@@ -1,0 +1,113 @@
+#content { overflow: auto; }
+
+.shorty-dialog {
+  display: none;
+  width:200; height:200;
+  margin-top: 45px;
+  background-color: white;
+  padding: 10px;
+}
+
+.shorty-desktop {
+  display: inline-block;
+  position: absolute;
+  width: 100%; height: 100%;
+  background: transparent;
+  text-align: left;
+  padding: 2.5em 0.5em;
+  padding-top: 20px;
+}
+
+.shorty-shading {
+  display: none;
+  position: absolute;
+  width: 100%; height: 100%;
+  background: transparent;
+  background-color: #EEEEEE;
+}
+
+.shorty-hourglass {
+  display: none;
+  position: absolute;
+  width: 100%; height: 100%;
+  background: transparent;
+}
+
+.shorty-headline {
+  font-size: large;
+  font-weight: bold;
+  margin-left: 2em;
+  padding: 2.5em 0.5em;
+}
+
+.shorty-list {
+  margin-top: 20px;
+}
+.shorty-list th {
+  font-weight: bold;
+}
+.shorty-list td {
+  padding: 3px;
+}
+
+.shorty-addBml {
+  text-decoration: underline;
+}
+
+.shorty-label {
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.shorty-label-prompt {
+  text-align: right;
+}
+
+.shorty-label-value {
+  text-align: left;
+}
+
+.shorty-input {
+  width: 20em;
+}
+
+.shorty-actions {
+  display: none;
+  font-size: smaller;
+  color: #666;
+  padding-left: 4em;
+}
+
+.shorty-actions span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.shorty-single {
+  padding: 0.5em 1em;
+}
+
+.shorty-single:hover {
+  background-color: #EAEAEA;
+}
+
+.shorty-single:hover .shorty-actions {
+  display: block;
+}
+
+.shorty-key {
+  color: black;
+}
+
+.shorty-notes {
+  color: blue;
+  text-decoration: none;
+}
+
+.shorty-source {
+  color: gray;
+}
+
+.shorty-target {
+  color: green;
+}

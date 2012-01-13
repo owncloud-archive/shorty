@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<info>
+	<id>shorty</id>
+	<name>Short URLs</name>
+	<description>URL shortener for ownCloud</description>
+	<version>0.1</version>
+	<licence>AGPL</licence>
+	<author>Christian Reiner</author>
+	<require>2</require>
+</info>

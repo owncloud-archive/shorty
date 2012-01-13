@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg3988"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="shorty.svg">
+  <title
+     id="title4164">Logo ownCloud Shorty Plugin</title>
+  <defs
+     id="defs3990" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="11"
+     inkscape:cx="14.454545"
+     inkscape:cy="32"
+     inkscape:current-layer="g4185"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1120"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4020"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3993">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="" />
+        <dc:title>Logo ownCloud Shorty Plugin</dc:title>
+        <dc:date>05.01.2012</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Christian Reiner</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Shared Commons</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>Christian Reiner, Hamburg, Germany</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Shadow"
+     id="g4185"
+     style="display:inline">
+    <path
+       style="fill:#646464;fill-opacity:1"
+       d="M 23.5,16.5625 8.0625,16.71875 c -4.54673,0.03879 -8.164642,6.548888 -8.125,14.625 0.03964,8.076112 3.703271,14.570036 8.25,14.53125 L 23.625,45.71875 c 3.896075,-0.03324 7.091762,-4.85679 7.90625,-11.3125 l 0.71875,0 c 0.799259,6.63226 4.121528,11.565135 8.09375,11.53125 l 15.4375,-0.125 c 4.546731,-0.03879 8.164642,-6.580138 8.125,-14.65625 -0.03964,-8.076112 -3.70327,-14.538786 -8.25,-14.5 l -15.46875,0.125 c -3.757091,0.03205 -6.86424,4.517045 -7.8125,10.625 l -0.90625,0 C 30.530115,21.124793 27.333201,16.529801 23.5,16.5625 z m -3.625,4.8125 c 3.44858,-0.02575 6.385921,2.457059 7.625,6.03125 l -9.71875,0 c -1.108,0 -2,1.561 -2,3.5 0,1.939 0.892,3.5 2,3.5 l 9.90625,0 C 26.580527,38.229252 23.577417,40.973286 20,41 l -8.09375,0.0625 C 7.359511,41.096444 3.655511,36.753669 3.625,31.3125 3.59449,25.871332 7.234511,21.440202 11.78125,21.40625 L 19.875,21.375 z m 32.15625,0.09375 c 4.546738,-0.03395 8.219489,4.277582 8.25,9.71875 0.03052,5.441169 -3.609511,9.872298 -8.15625,9.90625 L 44.03125,41.125 c -3.664637,0.02736 -6.760477,-2.780985 -7.84375,-6.71875 l 9.59375,0 c 1.108,0 2,-1.561 2,-3.5 0,-1.939 -0.892,-3.5 -2,-3.5 l -9.3125,0 C 37.721803,23.944816 40.578314,21.525084 43.9375,21.5 l 8.09375,-0.03125 z"
+       id="path4189"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     style="display:inline"
+     id="g4849"
+     inkscape:label="Object"
+     inkscape:groupmode="layer">
+    <path
+       inkscape:connector-curvature="0"
+       id="path4851"
+       d="M 23.625,13.1875 8.1875,13.34375 c -4.54673,0.03879 -8.164642,6.548888 -8.125,14.625 0.03964,8.076112 3.703271,14.570036 8.25,14.53125 L 23.75,42.34375 c 3.896075,-0.03324 7.091762,-4.85679 7.90625,-11.3125 l 0.71875,0 c 0.799259,6.63226 4.121528,11.565135 8.09375,11.53125 l 15.4375,-0.125 c 4.546731,-0.03879 8.164642,-6.580138 8.125,-14.65625 -0.03964,-8.076112 -3.70327,-14.538786 -8.25,-14.5 l -15.46875,0.125 c -3.757091,0.03205 -6.86424,4.517045 -7.8125,10.625 l -0.90625,0 C 30.655115,17.749793 27.458201,13.154801 23.625,13.1875 z M 20,18 c 3.44858,-0.02575 6.385921,2.457059 7.625,6.03125 l -9.71875,0 c -1.108,0 -2,1.561 -2,3.5 0,1.939 0.892,3.5 2,3.5 l 9.90625,0 c -1.106973,3.823002 -4.110083,6.567036 -7.6875,6.59375 l -8.09375,0.0625 C 7.484511,37.721444 3.780511,33.378669 3.75,27.9375 3.71949,22.496332 7.359511,18.065202 11.90625,18.03125 L 20,18 z m 32.15625,0.09375 c 4.546738,-0.03395 8.219489,4.277582 8.25,9.71875 0.03052,5.441169 -3.609511,9.872298 -8.15625,9.90625 L 44.15625,37.75 c -3.664637,0.02736 -6.760477,-2.780985 -7.84375,-6.71875 l 9.59375,0 c 1.108,0 2,-1.561 2,-3.5 0,-1.939 -0.892,-3.5 -2,-3.5 l -9.3125,0 c 1.253053,-3.461434 4.109564,-5.881166 7.46875,-5.90625 l 8.09375,-0.03125 z"
+       style="fill:#000000;fill-opacity:1" />
+  </g>
+</svg>

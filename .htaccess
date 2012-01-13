@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond "^/\?[a-z0-9]{8}$"
+RewriteRule "^/\?([a-z0-9]{8})$"  "/forward.php?$1" [R=301,L]
