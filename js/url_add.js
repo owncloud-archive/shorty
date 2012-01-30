@@ -24,15 +24,15 @@ $(document).ready
 (
   function ( )
   {
-    $('#shorty_add_submit').click(add_url);
+    $('#shorty-add-submit').click(add_url);
   }
 );
 
 function add_url ( event )
 {
-  var target = $('#shorty_add_url').val();
-  var notes  = $('#shorty_add_note').val();
-  var until  = $('#shorty_add_until').val();
+  var target = $('#shorty-add-url').val();
+  var notes  = $('#shorty-add-note').val();
+  var until  = $('#shorty-add-until').val();
   $.ajax
   (
     {

@@ -25,22 +25,22 @@
 <div id="dialog-show" class="shorty-dialog">
   <table>
     <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Key'); ?></td>
-        <td id="dialog_show_key" class="shorty-label"></td></tr>
+        <td id="dialog-show-key" class="shorty-label"></td></tr>
     <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Title'); ?></td>
-        <td id="dialog_show_title" class="shorty-label"></td></tr>
+        <td id="dialog-show-title" class="shorty-label"></td></tr>
     <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Source url'); ?></td>
-        <td id="dialog_show_source" class="shorty-label"></td></tr>
+        <td id="dialog-show-source" class="shorty-label"></td></tr>
     <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Target url'); ?></td>
-        <td id="dialog_show_target" class="shorty-label"></td></tr>
+        <td id="dialog-show-target" class="shorty-label"></td></tr>
     <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Valid until'); ?></td>
-        <td id="dialog_show_until" class="shorty-label"></td></tr>
+        <td id="dialog-show-until" class="shorty-label"></td></tr>
     <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Notes'); ?></td>
-        <td id="dialog_show_notes" class="shorty-label"></td></tr>
+        <td id="dialog-show-notes" class="shorty-label"></td></tr>
     <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Clicks'); ?></td>
-        <td id="dialog_show_clicks" class="shorty-label"></td></tr>
+        <td id="dialog-show-clicks" class="shorty-label"></td></tr>
     <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Created'); ?></td>
-        <td id="dialog_show_created" class="shorty-label"></td></tr>
+        <td id="dialog-show-created" class="shorty-label"></td></tr>
     <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Accessed'); ?></td>
-        <td id="dialog_show_accessed" class="shorty-label"></td></tr>
+        <td id="dialog-show-accessed" class="shorty-label"></td></tr>
   </table>
 </div>

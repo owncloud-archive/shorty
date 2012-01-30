@@ -24,7 +24,7 @@
 
 <div id='notification'></div>
 <div id="controls" class="controls shorty-controls">
-  <input type="button" id="controls_button_add" value="<?php echo OC_Shorty_L10n::t('Shorten Url'); ?>"/>
+  <input type="button" id="controls-button-add" value="<?php echo OC_Shorty_L10n::t('Shorten Url'); ?>"/>
 <?php require_once('tmpl_url_add.php'); ?>
 <?php require_once('tmpl_url_show.php'); ?>
 <?php require_once('tmpl_url_edit.php'); ?>

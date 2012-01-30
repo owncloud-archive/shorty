@@ -27,8 +27,8 @@ $(document).ready
 (
   function()
   {
-    $('#controls_button_add').click(Shorty.WUI.toggleDialogAdd);
-    $('#dialog-add_submit').click(Shorty.WUI.submitDialogAdd);
+    $('#controls-button-add').click(Shorty.WUI.toggleDialogAdd);
+    $('#dialog-add-submit').click(Shorty.WUI.submitDialogAdd);
     $('.shorty-actions').hover(function(){$(this).fadeToggle();});
     $(window).scroll(Shorty.Action.update_bottom);
     Shorty.Action.listGet();
@@ -43,7 +43,7 @@ Shorty={
       Shorty.WUI.toggleDesktopShading();
       Shorty.WUI.hideNotification();
       $('#dialog-add').slideToggle();
-      $('#dialog-add_target').focus();
+      $('#dialog-add-target').focus();
     },
     submitDialogAdd:function()
     {
@@ -55,7 +55,7 @@ Shorty={
     {
       Shorty.WUI.toggleDesktopShading();
       Shorty.WUI.hideNotification();
-      $('#dialog_edit').slideToggle();
+      $('#dialog-edit').slideToggle();
     },
     submitDialogEdit:function()
     {
@@ -123,8 +123,8 @@ Shorty={
       // prepare loading
       Shorty.WUI.hideNotification();
       Shorty.WUI.toggleDesktopHourglass(true);
-      var target = Shorty.Utility.encodeEntities($('#list_filter_target').val());
-      var notes  = Shorty.Utility.encodeEntities($('#list_filter_notes').val());
+      var target = Shorty.Utility.encodeEntities($('#list-filter-target').val());
+      var notes  = Shorty.Utility.encodeEntities($('#list-filter-notes').val());
       // load current list
       $.ajax
       (
@@ -142,9 +142,9 @@ Shorty={
             {
               Shorty.WUI.showNotification ( response );
               // prevent clicks whilst loading the list
-              $('.shorty_link').unbind('click', Shorty.Action.urlClick);
-              $('.shorty_delete').unbind('click', Shorty.Action.urlDel);
-              $('.shorty_edit').unbind('click', Shorty.Action.urlShow);
+              $('.shorty-link').unbind('click', Shorty.Action.urlClick);
+              $('.shorty-delete').unbind('click', Shorty.Action.urlDel);
+              $('.shorty-edit').unbind('click', Shorty.Action.urlShow);
 //              $.each(response, function(index, value) { Shorty.ListAdd(index,value); }
               var count_urls=0;
               var count_clicks=0;
@@ -154,12 +154,12 @@ Shorty={
                 count_clicks += 0;
                 Shorty.Action.listAdd(i,response.data[i]);
               }
-              Shorty.WUI.setControlsLabel('#controls_label_number',count_urls);
-              Shorty.WUI.setControlsLabel('#controls_label_clicks',count_clicks);
+              Shorty.WUI.setControlsLabel('#controls-label-number',count_urls);
+              Shorty.WUI.setControlsLabel('#controls-label-clicks',count_clicks);
               // reenable clicks after loading the list
-              $('.shorty_link').click(Shorty.Action.urlClick);
-              $('.shorty_delete').click(Shorty.Action.urlDel);
-              $('.shorty_edit').click(Shorty.Action.urlShow);
+              $('.shorty-link').click(Shorty.Action.urlClick);
+              $('.shorty-delete').click(Shorty.Action.urlDel);
+              $('.shorty-edit').click(Shorty.Action.urlShow);
               Shorty.WUI.toggleDesktopHourglass(false);
             } // if else
           }
@@ -180,7 +180,7 @@ Shorty={
              function()
              {
                $row.attr('data-'+this,token[this]);
-//               $row.find('td').filter(function(aspect){return ('shorty_'+aspect==$(this).attr('id'));}).text(token[this]);
+//               $row.find('td').filter(function(aspect){return ('shorty-'+aspect==$(this).attr('id'));}).text(token[this]);
                $.each($row.find('td'),function(){$(this).text(token[$(this).attr('id')]);});
              }
             );
@@ -191,9 +191,9 @@ Shorty={
     urlAdd:function(event)
     {
       Shorty.WUI.hideNotification();
-      var target = $('#dialog-add_target').val();
-      var notes  = $('#dialog-add_notes').val();
-      var until  = $('#dialog-add_until').val();
+      var target = $('#dialog-add-target').val();
+      var notes  = $('#dialog-add-notes').val();
+      var until  = $('#dialog-add-until').val();
       $.ajax
       (
         {
@@ -203,7 +203,7 @@ Shorty={
           {
             var shorty_id = response.data;
             $('#dialog-add').slideToggle();
-            $('#dialog-add').children('p').children('.shorty_input').val('');
+            $('#dialog-add').children('p').children('.shorty-input').val('');
             Shorty.Action.listAdd(response.data);
           }
         }
@@ -213,11 +213,11 @@ Shorty={
     urlEdit:function(event)
     {
       Shorty.WUI.hideNotification();
-      var key    = $('#shorty_add_key').val();
-      var source = Shorty.Utility.encodeEntities($('#shorty_add_source').val());
-      var target = Shorty.Utility.encodeEntities($('#shorty_add_target').val());
-      var notes  = Shorty.Utility.encodeEntities($('#shorty_add_notes').val());
-      var until  = Shorty.Utility.encodeEntities($('#shorty_add_until').val());
+      var key    = $('#shorty-add-key').val();
+      var source = Shorty.Utility.encodeEntities($('#shorty-add-source').val());
+      var target = Shorty.Utility.encodeEntities($('#shorty-add-target').val());
+      var notes  = Shorty.Utility.encodeEntities($('#shorty-add-notes').val());
+      var until  = Shorty.Utility.encodeEntities($('#shorty-add-until').val());
 
       $.ajax
       (
@@ -226,17 +226,17 @@ Shorty={
           data: 'key=' + key + '&source=' + encodeURI(source) + '&target=' + encodeURI(target) + '&notes=' + encodeURI(notes) + '&until=' + encodeURI(until),
           success: function()
           {
-            $('.shorty_add').slideToggle();
-            $('.shorty_add').children('p').children('.shorty_input').val('');
-            $('#shorty_add_key').val('');
+            $('.shorty-add').slideToggle();
+            $('.shorty-add').children('p').children('.shorty-input').val('');
+            $('#shorty-add-key').val('');
 
-            var record = $('.shorty_single[data-key = "' + key + '"]');
-            record.children('.shorty_target:first').text(target);
+            var record = $('.shorty-single[data-key = "' + key + '"]');
+            record.children('.shorty-target:first').text(target);
 
-            var record_notes = record.children('.shorty_notes:first').children('a:first');
+            var record_notes = record.children('.shorty-notes:first').children('a:first');
             record_notes.attr('href', target);
             record_notes.text(notes);
-            record.children('.shorty_until').html(until);
+            record.children('.shorty-until').html(until);
           }
         }
       );
@@ -250,7 +250,7 @@ Shorty={
       (
         {
           url: 'ajax/del.php',
-          data: 'url=' + encodeURI($(this).parent().parent().children('.shorty_url:first').text()),
+          data: 'url=' + encodeURI($(this).parent().parent().children('.shorty-url:first').text()),
           success: function(data){ record.animate({ opacity: 'hide' }, 'fast'); }
         }
       );
@@ -260,16 +260,16 @@ Shorty={
     {
       Shorty.WUI.hideNotification();
       var record = $(this).parent().parent();
-      $('#shorty_add_key').val(record.attr('data-key'));
-      $('#shorty_add_source').val(record.children('.shorty_source:first').text());
-      $('#shorty_add_target').val(record.children('.shorty_target:first').text());
-      $('#shorty_add_notes').val(record.children('.shorty_notes:first').text());
-      $('#shorty_add_until').val(record.children('.shorty_until:first').text());
-      if ($('.shorty_add').css('display') == 'none')
+      $('#shorty-add-key').val(record.attr('data-key'));
+      $('#shorty-add-source').val(record.children('.shorty-source:first').text());
+      $('#shorty-add-target').val(record.children('.shorty-target:first').text());
+      $('#shorty-add-notes').val(record.children('.shorty-notes:first').text());
+      $('#shorty-add-until').val(record.children('.shorty-until:first').text());
+      if ($('.shorty-add').css('display') == 'none')
       {
-        $('.shorty_add').slideToggle();
+        $('.shorty-add').slideToggle();
       }
-      $('html, body').animate({ scrollTop: $('.shorty_menu').offset().top }, 500);
+      $('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 500);
     },
 //Action:
     urlClick:function(event)
