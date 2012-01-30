@@ -74,6 +74,11 @@ Shorty={
       else
         $('#desktop').children('.shorty-hourglass').fadeOut('slow');
     },
+    toggleUrlList:function(filled)
+    {
+      $('#shorty-list-empty').toggle(!filled);
+      $('#shorty-list-nonempty').toggle(filled);
+    },
     emptyDesktop:function()
     {
       Shorty.WUI.hideNotification();
@@ -140,26 +145,38 @@ Shorty={
             }
             else
             {
-              Shorty.WUI.showNotification ( response );
-              // prevent clicks whilst loading the list
-              $('.shorty-link').unbind('click', Shorty.Action.urlClick);
-              $('.shorty-delete').unbind('click', Shorty.Action.urlDel);
-              $('.shorty-edit').unbind('click', Shorty.Action.urlShow);
-//              $.each(response, function(index, value) { Shorty.ListAdd(index,value); }
-              var count_urls=0;
-              var count_clicks=0;
-              for(var i in response.data) {
-                count_urls   += 1;
-//                count_clicks += response.data[i].clicks;
-                count_clicks += 0;
-                Shorty.Action.listAdd(i,response.data[i]);
+//              if ( strlen(response.message) )
+                Shorty.WUI.showNotification ( response );
+              if ( 0!=response.data.length )
+              {
+                // list empty, show placeholder instead of empty table
+                Shorty.WUI.setControlsLabel('#controls-label-number',0);
+                Shorty.WUI.setControlsLabel('#controls-label-clicks',0);
+                Shorty.WUI.toggleUrlList(false);
               }
-              Shorty.WUI.setControlsLabel('#controls-label-number',count_urls);
-              Shorty.WUI.setControlsLabel('#controls-label-clicks',count_clicks);
-              // reenable clicks after loading the list
-              $('.shorty-link').click(Shorty.Action.urlClick);
-              $('.shorty-delete').click(Shorty.Action.urlDel);
-              $('.shorty-edit').click(Shorty.Action.urlShow);
+              else
+              {
+                // list non-empty, fill and show table instead of placeholder
+                // prevent clicks whilst loading the list
+                $('.shorty-link').unbind('click', Shorty.Action.urlClick);
+                $('.shorty-delete').unbind('click', Shorty.Action.urlDel);
+                $('.shorty-edit').unbind('click', Shorty.Action.urlShow);
+                var count_urls=0;
+                var count_clicks=0;
+                for(var i in response.data) {
+                  count_urls   += 1;
+  //                count_clicks += response.data[i].clicks;
+                  count_clicks += 0;
+                  Shorty.Action.listAdd(i,response.data[i]);
+                }
+                Shorty.WUI.setControlsLabel('#controls-label-number',count_urls);
+                Shorty.WUI.setControlsLabel('#controls-label-clicks',count_clicks);
+                // reenable clicks after loading the list
+                $('.shorty-link').click(Shorty.Action.urlClick);
+                $('.shorty-delete').click(Shorty.Action.urlDel);
+                $('.shorty-edit').click(Shorty.Action.urlShow);
+                Shorty.WUI.toggleUrlList(true);
+              }
               Shorty.WUI.toggleDesktopHourglass(false);
             } // if else
           }
