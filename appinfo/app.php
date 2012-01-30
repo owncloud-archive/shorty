@@ -23,6 +23,7 @@
 
 OC::$CLASSPATH['OC_Shorty_Exception'] = 'apps/shorty/lib/exception.php';
 OC::$CLASSPATH['OC_Shorty_L10n']      = 'apps/shorty/lib/l10n.php';
+OC::$CLASSPATH['OC_Shorty_Meta']      = 'apps/shorty/lib/meta.php';
 OC::$CLASSPATH['OC_Shorty_Query']     = 'apps/shorty/lib/query.php';
 OC::$CLASSPATH['OC_Shorty_Tools']     = 'apps/shorty/lib/tools.php';
 OC::$CLASSPATH['OC_Shorty_Type']      = 'apps/shorty/lib/type.php';

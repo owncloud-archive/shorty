@@ -4,6 +4,7 @@
   display: none;
   width:200; height:200;
   margin-top: 45px;
+  background: solid;
   background-color: white;
   padding: 10px;
 }
@@ -14,6 +15,7 @@
   width: 100%; height: 100%;
   background: transparent;
   text-align: left;
+  margin-top: 30px;
   padding: 2.5em 0.5em;
   padding-top: 20px;
 }
@@ -30,6 +32,12 @@
   display: none;
   position: absolute;
   width: 100%; height: 100%;
+  background: transparent;
+}
+
+.shorty-favicon {
+  display: none;
+  position: absolute;
   background: transparent;
 }
 
@@ -56,6 +64,7 @@
 
 .shorty-label {
   display: inline-block;
+  margin-top: 8px;
   margin-left: 12px;
 }
 

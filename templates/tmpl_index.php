@@ -54,17 +54,21 @@
   <table class="shorty-list">
     <thead>
       <tr>
-        <th id="headerSource"><?php echo OC_Shorty_L10n::t('Source') ?></th>
-        <th id="headerTarget"><?php echo OC_Shorty_L10n::t('Target') ?></th>
-        <th id="headerUntil"><?php echo OC_Shorty_L10n::t('Valid until') ?></th>
-        <th id="headerClicks"><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
-        <th id="headerAction"><?php echo OC_Shorty_L10n::t('Actions') ?></th>
+        <th id="headerFavicon"><?php echo OC_Shorty_L10n::t('') ?></th>
+        <th id="headerTitle"  ><?php echo OC_Shorty_L10n::t('Title') ?></th>
+        <th id="headerSource" ><?php echo OC_Shorty_L10n::t('Source') ?></th>
+        <th id="headerTarget" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
+        <th id="headerUntil"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
+        <th id="headerClicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
+        <th id="headerAction" ><?php echo OC_Shorty_L10n::t('Actions') ?></th>
       </tr>
     </thead>
     <tbody>
       <tr id=""
           data-key=""
           data-source=""
+          data-title=""
+          data-favicon=""
           data-target=""
           data-until=""
           data-clicks=""
@@ -72,16 +76,18 @@
           data-accessed=""
           data-notes=""
           style="hidden" >
+        <td id="favicon"></td>
+        <td id="title"  ></td>
         <td id="source" ></td>
         <td id="target" ></td>
         <td id="until"  ></td>
         <td id="clicks" ></td>
         <td id="actions">
-          <span class="shorty-actions">
+          <div class="shorty-actions">
             <a href="" title="Download" class="download"><img class="svg" alt="Download" src="/owncloud/core/img/actions/download.svg" /></a>
             <a href="" title="Share" class="share"><img class="svg" alt="Share" src="/owncloud/core/img/actions/share.svg" /></a>
             <a href="" title="Delete" class="delete"><img class="svg" alt="Delete" src="/owncloud/core/img/actions/delete.svg" /></a>
-          </span>
+          </div>
         </td>
       </tr>
     </tbody>

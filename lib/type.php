@@ -35,10 +35,11 @@ class OC_Shorty_Type
   const DATE        = 'date';
   const TIMESTAMP   = 'timestamp';
   static $valid_sortings = array ( 'k'=>'key',      'kd'=>'key DESC',
-                            'c'=>'created',  'cd'=>'created DESC',
-                            'a'=>'accessed', 'ad'=>'accessed DESC',
-                            't'=>'clicks',   'td'=>'clicks DESC',
-                            'u'=>'url',      'ud'=>'url DESC' );
+                                   'c'=>'created',  'cd'=>'created DESC',
+                                   'a'=>'accessed', 'ad'=>'accessed DESC',
+                                   't'=>'title',    'td'=>'title DESC',
+                                   'h'=>'clicks',   'hd'=>'clicks DESC',
+                                   'u'=>'target',   'ud'=>'target DESC' );
 
   static function validate ( $value, $type )
   {
@@ -106,5 +107,5 @@ class OC_Shorty_Type
     }
   } // function req_argument
 
-} // class OC_Wiki_Query
+} // class OC_Shorty_Query
 ?>

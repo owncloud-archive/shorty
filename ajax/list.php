@@ -35,8 +35,9 @@ try
   define ('PAGE_SIZE', 10);
   $p_offset = OC_Shorty_Type::req_argument ( 'page',   OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
   $p_sort   = OC_Shorty_Type::req_argument ( 'sort',   OC_Shorty_Type::SORTING, FALSE);
-  $p_target = OC_Shorty_Type::req_argument ( 'target', OC_Shorty_Type::STRING, FALSE);
-  $p_notes  = OC_Shorty_Type::req_argument ( 'notes',  OC_Shorty_Type::STRING, FALSE);
+  $p_title  = OC_Shorty_Type::req_argument ( 'title' , OC_Shorty_Type::STRING,  FALSE);
+  $p_target = OC_Shorty_Type::req_argument ( 'target', OC_Shorty_Type::STRING,  FALSE);
+  $p_notes  = OC_Shorty_Type::req_argument ( 'notes',  OC_Shorty_Type::STRING,  FALSE);
   $param = array
   (
     ':user'   => OC_User::getUser ( ),
@@ -44,6 +45,7 @@ try
     ':offset' => $p_offset,
     ':limit'  => PAGE_SIZE,
     ':target' => sprintf('%%%s%%',$p_target),
+    ':title'  => sprintf('%%%s%%',$p_title),
     ':notes'  => sprintf('%%%s%%',$p_notes),
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_LIST );

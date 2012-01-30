@@ -33,12 +33,14 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 try
 {
   $p_key   = OC_Shorty_Type::req_argument ( 'key',   OC_Shorty_Type::KEY,    TRUE );
-  $p_notes = OC_Shorty_Type::req_argument ( 'notes', OC_Shorty_Type::STRING, TRUE );
+  $p_title = OC_Shorty_Type::req_argument ( 'title', OC_Shorty_Type::STRING, FALSE );
+  $p_notes = OC_Shorty_Type::req_argument ( 'notes', OC_Shorty_Type::STRING, FALSE );
   $param = array
   (
     'user'  => OC_User::getUser ( ),
-    'key'   => OC_Shorty_Tools::db_escape ( $p_key ),
-    'notes' => OC_Shorty_Tools::db_escape ( $p_notes ),
+    'key'   => $p_key,
+    'title' => $p_title,
+    'notes' => $p_notes,
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_UPDATE );
   $query->execute ( $param );
