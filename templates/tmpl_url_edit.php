@@ -22,23 +22,27 @@
 */
 ?>
 
-<div id="dialog_edit" class="shorty-dialog">
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Key'); ?></label>
-     <label id="dialog_show_target" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Source url'); ?></label>
-     <label id="dialog_show_target" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Target url'); ?></label>
-     <input type="text" id="dialog_show_target" class="shorty-label"/></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Notes'); ?></label>
-     <textarea cols=50 rows=3 id="dialog_show_notes" class="shorty-label"></textarea></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
-     <input type="text" id="dialog_show_until" class="shorty-label"/></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Clicks'); ?></label>
-     <label id="dialog_show_clicks" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Created'); ?></label>
-     <label id="dialog_show_created" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Accessed'); ?></label>
-     <label id="dialog_show_accessed" class="shorty-label"></label></p>
-  <p><label class="shorty-label"></label>
-     <input type="submit" value="<?php echo OC_Shorty_L10n::t('Save modified'); ?>" id="dialog_edit_submit" /></p>
+<div id="dialog-edit" class="shorty-dialog">
+  <table>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Key'); ?></td>
+        <td id="dialog_show_key" class="shorty-label"></label></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Title'); ?></td>
+        <td id="dialog_show_title" class="shorty-label"></label></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Source url'); ?></td>
+        <td id="dialog_show_source" class="shorty-label"></label></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Target url'); ?></td>
+        <td class="shorty-label"><input type="text" id="dialog_show_target" class="shorty-label"/></td></tr>
+    <td><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Valid until'); ?></td>
+        <td class="shorty-label"><input type="text" id="dialog_show_until" class="shorty-label datepicker"/></td></tr>
+    <td><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Notes'); ?></td>
+        <td class="shorty-label"><textarea cols=50 rows=3 id="dialog_show_notes" class="shorty-label"></textarea></td></tr>
+    <td><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Clicks'); ?></td>
+        <td id="dialog_show_clicks" class="shorty-label"></td></td></tr>
+    <td><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Created'); ?></td>
+        <td id="dialog_show_created" class="shorty-label"></td></td></tr>
+    <td><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Accessed'); ?></td>
+        <td id="dialog_show_accessed" class="shorty-label"></td></td></tr>
+    <td><td class="shorty-label"></td>
+        <td class="shorty-label"><input type="submit" value="<?php echo OC_Shorty_L10n::t('Save modified'); ?>" id="dialog_edit_submit" /></td></tr>
+  </table>
 </div>

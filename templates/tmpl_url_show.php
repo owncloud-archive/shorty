@@ -22,21 +22,25 @@
 */
 ?>
 
-<div id="dialog_show" class="shorty-dialog">
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Key'); ?></label>
-     <label id="dialog_show_target" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Source url'); ?></label>
-     <label id="dialog_show_target" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Target url'); ?></label>
-     <label id="dialog_show_target" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Notes'); ?></label>
-     <label id="dialog_show_notes" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
-     <label id="dialog_show_until" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Clicks'); ?></label>
-     <label id="dialog_show_clicks" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Created'); ?></label>
-     <label id="dialog_show_created" class="shorty-label"></label></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Accessed'); ?></label>
-     <label id="dialog_show_accessed" class="shorty-label"></label></p>
+<div id="dialog-show" class="shorty-dialog">
+  <table>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Key'); ?></td>
+        <td id="dialog_show_key" class="shorty-label"></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Title'); ?></td>
+        <td id="dialog_show_title" class="shorty-label"></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Source url'); ?></td>
+        <td id="dialog_show_source" class="shorty-label"></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Target url'); ?></td>
+        <td id="dialog_show_target" class="shorty-label"></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Valid until'); ?></td>
+        <td id="dialog_show_until" class="shorty-label"></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Notes'); ?></td>
+        <td id="dialog_show_notes" class="shorty-label"></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Clicks'); ?></td>
+        <td id="dialog_show_clicks" class="shorty-label"></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Created'); ?></td>
+        <td id="dialog_show_created" class="shorty-label"></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Accessed'); ?></td>
+        <td id="dialog_show_accessed" class="shorty-label"></td></tr>
+  </table>
 </div>

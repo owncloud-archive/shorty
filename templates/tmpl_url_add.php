@@ -22,13 +22,21 @@
 */
 ?>
 
-<div id="dialog_add" class="shorty-dialog">
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Target url'); ?></label>
-     <input type="text" id="dialog_add_target" class="shorty-input" /></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Notes'); ?></label>
-     <textarea cols=50 rows=3 id="dialog_add_notes" class="shorty-input"></textarea></p>
-  <p><label class="shorty-label"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
-     <input type="text" id="dialog_add_until" class="shorty-input" /></p>
-  <p><label class="shorty-label"></label>
-     <input type="submit" value="<?php echo OC_Shorty_L10n::t('Add as new'); ?>" id="dialog_add_submit" /></p>
+<div id="dialog-add" class="shorty-dialog">
+  <table>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Target (url)'); ?></td>
+        <td class="shorty-input"><img class="shorty-favicon" src="<?php echo OC_Helper::imagePath('shorty', 'blank.gif'); ?>">
+                                 <img class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>">
+                                 <input type="text" id="dialog-add-target" data="" class="shorty-input" /></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Entry title'); ?></td>
+        <td class="shorty-input"><img class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>">
+                                 <img id="dialog-add-favicon" class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>">
+                                 <input type="text" id="dialog-add-title" data="" class="shorty-input"/></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Valid until'); ?></td>
+        <td class="shorty-input"><input type="text" id="dialog-add-until" data="" class="shorty-input datepicker" /></td></tr>
+    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Notes'); ?></td>
+        <td class="shorty-input"><textarea cols=50 rows=3 id="dialog-add-notes" data="" class="shorty-input"></textarea></td></tr>
+    <tr><td class="shorty-label"></td>
+        <td class="shorty-input"><input type="submit" value="<?php echo OC_Shorty_L10n::t('Add as new'); ?>" id="dialog-add-submit" /></td><tr>
+  </table>
 </div>

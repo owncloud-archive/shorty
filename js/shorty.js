@@ -28,7 +28,7 @@ $(document).ready
   function()
   {
     $('#controls_button_add').click(Shorty.WUI.toggleDialogAdd);
-    $('#dialog_add_submit').click(Shorty.WUI.submitDialogAdd);
+    $('#dialog-add_submit').click(Shorty.WUI.submitDialogAdd);
     $('.shorty-actions').hover(function(){$(this).fadeToggle();});
     $(window).scroll(Shorty.Action.update_bottom);
     Shorty.Action.listGet();
@@ -42,8 +42,8 @@ Shorty={
     {
       Shorty.WUI.toggleDesktopShading();
       Shorty.WUI.hideNotification();
-      $('#dialog_add').slideToggle();
-      $('#dialog_add_target').focus();
+      $('#dialog-add').slideToggle();
+      $('#dialog-add_target').focus();
     },
     submitDialogAdd:function()
     {
@@ -191,9 +191,9 @@ Shorty={
     urlAdd:function(event)
     {
       Shorty.WUI.hideNotification();
-      var target = $('#dialog_add_target').val();
-      var notes  = $('#dialog_add_notes').val();
-      var until  = $('#dialog_add_until').val();
+      var target = $('#dialog-add_target').val();
+      var notes  = $('#dialog-add_notes').val();
+      var until  = $('#dialog-add_until').val();
       $.ajax
       (
         {
@@ -202,8 +202,8 @@ Shorty={
           success: function(response)
           {
             var shorty_id = response.data;
-            $('#dialog_add').slideToggle();
-            $('#dialog_add').children('p').children('.shorty_input').val('');
+            $('#dialog-add').slideToggle();
+            $('#dialog-add').children('p').children('.shorty_input').val('');
             Shorty.Action.listAdd(response.data);
           }
         }
