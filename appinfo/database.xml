@@ -16,12 +16,14 @@
       <field>
         <name>title</name>
         <type>text</type>
+        <default>''</default>
         <notnull>true</notnull>
         <length>256</length>
       </field>
       <field>
         <name>favicon</name>
         <type>text</type>
+        <default>''</default>
         <notnull>false</notnull>
         <length>1024</length>
       </field>
@@ -75,8 +77,8 @@
       <field>
         <name>notes</name>
         <type>text</type>
-        <default></default>
-        <notnull>false</notnull>
+        <default>''</default>
+        <notnull>true</notnull>
         <length>4096</length>
       </field>
 
@@ -89,42 +91,18 @@
         </field>
       </index>
       <index>
-        <name>shorty_title</name>
-        <unique>true</unique>
-        <field>
-          <name>title</name>
-          <sorting>descending</sorting>
-        </field>
-      </index>
-      <index>
-        <name>shorty_clicks</name>
-        <unique>true</unique>
-        <field>
-          <name>clicks</name>
-          <sorting>descending</sorting>
-        </field>
-      </index>
-      <index>
         <name>shorty_target</name>
-        <unique>true</unique>
+        <unique>false</unique>
         <field>
           <name>target</name>
           <sorting>descending</sorting>
         </field>
       </index>
       <index>
-        <name>shorty_created</name>
-        <unique>true</unique>
+        <name>shorty_title</name>
+        <unique>false</unique>
         <field>
-          <name>created</name>
-          <sorting>descending</sorting>
-        </field>
-      </index>
-      <index>
-        <name>shorty_accessed</name>
-        <unique>true</unique>
-        <field>
-          <name>accessed</name>
+          <name>title</name>
           <sorting>descending</sorting>
         </field>
       </index>
