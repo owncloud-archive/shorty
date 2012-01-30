@@ -93,7 +93,7 @@ Shorty={
       $('#notification').fadeOut('fast');
       $('#notification').text(t('shorty',''));
     },
-    showNotification:function ( response )
+    showNotification:function(response)
     {
       if ( shorty_debug && ('error'==response.status ) )
       {
@@ -129,13 +129,13 @@ Shorty={
       Shorty.WUI.hideNotification();
       Shorty.WUI.toggleDesktopHourglass(true);
       var target = Shorty.Utility.encodeEntities($('#list-filter-target').val());
-      var notes  = Shorty.Utility.encodeEntities($('#list-filter-notes').val());
+      var title  = Shorty.Utility.encodeEntities($('#list-filter-title').val());
       // load current list
       $.ajax
       (
         {
           url: 'ajax/list.php',
-          data: 'target=' + encodeURI(target) + '&notes=' + encodeURI(notes),
+          data: 'target=' + encodeURI(target) + '&title=' + encodeURI(title),
           success: function(response)
           {
             if ( 'error'==response.status )
@@ -147,7 +147,7 @@ Shorty={
             {
 //              if ( strlen(response.message) )
                 Shorty.WUI.showNotification ( response );
-              if ( 0!=response.data.length )
+              if ( 0==response.data.length )
               {
                 // list empty, show placeholder instead of empty table
                 Shorty.WUI.setControlsLabel('#controls-label-number',0);
@@ -209,19 +209,26 @@ Shorty={
     {
       Shorty.WUI.hideNotification();
       var target = $('#dialog-add-target').val();
+      var title  = $('#dialog-add-title').val();
       var notes  = $('#dialog-add-notes').val();
       var until  = $('#dialog-add-until').val();
       $.ajax
       (
         {
           url: 'ajax/add.php',
-          data: 'target=' + encodeURIComponent(target) + '&notes=' + encodeURIComponent(notes) + '&until=' + encodeURIComponent(until),
+          data: 'target=' + encodeURIComponent(target) 
+              + '&title=' + encodeURIComponent(title) 
+              + '&notes=' + encodeURIComponent(notes) 
+              + '&until=' + encodeURIComponent(until),
           success: function(response)
           {
-            var shorty_id = response.data;
+            Shorty.WUI.showNotification ( response )
+            if ( 'error'!=response.status )
+            {
+              $('#dialog-add').children('p').children('.shorty-input').val('');
+              Shorty.Action.listAdd(0,response.data);
+            } // if !error
             $('#dialog-add').slideToggle();
-            $('#dialog-add').children('p').children('.shorty-input').val('');
-            Shorty.Action.listAdd(response.data);
           }
         }
       );
