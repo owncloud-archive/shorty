@@ -37,7 +37,6 @@ try
   $p_sort   = OC_Shorty_Type::req_argument ( 'sort',   OC_Shorty_Type::SORTING, FALSE);
   $p_title  = OC_Shorty_Type::req_argument ( 'title' , OC_Shorty_Type::STRING,  FALSE);
   $p_target = OC_Shorty_Type::req_argument ( 'target', OC_Shorty_Type::STRING,  FALSE);
-  $p_notes  = OC_Shorty_Type::req_argument ( 'notes',  OC_Shorty_Type::STRING,  FALSE);
   $param = array
   (
     ':user'   => OC_User::getUser ( ),
@@ -46,12 +45,12 @@ try
     ':limit'  => PAGE_SIZE,
     ':target' => sprintf('%%%s%%',$p_target),
     ':title'  => sprintf('%%%s%%',$p_title),
-    ':notes'  => sprintf('%%%s%%',$p_notes),
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_LIST );
   $result = $query->execute($param);
   $reply = $result->fetchAll();
-  OC_JSON::success ( array ( 'data' => $reply,
-                             'note' => OC_Shorty_L10n::t('Number of entries: %s', count($reply)) ) );
+  OC_JSON::success ( array ( 'data'  => $reply,
+                             'count' => sizeof($reply),
+                             'note'  => OC_Shorty_L10n::t('Number of entries: %s', count($reply)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
