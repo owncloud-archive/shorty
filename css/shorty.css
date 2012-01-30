@@ -53,9 +53,12 @@
 }
 .shorty-list th {
   font-weight: bold;
+  padding: 2px;
+  padding-left: 4px;
 }
 .shorty-list td {
-  padding: 3px;
+  padding: 2px;
+  padding-left: 4px;
 }
 
 .shorty-addBml {
