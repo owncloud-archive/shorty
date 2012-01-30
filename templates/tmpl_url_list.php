@@ -35,10 +35,10 @@
     <tr>
       <th id="headerFavicon"><?php echo OC_Shorty_L10n::t('') ?></th>
       <th id="headerTitle"  ><?php echo OC_Shorty_L10n::t('Title') ?></th>
-      <th id="headerSource" ><?php echo OC_Shorty_L10n::t('Source') ?></th>
+      <th id="headerKey"    ><?php echo OC_Shorty_L10n::t('Key') ?></th>
       <th id="headerTarget" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
-      <th id="headerUntil"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
       <th id="headerClicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
+      <th id="headerUntil"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
       <th id="headerAction" ><?php echo OC_Shorty_L10n::t('Actions') ?></th>
     </tr>
   </thead>
@@ -49,18 +49,18 @@
         data-title=""
         data-favicon=""
         data-target=""
-        data-until=""
         data-clicks=""
+        data-until=""
         data-created=""
         data-accessed=""
         data-notes=""
         style="hidden" >
       <td id="favicon"></td>
       <td id="title"  ></td>
-      <td id="source" ></td>
+      <td id="key"    ></td>
       <td id="target" ></td>
-      <td id="until"  ></td>
       <td id="clicks" ></td>
+      <td id="until"  ></td>
       <td id="actions">
         <div class="shorty-actions">
           <a href="" title="Download" class="download"><img class="svg" alt="Download" src="/owncloud/core/img/actions/download.svg" /></a>
