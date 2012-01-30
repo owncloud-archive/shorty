@@ -48,7 +48,8 @@ class OC_Shorty_Type
       case self::KEY:       return preg_match ( '^[a-z0-9]{8}$',         $value );
       case self::SORTING:   return in_array ( trim($value), self::$valid_sortings );
       case self::STRING:    return preg_match ( '/^.+$/',                $value );
-      case self::URL:       return preg_match ( '/^(([\w]+:)?\/\/)?(([\d\w]|%[a-fA-f\d]{2,2})+(:([\d\w]|%[a-fA-f\d]{2,2})+)?@)?([\d\w][-\d\w]{0,253}[\d\w]\.)+[\w]{2,4}(:[\d]+)?(\/([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)*(\?(&amp;?([-+_~.\d\w]|%[a-fA-f\d]{2,2})=?)*)?(#([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)?$/', $value );
+//      case self::URL:       return preg_match ( '/^(([\w]+:)?\/\/)?(([\d\w]|%[a-fA-f\d]{2,2})+(:([\d\w]|%[a-fA-f\d]{2,2})+)?@)?([\d\w][-\d\w]{0,253}[\d\w]\.)+[\w]{2,4}(:[\d]+)?(\/([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)*(\?(&amp;?([-+_~.\d\w]|%[a-fA-f\d]{2,2})=?)*)?(#([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)?$/', $value );
+      case self::URL:       return preg_match ( '/^(http|https|ftp)\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(\/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$/', $value );
       case self::INTEGER:   return preg_match ( '/^[0-9]+$/',            $value );
       case self::FLOAT:     return preg_match ( '/^[0-9]+(\.[0-9]+)?$/', $value );
       case self::TIMESTAMP: return preg_match ( '/^[0-9]{}$/',$value );
@@ -93,15 +94,15 @@ class OC_Shorty_Type
       case 'POST':
         if ( isset($_POST[$arg]) && !empty($_POST[$arg]) )
           return self::normalize ( htmlspecialchars_decode($_POST[$arg]), $type ) ;
-        elseif ( $strict)
-          throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
-        break;
+        elseif ( ! $strict)
+          return NULL;
+        throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
       case 'GET':
         if ( isset($_GET[$arg]) && !empty($_GET[$arg]) )
           return self::normalize ( urldecode(trim($_GET[$arg])), $type );
-        elseif ( $strict)
-          throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
-        break;
+        elseif ( ! $strict)
+          return NULL;
+        throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
       default:
         throw new OC_Shorty_Exception ( "unexpected http request method '%1s'", array($_SERVER['REQUEST_METHOD']) );
     }
