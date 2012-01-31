@@ -35,7 +35,6 @@
     <tr>
       <th id="headerFavicon"><?php echo OC_Shorty_L10n::t('') ?></th>
       <th id="headerTitle"  ><?php echo OC_Shorty_L10n::t('Title') ?></th>
-      <th id="headerKey"    ><?php echo OC_Shorty_L10n::t('Key') ?></th>
       <th id="headerTarget" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
       <th id="headerClicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
       <th id="headerUntil"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
@@ -57,7 +56,6 @@
         style="hidden" >
       <td id="favicon"></td>
       <td id="title"  ></td>
-      <td id="key"    ></td>
       <td id="target" ></td>
       <td id="clicks" ></td>
       <td id="until"  ></td>
