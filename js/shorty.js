@@ -227,6 +227,8 @@ Shorty={
             {
               $('#dialog-add').children('p').children('.shorty-input').val('');
               Shorty.Action.listAdd(0,response.data);
+              Shorty.WUI.toggleUrlList(true);
+              Shorty.WUI.toggleDesktopHourglass(false);
             } // if !error
             $('#dialog-add').slideToggle();
           }
