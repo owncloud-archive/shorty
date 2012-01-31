@@ -67,8 +67,7 @@
 
 .shorty-label {
   display: inline-block;
-  margin-top: 8px;
-  margin-left: 12px;
+  margin: 8px;
 }
 
 .shorty-label-prompt {

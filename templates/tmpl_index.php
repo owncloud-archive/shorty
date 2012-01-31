@@ -28,7 +28,7 @@
 <!-- top control bar -->
 <div id="controls" class="controls shorty_controls">
   <!-- button to add a new entry to list -->
-  <input type="button" id="controls-button-add" value="<?php echo OC_Shorty_L10n::t('Shorten Url'); ?>"/>
+  <input type="button" id="controls-button-add" value="<?php echo OC_Shorty_L10n::t('New Shorty'); ?>"/>
   <!-- display label: number of entries in list -->
   <div class="shorty-label">
         <a class="shorty-label-prompt"><?php echo OC_Shorty_L10n::t('Number of entries') ?>:</a>
