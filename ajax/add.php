@@ -39,6 +39,12 @@ try
   $p_target  = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL,    TRUE  );
   $p_until   = OC_Shorty_Type::req_argument ( 'until',   OC_Shorty_Type::DATE,   FALSE );
   $p_notes   = OC_Shorty_Type::req_argument ( 'notes',   OC_Shorty_Type::STRING, FALSE );
+  // chose target host name if no title specified
+  if (empty($title))
+  {
+    $url = parse_url ( $p_target );
+    $p_title = $url['host'];
+  } // if
   $param = array
   (
     ':user'    => OC_User::getUser(),
