@@ -23,20 +23,28 @@
 ?>
 
 <div id="dialog-add" class="shorty-dialog">
-  <table>
-    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Target (url)'); ?></td>
-        <td class="shorty-input"><img class="shorty-favicon" src="<?php echo OC_Helper::imagePath('shorty', 'blank.gif'); ?>">
-                                 <img class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>">
-                                 <input type="text" id="dialog-add-target" data="" class="shorty-input" /></td></tr>
-    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Entry title'); ?></td>
-        <td class="shorty-input"><img class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>">
-                                 <img id="dialog-add-favicon" class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>">
-                                 <input type="text" id="dialog-add-title" data="" class="shorty-input"/></td></tr>
-    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Valid until'); ?></td>
-        <td class="shorty-input"><input type="text" id="dialog-add-until" data="" class="shorty-input datepicker" /></td></tr>
-    <tr><td class="shorty-label"><?php echo OC_Shorty_L10n::t('Notes'); ?></td>
-        <td class="shorty-input"><textarea cols=50 rows=3 id="dialog-add-notes" data="" class="shorty-input"></textarea></td></tr>
-    <tr><td class="shorty-label"></td>
-        <td class="shorty-input"><input type="submit" value="<?php echo OC_Shorty_L10n::t('Add as new'); ?>" id="dialog-add-submit" /></td><tr>
-  </table>
+  <form action="">
+  <fieldset>
+    <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Add a new shorty:'); ?></legend>
+    <label for="dialog-add-target"><?php echo OC_Shorty_L10n::t('Target (url)'); ?></label>
+    <img class="shorty-favicon" src="<?php echo OC_Helper::imagePath('shorty', 'blank.gif'); ?>">
+    <img class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>">
+    <input type="text" size="50" maxsize="4096" id="dialog-add-target" data="" class="shorty-input" />
+    <br>
+    <label for="dialog-add-favicon"><?php echo OC_Shorty_L10n::t('Entry title'); ?></label>
+    <img class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>">
+    <img id="dialog-add-favicon" class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>">
+    <input type="text" size="50" maxsize="80" id="dialog-add-title" data="" class="shorty-input"/>
+    <br>
+    <label for="dialog-add-until"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
+    <input type="text" size="50" maxsize="50" id="dialog-add-until" data="" class="shorty-input datepicker" />
+    <br>
+    <label for="dialog-add-notes"><?php echo OC_Shorty_L10n::t('Notes'); ?></label>
+    <textarea cols="50" rows="3" maxsize="4096" id="dialog-add-notes" data="" class="shorty-input"></textarea>
+    <br>
+    <label colspan="2">&nbsp;</label>
+    <input type="submit" value="<?php echo OC_Shorty_L10n::t('Add as new'); ?>" id="dialog-add-submit" class="shorty-button-submit"/>
+    <input type="submit" value="<?php echo OC_Shorty_L10n::t('Cancel'); ?>"     id="dialog-add-cancel" class="shorty-button-cancel"/></label>
+  </fieldset>
+  </form>
 </div>

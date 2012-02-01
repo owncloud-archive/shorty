@@ -26,21 +26,21 @@
 <div id='notification'></div>
 
 <!-- top control bar -->
-<div id="controls" class="controls shorty_controls">
+<div id="controls" class="controls">
   <!-- button to add a new entry to list -->
   <input type="button" id="controls-button-add" value="<?php echo OC_Shorty_L10n::t('New Shorty'); ?>"/>
   <!-- display label: number of entries in list -->
-  <div class="shorty-label">
-        <a class="shorty-label-prompt"><?php echo OC_Shorty_L10n::t('Number of entries') ?>:</a>
-        <a id="controls-label-number" class="shorty-label-value">
+  <span>
+        <a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Number of entries') ?>:</a>
+        <a id="controls-label-number" class="shorty-value">
         <img src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>" /></a>
-  </div>
+  </span>
   <!-- display label: total of clicks in list -->
-  <div class="shorty-label">
-        <a class="shorty-label-prompt"><?php echo OC_Shorty_L10n::t('Total of clicks') ?>:</a>
-        <a id="controls-label-clicks" class="shorty-label-value">
+  <span>
+        <a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Total of clicks') ?>:</a>
+        <a id="controls-label-clicks" class="shorty-value">
         <img src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>" /></a>
-  </div>
+  </span>
   <!-- the dialogs, hidden by default --> 
 <?php require_once('tmpl_url_add.php'); ?>
 <?php require_once('tmpl_url_show.php'); ?>

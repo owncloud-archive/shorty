@@ -18,7 +18,7 @@
         <type>text</type>
         <default>''</default>
         <notnull>true</notnull>
-        <length>256</length>
+        <length>80</length>
       </field>
       <field>
         <name>favicon</name>

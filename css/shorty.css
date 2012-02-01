@@ -1,13 +1,34 @@
 #content { overflow: auto; }
 
+.button {
+  border: none;
+  padding: 2px 8px;
+}
+
 .shorty-dialog {
   display: none;
   width:200; height:200;
-  margin-top: 45px;
+  margin-top: 10px;
   background: solid;
   background-color: white;
   padding: 10px;
 }
+.shorty-dialog label {
+  display: inline-block;
+  width: 70px;
+  float: left;
+  margin: 2px 4px 6px 4px;
+  text-align: right;
+  padding: 1px;
+}
+.shorty-dialog fieldset {
+  border: 1px solid gray
+}
+.shorty-dialog legend {
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+}
+
 
 .shorty-desktop {
   display: inline-block;
@@ -53,33 +74,29 @@
 }
 .shorty-list th {
   font-weight: bold;
-  padding: 2px;
-  padding-left: 4px;
+  padding: 1px;
+  padding-left: 10px;
 }
 .shorty-list td {
-  padding: 2px;
-  padding-left: 4px;
+  padding: 1px;
+  padding-left: 10px;
 }
 
-.shorty-addBml {
-  text-decoration: underline;
+.shorty-prompt {
+  margin-left: 4px;
+}
+.shorty-value {
+  margin-right: 4px;
 }
 
-.shorty-label {
-  display: inline-block;
-  margin: 8px;
+.shorty-button-submit {
+  text-align:right;
+  background-color: green;
 }
 
-.shorty-label-prompt {
-  text-align: right;
-}
-
-.shorty-label-value {
-  text-align: left;
-}
-
-.shorty-input {
-  width: 20em;
+.shorty-button-cancel {
+  text-align:right;
+  color: gray;
 }
 
 .shorty-actions {
@@ -121,4 +138,8 @@
 
 .shorty-target {
   color: green;
+}
+
+.shorty-addBml {
+  text-decoration: underline;
 }
