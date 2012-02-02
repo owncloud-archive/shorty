@@ -22,6 +22,7 @@
 */
 ?>
 
+<!-- (hidden) dialog to show a shorty from the list -->
 <div id="dialog-show" class="shorty-dialog">
   <form action="">
   <fieldset>
@@ -42,7 +43,7 @@
     <input id="dialog-show-until" type="text" readonly data="" class="shorty-value" />
     <br>
     <label for="dialog-show-notes"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
-    <textarea id="dialog-show-notes" readonly cols="50" rows="3" data="" class="shorty-value" />
+    <textarea id="dialog-show-notes" readonly cols="50" rows="3" data="" class="shorty-value"></textarea>
     <br>
     <label for="dialog-show-clicks"><?php echo OC_Shorty_L10n::t('Clicks'); ?></label>
     <input id="dialog-show-clicks" type="text" readonly data="" class="shorty-value" />

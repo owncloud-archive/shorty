@@ -22,6 +22,7 @@
 */
 ?>
 
+<!-- (hidden) dialog to add a new shorty -->
 <div id="dialog-add" class="shorty-dialog">
   <form action="">
   <fieldset>

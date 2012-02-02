@@ -43,8 +43,8 @@
   </span>
   <!-- the dialogs, hidden by default --> 
 <?php require_once('tmpl_url_add.php'); ?>
-<?php require_once('tmpl_url_show.php'); ?>
 <?php require_once('tmpl_url_edit.php'); ?>
+<?php require_once('tmpl_url_show.php'); ?>
 </div>
 
 <!-- the "desktop where the action takes place -->

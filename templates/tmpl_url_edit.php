@@ -22,6 +22,7 @@
 */
 ?>
 
+<!-- (hidden) dialog to modify a stored shorty -->
 <div id="dialog-edit" class="shorty-dialog">
   <form action="">
   <fieldset>
@@ -42,7 +43,7 @@
     <input id="dialog-edit-until" type="text" data="" class="shorty-value" />
     <br>
     <label for="dialog-edit-notes"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
-    <textarea id="dialog-edit-notes" readonly cols="50" rows="3" data="" class="shorty-value" />
+    <textarea id="dialog-edit-notes" readonly cols="50" rows="3" data="" class="shorty-value"></textarea>
     <br>
     <label for="dialog-edit-clicks"><?php echo OC_Shorty_L10n::t('Clicks'); ?></label>
     <input id="dialog-edit-clicks" type="text" readonly data="" class="shorty-value" />
