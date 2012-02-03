@@ -2,7 +2,7 @@
 * ownCloud shorty plugin, a URL shortener
 *
 * @author Christian Reiner
-* @copyright 2011 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
