@@ -28,17 +28,17 @@
 <!-- top control bar -->
 <div id="controls" class="controls">
   <!-- button to add a new entry to list -->
-  <input type="button" id="controls-button-add" value="<?php echo OC_Shorty_L10n::t('New Shorty'); ?>"/>
+  <input type="button" id="add" value="<?php echo OC_Shorty_L10n::t('New Shorty'); ?>"/>
   <!-- display label: number of entries in list -->
   <span>
         <a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Number of entries') ?>:</a>
-        <a id="controls-label-number" class="shorty-value">
+        <a id="number" class="shorty-value">
         <img src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>" /></a>
   </span>
   <!-- display label: total of clicks in list -->
   <span>
         <a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Total of clicks') ?>:</a>
-        <a id="controls-label-clicks" class="shorty-value">
+        <a id="clicks" class="shorty-value">
         <img src="<?php echo OC_Helper::imagePath('core', 'loading.gif'); ?>" /></a>
   </span>
   <!-- the dialogs, hidden by default --> 

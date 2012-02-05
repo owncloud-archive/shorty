@@ -26,11 +26,11 @@
 <div class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('apps/shorty', 'loading-disk.gif'); ?>" style="padding:50px"></div>
 
 <!-- the placeholder (if list of urls is empty) -->
-<div id="shorty-list-empty" class="shorty-label" style="display:inline-block">
+<div id="list-empty" class="shorty-label" style="display:inline-block">
   <?php echo OC_Shorty_L10n::t('The list of urls is currently empty.') ?>
 </div>
 <!-- the list of urls -->
-<table id="shorty-list-nonempty" class="shorty-list" style="display:none">
+<table id="list-nonempty" class="shorty-list" style="display:none">
   <thead>
     <tr>
       <th id="headerFavicon"><?php echo OC_Shorty_L10n::t('') ?></th>

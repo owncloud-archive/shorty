@@ -22,21 +22,28 @@
 
 #content { overflow: auto; }
 
-.button {
-  border: none;
-  padding: 2px 8px;
+.shorty-desktop {
+  display: inline-block;
+  position: absolute;
+  width: 100%; height: 100%;
+  background: transparent;
+  text-align: left;
+  margin-top: 30px;
+  padding: 2.5em 0.5em;
+  padding-top: 20px;
 }
 
 .shorty-dialog {
   display: none;
+  width: 500px; 
   margin-top: 10px;
   background: solid;
   background-color: white;
-  padding: 10px;
+  padding: 20px;
 }
 .shorty-dialog label {
   display: inline-block;
-  width: 70px;
+  width: 20%;
   float: left;
   margin: 2px 4px 6px 4px;
   text-align: right;
@@ -49,17 +56,23 @@
   font-weight: bold;
   padding: 0.2em 0.5em;
 }
+.shorty-dialog input {
+  width: 70%;
+}
+.shorty-dialog textarea {
+  width: 70%; height: 5em;
+}
+.shorty-dialog button {
+  width: 8em; height: 2em;
+  background: solid;
+  background-color: white;
+}
+.shorty-dialog button:hover {
+  border-color: green;
+}
 
-
-.shorty-desktop {
-  display: inline-block;
-  position: absolute;
-  width: 100%; height: 100%;
-  background: transparent;
-  text-align: left;
-  margin-top: 30px;
-  padding: 2.5em 0.5em;
-  padding-top: 20px;
+.shorty-dialog .shorty-hidden {
+  display: none;
 }
 
 .shorty-shading {
@@ -108,16 +121,6 @@
 }
 .shorty-value {
   margin-right: 4px;
-}
-
-.shorty-button-submit {
-  text-align:right;
-  background-color: green;
-}
-
-.shorty-button-cancel {
-  text-align:right;
-  color: gray;
 }
 
 .shorty-actions {

@@ -23,40 +23,34 @@
 ?>
 
 <!-- (hidden) dialog to show a shorty from the list -->
-<div id="dialog-show" class="shorty-dialog">
-  <form action="">
+<form id="dialog-show" class="shorty-dialog">
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Modify shorty:'); ?></legend>
-    <label for="dialog-show-key"><?php echo OC_Shorty_L10n::t('Key'); ?></label>
-    <input id="dialog-show-key" type="text" readonly data="" class="shorty-value" />
+    <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
+    <input id="key" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-show-title"><?php echo OC_Shorty_L10n::t('Title'); ?></label>
-    <input id="dialog-show-title" type="text" readonly data="" class="shorty-value" />
+    <label for="title"><?php echo OC_Shorty_L10n::t('Local Title:'); ?></label>
+    <input id="title" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-show-source"><?php echo OC_Shorty_L10n::t('Shorty (url)'); ?></label>
-    <input id="dialog-show-source" type="text" readonly data="" class="shorty-value" />
+    <label for="source"><?php echo OC_Shorty_L10n::t('Shorty (url):'); ?></label>
+    <input id="source" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-show-target"><?php echo OC_Shorty_L10n::t('Target (url)'); ?></label>
-    <input id="dialog-show-target" type="text" readonly data="" class="shorty-value" />
+    <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
+    <input id="target" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-show-until"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
-    <input id="dialog-show-until" type="text" readonly data="" class="shorty-value" />
+    <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
+    <input id="until" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-show-notes"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
-    <textarea id="dialog-show-notes" readonly cols="50" rows="3" data="" class="shorty-value"></textarea>
+    <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
+    <textarea id="notes" readonly cols="50" rows="3" data="" class="shorty-value"></textarea>
     <br>
-    <label for="dialog-show-clicks"><?php echo OC_Shorty_L10n::t('Clicks'); ?></label>
-    <input id="dialog-show-clicks" type="text" readonly data="" class="shorty-value" />
+    <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
+    <input id="clicks" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-show-created"><?php echo OC_Shorty_L10n::t('Created'); ?></label>
-    <input id="dialog-show-created" type="text" readonly data="" class="shorty-value" />
+    <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
+    <input id="created" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-show-accessed"><?php echo OC_Shorty_L10n::t('Accessed'); ?></label>
-    <input id="dialog-show-accessed" type="text" readonly data="" class="shorty-value" />
-    <br>
-    <label colspan="2">&nbsp;</label>
-    <input type="submit" value="<?php echo OC_Shorty_L10n::t('Save as modified'); ?>" id="dialog-add-submit" class="shorty-button-submit"/>
-    <input type="submit" value="<?php echo OC_Shorty_L10n::t('Cancel'); ?>"     id="dialog-add-cancel" class="shorty-button-cancel"/></label>
+    <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
+    <input id="accessed" type="text" readonly data="" class="shorty-value" />
   </fieldset>
-  </form>
-</div>
+</form>

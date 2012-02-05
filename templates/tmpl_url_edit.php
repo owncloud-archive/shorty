@@ -23,40 +23,40 @@
 ?>
 
 <!-- (hidden) dialog to modify a stored shorty -->
-<div id="dialog-edit" class="shorty-dialog">
-  <form action="">
+<form id="dialog-edit" class="shorty-dialog">
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Modify shorty:'); ?></legend>
-    <label for="dialog-edit-key"><?php echo OC_Shorty_L10n::t('Key'); ?></label>
-    <input id="dialog-edit-key" type="text" readonly data="" class="shorty-value" />
+    <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
+    <input id="key" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-edit-title"><?php echo OC_Shorty_L10n::t('Title'); ?></label>
-    <input id="dialog-edit-title" type="text" data="" class="shorty-value" />
+    <label for="title"><?php echo OC_Shorty_L10n::t('Local title:'); ?></label>
+    <input id="title" type="text" data="" class="shorty-value" />
     <br>
-    <label for="dialog-edit-source"><?php echo OC_Shorty_L10n::t('Shorty (url)'); ?></label>
-    <input id="dialog-edit-source" type="text" readonly data="" class="shorty-value" />
+    <label for="source"><?php echo OC_Shorty_L10n::t('Shorty (url):'); ?></label>
+    <input id="source" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-edit-target"><?php echo OC_Shorty_L10n::t('Target (url)'); ?></label>
-    <input id="dialog-edit-target" type="text" readonly data="" class="shorty-value" />
+    <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
+    <input id="target" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-edit-until"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
-    <input id="dialog-edit-until" type="text" data="" class="shorty-value" />
+    <label for="favicon"></label>
+    <img id="favicon" class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'blank.gif'); ?>">
+    <a id="mimetype" type="text" readonly size="50" maxsize="80" data="" class="shorty-input"/>
+    <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
+    <input id="until" type="text" data="" class="shorty-value" />
     <br>
-    <label for="dialog-edit-notes"><?php echo OC_Shorty_L10n::t('Valid until'); ?></label>
-    <textarea id="dialog-edit-notes" readonly cols="50" rows="3" data="" class="shorty-value"></textarea>
+    <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
+    <textarea id="notes" readonly cols="50" rows="3" data="" class="shorty-value"></textarea>
     <br>
-    <label for="dialog-edit-clicks"><?php echo OC_Shorty_L10n::t('Clicks'); ?></label>
-    <input id="dialog-edit-clicks" type="text" readonly data="" class="shorty-value" />
+    <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
+    <input id="clicks" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-edit-created"><?php echo OC_Shorty_L10n::t('Created'); ?></label>
-    <input id="dialog-edit-created" type="text" readonly data="" class="shorty-value" />
+    <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
+    <input id="created" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label for="dialog-edit-accessed"><?php echo OC_Shorty_L10n::t('Accessed'); ?></label>
-    <input id="dialog-edit-accessed" type="text" readonly data="" class="shorty-value" />
+    <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
+    <input id="accessed" type="text" readonly data="" class="shorty-value" />
     <br>
-    <label colspan="2">&nbsp;</label>
-    <input type="submit" value="<?php echo OC_Shorty_L10n::t('Save as modified'); ?>" id="dialog-add-submit" class="shorty-button-submit"/>
-    <input type="submit" value="<?php echo OC_Shorty_L10n::t('Cancel'); ?>"     id="dialog-add-cancel" class="shorty-button-cancel"/></label>
+    <label for="confirm"></label>
+    <input type="submit" value="<?php echo OC_Shorty_L10n::t('Save as modified'); ?>" id="confirm" class="shorty-button-submit"/>
   </fieldset>
-  </form>
-</div>
+</form>

@@ -27,100 +27,124 @@ $(document).ready
 (
   function()
   {
-    $('#controls-button-add').click(Shorty.WUI.toggleDialogAdd);
-    $('#dialog-add-submit').click(Shorty.WUI.submitDialogAdd);
-    $('.shorty-actions').hover(function(){$(this).fadeToggle();});
+    $('#desktop').find('.shorty-actions').hover(function(){$(this).fadeToggle();});
+    $('#controls').find('#add').click(Shorty.WUI.toggleDialogAdd);
+    $('#dialog-add').find('#confirm').click(Shorty.WUI.submitDialogAdd);
+    $('#dialog-edit').find('#confirm').click(Shorty.WUI.submitDialogEdit);
     $(window).scroll(Shorty.Action.update_bottom);
     Shorty.Action.listGet();
   }
 );
 
 Shorty={
-//WUI
+
   WUI:{
-    toggleDialogAdd:function()
+    toggleDialogAdd:function(duration,easing)
     {
-      Shorty.WUI.toggleDesktopShading();
+      duration = duration || 'slow';
+      easing   = easing   || 'swing';
       Shorty.WUI.hideNotification();
-      $('#dialog-add').slideToggle();
-      $('#dialog-add-target').focus();
+      Shorty.WUI.toggleDesktopShading(duration,easing);
+      $('#dialog-add').slideToggle().find('#target').focus();
     },
-    submitDialogAdd:function()
+  //WUI:
+    toggleDialogEdit:function(duration,easing)
     {
+      duration = duration || 'slow';
+      easing   = easing   || 'swing';
       Shorty.WUI.hideNotification();
-      Shorty.Action.urlAdd();
-      Shorty.WUI.toggleDesktopShading();
+      Shorty.WUI.toggleDesktopShading(duration,easing);
+      $('#dialog-edit').slideToggle().find('#title').focus();
     },
-    toggleDialogEdit:function()
+  //WUI:
+    toggleDesktopShading:function(duration,easing,callback)
     {
-      Shorty.WUI.toggleDesktopShading();
-      Shorty.WUI.hideNotification();
-      $('#dialog-edit').slideToggle();
+      duration = duration || 'slow';
+      easing   = easing   || 'swing';
+      $('#desktop').find('.shorty-shading').fadeToggle(duration,easing,callback);
     },
-    submitDialogEdit:function()
-    {
-      Shorty.WUI.hideNotification();
-      Shorty.Action.urlEdit();
-      Shorty.WUI.toggleDesktopShading();
-    },
-    toggleDesktopShading:function()
-    {
-      $('#desktop').children('.shorty-shading').fadeToggle();
-    },
+  //WUI:
     toggleDesktopHourglass:function(active)
     {
       if (active)
-        $('#desktop').children('.shorty-hourglass').fadeIn();
+        $('#desktop').find('.shorty-hourglass').fadeIn('fast');
       else
-        $('#desktop').children('.shorty-hourglass').fadeOut('slow');
+        $('#desktop').find('.shorty-hourglass').fadeOut('slow');
     },
-    toggleUrlList:function(filled)
+  //WUI:
+    toggleUrlList:function(filled,duration)
     {
-      $('#shorty-list-empty').toggle(!filled);
-      $('#shorty-list-nonempty').toggle(filled);
+      duration = duration || 'slow';
+      if (filled)
+      {
+        $('#desktop').find('#list-empty').hide();
+        $('#desktop').find('#list-nonempty').fadeIn(duration);
+      }
+      else
+      {
+        $('#desktop').find('#list-empty').fadeIn(duration);
+        $('#desktop').find('#list-nonempty').hide();
+      }
     },
+  //WUI:
     emptyDesktop:function()
     {
       Shorty.WUI.hideNotification();
       $('#desktop').empty()
     },
-    setControlsLabel:function(id,value)
+  //WUI:
+    hideNotification:function(duration)
     {
-      $(id).text(value);
+      duration = duration || 'fast';
+      $('#notification').fadeOut(duration);
+      $('#notification').text('');
     },
-    hideNotification:function()
+  //WUI:
+    showNotification:function(response,duration)
     {
-      $('#notification').fadeOut('fast');
-      $('#notification').text(t('shorty',''));
-    },
-    showNotification:function(response)
-    {
+      duration = duration || 'slow';
       if ( shorty_debug && ('error'==response.status ) )
       {
         $('#notification').attr('title', response.title);
         $('#notification').text(response.message);
-        $('#notification').fadeIn();
+        $('#notification').fadeIn(duration);
       }
       else if ( 'success'==response.status )
       {
         if ( ''!=response.note )
         {
           $('#notification').text(response.note);
-          $('#notification').fadeIn();
+          $('#notification').fadeIn(duration);
         }
         else
         {
-          $('#notification').fadeOut();
+          $('#notification').fadeOut('fast');
           $('#notification').text('');
         }
       }
-    }
+    },
+  //WUI:
+    submitDialogAdd:function()
+    {
+      Shorty.WUI.hideNotification();
+      Shorty.Action.urlAdd();
+      Shorty.WUI.toggleDesktopShading();
+    },
+  //WUI:
+    submitDialogEdit:function()
+    {
+      Shorty.WUI.hideNotification();
+      Shorty.Action.urlEdit();
+      Shorty.WUI.toggleDesktopShading();
+    },
   },
-//Action:
+
+  //==========
+
   Action:{
     listGet:function()
     {
-      if ( 'visible'==$('#desktop').children('.shorty-hourglass').css('display') )
+      if ( 'visible'==$('#desktop').find('.shorty-hourglass').css('display') )
       {
         // patience... list already loading...
         return;
@@ -150,8 +174,8 @@ Shorty={
               if ( 0==response.data.length )
               {
                 // list empty, show placeholder instead of empty table
-                Shorty.WUI.setControlsLabel('#controls-label-number',0);
-                Shorty.WUI.setControlsLabel('#controls-label-clicks',0);
+                $('#controls').find('#number').text(0);
+                $('#controls').find('#clicks').text(0);
                 Shorty.WUI.toggleUrlList(false);
               }
               else
@@ -169,8 +193,8 @@ Shorty={
                   count_clicks += 0;
                   Shorty.Action.listAdd(i,response.data[i]);
                 }
-                Shorty.WUI.setControlsLabel('#controls-label-number',count_urls);
-                Shorty.WUI.setControlsLabel('#controls-label-clicks',count_clicks);
+                $('#controls').find('#number').text(count_urls);
+                $('#controls').find('#clicks').text(count_clicks);
                 // reenable clicks after loading the list
                 $('.shorty-link').click(Shorty.Action.urlClick);
                 $('.shorty-delete').click(Shorty.Action.urlDel);
@@ -183,7 +207,7 @@ Shorty={
         }
       );
     },
-//Action:
+  //Action:
     listAdd:function(index,token)
     {
       // clone dummy row from list: dummy is the only row with an empty id
@@ -204,14 +228,14 @@ Shorty={
       $dummy.after($row);
       $row.attr('style','visible');
     },
-//Action:
+  //Action:
     urlAdd:function(event)
     {
       Shorty.WUI.hideNotification();
-      var target = $('#dialog-add-target').val();
-      var title  = $('#dialog-add-title').val();
-      var notes  = $('#dialog-add-notes').val();
-      var until  = $('#dialog-add-until').val();
+      var target = $('#dialog-add').find('#target').val();
+      var title  = $('#dialog-add').find('#title').val();
+      var notes  = $('#dialog-add').find('#notes').val();
+      var until  = $('#dialog-add').find('#until').val();
       $.ajax
       (
         {
@@ -225,7 +249,7 @@ Shorty={
             Shorty.WUI.showNotification ( response )
             if ( 'error'!=response.status )
             {
-              $('#dialog-add').children('p').children('.shorty-input').val('');
+              $('#dialog-add').find('.shorty-input').val('');
               Shorty.Action.listAdd(0,response.data);
               Shorty.WUI.toggleUrlList(true);
               Shorty.WUI.toggleDesktopHourglass(false);
@@ -235,7 +259,7 @@ Shorty={
         }
       );
     },
-//Action:
+  //Action:
     urlEdit:function(event)
     {
       Shorty.WUI.hideNotification();
@@ -244,7 +268,6 @@ Shorty={
       var target = Shorty.Utility.encodeEntities($('#shorty-add-target').val());
       var notes  = Shorty.Utility.encodeEntities($('#shorty-add-notes').val());
       var until  = Shorty.Utility.encodeEntities($('#shorty-add-until').val());
-
       $.ajax
       (
         {
@@ -253,7 +276,7 @@ Shorty={
           success: function()
           {
             $('.shorty-add').slideToggle();
-            $('.shorty-add').children('p').children('.shorty-input').val('');
+            $('.shorty-add').find('.shorty-input').val('');
             $('#shorty-add-key').val('');
 
             var record = $('.shorty-single[data-key = "' + key + '"]');
@@ -267,7 +290,7 @@ Shorty={
         }
       );
     },
-//Action:
+  //Action:
     urlDel:function(event)
     {
       Shorty.WUI.hideNotification();
@@ -281,7 +304,7 @@ Shorty={
         }
       );
     },
-//Action:
+  //Action:
     urlShow:function(event)
     {
       Shorty.WUI.hideNotification();
@@ -297,7 +320,7 @@ Shorty={
       }
       $('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 500);
     },
-//Action:
+  //Action:
     urlClick:function(event)
     {
       Shorty.WUI.hideNotification();
@@ -310,7 +333,9 @@ Shorty={
       );
     },
   },
-//Utility:
+
+  //==========
+
   Utility:{
     updateBottom:function()
     {
@@ -320,7 +345,7 @@ Shorty={
         Shorty.Action.UrlsGet();
       }
     },
-//Utility:
+  //Utility:
     encodeEntities:function(s)
     {
       try
@@ -331,7 +356,7 @@ Shorty={
         return "";
       }
     },
-//Utility:
+  //Utility:
     hasProtocol:function(url)
     {
       var regexp = /(http|https|ftp|sftp|ftps)/;
