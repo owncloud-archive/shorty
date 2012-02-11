@@ -298,6 +298,7 @@ Shorty =
       (
         {
           url:     'ajax/list.php',
+          cache:   false,
           data:    { target: encodeURI(target), title: encodeURI(title) },
           success: function(response)
           {
@@ -325,18 +326,20 @@ Shorty =
       $.ajax
       (
         {
-          url: 'ajax/add.php',
-          data: { 'target': encodeURIComponent(target),
-                  'title':  encodeURIComponent(title),
-                  'notes':  encodeURIComponent(notes),
-                  'until':  encodeURIComponent(until) },
+          url:     'ajax/add.php',
+          cache:   false,
+          data:    { target: encodeURIComponent(target),
+                     title:  encodeURIComponent(title),
+                     notes:  encodeURIComponent(notes),
+                     until:  encodeURIComponent(until) },
+//error:function(){alert('e');},
           success: function(response)
           {
             if ( 'success'==response.status )
             {
               Shorty.WUI.showNotification(response,'info');
               // close and neutralize dialog
-              callback();
+              if (callback) callback();
               $('#dialog-add').find('.shorty-input').val('');
               // add shorty to existing list
               var f_add_shorty = function(){Shorty.WUI.listAdd(0,response.data,true);};
@@ -363,8 +366,9 @@ Shorty =
       $.ajax
       (
         {
-          url: 'ajax/edit.php',
-          data: 'key=' + key + '&source=' + encodeURI(source) + '&target=' + encodeURI(target) + '&notes=' + encodeURI(notes) + '&until=' + encodeURI(until),
+          url:     'ajax/edit.php',
+          cache:   false,
+          data:    'key=' + key + '&source=' + encodeURI(source) + '&target=' + encodeURI(target) + '&notes=' + encodeURI(notes) + '&until=' + encodeURI(until),
           success: function()
           {
             $('.shorty-add').slideToggle();
@@ -390,8 +394,9 @@ Shorty =
       $.ajax
       (
         {
-          url: 'ajax/del.php',
-          data: 'url=' + encodeURI($(this).parent().parent().children('.shorty-url:first').text()),
+          url:     'ajax/del.php',
+          cache:   false,
+          data:    'url=' + encodeURI($(this).parent().parent().children('.shorty-url:first').text()),
           success: function(data){ record.animate({ opacity: 'hide' }, 'fast'); }
         }
       );
@@ -419,8 +424,9 @@ Shorty =
       $.ajax
       (
         {
-          url: 'ajax/click.php',
-          data: { url: encodeURI($(this).attr('href')) },
+          url:     'ajax/click.php',
+          cache:   false,
+          data:    { url: encodeURI($(this).attr('href')) },
           success: function()
           {
             // increment shorties and total number of clicks
@@ -436,6 +442,7 @@ Shorty =
       (
         {
           url:     'ajax/meta.php',
+          cache:   false,
           data:    { target: encodeURIComponent(target) },
           error:   function() { return ''; },
           success: function(response)
