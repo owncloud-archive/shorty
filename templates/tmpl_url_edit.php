@@ -39,7 +39,7 @@
     <input id="target" type="text" readonly data="" class="shorty-value" />
     <br>
     <label for="favicon"></label>
-    <img id="favicon" class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'blank.gif'); ?>">
+    <img id="favicon" class="shorty-favicon" src="<?php echo OC_Helper::imagePath('apps/shorty', 'blank.png'); ?>">
     <a id="mimetype" type="text" readonly size="50" maxsize="80" data="" class="shorty-input"/>
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
     <input id="until" type="text" data="" class="shorty-value" />
