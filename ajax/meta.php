@@ -21,18 +21,22 @@
 *
 */
 
-require_once ( '../../lib/base.php' );
+//no apps or filesystem
+$RUNTIME_NOSETUPFS = true;
+
+require_once ( '../../../lib/base.php' );
 
 // Check if we are a user
-OC_Util::checkLoggedIn ( );
-OC_Util::checkAppEnabled ( 'shorty' );
+OC_JSON::checkLoggedIn ( );
+OC_JSON::checkAppEnabled ( 'shorty' );
 
-OC_App::setActiveNavigationEntry ( 'shorty_index' );
-
-OC_Util::addScript ( 'shorty', 'debug' );
-OC_Util::addScript ( 'shorty', 'shorty' );
-OC_Util::addStyle  ( 'shorty', 'shorty' );
-
-$tmpl = new OC_Template( 'shorty', 'tmpl_index', 'user' );
-$tmpl->printPage ( );
+try
+{
+  $target  = OC_Shorty_Type::req_argument ( 'target', OC_Shorty_Type::URL, TRUE );
+  $meta    = OC_Shorty_Meta::fetchMetaData(htmlspecialchars_decode($target));
+  syslog(LOG_ERR,sprintf('### target: %s',$target));
+  syslog(LOG_ERR,sprintf('### meta: %s',print_r($meta,true)));
+  OC_JSON::success ( array ( 'data' => $meta,
+                             'note' => OC_Shorty_L10n::t("Target url '%s' is valid", $meta['target']) ) );
+} catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

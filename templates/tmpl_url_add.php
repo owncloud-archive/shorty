@@ -28,14 +28,17 @@
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Add a new shorty:'); ?></legend>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
     <input id="target" type="text" maxsize="4096" data="" class="shorty-input" />
-    <span id="meta" class="shorty-hidden">
     <br>
-    <label for="favicon"></label>
-    <img id="favicon" class="shorty-favicon" src="<?php echo OC_Helper::imagePath('core', 'blank.gif'); ?>">
-    <a id="mimetype" maxsize="80" data="" class="shorty-input"/>
+    <label for="meta">&nbsp;</label>
+    <span id="meta">
+    <img id="staticon"  class="shorty-icon" src="<?php echo OC_Helper::imagePath('apps/shorty', 'status/neutral.png'); ?>">
+    <img id="schemicon" class="shorty-icon" src="<?php echo OC_Helper::imagePath('apps/shorty', 'blank.png'); ?>">
+    <img id="favicon"   class="shorty-icon" src="<?php echo OC_Helper::imagePath('apps/shorty', 'blank.png'); ?>">
+    <img id="mimicon"   class="shorty-icon" src="<?php echo OC_Helper::imagePath('apps/shorty', 'blank.png'); ?>">
+    <a id="explanation" maxsize="80" data="" class="shorty-value"></a>
     </span>
     <br>
-    <label for="title"><?php echo OC_Shorty_L10n::t('Local title:'); ?></label>
+    <label for="title"><?php echo OC_Shorty_L10n::t('Optional title:'); ?></label>
     <input id="title" type="text" maxsize="80" data="" class="shorty-input"/>
     <br>
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>

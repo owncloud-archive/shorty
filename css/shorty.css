@@ -41,8 +41,11 @@
   background-color: white;
   padding: 20px;
 }
+.shorty-dialog br {
+  clear: left;
+}
 .shorty-dialog label {
-  display: inline-block;
+  display: inline;
   width: 20%;
   float: left;
   margin: 2px 4px 6px 4px;
@@ -71,16 +74,8 @@
   border-color: green;
 }
 
-.shorty-dialog .shorty-hidden {
+.shorty-hidden {
   display: none;
-}
-
-.shorty-shading {
-  display: none;
-  position: absolute;
-  width: 100%; height: 100%;
-  background: transparent;
-  background-color: white;
 }
 
 .shorty-hourglass {
@@ -90,10 +85,11 @@
   background: transparent;
 }
 
-.shorty-favicon {
-  display: none;
-  position: absolute;
+.shorty-icon {
+  display: inline;
   background: transparent;
+  vertical-align: middle;
+  padding: 1px;
 }
 
 .shorty-headline {
