@@ -26,7 +26,7 @@ $(document).ready
   {
     // basic action buttons
     $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
-    $('#controls').find('#add').bind('click',function(){Shorty.WUI.toggleDialog($('#dialog-add'),true)});
+    $('#controls').find('#add').bind('click',function(){Shorty.WUI.toggleDialog($('#dialog-add'))});
     // initialize desktop
     Shorty.WUI.listBuild();
     // ???
@@ -53,13 +53,17 @@ Shorty =
         // start sequence by hiding the desktop first
         $('#desktop').fadeOut(duration,function()
           {
+            // reset dialog fields
+            $.each(dialog.find('.shorty-input'),function(){if($(this).is('[data]'))$(this).val($(this).attr('data'));});
+            $.each(dialog.find('.shorty-value'),function(){if($(this).is('[data]'))$(this).text($(this).attr('data'));});
+            $.each(dialog.find('.shorty-icon'), function(){if($(this).is('[data]'))$(this).attr('src',$(this).attr('data'));});
             // show dialog
             dialog.slideDown(duration);
             // initialize dialog
             switch ( dialog.attr('id') )
             {
               case 'dialog-add':
-                dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){Shorty.WUI.submitDialog(event.data.dialog,dialog.slideDown);} );
+                dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){Shorty.WUI.submitDialog(event.data.dialog);} );
                 dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.collectMeta(event.data.dialog);} );
                 dialog.find('#target').focus();
                 break;
@@ -267,19 +271,19 @@ Shorty =
       );
     }, // collectMeta
   //WUI:
-    submitDialog: function(dialog,callback)
+    submitDialog: function(dialog)
     {
       Shorty.WUI.hideNotification();
       switch ( dialog.attr('id') )
       {
         case 'dialog-add':
-          Shorty.Action.urlAdd(callback);
+          Shorty.Action.urlAdd(Shorty.WUI.toggleDialog(dialog));
           break;
         case 'dialog-edit':
-          Shorty.Action.urlEdit(callback);
+          Shorty.Action.urlEdit(Shorty.WUI.toggleDialog(dialog));
           break;
         case 'dialog-del':
-          Shorty.Action.urlDel(callback);
+          Shorty.Action.urlDel(Shorty.WUI.toggleDialog(dialog));
           break;
       }; // switch
     },
@@ -319,10 +323,10 @@ Shorty =
     urlAdd:function(event,callback)
     {
       Shorty.WUI.hideNotification();
-      var target = $('#dialog-add').find('#target').val();
-      var title  = $('#dialog-add').find('#title').val();
-      var notes  = $('#dialog-add').find('#notes').val();
-      var until  = $('#dialog-add').find('#until').val();
+      var target = $('#dialog-add').find('#target').val() || '';
+      var title  = $('#dialog-add').find('#title').val()  || '';
+      var notes  = $('#dialog-add').find('#notes').val()  || '';
+      var until  = $('#dialog-add').find('#until').val()  || '';
       $.ajax
       (
         {
@@ -332,7 +336,7 @@ Shorty =
                      title:  encodeURIComponent(title),
                      notes:  encodeURIComponent(notes),
                      until:  encodeURIComponent(until) },
-//error:function(){alert('e');},
+          error:function(){if (Shorty.Debug) Shorty.Debug.log(this.data);},
           success: function(response)
           {
             if ( 'success'==response.status )
@@ -368,7 +372,11 @@ Shorty =
         {
           url:     'ajax/edit.php',
           cache:   false,
-          data:    'key=' + key + '&source=' + encodeURI(source) + '&target=' + encodeURI(target) + '&notes=' + encodeURI(notes) + '&until=' + encodeURI(until),
+          data:    { key: key,
+                     source: encodeURI(source),
+                     target: encodeURI(target),
+                     notes:  encodeURI(notes),
+                     until:  encodeURI(until) },
           success: function()
           {
             $('.shorty-add').slideToggle();
@@ -396,7 +404,7 @@ Shorty =
         {
           url:     'ajax/del.php',
           cache:   false,
-          data:    'url=' + encodeURI($(this).parent().parent().children('.shorty-url:first').text()),
+          data:    { url: encodeURI($(this).parent().parent().children('.shorty-url:first').text()) },
           success: function(data){ record.animate({ opacity: 'hide' }, 'fast'); }
         }
       );
