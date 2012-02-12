@@ -27,6 +27,9 @@ $(document).ready
     // basic action buttons
     $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
     $('#controls').find('#add').bind('click',function(){Shorty.WUI.toggleDialog($('#dialog-add'))});
+    // add date picker to 'valid until' fields
+    $( ".datepicker" ).datepicker({dateFormat :'dd-mm-yy'});
+//    $(function(){$(".datepicker").datepicker({dateFormat :'dd-mm-yy'});});
     // initialize desktop
     Shorty.WUI.listBuild();
     // ???
@@ -286,8 +289,9 @@ Shorty =
           Shorty.Action.urlDel(Shorty.WUI.toggleDialog(dialog));
           break;
       }; // switch
-    },
-  }, // submitDialog
+      return false;
+    }, // submitDialog
+  },// WUI
 
   //==========
 
