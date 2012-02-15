@@ -24,7 +24,7 @@
 
 <form id="shorty">
 		<fieldset class="personalblock">
-			<span class="bold"><?php echo $l->t('URL Shortener:');?></span>&nbsp;<a href="javascript:var url = encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkTo('shorty', 'url_add.php', null, true); ?>?url='+url, 'owncloud-shorty');"><?php echo $l->t('Shorten Url inside ownCloud'); ?></a>
-			<br/><em><?php echo $l->t('Drag this to your browser bookmarks and click it, when you want to shorten a webpages URL.'); ?></em><br />
+			<span class="bold"><?php echo $l->t('Add shorty to ownCloud');?></span>&nbsp;<a href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkTo('apps/shorty', 'add.php', null, true); ?>?url='+url, 'owncloud-shorty')%20})()"><?php echo $l->t('Create ownCloud Shorty'); ?></a>
+			<br/><em><?php echo $l->t('Drag this to your browser bookmarks and click it, whenever you want to shorten a webpages URL.'); ?></em><br />
 		</fieldset>
 </form>
