@@ -21,7 +21,7 @@
 *
 */
 
-OC_Util::addScript ( 'shorty', 'settings' );
+//OC_Util::addScript ( 'shorty', 'settings' );
 
 $tmpl = new OC_Template ( 'shorty', 'tmpl_settings' );
 return $tmpl->fetchPage ( );

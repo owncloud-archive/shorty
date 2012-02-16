@@ -1,4 +1,3 @@
-<?php
 /**
 * ownCloud shorty plugin, a URL shortener
 *
@@ -21,32 +20,19 @@
 *
 */
 
-require_once ( '../../lib/base.php' );
-
-// Check if we are a user
-OC_Util::checkLoggedIn ( );
-OC_Util::checkAppEnabled ( 'shorty' );
-
-OC_App::setActiveNavigationEntry ( 'shorty_index' );
-
-OC_Util::addScript ( 'shorty', 'debug' );
-OC_Util::addScript ( 'shorty', 'shorty' );
-OC_Util::addStyle  ( 'shorty', 'shorty' );
-
-try
-{
-  $tmpl = new OC_Template( 'shorty', 'tmpl_index', 'user' );
-  $p_url  = OC_Shorty_Type::req_argument('url',OC_Shorty_Type::URL,FALSE);
-  if ( $p_url )
+$(document).ready
+(
+  function()
   {
-    OC_Util::addScript ( 'shorty', 'add' );
-    $tmpl->assign('URL', htmlentities($p_url));
+    // basic action buttons
+    $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
+    $('#controls').find('#add').bind('click',function(){Shorty.WUI.toggleDialog($('#dialog-add'))});
+    // add date picker to 'valid until' fields
+    $( ".datepicker" ).datepicker({dateFormat :'dd-mm-yy'});
+    // initialize desktop
+    $.when(Shorty.WUI.toggleControls()).then(
+      Shorty.WUI.sumsFill(),
+      Shorty.WUI.listBuild()
+    );
   }
-  else
-  {
-    OC_Util::addScript ( 'shorty', 'list' );
-  }
-
-  $tmpl->printPage();
-} catch ( OC_Wiki_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
-?>
+); // document.ready

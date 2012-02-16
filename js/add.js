@@ -22,26 +22,21 @@
 
 $(document).ready
 (
-  function ( )
+  function()
   {
-    $('#shorty-add-submit').click(add_url);
+    // basic action buttons
+    $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
+    $('#controls').find('#add').bind('click',function(){Shorty.WUI.toggleDialog($('#dialog-add'))});
+    // add date picker to 'valid until' fields
+    $( ".datepicker" ).datepicker({dateFormat :'dd-mm-yy'});
+    // initialize desktop
+    $.when(Shorty.WUI.toggleControls()).then(
+      Shorty.WUI.sumsFill(),
+      $.when(
+        Shorty.WUI.listBuild()
+      ).then(
+        Shorty.WUI.toggleDialog($('dialog-add'))
+      )
+    );
   }
-);
-
-function add_url ( event )
-{
-  var target = $('#shorty-add-url').val();
-  var notes  = $('#shorty-add-note').val();
-  var until  = $('#shorty-add-until').val();
-  $.ajax
-  (
-    {
-      url: 'ajax/add_url.php',
-      data: 'target=' + encodeURI(target) + '&notes=' + encodeURI(notes) + '&until=' + encodeURI(until),
-      success: function ( data )
-      {
-        location.href='index.php';
-      }
-    }
-  );
-}
+); // document.ready

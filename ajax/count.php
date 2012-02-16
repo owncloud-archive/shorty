@@ -21,32 +21,25 @@
 *
 */
 
-require_once ( '../../lib/base.php' );
+//no apps or filesystem
+$RUNTIME_NOSETUPFS = TRUE;
+
+require_once ( '../../../lib/base.php' );
 
 // Check if we are a user
-OC_Util::checkLoggedIn ( );
-OC_Util::checkAppEnabled ( 'shorty' );
-
-OC_App::setActiveNavigationEntry ( 'shorty_index' );
-
-OC_Util::addScript ( 'shorty', 'debug' );
-OC_Util::addScript ( 'shorty', 'shorty' );
-OC_Util::addStyle  ( 'shorty', 'shorty' );
+OC_JSON::checkLoggedIn ( );
+OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $tmpl = new OC_Template( 'shorty', 'tmpl_index', 'user' );
-  $p_url  = OC_Shorty_Type::req_argument('url',OC_Shorty_Type::URL,FALSE);
-  if ( $p_url )
-  {
-    OC_Util::addScript ( 'shorty', 'add' );
-    $tmpl->assign('URL', htmlentities($p_url));
-  }
-  else
-  {
-    OC_Util::addScript ( 'shorty', 'list' );
-  }
-
-  $tmpl->printPage();
-} catch ( OC_Wiki_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
+  $param = array
+  (
+    ':user'   => OC_User::getUser ( ),
+  );
+  $query = OC_DB::prepare ( OC_Shorty_Query::URL_COUNT );
+  $result = $query->execute($param);
+  $reply = $result->fetchAll();
+  OC_JSON::success ( array ( 'data'  => $reply[0],
+                             'note'  => '' ) );
+} catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

@@ -20,35 +20,40 @@
 *
 */
 
-$(document).ready
-(
-  function()
-  {
-    // basic action buttons
-    $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
-    $('#controls').find('#add').bind('click',function(){Shorty.WUI.toggleDialog($('#dialog-add'))});
-    // add date picker to 'valid until' fields
-    $( ".datepicker" ).datepicker({dateFormat :'dd-mm-yy'});
-//    $(function(){$(".datepicker").datepicker({dateFormat :'dd-mm-yy'});});
-    // initialize desktop
-    Shorty.WUI.listBuild();
-    // ???
-    $(window).scroll(Shorty.Action.update_bottom);
-  }
-); // document.ready
-
-// ==========
 
 Shorty =
 {
 
-// ==========
+  // ==========
   WUI:
   {
-    toggleDialog: function(dialog,duration,easing)
+    toggleControls: function()
     {
-      duration = duration || 'slow';
-      easing   = easing   || 'swing';
+      var dfd = new $.Deferred();
+      Shorty.WUI.hideNotification();
+      // show or hide dialog
+      var controls = $('#controls');
+      if ( ! controls.is(':visible'))
+      {
+        $.when(
+          $.when(
+            controls.slideDown('slow')
+          ).then(Shorty.WUI.sumsFill)
+        ).then(function(){dfd.resolve();});
+      }
+      else
+      {
+        $.when(
+          controls.slideUp('fast')
+        ).then(function(){dfd.resolve();});
+      }
+      return dfd.promise();
+    }, // toggleControls
+    toggleDialog: function(dialog)
+    {
+      var duration = 'slow';
+      var easing   = 'swing';
+      var dfd = new $.Deferred();
       Shorty.WUI.hideNotification();
       // show or hide dialog
       if ( ! dialog.is(':visible'))
@@ -63,7 +68,7 @@ Shorty =
             // show dialog
             dialog.slideDown(duration);
             // initialize dialog
-            switch ( dialog.attr('id') )
+            switch(dialog.attr('id'))
             {
               case 'dialog-add':
                 dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){Shorty.WUI.submitDialog(event.data.dialog);} );
@@ -93,122 +98,162 @@ Shorty =
           }
         );
       }
+      return dfd.promise();
     }, // toggleDialog
   //WUI:
-    toggleDesktopHourglass: function(show,callback)
+    toggleDesktopHourglass: function(show)
     {
+      var dfd = new $.Deferred();
       if (show)
-        $('#desktop').find('.shorty-hourglass').fadeIn('fast',callback);
+        $.when(
+          $('#desktop').find('.shorty-hourglass').fadeIn('fast')
+        ).then(function(){dfd.resolve();});
       else
-        $('#desktop').find('.shorty-hourglass').fadeOut('slow',callback);
+        $.when(
+          $('#desktop').find('.shorty-hourglass').fadeOut('slow')
+        ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // toggleDesktopHourglass
   //WUI:
-    toggleUrlList: function(filled,callback,duration)
+    toggleUrlList: function(filled)
     {
-      duration = duration || 'slow';
+      var duration = 'slow';
+      var dfd = new $.Deferred();
       if (filled)
       {
-        $('#desktop').find('#list-empty').hide();
-        $('#desktop').find('#list-nonempty').fadeIn(duration);
-        if (callback) callback();
+        $.when
+        (
+          $('#desktop').find('#list-empty').hide(),
+          $('#desktop').find('#list-nonempty').fadeIn(duration)
+        ).then(function(){dfd.resolve();});
       }
       else
       {
-        $('#desktop').find('#list-empty').fadeIn(duration);
-        $('#desktop').find('#list-nonempty').hide();
-        if (callback) callback();
+        $.when
+        (
+          $('#desktop').find('#list-empty').fadeIn(duration),
+          $('#desktop').find('#list-nonempty').hide()
+        ).then(function(){dfd.resolve();});
       }
+      return dfd.promise();
     }, // toggleUrlList
   //WUI:
     listBuild: function()
     {
+      var dfd = new $.Deferred();
       // prepare loading
-      Shorty.WUI.hideNotification();
-      Shorty.WUI.toggleDesktopHourglass(true,function()
-      {
-        Shorty.Action.listGet(function(list)
-        {
-          Shorty.WUI.listFill(list,function()
-          {
+      $.when
+      (
+        Shorty.WUI.hideNotification(),
+        Shorty.WUI.toggleDesktopHourglass(true),
+        Shorty.Action.listGet(function(list){
+          Shorty.WUI.listFill(list,function(){
             Shorty.WUI.toggleDesktopHourglass(false);
-          } )
-        } );
-      } );
+          });
+        })
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // listBuild
+  //WUI:
+    sumsFill: function()
+    {
+      var dfd = new $.Deferred();
+      $.when
+      (
+        Shorty.Action.sumsGet(function(data)
+        {
+          // update (set) sum values in the control bar
+          $('#controls').find('#sum_shortys').text(data.sum_shortys),
+          $('#controls').find('#sum_clicks').text(data.sum_clicks)
+        })
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
+    }, // sumsFill
   //WUI:
     listFill: function(list,callback)
     {
-      var count_urls=0;
-      var count_clicks=0;
+      var dfd = new $.Deferred();
       if ( ! list.length )
       {
         // list empty, show placeholder instead of empty table
-        Shorty.WUI.toggleUrlList(false);
+        $.when(Shorty.WUI.toggleUrlList(false)).then(function(){dfd.resolve();});
       }
       else
       {
         // list non-empty, fill and show table instead of placeholder
         // prevent clicks whilst loading the list
-        $('.shorty-link').unbind('click', Shorty.Action.urlClick);
-        $('.shorty-delete').unbind('click', Shorty.Action.urlDel);
-        $('.shorty-edit').unbind('click', Shorty.Action.urlShow);
-        for(var i in list)
-        {
-          count_urls   += 1;
-          count_clicks += parseInt(list[i].clicks);
-          Shorty.WUI.listAdd(i,list[i]);
-        }
-        // reenable clicks after loading the list
-        $('.shorty-link').click(Shorty.Action.urlClick);
-        $('.shorty-show').click(Shorty.Action.urlShow);
-        $('.shorty-edit').click(Shorty.Action.urlEdit);
-        $('.shorty-del').click(Shorty.Action.urlDel);
-        Shorty.WUI.toggleUrlList(true);
+        $.when(
+          $('.shorty-link').unbind('click', Shorty.Action.urlClick),
+          $('.shorty-edit').unbind('click', Shorty.Action.urlEdit),
+          $('.shorty-delete').unbind('click', Shorty.Action.urlDel),
+          Shorty.WUI.sumsFill(),
+          Shorty.WUI.listAdd(list),
+          // display the list
+          Shorty.WUI.toggleUrlList(true),
+          // reenable clicks after loading the list
+          $('.shorty-link').click(Shorty.Action.urlClick),
+          $('.shorty-edit').click(Shorty.Action.urlEdit),
+          $('.shorty-del').click(Shorty.Action.urlDel)
+        ).then(function(){dfd.resolve();});
       }
-      // update (set) counters in the control bar
-      $('#controls').find('#number').text(count_urls);
-      $('#controls').find('#clicks').text(count_clicks);
-      callback();
+      if (callback) callback();
+      return dfd.promise();
     }, // listFill
   //WUI:
-    listAdd: function(index,token,smooth)
+    listAdd: function(list,smooth)
     {
+      var dfd = new $.Deferred();
+      smooth = smooth || true;
       // clone dummy row from list: dummy is the only row with an empty id
-      var $dummy = $('.shorty-list tr').filter(function(){return (''==$(this).attr('id'));});
-      var $row   = $dummy.clone();
-      // set row id to entry key
-      $row.attr('id',token.key);
-      // enhance row with real token values
-      $.each(Array('key','source','target','clicks','created','accessed','until','notes'),
-             function()
-             {
-               $row.attr('data-'+this,token[this]);
-               $.each($row.find('td'),function(){$(this).text(token[$(this).attr('id')]);});
-             }
-            );
-      $dummy.after($row);
-      if (smooth)
-           $row.slideIn('slow');
-      else $row.attr('style','visible');
+      var dummy = $('.shorty-list tr').filter(function(){return (''==$(this).attr('id'));});
+      var row, set;
+      // insert list elements (sets) one by one
+      for ( var i in list )
+      {
+        row = dummy.clone();
+        set = list[i];
+        // set row id to entry key
+        row.attr('id',set.key);
+        // enhance row with real set values
+        $.each(Array('key','source','target','clicks','created','accessed','until','notes'),
+          function(){
+            row.attr('data-'+this,set[this]);
+            $.each(row.find('td'),function(){$(this).text(set[$(this).attr('id')]);});
+          }
+        );
+        dummy.after(row);
+        if (smooth)
+             $.when(row.fadeIn('slow')).then(function(){dfd.resolve();});
+        else $.when(row.attr('style','visible')).then(function(){dfd.resolve();});
+      } // for
+      return dfd.promise();
     }, // listAdd
   //WUI:
     emptyDesktop: function()
     {
-      Shorty.WUI.hideNotification();
-      $('#desktop').empty()
+      var dfd = new $.Deferred();
+      $.when(
+        $('#desktop').empty(),
+        Shorty.WUI.hideNotification
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // emptyDesktop
   //WUI:
-    hideNotification: function(duration)
+    hideNotification: function()
     {
-      duration = duration || 'fast';
-      $('#notification').fadeOut(duration);
-      $('#notification').text('');
+      var dfd = new $.Deferred();
+      $.when(
+        $('#notification').fadeOut('fast').text('')
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // hideNotification
   //WUI:
-    showNotification: function(message,level,duration)
+    showNotification: function(message,level)
     {
-      level    = level    || 'info';
-      duration = duration || 'slow';
+      level = level || 'info';
+      var dfd = new $.Deferred();
+      var duration = 'slow';
+      var notification = $('#notification');
       switch(level)
       {
         case 'debug':
@@ -216,41 +261,57 @@ Shorty =
           if ( Shorty.debug )
           {
             Shorty.debug('Debug: '+message);
-            $('#notification').fadeOut('fast');
-            $('#notification').attr('title', 'debug message');
-            $('#notification').text('Debug: '+message);
-            $('#notification').fadeIn(duration);
+            $.when(
+              notification.fadeOut('fast'),
+              notification.attr('title', 'debug message'),
+              notification.text('Debug: '+message),
+              notification.fadeIn(duration)
+            ).then(function(){dfd.resolve();});
           }
           break;
         case 'error':
-          if (Shorty.debug) Shorty.debug('Error: '+message);
-          $('#notification').attr('title', 'error message');
-          $('#notification').fadeOut('fast');
-          $('#notification').text('Error: ' + message);
-          $('#notification').fadeIn(duration);
+          if (Shorty.debug)
+            Shorty.debug('Error: '+message);
+          $.when(
+            notification.fadeOut('fast'),
+            notification.attr('title', 'error message'),
+            notification.text('Error: ' + message),
+            notification.fadeIn(duration)
+          ).then(function(){dfd.resolve();});
           break;
         default: // 'info'
           if ( message.length )
           {
-            if (Shorty.debug) Shorty.debug('Info: '+message);
-            $('#notification').fadeOut('fast');
-            $('#notification').text(message);
-            $('#notification').fadeIn(duration);
+            if (Shorty.debug)
+              Shorty.debug('Info: '+message);
+            $.when(
+              notification.fadeOut('fast'),
+              notification.text(message),
+              notification.fadeIn(duration)
+            ).then(function(){dfd.resolve();});
           }
           else
           {
-            $('#notification').fadeOut('fast');
-            $('#notification').text('');
+            $.when(
+              notification.fadeOut('fast'),
+              notification.text('')
+            ).then(function(){dfd.resolve();});
           }
       } // switch
+      return dfd.promise();
     }, // showNotification
   //WUI:
     collectMeta: function(dialog)
     {
+      var dfd = new $.Deferred();
       var target = $('#dialog-add').find('#target').val().trim();
       // don't bother getting active on empty input
       if ( ! target.length )
-        return;
+      {
+        dialog.find('#target').focus();
+        dfd.resolve();
+        return dfd.promise();
+      }
       // fill in fallback scheme if none is specified
       if ( ! Shorty.Utility.hasScheme(target) )
       {
@@ -272,24 +333,36 @@ Shorty =
           );
         }
       );
+      return dfd.promise();
     }, // collectMeta
   //WUI:
     submitDialog: function(dialog)
     {
-      Shorty.WUI.hideNotification();
+      var dfd = new $.Deferred();
       switch ( dialog.attr('id') )
       {
         case 'dialog-add':
-          Shorty.Action.urlAdd(Shorty.WUI.toggleDialog(dialog));
+          $.when(
+            Shorty.WUI.hideNotification(),
+            Shorty.Action.urlAdd(Shorty.WUI.toggleDialog(dialog))
+          ).then(function(){dfd.resolve();});
           break;
         case 'dialog-edit':
-          Shorty.Action.urlEdit(Shorty.WUI.toggleDialog(dialog));
+          $.when(
+            Shorty.WUI.hideNotification(),
+            Shorty.Action.urlEdit(Shorty.WUI.toggleDialog(dialog))
+          ).then(function(){dfd.resolve();});
           break;
         case 'dialog-del':
-          Shorty.Action.urlDel(Shorty.WUI.toggleDialog(dialog));
+          $.when(
+            Shorty.WUI.hideNotification(),
+            Shorty.Action.urlDel(Shorty.WUI.toggleDialog(dialog))
+          ).then(function(){dfd.resolve();});
           break;
+        default:
+          dfd.resolve();
       }; // switch
-      return false;
+      return dfd.promise();
     }, // submitDialog
   },// WUI
 
@@ -297,180 +370,245 @@ Shorty =
 
   Action:
   {
+    sumsGet: function(callback)
+    {
+      var dfd = new $.Deferred();
+      $.when(
+        $.ajax
+        (
+          {
+            url:     'ajax/count.php',
+            cache:   false,
+            data:    {},
+            success: function(response)
+            {
+              if ( 'error'==response.status )
+              {
+                Shorty.WUI.showNotification(response.note,'debug');
+              }
+              else
+              {
+                Shorty.WUI.showNotification(response.note,'info');
+                if (callback) callback(response.data);
+              } // if else
+            }
+          }
+        )
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
+    }, // sumsGet
+  //Action:
     listGet: function(callback)
     {
+      var dfd = new $.Deferred();
 // ToDo Fixme: correct ids of filter variables
       var target = $('#list-filter-target').val() || '';
       var title  = $('#list-filter-title').val()  || '';
-      $.ajax
-      (
-        {
-          url:     'ajax/list.php',
-          cache:   false,
-          data:    { target: encodeURI(target), title: encodeURI(title) },
-          success: function(response)
+      $.when(
+        $.ajax
+        (
           {
-            if ( 'error'==response.status )
+            url:     'ajax/list.php',
+            cache:   false,
+            data:    { target: encodeURI(target), title: encodeURI(title) },
+            success: function(response)
             {
-              callback({});
+              var dfd = new $.Deferred();
+              if ( 'error'==response.status )
+              {
+                Shorty.WUI.showNotification(response.note,'debug');
+              }
+              else
+              {
+                Shorty.WUI.showNotification(response.note,'info');
+                if (callback)
+                  $.when(
+                    callback(response.data)
+                  ).then(function(){dfd.resolve();});
+              } // if else
+              return dfd.promise();
             }
-            else
-            {
-              Shorty.WUI.showNotification(response.note,'info');
-              callback(response.data);
-            } // if else
           }
-        }
-      );
+        )
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // listGet
   //Action:
     urlAdd:function(event,callback)
     {
-      Shorty.WUI.hideNotification();
+      var dfd = new $.Deferred();
       var target = $('#dialog-add').find('#target').val() || '';
       var title  = $('#dialog-add').find('#title').val()  || '';
       var notes  = $('#dialog-add').find('#notes').val()  || '';
       var until  = $('#dialog-add').find('#until').val()  || '';
-      $.ajax
-      (
-        {
-          url:     'ajax/add.php',
-          cache:   false,
-          data:    { target: encodeURIComponent(target),
-                     title:  encodeURIComponent(title),
-                     notes:  encodeURIComponent(notes),
-                     until:  encodeURIComponent(until) },
-          error:function(){if (Shorty.Debug) Shorty.Debug.log(this.data);},
-          success: function(response)
+      $.when(
+        Shorty.WUI.hideNotification(),
+        $.ajax
+        (
           {
-            if ( 'success'==response.status )
+            url:     'ajax/add.php',
+            cache:   false,
+            data:    { target: encodeURIComponent(target),
+                      title:  encodeURIComponent(title),
+                      notes:  encodeURIComponent(notes),
+                      until:  encodeURIComponent(until) },
+            error:function(){if (Shorty.Debug) Shorty.Debug.log(this.data);},
+            success: function(response)
             {
-              Shorty.WUI.showNotification(response,'info');
-              // close and neutralize dialog
-              if (callback) callback();
-              $('#dialog-add').find('.shorty-input').val('');
-              // add shorty to existing list
-              var f_add_shorty = function(){Shorty.WUI.listAdd(0,response.data,true);};
-              Shorty.WUI.toggleUrlList(true,f_add_shorty);
-            } // if !error
-            else
-            {
-              Shorty.WUI.showNotification(response.note,'error');
+              if ( 'success'==response.status )
+              {
+                Shorty.WUI.showNotification(response,'info');
+                // close and neutralize dialog
+                if (callback) callback();
+                $('#dialog-add').find('.shorty-input').val('');
+                // add shorty to existing list
+                var f_add_shorty = function(){Shorty.WUI.listAdd([response.data],true);};
+                Shorty.WUI.toggleUrlList(true,f_add_shorty);
+              } // if !error
+              else
+              {
+                Shorty.WUI.showNotification(response.note,'error');
+              }
+              $('#dialog-add').slideToggle();
             }
-            $('#dialog-add').slideToggle();
           }
-        }
-      );
+        )
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // urlAdd
   //Action:
     urlEdit: function(event)
     {
-      Shorty.WUI.hideNotification();
+      var dfd = new $.Deferred();
       var key    = $('#shorty-add-key').val();
       var source = $('#dialog-edit').find('#source').val();
       var target = $('#dialog-edit').find('#target').val();
       var notes  = $('#dialog-edit').find('#notes').val();
       var until  = $('#dialog-edit').find('#until').val();
-      $.ajax
-      (
-        {
-          url:     'ajax/edit.php',
-          cache:   false,
-          data:    { key: key,
-                     source: encodeURI(source),
-                     target: encodeURI(target),
-                     notes:  encodeURI(notes),
-                     until:  encodeURI(until) },
-          success: function()
+      $.when(
+        Shorty.WUI.hideNotification(),
+        $.ajax
+        (
           {
-            $('.shorty-add').slideToggle();
-            $('.shorty-add').find('.shorty-input').val('');
-            $('#shorty-add-key').val('');
+            url:     'ajax/edit.php',
+            cache:   false,
+            data:    { key: key,
+                      source: encodeURI(source),
+                      target: encodeURI(target),
+                      notes:  encodeURI(notes),
+                      until:  encodeURI(until) },
+            success: function()
+            {
+              $('.shorty-add').slideToggle();
+              $('.shorty-add').find('.shorty-input').val('');
+              $('#shorty-add-key').val('');
 
-            var record = $('.shorty-single[data-key = "' + key + '"]');
-            record.children('.shorty-target:first').text(target);
+              var record = $('.shorty-single[data-key = "' + key + '"]');
+              record.children('.shorty-target:first').text(target);
 
-            var record_notes = record.children('.shorty-notes:first').children('a:first');
-            record_notes.attr('href', target);
-            record_notes.text(notes);
-            record.children('.shorty-until').html(until);
+              var record_notes = record.children('.shorty-notes:first').children('a:first');
+              record_notes.attr('href', target);
+              record_notes.text(notes);
+              record.children('.shorty-until').html(until);
+            }
           }
-        }
-      );
+        )
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // urlEdit
   //Action:
     urlDel: function(event)
     {
-      Shorty.WUI.hideNotification();
+      var dfd = new $.Deferred();
       var record = $(this).parent().parent();
-      $.ajax
-      (
-        {
-          url:     'ajax/del.php',
-          cache:   false,
-          data:    { url: encodeURI($(this).parent().parent().children('.shorty-url:first').text()) },
-          success: function(data){ record.animate({ opacity: 'hide' }, 'fast'); }
-        }
-      );
+      $.when(
+        Shorty.WUI.hideNotification(),
+        $.ajax
+        (
+          {
+            url:     'ajax/del.php',
+            cache:   false,
+            data:    { url: encodeURI($(this).parent().parent().children('.shorty-url:first').text()) },
+            success: function(data){ record.animate({ opacity: 'hide' }, 'fast'); }
+          }
+        )
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // urlDel
   //Action:
     urlShow: function(event)
     {
-      Shorty.WUI.hideNotification();
+      var dfd = new $.Deferred();
       var record = $(this).parent().parent();
       $('#shorty-add-key').val(record.attr('data-key'));
       $('#shorty-add-source').val(record.children('.shorty-source:first').text());
       $('#shorty-add-target').val(record.children('.shorty-target:first').text());
       $('#shorty-add-notes').val(record.children('.shorty-notes:first').text());
       $('#shorty-add-until').val(record.children('.shorty-until:first').text());
-      if ($('.shorty-add').css('display') == 'none')
-      {
-        $('.shorty-add').slideToggle();
-      }
-      $('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 500);
+      $.when(
+        Shorty.WUI.hideNotification(),
+        function()
+        {
+          if ($('.shorty-add').css('display') == 'none')
+          {
+            $('.shorty-add').slideToggle();
+          }
+        },
+        $('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 500)
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // urlShow
   //Action:
     urlClick: function(event)
     {
-      Shorty.WUI.hideNotification();
-      $.ajax
-      (
-        {
-          url:     'ajax/click.php',
-          cache:   false,
-          data:    { url: encodeURI($(this).attr('href')) },
-          success: function()
+      var dfd = new $.Deferred();
+      $.when(
+        Shorty.WUI.hideNotification(),
+        $.ajax
+        (
           {
-            // increment shorties and total number of clicks
-            $('#controls').find('#clicks').val($('#controls').find('#clicks').val()+1);
+            url:     'ajax/click.php',
+            cache:   false,
+            data:    { url: encodeURI($(this).attr('href')) },
+            success: function()
+            {
+              // increment total number of shortys and clicks (sums)
+              var label = $('#controls').find('#sum_clicks');
+              label.val(label.val()+1);
+            }
           }
-        }
-      );
+        )
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // urlClick
   //Action:
     metaGet: function(target,callback)
     {
-      $.ajax
-      (
-        {
-          url:     'ajax/meta.php',
-          cache:   false,
-          data:    { target: encodeURIComponent(target) },
-          error:   function() { return ''; },
-          success: function(response)
+      var dfd = new $.Deferred();
+      $.when(
+        $.ajax
+        (
           {
-            if (Shorty.Debug) Shorty.Debug.log(response.note);
-            if ('success'==response.status)
+            url:     'ajax/meta.php',
+            cache:   false,
+            data:    { target: encodeURIComponent(target) },
+            error:   function() { return ''; },
+            success: function(response)
             {
-              callback(response.data);
-            }
-            else
-            {
-              if (Shorty.Debug) Shorty.Debug.log(Shorty.Debug.dump(response.data));
+              if (Shorty.Debug) Shorty.Debug.log(response.note);
+              if ('success'==response.status)
+              {
+                if (callback) callback(response.data);
+              }
+              else
+              {
+                if (Shorty.Debug) Shorty.Debug.log(Shorty.Debug.dump(response.data));
+              }
             }
           }
-        }
-      );
+        )
+      ).then(function(){dfd.resolve();});
+      return dfd.promise();
     }, // metaGet
   }, // Shorty.Action
 

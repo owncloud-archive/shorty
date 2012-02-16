@@ -27,7 +27,7 @@
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Add a new shorty:'); ?></legend>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
-    <input id="target" type="text" maxsize="4096" data="" class="shorty-input"/>
+    <input id="target" type="text" maxsize="4096" data="<?php echo $_['URL']; ?>" class="shorty-input"/>
     <br>
     <label for="meta">&nbsp;</label>
     <span id="meta">

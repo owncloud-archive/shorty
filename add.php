@@ -21,23 +21,25 @@
 *
 */
 
-require_once('../../lib/base.php');
+require_once ( '../../lib/base.php' );
 
 // Check if we are a user
 OC_Util::checkLoggedIn ( );
 OC_Util::checkAppEnabled ( 'shorty' );
 
-OC_App::setActiveNavigationEntry( 'shorty_index' );
+OC_App::setActiveNavigationEntry ( 'shorty_index' );
 
-OC_Util::addScript ( 'shorty', 'url_add' );
+OC_Util::addScript ( 'shorty', 'debug' );
+OC_Util::addScript ( 'shorty', 'add' );
+OC_Util::addScript ( 'shorty', 'shorty' );
 OC_Util::addStyle  ( 'shorty', 'shorty' );
 
 try
 {
   $p_url  = OC_Shorty_Type::req_argument('url',OC_Shorty_Type::URL,FALSE);
 
-  $tmpl = new OC_Template( 'shorty', 'tmpl_url_add', 'user' );
-  $tmpl->assign('URL',   htmlentities($p_url));
+  $tmpl = new OC_Template( 'shorty', 'tmpl_add', 'user' );
+  $tmpl->assign('URL', htmlentities($p_url));
   $tmpl->printPage();
 } catch ( OC_Wiki_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
 ?>
