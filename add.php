@@ -36,10 +36,7 @@ OC_Util::addStyle  ( 'shorty', 'shorty' );
 
 try
 {
-  $p_url  = OC_Shorty_Type::req_argument('url',OC_Shorty_Type::URL,FALSE);
-
-  $tmpl = new OC_Template( 'shorty', 'tmpl_add', 'user' );
-  $tmpl->assign('URL', htmlentities($p_url));
+  $tmpl = new OC_Template( 'shorty', 'tmpl_index', 'user' );
   $tmpl->printPage();
 } catch ( OC_Wiki_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
 ?>

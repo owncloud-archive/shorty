@@ -34,7 +34,15 @@ $(document).ready
       function(){
         $.when(Shorty.WUI.List.build()).then(
           function(){
-            Shorty.WUI.Dialog.toggle($('#dialog-add'));
+            var dialog = $('#dialog-add');
+            $.when(Shorty.WUI.Dialog.toggle(dialog)).then(
+              function(){
+                var target=decodeURIComponent(window.location.search.substring(1));
+                dialog.find('#target').val(target);
+                dialog.find('#title').focus();
+                Shorty.WUI.Meta.collect(dialog);
+              }
+            );
           }
         )
       }

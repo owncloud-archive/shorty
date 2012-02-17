@@ -63,6 +63,26 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Controls.toggle
     }, // Shorty.WUI.Controls
+    // ===== Shorty.WUI.Desktop =====
+    Desktop:
+    {
+      // ===== Shorty.WUI.Desktop.show =====
+      show: function(duration)
+      {
+        duration = duration || 'slow';
+        var dfd = new $.Deferred();
+        $.when($('#desktop').fadeIn(duration)).then(dfd.resolve);
+        return dfd.promise();
+      }, // Shorty.WUI.Desktop.show
+      // ===== Shorty.WUI.Desktop.hide =====
+      hide: function(duration)
+      {
+        duration = duration || 'slow';
+        var dfd = new $.Deferred();
+        $.when($('#desktop').fadeOut(duration)).then(dfd.resolve);
+        return dfd.promise();
+      }, // Shorty.WUI.Desktop.hide
+    }, // Shorty.WUI.Desktop
     // ===== Shorty.WUI.Dialog =====
     Dialog:
     {
@@ -118,11 +138,9 @@ Shorty =
         if ( ! dialog.is(':visible'))
         {
           // start sequence by hiding the desktop first
-          $('#desktop').fadeOut(duration,function()
-            {
+          $.when(Shorty.WUI.Desktop.hide()).then(
+            function(){
               Shorty.WUI.Dialog.reset(dialog);
-              // show dialog
-              dialog.slideDown(duration);
               // initialize dialog
               switch(dialog.attr('id'))
               {
@@ -134,14 +152,16 @@ Shorty =
                 default:
                   dialog.find('#title').focus();
               } // switch
-            }
+              // show dialog
+              $.when(dialog.slideDown(duration)).then(dfd.resolve);
+            } // function
           );
         }
         else
         {
           // hide dialog
-          dialog.slideUp(duration, function()
-            {
+          $.when(dialog.slideUp(duration)).then(
+            function(){
               switch ( dialog.attr('id') )
               {
                 case 'dialog-add':
@@ -150,7 +170,7 @@ Shorty =
                   break;
                 default:
               } // switch
-              $('#desktop').fadeIn(duration);
+              $.when(Shorty.WUI.Desktop.show()).then(dfd.resolve);
             }
           );
         }
@@ -457,11 +477,10 @@ Shorty =
         var dfd = new $.Deferred();
         $.when
         (
-          Shorty.WUI.Sums.get(function(data)
-          {
-            // update (set) sum values in the control bar
-            $('#controls').find('#sum_shortys').text(data.sum_shortys),
-            $('#controls').find('#sum_clicks').text(data.sum_clicks)
+          // update (set) sum values in the control bar
+          Shorty.WUI.Sums.get(function(data){
+            $('#controls').find('#sum_shortys').text(data.sum_shortys);
+            $('#controls').find('#sum_clicks').text(data.sum_clicks);
           })
         ).then(dfd.resolve);
         return dfd.promise();

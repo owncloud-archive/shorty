@@ -30,23 +30,13 @@ OC_Util::checkAppEnabled ( 'shorty' );
 OC_App::setActiveNavigationEntry ( 'shorty_index' );
 
 OC_Util::addScript ( 'shorty', 'debug' );
+OC_Util::addScript ( 'shorty', 'list' );
 OC_Util::addScript ( 'shorty', 'shorty' );
 OC_Util::addStyle  ( 'shorty', 'shorty' );
 
 try
 {
   $tmpl = new OC_Template( 'shorty', 'tmpl_index', 'user' );
-  $p_url  = OC_Shorty_Type::req_argument('url',OC_Shorty_Type::URL,FALSE);
-  if ( $p_url )
-  {
-    OC_Util::addScript ( 'shorty', 'add' );
-    $tmpl->assign('URL', htmlentities($p_url));
-  }
-  else
-  {
-    OC_Util::addScript ( 'shorty', 'list' );
-  }
-
   $tmpl->printPage();
 } catch ( OC_Wiki_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
 ?>
