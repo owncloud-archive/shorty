@@ -27,7 +27,7 @@
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Add a new shorty:'); ?></legend>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
-    <input id="target" type="text" maxsize="4096" data="" class="shorty-input"/>
+    <input id="target" type="text" maxsize="4096" data="" class=""/>
     <br>
     <label for="meta">&nbsp;</label>
     <span id="meta">
@@ -39,13 +39,13 @@
     </span>
     <br>
     <label for="title"><?php echo OC_Shorty_L10n::t('Optional title:'); ?></label>
-    <input id="title" type="text" maxsize="80" data="" class="shorty-input"/>
+    <input id="title" type="text" maxsize="80" data="" class=""/>
     <br>
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
-    <input id="until" type="text" maxsize="50" data="" class="shorty-input datepicker"/>
+    <input id="until" type="text" maxsize="10" data="" class="" style="width:30%" icon="<?php echo OC_Helper::imagePath('apps/shorty', 'calendar.png'); ?>"/>
     <br>
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
-    <textarea id="notes" maxsize="4096" data="" class="shorty-input"></textarea>
+    <textarea id="notes" maxsize="4096" data="" class=""></textarea>
     <br>
     <label for="confirm"></label>
     <button id="confirm" class="shorty-button-submit"><?php echo OC_Shorty_L10n::t('Add as new'); ?></button>

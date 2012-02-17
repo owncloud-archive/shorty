@@ -151,6 +151,10 @@
   color: black;
 }
 
+.shorty-date {
+  width: 40%;
+}
+
 .shorty-notes {
   color: blue;
   text-decoration: none;

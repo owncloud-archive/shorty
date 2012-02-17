@@ -20,7 +20,25 @@
 *
 */
 
+// some GENERAL initializations
+$(document).ready
+(
+  // add date picker options
+  function(){
+    $("#controls").find('#until').datepicker({
+      dateFormat :'dd-mm-yy',
+      changeMonth: true,
+      changeYear: true,
+      showOtherMonths: true,
+      selectOtherMonths: true,
+      showOn: "button",
+      buttonImage: $("#controls").find('#until').eq(0).attr('icon'),
+      buttonImageOnly: true
+    });
+  }
+); // document.ready
 
+// our library, coding UI and ACTION methods
 Shorty =
 {
   // ===== Shorty.WUI =====

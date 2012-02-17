@@ -27,30 +27,30 @@
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Modify shorty:'); ?></legend>
     <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
-    <input id="key" type="text" readonly data="" class="shorty-value" />
-    <br>
-    <label for="title"><?php echo OC_Shorty_L10n::t('Local Title:'); ?></label>
-    <input id="title" type="text" readonly data="" class="shorty-value" />
+    <input id="key" type="text" readonly data="" class="" />
     <br>
     <label for="source"><?php echo OC_Shorty_L10n::t('Shorty (url):'); ?></label>
-    <input id="source" type="text" readonly data="" class="shorty-value" />
+    <input id="source" type="text" readonly data="" class="" />
     <br>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
-    <input id="target" type="text" readonly data="" class="shorty-value" />
+    <input id="target" type="text" readonly data="" class="" />
+    <br>
+    <label for="title"><?php echo OC_Shorty_L10n::t('Local Title:'); ?></label>
+    <input id="title" type="text" readonly data="" class="" />
     <br>
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
-    <input id="until" type="text" readonly data="" class="shorty-value" />
+    <input id="until" type="text" readonly data="" class="" />
     <br>
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
-    <textarea id="notes" readonly cols="50" rows="3" data="" class="shorty-value"></textarea>
+    <textarea id="notes" readonly data="" class=""></textarea>
     <br>
     <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
-    <input id="clicks" type="text" readonly data="" class="shorty-value" />
+    <input id="clicks" type="text" readonly data="" class="" />
     <br>
     <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
-    <input id="created" type="text" readonly data="" class="shorty-value" />
+    <input id="created" type="text" readonly data="" class="" />
     <br>
     <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
-    <input id="accessed" type="text" readonly data="" class="shorty-value" />
+    <input id="accessed" type="text" readonly data="" class="" />
   </fieldset>
 </form>

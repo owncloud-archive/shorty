@@ -27,34 +27,40 @@
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Modify shorty:'); ?></legend>
     <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
-    <input id="key" type="text" readonly data="" class="shorty-value" />
-    <br>
-    <label for="title"><?php echo OC_Shorty_L10n::t('Local title:'); ?></label>
-    <input id="title" type="text" data="" class="shorty-value" />
+    <input id="key" type="text" readonly data="" class="" />
     <br>
     <label for="source"><?php echo OC_Shorty_L10n::t('Shorty (url):'); ?></label>
-    <input id="source" type="text" readonly data="" class="shorty-value" />
+    <input id="source" type="text" readonly data="" class="" />
     <br>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
-    <input id="target" type="text" readonly data="" class="shorty-value" />
+    <input id="target" type="text" readonly data="" class="" />
     <br>
-    <label for="favicon"></label>
-    <img id="favicon" class="shorty-favicon" src="<?php echo OC_Helper::imagePath('apps/shorty', 'blank.png'); ?>">
-    <a id="mimetype" type="text" readonly size="50" maxsize="80" data="" class="shorty-input"/>
+    <label for="meta">&nbsp;</label>
+    <span id="meta">
+    <img id="staticon"  class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('apps/shorty', 'status/neutral.png'); ?>">
+    <img id="schemicon" class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('apps/shorty', 'blank.png'); ?>">
+    <img id="favicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('apps/shorty', 'blank.png'); ?>">
+    <img id="mimicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('apps/shorty', 'blank.png'); ?>">
+    <a id="explanation" maxsize="80" data="" class="shorty-value"></a>
+    </span>
+    <br>
+    <label for="title"><?php echo OC_Shorty_L10n::t('Local title:'); ?></label>
+    <input id="title" type="text" maxsize="80" data="" class="" />
+    <br>
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
-    <input id="until" type="text" data="" class="shorty-value" />
+    <input id="until" type="text" maxsize="10" data="" class="datepicker" style="width:30%" icon="<?php echo OC_Helper::imagePath('apps/shorty', 'calendar.png'); ?>/>
     <br>
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
-    <textarea id="notes" readonly cols="50" rows="3" data="" class="shorty-value"></textarea>
+    <textarea id="notes" maxsize="4096" data="" class=""></textarea>
     <br>
     <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
-    <input id="clicks" type="text" readonly data="" class="shorty-value" />
+    <input id="clicks" type="text" readonly data="" class="" />
     <br>
     <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
-    <input id="created" type="text" readonly data="" class="shorty-value" />
+    <input id="created" type="text" readonly data="" class="" />
     <br>
     <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
-    <input id="accessed" type="text" readonly data="" class="shorty-value" />
+    <input id="accessed" type="text" readonly data="" class="" />
     <br>
     <label for="confirm"></label>
     <input type="submit" value="<?php echo OC_Shorty_L10n::t('Save as modified'); ?>" id="confirm" class="shorty-button-submit"/>
