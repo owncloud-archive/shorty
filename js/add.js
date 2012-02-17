@@ -34,7 +34,7 @@ $(document).ready
       function(){
         $.when(Shorty.WUI.List.build()).then(
           function(){
-            Shorty.WUI.Dialog.toggle($('dialog-add'));
+            Shorty.WUI.Dialog.toggle($('#dialog-add'));
           }
         )
       }
