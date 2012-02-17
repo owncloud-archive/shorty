@@ -45,7 +45,7 @@ class OC_Shorty_Type
   {
     switch ( $type )
     {
-      case self::KEY:       return preg_match ( '^[a-z0-9]{8}$',         $value );
+      case self::KEY:       return preg_match ( '/^[a-z0-9]{8}$/',       $value );
       case self::SORTING:   return in_array ( trim($value), self::$valid_sortings );
       case self::STRING:    return preg_match ( '/^.+$/',                $value );
 //      case self::URL:       return preg_match ( '/^(([\w]+:)?\/\/)?(([\d\w]|%[a-fA-f\d]{2,2})+(:([\d\w]|%[a-fA-f\d]{2,2})+)?@)?([\d\w][-\d\w]{0,253}[\d\w]\.)+[\w]{2,4}(:[\d]+)?(\/([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)*(\?(&amp;?([-+_~.\d\w]|%[a-fA-f\d]{2,2})=?)*)?(#([-+_~.\d\w]|%[a-fA-f\d]{2,2})*)?$/', $value );
