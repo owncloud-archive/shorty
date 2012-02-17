@@ -26,11 +26,11 @@
  */
 class OC_Shorty_Query
 {
-  const URL_INSERT            = "INSERT INTO *PREFIX*shorty (key,favicon,title,source,target,user,until,created,notes) VALUES (:key,:favicon,:title,:source,:target,:user,:until,:created,:notes)";
+  const URL_INSERT            = "INSERT INTO *PREFIX*shorty (key,favicon,title,source,target,user,until,notes) VALUES (:key,:favicon,:title,:source,:target,:user,:until,:notes)";
   const URL_DELETE            = "DELETE FROM *PREFIX*shorty WHERE user=:user AND key=:key";
   const URL_UPDATE            = "UPDATE *PREFIX*shorty SET title=:title,notes=:notes WHERE WHERE user=:user AND key=:key";
   const URL_CLICK             = "UPDATE *PREFIX*shorty SET accessed=:now, clicks=(clicks+1) WHERE key=:key";
-  const URL_FORWARD           = "SELECT target FROM *PREFIX*shorty WHERE key=:key AND until>:now LIMIT 1";
+  const URL_FORWARD           = "SELECT target FROM *PREFIX*shorty WHERE key=:key AND (until IS NULL OR until='' OR until>CURRENT_TIMESTAMP) LIMIT 1";
   const URL_VERIFY            = "SELECT key,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND key=:key LIMIT 1";
   const URL_LIST              = "SELECT key,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND target LIKE :target AND title LIKE :title ORDER BY :sort LIMIT :limit OFFSET :offset";
   const URL_COUNT             = "SELECT count(*) AS sum_shortys,sum(clicks) AS sum_clicks FROM *PREFIX*shorty WHERE user=:user";

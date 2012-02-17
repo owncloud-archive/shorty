@@ -29,20 +29,30 @@ OC_Util::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $p_key = OC_Shorty_Type::validate ( $_SERVER['QUERY_STRING'], OC_Shorty_Type::KEY );
-  $param = array
-  (
-    'key' => OC_Shorty_Tools::db_escape ( $p_key ),
-    'now' => OC_Shorty_Tools::db_timestamp ( ),
-  );
-  $query  = OC_DB::prepare ( OC_Shorty_Query::URL_FORWARD );
-  $result = $query->execute($param)->FetchOne();
-  if ( FALSE===$result )
-    throw new OC_Shorty_Exception ( "HTTP/1.0 404 Not Found", $param );
-  // register click in entry
-  $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
-  $query->execute ( $param );
+  // a safe target to forward to in case of problems: the shorty module
+  $target = OC_Helper::linkTo( 'shorty', 'index.php' , false);
+  // detect requested shorty key from request
+  $p_key = trim ( OC_Shorty_Type::normalize($_SERVER['QUERY_STRING'],OC_Shorty_Type::KEY) ) ;
+  // a key was specified, look for matching entry in database
+  if ( $p_key )
+  {
+    $param = array
+    (
+      'key' => OC_Shorty_Tools::db_escape ( $p_key ),
+    );
+    $query  = OC_DB::prepare ( OC_Shorty_Query::URL_FORWARD );
+    $result = $query->execute($param)->FetchOne();
+    if ( FALSE===$result )
+      throw new OC_Shorty_Exception ( "HTTP/1.0 404 Not Found", $param );
+    // and usable target ? stick with fallback otherwise
+    if ( trim($result) )
+      $target = trim($result);
+    // register click in shorty
+    $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
+    $query->execute ( $param );
+  } // if key
 } catch ( OC_Wiki_Exception $e ) { header($e->getMessage()); }
 
-header ( sprintf('Location: %s'), trim($result['url']) );
+// http forwarding header
+header ( sprintf('Location: %s', $target) );
 ?>

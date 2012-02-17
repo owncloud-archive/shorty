@@ -55,7 +55,6 @@ try
     ':target'  => $p_target,
     ':notes'   => $p_notes,
     ':until'   => $p_until,
-    ':created' => OC_Shorty_Tools::db_timestamp ( ),
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_INSERT );
   $query->execute ( $param );

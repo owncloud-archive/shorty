@@ -52,6 +52,7 @@ class OC_Shorty_Tools
     /**
     * @brief current timestamp as required by db engine
     * @return (string) current timestamp as required by db engine
+    * @TODO not really required any more, we rely on CURRENT_TIMESTAMP instead
     */
     static function db_timestamp ( )
     {

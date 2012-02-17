@@ -78,6 +78,7 @@
         <name>created</name>
         <type>integer</type>
         <notnull>true</notnull>
+        <default>CURRENT_TIMESTAMP</default>
         <unsigned>true</unsigned>
         <length>10</length>
       </field>
