@@ -149,23 +149,23 @@ class OC_Shorty_Meta
       case 'state':
         switch ($identifier)
         {
-          case TRUE:  return OC_Helper::imagePath('apps/shorty', 'status/good.png');
-          case FALSE: return OC_Helper::imagePath('apps/shorty', 'status/bad.png');
-          default:    return OC_Helper::imagePath('apps/shorty', 'status/neutral.png');
+          case TRUE:  return OC_Helper::imagePath('shorty', 'status/good.png');
+          case FALSE: return OC_Helper::imagePath('shorty', 'status/bad.png');
+          default:    return OC_Helper::imagePath('shorty', 'status/neutral.png');
         } // switch identifier
       case 'scheme':
         switch ($identifier)
         {
           case 'http':
-          case 'https':   return OC_Helper::imagePath('apps/shorty', 'scheme/H.png');
+          case 'https':   return OC_Helper::imagePath('shorty', 'scheme/H.png');
           case 'ftp':
-          case 'ftps':    return OC_Helper::imagePath('apps/shorty', 'scheme/F.png');
-          case 'sftp':    return OC_Helper::imagePath('apps/shorty', 'scheme/S.png');
-          case 'mailto':  return OC_Helper::imagePath('apps/shorty', 'scheme/M.png');
-          case 'gopher':  return OC_Helper::imagePath('apps/shorty', 'scheme/G.png');
+          case 'ftps':    return OC_Helper::imagePath('shorty', 'scheme/F.png');
+          case 'sftp':    return OC_Helper::imagePath('shorty', 'scheme/S.png');
+          case 'mailto':  return OC_Helper::imagePath('shorty', 'scheme/M.png');
+          case 'gopher':  return OC_Helper::imagePath('shorty', 'scheme/G.png');
           case 'webdav':
-          case 'webdavs': return OC_Helper::imagePath('apps/shorty', 'scheme/W.png');
-          default:        return OC_Helper::imagePath('apps/shorty', 'blank.png');
+          case 'webdavs': return OC_Helper::imagePath('shorty', 'scheme/W.png');
+          default:        return OC_Helper::imagePath('shorty', 'blank.png');
         } // switch identifier
       case 'mimetype':
         $identifier = explode('/',$identifier);
@@ -178,9 +178,9 @@ class OC_Shorty_Meta
             switch ($identifier[1])
             {
               case 'pdf':     return OC_Helper::imagePath('core', 'filetypes/application-pdf.png');
-              default:        return OC_Helper::imagePath('apps/shorty', 'blank.png');
+              default:        return OC_Helper::imagePath('shorty', 'blank.png');
             } // switch identifier[1]
-          default:            return OC_Helper::imagePath('apps/shorty', 'blank.png');
+          default:            return OC_Helper::imagePath('shorty', 'blank.png');
         } // switch identifier[0]
     } // switch aspect
   } // function selectIcon

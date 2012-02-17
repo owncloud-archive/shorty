@@ -22,7 +22,7 @@
 */
 ?>
 
-<div class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('apps/shorty', 'loading-disk.gif'); ?>" style="padding-top:100px;padding-left:200px"></div>
+<div class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>" style="padding-top:100px;padding-left:200px"></div>
 
 <!-- the placeholder (if list of urls is empty) -->
 <div id="list-empty" class="shorty-label" style="display:none">
