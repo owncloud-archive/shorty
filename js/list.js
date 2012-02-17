@@ -26,13 +26,14 @@ $(document).ready
   {
     // basic action buttons
     $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
-    $('#controls').find('#add').bind('click',function(){Shorty.WUI.toggleDialog($('#dialog-add'))});
+    $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
     // add date picker to 'valid until' fields
     $( ".datepicker" ).datepicker({dateFormat :'dd-mm-yy'});
     // initialize desktop
-    $.when(Shorty.WUI.toggleControls()).then(
-      Shorty.WUI.sumsFill(),
-      Shorty.WUI.listBuild()
+    $.when(Shorty.WUI.Controls.init()).then(
+      function(){
+        Shorty.WUI.List.build();
+      }
     );
   }
 ); // document.ready
