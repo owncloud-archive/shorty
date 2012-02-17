@@ -36,6 +36,7 @@ $(document).ready
             $.when(Shorty.WUI.Dialog.toggle(dialog)).then(
               function(){
                 var target=decodeURIComponent(window.location.search.substring(1));
+                target=target||document.referrer;
                 dialog.find('#target').val(target);
                 dialog.find('#title').focus();
                 Shorty.WUI.Meta.collect(dialog);
