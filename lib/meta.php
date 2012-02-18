@@ -50,7 +50,6 @@ class OC_Shorty_Meta
     curl_setopt ( $handle, CURLOPT_RETURNTRANSFER, 1 );
     curl_setopt ( $handle, CURLOPT_FOLLOWLOCATION, TRUE );
     curl_setopt ( $handle, CURLOPT_MAXREDIRS, 10 );
-//    $page = self::curl_exec_and_follow ( $handle );
     if ( FALSE!==($page=curl_exec($handle)) )
     {
       // try to extract title from page
@@ -58,8 +57,8 @@ class OC_Shorty_Meta
       $meta['title']    = htmlspecialchars_decode ( $match[1] );
       $meta['staticon'] = self::selectIcon ( 'state', TRUE );
       // try to extract favicon from page
-      preg_match ( "/<head>.*<link rel=\"shortcut.*\".*href=\"(.*)\".*<\/head>/si", $page, $match );
-      $meta['favicon']     = htmlspecialchars_decode ( $match[1] );
+      preg_match ( '/<[^>]*link[^>]*(rel="icon"|rel="shortcut icon") .*href="([^>]*)".*>/iU', $page, $match );
+      $meta['favicon']     = htmlspecialchars_decode ( $match[2] );
       $meta['final']       = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
       $meta['mimetype']    = preg_filter ( '/^([^;]+)$/i', '$0', curl_getinfo($handle,CURLINFO_CONTENT_TYPE) );
       $meta['mimicon']     = self::selectIcon ( 'mimetype', $meta['mimetype'] );
