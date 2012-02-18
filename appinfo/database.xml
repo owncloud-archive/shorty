@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <!--
 * ownCloud shorty plugin, a URL shortener
 *
@@ -19,8 +20,6 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 -->
-
-<?xml version="1.0" encoding="ISO-8859-1" ?>
 <database>
   <name>*dbname*</name>
   <create>true</create>

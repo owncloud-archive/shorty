@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <!--
 * ownCloud shorty plugin, a URL shortener
 *
@@ -19,11 +20,9 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 -->
-
-<?xml version="1.0"?>
 <info>
 	<id>shorty</id>
-	<name>Short URLs</name>
+	<name>Shorty</name>
 	<description>URL shortener for ownCloud</description>
 	<version>0.1</version>
 	<licence>AGPL</licence>
