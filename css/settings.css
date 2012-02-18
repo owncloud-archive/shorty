@@ -1,0 +1,39 @@
+#shorty #shortlet {
+  margin: 0.4em 0.2em;
+  outline: medium none;
+  padding: 0.3em 0.5em 0.3em;
+  background-color: lightgray;
+  background-image: -moz-linear-gradient(center bottom , #EEEEEE 0%, white 50%);
+  border: 1px solid #DDDDDD;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  box-shadow: 0 1px 1px #FFFFFF, 0 1px 0 #BBBBBB inset;
+}
+
+#shorty label {
+  display: inline-block;
+  width: 6em;
+  margin: 0 0 0.4em;
+}
+
+#shorty select {
+  background: none repeat scroll 0 0 #F8F8F8;
+  color: #555555;
+}
+
+#shorty .explain {
+  font-style: italic;
+  margin: 0.3em;
+}
+
+#shorty .example {
+  font-family: fixed;
+  margin: 0.3em;
+}
+
+#shorty #title {
+  margin-bottom: 0.6em;
+}
+
+#shorty #backend-base {
+  width: 20em;
+}

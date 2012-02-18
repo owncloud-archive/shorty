@@ -1,4 +1,3 @@
-<?php
 /**
 * ownCloud shorty plugin, a URL shortener
 *
@@ -21,14 +20,19 @@
 *
 */
 
-OC_Util::addStyle  ( 'shorty', 'settings' );
-OC_Util::addScript ( 'shorty', 'settings' );
-
-OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
-OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
-
-if ( 'admin' == OC_App::getActiveNavigationEntry() )
-     $tmpl = new OC_Template ( 'shorty', 'tmpl_settings_admin' );
-else $tmpl = new OC_Template ( 'shorty', 'tmpl_settings_personal' );
-return $tmpl->fetchPage ( );
-?>
+$(document).ready(
+  function(){
+    // backend settings, activate hints for currently selected backend
+    $('#shorty').find('.explain').filter('#'+$('#shorty').find('#backend-type').val()).toggle();
+    $('#shorty').find('.example').filter('#'+$('#shorty').find('#backend-type').val()).toggle();
+    // show matching hint when backend selection is changed
+    $('#shorty').find('#backend-type').change(
+      function(){
+        $('#shorty').find('.explain').hide();
+        $('#shorty').find('.example').hide();
+        $('#shorty').find('.explain').filter('#'+$('#shorty').find('#backend-type').val()).fadeIn('slow');
+        $('#shorty').find('.example').filter('#'+$('#shorty').find('#backend-type').val()).fadeIn('slow');
+      }
+    );
+  }
+);

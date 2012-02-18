@@ -27,7 +27,7 @@ require_once ( '../../lib/base.php' );
 OC_Util::checkLoggedIn ( );
 OC_Util::checkAppEnabled ( 'shorty' );
 
-OC_App::setActiveNavigationEntry ( 'shorty_index' );
+OC_App::setActiveNavigationEntry ( 'shorty_add' );
 
 OC_Util::addScript ( 'shorty', 'debug' );
 OC_Util::addScript ( 'shorty', 'add' );
