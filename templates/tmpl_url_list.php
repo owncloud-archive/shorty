@@ -22,14 +22,28 @@
 */
 ?>
 
-<div class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>" style="padding-top:100px;padding-left:200px"></div>
+<div class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>" style=""></div>
 
 <!-- the placeholder (if list of urls is empty) -->
-<div id="list-empty" class="shorty-label" style="display:none">
-  <?php echo OC_Shorty_L10n::t('The list of urls is currently empty.') ?>
-</div>
+<table id="list-empty" class="shorty-list" style="display:none;">
+  <thead>
+    <tr>
+      <th id="headerFavicon"><?php echo OC_Shorty_L10n::t('') ?></th>
+      <th id="headerTitle"  ><?php echo OC_Shorty_L10n::t('Title') ?></th>
+      <th id="headerTarget" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
+      <th id="headerClicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
+      <th id="headerUntil"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
+      <th id="headerAction" ><?php echo OC_Shorty_L10n::t('Actions') ?></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="7" class="shorty-label" style="font-style:italic;text-align:center;"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></td>
+    </tr>
+  </tbody>
+</table>
 <!-- the list of urls -->
-<table id="list-nonempty" class="shorty-list" style="display:none">
+<table id="list-nonempty" class="shorty-list" style="display:none;">
   <thead>
     <tr>
       <th id="headerFavicon"><?php echo OC_Shorty_L10n::t('') ?></th>
