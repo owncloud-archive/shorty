@@ -26,31 +26,114 @@
   <fieldset class="personalblock">
     <div id="title"><strong>Shorty</strong></div>
     <div id="settings">
-      <label for="backend" class="bold"><?php echo $l->t('Backend');?>:</label>
-      <select id="backend-type" class="chzen-select" name="type" data-placeholder="<?php echo $l->t('Choose a type...');?>">
+      <label for="backend-type"><?php echo $l->t('Backend');?></label>
+      <select id="backend-type" name="backend-type" data-placeholder="<?php echo $l->t('Choose service...'); ?>">
+        <option value=""></option>
         <option value="none"> [ none ] </option>
-        <option value="static">- static -</option>
-        <option value="kickto">kick.to</option>
+        <option value="static">static backend</option>
+        <option value="google">google service</option>
+        <option value="tinyurl">tinyURL service</option>
+        <option value="isgd">is.gd service</option>
+        <option value="bitly">bitly.com service</option>
       </select>
-      <input id="backend-base" class="chzen-input" type="text" value="" maxsize="256" data-placeholder="<?php echo $l->t('Specify a backend base...');?>">
-      <br/>
-      <label for="backend-hint"> </label>
-      <span id="backend-hint"><?php echo $l->t('Explanation:');?>
-      <span id="none"   class="explain" style="display:none;"><?php echo $l->t('Don\'t use a backend, simply generate links to ownClouds shorty module.');?></span>
-      <span id="static" class="explain" style="display:none;"><?php echo $l->t('Static, rule-based backend, generate links relative to a given external url.');?></span>
-      <span id="kickto" class="explain" style="display:none;"><?php echo $l->t('Use "kick.to" service, register a short link for each generated shorty.');?></span>
+      <span id="backend-none" class="backend-supplement" style="display:none;">
+        <br/>
+        <label for="backend-explain"> </label>
+        <span id="backend-explain">
+          <label for="explain"><?php echo $l->t('Explanation:');?></label>
+          <span id="explain" class="explain"><?php echo $l->t('Don\'t use a backend, simply generate links to ownClouds shorty module.');?></span>
+          <br/>
+        </span>
+        <label for="backend-example"> </label>
+        <span id="backend-example">
+          <label for="example"><?php echo $l->t('Example:');?></label>
+          <span id="example" class="example"><?php echo sprintf('http://%s%s<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME'],OC_Helper::linkTo('shorty','',false)) ?></span>
+        </span>
       </span>
-      <br/>
-      <label for="backend-example"> </label>
-      <span id="backend-example"><?php echo $l->t('Example:');?>
-        <span id="none"   class="example" style="display:none;">
-          <?php echo sprintf('http://%s%s<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME'],OC_Helper::linkTo('shorty','',false)) ?>
+      <span id="backend-static" class="backend-supplement" style="display:none;">
+        <label for="backend-base"><?php echo $l->t('Base url:');?></label>
+        <input id="backend-base" type="text" value="" maxsize="256" data-placeholder="<?php echo $l->t('Specify a backend base...');?>">
+        <br/>
+        <label for="backend-explain"> </label>
+        <span id="backend-explain">
+          <label for="explain"><?php echo $l->t('Explanation:');?></label>
+          <span id="explain" class="explain"><?php echo $l->t('Static, rule-based backend, generate links relative to a given external url.');?></span>
+          <br/>
         </span>
-        <span id="static" class="example" style="display:none;">
-          <?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME']) ?>
+        <label for="backend-example"> </label>
+        <span id="backend-example">
+          <label for="example"><?php echo $l->t('Example:');?></label>
+          <span id="example" class="example"><?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME']) ?></span>
         </span>
-        <span id="kickto" class="example" style="display:none;">
-          <?php echo sprintf('http://kick.to/<em>&lt;key&gt;</em>') ?>
+      </span>
+      <span id="backend-google" class="backend-supplement" style="display:none;">
+        <br/>
+        <label for="backend-explain"> </label>
+        <span id="backend-explain">
+          <label for="explain"><?php echo $l->t('Explanation:');?></label>
+          <span id="explain" class="explain"><?php echo $l->t('Use "google" service and register a short url for each generated shorty.');?></span>
+          <br/>
+        </span>
+        <label for="backend-example"> </label>
+        <span id="backend-example">
+          <label for="example"><?php echo $l->t('Example:');?></label>
+          <span id="example" class="example"><?php echo sprintf('http://goo.gl/<em>&lt;key&gt;</em>') ?></span>
+        </span>
+      </span>
+      <span id="backend-tinyurl" class="backend-supplement" style="display:none;">
+        <br/>
+        <label for="backend-explain"> </label>
+        <span id="backend-explain">
+          <label for="explain"><?php echo $l->t('Explanation:');?></label>
+          <span id="explain" class="explain"><?php echo $l->t('Use "tinyURL" service to register a short url for each generated shorty.');?></span>
+          <br/>
+        </span>
+        <label for="backend-example"> </label>
+        <span id="backend-example">
+          <label for="example"><?php echo $l->t('Example:');?></label>
+          <span id="example" class="example"><?php echo sprintf('http://tinyurl.com/<em>&lt;key&gt;</em>') ?></span>
+        </span>
+      </span>
+      <span id="backend-isgd" class="backend-supplement" style="display:none;">
+        <br/>
+        <label for="backend-explain"> </label>
+        <span id="backend-explain">
+          <label for="explain"><?php echo $l->t('Explanation:');?></label>
+          <span id="explain" class="explain"><?php echo $l->t('Use "is.gd" service to register a short url for each generated shorty.');?></span>
+          <br/>
+        </span>
+        <label for="backend-example"> </label>
+        <span id="backend-example">
+          <label for="example"><?php echo $l->t('Example:');?></label>
+          <span id="example" class="example"><?php echo sprintf('http://is.gd/<em>&lt;key&gt;</em>') ?></span>
+        </span>
+      </span>
+      <span id="backend-turl" class="backend-supplement" style="display:none;">
+        <br/>
+        <label for="backend-explain"> </label>
+        <span id="backend-explain">
+          <label for="explain"><?php echo $l->t('Explanation:');?></label>
+          <span id="explain" class="explain"><?php echo $l->t('Use "turl" service to register a short url for each generated shorty.');?></span>
+          <br/>
+        </span>
+        <label for="backend-example"> </label>
+        <span id="backend-example">
+          <label for="example"><?php echo $l->t('Example:');?></label>
+          <span id="example" class="example"><?php echo sprintf('http://turl.ca/<em>&lt;key&gt;</em>') ?></span>
+        </span>
+      </span>
+      <span id="backend-bitly" class="backend-supplement" style="display:none;">
+        <br/>
+        <label for="backend-explain"> </label>
+        <span id="backend-explain">
+          <label for="explain"><?php echo $l->t('Explanation:');?></label>
+          <span id="explain" class="explain"><?php echo $l->t('Use "bitly.com" service to register a short url for each generated shorty.');?></span>
+          <br/>
+        </span>
+        <label for="backend-example"> </label>
+        <span id="backend-example">
+          <label for="example"><?php echo $l->t('Example:');?></label>
+          <span id="example" class="example"><?php echo sprintf('http://bitly.com/<em>&lt;key&gt;</em>') ?></span>
         </span>
       </span>
     </div>

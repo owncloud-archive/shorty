@@ -11,13 +11,9 @@
 
 #shorty label {
   display: inline-block;
+  font-weight: bold;
   width: 6em;
-  margin: 0 0 0.4em;
-}
-
-#shorty select {
-  background: none repeat scroll 0 0 #F8F8F8;
-  color: #555555;
+  margin: 0 0.2em 0.4em;
 }
 
 #shorty .explain {
@@ -35,5 +31,5 @@
 }
 
 #shorty #backend-base {
-  width: 20em;
+  width: 20em
 }

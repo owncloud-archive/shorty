@@ -23,15 +23,18 @@
 $(document).ready(
   function(){
     // backend settings, activate hints for currently selected backend
-    $('#shorty').find('.explain').filter('#'+$('#shorty').find('#backend-type').val()).toggle();
-    $('#shorty').find('.example').filter('#'+$('#shorty').find('#backend-type').val()).toggle();
-    // show matching hint when backend selection is changed
-    $('#shorty').find('#backend-type').change(
+    var type=$('#shorty').find('#backend-type').val()||'';
+    if (type.length){
+      $('#shorty').find('#backend-'+type).show();
+    }
+    // react with a matching explanation and example url when backend type is chosen
+    $('#shorty').find('#backend-type').chosen().change(
       function(){
-        $('#shorty').find('.explain').hide();
-        $('#shorty').find('.example').hide();
-        $('#shorty').find('.explain').filter('#'+$('#shorty').find('#backend-type').val()).fadeIn('slow');
-        $('#shorty').find('.example').filter('#'+$('#shorty').find('#backend-type').val()).fadeIn('slow');
+        var type=$('#shorty').find('#backend-type').val();
+        if (type.length){
+          $('#shorty').find('.backend-supplement').hide();
+          $('#shorty').find('.backend-supplement').filter('#backend-'+type).fadeIn('slow');
+        }
       }
     );
   }
