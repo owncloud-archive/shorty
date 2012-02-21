@@ -21,14 +21,14 @@
 *
 */
 
-OC_Util::addStyle  ( 'shorty', 'settings' );
-OC_Util::addScript ( 'shorty', 'settings' );
+OC_Util::addStyle  ( 'shorty', 'personal' );
+//OC_Util::addScript ( 'shorty', 'personal' );
 
 OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 
-if ( 'admin' == OC_App::getActiveNavigationEntry() )
-     $tmpl = new OC_Template ( 'shorty', 'tmpl_settings_admin' );
-else $tmpl = new OC_Template ( 'shorty', 'tmpl_settings_personal' );
+// fetch template
+$tmpl = new OC_Template ( 'shorty', 'tmpl_personal' );
+// render template
 return $tmpl->fetchPage ( );
 ?>

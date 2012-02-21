@@ -27,14 +27,37 @@ $(document).ready(
     if (type.length){
       $('#shorty').find('#backend-'+type).show();
     }
+    // initialize example that depends on backend-base
+    if ($('#shorty').find('#backend-base').val().length)
+      $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-base').val()+'<shorty key>');
     // react with a matching explanation and example url when backend type is chosen
     $('#shorty').find('#backend-type').chosen().change(
       function(){
         var type=$('#shorty').find('#backend-type').val();
+        $('#shorty').find('.backend-supplement').hide();
         if (type.length){
-          $('#shorty').find('.backend-supplement').hide();
           $('#shorty').find('.backend-supplement').filter('#backend-'+type).fadeIn('slow');
+          // save setting
+          $.get( OC.filePath('shorty', 'ajax', 'settings.php'),
+                 $('#shorty').find('#backend-type').serialize(),
+                 function(data){
+                   //OC.msg.finishedSaving('#shorty .msg', data);
+                 });
+          return false;
         }
+      }
+    );
+    $('#shorty').find('#backend-base').bind('input',function(){
+        $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-base').val()+'<shorty key>');
+      });
+    $('#shorty').find('#backend-base').focusout(function(){
+        // save setting
+        $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-base').val()+'<shorty key>');
+        $.get( OC.filePath('shorty', 'ajax', 'settings.php'),
+               $('#shorty').find('#backend-base').serialize(),
+               function(data){
+                 //OC.msg.finishedSaving('#shorty .msg', data);
+               });
       }
     );
   }

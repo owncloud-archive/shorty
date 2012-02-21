@@ -9,27 +9,10 @@
   box-shadow: 0 1px 1px #FFFFFF, 0 1px 0 #BBBBBB inset;
 }
 
-#shorty label {
+#shorty .aspect {
   display: inline-block;
   font-weight: bold;
   width: 6em;
-  margin: 0 0.2em 0.4em;
+  margin: 0 0.2em 0.4em 0;
 }
 
-#shorty .explain {
-  font-style: italic;
-  margin: 0.3em;
-}
-
-#shorty .example {
-  font-family: fixed;
-  margin: 0.3em;
-}
-
-#shorty #title {
-  margin-bottom: 0.6em;
-}
-
-#shorty #backend-base {
-  width: 20em
-}

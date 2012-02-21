@@ -1,0 +1,20 @@
+#shorty .aspect {
+  display: inline-block;
+  font-weight: bold;
+  width: 6em;
+  margin: 0 0.2em 0.4em;
+}
+
+#shorty .explain {
+  font-style: italic;
+  margin: 0.3em;
+}
+
+#shorty .example {
+  font-family: fixed;
+  margin: 0.3em;
+}
+
+#shorty .title {
+  margin-bottom: 0.6em;
+}
