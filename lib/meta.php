@@ -58,7 +58,8 @@ class OC_Shorty_Meta
       $meta['staticon'] = self::selectIcon ( 'state', TRUE );
       // try to extract favicon from page
       preg_match ( '/<[^>]*link[^>]*(rel="icon"|rel="shortcut icon") .*href="([^>]*)".*>/iU', $page, $match );
-      $meta['favicon']     = htmlspecialchars_decode ( $match[2] );
+      if (1<sizeof($match))
+        $meta['favicon']     = htmlspecialchars_decode ( $match[2] );
       $meta['final']       = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
       $meta['mimetype']    = preg_filter ( '/^([^;]+)$/i', '$0', curl_getinfo($handle,CURLINFO_CONTENT_TYPE) );
       $meta['mimicon']     = self::selectIcon ( 'mimetype', $meta['mimetype'] );
