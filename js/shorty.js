@@ -558,9 +558,9 @@ Shorty =
               url:     'ajax/add.php',
               cache:   false,
               data:    { target: encodeURIComponent(target),
-                        title:  encodeURIComponent(title),
-                        notes:  encodeURIComponent(notes),
-                        until:  encodeURIComponent(until) },
+                         title:  encodeURIComponent(title),
+                         notes:  encodeURIComponent(notes),
+                         until:  encodeURIComponent(until) },
               error:function(){if (Shorty.Debug) Shorty.Debug.log(this.data);},
               success: function(response)
               {
