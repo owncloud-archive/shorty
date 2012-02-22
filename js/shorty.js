@@ -158,7 +158,10 @@ Shorty =
           // start sequence by hiding the desktop first
           $.when(Shorty.WUI.Desktop.hide()).then(
             function(){
+              // wipe (reset) dialog
               Shorty.WUI.Dialog.reset(dialog);
+              // show dialog
+              $.when(dialog.slideDown(duration)).then(dfd.resolve);
               // initialize dialog
               switch(dialog.attr('id'))
               {
@@ -170,8 +173,6 @@ Shorty =
                 default:
                   dialog.find('#title').focus();
               } // switch
-              // show dialog
-              $.when(dialog.slideDown(duration)).then(dfd.resolve);
             } // function
           );
         }
