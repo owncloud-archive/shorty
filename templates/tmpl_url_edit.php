@@ -27,13 +27,13 @@
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Modify shorty:'); ?></legend>
     <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
-    <input id="key" type="text" readonly data="" class="" />
+    <input id="key" name="key" type="text" readonly data="" class="" />
     <br>
     <label for="source"><?php echo OC_Shorty_L10n::t('Shorty (url):'); ?></label>
-    <input id="source" type="text" readonly data="" class="" />
+    <input id="source" name="source" type="text" readonly data="" class="" />
     <br>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
-    <input id="target" type="text" readonly data="" class="" />
+    <input id="target" name="target" type="text" readonly data="" class="" />
     <br>
     <label for="meta">&nbsp;</label>
     <span id="meta">
@@ -45,22 +45,23 @@
     </span>
     <br>
     <label for="title"><?php echo OC_Shorty_L10n::t('Local title:'); ?></label>
-    <input id="title" type="text" maxsize="80" data="" class="" />
+    <input id="title" name="title" type="text" maxsize="80" data="" class="" />
     <br>
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
-    <input id="until" type="text" maxsize="10" data="" class="datepicker" style="width:30%" icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
+    <input id="until" name="until" type="text" maxsize="10" data="" class="datepicker" style="width:30%"
+           icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     <br>
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
-    <textarea id="notes" maxsize="4096" data="" class=""></textarea>
+    <textarea id="notes" name="notes" maxsize="4096" data="" class=""></textarea>
     <br>
     <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
-    <input id="clicks" type="text" readonly data="" class="" />
+    <input id="clicks" name="clicks" type="text" readonly data="" class="" />
     <br>
     <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
-    <input id="created" type="text" readonly data="" class="" />
+    <input id="created" name="created" type="text" readonly data="" class="" />
     <br>
     <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
-    <input id="accessed" type="text" readonly data="" class="" />
+    <input id="accessed" name="accessed" type="text" readonly data="" class="" />
     <br>
     <label for="confirm"></label>
     <input type="submit" value="<?php echo OC_Shorty_L10n::t('Save as modified'); ?>" id="confirm" class="shorty-button-submit"/>
