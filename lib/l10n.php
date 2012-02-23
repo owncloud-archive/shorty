@@ -30,7 +30,7 @@ class OC_Shorty_L10n
 {
   private $dictionary;
   static private $instance=NULL;
-  private function __construct ( ) { $this->dictionary = new OC_L10n('wiki'); }
+  private function __construct ( ) { $this->dictionary = new OC_L10n('shorty'); }
 /*
   static public function t ( $phrase, $param=array() )
   {

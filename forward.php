@@ -51,7 +51,7 @@ try
     $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
     $query->execute ( $param );
   } // if key
-} catch ( OC_Wiki_Exception $e ) { header($e->getMessage()); }
+} catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
 
 // http forwarding header
 header ( sprintf('Location: %s', $target) );
