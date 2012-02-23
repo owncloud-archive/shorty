@@ -38,5 +38,5 @@ try
 {
   $tmpl = new OC_Template( 'shorty', 'tmpl_index', 'user' );
   $tmpl->printPage();
-} catch ( OC_Wiki_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
+} catch ( OC_Shorty_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
 ?>
