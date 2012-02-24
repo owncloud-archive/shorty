@@ -145,7 +145,7 @@ Shorty =
         }; // switch
         return dfd.promise();
       }, // Shorty.WUI.Dialog.submit
-      // ===== Shorty.WUI.Dialog.toggle =====
+      // ===== Shorty.WUI.Dialog.show =====
       show: function(dialog)
       {
         var duration = 'slow';
@@ -195,7 +195,7 @@ Shorty =
         );
         return dfd.promise();
       }, // Shorty.WUI.Dialog.hide
-      // ===== Shorty.WUI.Dialog.show =====
+      // ===== Shorty.WUI.Dialog.toggle =====
       toggle: function(dialog)
       {
         var dfd = new $.Deferred();
