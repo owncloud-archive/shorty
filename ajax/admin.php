@@ -21,20 +21,28 @@
 *
 */
 
+//no apps or filesystem
+$RUNTIME_NOSETUPFS = true;
+
+require_once ( '../../../lib/base.php' );
+
 // Check if we are a user
-OC_Util::checkAdminUser ( );
-OC_Util::checkAppEnabled ( 'shorty' );
+OC_JSON::checkAdminUser ( );
+OC_JSON::checkAppEnabled ( 'shorty' );
 
-OC_Util::addStyle  ( 'shorty', 'admin' );
-OC_Util::addScript ( 'shorty', 'admin' );
-
-OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
-OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
-
-// fetch template
-$tmpl = new OC_Template ( 'shorty', 'tmpl_admin' );
-// inflate template
-$tmpl->assign ( 'backend-static-base-system', OC_Appconfig::getValue('shorty','backend-static-base-system','') );
-// render template
-return $tmpl->fetchPage ( );
+try
+{
+  // detect settings
+  $data = array(
+    'backend-static-base-system' => OC_Shorty_Type::req_argument ( 'backend-static-base-system', OC_Shorty_Type::URL, FALSE ),
+  );
+  // eliminate settings not explicitly set
+  $data = array_diff ( $data, array(FALSE) );
+  // store settings
+  foreach ( $data as $key=>$val )
+    OC_Appconfig::setValue( 'shorty', $key, $val );
+  // a friendly reply, in case someone is interested
+  OC_JSON::success ( array ( 'data' => $data,
+                             'note' => OC_Shorty_L10n::t('Setting saved.') ) );
+} catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

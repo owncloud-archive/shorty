@@ -6,12 +6,13 @@
 }
 
 #shorty .explain {
+  display: inline-block;
   font-style: italic;
   margin: 0.3em;
 }
 
 #shorty .example {
-  font-family: fixed;
+  font-family: Monospace;
   margin: 0.3em;
 }
 

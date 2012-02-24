@@ -125,19 +125,19 @@ Shorty =
           case 'dialog-add':
             $.when(
               Shorty.WUI.Notification.hide(),
-              Shorty.Action.Url.add(Shorty.WUI.Dialog.toggle(dialog))
+              Shorty.Action.Url.add()
             ).then(dfd.resolve);
             break;
           case 'dialog-edit':
             $.when(
               Shorty.WUI.Notification.hide(),
-              Shorty.Action.Url.edit(Shorty.WUI.Dialog.toggle(dialog))
+              Shorty.Action.Url.edit()
             ).then(dfd.resolve);
             break;
           case 'dialog-del':
             $.when(
               Shorty.WUI.Notification.hide(),
-              Shorty.Action.Url.del(Shorty.WUI.Dialog.toggle(dialog))
+              Shorty.Action.Url.del()
             ).then(dfd.resolve);
             break;
           default:
@@ -146,53 +146,65 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Dialog.submit
       // ===== Shorty.WUI.Dialog.toggle =====
-      toggle: function(dialog)
+      show: function(dialog)
       {
         var duration = 'slow';
-        var easing   = 'swing';
+        var dfd = new $.Deferred();
+        if (dialog.is(':visible'))
+          return;
+        $.when(Shorty.WUI.Desktop.hide()).then(
+          function(){
+            // wipe (reset) dialog
+            Shorty.WUI.Dialog.reset(dialog);
+            // show dialog
+            $.when(dialog.slideDown(duration)).then(dfd.resolve);
+            // initialize dialog
+            switch(dialog.attr('id'))
+            {
+              case 'dialog-add':
+                dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){Shorty.WUI.Dialog.submit(event.data.dialog);} );
+                dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
+                dialog.find('#target').focus();
+                break;
+              default:
+                dialog.find('#title').focus();
+            } // switch
+          } // function
+        );
+        return dfd.promise();
+      }, // Shorty.WUI.Dialog.show
+      // ===== Shorty.WUI.Dialog.hide =====
+      hide: function(dialog)
+      {
+        var duration = 'slow';
+        var dfd = new $.Deferred();
+        if (!dialog.is(':visible'))
+        return;
+        $.when(dialog.slideUp(duration)).then(
+          function(){
+            switch ( dialog.attr('id') )
+            {
+              case 'dialog-add':
+                dialog.find('#confirm').unbind('click');
+                dialog.find('#target').unbind('focusout');
+                break;
+              default:
+            } // switch
+            $.when(Shorty.WUI.Desktop.show()).then(dfd.resolve);
+          }
+        );
+        return dfd.promise();
+      }, // Shorty.WUI.Dialog.hide
+      // ===== Shorty.WUI.Dialog.show =====
+      toggle: function(dialog)
+      {
         var dfd = new $.Deferred();
         Shorty.WUI.Notification.hide();
         // show or hide dialog
         if ( ! dialog.is(':visible'))
-        {
-          // start sequence by hiding the desktop first
-          $.when(Shorty.WUI.Desktop.hide()).then(
-            function(){
-              // wipe (reset) dialog
-              Shorty.WUI.Dialog.reset(dialog);
-              // show dialog
-              $.when(dialog.slideDown(duration)).then(dfd.resolve);
-              // initialize dialog
-              switch(dialog.attr('id'))
-              {
-                case 'dialog-add':
-                  dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){Shorty.WUI.Dialog.submit(event.data.dialog);} );
-                  dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
-                  dialog.find('#target').focus();
-                  break;
-                default:
-                  dialog.find('#title').focus();
-              } // switch
-            } // function
-          );
-        }
-        else
-        {
-          // hide dialog
-          $.when(dialog.slideUp(duration)).then(
-            function(){
-              switch ( dialog.attr('id') )
-              {
-                case 'dialog-add':
-                  dialog.find('#confirm').unbind('click');
-                  dialog.find('#target').unbind('focusout');
-                  break;
-                default:
-              } // switch
-              $.when(Shorty.WUI.Desktop.show()).then(dfd.resolve);
-            }
-          );
-        }
+          $.when(Shorty.WUI.Dialog.show(dialog)).then(dfd.resolve);
+        else 
+          $.when(Shorty.WUI.Dialog.hide(dialog)).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Dialog.toggle
     }, // Shorty.WUI.Dialog
@@ -543,57 +555,57 @@ Shorty =
     Url:
     {
       // ===== Shorty.Action.Url.add =====
-      add:function(event,callback)
+      add:function()
       {
         var dfd = new $.Deferred();
-        var target = $('#dialog-add').find('#target').val() || '';
-        var title  = $('#dialog-add').find('#title').val()  || '';
-        var notes  = $('#dialog-add').find('#notes').val()  || '';
-        var until  = $('#dialog-add').find('#until').val()  || '';
+        var dialog = $('#dialog-add');
+        var target = dialog.find('#target').val() || '';
+        var title  = dialog.find('#title').val()  || '';
+        var notes  = dialog.find('#notes').val()  || '';
+        var until  = dialog.find('#until').val()  || '';
         $.when(
           Shorty.WUI.Notification.hide(),
-          $.ajax
-          (
+          $.ajax(
+          {
+            url:     'ajax/add.php',
+            cache:   false,
+            data:    { target: encodeURIComponent(target),
+                       title:  encodeURIComponent(title),
+                       notes:  encodeURIComponent(notes),
+                       until:  encodeURIComponent(until) },
+            error:   function(){if (!typeof Shorty.Debug==="undefined") Shorty.Debug.log(this.data);},
+            success: function(response)
             {
-              url:     'ajax/add.php',
-              cache:   false,
-              data:    { target: encodeURIComponent(target),
-                         title:  encodeURIComponent(title),
-                         notes:  encodeURIComponent(notes),
-                         until:  encodeURIComponent(until) },
-              error:function(){if (Shorty.Debug) Shorty.Debug.log(this.data);},
-              success: function(response)
+              if ( 'success'==response.status )
               {
-                if ( 'success'==response.status )
-                {
-                  Shorty.WUI.Notification.show(response,'info');
-                  // close and neutralize dialog
-                  if (callback) callback();
-                  $('#dialog-add').find('.shorty-input').val('');
-                  // add shorty to existing list
-                  var f_add_shorty = function(){Shorty.WUI.List.add([response.data],true);};
-                  Shorty.WUI.List.toggle(true,f_add_shorty);
-                } // if !error
-                else
-                {
-                  Shorty.WUI.Notification.show(response.note,'error');
-                }
-                $('#dialog-add').slideToggle();
+                // close and neutralize dialog
+                Shorty.WUI.Dialog.hide(dialog);
+                // show notification
+                Shorty.WUI.Notification.show(response,'info');
+                // add shorty to existing list
+                var f_add_shorty = function(){Shorty.WUI.List.add([response.data],true);};
+                //Shorty.WUI.List.toggle(true,f_add_shorty);
+              } // if !error
+              else
+              {
+                Shorty.WUI.Notification.show(response.note,'error');
               }
+              return true;
             }
-          )
+          })
         ).then(dfd.resolve);
-        return dfd.promise();
+        return dfd.promise;
       }, // ===== Shorty.Action.Url.add =====
       // ===== Shorty.Action.Url.edit =====
-      edit: function(event)
+      edit: function()
       {
         var dfd = new $.Deferred();
-        var key    = $('#shorty-add-key').val();
-        var source = $('#dialog-edit').find('#source').val();
-        var target = $('#dialog-edit').find('#target').val();
-        var notes  = $('#dialog-edit').find('#notes').val();
-        var until  = $('#dialog-edit').find('#until').val();
+        var dialog = $('#dialog-edit');
+        var key    = dialog.find('#key').val();
+        var source = dialog.find('#source').val();
+        var target = dialog.find('#target').val();
+        var notes  = dialog.find('#notes').val();
+        var until  = dialog.find('#until').val();
         $.when(
           Shorty.WUI.Notification.hide(),
           $.ajax
@@ -606,12 +618,12 @@ Shorty =
                         target: encodeURI(target),
                         notes:  encodeURI(notes),
                         until:  encodeURI(until) },
-              success: function()
+              success: function(data)
               {
-                $('.shorty-add').slideToggle();
-                $('.shorty-add').find('.shorty-input').val('');
-                $('#shorty-add-key').val('');
-
+                // close and neutralize dialog
+                Shorty.WUI.Dialog.hide(dialog);
+                // show notification
+                Shorty.WUI.Notification.show(response,'info');
                 var record = $('.shorty-single[data-key = "' + key + '"]');
                 record.children('.shorty-target:first').text(target);
 
@@ -626,10 +638,11 @@ Shorty =
         return dfd.promise();
       }, // ===== Shorty.Action.Url.edit =====
       // ===== Shorty.Action.Url.del =====
-      del: function(event)
+      del: function()
       {
         var dfd = new $.Deferred();
-        var record = $(this).parent().parent();
+        var dialog = $('#dialog-edit');
+        var key    = dialog.find('#key').val();
         $.when(
           Shorty.WUI.Notification.hide(),
           $.ajax
@@ -637,17 +650,27 @@ Shorty =
             {
               url:     'ajax/del.php',
               cache:   false,
-              data:    { url: encodeURI($(this).parent().parent().children('.shorty-url:first').text()) },
-              success: function(data){ record.animate({ opacity: 'hide' }, 'fast'); }
+              data:    { key: key },
+              success: function(data)
+              {
+                // close and neutralize dialog
+                Shorty.WUI.Dialog.hide(dialog);
+                // show notification
+                Shorty.WUI.Notification.show(response,'info');
+                // hide and remove deleted entry
+                // ...
+              }
             }
           )
         ).then(dfd.resolve);
         return dfd.promise();
       }, // ===== Shorty.Action.Url.del =====
       // ===== Shorty.Action.Url.show =====
-      show: function(event)
+      show: function()
       {
         var dfd = new $.Deferred();
+        var dialog = $('#dialog-edit');
+        var key    = dialog.find('#key').val();
         var record = $(this).parent().parent();
         $('#shorty-add-key').val(record.attr('data-key'));
         $('#shorty-add-source').val(record.children('.shorty-source:first').text());
@@ -667,29 +690,6 @@ Shorty =
         ).then(dfd.resolve);
         return dfd.promise();
       }, // ===== Shorty.Action.Url.show =====
-      // ===== Shorty.Action.Url.click =====
-      click: function(event)
-      {
-        var dfd = new $.Deferred();
-        $.when(
-          Shorty.WUI.Notification.hide(),
-          $.ajax
-          (
-            {
-              url:     'ajax/click.php',
-              cache:   false,
-              data:    { url: encodeURI($(this).attr('href')) },
-              success: function()
-              {
-                // increment total number of shortys and clicks (sums)
-                var label = $('#controls').find('#sum_clicks');
-                label.val(label.val()+1);
-              }
-            }
-          )
-        ).then(dfd.resolve);
-        return dfd.promise();
-      }, // ===== Shorty.Action.Url.click =====
     }, // ===== Shorty.Action.Url =====
   }, // Shorty.Action
 

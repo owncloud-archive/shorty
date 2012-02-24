@@ -21,14 +21,34 @@
 *
 */
 
+// Check if we are a user
+OC_Util::checkLoggedIn ( );
+OC_Util::checkAppEnabled ( 'shorty' );
+
 OC_Util::addStyle  ( 'shorty', 'personal' );
-//OC_Util::addScript ( 'shorty', 'personal' );
+OC_Util::addScript ( 'shorty', 'personal' );
 
 OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 
 // fetch template
 $tmpl = new OC_Template ( 'shorty', 'tmpl_personal' );
+// inflate template
+$tmpl->assign ( 'backend-types',
+                array (
+                  'none'    => ' [ none ] ',
+                  'static'  => 'static backend',
+                  'google'  => 'google service',
+                  'tinyurl' => 'tinyURL service',
+                  'isgd'    => 'is.gd service',
+                  'bitly'   => 'bitly.com service',
+                ));
+$tmpl->assign ( 'backend-static-base-system', OC_Appconfig::getValue('shorty','backend-static-base','') );
+$tmpl->assign ( 'backend-static-base',        OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-static-base','') );
+$tmpl->assign ( 'backend-google-key',         OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','') );
+$tmpl->assign ( 'backend-bitly-user',         OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-user','') );
+$tmpl->assign ( 'backend-bitly-key',          OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-key','') );
+$tmpl->assign ( 'backend-type',               OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') );
 // render template
 return $tmpl->fetchPage ( );
 ?>

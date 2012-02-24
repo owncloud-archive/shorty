@@ -22,42 +22,23 @@
 
 $(document).ready(
   function(){
-    // backend settings, activate hints for currently selected backend
-    var type=$('#shorty').find('#backend-type').val()||'';
-    if (type.length){
-      $('#shorty').find('#backend-'+type).show();
-    }
     // initialize example that depends on backend-base
-    if ($('#shorty').find('#backend-base').val().length)
-      $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-base').val()+'<shorty key>');
-    // react with a matching explanation and example url when backend type is chosen
-    $('#shorty').find('#backend-type').chosen().change(
-      function(){
-        var type=$('#shorty').find('#backend-type').val();
-        $('#shorty').find('.backend-supplement').hide();
-        if (type.length){
-          $('#shorty').find('.backend-supplement').filter('#backend-'+type).fadeIn('slow');
-          // save setting
-          $.get( OC.filePath('shorty', 'ajax', 'settings.php'),
-                 $('#shorty').find('#backend-type').serialize(),
-                 function(data){
-                   //OC.msg.finishedSaving('#shorty .msg', data);
-                 });
-          return false;
-        }
-      }
-    );
-    $('#shorty').find('#backend-base').bind('input',function(){
-        $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-base').val()+'<shorty key>');
-      });
-    $('#shorty').find('#backend-base').focusout(function(){
-        // save setting
-        $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-base').val()+'<shorty key>');
-        $.get( OC.filePath('shorty', 'ajax', 'settings.php'),
-               $('#shorty').find('#backend-base').serialize(),
-               function(data){
-                 //OC.msg.finishedSaving('#shorty .msg', data);
-               });
+    if ($('#shorty').find('#backend-static').find('#backend-static-base-system').val().length)
+      $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base-system').val()+'<shorty key>');
+    // modify example upon input of a base
+    $('#shorty').find('#backend-static').find('#backend-static-base-system').bind('input',function(){
+      $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base-system').val()+'<shorty key>');
+    });
+    // store setting
+    $('#shorty').find('#backend-static').find('#backend-static-base-system').focusout(function(){
+      // modify example
+      $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base-system').val()+'<shorty key>');
+      // save setting
+      $.get( OC.filePath('shorty','ajax','admin.php'),
+        $('#shorty').find('#backend-static').find('#backend-static-base-system').serialize(),
+        function(data){
+          //OC.msg.finishedSaving('#shorty .msg', data);
+        });
       }
     );
   }

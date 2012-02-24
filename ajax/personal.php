@@ -34,15 +34,19 @@ try
 {
   // detect settings
   $data = array(
-    'backend-type' => OC_Shorty_Type::req_argument('backend-type',OC_Shorty_Type::STRING,FALSE),
-    'backend-base' => OC_Shorty_Type::req_argument('backend-base',OC_Shorty_Type::URL,FALSE)
+    'backend-type'        => OC_Shorty_Type::req_argument ( 'backend-type',        OC_Shorty_Type::STRING, FALSE ),
+    'backend-static-base' => OC_Shorty_Type::req_argument ( 'backend-static-base', OC_Shorty_Type::URL,    FALSE ),
+    'backend-google-key'  => OC_Shorty_Type::req_argument ( 'backend-google-key',  OC_Shorty_Type::STRING, FALSE ),
+    'backend-bitly-user'  => OC_Shorty_Type::req_argument ( 'backend-bitly-user',  OC_Shorty_Type::STRING, FALSE ),
+    'backend-bitly-key'   => OC_Shorty_Type::req_argument ( 'backend-bitly-key',   OC_Shorty_Type::STRING, FALSE ),
   );
+  // eliminate settings not explicitly set
+  $data = array_diff ( $data, array(FALSE) );
   // store settings
-  if ( $data['backend-type'] )
-    OC_Appconfig::setValue( 'shorty', 'backend-type', $data['backend-type'] );
-  if ( $data['backend-base'] )
-    OC_Appconfig::setValue( 'shorty', 'backend-base', $data['backend-base'] );
+  foreach ( $data as $key=>$val )
+    OC_Preferences::setValue( OC_User::getUser(), 'shorty', $key, $val );
+  // a friendly reply, in case someone is interested
   OC_JSON::success ( array ( 'data' => $data,
-                             'note' => OC_Shorty_L10n::t('Setting saved.') ) );
+                             'note' => OC_Shorty_L10n::t('Preference saved.') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
