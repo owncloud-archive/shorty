@@ -22,7 +22,7 @@
 */
 ?>
 
-<div class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>" style=""></div>
+<div class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
 
 <!-- the placeholder (if list of urls is empty) -->
 <table id="list-empty" class="shorty-list" style="display:none;">
