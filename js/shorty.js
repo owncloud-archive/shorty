@@ -48,8 +48,7 @@ Shorty =
     Controls:
     {
       // ===== Shorty.WUI.Controls.init =====
-      init: function()
-      {
+      init: function(){
         var dfd = new $.Deferred();
         $.when(
           Shorty.WUI.Controls.toggle(),
@@ -58,22 +57,19 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Controls.init
       // ===== Shorty.WUI.Controls.toggle =====
-      toggle: function()
-      {
+      toggle: function(){
         var dfd = new $.Deferred();
         Shorty.WUI.Notification.hide();
         // show or hide dialog
         var controls = $('#controls');
-        if ( ! controls.is(':visible'))
-        {
+        if ( ! controls.is(':visible')){
           $.when(
             $.when(
               controls.slideDown('slow')
             ).then(Shorty.WUI.Sums.fill)
           ).then(dfd.resolve);
         }
-        else
-        {
+        else{
           $.when(
             controls.slideUp('fast')
           ).then(dfd.resolve);
@@ -85,16 +81,14 @@ Shorty =
     Desktop:
     {
       // ===== Shorty.WUI.Desktop.show =====
-      show: function(duration)
-      {
+      show: function(duration){
         duration = duration || 'slow';
         var dfd = new $.Deferred();
         $.when($('#desktop').fadeIn(duration)).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Desktop.show
       // ===== Shorty.WUI.Desktop.hide =====
-      hide: function(duration)
-      {
+      hide: function(duration){
         duration = duration || 'slow';
         var dfd = new $.Deferred();
         $.when($('#desktop').fadeOut(duration)).then(dfd.resolve);
@@ -105,8 +99,7 @@ Shorty =
     Dialog:
     {
       // ===== Shorty.WUI.Dialog.reset =====
-      reset: function(dialog)
-      {
+      reset: function(dialog){
         var dfd = new $.Deferred();
         // reset dialog fields
         $.when(
@@ -117,11 +110,9 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Dialog.reset
       // ===== Shorty.WUI.Dialog.submit =====
-      submit: function(dialog)
-      {
+      submit: function(dialog){
         var dfd = new $.Deferred();
-        switch ( dialog.attr('id') )
-        {
+        switch ( dialog.attr('id') ){
           case 'dialog-add':
             $.when(
               Shorty.WUI.Notification.hide(),
@@ -146,8 +137,7 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Dialog.submit
       // ===== Shorty.WUI.Dialog.show =====
-      show: function(dialog)
-      {
+      show: function(dialog){
         var duration = 'slow';
         var dfd = new $.Deferred();
         if (dialog.is(':visible'))
@@ -159,8 +149,7 @@ Shorty =
             // show dialog
             $.when(dialog.slideDown(duration)).then(function(){
               // initialize dialog
-              switch(dialog.attr('id'))
-              {
+              switch(dialog.attr('id')){
                 case 'dialog-add':
                   dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){Shorty.WUI.Dialog.submit(event.data.dialog);} );
                   dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
@@ -176,16 +165,14 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Dialog.show
       // ===== Shorty.WUI.Dialog.hide =====
-      hide: function(dialog)
-      {
+      hide: function(dialog){
         var duration = 'slow';
         var dfd = new $.Deferred();
         if (!dialog.is(':visible'))
         return;
         $.when(dialog.slideUp(duration)).then(
           function(){
-            switch ( dialog.attr('id') )
-            {
+            switch ( dialog.attr('id') ){
               case 'dialog-add':
                 dialog.find('#confirm').unbind('click');
                 dialog.find('#target').unbind('focusout');
@@ -198,8 +185,7 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Dialog.hide
       // ===== Shorty.WUI.Dialog.toggle =====
-      toggle: function(dialog)
-      {
+      toggle: function(dialog){
         var dfd = new $.Deferred();
         Shorty.WUI.Notification.hide();
         // show or hide dialog
@@ -213,17 +199,18 @@ Shorty =
     // Shorty.WUI.Hourglass
     Hourglass:
     {
-      toggle: function(show)
-      {
+      toggle: function(show){
         var dfd = new $.Deferred();
-        if (show)
+        if (show){
           $.when(
             $('#desktop').find('.shorty-hourglass').fadeIn('fast')
           ).then(dfd.resolve);
-        else
+        }
+        else{
           $.when(
             $('#desktop').find('.shorty-hourglass').fadeOut('slow')
           ).then(dfd.resolve);
+        }
         return dfd.promise();
       }, // Shorty.WUI.Hourglass.toggle
     }, // Shorty.WUI.Hourglass
@@ -231,19 +218,16 @@ Shorty =
     List:
     {
       // ===== Shorty.WUI.List.toggle =====
-      toggle: function(filled)
-      {
+      toggle: function(filled){
         var duration = 'slow';
         var dfd = new $.Deferred();
-        if (filled)
-        {
+        if (filled){
           $.when(
             $('#desktop').find('#list-empty').hide(),
             $('#desktop').find('#list-nonempty').fadeIn(duration)
           ).then(dfd.resolve);
         }
-        else
-        {
+        else{
           $.when(
             $('#desktop').find('#list-nonempty').hide(),
             $('#desktop').find('#list-empty').fadeIn(duration)
@@ -256,8 +240,7 @@ Shorty =
       {
         var dfd = new $.Deferred();
         // prepare loading
-        $.when
-        (
+        $.when(
           Shorty.WUI.Notification.hide(),
           Shorty.WUI.Hourglass.toggle(true),
           Shorty.WUI.List.get(function(list){
@@ -269,16 +252,13 @@ Shorty =
         return dfd.promise();
       }, // build
       // ===== Shorty.WUI.List.fill =====
-      fill: function(list,callback)
-      {
+      fill: function(list,callback){
         var dfd = new $.Deferred();
-        if ( ! list.length )
-        {
+        if ( ! list.length ){
           // list empty, show placeholder instead of empty table
           $.when(Shorty.WUI.List.toggle(false)).then(dfd.resolve);
         }
-        else
-        {
+        else{
           // list non-empty, fill and show table instead of placeholder
           // prevent clicks whilst loading the list
           $.when(
@@ -299,8 +279,7 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.fill
       // ===== Shorty.WUI.List.add =====
-      add: function(list,smooth)
-      {
+      add: function(list,smooth){
         smooth = smooth || true;
         var dfd = new $.Deferred();
         // clone dummy row from list: dummy is the only row with an empty id
@@ -329,38 +308,32 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.add
       // ===== Shorty.WUI.List.get =====
-      get: function(callback)
-      {
+      get: function(callback){
         var dfd = new $.Deferred();
   // ToDo Fixme: correct ids of filter variables
         var target = $('#list-filter-target').val() || '';
         var title  = $('#list-filter-title').val()  || '';
         $.when(
-          $.ajax
-          (
-            {
-              url:     'ajax/list.php',
-              cache:   false,
-              data:    { target: encodeURI(target), title: encodeURI(title) },
-              success: function(response)
-              {
-                var dfd = new $.Deferred();
-                if ( 'error'==response.status )
-                {
-                  Shorty.WUI.Notification.show(response.note,'debug');
-                }
-                else
-                {
-                  Shorty.WUI.Notification.show(response.note,'info');
-                  if (callback)
-                    $.when(
-                      callback(response.data)
-                    ).then(dfd.resolve);
-                } // if else
-                return dfd.promise();
+          $.ajax({
+            url:     'ajax/list.php',
+            cache:   false,
+            data:    { target: encodeURI(target), title: encodeURI(title) },
+            success: function(response){
+              var dfd = new $.Deferred();
+              if ( 'error'==response.status ){
+                Shorty.WUI.Notification.show(response.note,'debug');
               }
+              else{
+                Shorty.WUI.Notification.show(response.note,'info');
+                if (callback){
+                  $.when(
+                    callback(response.data)
+                  ).then(dfd.resolve);
+                }
+              } // if else
+              return dfd.promise();
             }
-          )
+          })
         ).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.get
@@ -369,8 +342,7 @@ Shorty =
     Notification:
     {
       // ===== Shorty.WUI.Notification.hide =====
-      hide: function()
-      {
+      hide: function(){
         var dfd = new $.Deferred();
         $.when(
           $('#notification').fadeOut('fast').text('')
@@ -378,18 +350,15 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Notification.hide
       // ===== Shorty.WUI.Notification.show =====
-      show: function(message,level)
-      {
+      show: function(message,level){
         level = level || 'info';
         var dfd = new $.Deferred();
         var duration = 'slow';
         var notification = $('#notification');
-        switch(level)
-        {
+        switch(level){
           case 'debug':
             // detect debug mode by checking, of function 'debug()' exists
-            if ( Shorty.debug )
-            {
+            if ( Shorty.debug ){
               Shorty.debug('Debug: '+message);
               $.when(
                 notification.fadeOut('fast'),
@@ -410,8 +379,7 @@ Shorty =
             ).then(dfd.resolve);
             break;
           default: // 'info'
-            if ( message.length )
-            {
+            if ( message.length ){
               if (Shorty.debug)
                 Shorty.debug('Info: '+message);
               $.when(
@@ -420,8 +388,7 @@ Shorty =
                 notification.fadeIn(duration)
               ).then(dfd.resolve);
             }
-            else
-            {
+            else{
               $.when(
                 notification.fadeOut('fast'),
                 notification.text('')
@@ -435,21 +402,18 @@ Shorty =
     Meta:
     {
       // ===== Shorty.WUI.Meta.collect =====
-      collect: function(dialog)
-      {
+      collect: function(dialog){
         var dfd = new $.Deferred();
         var target = $('#dialog-add').find('#target').val().trim();
         // don't bother getting active on empty input
-        if ( ! target.length )
-        {
+        if ( ! target.length ){
           dialog.find('#target').focus();
           dfd.resolve();
           return dfd.promise();
         }
         // fill in fallback protocol scheme 'http' if none is specified
         var regexp = /^[a-zA-Z0-9]+\:\//;
-        if ( ! regexp.test(target) )
-        {
+        if ( ! regexp.test(target) ){
           target = 'http://' + target;
           dialog.find('#target').val(target);
         }
@@ -471,31 +435,24 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Meta.collect
       // Shorty.WUI.Meta.get
-      get: function(target,callback)
-      {
+      get: function(target,callback){
         var dfd = new $.Deferred();
         $.when(
-          $.ajax
-          (
-            {
-              url:     'ajax/meta.php',
-              cache:   false,
-              data:    { target: encodeURIComponent(target) },
-              error:   function() { return ''; },
-              success: function(response)
-              {
-                if (Shorty.Debug) Shorty.Debug.log(response.note);
-                if ('success'==response.status)
-                {
-                  if (callback) callback(response.data);
-                }
-                else
-                {
-                  if (Shorty.Debug) Shorty.Debug.log(Shorty.Debug.dump(response.data));
-                }
+          $.ajax({
+            url:     'ajax/meta.php',
+            cache:   false,
+            data:    { target: encodeURIComponent(target) },
+            error:   function() { return ''; },
+            success: function(response){
+              if (Shorty.Debug) Shorty.Debug.log(response.note);
+              if ('success'==response.status){
+                if (callback) callback(response.data);
+              }
+              else{
+                if (Shorty.Debug) Shorty.Debug.log(Shorty.Debug.dump(response.data));
               }
             }
-          )
+          })
         ).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Meta.get
@@ -504,11 +461,9 @@ Shorty =
     Sums:
     {
       // ===== Shorty.WUI.Sums.fill =====
-      fill: function()
-      {
+      fill: function(){
         var dfd = new $.Deferred();
-        $.when
-        (
+        $.when(
           // update (set) sum values in the control bar
           Shorty.WUI.Sums.get(function(data){
             $('#controls').find('#sum_shortys').text(data.sum_shortys);
@@ -518,30 +473,23 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Sums.fill
       // ===== Shorty.WUI.Sums.get =====
-      get: function(callback)
-      {
+      get: function(callback){
         var dfd = new $.Deferred();
         $.when(
-          $.ajax
-          (
-            {
-              url:     'ajax/count.php',
-              cache:   false,
-              data:    {},
-              success: function(response)
-              {
-                if ( 'error'==response.status )
-                {
-                  Shorty.WUI.Notification.show(response.note,'debug');
-                }
-                else
-                {
-                  Shorty.WUI.Notification.show(response.note,'info');
-                  if (callback) callback(response.data);
-                } // if else
+          $.ajax({
+            url:     'ajax/count.php',
+            cache:   false,
+            data:    {},
+            success: function(response){
+              if ( 'error'==response.status ){
+                Shorty.WUI.Notification.show(response.note,'debug');
               }
+              else{
+                Shorty.WUI.Notification.show(response.note,'info');
+                if (callback) callback(response.data);
+              } // if else
             }
-          )
+          })
         ).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Sums.get
@@ -556,8 +504,7 @@ Shorty =
     Url:
     {
       // ===== Shorty.Action.Url.add =====
-      add:function()
-      {
+      add:function(){
         var dfd = new $.Deferred();
         var dialog = $('#dialog-add');
         var target = dialog.find('#target').val() || '';
@@ -566,8 +513,7 @@ Shorty =
         var until  = dialog.find('#until').val()  || '';
         $.when(
           Shorty.WUI.Notification.hide(),
-          $.ajax(
-          {
+          $.ajax({
             url:     'ajax/add.php',
             cache:   false,
             data:    { target: encodeURIComponent(target),
@@ -575,10 +521,8 @@ Shorty =
                        notes:  encodeURIComponent(notes),
                        until:  encodeURIComponent(until) },
             error:   function(){if (!typeof Shorty.Debug==="undefined") Shorty.Debug.log(this.data);},
-            success: function(response)
-            {
-              if ( 'success'==response.status )
-              {
+            success: function(response){
+              if ( 'success'==response.status ){
                 // close and neutralize dialog
                 Shorty.WUI.Dialog.hide(dialog);
                 // show notification
@@ -587,8 +531,7 @@ Shorty =
                 var f_add_shorty = function(){Shorty.WUI.List.add([response.data],true);};
                 //Shorty.WUI.List.toggle(true,f_add_shorty);
               } // if !error
-              else
-              {
+              else{
                 Shorty.WUI.Notification.show(response.note,'error');
               }
               return true;
@@ -598,8 +541,7 @@ Shorty =
         return dfd.promise;
       }, // ===== Shorty.Action.Url.add =====
       // ===== Shorty.Action.Url.edit =====
-      edit: function()
-      {
+      edit: function(){
         var dfd = new $.Deferred();
         var dialog = $('#dialog-edit');
         var key    = dialog.find('#key').val();
@@ -609,66 +551,56 @@ Shorty =
         var until  = dialog.find('#until').val();
         $.when(
           Shorty.WUI.Notification.hide(),
-          $.ajax
-          (
-            {
-              url:     'ajax/edit.php',
-              cache:   false,
-              data:    { key: key,
-                        source: encodeURI(source),
-                        target: encodeURI(target),
-                        notes:  encodeURI(notes),
-                        until:  encodeURI(until) },
-              success: function(data)
-              {
-                // close and neutralize dialog
-                Shorty.WUI.Dialog.hide(dialog);
-                // show notification
-                Shorty.WUI.Notification.show(response,'info');
-                var record = $('.shorty-single[data-key = "' + key + '"]');
-                record.children('.shorty-target:first').text(target);
+          $.ajax({
+            url:     'ajax/edit.php',
+            cache:   false,
+            data:    { key: key,
+                      source: encodeURI(source),
+                      target: encodeURI(target),
+                      notes:  encodeURI(notes),
+                      until:  encodeURI(until) },
+            success: function(data){
+              // close and neutralize dialog
+              Shorty.WUI.Dialog.hide(dialog);
+              // show notification
+              Shorty.WUI.Notification.show(response,'info');
+              var record = $('.shorty-single[data-key = "' + key + '"]');
+              record.children('.shorty-target:first').text(target);
 
-                var record_notes = record.children('.shorty-notes:first').children('a:first');
-                record_notes.attr('href', target);
-                record_notes.text(notes);
-                record.children('.shorty-until').html(until);
-              }
+              var record_notes = record.children('.shorty-notes:first').children('a:first');
+              record_notes.attr('href', target);
+              record_notes.text(notes);
+              record.children('.shorty-until').html(until);
             }
-          )
+          })
         ).then(dfd.resolve);
         return dfd.promise();
       }, // ===== Shorty.Action.Url.edit =====
       // ===== Shorty.Action.Url.del =====
-      del: function()
-      {
+      del: function(){
         var dfd = new $.Deferred();
         var dialog = $('#dialog-edit');
         var key    = dialog.find('#key').val();
         $.when(
           Shorty.WUI.Notification.hide(),
-          $.ajax
-          (
-            {
-              url:     'ajax/del.php',
-              cache:   false,
-              data:    { key: key },
-              success: function(data)
-              {
-                // close and neutralize dialog
-                Shorty.WUI.Dialog.hide(dialog);
-                // show notification
-                Shorty.WUI.Notification.show(response,'info');
-                // hide and remove deleted entry
-                // ...
-              }
+          $.ajax({
+            url:     'ajax/del.php',
+            cache:   false,
+            data:    { key: key },
+            success: function(data){
+              // close and neutralize dialog
+              Shorty.WUI.Dialog.hide(dialog);
+              // show notification
+              Shorty.WUI.Notification.show(response,'info');
+              // hide and remove deleted entry
+              // ...
             }
-          )
+          })
         ).then(dfd.resolve);
         return dfd.promise();
       }, // ===== Shorty.Action.Url.del =====
       // ===== Shorty.Action.Url.show =====
-      show: function()
-      {
+      show: function(){
         var dfd = new $.Deferred();
         var dialog = $('#dialog-edit');
         var key    = dialog.find('#key').val();
@@ -680,10 +612,8 @@ Shorty =
         $('#shorty-add-until').val(record.children('.shorty-until:first').text());
         $.when(
           Shorty.WUI.Notification.hide(),
-          function()
-          {
-            if ($('.shorty-add').css('display') == 'none')
-            {
+          function(){
+            if ($('.shorty-add').css('display') == 'none'){
               $('.shorty-add').slideToggle();
             }
           },
