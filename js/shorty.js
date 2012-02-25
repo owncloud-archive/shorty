@@ -157,18 +157,20 @@ Shorty =
             // wipe (reset) dialog
             Shorty.WUI.Dialog.reset(dialog);
             // show dialog
-            $.when(dialog.slideDown(duration)).then(dfd.resolve);
-            // initialize dialog
-            switch(dialog.attr('id'))
-            {
-              case 'dialog-add':
-                dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){Shorty.WUI.Dialog.submit(event.data.dialog);} );
-                dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
-                dialog.find('#target').focus();
-                break;
-              default:
-                dialog.find('#title').focus();
-            } // switch
+            $.when(dialog.slideDown(duration)).then(function(){
+              // initialize dialog
+              switch(dialog.attr('id'))
+              {
+                case 'dialog-add':
+                  dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){Shorty.WUI.Dialog.submit(event.data.dialog);} );
+                  dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
+                  dialog.find('#target').focus();
+                  break;
+                default:
+                  dialog.find('#title').focus();
+              } // switch
+              dfd.resolve();
+            });
           } // function
         );
         return dfd.promise();
@@ -235,18 +237,16 @@ Shorty =
         var dfd = new $.Deferred();
         if (filled)
         {
-          $.when
-          (
+          $.when(
             $('#desktop').find('#list-empty').hide(),
             $('#desktop').find('#list-nonempty').fadeIn(duration)
           ).then(dfd.resolve);
         }
         else
         {
-          $.when
-          (
-            $('#desktop').find('#list-empty').fadeIn(duration),
-            $('#desktop').find('#list-nonempty').hide()
+          $.when(
+            $('#desktop').find('#list-nonempty').hide(),
+            $('#desktop').find('#list-empty').fadeIn(duration)
           ).then(dfd.resolve);
         }
         return dfd.promise();
@@ -301,30 +301,31 @@ Shorty =
       // ===== Shorty.WUI.List.add =====
       add: function(list,smooth)
       {
-        var dfd = new $.Deferred();
         smooth = smooth || true;
+        var dfd = new $.Deferred();
         // clone dummy row from list: dummy is the only row with an empty id
         var dummy = $('.shorty-list tr').filter(function(){return (''==$(this).attr('id'));});
         var row, set;
-        // insert list elements (sets) one by one
-        for ( var i in list )
-        {
-          row = dummy.clone();
-          set = list[i];
-          // set row id to entry key
-          row.attr('id',set.key);
-          // enhance row with real set values
-          $.each(Array('key','source','target','clicks','created','accessed','until','notes'),
-            function(){
-              row.attr('data-'+this,set[this]);
-              $.each(row.find('td'),function(){$(this).text(set[$(this).attr('id')]);});
-            }
-          );
-          dummy.after(row);
-          if (smooth)
-              $.when(row.fadeIn('slow')).then(dfd.resolve);
-          else $.when(row.attr('style','visible')).then(dfd.resolve);
-        } // for
+        $.when(
+          // insert list elements (sets) one by one
+          $.each(list,function(i,set){
+            row = dummy.clone();
+            // set row id to entry key
+            row.attr('id',set.key);
+            // enhance row with real set values
+            $.each(Array('key','source','target','clicks','created','accessed','until','notes'),
+              function(){
+                row.attr('data-'+this,set[this]);
+                $.each(row.find('td'),function(){$(this).text(set[$(this).attr('id')]);});
+              }
+            );
+            dummy.after(row);
+            if (smooth)
+              row.slideDown('slow');
+            else
+              row.show();
+          }) // each
+        ).then (dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.add
       // ===== Shorty.WUI.List.get =====
@@ -453,8 +454,8 @@ Shorty =
           dialog.find('#target').val(target);
         }
         // query meta data from target
-        Shorty.WUI.Meta.get(target,function(meta)
-          {
+        $.when(
+          Shorty.WUI.Meta.get(target,function(meta){
             dialog.find('#meta').fadeTo ( 'fast', 0, function()
               {
                 dialog.find('#staticon').attr('src',meta.staticon);
@@ -465,8 +466,8 @@ Shorty =
                 dialog.find('#meta').fadeTo('fast',1);
               }
             );
-          }
-        );
+          })
+        ).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Meta.collect
       // Shorty.WUI.Meta.get
