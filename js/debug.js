@@ -20,29 +20,26 @@
 *
 */
 
-Shorty =
-{
-  Debug:
-  {
-    log: function(issue)
-    {
-      switch (typeof(issue))
-      {
-        case 'string': console.log(issue); break;
-        default:       console.log(dump(issue));
+Shorty = {
+  Debug:{
+    log: function(issue){
+      switch (typeof(issue)){
+        case 'string':
+          console.log(issue);
+          break;
+        default:
+          console.log(dump(issue));
       } // switch
     }, // Shorty.Debuglog()
 
-    dump: function(arr,level)
-    {
+    dump: function(arr,level){
       var dumped_text = "";
       if(!level) level = 0;
-
-      //The padding given at the beginning of the line.
+      // some padding given at the beginning of the line
       var level_padding = "";
       for(var j=0;j<level+1;j++) level_padding += "    ";
 
-      if(typeof(arr) == 'object') { //Array/Hashes/Objects
+      if(typeof(arr) == 'object') {
         for(var item in arr) {
           var value = arr[item];
 

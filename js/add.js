@@ -20,10 +20,8 @@
 *
 */
 
-$(document).ready
-(
-  function()
-  {
+$(document).ready(
+  function(){
     // basic action buttons
     $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
     $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});

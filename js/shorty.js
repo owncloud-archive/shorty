@@ -68,8 +68,7 @@ Shorty =
               controls.slideDown('slow')
             ).then(Shorty.WUI.Sums.fill)
           ).then(dfd.resolve);
-        }
-        else{
+        }else{
           $.when(
             controls.slideUp('fast')
           ).then(dfd.resolve);
@@ -205,8 +204,7 @@ Shorty =
           $.when(
             $('#desktop').find('.shorty-hourglass').fadeIn('fast')
           ).then(dfd.resolve);
-        }
-        else{
+        }else{
           $.when(
             $('#desktop').find('.shorty-hourglass').fadeOut('slow')
           ).then(dfd.resolve);
@@ -226,8 +224,7 @@ Shorty =
             $('#desktop').find('#list-empty').hide(),
             $('#desktop').find('#list-nonempty').fadeIn(duration)
           ).then(dfd.resolve);
-        }
-        else{
+        }else{
           $.when(
             $('#desktop').find('#list-nonempty').hide(),
             $('#desktop').find('#list-empty').fadeIn(duration)
@@ -257,8 +254,7 @@ Shorty =
         if ( ! list.length ){
           // list empty, show placeholder instead of empty table
           $.when(Shorty.WUI.List.toggle(false)).then(dfd.resolve);
-        }
-        else{
+        }else{
           // list non-empty, fill and show table instead of placeholder
           // prevent clicks whilst loading the list
           $.when(
@@ -322,8 +318,7 @@ Shorty =
               var dfd = new $.Deferred();
               if ( 'error'==response.status ){
                 Shorty.WUI.Notification.show(response.note,'debug');
-              }
-              else{
+              }else{
                 Shorty.WUI.Notification.show(response.note,'info');
                 if (callback){
                   $.when(
@@ -387,8 +382,7 @@ Shorty =
                 notification.text(message),
                 notification.fadeIn(duration)
               ).then(dfd.resolve);
-            }
-            else{
+            }else{
               $.when(
                 notification.fadeOut('fast'),
                 notification.text('')
@@ -447,8 +441,7 @@ Shorty =
               if (Shorty.Debug) Shorty.Debug.log(response.note);
               if ('success'==response.status){
                 if (callback) callback(response.data);
-              }
-              else{
+              }else{
                 if (Shorty.Debug) Shorty.Debug.log(Shorty.Debug.dump(response.data));
               }
             }
@@ -483,8 +476,7 @@ Shorty =
             success: function(response){
               if ( 'error'==response.status ){
                 Shorty.WUI.Notification.show(response.note,'debug');
-              }
-              else{
+              }else{
                 Shorty.WUI.Notification.show(response.note,'info');
                 if (callback) callback(response.data);
               } // if else
@@ -530,8 +522,7 @@ Shorty =
                 // add shorty to existing list
                 var f_add_shorty = function(){Shorty.WUI.List.add([response.data],true);};
                 //Shorty.WUI.List.toggle(true,f_add_shorty);
-              } // if !error
-              else{
+              }else{
                 Shorty.WUI.Notification.show(response.note,'error');
               }
               return true;

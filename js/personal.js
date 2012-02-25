@@ -68,13 +68,12 @@ $(document).ready(
   }
 );
 
-
+// Verification
 Verification =
 {
   Dialog:
   {
-    init:function(target)
-    {
+    init:function(target){
       //alert(encodeURIComponent(target));
       var popup=$('#shorty').find('#verification');
       popup.dialog({show:'fade',autoOpen:true,modal:true});
@@ -84,8 +83,7 @@ Verification =
     }, // Verification::Dialog::init
 
      // Verification::Dialog::check
-    check:function(popup,target)
-    {
+    check:function(popup,target){
       $.ajax({
         url:     target,
         cache:   false,
