@@ -30,6 +30,10 @@ $(document).ready(
     // backend 'static': initialize example that depends on backend-base
     if ($('#shorty').find('#backend-static').find('#backend-static-base').val().length)
       $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base').val()+'<shorty key>');
+    // backend 'static': offer a clickable example link to verify the correct setup
+    $('#shorty').find('#backend-static').find('#example').bind('click',function(){
+      Verification.Dialog.init($('#shorty').find('#backend-static').find('#example').text());
+    });
     // react with a matching explanation and example url when backend type is chosen
     $('#shorty').find('#backend-type').chosen().change(
       function(){
@@ -63,3 +67,44 @@ $(document).ready(
     );
   }
 );
+
+
+Verification =
+{
+  Dialog:
+  {
+    init:function(target)
+    {
+      //alert(encodeURIComponent(target));
+      var popup=$('#shorty').find('#verification');
+      popup.dialog({autoOpen:false,show:'fade',modal:true});
+      popup.dialog('open');
+      this.check(popup,$('#shorty').find('#backend-static').find('#example').text());
+    }, // Verification::Dialog::init
+
+     // Verification::Dialog::check
+    check:function(popup,target)
+    {
+      $.ajax({
+        url:     target,
+        cache:   false,
+        data:    { },
+        error:   function(){
+          $.when(popup.find('#hourglass').fadeOut('slow')).then(function(){
+            popup.find('#failure').fadeIn('slow');
+          });
+        },
+        success: function(response){
+          if ( 'error'==response.status )
+            $.when(popup.find('#hourglass').fadeOut('slow')).then(function(){
+              popup.find('#failure').fadeIn('slow');
+            });
+          else
+            $.when(popup.find('#hourglass').fadeOut('slow')).then(function(){
+              popup.find('#success').fadeIn('slow');
+            });
+        }
+      });
+    } // Verification::Dialog::check
+  } // Verification::Dialog
+} // Verification

@@ -30,3 +30,20 @@
   font-family: Monospace;
   margin: 0.3em;
 }
+
+#verification #hourglass {
+  display: block;
+  text-align: center;
+  width: 100%; height: 100%;
+  margin-top: 20px;
+}
+
+#verification #failure {
+  display: none;
+  position: absolute;
+}
+
+#verification #success {
+  display: none;
+  position: absolute;
+}

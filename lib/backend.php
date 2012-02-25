@@ -27,13 +27,25 @@
 
 class OC_Shorty_Backend
 {
+  // ===== OC_Shorty_Backend::chooseStaticBackendBase =====
+  static function chooseStaticBackendBase ( )
+  {
+    // use the users personal preference if stored or
+    // use system wide setting, if no personal preference
+    // bail out otherwise
+    if (  (FALSE===($base = OC_Preference::getValue(OC_User::getUser(),'shorty','backend-static-base',FALSE)))
+        &&(FALSE===($base = OC_Appconfig::getValue (                   'shorty','backend-static-base-system', FALSE))) )
+      throw new OC_Shorty_Exception ( "No base configured for the usage of a 'static' backend" );
+    return $base;
+  }, // OC_Shorty_Backend::chooseStaticBackendBase
+  
   // OC_Shorty_Backend::registerUrl
   static function registerUrl ( $key )
   {
     try
     {
       // construct the $relay, the url to be called to reach THIS service (ownclouds shorty plugin)
-      $relay = OC_Helper::linkTo("shorty",'forward.php?'.$key);
+      $relay = OC_Helper::linkTo('shorty','forward.php?'.$key);
       // call backend specific work horse
       switch ( $type=OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') )
       {

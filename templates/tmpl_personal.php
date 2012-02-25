@@ -67,13 +67,13 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t('Example:');?></label>
-          <span id="example" class="example"><?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME']) ?></span>
+          <a id="example" class="example" title="<?php echo $l->t('Verify by clicking');?>"><?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME']) ?></a>
         </span>
         <br/>
         <span id="explain" class="explain">
           <?php echo $l->t('Static, rule-based backend, generates shorty links relative to a given base url.<br>'.
                            'You have to take care that any request to the url configured here is internally mapped to this shorty module.<br>'.
-                           'Have a try with the example link provided, it should result in a confirmation that your setup is working.<br>'.
+                           'Have a try with the example link provided, click it, it should result in a confirmation that your setup is working.<br>'.
                            'Only use this backend, if you can provide a short base url that is mapped the described way.');?>
         </span>
       </span>
@@ -159,6 +159,7 @@
         </span>
       </span>
     </div>
-    
+    <!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
+    <?php require_once('tmpl_dlg_verify.php'); ?>
   </fieldset>
 </form>

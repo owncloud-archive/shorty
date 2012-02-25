@@ -34,9 +34,12 @@ try
   // detect requested shorty key from request
   $p_key = trim ( OC_Shorty_Type::normalize($_SERVER['QUERY_STRING'],OC_Shorty_Type::KEY) ) ;
   // a key was specified, look for matching entry in database
-  if ( '<shorty-key>'==$p_key )
-    // this is a pseudo key, used for to test the setup, so forward to a positive message. 
-    $target = 'success.php';
+  if ( '<shorty key>'==$p_key )
+  {
+    // this is a pseudo key, used for to test the setup, so forward to a positive message.
+    );
+    OC_JSON::success ( array ( ) );
+  }
   else if ( $p_key )
   {
     $param = array
