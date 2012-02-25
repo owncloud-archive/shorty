@@ -33,11 +33,11 @@ class OC_Shorty_Backend
     // use the users personal preference if stored or
     // use system wide setting, if no personal preference
     // bail out otherwise
-    if (  (FALSE===($base = OC_Preference::getValue(OC_User::getUser(),'shorty','backend-static-base',FALSE)))
-        &&(FALSE===($base = OC_Appconfig::getValue (                   'shorty','backend-static-base-system', FALSE))) )
+    if (  (FALSE===($base = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-static-base',FALSE)))
+        &&(FALSE===($base =   OC_Appconfig::getValue (                  'shorty','backend-static-base-system', FALSE))) )
       throw new OC_Shorty_Exception ( "No base configured for the usage of a 'static' backend" );
     return $base;
-  }, // OC_Shorty_Backend::chooseStaticBackendBase
+  } // OC_Shorty_Backend::chooseStaticBackendBase
   
   // OC_Shorty_Backend::registerUrl
   static function registerUrl ( $key )
@@ -49,31 +49,35 @@ class OC_Shorty_Backend
       // call backend specific work horse
       switch ( $type=OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') )
       {
-        default:        return registerUrl_default ( $key, $relay );
-        case 'static':  return registerUrl_static  ( $key, $relay );
-        case 'google':  return registerUrl_google  ( $key, $relay );
-        case 'tinyurl': return registerUrl_tinyurl ( $key, $relay );
-        case 'isgd':    return registerUrl_isgd    ( $key, $relay );
-        case 'bitly':   return registerUrl_bitly   ( $key, $relay );
+        default:        return OC_Shorty_Backend::registerUrl_default ( $key, $relay );
+        case 'static':  return OC_Shorty_Backend::registerUrl_static  ( $key, $relay );
+        case 'google':  return OC_Shorty_Backend::registerUrl_google  ( $key, $relay );
+        case 'tinyurl': return OC_Shorty_Backend::registerUrl_tinyurl ( $key, $relay );
+        case 'isgd':    return OC_Shorty_Backend::registerUrl_isgd    ( $key, $relay );
+        case 'bitly':   return OC_Shorty_Backend::registerUrl_bitly   ( $key, $relay );
       } // switch
     } // try
     catch (OC_Shorty_Exception $e)
     {
-      throw new OC_Shorty_Exception ( "Failed to register url '%s' for '%s' backend", $url, $type );
+      throw new OC_Shorty_Exception ( "Failed to register url '%s' at '%s' backend\nReason: %s", array($relay,$type,$e->getMessage()) );
+    } // catch
+    catch (Exception $e)
+    {
+      throw new OC_Shorty_Exception ( "Failed to register url '%s' at '%s' backend", array($relay,$type) );
     } // catch
   } // OC_Shorty_Backend::registerUrl
 
   // OC_Shorty_Backend::registerUrl_default
   static function registerUrl_default ( $key, $relay )
   {
-    return OC_Shorty_Type::validate ( OC_Shorty_Type::URL, $relay );
+    return OC_Shorty_Type::validate ( $relay, OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_default
   
   // OC_Shorty_Backend::registerUrl_static
   static function registerUrl_static ( $key, $relay )
   {
-    $base = trim ( OC_Preferences::getValue('shorty','backend-static-base','') );
-    return OC_Shorty_Type::validate ( OC_Shorty_Type::URL, $base.$key );
+    $base = trim ( OC_Shorty_Backend::chooseStaticBackendBase() );
+    return OC_Shorty_Type::validate ( $base.$key, OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_static
   
   // OC_Shorty_Backend::registerUrl_google
@@ -87,10 +91,10 @@ class OC_Shorty_Backend
                                                    'key'=>OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','')) );
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
-        ||( ! preg_match( '/^(.+)$/', $reply, $matches )) )
+        ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
       throw new OC_Shorty_Exception ( 'Failed to register url at backend' );
     curl_close ( $curl );
-    return OC_Shorty_Type::validate ( OC_Shorty_Type::URL, $match[1] );
+    return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_google
   
   // OC_Shorty_Backend::registerUrl_tinyurl
@@ -100,10 +104,10 @@ class OC_Shorty_Backend
     curl_setopt ( $curl, CURLOPT_URL, sprintf('http://tinyurl.com/api-create.php?url=%s', urlencode(trim($relay))) );
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
-        ||( ! preg_match( '/^(.+)$/', $reply, $matches )) )
+        ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
       throw new OC_Shorty_Exception ( 'Failed to register url at backend' );
     curl_close ( $curl );
-    return OC_Shorty_Type::validate ( OC_Shorty_Type::URL, $match[1] );
+    return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_tinyurl
   
   // OC_Shorty_Backend::registerUrl_isgd
@@ -113,10 +117,10 @@ class OC_Shorty_Backend
     curl_setopt ( $curl, CURLOPT_URL, sprintf('http://is.gd/create.php?format=simple&url=%s', urlencode(trim($relay))) );
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
-        ||( ! preg_match( '/^(.+)$/', $reply, $matches )) )
+        ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
       throw new OC_Shorty_Exception ( 'Failed to register url at backend' );
     curl_close ( $curl );
-    return OC_Shorty_Type::validate ( OC_Shorty_Type::URL, $match[1] );
+    return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_isgd
   
   // OC_Shorty_Backend::registerUrl_bitly
@@ -129,10 +133,10 @@ class OC_Shorty_Backend
                                               urlencode(trim($relay))) );
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
-        ||( ! preg_match( '/^(.+)$/', $reply, $matches )) )
+        ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
       throw new OC_Shorty_Exception ( 'Failed to register url at backend' );
     curl_close ( $curl );
-    return OC_Shorty_Type::validate ( OC_Shorty_Type::URL, $match[1] );
+    return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_bitly
 
 } // class OC_Shorty_Backend

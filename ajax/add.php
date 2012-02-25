@@ -33,7 +33,6 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 try
 {
   $p_key     = OC_Shorty_Tools::shorty_key ( );
-  $p_source  = sprintf ('%s?%s', dirname($_SERVER['REQUEST_URI']), $p_key  );
   $p_favicon = OC_Shorty_Type::req_argument ( 'favicon', OC_Shorty_Type::URL,    FALSE );
   $p_title   = OC_Shorty_Type::req_argument ( 'title',   OC_Shorty_Type::STRING, FALSE ) || '';
   $p_target  = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL,    TRUE  );
@@ -45,6 +44,10 @@ try
     $url = parse_url ( $p_target );
     $p_title = $url['host'];
   } // if
+  // register shorty at backend
+  $p_source = OC_Shorty_Backend::registerUrl ( $p_key );
+
+  // insert new shorty into our database
   $param = array
   (
     ':user'    => OC_User::getUser(),
