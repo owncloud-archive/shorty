@@ -32,7 +32,7 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  define ('PAGE_SIZE', 10);
+  define ('PAGE_SIZE', 100);
   $p_offset = OC_Shorty_Type::req_argument ( 'page',   OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
   $p_sort   = OC_Shorty_Type::req_argument ( 'sort',   OC_Shorty_Type::SORTING, FALSE);
   $p_title  = OC_Shorty_Type::req_argument ( 'title' , OC_Shorty_Type::STRING,  FALSE);

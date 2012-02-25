@@ -26,23 +26,17 @@ $(document).ready(
     $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
     $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
     // initialize desktop
-    $.when(Shorty.WUI.Controls.init()).then(
-      function(){
-        $.when(Shorty.WUI.List.build()).then(
-          function(){
-            var dialog = $('#dialog-add');
-            $.when(Shorty.WUI.Dialog.toggle(dialog)).then(
-              function(){
-                var target=decodeURIComponent(window.location.search.substring(1));
-                target=target||document.referrer;
-                dialog.find('#target').val(target);
-                dialog.find('#title').focus();
-                Shorty.WUI.Meta.collect(dialog);
-              }
-            );
-          }
-        )
-      }
-    );
+    $.when(Shorty.WUI.Controls.init()).then(function(){
+      $.when(Shorty.WUI.List.build()).then(function(){
+        var dialog = $('#dialog-add');
+        $.when(Shorty.WUI.Dialog.toggle(dialog)).then(function(){
+          var target=decodeURIComponent(window.location.search.substring(1));
+          target=target||document.referrer;
+          dialog.find('#target').val(target);
+          dialog.find('#title').focus();
+          Shorty.WUI.Meta.collect(dialog);
+        });
+      });
+    });
   }
 ); // document.ready

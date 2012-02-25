@@ -108,8 +108,8 @@ Shorty =
         ).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Dialog.reset
-      // ===== Shorty.WUI.Dialog.submit =====
-      submit: function(dialog){
+      // ===== Shorty.WUI.Dialog.execute =====
+      execute: function(dialog){
         var dfd = new $.Deferred();
         switch ( dialog.attr('id') ){
           case 'dialog-add':
@@ -134,7 +134,7 @@ Shorty =
             dfd.resolve();
         }; // switch
         return dfd.promise();
-      }, // Shorty.WUI.Dialog.submit
+      }, // Shorty.WUI.Dialog.execute
       // ===== Shorty.WUI.Dialog.show =====
       show: function(dialog){
         var duration = 'slow';
@@ -150,7 +150,7 @@ Shorty =
               // initialize dialog
               switch(dialog.attr('id')){
                 case 'dialog-add':
-                  dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){Shorty.WUI.Dialog.submit(event.data.dialog);} );
+                  dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
                   dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
                   dialog.find('#target').focus();
                   break;
@@ -313,7 +313,8 @@ Shorty =
           $.ajax({
             url:     'ajax/list.php',
             cache:   false,
-            data:    { target: encodeURI(target), title: encodeURI(title) },
+            data:    { target: encodeURI(target),
+                       title: encodeURI(title) },
             success: function(response){
               var dfd = new $.Deferred();
               if ( 'error'==response.status ){
@@ -472,7 +473,7 @@ Shorty =
           $.ajax({
             url:     'ajax/count.php',
             cache:   false,
-            data:    {},
+            data:    { },
             success: function(response){
               if ( 'error'==response.status ){
                 Shorty.WUI.Notification.show(response.note,'debug');
@@ -546,10 +547,10 @@ Shorty =
             url:     'ajax/edit.php',
             cache:   false,
             data:    { key: key,
-                      source: encodeURI(source),
-                      target: encodeURI(target),
-                      notes:  encodeURI(notes),
-                      until:  encodeURI(until) },
+                       source: encodeURI(source),
+                       target: encodeURI(target),
+                       notes:  encodeURI(notes),
+                       until:  encodeURI(until) },
             success: function(data){
               // close and neutralize dialog
               Shorty.WUI.Dialog.hide(dialog);

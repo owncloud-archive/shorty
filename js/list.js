@@ -27,10 +27,6 @@ $(document).ready
     $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
     $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
     // initialize desktop
-    $.when(Shorty.WUI.Controls.init()).then(
-      function(){
-        Shorty.WUI.List.build();
-      }
-    );
+    $.when(Shorty.WUI.Controls.init()).then(Shorty.WUI.List.build);
   }
 ); // document.ready
