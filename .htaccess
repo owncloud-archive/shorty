@@ -1,3 +1,38 @@
+#
+# ownCloud shorty plugin, a URL shortener
+#
+# @author Christian Reiner
+# @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+# License as published by the Free Software Foundation; either
+# version 3 of the license, or any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+#
+# You should have received a copy of the GNU Affero General Public
+# License along with this library.
+# If not, see <http://www.gnu.org/licenses/>.
+#
+
+# these rules try to detect any requests that carry a "shorty key" and map them to forward.php?<shorty key>
+# that way you can use shorter (or more simple) urls to publish or relay links
+
 RewriteEngine On
-RewriteCond "^/\?[a-z0-9]{8}$"
-RewriteRule "^/\?([a-z0-9]{8})$"  "/forward.php?$1" [R=301,L]
+
+# example: http://.../apps/shorty/index.php/0123456789
+RewriteRule "^index\.php/([a-z0-9]{10})$"  "forward.php?$1" [L]
+# example: http://.../apps/shorty//0123456789
+RewriteRule "^([a-z0-9]{10})$"  "forward.php?$1" [L]
+
+# example: http://.../apps/shorty/index.php?0123456789
+RewriteCond     %{QUERY_STRING} ^([a-z0-9]{10})$
+RewriteRule     ^index\.php     forward.php?%{QUERY_STRING}     [L]
+
+# example: http://.../apps/shorty/?0123456789
+RewriteCond     %{QUERY_STRING} ^([a-z0-9]{10})$
+RewriteRule     ^$     forward.php?%{QUERY_STRING}     [L]

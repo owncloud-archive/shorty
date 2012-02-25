@@ -37,7 +37,6 @@ try
   if ( '<shorty key>'==$p_key )
   {
     // this is a pseudo key, used for to test the setup, so forward to a positive message.
-    );
     OC_JSON::success ( array ( ) );
   }
   else if ( $p_key )
