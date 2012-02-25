@@ -25,6 +25,7 @@
 OC_Util::checkLoggedIn ( );
 OC_Util::checkAppEnabled ( 'shorty' );
 
+OC_Util::addStyle  ( 'shorty', 'shorty' );
 OC_Util::addStyle  ( 'shorty', 'personal' );
 OC_Util::addScript ( 'shorty', 'personal' );
 

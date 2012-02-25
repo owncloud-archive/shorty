@@ -33,14 +33,20 @@
   <!-- success -->
   <div id="success">
     <fieldset>
-      <legend><span id="title" class="title"><strong>Verification successful !</strong></span></legend>
+      <legend>
+        <img class="shorty-status" src="<?php echo OC_Helper::imagePath('shorty','status/good.png'); ?>" alt="<?php $l->t('Success') ?>" title="<?php $l->t('Verification successful') ?>">
+        <span id="title" class="title"><strong>Verification successful !</strong></span>
+      </legend>
       <?php echo $l->t("Great, your setup appears to be working fine ! <br>Requests to the configured base url '%s' are mapped to this ownClouds shorty module.",$_['backend-static-base']);?>
     </fieldset>
   </div>
   <!-- failure -->
   <div id="failure">
     <fieldset>
-      <legend><span id="title" class="title"><strong>Verification failed !</strong></span></legend>
+      <legend>
+        <img class="shorty-status" src="<?php echo OC_Helper::imagePath('shorty','status/bad.png'); ?>" alt="<?php $l->t('Success') ?>" title="<?php $l->t('Verification successful') ?>">
+        <span id="title" class="title"><strong>Verification failed !</strong></span>
+      </legend>
       <?php echo $l->t('Sorry, but your setup appears not be be working correctly yet.<br>'.
                        'Please check your setup and make sure that the configured url \' <a style="font-family:Monospace;">%1$s</a> \' is indeed correct '.
                        'and that all requests to it are somehow mapped to ownClouds shorty module at \' <a style="font-family:Monospace;">%2$s</a> \'.',

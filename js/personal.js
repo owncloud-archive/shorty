@@ -77,7 +77,8 @@ Verification =
     {
       //alert(encodeURIComponent(target));
       var popup=$('#shorty').find('#verification');
-      popup.dialog({autoOpen:false,show:'fade',modal:true});
+      popup.dialog({show:'fade',autoOpen:true,modal:true});
+      popup.dialog('option','minHeight',240 );
       popup.dialog('open');
       this.check(popup,$('#shorty').find('#backend-static').find('#example').text());
     }, // Verification::Dialog::init

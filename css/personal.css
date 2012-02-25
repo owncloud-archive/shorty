@@ -47,3 +47,8 @@
   display: none;
   position: absolute;
 }
+
+#verification legend {
+  width: 100%;
+  text-align: center;
+}
