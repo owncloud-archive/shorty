@@ -177,3 +177,7 @@
 .shorty-target {
   color: green;
 }
+
+.shorty-meta {
+  margin: 0.1em;
+}

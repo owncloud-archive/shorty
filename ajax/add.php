@@ -33,17 +33,11 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 try
 {
   $p_key     = OC_Shorty_Tools::shorty_key ( );
-  $p_favicon = OC_Shorty_Type::req_argument ( 'favicon', OC_Shorty_Type::URL,    FALSE );
   $p_title   = OC_Shorty_Type::req_argument ( 'title',   OC_Shorty_Type::STRING, FALSE ) || '';
   $p_target  = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL,    TRUE  );
   $p_until   = OC_Shorty_Type::req_argument ( 'until',   OC_Shorty_Type::DATE,   FALSE );
   $p_notes   = OC_Shorty_Type::req_argument ( 'notes',   OC_Shorty_Type::STRING, FALSE ) || '';
-  // chose target host name if no title specified
-  if (empty($title))
-  {
-    $url = parse_url ( $p_target );
-    $p_title = $url['host'];
-  } // if
+  $p_favicon = OC_Shorty_Type::req_argument ( 'favicon', OC_Shorty_Type::URL,    FALSE );
   // register shorty at backend
   $p_source = OC_Shorty_Backend::registerUrl ( $p_key );
 
@@ -52,8 +46,8 @@ try
   (
     ':user'    => OC_User::getUser(),
     ':key'     => $p_key,
-    ':favicon' => $p_favicon,
     ':title'   => $p_title,
+    ':favicon' => $p_favicon,
     ':source'  => $p_source,
     ':target'  => $p_target,
     ':notes'   => $p_notes,

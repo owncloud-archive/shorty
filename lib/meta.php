@@ -56,15 +56,31 @@ class OC_Shorty_Meta
       preg_match ( "/<head>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
       $meta['title']    = htmlspecialchars_decode ( $match[1] );
       $meta['staticon'] = self::selectIcon ( 'state', TRUE );
+      // final url after a possible redirection
+      $meta['final']       = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
       // try to extract favicon from page
       preg_match ( '/<[^>]*link[^>]*(rel="icon"|rel="shortcut icon") .*href="([^>]*)".*>/iU', $page, $match );
       if (1<sizeof($match))
-        $meta['favicon']     = htmlspecialchars_decode ( $match[2] );
-      $meta['final']       = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
-      $meta['mimetype']    = preg_filter ( '/^([^;]+)$/i', '$0', curl_getinfo($handle,CURLINFO_CONTENT_TYPE) );
+      {
+        // the specified uri might be an url, an absolute or a relative path
+        // we have to turn it into an url to be able to display it out of context
+        $favicon = htmlspecialchars_decode ( $match[2] );
+        // test for an url
+        $u = parse_url($meta['final']);
+        if ( ! empty($u['scheme']) )
+          $meta['favicon'] = $favicon;
+        // test for an absolute path
+        if ( '/'==$u['path'] )
+          $meta['favicon'] = sprintf( '%s://%s/%s', $u['scheme'], $u['host'], $favicon );
+        // so it appears to be a relative path
+        else
+          $meta['favicon'] = sprintf( '%s/%s', dirname($meta['final']), $favicon );
+      }
+      $meta['mimetype']    = preg_replace ( '/^([^;]+);.*/i', '$1', curl_getinfo($handle,CURLINFO_CONTENT_TYPE) );
       $meta['mimicon']     = self::selectIcon ( 'mimetype', $meta['mimetype'] );
       $meta['code']        = curl_getinfo ( $handle, CURLINFO_HTTP_CODE );
       $meta['status']      = OC_Shorty_L10n::t ( self::selectCode('status',$meta['code']) );
+      // this is the 'title' of the page
       $meta['explanation'] = OC_Shorty_L10n::t ( self::selectCode('explanation',$meta['code']) );
     }
     curl_close ( $handle );

@@ -233,13 +233,12 @@ Shorty =
                 // enhance row with real set values
                 row.attr('data-'+this,set[this]);
                 // fill data into corresponsing column
-//                row.find('td').filter('#'+this).html('<span class="ellipsis">'+set[this]+'</span');
                 row.find('td').filter('#'+this).text(set[this]);
               }
             );
             dummy.after(row);
             if (smooth)
-              row.slideDown('slow');
+              row.slideToggle('slow');
             else
               row.show();
           }) // each
@@ -448,13 +447,14 @@ Shorty =
         // query meta data from target
         $.when(
           Shorty.WUI.Meta.get(target,function(meta){
+            dialog.find('#target').val(meta.final);
             dialog.find('#meta').fadeTo ( 'fast', 0, function()
               {
                 dialog.find('#staticon').attr('src',meta.staticon);
                 dialog.find('#schemicon').attr('src',meta.schemicon);
                 dialog.find('#favicon').attr('src',meta.favicon);
                 dialog.find('#mimicon').attr('src',meta.mimicon);
-                dialog.find('#explanation').html(meta.title?meta.title:meta.explanation);
+                dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
                 dialog.find('#meta').fadeTo('fast',1);
               }
             );
@@ -533,19 +533,21 @@ Shorty =
       add:function(){
         var dfd = new $.Deferred();
         var dialog = $('#dialog-add');
-        var target = dialog.find('#target').val() || '';
-        var title  = dialog.find('#title').val()  || '';
-        var notes  = dialog.find('#notes').val()  || '';
-        var until  = dialog.find('#until').val()  || '';
+        var target  = dialog.find('#target').val() || '';
+        var title   = dialog.find('#title').val()  || dialog.find('#meta').find('#explanation').text();
+        var notes   = dialog.find('#notes').val()  || '';
+        var until   = dialog.find('#until').val()  || '';
+        var favicon = dialog.find('#meta').find('#favicon').text();
         $.when(
           Shorty.WUI.Notification.hide(),
           $.ajax({
             url:     'ajax/add.php',
             cache:   false,
-            data:    { target: encodeURIComponent(target),
-                       title:  encodeURIComponent(title),
-                       notes:  encodeURIComponent(notes),
-                       until:  encodeURIComponent(until) },
+            data:    { target:  encodeURIComponent(target),
+                       title:   encodeURIComponent(title),
+                       notes:   encodeURIComponent(notes),
+                       until:   encodeURIComponent(until),
+                       favicon: encodeURIComponent(favicon) },
             error:   function(){if (!typeof Shorty.Debug==="undefined") Shorty.Debug.log(this.data);},
             success: function(response){
               if ( 'success'==response.status ){

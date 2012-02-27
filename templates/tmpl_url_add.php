@@ -30,11 +30,11 @@
     <input id="target" name="target" type="text" maxsize="4096" data="" class=""/>
     <br>
     <label for="meta">&nbsp;</label>
-    <span id="meta">
-    <img id="staticon"  class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'status/neutral.png'); ?>">
-    <img id="schemicon" class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
-    <img id="favicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
-    <img id="mimicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
+    <span id="meta" class="shorty-meta">
+    <img id="staticon"  class="shorty-icon" src="" width="16" data="<?php echo OC_Helper::imagePath('shorty', 'status/neutral.png'); ?>">
+    <img id="schemicon" class="shorty-icon" src="" width="16" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
+    <img id="favicon"   class="shorty-icon" src="" width="16" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
+    <img id="mimicon"   class="shorty-icon" src="" width="16" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
     <a id="explanation" maxsize="80" data="" class="shorty-value"></a>
     </span>
     <br>
