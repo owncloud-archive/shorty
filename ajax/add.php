@@ -40,6 +40,8 @@ try
   $p_favicon = OC_Shorty_Type::req_argument ( 'favicon', OC_Shorty_Type::URL,    FALSE );
   // register shorty at backend
   $p_source = OC_Shorty_Backend::registerUrl ( $p_key );
+  // fallback title: choose hostname if no title is specified
+  $p_title = parse_url ( $p_target, PHP_URL_HOST );
   // insert new shorty into our database
   $param = array
   (

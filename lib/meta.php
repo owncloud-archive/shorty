@@ -30,16 +30,16 @@ class OC_Shorty_Meta
 
   static function fetchMetaData ( $url )
   {
-    $token = parse_url ( $url );
+    $url_token = parse_url ( $url );
     // some sane fallback values, in case we cannot get the meta data
     $meta = array();
     $meta['target']    = $url;
-    $meta['title']     = strtolower ( $token['host'] );
-    $meta['scheme']    = strtolower ( $token['scheme'] );
+    $meta['title']     = strtolower ( $url_token['host'] );
+    $meta['scheme']    = strtolower ( $url_token['scheme'] );
     $meta['mimetype']  = 'application/octet-stream';
-    $meta['schemicon'] = self::selectIcon ( 'scheme', strtolower($token['scheme']) );
+    $meta['schemicon'] = self::selectIcon ( 'scheme', strtolower($url_token['scheme']) );
     // we wont bother retrieving data about other protocols than http or ftp
-    if ( ! in_array(strtolower($token['scheme']),array('http','https','ftp','ftps')) )
+    if ( ! in_array(strtolower($url_token['scheme']),array('http','https','ftp','ftps')) )
       return $meta;
     // to fetch meta data we rely on curl being installed
     if ( ! function_exists('curl_init') )
@@ -66,12 +66,12 @@ class OC_Shorty_Meta
         // we have to turn it into an url to be able to display it out of context
         $favicon = htmlspecialchars_decode ( $match[2] );
         // test for an url
-        $u = parse_url($meta['final']);
-        if ( ! empty($u['scheme']) )
+        $url_token = parse_url($meta['final']);
+        if ( ! empty($url_token['scheme']) )
           $meta['favicon'] = $favicon;
         // test for an absolute path
-        if ( '/'==$u['path'] )
-          $meta['favicon'] = sprintf( '%s://%s/%s', $u['scheme'], $u['host'], $favicon );
+        if ( '/'==$url_token['path'] )
+          $meta['favicon'] = sprintf( '%s://%s/%s', $url_token['scheme'], $url_token['host'], $favicon );
         // so it appears to be a relative path
         else
           $meta['favicon'] = sprintf( '%s/%s', dirname($meta['final']), $favicon );
