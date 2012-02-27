@@ -39,13 +39,15 @@ class OC_Shorty_Backend
     return $base;
   } // OC_Shorty_Backend::chooseStaticBackendBase
   
-  // OC_Shorty_Backend::registerUrl
+  // ===== OC_Shorty_Backend::registerUrl =====
   static function registerUrl ( $key )
   {
     try
     {
       // construct the $relay, the url to be called to reach THIS service (ownclouds shorty plugin)
-      $relay = OC_Helper::linkTo('shorty','forward.php?'.$key);
+      $relay = sprintf ( '%s://%s%s', (isset($_SERVER["HTTPS"])&&'on'==$_SERVER["HTTPS"])?'https':'http',
+                                      $_SERVER['SERVER_NAME'],
+                                      OC_Helper::linkTo('shorty','forward.php?'.$key) );
       // call backend specific work horse
       switch ( $type=OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') )
       {
@@ -67,20 +69,20 @@ class OC_Shorty_Backend
     } // catch
   } // OC_Shorty_Backend::registerUrl
 
-  // OC_Shorty_Backend::registerUrl_default
+  // ===== OC_Shorty_Backend::registerUrl_default =====
   static function registerUrl_default ( $key, $relay )
   {
     return OC_Shorty_Type::validate ( $relay, OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_default
   
-  // OC_Shorty_Backend::registerUrl_static
+  // ===== OC_Shorty_Backend::registerUrl_static =====
   static function registerUrl_static ( $key, $relay )
   {
     $base = trim ( OC_Shorty_Backend::chooseStaticBackendBase() );
     return OC_Shorty_Type::validate ( $base.$key, OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_static
   
-  // OC_Shorty_Backend::registerUrl_google
+  // ===== OC_Shorty_Backend::registerUrl_google =====
   static function registerUrl_google ( $key, $relay )
   {
     $curl = curl_init ( );
@@ -97,7 +99,7 @@ class OC_Shorty_Backend
     return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_google
   
-  // OC_Shorty_Backend::registerUrl_tinyurl
+  // ===== OC_Shorty_Backend::registerUrl_tinyurl =====
   static function registerUrl_tinyurl ( $key, $relay )
   {
     $curl = curl_init ( );
@@ -110,7 +112,7 @@ class OC_Shorty_Backend
     return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_tinyurl
   
-  // OC_Shorty_Backend::registerUrl_isgd
+  // ===== OC_Shorty_Backend::registerUrl_isgd =====
   static function registerUrl_isgd ( $key, $relay )
   {
     $curl = curl_init ( );
@@ -123,7 +125,7 @@ class OC_Shorty_Backend
     return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_isgd
   
-  // OC_Shorty_Backend::registerUrl_bitly
+  // ===== OC_Shorty_Backend::registerUrl_bitly =====
   static function registerUrl_bitly ( $key, $relay )
   {
     $curl = curl_init ( );
