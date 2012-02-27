@@ -33,24 +33,23 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 try
 {
   $p_key     = OC_Shorty_Tools::shorty_key ( );
-  $p_title   = OC_Shorty_Type::req_argument ( 'title',   OC_Shorty_Type::STRING, FALSE ) || '';
+  $p_title   = OC_Shorty_Type::req_argument ( 'title',   OC_Shorty_Type::STRING, FALSE );
   $p_target  = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL,    TRUE  );
   $p_until   = OC_Shorty_Type::req_argument ( 'until',   OC_Shorty_Type::DATE,   FALSE );
-  $p_notes   = OC_Shorty_Type::req_argument ( 'notes',   OC_Shorty_Type::STRING, FALSE ) || '';
+  $p_notes   = OC_Shorty_Type::req_argument ( 'notes',   OC_Shorty_Type::STRING, FALSE );
   $p_favicon = OC_Shorty_Type::req_argument ( 'favicon', OC_Shorty_Type::URL,    FALSE );
   // register shorty at backend
   $p_source = OC_Shorty_Backend::registerUrl ( $p_key );
-
   // insert new shorty into our database
   $param = array
   (
     ':user'    => OC_User::getUser(),
     ':key'     => $p_key,
-    ':title'   => $p_title,
-    ':favicon' => $p_favicon,
-    ':source'  => $p_source,
-    ':target'  => $p_target,
-    ':notes'   => $p_notes,
+    ':title'   => $p_title   ? $p_title   : '',
+    ':favicon' => $p_favicon ? $p_favicon : '',
+    ':source'  => $p_source  ? $p_source  : '',
+    ':target'  => $p_target  ? $p_target  : '',
+    ':notes'   => $p_notes   ? $p_notes   : '',
     ':until'   => $p_until,
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_INSERT );

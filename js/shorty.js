@@ -238,7 +238,8 @@ Shorty =
             );
             dummy.after(row);
             if (smooth)
-              row.slideToggle('slow');
+//              row.slideToggle('slow');
+              row.show();
             else
               row.show();
           }) // each
