@@ -216,8 +216,8 @@ Shorty =
     List:
     {
       // ===== Shorty.WUI.List.add =====
-      add: function(list,smooth){
-        smooth = smooth || true;
+      add: function(list,hidden){
+        hidden = hidden || false;
         var dfd = new $.Deferred();
         // clone dummy row from list: dummy is the only row with an empty id
         var dummy = $('.shorty-list tr').filter(function(){return (''==$(this).attr('id'));});
@@ -233,15 +233,15 @@ Shorty =
                 // enhance row with real set values
                 row.attr('data-'+this,set[this]);
                 // fill data into corresponsing column
-                row.find('td').filter('#'+this).text(set[this]);
+                if (hidden)
+                  // row is meant to be shown only later, so keep it hidden
+                  row.find('td').filter('#'+this).html('<span style="display:none;">'+set[this]+'</span>');
+                else
+                  // row is meant to be shown immediately, typically when initializing the list
+                  row.find('td').filter('#'+this).html('<span style="display:inline;">'+set[this]+'</span>');
               }
             );
             dummy.after(row);
-            if (smooth)
-//              row.slideToggle('slow');
-              row.show();
-            else
-              row.show();
           }) // each
         ).then (dfd.resolve);
         return dfd.promise();
@@ -339,7 +339,17 @@ Shorty =
         if (filled){
           $.when(
             $('#desktop').find('#list-empty').hide(),
-            $('#desktop').find('#list-nonempty').fadeIn(duration)
+            $.when(
+              $('#desktop').find('#list-nonempty').fadeIn(duration)
+            ).then(function(){
+              // in addition, fade in any columns that were added, but not yet shown
+              $('#desktop').find('#list-nonempty').find('tbody').find('tr').each(function(){
+                // only those rows that carry an id (not the dummy)
+                if (   ''!=$(this).attr('id')
+                    && 'none'==$(this).find('td').find('span').css('display') )
+                  $(this).find('td').find('span').effect('pulsate');
+              });
+            })
           ).then(dfd.resolve);
         }else{
           $.when(
@@ -348,7 +358,7 @@ Shorty =
           ).then(dfd.resolve);
         }
         return dfd.promise();
-      }, // // Shorty.WUI.List.toggle
+      }, // Shorty.WUI.List.toggle
       // ===== Shorty.WUI.List.Toolbar =====
       Toolbar:
       {
@@ -535,7 +545,7 @@ Shorty =
         var dfd = new $.Deferred();
         var dialog = $('#dialog-add');
         var target  = dialog.find('#target').val() || '';
-        var title   = dialog.find('#title').val()  || dialog.find('#meta').find('#explanation').text();
+        var title   = dialog.find('#title').val()  || '';
         var notes   = dialog.find('#notes').val()  || '';
         var until   = dialog.find('#until').val()  || '';
         var favicon = dialog.find('#meta').find('#favicon').text();
@@ -552,13 +562,14 @@ Shorty =
             error:   function(){if (!typeof Shorty.Debug==="undefined") Shorty.Debug.log(this.data);},
             success: function(response){
               if ( 'success'==response.status ){
-                // close and neutralize dialog
-                Shorty.WUI.Dialog.hide(dialog);
                 // show notification
                 Shorty.WUI.Notification.show(response,'info');
                 // add shorty to existing list
-                var f_add_shorty = function(){Shorty.WUI.List.add([response.data],true);};
-                //Shorty.WUI.List.toggle(true,f_add_shorty);
+                Shorty.WUI.List.add([response.data],true);
+                // close and neutralize dialog
+                Shorty.WUI.Dialog.hide(dialog);
+                // show list
+                Shorty.WUI.List.toggle(true);
               }else{
                 Shorty.WUI.Notification.show(response.note,'error');
               }
