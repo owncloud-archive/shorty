@@ -45,13 +45,56 @@
 <!-- the list of urls -->
 <table id="list-nonempty" class="shorty-list" style="display:none;">
   <thead>
-    <tr>
-      <th id="headerFavicon"><?php echo OC_Shorty_L10n::t('') ?></th>
+    <tr id="title">
+      <!-- a button to open/close the toolbar below -->
+      <th id="headerFavicon"><img id="tools" alt="toolbar" title="show toolsbar"
+                                  src="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
+                                  data-plus="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
+                                  data-minus="<?php echo OC_Helper::imagePath('shorty','actions/minus.png'); ?>"></th>
       <th id="headerTitle"  ><?php echo OC_Shorty_L10n::t('Title') ?></th>
       <th id="headerTarget" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
       <th id="headerClicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
       <th id="headerUntil"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
       <th id="headerAction" ><?php echo OC_Shorty_L10n::t('Actions') ?></th>
+    </tr>
+    <!-- toolbar opened/closed by the button above -->
+    <tr id="toolbar">
+      <th id="headerFavicon">
+        <div style="display:none;">
+          <a id="reload"><img alt="<?php echo $l->t('reload'); ?>" title="<?php echo $l->t('reload list'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/reload.png'); ?>"></a>
+        </div>
+      </th>
+      <th id="headerTitle">
+        <div style="display:none;">
+          <a id="sort-up"  ><img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>"></a>
+          <a id="sort-down"><img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>"></a>
+          <input id='filter' type="text" value="">
+        </div>
+      </th>
+      <th id="headerTarget">
+        <div style="display:none;">
+          <a id="sort-up"  ><img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>"></a>
+          <a id="sort-down"><img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>"></a>
+          <input id='filter' type="text" value="">
+        </div>
+      </th>
+      <th id="headerClicks">
+        <div style="display:none;">
+          <a id="sort-up"  ><img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>"></a>
+          <a id="sort-down"><img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>"></a>
+        </div>
+      </th>
+      <th id="headerUntil">
+        <div style="display:none;">
+          <a id="sort-up"  ><img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>"></a>
+          <a id="sort-down"><img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>"></a>
+        </div>
+      </th>
+      <th id="headerAction">
+        <div style="display:none;">
+          &nbsp;
+        </div>
+      </th>
     </tr>
   </thead>
   <tbody>

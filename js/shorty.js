@@ -215,23 +215,37 @@ Shorty =
     // ===== Shorty.WUI.List =====
     List:
     {
-      // ===== Shorty.WUI.List.toggle =====
-      toggle: function(filled){
-        var duration = 'slow';
+      // ===== Shorty.WUI.List.add =====
+      add: function(list,smooth){
+        smooth = smooth || true;
         var dfd = new $.Deferred();
-        if (filled){
-          $.when(
-            $('#desktop').find('#list-empty').hide(),
-            $('#desktop').find('#list-nonempty').fadeIn(duration)
-          ).then(dfd.resolve);
-        }else{
-          $.when(
-            $('#desktop').find('#list-nonempty').hide(),
-            $('#desktop').find('#list-empty').fadeIn(duration)
-          ).then(dfd.resolve);
-        }
+        // clone dummy row from list: dummy is the only row with an empty id
+        var dummy = $('.shorty-list tr').filter(function(){return (''==$(this).attr('id'));});
+        var row, set;
+        $.when(
+          // insert list elements (sets) one by one
+          $.each(list,function(i,set){
+            row = dummy.clone();
+            // set row id to entry key
+            row.attr('id',set.key);
+            $.each(Array('key','title','source','target','clicks','created','accessed','until','notes'),
+              function(){
+                // enhance row with real set values
+                row.attr('data-'+this,set[this]);
+                // fill data into corresponsing column
+//                row.find('td').filter('#'+this).html('<span class="ellipsis">'+set[this]+'</span');
+                row.find('td').filter('#'+this).text(set[this]);
+              }
+            );
+            dummy.after(row);
+            if (smooth)
+              row.slideDown('slow');
+            else
+              row.show();
+          }) // each
+        ).then (dfd.resolve);
         return dfd.promise();
-      }, // // Shorty.WUI.List.toggle
+      }, // Shorty.WUI.List.add
       // ===== Shorty.WUI.List.build =====
       build: function()
       {
@@ -239,15 +253,29 @@ Shorty =
         // prepare loading
         $.when(
           Shorty.WUI.Notification.hide(),
+          // show hourglass
           Shorty.WUI.Hourglass.toggle(true),
+          // retrieve new entries
           Shorty.WUI.List.get(function(list){
-            Shorty.WUI.List.fill(list,function(){
-              Shorty.WUI.Hourglass.toggle(false);
-            });
+            // remove old entries
+            Shorty.WUI.List.empty();
+            // add new entries
+            Shorty.WUI.List.fill(list);
+            // hide hourglass
+            Shorty.WUI.Hourglass.toggle(false);
           })
         ).then(dfd.resolve);
         return dfd.promise();
-      }, // build
+      }, // Shorty.WUI.List.build
+      // ===== Shorty.WUI.List.empty =====
+      empty: function()
+      {
+        var entries=$('#desktop').find('#list-nonempty').find('tbody').find('tr');
+        entries.each(function(){
+          if(''!=$(this).attr('id'))
+            $(this).remove();
+        });
+      }, // Shorty.WUI.List.empty
       // ===== Shorty.WUI.List.fill =====
       fill: function(list,callback){
         var dfd = new $.Deferred();
@@ -274,35 +302,6 @@ Shorty =
         if (callback) callback();
         return dfd.promise();
       }, // Shorty.WUI.List.fill
-      // ===== Shorty.WUI.List.add =====
-      add: function(list,smooth){
-        smooth = smooth || true;
-        var dfd = new $.Deferred();
-        // clone dummy row from list: dummy is the only row with an empty id
-        var dummy = $('.shorty-list tr').filter(function(){return (''==$(this).attr('id'));});
-        var row, set;
-        $.when(
-          // insert list elements (sets) one by one
-          $.each(list,function(i,set){
-            row = dummy.clone();
-            // set row id to entry key
-            row.attr('id',set.key);
-            // enhance row with real set values
-            $.each(Array('key','source','target','clicks','created','accessed','until','notes'),
-              function(){
-                row.attr('data-'+this,set[this]);
-                $.each(row.find('td'),function(){$(this).text(set[$(this).attr('id')]);});
-              }
-            );
-            dummy.after(row);
-            if (smooth)
-              row.slideDown('slow');
-            else
-              row.show();
-          }) // each
-        ).then (dfd.resolve);
-        return dfd.promise();
-      }, // Shorty.WUI.List.add
       // ===== Shorty.WUI.List.get =====
       get: function(callback){
         var dfd = new $.Deferred();
@@ -333,6 +332,40 @@ Shorty =
         ).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.get
+      // ===== Shorty.WUI.List.toggle =====
+      toggle: function(filled){
+        var duration = 'slow';
+        var dfd = new $.Deferred();
+        if (filled){
+          $.when(
+            $('#desktop').find('#list-empty').hide(),
+            $('#desktop').find('#list-nonempty').fadeIn(duration)
+          ).then(dfd.resolve);
+        }else{
+          $.when(
+            $('#desktop').find('#list-nonempty').hide(),
+            $('#desktop').find('#list-empty').fadeIn(duration)
+          ).then(dfd.resolve);
+        }
+        return dfd.promise();
+      }, // // Shorty.WUI.List.toggle
+      // ===== Shorty.WUI.List.Toolbar =====
+      Toolbar:
+      {
+        // ===== Shorty.WUI.List.Toolbar.toggle =====
+        toggle: function(duration){
+          duration = duration || 'slow';
+          var button=$('#list-nonempty').find('#tools');
+          var toolbar=$('#list-nonempty').find('#toolbar');
+          if (button.attr('data-plus')==button.attr('src')){
+            button.attr('src',button.attr('data-minus'));
+            toolbar.find('div').each(function(){$(this).slideDown(duration);});
+          }else{
+            button.attr('src',button.attr('data-plus'));
+            toolbar.find('div').each(function(){$(this).slideUp(duration);});
+          }
+        }, // Shorty.WUI.List.Toolbar.toggle
+      }, // Shorty.WUI.List.Toolbar
     }, // Shorty.WUI.List
     // ===== Shorty.WUI.Notification =====
     Notification:
