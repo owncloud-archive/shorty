@@ -22,6 +22,15 @@
 
 #content { overflow: auto; }
 
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -moz-binding: url('xul/ellipsis.xml#ellipsis');
+  text-overflow: ellipsis;
+}
+
 .shorty-controls {
   display: none;
 }
