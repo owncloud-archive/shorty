@@ -20,18 +20,15 @@
 *
 */
 
-$(document).ready
-(
-  function(){
-    // basic action buttons
-    $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
-    // button to open the 'add' dialog
-    $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
-    // button to open the tools header row in the list
-    $('#list-nonempty').find('#tools').bind('click',Shorty.WUI.List.Toolbar.toggle);
-    // button to reload the list
-    $('#list-nonempty').find('#reload').bind('click',Shorty.WUI.List.build);
-    // initialize desktop
-    $.when(Shorty.WUI.Controls.init()).then(Shorty.WUI.List.build);
-  }
-); // document.ready
+$(document).ready(function(){
+  // basic action buttons
+  $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
+  // button to open the 'add' dialog
+  $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
+  // button to open the tools header row in the list
+  $('#list').find('#tools').bind('click',Shorty.WUI.List.Toolbar.toggle);
+  // button to reload the list
+  $('#list').find('#toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
+  // initialize desktop
+  $.when(Shorty.WUI.Controls.init()).then(Shorty.WUI.List.build);
+}); // document.ready

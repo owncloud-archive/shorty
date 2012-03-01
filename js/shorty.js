@@ -21,22 +21,21 @@
 */
 
 // some GENERAL initializations
-$(document).ready
-(
+$(document).ready(function(){
+  // make notification closeable
+  $("#content").find('#notification').bind('click',Shorty.WUI.Notification.hide);
   // add date picker options
-  function(){
-    $("#controls").find('#until').datepicker({
-      dateFormat :'dd-mm-yy',
-      changeMonth: true,
-      changeYear: true,
-      showOtherMonths: true,
-      selectOtherMonths: true,
-      showOn: "button",
-      buttonImage: $("#controls").find('#until').eq(0).attr('icon'),
-      buttonImageOnly: true
-    });
-  }
-); // document.ready
+  $("#controls").find('#until').datepicker({
+    dateFormat :'dd-mm-yy',
+    changeMonth: true,
+    changeYear: true,
+    showOtherMonths: true,
+    selectOtherMonths: true,
+    showOn: "button",
+    buttonImage: $("#controls").find('#until').eq(0).attr('icon'),
+    buttonImageOnly: true
+  });
+}); // document.ready
 
 // our library, coding UI and ACTION methods
 Shorty =
@@ -97,17 +96,6 @@ Shorty =
     // ===== Shorty.WUI.Dialog =====
     Dialog:
     {
-      // ===== Shorty.WUI.Dialog.reset =====
-      reset: function(dialog){
-        var dfd = new $.Deferred();
-        // reset dialog fields
-        $.when(
-          $.each(dialog.find('.shorty-input'),function(){if($(this).is('[data]'))$(this).val($(this).attr('data'));}),
-          $.each(dialog.find('.shorty-value'),function(){if($(this).is('[data]'))$(this).text($(this).attr('data'));}),
-          $.each(dialog.find('.shorty-icon'), function(){if($(this).is('[data]'))$(this).attr('src',$(this).attr('data'));})
-        ).then(dfd.resolve);
-        return dfd.promise();
-      }, // Shorty.WUI.Dialog.reset
       // ===== Shorty.WUI.Dialog.execute =====
       execute: function(dialog){
         var dfd = new $.Deferred();
@@ -135,6 +123,33 @@ Shorty =
         }; // switch
         return dfd.promise();
       }, // Shorty.WUI.Dialog.execute
+      // ===== Shorty.WUI.Dialog.reset =====
+      reset: function(dialog){
+        var dfd = new $.Deferred();
+        if (dialog){
+          // reset dialog fields
+          $.when(
+            $.each(dialog.find('.shorty-input'),function(){if($(this).is('[data]'))$(this).val($(this).attr('data'));}),
+            $.each(dialog.find('.shorty-value'),function(){if($(this).is('[data]'))$(this).text($(this).attr('data'));}),
+            $.each(dialog.find('.shorty-icon'), function(){if($(this).is('[data]'))$(this).attr('src',$(this).attr('data'));})
+          ).then(dfd.resolve);
+        }
+        else
+          dfd.resolve();
+        return dfd.promise();
+      }, // Shorty.WUI.Dialog.reset
+      // ===== Shorty.WUI.Dialog.sharpen =====
+      sharpen: function(dialog,sharp){
+        var dfd = new $.Deferred();
+        if (dialog){
+          if (sharp){
+
+          }else{
+          }
+        }
+        dfd.resolve();
+        return dfd.promise();
+      }, // Shorty.WUI.Dialog.sharpen
       // ===== Shorty.WUI.Dialog.show =====
       show: function(dialog){
         var duration = 'slow';
@@ -168,19 +183,21 @@ Shorty =
         var duration = 'slow';
         var dfd = new $.Deferred();
         if (!dialog.is(':visible'))
-        return;
-        $.when(dialog.slideUp(duration)).then(
-          function(){
-            switch ( dialog.attr('id') ){
-              case 'dialog-add':
-                dialog.find('#confirm').unbind('click');
-                dialog.find('#target').unbind('focusout');
-                break;
-              default:
-            } // switch
-            $.when(Shorty.WUI.Desktop.show()).then(dfd.resolve);
-          }
-        );
+          dfd.resolve();
+        else{
+          $.when(dialog.slideUp(duration)).then(
+            function(){
+              switch ( dialog.attr('id') ){
+                case 'dialog-add':
+                  dialog.find('#confirm').unbind('click');
+                  dialog.find('#target').unbind('focusout');
+                  break;
+                default:
+              } // switch
+              $.when(Shorty.WUI.Desktop.show()).then(dfd.resolve);
+            }
+          );
+        }
         return dfd.promise();
       }, // Shorty.WUI.Dialog.hide
       // ===== Shorty.WUI.Dialog.toggle =====
@@ -198,16 +215,24 @@ Shorty =
     // Shorty.WUI.Hourglass
     Hourglass:
     {
+      // ===== Shorty.WUI.Hourglass.toggle =====
       toggle: function(show){
         var dfd = new $.Deferred();
+        var hourglass = $('#desktop').find('.shorty-hourglass');
         if (show){
-          $.when(
-            $('#desktop').find('.shorty-hourglass').fadeIn('fast')
-          ).then(dfd.resolve);
+          if (hourglass.is(':visible'))
+            dfd.resolve();
+          else
+            $.when(
+              hourglass.fadeIn('fast')
+            ).then(dfd.resolve);
         }else{
-          $.when(
-            $('#desktop').find('.shorty-hourglass').fadeOut('slow')
-          ).then(dfd.resolve);
+          if (!hourglass.is(':visible'))
+            dfd.resolve();
+          else
+            $.when(
+              hourglass.fadeOut('slow')
+            ).then(dfd.resolve);
         }
         return dfd.promise();
       }, // Shorty.WUI.Hourglass.toggle
@@ -217,7 +242,6 @@ Shorty =
     {
       // ===== Shorty.WUI.List.add =====
       add: function(list,hidden){
-        hidden = hidden || false;
         var dfd = new $.Deferred();
         // clone dummy row from list: dummy is the only row with an empty id
         var dummy = $('.shorty-list tr').filter(function(){return (''==$(this).attr('id'));});
@@ -252,54 +276,87 @@ Shorty =
         var dfd = new $.Deferred();
         // prepare loading
         $.when(
-          Shorty.WUI.Notification.hide(),
-          // show hourglass
           Shorty.WUI.Hourglass.toggle(true),
+          Shorty.WUI.List.dim(false)
+        ).then(function(){
           // retrieve new entries
-          Shorty.WUI.List.get(function(list){
-            // remove old entries
-            Shorty.WUI.List.empty();
-            // add new entries
-            Shorty.WUI.List.fill(list);
-            // hide hourglass
-            Shorty.WUI.Hourglass.toggle(false);
+          $.when(
+            Shorty.WUI.List.get(function(list){
+              Shorty.WUI.List.empty();
+              Shorty.WUI.List.fill(list);
+            })
+          ).then(function(){
+            $.when(
+              Shorty.WUI.List.show(),
+              Shorty.WUI.List.dim(true)
+            ).then(function(){
+              Shorty.WUI.Hourglass.toggle(false)
+              dfd.resolve();
+            });
           })
-        ).then(dfd.resolve);
+        })
         return dfd.promise();
       }, // Shorty.WUI.List.build
+      // ===== Shorty.WUI.List.dim =====
+      dim: function(show){
+        var duration = 'slow';
+        var dfd = new $.Deferred();
+        var list = $('#desktop').find('#list');
+        var body = list.find('tbody');
+        if (show)
+        {
+          $.when(
+            body.fadeIn(duration)
+          ).then(function(){
+            // in addition, fade in any columns that were added, but not yet shown
+            body.find('tr').each(function(){
+              // only those rows that carry an id (not the dummy)
+              if (   ''!=$(this).attr('id')
+                  && 'none'==$(this).find('td').find('span').css('display') )
+                $(this).find('td').find('span').effect('pulsate');
+            });
+          }).then(dfd.resolve);
+        }else{
+          if (!body.is(':visible'))
+            dfd.resolve();
+          else
+          {
+            $.when(
+              body.fadeOut(duration)
+            ).then(dfd.resolve);
+          }
+        }
+        return dfd.promise();
+      }, // Shorty.WUI.List.dim
       // ===== Shorty.WUI.List.empty =====
       empty: function()
       {
-        var entries=$('#desktop').find('#list-nonempty').find('tbody').find('tr');
-        entries.each(function(){
-          if(''!=$(this).attr('id'))
-            $(this).remove();
-        });
+        var dfd = new $.Deferred();
+        $.when(
+          $('#desktop').find('#list').find('tbody').find('tr').each(function(){
+            if(''!=$(this).attr('id'))
+              $(this).remove();
+          })
+        ).then(dfd.resolve);
+        return dfd.promise();
       }, // Shorty.WUI.List.empty
       // ===== Shorty.WUI.List.fill =====
-      fill: function(list,callback){
+      fill: function(list){
         var dfd = new $.Deferred();
-        if ( ! list.length ){
-          // list empty, show placeholder instead of empty table
-          $.when(Shorty.WUI.List.toggle(false)).then(dfd.resolve);
-        }else{
-          // list non-empty, fill and show table instead of placeholder
-          // prevent clicks whilst loading the list
-          $.when(
-            $('.shorty-link').unbind('click', Shorty.Action.Url.click),
-            $('.shorty-edit').unbind('click', Shorty.Action.Url.edit),
-            $('.shorty-delete').unbind('click', Shorty.Action.Url.del),
-            Shorty.WUI.Sums.fill(),
-            Shorty.WUI.List.add(list),
-            // display the list
-            Shorty.WUI.List.toggle(true),
-            // reenable clicks after loading the list
-            $('.shorty-link').click(Shorty.Action.Url.click),
-            $('.shorty-edit').click(Shorty.Action.Url.edit),
-            $('.shorty-del').click(Shorty.Action.Url.del)
-          ).then(dfd.resolve);
-        }
-        if (callback) callback();
+        // prevent clicks whilst loading the list
+        $.when(
+          $('.shorty-link').unbind('click', Shorty.Action.Url.click),
+          $('.shorty-edit').unbind('click', Shorty.Action.Url.edit),
+          $('.shorty-delete').unbind('click', Shorty.Action.Url.del),
+          Shorty.WUI.Sums.fill(),
+          Shorty.WUI.List.add(list,false),
+          // display the list
+//          Shorty.WUI.List.show(),
+          // reenable clicks after loading the list
+          $('.shorty-link').click(Shorty.Action.Url.click),
+          $('.shorty-edit').click(Shorty.Action.Url.edit),
+          $('.shorty-del').click(Shorty.Action.Url.del)
+        ).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.fill
       // ===== Shorty.WUI.List.get =====
@@ -332,32 +389,56 @@ Shorty =
         ).then(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.get
-      // ===== Shorty.WUI.List.toggle =====
-      toggle: function(filled){
-        var duration = 'slow';
+      // ===== Shorty.WUI.List.hide =====
+      hide: function(duration){
+        duration = 'slow';
         var dfd = new $.Deferred();
-        if (filled){
+        var list = $('#desktop').find('#list');
+        if ( ! list.is(':visible'))
+          dfd.resolve();
+        else
+        {
           $.when(
-            $('#desktop').find('#list-empty').hide(),
-            $.when(
-              $('#desktop').find('#list-nonempty').fadeIn(duration)
-            ).then(function(){
-              // in addition, fade in any columns that were added, but not yet shown
-              $('#desktop').find('#list-nonempty').find('tbody').find('tr').each(function(){
-                // only those rows that carry an id (not the dummy)
-                if (   ''!=$(this).attr('id')
-                    && 'none'==$(this).find('td').find('span').css('display') )
-                  $(this).find('td').find('span').effect('pulsate');
-              });
-            })
-          ).then(dfd.resolve);
-        }else{
-          $.when(
-            $('#desktop').find('#list-nonempty').hide(),
-            $('#desktop').find('#list-empty').fadeIn(duration)
+            list.fadeOut(duration)
           ).then(dfd.resolve);
         }
         return dfd.promise();
+      }, // Shorty.WUI.List.hide
+      // ===== Shorty.WUI.List.placeholder =====
+      placeholder: function(){
+        if ($('#list').find('tbody').find('tr').is(':visible'))
+          $('#placeholder').fadeOut('slow');
+        else
+          $('#placeholder').fadeIn('fast');
+      }, // Shorty.WUI.List.placeholder
+      // ===== Shorty.WUI.List.show =====
+      show: function(duration){
+        duration = 'slow';
+        var dfd = new $.Deferred();
+        var list = $('#desktop').find('#list');
+        if (list.is(':visible'))
+          dfd.resolve();
+        else
+        {
+          // list currently not visible, show it
+          $.when(
+            list.find('tbody').show(),
+            list.fadeIn(duration)
+          ).then(function(){
+            dfd.resolve();
+            Shorty.WUI.List.placeholder();
+          });
+        }
+        return dfd.promise();
+      }, // Shorty.WUI.List.show
+      // ===== Shorty.WUI.List.toggle =====
+      toggle: function(duration){
+        duration = 'slow';
+        var dfd = new $.Deferred();
+        if (list.is(':visible'))
+          return Shorty.WUI.List.hide();
+        else
+          return Shorty.WUI.List.show();
       }, // Shorty.WUI.List.toggle
       // ===== Shorty.WUI.List.Toolbar =====
       Toolbar:
@@ -365,8 +446,8 @@ Shorty =
         // ===== Shorty.WUI.List.Toolbar.toggle =====
         toggle: function(duration){
           duration = duration || 'slow';
-          var button=$('#list-nonempty').find('#tools');
-          var toolbar=$('#list-nonempty').find('#toolbar');
+          var button=$('#list').find('#tools');
+          var toolbar=$('#list').find('#toolbar');
           if (button.attr('data-plus')==button.attr('src')){
             button.attr('src',button.attr('data-minus'));
             toolbar.find('div').each(function(){$(this).slideDown(duration);});
@@ -394,45 +475,49 @@ Shorty =
         var dfd = new $.Deferred();
         var duration = 'slow';
         var notification = $('#notification');
-        switch(level){
-          case 'debug':
-            // detect debug mode by checking, of function 'debug()' exists
-            if ( Shorty.debug ){
-              Shorty.debug('Debug: '+message);
-              $.when(
-                notification.fadeOut('fast'),
-                notification.attr('title', 'debug message'),
-                notification.text('Debug: '+message),
-                notification.fadeIn(duration)
-              ).then(dfd.resolve);
-            }
-            break;
-          case 'error':
-            if (Shorty.debug)
-              Shorty.debug('Error: '+message);
-            $.when(
-              notification.fadeOut('fast'),
-              notification.attr('title', 'error message'),
-              notification.text('Error: ' + message),
-              notification.fadeIn(duration)
-            ).then(dfd.resolve);
-            break;
-          default: // 'info'
-            if ( message.length ){
-              if (Shorty.debug)
-                Shorty.debug('Info: '+message);
-              $.when(
-                notification.fadeOut('fast'),
-                notification.text(message),
-                notification.fadeIn(duration)
-              ).then(dfd.resolve);
-            }else{
-              $.when(
-                notification.fadeOut('fast'),
-                notification.text('')
-              ).then(dfd.resolve);
-            }
-        } // switch
+        if (message && message.length){
+          $.when(
+            notification.fadeOut('fast')
+          ).then(function(){
+            switch(level){
+              case 'debug':
+                // detect debug mode by checking, of function 'debug()' exists
+                if ( Shorty.debug ){
+                  Shorty.debug('Debug: '+message);
+                  $.when(
+                    notification.attr('title', 'debug message'),
+                    notification.text('Debug: '+message),
+                    notification.fadeIn(duration)
+                  ).then(dfd.resolve);
+                }
+                else
+                  dfd.resolve();
+                break;
+              case 'error':
+                if (Shorty.debug)
+                  Shorty.debug('Error: '+message);
+                $.when(
+                  notification.attr('title', 'error message'),
+                  notification.text('Error: ' + message),
+                  notification.fadeIn(duration)
+                ).then(dfd.resolve);
+                break;
+              default: // 'info'
+                if ( message.length ){
+                  if (Shorty.debug)
+                    Shorty.debug('Info: '+message);
+                  $.when(
+                    notification.text(message),
+                    notification.fadeIn(duration)
+                  ).then(dfd.resolve);
+                }else{
+                  $.when(
+                    notification.text('')
+                  ).then(dfd.resolve);
+                }
+            } // switch
+          })
+        } // if message
         return dfd.promise();
       }, // Shorty.WUI.Notification.show
     }, // Shorty.WUI.Notification
@@ -459,7 +544,7 @@ Shorty =
         $.when(
           Shorty.WUI.Meta.get(target,function(meta){
             dialog.find('#target').val(meta.final);
-            dialog.find('#meta').fadeTo ( 'fast', 0, function()
+            dialog.find('#meta').fadeTo('fast',0.0,function()
               {
                 dialog.find('#staticon').attr('src',meta.staticon);
                 dialog.find('#schemicon').attr('src',meta.schemicon);
@@ -551,6 +636,10 @@ Shorty =
         var favicon = dialog.find('#meta').find('#favicon').text();
         $.when(
           Shorty.WUI.Notification.hide(),
+          // close and neutralize dialog
+          Shorty.WUI.Dialog.hide(dialog),
+          Shorty.WUI.List.dim(false),
+          Shorty.WUI.List.show(),
           $.ajax({
             url:     'ajax/add.php',
             cache:   false,
@@ -564,16 +653,13 @@ Shorty =
               if ( 'success'==response.status ){
                 // show notification
                 Shorty.WUI.Notification.show(response,'info');
+                Shorty.WUI.Dialog.reset(dialog);
                 // add shorty to existing list
                 Shorty.WUI.List.add([response.data],true);
-                // close and neutralize dialog
-                Shorty.WUI.Dialog.hide(dialog);
-                // show list
-                Shorty.WUI.List.toggle(true);
+                Shorty.WUI.List.dim(true)
               }else{
                 Shorty.WUI.Notification.show(response.note,'error');
               }
-              return true;
             }
           })
         ).then(dfd.resolve);
@@ -589,7 +675,7 @@ Shorty =
         var notes  = dialog.find('#notes').val();
         var until  = dialog.find('#until').val();
         $.when(
-          Shorty.WUI.Notification.hide(),
+//          Shorty.WUI.Notification.hide(),
           $.ajax({
             url:     'ajax/edit.php',
             cache:   false,
@@ -621,7 +707,7 @@ Shorty =
         var dialog = $('#dialog-edit');
         var key    = dialog.find('#key').val();
         $.when(
-          Shorty.WUI.Notification.hide(),
+//          Shorty.WUI.Notification.hide(),
           $.ajax({
             url:     'ajax/del.php',
             cache:   false,
@@ -650,7 +736,7 @@ Shorty =
         $('#shorty-add-notes').val(record.children('.shorty-notes:first').text());
         $('#shorty-add-until').val(record.children('.shorty-until:first').text());
         $.when(
-          Shorty.WUI.Notification.hide(),
+//          Shorty.WUI.Notification.hide(),
           function(){
             if ($('.shorty-add').css('display') == 'none'){
               $('.shorty-add').slideToggle();

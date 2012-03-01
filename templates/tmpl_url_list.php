@@ -22,32 +22,15 @@
 */
 ?>
 
-<div class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
+<div id="hourglass" class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
+<div id="placeholder" class="shorty-placeholder"><span class="shorty-label"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></span></div>
 
-<!-- the placeholder (if list of urls is empty) -->
-<table id="list-empty" class="shorty-list" style="display:none;">
-  <thead>
-    <tr>
-      <th id="headerFavicon"><?php echo OC_Shorty_L10n::t('') ?></th>
-      <th id="headerTitle"  ><?php echo OC_Shorty_L10n::t('Title') ?></th>
-      <th id="headerTarget" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
-      <th id="headerClicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
-      <th id="headerUntil"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
-      <th id="headerAction" ><?php echo OC_Shorty_L10n::t('Actions') ?></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="7" class="shorty-label" style="font-style:italic;text-align:center;"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></td>
-    </tr>
-  </tbody>
-</table>
 <!-- the list of urls -->
-<table id="list-nonempty" class="shorty-list" style="display:none;">
+<table id="list" class="shorty-list" style="display:none;">
   <thead>
     <tr id="title">
       <!-- a button to open/close the toolbar below -->
-      <th id="headerFavicon"><img id="tools" alt="toolbar" title="show toolsbar"
+      <th id="headerFavicon"><img id="tools" alt="toolbar" title="toggle toolbar"
                                   src="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
                                   data-plus="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
                                   data-minus="<?php echo OC_Helper::imagePath('shorty','actions/minus.png'); ?>"></th>
@@ -97,7 +80,9 @@
       </th>
     </tr>
   </thead>
+  <!-- the standard body for non-empty lists -->
   <tbody>
+    <!-- the 'dummy' row, a blueprint -->
     <tr id=""
         data-key=""
         data-source=""
@@ -109,7 +94,7 @@
         data-created=""
         data-accessed=""
         data-notes=""
-        style="hidden" >
+        style="display:hidden;" >
       <td id="favicon"></td>
       <td id="title"  ></td>
       <td id="target" ></td>
