@@ -552,21 +552,20 @@ Shorty =
         $.when(
           Shorty.WUI.Meta.get(target,function(meta){
             dialog.find('#target').val(meta.final);
-            dialog.find('#meta').fadeTo('fast',0,function()
-              {
-                dialog.find('#staticon').attr('src',meta.staticon);
-                dialog.find('#schemicon').attr('src',meta.schemicon);
-                dialog.find('#favicon').attr('src',meta.favicon);
-                dialog.find('#mimicon').attr('src',meta.mimicon);
-                dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
-                dialog.find('#meta').fadeTo('fast',1);
-              }
-            );
+            dialog.find('#meta').fadeTo('fast',0,function(){
+              Shorty.WUI.Meta.reset(dialog);
+              dialog.find('#staticon').attr('src',meta.staticon);
+              dialog.find('#schemicon').attr('src',meta.schemicon);
+              dialog.find('#favicon').attr('src',meta.favicon);
+              dialog.find('#mimicon').attr('src',meta.mimicon);
+              dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
+              dialog.find('#meta').fadeTo('fast',1);
+            });
           })
         ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Meta.collect
-      // Shorty.WUI.Meta.get
+      // ===== Shorty.WUI.Meta.get =====
       get: function(target,callback){
         var dfd = new $.Deferred();
         $.when(
@@ -587,6 +586,15 @@ Shorty =
         ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Meta.get
+      // ===== Shorty.WUI.Meta.reset =====
+      reset: function(dialog){
+        dialog.find('#staticon').attr('src',dialog.find('#staticon').attr('data'));
+        dialog.find('#schemicon').attr('src',dialog.find('#schemicon').attr('data'));
+        dialog.find('#favicon').attr('src',dialog.find('#favicon').attr('data'));
+        dialog.find('#mimicon').attr('src',dialog.find('#mimicon').attr('data'));
+        dialog.find('#explanation').html(dialog.find('#explanation').attr('data'));
+        dialog.find('#meta').fadeTo('fast',1);
+      }, // Shorty.WUI.Meta.reset
     }, // Shorty.WUI.Meta
     // ===== Shorty.WUI.Sums =====
     Sums:
