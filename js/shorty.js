@@ -52,7 +52,7 @@ Shorty =
         $.when(
           Shorty.WUI.Controls.toggle(),
           Shorty.WUI.Sums.fill()
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Controls.init
       // ===== Shorty.WUI.Controls.toggle =====
@@ -65,12 +65,12 @@ Shorty =
           $.when(
             $.when(
               controls.slideDown('slow')
-            ).then(Shorty.WUI.Sums.fill)
-          ).then(dfd.resolve);
+            ).done(Shorty.WUI.Sums.fill)
+          ).done(dfd.resolve);
         }else{
           $.when(
             controls.slideUp('fast')
-          ).then(dfd.resolve);
+          ).done(dfd.resolve);
         }
         return dfd.promise();
       }, // Shorty.WUI.Controls.toggle
@@ -82,14 +82,14 @@ Shorty =
       show: function(duration){
         duration = duration || 'slow';
         var dfd = new $.Deferred();
-        $.when($('#desktop').fadeIn(duration)).then(dfd.resolve);
+        $.when($('#desktop').fadeIn(duration)).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Desktop.show
       // ===== Shorty.WUI.Desktop.hide =====
       hide: function(duration){
         duration = duration || 'slow';
         var dfd = new $.Deferred();
-        $.when($('#desktop').fadeOut(duration)).then(dfd.resolve);
+        $.when($('#desktop').fadeOut(duration)).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Desktop.hide
     }, // Shorty.WUI.Desktop
@@ -104,19 +104,19 @@ Shorty =
             $.when(
               Shorty.WUI.Notification.hide(),
               Shorty.Action.Url.add()
-            ).then(dfd.resolve);
+            ).done(dfd.resolve);
             break;
           case 'dialog-edit':
             $.when(
               Shorty.WUI.Notification.hide(),
               Shorty.Action.Url.edit()
-            ).then(dfd.resolve);
+            ).done(dfd.resolve);
             break;
           case 'dialog-del':
             $.when(
               Shorty.WUI.Notification.hide(),
               Shorty.Action.Url.del()
-            ).then(dfd.resolve);
+            ).done(dfd.resolve);
             break;
           default:
             dfd.resolve();
@@ -132,7 +132,7 @@ Shorty =
             $.each(dialog.find('.shorty-input'),function(){if($(this).is('[data]'))$(this).val($(this).attr('data'));}),
             $.each(dialog.find('.shorty-value'),function(){if($(this).is('[data]'))$(this).text($(this).attr('data'));}),
             $.each(dialog.find('.shorty-icon'), function(){if($(this).is('[data]'))$(this).attr('src',$(this).attr('data'));})
-          ).then(dfd.resolve);
+          ).done(dfd.resolve);
         }
         else
           dfd.resolve();
@@ -156,26 +156,24 @@ Shorty =
         var dfd = new $.Deferred();
         if (dialog.is(':visible'))
           return;
-        $.when(Shorty.WUI.Desktop.hide()).then(
-          function(){
-            // wipe (reset) dialog
-            Shorty.WUI.Dialog.reset(dialog);
-            // show dialog
-            $.when(dialog.slideDown(duration)).then(function(){
-              // initialize dialog
-              switch(dialog.attr('id')){
-                case 'dialog-add':
-                  dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
-                  dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
-                  dialog.find('#target').focus();
-                  break;
-                default:
-                  dialog.find('#title').focus();
-              } // switch
-              dfd.resolve();
-            });
-          } // function
-        );
+        $.when(Shorty.WUI.Desktop.hide()).done(function(){
+          // wipe (reset) dialog
+          Shorty.WUI.Dialog.reset(dialog);
+          // show dialog
+          $.when(dialog.slideDown(duration)).done(function(){
+            // initialize dialog
+            switch(dialog.attr('id')){
+              case 'dialog-add':
+                dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
+                dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
+                dialog.find('#target').focus();
+                break;
+              default:
+                dialog.find('#title').focus();
+            } // switch
+            dfd.resolve();
+          });
+        });
         return dfd.promise();
       }, // Shorty.WUI.Dialog.show
       // ===== Shorty.WUI.Dialog.hide =====
@@ -185,7 +183,7 @@ Shorty =
         if (!dialog.is(':visible'))
           dfd.resolve();
         else{
-          $.when(dialog.slideUp(duration)).then(
+          $.when(dialog.slideUp(duration)).done(
             function(){
               switch ( dialog.attr('id') ){
                 case 'dialog-add':
@@ -194,7 +192,7 @@ Shorty =
                   break;
                 default:
               } // switch
-              $.when(Shorty.WUI.Desktop.show()).then(dfd.resolve);
+              $.when(Shorty.WUI.Desktop.show()).done(dfd.resolve);
             }
           );
         }
@@ -206,9 +204,9 @@ Shorty =
         Shorty.WUI.Notification.hide();
         // show or hide dialog
         if ( ! dialog.is(':visible'))
-          $.when(Shorty.WUI.Dialog.show(dialog)).then(dfd.resolve);
+          $.when(Shorty.WUI.Dialog.show(dialog)).done(dfd.resolve);
         else 
-          $.when(Shorty.WUI.Dialog.hide(dialog)).then(dfd.resolve);
+          $.when(Shorty.WUI.Dialog.hide(dialog)).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Dialog.toggle
     }, // Shorty.WUI.Dialog
@@ -225,14 +223,14 @@ Shorty =
           else
             $.when(
               hourglass.fadeIn('fast')
-            ).then(dfd.resolve);
+            ).done(dfd.resolve);
         }else{
           if (!hourglass.is(':visible'))
             dfd.resolve();
           else
             $.when(
               hourglass.fadeOut('slow')
-            ).then(dfd.resolve);
+            ).done(dfd.resolve);
         }
         return dfd.promise();
       }, // Shorty.WUI.Hourglass.toggle
@@ -252,22 +250,32 @@ Shorty =
             row = dummy.clone();
             // set row id to entry key
             row.attr('id',set.key);
-            $.each(Array('key','title','source','target','clicks','created','accessed','until','notes'),
-              function(){
+            // add attributes to row, as data and value
+            $.each(['key','title','source','target','clicks','created','accessed','until','notes','favicon'],
+              function(i,aspect){
                 // enhance row with real set values
-                row.attr('data-'+this,set[this]);
+                row.attr('data-'+this,set[aspect]);
                 // fill data into corresponsing column
+                var content;
+                switch(aspect)
+                {
+                  case 'favicon':
+                    content='<img width="16" src="'+set[aspect]+'">';
+                    break;
+                  default:
+                    content=set[aspect];
+                } // switch
                 if (hidden)
                   // row is meant to be shown only later, so keep it hidden
-                  row.find('td').filter('#'+this).html('<span style="display:none;">'+set[this]+'</span>');
+                  row.find('td').filter('#'+aspect).html('<span style="display:none;">'+content+'</span>');
                 else
                   // row is meant to be shown immediately, typically when initializing the list
-                  row.find('td').filter('#'+this).html('<span style="display:inline;">'+set[this]+'</span>');
+                  row.find('td').filter('#'+aspect).html('<span style="display:inline;">'+content+'</span>');
               }
             );
             dummy.after(row);
           }) // each
-        ).then (dfd.resolve);
+        ).done (dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.add
       // ===== Shorty.WUI.List.build =====
@@ -278,18 +286,18 @@ Shorty =
         $.when(
           Shorty.WUI.Hourglass.toggle(true),
           Shorty.WUI.List.dim(false)
-        ).then(function(){
+        ).done(function(){
           // retrieve new entries
           $.when(
             Shorty.WUI.List.get(function(list){
               Shorty.WUI.List.empty();
               Shorty.WUI.List.fill(list);
             })
-          ).then(function(){
+          ).done(function(){
             $.when(
               Shorty.WUI.List.show(),
               Shorty.WUI.List.dim(true)
-            ).then(function(){
+            ).done(function(){
               Shorty.WUI.Hourglass.toggle(false)
               dfd.resolve();
             });
@@ -307,7 +315,7 @@ Shorty =
         {
           $.when(
             body.fadeIn(duration)
-          ).then(function(){
+          ).done(function(){
             // in addition, fade in any columns that were added, but not yet shown
             body.find('tr').each(function(){
               // only those rows that carry an id (not the dummy)
@@ -315,7 +323,7 @@ Shorty =
                   && 'none'==$(this).find('td').find('span').css('display') )
                 $(this).find('td').find('span').effect('pulsate');
             });
-          }).then(dfd.resolve);
+          }).done(dfd.resolve);
         }else{
           if (!body.is(':visible'))
             dfd.resolve();
@@ -323,7 +331,7 @@ Shorty =
           {
             $.when(
               body.fadeOut(duration)
-            ).then(dfd.resolve);
+            ).done(dfd.resolve);
           }
         }
         return dfd.promise();
@@ -337,7 +345,7 @@ Shorty =
             if(''!=$(this).attr('id'))
               $(this).remove();
           })
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.empty
       // ===== Shorty.WUI.List.fill =====
@@ -356,7 +364,7 @@ Shorty =
           $('.shorty-link').click(Shorty.Action.Url.click),
           $('.shorty-edit').click(Shorty.Action.Url.edit),
           $('.shorty-del').click(Shorty.Action.Url.del)
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.fill
       // ===== Shorty.WUI.List.get =====
@@ -380,13 +388,13 @@ Shorty =
                 if (callback){
                   $.when(
                     callback(response.data)
-                  ).then(dfd.resolve);
+                  ).done(dfd.resolve);
                 }
               } // if else
               return dfd.promise();
             }
           })
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.get
       // ===== Shorty.WUI.List.hide =====
@@ -400,7 +408,7 @@ Shorty =
         {
           $.when(
             list.fadeOut(duration)
-          ).then(dfd.resolve);
+          ).done(dfd.resolve);
         }
         return dfd.promise();
       }, // Shorty.WUI.List.hide
@@ -424,7 +432,7 @@ Shorty =
           $.when(
             list.find('tbody').show(),
             list.fadeIn(duration)
-          ).then(function(){
+          ).done(function(){
             dfd.resolve();
             Shorty.WUI.List.placeholder();
           });
@@ -466,7 +474,7 @@ Shorty =
         var dfd = new $.Deferred();
         $.when(
           $('#notification').fadeOut('fast').text('')
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Notification.hide
       // ===== Shorty.WUI.Notification.show =====
@@ -478,7 +486,7 @@ Shorty =
         if (message && message.length){
           $.when(
             notification.fadeOut('fast')
-          ).then(function(){
+          ).done(function(){
             switch(level){
               case 'debug':
                 // detect debug mode by checking, of function 'debug()' exists
@@ -488,7 +496,7 @@ Shorty =
                     notification.attr('title', 'debug message'),
                     notification.text('Debug: '+message),
                     notification.fadeIn(duration)
-                  ).then(dfd.resolve);
+                  ).done(dfd.resolve);
                 }
                 else
                   dfd.resolve();
@@ -500,7 +508,7 @@ Shorty =
                   notification.attr('title', 'error message'),
                   notification.text('Error: ' + message),
                   notification.fadeIn(duration)
-                ).then(dfd.resolve);
+                ).done(dfd.resolve);
                 break;
               default: // 'info'
                 if ( message.length ){
@@ -509,11 +517,11 @@ Shorty =
                   $.when(
                     notification.text(message),
                     notification.fadeIn(duration)
-                  ).then(dfd.resolve);
+                  ).done(dfd.resolve);
                 }else{
                   $.when(
                     notification.text('')
-                  ).then(dfd.resolve);
+                  ).done(dfd.resolve);
                 }
             } // switch
           })
@@ -544,7 +552,7 @@ Shorty =
         $.when(
           Shorty.WUI.Meta.get(target,function(meta){
             dialog.find('#target').val(meta.final);
-            dialog.find('#meta').fadeTo('fast',0.0,function()
+            dialog.find('#meta').fadeTo('fast',0,function()
               {
                 dialog.find('#staticon').attr('src',meta.staticon);
                 dialog.find('#schemicon').attr('src',meta.schemicon);
@@ -555,7 +563,7 @@ Shorty =
               }
             );
           })
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Meta.collect
       // Shorty.WUI.Meta.get
@@ -576,7 +584,7 @@ Shorty =
               }
             }
           })
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Meta.get
     }, // Shorty.WUI.Meta
@@ -592,7 +600,7 @@ Shorty =
             $('#controls').find('#sum_shortys').text(data.sum_shortys);
             $('#controls').find('#sum_clicks').text(data.sum_clicks);
           })
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Sums.fill
       // ===== Shorty.WUI.Sums.get =====
@@ -612,7 +620,7 @@ Shorty =
               } // if else
             }
           })
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Sums.get
     }, // Shorty.WUI.Sums
@@ -629,11 +637,14 @@ Shorty =
       add:function(){
         var dfd = new $.Deferred();
         var dialog = $('#dialog-add');
-        var target  = dialog.find('#target').val() || '';
-        var title   = dialog.find('#title').val()  || '';
-        var notes   = dialog.find('#notes').val()  || '';
-        var until   = dialog.find('#until').val()  || '';
-        var favicon = dialog.find('#meta').find('#favicon').text();
+        var target  = dialog.find('#target').val().trim() || '';
+        var title   = dialog.find('#title').val().trim()  || '';
+        var notes   = dialog.find('#notes').val().trim()  || '';
+        var until   = dialog.find('#until').val().trim()  || '';
+        // take over meta data retrieved before
+        var favicon = dialog.find('#meta').find('#favicon').attr('src');
+        if (''==title)
+          title = dialog.find('#meta').find('#explanation').html();
         $.when(
           Shorty.WUI.Notification.hide(),
           // close and neutralize dialog
@@ -648,7 +659,11 @@ Shorty =
                        notes:   encodeURIComponent(notes),
                        until:   encodeURIComponent(until),
                        favicon: encodeURIComponent(favicon) },
-            error:   function(){if (!typeof Shorty.Debug==="undefined") Shorty.Debug.log(this.data);},
+            error:   function(){
+              if (!typeof Shorty.Debug==="undefined")
+                Shorty.Debug.log(this.data);
+              return false;
+            },
             success: function(response){
               if ( 'success'==response.status ){
                 // show notification
@@ -662,7 +677,7 @@ Shorty =
               }
             }
           })
-        ).then(dfd.resolve);
+        ).done(dfd.resolve).fail(dfd.reject);
         return dfd.promise;
       }, // ===== Shorty.Action.Url.add =====
       // ===== Shorty.Action.Url.edit =====
@@ -698,7 +713,7 @@ Shorty =
               record.children('.shorty-until').html(until);
             }
           })
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // ===== Shorty.Action.Url.edit =====
       // ===== Shorty.Action.Url.del =====
@@ -721,7 +736,7 @@ Shorty =
               // ...
             }
           })
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // ===== Shorty.Action.Url.del =====
       // ===== Shorty.Action.Url.show =====
@@ -743,7 +758,7 @@ Shorty =
             }
           },
           $('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 500)
-        ).then(dfd.resolve);
+        ).done(dfd.resolve);
         return dfd.promise();
       }, // ===== Shorty.Action.Url.show =====
     }, // ===== Shorty.Action.Url =====

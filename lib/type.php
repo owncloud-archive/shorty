@@ -48,39 +48,39 @@ class OC_Shorty_Type
       case self::KEY:
         if ( preg_match ( '/^[a-z0-9]{10}$/i', $value ) )
           return $value;
-        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'...'),$type) );
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::SORTING:
         if ( in_array ( trim($value), self::$valid_sortings ) )
           return $value;
-        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'...'),$type) );
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::STRING:
         if ( preg_match ( '/^.*$/', $value ) )
           return $value;
-        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'...'),$type) );
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::URL:
-        $pattern = '/^(http|https|ftp)\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(\/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$/';
+        $pattern = '/^([a-zA-Z][a-zA-Z][a-zA-Z0-9]+)\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(\/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+)?)*$/';
         if ( preg_match ( $pattern, $value ) )
           return $value;
-        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'...'),$type) );
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::INTEGER:
         if ( preg_match ( '/^[0-9]+$/', $value ) )
           return $value;
-        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'...'),$type) );
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::FLOAT:
         if ( preg_match ( '/^[0-9]+(\.[0-9]+)?$/', $value ) )
           return $value;
-        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'...'),$type) );
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::TIMESTAMP:
         if ( preg_match ( '/^[0-9]{}$/', $value ) )
           return $value;
-        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'...'),$type) );
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::DATE:
         if (  (  (FALSE!==($date=date_parse_from_format('Y#m#d', $value )))
                ||(FALSE!==($date=date_parse_from_format('d#m#Y', $value )))
                ||(FALSE!==($date=date_parse_from_format('Ymd',   $value ))) )
             &&( date_check ( $date['year'],$date['month'],$date['day'] ) ) )
           return $value;
-        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'...'),$type) );
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
     } // switch $type
     throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
   } // function is_valid
@@ -94,7 +94,7 @@ class OC_Shorty_Type
       case self::KEY:       return trim ( $value );
       case self::SORTING:   return $valid_sortings ( trim($value) );
       case self::STRING:    return trim ( $value );
-      case self::URL:       return trim ( $value ); // ToDo: url encoding
+      case self::URL:       return trim ( $value );
       case self::INTEGER:   return sprintf ( '%d', $value );
       case self::FLOAT:     return sprintf ( '%f', $value );
       case self::TIMESTAMP: return trim ( $value );
