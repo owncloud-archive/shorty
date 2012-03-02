@@ -87,7 +87,6 @@ class OC_Shorty_Meta
       $meta['mimicon']     = self::selectIcon ( 'mimetype', $meta['mimetype'] );
       $meta['code']        = curl_getinfo ( $handle, CURLINFO_HTTP_CODE );
       $meta['status']      = OC_Shorty_L10n::t ( self::selectCode('status',$meta['code']) );
-      // this is the 'title' of the page
       $meta['explanation'] = OC_Shorty_L10n::t ( self::selectCode('explanation',$meta['code']) );
     }
     curl_close ( $handle );

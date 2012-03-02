@@ -690,17 +690,16 @@ Shorty =
     {
       // ===== Shorty.Action.Url.add =====
       add:function(){
-        var dfd = new $.Deferred();
-        var dialog = $('#dialog-add');
-        var target  = dialog.find('#target').val().trim() || '';
-        var title   = dialog.find('#title').val().trim()  || '';
-        var notes   = dialog.find('#notes').val().trim()  || '';
-        var until   = dialog.find('#until').val().trim()  || '';
+        var dfd=new $.Deferred();
+        var dialog=$('#dialog-add');
+        var target=dialog.find('#target').val().trim()||'';
+        var title =dialog.find('#title').val().trim() ||'';
+        var notes =dialog.find('#notes').val().trim() ||'';
+        var until =dialog.find('#until').val().trim() ||'';
         // store favicon from meta data, except it is the internal default blank
         var favicon = dialog.find('#meta').find('#favicon').attr('src');
-        favicon = (favicon==dialog.find('#meta').find('#favicon').attr('data'))?'':favicon;
-        if (''==title)
-          title = dialog.find('#meta').find('#explanation').html();
+        favicon=(favicon==dialog.find('#meta').find('#favicon').attr('data'))?'':favicon;
+        // perform upload of new shorty
         $.when(
           Shorty.WUI.Notification.hide(),
           // close and neutralize dialog
