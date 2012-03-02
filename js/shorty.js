@@ -23,16 +23,16 @@
 // some GENERAL initializations
 $(document).ready(function(){
   // make notification closeable
-  $("#content").find('#notification').bind('click',Shorty.WUI.Notification.hide);
+  $('#content').find('#notification').bind('click',Shorty.WUI.Notification.hide);
   // add date picker options
-  $("#controls").find('#until').datepicker({
+  $('#controls').find('#until').datepicker({
     dateFormat :'dd-mm-yy',
     changeMonth: true,
     changeYear: true,
     showOtherMonths: true,
     selectOtherMonths: true,
-    showOn: "button",
-    buttonImage: $("#controls").find('#until').eq(0).attr('icon'),
+    showOn: 'button',
+    buttonImage: $('#controls').find('#until').eq(0).attr('icon'),
     buttonImageOnly: true
   });
 }); // document.ready
@@ -715,7 +715,7 @@ Shorty =
                        until:   encodeURIComponent(until),
                        favicon: encodeURIComponent(favicon) },
             error:   function(){
-              if (!typeof Shorty.Debug==="undefined")
+              if (!typeof Shorty.Debug==='undefined')
                 Shorty.Debug.log(this.data);
               return false;
             },
