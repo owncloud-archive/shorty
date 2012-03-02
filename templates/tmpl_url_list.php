@@ -28,7 +28,7 @@
 <!-- the list of urls -->
 <table id="list" class="shorty-list" style="display:none;">
   <thead>
-    <tr id="title">
+    <tr id="titlebar">
       <!-- a button to open/close the toolbar below -->
       <th id="headerFavicon"><img id="tools" alt="toolbar" title="toggle toolbar"
                                   src="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"

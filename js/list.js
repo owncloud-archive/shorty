@@ -26,7 +26,7 @@ $(document).ready(function(){
   // button to open the 'add' dialog
   $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
   // button to open the tools header row in the list
-  $('#list').find('#tools').bind('click',Shorty.WUI.List.Toolbar.toggle);
+  $('#list').find('#titlebar').bind('click',Shorty.WUI.List.Toolbar.toggle);
   // button to reload the list
   $('#list').find('#toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
   // initialize desktop
