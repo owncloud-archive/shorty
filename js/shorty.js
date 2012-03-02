@@ -698,6 +698,7 @@ Shorty =
         var until   = dialog.find('#until').val().trim()  || '';
         // take over meta data retrieved before
         var favicon = dialog.find('#meta').find('#favicon').attr('src');
+        favicon = (favicon==dialog.find('#meta').find('#favicon').attr('data'))?'':favicon;
         if (''==title)
           title = dialog.find('#meta').find('#explanation').html();
         $.when(
