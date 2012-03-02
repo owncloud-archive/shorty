@@ -42,11 +42,7 @@ $(document).ready(
         if (type.length){
           $('#shorty').find('.backend-supplement').filter('#backend-'+type).fadeIn('slow');
           // save preference
-          $.get( OC.filePath('shorty', 'ajax', 'personal.php'),
-                 $('#shorty').find('#backend-type').serialize(),
-                 function(data){
-                   //OC.msg.finishedSaving('#shorty .msg', data);
-                 });
+          Shorty.Action.Preference.set($('#shorty').find('#backend-type').serialize());
           return false;
         }
       }
@@ -58,11 +54,7 @@ $(document).ready(
     // safe preferences
     $('#shorty').find('.backend-supplement').focusout(function(){
         // save preference
-        $.get( OC.filePath('shorty', 'ajax', 'personal.php'),
-               $(this).find('input').serialize(),
-               function(data){
-                 //OC.msg.finishedSaving('#shorty .msg', data);
-               });
+        Shorty.Action.Preference.set($(this).find('input').serialize());
       }
     );
   }

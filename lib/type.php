@@ -27,19 +27,20 @@
 class OC_Shorty_Type
 {
   const KEY         = 'key';
-  const SORTING     = 'sorting';
+  const SORTKEY     = 'sortkey';
+  const SORTVAL     = 'sortval';
   const STRING      = 'string';
   const URL         = 'url';
   const INTEGER     = 'integer';
   const FLOAT       = 'float';
   const DATE        = 'date';
   const TIMESTAMP   = 'timestamp';
-  static $valid_sortings = array ( 'k'=>'key',      'kd'=>'key DESC',
-                                   'c'=>'created',  'cd'=>'created DESC',
-                                   'a'=>'accessed', 'ad'=>'accessed DESC',
-                                   't'=>'title',    'td'=>'title DESC',
-                                   'h'=>'clicks',   'hd'=>'clicks DESC',
-                                   'u'=>'target',   'ud'=>'target DESC' );
+  static $SORTING = array ( 'ka'=>'key',      'kd'=>'key DESC',
+                            'ca'=>'created',  'cd'=>'created DESC',
+                            'aa'=>'accessed', 'ad'=>'accessed DESC',
+                            'ta'=>'title',    'td'=>'title DESC',
+                            'ha'=>'clicks',   'hd'=>'clicks DESC',
+                            'ua'=>'target',   'ud'=>'target DESC' );
 
   static function validate ( $value, $type )
   {
@@ -49,8 +50,12 @@ class OC_Shorty_Type
         if ( preg_match ( '/^[a-z0-9]{10}$/i', $value ) )
           return $value;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
-      case self::SORTING:
-        if ( in_array ( trim($value), self::$valid_sortings ) )
+      case self::SORTKEY:
+        if ( array_key_exists ( trim($value), self::$SORTING ) )
+          return $value;
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+      case self::SORTVAL:
+        if ( in_array ( trim($value), self::$SORTING ) )
           return $value;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::STRING:
@@ -92,7 +97,8 @@ class OC_Shorty_Type
     switch ( $type )
     {
       case self::KEY:       return trim ( $value );
-      case self::SORTING:   return $valid_sortings ( trim($value) );
+      case self::SORTKEY:   return trim ( $value );
+      case self::SORTVAL:   return trim ( $value );
       case self::STRING:    return trim ( $value );
       case self::URL:       return trim ( $value );
       case self::INTEGER:   return sprintf ( '%d', $value );

@@ -34,17 +34,14 @@ try
 {
   define ('PAGE_SIZE', 100);
   $p_offset = OC_Shorty_Type::req_argument ( 'page',   OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
-  $p_sort   = OC_Shorty_Type::req_argument ( 'sort',   OC_Shorty_Type::SORTING, FALSE);
-  $p_title  = OC_Shorty_Type::req_argument ( 'title' , OC_Shorty_Type::STRING,  FALSE);
-  $p_target = OC_Shorty_Type::req_argument ( 'target', OC_Shorty_Type::STRING,  FALSE);
+  // pre-sort list according to user preferences
+  $p_sort = OC_Shorty_Type::$SORTING[OC_Preferences::getValue(OC_User::getUser(),'shorty','list-sort-key','created')];
   $param = array
   (
     ':user'   => OC_User::getUser ( ),
-    ':sort'   => $p_sort ? $p_sort : 'created',
+    ':sort'   => $p_sort,
     ':offset' => $p_offset,
     ':limit'  => PAGE_SIZE,
-    ':target' => sprintf('%%%s%%',$p_target),
-    ':title'  => sprintf('%%%s%%',$p_title),
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_LIST );
   $result = $query->execute($param);

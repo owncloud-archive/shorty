@@ -34,12 +34,12 @@ $(document).ready(
       // modify example
       $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base-system').val()+'<shorty key>');
       // save setting
-      $.get( OC.filePath('shorty','ajax','admin.php'),
-        $('#shorty').find('#backend-static').find('#backend-static-base-system').serialize(),
-        function(data){
-          //OC.msg.finishedSaving('#shorty .msg', data);
-        });
-      }
-    );
+//      Shorty.Action.Setting.set($('#shorty').find('#backend-static').find('#backend-static-base-system').serialize());
+      $.when(
+        Shorty.Action.Setting.set($('#shorty').find('#backend-static').find('#backend-static-base-system').serialize())
+      ).done(function(result){
+        alert(result);
+      });
+    });
   }
 );

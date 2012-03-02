@@ -290,7 +290,6 @@ Shorty =
           // retrieve new entries
           $.when(
             Shorty.WUI.List.get(function(list){
-              Shorty.WUI.List.empty();
               Shorty.WUI.List.fill(list);
             })
           ).done(function(){
@@ -357,9 +356,8 @@ Shorty =
           $('.shorty-edit').unbind('click', Shorty.Action.Url.edit),
           $('.shorty-delete').unbind('click', Shorty.Action.Url.del),
           Shorty.WUI.Sums.fill(),
+          Shorty.WUI.List.empty(),
           Shorty.WUI.List.add(list,false),
-          // display the list
-//          Shorty.WUI.List.show(),
           // reenable clicks after loading the list
           $('.shorty-link').click(Shorty.Action.Url.click),
           $('.shorty-edit').click(Shorty.Action.Url.edit),
@@ -370,15 +368,10 @@ Shorty =
       // ===== Shorty.WUI.List.get =====
       get: function(callback){
         var dfd = new $.Deferred();
-  // ToDo Fixme: correct ids of filter variables
-        var target = $('#list-filter-target').val() || '';
-        var title  = $('#list-filter-title').val()  || '';
         $.when(
           $.ajax({
             url:     'ajax/list.php',
             cache:   false,
-            data:    { target: encodeURI(target),
-                       title: encodeURI(title) },
             success: function(response){
               var dfd = new $.Deferred();
               if ( 'error'==response.status ){
@@ -439,6 +432,27 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.List.show
+      // ===== Shorty.WUI.List.sort =====
+      sort: function(){
+        $.when(
+          Shorty.WUI.Hourglass.toggle(true),
+          Shorty.WUI.List.dim(false)
+        ).done(function(){
+          // retrieve new entries
+          $.when(
+            Shorty.WUI.List.empty(),
+            Shorty.WUI.List.fill(list)
+          ).done(function(){
+            $.when(
+              Shorty.WUI.List.show(),
+              Shorty.WUI.List.dim(true)
+            ).done(function(){
+              Shorty.WUI.Hourglass.toggle(false)
+              dfd.resolve();
+            });
+          })
+        })
+      }, // Shorty.WUI.List.sort
       // ===== Shorty.WUI.List.toggle =====
       toggle: function(duration){
         duration = 'slow';
@@ -638,6 +652,39 @@ Shorty =
 
   Action:
   {
+    // ===== Shorty.Action.Preference =====
+    Preference:
+    {
+      // ===== Shorty.Action.Preference.get =====
+      get:function(data){
+        $.get(OC.filePath('shorty','ajax','preferences.php'),data);
+      }, // Shorty.Action.Preference.get
+      // ===== Shorty.Action.Preference.set =====
+      set:function(data){
+        $.post(OC.filePath('shorty','ajax','preferences.php'),data);
+      }, // Shorty.Action.Preference.set
+    }, // Shorty.Action.Preference
+    // ===== Shorty.Action.Setting =====
+    Setting:
+    {
+      // ===== Shorty.Action.Setting.get =====
+      get:function(data){
+        var dfd = new $.Deferred();
+        var result = $.when(
+          $.get(OC.filePath('shorty','ajax','settings.php'),data,
+            function(reply){
+              reply.each(function(key,val){result[key]=val;});
+          })
+        ).done(function(){
+          dfd.resolve();
+        });
+        return dfd.promise();
+      }, // Shorty.Action.Setting.get
+      // ===== Shorty.Action.Setting.set =====
+      set:function(data){
+        $.post(OC.filePath('shorty','ajax','settings.php'),data);
+      }, // Shorty.Action.Setting.set
+    }, // Shorty.Action.Setting
     // ===== Shorty.Action.Url =====
     Url:
     {

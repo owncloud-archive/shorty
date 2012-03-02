@@ -49,28 +49,52 @@
       </th>
       <th id="headerTitle">
         <div style="display:none;">
-          <a id="sort-up"  ><img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>"></a>
-          <a id="sort-down"><img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>"></a>
+          <a id="sort-up"   class="shorty-sorter" data-sort-code="ta" data-sort-type="string">
+            <img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
+                 src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>">
+          </a>
+          <a id="sort-down" class="shorty-sorter" data-sort-code="td" data-sort-type="string">
+            <img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>"
+                 src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>">
+            </a>
           <input id='filter' type="text" value="">
         </div>
       </th>
       <th id="headerTarget">
         <div style="display:none;">
-          <a id="sort-up"  ><img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>"></a>
-          <a id="sort-down"><img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>"></a>
+          <a id="sort-up"   class="shorty-sorter" data-sort-code="ua" data-sort-type="string">
+            <img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
+                 src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>">
+          </a>
+          <a id="sort-down" class="shorty-sorter" data-sort-code="ua" data-sort-type="string">
+            <img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>"
+                 src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>">
+          </a>
           <input id='filter' type="text" value="">
         </div>
       </th>
       <th id="headerClicks">
         <div style="display:none;">
-          <a id="sort-up"  ><img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>"></a>
-          <a id="sort-down"><img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>"></a>
+          <a id="sort-up"   class="shorty-sorter" data-sort-code="ha" data-sort-type="int">
+            <img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
+                 src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>">
+          </a>
+          <a id="sort-down" class="shorty-sorter" data-sort-code="hd" data-sort-type="int">
+            <img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>"
+                 src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>">
+          </a>
         </div>
       </th>
       <th id="headerUntil">
         <div style="display:none;">
-          <a id="sort-up"  ><img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>"></a>
-          <a id="sort-down"><img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>"></a>
+          <a id="sort-up"   class="shorty-sorter" data-sort-code="da" data-sort-type="date">
+            <img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
+                 src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>">
+          </a>
+          <a id="sort-down" class="shorty-sorter" data-sort-code="dd" data-sort-type="date">
+            <img alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>"
+                 src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>">
+          </a>
         </div>
       </th>
       <th id="headerAction">

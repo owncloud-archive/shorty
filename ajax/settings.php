@@ -27,26 +27,34 @@ $RUNTIME_NOSETUPFS = true;
 require_once ( '../../../lib/base.php' );
 
 // Check if we are a user
-OC_JSON::checkLoggedIn ( );
+OC_JSON::checkAdminUser ( );
 OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  // detect settings
-  $data = array(
-    'backend-type'        => OC_Shorty_Type::req_argument ( 'backend-type',        OC_Shorty_Type::STRING, FALSE ),
-    'backend-static-base' => OC_Shorty_Type::req_argument ( 'backend-static-base', OC_Shorty_Type::URL,    FALSE ),
-    'backend-google-key'  => OC_Shorty_Type::req_argument ( 'backend-google-key',  OC_Shorty_Type::STRING, FALSE ),
-    'backend-bitly-user'  => OC_Shorty_Type::req_argument ( 'backend-bitly-user',  OC_Shorty_Type::STRING, FALSE ),
-    'backend-bitly-key'   => OC_Shorty_Type::req_argument ( 'backend-bitly-key',   OC_Shorty_Type::STRING, FALSE ),
-  );
-  // eliminate settings not explicitly set
-  $data = array_diff ( $data, array(FALSE) );
-  // store settings
-  foreach ( $data as $key=>$val )
-    OC_Preferences::setValue( OC_User::getUser(), 'shorty', $key, $val );
-  // a friendly reply, in case someone is interested
+  $data = array();
+  switch ( $_SERVER['REQUEST_METHOD'] )
+  {
+    case 'POST':
+      $data = array(
+        'backend-static-base-system' => OC_Shorty_Type::req_argument ( 'backend-static-base-system', OC_Shorty_Type::URL, FALSE ),
+      );
+      // eliminate settings not explicitly set
+      $data = array_diff ( $data, array(FALSE) );
+      // store settings one by one
+      foreach ( $data as $key=>$val )
+        OC_Appconfig::setValue( 'shorty', $key, $val );
+      break;
+    case 'GET':
+      // we simply look for all tokens specified as arguments ( example: http://.../shorty/ajax/settings.php?setting1&setting2 )
+      foreach ( array_keys ($_GET) as $key )
+        $data[$key] = OC_Appconfig::getValue( 'shorty', $key );
+      break;
+    default:
+      throw new OC_Shorty_Exception ( "unexpected request method '%s'", $_SERVER['REQUEST_METHOD'] );
+  } // switch
+    // a friendly reply, in case someone is interested
   OC_JSON::success ( array ( 'data' => $data,
-                             'note' => OC_Shorty_L10n::t('Preference saved.') ) );
+                             'note' => OC_Shorty_L10n::t('Setting saved.') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

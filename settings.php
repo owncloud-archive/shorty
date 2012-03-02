@@ -25,14 +25,16 @@
 OC_Util::checkAdminUser ( );
 OC_Util::checkAppEnabled ( 'shorty' );
 
-OC_Util::addStyle  ( 'shorty', 'admin' );
-OC_Util::addScript ( 'shorty', 'admin' );
+OC_Util::addStyle  ( 'shorty', 'shorty' );
+OC_Util::addStyle  ( 'shorty', 'settings' );
+OC_Util::addScript ( 'shorty', 'shorty' );
+OC_Util::addScript ( 'shorty', 'settings' );
 
 OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 
 // fetch template
-$tmpl = new OC_Template ( 'shorty', 'tmpl_admin' );
+$tmpl = new OC_Template ( 'shorty', 'tmpl_settings' );
 // inflate template
 $tmpl->assign ( 'backend-static-base-system', OC_Appconfig::getValue('shorty','backend-static-base-system','') );
 // render template

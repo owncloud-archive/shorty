@@ -29,6 +29,8 @@ $(document).ready(function(){
   $('#list').find('#titlebar').bind('click',Shorty.WUI.List.Toolbar.toggle);
   // button to reload the list
   $('#list').find('#toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
+  // sort buttons
+  $('#list').find('#toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
   // initialize desktop
   $.when(Shorty.WUI.Controls.init()).then(Shorty.WUI.List.build);
 }); // document.ready

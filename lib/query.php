@@ -32,7 +32,7 @@ class OC_Shorty_Query
   const URL_CLICK             = "UPDATE *PREFIX*shorty SET accessed=:now, clicks=(clicks+1) WHERE key=:key";
   const URL_FORWARD           = "SELECT target FROM *PREFIX*shorty WHERE key=:key AND (until IS NULL OR until='' OR until>CURRENT_TIMESTAMP) LIMIT 1";
   const URL_VERIFY            = "SELECT key,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND key=:key LIMIT 1";
-  const URL_LIST              = "SELECT key,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND target LIKE :target AND title LIKE :title ORDER BY :sort LIMIT :limit OFFSET :offset";
+  const URL_LIST              = "SELECT key,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user ORDER BY :sort LIMIT :limit OFFSET :offset";
   const URL_COUNT             = "SELECT count(*) AS sum_shortys,IFNULL(sum(clicks),0) AS sum_clicks FROM *PREFIX*shorty WHERE user=:user";
 } // class OC_Shorty_Query
 ?>

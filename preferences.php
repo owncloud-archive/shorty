@@ -26,14 +26,15 @@ OC_Util::checkLoggedIn ( );
 OC_Util::checkAppEnabled ( 'shorty' );
 
 OC_Util::addStyle  ( 'shorty', 'shorty' );
-OC_Util::addStyle  ( 'shorty', 'personal' );
-OC_Util::addScript ( 'shorty', 'personal' );
+OC_Util::addStyle  ( 'shorty', 'preferences' );
+OC_Util::addScript ( 'shorty', 'shorty' );
+OC_Util::addScript ( 'shorty', 'preferences' );
 
 OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 
 // fetch template
-$tmpl = new OC_Template ( 'shorty', 'tmpl_personal' );
+$tmpl = new OC_Template ( 'shorty', 'tmpl_preferences' );
 // inflate template
 $tmpl->assign ( 'backend-types',
                 array (
