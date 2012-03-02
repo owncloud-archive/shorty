@@ -696,7 +696,7 @@ Shorty =
         var title   = dialog.find('#title').val().trim()  || '';
         var notes   = dialog.find('#notes').val().trim()  || '';
         var until   = dialog.find('#until').val().trim()  || '';
-        // take over meta data retrieved before
+        // store favicon from meta data, except it is the internal default blank
         var favicon = dialog.find('#meta').find('#favicon').attr('src');
         favicon = (favicon==dialog.find('#meta').find('#favicon').attr('data'))?'':favicon;
         if (''==title)
