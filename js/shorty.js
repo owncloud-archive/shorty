@@ -407,10 +407,11 @@ Shorty =
       }, // Shorty.WUI.List.hide
       // ===== Shorty.WUI.List.emptylist =====
       emptylist: function(){
-        if ($('#list').find('tbody').find('tr').is(':visible'))
-          $('#emptylist').fadeOut('slow');
+        // list if empty if one 1 row is contained (the dummy)
+        if (1==$('#list').find('tbody').find('tr').length)
+          $('#emptylist').fadeIn('slow');
         else
-          $('#emptylist').fadeIn('fast');
+          $('#emptylist').fadeOut('fast');
       }, // Shorty.WUI.List.emptylist
       // ===== Shorty.WUI.List.show =====
       show: function(duration){
