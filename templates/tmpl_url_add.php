@@ -39,13 +39,17 @@
     </span>
     <br>
     <label for="title"><?php echo OC_Shorty_L10n::t('Optional title:'); ?></label>
-    <input id="title" name="title" type="text" maxsize="80" data="" class="shorty-input"/>
+    <input id="title" name="title" type="text" maxsize="80" data="" class="shorty-input"
+           placeholder=""/>
     <br>
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
-    <input id="until" name="until" type="text" maxsize="10" data="" class="shorty-input" style="width:30%" icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
+    <input id="until" name="until" type="text" maxsize="10" data="" class="shorty-input" style="width:30%"
+           placeholder="<?php echo OC_Shorty_L10n::t('removal'); ?>"
+           icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     <br>
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
-    <textarea id="notes" name="notes" maxsize="4096" data="" class="shorty-input"></textarea>
+    <textarea id="notes" name="notes" maxsize="4096" data="" class="shorty-input"
+              placeholder=""></textarea>
     <br>
     <label for="confirm"></label>
     <button id="confirm" class="shorty-button-submit"><?php echo OC_Shorty_L10n::t('Add as new'); ?></button>

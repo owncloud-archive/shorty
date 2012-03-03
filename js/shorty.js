@@ -566,6 +566,7 @@ Shorty =
         $.when(
           Shorty.WUI.Meta.get(target,function(meta){
             dialog.find('#target').val(meta.final);
+            dialog.find('#title').attr('placeholder',meta.title);
             dialog.find('#meta').fadeTo('fast',0,function(){
               Shorty.WUI.Meta.reset(dialog);
               dialog.find('#staticon').attr('src',meta.staticon);
@@ -692,13 +693,14 @@ Shorty =
       add:function(){
         var dfd=new $.Deferred();
         var dialog=$('#dialog-add');
+        var title =dialog.find('#title').val().trim() ||dialog.find('#title').attr('placeholder').trim();
         var target=dialog.find('#target').val().trim()||'';
-        var title =dialog.find('#title').val().trim() ||'';
         var notes =dialog.find('#notes').val().trim() ||'';
         var until =dialog.find('#until').val().trim() ||'';
         // store favicon from meta data, except it is the internal default blank
         var favicon = dialog.find('#meta').find('#favicon').attr('src');
         favicon=(favicon==dialog.find('#meta').find('#favicon').attr('data'))?'':favicon;
+        // accept page title as taken from the meta data in case no explicit title has been specified
         // perform upload of new shorty
         $.when(
           Shorty.WUI.Notification.hide(),
