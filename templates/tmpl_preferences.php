@@ -36,7 +36,7 @@
       <label for="backend-type" class="aspect"><?php echo $l->t('Backend:');?></label>
       <!-- list of available backend types -->
       <span style="margin-right:1em;">
-        <select id="backend-type" name="backend-type" data-placeholder="<?php echo $l->t('Choose service...'); ?>">
+        <select id="backend-type" name="backend-type" placeholder="<?php echo $l->t('Choose service...'); ?>">
           <?php
             foreach ( $_['backend-types'] as $value=>$display )
               echo sprintf ( "        <option value=\"%s\" %s>%s</option>\n", $value, ($value==$_['backend-type']?'selected':''), $display );
@@ -62,7 +62,7 @@
       <span id="backend-static" class="backend-supplement" style="display:none;">
         <label for="backend-static-base" class="aspect"><?php echo $l->t('Base url:');?></label>
         <input id="backend-static-base" type="text" name="backend-static-base" value="<?php echo $_['backend-static-base']; ?>"
-               maxsize="256" data-placeholder="<?php echo $l->t('specify a backend base url...');?>" style="width:15em;">
+               maxsize="256" placeholder="<?php echo $l->t('specify a backend base url...');?>" style="width:15em;">
         <br/>
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
@@ -81,7 +81,7 @@
       <span id="backend-google" class="backend-supplement" style="display:none;">
         <label for="backend-google-key" class="aspect"><?php echo $l->t('Google key:');?></label>
         <input id="backend-google-key" type="text" name="backend-google-key" value="<?php echo $_['backend-google-key']; ?>"
-               maxsize="256" data-placeholder="<?php echo $l->t('your Google API console key');?>" style="width:15em;">
+               maxsize="256" placeholder="<?php echo $l->t('Google API console key');?>" style="width:15em;">
         <br/>
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
@@ -140,10 +140,10 @@
       <span id="backend-bitly" class="backend-supplement" style="display:none;">
         <label for="backend-bitly-user" class="aspect"><?php echo $l->t('bit.ly user:');?></label>
         <input id="backend-bitly-user" type="text" name="backend-bitly-user" value="<?php echo $_['backend-bitly-user']; ?>"
-               maxsize="256" data-placeholder="<?php echo $l->t('your bit.ly user name');?>" style="width:15em;">
+               maxsize="256" placeholder="<?php echo $l->t('bit.ly user name');?>" style="width:15em;">
         <label for="backend-bitly-key" class="aspect"><?php echo $l->t('bit.ly key:');?></label>
         <input id="backend-bitly-key" type="text" name="backend-bitly-key" value="<?php echo $_['backend-bitly-key']; ?>"
-               maxsize="256" data-placeholder="<?php echo $l->t('your bit.ly key');?>" style="width:15em;">
+               maxsize="256" placeholder="<?php echo $l->t('bit.ly key');?>" style="width:15em;">
         <br/>
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">

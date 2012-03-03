@@ -405,13 +405,13 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.List.hide
-      // ===== Shorty.WUI.List.placeholder =====
-      placeholder: function(){
+      // ===== Shorty.WUI.List.emptylist =====
+      emptylist: function(){
         if ($('#list').find('tbody').find('tr').is(':visible'))
-          $('#placeholder').fadeOut('slow');
+          $('#emptylist').fadeOut('slow');
         else
-          $('#placeholder').fadeIn('fast');
-      }, // Shorty.WUI.List.placeholder
+          $('#emptylist').fadeIn('fast');
+      }, // Shorty.WUI.List.emptylist
       // ===== Shorty.WUI.List.show =====
       show: function(duration){
         duration = 'slow';
@@ -427,7 +427,7 @@ Shorty =
             list.fadeIn(duration)
           ).done(function(){
             dfd.resolve();
-            Shorty.WUI.List.placeholder();
+            Shorty.WUI.List.emptylist();
           });
         }
         return dfd.promise();

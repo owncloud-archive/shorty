@@ -23,7 +23,7 @@
 ?>
 
 <div id="hourglass" class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
-<div id="placeholder" class="shorty-placeholder"><span class="shorty-label"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></span></div>
+<div id="emptylist" class="shorty-emptylist"><span class="shorty-label"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></span></div>
 
 <!-- the list of urls -->
 <table id="list" class="shorty-list" style="display:none;">

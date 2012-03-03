@@ -100,7 +100,7 @@
   background: transparent;
 }
 
-.shorty-placeholder {
+.shorty-emptylist {
   display: none;
   position: absolute;
   z-index: 2;
