@@ -142,10 +142,13 @@
 }
 
 .shorty-expired {
-    color: gray;
+  color: gray;
 }
 .shorty-expired img {
   opacity : 0.2;
+}
+.shorty-expired #until {
+  text-decoration: line-through;
 }
 
 .shorty-prompt {
