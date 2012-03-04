@@ -258,7 +258,7 @@ Shorty =
                 // enhance row with real set values
                 row.attr('data-'+this,set[aspect]);
                 // fill data into corresponsing column
-                var content;
+                var content, css;
                 switch(aspect)
                 {
                   case 'favicon':
@@ -273,15 +273,18 @@ Shorty =
                         row.addClass('shorty-expired');
                     }
                     break;
+                  case 'title':
+                  case 'target':
+                    css='ellipsis';
                   default:
                     content=set[aspect];
                 } // switch
                 if (hidden)
                   // row is meant to be shown only later, so keep it hidden
-                  row.find('td').filter('#'+aspect).html('<span style="display:none;">'+content+'</span>');
+                  row.find('td').filter('#'+aspect).html('<span class="'+css+'" style="display:none;">'+content+'</span>');
                 else
                   // row is meant to be shown immediately, typically when initializing the list
-                  row.find('td').filter('#'+aspect).html('<span style="display:inline;">'+content+'</span>');
+                  row.find('td').filter('#'+aspect).html('<span class="'+css+'" style="display:block;">'+content+'</span>');
               }
             );
             dummy.after(row);

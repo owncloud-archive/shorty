@@ -120,16 +120,17 @@
         data-notes=""
         style="display:hidden;" >
       <td id="favicon"></td>
-      <td id="title"  ></td>
-      <td id="target" ></td>
+      <td id="title"  width="200px"></td>
+      <td id="target" width="200px"></td>
       <td id="clicks" ></td>
       <td id="until"  ></td>
       <td id="actions">
-        <div class="shorty-actions">
-          <a href="" title="Download" class="download"><img class="svg" alt="Download" src="/owncloud/core/img/actions/download.svg" /></a>
-          <a href="" title="Share" class="share"><img class="svg" alt="Share" src="/owncloud/core/img/actions/share.svg" /></a>
-          <a href="" title="Delete" class="delete"><img class="svg" alt="Delete" src="/owncloud/core/img/actions/delete.svg" /></a>
-        </div>
+        <span class="shorty-actions">
+          <a href="" title="Open"   class=""><img class="svg" alt="Download" title="Open target url" src="/owncloud/core/img/actions/download.svg" /></a>
+          <a href="" title="Share"  class=""><img class="svg" alt="Share"    title="Share shorty"    src="/owncloud/core/img/actions/share.svg"    /></a>
+          <a href="" title="Edit"   class=""><img class="svg" alt="Edit"     title="Edit shorty"     src="/owncloud/core/img/actions/edit.svg"     /></a>
+          <a href="" title="Delete" class=""><img class="svg" alt="Delete"   title="Delete shorty"   src="/owncloud/core/img/actions/delete.svg"   /></a>
+        </span>
       </td>
     </tr>
   </tbody>
