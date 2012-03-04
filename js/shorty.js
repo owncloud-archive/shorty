@@ -123,6 +123,28 @@ Shorty =
         }; // switch
         return dfd.promise();
       }, // Shorty.WUI.Dialog.execute
+      // ===== Shorty.WUI.Dialog.hide =====
+      hide: function(dialog){
+        var duration = 'slow';
+        var dfd = new $.Deferred();
+        if (!dialog.is(':visible'))
+          dfd.resolve();
+        else{
+          $.when(dialog.slideUp(duration)).done(
+            function(){
+              switch ( dialog.attr('id') ){
+                case 'dialog-add':
+                  dialog.find('#confirm').unbind('click');
+                  dialog.find('#target').unbind('focusout');
+                  break;
+                default:
+              } // switch
+              $.when(Shorty.WUI.Desktop.show()).done(dfd.resolve);
+            }
+          );
+        }
+        return dfd.promise();
+      }, // Shorty.WUI.Dialog.hide
       // ===== Shorty.WUI.Dialog.reset =====
       reset: function(dialog){
         var dfd = new $.Deferred();
@@ -160,44 +182,24 @@ Shorty =
           // wipe (reset) dialog
           Shorty.WUI.Dialog.reset(dialog);
           // show dialog
-          $.when(dialog.slideDown(duration)).done(function(){
-            // initialize dialog
-            switch(dialog.attr('id')){
-              case 'dialog-add':
-                dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
-                dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
-                dialog.find('#target').focus();
-                break;
-              default:
-                dialog.find('#title').focus();
-            } // switch
-            dfd.resolve();
-          });
+          $.when(
+            dialog.slideDown(duration),
+            function(){
+              // initialize dialog
+              switch(dialog.attr('id')){
+                case 'dialog-add':
+                  dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
+                  dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
+                  dialog.find('#target').focus();
+                  break;
+                default:
+                  dialog.find('#title').focus();
+              } // switch
+            }()
+          ).done(dfd.resolve);
         });
         return dfd.promise();
       }, // Shorty.WUI.Dialog.show
-      // ===== Shorty.WUI.Dialog.hide =====
-      hide: function(dialog){
-        var duration = 'slow';
-        var dfd = new $.Deferred();
-        if (!dialog.is(':visible'))
-          dfd.resolve();
-        else{
-          $.when(dialog.slideUp(duration)).done(
-            function(){
-              switch ( dialog.attr('id') ){
-                case 'dialog-add':
-                  dialog.find('#confirm').unbind('click');
-                  dialog.find('#target').unbind('focusout');
-                  break;
-                default:
-              } // switch
-              $.when(Shorty.WUI.Desktop.show()).done(dfd.resolve);
-            }
-          );
-        }
-        return dfd.promise();
-      }, // Shorty.WUI.Dialog.hide
       // ===== Shorty.WUI.Dialog.toggle =====
       toggle: function(dialog){
         var dfd = new $.Deferred();
