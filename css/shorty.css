@@ -48,7 +48,7 @@
 
 .shorty-dialog {
   display: none;
-  width: 500px; 
+  width: 500px;
   margin-top: 10px;
   background: solid;
   background-color: white;
@@ -139,6 +139,13 @@
 .shorty-list td {
   padding: 1px;
   padding-left: 10px;
+}
+
+.shorty-expired {
+    color: gray;
+}
+.shorty-expired img {
+  opacity : 0.2;
 }
 
 .shorty-prompt {

@@ -263,7 +263,13 @@ Shorty =
                     content='<img width="16" src="'+set[aspect]+'">';
                     break;
                   case 'until':
-                    content=set[aspect]==null?'-/-':set[aspect];
+                    if (null==set[aspect])
+                      content='-/-';
+                    else{
+                      content=set[aspect];
+                      if (Shorty.Date.expired(set[aspect]))
+                        row.addClass('shorty-expired');
+                    }
                     break;
                   default:
                     content=set[aspect];
@@ -824,5 +830,13 @@ Shorty =
       }, // ===== Shorty.Action.Url.show =====
     }, // ===== Shorty.Action.Url =====
   }, // Shorty.Action
+  // ==== Shorty.Date =====
+  Date:
+  {
+    // ===== Shorty.Date.expired =====
+    expired:function(date){
+      return (Date.parse(date)<=Date.parse(Date()));
+    } // Shorty.Date.expired
+  } // Shorty.Date
 
 } // Shorty
