@@ -23,7 +23,7 @@
 <info>
 	<id>shorty</id>
 	<name>Shorty</name>
-	<description>URL shortener for ownCloud</description>
+	<description>URL shortener plugin for ownCloud</description>
 	<version>0.1</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>

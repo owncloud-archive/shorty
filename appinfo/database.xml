@@ -68,25 +68,21 @@
       </field>
       <field>
         <name>until</name>
-        <type>integer</type>
+        <type>date</type>
         <notnull>false</notnull>
-        <unsigned>true</unsigned>
-        <length>10</length>
+        <default></default>
       </field>
       <field>
         <name>created</name>
-        <type>integer</type>
-        <notnull>true</notnull>
-        <default>CURRENT_TIMESTAMP</default>
-        <unsigned>true</unsigned>
-        <length>10</length>
+        <type>timestamp</type>
+        <notnull>false</notnull>
+        <default></default>
       </field>
       <field>
         <name>accessed</name>
-        <type>integer</type>
+        <type>timestamp</type>
         <notnull>false</notnull>
-        <unsigned>true</unsigned>
-        <length>10</length>
+        <default></default>
       </field>
       <field>
         <name>clicks</name>

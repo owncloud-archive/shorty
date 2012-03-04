@@ -76,15 +76,11 @@ class OC_Shorty_Type
           return $value;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::TIMESTAMP:
-        if ( preg_match ( '/^[0-9]{}$/', $value ) )
+        if ( preg_match ( '/^[0-9]{10}$/', $value ) )
           return $value;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::DATE:
-        if (  (  (FALSE!==($date=date_parse_from_format('Y#m#d', $value )))
-               ||(FALSE!==($date=date_parse_from_format('d#m#Y', $value )))
-               ||(FALSE!==($date=date_parse_from_format('Ymd',   $value ))) )
-            &&( date_check ( $date['year'],$date['month'],$date['day'] ) ) )
-          return $value;
+          return strtotime ( $value );
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
     } // switch $type
     throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
@@ -104,7 +100,7 @@ class OC_Shorty_Type
       case self::INTEGER:   return sprintf ( '%d', $value );
       case self::FLOAT:     return sprintf ( '%f', $value );
       case self::TIMESTAMP: return trim ( $value );
-      case self::DATE:      return date_format ( 'Y-m-d', self::normalize($value,OC_Shorty_Type::TIMESTAMP) );
+      case self::DATE:      return date ( 'Y-m-d', self::validate($value,OC_Shorty_Type::DATE) );
     } // switch $type
     throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
   } // function normalize

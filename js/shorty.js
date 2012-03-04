@@ -205,7 +205,7 @@ Shorty =
         // show or hide dialog
         if ( ! dialog.is(':visible'))
           $.when(Shorty.WUI.Dialog.show(dialog)).done(dfd.resolve);
-        else 
+        else
           $.when(Shorty.WUI.Dialog.hide(dialog)).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Dialog.toggle
@@ -261,6 +261,9 @@ Shorty =
                 {
                   case 'favicon':
                     content='<img width="16" src="'+set[aspect]+'">';
+                    break;
+                  case 'until':
+                    content=set[aspect]==null?'-/-':set[aspect];
                     break;
                   default:
                     content=set[aspect];
