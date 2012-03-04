@@ -59,7 +59,6 @@ try
     default:
       throw new OC_Shorty_Exception ( "unexpected request method '%s'", $_SERVER['REQUEST_METHOD'] );
   } // switch
-  } // switch
   // a friendly reply, in case someone is interested
   OC_JSON::success ( array ( 'data' => $data,
                              'note' => OC_Shorty_L10n::t('Preference saved.') ) );
