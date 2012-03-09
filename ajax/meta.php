@@ -46,7 +46,7 @@ try
 {
   $target  = OC_Shorty_Type::req_argument ( 'target', OC_Shorty_Type::URL, TRUE );
   $meta    = OC_Shorty_Meta::fetchMetaData(htmlspecialchars_decode($target));
-  OC_JSON::success ( array ( 'data' => $meta,
-                             'note' => OC_Shorty_L10n::t("Target url '%s' is valid", $meta['target']) ) );
+  OC_JSON::success ( array ( 'data'    => $meta,
+                             'message' => OC_Shorty_L10n::t("Target url '%s' is valid", $meta['target']) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

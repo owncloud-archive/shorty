@@ -30,26 +30,6 @@
  */
 
 /**
- * @brief Initialization of elements
- * @author Christian Reiner
- */
-$(document).ready(function(){
-  // make notification closeable
-  $('#content').find('#notification').bind('click',Shorty.WUI.Notification.hide);
-  // add date picker options
-  $('#controls').find('#until').datepicker({
-    dateFormat :'dd-mm-yy',
-    changeMonth: true,
-    changeYear: true,
-    showOtherMonths: true,
-    selectOtherMonths: true,
-    showOn: 'button',
-    buttonImage: $('#controls').find('#until').eq(0).attr('icon'),
-    buttonImageOnly: true
-  });
-}); // document.ready
-
-/**
  * @class Shorty
  * @brief Central activity library for the client side
  * @author Christian Reiner
@@ -405,9 +385,9 @@ Shorty =
             success: function(response){
               var dfd = new $.Deferred();
               if ( 'error'==response.status ){
-                Shorty.WUI.Notification.show(response.note,'debug');
+                Shorty.WUI.Notification.show(response.message,'debug');
               }else{
-                Shorty.WUI.Notification.show(response.note,'info');
+                Shorty.WUI.Notification.show(response.message,'info');
                 if (callback){
                   $.when(
                     callback(response.data)
@@ -435,14 +415,14 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.List.hide
-      // ===== Shorty.WUI.List.emptylist =====
-      emptylist: function(){
+      // ===== Shorty.WUI.List.vacuum =====
+      vacuum: function(){
         // list if empty if one 1 row is contained (the dummy)
         if (1==$('#list').find('tbody').find('tr').length)
-          $('#emptylist').fadeIn('slow');
+          $('#vacuum').fadeIn('slow');
         else
-          $('#emptylist').fadeOut('fast');
-      }, // Shorty.WUI.List.emptylist
+          $('#vacuum').fadeOut('fast');
+      }, // Shorty.WUI.List.vacuum
       // ===== Shorty.WUI.List.show =====
       show: function(duration){
         duration = 'slow';
@@ -458,7 +438,7 @@ Shorty =
             list.fadeIn(duration)
           ).done(function(){
             dfd.resolve();
-            Shorty.WUI.List.emptylist();
+            Shorty.WUI.List.vacuum();
           });
         }
         return dfd.promise();
@@ -518,7 +498,7 @@ Shorty =
       hide: function(){
         var dfd = new $.Deferred();
         $.when(
-          $('#notification').fadeOut('fast').text('')
+          $('#notification').slideUp('fast').text('')
         ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Notification.hide
@@ -530,7 +510,7 @@ Shorty =
         var notification = $('#notification');
         if (message && message.length){
           $.when(
-            notification.fadeOut('fast')
+            notification.slideUp('fast')
           ).done(function(){
             switch(level){
               case 'debug':
@@ -540,7 +520,7 @@ Shorty =
                   $.when(
                     notification.attr('title', 'debug message'),
                     notification.text('Debug: '+message),
-                    notification.fadeIn(duration)
+                    notification.slideDown(duration)
                   ).done(dfd.resolve);
                 }
                 else
@@ -552,7 +532,7 @@ Shorty =
                 $.when(
                   notification.attr('title', 'error message'),
                   notification.text('Error: ' + message),
-                  notification.fadeIn(duration)
+                  notification.slideDown(duration)
                 ).done(dfd.resolve);
                 break;
               default: // 'info'
@@ -561,7 +541,7 @@ Shorty =
                     Shorty.debug('Info: '+message);
                   $.when(
                     notification.text(message),
-                    notification.fadeIn(duration)
+                    notification.slideDown(duration)
                   ).done(dfd.resolve);
                 }else{
                   $.when(
@@ -596,7 +576,8 @@ Shorty =
         // query meta data from target
         $.when(
           Shorty.WUI.Meta.get(target,function(meta){
-            dialog.find('#target').val(meta.final);
+            if (meta.final)
+              dialog.find('#target').val(meta.final);
             dialog.find('#title').attr('placeholder',meta.title);
             dialog.find('#meta').fadeTo('fast',0,function(){
               Shorty.WUI.Meta.reset(dialog);
@@ -621,7 +602,7 @@ Shorty =
             data:    { target: encodeURIComponent(target) },
             error:   function() { return ''; },
             success: function(response){
-              if (Shorty.Debug) Shorty.Debug.log(response.note);
+              if (Shorty.Debug) Shorty.Debug.log(response.message);
               if ('success'==response.status){
                 if (callback) callback(response.data);
               }else{
@@ -667,9 +648,9 @@ Shorty =
             data:    { },
             success: function(response){
               if ( 'error'==response.status ){
-                Shorty.WUI.Notification.show(response.note,'debug');
+                Shorty.WUI.Notification.show(response.message,'debug');
               }else{
-                Shorty.WUI.Notification.show(response.note,'info');
+                Shorty.WUI.Notification.show(response.message,'info');
                 if (callback) callback(response.data);
               } // if else
             }
@@ -725,11 +706,11 @@ Shorty =
         var dfd=new $.Deferred();
         var dialog=$('#dialog-add');
         var target=dialog.find('#target').val().trim()||'';
-//        var title =dialog.find('#title').val().trim()||'';
-        var title =dialog.find('#title').eq(0).valOrPlaceholder().trim() ||'';
+        var title =dialog.find('#title').val().trim()||'';
+//        var title =dialog.find('#title').eq(0).valOrPlaceholder().trim() ||'';
         var notes =dialog.find('#notes').val().trim()||'';
-//        var until =dialog.find('#until').val().trim()||'';
-        var until =dialog.find('#until').eq(0).valOrPlaceholder().trim() ||'';
+        var until =dialog.find('#until').val().trim()||'';
+//        var until =dialog.find('#until').eq(0).valOrPlaceholder().trim() ||'';
         // store favicon from meta data, except it is the internal default blank
         var favicon = dialog.find('#meta').find('#favicon').attr('src');
         favicon=(favicon==dialog.find('#meta').find('#favicon').attr('data'))?'':favicon;
@@ -762,7 +743,7 @@ Shorty =
                 Shorty.WUI.List.add([response.data],true);
                 Shorty.WUI.List.dim(true)
               }else{
-                Shorty.WUI.Notification.show(response.note,'error');
+                Shorty.WUI.Notification.show(response.message,'error');
               }
             }
           })

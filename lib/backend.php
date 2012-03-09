@@ -90,7 +90,7 @@ class OC_Shorty_Backend
     } // try
     catch (OC_Shorty_Exception $e)
     {
-      throw new OC_Shorty_Exception ( "Failed to register url '%s' at '%s' backend\nReason: %s", array($relay,$type,$e->getMessage()) );
+      throw $e;
     } // catch
     catch (Exception $e)
     {

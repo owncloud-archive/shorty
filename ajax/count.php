@@ -50,7 +50,7 @@ try
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_COUNT );
   $result = $query->execute($param);
   $reply = $result->fetchAll();
-  OC_JSON::success ( array ( 'data'  => $reply[0],
-                             'note'  => '' ) );
+  OC_JSON::success ( array ( 'data'    => $reply[0],
+                             'message' => '' ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

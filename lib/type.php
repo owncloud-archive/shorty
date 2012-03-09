@@ -68,34 +68,46 @@ class OC_Shorty_Type
    * @access public
    * @author Christian Reiner
    */
-  static function validate ( $value, $type )
+  static function validate ( $value, $type, $strict=FALSE )
   {
     switch ( $type )
     {
       case self::KEY:
         if ( preg_match ( '/^[a-z0-9]{10}$/i', $value ) )
           return $value;
+        elseif ( ! $strict)
+          return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::SORTKEY:
         if ( array_key_exists ( trim($value), self::$SORTING ) )
           return $value;
+        elseif ( ! $strict)
+          return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::SORTVAL:
         if ( in_array ( trim($value), self::$SORTING ) )
           return $value;
+        elseif ( ! $strict)
+          return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::STRING:
         if ( preg_match ( '/^.*$/', $value ) )
           return $value;
+        elseif ( ! $strict)
+          return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::URL:
         $pattern = '/^([a-zA-Z][a-zA-Z][a-zA-Z0-9]+)\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(\/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+)?)*$/';
         if ( preg_match ( $pattern, $value ) )
           return $value;
+        elseif ( ! $strict)
+          return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::INTEGER:
         if ( preg_match ( '/^[0-9]+$/', $value ) )
           return $value;
+        elseif ( ! $strict)
+          return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::FLOAT:
         if ( preg_match ( '/^[0-9]+(\.[0-9]+)?$/', $value ) )
@@ -104,9 +116,14 @@ class OC_Shorty_Type
       case self::TIMESTAMP:
         if ( preg_match ( '/^[0-9]{10}$/', $value ) )
           return $value;
+        elseif ( ! $strict)
+          return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::DATE:
-          return strtotime ( $value );
+        if (FALSE!==($time=strtotime($value)))
+          return $time;
+        elseif ( ! $strict)
+          return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
     } // switch $type
     throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
@@ -125,10 +142,13 @@ class OC_Shorty_Type
    * @access public
    * @author Christian Reiner
    */
-  static function normalize ( $value, $type )
+  static function normalize ( $value, $type, $strict=FALSE )
   {
-    if ( ! self::validate($value,$type) )
-      throw new OC_Shorty_Exception ( "invalid value '%1\$s' for type '%2\$s'", array($value,$type) );
+    if (NULL===(self::validate($value,$type,$strict)))
+      if ( ! $strict)
+        return NULL;
+      else
+        throw new OC_Shorty_Exception ( "invalid value '%1\$s' for type '%2\$s'", array($value,$type) );
     switch ( $type )
     {
       case self::KEY:       return trim ( $value );
@@ -166,7 +186,7 @@ class OC_Shorty_Type
         throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
       case 'GET':
         if ( isset($_GET[$arg]) && !empty($_GET[$arg]) )
-          return self::normalize ( urldecode(trim($_GET[$arg])), $type );
+          return self::normalize ( urldecode(trim($_GET[$arg])), $type, $strict );
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );

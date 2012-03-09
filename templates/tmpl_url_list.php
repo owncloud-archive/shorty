@@ -35,7 +35,7 @@
 ?>
 
 <div id="hourglass" class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
-<div id="emptylist" class="shorty-emptylist"><span class="shorty-label"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></span></div>
+<div id="vacuum" class="shorty-vacuum"><span class="shorty-label"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></span></div>
 
 <!-- the list of urls -->
 <table id="list" class="shorty-list" style="display:none;">
@@ -138,9 +138,10 @@
       <td id="until"  ></td>
       <td id="actions">
         <span class="shorty-actions">
+          <a href="" title="Show"   class=""><img class="svg" alt="Show"     title="Show target"     src="/owncloud/core/img/actions/info.svg"     /></a>
           <a href="" title="Open"   class=""><img class="svg" alt="Download" title="Open target url" src="/owncloud/core/img/actions/download.svg" /></a>
           <a href="" title="Share"  class=""><img class="svg" alt="Share"    title="Share shorty"    src="/owncloud/core/img/actions/share.svg"    /></a>
-          <a href="" title="Edit"   class=""><img class="svg" alt="Edit"     title="Edit shorty"     src="/owncloud/core/img/actions/edit.svg"     /></a>
+          <a href="" title="Edit"   class=""><img class="svg" alt="Edit"     title="Edit shorty"     src="/owncloud/core/img/actions/rename.svg"     /></a>
           <a href="" title="Delete" class=""><img class="svg" alt="Delete"   title="Delete shorty"   src="/owncloud/core/img/actions/delete.svg"   /></a>
         </span>
       </td>

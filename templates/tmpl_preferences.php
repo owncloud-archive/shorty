@@ -40,7 +40,7 @@
     <div id="settings">
       <!-- shortlet -->
       <label for="shortlet" class="aspect"><?php echo $l->t('Shortlet');?></label>
-      <span id="shortlet"><a class="shortlet" href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkTo('shorty', 'add.php', null, true); ?>?'+url, 'owncloud-shorty')%20})()"><?php echo $l->t('Add shorty to ownCloud'); ?></a></span>
+      <span id="shortlet"><a class="shortlet" href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkTo('shorty', 'index.php', null, true); ?>?'+url, 'owncloud-shorty')%20})()"><?php echo $l->t('Add shorty to ownCloud'); ?></a></span>
       <br>
       <span class="explain"><em><?php echo $l->t('Drag this to your browser bookmarks and click it, whenever you want to create a Shorty.'); ?></em></span>
       <br>

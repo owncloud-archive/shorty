@@ -52,6 +52,7 @@ try
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
   $query->execute ( $param );
-  OC_JSON::success ( array ( 'data' => array('key'=>$p_key) ) );
+  OC_JSON::success ( array ( 'data'    => array('key'=>$p_key),
+                             'message' => OC_Shorty_L10n::t('Click registered') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

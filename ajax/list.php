@@ -45,7 +45,7 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 try
 {
   define ('PAGE_SIZE', 100);
-  $p_offset = OC_Shorty_Type::req_argument ( 'page',   OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
+  $p_offset = OC_Shorty_Type::req_argument ( 'page', OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
   // pre-sort list according to user preferences
   $p_sort = OC_Shorty_Type::$SORTING[OC_Preferences::getValue(OC_User::getUser(),'shorty','list-sort-key','created')];
   $param = array

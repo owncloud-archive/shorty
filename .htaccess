@@ -27,7 +27,7 @@
 # That way you can use shorter (or more simple) urls to publish or relay links
 # @author Christian Reiner
 
-RewriteEngine On
+#RewriteEngine On
 
 # example: http://.../apps/shorty/index.php/0123456789
 RewriteRule "^index\.php/([a-z0-9]{10})$"  "forward.php?$1" [L]

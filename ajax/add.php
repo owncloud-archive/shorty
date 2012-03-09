@@ -82,7 +82,7 @@ try
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_VERIFY );
   $entry = $query->execute($param)->FetchAll();
-  OC_JSON::success ( array ( 'data' => $entry[0],
-                             'note' => OC_Shorty_L10n::t("Url shortened to: %s",$p_source) ) );
+  OC_JSON::success ( array ( 'data'    => $entry[0],
+                             'message' => OC_Shorty_L10n::t("Url shortened to: %s",$p_source) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

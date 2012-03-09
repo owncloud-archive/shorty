@@ -25,14 +25,11 @@
 
 /**
  * @file js/add.js
- * @brief Client side activity initialization in case of a call with an url to add
+ * @brief Client side desktop initialization in case of a call with an url to add
  * @author Christian Reiner
  */
 
 $(document).ready(function(){
-  // basic action buttons
-  $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
-  $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
   // initialize desktop
   $.when(Shorty.WUI.Controls.init()).then(function(){
     $.when(Shorty.WUI.List.build()).then(function(){

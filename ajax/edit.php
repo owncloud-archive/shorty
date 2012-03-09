@@ -58,7 +58,7 @@ try
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_UPDATE );
   $query->execute ( $param );
-  OC_JSON::success ( array ( 'data' => array('key'=>$p_key),
-                             'note' => sprintf(OC_Shorty_L10n::t("Modifications for shortened url with key '%s' saved"),$p_key) )  );
+  OC_JSON::success ( array ( 'data'    => array('key'=>$p_key),
+                             'message' => sprintf(OC_Shorty_L10n::t("Modifications for shortened url with key '%s' saved"),$p_key) )  );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
