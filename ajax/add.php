@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU AFFERO GENERAL PUBLIC LICENSE (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -21,6 +24,20 @@
 *
 */
 
+/**
+ * @file ajax/add.php
+ * @brief Ajax method to add a new shorty defined by request arguments
+ * @param title (string) Human readable title of the shorty
+ * @param target (url) Remote target url meant to be shortened
+ * @param until (date) Date until when the created shorty is valid and usable
+ * @param notes (string) Any additional information in text form
+ * @param favicon (url) Reference to the shortcut icon used in target url
+ * @returns (json) success/error state indicator
+ * @returns (json) Associative array of attributes of the generated shorty
+ * @returns (json) Human readable message
+ * @author Christian Reiner
+ */
+ 
 //no apps or filesystem
 $RUNTIME_NOSETUPFS = true;
 

@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -22,12 +25,30 @@
 */
 
 /**
- * @brief Routines to retrieve info about a remote url
+ * @file lib/meta.php
+ * Routines to retrieve meta information about a remote url
+ * @author Christian Reiner
  */
- 
+
+/**
+ * @class OC_Shorty_Meta
+ * @brief Static 'namespace' class for url meta information retrieval
+ * ownCloud propagtes to use static classes as namespaces instead of OOP.
+ * This 'namespace' defines routines for the retrieval of meta information about remote urls. 
+ * @access public
+ * @author Christian Reiner
+ */ 
 class OC_Shorty_Meta
 {
 
+  /**
+   * @method OC_Shorty_Meta::fetchMetaData
+   * @brief Retrieves the meta information to a given remote url
+   * @param url decoded target url for which meta information if requested
+   * @returns associative array holding the requested meta data
+   * @access public
+   * @author Christian Reiner
+   */
   static function fetchMetaData ( $url )
   {
     $url_token = parse_url ( $url );
@@ -94,8 +115,19 @@ class OC_Shorty_Meta
     return $meta;
   } // function fetchMetaData
 
+  /**
+   * @method OC_Shorty_Meta::selectCode
+   * @brief Some helper utility used to resolve numeric http status codes into human readable strings
+   * @param aspect a string indicating a section/pool a code is to be resolved in
+   * @param identifier a string indicating a specific code to be resolved
+   * @returns a human readable string resolving the specified numeric status code
+   * @throws OC_Shorty_Exception in case of an undefined code to be resolved
+   * @access public
+   * @author Christian Reiner
+   */
   static function selectCode ( $aspect, $identifier )
   {
+    // map of official http status codes
     $_code_map = array
     (
       'status' => array
@@ -151,19 +183,30 @@ class OC_Shorty_Meta
         206 => 'The request has been fulfilled partially.',
       )
     );
+    // resolve specified code against map or provide some fallback content
     if ( key_exists($aspect,$_code_map) && key_exists($identifier,$_code_map[$aspect]) )
       return $_code_map[$aspect][$identifier];
     else
     {
       switch ( $aspect )
       {
-        case 'status':      return '[Unknown Status]';
-        case 'explanation': return '';
-        default:            return '';
+        case 'status':      return sprintf("Status %s [unknown]",$identifier);
+        case 'explanation': return sprintf("[Undefined status code '%s']",$identifier);
+        default: throw new OC_Shorty_Exception ( "unknown aspect '%s' requested to resolve code '%s'",
+                                                 array($aspect,$identifier) );
       } // switch
     }
   } // function selectCode
 
+  /**
+   * @method OC_Shorty_Meta::selectIcon
+   * @brief Some helper utility for the easy integrate of icon references into templates and alike
+   * @param aspect a string indicating a section/pool an icon is to be chosen from
+   * @param identifier a string indicating a specific icon to be referenced
+   * @returns a hyper reference to an icon in form of a string
+   * @access public
+   * @author Christian Reiner
+   */
   static function selectIcon ( $aspect, $identifier )
   {
     switch ( $aspect )

@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -20,6 +23,15 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
+
+/**
+ * @file ajax/meta.php
+ * @brief Ajax method to query meta information about a given remote url
+ * @param target (string) Url of a remote web resource
+ * @returns (json) success/error state indicator
+ * @returns (array) Associative array of meta data aspects
+ * @author Christian Reiner
+ */
 
 //no apps or filesystem
 $RUNTIME_NOSETUPFS = true;

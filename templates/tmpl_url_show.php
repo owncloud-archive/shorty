@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -20,6 +23,15 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
+?>
+
+<?php
+/**
+ * @file templates/tmpl_url_show.php
+ * A read-only dialog visualizing all aspects of a selected shorty.
+ * @access public
+ * @author Christian Reiner
+ */
 ?>
 
 <!-- (hidden) dialog to show a shorty from the list -->

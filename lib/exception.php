@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -22,21 +25,31 @@
 */
 
 /**
- * @file
- * app specific exception class
+ * @file lib/exception.php
+ * Application specific exception class
+ * @author Christian Reiner
  */
 
+/**
+ * @class OC_Shorty_Exception
+ * @brief Application specific exception class
+ * @access public
+ * @author Christian Reiner
+ */
 class OC_Shorty_Exception extends Exception
 {
   protected $phrase = '';
   protected $param  = array ( );
 
   /**
+   * @method OC_Shorty_Exception::__construct
    * @brief: Constructs an exception based on a phrase and a set of parameters
    * @param phrase (string) Human readable message that should be translatable
    * @param param  (array) Set of parameters to be used as sprintf arguments to fill the phrase
+   * @access public
+   * @author Christian Reiner
    */
-  public    function __construct ( $phrase, $param=array() )
+  public function __construct ( $phrase, $param=array() )
   {
     if ( is_array($param) )
          $this->param = $param;
@@ -47,8 +60,11 @@ class OC_Shorty_Exception extends Exception
   }
 
   /**
+   * @method OC_Shorty_Exception::getTranslation
    * @brief: Returns the translated message of the exception
-   * @return (string) Translated message including the filled in set of arguments
+   * @returns (string) Translated message including the filled in set of arguments
+   * @access public
+   * @author Christian Reiner
    */
   public function getTranslation ( )
   {
@@ -56,9 +72,13 @@ class OC_Shorty_Exception extends Exception
   }
 
   /**
-  * @brief Calls OC_JSON::error with a pretty formated version of an exception
-  * @return (json) OC_JSON::error
-  */
+   * @method OC_Shorty_Exception::JSONerror
+   * @brief Calls OC_JSON::error with a pretty formated version of an exception
+   * @param e (exception) an exception object holding information
+   * @returns (json) OC_JSON::error
+   * @access public
+   * @author Christian Reiner
+   */
   static function JSONerror ( $e )
   {
     $title = OC_Shorty_L10n::t("Exception");

@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -20,6 +23,21 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
+
+/**
+ * @file ajax/preferences.php
+ * @brief Ajax method to store one or more personal preferences
+ * @param backend-type (string) Identifier of chosen backend type
+ * @param backend-static-base (string) Url to use as a base when the static backend is active
+ * @param backend-google-key (string) Personal authentication key to use when the google backend is active
+ * @param backend-bitly-key (string) Personal authentication key to use when the bit.li backend is active
+ * @param backend-bitly-user (string) Personal authentication user to use when the bit.li backend is active
+ * @param list-sort-key (string) Two character sorting key controlling the active sorting of shorty lists
+ * @returns (json) success/error state indicator
+ * @returns (json) Associative array holding the stored values by their key
+ * @returns (json) Human readable message describing the result
+ * @author Christian Reiner
+ */
 
 //no apps or filesystem
 $RUNTIME_NOSETUPFS = true;

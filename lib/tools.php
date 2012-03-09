@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -22,95 +25,115 @@
 */
 
 /**
- * @file
- * a collection of general utility routines
+ * @file lib/tools.php
+ * A collection of general utility routines
+ * @author Christian Reiner
  */
 
-
+/**
+ * @class OC_Shorty_Tools
+ * @brief Collection of a few practical routines, a tool box
+ * @access public
+ * @author Christian Reiner
+ */
 class OC_Shorty_Tools
 {
 
-    /**
-    * @brief escape a value for incusion in db statements
-    * @param value (string) value to be escaped
-    * @return (string) escaped string value
-    * @todo use mdb2::quote() / mdb2:.escape() instead ?
-    */
-    static function db_escape ( $value )
+  /**
+  * @method OC_Shorty_Tools::db_escape
+  * @brief escape a value for incusion in db statements
+  * @param value (string) value to be escaped
+  * @returns (string) escaped string value
+  * @throws OC_Shorty_Exception in case of an unknown database engine
+  * @access public
+  * @author Christian Reiner
+  * @todo use mdb2::quote() / mdb2:.escape() instead ?
+  */
+  static function db_escape ( $value )
+  {
+    $type = OC_Config::getValue ( 'dbtype', 'sqlite' );
+    switch ( $type )
     {
-      $type = OC_Config::getValue ( 'dbtype', 'sqlite' );
-      switch ( $type )
-      {
-        case 'sqlite':
-        case 'sqlite3': return sqlite_escape_string     ( $value );
-        case 'mysql':   return mysql_real_escape_string ( $value );
-        case 'pgsql':   return pg_escape_string         ( $value );
-      }
-      throw new OC_Shorty_Exception ( "unknown database backend type '%1'", array($type) );
-    } // function db_escape
-
-    /**
-    * @brief current timestamp as required by db engine
-    * @return (string) current timestamp as required by db engine
-    * @TODO not really required any more, we rely on CURRENT_TIMESTAMP instead
-    */
-    static function db_timestamp ( )
-    {
-      $type = OC_Config::getValue( "dbtype", "sqlite" );
-      switch ( $type )
-      {
-        case 'sqlite':
-        case 'sqlite3': return "strftime('%s','now')";
-        case 'mysql':   return 'UNIX_TIMESTAMP()';
-        case 'pgsql':   return "date_part('epoch',now())::integer";
-      }
-      throw new OC_Shorty_Exception ( "unknown database backend type '%1'", array($type) );
-    } // function db_timestamp
-
-    /**
-    * @brief Creates a random key to be used for a new shorty entry
-    * @return (string) valid and unique key
-    */
-    static function shorty_key ( )
-    {
-
-      return self::convertToAlphabet ( str_replace(array(' ','.'),'',microtime()),
-                                       '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-    } // function shorty_key
-
-    /**
-    * @brief Converts a given decimal number into an arbitrary base (alphabet)
-    * @param  number decimal value to be converted 
-    * @return (string) converted value in string notation
-    */
-    static function convertToAlphabet ( $number, $alphabet )
-    {
-      $alphabetLen = strlen($alphabet);
-      $decVal = (int) $number;
-      $number = FALSE;
-      $nslen = 0;
-      $pos = 1;
-      while ($decVal > 0)
-      {
-        $valPerChar = pow($alphabetLen, $pos);
-        $curChar = floor($decVal / $valPerChar);
-        if ($curChar >= $alphabetLen)
-        {
-          $pos++;
-        } else {
-          $decVal -= ($curChar * $valPerChar);
-          if ($number === FALSE)
-          {
-            $number = str_repeat($alphabet{1}, $pos);
-            $nslen = $pos;
-          }
-          $number = substr($number, 0, ($nslen - $pos)) . $alphabet{$curChar} . substr($number, (($nslen - $pos) + 1));
-          $pos--;
-        }
-      }
-      if ($number === FALSE) $number = $alphabet{1};
-      return $number;
+      case 'sqlite':
+      case 'sqlite3': return sqlite_escape_string     ( $value );
+      case 'mysql':   return mysql_real_escape_string ( $value );
+      case 'pgsql':   return pg_escape_string         ( $value );
     }
+    throw new OC_Shorty_Exception ( "unknown database backend type '%1'", array($type) );
+  } // function db_escape
+
+  /**
+  * @method OC_Shorty_Tools::db_timestamp
+  * @brief current timestamp as required by db engine
+  * @returns (string) current timestamp as required by db engine
+  * @throws OC_Shorty_Exception in case of an unknown database engine
+  * @access public
+  * @author Christian Reiner
+  * @todo not really required any more, we rely on CURRENT_TIMESTAMP instead
+  */
+  static function db_timestamp ( )
+  {
+    $type = OC_Config::getValue( "dbtype", "sqlite" );
+    switch ( $type )
+    {
+      case 'sqlite':
+      case 'sqlite3': return "strftime('%s','now')";
+      case 'mysql':   return 'UNIX_TIMESTAMP()';
+      case 'pgsql':   return "date_part('epoch',now())::integer";
+    }
+    throw new OC_Shorty_Exception ( "unknown database backend type '%1'", array($type) );
+  } // function db_timestamp
+
+  /**
+  * @method OC_Shorty_Tools::shorty_key
+  * @brief Creates a random key to be used for a new shorty entry
+  * @returns (string) valid and unique key
+  * @access public
+  * @author Christian Reiner
+  */
+  static function shorty_key ( )
+  {
+
+    return self::convertToAlphabet ( str_replace(array(' ','.'),'',microtime()),
+                                     '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+  } // function shorty_key
+
+  /**
+  * @method OC_Shorty_Tools::convertToAlphabet
+  * @brief Converts a given decimal number into an arbitrary base (alphabet)
+  * @param  number decimal value to be converted
+  * @returns (string) converted value in string notation
+  * @access public
+  * @author Christian Reiner
+  */
+  static function convertToAlphabet ( $number, $alphabet )
+  {
+    $alphabetLen = strlen($alphabet);
+    $decVal = (int) $number;
+    $number = FALSE;
+    $nslen = 0;
+    $pos = 1;
+    while ($decVal > 0)
+    {
+      $valPerChar = pow($alphabetLen, $pos);
+      $curChar = floor($decVal / $valPerChar);
+      if ($curChar >= $alphabetLen)
+      {
+        $pos++;
+      } else {
+        $decVal -= ($curChar * $valPerChar);
+        if ($number === FALSE)
+        {
+          $number = str_repeat($alphabet{1}, $pos);
+          $nslen = $pos;
+        }
+        $number = substr($number, 0, ($nslen - $pos)) . $alphabet{$curChar} . substr($number, (($nslen - $pos) + 1));
+        $pos--;
+      }
+    }
+    if ($number === FALSE) $number = $alphabet{1};
+    return $number;
+  }
 
 } // class OC_Shorty_Tools
 ?>

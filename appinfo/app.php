@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -20,6 +23,12 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
+
+/**
+ * @file appinfo/app.php
+ * @brief Basic registration of plugin at ownCloud
+ * @author Christian Reiner
+ */
 
 OC::$CLASSPATH['OC_Shorty_Backend']   = 'apps/shorty/lib/backend.php';
 OC::$CLASSPATH['OC_Shorty_Exception'] = 'apps/shorty/lib/exception.php';

@@ -1,8 +1,11 @@
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -20,7 +23,16 @@
 *
 */
 
-// some GENERAL initializations
+/**
+ * @file js/settings.js
+ * @brief Client side activity library
+ * @author Christian Reiner
+ */
+
+/**
+ * @brief Initialization of elements
+ * @author Christian Reiner
+ */
 $(document).ready(function(){
   // make notification closeable
   $('#content').find('#notification').bind('click',Shorty.WUI.Notification.hide);
@@ -37,7 +49,11 @@ $(document).ready(function(){
   });
 }); // document.ready
 
-// our library, coding UI and ACTION methods
+/**
+ * @class Shorty
+ * @brief Central activity library for the client side
+ * @author Christian Reiner
+ */
 Shorty =
 {
   // ===== Shorty.WUI =====
@@ -708,14 +724,15 @@ Shorty =
       add:function(){
         var dfd=new $.Deferred();
         var dialog=$('#dialog-add');
-        var title =dialog.find('#title').val().trim() ||dialog.find('#title').attr('placeholder').trim();
         var target=dialog.find('#target').val().trim()||'';
-        var notes =dialog.find('#notes').val().trim() ||'';
-        var until =dialog.find('#until').val().trim() ||'';
+//        var title =dialog.find('#title').val().trim()||'';
+        var title =dialog.find('#title').eq(0).valOrPlaceholder().trim() ||'';
+        var notes =dialog.find('#notes').val().trim()||'';
+//        var until =dialog.find('#until').val().trim()||'';
+        var until =dialog.find('#until').eq(0).valOrPlaceholder().trim() ||'';
         // store favicon from meta data, except it is the internal default blank
         var favicon = dialog.find('#meta').find('#favicon').attr('src');
         favicon=(favicon==dialog.find('#meta').find('#favicon').attr('data'))?'':favicon;
-        // accept page title as taken from the meta data in case no explicit title has been specified
         // perform upload of new shorty
         $.when(
           Shorty.WUI.Notification.hide(),

@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -22,11 +25,20 @@
 */
 ?>
 
+<?php
+/**
+ * @file templates/tmpl_url_add.php
+ * A dialog to add a remote target url as a new shorty.
+ * @access public
+ * @author Christian Reiner
+ */
+?>
+
 <!-- (hidden) dialog to add a new shorty -->
 <form id="dialog-add" class="shorty-dialog">
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Add a new shorty:'); ?></legend>
-    <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
+    <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
     <input id="target" name="target" type="text" maxsize="4096" data="" class="shorty-input"/>
     <br>
     <label for="meta">&nbsp;</label>
@@ -38,18 +50,18 @@
     <a id="explanation" maxsize="80" data="" class="shorty-value"></a>
     </span>
     <br>
-    <label for="title"><?php echo OC_Shorty_L10n::t('Optional title:'); ?></label>
+    <label for="title"><?php echo OC_Shorty_L10n::t('Shorty title:'); ?></label>
     <input id="title" name="title" type="text" maxsize="80" data="" class="shorty-input"
-           placeholder=""/>
+           placeholder="" saveholder="true"/>
     <br>
-    <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
+    <label for="until"><?php echo OC_Shorty_L10n::t('Expiration date:'); ?></label>
     <input id="until" name="until" type="text" maxsize="10" data="" class="shorty-input" style="width:30%"
-           placeholder="<?php echo OC_Shorty_L10n::t('removal'); ?>"
+           placeholder="<?php echo OC_Shorty_L10n::t('-removal-'); ?>"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     <br>
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
     <textarea id="notes" name="notes" maxsize="4096" data="" class="shorty-input"
-              placeholder=""></textarea>
+              placeholder="<?php echo OC_Shorty_L10n::t('help for later recognition…'); ?>"></textarea>
     <br>
     <label for="confirm"></label>
     <button id="confirm" class="shorty-button-submit"><?php echo OC_Shorty_L10n::t('Add as new'); ?></button>

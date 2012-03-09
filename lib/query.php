@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -22,7 +25,18 @@
 */
 
 /**
- * @brief Catalog of sql queries
+ * @file lib/query.php
+ * Static catalog of sql queries
+ * @author Christian Reiner
+ */
+
+/**
+ * @class OC_Shorty_Query
+ * @brief Static catalog of sql queries
+ * These query templates are referenced by a OC_Shorty_Query::URL_...
+ * They have to be prapared by adding an array of parameters
+ * @access public
+ * @author Christian Reiner
  */
 class OC_Shorty_Query
 {

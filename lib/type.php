@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -22,10 +25,20 @@
 */
 
 /**
- * @brief Catalog of sql queries
+ * @file lib/type.php
+ * Type handling, recognition and verification routines
+ * @author Christian Reiner
+ */
+
+/**
+ * @class OC_Shorty_Type
+ * @brief Static 'namespace' class offering routines and constants used to handle type recognition and value verification
+ * @access public
+ * @author Christian Reiner
  */
 class OC_Shorty_Type
 {
+  // the 'types' of values we deal with, actually more something like flavours
   const KEY         = 'key';
   const SORTKEY     = 'sortkey';
   const SORTVAL     = 'sortval';
@@ -42,6 +55,19 @@ class OC_Shorty_Type
                             'ha'=>'clicks',   'hd'=>'clicks DESC',
                             'ua'=>'target',   'ud'=>'target DESC' );
 
+  /**
+   * @method OC_Shorty_Type::validate
+   * @brief Validates a given value against a type specific regular expression
+   * Validates a given value according to the claimed type of the value.
+   * Validation is done by matching the value against a type specific regular expression. 
+   * @param value the value to be verified according to the specified type
+   * @param type the type the value is said to belong to, important for verification
+   * @param strict flag indicating if the verification should be done strict, that is if an exception should be thrown in case of a failure
+   * @returns the value itself in case of a positive validation, NULL or an exception in case of a failure, depending on the flag indication strict mode
+   * @throws error indicating a failed validation in case of strict mode
+   * @access public
+   * @author Christian Reiner
+   */
   static function validate ( $value, $type )
   {
     switch ( $type )
@@ -86,6 +112,19 @@ class OC_Shorty_Type
     throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
   } // function is_valid
 
+  /**
+   * @method OC_Shorty_Type::normalize
+   * @brief cleanup and formal normalization of a given value according to its type
+   * Normalizes a given value according to its claimed type.
+   * This typically means trimming of string values, but sometimes also more specific actions. 
+   * @param value the value to be normalized
+   * @param type the supposed type of the value
+   * @param strict boolean flag indicating if the normalization should be done in a strict way
+   * @returns the normalized value
+   * @throws error indicating a parameter violation
+   * @access public
+   * @author Christian Reiner
+   */
   static function normalize ( $value, $type )
   {
     if ( ! self::validate($value,$type) )
@@ -106,12 +145,15 @@ class OC_Shorty_Type
   } // function normalize
 
   /**
-  * @brief returns checked request argument or throws an error
-  * @param arg (string) name of the request argument to get_argument
-  * @param strict (bool) controls if an exception will be thrown upon a missing argument
-  * @return (string) checked and prepared value of request argument
-  * @throw error indicating a parameter violation
-  */
+   * @method OC_Shorty_Type::req_argument
+   * @brief returns checked request argument or throws an error
+   * @param arg (string) name of the request argument to get_argument
+   * @param strict (bool) controls if an exception will be thrown upon a missing argument
+   * @returns (string) checked and prepared value of request argument
+   * @throws error indicating a parameter violation
+   * @access public
+   * @author Christian Reiner
+   */
   static function req_argument ( $arg, $type, $strict=FALSE )
   {
     switch ( $_SERVER['REQUEST_METHOD'] )

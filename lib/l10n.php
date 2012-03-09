@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -22,23 +25,52 @@
 */
 
 /**
- * @file
+ * @file lib/l10n.php
  * Translation singleton
+ * @author Christian Reiner
  */
 
+/**
+ * @class OC_Shorty_L10n
+ * @brief Convenient translation singleton
+ * @access public
+ * @author Christian Reiner
+ */
 class OC_Shorty_L10n
 {
+  /**
+   * @var OC_Shorty_L10n::dictionary
+   * @brief An internal dictionary file filled from the translation files provided.
+   * @access private
+   * @author Christian Reiner
+   */
   private $dictionary;
+
+    /**
+   * @var OC_Shorty_L10n::instance
+   * @brief Internal singleton object
+   * @access private
+   * @author Christian Reiner
+   */
   static private $instance=NULL;
+
+  /**
+   * @method OC_Shorty_L10n::__construct
+   * @brief
+   * @access private
+   * @author Christian Reiner
+   */
   private function __construct ( ) { $this->dictionary = new OC_L10n('shorty'); }
-/*
-  static public function t ( $phrase, $param=array() )
-  {
-    if ( ! self::$instance )
-      self::$instance = new OC_Shorty_L10n ( );
-    return self::$instance->dictionary->t ( $phrase, $param );
-  }
-*/
+
+  /**
+   * @method OC_Shorty_L10n::t
+   * @brief Translates a given string into the users session language and fills any placeolders
+   * @param phrase to be translated
+   * @param … further arguments used as filling tokens in the tradition of printf strategies
+   * @returns translated phrase or the original phrase incase no translation could be found
+   * @access public
+   * @author Christian Reiner
+   */
   static public function t ( $phrase )
   {
     // create singleton instance, if required

@@ -1,9 +1,12 @@
 <?php
 /**
-* ownCloud shorty plugin, a URL shortener
-*
+* @package shorty an ownCloud url shortener plugin
+* @category internet
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -20,6 +23,15 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
+
+/**
+ * @file ajax/click.php
+ * @brief Ajax method to register a 'click', a single hit on an existing and valid shorty
+ * @param key (string) Internal key of a referenced shorty
+ * @returns (json) success/error state indicator
+ * @returns (json) Associative array holding the key of the shorty whose click was registered
+ * @author Christian Reiner
+ */
 
 //no apps or filesystem
 $RUNTIME_NOSETUPFS = true;
@@ -40,6 +52,6 @@ try
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
   $query->execute ( $param );
-  OC_JSON::success ( array ( 'data' => $p_key ) );
+  OC_JSON::success ( array ( 'data' => array('key'=>$p_key) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
