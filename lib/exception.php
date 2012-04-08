@@ -98,11 +98,11 @@ class OC_Shorty_Exception extends Exception
         break;
       default:
         if ( is_a($e,'Exception') )
-             $message = OC_Shorty_L10n::t("Unexpected type of exception caught");
-        else $message = OC_Shorty_L10n::t("Unknown object of type '%s' thrown", get_class($e));
+             $message = OC_Shorty_L10n::t("Unexpected type of exception caught: %s", get_class($e));
+        else $message = OC_Shorty_L10n::t("Unknown object of type caught: %s", get_class($e));
     } // switch
     return OC_JSON::error ( array ( 'title'   => $title,
-                                    'message' => sprintf("%s: %s",array($title,$message)) ) );
+                                    'message' => sprintf("%s: %s", $title, $message) ) );
   } // function error
 
 } // class OC_Shorty_Exception

@@ -584,21 +584,22 @@ Shorty =
             dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
             dialog.find('#meta').fadeTo('fast',1);
           });
-        }).done(dfd.resolve);
+          dfd.resolve(response);
+        }).fail(function(reponse){
+          dfd.reject(response);
+        });
         return dfd.promise();
       }, // Shorty.WUI.Meta.collect
       // ===== Shorty.WUI.Meta.get =====
       get: function(target){
         var dfd = new $.Deferred();
-        $.when(
-          $.ajax({
-            url:     'ajax/meta.php',
-            cache:   false,
-            data:    { target: encodeURIComponent(target) }
-          }).pipe(
-            function(response){return Shorty.Ajax.eval(response);},
-            function(response){return Shorty.Ajax.fail();}
-          )
+        $.ajax({
+          url:     'ajax/meta.php',
+          cache:   false,
+          data:    { target: encodeURIComponent(target) }
+        }).pipe(
+          function(response){return Shorty.Ajax.eval(response);},
+          function(response){return Shorty.Ajax.fail(response);}
         ).done(function(response){
           dfd.resolve(response);
         }).fail(function(response){
