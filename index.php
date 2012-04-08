@@ -40,8 +40,7 @@ OC_Util::checkAppEnabled ( 'shorty' );
 
 OC_App::setActiveNavigationEntry ( 'shorty' );
 
-//OC_Util::addScript ( 'shorty', 'debug' );
-OC_Util::addScript ( 'shorty', 'placeholder' );
+OC_Util::addScript ( 'shorty', 'debug' );
 OC_Util::addScript ( 'shorty', 'shorty' );
 OC_Util::addScript ( 'shorty', 'init' );
 

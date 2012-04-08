@@ -51,8 +51,7 @@
     </span>
     <br>
     <label for="title"><?php echo OC_Shorty_L10n::t('Shorty title:'); ?></label>
-    <input id="title" name="title" type="text" maxsize="80" data="" class="shorty-input"
-           placeholder="" saveholder="true"/>
+    <input id="title" name="title" type="text" maxsize="80" data="" class="shorty-input" placeholder=""/>
     <br>
     <label for="until"><?php echo OC_Shorty_L10n::t('Expiration date:'); ?></label>
     <input id="until" name="until" type="text" maxsize="10" data="" class="shorty-input" style="width:30%"
