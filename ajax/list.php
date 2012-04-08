@@ -58,8 +58,8 @@ try
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_LIST );
   $result = $query->execute($param);
   $reply = $result->fetchAll();
-  OC_JSON::success ( array ( 'data'  => $reply,
-                             'count' => sizeof($reply),
-                             'note'  => OC_Shorty_L10n::t('Number of entries: %s', count($reply)) ) );
+  OC_JSON::success ( array ( 'data'    => $reply,
+                             'count'   => sizeof($reply),
+                             'message' => OC_Shorty_L10n::t('Number of entries: %s', count($reply)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

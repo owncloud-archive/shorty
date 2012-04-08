@@ -102,7 +102,7 @@ class OC_Shorty_Exception extends Exception
         else $message = OC_Shorty_L10n::t("Unknown object of type '%s' thrown", get_class($e));
     } // switch
     return OC_JSON::error ( array ( 'title'   => $title,
-                                    'message' => $message ) );
+                                    'message' => sprintf("%s: %s",array($title,$message)) ) );
   } // function error
 
 } // class OC_Shorty_Exception

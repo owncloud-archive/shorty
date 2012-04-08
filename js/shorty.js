@@ -299,17 +299,18 @@ Shorty =
         ).done(function(){
           // retrieve new entries
           $.when(
-            Shorty.WUI.List.get(function(list){
-              Shorty.WUI.List.fill(list);
-            })
+            Shorty.WUI.List.get()
+          ).pipe(function(response){Shorty.WUI.List.fill(response.data);}
           ).done(function(){
             $.when(
               Shorty.WUI.List.show(),
               Shorty.WUI.List.dim(true)
-            ).done(function(){
+            ).always(function(){
               Shorty.WUI.Hourglass.toggle(false)
               dfd.resolve();
             });
+          }).fail(function(){
+            dfd.reject();
           })
         })
         return dfd.promise();
@@ -376,28 +377,21 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.fill
       // ===== Shorty.WUI.List.get =====
-      get: function(callback){
+      get: function(){
         var dfd = new $.Deferred();
         $.when(
           $.ajax({
             url:     'ajax/list.php',
-            cache:   false,
-            success: function(response){
-              var dfd = new $.Deferred();
-              if ( 'error'==response.status ){
-                Shorty.WUI.Notification.show(response.message,'debug');
-              }else{
-                Shorty.WUI.Notification.show(response.message,'info');
-                if (callback){
-                  $.when(
-                    callback(response.data)
-                  ).done(dfd.resolve);
-                }
-              } // if else
-              return dfd.promise();
-            }
-          })
-        ).done(dfd.resolve);
+            cache:   false
+          }).pipe(
+            function(response){return Shorty.Ajax.eval(response)},
+            function(response){return Shorty.Ajax.fail(response)}
+          )
+        ).done(function(response){
+          dfd.resolve(response);
+        }).fail(function(response){
+          dfd.reject(response);
+        });
         return dfd.promise();
       }, // Shorty.WUI.List.get
       // ===== Shorty.WUI.List.hide =====
@@ -515,8 +509,8 @@ Shorty =
             switch(level){
               case 'debug':
                 // detect debug mode by checking, of function 'debug()' exists
-                if ( Shorty.debug ){
-                  Shorty.debug('Debug: '+message);
+                if ( Shorty.Debug ){
+                  Shorty.Debug.log('Debug: '+message);
                   $.when(
                     notification.attr('title', 'debug message'),
                     notification.text('Debug: '+message),
@@ -527,8 +521,8 @@ Shorty =
                   dfd.resolve();
                 break;
               case 'error':
-                if (Shorty.debug)
-                  Shorty.debug('Error: '+message);
+                if (Shorty.Debug)
+                  Shorty.Debug.log('Error: '+message);
                 $.when(
                   notification.attr('title', 'error message'),
                   notification.text('Error: ' + message),
@@ -537,8 +531,8 @@ Shorty =
                 break;
               default: // 'info'
                 if ( message.length ){
-                  if (Shorty.debug)
-                    Shorty.debug('Info: '+message);
+                  if (Shorty.Debug)
+                    Shorty.Debug.log('Info: '+message);
                   $.when(
                     notification.text(message),
                     notification.slideDown(duration)
@@ -575,42 +569,41 @@ Shorty =
         }
         // query meta data from target
         $.when(
-          Shorty.WUI.Meta.get(target,function(meta){
-            if (meta.final)
-              dialog.find('#target').val(meta.final);
-            dialog.find('#title').attr('placeholder',meta.title);
-            dialog.find('#meta').fadeTo('fast',0,function(){
-              Shorty.WUI.Meta.reset(dialog);
-              dialog.find('#staticon').attr('src',meta.staticon);
-              dialog.find('#schemicon').attr('src',meta.schemicon);
-              dialog.find('#favicon').attr('src',meta.favicon);
-              dialog.find('#mimicon').attr('src',meta.mimicon);
-              dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
-              dialog.find('#meta').fadeTo('fast',1);
-            });
-          })
-        ).done(dfd.resolve);
+          Shorty.WUI.Meta.get(target)
+        ).done(function(response){
+          var meta=response.data;
+          if (meta.final)
+            dialog.find('#target').val(meta.final);
+          dialog.find('#title').attr('placeholder',meta.title);
+          dialog.find('#meta').fadeTo('fast',0,function(){
+            Shorty.WUI.Meta.reset(dialog);
+            dialog.find('#staticon').attr('src',meta.staticon);
+            dialog.find('#schemicon').attr('src',meta.schemicon);
+            dialog.find('#favicon').attr('src',meta.favicon);
+            dialog.find('#mimicon').attr('src',meta.mimicon);
+            dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
+            dialog.find('#meta').fadeTo('fast',1);
+          });
+        }).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Meta.collect
       // ===== Shorty.WUI.Meta.get =====
-      get: function(target,callback){
+      get: function(target){
         var dfd = new $.Deferred();
         $.when(
           $.ajax({
             url:     'ajax/meta.php',
             cache:   false,
-            data:    { target: encodeURIComponent(target) },
-            error:   function() { return ''; },
-            success: function(response){
-              if (Shorty.Debug) Shorty.Debug.log(response.message);
-              if ('success'==response.status){
-                if (callback) callback(response.data);
-              }else{
-                if (Shorty.Debug) Shorty.Debug.log(Shorty.Debug.dump(response.data));
-              }
-            }
-          })
-        ).done(dfd.resolve);
+            data:    { target: encodeURIComponent(target) }
+          }).pipe(
+            function(response){return Shorty.Ajax.eval(response);},
+            function(response){return Shorty.Ajax.fail();}
+          )
+        ).done(function(response){
+          dfd.resolve(response);
+        }).fail(function(response){
+          dfd.reject(response);
+        });
         return dfd.promise();
       }, // Shorty.WUI.Meta.get
       // ===== Shorty.WUI.Meta.reset =====
@@ -645,17 +638,17 @@ Shorty =
           $.ajax({
             url:     'ajax/count.php',
             cache:   false,
-            data:    { },
-            success: function(response){
-              if ( 'error'==response.status ){
-                Shorty.WUI.Notification.show(response.message,'debug');
-              }else{
-                Shorty.WUI.Notification.show(response.message,'info');
-                if (callback) callback(response.data);
-              } // if else
-            }
-          })
-        ).done(dfd.resolve);
+            data:    { }
+          }).pipe(
+            function(response){return Shorty.Ajax.eval(response)},
+            function(response){return Shorty.Ajax.fail(response)}
+          )
+        ).done(function(response){
+          if (callback) callback(response.data);
+          dfd.resolve(response);
+        }).fail(function(response){
+          dfd.reject(response);
+        });
         return dfd.promise();
       }, // Shorty.WUI.Sums.get
     }, // Shorty.WUI.Sums
@@ -720,7 +713,8 @@ Shorty =
           // close and neutralize dialog
           Shorty.WUI.Dialog.hide(dialog),
           Shorty.WUI.List.dim(false),
-          Shorty.WUI.List.show(),
+          Shorty.WUI.List.show()
+        ).done(function(){
           $.ajax({
             url:     'ajax/add.php',
             cache:   false,
@@ -728,27 +722,21 @@ Shorty =
                        title:   encodeURIComponent(title),
                        notes:   encodeURIComponent(notes),
                        until:   encodeURIComponent(until),
-                       favicon: encodeURIComponent(favicon) },
-            error:   function(){
-              if (!typeof Shorty.Debug==='undefined')
-                Shorty.Debug.log(this.data);
-              return false;
-            },
-            success: function(response){
-              if ( 'success'==response.status ){
-                // show notification
-                Shorty.WUI.Notification.show(response,'info');
-                Shorty.WUI.Dialog.reset(dialog);
-                // add shorty to existing list
-                Shorty.WUI.List.add([response.data],true);
-                Shorty.WUI.List.dim(true)
-              }else{
-                Shorty.WUI.Notification.show(response.message,'error');
-              }
-            }
-          })
-        ).done(dfd.resolve).fail(dfd.reject);
-        return dfd.promise;
+                       favicon: encodeURIComponent(favicon) }
+          }).pipe(
+            function(response){return Shorty.Ajax.eval(response)},
+            function(response){return Shorty.Ajax.fail(response)}
+          ).done(function(response){
+            Shorty.WUI.Dialog.reset(dialog);
+            // add shorty to existing list
+            Shorty.WUI.List.add([response.data],true);
+            Shorty.WUI.List.dim(true)
+            dfd.resolve(response);
+          }).fail(function(response){
+            dfd.reject(response);
+          });
+        });
+        return dfd.promise();
       }, // ===== Shorty.Action.Url.add =====
       // ===== Shorty.Action.Url.edit =====
       edit: function(){
@@ -760,7 +748,6 @@ Shorty =
         var notes  = dialog.find('#notes').val();
         var until  = dialog.find('#until').val();
         $.when(
-//          Shorty.WUI.Notification.hide(),
           $.ajax({
             url:     'ajax/edit.php',
             cache:   false,
@@ -769,21 +756,23 @@ Shorty =
                        target: encodeURI(target),
                        notes:  encodeURI(notes),
                        until:  encodeURI(until) },
-            success: function(data){
-              // close and neutralize dialog
-              Shorty.WUI.Dialog.hide(dialog);
-              // show notification
-              Shorty.WUI.Notification.show(response,'info');
-              var record = $('.shorty-single[data-key = "' + key + '"]');
-              record.children('.shorty-target:first').text(target);
-
-              var record_notes = record.children('.shorty-notes:first').children('a:first');
-              record_notes.attr('href', target);
-              record_notes.text(notes);
-              record.children('.shorty-until').html(until);
-            }
-          })
-        ).done(dfd.resolve);
+          }).pipe(
+            function(response){return Shorty.Ajax.eval(response)},
+            function(response){return Shorty.Ajax.fail(response)}
+          )
+        ).done(function(response){
+          // close and neutralize dialog
+          Shorty.WUI.Dialog.hide(dialog);
+          var record = $('.shorty-single[data-key = "' + key + '"]');
+          record.children('.shorty-target:first').text(target);
+          var record_notes = record.children('.shorty-notes:first').children('a:first');
+          record_notes.attr('href', target);
+          record_notes.text(notes);
+          record.children('.shorty-until').html(until);
+          dfd.resolve(response.data);
+        }).fail(function(response){
+          dfd.reject(response.data);
+        });
         return dfd.promise();
       }, // ===== Shorty.Action.Url.edit =====
       // ===== Shorty.Action.Url.del =====
@@ -796,17 +785,20 @@ Shorty =
           $.ajax({
             url:     'ajax/del.php',
             cache:   false,
-            data:    { key: key },
-            success: function(data){
-              // close and neutralize dialog
-              Shorty.WUI.Dialog.hide(dialog);
-              // show notification
-              Shorty.WUI.Notification.show(response,'info');
-              // hide and remove deleted entry
-              // ...
-            }
-          })
-        ).done(dfd.resolve);
+            data:    { key: key }
+          }).pipe(
+            function(response){return Shorty.Ajax.eval(response)},
+            function(response){return Shorty.Ajax.fail(response)}
+          )
+        ).done(function(response){
+          // close and neutralize dialog
+          Shorty.WUI.Dialog.hide(dialog);
+          // hide and remove deleted entry
+          // ...
+          dfd.resolve(response.data);
+        }).fail(function(response){
+          dfd.reject(response.data);
+        });
         return dfd.promise();
       }, // ===== Shorty.Action.Url.del =====
       // ===== Shorty.Action.Url.show =====
@@ -833,6 +825,36 @@ Shorty =
       }, // ===== Shorty.Action.Url.show =====
     }, // ===== Shorty.Action.Url =====
   }, // Shorty.Action
+
+  // ===========
+
+  // ===== Shorty.Ajax =====
+  Ajax:
+  {
+    // ===== Shorty.Ajax.eval =====
+    eval:function(response){
+      // Check to see if the response is truely successful.
+      if ('success'==response.status){
+        Shorty.WUI.Notification.show(response.message,'debug');
+        return new $.Deferred().resolve(response);
+      } else {
+        Shorty.WUI.Notification.show(response.message,'error');
+        return new $.Deferred().reject(response);
+      }
+    }, // Shorty.Ajax.eval
+
+    // ===== Shorty.Ajax.fail =====
+    fail:function(response){
+      return new $.Deferred().reject({
+        status: 'error',
+        data: null,
+        message: [ "Unexpected error: " + response.status + " " + response.statusText ]
+      });
+    } // Shorty.Ajax.fail
+  }, // Shorty.Ajax
+
+  // ===========
+
   // ==== Shorty.Date =====
   Date:
   {

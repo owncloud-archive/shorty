@@ -51,6 +51,6 @@ try
   $result = $query->execute($param);
   $reply = $result->fetchAll();
   OC_JSON::success ( array ( 'data'    => $reply[0],
-                             'message' => '' ) );
+                             'message' => OC_Shorty_L10n::t('Counted entries and clicks') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
