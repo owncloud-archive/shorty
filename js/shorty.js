@@ -283,6 +283,7 @@ Shorty =
                   row.find('td').filter('#'+aspect).html('<span class="'+css+'" style="display:block;">'+content+'</span>');
               }
             );
+            // insert new row in table
             dummy.after(row);
           }) // each
         ).done (dfd.resolve);

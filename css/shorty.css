@@ -156,6 +156,16 @@
   padding: 1px;
   padding-left: 10px;
 }
+.shorty-list tbody tr:first-child {
+  display: none;
+}
+.shorty-list tbody tr td span.shorty-actions {
+  visibility:visible;
+  opacity:0;
+}
+.shorty-list tbody tr:hover td span.shorty-actions {
+  opacity:1;
+}
 
 .shorty-expired {
   color: gray;
@@ -173,20 +183,6 @@
 .shorty-value {
   margin-right: 4px;
 }
-
-.shorty-actions {
-  display: none;
-  font-size: smaller;
-  color: #666;
-  padding-left: 4em;
-}
-
-.shorty-actions span:hover {
-  display: visible;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
 .shorty-single {
   padding: 0.5em 1em;
 }

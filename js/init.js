@@ -36,8 +36,6 @@
 $(document).ready(function(){
   // make notification closeable
   $('#content').find('#notification').bind('click',Shorty.WUI.Notification.hide);
-  // basic action buttons
-  $('#desktop').find('.shorty-actions').bind('hover',function(){$(this).fadeToggle();});
   // button to open the 'add' dialog
   $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
   // button to open the tools header row in the list
