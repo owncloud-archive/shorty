@@ -132,18 +132,20 @@ Shorty =
         if (!dialog.is(':visible'))
           dfd.resolve();
         else{
-          $.when(dialog.slideUp(duration)).done(
-            function(){
-              switch ( dialog.attr('id') ){
-                case 'dialog-add':
-                  dialog.find('#confirm').unbind('click');
-                  dialog.find('#target').unbind('focusout');
-                  break;
-                default:
-              } // switch
-              $.when(Shorty.WUI.Desktop.show()).done(dfd.resolve);
-            }
-          );
+          $.when(
+            dialog.slideUp(duration)
+          ).pipe(function(){
+            switch ( dialog.attr('id') ){
+              case 'dialog-add':
+                dialog.find('#confirm').unbind('click');
+                dialog.find('#target').unbind('focusout');
+                break;
+              default:
+            } // switch
+          }).pipe(function(){
+            if (dialog.hasClass('shorty-standalone'))
+              Shorty.WUI.Desktop.show();
+          }).done(dfd.resolve);
         }
         return dfd.promise();
       }, // Shorty.WUI.Dialog.hide
@@ -174,27 +176,34 @@ Shorty =
         var duration = 'slow';
         var dfd = new $.Deferred();
         if (dialog.is(':visible'))
-          return;
-        $.when(Shorty.WUI.Desktop.hide()).done(function(){
-          // wipe (reset) dialog
-          Shorty.WUI.Dialog.reset(dialog);
-          // show dialog
+          dfd.resolve();
+        else{
           $.when(
-            dialog.slideDown(duration),
             function(){
-              // initialize dialog
-              switch(dialog.attr('id')){
-                case 'dialog-add':
-                  dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
-                  dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
-                  dialog.find('#target').focus();
-                  break;
-                default:
-                  dialog.find('#title').focus();
-              } // switch
+              var dfd = new $.Deferred();
+              if (dialog.hasClass('shorty-standalone'))
+                $.when(Shorty.WUI.Desktop.hide()).done(dfd.resolve);
+              else dfd.resolve();
+              return dfd.promise();
             }()
-          ).done(dfd.resolve);
-        });
+          ).pipe(function(){
+            // wipe (reset) dialog
+            Shorty.WUI.Dialog.reset(dialog);
+            // show dialog
+            dialog.slideDown(duration);
+          }).pipe(function(){
+            // initialize dialog
+            switch(dialog.attr('id')){
+              case 'dialog-add':
+                dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
+                dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
+                dialog.find('#target').focus();
+                break;
+              default:
+                dialog.find('#title').focus();
+            } // switch
+          }).done(dfd.resolve);
+        }
         return dfd.promise();
       }, // Shorty.WUI.Dialog.show
       // ===== Shorty.WUI.Dialog.toggle =====
@@ -215,18 +224,24 @@ Shorty =
     {
       // ===== Shorty.WUI.Entry.click =====
       click: function(event,element){
+        var dfd = new $.Deferred();
         var entry=element.parents('tr').eq(0);
         if (Shorty.Debug) Shorty.Debug.log(event.type+" on action "+element.attr('id')+" for entry "+entry.attr('id'));
-        if ('click'==event.type){
-          switch(element.attr('id')){
-            default:
-            case 'show':   Shorty.WUI.Entry.show(entry);   break;
-            case 'share':  Shorty.WUI.Entry.share(entry);  break;
-            case 'edit':   Shorty.WUI.Entry.edit(entry);   break;
-            case 'delete': Shorty.WUI.Entry.delete(entry); break;
-            case 'open':   Shorty.Action.Url.forward(entry);  break;
-          } // switch
-        } // if click
+        $.when(
+          Shorty.WUI.List.highlight(entry)
+        ).pipe(function(){
+          if ('click'==event.type){
+            switch(element.attr('id')){
+              default:
+              case 'show':   Shorty.WUI.Entry.show(entry);   break;
+              case 'share':  Shorty.WUI.Entry.share(entry);  break;
+              case 'edit':   Shorty.WUI.Entry.edit(entry);   break;
+              case 'delete': Shorty.WUI.Entry.delete(entry); break;
+              case 'open':   Shorty.Action.Url.forward(entry);  break;
+            } // switch
+          } // if click
+        }).done(dfd.resolve);
+        return dfd.promise();
       }, // Shorty.WUI.Entry.click
       // ===== Shorty.WUI.Entry.delete =====
       delete: function(entry){
@@ -235,13 +250,27 @@ Shorty =
       // ===== Shorty.WUI.Entry.edit =====
       edit: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("edit entry "+entry.attr('id'));
-        var dialog=$('#controls #edit');
+        // select the existing edit dialog for this
+        var dialog=$('#controls #dialog-edit');
+        // load entry into dialog
         Shorty.WUI.Dialog.load(dialog,entry);
+        // open edit dialog
         Shorty.WUI.Dialog.show(dialog);
       }, // Shorty.WUI.Entry.edit
       // ===== Shorty.WUI.Entry.share =====
       share: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("share entry "+entry.attr('id'));
+        var dfd = new $.Deferred();
+        // use the existing 'share' dialog for this
+        var dialog=$('#dialog-share');
+        $.when(
+          // move 'share' dialog towards entry
+          dialog.appendTo(entry.find('td#actions')),
+          // open dialog
+//          dialog.slideDown()
+          Shorty.WUI.Dialog.show($('#dialog-share').eq(0))
+        ).done(dfd.resolve);
+        return dfd.promise();
       }, // Shorty.WUI.Entry.share
       // ===== Shorty.WUI.Entry.show =====
       show: function(entry){
@@ -458,6 +487,21 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.List.hide
+      // ===== Shorty.WUI.List.highlight =====
+      highlight: function(entry){
+        if (Shorty.Debug) Shorty.Debug.log("highlighting list entry "+entry.attr('id'));
+        var dfd = new $.Deferred();
+        // close any open embedded dialog
+        $.when(
+//          $('#dialog-share').slideUp()
+          Shorty.WUI.Dialog.hide($('#dialog-share').eq(0))
+        ).pipe(function(){
+          // neutralize all rows that might have been highlighted
+          $('#desktop #list tr').removeClass('clicked');
+          entry.addClass('clicked');
+        }).done(dfd.resolve);
+        return dfd.promise();
+      }, // Shorty.WUI.List.highlight
       // ===== Shorty.WUI.List.vacuum =====
       vacuum: function(){
         if (Shorty.Debug) Shorty.Debug.log("vacuum list");

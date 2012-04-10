@@ -35,9 +35,9 @@
 ?>
 
 <!-- (hidden) dialog to show a shorty from the list -->
-<form id="dialog-show" class="shorty-dialog">
+<form id="dialog-show" class="shorty-dialog shorty-embedded">
   <fieldset>
-    <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Modify shorty:'); ?></legend>
+    <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Shorty details:'); ?></legend>
     <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
     <input id="key" name="key" type="text" readonly data="" class="" />
     <br>

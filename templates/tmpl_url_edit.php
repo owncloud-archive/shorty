@@ -35,7 +35,7 @@
 ?>
 
 <!-- (hidden) dialog to modify a stored shorty -->
-<form id="dialog-edit" class="shorty-dialog">
+<form id="dialog-edit" class="shorty-dialog shorty-standalone">
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Modify shorty:'); ?></legend>
     <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>

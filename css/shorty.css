@@ -56,11 +56,25 @@
 
 .shorty-dialog {
   display: none;
+}
+.shorty-standalone {
   width: 500px;
   margin-top: 10px;
   background: solid;
   background-color: white;
   padding: 20px;
+}
+.shorty-embedded {
+  background: none repeat scroll 0 0 #EEEEEE;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  box-shadow: 0 1px 1px #777777;
+  margin-right: 7em;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: 26em;
+  z-index: 100;
 }
 .shorty-dialog br {
   clear: left;
@@ -156,6 +170,7 @@
   padding: 1px;
   padding-left: 10px;
 }
+/* hide the dummy row */
 .shorty-list tbody tr:first-child {
   display: none;
 }
@@ -175,6 +190,13 @@
   -webkit-transition: opacity 500ms;
   -ms-transition: opacity 500ms;
   -o-transition: opacity 500ms;
+}
+.shorty-list tbody tr.clicked {
+  background-color:#EEEEEE;
+}
+.shorty-list tbody tr td#actions{
+  width:100px;
+  overflow:auto;
 }
 
 .shorty-expired {
@@ -233,7 +255,6 @@
 .shorty-close-button {
   float:right;
   opacity:0.6;
-  border:1px solid;
   margin:-4px 6px 4px;
 }
 
@@ -242,18 +263,4 @@
 }
 .shorty-clickable:after {
   content:url("img/actions/open.png");
-}
-
-#shorty-share {
-  background: none repeat scroll 0 0 #EEEEEE;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
-  box-shadow: 0 1px 1px #777777;
-  display: block;
-  margin-right: 7em;
-  padding: 1em;
-  position: absolute;
-  right: 0;
-  width: 16em;
-  z-index: 100;
 }

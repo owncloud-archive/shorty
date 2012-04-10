@@ -35,7 +35,7 @@
 ?>
 
 <!-- (hidden) dialog to add a new shorty -->
-<form id="dialog-add" class="shorty-dialog">
+<form id="dialog-add" class="shorty-dialog shorty-standalone">
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Add a new shorty:'); ?></legend>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
