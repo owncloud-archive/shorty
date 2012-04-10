@@ -873,6 +873,9 @@ Shorty =
       // ===== Shorty.Action.Url.forward =====
       forward: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("action forward to entry "+entry.attr('id'));
+        var url=entry.attr('data-target');
+        if (Shorty.Debug) Shorty.Debug.log("opening target url '"+url+"' in new window");
+        window.open(url);
       }, // Shorty.Action.Url.forward
       // ===== Shorty.Action.Url.show =====
       show: function(){
