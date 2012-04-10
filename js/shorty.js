@@ -156,18 +156,6 @@ Shorty =
           dfd.resolve();
         return dfd.promise();
       }, // Shorty.WUI.Dialog.reset
-      // ===== Shorty.WUI.Dialog.sharpen =====
-      sharpen: function(dialog,sharp){
-        var dfd = new $.Deferred();
-        if (dialog){
-          if (sharp){
-
-          }else{
-          }
-        }
-        dfd.resolve();
-        return dfd.promise();
-      }, // Shorty.WUI.Dialog.sharpen
       // ===== Shorty.WUI.Dialog.show =====
       show: function(dialog){
         var duration = 'slow';
