@@ -162,9 +162,19 @@
 .shorty-list tbody tr td span.shorty-actions {
   visibility:visible;
   opacity:0;
+  transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
 }
 .shorty-list tbody tr:hover td span.shorty-actions {
   opacity:1;
+  transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
 }
 
 .shorty-expired {
@@ -218,4 +228,32 @@
 
 .shorty-meta {
   margin: 0.1em;
+}
+
+.shorty-close-button {
+  float:right;
+  opacity:0.6;
+  border:1px solid;
+  margin:-4px 6px 4px;
+}
+
+.shorty-clickable {
+  text-decoration: underline;
+}
+.shorty-clickable:after {
+  content:url("img/actions/open.png");
+}
+
+#shorty-share {
+  background: none repeat scroll 0 0 #EEEEEE;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  box-shadow: 0 1px 1px #777777;
+  display: block;
+  margin-right: 7em;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: 16em;
+  z-index: 100;
 }
