@@ -138,11 +138,11 @@
       <td id="until"  ></td>
       <td id="actions">
         <span class="shorty-actions">
-          <a href="" title="Show"   class=""><img class="svg" alt="Show"     title="Show target"     src="/owncloud/core/img/actions/info.svg"     /></a>
-          <a href="" title="Open"   class=""><img class="svg" alt="Download" title="Open target url" src="/owncloud/core/img/actions/download.svg" /></a>
-          <a href="" title="Share"  class=""><img class="svg" alt="Share"    title="Share shorty"    src="/owncloud/core/img/actions/share.svg"    /></a>
-          <a href="" title="Edit"   class=""><img class="svg" alt="Edit"     title="Edit shorty"     src="/owncloud/core/img/actions/rename.svg"     /></a>
-          <a href="" title="Delete" class=""><img class="svg" alt="Delete"   title="Delete shorty"   src="/owncloud/core/img/actions/delete.svg"   /></a>
+          <a id="show"   title="Show"   class=""><img class="svg" alt="Show"     title="Show target"     src="/owncloud/core/img/actions/info.svg"     /></a>
+          <a id="open"   title="Open"   class=""><img class="svg" alt="Download" title="Open target url" src="/owncloud/core/img/actions/download.svg" /></a>
+          <a id="share"  title="Share"  class=""><img class="svg" alt="Share"    title="Share shorty"    src="/owncloud/core/img/actions/share.svg"    /></a>
+          <a id="edit"   title="Edit"   class=""><img class="svg" alt="Edit"     title="Edit shorty"     src="/owncloud/core/img/actions/rename.svg"   /></a>
+          <a id="delete" title="Delete" class=""><img class="svg" alt="Delete"   title="Delete shorty"   src="/owncloud/core/img/actions/delete.svg"   /></a>
         </span>
       </td>
     </tr>

@@ -44,6 +44,7 @@ Shorty =
     {
       // ===== Shorty.WUI.Controls.init =====
       init: function(){
+        if (Shorty.Debug) Shorty.Debug.log("init controls");
         var dfd = new $.Deferred();
         $.when(
           Shorty.WUI.Controls.toggle(),
@@ -53,6 +54,7 @@ Shorty =
       }, // Shorty.WUI.Controls.init
       // ===== Shorty.WUI.Controls.toggle =====
       toggle: function(){
+        if (Shorty.Debug) Shorty.Debug.log("toggle controls");
         var dfd = new $.Deferred();
         Shorty.WUI.Notification.hide();
         // show or hide dialog
@@ -76,6 +78,7 @@ Shorty =
     {
       // ===== Shorty.WUI.Desktop.show =====
       show: function(duration){
+        if (Shorty.Debug) Shorty.Debug.log("show desktop");
         duration = duration || 'slow';
         var dfd = new $.Deferred();
         $.when($('#desktop').fadeIn(duration)).done(dfd.resolve);
@@ -83,6 +86,7 @@ Shorty =
       }, // Shorty.WUI.Desktop.show
       // ===== Shorty.WUI.Desktop.hide =====
       hide: function(duration){
+        if (Shorty.Debug) Shorty.Debug.log("hide desktop");
         duration = duration || 'slow';
         var dfd = new $.Deferred();
         $.when($('#desktop').fadeOut(duration)).done(dfd.resolve);
@@ -94,6 +98,7 @@ Shorty =
     {
       // ===== Shorty.WUI.Dialog.execute =====
       execute: function(dialog){
+        if (Shorty.Debug) Shorty.Debug.log("execute dialog "+dialog.attr('id'));
         var dfd = new $.Deferred();
         switch ( dialog.attr('id') ){
           case 'dialog-add':
@@ -121,6 +126,7 @@ Shorty =
       }, // Shorty.WUI.Dialog.execute
       // ===== Shorty.WUI.Dialog.hide =====
       hide: function(dialog){
+        if (Shorty.Debug) Shorty.Debug.log("hide dialog "+dialog.attr('id'));
         var duration = 'slow';
         var dfd = new $.Deferred();
         if (!dialog.is(':visible'))
@@ -141,8 +147,14 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.Dialog.hide
+      // ===== Shorty.WUI.Dialog.load =====
+      load: function(dialog,entry){
+        if (Shorty.Debug) Shorty.Debug.log("loading dialog "+dialog.attr('id')+" with entry "+entry.attr('id'));
+        
+      }, // Shorty.WUI.Dialog.load
       // ===== Shorty.WUI.Dialog.reset =====
       reset: function(dialog){
+        if (Shorty.Debug) Shorty.Debug.log("reset dialog "+dialog.attr('id'));
         var dfd = new $.Deferred();
         if (dialog){
           // reset dialog fields
@@ -158,6 +170,7 @@ Shorty =
       }, // Shorty.WUI.Dialog.reset
       // ===== Shorty.WUI.Dialog.show =====
       show: function(dialog){
+        if (Shorty.Debug) Shorty.Debug.log("show dialog "+dialog.attr('id'));
         var duration = 'slow';
         var dfd = new $.Deferred();
         if (dialog.is(':visible'))
@@ -186,6 +199,7 @@ Shorty =
       }, // Shorty.WUI.Dialog.show
       // ===== Shorty.WUI.Dialog.toggle =====
       toggle: function(dialog){
+        if (Shorty.Debug) Shorty.Debug.log("toggle dialog "+dialog.attr('id'));
         var dfd = new $.Deferred();
         Shorty.WUI.Notification.hide();
         // show or hide dialog
@@ -196,11 +210,51 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Dialog.toggle
     }, // Shorty.WUI.Dialog
+    // ===== Shorty.WUI.Entry =====
+    Entry:
+    {
+      // ===== Shorty.WUI.Entry.click =====
+      click: function(event,element){
+        var entry=element.parents('tr').eq(0);
+        if (Shorty.Debug) Shorty.Debug.log(event.type+" on action "+element.attr('id')+" for entry "+entry.attr('id'));
+        if ('click'==event.type){
+          switch(element.attr('id')){
+            default:
+            case 'show':   Shorty.WUI.Entry.show(entry);   break;
+            case 'share':  Shorty.WUI.Entry.share(entry);  break;
+            case 'edit':   Shorty.WUI.Entry.edit(entry);   break;
+            case 'delete': Shorty.WUI.Entry.delete(entry); break;
+            case 'open':   Shorty.Action.Url.forward(entry);  break;
+          } // switch
+        } // if click
+      }, // Shorty.WUI.Entry.click
+      // ===== Shorty.WUI.Entry.delete =====
+      delete: function(entry){
+        if (Shorty.Debug) Shorty.Debug.log("delete entry "+entry.attr('id'));
+      }, // Shorty.WUI.Entry.delete
+      // ===== Shorty.WUI.Entry.edit =====
+      edit: function(entry){
+        if (Shorty.Debug) Shorty.Debug.log("edit entry "+entry.attr('id'));
+        var dialog=$('#controls #edit');
+        Shorty.WUI.Dialog.load(dialog,entry);
+        Shorty.WUI.Dialog.show(dialog);
+      }, // Shorty.WUI.Entry.edit
+      // ===== Shorty.WUI.Entry.share =====
+      share: function(entry){
+        if (Shorty.Debug) Shorty.Debug.log("share entry "+entry.attr('id'));
+      }, // Shorty.WUI.Entry.share
+      // ===== Shorty.WUI.Entry.show =====
+      show: function(entry){
+        if (Shorty.Debug) Shorty.Debug.log("show entry "+entry.attr('id'));
+      } // Shorty.WUI.Entry.show
+    }, // Shorty.WUI.Entry
+    // ===== Shorty.WUI.Hourglass =====
     // Shorty.WUI.Hourglass
     Hourglass:
     {
       // ===== Shorty.WUI.Hourglass.toggle =====
       toggle: function(show){
+        if (Shorty.Debug) Shorty.Debug.log("toggle hourglass to "+show?"true":"false");
         var dfd = new $.Deferred();
         var hourglass = $('#desktop').find('.shorty-hourglass');
         if (show){
@@ -226,6 +280,7 @@ Shorty =
     {
       // ===== Shorty.WUI.List.add =====
       add: function(list,hidden){
+        if (Shorty.Debug) Shorty.Debug.log("add list holding "+list.length+" entries");
         var dfd = new $.Deferred();
         // clone dummy row from list: dummy is the only row with an empty id
         var dummy = $('.shorty-list tr').filter(function(){return (''==$(this).attr('id'));});
@@ -280,6 +335,7 @@ Shorty =
       // ===== Shorty.WUI.List.build =====
       build: function()
       {
+        if (Shorty.Debug) Shorty.Debug.log("build list");
         var dfd = new $.Deferred();
         // prepare loading
         $.when(
@@ -306,6 +362,7 @@ Shorty =
       }, // Shorty.WUI.List.build
       // ===== Shorty.WUI.List.dim =====
       dim: function(show){
+        if (Shorty.Debug) Shorty.Debug.log("dim list to "+(show?"true":"false"));
         var duration = 'slow';
         var dfd = new $.Deferred();
         var list = $('#desktop').find('#list');
@@ -336,8 +393,8 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.dim
       // ===== Shorty.WUI.List.empty =====
-      empty: function()
-      {
+      empty: function(){
+        if (Shorty.Debug) Shorty.Debug.log("empty list");
         var dfd = new $.Deferred();
         $.when(
           $('#desktop').find('#list').find('tbody').find('tr').each(function(){
@@ -349,6 +406,7 @@ Shorty =
       }, // Shorty.WUI.List.empty
       // ===== Shorty.WUI.List.fill =====
       fill: function(list){
+        if (Shorty.Debug) Shorty.Debug.log("fill list");
         var dfd = new $.Deferred();
         // prevent clicks whilst loading the list
         $.when(
@@ -367,6 +425,7 @@ Shorty =
       }, // Shorty.WUI.List.fill
       // ===== Shorty.WUI.List.get =====
       get: function(){
+        if (Shorty.Debug) Shorty.Debug.log("get list");
         var dfd = new $.Deferred();
         $.when(
           $.ajax({
@@ -385,6 +444,7 @@ Shorty =
       }, // Shorty.WUI.List.get
       // ===== Shorty.WUI.List.hide =====
       hide: function(duration){
+        if (Shorty.Debug) Shorty.Debug.log("hide list");
         duration = 'slow';
         var dfd = new $.Deferred();
         var list = $('#desktop').find('#list');
@@ -400,6 +460,7 @@ Shorty =
       }, // Shorty.WUI.List.hide
       // ===== Shorty.WUI.List.vacuum =====
       vacuum: function(){
+        if (Shorty.Debug) Shorty.Debug.log("vacuum list");
         // list if empty if one 1 row is contained (the dummy)
         if (1==$('#list').find('tbody').find('tr').length)
           $('#vacuum').fadeIn('slow');
@@ -408,6 +469,7 @@ Shorty =
       }, // Shorty.WUI.List.vacuum
       // ===== Shorty.WUI.List.show =====
       show: function(duration){
+        if (Shorty.Debug) Shorty.Debug.log("show list");
         duration = 'slow';
         var dfd = new $.Deferred();
         var list = $('#desktop').find('#list');
@@ -428,6 +490,7 @@ Shorty =
       }, // Shorty.WUI.List.show
       // ===== Shorty.WUI.List.sort =====
       sort: function(){
+        if (Shorty.Debug) Shorty.Debug.log("sort list");
         $.when(
           Shorty.WUI.Hourglass.toggle(true),
           Shorty.WUI.List.dim(false)
@@ -449,6 +512,7 @@ Shorty =
       }, // Shorty.WUI.List.sort
       // ===== Shorty.WUI.List.toggle =====
       toggle: function(duration){
+        if (Shorty.Debug) Shorty.Debug.log("toggle list");
         duration = 'slow';
         var dfd = new $.Deferred();
         if (list.is(':visible'))
@@ -461,6 +525,7 @@ Shorty =
       {
         // ===== Shorty.WUI.List.Toolbar.toggle =====
         toggle: function(duration){
+          if (Shorty.Debug) Shorty.Debug.log("toggle list toolbar");
           duration = duration || 'slow';
           var button=$('#list').find('#tools');
           var toolbar=$('#list').find('#toolbar');
@@ -479,6 +544,7 @@ Shorty =
     {
       // ===== Shorty.WUI.Notification.hide =====
       hide: function(){
+        if (Shorty.Debug) Shorty.Debug.log("hide notification");
         var dfd = new $.Deferred();
         $.when(
           $('#notification').slideUp('fast').text('')
@@ -487,6 +553,7 @@ Shorty =
       }, // Shorty.WUI.Notification.hide
       // ===== Shorty.WUI.Notification.show =====
       show: function(message,level){
+        if (Shorty.Debug) Shorty.Debug.log("show notification with level "+level);
         level = level || 'info';
         var dfd = new $.Deferred();
         var duration = 'slow';
@@ -542,6 +609,7 @@ Shorty =
     {
       // ===== Shorty.WUI.Meta.collect =====
       collect: function(dialog){
+        if (Shorty.Debug) Shorty.Debug.log("collect meta data");
         var dfd = new $.Deferred();
         var target = $('#dialog-add').find('#target').val().trim();
         // don't bother getting active on empty input
@@ -581,6 +649,7 @@ Shorty =
       }, // Shorty.WUI.Meta.collect
       // ===== Shorty.WUI.Meta.get =====
       get: function(target){
+        if (Shorty.Debug) Shorty.Debug.log("get meta data for target "+target);
         var dfd = new $.Deferred();
         $.ajax({
           url:     'ajax/meta.php',
@@ -598,6 +667,7 @@ Shorty =
       }, // Shorty.WUI.Meta.get
       // ===== Shorty.WUI.Meta.reset =====
       reset: function(dialog){
+        if (Shorty.Debug) Shorty.Debug.log("reset meta data");
         dialog.find('#staticon').attr('src',dialog.find('#staticon').attr('data'));
         dialog.find('#schemicon').attr('src',dialog.find('#schemicon').attr('data'));
         dialog.find('#favicon').attr('src',dialog.find('#favicon').attr('data'));
@@ -611,6 +681,7 @@ Shorty =
     {
       // ===== Shorty.WUI.Sums.fill =====
       fill: function(){
+        if (Shorty.Debug) Shorty.Debug.log("fill sums");
         var dfd = new $.Deferred();
         $.when(
           // update (set) sum values in the control bar
@@ -623,6 +694,7 @@ Shorty =
       }, // Shorty.WUI.Sums.fill
       // ===== Shorty.WUI.Sums.get =====
       get: function(callback){
+        if (Shorty.Debug) Shorty.Debug.log("get sums");
         var dfd = new $.Deferred();
         $.when(
           $.ajax({
@@ -653,10 +725,12 @@ Shorty =
     {
       // ===== Shorty.Action.Preference.get =====
       get:function(data){
+        if (Shorty.Debug) Shorty.Debug.log("get preference");
         $.get(OC.filePath('shorty','ajax','preferences.php'),data);
       }, // Shorty.Action.Preference.get
       // ===== Shorty.Action.Preference.set =====
       set:function(data){
+        if (Shorty.Debug) Shorty.Debug.log("set preference");
         $.post(OC.filePath('shorty','ajax','preferences.php'),data);
       }, // Shorty.Action.Preference.set
     }, // Shorty.Action.Preference
@@ -665,6 +739,7 @@ Shorty =
     {
       // ===== Shorty.Action.Setting.get =====
       get:function(data){
+        if (Shorty.Debug) Shorty.Debug.log("get setting");
         var dfd = new $.Deferred();
         var result = $.when(
           $.get(OC.filePath('shorty','ajax','settings.php'),data,
@@ -678,6 +753,7 @@ Shorty =
       }, // Shorty.Action.Setting.get
       // ===== Shorty.Action.Setting.set =====
       set:function(data){
+        if (Shorty.Debug) Shorty.Debug.log("set setting");
         $.post(OC.filePath('shorty','ajax','settings.php'),data);
       }, // Shorty.Action.Setting.set
     }, // Shorty.Action.Setting
@@ -686,6 +762,7 @@ Shorty =
     {
       // ===== Shorty.Action.Url.add =====
       add:function(){
+        if (Shorty.Debug) Shorty.Debug.log("action add url");
         var dfd=new $.Deferred();
         var dialog=$('#dialog-add');
         var target=dialog.find('#target').val().trim()||'';
@@ -730,6 +807,7 @@ Shorty =
       }, // ===== Shorty.Action.Url.add =====
       // ===== Shorty.Action.Url.edit =====
       edit: function(){
+        if (Shorty.Debug) Shorty.Debug.log("action edit url");
         var dfd = new $.Deferred();
         var dialog = $('#dialog-edit');
         var key    = dialog.find('#key').val();
@@ -767,6 +845,7 @@ Shorty =
       }, // ===== Shorty.Action.Url.edit =====
       // ===== Shorty.Action.Url.del =====
       del: function(){
+        if (Shorty.Debug) Shorty.Debug.log("action delete url");
         var dfd = new $.Deferred();
         var dialog = $('#dialog-edit');
         var key    = dialog.find('#key').val();
@@ -791,6 +870,10 @@ Shorty =
         });
         return dfd.promise();
       }, // ===== Shorty.Action.Url.del =====
+      // ===== Shorty.Action.Url.forward =====
+      forward: function(entry){
+        if (Shorty.Debug) Shorty.Debug.log("action forward to entry "+entry.attr('id'));
+      }, // Shorty.Action.Url.forward
       // ===== Shorty.Action.Url.show =====
       show: function(){
         var dfd = new $.Deferred();
@@ -823,6 +906,7 @@ Shorty =
   {
     // ===== Shorty.Ajax.eval =====
     eval:function(response){
+      if (Shorty.Debug) Shorty.Debug.log("eval ajax response of status "+response.status);
       // Check to see if the response is truely successful.
       if ('success'==response.status){
         Shorty.WUI.Notification.show(response.message,'debug');
@@ -835,6 +919,7 @@ Shorty =
 
     // ===== Shorty.Ajax.fail =====
     fail:function(response){
+      if (Shorty.Debug) Shorty.Debug.log("handle ajax failure");
       return new $.Deferred().reject({
         status: 'error',
         data: null,

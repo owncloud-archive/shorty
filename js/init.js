@@ -55,5 +55,7 @@ $(document).ready(function(){
     buttonImage: $('#controls').find('#until').eq(0).attr('icon'),
     buttonImageOnly: true
   });
+  // bind actions to the actions icons
+  $('#list .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
 }); // document.ready
 
