@@ -138,11 +138,26 @@
       <td id="until"  ></td>
       <td id="actions">
         <span class="shorty-actions">
-          <a id="show"   title="Show"   class=""><img class="svg" alt="Show"   title="Show target"   src="<?php echo OC_Helper::imagePath('core','actions/info.png');   ?>" /></a>
-          <a id="open"   title="Open"   class=""><img class="svg" alt="Open"   title="Open target"   src="<?php echo OC_Helper::imagePath('shorty','actions/open.png'); ?>" /></a>
-          <a id="share"  title="Share"  class=""><img class="svg" alt="Share"  title="Share shorty"  src="<?php echo OC_Helper::imagePath('core','actions/share.png');  ?>" /></a>
-          <a id="edit"   title="Edit"   class=""><img class="svg" alt="Edit"   title="Edit shorty"   src="<?php echo OC_Helper::imagePath('core','actions/rename.png'); ?>" /></a>
-          <a id="delete" title="Delete" class=""><img class="svg" alt="Delete" title="Delete shorty" src="<?php echo OC_Helper::imagePath('core','actions/delete.png'); ?>" /></a>
+          <a id="open"   title="<?php echo $l->t('open');   ?>"   class="">
+            <img class="svg" alt="<?php echo $l->t('open'); ?>"   title="<?php echo $l->t('open target'); ?>"
+                 src="<?php echo OC_Helper::imagePath('shorty','actions/open.png'); ?>" />
+          </a>
+          <a id="show"   title="<?php echo $l->t('show');   ?>"   class="">
+            <img class="svg" alt="<?php echo $l->t('show'); ?>"   title="<?php echo $l->t('show shorty'); ?>"
+                 src="<?php echo OC_Helper::imagePath('core','actions/info.png');   ?>" />
+          </a>
+          <a id="share"  title="<?php echo $l->t('share');  ?>"   class="">
+            <img class="svg" alt="<?php echo $l->t('share'); ?>"  title="<?php echo $l->t('share shorty'); ?>"
+                 src="<?php echo OC_Helper::imagePath('core','actions/share.png');  ?>" />
+          </a>
+          <a id="edit"   title="<?php echo $l->t('edit');   ?>"   class="">
+            <img class="svg" alt="<?php echo $l->t('edit'); ?>"   title="<?php echo $l->t('edit shorty'); ?>"
+                 src="<?php echo OC_Helper::imagePath('core','actions/rename.png'); ?>" />
+          </a>
+          <a id="delete" title="<?php echo $l->t('delete'); ?>" class="">
+            <img class="svg" alt="<?php echo $l->t('delete'); ?>" title="<?php echo $l->t('delete shorty'); ?>"
+                 src="<?php echo OC_Helper::imagePath('core','actions/delete.png'); ?>" />
+          </a>
         </span>
       </td>
     </tr>
