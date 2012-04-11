@@ -56,21 +56,25 @@
 
 .shorty-dialog {
   display: none;
-}
-.shorty-standalone {
-  width: 500px;
-  margin-top: 10px;
-  background: solid;
-  background-color: white;
-  padding: 20px;
-}
-.shorty-embedded {
-  background: none repeat scroll 0 0 #EEEEEE;
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
   box-shadow: 0 1px 1px #777777;
-  margin-right: 7em;
-  padding: 1em;
+}
+.shorty-dialog fieldset {
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+.shorty-standalone {
+  width: 500px;
+  margin: -1px 1em 0;
+  background: none repeat scroll 0 0 #F7F7F7;
+  padding: 0 0.5em 0.5em;
+  z-index: 100;
+}
+.shorty-embedded {
+  background: none repeat scroll 0 0 #EEEEEE;
+  margin: 0 4em;
+  padding: 0 0.5em 0.5em;
   position: absolute;
   right: 0;
   width: 26em;

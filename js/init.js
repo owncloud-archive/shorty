@@ -38,6 +38,8 @@ $(document).ready(function(){
   $('#content').find('#notification').bind('click',Shorty.WUI.Notification.hide);
   // button to open the 'add' dialog
   $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
+  // close button in embedded dialogs
+  $('.shorty-embedded #close').bind('click',function(){Shorty.WUI.Dialog.hide($(this).parents('form').eq(0));});
   // button to open the tools header row in the list
   $('#list').find('#titlebar').bind('click',Shorty.WUI.List.Toolbar.toggle);
   // button to reload the list
