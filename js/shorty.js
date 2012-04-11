@@ -81,7 +81,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("show desktop");
         duration = duration || 'slow';
         var dfd = new $.Deferred();
-        $.when($('#desktop').fadeIn(duration)).done(dfd.resolve);
+        $.when($('#desktop').fadeTo(duration,1.0)).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Desktop.show
       // ===== Shorty.WUI.Desktop.hide =====
@@ -89,7 +89,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("hide desktop");
         duration = duration || 'slow';
         var dfd = new $.Deferred();
-        $.when($('#desktop').fadeOut(duration)).done(dfd.resolve);
+        $.when($('#desktop').fadeTo(duration,0.3)).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Desktop.hide
     }, // Shorty.WUI.Desktop

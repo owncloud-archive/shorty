@@ -65,11 +65,14 @@
   border-bottom-right-radius: 0.5em;
 }
 .shorty-standalone {
-  width: 500px;
+  width: 40em;
   margin: -1px 1em 0;
   background: none repeat scroll 0 0 #F7F7F7;
   padding: 0 0.5em 0.5em;
   z-index: 100;
+}
+.shorty-standalone label {
+  width: 8em;
 }
 .shorty-embedded {
   background: none repeat scroll 0 0 #EEEEEE;
@@ -77,15 +80,17 @@
   padding: 0 0.5em 0.5em;
   position: absolute;
   right: 0;
-  width: 26em;
+  width: 30em;
   z-index: 100;
+}
+.shorty-embedded label {
+  width: 8em;
 }
 .shorty-dialog br {
   clear: left;
 }
 .shorty-dialog label {
   display: inline;
-  width: 20%;
   float: left;
   margin: 2px 4px 6px 4px;
   text-align: right;
