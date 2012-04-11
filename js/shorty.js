@@ -288,7 +288,7 @@ Shorty =
       toggle: function(show){
         if (Shorty.Debug) Shorty.Debug.log("toggle hourglass to "+show?"true":"false");
         var dfd = new $.Deferred();
-        var hourglass = $('#desktop').find('.shorty-hourglass');
+        var hourglass = $('#desktop .shorty-hourglass');
         if (show){
           if (hourglass.is(':visible'))
             dfd.resolve();
@@ -398,20 +398,20 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("dim list to "+(show?"true":"false"));
         var duration = 'slow';
         var dfd = new $.Deferred();
-        var list = $('#desktop').find('#list');
+        var list = $('#desktop #list');
         var body = list.find('tbody');
         if (show)
         {
           $.when(
             body.fadeIn(duration)
-          ).done(function(){
+          ).pipe(function(){
             // in addition, fade in any columns that were added, but not yet shown
             body.find('tr').each(function(){
               // only those rows that carry an id (not the dummy)
               if (   ''!=$(this).attr('id')
-                  && 'none'==$(this).find('td').find('span').css('display') ){
-                Shorty.WUI.List.highlight($(this));
-                $(this).find('td').find('span').effect('pulsate');
+                  && 'none'==$(this).find('td span').css('display') ){
+                Shorty.WUI.List.highlight($(this)),
+                $(this).find('td').not('#actions').find('span').effect('pulsate')
               }
             });
           }).done(dfd.resolve);
@@ -432,7 +432,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("empty list");
         var dfd = new $.Deferred();
         $.when(
-          $('#desktop').find('#list').find('tbody').find('tr').each(function(){
+          $('#desktop').find('#list tbody tr').each(function(){
             if(''!=$(this).attr('id'))
               $(this).remove();
           })
@@ -482,7 +482,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("hide list");
         duration = 'slow';
         var dfd = new $.Deferred();
-        var list = $('#desktop').find('#list');
+        var list = $('#desktop #list');
         if ( ! list.is(':visible'))
           dfd.resolve();
         else
@@ -504,14 +504,14 @@ Shorty =
           // neutralize all rows that might have been highlighted
           $('#desktop #list tr').removeClass('clicked');
           entry.addClass('clicked');
-        }).done(dfd.resolve);
+        }).always(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.highlight
       // ===== Shorty.WUI.List.vacuum =====
       vacuum: function(){
         if (Shorty.Debug) Shorty.Debug.log("vacuum list");
         // list if empty if one 1 row is contained (the dummy)
-        if (1==$('#list').find('tbody').find('tr').length)
+        if (1==$('#list tbody').find('tr').length)
           $('#vacuum').fadeIn('slow');
         else
           $('#vacuum').fadeOut('fast');
@@ -521,7 +521,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("show list");
         duration = 'slow';
         var dfd = new $.Deferred();
-        var list = $('#desktop').find('#list');
+        var list = $('#desktop #list');
         if (list.is(':visible'))
           dfd.resolve();
         else
@@ -576,8 +576,8 @@ Shorty =
         toggle: function(duration){
           if (Shorty.Debug) Shorty.Debug.log("toggle list toolbar");
           duration = duration || 'slow';
-          var button=$('#list').find('#tools');
-          var toolbar=$('#list').find('#toolbar');
+          var button=$('#list #tools');
+          var toolbar=$('#list #toolbar');
           if (button.attr('data-plus')==button.attr('src')){
             button.attr('src',button.attr('data-minus'));
             toolbar.find('div').each(function(){$(this).slideDown(duration);});
@@ -660,7 +660,7 @@ Shorty =
       collect: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("collect meta data");
         var dfd = new $.Deferred();
-        var target = $('#dialog-add').find('#target').val().trim();
+        var target = $('#dialog-add #target').val().trim();
         // don't bother getting active on empty input
         if ( ! target.length ){
           dialog.find('#target').focus();
@@ -735,8 +735,8 @@ Shorty =
         $.when(
           // update (set) sum values in the control bar
           Shorty.WUI.Sums.get(function(data){
-            $('#controls').find('#sum_shortys').text(data.sum_shortys);
-            $('#controls').find('#sum_clicks').text(data.sum_clicks);
+            $('#controls #sum_shortys').text(data.sum_shortys);
+            $('#controls #sum_clicks').text(data.sum_clicks);
           })
         ).done(dfd.resolve);
         return dfd.promise();
@@ -802,7 +802,8 @@ Shorty =
       }, // Shorty.Action.Setting.get
       // ===== Shorty.Action.Setting.set =====
       set:function(data){
-        if (Shorty.Debug) Shorty.Debug.log("set setting");
+        if (Shorty.Debug) Shorty.Debug.log("set setting:");
+        if (Shorty.Debug) Shorty.Debug.log(data);
         $.post(OC.filePath('shorty','ajax','settings.php'),data);
       }, // Shorty.Action.Setting.set
     }, // Shorty.Action.Setting
@@ -822,8 +823,8 @@ Shorty =
         var until =dialog.find('#until').val().trim()||'';
 //        var until =dialog.find('#until').eq(0).valOrPlaceholder().trim() ||'';
         // store favicon from meta data, except it is the internal default blank
-        var favicon = dialog.find('#meta').find('#favicon').attr('src');
-        favicon=(favicon==dialog.find('#meta').find('#favicon').attr('data'))?'':favicon;
+        var favicon = dialog.find('#meta #favicon').attr('src');
+        favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
         // perform upload of new shorty
         $.when(
           Shorty.WUI.Notification.hide(),
