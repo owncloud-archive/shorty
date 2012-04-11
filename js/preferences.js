@@ -36,7 +36,7 @@ $(document).ready(
     if (type.length){
       $('#shorty #backend-'+type).show();
     }
-    // backend 'static': initialize example that depends on backend-base
+    // backend 'static': initialize example that depends on backend-base system setting
     if ($('#shorty #backend-static #backend-static-base').val().length)
       $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty key>');
     // backend 'static': offer a clickable example link to verify the correct setup
@@ -56,16 +56,11 @@ $(document).ready(
         }
       }
     );
-    // backend 'static': modify example
-    $('#shorty #backend-static #backend-static-base').bind('input',function(){
-        $('#shorty #backend-static #example').text($('#shorty').find('#backend-static #backend-static-base').val()+'<shorty key>');
-      });
     // safe preferences
     $('#shorty .backend-supplement').focusout(function(){
-        // save preference
-        Shorty.Action.Preference.set($(this).find('input').serialize());
-      }
-    );
+      // save preference
+      Shorty.Action.Preference.set($(this).find('input').serialize());
+    });
   }
 );
 

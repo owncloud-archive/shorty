@@ -39,28 +39,6 @@
 class OC_Shorty_Backend
 {
   /**
-   * @method OC_Shorty_Backend::chooseStaticBackendBase
-   * @brief Wrapper method used to collect a requried parameter from system settings and personal preferences.
-   * The static backend requires a static base url to be specified prior to usage.
-   * That url can be specified as a system setting but might also be overridden by a user preference.
-   * This wrapper takes over the evaluation of those two sources to provide a single distinct value. 
-   * @returns (string) requested parameter value
-   * @throws OC_Shorty_Exception
-   * @access public
-   * @author Christian Reiner
-   */
-  static function chooseStaticBackendBase ( )
-  {
-    // use the users personal preference if stored or
-    // use system wide setting, if no personal preference
-    // bail out otherwise
-    if (  (FALSE===($base = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-static-base',FALSE)))
-        &&(FALSE===($base =   OC_Appconfig::getValue (                  'shorty','backend-static-base-system', FALSE))) )
-      throw new OC_Shorty_Exception ( "No base configured for the usage of a 'static' backend" );
-    return $base;
-  } // OC_Shorty_Backend::chooseStaticBackendBase
-  
-  /**
    * @method OC_Shorty_Backend::registerUrl
    * @brief Wrapper function around the specific backend routines
    * @param key (string) Internal shorty key used to reference a shorty upon usage. 
@@ -123,7 +101,7 @@ class OC_Shorty_Backend
    */
   static function registerUrl_static ( $key, $relay )
   {
-    $base = trim ( OC_Shorty_Backend::chooseStaticBackendBase() );
+    $base = trim ( OC_Appconfig::getValue('shorty','backend-static-base',FALSE) );
     return OC_Shorty_Type::validate ( $base.$key, OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_static
   

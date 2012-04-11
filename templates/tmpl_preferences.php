@@ -73,7 +73,8 @@
       </span>
       <span id="backend-static" class="backend-supplement" style="display:none;">
         <label for="backend-static-base" class="aspect"><?php echo $l->t('Base url:');?></label>
-        <input id="backend-static-base" type="text" name="backend-static-base" value="<?php echo $_['backend-static-base']; ?>"
+        <input id="backend-static-base" type="text" name="backend-static-base"
+               readonly disabled value="<?php echo $_['backend-static-base']; ?>"
                maxlength="256" placeholder="<?php echo $l->t('specify a backend base url...');?>" style="width:15em;">
         <br/>
         <label for="backend-example" class="aspect"> </label>

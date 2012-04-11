@@ -27,7 +27,7 @@
 /**
  * @file ajax/preferences.php
  * @brief Ajax method to store one or more system settings  (plugin settings)
- * @param backend-static-base-system (string) Url to use as a base when the static backend is active (plugins default, may be overridden by user preference)
+ * @param backend-static-base (string) Url to use as a base when the static backend is active (plugins default, may be overridden by user preference)
  * @returns (json) success/error state indicator
  * @returns (json) Associative array holding the stored values by their key
  * @returns (json) Human readable message describing the result
@@ -50,7 +50,7 @@ try
   {
     case 'POST':
       $data = array(
-        'backend-static-base-system' => OC_Shorty_Type::req_argument ( 'backend-static-base-system', OC_Shorty_Type::URL, FALSE ),
+        'backend-static-base' => OC_Shorty_Type::req_argument ( 'backend-static-base', OC_Shorty_Type::URL, FALSE ),
       );
       // eliminate settings not explicitly set
       $data = array_diff ( $data, array(FALSE) );

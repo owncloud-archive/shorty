@@ -32,18 +32,18 @@
 $(document).ready(
   function(){
     // initialize example that depends on backend-base
-    if ($('#shorty #backend-static #backend-static-base-system').val().length)
-      $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base-system').val()+'<shorty key>');
+    if ($('#shorty #backend-static-base').val().length)
+      $('#shorty #backend-static-example').text($('#shorty #backend-static-base').val()+'<shorty key>');
     // modify example upon input of a base
-    $('#shorty #backend-static #backend-static-base-system').bind('input',function(){
-      $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base-system').val()+'<shorty key>');
+    $('#shorty #backend-static-base').bind('input',function(){
+      $('#shorty #backend-static-example').text($('#shorty #backend-static-base').val()+'<shorty key>');
     });
     // store setting
-    $('#shorty #backend-static #backend-static-base-system').focusout(function(){
+    $('#shorty #backend-static-base').focusout(function(){
       // modify example
-      $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base-system').val()+'<shorty key>');
+      $('#shorty #backend-static-example').text($('#shorty #backend-static-base').val()+'<shorty key>');
       // save setting
-      Shorty.Action.Setting.set($('#shorty #backend-static #backend-static-base-system').serialize());
+      Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize());
       return false;
     });
   }

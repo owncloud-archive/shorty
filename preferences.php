@@ -36,10 +36,11 @@
 OC_Util::checkLoggedIn ( );
 OC_Util::checkAppEnabled ( 'shorty' );
 
-OC_Util::addStyle  ( 'shorty', 'shorty' );
-OC_Util::addStyle  ( 'shorty', 'preferences' );
+OC_Util::addScript ( 'shorty', 'debug' );
 OC_Util::addScript ( 'shorty', 'shorty' );
 OC_Util::addScript ( 'shorty', 'preferences' );
+OC_Util::addStyle  ( 'shorty', 'shorty' );
+OC_Util::addStyle  ( 'shorty', 'preferences' );
 
 OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
@@ -47,21 +48,27 @@ OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 // fetch template
 $tmpl = new OC_Template ( 'shorty', 'tmpl_preferences' );
 // inflate template
-$tmpl->assign ( 'backend-types',
-                array (
-                  'none'    => ' [ none ] ',
-                  'static'  => 'static backend',
-                  'google'  => 'google service',
-                  'tinyurl' => 'tinyURL service',
-                  'isgd'    => 'is.gd service',
-                  'bitly'   => 'bitly.com service',
-                ));
-$tmpl->assign ( 'backend-static-base-system', OC_Appconfig::getValue('shorty','backend-static-base','') );
-$tmpl->assign ( 'backend-static-base',        OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-static-base','') );
-$tmpl->assign ( 'backend-google-key',         OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','') );
-$tmpl->assign ( 'backend-bitly-user',         OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-user','') );
-$tmpl->assign ( 'backend-bitly-key',          OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-key','') );
-$tmpl->assign ( 'backend-type',               OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') );
+$backend_types = array (
+  'none'    => ' [ none ] ',
+  'static'  => 'static backend',
+  'google'  => 'google service',
+  'tinyurl' => 'tinyURL service',
+  'isgd'    => 'is.gd service',
+  'bitly'   => 'bitly.com service',
+);
+// kick out static option again if no global backend base has been specified in the system settings
+$backend_static_base = OC_Appconfig::getValue('shorty','backend-static-base','');
+if (   empty($backend_static_base)
+    || !parse_url($backend_static_base,PHP_URL_SCHEME)
+    || !parse_url($backend_static_base,PHP_URL_HOST) )
+  unset($backend_types['static']);
+// feed template engine
+$tmpl->assign ( 'backend-types',       $backend_types );
+$tmpl->assign ( 'backend-static-base', $backend_static_base );
+$tmpl->assign ( 'backend-google-key',  OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','') );
+$tmpl->assign ( 'backend-bitly-user',  OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-user','') );
+$tmpl->assign ( 'backend-bitly-key',   OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-key','') );
+$tmpl->assign ( 'backend-type',        OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') );
 // render template
 return $tmpl->fetchPage ( );
 ?>
