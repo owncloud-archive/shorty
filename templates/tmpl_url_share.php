@@ -43,25 +43,21 @@
       <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
            src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');  ?>">
     </a>
+    <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
+    <select id="status" name="status" data="" class="" value="" />
+      <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>
+      <option value="shared" ><?php echo OC_Shorty_L10n::t('shared');  ?></option>
+      <option value="public" ><?php echo OC_Shorty_L10n::t('public');  ?></option>
+    </select>
+    <br>
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url:'); ?></label>
     <a id="source" class="shorty-clickable" target="_blank"
        title="<?php echo OC_Shorty_L10n::t('open source url'); ?>"
-       href="">
-      <span class="ellipsis"></span>
-    </a>
+       href=""></a>
     <br>
-    <label for="status"><?php echo OC_Shorty_L10n::t('Sharing status:'); ?></label>
-    <select id="status" name="status" data="" class="" />
-      <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>
-      <option value="blocked"><?php echo OC_Shorty_L10n::t('shared');  ?></option>
-      <option value="blocked"><?php echo OC_Shorty_L10n::t('public');  ?></option>
-    </select>
-    <br>
-    <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
+    <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
     <a id="target" class="shorty-clickable" target="_blank"
        title="<?php echo OC_Shorty_L10n::t('open target url'); ?>"
-       href="">
-      <span class="ellipsis"></span>
-    </a>
+       href=""></a>
   </fieldset>
 </form>

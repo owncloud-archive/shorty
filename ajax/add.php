@@ -50,6 +50,7 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 try
 {
   $p_key     = OC_Shorty_Tools::shorty_key ( );
+  $p_status  = OC_Shorty_Type::req_argument ( 'status',  OC_Shorty_Type::STATUS, FALSE );
   $p_title   = OC_Shorty_Type::req_argument ( 'title',   OC_Shorty_Type::STRING, FALSE );
   $p_target  = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL,    TRUE  );
   $p_until   = OC_Shorty_Type::req_argument ( 'until',   OC_Shorty_Type::DATE,   FALSE );
@@ -64,6 +65,7 @@ try
   (
     ':user'    => OC_User::getUser(),
     ':key'     => $p_key,
+    ':status'  => $p_status  ? $p_status  : '',
     ':title'   => $p_title   ? $p_title   : '',
     ':favicon' => $p_favicon ? $p_favicon : '',
     ':source'  => $p_source  ? $p_source  : '',

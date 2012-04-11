@@ -121,6 +121,7 @@
     <!-- the 'dummy' row, a blueprint -->
     <tr id=""
         data-key=""
+        data-status=""
         data-source=""
         data-title=""
         data-favicon=""

@@ -59,20 +59,24 @@
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
   box-shadow: 0 1px 1px #777777;
+  vertical-align:middle;
 }
 .shorty-dialog fieldset {
   border-bottom-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
 }
+.shorty-dialog .chzn-container,
+.shorty-dialog input,
+.shorty-dialog img {
+  margin:0.3em;
+  vertical-align:middle;
+}
 .shorty-standalone {
-  width: 40em;
+  width: 46em;
   margin: -1px 1em 0;
   background: none repeat scroll 0 0 #F7F7F7;
-  padding: 0 0.5em 0.5em;
+  padding: 0.5em;
   z-index: 100;
-}
-.shorty-standalone label {
-  width: 8em;
 }
 .shorty-embedded {
   background: none repeat scroll 0 0 #EEEEEE;
@@ -80,11 +84,20 @@
   padding: 0 0.5em 0.5em;
   position: absolute;
   right: 0;
-  width: 30em;
+  width: 34em;
   z-index: 100;
 }
-.shorty-embedded label {
-  width: 8em;
+.shorty-embedded a {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: inherit;
+/*   padding: 0.6em 0.5em 0.4em; */
+}
+.shorty-embedded a.shorty-clickable:before {
+  content:url("/owncloud/apps/shorty/img/actions/external.png");
+  margin-right:0.3em;
 }
 .shorty-dialog br {
   clear: left;
@@ -92,9 +105,15 @@
 .shorty-dialog label {
   display: inline;
   float: left;
-  margin: 2px 4px 6px 4px;
+  clear:none;
+  width: 7em;
   text-align: right;
-  padding: 1px;
+}
+.shorty-standalone label {
+  padding: 0.6em 0.5em 0.4em;
+}
+.shorty-embedded label {
+  padding: 0 0.5em;
 }
 .shorty-dialog fieldset {
   border: 1px solid gray
@@ -112,6 +131,7 @@
 }
 .shorty-dialog textarea {
   width: 70%; height: 5em;
+  padding: 0.6em 0.5em 0.4em;
 }
 .shorty-dialog textarea[placeholder], [placeholder], *[placeholder]
 {
@@ -176,8 +196,7 @@
   padding-left: 10px;
 }
 .shorty-list td {
-  padding: 1px;
-  padding-left: 10px;
+  padding: 1px 6px;
 }
 /* hide the dummy row */
 .shorty-list tbody tr:first-child {
@@ -271,7 +290,4 @@
 
 .shorty-clickable {
   text-decoration: underline;
-}
-.shorty-clickable:after {
-  content:url("img/actions/open.png");
 }

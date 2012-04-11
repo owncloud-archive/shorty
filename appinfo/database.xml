@@ -47,6 +47,13 @@
         <length>12</length>
       </field>
       <field>
+        <name>status</name>
+        <type>text</type>
+        <default>'shared'</default>
+        <notnull>true</notnull>
+        <length>10</length>
+      </field>
+      <field>
         <name>title</name>
         <type>text</type>
         <default>''</default>

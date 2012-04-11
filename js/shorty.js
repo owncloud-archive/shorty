@@ -195,7 +195,7 @@ Shorty =
             // initialize dialog
             switch(dialog.attr('id')){
               case 'dialog-add':
-                dialog.find('#confirm').bind('click', {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
+                dialog.find('#confirm').bind('click',   {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
                 dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
                 dialog.find('#target').focus();
                 break;
@@ -264,10 +264,13 @@ Shorty =
         // use the existing 'share' dialog for this
         var dialog=$('#dialog-share');
         $.when(
+          // fill dialog
+          dialog.find('#source').attr('href',entry.attr('data-source')).text(entry.attr('data-source')),
+          dialog.find('#target').attr('href',entry.attr('data-target')).text(entry.attr('data-target')),
+          dialog.find('#status').attr('value',entry.attr('data-status')).attr('data',entry.attr('data-status')),
           // move 'share' dialog towards entry
           dialog.appendTo(entry.find('td#actions')),
           // open dialog
-//          dialog.slideDown()
           Shorty.WUI.Dialog.show($('#dialog-share').eq(0))
         ).done(dfd.resolve);
         return dfd.promise();
@@ -321,7 +324,7 @@ Shorty =
             // set row id to entry key
             row.attr('id',set.key);
             // add attributes to row, as data and value
-            $.each(['key','title','source','target','clicks','created','accessed','until','notes','favicon'],
+            $.each(['key','status','title','source','target','clicks','created','accessed','until','notes','favicon'],
               function(i,aspect){
                 // enhance row with real set values
                 row.attr('data-'+this,set[aspect]);
@@ -344,6 +347,7 @@ Shorty =
                   case 'title':
                   case 'target':
                     css='ellipsis';
+                    // ** NO ** break;
                   default:
                     content=set[aspect];
                 } // switch
@@ -405,8 +409,10 @@ Shorty =
             body.find('tr').each(function(){
               // only those rows that carry an id (not the dummy)
               if (   ''!=$(this).attr('id')
-                  && 'none'==$(this).find('td').find('span').css('display') )
+                  && 'none'==$(this).find('td').find('span').css('display') ){
+                Shorty.WUI.List.highlight($(this));
                 $(this).find('td').find('span').effect('pulsate');
+              }
             });
           }).done(dfd.resolve);
         }else{
@@ -493,7 +499,6 @@ Shorty =
         var dfd = new $.Deferred();
         // close any open embedded dialog
         $.when(
-//          $('#dialog-share').slideUp()
           Shorty.WUI.Dialog.hide($('#dialog-share').eq(0))
         ).pipe(function(){
           // neutralize all rows that might have been highlighted
@@ -809,6 +814,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("action add url");
         var dfd=new $.Deferred();
         var dialog=$('#dialog-add');
+        var status=dialog.find('#status').val().trim()||'public';
         var target=dialog.find('#target').val().trim()||'';
         var title =dialog.find('#title').val().trim()||'';
 //        var title =dialog.find('#title').eq(0).valOrPlaceholder().trim() ||'';
@@ -826,14 +832,17 @@ Shorty =
           Shorty.WUI.List.dim(false),
           Shorty.WUI.List.show()
         ).done(function(){
+          var data={status:  encodeURIComponent(status),
+                    target:  encodeURIComponent(target),
+                    title:   encodeURIComponent(title),
+                    notes:   encodeURIComponent(notes),
+                    until:   encodeURIComponent(until),
+                    favicon: encodeURIComponent(favicon)};
+          if (Shorty.Debug) Shorty.Debug.log(data);
           $.ajax({
-            url:     'ajax/add.php',
-            cache:   false,
-            data:    { target:  encodeURIComponent(target),
-                       title:   encodeURIComponent(title),
-                       notes:   encodeURIComponent(notes),
-                       until:   encodeURIComponent(until),
-                       favicon: encodeURIComponent(favicon) }
+            url:   'ajax/add.php',
+            cache: false,
+            data:  data
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -864,6 +873,7 @@ Shorty =
             url:     'ajax/edit.php',
             cache:   false,
             data:    { key: key,
+                       status: encodeURI(status),
                        source: encodeURI(source),
                        target: encodeURI(target),
                        notes:  encodeURI(notes),
@@ -924,16 +934,16 @@ Shorty =
       // ===== Shorty.Action.Url.show =====
       show: function(){
         var dfd = new $.Deferred();
-        var dialog = $('#dialog-edit');
+        var dialog = $('#dialog-show');
         var key    = dialog.find('#key').val();
         var record = $(this).parent().parent();
         $('#shorty-add-key').val(record.attr('data-key'));
+        $('#shorty-add-key').val(record.attr('data-status'));
         $('#shorty-add-source').val(record.children('.shorty-source:first').text());
         $('#shorty-add-target').val(record.children('.shorty-target:first').text());
         $('#shorty-add-notes').val(record.children('.shorty-notes:first').text());
         $('#shorty-add-until').val(record.children('.shorty-until:first').text());
         $.when(
-//          Shorty.WUI.Notification.hide(),
           function(){
             if ($('.shorty-add').css('display') == 'none'){
               $('.shorty-add').slideToggle();

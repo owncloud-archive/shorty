@@ -59,5 +59,7 @@ $(document).ready(function(){
   });
   // bind actions to the actions icons
   $('#list .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
+  // pretty select boxes throughout this module
+  $('.shorty-dialog select').chosen();
 }); // document.ready
 

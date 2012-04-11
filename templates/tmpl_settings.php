@@ -44,7 +44,7 @@
     <span id="backend-static" class="backend-supplement">
       <label for="backend-static-base-system" class="aspect"><?php echo $l->t('Base url:');?></label>
       <input id="backend-static-base-system" type="text" name="backend-static-base-system" value="<?php echo $_['backend-static-base-system']; ?>"
-             maxsize="256" placeholder="<?php echo $l->t('Specify a backend base url…');?>" style="width:15em;">
+             maxlength="256" placeholder="<?php echo $l->t('Specify a backend base url…');?>" style="width:15em;">
       <br/>
       <label for="backend-example" class="aspect"> </label>
       <span id="backend-example">

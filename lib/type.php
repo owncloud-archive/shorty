@@ -40,6 +40,7 @@ class OC_Shorty_Type
 {
   // the 'types' of values we deal with, actually more something like flavours
   const KEY         = 'key';
+  const STATUS      = 'status';
   const SORTKEY     = 'sortkey';
   const SORTVAL     = 'sortval';
   const STRING      = 'string';
@@ -49,6 +50,7 @@ class OC_Shorty_Type
   const DATE        = 'date';
   const TIMESTAMP   = 'timestamp';
   static $SORTING = array ( 'ka'=>'key',      'kd'=>'key DESC',
+                            'sa'=>'status',   'sd'=>'status DESC',
                             'ca'=>'created',  'cd'=>'created DESC',
                             'aa'=>'accessed', 'ad'=>'accessed DESC',
                             'ta'=>'title',    'td'=>'title DESC',
@@ -74,6 +76,12 @@ class OC_Shorty_Type
     {
       case self::KEY:
         if ( preg_match ( '/^[a-z0-9]{10}$/i', $value ) )
+          return $value;
+        elseif ( ! $strict)
+          return NULL;
+        throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+      case self::STATUS:
+        if ( in_array($value,array('blocked','shared','public','deleted')) )
           return $value;
         elseif ( ! $strict)
           return NULL;
@@ -152,6 +160,7 @@ class OC_Shorty_Type
     switch ( $type )
     {
       case self::KEY:       return trim ( $value );
+      case self::STATUS:    return trim ( $value );
       case self::SORTKEY:   return trim ( $value );
       case self::SORTVAL:   return trim ( $value );
       case self::STRING:    return trim ( $value );

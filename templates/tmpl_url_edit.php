@@ -53,18 +53,18 @@
     <img id="schemicon" class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
     <img id="favicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
     <img id="mimicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
-    <a id="explanation" maxsize="80" data="" class="shorty-value"></a>
+    <a id="explanation" maxlength="80" data="" class="shorty-value"></a>
     </span>
     <br>
     <label for="title"><?php echo OC_Shorty_L10n::t('Local title:'); ?></label>
-    <input id="title" name="title" type="text" maxsize="80" data="" class="" />
+    <input id="title" name="title" type="text" maxlength="80" data="" class="" />
     <br>
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
-    <input id="until" name="until" type="text" maxsize="10" data="" class="datepicker" style="width:30%"
+    <input id="until" name="until" type="text" maxlength="10" data="" class="datepicker" style="width:30%"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     <br>
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
-    <textarea id="notes" name="notes" maxsize="4096" data="" class=""></textarea>
+    <textarea id="notes" name="notes" maxlength="4096" data="" class=""></textarea>
     <br>
     <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
     <input id="clicks" name="clicks" type="text" readonly data="" class="" />
