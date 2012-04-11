@@ -139,23 +139,23 @@
       <td id="actions">
         <span class="shorty-actions">
           <a id="open"   title="<?php echo $l->t('open');   ?>"   class="">
-            <img class="svg" alt="<?php echo $l->t('open'); ?>"   title="<?php echo $l->t('open target'); ?>"
+            <img class="shorty-icon" alt="<?php echo $l->t('open'); ?>"   title="<?php echo $l->t('open target'); ?>"
                  src="<?php echo OC_Helper::imagePath('shorty','actions/open.png'); ?>" />
           </a>
           <a id="show"   title="<?php echo $l->t('show');   ?>"   class="">
-            <img class="svg" alt="<?php echo $l->t('show'); ?>"   title="<?php echo $l->t('show shorty'); ?>"
+            <img class="shorty-icon" alt="<?php echo $l->t('show'); ?>"   title="<?php echo $l->t('show shorty'); ?>"
                  src="<?php echo OC_Helper::imagePath('core','actions/info.png');   ?>" />
           </a>
           <a id="share"  title="<?php echo $l->t('share');  ?>"   class="">
-            <img class="svg" alt="<?php echo $l->t('share'); ?>"  title="<?php echo $l->t('share shorty'); ?>"
+            <img class="shorty-icon" alt="<?php echo $l->t('share'); ?>"  title="<?php echo $l->t('share shorty'); ?>"
                  src="<?php echo OC_Helper::imagePath('core','actions/share.png');  ?>" />
           </a>
           <a id="edit"   title="<?php echo $l->t('edit');   ?>"   class="">
-            <img class="svg" alt="<?php echo $l->t('edit'); ?>"   title="<?php echo $l->t('edit shorty'); ?>"
+            <img class="shorty-icon" alt="<?php echo $l->t('edit'); ?>"   title="<?php echo $l->t('edit shorty'); ?>"
                  src="<?php echo OC_Helper::imagePath('core','actions/rename.png'); ?>" />
           </a>
           <a id="delete" title="<?php echo $l->t('delete'); ?>" class="">
-            <img class="svg" alt="<?php echo $l->t('delete'); ?>" title="<?php echo $l->t('delete shorty'); ?>"
+            <img class="shorty-icon" alt="<?php echo $l->t('delete'); ?>" title="<?php echo $l->t('delete shorty'); ?>"
                  src="<?php echo OC_Helper::imagePath('core','actions/delete.png'); ?>" />
           </a>
         </span>

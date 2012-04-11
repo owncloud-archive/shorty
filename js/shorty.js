@@ -330,7 +330,7 @@ Shorty =
                 switch(aspect)
                 {
                   case 'favicon':
-                    content='<img width="16" src="'+set[aspect]+'">';
+                    content='<img class="shorty-icon" width="16" src="'+set[aspect]+'">';
                     break;
                   case 'until':
                     if (null==set[aspect])

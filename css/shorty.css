@@ -201,7 +201,9 @@
   -o-transition: opacity 500ms;
 }
 .shorty-list tbody tr.clicked {
+  border-radius: 0.5em;
   background-color:#EEEEEE;
+  box-shadow: 0 1px 2px #777777;
 }
 .shorty-list tbody tr td#actions{
   width:100px;
