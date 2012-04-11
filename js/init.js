@@ -35,19 +35,19 @@
  */
 $(document).ready(function(){
   // make notification closeable
-  $('#content').find('#notification').bind('click',Shorty.WUI.Notification.hide);
+  $('#content #notification').bind('click',Shorty.WUI.Notification.hide);
   // button to open the 'add' dialog
-  $('#controls').find('#add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
+  $('#controls #add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
   // close button in embedded dialogs
   $('.shorty-embedded #close').bind('click',function(){Shorty.WUI.Dialog.hide($(this).parents('form').eq(0));});
   // button to open the tools header row in the list
-  $('#list').find('#titlebar').bind('click',Shorty.WUI.List.Toolbar.toggle);
+  $('#list #titlebar').bind('click',Shorty.WUI.List.Toolbar.toggle);
   // button to reload the list
-  $('#list').find('#toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
+  $('#list #toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
   // sort buttons
-  $('#list').find('#toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
+  $('#list #toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
   // add date picker options
-  $('#controls').find('#until').datepicker({
+  $('#controls #until').datepicker({
     dateFormat :'dd-mm-yy',
     changeMonth: true,
     changeYear: true,

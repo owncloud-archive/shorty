@@ -32,23 +32,19 @@
 $(document).ready(
   function(){
     // initialize example that depends on backend-base
-    if ($('#shorty').find('#backend-static').find('#backend-static-base-system').val().length)
-      $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base-system').val()+'<shorty key>');
+    if ($('#shorty #backend-static #backend-static-base-system').val().length)
+      $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base-system').val()+'<shorty key>');
     // modify example upon input of a base
-    $('#shorty').find('#backend-static').find('#backend-static-base-system').bind('input',function(){
-      $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base-system').val()+'<shorty key>');
+    $('#shorty #backend-static #backend-static-base-system').bind('input',function(){
+      $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base-system').val()+'<shorty key>');
     });
     // store setting
-    $('#shorty').find('#backend-static').find('#backend-static-base-system').focusout(function(){
+    $('#shorty #backend-static #backend-static-base-system').focusout(function(){
       // modify example
-      $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base-system').val()+'<shorty key>');
+      $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base-system').val()+'<shorty key>');
       // save setting
-//      Shorty.Action.Setting.set($('#shorty').find('#backend-static').find('#backend-static-base-system').serialize());
-      $.when(
-        Shorty.Action.Setting.set($('#shorty').find('#backend-static').find('#backend-static-base-system').serialize())
-      ).done(function(result){
-        alert(result);
-      });
+      Shorty.Action.Setting.set($('#shorty #backend-static #backend-static-base-system').serialize());
+      return false;
     });
   }
 );

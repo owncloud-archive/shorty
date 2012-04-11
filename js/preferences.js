@@ -32,36 +32,36 @@
 $(document).ready(
   function(){
     // backend preferences, activate hints for currently selected backend
-    var type=$('#shorty').find('#backend-type').val()||'';
+    var type=$('#shorty #backend-type').val()||'';
     if (type.length){
-      $('#shorty').find('#backend-'+type).show();
+      $('#shorty #backend-'+type).show();
     }
     // backend 'static': initialize example that depends on backend-base
-    if ($('#shorty').find('#backend-static').find('#backend-static-base').val().length)
-      $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base').val()+'<shorty key>');
+    if ($('#shorty #backend-static #backend-static-base').val().length)
+      $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty key>');
     // backend 'static': offer a clickable example link to verify the correct setup
-    $('#shorty').find('#backend-static').find('#example').bind('click',function(){
-      Verification.Dialog.init($('#shorty').find('#backend-static').find('#example').text());
+    $('#shorty #backend-static #example').bind('click',function(){
+      Verification.Dialog.init($('#shorty #backend-static #example').text());
     });
     // react with a matching explanation and example url when backend type is chosen
-    $('#shorty').find('#backend-type').chosen().change(
+    $('#shorty #backend-type').chosen().change(
       function(){
-        var type=$('#shorty').find('#backend-type').val();
-        $('#shorty').find('.backend-supplement').hide();
+        var type=$('#shorty #backend-type').val();
+        $('#shorty .backend-supplement').hide();
         if (type.length){
-          $('#shorty').find('.backend-supplement').filter('#backend-'+type).fadeIn('slow');
+          $('#shorty .backend-supplement').filter('#backend-'+type).fadeIn('slow');
           // save preference
-          Shorty.Action.Preference.set($('#shorty').find('#backend-type').serialize());
+          Shorty.Action.Preference.set($('#shorty #backend-type').serialize());
           return false;
         }
       }
     );
     // backend 'static': modify example
-    $('#shorty').find('#backend-static').find('#backend-static-base').bind('input',function(){
-        $('#shorty').find('#backend-static').find('#example').text($('#shorty').find('#backend-static').find('#backend-static-base').val()+'<shorty key>');
+    $('#shorty #backend-static #backend-static-base').bind('input',function(){
+        $('#shorty #backend-static #example').text($('#shorty').find('#backend-static #backend-static-base').val()+'<shorty key>');
       });
     // safe preferences
-    $('#shorty').find('.backend-supplement').focusout(function(){
+    $('#shorty .backend-supplement').focusout(function(){
         // save preference
         Shorty.Action.Preference.set($(this).find('input').serialize());
       }
@@ -76,11 +76,11 @@ Verification =
   {
     init:function(target){
       //alert(encodeURIComponent(target));
-      var popup=$('#shorty').find('#verification');
+      var popup=$('#shorty #verification');
       popup.dialog({show:'fade',autoOpen:true,modal:true});
       popup.dialog('option','minHeight',240 );
       popup.dialog('open');
-      this.check(popup,$('#shorty').find('#backend-static').find('#example').text());
+      this.check(popup,$('#shorty #backend-static #example').text());
     }, // Verification::Dialog::init
 
      // Verification::Dialog::check
