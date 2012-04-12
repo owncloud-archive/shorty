@@ -37,12 +37,14 @@
 <!-- (hidden) dialog to add a new shorty -->
 <form id="dialog-add" class="shorty-dialog shorty-standalone">
   <fieldset>
-    <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Add a new shorty:'); ?></legend>
-    <a id="close" class="shorty-close-button"
-       title="<?php echo OC_Shorty_L10n::t('close'); ?>">
-      <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
-           src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');  ?>">
-    </a>
+    <legend class="shorty-legend">
+      <a id="close" class="shorty-close-button"
+        title="<?php echo OC_Shorty_L10n::t('close'); ?>">
+        <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
+            src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');  ?>">
+      </a>
+      <?php echo OC_Shorty_L10n::t('Add a new shorty:'); ?>
+    </legend>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
     <input id="target" name="target" type="text" maxlength="4096" data="" class="shorty-input"/>
     <br>

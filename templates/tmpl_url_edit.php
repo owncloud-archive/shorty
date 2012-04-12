@@ -37,12 +37,14 @@
 <!-- (hidden) dialog to modify a stored shorty -->
 <form id="dialog-edit" class="shorty-dialog shorty-standalone">
   <fieldset>
-    <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Modify shorty:'); ?></legend>
-    <a id="close" class="shorty-close-button"
-       title="<?php echo OC_Shorty_L10n::t('close'); ?>">
-      <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
-           src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');  ?>">
-    </a>
+    <legend class="shorty-legend">
+      <a id="close" class="shorty-close-button"
+        title="<?php echo OC_Shorty_L10n::t('close'); ?>">
+        <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
+            src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');  ?>">
+      </a>    
+      <?php echo OC_Shorty_L10n::t('Modify shorty:'); ?>
+    </legend>
     <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
     <input id="key" name="key" type="text" readonly data="" class="" />
     <br>

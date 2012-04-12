@@ -37,12 +37,14 @@
 <!-- (hidden) dialog to share a shorty from the list -->
 <form id="dialog-share" class="shorty-dialog shorty-embedded">
   <fieldset>
-    <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Share shorty:'); ?></legend>
-    <a id="close" class="shorty-close-button"
-       title="<?php echo OC_Shorty_L10n::t('close'); ?>">
-      <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
-           src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');  ?>">
-    </a>
+    <legend class="shorty-legend">
+      <a id="close" class="shorty-close-button"
+        title="<?php echo OC_Shorty_L10n::t('close'); ?>">
+        <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
+            src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');  ?>">
+      </a>
+      <?php echo OC_Shorty_L10n::t('Share shorty:'); ?>
+    </legend>
     <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
     <select id="status" name="status" data="" class="" value="" />
       <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>

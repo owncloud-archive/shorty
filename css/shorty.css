@@ -120,7 +120,8 @@
 }
 .shorty-dialog legend {
   font-weight: bold;
-  padding: 0.2em 0.5em;
+  margin: 0 0 0 5px;
+  padding: 0 0.5em 0 0.2em;
 }
 .shorty-dialog input {
   width: 70%;
@@ -309,9 +310,14 @@
 }
 
 .shorty-close-button {
-  float:right;
-  opacity:0.6;
-  margin:-4px 6px 4px;
+  display:inline;
+  float:left;
+  margin:0 0.8em 0 0.3em;
+  padding:0;
+}
+.shorty-close-button img {
+  margin:0;
+  padding:0;
 }
 
 .shorty-clickable {
