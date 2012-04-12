@@ -56,11 +56,12 @@
 
 .shorty-dialog {
   display: none;
+  color: black;
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
   box-shadow: 0 2px 1px #777777;
   vertical-align:middle;
-  z-index: 100;
+  z-index:100;
 }
 .shorty-dialog fieldset {
   border-bottom-left-radius: 0.5em;
@@ -251,8 +252,14 @@
 .shorty-expired {
   color: gray;
 }
+.shorty-expired .shorty-dialog {
+  color: black;
+}
 .shorty-expired img {
   opacity : 0.2;
+}
+.shorty-expired .shorty-dialog img {
+  opacity : 1;
 }
 .shorty-expired #until {
   text-decoration: line-through;
