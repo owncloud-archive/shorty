@@ -176,8 +176,12 @@ Shorty =
         var duration = 'slow';
         var dfd = new $.Deferred();
         if (dialog.is(':visible'))
+          // dialog already open, nothing to do...
           dfd.resolve();
         else{
+          $('#controls form.shorty-standalone').each(function(){
+            Shorty.WUI.Dialog.hide($(this));
+          });
           $.when(
             function(){
               var dfd = new $.Deferred();
