@@ -38,6 +38,11 @@
 <form id="dialog-show" class="shorty-dialog shorty-embedded">
   <fieldset>
     <legend class="shorty-legend"><?php echo OC_Shorty_L10n::t('Shorty details:'); ?></legend>
+    <a id="close" class="shorty-close-button"
+       title="<?php echo OC_Shorty_L10n::t('close'); ?>">
+      <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
+           src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');  ?>">
+    </a>
     <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
     <input id="key" name="key" type="text" readonly data="" class="" />
     <br>
