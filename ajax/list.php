@@ -44,6 +44,10 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
+  // first remove any entries already marked as 'deleted'
+  $query = OC_DB::prepare ( OC_Shorty_Query::URL_REMOVE );
+  $result = $query->execute(array(':user'=>OC_User::getUser()));
+  // now comes the real list selection
   define ('PAGE_SIZE', 100);
   $p_offset = OC_Shorty_Type::req_argument ( 'page', OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
   // pre-sort list according to user preferences

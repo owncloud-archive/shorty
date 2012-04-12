@@ -42,7 +42,9 @@ class OC_Shorty_Query
 {
   const URL_INSERT            = "INSERT INTO *PREFIX*shorty (key,status,favicon,title,source,target,user,until,created,notes) VALUES (:key,:status,:favicon,:title,:source,:target,:user,:until,CURRENT_TIMESTAMP,:notes)";
   const URL_DELETE            = "DELETE FROM *PREFIX*shorty WHERE user=:user AND key=:key";
-  const URL_UPDATE            = "UPDATE *PREFIX*shorty SET status=:status,title=:title,notes=:notes WHERE WHERE user=:user AND key=:key";
+  const URL_REMOVE            = "DELETE FROM *PREFIX*shorty WHERE user=:user AND 'deleted'=status";
+  const URL_UPDATE            = "UPDATE *PREFIX*shorty SET status=:status,title=:title,notes=:notes WHERE user=:user AND key=:key";
+  const URL_STATUS            = "UPDATE *PREFIX*shorty SET status=:status WHERE user=:user AND key=:key";
   const URL_CLICK             = "UPDATE *PREFIX*shorty SET accessed=:now, clicks=(clicks+1) WHERE key=:key";
   const URL_FORWARD           = "SELECT target FROM *PREFIX*shorty WHERE key=:key AND (until IS NULL OR until='' OR until>CURRENT_TIMESTAMP) LIMIT 1";
   const URL_VERIFY            = "SELECT key,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND key=:key LIMIT 1";

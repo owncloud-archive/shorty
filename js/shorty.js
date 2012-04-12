@@ -246,6 +246,17 @@ Shorty =
       // ===== Shorty.WUI.Entry.delete =====
       delete: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("delete entry "+entry.attr('id'));
+        if (entry.hasClass('deleted')){
+          // change status to deleted
+          Shorty.Action.Url.status(entry.attr('data-key'),'blocked');
+          // mark row as undeleted
+          entry.removeClass('deleted');
+        }else{
+          // change status to deleted
+          Shorty.Action.Url.status(entry.attr('data-key'),'deleted');
+          // mark row as deleted
+          entry.addClass('deleted');
+        }
       }, // Shorty.WUI.Entry.delete
       // ===== Shorty.WUI.Entry.edit =====
       edit: function(entry){
@@ -347,7 +358,13 @@ Shorty =
                   case 'title':
                   case 'target':
                     css='ellipsis';
-                    // ** NO ** break;
+                    content=set[aspect];
+                    break;
+                  case 'status':
+                    if ('deleted'==set[aspect])
+                      row.addClass('deleted');
+                    content=set[aspect];
+                    break;
                   default:
                     content=set[aspect];
                 } // switch
@@ -954,6 +971,21 @@ Shorty =
         ).done(dfd.resolve);
         return dfd.promise();
       }, // ===== Shorty.Action.Url.show =====
+      // ===== Shorty.Action.Url.status =====
+      status: function(key,status){
+        if (Shorty.Debug) Shorty.Debug.log("changing status of key "+key+" to "+status);
+        var dfd = new $.Deferred();
+        $.ajax({
+          url:     'ajax/status.php',
+          cache:   false,
+          data:    { key:    key,
+                     status: status }
+        }).pipe(
+          function(response){return Shorty.Ajax.eval(response)},
+          function(response){return Shorty.Ajax.fail(response)}
+        ).done(dfd.rsolve).fail(dfd.reject);
+        return dfd.promise();
+      } // Shorty.Action.Url.status
     }, // ===== Shorty.Action.Url =====
   }, // Shorty.Action
 
@@ -966,12 +998,20 @@ Shorty =
     eval:function(response){
       if (Shorty.Debug) Shorty.Debug.log("eval ajax response of status "+response.status);
       // Check to see if the response is truely successful.
-      if ('success'==response.status){
-        Shorty.WUI.Notification.show(response.message,'debug');
-        return new $.Deferred().resolve(response);
-      } else {
-        Shorty.WUI.Notification.show(response.message,'error');
-        return new $.Deferred().reject(response);
+      if (response.status){
+        // this is a valid response
+        if ('success'==response.status){
+          Shorty.WUI.Notification.show(response.message,'debug');
+          return new $.Deferred().resolve(response);
+        } else {
+          Shorty.WUI.Notification.show(response.message,'error');
+          return new $.Deferred().reject(response);
+        }
+//       }else{
+  // TEST (regex) if this is a DB error:
+  // DB Error: "SQLSTATE[HY000]: General error: 1 near "WHERE": syntax error".....
+//         // not a valid response, maybe a DB error ?
+//         if ('DB error'==response)
       }
     }, // Shorty.Ajax.eval
 

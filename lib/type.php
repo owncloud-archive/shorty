@@ -75,7 +75,7 @@ class OC_Shorty_Type
     switch ( $type )
     {
       case self::KEY:
-        if ( preg_match ( '/^[a-z0-9]{10}$/i', $value ) )
+        if ( preg_match ( '/^[a-z0-9]{2,20}$/i', $value ) )
           return $value;
         elseif ( ! $strict)
           return NULL;

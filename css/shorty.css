@@ -58,8 +58,9 @@
   display: none;
   border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
-  box-shadow: 0 1px 1px #777777;
+  box-shadow: 0 2px 1px #777777;
   vertical-align:middle;
+  z-index: 100;
 }
 .shorty-dialog fieldset {
   border-bottom-left-radius: 0.5em;
@@ -74,18 +75,16 @@
 .shorty-standalone {
   width: 46em;
   margin: -1px 1em 0;
-  background: none repeat scroll 0 0 #F7F7F7;
   padding: 0.5em;
-  z-index: 100;
+  background: none repeat scroll 0 0 #F7F7F7;
 }
 .shorty-embedded {
-  background: none repeat scroll 0 0 #EEEEEE;
-  margin: 0 4em;
-  padding: 0 0.5em 0.5em;
-  position: absolute;
   right: 0;
   width: 34em;
-  z-index: 100;
+  margin: -1px 4em 0;
+  padding: 0.5em;
+  background: none repeat scroll 0 0 #EEEEEE;
+  position: absolute;
 }
 .shorty-embedded a {
   display: block;
@@ -96,7 +95,7 @@
 /*   padding: 0.6em 0.5em 0.4em; */
 }
 .shorty-embedded a.shorty-clickable:before {
-  content:url("/owncloud/apps/shorty/img/actions/external.png");
+  content:url("../img/actions/external.png");
   margin-right:0.3em;
 }
 .shorty-dialog br {
@@ -145,6 +144,8 @@
 .shorty-dialog button:hover {
   border-color: green;
 }
+
+
 
 .shorty-hidden {
   display: none;
@@ -222,7 +223,25 @@
 .shorty-list tbody tr.clicked {
   border-radius: 0.5em;
   background-color:#EEEEEE;
-  box-shadow: 0 1px 2px #777777;
+  box-shadow: 0 0 0.5px #777777;
+}
+.shorty-list tbody tr.deleted>#title,
+.shorty-list tbody tr.deleted>#target,
+.shorty-list tbody tr.deleted>#clicks,
+.shorty-list tbody tr.deleted>#until {
+  color: gray;
+  text-decoration: line-through;
+  background: transparent url('../img/status/strike.png') 0 50% repeat-x;
+}
+.shorty-list tbody tr.deleted:hover>#actions #delete>img {
+  opacity: 0;
+}
+.shorty-list tbody tr.deleted:hover>#actions #delete:after {
+  content: url("../img/actions/recycle.png");
+  position: relative;
+  top: 0.3em;
+  margin-left: -22px;
+  vertical-align: top:
 }
 .shorty-list tbody tr td#actions{
   width:100px;

@@ -5,7 +5,7 @@
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -25,7 +25,7 @@
 */
 
 /**
- * @file ajax/edit.php
+ * @file ajax/status.php
  * @brief Ajax method to modify aspects of an existing shorty
  * @param key (string) Internal key of the referenced shorty
  * @param title (string) Human readable title
@@ -48,19 +48,15 @@ try
 {
   $p_key    = OC_Shorty_Type::req_argument ( 'key',    OC_Shorty_Type::KEY,    TRUE );
   $p_status = OC_Shorty_Type::req_argument ( 'status', OC_Shorty_Type::STATUS, FALSE );
-  $p_title  = OC_Shorty_Type::req_argument ( 'title',  OC_Shorty_Type::STRING, FALSE );
-  $p_notes  = OC_Shorty_Type::req_argument ( 'notes',  OC_Shorty_Type::STRING, FALSE );
   $param = array
   (
     'user'   => OC_User::getUser ( ),
     'key'    => $p_key,
     'status' => $p_status,
-    'title'  => $p_title,
-    'notes'  => $p_notes,
   );
-  $query = OC_DB::prepare ( OC_Shorty_Query::URL_UPDATE );
+  $query = OC_DB::prepare ( OC_Shorty_Query::URL_STATUS );
   $query->execute ( $param );
   OC_JSON::success ( array ( 'data'    => array('key'=>$p_key),
-                             'message' => sprintf(OC_Shorty_L10n::t("Modifications for shorty with key '%s' saved"),$p_key) )  );
+                             'message' => sprintf(OC_Shorty_L10n::t("Status change for shorty with key '%s' saved"),$p_key) )  );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
