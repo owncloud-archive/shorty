@@ -115,9 +115,6 @@
         </div>
       </th>
     </tr>
-  </thead>
-  <!-- the standard body for non-empty lists -->
-  <tbody>
     <!-- the 'dummy' row, a blueprint -->
     <tr id=""
         data-key=""
@@ -130,8 +127,7 @@
         data-until=""
         data-created=""
         data-accessed=""
-        data-notes=""
-        style="display:hidden;" >
+        data-notes="">
       <td id="favicon"></td>
       <td id="title"  width="200px"></td>
       <td id="target" width="200px"></td>
@@ -162,5 +158,8 @@
         </span>
       </td>
     </tr>
+  </thead>
+  <!-- the standard body for non-empty lists -->
+  <tbody>
   </tbody>
 </table>

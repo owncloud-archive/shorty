@@ -177,6 +177,9 @@ Shorty =
           $('#controls form.shorty-standalone').each(function(){
             Shorty.WUI.Dialog.hide($(this));
           });
+          // hide 'old' notifications
+          Shorty.WUI.Notification.hide(),
+          // some preparations
           $.when(
             function(){
               var dfd = new $.Deferred();
@@ -192,11 +195,14 @@ Shorty =
             dialog.slideDown(duration);
           }).pipe(function(){
             // initialize dialog
+            dialog.find('#confirm').bind('click',   {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
+            dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
             switch(dialog.attr('id')){
               case 'dialog-add':
-                dialog.find('#confirm').bind('click',   {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
-                dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
                 dialog.find('#target').focus();
+                break;
+              case 'dialog-add':
+                dialog.find('#title').focus();
                 break;
               default:
                 dialog.find('#title').focus();
@@ -331,63 +337,58 @@ Shorty =
     {
       // ===== Shorty.WUI.List.add =====
       add: function(list,hidden){
-        if (Shorty.Debug) Shorty.Debug.log("add list holding "+list.length+" entries");
+        if (Shorty.Debug) Shorty.Debug.log("add entry to list holding "+list.length+" entries");
         var dfd = new $.Deferred();
-        // clone dummy row from list: dummy is the only row with an empty id
-        var dummy = $('.shorty-list tr').filter(function(){return (''==$(this).attr('id'));});
-        var row, set;
-        $.when(
-          // insert list elements (sets) one by one
-          $.each(list,function(i,set){
-            row = dummy.clone();
-            // set row id to entry key
-            row.attr('id',set.key);
-            // add attributes to row, as data and value
-            $.each(['key','status','title','source','target','clicks','created','accessed','until','notes','favicon'],
-              function(i,aspect){
-                // enhance row with real set values
-                row.attr('data-'+this,set[aspect]);
-                // fill data into corresponsing column
-                var content, css;
-                switch(aspect)
-                {
-                  case 'favicon':
-                    content='<img class="shorty-icon" width="16" src="'+set[aspect]+'">';
-                    break;
-                  case 'until':
-                    if (null==set[aspect])
-                      content='-/-';
-                    else{
-                      content=set[aspect];
-                      if (Shorty.Date.expired(set[aspect]))
-                        row.addClass('shorty-expired');
-                    }
-                    break;
-                  case 'title':
-                  case 'target':
-                    css='ellipsis';
+        // insert list elements (sets) one by one
+        var row,set;
+        $.each(list,function(i,set){
+          // clone dummy row from list header: dummy is the last row
+          row = $('#desktop #list thead tr:last-child').eq(0).clone();
+          // set row id to entry key
+          row.attr('id',set.key);
+          // add attributes to row, as data and value
+          $.each(['key','status','title','source','target','clicks','created','accessed','until','notes','favicon'],
+                 function(j,aspect){
+            if (set[aspect]){
+              // enhance row with real set values
+              row.attr('data-'+this,set[aspect]);
+              if (hidden) row.addClass('shorty-pulsate');
+              // fill data into corresponsing column
+              var content, classes=[];
+              switch(aspect)
+              {
+                case 'favicon':
+                  content='<img class="shorty-icon" width="16" src="'+set[aspect]+'">';
+                  break;
+                case 'until':
+                  if (null==set[aspect])
+                    content='-/-';
+                  else{
                     content=set[aspect];
-                    break;
-                  case 'status':
-                    if ('deleted'==set[aspect])
-                      row.addClass('deleted');
-                    content=set[aspect];
-                    break;
-                  default:
-                    content=set[aspect];
-                } // switch
-                if (hidden)
-                  // row is meant to be shown only later, so keep it hidden
-                  row.find('td').filter('#'+aspect).html('<span class="'+css+'" style="display:none;">'+content+'</span>');
-                else
-                  // row is meant to be shown immediately, typically when initializing the list
-                  row.find('td').filter('#'+aspect).html('<span class="'+css+'" style="display:block;">'+content+'</span>');
-              }
-            );
-            // insert new row in table
-            dummy.after(row);
-          }) // each
-        ).done (dfd.resolve);
+                    if (Shorty.Date.expired(set[aspect]))
+                      row.addClass('shorty-expired');
+                  }
+                  break;
+                case 'title':
+                case 'target':
+                  classes.push('ellipsis');
+                  content=set[aspect];
+                  break;
+                case 'status':
+                  if ('deleted'==set[aspect])
+                    row.addClass('deleted');
+                  content=set[aspect];
+                  break;
+                default:
+                  content=set[aspect];
+              } // switch
+              // insert new content into row cell
+              row.find('td').filter('#'+aspect).html('<span class="'+classes.join(' ')+'">'+content+'</span>');
+            } // if aspect
+          }); // each aspect
+          // insert new row in table
+          $('#desktop #list tbody').prepend(row);
+        }) // each
         return dfd.promise();
       }, // Shorty.WUI.List.add
       // ===== Shorty.WUI.List.build =====
@@ -421,25 +422,21 @@ Shorty =
       // ===== Shorty.WUI.List.dim =====
       dim: function(show){
         if (Shorty.Debug) Shorty.Debug.log("dim list to "+(show?"true":"false"));
-        var duration = 'slow';
-        var dfd = new $.Deferred();
-        var list = $('#desktop #list');
-        var body = list.find('tbody');
+        var duration='slow';
+        var dfd =new $.Deferred();
+        var list=$('#desktop #list');
+        var body=list.find('tbody');
         if (show)
         {
+          var rows=body.find('tr.shorty-pulsate');
+          Shorty.WUI.List.highlight(rows.eq(0));
+          rows.each(function(){
+            $(this).removeClass('shorty-pulsate');
+            $(this).find('td').effect('pulsate');
+          });
           $.when(
             body.fadeIn(duration)
-          ).pipe(function(){
-            // in addition, fade in any columns that were added, but not yet shown
-            body.find('tr').each(function(){
-              // only those rows that carry an id (not the dummy)
-              if (   ''!=$(this).attr('id')
-                  && 'none'==$(this).find('td span').css('display') ){
-                Shorty.WUI.List.highlight($(this)),
-                $(this).find('td').not('#actions').find('span').effect('pulsate')
-              }
-            });
-          }).done(dfd.resolve);
+          ).done(dfd.resolve);
         }else{
           if (!body.is(':visible'))
             dfd.resolve();
@@ -532,15 +529,54 @@ Shorty =
         }).always(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.highlight
-      // ===== Shorty.WUI.List.vacuum =====
-      vacuum: function(){
-        if (Shorty.Debug) Shorty.Debug.log("vacuum list");
-        // list if empty if one 1 row is contained (the dummy)
-        if (1==$('#list tbody').find('tr').length)
-          $('#vacuum').fadeIn('slow');
-        else
-          $('#vacuum').fadeOut('fast');
-      }, // Shorty.WUI.List.vacuum
+      // ===== Shorty.WUI.List.modify =====
+      modify: function(list,hidden){
+        if (Shorty.Debug) Shorty.Debug.log("modify entry in list holding "+list.length+" entries");
+        var dfd = new $.Deferred();
+        // modify list elements (sets) one by one
+        var row,set;
+        $.each(list,function(i,set){
+          // select row from list by key
+          row=$('#desktop #list tbody tr#'+set.key);
+          // modify attributes in row, as data and value
+          $.each(['status','title','until','notes'],
+                 function(j,aspect){
+            if (set[aspect]){
+              // enhance row with actual set values
+              row.attr('data-'+this,set[aspect]);
+              if (hidden) row.addClass('shorty-pulsate');
+              // fill data into corresponsing column
+              var content, classes=[];
+              switch(aspect)
+              {
+                case 'until':
+                  if (null==set[aspect])
+                    content='-/-';
+                  else{
+                    content=set[aspect];
+                    if (Shorty.Date.expired(set[aspect]))
+                      row.addClass('shorty-expired');
+                  }
+                  break;
+                case 'title':
+                  classes.push('ellipsis');
+                  content=set[aspect];
+                  break;
+                case 'status':
+                  if ('deleted'==set[aspect])
+                    row.addClass('deleted');
+                  content=set[aspect];
+                  break;
+                default:
+                  content=set[aspect];
+              } // switch
+              // show modified column immediately or keep it for a later pulsation effect ?
+              row.find('td').filter('#'+aspect).html('<span class="'+classes.join(' ')+'">'+content+'</span>');
+            } // if aspect
+          }) // each aspect
+        }) // each entry
+        return dfd.resolve().promise();
+      }, // Shorty.WUI.List.modify
       // ===== Shorty.WUI.List.show =====
       show: function(duration){
         if (Shorty.Debug) Shorty.Debug.log("show list");
@@ -594,6 +630,15 @@ Shorty =
         else
           return Shorty.WUI.List.show();
       }, // Shorty.WUI.List.toggle
+      // ===== Shorty.WUI.List.vacuum =====
+      vacuum: function(){
+        if (Shorty.Debug) Shorty.Debug.log("vacuum list");
+        // list if empty if one 1 row is contained (the dummy)
+        if ($('#list tbody').find('tr').length)
+          $('#vacuum').fadeOut('fast');
+        else
+          $('#vacuum').fadeIn('slow');
+      }, // Shorty.WUI.List.vacuum
       // ===== Shorty.WUI.List.Toolbar =====
       Toolbar:
       {
@@ -621,8 +666,10 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("hide notification");
         var dfd = new $.Deferred();
         $.when(
-          $('#notification').slideUp('fast').text('')
-        ).done(dfd.resolve);
+          $('#notification').slideUp('fast')
+        ).pipe(function(){
+          $('#notification').text('');
+        }).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Notification.hide
       // ===== Shorty.WUI.Notification.show =====
@@ -840,13 +887,11 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("action add url");
         var dfd=new $.Deferred();
         var dialog=$('#dialog-add');
-        var status=dialog.find('#status').val().trim()||'public';
-        var target=dialog.find('#target').val().trim()||'';
-        var title =dialog.find('#title').val().trim()||'';
-//        var title =dialog.find('#title').eq(0).valOrPlaceholder().trim() ||'';
-        var notes =dialog.find('#notes').val().trim()||'';
-        var until =dialog.find('#until').val().trim()||'';
-//        var until =dialog.find('#until').eq(0).valOrPlaceholder().trim() ||'';
+        var status=dialog.find('#status').val()||'public';
+        var target=dialog.find('#target').val()||'';
+        var title =dialog.find('#title').val()||'';
+        var notes =dialog.find('#notes').val()||'';
+        var until =dialog.find('#until').val()||'';
         // store favicon from meta data, except it is the internal default blank
         var favicon = dialog.find('#meta #favicon').attr('src');
         favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
@@ -887,39 +932,43 @@ Shorty =
       // ===== Shorty.Action.Url.edit =====
       edit: function(){
         if (Shorty.Debug) Shorty.Debug.log("action modify url");
-        var dfd = new $.Deferred();
-        var dialog = $('#dialog-edit');
-        var key    = dialog.find('#key').val();
-        var source = dialog.find('#source').val();
-        var target = dialog.find('#target').val();
-        var notes  = dialog.find('#notes').val();
-        var until  = dialog.find('#until').val();
+        var dfd=new $.Deferred();
+        var dialog=$('#dialog-edit');
+        var key   =dialog.find('#key').val();
+        var status=dialog.find('#status').val()||'public';
+        var title =dialog.find('#title').val()||'';
+        var until =dialog.find('#until').val()||'';
+        var notes =dialog.find('#notes').val()||'';
+        // perform modification of existing shorty
         $.when(
+          Shorty.WUI.Notification.hide(),
+          // close and neutralize dialog
+          Shorty.WUI.Dialog.hide(dialog),
+          Shorty.WUI.List.dim(false),
+          Shorty.WUI.List.show()
+        ).done(function(){
+          var data={key: key,
+                    status: encodeURI(status),
+                    title:  encodeURI(title),
+                    notes:  encodeURI(notes),
+                    until:  encodeURI(until) };
+          if (Shorty.Debug) Shorty.Debug.log(data);
           $.ajax({
-            url:     'ajax/edit.php',
-            cache:   false,
-            data:    { key: key,
-                       status: encodeURI(status),
-                       source: encodeURI(source),
-                       target: encodeURI(target),
-                       notes:  encodeURI(notes),
-                       until:  encodeURI(until) },
+            url:   'ajax/edit.php',
+            cache: false,
+            data:  data,
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
-          )
-        ).done(function(response){
-          // close and neutralize dialog
-          Shorty.WUI.Dialog.hide(dialog);
-          var record = $('.shorty-single[data-key = "' + key + '"]');
-          record.children('.shorty-target:first').text(target);
-          var record_notes = record.children('.shorty-notes:first').children('a:first');
-          record_notes.attr('href', target);
-          record_notes.text(notes);
-          record.children('.shorty-until').html(until);
-          dfd.resolve(response.data);
-        }).fail(function(response){
-          dfd.reject(response.data);
+          ).done(function(response){
+            Shorty.WUI.Dialog.reset(dialog);
+            // modify existing entry in list
+            Shorty.WUI.List.modify([response.data],true);
+            Shorty.WUI.List.dim(true)
+            dfd.resolve(response);
+          }).fail(function(response){
+            dfd.reject(response);
+          });
         });
         return dfd.promise();
       }, // ===== Shorty.Action.Url.edit =====

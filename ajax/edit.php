@@ -46,21 +46,32 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $p_key    = OC_Shorty_Type::req_argument ( 'key',    OC_Shorty_Type::KEY,    TRUE );
-  $p_status = OC_Shorty_Type::req_argument ( 'status', OC_Shorty_Type::STATUS, FALSE );
-  $p_title  = OC_Shorty_Type::req_argument ( 'title',  OC_Shorty_Type::STRING, FALSE );
-  $p_notes  = OC_Shorty_Type::req_argument ( 'notes',  OC_Shorty_Type::STRING, FALSE );
+  $p_key     = OC_Shorty_Type::req_argument ( 'key',     OC_Shorty_Type::KEY,    TRUE );
+  $p_status  = OC_Shorty_Type::req_argument ( 'status',  OC_Shorty_Type::STATUS, FALSE );
+  $p_title   = OC_Shorty_Type::req_argument ( 'title',   OC_Shorty_Type::STRING, FALSE );
+  $p_until   = OC_Shorty_Type::req_argument ( 'until',   OC_Shorty_Type::DATE,   FALSE );
+  $p_notes   = OC_Shorty_Type::req_argument ( 'notes',   OC_Shorty_Type::STRING, FALSE );
   $param = array
   (
-    'user'   => OC_User::getUser ( ),
-    'key'    => $p_key,
-    'status' => $p_status,
-    'title'  => $p_title,
-    'notes'  => $p_notes,
+    ':user'  => OC_User::getUser ( ),
+    ':key'   => $p_key,
+    ':status'=> $p_status  ? $p_status  : '',
+    ':title' => $p_title   ? $p_title   : '',
+    ':notes' => $p_notes   ? $p_notes   : '',
+    ':until' => $p_until,
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_UPDATE );
   $query->execute ( $param );
-  OC_JSON::success ( array ( 'data'    => array('key'=>$p_key),
-                             'message' => sprintf(OC_Shorty_L10n::t("Modifications for shorty with key '%s' saved"),$p_key) )  );
+  
+  // read new entry for feedback
+  $param = array
+  (
+    'user' => OC_User::getUser(),
+    'key'  => $p_key,
+  );
+  $query = OC_DB::prepare ( OC_Shorty_Query::URL_VERIFY );
+  $entry = $query->execute($param)->FetchAll();
+  OC_JSON::success ( array ( 'data'    => $entry[0],
+                             'message' => OC_Shorty_L10n::t("Modifications for shorty with key '%s' saved",$p_key) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
