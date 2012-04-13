@@ -190,21 +190,23 @@
   display: inline;
   position: absolute;
   z-index: 3;
-  margin-top: 0.4em;
+  margin: 0.4em;
   background: transparent;
 }
 .shorty-list th {
   font-weight: bold;
-  padding: 1px;
-  padding-left: 10px;
-}
-.shorty-list td {
   padding: 1px 6px;
 }
-/* hide the dummy row */
-.shorty-list tbody tr:first-child {
-  display: none;
+.shorty-list th#headerClicks,
+.shorty-list th#headerUntil,
+.shorty-list th#headerActions {
+  text-align: center;
 }
+.shorty-list td { padding: 1px 6px; }
+.shorty-list td#until { text-align: center; }
+.shorty-list td#clicks { text-align: right; }
+/* hide the dummy row */
+.shorty-list tbody tr:first-child { display: none; }
 .shorty-list tbody tr td span.shorty-actions {
   visibility:visible;
   opacity:0;
