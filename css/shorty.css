@@ -93,7 +93,6 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   width: inherit;
-/*   padding: 0.6em 0.5em 0.4em; */
 }
 .shorty-embedded a.shorty-clickable:before {
   content:url("../img/actions/external.png");
@@ -202,9 +201,15 @@
 .shorty-list th#headerActions {
   text-align: center;
 }
-.shorty-list td { padding: 1px 6px; }
-.shorty-list td#until { text-align: center; }
-.shorty-list td#clicks { text-align: right; }
+.shorty-list td {
+  padding: 1px 6px;
+}
+.shorty-list td#until {
+  text-align: center;
+}
+.shorty-list td#clicks {
+  text-align: right;
+}
 /* hide the dummy row */
 .shorty-list tbody tr:first-child { display: none; }
 .shorty-list tbody tr td span.shorty-actions {
