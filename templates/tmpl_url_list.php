@@ -152,7 +152,7 @@
                  src="<?php echo OC_Helper::imagePath('core','actions/share.png');  ?>" />
           </a>
           <a id="edit"   title="<?php echo $l->t('edit');   ?>"   class="">
-            <img class="shorty-icon" alt="<?php echo $l->t('edit'); ?>"   title="<?php echo $l->t('edit shorty'); ?>"
+            <img class="shorty-icon" alt="<?php echo $l->t('modify'); ?>"   title="<?php echo $l->t('modify shorty'); ?>"
                  src="<?php echo OC_Helper::imagePath('core','actions/rename.png'); ?>" />
           </a>
           <a id="delete" title="<?php echo $l->t('delete'); ?>" class="">

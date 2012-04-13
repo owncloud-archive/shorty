@@ -259,7 +259,7 @@ Shorty =
       }, // Shorty.WUI.Entry.delete
       // ===== Shorty.WUI.Entry.edit =====
       edit: function(entry){
-        if (Shorty.Debug) Shorty.Debug.log("edit entry "+entry.attr('id'));
+        if (Shorty.Debug) Shorty.Debug.log("modify entry "+entry.attr('id'));
         var dfd = new $.Deferred();
         // use the existing edit dialog for this
         var dialog=$('#controls #dialog-edit');
@@ -886,7 +886,7 @@ Shorty =
       }, // ===== Shorty.Action.Url.add =====
       // ===== Shorty.Action.Url.edit =====
       edit: function(){
-        if (Shorty.Debug) Shorty.Debug.log("action edit url");
+        if (Shorty.Debug) Shorty.Debug.log("action modify url");
         var dfd = new $.Deferred();
         var dialog = $('#dialog-edit');
         var key    = dialog.find('#key').val();
