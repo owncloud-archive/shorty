@@ -46,12 +46,14 @@
       <?php echo OC_Shorty_L10n::t('Modify shorty:'); ?>
     </legend>
     <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
-    <input id="key" name="key" type="text" readonly data="" class="" />
+    <input id="key" name="key" type="text" readonly data="" class=""
+           readonly disabled />
     <br>
-    <label for="source"><?php echo OC_Shorty_L10n::t('Shorty (url):'); ?></label>
-    <input id="source" name="source" type="text" readonly data="" class="" />
+    <label for="source"><?php echo OC_Shorty_L10n::t('Source url:'); ?></label>
+    <input id="source" name="source" type="text" readonly data="" class=""
+           readonly disabled />
     <br>
-    <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
+    <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
     <input id="target" name="target" type="text" readonly data="" class="" />
     <br>
     <label for="meta">&nbsp;</label>
@@ -63,7 +65,7 @@
     <a id="explanation" maxlength="80" data="" class="shorty-value"></a>
     </span>
     <br>
-    <label for="title"><?php echo OC_Shorty_L10n::t('Local title:'); ?></label>
+    <label for="title"><?php echo OC_Shorty_L10n::t('Shorty title:'); ?></label>
     <input id="title" name="title" type="text" maxlength="80" data="" class="" />
     <br>
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
@@ -73,16 +75,7 @@
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
     <textarea id="notes" name="notes" maxlength="4096" data="" class=""></textarea>
     <br>
-    <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
-    <input id="clicks" name="clicks" type="text" readonly data="" class="" />
-    <br>
-    <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
-    <input id="created" name="created" type="text" readonly data="" class="" />
-    <br>
-    <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
-    <input id="accessed" name="accessed" type="text" readonly data="" class="" />
-    <br>
     <label for="confirm"></label>
-    <input type="submit" value="<?php echo OC_Shorty_L10n::t('Save as modified'); ?>" id="confirm" class="shorty-button-submit"/>
+    <button id="confirm" class="shorty-button-submit"><?php echo OC_Shorty_L10n::t('Save'); ?></button>
   </fieldset>
 </form>

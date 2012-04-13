@@ -149,11 +149,6 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.Dialog.hide
-      // ===== Shorty.WUI.Dialog.load =====
-      load: function(dialog,entry){
-        if (Shorty.Debug) Shorty.Debug.log("loading dialog "+dialog.attr('id')+" with entry "+entry.attr('id'));
-        
-      }, // Shorty.WUI.Dialog.load
       // ===== Shorty.WUI.Dialog.reset =====
       reset: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("reset dialog "+dialog.attr('id'));
@@ -265,12 +260,21 @@ Shorty =
       // ===== Shorty.WUI.Entry.edit =====
       edit: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("edit entry "+entry.attr('id'));
-        // select the existing edit dialog for this
+        var dfd = new $.Deferred();
+        // use the existing edit dialog for this
         var dialog=$('#controls #dialog-edit');
         // load entry into dialog
-        Shorty.WUI.Dialog.load(dialog,entry);
+        dialog.find('#key').attr('data-key',entry.attr('data-key')).val(entry.attr('data-key'));
+        dialog.find('#source').attr('data-source',entry.attr('data-source')).val(entry.attr('data-source'));
+        dialog.find('#target').attr('data-target',entry.attr('data-target')).val(entry.attr('data-target'));
+        dialog.find('#title').attr('data-title',entry.attr('data-title')).val(entry.attr('data-title'));
+        dialog.find('#until').attr('data-until',entry.attr('data-until')||'').val(entry.attr('data-until')||'');
+        dialog.find('#notes').attr('data-notes',entry.attr('data-notes')).val(entry.attr('data-notes'));
         // open edit dialog
-        Shorty.WUI.Dialog.show(dialog);
+        $.when(
+          Shorty.WUI.Dialog.show(dialog)
+        ).done(dfd.resolve);
+        return dfd.promise();
       }, // Shorty.WUI.Entry.edit
       // ===== Shorty.WUI.Entry.share =====
       share: function(entry){
@@ -278,15 +282,15 @@ Shorty =
         var dfd = new $.Deferred();
         // use the existing 'share' dialog for this
         var dialog=$('#dialog-share');
+        // fill dialog
+        dialog.find('#source').attr('href',entry.attr('data-source')).text(entry.attr('data-source')),
+        dialog.find('#target').attr('href',entry.attr('data-target')).text(entry.attr('data-target')),
+        dialog.find('#status').attr('value',entry.attr('data-status')).attr('data',entry.attr('data-status')),
+        // move 'share' dialog towards entry
+        dialog.appendTo(entry.find('td#actions')),
+        // open dialog
         $.when(
-          // fill dialog
-          dialog.find('#source').attr('href',entry.attr('data-source')).text(entry.attr('data-source')),
-          dialog.find('#target').attr('href',entry.attr('data-target')).text(entry.attr('data-target')),
-          dialog.find('#status').attr('value',entry.attr('data-status')).attr('data',entry.attr('data-status')),
-          // move 'share' dialog towards entry
-          dialog.appendTo(entry.find('td#actions')),
-          // open dialog
-          Shorty.WUI.Dialog.show($('#dialog-share').eq(0))
+          Shorty.WUI.Dialog.show(dialog)
         ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.Entry.share
