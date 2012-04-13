@@ -41,7 +41,7 @@
       <a id="close" class="shorty-close-button"
         title="<?php echo OC_Shorty_L10n::t('close'); ?>">
         <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
-            src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');  ?>">
+            src="<?php echo OC_Helper::imagePath('shorty','actions/shade.png');  ?>">
       </a>
       <?php echo OC_Shorty_L10n::t('Share shorty:'); ?>
     </legend>
