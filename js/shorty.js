@@ -664,12 +664,12 @@ Shorty =
           duration = duration || 'slow';
           var button=$('#list #tools');
           var toolbar=$('#list #toolbar');
-          if (button.attr('data-plus')==button.attr('src')){
+          if (!toolbar.find('div').is(':visible')){
             button.attr('src',button.attr('data-minus'));
-            toolbar.find('div').each(function(){$(this).slideDown(duration);});
+            toolbar.find('div').slideDown(duration);
           }else{
             button.attr('src',button.attr('data-plus'));
-            toolbar.find('div').each(function(){$(this).slideUp(duration);});
+            toolbar.find('div').slideUp(duration);
           }
         }, // Shorty.WUI.List.Toolbar.toggle
       }, // Shorty.WUI.List.Toolbar
