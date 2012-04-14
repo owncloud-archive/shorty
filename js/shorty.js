@@ -664,13 +664,31 @@ Shorty =
           duration = duration || 'slow';
           var button=$('#list #tools');
           var toolbar=$('#list #toolbar');
+          var dfd = new $.Deferred();
           if (!toolbar.find('div').is(':visible')){
-            button.attr('src',button.attr('data-minus'));
-            toolbar.find('div').slideDown(duration);
+            // tool NOT visible: open toolbar
+            $.when(
+              toolbar.find('div').slideDown(duration)
+              ).pipe(
+              button.attr('src',button.attr('data-minus'))
+            ).done(dfd.resolve);
           }else{
-            button.attr('src',button.attr('data-plus'));
-            toolbar.find('div').slideUp(duration);
+            // toolbar IS visible
+            if (toolbar.find('#title,#target').find('div input#filter:text[value!=""]').length){
+              // some column filters active, prevent closing of toolbar
+              $.when(
+                toolbar.find('#title,#target').find('div input#filter:text[value!=""]').effect('pulsate')
+              ).done(dfd.resolve);
+            }else{
+              // close toolbar
+              $.when(
+                toolbar.find('div').slideUp(duration)
+              ).pipe(
+                button.attr('src',button.attr('data-plus'))
+              ).done(dfd.resolve);
+            }
           }
+          return dfd.promise();
         }, // Shorty.WUI.List.Toolbar.toggle
       }, // Shorty.WUI.List.Toolbar
     }, // Shorty.WUI.List
