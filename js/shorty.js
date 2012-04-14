@@ -642,7 +642,10 @@ Shorty =
         var sortDir=icon.attr('data-sort-direction');
         var sortCode=icon.attr('data-sort-code');
         if (Shorty.Debug) Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
+        // use the 'tinysort' jquery plugin for sorting
         $('#list tbody>tr').tsort({order:sortDir,attr:'data-'+sortCol});
+        // store the sorting code as preference, for returning list retrievals
+        Shorty.Action.Preference.set({'list-sort-key':sortCode});
       }, // Shorty.WUI.List.sort
       // ===== Shorty.WUI.List.toggle =====
       toggle: function(duration){

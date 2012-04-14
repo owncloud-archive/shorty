@@ -75,7 +75,7 @@
           <img id="sort-up" class="shorty-sorter" data-sort-code="ua" data-sort-type="string" data-sort-direction='asc'
                alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
                src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>">
-          <img id="sort-down" class="shorty-sorter" data-sort-code="ua" data-sort-type="string" data-sort-direction='desc'
+          <img id="sort-down" class="shorty-sorter" data-sort-code="ud" data-sort-type="string" data-sort-direction='desc'
                alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>"
                src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>">
           <input id='filter' type="text" value="">
