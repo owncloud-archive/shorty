@@ -42,24 +42,24 @@
   <thead>
     <tr id="titlebar">
       <!-- a button to open/close the toolbar below -->
-      <th id="headerFavicon"><img id="tools" alt="toolbar" title="toggle toolbar"
-                                  src="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
-                                  data-plus="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
-                                  data-minus="<?php echo OC_Helper::imagePath('shorty','actions/minus.png'); ?>"></th>
-      <th id="headerTitle"  ><?php echo OC_Shorty_L10n::t('Title') ?></th>
-      <th id="headerTarget" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
-      <th id="headerClicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
-      <th id="headerUntil"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
-      <th id="headerAction" ><?php echo OC_Shorty_L10n::t('Actions') ?></th>
+      <th id="favicon"><img id="tools" alt="toolbar" title="toggle toolbar"
+                            src="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
+                            data-plus="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
+                            data-minus="<?php echo OC_Helper::imagePath('shorty','actions/minus.png'); ?>"></th>
+      <th id="title"  ><?php echo OC_Shorty_L10n::t('Title') ?></th>
+      <th id="target" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
+      <th id="clicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
+      <th id="until"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
+      <th id="action" ><?php echo OC_Shorty_L10n::t('Actions') ?></th>
     </tr>
     <!-- toolbar opened/closed by the button above -->
     <tr id="toolbar">
-      <th id="headerFavicon">
+      <th id="favicon">
         <div style="display:none;">
           <a id="reload"><img alt="<?php echo $l->t('reload'); ?>" title="<?php echo $l->t('reload list'); ?>" src="<?php echo OC_Helper::imagePath('shorty','actions/reload.png'); ?>"></a>
         </div>
       </th>
-      <th id="headerTitle">
+      <th id="title">
         <div style="display:none;">
           <a id="sort-up"   class="shorty-sorter" data-sort-code="ta" data-sort-type="string">
             <img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
@@ -72,7 +72,7 @@
           <input id='filter' type="text" value="">
         </div>
       </th>
-      <th id="headerTarget">
+      <th id="target">
         <div style="display:none;">
           <a id="sort-up"   class="shorty-sorter" data-sort-code="ua" data-sort-type="string">
             <img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
@@ -85,7 +85,7 @@
           <input id='filter' type="text" value="">
         </div>
       </th>
-      <th id="headerClicks">
+      <th id="clicks">
         <div style="display:none;">
           <a id="sort-up"   class="shorty-sorter" data-sort-code="ha" data-sort-type="int">
             <img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
@@ -97,7 +97,7 @@
           </a>
         </div>
       </th>
-      <th id="headerUntil">
+      <th id="until">
         <div style="display:none;">
           <a id="sort-up"   class="shorty-sorter" data-sort-code="da" data-sort-type="date">
             <img alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
@@ -109,7 +109,7 @@
           </a>
         </div>
       </th>
-      <th id="headerAction">
+      <th id="action">
         <div style="display:none;">
           &nbsp;
         </div>

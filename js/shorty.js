@@ -480,6 +480,22 @@ Shorty =
         ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.fill
+      // ===== Shorty.WUI.List.filter =====
+      filter: function(event,input){
+        var column =$(input.context.parentElement.parentElement).attr('id');
+        var pattern=$(input).val();
+        if (Shorty.Debug) Shorty.Debug.log("filter list by column "+column);
+        var dfd = new $.Deferred();
+        $.when(
+          $('#list tbody tr').filter(function(){
+            return (-1==$(this).find('td#'+column+' span').text().toLowerCase().indexOf(pattern.toLowerCase()));
+          }).addClass('shorty-filtered'),
+          $('#list tbody tr').not(function(){
+            return (-1==$(this).find('td#'+column+' span').text().toLowerCase().indexOf(pattern.toLowerCase()));
+          }).removeClass('shorty-filtered')
+        ).done(dfd.resolve);
+        return dfd.promise();
+      }, // Shorty.WUI.List.filter
       // ===== Shorty.WUI.List.get =====
       get: function(){
         if (Shorty.Debug) Shorty.Debug.log("get list");

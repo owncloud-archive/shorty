@@ -61,5 +61,8 @@ $(document).ready(function(){
   $('#list .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
   // pretty select boxes throughout this module
   $('.shorty-dialog select').chosen();
+  // column filter reactions
+  $('#list thead tr#toolbar th#target #filter').keyup(function(e){Shorty.WUI.List.filter(e,$(this));});
+  $('#list thead tr#toolbar th#title  #filter').keyup(function(e){Shorty.WUI.List.filter(e,$(this));});
 }); // document.ready
 

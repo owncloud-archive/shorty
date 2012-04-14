@@ -149,6 +149,14 @@
 .shorty-pulsate {
   display: none;
 }
+.shorty-filtered {
+  display: none;
+  transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+}
 
 .shorty-hourglass {
   display: none;
@@ -195,9 +203,9 @@
   font-weight: bold;
   padding: 1px 6px;
 }
-.shorty-list th#headerClicks,
-.shorty-list th#headerUntil,
-.shorty-list th#headerActions {
+.shorty-list th#clicks,
+.shorty-list th#until,
+.shorty-list th#actions {
   text-align: center;
 }
 .shorty-list td {
