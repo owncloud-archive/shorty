@@ -352,7 +352,7 @@ Shorty =
             if (set[aspect]){
               // enhance row with real set values
               row.attr('data-'+this,set[aspect]);
-              if (hidden) row.addClass('shorty-pulsate');
+              if (hidden) row.addClass('shorty-fresh');
               // fill data into corresponsing column
               var content, classes=[];
               switch(aspect)
@@ -428,10 +428,10 @@ Shorty =
         var body=list.find('tbody');
         if (show)
         {
-          var rows=body.find('tr.shorty-pulsate');
+          var rows=body.find('tr.shorty-fresh');
           Shorty.WUI.List.highlight(rows.eq(0));
           rows.each(function(){
-            $(this).removeClass('shorty-pulsate');
+            $(this).removeClass('shorty-fresh');
             $(this).find('td').effect('pulsate');
           });
           $.when(
@@ -560,7 +560,7 @@ Shorty =
             if (set[aspect]){
               // enhance row with actual set values
               row.attr('data-'+this,set[aspect]);
-              if (hidden) row.addClass('shorty-pulsate');
+              if (hidden) row.addClass('shorty-fresh');
               // fill data into corresponsing column
               var content, classes=[];
               switch(aspect)
