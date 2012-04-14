@@ -266,6 +266,10 @@
   overflow:auto;
 }
 
+.shorty-list #toolbar img.shorty-sorter {
+  cursor: pointer;
+}
+
 .shorty-expired {
   color: gray;
 }

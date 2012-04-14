@@ -24,10 +24,21 @@
 */
 
 /**
- * @file js/settings.js
+ * @file js/shorty.js
  * @brief Client side activity library
  * @author Christian Reiner
  */
+
+// max()-selector
+// usage: var maxWidth = $("a").max(function() {return $(this).width(); });
+$.fn.max = function(selector) {
+  return Math.max.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
+}
+// min()-selector
+// usage: var minWidth = $("a").min(function() {return $(this).width(); });
+$.fn.min = function(selector) {
+  return Math.min.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
+}
 
 /**
  * @class Shorty
@@ -626,26 +637,12 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.show
       // ===== Shorty.WUI.List.sort =====
-      sort: function(){
-        if (Shorty.Debug) Shorty.Debug.log("sort list");
-        $.when(
-          Shorty.WUI.Hourglass.toggle(true),
-          Shorty.WUI.List.dim(false)
-        ).done(function(){
-          // retrieve new entries
-          $.when(
-            Shorty.WUI.List.empty(),
-            Shorty.WUI.List.fill(list)
-          ).done(function(){
-            $.when(
-              Shorty.WUI.List.show(),
-              Shorty.WUI.List.dim(true)
-            ).done(function(){
-              Shorty.WUI.Hourglass.toggle(false)
-              dfd.resolve();
-            });
-          })
-        })
+      sort: function(event,icon){
+        var sortCol=icon.parents('th').attr('id');
+        var sortDir=icon.attr('data-sort-direction');
+        var sortCode=icon.attr('data-sort-code');
+        if (Shorty.Debug) Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
+        $('#list tbody>tr').tsort({order:sortDir,attr:'data-'+sortCol});
       }, // Shorty.WUI.List.sort
       // ===== Shorty.WUI.List.toggle =====
       toggle: function(duration){
@@ -1130,8 +1127,6 @@ Shorty =
       });
     } // Shorty.Ajax.fail
   }, // Shorty.Ajax
-
-  // ===========
 
   // ==== Shorty.Date =====
   Date:

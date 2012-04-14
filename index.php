@@ -40,11 +40,12 @@ OC_Util::checkAppEnabled ( 'shorty' );
 
 OC_App::setActiveNavigationEntry ( 'shorty_index' );
 
-OC_Util::addScript ( 'shorty', 'debug' );
-OC_Util::addScript ( 'shorty', 'shorty' );
-OC_Util::addScript ( 'shorty', 'init' );
+OC_Util::addScript ( 'shorty',  'debug' );
+OC_Util::addScript ( 'shorty',  'shorty' );
+OC_Util::addScript ( 'shorty',  'init' );
+OC_Util::addScript ( 'shorty/3rdparty','jquery.tinysort.min' );
 
-OC_Util::addStyle  ( 'shorty', 'shorty' );
+OC_Util::addStyle  ( 'shorty',  'shorty' );
 
 // strategy:
 // - first: decide which action is requested
