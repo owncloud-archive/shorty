@@ -115,7 +115,8 @@
   padding: 0 0.5em;
 }
 .shorty-dialog fieldset {
-  border: 1px solid gray
+  border: 1px solid gray;
+  padding: 2px;
 }
 .shorty-dialog legend {
   font-weight: bold;
@@ -125,25 +126,31 @@
 .shorty-dialog input {
   width: 70%;
 }
-.shorty-dialog input[placeholder], [placeholder], *[placeholder]
-{
-  color: gray !important;
-}
 .shorty-dialog textarea {
   width: 70%; height: 5em;
   padding: 0.6em 0.5em 0.4em;
+  background: none repeat scroll 0 0 #F8F8F8;
+  color: #555555;
+  border: 1px solid #DDDDDD;
+  cursor: text;
 }
-.shorty-dialog textarea[placeholder], [placeholder], *[placeholder]
-{
-  color: gray !important;
+.shorty-dialog textarea:hover,
+.shorty-dialog textarea:active {
+  background-color: #FFFFFF;
+  color: #333333;
+  opacity: 1;
 }
-.shorty-dialog button {
+.shorty-dialog button#confirm {
   width: 8em; height: 2em;
   background: solid;
+  background-color: #EEEEEE;
+}
+.shorty-dialog button#confirm.sharp {
   background-color: white;
 }
-.shorty-dialog button:hover {
-  border-color: green;
+.shorty-dialog button#confirm.sharp:hover {
+/*   border-color: green; */
+  border:1px solid gray;
 }
 
 .shorty-fresh {

@@ -158,13 +158,26 @@ Shorty =
           $.when(
             $.each(dialog.find('.shorty-input'),function(){if($(this).is('[data]'))$(this).val($(this).attr('data'));}),
             $.each(dialog.find('.shorty-value'),function(){if($(this).is('[data]'))$(this).text($(this).attr('data'));}),
-            $.each(dialog.find('.shorty-icon'), function(){if($(this).is('[data]'))$(this).attr('src',$(this).attr('data'));})
+            $.each(dialog.find('.shorty-icon'), function(){if($(this).is('[data]'))$(this).attr('src',$(this).attr('data'));}),
+            Shorty.WUI.Dialog.sharpen(dialog,false)
           ).done(dfd.resolve);
         }
         else
           dfd.resolve();
         return dfd.promise();
       }, // Shorty.WUI.Dialog.reset
+      // ===== Shorty.WUI.Dialog.sharpen =====
+      sharpen: function(dialog,sharpness){
+        if (Shorty.Debug) Shorty.Debug.log("toggle sharpness of dialog '"+dialog.attr('id')+"' to "+sharpness);
+        var confirm=dialog.find('#confirm');
+        if (sharpness){
+          confirm.bind('click',{dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);});
+          confirm.addClass('sharp');
+        }else{
+          confirm.bind('click',function(event){event.preventDefault();dialog.find('#target').effect('highlight',{'color':'#CCCCCC'},500);});
+          confirm.removeClass('sharp');
+        }
+      }, // Shorty.WUI.Dialog.sharpen
       // ===== Shorty.WUI.Dialog.show =====
       show: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("show dialog "+dialog.attr('id'));
@@ -194,18 +207,16 @@ Shorty =
             // show dialog
             dialog.slideDown(duration);
           }).pipe(function(){
-            // initialize dialog
-            dialog.find('#confirm').bind('click',   {dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);} );
-            dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);} );
+            // initialize dialog actions
             switch(dialog.attr('id')){
               case 'dialog-add':
                 dialog.find('#target').focus();
+                dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);});
                 break;
-              case 'dialog-add':
+              case 'dialog-edit':
                 dialog.find('#title').focus();
+                Shorty.WUI.Dialog.sharpen(dialog,true);
                 break;
-              default:
-                dialog.find('#title').focus();
             } // switch
           }).done(dfd.resolve);
         }
@@ -789,15 +800,18 @@ Shorty =
           dialog.find('#title').attr('placeholder',meta.title);
           dialog.find('#meta').fadeTo('fast',0,function(){
             Shorty.WUI.Meta.reset(dialog);
+            // specify the icons and information to be shown as meta data
             dialog.find('#staticon').attr('src',meta.staticon);
             dialog.find('#schemicon').attr('src',meta.schemicon);
             dialog.find('#favicon').attr('src',meta.favicon);
             dialog.find('#mimicon').attr('src',meta.mimicon);
             dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
             dialog.find('#meta').fadeTo('fast',1);
+            Shorty.WUI.Dialog.sharpen(dialog,true);
           });
           dfd.resolve(response);
         }).fail(function(reponse){
+          Shorty.WUI.Dialog.sharpen(dialog,false);
           dfd.reject(response);
         });
         return dfd.promise();
