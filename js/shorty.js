@@ -647,6 +647,10 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
         // use the 'tinysort' jquery plugin for sorting
         $('#list tbody>tr').tsort({order:sortDir,attr:'data-'+sortCol});
+        // mark currently active sort icon
+        var icons=$('#list thead tr#toolbar img.shorty-sorter');
+        icons.removeClass('shorty-active');
+        icons.filter('[data-sort-code="'+sortCode+'"]').addClass('shorty-active');
         // store the sorting code as preference, for returning list retrievals
         Shorty.Action.Preference.set({'list-sort-code':sortCode});
       }, // Shorty.WUI.List.sort
