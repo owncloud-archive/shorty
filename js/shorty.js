@@ -486,34 +486,27 @@ Shorty =
       // ===== Shorty.WUI.List.fill =====
       fill: function(list){
         if (Shorty.Debug) Shorty.Debug.log("fill list");
-        var sort;
         var dfd = new $.Deferred();
-        // prevent clicks whilst loading the list
         $.when(
-          $('.shorty-link').unbind('click', Shorty.Action.Url.click),
-          $('.shorty-edit').unbind('click', Shorty.Action.Url.edit),
-          $('.shorty-delete').unbind('click', Shorty.Action.Url.del),
           Shorty.WUI.Sums.fill(),
           Shorty.WUI.List.empty(),
-          // add list of elements, one by one
-          Shorty.WUI.List.add(list,false),
-          // sort finished list
+          Shorty.WUI.List.add(list,false)
+        ).pipe(
+          // filter list
+          Shorty.WUI.List.filter('target',$('#list thead tr#toolbar th#target #filter').val()),
+          Shorty.WUI.List.filter('title',$('#list thead tr#toolbar th#title #filter').val())
+        ).pipe(
+          // sort list
           $.when(
             Shorty.Action.Preference.get('list-sort-code')
           ).done(function(pref){
             Shorty.WUI.List.sort(pref['list-sort-code']);
-          }),
-          // reenable clicks after loading the list
-          $('.shorty-link').click(Shorty.Action.Url.click),
-          $('.shorty-edit').click(Shorty.Action.Url.edit),
-          $('.shorty-del').click(Shorty.Action.Url.del)
+          })
         ).done(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.fill
       // ===== Shorty.WUI.List.filter =====
-      filter: function(event,input){
-        var column =$(input.context.parentElement.parentElement).attr('id');
-        var pattern=$(input).val();
+      filter: function(column,pattern){
         if (Shorty.Debug) Shorty.Debug.log("filter list by column "+column);
         var dfd = new $.Deferred();
         $.when(

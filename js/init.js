@@ -61,9 +61,16 @@ $(document).ready(function(){
   $('#list .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
   // pretty select boxes throughout this module
   $('.shorty-dialog select').chosen();
-  // column filter reactions
-  $('#list thead tr#toolbar th#target #filter').bind('keyup',function(e){Shorty.WUI.List.filter(e,$(this));});
-  $('#list thead tr#toolbar th#title  #filter').bind('keyup',function(e){Shorty.WUI.List.filter(e,$(this));});
-  $('#list thead tr#toolbar div img.shorty-sorter').bind('click',function(){Shorty.WUI.List.sort($(this).attr('data-sort-code'));});
+  // column filter reaction
+  $('#list thead tr#toolbar').find('th#target,th#title').find('#filter').bind('keyup',function(){
+    Shorty.WUI.List.filter(
+      $($(this).context.parentElement.parentElement).attr('id'),
+      $(this).val()
+    );
+  });
+// column sorting reaction
+  $('#list thead tr#toolbar div img.shorty-sorter').bind('click',function(){
+    Shorty.WUI.List.sort($(this).attr('data-sort-code'));
+  });
 }); // document.ready
 
