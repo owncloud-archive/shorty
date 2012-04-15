@@ -50,6 +50,7 @@
       <th id="target" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
       <th id="clicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
       <th id="until"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
+      <th id="status" ><?php echo OC_Shorty_L10n::t('Status') ?></th>
       <th id="action" ><?php echo OC_Shorty_L10n::t('Actions') ?></th>
     </tr>
     <!-- toolbar opened/closed by the button above -->
@@ -101,6 +102,15 @@
                src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>">
         </div>
       </th>
+      <th id="status">
+        <div style="display:none;">
+          <select id='filter' value="" data-placeholder=" ">
+          <?php foreach($_['shorty-status'] as $status)
+                  echo sprintf('<option value="%s">%s</option>',$status,htmlentities($l->t($status)));
+          ?>
+          </select>
+        </div>
+      </th>
       <!-- an invisible column important for default sorting -->
       <th id="created" style="display:none;">
         <div style="display:none;">
@@ -136,6 +146,7 @@
       <td id="target" width="200px"></td>
       <td id="clicks" ></td>
       <td id="until"  ></td>
+      <td id="status" ></td>
       <!-- an invisible column important for default sorting -->
       <td id="created" style="display:none;"></td>
       <td id="actions">

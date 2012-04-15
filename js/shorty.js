@@ -494,7 +494,8 @@ Shorty =
         ).pipe(
           // filter list
           Shorty.WUI.List.filter('target',$('#list thead tr#toolbar th#target #filter').val()),
-          Shorty.WUI.List.filter('title',$('#list thead tr#toolbar th#title #filter').val())
+          Shorty.WUI.List.filter('title', $('#list thead tr#toolbar th#title #filter').val()),
+          Shorty.WUI.List.filter('status',$('#list thead tr#toolbar th#status select :selected').val())
         ).pipe(
           // sort list
           $.when(
@@ -690,13 +691,14 @@ Shorty =
               ).pipe(
               button.attr('src',button.attr('data-minus'))
             ).done(dfd.resolve);
-          }else{
-            // toolbar IS visible
-            if (toolbar.find('#title,#target').find('div input#filter:text[value!=""]').length){
-              // some column filters active, prevent closing of toolbar
-              $.when(
-                toolbar.find('#title,#target').find('div input#filter:text[value!=""]').effect('pulsate')
-              ).done(dfd.resolve);
+          }else{ // toolbar IS visible
+            // any filters active? prevent closing of toolbar !
+            if (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
+                   &&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]').effect('pulsate')) )
+                ||(  (toolbar.find('th#status select :selected').val())
+                   &&(toolbar.find('#status div.chzn-container').effect('pulsate')) )
+               ) {
+              if (Shorty.Debug) Shorty.Debug.log('active filter prevents closing of toolbar');
             }else{
               // close toolbar
               $.when(

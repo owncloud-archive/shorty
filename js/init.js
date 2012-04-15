@@ -61,11 +61,19 @@ $(document).ready(function(){
   $('#list .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
   // pretty select boxes throughout this module
   $('.shorty-dialog select').chosen();
+  $('.shorty-list select').chosen({allow_single_deselect:true});
   // column filter reaction
   $('#list thead tr#toolbar').find('th#target,th#title').find('#filter').bind('keyup',function(){
     Shorty.WUI.List.filter(
       $($(this).context.parentElement.parentElement).attr('id'),
       $(this).val()
+    );
+  });
+//  $('#list thead tr#toolbar').find('th#status div.chzn-container a span').bind('change',function(){
+  $('#list thead tr#toolbar th#status select').change(function(){
+    Shorty.WUI.List.filter(
+      $(this).parents('th').attr('id'),
+      $(this).find(':selected').val()
     );
   });
 // column sorting reaction

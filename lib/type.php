@@ -69,6 +69,12 @@ class OC_Shorty_Type
     'backend-bitly-key'   => OC_Shorty_Type::STRING,
     'list-sort-code'      => OC_Shorty_Type::SORTKEY,
   );
+  // valid status for entries
+  static $STATUS = array (
+    'blocked',
+    'shared',
+    'public',
+  );
   // a list of all valid system settings
   static $SETTING = array (
     'backend-static-base' => OC_Shorty_Type::URL,
