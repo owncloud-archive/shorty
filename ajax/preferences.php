@@ -32,7 +32,7 @@
  * @param backend-google-key (string) Personal authentication key to use when the google backend is active
  * @param backend-bitly-key (string) Personal authentication key to use when the bit.li backend is active
  * @param backend-bitly-user (string) Personal authentication user to use when the bit.li backend is active
- * @param list-sort-key (string) Two character sorting key controlling the active sorting of shorty lists
+ * @param list-sort-code (string) Two character sorting key controlling the active sorting of shorty lists
  * @returns (json) success/error state indicator
  * @returns (json) Associative array holding the stored values by their key
  * @returns (json) Human readable message describing the result
@@ -54,31 +54,57 @@ try
   switch ( $_SERVER['REQUEST_METHOD'] )
   {
     case 'POST':
-      // detect settings
-      $data = array(
-        'backend-type'        => OC_Shorty_Type::req_argument ( 'backend-type',        OC_Shorty_Type::STRING,  FALSE ),
-        'backend-static-base' => OC_Shorty_Type::req_argument ( 'backend-static-base', OC_Shorty_Type::URL,     FALSE ),
-        'backend-google-key'  => OC_Shorty_Type::req_argument ( 'backend-google-key',  OC_Shorty_Type::STRING,  FALSE ),
-        'backend-bitly-user'  => OC_Shorty_Type::req_argument ( 'backend-bitly-user',  OC_Shorty_Type::STRING,  FALSE ),
-        'backend-bitly-key'   => OC_Shorty_Type::req_argument ( 'backend-bitly-key',   OC_Shorty_Type::STRING,  FALSE ),
-        'list-sort-key'       => OC_Shorty_Type::req_argument ( 'list-sort-key',       OC_Shorty_Type::SORTKEY, FALSE ),
-      );
+      // detect provided preferences
+      $data = array();
+      foreach (array_keys($_POST) as $key)
+        if ($type=OC_Shorty_Type::$PREFERENCE[$key])
+          $data[$key] = OC_Shorty_Type::req_argument ( $key, $type, FALSE );
       // eliminate settings not explicitly set
       $data = array_diff ( $data, array(FALSE) );
       // store settings
       foreach ( $data as $key=>$val )
         OC_Preferences::setValue( OC_User::getUser(), 'shorty', $key, $val );
+      // a friendly reply, in case someone is interested
+      OC_JSON::success ( array ( 'data'    => $data,
+                                 'message' => OC_Shorty_L10n::t('Preference saved.') ) );
       break;
     case 'GET':
-      // we simply look for all tokens specified as arguments ( example: http://.../shorty/ajax/preferences.php?pref1&pref2 )
-      foreach ( array_keys ($_GET) as $key )
-        $data[$key] = OC_Preferences::setValue( OC_User::getUser(), 'shorty', $key );
+      // detect requested preferences
+      foreach (array_keys($_GET) as $key)
+      {
+        if (  ('_'!=$key) // ignore ajax timestamp argument
+            &&($type=OC_Shorty_Type::$PREFERENCE[$key]) )
+        {
+          $data[$key] = OC_Preferences::getValue( OC_User::getUser(), 'shorty', $key);
+          // morph value into an explicit type
+          switch ($type)
+          {
+            case OC_Shorty_Type::KEY:
+            case OC_Shorty_Type::STATUS:
+            case OC_Shorty_Type::SORTKEY:
+            case OC_Shorty_Type::SORTVAL:
+            case OC_Shorty_Type::STRING:
+            case OC_Shorty_Type::URL:
+            case OC_Shorty_Type::DATE:
+              settype ( $data[$key], 'string' );
+              break;
+            case OC_Shorty_Type::INTEGER:
+            case OC_Shorty_Type::TIMESTAMP:
+              settype ( $data[$key], 'integer' );
+              break;
+            case OC_Shorty_Type::FLOAT:
+              settype ( $data[$key], 'float' );
+              break;
+            default:
+          } // switch
+        }
+      } // foreach
+      // a friendly reply, in case someone is interested
+      OC_JSON::success ( array ( 'data'    => $data,
+                                 'message' => OC_Shorty_L10n::t('Preference(s) retrieved.') ) );
       break;
     default:
       throw new OC_Shorty_Exception ( "unexpected request method '%s'", $_SERVER['REQUEST_METHOD'] );
   } // switch
-  // a friendly reply, in case someone is interested
-  OC_JSON::success ( array ( 'data'    => $data,
-                             'message' => OC_Shorty_L10n::t('Preference saved.') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

@@ -101,6 +101,17 @@
                src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>">
         </div>
       </th>
+      <!-- an invisible column important for default sorting -->
+      <th id="created" style="display:none;">
+        <div style="display:none;">
+          <img id="sort-up"   class="shorty-sorter" data-sort-code="ca" data-sort-type="date" data-sort-direction='asc'
+               alt="<?php echo $l->t('up');   ?>" title="<?php echo $l->t('sort ascending');  ?>"
+               src="<?php echo OC_Helper::imagePath('shorty','actions/up.png');   ?>">
+          <img id="sort-down" class="shorty-sorter" data-sort-code="cd" data-sort-type="date" data-sort-direction='desc'
+               alt="<?php echo $l->t('down'); ?>" title="<?php echo $l->t('sort descending'); ?>"
+               src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>">
+        </div>
+      </th>
       <th id="action">
         <div style="display:none;">
           &nbsp;
@@ -125,6 +136,8 @@
       <td id="target" width="200px"></td>
       <td id="clicks" ></td>
       <td id="until"  ></td>
+      <!-- an invisible column important for default sorting -->
+      <td id="created" style="display:none;"></td>
       <td id="actions">
         <span class="shorty-actions">
           <a id="open"   title="<?php echo $l->t('open');   ?>"   class="">

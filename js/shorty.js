@@ -486,6 +486,7 @@ Shorty =
       // ===== Shorty.WUI.List.fill =====
       fill: function(list){
         if (Shorty.Debug) Shorty.Debug.log("fill list");
+        var sort;
         var dfd = new $.Deferred();
         // prevent clicks whilst loading the list
         $.when(
@@ -494,7 +495,14 @@ Shorty =
           $('.shorty-delete').unbind('click', Shorty.Action.Url.del),
           Shorty.WUI.Sums.fill(),
           Shorty.WUI.List.empty(),
+          // add list of elements, one by one
           Shorty.WUI.List.add(list,false),
+          // sort finished list
+          $.when(
+            Shorty.Action.Preference.get('list-sort-code')
+          ).done(function(pref){
+            Shorty.WUI.List.sort(pref['list-sort-code']);
+          }),
           // reenable clicks after loading the list
           $('.shorty-link').click(Shorty.Action.Url.click),
           $('.shorty-edit').click(Shorty.Action.Url.edit),
@@ -524,8 +532,9 @@ Shorty =
         var dfd = new $.Deferred();
         $.when(
           $.ajax({
-            url:     'ajax/list.php',
-            cache:   false
+            type:  'GET',
+            url:   OC.filePath('shorty','ajax','list.php'),
+            cache: false
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -637,15 +646,16 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.show
       // ===== Shorty.WUI.List.sort =====
-      sort: function(event,icon){
+      sort: function(sortCode){
+        sortCore = sortCode || 'cd';
+        var icon=$('#list thead tr#toolbar th div img[data-sort-code="'+sortCode+'"]');
         var sortCol=icon.parents('th').attr('id');
         var sortDir=icon.attr('data-sort-direction');
-        var sortCode=icon.attr('data-sort-code');
         if (Shorty.Debug) Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
         // use the 'tinysort' jquery plugin for sorting
         $('#list tbody>tr').tsort({order:sortDir,attr:'data-'+sortCol});
         // store the sorting code as preference, for returning list retrievals
-        Shorty.Action.Preference.set({'list-sort-key':sortCode});
+        Shorty.Action.Preference.set({'list-sort-code':sortCode});
       }, // Shorty.WUI.List.sort
       // ===== Shorty.WUI.List.toggle =====
       toggle: function(duration){
@@ -821,9 +831,10 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("get meta data for target "+target);
         var dfd = new $.Deferred();
         $.ajax({
-          url:     'ajax/meta.php',
-          cache:   false,
-          data:    { target: encodeURIComponent(target) }
+          type:  'GET',
+          url:   OC.filePath('shorty','ajax','meta.php'),
+          cache: false,
+          data:  { target: encodeURIComponent(target) }
         }).pipe(
           function(response){return Shorty.Ajax.eval(response);},
           function(response){return Shorty.Ajax.fail(response);}
@@ -867,9 +878,10 @@ Shorty =
         var dfd = new $.Deferred();
         $.when(
           $.ajax({
-            url:     'ajax/count.php',
-            cache:   false,
-            data:    { }
+            type:  'GET',
+            url:   OC.filePath('shorty','ajax','count.php'),
+            cache: false,
+            data:  { }
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -894,13 +906,45 @@ Shorty =
     {
       // ===== Shorty.Action.Preference.get =====
       get:function(data){
-        if (Shorty.Debug) Shorty.Debug.log("get preference");
-        $.get(OC.filePath('shorty','ajax','preferences.php'),data);
+        if (Shorty.Debug){Shorty.Debug.log("get preference(s):");Shorty.Debug.log(data);}
+        var dfd = new $.Deferred();
+        $.ajax({
+          type:  'GET',
+          url:   OC.filePath('shorty','ajax','preferences.php'),
+          cache: false,
+          data:  data
+        }).pipe(
+          function(response){return Shorty.Ajax.eval(response)},
+          function(response){return Shorty.Ajax.fail(response)}
+        ).always(function(response){
+          if (Shorty.Debug){Shorty.Debug.log("got preference(s):");Shorty.Debug.log(response.data);}
+        }).done(function(response){
+          dfd.resolve(response.data);
+        }).fail(function(response){
+          dfd.reject({});
+        });
+        return dfd.promise();
       }, // Shorty.Action.Preference.get
       // ===== Shorty.Action.Preference.set =====
       set:function(data){
-        if (Shorty.Debug) Shorty.Debug.log("set preference");
-        $.post(OC.filePath('shorty','ajax','preferences.php'),data);
+        if (Shorty.Debug){Shorty.Debug.log("set preference(s):");Shorty.Debug.log(data);}
+        var dfd = new $.Deferred();
+        $.ajax({
+          type:  'POST',
+          url:   OC.filePath('shorty','ajax','preferences.php'),
+          cache: false,
+          data:  data
+        }).pipe(
+          function(response){return Shorty.Ajax.eval(response)},
+          function(response){return Shorty.Ajax.fail(response)}
+        ).always(function(response){
+          if (Shorty.Debug){Shorty.Debug.log("got preference(s):");Shorty.Debug.log(response.data);}
+        }).done(function(response){
+          dfd.resolve(response.data);
+        }).fail(function(response){
+          dfd.reject({});
+        });
+        return dfd.promise();
       }, // Shorty.Action.Preference.set
     }, // Shorty.Action.Preference
     // ===== Shorty.Action.Setting =====
@@ -908,23 +952,45 @@ Shorty =
     {
       // ===== Shorty.Action.Setting.get =====
       get:function(data){
-        if (Shorty.Debug) Shorty.Debug.log("get setting");
+        if (Shorty.Debug){Shorty.Debug.log("get setting(s):");Shorty.Debug.log(data);}
         var dfd = new $.Deferred();
-        var result = $.when(
-          $.get(OC.filePath('shorty','ajax','settings.php'),data,
-            function(reply){
-              reply.each(function(key,val){result[key]=val;});
-          })
-        ).done(function(){
-          dfd.resolve();
+        $.ajax({
+          type:  'GET',
+          url:   OC.filePath('shorty','ajax','settings.php'),
+          cache: false,
+          data:  data
+        }).pipe(
+          function(response){return Shorty.Ajax.eval(response)},
+          function(response){return Shorty.Ajax.fail(response)}
+        ).always(function(response){
+          if (Shorty.Debug){Shorty.Debug.log("got preference(s):");Shorty.Debug.log(response.data);}
+        }).done(function(response){
+          dfd.resolve(response.data);
+        }).fail(function(response){
+          dfd.reject({});
         });
         return dfd.promise();
       }, // Shorty.Action.Setting.get
       // ===== Shorty.Action.Setting.set =====
       set:function(data){
-        if (Shorty.Debug) Shorty.Debug.log("set setting:");
-        if (Shorty.Debug) Shorty.Debug.log(data);
-        $.post(OC.filePath('shorty','ajax','settings.php'),data);
+        if (Shorty.Debug){Shorty.Debug.log("set setting(s):");Shorty.Debug.log(data);}
+        var dfd = new $.Deferred();
+        $.ajax({
+          type:  'POST',
+          url:   OC.filePath('shorty','ajax','settings.php'),
+          cache: false,
+          data:  data
+        }).pipe(
+          function(response){return Shorty.Ajax.eval(response)},
+          function(response){return Shorty.Ajax.fail(response)}
+        ).always(function(response){
+          if (Shorty.Debug){Shorty.Debug.log("got preference(s):");Shorty.Debug.log(response.data);}
+        }).done(function(response){
+          dfd.resolve(response.data);
+        }).fail(function(response){
+          dfd.reject({});
+        });
+        return dfd.promise();
       }, // Shorty.Action.Setting.set
     }, // Shorty.Action.Setting
     // ===== Shorty.Action.Url =====
@@ -959,7 +1025,8 @@ Shorty =
                     favicon: encodeURIComponent(favicon)};
           if (Shorty.Debug) Shorty.Debug.log(data);
           $.ajax({
-            url:   'ajax/add.php',
+            type:  'GET',
+            url:   OC.filePath('shorty','ajax','add.php'),
             cache: false,
             data:  data
           }).pipe(
@@ -1002,7 +1069,8 @@ Shorty =
                     until:  encodeURI(until) };
           if (Shorty.Debug) Shorty.Debug.log(data);
           $.ajax({
-            url:   'ajax/edit.php',
+            type:  'GET',
+            url:   OC.filePath('shorty','ajax','edit.php'),
             cache: false,
             data:  data,
           }).pipe(
@@ -1029,9 +1097,10 @@ Shorty =
         $.when(
 //          Shorty.WUI.Notification.hide(),
           $.ajax({
-            url:     'ajax/del.php',
-            cache:   false,
-            data:    { key: key }
+            type:  'GET',
+            url:   OC.filePath('shorty','ajax','del.php'),
+            cache: false,
+            data:  { key: key }
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -1081,14 +1150,15 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("changing status of key "+key+" to "+status);
         var dfd = new $.Deferred();
         $.ajax({
-          url:     'ajax/status.php',
-          cache:   false,
-          data:    { key:    key,
-                     status: status }
+          type:  'GET',
+          url:   OC.filePath('shorty','ajax','status.php'),
+          cache: false,
+          data:  { key:    key,
+                   status: status }
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
-        ).done(dfd.rsolve).fail(dfd.reject);
+        ).done(dfd.resolve).fail(dfd.reject);
         return dfd.promise();
       } // Shorty.Action.Url.status
     }, // ===== Shorty.Action.Url =====

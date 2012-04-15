@@ -49,9 +49,11 @@ try
   switch ( $_SERVER['REQUEST_METHOD'] )
   {
     case 'POST':
-      $data = array(
-        'backend-static-base' => OC_Shorty_Type::req_argument ( 'backend-static-base', OC_Shorty_Type::URL, FALSE ),
-      );
+      // detect provided preferences
+      $data = array();
+      foreach (array_keys($_POST) as $key)
+        if ($type=OC_Shorty_Type::$SETTING[$key])
+          $data[$key] = OC_Shorty_Type::req_argument ( $key, $type, FALSE );
       // eliminate settings not explicitly set
       $data = array_diff ( $data, array(FALSE) );
       // store settings one by one
@@ -59,9 +61,36 @@ try
         OC_Appconfig::setValue( 'shorty', $key, $val );
       break;
     case 'GET':
-      // we simply look for all tokens specified as arguments ( example: http://.../shorty/ajax/settings.php?setting1&setting2 )
-      foreach ( array_keys ($_GET) as $key )
-        $data[$key] = OC_Appconfig::getValue( 'shorty', $key );
+      // detect requested preferences
+      foreach (array_keys($_GET) as $key)
+      {
+        if (  ('_'!=$key) // ignore ajax timestamp argument
+            &&($type=OC_Shorty_Type::$PREFERENCE[$key]) )
+        {
+          $data[$key] = OC_Preferences::getValue( OC_User::getUser(), 'shorty', $key);
+          // morph value into an explicit type
+          switch ($type)
+          {
+            case OC_Shorty_Type::KEY:
+            case OC_Shorty_Type::STATUS:
+            case OC_Shorty_Type::SORTKEY:
+            case OC_Shorty_Type::SORTVAL:
+            case OC_Shorty_Type::STRING:
+            case OC_Shorty_Type::URL:
+            case OC_Shorty_Type::DATE:
+              settype ( $data[$key], 'string' );
+              break;
+            case OC_Shorty_Type::INTEGER:
+            case OC_Shorty_Type::TIMESTAMP:
+              settype ( $data[$key], 'integer' );
+              break;
+            case OC_Shorty_Type::FLOAT:
+              settype ( $data[$key], 'float' );
+              break;
+            default:
+          } // switch
+        }
+      } // foreach
       break;
     default:
       throw new OC_Shorty_Exception ( "unexpected request method '%s'", $_SERVER['REQUEST_METHOD'] );

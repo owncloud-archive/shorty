@@ -49,14 +49,30 @@ class OC_Shorty_Type
   const FLOAT       = 'float';
   const DATE        = 'date';
   const TIMESTAMP   = 'timestamp';
-  static $SORTING = array ( 'ka'=>'key',      'kd'=>'key DESC',
-                            'sa'=>'status',   'sd'=>'status DESC',
-                            'ca'=>'created',  'cd'=>'created DESC',
-                            'aa'=>'accessed', 'ad'=>'accessed DESC',
-                            'ta'=>'title',    'td'=>'title DESC',
-                            'ha'=>'clicks',   'hd'=>'clicks DESC',
-                            'ua'=>'target',   'ud'=>'target DESC' );
-
+  // a list of all valid list sorting codes
+  static $SORTING = array (
+    ''  =>'created DESC', // default
+    'aa'=>'accessed', 'ad'=>'accessed DESC',
+    'ca'=>'created',  'cd'=>'created DESC',
+    'da'=>'until',    'dd'=>'until DESC',
+    'ha'=>'clicks',   'hd'=>'clicks DESC',
+    'ka'=>'key',      'kd'=>'key DESC',
+    'sa'=>'status',   'sd'=>'status DESC',
+    'ta'=>'title',    'td'=>'title DESC',
+    'ua'=>'target',   'ud'=>'target DESC' );
+  // a list of all valid user preferences
+  static $PREFERENCE = array (
+    'backend-type'        => OC_Shorty_Type::STRING,
+    'backend-static-base' => OC_Shorty_Type::URL,
+    'backend-google-key'  => OC_Shorty_Type::STRING,
+    'backend-bitly-user'  => OC_Shorty_Type::STRING,
+    'backend-bitly-key'   => OC_Shorty_Type::STRING,
+    'list-sort-code'      => OC_Shorty_Type::SORTKEY,
+  );
+  // a list of all valid system settings
+  static $SETTING = array (
+    'backend-static-base' => OC_Shorty_Type::URL,
+  );
   /**
    * @method OC_Shorty_Type::validate
    * @brief Validates a given value against a type specific regular expression
