@@ -1038,6 +1038,7 @@ Shorty =
             Shorty.WUI.List.dim(true)
             dfd.resolve(response);
           }).fail(function(response){
+            Shorty.WUI.List.dim(true)
             dfd.reject(response);
           });
         });
