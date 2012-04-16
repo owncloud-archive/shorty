@@ -92,9 +92,9 @@
       </span>
       <!-- backend google -->
       <span id="backend-google" class="backend-supplement" style="display:none;">
-        <label for="backend-google-key" class="aspect"><?php echo $l->t('Google key:');?></label>
+        <label for="backend-google-key" class="aspect"><?php echo $l->t('API key:');?></label>
         <input id="backend-google-key" type="text" name="backend-google-key" value="<?php echo $_['backend-google-key']; ?>"
-               maxlength="256" placeholder="<?php echo $l->t('Google API console key');?>" style="width:15em;">
+               maxlength="256" placeholder="<?php echo $l->t('Google API console key');?>" style="width:24em;">
         <br/>
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
@@ -103,11 +103,12 @@
         </span>
         <br/>
         <span id="explain" class="explain">
-          <?php echo sprintf($l->t(
+          <?php echo $l->t(
             'Use the "Google URL Shorten Service" to register a short url for each generated shorty.<br>'.
-            'You must provide a valid "API access key" to use this service. This means you require a "Google API console account".<br>'.
-            'Register a new "%s" at their pages.',
-            sprintf('<a href="https://code.google.com/apis/console/" target="_blank">%s</a>',$l->t('Google API console account'))));?>
+            'You must provide a valid "%s" to use this service. This means you require a "Google API console account".<br>'.
+            'Register a new "%s" at their pages.',array(
+              sprintf('<a href="https://code.google.com/apis/console/" target="_blank">%s</a>',$l->t('Google API access key')),
+              sprintf('<a href="https://code.google.com/apis/console/" target="_blank">%s</a>',$l->t('Google API console account'))) );?>
         </span>
       </span>
       <!-- backend tinyURL -->

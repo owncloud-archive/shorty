@@ -116,18 +116,26 @@ class OC_Shorty_Backend
    */
   static function registerUrl_google ( $key, $relay )
   {
+    $google_api_key = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','');
+    if ( ! $google_api_key )
+      throw new OC_Shorty_Exception ( 'No Google API key configured' );
     $curl = curl_init ( );
     curl_setopt ( $curl, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url' );
     curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
     curl_setopt ( $curl, CURLOPT_POST, TRUE );
-    curl_setopt ( $curl, CURLOPT_POSTFIELDS, array('long_url'=>$relay,
-                                                   'key'=>OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','')) );
+    curl_setopt ( $curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json') );
+    curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array('longUrl'=>$relay,
+                                                               'key'=>$google_api_key) ) );
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
-        ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
+        ||(NULL===($payload=json_decode($reply)))
+        ||(!is_object($payload))
+        ||(!property_exists($payload,'id')) )
+    {
       throw new OC_Shorty_Exception ( 'Failed to register url at backend' );
+    }
     curl_close ( $curl );
-    return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
+    return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_google
   
   /**
