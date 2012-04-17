@@ -93,14 +93,14 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
         // now try to interpret its content
         if (NULL!==($value=OC_Shorty_Type::normalize($raw,OC_Shorty_Type::URL,FALSE)))
         {
-          // the query string is a key, look for a shorty to forward to
+          // the query string is a url, acquire it as a new shorty
           $act = 'acquire';
           $arg = $raw;
           break 2;
         }
         elseif (NULL!==($value=OC_Shorty_Type::normalize($raw,OC_Shorty_Type::KEY,FALSE)))
         {
-          // the query string is a url, acquire it as a new shorty
+          // the query string is a key, look for a shorty to forward to
           $act = 'forward';
           $arg = $raw;
           break 2;
@@ -130,7 +130,7 @@ switch ($act)
       // a key was specified, look for matching entry in database
       if ( '<shorty key>'==$p_key )
       {
-        // this is a pseudo key, used for to test the setup, so forward to a positive message.
+        // this is a pseudo key, used to test the setup, so return a positive message.
         OC_JSON::success ( array ( ) );
       }
       else if ( $p_key )

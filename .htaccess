@@ -27,17 +27,19 @@
 # That way you can use shorter (or more simple) urls to publish or relay links
 # @author Christian Reiner
 
-#RewriteEngine On
+RewriteEngine On
 
 # example: http://.../apps/shorty/index.php/0123456789
-RewriteRule "^index\.php/([a-z0-9]{10})$"  "forward.php?$1" [L]
-# example: http://.../apps/shorty//0123456789
-RewriteRule "^([a-z0-9]{10})$"  "forward.php?$1" [L]
+RewriteRule     index\.php/([a-z0-9]{10})$     index.php?$1 [NC,L]
 
 # example: http://.../apps/shorty/index.php?0123456789
-RewriteCond     %{QUERY_STRING} ^([a-z0-9]{10})$
-RewriteRule     ^index\.php     forward.php?%{QUERY_STRING}     [L]
+RewriteCond     %{QUERY_STRING}                 ^([a-z0-9]{10})$         [NC]
+RewriteRule     index\.php                     index.php?%{QUERY_STRING} [L]
 
 # example: http://.../apps/shorty/?0123456789
-RewriteCond     %{QUERY_STRING} ^([a-z0-9]{10})$
-RewriteRule     ^$     forward.php?%{QUERY_STRING}     [L]
+RewriteCond     %{QUERY_STRING}                ^([a-z0-9]{10})$          [NC]
+RewriteCond     %{REQUEST_URI}                 meta/.+\.php
+RewriteRule     -                              index.php?%{QUERY_STRING} [L]
+
+# example: http://.../apps/shorty/0123456789
+RewriteRule     ^([a-z0-9]{10})$                index.php?$1 [NC,L]
