@@ -142,8 +142,8 @@
         data-accessed=""
         data-notes="">
       <td id="favicon"></td>
-      <td id="title"  width="200px"></td>
-      <td id="target" width="200px"></td>
+      <td id="title"  ></td>
+      <td id="target" ></td>
       <td id="clicks" ></td>
       <td id="until"  ></td>
       <td id="status" ></td>

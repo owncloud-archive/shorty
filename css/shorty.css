@@ -200,6 +200,11 @@
   z-index: 3;
   margin: 0.4em;
   background: transparent;
+  table-layout: fixed;
+}
+.shorty-list #title,
+.shorty-list #target {
+  width:18em;
 }
 .shorty-list th {
   font-weight: bold;
@@ -273,8 +278,8 @@
   border:1px solid;
   border-radius: 0.3em;
 }
-.shorty-list #toolbar select {
-  width: 10em;
+.shorty-list #toolbar #status select {
+  width: 5em;
 }
 
 .shorty-expired {

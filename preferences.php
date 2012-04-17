@@ -51,10 +51,12 @@ $tmpl = new OC_Template ( 'shorty', 'tmpl_preferences' );
 $backend_types = array (
   'none'    => ' [ none ] ',
   'static'  => 'static backend',
-  'google'  => 'google service',
-  'tinyurl' => 'tinyURL service',
-  'isgd'    => 'is.gd service',
   'bitly'   => 'bitly.com service',
+  'cligs'   => 'cli.gs service',
+  'isgd'    => 'is.gd service',
+  'google'  => 'goo.gl service',
+  'tinycc'  => 'tiny.cc service',
+  'tinyurl' => 'ti.ny service',
 );
 // kick out static option again if no global backend base has been specified in the system settings
 $backend_static_base = OC_Appconfig::getValue('shorty','backend-static-base','');
@@ -65,9 +67,11 @@ if (   empty($backend_static_base)
 // feed template engine
 $tmpl->assign ( 'backend-types',       $backend_types );
 $tmpl->assign ( 'backend-static-base', $backend_static_base );
-$tmpl->assign ( 'backend-google-key',  OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','') );
 $tmpl->assign ( 'backend-bitly-user',  OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-user','') );
 $tmpl->assign ( 'backend-bitly-key',   OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-key','') );
+$tmpl->assign ( 'backend-google-key',  OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','') );
+$tmpl->assign ( 'backend-tinycc-user', OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-tinycc-user','') );
+$tmpl->assign ( 'backend-tinycc-key',  OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-tinycc-key','') );
 $tmpl->assign ( 'backend-type',        OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') );
 // render template
 return $tmpl->fetchPage ( );

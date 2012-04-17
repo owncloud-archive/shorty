@@ -64,9 +64,11 @@ class OC_Shorty_Type
   static $PREFERENCE = array (
     'backend-type'        => OC_Shorty_Type::STRING,
     'backend-static-base' => OC_Shorty_Type::URL,
-    'backend-google-key'  => OC_Shorty_Type::STRING,
     'backend-bitly-user'  => OC_Shorty_Type::STRING,
     'backend-bitly-key'   => OC_Shorty_Type::STRING,
+    'backend-google-key'  => OC_Shorty_Type::STRING,
+    'backend-tinycc-user' => OC_Shorty_Type::STRING,
+    'backend-tinycc-key'  => OC_Shorty_Type::STRING,
     'list-sort-code'      => OC_Shorty_Type::SORTKEY,
   );
   // valid status for entries

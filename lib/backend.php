@@ -60,10 +60,12 @@ class OC_Shorty_Backend
       {
         default:        return OC_Shorty_Backend::registerUrl_default ( $key, $relay );
         case 'static':  return OC_Shorty_Backend::registerUrl_static  ( $key, $relay );
-        case 'google':  return OC_Shorty_Backend::registerUrl_google  ( $key, $relay );
-        case 'tinyurl': return OC_Shorty_Backend::registerUrl_tinyurl ( $key, $relay );
-        case 'isgd':    return OC_Shorty_Backend::registerUrl_isgd    ( $key, $relay );
         case 'bitly':   return OC_Shorty_Backend::registerUrl_bitly   ( $key, $relay );
+        case 'cligs':   return OC_Shorty_Backend::registerUrl_cligs   ( $key, $relay );
+        case 'google':  return OC_Shorty_Backend::registerUrl_google  ( $key, $relay );
+        case 'isgd':    return OC_Shorty_Backend::registerUrl_isgd    ( $key, $relay );
+        case 'tinyurl': return OC_Shorty_Backend::registerUrl_tinyurl ( $key, $relay );
+        case 'tinycc':  return OC_Shorty_Backend::registerUrl_tinycc  ( $key, $relay );
       } // switch
     } // try
     catch (OC_Shorty_Exception $e)
@@ -106,58 +108,64 @@ class OC_Shorty_Backend
   } // OC_Shorty_Backend::registerUrl_static
   
   /**
-   * @method OC_Shorty_Backend::registerUrl_google
-   * @brief Registers a given local relay url at the google shortening service
+   * @method OC_Shorty_Backend::registerUrl_bitly
+   * @brief Registers a given local relay url at the bit.ly shortening service
    * @param key (string)
    * @param relay (url)
    * @returns registered and validated relay url
    * @access public
    * @author Chrisian Reiner
    */
-  static function registerUrl_google ( $key, $relay )
+  static function registerUrl_bitly ( $key, $relay )
   {
-    $google_api_key = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','');
-    if ( ! $google_api_key )
-      throw new OC_Shorty_Exception ( 'No Google API key configured' );
+    $bitly_api_user = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-user','');
+    $bitly_api_key  = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-key', '');
+    if ( ! $bitly_api_key || ! $bitly_api_user )
+      throw new OC_Shorty_Exception ( 'No API user or key configured' );
     $curl = curl_init ( );
-    curl_setopt ( $curl, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url' );
+    curl_setopt ( $curl, CURLOPT_URL, 'https://api-ssl.bit.ly/shorten' );
     curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
     curl_setopt ( $curl, CURLOPT_POST, TRUE );
     curl_setopt ( $curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json') );
-    curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array('longUrl'=>$relay,
-                                                               'key'=>$google_api_key) ) );
+    curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array('version'=>'2.0.1',
+                                                               'longUrl'=>$relay,
+                                                               'format'=>'json',
+                                                               'login'=>$bitly_api_user,
+                                                               'apiKey'=>$bitly_api_key) ) );
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
         ||(NULL===($payload=json_decode($reply)))
         ||(!is_object($payload))
         ||(!property_exists($payload,'id')) )
     {
-      throw new OC_Shorty_Exception ( 'Failed to register url at backend' );
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'static'" );
     }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
-  } // OC_Shorty_Backend::registerUrl_google
-  
+  } // OC_Shorty_Backend::registerUrl_bitly
+
   /**
-   * @method OC_Shorty_Backend::registerUrl_tinyul
-   * @brief Registers a given local relay url at the tinyURL shortening service
+   * @method OC_Shorty_Backend::registerUrl_cligs
+   * @brief Registers a given local relay url at the cli.gs shortening service
    * @param key (string)
    * @param relay (url)
    * @returns registered and validated relay url
    * @access public
    * @author Chrisian Reiner
    */
-  static function registerUrl_tinyurl ( $key, $relay )
+  static function registerUrl_cligs ( $key, $relay )
   {
     $curl = curl_init ( );
-    curl_setopt ( $curl, CURLOPT_URL, sprintf('http://tinyurl.com/api-create.php?url=%s', urlencode(trim($relay))) );
+    curl_setopt ( $curl, CURLOPT_URL, sprintf('http://cli.gs/api/v2/cligs/create?url=%s&appid=oc_shorty&test=1', urlencode(trim($relay))) );
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
         ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
-      throw new OC_Shorty_Exception ( 'Failed to register url at backend' );
+    {
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'cli.gs'" );
+    }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
-  } // OC_Shorty_Backend::registerUrl_tinyurl
+  } // OC_Shorty_Backend::registerUrl_cligs
 
   /**
    * @method OC_Shorty_Backend::registerUrl_isgd
@@ -175,33 +183,104 @@ class OC_Shorty_Backend
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
         ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
-      throw new OC_Shorty_Exception ( 'Failed to register url at backend' );
+    {
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'is.gd'" );
+    }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_isgd
 
   /**
-   * @method OC_Shorty_Backend::registerUrl_bitly
-   * @brief Registers a given local relay url at the bit.ly shortening service
+   * @method OC_Shorty_Backend::registerUrl_google
+   * @brief Registers a given local relay url at the google shortening service
    * @param key (string)
    * @param relay (url)
    * @returns registered and validated relay url
    * @access public
    * @author Chrisian Reiner
    */
-  static function registerUrl_bitly ( $key, $relay )
+  static function registerUrl_google ( $key, $relay )
+  {
+    $api_key = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','');
+    if ( ! $api_key )
+      throw new OC_Shorty_Exception ( 'No goo.gl API key configured' );
+    $curl = curl_init ( );
+    curl_setopt ( $curl, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url' );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
+    curl_setopt ( $curl, CURLOPT_POST, TRUE );
+    curl_setopt ( $curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json') );
+    curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array('longUrl'=>$relay,
+                                                               'key'=>$api_key) ) );
+    curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
+    if (  (FALSE===($reply=curl_exec($curl)))
+        ||(NULL===($payload=json_decode($reply)))
+        ||(!is_object($payload))
+        ||(!property_exists($payload,'id')) )
+    {
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'goo.gl'" );
+    }
+    curl_close ( $curl );
+    return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
+  } // OC_Shorty_Backend::registerUrl_google
+  
+  /**
+   * @method OC_Shorty_Backend::registerUrl_tinycc
+   * @brief Registers a given local relay url at the tiny.cc shortening service
+   * @param key (string)
+   * @param relay (url)
+   * @returns registered and validated relay url
+   * @access public
+   * @author Chrisian Reiner
+   */
+  static function registerUrl_tinycc ( $key, $relay )
+  {
+    $api_user = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-tinycc-user','');
+    $api_key  = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-tinycc-key','');
+    if ( ! $api_key || ! $api_user )
+      throw new OC_Shorty_Exception ( 'No goo.gl API key configured' );
+    $curl = curl_init ( );
+    curl_setopt ( $curl, CURLOPT_URL, 'http://tiny.cc/?c=shorten' );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
+    curl_setopt ( $curl, CURLOPT_POST, TRUE );
+    curl_setopt ( $curl, CURLOPT_HEADER, TRUE );
+    curl_setopt ( $curl, CURLOPT_POSTFIELDS, array('longUrl'=>$relay,
+                                                   'version'=>'2.0.3',
+                                                   'format'=>'json',
+                                                   'login'=>$api_user,
+                                                   'apiKey'=>$api_key) );
+    curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
+    if (  (FALSE===($reply=curl_exec($curl)))
+        ||(NULL===($payload=json_decode($reply)))
+        ||(!is_object($payload))
+        ||(!property_exists($payload,'id')) )
+    {
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'ti.ny'" );
+    }
+    curl_close ( $curl );
+    return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
+  } // OC_Shorty_Backend::registerUrl_google
+
+  /**
+   * @method OC_Shorty_Backend::registerUrl_tinyurl
+   * @brief Registers a given local relay url at the tinyURL shortening service
+   * @param key (string)
+   * @param relay (url)
+   * @returns registered and validated relay url
+   * @access public
+   * @author Chrisian Reiner
+   */
+  static function registerUrl_tinyurl ( $key, $relay )
   {
     $curl = curl_init ( );
-    curl_setopt ( $curl, CURLOPT_URL, sprintf('http://is.gd/create.php?format=simple&login=%s&apiKey=%s&url=%s',
-                                              urlencode(OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-user','')),
-                                              urlencode(OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-key','')),
-                                              urlencode(trim($relay))) );
+    curl_setopt ( $curl, CURLOPT_URL, sprintf('http://tinyurl.com/api-create.php?url=%s', urlencode(trim($relay))) );
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
         ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
-      throw new OC_Shorty_Exception ( 'Failed to register url at backend' );
+    {
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'tinyUrl'" );
+    }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
-  } // OC_Shorty_Backend::registerUrl_bitly
+  } // OC_Shorty_Backend::registerUrl_tinyurl
 
 } // class OC_Shorty_Backend
