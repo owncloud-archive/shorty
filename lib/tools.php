@@ -93,10 +93,28 @@ class OC_Shorty_Tools
   */
   static function shorty_key ( )
   {
-
-    return self::convertToAlphabet ( str_replace(array(' ','.'),'',microtime()),
-                                     '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+    // each shorty installation uses a (once self generated) 62 char alphabet
+    $alphabet=OC_Appconfig::getValue('shorty','key-alphabet');
+    if ( empty($alphabet) )
+    {
+      $alphabet = self::randomAlphabet(62);
+      OC_Appconfig::setValue ( 'shorty', 'key-alphabet', $alphabet );
+    }
+    // use alphabet to generate a key being unique over time
+    return self::convertToAlphabet ( str_replace(array(' ','.'),'',microtime()), $alphabet );
   } // function shorty_key
+
+  /**
+   *
+   */
+  static function randomAlphabet ($length)
+  {
+    if ( ! is_integer($length) )
+      return FALSE;
+    $c = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxwz0123456789";
+    for($l=0;$l<$length;$l++) $s .= $c{rand(0,strlen($c))};
+    return str_shuffle($s);
+  } // function randomAlphabet
 
   /**
   * @method OC_Shorty_Tools::convertToAlphabet
