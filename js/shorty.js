@@ -991,6 +991,55 @@ Shorty =
         });
         return dfd.promise();
       }, // Shorty.Action.Setting.set
+      // ===== Shorty.Action.Setting.popup =====
+      popup:{},
+      // ===== Shorty.Action.Setting.verify =====
+      verify:function(){
+        if (!Shorty.Action.Setting.popup.dialog){
+         Shorty.Action.Setting.popup=$('#shorty #verification');
+         Shorty.Action.Setting.popup.dialog({show:'fade',autoOpen:false,modal:true});
+         Shorty.Action.Setting.popup.dialog('option','minHeight',240 );
+        }
+        var dfd = new $.Deferred();
+        $.when(
+          this.check(Shorty.Action.Setting.popup,
+                     $('#shorty #backend-static #backend-static-base').val())
+        ).done(dfd.resolve);
+        return dfd.promise();
+      }, // Shorty.Action.Setting.verify
+      // ===== Shorty.Action.Setting.check =====
+      check:function(popup,target){
+        popup.find('#verification-target').text(target);
+        popup.dialog('open');
+        popup.find('#success').hide();
+        popup.find('#failure').hide();
+        popup.find('#hourglass').fadeIn('fast');
+        var dfd = new $.Deferred();
+        $.ajax({
+          // the '0000000000' below is a special key recognized for testing purposes
+          url:     target+'0000000000',
+          cache:   false,
+          data:    { },
+        }).pipe(
+          function(response){return Shorty.Ajax.eval(response)},
+          function(response){return Shorty.Ajax.fail(response)}
+        ).done(function(response){
+          $.when(
+            popup.find('#hourglass').fadeOut('fast')
+          ).then(function(){
+            popup.find('#success').fadeIn('fast');
+            dfd.resolve(response);
+          })
+        }).fail(function(response){
+          $.when(
+            popup.find('#hourglass').fadeOut('fast')
+          ).then(function(){
+            popup.find('#failure').fadeIn('fast');
+            dfd.reject(response);
+          })
+        })
+        return dfd.promise();
+      } // Shorty.Action.Setting.check
     }, // Shorty.Action.Setting
     // ===== Shorty.Action.Url =====
     Url:

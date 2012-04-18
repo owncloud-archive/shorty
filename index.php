@@ -128,10 +128,11 @@ switch ($act)
       // detect requested shorty key from request
       $p_key = trim ( OC_Shorty_Type::normalize($_SERVER['QUERY_STRING'],OC_Shorty_Type::KEY) ) ;
       // a key was specified, look for matching entry in database
-      if ( '<shorty key>'==$p_key )
+      if ( '0000000000'==$p_key )
       {
         // this is a pseudo key, used to test the setup, so return a positive message.
         OC_JSON::success ( array ( ) );
+        exit();
       }
       else if ( $p_key )
       {

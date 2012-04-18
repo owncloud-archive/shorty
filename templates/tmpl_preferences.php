@@ -76,19 +76,21 @@
         <label for="backend-static-base" class="aspect"><?php echo $l->t('Base url:');?></label>
         <input id="backend-static-base" type="text" name="backend-static-base"
                readonly disabled value="<?php echo $_['backend-static-base']; ?>"
-               maxlength="256" placeholder="<?php echo $l->t('specify a backend base url...');?>" style="width:15em;">
+               placeholder="<?php echo $l->t('specify a backend base url...');?>" style="width:25em;">
         <br/>
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t('Example:');?></label>
-          <a id="example" class="example" title="<?php echo $l->t('Verify by clicking');?>"><?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME']) ?></a>
+          <a id="example" class="example" title="<?php echo $l->t('Verify by clicking');?>">
+            <?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME']) ?>
+          </a>
         </span>
         <br/>
         <span id="explain" class="explain">
           <?php echo $l->t('Static, rule-based backend, generates shorty links relative to a given base url.<br>'.
-                           'You have to take care that any request to the url configured here is internally mapped to this shorty module.<br>'.
+                           'Since this setup depends on server based configuration rules the base url can only be specified in the \'Admin\' section of the configuration.<br>'.
                            'Have a try with the example link provided, click it, it should result in a confirmation that your setup is working.<br>'.
-                           'Only use this backend, if you can provide a short base url that is mapped the described way.');?>
+                           'Only use this backend, if you can provide a short base url that is mapped the described way. Your shorties won\'t work otherwise. ');?>
         </span>
       </span>
       <!-- backend bit.ly -->

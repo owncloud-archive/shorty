@@ -34,7 +34,7 @@
  */
 ?>
 
-<div id="hourglass" class="shorty-hourglass"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
+<div id="hourglass" class="shorty-hourglass" style="left:20em;top:10em;"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
 <div id="vacuum" class="shorty-vacuum"><span class="shorty-label"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></span></div>
 
 <!-- the list of urls -->

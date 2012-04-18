@@ -36,12 +36,14 @@ $(document).ready(
     if (type.length){
       $('#shorty #backend-'+type).show();
     }
+
     // backend 'static': initialize example that depends on backend-base system setting
     if ($('#shorty #backend-static #backend-static-base').val().length)
       $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty key>');
     // backend 'static': offer a clickable example link to verify the correct setup
-    $('#shorty #backend-static #example').bind('click',function(){
-      Verification.Dialog.init($('#shorty #backend-static #example').text());
+    $('#shorty #backend-static #example').bind('click',function(event){
+      event.preventDefault();
+      Shorty.Action.Setting.verify();
     });
     // react with a matching explanation and example url when backend type is chosen
     $('#shorty #backend-type').chosen().change(
@@ -56,6 +58,7 @@ $(document).ready(
         }
       }
     );
+
     // safe preferences
     $('#shorty .backend-supplement').focusout(function(){
       // save preference
@@ -63,43 +66,3 @@ $(document).ready(
     });
   }
 );
-
-// Verification
-Verification =
-{
-  Dialog:
-  {
-    init:function(target){
-      //alert(encodeURIComponent(target));
-      var popup=$('#shorty #verification');
-      popup.dialog({show:'fade',autoOpen:true,modal:true});
-      popup.dialog('option','minHeight',240 );
-      popup.dialog('open');
-      this.check(popup,$('#shorty #backend-static #example').text());
-    }, // Verification::Dialog::init
-
-     // Verification::Dialog::check
-    check:function(popup,target){
-      $.ajax({
-        url:     target,
-        cache:   false,
-        data:    { },
-        error:   function(){
-          $.when(popup.find('#hourglass').fadeOut('slow')).then(function(){
-            popup.find('#failure').fadeIn('slow');
-          });
-        },
-        success: function(response){
-          if ( 'error'==response.status )
-            $.when(popup.find('#hourglass').fadeOut('slow')).then(function(){
-              popup.find('#failure').fadeIn('slow');
-            });
-          else
-            $.when(popup.find('#hourglass').fadeOut('slow')).then(function(){
-              popup.find('#success').fadeIn('slow');
-            });
-        }
-      });
-    } // Verification::Dialog::check
-  } // Verification::Dialog
-} // Verification

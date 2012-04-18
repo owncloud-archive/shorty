@@ -33,15 +33,20 @@ $(document).ready(
   function(){
     // initialize example that depends on backend-base
     if ($('#shorty #backend-static-base').val().length)
-      $('#shorty #backend-static-example').text($('#shorty #backend-static-base').val()+'<shorty key>');
+      $('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty key>');
     // modify example upon input of a base
     $('#shorty #backend-static-base').bind('input',function(){
-      $('#shorty #backend-static-example').text($('#shorty #backend-static-base').val()+'<shorty key>');
+      $('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty key>');
+    });
+    // backend 'static': offer a clickable example link to verify the correct setup
+    $('#shorty #backend-static #example').bind('click',function(event){
+      event.preventDefault();
+      Shorty.Action.Setting.verify();
     });
     // store setting
     $('#shorty #backend-static-base').focusout(function(){
       // modify example
-      $('#shorty #backend-static-example').text($('#shorty #backend-static-base').val()+'<shorty key>');
+      $('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty key>');
       // save setting
       Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize());
       return false;

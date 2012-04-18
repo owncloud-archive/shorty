@@ -57,15 +57,24 @@
 #controls {
   display: none;
 }
+/* a dialog for verification of the static backend setup */
+#verification {
+  overflow: hidden;
+}
+#verification p {
+  padding-bottom:0.4em;
+}
 
 /* an activity visualizer, currently a 'rotating timer wheel' */
 #hourglass {
   display: none;
   position: absolute;
-  left:10em; top:8em;
   width: 100%; height: 100%;
   z-index: 1;
   background: transparent;
+}
+#hourglass img {
+  margin:4em 8em;
 }
 /* a replacement list visualized in case the 'real' list is empty */
 #vacuum {
