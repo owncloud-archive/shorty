@@ -162,6 +162,11 @@
   border-radius: 0.5em;
   background-color:#EEEEEE;
   box-shadow: 0 0 0.5px #777777;
+  transition: background-color 500ms;
+  -moz-transition: background-color 500ms;
+  -webkit-transition: background-color 500ms;
+  -ms-transition: background-color 500ms;
+  -o-transition: background-color 500ms;
 }
 /* strike through visible content of rows (entries) marked as deleted */
 #list tbody tr.deleted>#title,
