@@ -24,26 +24,26 @@
 */
 
 /**
- * @file css/settings.css
+ * @file css/shorty.css
  * @brief Style definitions of the plugins own view
  * @author Christian Reiner
  */
 
+/* everything :-) */
 #content { overflow: auto; }
 
-.ellipsis {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: inherit;
+/* a case sensitive help button */
+#content #controls #help {
+/*   float:right; */
+}
+/* adapt optical appearance in case the help button is pushed into the header */
+#header #help {
+  float:right;
+  background-color:blue;
 }
 
-.shorty-controls {
-  display: none;
-}
-
-.shorty-desktop {
+/* the shorty desktop, a canvas, contains all elements except of those pushed into the header */
+#desktop {
   display: inline-block;
   position: absolute;
 /*   width: 100%; height: 100%; */
@@ -53,7 +53,128 @@
   padding: 2.5em 0.5em;
   padding-top: 20px;
 }
+/* top bar, holding main control elements */
+#controls {
+  display: none;
+}
 
+/* an activity visualizer, currently a 'rotating timer wheel' */
+#hourglass {
+  display: none;
+  position: absolute;
+  left:10em; top:8em;
+  width: 100%; height: 100%;
+  z-index: 1;
+  background: transparent;
+}
+/* a replacement list visualized in case the 'real' list is empty */
+#vacuum {
+  display: none;
+  position: absolute;
+  left:8em; top:9em;
+  width: 100%; height: 100%;
+  z-index: 2;
+  white-space: nowrap;
+  font-style: italic;
+  background: transparent;
+}
+/* the list of shorties */
+#list {
+  display: inline;
+  position: absolute;
+  z-index: 3;
+  margin: 0.4em;
+  background: transparent;
+  table-layout: fixed;
+}
+/* the collapsable toolbar below the lists column title row */
+#list #toolbar img {
+  cursor: pointer;
+}
+/* last column in the list, content usually invisible, except when hovered */
+#list #toolbar img.shorty-active {
+  border:1px solid;
+  border-radius: 0.3em;
+}
+/* fix width of status filter select element (reason: readability) */
+#list #toolbar #status select {
+  width: 6.4em;
+}
+
+/* the title and taret columns, note: not th, but <th> AND <td> */
+#list #title,
+#list #target {
+  width:18em;
+}
+/* column title apeparance */
+#list th {
+  font-weight: bold;
+  padding: 1px 6px;
+}
+#list th#clicks,
+#list th#until,
+#list th#actions {
+  text-align: center;
+}
+/* general table cell appearance */
+#list td {
+  padding: 1px 6px;
+}
+#list td#until {
+  text-align: center;
+}
+#list td#clicks {
+  text-align: right;
+}
+/* hide the dummy row */
+#list thead tr:last-child { display: none; }
+/* hide the content of the 'actions' column, except when being hovered */
+#list tbody tr td span.shorty-actions {
+  visibility:visible;
+  opacity:0;
+  transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  width:100px;
+  overflow:auto;
+}
+#list tbody tr:hover td span.shorty-actions {
+  opacity:1;
+  transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+}
+/* highlight a specific, 'clicked' row in the list */
+#list tbody tr.clicked {
+  border-radius: 0.5em;
+  background-color:#EEEEEE;
+  box-shadow: 0 0 0.5px #777777;
+}
+/* strike through visible content of rows (entries) marked as deleted */
+#list tbody tr.deleted>#title,
+#list tbody tr.deleted>#target,
+#list tbody tr.deleted>#clicks,
+#list tbody tr.deleted>#until {
+  color: gray;
+  text-decoration: line-through;
+  background: transparent url('../img/status/strike.png') 0 50% repeat-x;
+}
+/* replace the 'delete' action icon by an 'undelete' icon */
+#list tbody tr.deleted:hover>#actions #delete>img {
+  opacity: 0;
+}
+#list tbody tr.deleted:hover>#actions #delete:after {
+  content: url("../img/actions/recycle.png");
+  position: relative;
+  top: 0.3em;
+  margin-left: -22px;
+  vertical-align: top:
+}
+/* general style of interactive dialogs */
 .shorty-dialog {
   display: none;
   color: black;
@@ -73,12 +194,24 @@
   margin:0.3em;
   vertical-align:middle;
 }
+.shorty-dialog br {
+  clear: left;
+}
+.shorty-dialog label {
+  display: inline;
+  float: left;
+  clear:none;
+  width: 7em;
+  text-align: right;
+}
+/* dialogs floating above other content ('standing alone') */
 .shorty-standalone {
   width: 46em;
   margin: -1px 1em 0;
   padding: 0.5em;
   background: none repeat scroll 0 0 #F7F7F7;
 }
+/* dialogs related to elements ('embedded in the content') */
 .shorty-embedded {
   right: 0;
   width: 34em;
@@ -97,16 +230,6 @@
 .shorty-embedded a.shorty-clickable:before {
   content:url("../img/actions/external.png");
   margin-right:0.3em;
-}
-.shorty-dialog br {
-  clear: left;
-}
-.shorty-dialog label {
-  display: inline;
-  float: left;
-  clear:none;
-  width: 7em;
-  text-align: right;
 }
 .shorty-standalone label {
   padding: 0.6em 0.5em 0.4em;
@@ -152,139 +275,26 @@
 /*   border-color: green; */
   border:1px solid gray;
 }
-
+/* elements (rows) freshly added to the list, this calss might trigger visual effects like pulsation */
 .shorty-fresh {
   display: none;
 }
+/* elements (rows) currently filtered out (toolbars column filter options) */
 .shorty-filtered {
   display: none;
 }
-
-.shorty-hourglass {
-  display: none;
-  position: absolute;
-  left:10em; top:8em;
-  width: 100%; height: 100%;
-  z-index: 1;
-  background: transparent;
-}
-
-.shorty-vacuum {
-  display: none;
-  position: absolute;
-  left:8em; top:9em;
-  width: 100%; height: 100%;
-  z-index: 2;
-  white-space: nowrap;
-  font-style: italic;
-  background: transparent;
-}
-
+/* style of all icons (as opposed to all images) */
 .shorty-icon {
   display: inline;
   background: transparent;
   vertical-align: middle;
   padding: 1px;
 }
-
-.shorty-headline {
-  font-size: large;
-  font-weight: bold;
-  margin-left: 2em;
-  padding: 2.5em 0.5em;
-}
-
-.shorty-list {
-  display: inline;
-  position: absolute;
-  z-index: 3;
-  margin: 0.4em;
-  background: transparent;
-  table-layout: fixed;
-}
-.shorty-list #title,
-.shorty-list #target {
-  width:18em;
-}
-.shorty-list th {
-  font-weight: bold;
-  padding: 1px 6px;
-}
-.shorty-list th#clicks,
-.shorty-list th#until,
-.shorty-list th#actions {
-  text-align: center;
-}
-.shorty-list td {
-  padding: 1px 6px;
-}
-.shorty-list td#until {
-  text-align: center;
-}
-.shorty-list td#clicks {
-  text-align: right;
-}
-/* hide the dummy row */
-.shorty-list thead tr:last-child { display: none; }
-.shorty-list tbody tr td span.shorty-actions {
-  visibility:visible;
-  opacity:0;
-  transition: opacity 500ms;
-  -moz-transition: opacity 500ms;
-  -webkit-transition: opacity 500ms;
-  -ms-transition: opacity 500ms;
-  -o-transition: opacity 500ms;
-}
-.shorty-list tbody tr:hover td span.shorty-actions {
-  opacity:1;
-  transition: opacity 500ms;
-  -moz-transition: opacity 500ms;
-  -webkit-transition: opacity 500ms;
-  -ms-transition: opacity 500ms;
-  -o-transition: opacity 500ms;
-}
-.shorty-list tbody tr.clicked {
-  border-radius: 0.5em;
-  background-color:#EEEEEE;
-  box-shadow: 0 0 0.5px #777777;
-}
-.shorty-list tbody tr.deleted>#title,
-.shorty-list tbody tr.deleted>#target,
-.shorty-list tbody tr.deleted>#clicks,
-.shorty-list tbody tr.deleted>#until {
-  color: gray;
-  text-decoration: line-through;
-  background: transparent url('../img/status/strike.png') 0 50% repeat-x;
-}
-.shorty-list tbody tr.deleted:hover>#actions #delete>img {
-  opacity: 0;
-}
-.shorty-list tbody tr.deleted:hover>#actions #delete:after {
-  content: url("../img/actions/recycle.png");
-  position: relative;
-  top: 0.3em;
-  margin-left: -22px;
-  vertical-align: top:
-}
-.shorty-list tbody tr td#actions{
-  width:100px;
-  overflow:auto;
-}
-
-.shorty-list #toolbar img {
-  cursor: pointer;
-}
-.shorty-list #toolbar img.shorty-active {
-  border:1px solid;
-  border-radius: 0.3em;
-}
-.shorty-list #toolbar #status select {
-  width: 6.4em;
-}
-
+/* dim entries with expired 'until' dates */
 .shorty-expired {
   color: gray;
 }
+/* but keep embedded dialogs readable */
 .shorty-expired .shorty-dialog {
   color: black;
 }
@@ -297,7 +307,7 @@
 .shorty-expired #until {
   text-decoration: line-through;
 }
-
+/* some general style flavours */
 .shorty-prompt {
   margin-left: 4px;
 }
@@ -307,40 +317,32 @@
 .shorty-single {
   padding: 0.5em 1em;
 }
-
 .shorty-single:hover {
   background-color: #EAEAEA;
 }
-
 .shorty-single:hover .shorty-actions {
   display: block;
 }
-
 .shorty-key {
   color: black;
 }
-
 .shorty-date {
   width: 40%;
 }
-
 .shorty-notes {
   color: blue;
   text-decoration: none;
 }
-
 .shorty-source {
   color: gray;
 }
-
 .shorty-target {
   color: green;
 }
-
 .shorty-meta {
   margin: 0.1em;
 }
-
+/* close buttons in dialogs, embedded or standalone */
 .shorty-close-button {
   display:inline;
   float:left;
@@ -351,7 +353,15 @@
   margin:0;
   padding:0;
 }
-
+/* unlike elsewhere we underline clickable links in dialogs */
 .shorty-clickable {
   text-decoration: underline;
+}
+/* keep long entries like urls from disrupting the compact appearance of the list */
+.ellipsis {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: inherit;
 }
