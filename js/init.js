@@ -47,7 +47,7 @@ $(document).ready(function(){
   // sort buttons
   $('#list #toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
   // add date picker options
-  $('#controls #until').datepicker({
+  $('#controls #until:not([readonly])').datepicker({
     dateFormat :'dd-mm-yy',
     changeMonth: true,
     changeYear: true,
