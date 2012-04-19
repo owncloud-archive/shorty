@@ -206,7 +206,7 @@
 .shorty-dialog input,
 .shorty-dialog img {
 /*   margin:0.3em; */
-  vertical-align:baseline;
+/*   vertical-align:baseline; */
 }
 .shorty-dialog br {
   clear: left;
@@ -261,7 +261,7 @@
 }
 .shorty-dialog fieldset {
   border: 1px solid gray;
-  padding: 2px;
+  padding: 2px 4px 8px;
 }
 .shorty-dialog legend {
   font-weight: bold;
