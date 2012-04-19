@@ -65,20 +65,29 @@
     <input id="title" name="title" type="text" maxlength="80" data="" class="" />
     <br>
     <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
-    <select id="status" name="status" data="shared" value="shared">
+    <select id="status" name="status" data="shared" value="shared" style="width:8em;">
       <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>
       <option value="shared" ><?php echo OC_Shorty_L10n::t('shared');  ?></option>
       <option value="public" ><?php echo OC_Shorty_L10n::t('public');  ?></option>
     </select>
-    <span style="display:inline-block;">
+    <span style="display:inline;">
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
-    <input id="until" name="until" type="text" maxlength="10" data="" class="shorty-input" style="width:22%"
+    <input id="until" name="until" type="text" maxlength="10" data="" class="shorty-input" style="width:12em"
            placeholder="<?php echo OC_Shorty_L10n::t('-removal-'); ?>"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     </span>
     <br>
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
     <textarea id="notes" name="notes" maxlength="4096" data="" class=""></textarea>
+    <br>
+    <span class="label-line">
+    <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
+    <input id="clicks" name="clicks" data="" type="textarea" class="" style="width:1em;" readonly disabled />
+    <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
+    <input id="created" name="created" type="text" data="" class="" style="width:9em;" readonly disabled />
+    <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
+    <input id="accessed" name="accessed" type="text" data="" class="" style="width:9em;" readonly disabled />
+    </span>
     <br>
     <label for="confirm"></label>
     <button id="confirm" class="shorty-button-submit"><?php echo OC_Shorty_L10n::t('Save'); ?></button>

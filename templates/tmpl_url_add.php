@@ -68,7 +68,7 @@
     </select>
     <span style="display:inline-block;">
     <label for="until"><?php echo OC_Shorty_L10n::t('Expiration:'); ?></label>
-    <input id="until" name="until" type="text" maxlength="10" data="" class="shorty-input" style="width:22%"
+    <input id="until" name="until" type="text" maxlength="10" data="" class="shorty-input" style="width:12em;"
            placeholder="<?php echo OC_Shorty_L10n::t('-removal-'); ?>"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     </span>

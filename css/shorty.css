@@ -205,18 +205,25 @@
 .shorty-dialog .chzn-container,
 .shorty-dialog input,
 .shorty-dialog img {
-  margin:0.3em;
-  vertical-align:middle;
+/*   margin:0.3em; */
+  vertical-align:baseline;
 }
 .shorty-dialog br {
   clear: left;
 }
 .shorty-dialog label {
-  display: inline;
-  float: left;
+  display: inline-block;
+/*   float: left; */
   clear:none;
-  width: 7em;
-  text-align: right;
+  width: 5em;
+  text-align: left;
+  vertical-align: baseline;
+}
+.shorty-dialog span.label-line {
+  display: inline;
+  clear: none;
+  margin: 0;
+  padding: 0;
 }
 /* dialogs floating above other content ('standing alone') */
 .shorty-standalone {
@@ -271,6 +278,8 @@
   color: #555555;
   border: 1px solid #DDDDDD;
   cursor: text;
+  vertical-align:baseline;
+  margin: 0.3em;
 }
 .shorty-dialog textarea:hover,
 .shorty-dialog textarea:active {
