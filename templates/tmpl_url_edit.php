@@ -45,14 +45,12 @@
       </a>    
       <?php echo OC_Shorty_L10n::t('Modify shorty:'); ?>
     </legend>
-    <input id="key" name="key" type="hidden" readonly data="" class=""
-           readonly disabled />
+    <input id="key" name="key" type="hidden" readonly data="" class="" readonly disabled />
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url:'); ?></label>
-    <input id="source" name="source" type="text" readonly data="" class=""
-           readonly disabled />
+    <input id="source" name="source" type="text" data="" class="" readonly disabled />
     <br>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
-    <input id="target" name="target" type="text" readonly data="" class="" />
+    <input id="target" name="target" type="text" data="" class="" readonly />
     <br>
     <label for="meta">&nbsp;</label>
     <span id="meta">
@@ -73,7 +71,7 @@
       <option value="public" ><?php echo OC_Shorty_L10n::t('public');  ?></option>
     </select>
     <span style="display:inline-block;">
-    <label for="until"><?php echo OC_Shorty_L10n::t('Expiration:'); ?></label>
+    <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
     <input id="until" name="until" type="text" maxlength="10" data="" class="shorty-input" style="width:22%"
            placeholder="<?php echo OC_Shorty_L10n::t('-removal-'); ?>"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>

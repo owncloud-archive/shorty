@@ -35,7 +35,7 @@
 ?>
 
 <!-- (hidden) dialog to show a shorty from the list -->
-<form id="dialog-show" class="shorty-dialog shorty-embedded">
+<form id="dialog-show" class="shorty-dialog shorty-standalone">
   <fieldset>
     <legend class="shorty-legend">
       <a id="close" class="shorty-close-button"
@@ -45,31 +45,42 @@
       </a>
       <?php echo OC_Shorty_L10n::t('Shorty details:'); ?>
     </legend>
-    <label for="key"><?php echo OC_Shorty_L10n::t('Shorty-Key:'); ?></label>
-    <input id="key" name="key" type="text" readonly data="" class="" />
-    <br>
     <label for="source"><?php echo OC_Shorty_L10n::t('Shorty (url):'); ?></label>
-    <input id="source" name="source" type="text" readonly data="" class="" />
+    <input id="source" name="source" type="text" data="" class="" readonly disabled />
     <br>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target (url):'); ?></label>
-    <input id="target" name="target" type="text" readonly data="" class="" />
+    <input id="target" name="target" data="" class="" readonly disabled />
+    <br>
+    <label for="meta">&nbsp;</label>
+    <span id="meta">
+      <img id="staticon"  class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'status/neutral.png'); ?>">
+      <img id="schemicon" class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
+      <img id="favicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
+      <img id="mimicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
+      <a id="explanation" maxlength="80" data="" class="shorty-value"></a>
+    </span>
     <br>
     <label for="title"><?php echo OC_Shorty_L10n::t('Local Title:'); ?></label>
-    <input id="title" name="title" type="text" readonly data="" class="" />
+    <input id="title" name="title" type="text" data="" class="" readonly disabled />
     <br>
+    <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
+    <input id="status" name="status" type="text" data="" class="" style="width:12em;" readonly disabled />
+    <span style="display:inline-block;">
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
-    <input id="until" name="until" type="text" readonly data="" class="" />
+    <input id="until" name="until" type="text" data="" class="" style="width:12em;" readonly disabled />
+    </span>
     <br>
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
-    <textarea id="notes" name="notes" readonly data="" class=""></textarea>
+    <input id="notes" name="notes" data="" class="" readonly disabled />
     <br>
     <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
-    <input id="clicks" name="clicks" type="text" readonly data="" class="" />
+    <input id="clicks" name="clicks" data="" type="textarea" class="" readonly disabled />
     <br>
+    <span style="display:inline-block;">
     <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
-    <input id="created" name="created" type="text" readonly data="" class="" />
-    <br>
+    <input id="created" name="created" type="text" data="" class="" style="width:12em;" readonly disabled />
     <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
-    <input id="accessed" name="accessed" type="text" readonly data="" class="" />
+    <input id="accessed" name="accessed" type="text" data="" class="" style="width:12em;" readonly disabled />
+    </span>
   </fieldset>
 </form>

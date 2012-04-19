@@ -254,20 +254,26 @@ Shorty =
         var dfd = new $.Deferred();
         var entry=element.parents('tr').eq(0);
         if (Shorty.Debug) Shorty.Debug.log(event.type+" on action "+element.attr('id')+" for entry "+entry.attr('id'));
-        $.when(
-          Shorty.WUI.List.highlight(entry)
-        ).pipe(function(){
-          if ('click'==event.type){
-            switch(element.attr('id')){
-              default:
-              case 'show':   Shorty.WUI.Entry.show(entry);   break;
-              case 'share':  Shorty.WUI.Entry.share(entry);  break;
-              case 'edit':   Shorty.WUI.Entry.edit(entry);   break;
-              case 'delete': Shorty.WUI.Entry.delete(entry); break;
-              case 'open':   Shorty.Action.Url.forward(entry);  break;
-            } // switch
-          } // if click
-        }).done(dfd.resolve);
+        //
+        if ($('.shorty-dialog').is(':visible'))
+          $('.shorty-dialog').each(function(){Shorty.WUI.Dialog.hide($(this));});
+        else{
+          // highlight clicked row as active entry
+          $.when(
+            Shorty.WUI.List.highlight(entry)
+          ).pipe(function(){
+            if ('click'==event.type){
+              switch(element.attr('id')){
+                default:
+                case 'show':   Shorty.WUI.Entry.show(entry);   break;
+                case 'share':  Shorty.WUI.Entry.share(entry);  break;
+                case 'edit':   Shorty.WUI.Entry.edit(entry);   break;
+                case 'delete': Shorty.WUI.Entry.delete(entry); break;
+                case 'open':   Shorty.Action.Url.forward(entry);  break;
+              } // switch
+            } // if click
+          }).done(dfd.resolve);
+        } // else
         return dfd.promise();
       }, // Shorty.WUI.Entry.click
       // ===== Shorty.WUI.Entry.delete =====
@@ -293,15 +299,41 @@ Shorty =
         var dialog=$('#controls #dialog-edit');
         // load entry into dialog
         dialog.find('#key').attr('data-key',entry.attr('data-key')).val(entry.attr('data-key'));
+        dialog.find('#status').attr('data-status',entry.attr('data-status')||'').val(entry.attr('data-status')||'');
         dialog.find('#source').attr('data-source',entry.attr('data-source')).val(entry.attr('data-source'));
         dialog.find('#target').attr('data-target',entry.attr('data-target')).val(entry.attr('data-target'));
         dialog.find('#title').attr('data-title',entry.attr('data-title')).val(entry.attr('data-title'));
         dialog.find('#until').attr('data-until',entry.attr('data-until')||'').val(entry.attr('data-until')||'');
+        dialog.find('#clicks').attr('data-clicks',entry.attr('data-clicks')||'').val(entry.attr('data-clicks')||'');
+        dialog.find('#created').attr('data-created',entry.attr('data-created')||'').val(entry.attr('data-created')||'');
+        dialog.find('#accessed').attr('data-accessed',entry.attr('data-accessed')||'').val(entry.attr('data-accessed')||'');
         dialog.find('#notes').attr('data-notes',entry.attr('data-notes')).val(entry.attr('data-notes'));
         // open edit dialog
+        Shorty.WUI.Dialog.show(dialog)
         $.when(
-          Shorty.WUI.Dialog.show(dialog)
-        ).done(dfd.resolve);
+          Shorty.WUI.Meta.get(entry.attr('data-target'))
+        ).pipe(function(response){
+          var meta=response.data;
+          if (meta.final)
+            dialog.find('#target').val(meta.final);
+          dialog.find('#title').attr('placeholder',meta.title);
+          dialog.find('#meta').fadeTo('fast',0,function(){
+            Shorty.WUI.Meta.reset(dialog);
+            // specify the icons and information to be shown as meta data
+            dialog.find('#staticon').attr('src',meta.staticon);
+            dialog.find('#schemicon').attr('src',meta.schemicon);
+            dialog.find('#favicon').attr('src',meta.favicon);
+            dialog.find('#mimicon').attr('src',meta.mimicon);
+            dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
+            dialog.find('#meta').fadeTo('fast',1);
+          })
+        }).done(function(reponse){
+          Shorty.WUI.Dialog.sharpen(dialog,true);
+          dfd.resolve(response);
+        }).fail(function(reponse){
+          Shorty.WUI.Dialog.sharpen(dialog,false);
+          dfd.reject(response);
+        });
         return dfd.promise();
       }, // Shorty.WUI.Entry.edit
       // ===== Shorty.WUI.Entry.share =====
@@ -310,7 +342,7 @@ Shorty =
         var dfd = new $.Deferred();
         // use the existing 'share' dialog for this
         var dialog=$('#dialog-share');
-        // fill dialog
+        // fill and show dialog
         dialog.find('#source').attr('href',entry.attr('data-source')).text(entry.attr('data-source')),
         dialog.find('#target').attr('href',entry.attr('data-target')).text(entry.attr('data-target')),
         dialog.find('#status').attr('value',entry.attr('data-status')).attr('data',entry.attr('data-status')),
@@ -325,6 +357,45 @@ Shorty =
       // ===== Shorty.WUI.Entry.show =====
       show: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("show entry "+entry.attr('id'));
+        var dfd = new $.Deferred();
+        // use the existing edit dialog for this
+        var dialog=$('#controls #dialog-show');
+        // load entry into dialog
+        dialog.find('#key').attr('data-key',entry.attr('data-key')).val(entry.attr('data-key'));
+        dialog.find('#status').attr('data-status',entry.attr('data-status')||'').val(entry.attr('data-status')||'');
+        dialog.find('#source').attr('data-source',entry.attr('data-source')).val(entry.attr('data-source'));
+        dialog.find('#target').attr('data-target',entry.attr('data-target')).val(entry.attr('data-target'));
+        dialog.find('#title').attr('data-title',entry.attr('data-title')).val(entry.attr('data-title'));
+        dialog.find('#until').attr('data-until',entry.attr('data-until')||'').val(entry.attr('data-until')||'');
+        dialog.find('#clicks').attr('data-clicks',entry.attr('data-clicks')||'').val(entry.attr('data-clicks')||'');
+        dialog.find('#created').attr('data-created',entry.attr('data-created')||'').val(entry.attr('data-created')||'');
+        dialog.find('#accessed').attr('data-accessed',entry.attr('data-accessed')||'').val(entry.attr('data-accessed')||'');
+        dialog.find('#notes').attr('data-notes',entry.attr('data-notes')).val(entry.attr('data-notes'));
+        // open edit dialog
+        Shorty.WUI.Dialog.show(dialog)
+        $.when(
+          Shorty.WUI.Meta.get(entry.attr('data-target'))
+        ).pipe(function(response){
+          var meta=response.data;
+          if (meta.final)
+            dialog.find('#target').val(meta.final);
+          dialog.find('#title').attr('placeholder',meta.title);
+          dialog.find('#meta').fadeTo('fast',0,function(){
+            Shorty.WUI.Meta.reset(dialog);
+            // specify the icons and information to be shown as meta data
+            dialog.find('#staticon').attr('src',meta.staticon);
+            dialog.find('#schemicon').attr('src',meta.schemicon);
+            dialog.find('#favicon').attr('src',meta.favicon);
+            dialog.find('#mimicon').attr('src',meta.mimicon);
+            dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
+            dialog.find('#meta').fadeTo('fast',1);
+          })
+        }).done(function(reponse){
+          dfd.resolve(response);
+        }).fail(function(reponse){
+          dfd.reject(response);
+        });
+        return dfd.promise();
       } // Shorty.WUI.Entry.show
     }, // Shorty.WUI.Entry
     // ===== Shorty.WUI.Hourglass =====
@@ -562,7 +633,7 @@ Shorty =
         var dfd = new $.Deferred();
         // close any open embedded dialog
         $.when(
-          Shorty.WUI.Dialog.hide($('#dialog-share').eq(0))
+          Shorty.WUI.Dialog.hide($('.shorty-dialog'))
         ).pipe(function(){
           // neutralize all rows that might have been highlighted
           $('#desktop #list tr').removeClass('clicked');

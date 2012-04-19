@@ -245,7 +245,8 @@
   content:url("../img/actions/external.png");
   margin-right:0.3em;
 }
-.shorty-standalone label {
+.shorty-standalone label,
+.shorty-standalone span {
   padding: 0.6em 0.5em 0.4em;
 }
 .shorty-embedded label {
@@ -289,6 +290,14 @@
 /*   border-color: green; */
   border:1px solid gray;
 }
+.shorty-dialog input[readonly],
+.shorty-dialog textarea[readonly] {
+  border: 0 none;
+  box-shadow: 0 0 0;
+  background: none;
+  background-color: #F7F7F7;
+}
+
 /* elements (rows) freshly added to the list, this calss might trigger visual effects like pulsation */
 .shorty-fresh {
   display: none;

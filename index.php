@@ -34,8 +34,6 @@
  */
 require_once ( '../../lib/base.php' );
 
-// Check if we are a user
-OC_Util::checkLoggedIn ( );
 OC_Util::checkAppEnabled ( 'shorty' );
 
 OC_App::setActiveNavigationEntry ( 'shorty_index' );
@@ -123,8 +121,6 @@ switch ($act)
   case 'forward': // forward to a target identified by a key
     try
     {
-      // a safe target to forward to in case of problems: the shorty module
-      $target = OC_Helper::linkTo( 'shorty', 'index.php' , false);
       // detect requested shorty key from request
       $p_key = trim ( OC_Shorty_Type::normalize($_SERVER['QUERY_STRING'],OC_Shorty_Type::KEY) ) ;
       // a key was specified, look for matching entry in database
@@ -141,26 +137,48 @@ switch ($act)
           'key' => OC_Shorty_Tools::db_escape ( $p_key ),
         );
         $query  = OC_DB::prepare ( OC_Shorty_Query::URL_FORWARD );
-        $result = $query->execute($param)->FetchOne();
+        $result = $query->execute($param)->FetchAll();
         if ( FALSE===$result )
           throw new OC_Shorty_Exception ( "HTTP/1.0 404 Not Found", $param );
         // and usable target ? stick with fallback otherwise
         if ( trim($result) )
-          $target = trim($result);
+          $target = trim($result['target']);
+        // check status of matched entry
+        switch (trim($result['status']))
+        {
+          default:
+          case 'blocked':
+            // refuse forwarding
+            header("HTTP/1.0 403 Forbidden");
+            die();
+            break;
+          case 'shared':
+            // check if we are a user, deny access if not
+            OC_Util::checkLoggedIn ( );
+            // NO break;
+          case 'public':
+            // forward to target, regardless of who sends the request
+            // http forwarding header
+            header ( sprintf('Location: %s', $target) );
+        } // switch status
         // register click in shorty
         $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
         $query->execute ( $param );
+        exit();
       } // if key
     } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
-    // http forwarding header
-    header ( sprintf('Location: %s', $target) );
+    // cannot really come here, but let's stay on the safe side...
     exit();
   case 'acquire': // add url as new shorty
+    // Check if we are a user
+    OC_Util::checkLoggedIn ( );
     $_SESSION['shorty']['add'] = $arg;
     header ( sprintf('Location: %s', OC_Helper::linkTo('shorty','',null,false)) ); // TODO index.php or not, that is the question
     exit();
   case 'index': // action 'index': list of shortys
   default:
+    // Check if we are a user
+    OC_Util::checkLoggedIn ( );
     try
     {
       // is this a redirect from a call with a target url to be added ? 
