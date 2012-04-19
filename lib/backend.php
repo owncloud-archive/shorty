@@ -254,7 +254,7 @@ class OC_Shorty_Backend
         ||(!is_object($payload))
         ||(!property_exists($payload,'id')) )
     {
-      throw new OC_Shorty_Exception ( "Failed to register url at backend 'ti.ny'" );
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'tiny.cc'" );
     }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
