@@ -242,7 +242,7 @@
   position: absolute;
 }
 .shorty-embedded a {
-  display: block;
+  display: inline;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
