@@ -47,10 +47,10 @@
     </legend>
     <label for="source"><?php echo OC_Shorty_L10n::t('Shorty url:'); ?></label>
     <input id="source" name="source" type="text" data="" class="" readonly disabled />
-    <br>
+    <br />
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
     <input id="target" name="target" data="" class="" readonly disabled />
-    <br>
+    <br />
     <label for="meta">&nbsp;</label>
     <span id="meta">
       <img id="staticon"  class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'status/neutral.png'); ?>">
@@ -59,20 +59,20 @@
       <img id="mimicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
       <a id="explanation" maxlength="80" data="" class="shorty-value"></a>
     </span>
-    <br>
-    <label for="title"><?php echo OC_Shorty_L10n::t('Local Title:'); ?></label>
+    <br />
+    <label for="title"><?php echo OC_Shorty_L10n::t('Shorty title:'); ?></label>
     <input id="title" name="title" type="text" data="" class="" readonly disabled />
-    <br>
+    <br />
     <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
     <input id="status" name="status" type="text" data="" class="" style="width:8em;" readonly disabled />
     <span class="label-line">
     <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
     <input id="until" name="until" type="text" data="" class="" style="width:12em;" readonly disabled />
     </span>
-    <br>
+    <br />
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
     <input id="notes" name="notes" data="" class="" readonly disabled />
-    <br>
+    <br />
     <span class="label-line">
     <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
     <input id="clicks" name="clicks" data="" type="textarea" class="" style="width:1em;" readonly disabled />

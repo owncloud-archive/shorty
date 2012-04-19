@@ -51,12 +51,12 @@
       <option value="shared" ><?php echo OC_Shorty_L10n::t('shared');  ?></option>
       <option value="public" ><?php echo OC_Shorty_L10n::t('public');  ?></option>
     </select>
-    <br>
+    <br />
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url:'); ?></label>
     <a id="source" class="shorty-clickable" target="_blank"
        title="<?php echo OC_Shorty_L10n::t('open source url'); ?>"
        href=""></a>
-    <br>
+    <br />
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
     <a id="target" class="shorty-clickable" target="_blank"
        title="<?php echo OC_Shorty_L10n::t('open target url'); ?>"

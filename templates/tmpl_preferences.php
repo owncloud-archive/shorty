@@ -41,9 +41,9 @@
       <!-- shortlet -->
       <label for="shortlet" class="aspect"><?php echo $l->t('Shortlet');?></label>
       <span id="shortlet"><a class="shortlet" href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkTo('shorty', 'index.php', null, true); ?>?'+url, 'owncloud-shorty')%20})()"><?php echo $l->t('Add shorty to ownCloud'); ?></a></span>
-      <br>
+      <br />
       <span class="explain"><em><?php echo $l->t('Drag this to your browser bookmarks and click it, whenever you want to create a Shorty.'); ?></em></span>
-      <br>
+      <br />
       <!-- backend selection -->
       <label for="backend-type" class="aspect"><?php echo $l->t('Backend:');?></label>
       <!-- list of available backend types -->
@@ -66,8 +66,8 @@
         </span>
         <br/>
         <span id="explain" class="explain">
-          <?php echo $l->t('Don\'t use any backend, simply generate direct links to your ownCloud.<br>'.
-                           'Such links are most likely longer than those generated when using a backend.<br>'.
+          <?php echo $l->t('Don\'t use any backend, simply generate direct links to your ownCloud.<br />'.
+                           'Such links are most likely longer than those generated when using a backend.<br />'.
                            'However this option does not rely on any third party service and keeps your shortys under your control.');?>
         </span>
       </span>
@@ -87,9 +87,9 @@
         </span>
         <br/>
         <span id="explain" class="explain">
-          <?php echo $l->t('Static, rule-based backend, generates shorty links relative to a given base url.<br>'.
-                           'Since this setup depends on server based configuration rules the base url can only be specified in the \'Admin\' section of the configuration.<br>'.
-                           'Have a try with the example link provided, click it, it should result in a confirmation that your setup is working.<br>'.
+          <?php echo $l->t('Static, rule-based backend, generates shorty links relative to a given base url.<br />'.
+                           'Since this setup depends on server based configuration rules the base url can only be specified in the \'Admin\' section of the configuration.<br />'.
+                           'Have a try with the example link provided, click it, it should result in a confirmation that your setup is working.<br />'.
                            'Only use this backend, if you can provide a short base url that is mapped the described way. Your shorties won\'t work otherwise. ');?>
         </span>
       </span>
@@ -110,8 +110,8 @@
         <br/>
         <span id="explain" class="explain">
           <?php echo $l->t(
-            'Use the "bitly.com - shorten, share and track your links" service to register a short url for each generated shorty.<br>'.
-            'The service requires you to authenticate yourself by providing a valid bit.ly user name and an "%s".<br>'.
+            'Use the "bitly.com - shorten, share and track your links" service to register a short url for each generated shorty.<br />'.
+            'The service requires you to authenticate yourself by providing a valid bit.ly user name and an "%s".<br />'.
             'This means you have to "%s" at their site first.',array(
               sprintf('<a class="external" href="http://bitly.com/a/your_api_key" target="_blank">%s</a>',$l->t('api access key')),
               sprintf('<a class="external" href="http://bitly.com/a/sign_up" target="_blank">%s</a>',$l->t('register an account')) ) ); ?>
@@ -157,8 +157,8 @@
         <br/>
         <span id="explain" class="explain">
           <?php echo $l->t(
-            'Use Googles "goo.gl URL Shorten Service" to register a short url for each generated shorty.<br>'.
-            'You must provide a valid "%s" to use this service. This means you require a "Google API console account".<br>'.
+            'Use Googles "goo.gl URL Shorten Service" to register a short url for each generated shorty.<br />'.
+            'You must provide a valid "%s" to use this service. This means you require a "Google API console account".<br />'.
             'Register a new "%s" at their pages.',array(
               sprintf('<a class="external" href="https://code.google.com/apis/console/" target="_blank">%s</a>',$l->t('Google API access key')),
               sprintf('<a class="external" href="https://code.google.com/apis/console/" target="_blank">%s</a>',$l->t('Google API console account'))) );?>
@@ -181,8 +181,8 @@
         <br/>
         <span id="explain" class="explain">
           <?php echo $l->t(
-            'Use the "tiny.cc" service to register a short url for each generated shorty.<br>'.
-            'The service requires you to authenticate yourself by providing a valid tiny.cc user name and an api access key.<br>'.
+            'Use the "tiny.cc" service to register a short url for each generated shorty.<br />'.
+            'The service requires you to authenticate yourself by providing a valid tiny.cc user name and an api access key.<br />'.
             'This means you have to "%s" at their site first.',array(
               sprintf('<a class="external" href="http://tiny.ccc/" target="_blank">%s</a>',$l->t('register an account')) ) ); ?>
         </span>

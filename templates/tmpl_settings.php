@@ -55,9 +55,9 @@
       </span>
       <br/>
       <span id="explain" class="explain"><?php echo $l->t(
-        'Static, rule-based backend, generates shorty links relative to a given base url.<br>'.
-        'You have to take care that any request to the url configured here is internally mapped to the shorty module.<br>'.
-        'Have a try with the example link provided, it should result in a hint that the requested shorty is not defined.<br>'.
+        'Static, rule-based backend, generates shorty links relative to a given base url.<br />'.
+        'You have to take care that any request to the url configured here is internally mapped to the shorty module.<br />'.
+        'Have a try with the example link provided, it should result in a hint that the requested shorty is not defined.<br />'.
         'Leave empty if you can\'t provide a short base url that is mapped the described way.');?>
       </span>
     </div>

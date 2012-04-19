@@ -48,10 +48,10 @@
     <input id="key" name="key" type="hidden" readonly data="" class="" readonly disabled />
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url:'); ?></label>
     <input id="source" name="source" type="text" data="" class="" readonly disabled />
-    <br>
+    <br />
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
     <input id="target" name="target" type="text" data="" class="" readonly />
-    <br>
+    <br />
     <label for="meta">&nbsp;</label>
     <span id="meta">
     <img id="staticon"  class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'status/neutral.png'); ?>">
@@ -60,10 +60,10 @@
     <img id="mimicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
     <a id="explanation" maxlength="80" data="" class="shorty-value"></a>
     </span>
-    <br>
+    <br />
     <label for="title"><?php echo OC_Shorty_L10n::t('Shorty title:'); ?></label>
     <input id="title" name="title" type="text" maxlength="80" data="" class="" />
-    <br>
+    <br />
     <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
     <select id="status" name="status" data="shared" value="shared" style="width:8em;">
       <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>
@@ -76,10 +76,10 @@
            placeholder="<?php echo OC_Shorty_L10n::t('-removal-'); ?>"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     </span>
-    <br>
+    <br />
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
     <textarea id="notes" name="notes" maxlength="4096" data="" class=""></textarea>
-    <br>
+    <br />
     <span class="label-line">
     <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
     <input id="clicks" name="clicks" data="" type="textarea" class="" style="width:1em;" readonly disabled />
@@ -88,7 +88,7 @@
     <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
     <input id="accessed" name="accessed" type="text" data="" class="" style="width:9em;" readonly disabled />
     </span>
-    <br>
+    <br />
     <label for="confirm"></label>
     <button id="confirm" class="shorty-button-submit"><?php echo OC_Shorty_L10n::t('Save'); ?></button>
   </fieldset>
