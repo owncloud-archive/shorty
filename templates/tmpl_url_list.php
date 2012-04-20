@@ -106,7 +106,7 @@
         <div style="display:none;">
           <select id='filter' value="" data-placeholder=" ">
           <?php foreach($_['shorty-status'] as $status)
-                  echo sprintf('<option value="%s">%s</option>',$status,htmlentities($l->t($status)));
+                  echo sprintf("<option value=\"%s\">%s</option>\n",$status,htmlentities($l->t($status)));
           ?>
           </select>
         </div>
