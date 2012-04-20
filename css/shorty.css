@@ -117,8 +117,10 @@
 #list thead #titlebar th span {
   display:inline-block;
 }
-#list thead #title span,
-#list thead #target span {
+#list tbody th#title,
+#list tbody td#title,
+#list tbody th#target,
+#list tbody td#target {
   width:10em;
 }
 #list thead #clicks span {
@@ -150,10 +152,6 @@
 /* general table cell appearance */
 #list tbody td {
   padding: 1px 6px;
-}
-#list tbody #title,
-#list tbody #target {
-  width:10em;
 }
 #list tbody td#until {
   text-align: center;
@@ -211,8 +209,8 @@
 #list tbody tr.deleted:hover>#actions #delete:after {
   content: url("../img/actions/recycle.png");
   position: relative;
-  top: 3px;
-  margin-left: -22px;
+  top: 4px;
+  margin-left: -21px;
   vertical-align: top:
 }
 /* prettyfied select boxes */
@@ -221,6 +219,8 @@
   margin: 0;
   padding: 0.2em;
   opacity:0.8;
+  border:0 none;
+  font-size: 10px;
 }
 #content span.shorty-select {
   border: 1px solid #DDDDDD;
@@ -242,13 +242,14 @@
 .shorty-dialog fieldset {
   border-bottom-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
+  border: 1px solid gray;
+  padding: 2px 4px 8px;
 }
 .shorty-dialog br {
   clear: left;
 }
 .shorty-dialog label {
   display: inline-block;
-/*   float: left; */
   clear:none;
   width: 5em;
   text-align: left;
@@ -259,44 +260,6 @@
   clear: none;
   margin: 0;
   padding: 0;
-}
-/* dialogs floating above other content ('standing alone') */
-.shorty-standalone {
-  width: 46em;
-  margin: -1px 1em 0;
-  padding: 0.5em;
-  background: none repeat scroll 0 0 #F7F7F7;
-}
-/* dialogs related to elements ('embedded in the content') */
-.shorty-embedded {
-  right: 0;
-  width: 34em;
-  margin: -1px 4em 0;
-  padding: 0.5em;
-  background: none repeat scroll 0 0 #EEEEEE;
-  position: absolute;
-}
-.shorty-embedded a {
-  display: inline;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: inherit;
-}
-.shorty-embedded a.shorty-clickable:before {
-  content:url("../img/actions/external.png");
-  margin-right:0.3em;
-}
-.shorty-standalone label,
-.shorty-standalone span {
-  padding: 0.6em 0.5em 0.4em;
-}
-.shorty-embedded label {
-  padding: 0 0.5em;
-}
-.shorty-dialog fieldset {
-  border: 1px solid gray;
-  padding: 2px 4px 8px;
 }
 .shorty-dialog legend {
   font-weight: bold;
@@ -322,6 +285,13 @@
   color: #333333;
   opacity: 1;
 }
+.shorty-dialog input[readonly],
+.shorty-dialog textarea[readonly] {
+  border: 0 none;
+  box-shadow: 0 0 0;
+  background: none;
+  background-color: #F7F7F7;
+}
 .shorty-dialog button#confirm {
   width: 8em; height: 2em;
   background: solid;
@@ -332,16 +302,62 @@
 }
 .shorty-dialog button#confirm.sharp:hover {
 /*   border-color: green; */
-  border:1px solid gray;
-}
-.shorty-dialog input[readonly],
-.shorty-dialog textarea[readonly] {
-  border: 0 none;
-  box-shadow: 0 0 0;
-  background: none;
-  background-color: #F7F7F7;
+  border: 1px solid gray;
 }
 
+/* dialogs floating above other content ('standing alone') */
+.shorty-standalone {
+  width: 46em;
+  margin: -1px 1em 0;
+  padding: 0.5em;
+  background: none repeat scroll 0 0 #F7F7F7;
+}
+.shorty-standalone fieldset {
+  width: 45em;
+}
+/* dialogs related to elements ('embedded in the content') */
+.shorty-embedded {
+  left: 7em;
+  width: 34em;
+  margin: -1px 4em 0;
+  padding: 0.5em;
+  background: none repeat scroll 0 0 #EEEEEE;
+  position: absolute;
+}
+.shorty-embedded fieldset {
+  width: 32;
+}
+.shorty-embedded a#source,
+.shorty-embedded a#relay,
+.shorty-embedded a#target {
+  display: inline-block;
+  width: 26em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.shorty-embedded a.shorty-clickable:before {
+  content:url("../img/actions/external.png");
+  margin-right:0.3em;
+}
+.shorty-embedded select {
+  margin: 0 0 0.2em 1.2em;
+  padding: 0.2em 0.4em 0.2em 0.2em;
+  border: 0 none;
+  background-color: #F4F4F4;
+}
+.shorty-embedded select:before {
+  content:url("../../../core/img/actions/share.png");
+  margin-right:0.3em;
+}
+.shorty-standalone label,
+.shorty-standalone span {
+  padding: 0.6em 0.5em 0.4em;
+}
+.shorty-embedded label {
+  padding: 0 0.5em;
+}
 /* elements (rows) freshly added to the list, this calss might trigger visual effects like pulsation */
 .shorty-fresh {
   display: none;

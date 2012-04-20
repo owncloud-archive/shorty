@@ -132,7 +132,7 @@ Shorty =
             break;
           default:
             dfd.resolve();
-        }; // switch
+        } // switch
         return dfd.promise();
       }, // Shorty.WUI.Dialog.execute
       // ===== Shorty.WUI.Dialog.hide =====
@@ -264,12 +264,11 @@ Shorty =
           ).pipe(function(){
             if ('click'==event.type){
               switch(element.attr('id')){
-                default:
-                case 'show':   Shorty.WUI.Entry.show(entry);   break;
-                case 'share':  Shorty.WUI.Entry.share(entry);  break;
-                case 'edit':   Shorty.WUI.Entry.edit(entry);   break;
-                case 'delete': Shorty.WUI.Entry.delete(entry); break;
-                case 'open':   Shorty.Action.Url.forward(entry);
+                case 'delete': Shorty.WUI.Entry.delete(entry);   break;
+                case 'edit':   Shorty.WUI.Entry.edit(entry);     break;
+                case 'open':   Shorty.Action.Url.forward(entry); break;
+                case 'share':  Shorty.WUI.Entry.share(entry);    break;
+                case 'show':   Shorty.WUI.Entry.show(entry);     break;
               } // switch
             } // if click
           }).done(dfd.resolve)
@@ -489,7 +488,7 @@ Shorty =
                 span.text(set[aspect]);
             } // switch
             row.find('td#'+aspect).empty().append(span);
-          }); // each aspect
+          }) // each aspect
           // insert new row in table
           $('#desktop #list tbody').prepend(row);
         }) // each
@@ -910,7 +909,7 @@ Shorty =
         }).fail(function(reponse){
           Shorty.WUI.Dialog.sharpen(dialog,false);
           dfd.reject(response);
-        });
+        })
         return dfd.promise();
       }, // Shorty.WUI.Meta.collect
       // ===== Shorty.WUI.Meta.get =====
