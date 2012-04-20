@@ -30,14 +30,20 @@
  */
 
 #shorty #shortlet {
-  margin: 0.4em 0.2em;
   outline: medium none;
-  padding: 0.3em 0.5em 0.3em;
+  padding: 0.6em 0.8em;
   background-color: lightgray;
   background-image: -moz-linear-gradient(center bottom , #EEEEEE 0%, white 50%);
   border: 1px solid #DDDDDD;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
-  box-shadow: 0 1px 1px #FFFFFF, 0 1px 0 #BBBBBB inset;
+  box-shadow: 0 1px 0 #BBBBBB inset;
+}
+#shorty #shortlet a {
+  font-style: italic;
+  color: DarkSlateGray;
+}
+#shorty .chzn-container {
+    vertical-align: middle;
 }
 
 #shorty .title {
@@ -69,7 +75,6 @@
   content:url("../img/actions/external.png");
   margin-left:0.3em;
 }
-
 
 #verification #hourglass {
   display: block;

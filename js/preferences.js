@@ -46,7 +46,8 @@ $(document).ready(
       Shorty.Action.Setting.verify();
     });
     // react with a matching explanation and example url when backend type is chosen
-    $('#shorty #backend-type').chosen().change(
+    $('.chosen').chosen();
+    $('#shorty #backend-type').change(
       function(){
         var type=$('#shorty #backend-type').val();
         $('#shorty .backend-supplement').hide();
