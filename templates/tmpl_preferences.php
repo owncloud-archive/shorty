@@ -48,7 +48,8 @@
       <label for="backend-type" class="aspect"><?php echo $l->t('Backend:');?></label>
       <!-- list of available backend types -->
       <span style="margin-right:1em;">
-        <select id="backend-type" name="backend-type" placeholder="<?php echo $l->t('Choose service...'); ?>" style="width:11em;">
+        <select id="backend-type" name="backend-type" style="width:11em;" class="chosen"
+                placeholder="<?php echo $l->t('Choose service...'); ?>" >
           <?php
             foreach ( $_['backend-types'] as $value=>$display )
               echo sprintf ( "        <option value=\"%s\" %s>%s</option>\n", $value, ($value==$_['backend-type']?'selected':''), $display );

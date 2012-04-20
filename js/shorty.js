@@ -60,7 +60,7 @@ Shorty =
         $.when(
           Shorty.WUI.Controls.toggle(),
           Shorty.WUI.Sums.fill()
-        ).done(dfd.resolve);
+        ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Controls.init
       // ===== Shorty.WUI.Controls.toggle =====
@@ -75,11 +75,11 @@ Shorty =
             $.when(
               controls.slideDown('slow')
             ).done(Shorty.WUI.Sums.fill)
-          ).done(dfd.resolve);
+          ).done(dfd.resolve)
         }else{
           $.when(
             controls.slideUp('fast')
-          ).done(dfd.resolve);
+          ).done(dfd.resolve)
         }
         return dfd.promise();
       }, // Shorty.WUI.Controls.toggle
@@ -92,7 +92,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("show desktop");
         duration = duration || 'slow';
         var dfd = new $.Deferred();
-        $.when($('#desktop').fadeTo(duration,1.0)).done(dfd.resolve);
+        $.when($('#desktop').fadeTo(duration,1.0)).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Desktop.show
       // ===== Shorty.WUI.Desktop.hide =====
@@ -100,7 +100,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("hide desktop");
         duration = duration || 'slow';
         var dfd = new $.Deferred();
-        $.when($('#desktop').fadeTo(duration,0.3)).done(dfd.resolve);
+        $.when($('#desktop').fadeTo(duration,0.3)).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Desktop.hide
     }, // Shorty.WUI.Desktop
@@ -116,19 +116,19 @@ Shorty =
             $.when(
               Shorty.WUI.Notification.hide(),
               Shorty.Action.Url.add()
-            ).done(dfd.resolve);
+            ).done(dfd.resolve)
             break;
           case 'dialog-edit':
             $.when(
               Shorty.WUI.Notification.hide(),
               Shorty.Action.Url.edit()
-            ).done(dfd.resolve);
+            ).done(dfd.resolve)
             break;
           case 'dialog-del':
             $.when(
               Shorty.WUI.Notification.hide(),
               Shorty.Action.Url.del()
-            ).done(dfd.resolve);
+            ).done(dfd.resolve)
             break;
           default:
             dfd.resolve();
@@ -156,7 +156,7 @@ Shorty =
           }).pipe(function(){
             if (dialog.hasClass('shorty-standalone'))
               Shorty.WUI.Desktop.show();
-          }).done(dfd.resolve);
+          }).done(dfd.resolve)
         }
         return dfd.promise();
       }, // Shorty.WUI.Dialog.hide
@@ -171,7 +171,7 @@ Shorty =
             $.each(dialog.find('.shorty-value'),function(){if($(this).is('[data]'))$(this).text($(this).attr('data'));}),
             $.each(dialog.find('.shorty-icon'), function(){if($(this).is('[data]'))$(this).attr('src',$(this).attr('data'));}),
             Shorty.WUI.Dialog.sharpen(dialog,false)
-          ).done(dfd.resolve);
+          ).done(dfd.resolve)
         }
         else
           dfd.resolve();
@@ -208,7 +208,7 @@ Shorty =
             function(){
               var dfd = new $.Deferred();
               if (dialog.hasClass('shorty-standalone'))
-                $.when(Shorty.WUI.Desktop.hide()).done(dfd.resolve);
+                $.when(Shorty.WUI.Desktop.hide()).done(dfd.resolve)
               else dfd.resolve();
               return dfd.promise();
             }()
@@ -229,7 +229,7 @@ Shorty =
                 Shorty.WUI.Dialog.sharpen(dialog,true);
                 break;
             } // switch
-          }).done(dfd.resolve);
+          }).done(dfd.resolve)
         }
         return dfd.promise();
       }, // Shorty.WUI.Dialog.show
@@ -240,9 +240,9 @@ Shorty =
         Shorty.WUI.Notification.hide();
         // show or hide dialog
         if ( ! dialog.is(':visible'))
-          $.when(Shorty.WUI.Dialog.show(dialog)).done(dfd.resolve);
+          $.when(Shorty.WUI.Dialog.show(dialog)).done(dfd.resolve)
         else
-          $.when(Shorty.WUI.Dialog.hide(dialog)).done(dfd.resolve);
+          $.when(Shorty.WUI.Dialog.hide(dialog)).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Dialog.toggle
     }, // Shorty.WUI.Dialog
@@ -269,10 +269,10 @@ Shorty =
                 case 'share':  Shorty.WUI.Entry.share(entry);  break;
                 case 'edit':   Shorty.WUI.Entry.edit(entry);   break;
                 case 'delete': Shorty.WUI.Entry.delete(entry); break;
-                case 'open':   Shorty.Action.Url.forward(entry);  break;
+                case 'open':   Shorty.Action.Url.forward(entry);
               } // switch
             } // if click
-          }).done(dfd.resolve);
+          }).done(dfd.resolve)
         } // else
         return dfd.promise();
       }, // Shorty.WUI.Entry.click
@@ -333,7 +333,7 @@ Shorty =
         }).fail(function(reponse){
           Shorty.WUI.Dialog.sharpen(dialog,false);
           dfd.reject(response);
-        });
+        })
         return dfd.promise();
       }, // Shorty.WUI.Entry.edit
       // ===== Shorty.WUI.Entry.share =====
@@ -344,19 +344,19 @@ Shorty =
         var dialog=$('#dialog-share');
         // fill and show dialog
         dialog.find('#source').attr('href',entry.attr('data-source'))
-                              .text(entry.attr('data-source')),
+                              .text(entry.attr('data-source'));
         dialog.find('#relay').attr('href',entry.attr('data-relay'))
-                              .text(entry.attr('data-relay')),
+                              .text(entry.attr('data-relay'));
         dialog.find('#target').attr('href',entry.attr('data-target'))
-                              .text(entry.attr('data-target')),
+                              .text(entry.attr('data-target'));
         dialog.find('#status').attr('value',entry.attr('data-status'))
-                              .attr('data',entry.attr('data-status')),
+                              .attr('data',entry.attr('data-status'));
         // move 'share' dialog towards entry
         dialog.appendTo(entry.find('td#actions')),
         // open dialog
         $.when(
           Shorty.WUI.Dialog.show(dialog)
-        ).done(dfd.resolve);
+        ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Entry.share
       // ===== Shorty.WUI.Entry.show =====
@@ -399,7 +399,7 @@ Shorty =
           dfd.resolve(response);
         }).fail(function(reponse){
           dfd.reject(response);
-        });
+        })
         return dfd.promise();
       } // Shorty.WUI.Entry.show
     }, // Shorty.WUI.Entry
@@ -418,14 +418,14 @@ Shorty =
           else
             $.when(
               hourglass.fadeIn('fast')
-            ).done(dfd.resolve);
+            ).done(dfd.resolve)
         }else{
           if (!hourglass.is(':visible'))
             dfd.resolve();
           else
             $.when(
               hourglass.fadeOut('slow')
-            ).done(dfd.resolve);
+            ).done(dfd.resolve)
         }
         return dfd.promise();
       }, // Shorty.WUI.Hourglass.toggle
@@ -447,42 +447,48 @@ Shorty =
           // add attributes to row, as data and value
           $.each(['key','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
                  function(j,aspect){
-            if (set[aspect]){
-              // enhance row with real set values
-              row.attr('data-'+this,set[aspect]);
-              if (hidden) row.addClass('shorty-fresh');
-              // fill data into corresponsing column
-              var content, classes=[];
-              switch(aspect)
-              {
-                case 'favicon':
-                  content='<img class="shorty-icon" width="16" src="'+set[aspect]+'">';
-                  break;
-                case 'until':
-                  if (null==set[aspect])
-                    content='-/-';
-                  else{
-                    content=set[aspect];
-                    if (Shorty.Date.expired(set[aspect]))
-                      row.addClass('shorty-expired');
-                  }
-                  break;
-                case 'title':
-                case 'target':
-                  classes.push('ellipsis');
-                  content=set[aspect];
-                  break;
-                case 'status':
-                  if ('deleted'==set[aspect])
-                    row.addClass('deleted');
-                  content=set[aspect];
-                  break;
-                default:
-                  content=set[aspect];
-              } // switch
-              // insert new content into row cell
-              row.find('td').filter('#'+aspect).html('<span class="'+classes.join(' ')+'">'+content+'</span>');
-            } // if aspect
+            if (hidden)
+              row.addClass('shorty-fresh'); // might lead to a pulsate effect later
+            // we wrap the cells content into a span tag
+            var span=$('<span>');
+            // enhance row with real set values
+            if ('undefined'==set[aspect])
+                 row.attr('data-'+this,'');
+            else row.attr('data-'+this,set[aspect]);
+            // fill data into corresponsing column
+            var title, content, classes=[];
+            switch(aspect)
+            {
+              case 'favicon':
+                span.html('<img class="shorty-icon" width="16" src="'+set[aspect]+'">');
+                break;
+              case 'until':
+                if (null==set[aspect])
+                  span.text('-/-');
+                else{
+                  span.text(set[aspect]);
+                  if (Shorty.Date.expired(set[aspect]))
+                    row.addClass('shorty-expired');
+                }
+                break;
+              case 'title':
+                span.text(set[aspect]);
+                span.addClass('ellipsis');
+                break;
+              case 'target':
+                span.text(set[aspect]);
+                span.attr('title',set[aspect]);
+                span.addClass('ellipsis');
+                break;
+              case 'status':
+                if ('deleted'==set[aspect])
+                  row.addClass('deleted');
+                span.text(set[aspect]);
+                break;
+              default:
+                span.text(set[aspect]);
+            } // switch
+            row.find('td#'+aspect).empty().append(span);
           }); // each aspect
           // insert new row in table
           $('#desktop #list tbody').prepend(row);
@@ -510,7 +516,7 @@ Shorty =
             ).always(function(){
               Shorty.WUI.Hourglass.toggle(false)
               dfd.resolve();
-            });
+            })
           }).fail(function(){
             dfd.reject();
           })
@@ -534,7 +540,7 @@ Shorty =
           });
           $.when(
             body.fadeIn(duration)
-          ).done(dfd.resolve);
+          ).done(dfd.resolve)
         }else{
           if (!body.is(':visible'))
             dfd.resolve();
@@ -542,7 +548,7 @@ Shorty =
           {
             $.when(
               body.fadeOut(duration)
-            ).done(dfd.resolve);
+            ).done(dfd.resolve)
           }
         }
         return dfd.promise();
@@ -556,7 +562,7 @@ Shorty =
             if(''!=$(this).attr('id'))
               $(this).remove();
           })
-        ).done(dfd.resolve);
+        ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.List.empty
       // ===== Shorty.WUI.List.fill =====
@@ -579,7 +585,7 @@ Shorty =
           ).done(function(pref){
             Shorty.WUI.List.sort(pref['list-sort-code']);
           })
-        ).done(dfd.resolve);
+        ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.List.fill
       // ===== Shorty.WUI.List.filter =====
@@ -593,7 +599,7 @@ Shorty =
           $('#list tbody tr').not(function(){
             return (-1==$(this).find('td#'+column+' span').text().toLowerCase().indexOf(pattern.toLowerCase()));
           }).removeClass('shorty-filtered')
-        ).done(dfd.resolve);
+        ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.List.filter
       // ===== Shorty.WUI.List.get =====
@@ -613,7 +619,7 @@ Shorty =
           dfd.resolve(response);
         }).fail(function(response){
           dfd.reject(response);
-        });
+        })
         return dfd.promise();
       }, // Shorty.WUI.List.get
       // ===== Shorty.WUI.List.hide =====
@@ -628,7 +634,7 @@ Shorty =
         {
           $.when(
             list.fadeOut(duration)
-          ).done(dfd.resolve);
+          ).done(dfd.resolve)
         }
         return dfd.promise();
       }, // Shorty.WUI.List.hide
@@ -711,7 +717,7 @@ Shorty =
           ).done(function(){
             dfd.resolve();
             Shorty.WUI.List.vacuum();
-          });
+          })
         }
         return dfd.promise();
       }, // Shorty.WUI.List.show
@@ -723,7 +729,13 @@ Shorty =
         var sortDir=icon.attr('data-sort-direction');
         if (Shorty.Debug) Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
         // use the 'tinysort' jquery plugin for sorting
-        $('#list tbody>tr').tsort({order:sortDir,attr:'data-'+sortCol});
+        switch (sortCol){
+          case 'until':
+            $('#list tbody>tr').tsort('td#until',{order:sortDir});
+            break;
+          default:
+            $('#list tbody>tr').tsort({attr:'data-'+sortCol,order:sortDir});
+        } // switch 
         // mark currently active sort icon
         var icons=$('#list thead tr#toolbar img.shorty-sorter');
         icons.removeClass('shorty-active');
@@ -766,7 +778,7 @@ Shorty =
               toolbar.find('div').slideDown(duration)
               ).pipe(
               button.attr('src',button.attr('data-minus'))
-            ).done(dfd.resolve);
+            ).done(dfd.resolve)
           }else{ // toolbar IS visible
             // any filters active? prevent closing of toolbar !
             if (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
@@ -781,7 +793,7 @@ Shorty =
                 toolbar.find('div').slideUp(duration)
               ).pipe(
                 button.attr('src',button.attr('data-plus'))
-              ).done(dfd.resolve);
+              ).done(dfd.resolve)
             }
           }
           return dfd.promise();
@@ -799,7 +811,7 @@ Shorty =
           $('#notification').slideUp('fast')
         ).pipe(function(){
           $('#notification').text('');
-        }).done(dfd.resolve);
+        }).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Notification.hide
       // ===== Shorty.WUI.Notification.show =====
@@ -822,7 +834,7 @@ Shorty =
                     notification.attr('title', 'debug message'),
                     notification.text('Debug: '+message),
                     notification.slideDown(duration)
-                  ).done(dfd.resolve);
+                  ).done(dfd.resolve)
                 }
                 else
                   dfd.resolve();
@@ -834,7 +846,7 @@ Shorty =
                   notification.attr('title', 'error message'),
                   notification.text('Error: ' + message),
                   notification.slideDown(duration)
-                ).done(dfd.resolve);
+                ).done(dfd.resolve)
                 break;
               default: // 'info'
                 if ( message.length ){
@@ -843,11 +855,11 @@ Shorty =
                   $.when(
                     notification.text(message),
                     notification.slideDown(duration)
-                  ).done(dfd.resolve);
+                  ).done(dfd.resolve)
                 }else{
                   $.when(
                     notification.text('')
-                  ).done(dfd.resolve);
+                  ).done(dfd.resolve)
                 }
             } // switch
           })
@@ -917,7 +929,7 @@ Shorty =
           dfd.resolve(response);
         }).fail(function(response){
           dfd.reject(response);
-        });
+        })
         return dfd.promise();
       }, // Shorty.WUI.Meta.get
       // ===== Shorty.WUI.Meta.reset =====
@@ -944,7 +956,7 @@ Shorty =
             $('#controls #sum_shortys').text(data.sum_shortys);
             $('#controls #sum_clicks').text(data.sum_clicks);
           })
-        ).done(dfd.resolve);
+        ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Sums.fill
       // ===== Shorty.WUI.Sums.get =====
@@ -966,7 +978,7 @@ Shorty =
           dfd.resolve(response);
         }).fail(function(response){
           dfd.reject(response);
-        });
+        })
         return dfd.promise();
       }, // Shorty.WUI.Sums.get
     }, // Shorty.WUI.Sums
@@ -997,7 +1009,7 @@ Shorty =
           dfd.resolve(response.data);
         }).fail(function(response){
           dfd.reject({});
-        });
+        })
         return dfd.promise();
       }, // Shorty.Action.Preference.get
       // ===== Shorty.Action.Preference.set =====
@@ -1018,7 +1030,7 @@ Shorty =
           dfd.resolve(response.data);
         }).fail(function(response){
           dfd.reject({});
-        });
+        })
         return dfd.promise();
       }, // Shorty.Action.Preference.set
     }, // Shorty.Action.Preference
@@ -1043,7 +1055,7 @@ Shorty =
           dfd.resolve(response.data);
         }).fail(function(response){
           dfd.reject({});
-        });
+        })
         return dfd.promise();
       }, // Shorty.Action.Setting.get
       // ===== Shorty.Action.Setting.set =====
@@ -1064,7 +1076,7 @@ Shorty =
           dfd.resolve(response.data);
         }).fail(function(response){
           dfd.reject({});
-        });
+        })
         return dfd.promise();
       }, // Shorty.Action.Setting.set
       // ===== Shorty.Action.Setting.popup =====
@@ -1080,7 +1092,7 @@ Shorty =
         $.when(
           this.check(Shorty.Action.Setting.popup,
                      $('#shorty #backend-static #backend-static-base').val())
-        ).done(dfd.resolve);
+        ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.Action.Setting.verify
       // ===== Shorty.Action.Setting.check =====
@@ -1165,8 +1177,8 @@ Shorty =
           }).fail(function(response){
             Shorty.WUI.List.dim(true)
             dfd.reject(response);
-          });
-        });
+          })
+        })
         return dfd.promise();
       }, // ===== Shorty.Action.Url.add =====
       // ===== Shorty.Action.Url.edit =====
@@ -1209,8 +1221,8 @@ Shorty =
             dfd.resolve(response);
           }).fail(function(response){
             dfd.reject(response);
-          });
-        });
+          })
+        })
         return dfd.promise();
       }, // ===== Shorty.Action.Url.edit =====
       // ===== Shorty.Action.Url.del =====
@@ -1238,7 +1250,7 @@ Shorty =
           dfd.resolve(response.data);
         }).fail(function(response){
           dfd.reject(response.data);
-        });
+        })
         return dfd.promise();
       }, // ===== Shorty.Action.Url.del =====
       // ===== Shorty.Action.Url.forward =====
@@ -1267,7 +1279,7 @@ Shorty =
             }
           },
           $('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 500)
-        ).done(dfd.resolve);
+        ).done(dfd.resolve)
         return dfd.promise();
       }, // ===== Shorty.Action.Url.show =====
       // ===== Shorty.Action.Url.status =====
@@ -1283,7 +1295,7 @@ Shorty =
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
-        ).done(dfd.resolve).fail(dfd.reject);
+        ).done(dfd.resolve).fail(dfd.reject)
         return dfd.promise();
       } // Shorty.Action.Url.status
     }, // ===== Shorty.Action.Url =====

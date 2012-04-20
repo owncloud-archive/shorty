@@ -34,7 +34,7 @@
  */
 ?>
 
-<div id="hourglass" class="shorty-hourglass" style="left:20em;top:10em;"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
+<div id="hourglass" class="shorty-hourglass" style="left:10em;top:10em;"><img src="<?php echo OC_Helper::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
 <div id="vacuum" class="shorty-vacuum"><span class="shorty-label"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></span></div>
 
 <!-- the list of urls -->
@@ -42,16 +42,16 @@
   <thead>
     <tr id="titlebar">
       <!-- a button to open/close the toolbar below -->
-      <th id="favicon"><img id="tools" alt="toolbar" title="toggle toolbar"
-                            src="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
-                            data-plus="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
-                            data-minus="<?php echo OC_Helper::imagePath('shorty','actions/minus.png'); ?>"></th>
-      <th id="title"  ><?php echo OC_Shorty_L10n::t('Title') ?></th>
-      <th id="target" ><?php echo OC_Shorty_L10n::t('Target') ?></th>
-      <th id="clicks" ><?php echo OC_Shorty_L10n::t('Clicks') ?></th>
-      <th id="until"  ><?php echo OC_Shorty_L10n::t('Until') ?></th>
-      <th id="status" ><?php echo OC_Shorty_L10n::t('Status') ?></th>
-      <th id="action" ><?php echo OC_Shorty_L10n::t('Actions') ?></th>
+      <th id="favicon"><span><img id="tools" alt="toolbar" title="toggle toolbar"
+                                  src="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
+                                  data-plus="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
+                                  data-minus="<?php echo OC_Helper::imagePath('shorty','actions/minus.png'); ?>"></span></th>
+      <th id="title"  ><span><?php echo OC_Shorty_L10n::t('Title')   ?></span></th>
+      <th id="target" ><span><?php echo OC_Shorty_L10n::t('Target')  ?></span></th>
+      <th id="clicks" ><span><?php echo OC_Shorty_L10n::t('Clicks')  ?></span></th>
+      <th id="until"  ><span><?php echo OC_Shorty_L10n::t('Until')   ?></span></th>
+      <th id="status" ><span><?php echo OC_Shorty_L10n::t('Status')  ?></span></th>
+      <th id="action" ><span><?php echo OC_Shorty_L10n::t('Actions') ?></span></th>
     </tr>
     <!-- toolbar opened/closed by the button above -->
     <tr id="toolbar">
@@ -102,18 +102,16 @@
                src="<?php echo OC_Helper::imagePath('shorty','actions/down.png'); ?>">
         </div>
       </th>
-      <th id="status">
+      <!-- status filter, colspan 2 to prevent width enhancement of column -->
+      <th id="status" colspan=2>
         <div style="display:none;">
-          <select id='filter' value="" data-placeholder=" ">
-          <?php foreach($_['shorty-status'] as $status)
-                  echo sprintf("<option value=\"%s\">%s</option>\n",$status,htmlentities($l->t($status)));
-          ?>
-          </select>
-        </div>
-      </th>
-      <th id="action">
-        <div style="display:none;">
-          &nbsp;
+          <span id="horst" class="shorty-select">
+            <select id='filter' value="" data-placeholder=" ">
+              <?php foreach($_['shorty-status'] as $status)
+                echo sprintf("<option value=\"%s\">%s</option>\n",$status,htmlentities($l->t($status)));
+              ?>
+            </select>
+          </span>
         </div>
       </th>
     </tr>

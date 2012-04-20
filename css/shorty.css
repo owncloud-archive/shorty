@@ -95,45 +95,72 @@
   margin: 0.4em;
   background: transparent;
   table-layout: fixed;
+  width: 100%;
 }
 /* the collapsable toolbar below the lists column title row */
-#list #toolbar img {
+#list thead #toolbar {
+  margin-bottom: 2em;
+}
+#list thead #toolbar img {
   cursor: pointer;
+  vertical-align: middle;
+}
+#list thead #toolbar img.shorty-sorter {
+  opacity:0.6;
 }
 /* last column in the list, content usually invisible, except when hovered */
-#list #toolbar img.shorty-active {
-  border:1px solid;
+#list thead #toolbar img.shorty-active {
+  border:1px solid #888888;
   border-radius: 0.3em;
 }
-/* fix width of status filter select element (reason: readability) */
-#list #toolbar #status select {
-  width: 6.4em;
+/* the title and taret columns, note: <th> AND <td> */
+#list thead #titlebar th span {
+  display:inline-block;
+}
+#list thead #title span,
+#list thead #target span {
+  width:10em;
+}
+#list thead #clicks span {
+  width:3em;
+}
+#list thead #until span {
+  width:5em;
+}
+#list thead #toolbar input,
+#list thead #toolbar .chzn-container {
+  width:6em;
+  font-size: 11px;
+  margin: 0;
+  padding: 0.4em 0.3em 0.2em;
+  vertical-align: baseline;
+  background-color:#FFFFFF;
 }
 
-/* the title and taret columns, note: not th, but <th> AND <td> */
-#list #title,
-#list #target {
-  width:18em;
-}
 /* column title apeparance */
-#list th {
+#list thead th {
   font-weight: bold;
   padding: 1px 6px;
 }
-#list th#clicks,
-#list th#until,
-#list th#actions {
+#list thead th#clicks,
+#list thead th#until,
+#list thead th#actions {
   text-align: center;
 }
 /* general table cell appearance */
-#list td {
+#list tbody td {
   padding: 1px 6px;
 }
-#list td#until {
+#list tbody #title,
+#list tbody #target {
+  width:10em;
+}
+#list tbody td#until {
   text-align: center;
 }
-#list td#clicks {
+#list tbody td#clicks {
   text-align: right;
+  margin-right: 0.4em;
 }
 /* hide the dummy row */
 #list thead tr:last-child { display: none; }
@@ -184,9 +211,23 @@
 #list tbody tr.deleted:hover>#actions #delete:after {
   content: url("../img/actions/recycle.png");
   position: relative;
-  top: 0.3em;
+  top: 3px;
   margin-left: -22px;
   vertical-align: top:
+}
+/* prettyfied select boxes */
+#content span.shorty-select select {
+  width: 6.4em;
+  margin: 0;
+  padding: 0.2em;
+  opacity:0.8;
+}
+#content span.shorty-select {
+  border: 1px solid #DDDDDD;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  box-shadow: 0 1px 1px #FFFFFF, 0 1px 0 #BBBBBB inset;
+  outline: medium none;
+  padding: 2px;
 }
 /* general style of interactive dialogs */
 .shorty-dialog {
@@ -201,12 +242,6 @@
 .shorty-dialog fieldset {
   border-bottom-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
-}
-.shorty-dialog .chzn-container,
-.shorty-dialog input,
-.shorty-dialog img {
-/*   margin:0.3em; */
-/*   vertical-align:baseline; */
 }
 .shorty-dialog br {
   clear: left;
