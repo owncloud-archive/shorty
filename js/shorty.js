@@ -343,9 +343,14 @@ Shorty =
         // use the existing 'share' dialog for this
         var dialog=$('#dialog-share');
         // fill and show dialog
-        dialog.find('#source').attr('href',entry.attr('data-source')).text(entry.attr('data-source')),
-        dialog.find('#target').attr('href',entry.attr('data-target')).text(entry.attr('data-target')),
-        dialog.find('#status').attr('value',entry.attr('data-status')).attr('data',entry.attr('data-status')),
+        dialog.find('#source').attr('href',entry.attr('data-source'))
+                              .text(entry.attr('data-source')),
+        dialog.find('#relay').attr('href',entry.attr('data-relay'))
+                              .text(entry.attr('data-relay')),
+        dialog.find('#target').attr('href',entry.attr('data-target'))
+                              .text(entry.attr('data-target')),
+        dialog.find('#status').attr('value',entry.attr('data-status'))
+                              .attr('data',entry.attr('data-status')),
         // move 'share' dialog towards entry
         dialog.appendTo(entry.find('td#actions')),
         // open dialog
@@ -440,7 +445,7 @@ Shorty =
           // set row id to entry key
           row.attr('id',set.key);
           // add attributes to row, as data and value
-          $.each(['key','status','title','source','target','clicks','created','accessed','until','notes','favicon'],
+          $.each(['key','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
                  function(j,aspect){
             if (set[aspect]){
               // enhance row with real set values

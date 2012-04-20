@@ -57,6 +57,11 @@
        title="<?php echo OC_Shorty_L10n::t('open source url'); ?>"
        href=""></a>
     <br />
+    <label for="relay"><?php echo OC_Shorty_L10n::t('Relay url:'); ?></label>
+    <a id="relay" class="shorty-clickable" target="_blank"
+       title="<?php echo OC_Shorty_L10n::t('open relay url'); ?>"
+       href=""></a>
+    <br />
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
     <a id="target" class="shorty-clickable" target="_blank"
        title="<?php echo OC_Shorty_L10n::t('open target url'); ?>"

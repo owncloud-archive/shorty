@@ -119,7 +119,7 @@ class OC_Shorty_Tools
   /**
   * @method OC_Shorty_Tools::convertToAlphabet
   * @brief Converts a given decimal number into an arbitrary base (alphabet)
-  * @param  number decimal value to be converted
+  * @param number decimal value to be converted
   * @returns (string) converted value in string notation
   * @access public
   * @author Christian Reiner
@@ -152,6 +152,21 @@ class OC_Shorty_Tools
     if ($number === FALSE) $number = $alphabet{1};
     return $number;
   }
+
+  /**
+   * @method OC_Shorty_Tools::relayUrl
+   * @brief Generates a relay url for a given key acting as a href target for all backends
+   * @param key (string) shorty key as shorty identification
+   * @returns (string) generated absolute relay url
+   * @access public
+   * @author Christian Reiner
+   */
+  static function relayUrl ($key)
+  {
+    return sprintf ( '%s://%s%s', (isset($_SERVER["HTTPS"])&&'on'==$_SERVER["HTTPS"])?'https':'http',
+                                  $_SERVER['SERVER_NAME'],
+                                  OC_Helper::linkTo('shorty','index.php?'.$key) );
+  } // function relayUrl
 
 } // class OC_Shorty_Tools
 ?>

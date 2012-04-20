@@ -52,9 +52,7 @@ class OC_Shorty_Backend
     try
     {
       // construct the $relay, the url to be called to reach THIS service (ownclouds shorty plugin)
-      $relay = sprintf ( '%s://%s%s', (isset($_SERVER["HTTPS"])&&'on'==$_SERVER["HTTPS"])?'https':'http',
-                                      $_SERVER['SERVER_NAME'],
-                                      OC_Helper::linkTo('shorty','forward.php?'.$key) );
+      $relay = OC_Shorty_Tools::relayUrl ( $key );
       // call backend specific work horse
       switch ( $type=OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') )
       {
