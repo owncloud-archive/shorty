@@ -51,7 +51,7 @@
       <th id="clicks" ><span><?php echo OC_Shorty_L10n::t('Clicks')  ?></span></th>
       <th id="until"  ><span><?php echo OC_Shorty_L10n::t('Until')   ?></span></th>
       <th id="status" ><span><?php echo OC_Shorty_L10n::t('Status')  ?></span></th>
-      <th id="action" ><span><?php echo OC_Shorty_L10n::t('Actions') ?></span></th>
+      <th id="action" ><span>&nbsp;</span></th>
     </tr>
     <!-- toolbar opened/closed by the button above -->
     <tr id="toolbar">
