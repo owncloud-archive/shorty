@@ -339,14 +339,10 @@
   margin-right:0.3em;
 }
 .shorty-embedded select {
-  margin: 0 0 0.2em 1.2em;
+  margin: 0 0 0.2em 1.0em;
   padding: 0.2em 0.4em 0.2em 0.2em;
   border: 0 none;
   background-color: #F4F4F4;
-}
-.shorty-embedded select:before {
-  content:url("../../../core/img/actions/share.png");
-  margin-right:0.3em;
 }
 .shorty-standalone label,
 .shorty-standalone span {
