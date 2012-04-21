@@ -40,7 +40,11 @@ OC::$CLASSPATH['OC_Shorty_Type']      = 'apps/shorty/lib/type.php';
 
 OC_App::register ( array ( 'order' => 71, 'id' => 'shorty', 'name' => 'Shorty' ) );
 
-OC_App::addNavigationEntry ( array ( 'id' => 'shorty_index', 'order' => 71, 'href' => OC_Helper::linkTo( 'shorty', 'index.php' ), 'icon' => OC_Helper::imagePath( 'shorty', 'shorty.png' ), 'name' => 'Shorty' ) );
+OC_App::addNavigationEntry ( array ( 'id' => 'shorty_index',
+                                     'order' => 71,
+                                     'href' => OC_Helper::linkTo( 'shorty', 'index.php' ),
+                                     'icon' => OC_Helper::imagePath( 'shorty', 'shorty.svg' ),
+                                     'name' => 'Shorty' ) );
 
 OC_APP::registerAdmin    ( 'shorty', 'settings' );
 OC_App::registerPersonal ( 'shorty', 'preferences' );
