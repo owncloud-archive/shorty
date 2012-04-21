@@ -558,6 +558,9 @@ Shorty =
       empty: function(){
         if (Shorty.Debug) Shorty.Debug.log("empty list");
         var dfd = new $.Deferred();
+        // move embedded dialogs back to their safe place in the controls
+        $('.shorty-embedded').appendTo($('#controls #dialog-show'));
+        // remove all rows, one by one
         $.when(
           $('#desktop').find('#list tbody tr').each(function(){
             if(''!=$(this).attr('id'))
