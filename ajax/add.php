@@ -83,8 +83,9 @@ try
     'key'  => $p_key,
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_VERIFY );
-  $entry = $query->execute($param)->FetchAll();
-  OC_JSON::success ( array ( 'data'    => $entry[0],
+  $entries = $query->execute($param)->FetchAll();
+  $entries[0]['relay']=OC_Shorty_Tools::relayUrl ( $entries[0]['key'] );
+  OC_JSON::success ( array ( 'data'    => $entries[0],
                              'message' => OC_Shorty_L10n::t("Url shortened to: %s",$p_source) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
