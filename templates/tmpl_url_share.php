@@ -47,9 +47,15 @@
     </legend>
     <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
     <select id="status" name="status" data="" class="" value="">
-      <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>
-      <option value="shared" ><?php echo OC_Shorty_L10n::t('shared');  ?></option>
-      <option value="public" ><?php echo OC_Shorty_L10n::t('public');  ?></option>
+      <option value="blocked">
+        <?php echo OC_Shorty_L10n::t('blocked'); ?>
+      </option>
+      <option value="shared" >
+        <?php echo OC_Shorty_L10n::t('shared');  ?>
+      </option>
+      <option value="public" >
+        <?php echo OC_Shorty_L10n::t('public');  ?>
+      </option>
     </select>
     <br />
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url:'); ?></label>
