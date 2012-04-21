@@ -149,17 +149,6 @@
 #list thead th#actions {
   text-align: center;
 }
-/* general table cell appearance */
-#list tbody td {
-  padding: 1px 6px;
-}
-#list tbody td#until {
-  text-align: center;
-}
-#list tbody td#clicks {
-  text-align: right;
-  margin-right: 0.4em;
-}
 /* hide the dummy row */
 #list thead tr:last-child { display: none; }
 /* hide the content of the 'actions' column, except when being hovered */
@@ -212,6 +201,17 @@
   top: 4px;
   margin-left: -21px;
   vertical-align: top:
+}
+/* general table cell appearance */
+#list tbody td {
+  padding: 1px 6px;
+}
+#list tbody td#until {
+  text-align: center;
+}
+#list tbody td#clicks {
+  text-align: right;
+  margin-right: 0.4em;
 }
 /* prettyfied select boxes */
 #content span.shorty-select select {
@@ -317,7 +317,7 @@
 }
 /* dialogs related to elements ('embedded in the content') */
 .shorty-embedded {
-  left: 7em;
+  left: 6em;
   width: 34em;
   margin: -1px 4em 0;
   padding: 0.5em;
