@@ -48,7 +48,7 @@ $(document).ready(function(){
   $('#list #toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
   // add date picker options
   $('#controls #until:not([readonly])').datepicker({
-    dateFormat :'dd-mm-yy',
+    dateFormat :'yy-mm-dd',
     changeMonth: true,
     changeYear: true,
     showOtherMonths: true,
@@ -61,14 +61,6 @@ $(document).ready(function(){
   $('#list .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
   // pretty select boxes where applicable (class controlled)
   $('.chosen').chosen();
-  // route through click on the shorty-select drop down icon that hides the original icon from being clicked
-//    $('#content span.shorty-select').bind('click',function(){
-//      alert($(this).find('select').attr('id'));
-//      var hold=$(this).bind('click');
-//      $(this).unbind('click');
-//      $(this).find('select').trigger('click');
-//      $(this).bind('click',hold);
-//   });
   // column filter reaction
   $('#list thead tr#toolbar').find('th#target,th#title').find('#filter').bind('keyup',function(){
     Shorty.WUI.List.filter(
