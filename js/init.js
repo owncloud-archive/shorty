@@ -61,21 +61,21 @@ $(document).ready(function(){
   $('#list .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
   // pretty select boxes where applicable (class controlled)
   $('.chosen').chosen();
-  // column filter reaction
+  // title & target filter reaction
   $('#list thead tr#toolbar').find('th#target,th#title').find('#filter').bind('keyup',function(){
     Shorty.WUI.List.filter(
       $($(this).context.parentElement.parentElement).attr('id'),
       $(this).val()
     );
   });
-//  $('#list thead tr#toolbar').find('th#status div.chzn-container a span').bind('change',function(){
+  // status filter reaction
   $('#list thead tr#toolbar th#status select').change(function(){
     Shorty.WUI.List.filter(
       $(this).parents('th').attr('id'),
       $(this).find(':selected').val()
     );
   });
-// column sorting reaction
+  // column sorting reaction
   $('#list thead tr#toolbar div img.shorty-sorter').bind('click',function(){
     Shorty.WUI.List.sort($(this).attr('data-sort-code'));
   });

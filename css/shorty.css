@@ -98,9 +98,6 @@
   width: 100%;
 }
 /* the collapsable toolbar below the lists column title row */
-#list thead #toolbar {
-  margin-bottom: 2em;
-}
 #list thead #toolbar img {
   cursor: pointer;
   vertical-align: middle;
