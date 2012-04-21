@@ -197,8 +197,10 @@ switch ($act)
         OC_Util::addScript ( 'shorty', 'list' );
       }
       $tmpl = new OC_Template( 'shorty', 'tmpl_index', 'user' );
-//      $tmpl->assign ( 'shorty-status', OC_Shorty_Type::$STATUS);
-      $tmpl->assign ( 'shorty-status', array_merge(array(''),OC_Shorty_Type::$STATUS) );
+      $shorty_status['']=sprintf('- %s -',OC_Shorty_L10n::t('all'));
+      foreach ( OC_Shorty_Type::$STATUS as $status )
+        $shorty_status[$status] = OC_Shorty_L10n::t($status);
+      $tmpl->assign ( 'shorty-status', $shorty_status );
       $tmpl->printPage();
     } catch ( OC_Shorty_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
 } // switch
