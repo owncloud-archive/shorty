@@ -264,19 +264,19 @@ Shorty =
           ).pipe(function(){
             if ('click'==event.type){
               switch(element.attr('id')){
-                case 'delete': Shorty.WUI.Entry.delete(entry);   break;
-                case 'edit':   Shorty.WUI.Entry.edit(entry);     break;
-                case 'open':   Shorty.Action.Url.forward(entry); break;
-                case 'share':  Shorty.WUI.Entry.share(entry);    break;
-                case 'show':   Shorty.WUI.Entry.show(entry);     break;
+                case 'del':   Shorty.WUI.Entry.del(entry);      break;
+                case 'edit':  Shorty.WUI.Entry.edit(entry);     break;
+                case 'open':  Shorty.Action.Url.forward(entry); break;
+                case 'share': Shorty.WUI.Entry.share(entry);    break;
+                case 'show':  Shorty.WUI.Entry.show(entry);     break;
               } // switch
             } // if click
           }).done(dfd.resolve)
         } // else
         return dfd.promise();
       }, // Shorty.WUI.Entry.click
-      // ===== Shorty.WUI.Entry.delete =====
-      delete: function(entry){
+      // ===== Shorty.WUI.Entry.del =====
+      del: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("delete entry "+entry.attr('id'));
         if (entry.hasClass('deleted')){
           // change status to deleted
@@ -289,7 +289,7 @@ Shorty =
           // mark row as deleted
           entry.addClass('deleted');
         }
-      }, // Shorty.WUI.Entry.delete
+      }, // Shorty.WUI.Entry.del
       // ===== Shorty.WUI.Entry.edit =====
       edit: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("modify entry "+entry.attr('id'));
