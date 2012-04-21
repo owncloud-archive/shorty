@@ -248,7 +248,7 @@
 .shorty-dialog label {
   display: inline-block;
   clear:none;
-  width: 5em;
+  width: 5.5em;
   text-align: left;
   vertical-align: baseline;
 }
@@ -265,10 +265,10 @@
 }
 .shorty-dialog textarea {
   width: 80%; height: 5em;
-  padding: 0.6em 0.5em 0.4em;
   background: none repeat scroll 0 0 #F8F8F8;
   color: #555555;
   border: 1px solid #DDDDDD;
+  border-radius: 0.5em;
   cursor: text;
   vertical-align:baseline;
   margin: 0.3em;
@@ -285,17 +285,21 @@
 .shorty-dialog a,
 .shorty-dialog input,
 .shorty-dialog select,
+.shorty-dialog textarea,
 .shorty-dialog button {
-  padding: 0.4em 0.3em 0.2em;
+  padding: 0.4em 0.2em;
 }
 .shorty-dialog input[readonly],
+.shorty-dialog select[readonly],
 .shorty-dialog textarea[readonly],
 .shorty-dialog button[readonly] {
   border: 0 none;
-  box-shadow: 0 0 0;
+/*   box-shadow: 0 0 0; */
+  box-shadow: 0 0 0 #FFFFFF;
+  outline: none;
   background: none;
   background-color: #F7F7F7;
-  padding: 0.4em 0.1em 0.2em;
+  padding: 0.3em 0.3em;
 }
 .shorty-dialog button#confirm {
   width: 8em; height: 2em;
@@ -354,7 +358,7 @@
 }
 .shorty-standalone label,
 .shorty-standalone span {
-  padding: 0.6em 0.5em 0.4em;
+  padding: 0.6em 0.5em 0.4em 0.3em;
 }
 .shorty-embedded label {
   padding: 0 0.5em;
