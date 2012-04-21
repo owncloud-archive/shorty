@@ -165,7 +165,7 @@ class OC_Shorty_Tools
   {
     return sprintf ( '%s://%s%s', (isset($_SERVER["HTTPS"])&&'on'==$_SERVER["HTTPS"])?'https':'http',
                                   $_SERVER['SERVER_NAME'],
-                                  OC_Helper::linkTo('shorty','index.php?'.$key) );
+                                  OC_Helper::linkTo('apps/shorty','index.php?'.$key) );
   } // function relayUrl
 
 } // class OC_Shorty_Tools
