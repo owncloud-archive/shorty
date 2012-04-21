@@ -344,6 +344,8 @@ Shorty =
         // use the existing 'share' dialog for this
         var dialog=$('#dialog-share');
         // fill and show dialog
+        dialog.find('#key').val(entry.attr('data-key'))
+                           .attr('data',entry.attr('data-key'));
         dialog.find('#source').attr('href',entry.attr('data-source'))
                               .text(entry.attr('data-source'));
         dialog.find('#relay').attr('href',entry.attr('data-relay'))
@@ -1299,7 +1301,13 @@ Shorty =
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
-        ).done(dfd.resolve).fail(dfd.reject)
+        ).done(function(){
+          // update the rows content
+          var row=$('#list tbody tr#'+key);
+          row.attr('data-status',status);
+          row.find('td#status span').text(status);
+          dfd.resolve();
+        }).fail(dfd.reject)
         return dfd.promise();
       } // Shorty.Action.Url.status
     }, // ===== Shorty.Action.Url =====
