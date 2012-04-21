@@ -200,7 +200,7 @@ Shorty =
           // dialog already open, nothing to do...
           dfd.resolve();
         else{
-          $('#controls form.shorty-standalone').each(function(){
+          $('#content form.shorty-dialog').each(function(){
             Shorty.WUI.Dialog.hide($(this));
           });
           // hide 'old' notifications
