@@ -35,8 +35,9 @@ $(document).ready(function(){
     $.when(Shorty.WUI.List.build()).then(function(){
       var dialog = $('#dialog-add');
       $.when(Shorty.WUI.Dialog.toggle(dialog)).then(function(){
-        var target=decodeURIComponent(window.location.search.substring(1));
-        target=target||document.referrer;
+        // any referrer handed over from php (explicitly in markup) ?
+        var target=$('#controls').attr('data-referrer');
+        $('#controls').removeAttr('data-referrer');
         dialog.find('#target').val(target);
         dialog.find('#title').focus();
         Shorty.WUI.Meta.collect(dialog);

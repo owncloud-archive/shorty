@@ -176,7 +176,8 @@ switch ($act)
   case 'acquire': // add url as new shorty
     // Check if we are a user
     OC_Util::checkLoggedIn ( );
-    $_SESSION['shorty']['add'] = $arg;
+    // keep the url specified as referer, that is the one we want to store
+    $_SESSION['shorty-referrer'] = $arg;
     header ( sprintf('Location: %s', OC_Helper::linkTo('shorty','',null,false)) ); // TODO index.php or not, that is the question
     exit();
   // =====
@@ -187,14 +188,12 @@ switch ($act)
     try
     {
       // is this a redirect from a call with a target url to be added ? 
-      if ( isset($_SESSION['shorty']) && is_array($_SESSION['shorty']) && isset($_SESSION['shorty']['add']) )
+      if ( isset($_SESSION['shorty-referrer']) )
       {
         // this takes care of handling the url on the client side
         OC_Util::addScript ( 'shorty', 'add' );
         // add url taked from the session vars to anything contained in the query string
-        $_SERVER['QUERY_STRING'] = implode('&',array_merge(array('url'=>$_SESSION['shorty']['add']),explode('&',$_SERVER['QUERY_STRING'])));
-        // clean up session var so that a browser reload does not trigger the same action again
-        unset ( $_SESSION['shorty']['add'] );
+        $_SERVER['QUERY_STRING'] = implode('&',array_merge(array('url'=>$_SESSION['shorty-referrer']),explode('&',$_SERVER['QUERY_STRING'])));
       }
       else
       {
@@ -202,10 +201,15 @@ switch ($act)
         OC_Util::addScript ( 'shorty', 'list' );
       }
       $tmpl = new OC_Template( 'shorty', 'tmpl_index', 'user' );
+      // available status (required for select filter in toolbox)
       $shorty_status['']=sprintf('- %s -',OC_Shorty_L10n::t('all'));
       foreach ( OC_Shorty_Type::$STATUS as $status )
         $shorty_status[$status] = OC_Shorty_L10n::t($status);
       $tmpl->assign ( 'shorty-status', $shorty_status );
+      // any referrer we want to hand over to the browser ?
+      $tmpl->assign ( 'shorty-referrer', $_SESSION['shorty-referrer'] );
+      // clean up session var so that a browser reload does not trigger the same action again
+      unset ( $_SESSION['shorty-referrer'] );
       $tmpl->printPage();
     } catch ( OC_Shorty_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
 } // switch
