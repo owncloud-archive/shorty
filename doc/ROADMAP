@@ -38,6 +38,20 @@ or it can make an existing shorty freely accessible to the public. Other
 ownCloud plugins allow to define individual access to content on per-user or
 per-group rules.
 
+* Support of further backends: 
+Currently the usage of six url shortener services is implemented, besides the
+two private or local ones. Unfortunately three of these had to be disabled due
+to stability issues. Besides correcting the implementation for the disabled it
+might make sense to support further backends, especially other types besides
+online services.
+
+* Performance, stability and usability enhancements: 
+"Shorty" is my first web application using up to date web technologies.
+Therefore the implementation certainly is far from the quality one could expect
+from a serious and experienced web developer. One could also put this into more
+constructive terms: there is definately much room for enhancements   :-) 
+
+
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.
 Drop me a note, an idea, a patch, a good bottle of wine, anything !
