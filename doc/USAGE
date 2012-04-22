@@ -1,0 +1,119 @@
+* @package shorty an ownCloud url shortener plugin
+* @category internet
+* @author Christian Reiner
+* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
+*
+* This library is free software; you can redistribute it and/or
+* modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+* License as published by the Free Software Foundation; either
+* version 3 of the license, or any later version.
+*
+* This library is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+*
+* You should have received a copy of the GNU Affero General Public
+* License along with this library.
+* If not, see <http://www.gnu.org/licenses/>.
+
+=== Overview ===
+See file README.
+
+=== Installation ===
+See file INSTALLATION.
+
+=== Usage ===
+This is only a very basic description. The plugin should be faily intuitive to
+use, just have a try with a few web urls. To get going I suggest that you
+- chose a backend (see configuration below).
+- import the shortlet into your preferred web browser (see configuration below).
+- define a few shorties either manually ("New") or by using the shortlet.
+All actions on existing shorties are accessed using the action icons shown left
+of the shorty in the list. Daily uses is probably based on selection the 'share'
+action and grabbing the visualized "source url".
+By clicking on the header row of the list of shorties you can open (and close)
+a "toolbox" offering options to sort, filter and reload the list. The sorting
+you chose is stored in a persistant manner, not so any filters defined. You
+cannot accidentially close the toolbox when there are still filters active. 
+You can remove (delete) existing shorties, but those shorties will only be
+marked as deleted. This way you can 'undelete' them if required. Permanent
+removal is done next time you access the shorty plugin. If you really want to
+make sure the removal is done NOW then simply reload the list. This is done in
+the "toolbox" of the list (click on the header row) by chosing the "reload"
+icon on the left (or by a simple browser reload). 
+
+=== CONFIGURATION ===
+There are four aspects that can be configured:
+C-1.) System wide "static backend" (optional)
+C-2.) Selection of a backend per user (optional)
+C-3.) Import of the "shortlet" into a web browser
+C-4.) Access control inside each single "shorty"
+
+C-1.) System wide "static backend" (optional)
+(Requires adminisstrative rights)
+This optional setting enables a 'static backend'. That is a backend generting
+source urls based on a static base url, thus the name. That base url should be
+chosen as short as possible, since this defines the total length of all links
+to be posted and used. Most likely the definition of that url requires the
+configuration of rewrite rules on the server side. So it is only an option for
+experienced adminsitrators with access to the server configuration, be it
+centralized or based on decentralized per-directory rules (".htaccess files").
+A basic example is packed in the .htaccess file (might be hidden in a directory
+listing because of the leading dot (.) in the name). The rules must be
+configured such that all requests to urls of the scheme <base url><shorty key>
+are mapped directly onto the web url of the shorty plugin
+(http://<domain>/<owncloud>/apps/shorty/). The <shorty key> is a string, 6-12
+characters long, hard to predict. It is guaranteed to be unique thoughout the
+system (though in a crude manner...). The perfect situation for the definition
+of a meaningful static backend would be a domain with a very short name and
+configuration access to something close to the web root.
+An random example is my own domain "christian-reiner.info". Since that is not
+exactly short I would love to use the additional domain "c-r.info" for the sole
+purpose of a static backend. Unfortunately that domain has been reserved by a
+domain grabber who asks thousands of Euros for it ! So that's no option. At
+least you should try to find a setup where the web path of the owncloud
+application is not part of the base url. So that you get something like
+http://<domain name>/<shorty key>.
+(Note that the shorty key is NOT part of the base url configuration).
+You can easily test your setup any time by clicking on the example dynamically
+visualized next to the configuration option. It runs a simple self-tests of the
+setup in background.
+There is no need that the base url must be served by the same http server that
+serves the owncoud system. A static rewrite setup may well forward short source
+urls to the shorty plugin inside a remote owncloud installation. 
+
+C-2.) Selection of a backend per user (optional)
+To generate the a source url that is part of every shorty the plugin uses a
+backend. The configuration is done by using a preference option in the personal
+preference section of the configuration. You can simply chose one of the
+offered backends (combo box). 
+Different backends are implemented:
+C-B-1.) "-none-"
+As you have guessed this is something like a "dummy" backend without any
+implemented logic. That means the source urls generated are exactly based on
+the web url of the shorty plugin in your owncloud system. This is not a very
+clever setup, but it certainly works and keeps your data private.
+C-B-2.) "static backend"
+If configured in the system administration a "static backend" is offered. For a
+description see C-1. This backend typically offers shorter source urls, but its
+setup required administrative rights on some http server system.
+C-B-xxx.) online services (url shorteners)
+A few online services are offered as backends to generate short source urls.
+Usage of some of those services requires you to open a free account at their
+site. Detailed configuration requirements are displayed for the chosen backend. 
+
+C-3.) Import of the "shortlet" into a web browser
+Shorty comes with a neat little "Shortlet" offered in the personal preferneces
+section of owncloud. It is a "button" you can import into your web browsers
+bookmark toolbar or area by simple drag & drop. The Shortlet should work with
+most modern browsers, though not all. Just have a try with it.
+
+C-4.) Access control inside each single "shorty"
+There are a few attributres you can configure freely inside each stored shorty:
+- a title just shown inside the shorty plugin (serves recognition). 
+- a notes area, maybe you want to write down whom you send the shorty ?
+- a status option that controls the usage of the shorty.
