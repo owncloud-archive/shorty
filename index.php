@@ -150,6 +150,8 @@ switch ($act)
           case 'blocked':
             // refuse forwarding
             header("HTTP/1.0 403 Forbidden");
+            // maybe something more meaningful than the following ?
+            OC_Util::displayLoginPage();
             die();
             break;
           case 'shared':
@@ -158,6 +160,7 @@ switch ($act)
             // NO break;
           case 'public':
             // forward to target, regardless of who sends the request
+            header("HTTP/1.0 301 Moved Permanently");
             // http forwarding header
             header ( sprintf('Location: %s', $target) );
         } // switch status
@@ -169,12 +172,14 @@ switch ($act)
     } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
     // cannot really come here, but let's stay on the safe side...
     exit();
+  // =====
   case 'acquire': // add url as new shorty
     // Check if we are a user
     OC_Util::checkLoggedIn ( );
     $_SESSION['shorty']['add'] = $arg;
     header ( sprintf('Location: %s', OC_Helper::linkTo('shorty','',null,false)) ); // TODO index.php or not, that is the question
     exit();
+  // =====
   case 'index': // action 'index': list of shortys
   default:
     // Check if we are a user
