@@ -26,6 +26,11 @@ See file README.
 === Installation ===
 See file INSTALLATION.
 
+=== Requirements ===
+ownCloud version 2 or newer on the server side.
+A css3 capable and reasonably standards conform web browser.
+A scripting capable bookmarks feature for the optional Shortlet thing. 
+
 === Usage ===
 This is only a very basic description. The plugin should be faily intuitive to
 use, just have a try with a few web urls. To get going I suggest that you
