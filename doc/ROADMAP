@@ -1,0 +1,39 @@
+* @package shorty an ownCloud url shortener plugin
+* @category internet
+* @author Christian Reiner
+* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
+*
+* This library is free software; you can redistribute it and/or
+* modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+* License as published by the Free Software Foundation; either
+* version 3 of the license, or any later version.
+*
+* This library is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+*
+* You should have received a copy of the GNU Affero General Public
+* License along with this library.
+* If not, see <http://www.gnu.org/licenses/>.
+
+Future versions might implement additional features and services. Currently
+planned are the following:
+
+* Integrated proxy function as an alternative to forwarding:
+Currently all browser requests are forwarded to the final target url, provided
+that the referenced shorty is still valid and accessible. This is a simple but
+effective strategy. Offering a transparent proxy service as an alternative
+would greatly enhance the privacy protection, since the final target url of a
+referenced web ressource would never be handed out. 
+
+* Better, more fine grained access control:
+Currently the only means of access control, apart from defining or remooving a
+shorty are its "status". The status can block an otherwise valid shorty from
+usage from outside ownCloud, it can restrict its access to authenticated users
+or it can make an existing shorty freely accessible to the public. Other
+ownCloud plugins allow to define individual access to content on per-user or
+per-group rules.

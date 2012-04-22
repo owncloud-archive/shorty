@@ -46,6 +46,16 @@ make sure the removal is done NOW then simply reload the list. This is done in
 the "toolbox" of the list (click on the header row) by chosing the "reload"
 icon on the left (or by a simple browser reload). 
 
+=== PRIVACY ===
+Shorty allows you to stay more in control over links you post or send. It is up
+to you to decide wether a once posted link should stay valid and usable or not.
+However it is also very important to keep in mind that such form of control can
+never replace any serious form of access control over the content published via
+a published link. Shorty works as a short url resolver, meaning it forwards any
+requesting web browser to the real address of the published content. This might
+change when a proxy function is integrated in a future version, as opposed to
+the current forwarding mechanism. 
+
 === CONFIGURATION ===
 There are four aspects that can be configured:
 C-1.) System wide "static backend" (optional)

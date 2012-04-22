@@ -21,9 +21,9 @@
 * If not, see <http://www.gnu.org/licenses/>.
 
 This package is a plugin for the ownCloud web application ("ownCloud app").
-It offers a service to store, manage and use a collection of short links
+Shorty offers a service to store, manage and use a collection of short links
 pointing to ressources in the web. The features are a combination of a
-centralized bookmarks collection, a url shortener and an access control.
+centralized bookmarks collection, an url shortener and an access control.
 The collection is presented as a link of "shorties", a shorty can be created
 either manually in the list ("New") or by using the "Shortlet". The Shortlet
 is something like a Booklet, a JS based bookmark meant to be stored inside the

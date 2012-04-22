@@ -35,7 +35,15 @@
 <info>
 	<id>shorty</id>
 	<name>Shorty</name>
-	<description>URL shortener plugin for ownCloud</description>
+	<description>Shorty offers a service to store, manage and use a collection of short links
+pointing to ressources in the web. The features are a combination of a
+centralized bookmarks collection, an url shortener and an access control.
+The collection is presented as a link of "shorties", a shorty can be created
+either manually in the list ("New") or by using the "Shortlet". The Shortlet
+is something like a Booklet, a JS based bookmark meant to be stored inside the
+bookmark toolbar or area of a web browser. When clicked, the page currently
+open in the browser will be offered to be added to the list of existing shorties.
+Current version: 0.0.9 (22.04.2012)</description>
 	<version>0.0.9</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
