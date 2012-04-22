@@ -37,3 +37,7 @@ usage from outside ownCloud, it can restrict its access to authenticated users
 or it can make an existing shorty freely accessible to the public. Other
 ownCloud plugins allow to define individual access to content on per-user or
 per-group rules.
+
+Contributions:
+I'd be more than happy to welcome all contributions to this little experiment.
+Drop me a note, an idea, a patch, a good bottle of wine, anything !
