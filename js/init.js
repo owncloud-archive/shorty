@@ -62,7 +62,9 @@ $(document).ready(function(){
     buttonImageOnly: true
   });
   // bind actions to the actions icons
-  $('#list .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
+  $('#list tbody .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
+  // bind highlighting to clicks on a row, except for the action icons
+  $('#list tbody tr td:not(#actions)').live('click',function(){Shorty.WUI.List.highlight($(this).parents('tr'));});
   // pretty select boxes where applicable (class controlled)
   $('.chosen').chosen();
   // title & target filter reaction

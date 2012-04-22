@@ -110,7 +110,10 @@
   border:1px solid #888888;
   border-radius: 0.3em;
 }
-/* the title and taret columns, note: <th> AND <td> */
+#list thead tr:nth-child(2) > th {
+  padding-bottom:0.5em;
+}
+/* somewhat more fixed layout for the table */
 #list thead #titlebar th span {
   display:inline-block;
 }
