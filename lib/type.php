@@ -77,6 +77,17 @@ class OC_Shorty_Type
     'shared',
     'public',
   );
+  // a list of implemented backends
+  static $BACKENDS = array (
+    'none'    => ' [ none ] ',
+    'static'  => 'static backend',
+//     'bitly'   => 'bitly.com service',
+//     'cligs'   => 'cli.gs service',
+    'isgd'    => 'is.gd service',
+    'google'  => 'goo.gl service',
+//     'tinycc'  => 'tiny.cc service',
+    'tinyurl' => 'ti.ny service',
+  );
   // a list of all valid system settings
   static $SETTING = array (
     'backend-static-base' => OC_Shorty_Type::URL,

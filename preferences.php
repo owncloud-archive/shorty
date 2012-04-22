@@ -48,16 +48,7 @@ OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 // fetch template
 $tmpl = new OC_Template ( 'shorty', 'tmpl_preferences' );
 // inflate template
-$backend_types = array (
-  'none'    => ' [ none ] ',
-  'static'  => 'static backend',
-  'bitly'   => 'bitly.com service',
-  'cligs'   => 'cli.gs service',
-  'isgd'    => 'is.gd service',
-  'google'  => 'goo.gl service',
-  'tinycc'  => 'tiny.cc service',
-  'tinyurl' => 'ti.ny service',
-);
+$backend_types = OC_Shorty_Type::$BACKENDS;
 // kick out static option again if no global backend base has been specified in the system settings
 $backend_static_base = OC_Appconfig::getValue('shorty','backend-static-base','');
 if (   empty($backend_static_base)
