@@ -38,7 +38,7 @@ $(document).ready(function(){
   $('#content #notification').bind('click',Shorty.WUI.Notification.hide);
   // button to open the 'add' dialog
   $('#controls #add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
-  // close button in embedded dialogs
+  // close button in dialogs
   $('.shorty-dialog #close').bind('click',function(){Shorty.WUI.Dialog.hide($(this).parents('form').eq(0));});
   // status selection in embedded share dialog
   $('.shorty-embedded#dialog-share #status').bind('change',function(){
@@ -64,7 +64,10 @@ $(document).ready(function(){
   // bind actions to the actions icons
   $('#list tbody .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
   // bind highlighting to clicks on a row, except for the action icons
-  $('#list tbody tr td:not(#actions)').live('click',function(){Shorty.WUI.List.highlight($(this).parents('tr'));});
+  $('#list tbody tr td:not(#actions)').live('click',function(){
+    Shorty.WUI.List.highlight($(this).parents('tr'));
+    Shorty.WUI.Dialog.hide($('.shorty-embedded').eq(0));
+  });
   // pretty select boxes where applicable (class controlled)
   $('.chosen').chosen();
   // title & target filter reaction
