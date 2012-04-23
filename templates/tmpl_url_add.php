@@ -46,7 +46,7 @@
       <?php echo OC_Shorty_L10n::t('Add a new shorty:'); ?>
     </legend>
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
-    <input id="target" name="target" type="text" maxlength="4096" data="" class="shorty-input"/>
+    <input id="target" name="target" type="text" maxlength="4096" data="" class=""/>
     <br />
     <label for="meta">&nbsp;</label>
     <span id="meta" class="shorty-meta">
@@ -58,23 +58,23 @@
     </span>
     <br />
     <label for="title"><?php echo OC_Shorty_L10n::t('Shorty title:'); ?></label>
-    <input id="title" name="title" type="text" maxlength="80" data="" class="shorty-input" placeholder=""/>
+    <input id="title" name="title" type="text" maxlength="80" data="" class="" placeholder=""/>
     <br />
     <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
-    <select id="status" name="status" data="shared" value="shared">
+    <select id="status" name="status" data="shared" value="shared" class="">
       <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>
       <option value="shared" ><?php echo OC_Shorty_L10n::t('shared');  ?></option>
       <option value="public" ><?php echo OC_Shorty_L10n::t('public');  ?></option>
     </select>
     <span style="display:inline-block;">
     <label for="until"><?php echo OC_Shorty_L10n::t('Expiration:'); ?></label>
-    <input id="until" name="until" type="text" maxlength="10" data="" class="shorty-input" style="width:12em;"
+    <input id="until" name="until" type="text" maxlength="10" data="" class="" style="width:12em;"
            placeholder="-<?php echo OC_Shorty_L10n::t('never'); ?>-"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     </span>
     <br />
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
-    <textarea id="notes" name="notes" maxlength="4096" data="" class="shorty-input"
+    <textarea id="notes" name="notes" maxlength="4096" data="" class=""
               placeholder="<?php echo OC_Shorty_L10n::t('help for later recognition…'); ?>"></textarea>
     <br />
     <label for="confirm"></label>

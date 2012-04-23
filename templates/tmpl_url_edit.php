@@ -65,14 +65,14 @@
     <input id="title" name="title" type="text" maxlength="80" data="" class="" />
     <br />
     <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
-    <select id="status" name="status" data="shared" value="shared" style="width:8em;">
+    <select id="status" name="status" data="shared" value="shared" style="width:8em;" class="">
       <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>
       <option value="shared" ><?php echo OC_Shorty_L10n::t('shared');  ?></option>
       <option value="public" ><?php echo OC_Shorty_L10n::t('public');  ?></option>
     </select>
     <span style="display:inline;">
     <label for="until"><?php echo OC_Shorty_L10n::t('Expiration:'); ?></label>
-    <input id="until" name="until" type="text" maxlength="10" data="" class="shorty-input" style="width:12em"
+    <input id="until" name="until" type="text" maxlength="10" data="" class="" style="width:12em"
            placeholder="-<?php echo OC_Shorty_L10n::t('never'); ?>-"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     </span>
