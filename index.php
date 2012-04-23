@@ -138,23 +138,44 @@ switch ($act)
         );
         $query  = OC_DB::prepare ( OC_Shorty_Query::URL_FORWARD );
         $result = $query->execute($param)->FetchAll();
-        if (  (FALSE===$result)
-            ||(!is_array($result)    ||  !array_key_exists(0,$result))
-            ||(!is_array($result[0]) || (!array_key_exists('target',$result[0]))) )
+        if ( FALSE===$result )
           throw new OC_Shorty_Exception ( "HTTP/1.0 404 Not Found", $param );
-        // and usable target ? stick with fallback otherwise
+        elseif ( ! is_array($result) )
+          throw new OC_Shorty_Exception ( "HTTP/1.0 404 Not Found", $param );
+        elseif ( 0==sizeof($result) )
+        {
+          // no entry found => 404: Not Found
+          header ( sprintf('Location: status.php?%s', 404) );
+          exit;
+        }
+        elseif ( 1<sizeof($result) )
+        {
+          // multiple matches => 409: Conflict
+          header ( sprintf('Location: status.php?%s', 409) );
+          exit;
+        }
+        elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('target',$result[0])) )
+        {
+          // invalid entry => 500: Internal Server Error
+          header ( sprintf('Location: status.php?%s', 500) );
+          exit;
+        }
+        elseif ( (!array_key_exists('target',$result[0])) || ('1'==$result[0]['expired']) )
+        {
+          // entry expired => 410: Gone
+          header ( sprintf('Location: status.php?%s', 410) );
+          exit;
+        }
+        // an usable target !
         $target = trim($result[0]['target']);
         // check status of matched entry
         switch (trim($result[0]['status']))
         {
           default:
           case 'blocked':
-            // refuse forwarding
-            header("HTTP/1.0 403 Forbidden");
-            // maybe something more meaningful than the following ?
-            OC_Util::displayLoginPage();
-            die();
-            break;
+            // refuse forwarding => 403: Forbidden
+            header ( sprintf('Location: status.php?%s', 403) );
+            exit;
           case 'shared':
             // check if we are a user, deny access if not
             OC_Util::checkLoggedIn ( );
