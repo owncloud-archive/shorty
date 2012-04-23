@@ -138,13 +138,14 @@ switch ($act)
         );
         $query  = OC_DB::prepare ( OC_Shorty_Query::URL_FORWARD );
         $result = $query->execute($param)->FetchAll();
-        if ( FALSE===$result )
+        if (  (FALSE===$result)
+            ||(!is_array($result)    ||  !array_key_exists(0,$result))
+            ||(!is_array($result[0]) || (!array_key_exists('target',$result[0]))) )
           throw new OC_Shorty_Exception ( "HTTP/1.0 404 Not Found", $param );
         // and usable target ? stick with fallback otherwise
-        if ( trim($result) )
-          $target = trim($result['target']);
+        $target = trim($result[0]['target']);
         // check status of matched entry
-        switch (trim($result['status']))
+        switch (trim($result[0]['status']))
         {
           default:
           case 'blocked':
