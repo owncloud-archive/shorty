@@ -40,7 +40,7 @@
  */
 class OC_Shorty_Query
 {
-  const URL_INSERT            = "INSERT INTO *PREFIX*shorty (key,status,favicon,title,source,target,user,until,created,notes) VALUES (:key,:status,:favicon,:title,:source,:target,:user,:until,CURRENT_TIMESTAMP,:notes)";
+  const URL_INSERT            = "INSERT INTO *PREFIX*shorty (key,status,favicon,title,source,target,user,until,created,notes) VALUES (:key,:status,:favicon,:title,:source,:target,:user,:until,CURRENT_DATE,:notes)";
   const URL_DELETE            = "DELETE FROM *PREFIX*shorty WHERE user=:user AND key=:key";
   const URL_REMOVE            = "DELETE FROM *PREFIX*shorty WHERE user=:user AND 'deleted'=status";
   const URL_UPDATE            = "UPDATE *PREFIX*shorty SET status=:status,title=:title,until=:until,notes=:notes WHERE user=:user AND key=:key";

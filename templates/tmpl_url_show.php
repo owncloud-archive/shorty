@@ -77,9 +77,9 @@
     <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
     <input id="clicks" name="clicks" data="" type="textarea" class="" style="width:1em;" readonly disabled />
     <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
-    <input id="created" name="created" type="text" data="" class="" style="width:9em;" readonly disabled />
+    <input id="created" name="created" type="text" data="" class="" style="width:7em;" readonly disabled />
     <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
-    <input id="accessed" name="accessed" type="text" data="" class="" style="width:9em;" readonly disabled />
+    <input id="accessed" name="accessed" type="text" data="" class="" style="width:10em;" readonly disabled />
     </span>
   </fieldset>
 </form>
