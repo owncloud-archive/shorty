@@ -66,7 +66,7 @@
     <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
     <input id="status" name="status" type="text" data="" class="" style="width:8em;" readonly disabled />
     <span class="label-line">
-    <label for="until"><?php echo OC_Shorty_L10n::t('Valid until:'); ?></label>
+    <label for="until"><?php echo OC_Shorty_L10n::t('Expiration:'); ?></label>
     <input id="until" name="until" type="text" data="" class="" style="width:12em;" readonly disabled />
     </span>
     <br />

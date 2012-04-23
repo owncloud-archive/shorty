@@ -328,12 +328,12 @@ Shorty =
             dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
             dialog.find('#meta').fadeTo('fast',1);
           })
-        }).done(function(reponse){
+        }).done(function(){
           Shorty.WUI.Dialog.sharpen(dialog,true);
-          dfd.resolve(response);
-        }).fail(function(reponse){
+          dfd.resolve();
+        }).fail(function(){
           Shorty.WUI.Dialog.sharpen(dialog,false);
-          dfd.reject(response);
+          dfd.reject();
         })
         return dfd.promise();
       }, // Shorty.WUI.Entry.edit
@@ -398,10 +398,10 @@ Shorty =
             dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
             dialog.find('#meta').fadeTo('fast',1);
           })
-        }).done(function(reponse){
-          dfd.resolve(response);
-        }).fail(function(reponse){
-          dfd.reject(response);
+        }).done(function(){
+          dfd.resolve();
+        }).fail(function(){
+          dfd.reject();
         })
         return dfd.promise();
       } // Shorty.WUI.Entry.show
@@ -467,7 +467,7 @@ Shorty =
                 break;
               case 'until':
                 if (null==set[aspect])
-                  span.text('-/-');
+                  span.text('-never-');
                 else{
                   span.text(set[aspect]);
                   if (Shorty.Date.expired(set[aspect]))

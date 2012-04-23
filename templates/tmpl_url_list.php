@@ -46,11 +46,11 @@
                                   src="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
                                   data-plus="<?php echo OC_Helper::imagePath('shorty','actions/plus.png'); ?>"
                                   data-minus="<?php echo OC_Helper::imagePath('shorty','actions/minus.png'); ?>"></span></th>
-      <th id="title"  ><span><?php echo OC_Shorty_L10n::t('Title')   ?></span></th>
-      <th id="target" ><span><?php echo OC_Shorty_L10n::t('Target')  ?></span></th>
-      <th id="clicks" ><span><?php echo OC_Shorty_L10n::t('Clicks')  ?></span></th>
-      <th id="until"  ><span><?php echo OC_Shorty_L10n::t('Until')   ?></span></th>
-      <th id="status" ><span><?php echo OC_Shorty_L10n::t('Status')  ?></span></th>
+      <th id="title"  ><span><?php echo OC_Shorty_L10n::t('Title')      ?></span></th>
+      <th id="target" ><span><?php echo OC_Shorty_L10n::t('Target')     ?></span></th>
+      <th id="clicks" ><span><?php echo OC_Shorty_L10n::t('Clicks')     ?></span></th>
+      <th id="until"  ><span><?php echo OC_Shorty_L10n::t('Expiration') ?></span></th>
+      <th id="status" ><span><?php echo OC_Shorty_L10n::t('Status')     ?></span></th>
       <th id="action" ><span>&nbsp;</span></th>
     </tr>
     <!-- toolbar opened/closed by the button above -->
