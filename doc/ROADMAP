@@ -51,6 +51,8 @@ Therefore the implementation certainly is far from the quality one could expect
 from a serious and experienced web developer. One could also put this into more
 constructive terms: there is definately much room for enhancements   :-) 
 
+* Translations of the shorty module itself (i18n/l10n):
+Main development language is english (us), a german translation will follow.
 
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.
