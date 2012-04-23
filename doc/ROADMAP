@@ -67,7 +67,16 @@ I wish a better API socumentation would exist for ownCloud !
 * Localization for the date picker fields
 Currently date inputs (expiration date) are not validated in an explicit manner.
 A number of formats work, are accepted correct, but there is no localization
-of the input format to the users language. 
+of the input format to the users language.
+
+* Integrated help button
+One thing I miss throughout the ownCloud application is a context sensitive
+help, or a help button at all ! Originally I planned to integrate on into this 
+plugin. However I think that is more something that should be implemented as a
+core feature of ownCloud. Maybe as a separate plugin (app). SOmehing like a
+help framework with a documented api where other plugins (and core apps) can
+attach help texts or documents to. Context sensivity would then simply mean to
+update the reference in the help button for each action taken.
 
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.
