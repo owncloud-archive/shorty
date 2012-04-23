@@ -790,7 +790,8 @@ Shorty =
             if (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
                    &&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]').effect('pulsate')) )
                 ||(  (toolbar.find('th#status select :selected').val())
-                   &&(toolbar.find('#status div.chzn-container').effect('pulsate')) )
+//                   &&(toolbar.find('#status div.chzn-container').effect('pulsate')) )
+                   &&(toolbar.find('#status').effect('pulsate')) )
                ) {
               if (Shorty.Debug) Shorty.Debug.log('active filter prevents closing of toolbar');
             }else{
