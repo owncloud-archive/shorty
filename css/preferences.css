@@ -42,6 +42,12 @@
   font-style: italic;
   color: DarkSlateGray;
 }
+#shorty #shortlet:after {
+  content: url("../img/drag_me.png");
+  position: relative;
+  top: -12px;
+  margin-left: -120px;
+}
 #shorty .chzn-container {
     vertical-align: middle;
 }
