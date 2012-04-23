@@ -299,16 +299,17 @@ Shorty =
         // use the existing edit dialog for this
         var dialog=$('#controls #dialog-edit');
         // load entry into dialog
-        dialog.find('#key').attr('data-key',entry.attr('data-key')).val(entry.attr('data-key'));
-        dialog.find('#status').attr('data-status',entry.attr('data-status')||'').val(entry.attr('data-status')||'');
-        dialog.find('#source').attr('data-source',entry.attr('data-source')).val(entry.attr('data-source'));
-        dialog.find('#target').attr('data-target',entry.attr('data-target')).val(entry.attr('data-target'));
-        dialog.find('#title').attr('data-title',entry.attr('data-title')).val(entry.attr('data-title'));
-//        dialog.find('#until').attr('data-until',entry.attr('data-until')||'').val(entry.attr('data-until')||'');
-        dialog.find('#clicks').attr('data-clicks',entry.attr('data-clicks')||'').val(entry.attr('data-clicks')||'');
-        dialog.find('#created').attr('data-created',entry.attr('data-created')||'').val(entry.attr('data-created')||'');
-        dialog.find('#accessed').attr('data-accessed',entry.attr('data-accessed')||'').val(entry.attr('data-accessed')||'');
-        dialog.find('#notes').attr('data-notes',entry.attr('data-notes')).val(entry.attr('data-notes'));
+        dialog.find('#key').val(entry.attr('data-key'));
+        dialog.find('#status').val(entry.attr('data-status')||'');
+        dialog.find('#source').val(entry.attr('data-source'||''));
+        dialog.find('#target').val(entry.attr('data-target'||''));
+        dialog.find('#title').val(entry.attr('data-title')||'');
+        dialog.find('#clicks').val(entry.attr('data-clicks')||'');
+        dialog.find('#created').val(entry.attr('data-created')||'');
+        dialog.find('#accessed').val(entry.attr('data-accessed')||'');
+        dialog.find('#notes').val(entry.attr('data-notes')||'');
+//        dialog.find('#until').val(entry.attr('data-until')||'');
+        dialog.find('#until').datepicker('setDate',new Date(entry.attr('data-until'))||'');
         // open edit dialog
         Shorty.WUI.Dialog.show(dialog)
         $.when(
