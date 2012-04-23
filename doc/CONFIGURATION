@@ -81,6 +81,9 @@ iii.) online services (url shorteners)
 A few online services are offered as backends to generate short source urls.
 Usage of some of those services requires you to open a free account at their
 site. Detailed configuration requirements are displayed for the chosen backend.
+If you don't care for details and just want short urls then have a try with the
+tin.ny backend. No registration required, reliable service. But keep in mind
+you depend on an external service as opposed to using a local static backend.
 
 3.) Import of the "shortlet" into a web browser  (optional)
 Shorty comes with a neat little "Shortlet" offered in the personal preferneces
