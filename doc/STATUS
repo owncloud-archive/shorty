@@ -1,3 +1,4 @@
+*****
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
@@ -19,6 +20,7 @@
 * You should have received a copy of the GNU Affero General Public
 * License along with this library.
 * If not, see <http://www.gnu.org/licenses/>.
+*****
 
 The current status of this package is as follows:
 
