@@ -680,7 +680,7 @@ Shorty =
               {
                 case 'until':
                   if (null==set[aspect])
-                    content='-/-';
+                    content='-never-';
                   else{
                     content=set[aspect];
                     if (Shorty.Date.expired(set[aspect]))
