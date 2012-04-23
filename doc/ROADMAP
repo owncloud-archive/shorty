@@ -62,7 +62,12 @@ in browsers supporting svg directly. However I did not yet figure out how to
 use that feature without adding too much scripting overhead. Is it possible
 to reference icons the ownCloud way directly in a php based template, without
 the need to explicit handling via javascript ?
-I wish a better API socumentation would exist for ownCloud ! 
+I wish a better API socumentation would exist for ownCloud !
+
+* Localization for the date picker fields
+Currently date inputs (expiration date) are not validated in an explicit manner.
+A number of formats work, are accepted correct, but there is no localization
+of the input format to the users language. 
 
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.
