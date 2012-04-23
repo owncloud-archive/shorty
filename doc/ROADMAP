@@ -54,6 +54,14 @@ constructive terms: there is definately much room for enhancements   :-)
 * Translations of the shorty module itself (i18n/l10n):
 Main development language is english (us), a german translation will follow.
 
+* Usage of svg icons instead of png graphics:
+I created all icons in svg format. ownCloud implements a mechanism to use those
+in browsers supporting svg directly. However I did not yet figure out how to
+use that feature without adding too much scripting overhead. Is it possible
+to reference icons the ownCloud way directly in a php based template, without
+the need to explicit handling via javascript ?
+I wish a better API socumentation would exist for ownCloud ! 
+
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.
 Drop me a note, an idea, a patch, a good bottle of wine, anything !

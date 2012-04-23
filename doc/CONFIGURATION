@@ -48,7 +48,7 @@ An random example is my own domain "christian-reiner.info". Since that is not
 exactly short I would love to use the additional domain "c-r.info" for the sole
 purpose of a static backend. Unfortunately that domain has been reserved by a
 domain grabber who asks thousands of Euros for it ! So that's no option. At
-least you should try to find a setup where the web path of the owncloud
+least you should try to find a setup where the web path of the ownCloud
 application is not part of the base url. So that you get something like
 http://<domain name>/<shorty key>.
 (Note that the shorty key is NOT part of the base url configuration).
@@ -57,7 +57,7 @@ visualized next to the configuration option. It runs a simple self-tests of the
 setup in background.
 There is no need that the base url must be served by the same http server that
 serves the owncoud system. A static rewrite setup may well forward short source
-urls to the shorty plugin inside a remote owncloud installation.
+urls to the shorty plugin inside a remote ownCloud installation.
 
 2.) Selection of a backend per user (optional)
 To generate the a source url that is part of every shorty the plugin uses a
@@ -71,7 +71,7 @@ Different backends are implemented:
 i.) "-none-"
 As you have guessed this is something like a "dummy" backend without any
 implemented logic. That means the source urls generated are exactly based on
-the web url of the shorty plugin in your owncloud system. This is not a very
+the web url of the shorty plugin in your ownCloud system. This is not a very
 clever setup, but it certainly works and keeps your data private.
 ii.) "static backend"
 If configured in the system administration a "static backend" is offered. For a
@@ -87,7 +87,7 @@ you depend on an external service as opposed to using a local static backend.
 
 3.) Import of the "shortlet" into a web browser  (optional)
 Shorty comes with a neat little "Shortlet" offered in the personal preferneces
-section of owncloud. It is a "button" you can import into your web browsers
+section of ownCloud. It is a "button" you can import into your web browsers
 bookmark toolbar or area by simple drag & drop. The Shortlet should work with
 most modern browsers, though not all. Just have a try with it.
 
