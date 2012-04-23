@@ -305,9 +305,6 @@ Shorty =
         dialog.find('#target').attr('data-target',entry.attr('data-target')).val(entry.attr('data-target'));
         dialog.find('#title').attr('data-title',entry.attr('data-title')).val(entry.attr('data-title'));
 //        dialog.find('#until').attr('data-until',entry.attr('data-until')||'').val(entry.attr('data-until')||'');
-alert(dialog.find('#until').val());
-        dialog.find('#until').attr('data-until',entry.attr('data-until')||'').datepicker('setDate',new Date(entry.attr('data-until'))||'');
-alert(dialog.find('#until').val());
         dialog.find('#clicks').attr('data-clicks',entry.attr('data-clicks')||'').val(entry.attr('data-clicks')||'');
         dialog.find('#created').attr('data-created',entry.attr('data-created')||'').val(entry.attr('data-created')||'');
         dialog.find('#accessed').attr('data-accessed',entry.attr('data-accessed')||'').val(entry.attr('data-accessed')||'');
