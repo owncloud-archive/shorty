@@ -249,19 +249,6 @@
 .shorty-dialog br {
   clear: left;
 }
-.shorty-dialog label {
-  display: inline-block;
-  clear:none;
-  width: 5.5em;
-  text-align: left;
-  vertical-align: baseline;
-}
-.shorty-dialog span.label-line {
-  display: inline;
-  clear: none;
-  margin: 0;
-  padding: 0;
-}
 .shorty-dialog legend {
   font-weight: bold;
   margin: 0 0 0 5px;
@@ -363,12 +350,22 @@
   border: 0 none;
   background-color: #F4F4F4;
 }
-.shorty-standalone label,
-.shorty-standalone span {
+.shorty-dialog label {
+  display: inline-block;
+  clear:none;
+  width: 5.5em;
+  text-align: left;
+  vertical-align: baseline;
   padding: 0.6em 0.5em 0.4em 0.3em;
 }
-.shorty-embedded label {
-  padding: 0 0.5em;
+.shorty-dialog span {
+  padding: 0.6em 0.5em 0.4em 0.3em;
+}
+.shorty-dialog span.label-line {
+  display: inline;
+  clear: none;
+  margin: 0;
+  padding: 0;
 }
 /* elements (rows) freshly added to the list, this calss might trigger visual effects like pulsation */
 .shorty-fresh {

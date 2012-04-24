@@ -37,7 +37,7 @@
 <!-- (hidden) dialog to add a new shorty -->
 <form id="dialog-add" class="shorty-dialog shorty-standalone">
   <fieldset>
-    <legend class="shorty-legend">
+    <legend class="">
       <a id="close" class="shorty-close-button"
         title="<?php echo OC_Shorty_L10n::t('close'); ?>">
         <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
@@ -68,14 +68,16 @@
     </select>
     <span style="display:inline-block;">
     <label for="until"><?php echo OC_Shorty_L10n::t('Expiration:'); ?></label>
-    <input id="until" name="until" type="text" maxlength="10" data="" class="" style="width:12em;"
+    <input id="until" name="until" type="text" maxlength="10" value=""
+           data="" class="" style="width:12em;"
            placeholder="-<?php echo OC_Shorty_L10n::t('never'); ?>-"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>"/>
     </span>
     <br />
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
     <textarea id="notes" name="notes" maxlength="4096" data="" class=""
-              placeholder="<?php echo OC_Shorty_L10n::t('help for later recognition…'); ?>"></textarea>
+              placeholder="<?php echo OC_Shorty_L10n::t('Anything that appears helpful …'); ?>">
+    </textarea>
     <br />
     <label for="confirm"></label>
     <button id="confirm" class="shorty-button-submit"><?php echo OC_Shorty_L10n::t('Add as new'); ?></button>

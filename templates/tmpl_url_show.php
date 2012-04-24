@@ -37,7 +37,7 @@
 <!-- (hidden) dialog to show a shorty from the list -->
 <form id="dialog-show" class="shorty-dialog shorty-standalone">
   <fieldset>
-    <legend class="shorty-legend">
+    <legend class="">
       <a id="close" class="shorty-close-button"
         title="<?php echo OC_Shorty_L10n::t('close'); ?>">
         <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"

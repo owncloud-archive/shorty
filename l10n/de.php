@@ -35,7 +35,7 @@
 "Total of clicks"                                            => "Summe der Clicks",
 "Add a new shorty:"                                          => "Neuen Shorty hinzufügen",
 "never"                                                      => "niemals",
-"help for later recognition…"                                => "Hilfe für spätere Wiedererkennung…",
+"Anything that appears helpful …"                            => "Alles, was hilfreich erscheint …",
 "Add as new"                                                 => "Als neu hinzufügen",
 "Shorty details:"                                            => "Shorty-Details:",
 "Share shorty:"                                              => "Shorty teilen:",
