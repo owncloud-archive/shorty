@@ -79,7 +79,7 @@
     </span>
     <br />
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
-    <textarea id="notes" name="notes" maxlength="4096" data="" class="">
+    <textarea id="notes" name="notes" maxlength="4096" data="" class=""
               placeholder="<?php echo OC_Shorty_L10n::t('Anything that appears helpful …'); ?>">
     </textarea>
     <br />
