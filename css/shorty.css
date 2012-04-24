@@ -192,15 +192,19 @@
   background: transparent url('../img/status/strike.png') 0 50% repeat-x;
 }
 /* replace the 'delete' action icon by an 'undelete' icon */
-#list tbody tr.deleted:hover>#actions #delete>img {
-  opacity: 0;
-}
-#list tbody tr.deleted:hover>#actions #delete:after {
+#list tbody tr.deleted>#actions #del:after {
   content: url("../img/actions/recycle.png");
   position: relative;
-  top: 4px;
-  margin-left: -21px;
-  vertical-align: top:
+  top: 3px;
+  margin-left: -20px;
+  padding: 0;
+  opacity: 0;
+}
+#list tbody tr.deleted:hover>#actions #del>img {
+  opacity: 0;
+}
+#list tbody tr.deleted:hover>#actions #del:after {
+  opacity: 1;
 }
 /* general table cell appearance */
 #list tbody td {
@@ -297,7 +301,7 @@
 }
 .shorty-dialog button#confirm {
   width: 8em; height: 2em;
-  background: solid;
+  border: 1px solid lightgray;
   background-color: #EEEEEE;
 }
 .shorty-dialog button#confirm.sharp {
@@ -328,7 +332,7 @@
   position: absolute;
 }
 .shorty-embedded fieldset {
-  width: 32;
+/*   width: 32em; */
 }
 .shorty-embedded a#source,
 .shorty-embedded a#relay,
