@@ -14,6 +14,7 @@
 "all"                                                        => "alle",
 "blocked"                                                    => "blockiert",
 "shared"                                                     => "geteilt",
+"deleted"                                                    => "gelöscht",
 "public"                                                     => "freigegeben",
 "List currently empty."                                      => "Liste derzeit leer.",
 "Title"                                                      => "Titel",

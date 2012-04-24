@@ -372,7 +372,7 @@ Shorty =
         var dialog=$('#controls #dialog-show');
         // load entry into dialog
         dialog.find('#id').attr('data-id',entry.attr('data-id')).val(entry.attr('data-id'));
-        dialog.find('#status').attr('data-status',entry.attr('data-status')||'').val(entry.attr('data-status')||'');
+        dialog.find('#status').attr('data-status',entry.attr('data-status')||'').val(t('shorty',entry.attr('data-status'))||'');
         dialog.find('#source').attr('data-source',entry.attr('data-source')).val(entry.attr('data-source'));
         dialog.find('#target').attr('data-target',entry.attr('data-target')).val(entry.attr('data-target'));
         dialog.find('#title').attr('data-title',entry.attr('data-title')).val(entry.attr('data-title'));
@@ -488,7 +488,8 @@ Shorty =
               case 'status':
                 if ('deleted'==set[aspect])
                   row.addClass('deleted');
-                span.text(set[aspect]);
+//                 span.text(set[aspect]);
+                span.text(t('shorty',set[aspect]));
                 break;
               default:
                 span.text(set[aspect]);
@@ -1309,7 +1310,7 @@ Shorty =
           // update the rows content
           var row=$('#list tbody tr#'+id);
           row.attr('data-status',status);
-          row.find('td#status span').text(status);
+          row.find('td#status span').text(t('shorty',status));
           dfd.resolve();
         }).fail(dfd.reject)
         return dfd.promise();
