@@ -48,7 +48,8 @@ try
   $param = array
   (
     'user' => OC_User::getUser(),
-    'id'   => OC_Shorty_Tools::db_escape ( $p_id ),
+//     'id'   => OC_Shorty_Tools::db_escape ( $p_id ),
+    'id'   => $p_id,
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
   $query->execute ( $param );

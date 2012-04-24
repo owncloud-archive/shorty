@@ -55,9 +55,14 @@ class OC_Shorty_Tools
     switch ( $type )
     {
       case 'sqlite':
-      case 'sqlite3': return sqlite_escape_string     ( $value );
-      case 'mysql':   return mysql_real_escape_string ( $value );
-      case 'pgsql':   return pg_escape_string         ( $value );
+      case 'sqlite3':
+        return sqlite_escape_string     ( $value );
+      case 'pgsql':
+        return pg_escape_string         ( $value );
+      case 'mysql':
+        if (get_magic_quotes_gpc())
+             return mysql_real_escape_string ( stripslashes($value) );
+        else return mysql_real_escape_string ( $value );
     }
     throw new OC_Shorty_Exception ( "unknown database backend type '%1'", array($type) );
   } // function db_escape

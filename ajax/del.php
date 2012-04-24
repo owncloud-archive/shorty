@@ -47,9 +47,10 @@ try
   $p_id  = OC_Shorty_Type::req_argument ( 'id', OC_Shorty_Type::ID, TRUE );
   $param = array
   (
-    OC_Shorty_Tools::db_escape ( $p_id ),
-    OC_User::getUser()
-    );
+    'user' => OC_User::getUser(),
+//     'id'   => OC_Shorty_Tools::db_escape ( $p_id ),
+    'id'   => $p_id,
+  );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_DELETE );
   $query->execute($param);
   OC_JSON::success ( array ( 'data'    => array('id'=>$p_id),
