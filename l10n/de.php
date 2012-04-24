@@ -104,8 +104,12 @@
 => "Statisches, regelbasiertes Backend, generiert Shorty-Links relativ zu einer gegebenen Basis-Url.",
 "Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration."
 => "Da diese Konfiguration von serverseitigen Konfigurationsregeln abhängt, kann die Basis-Url nur unter 'Verwaltung' in der Konfiguration festgelegt werden.",
+"You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."
+=> "Es muss sicher gestellt werden, dass jede Anfrage an die hier konfigurierte URL intern umgesetzt wird auf das 'Shorty'-Modul",
 "Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."
 => "Einfach den verfügbaren Beispiel-Link durch Anklicken testen. Das sollte zu einer Bestätigung führen, dass die Konfiguration funktioniert.",
+"Leave empty if you can't provide a short base url that is mapped the described way."
+=> "Einfach leer lassen, wenn keine Basis-URL angegeben werden kann, die wir beschrieben umgesetzt wird.",
 "Only use this backend, if you can provide a short base url that is mapped the described way. Your shorties won't work otherwise."
 => "Dieses Backend kann nur verwendet werden, wenn die Basis-Url in der beschriebenen Art umgesetzt wird. Die Shorties werden andernfalls nicht nutzbar sein.",
 "Use Googles 'goo.gl URL Shorten Service' to register a short url for each generated shorty."
