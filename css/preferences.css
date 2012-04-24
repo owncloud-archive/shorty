@@ -32,8 +32,7 @@
 #shorty #shortlet {
   outline: medium none;
   padding: 0.6em 0.8em;
-  background-color: lightgray;
-  background-image: -moz-linear-gradient(center bottom , #EEEEEE 0%, white 50%);
+  background-image: -moz-linear-gradient(center bottom, Lavender 0%, white 50%);
   border: 1px solid #DDDDDD;
   border-radius: 0.5em 0.5em 0.5em 0.5em;
   box-shadow: 0 1px 0 #BBBBBB inset;
@@ -46,7 +45,7 @@
   content: url("../img/drag_me.png");
   position: relative;
   top: -12px;
-  margin-left: -120px;
+  margin-left: -160px;
 }
 #shorty .chzn-container {
     vertical-align: middle;
