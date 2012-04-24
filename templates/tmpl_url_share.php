@@ -43,7 +43,7 @@
         <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
             src="<?php echo OC_Helper::imagePath('shorty','actions/shade.png');  ?>">
       </a>
-      <?php echo OC_Shorty_L10n::t('Use shorty').':'; ?>
+      <?php echo OC_Shorty_L10n::t('Test and use').':'; ?>
     </legend>
     <input id="id" name="id" type="hidden" readonly data="" class="" readonly disabled />
     <label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>

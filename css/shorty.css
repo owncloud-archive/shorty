@@ -300,7 +300,7 @@
   padding: 0.3em 0.3em;
 }
 .shorty-dialog button#confirm {
-  width: 8em; height: 2em;
+  width: 12em; height: 2em;
   border: 1px solid lightgray;
   background-color: #EEEEEE;
 }

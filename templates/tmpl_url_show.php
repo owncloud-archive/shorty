@@ -43,7 +43,7 @@
         <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
             src="<?php echo OC_Helper::imagePath('shorty','actions/shade.png');  ?>">
       </a>
-      <?php echo OC_Shorty_L10n::t('Shorty details').':'; ?>
+      <?php echo OC_Shorty_L10n::t('Show details').':'; ?>
     </legend>
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
     <input id="source" name="source" type="text" data="" class="" readonly disabled />
