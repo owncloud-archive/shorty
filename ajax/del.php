@@ -44,7 +44,7 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $p_id  = OC_Shorty_Type::req_argument ( 'id', OC_Shorty_Type::KEY, TRUE );
+  $p_id  = OC_Shorty_Type::req_argument ( 'id', OC_Shorty_Type::ID, TRUE );
   $param = array
   (
     OC_Shorty_Tools::db_escape ( $p_id ),

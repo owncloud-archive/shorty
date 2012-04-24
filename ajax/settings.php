@@ -71,7 +71,7 @@ try
           // morph value into an explicit type
           switch ($type)
           {
-            case OC_Shorty_Type::KEY:
+            case OC_Shorty_Type::ID:
             case OC_Shorty_Type::STATUS:
             case OC_Shorty_Type::SORTKEY:
             case OC_Shorty_Type::SORTVAL:

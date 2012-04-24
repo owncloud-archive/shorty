@@ -44,7 +44,7 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $p_id  = OC_Shorty_Type::req_argument ( $_GET['id'], OC_Shorty_Type::KEY, TRUE );
+  $p_id  = OC_Shorty_Type::req_argument ( $_GET['id'], OC_Shorty_Type::ID, TRUE );
   $param = array
   (
     'user' => OC_User::getUser(),
