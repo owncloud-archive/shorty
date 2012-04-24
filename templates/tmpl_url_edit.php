@@ -43,13 +43,13 @@
         <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
             src="<?php echo OC_Helper::imagePath('shorty','actions/shade.png');  ?>">
       </a>    
-      <?php echo OC_Shorty_L10n::t('Modify shorty:'); ?>
+      <?php echo OC_Shorty_L10n::t('Modify shorty').':'; ?>
     </legend>
     <input id="key" name="key" type="hidden" readonly data="" class="" readonly disabled />
-    <label for="source"><?php echo OC_Shorty_L10n::t('Source url:'); ?></label>
+    <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
     <input id="source" name="source" type="text" data="" class="" readonly disabled />
     <br />
-    <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
+    <label for="target"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
     <input id="target" name="target" type="text" data="" class="" readonly />
     <br />
     <label for="meta">&nbsp;</label>
@@ -61,34 +61,34 @@
     <a id="explanation" maxlength="80" data="" class="shorty-value"></a>
     </span>
     <br />
-    <label for="title"><?php echo OC_Shorty_L10n::t('Shorty title:'); ?></label>
+    <label for="title"><?php echo OC_Shorty_L10n::t('Shorty title').':'; ?></label>
     <input id="title" name="title" type="text" maxlength="80" data="" class="" />
     <br />
-    <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
+    <label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>
     <select id="status" name="status" data="shared" value="shared" style="width:8em;" class="">
       <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>
       <option value="shared" ><?php echo OC_Shorty_L10n::t('shared');  ?></option>
       <option value="public" ><?php echo OC_Shorty_L10n::t('public');  ?></option>
     </select>
     <span style="display:inline;">
-    <label for="until"><?php echo OC_Shorty_L10n::t('Expiration:'); ?></label>
+    <label for="until"><?php echo OC_Shorty_L10n::t('Expiration').':'; ?></label>
     <input id="until" name="until" type="text" value=""
            maxlength="10" data="" class="" style="width:8em;"
            placeholder="-<?php echo OC_Shorty_L10n::t('never'); ?>-"
            icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>" />
     </span>
     <br />
-    <label for="notes"><?php echo OC_Shorty_L10n::t('Notes:'); ?></label>
+    <label for="notes"><?php echo OC_Shorty_L10n::t('Notes').':'; ?></label>
     <textarea id="notes" name="notes" maxlength="4096" data="" class=""
               placeholder="<?php echo OC_Shorty_L10n::t('Anything that appears helpful …'); ?>">
     </textarea>
     <br />
     <span class="label-line">
-    <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks:'); ?></label>
+    <label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks').':'; ?></label>
     <input id="clicks" name="clicks" data="" type="textarea" class="" style="width:1em;" readonly disabled />
-    <label for="created"><?php echo OC_Shorty_L10n::t('Created:'); ?></label>
+    <label for="created"><?php echo OC_Shorty_L10n::t('Creation').':'; ?></label>
     <input id="created" name="created" type="text" data="" class="" style="width:7em;" readonly disabled />
-    <label for="accessed"><?php echo OC_Shorty_L10n::t('Accessed:'); ?></label>
+    <label for="accessed"><?php echo OC_Shorty_L10n::t('Access').':'; ?></label>
     <input id="accessed" name="accessed" type="text" data="" class="" style="width:10em;" readonly disabled />
     </span>
     <br />

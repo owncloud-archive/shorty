@@ -150,11 +150,11 @@
                  src="<?php echo OC_Helper::imagePath('core','actions/delete.png'); ?>" />
           </a>
           <a id="share" title="<?php echo $l->t('share');  ?>"   class="">
-            <img class="shorty-icon" alt="<?php echo $l->t('share'); ?>"  title="<?php echo $l->t('share shorty'); ?>"
+            <img class="shorty-icon" alt="<?php echo $l->t('share'); ?>"  title="<?php echo $l->t('use shorty'); ?>"
                  src="<?php echo OC_Helper::imagePath('core','actions/share.png');  ?>" />
           </a>
           <a id="open"  title="<?php echo $l->t('open');   ?>"   class="">
-            <img class="shorty-icon" alt="<?php echo $l->t('open'); ?>"   title="<?php echo $l->t('open target'); ?>"
+            <img class="shorty-icon" alt="<?php echo $l->t('open'); ?>"   title="<?php echo $l->t('open target url'); ?>"
                  src="<?php echo OC_Helper::imagePath('shorty','actions/open.png'); ?>" />
           </a>
         </span>

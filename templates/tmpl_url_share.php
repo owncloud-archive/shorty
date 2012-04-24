@@ -43,10 +43,10 @@
         <img alt="<?php echo OC_Shorty_L10n::t('close'); ?>"
             src="<?php echo OC_Helper::imagePath('shorty','actions/shade.png');  ?>">
       </a>
-      <?php echo OC_Shorty_L10n::t('Share shorty:'); ?>
+      <?php echo OC_Shorty_L10n::t('Use shorty').':'; ?>
     </legend>
     <input id="key" name="key" type="hidden" readonly data="" class="" readonly disabled />
-    <label for="status"><?php echo OC_Shorty_L10n::t('Status:'); ?></label>
+    <label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>
     <select id="status" name="status" data="" class="" value="">
       <option value="blocked">
         <?php echo OC_Shorty_L10n::t('blocked'); ?>
@@ -59,17 +59,17 @@
       </option>
     </select>
     <br />
-    <label for="source"><?php echo OC_Shorty_L10n::t('Source url:'); ?></label>
+    <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
     <a id="source" class="shorty-clickable" target="_blank"
        title="<?php echo OC_Shorty_L10n::t('open source url'); ?>"
        href=""></a>
     <br />
-    <label for="relay"><?php echo OC_Shorty_L10n::t('Relay url:'); ?></label>
+    <label for="relay"><?php echo OC_Shorty_L10n::t('Relay url').':'; ?></label>
     <a id="relay" class="shorty-clickable" target="_blank"
        title="<?php echo OC_Shorty_L10n::t('open relay url'); ?>"
        href=""></a>
     <br />
-    <label for="target"><?php echo OC_Shorty_L10n::t('Target url:'); ?></label>
+    <label for="target"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
     <a id="target" class="shorty-clickable" target="_blank"
        title="<?php echo OC_Shorty_L10n::t('open target url'); ?>"
        href=""></a>
