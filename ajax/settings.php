@@ -25,7 +25,7 @@
 */
 
 /**
- * @file ajax/preferences.php
+ * @file ajax/settings.php
  * @brief Ajax method to store one or more system settings  (plugin settings)
  * @param backend-static-base (string) Url to use as a base when the static backend is active (plugins default, may be overridden by user preference)
  * @returns (json) success/error state indicator
@@ -49,7 +49,7 @@ try
   switch ( $_SERVER['REQUEST_METHOD'] )
   {
     case 'POST':
-      // detect provided preferences
+      // detect provided settings
       $data = array();
       foreach (array_keys($_POST) as $key)
         if ($type=OC_Shorty_Type::$SETTING[$key])
@@ -61,7 +61,7 @@ try
         OC_Appconfig::setValue( 'shorty', $key, $val );
       break;
     case 'GET':
-      // detect requested preferences
+      // detect requested settings
       foreach (array_keys($_GET) as $key)
       {
         if (  ('_'!=$key) // ignore ajax timestamp argument
