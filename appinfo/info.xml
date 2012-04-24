@@ -43,7 +43,7 @@ either manually in the list ("New") or by using the "Shortlet". The Shortlet
 is something like a Booklet, a JS based bookmark meant to be stored inside the
 bookmark toolbar or area of a web browser. When clicked, the page currently
 open in the browser will be offered to be added to the list of existing shorties.
-Current version: 0.0.9 (22.04.2012)</description>
+Current version: 0.0.9 (24.04.2012)</description>
 	<version>0.0.9</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
