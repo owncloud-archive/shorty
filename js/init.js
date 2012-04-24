@@ -51,8 +51,9 @@ $(document).ready(function(){
   // sort buttons
   $('#list #toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
   // add date picker options
-  $('#controls #until:not([readonly])').datepicker({
+  $.datepicker.setDefaults({
     dateFormat :'yy-mm-dd',
+    appendText: "(yyyy-mm-dd)",
     changeMonth: true,
     changeYear: true,
     showOtherMonths: true,
@@ -61,6 +62,7 @@ $(document).ready(function(){
     buttonImage: $('#controls').find('#until').eq(0).attr('icon'),
     buttonImageOnly: true
   });
+  $('#controls #until:not([readonly])').datepicker();
   // bind actions to the actions icons
   $('#list tbody .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
   // bind highlighting to clicks on a row, except for the action icons
