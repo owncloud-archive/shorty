@@ -64,7 +64,7 @@ try
   $reply = $result->fetchAll();
   // enhance all entries with the relay url
   foreach (array_keys($reply) as $key)
-    $reply[$key]['relay']=OC_Shorty_Tools::relayUrl ( $reply[$key]['key'] );
+    $reply[$key]['relay']=OC_Shorty_Tools::relayUrl ( $reply[$key]['id'] );
   OC_JSON::success ( array ( 'data'    => $reply,
                              'count'   => sizeof($reply),
                              'message' => OC_Shorty_L10n::t('Number of entries: %s', count($reply)) ) );

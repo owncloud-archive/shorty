@@ -42,7 +42,7 @@ $(document).ready(function(){
   $('.shorty-dialog #close').bind('click',function(){Shorty.WUI.Dialog.hide($(this).parents('form').eq(0));});
   // status selection in embedded share dialog
   $('.shorty-embedded#dialog-share #status').bind('change',function(){
-    Shorty.Action.Url.status($(this).siblings('#key').val(),$(this).val());
+    Shorty.Action.Url.status($(this).siblings('#id').val(),$(this).val());
   });
   // button to open the tools header row in the list
   $('#list #titlebar').bind('click',Shorty.WUI.List.Toolbar.toggle);

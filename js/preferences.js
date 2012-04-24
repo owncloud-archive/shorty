@@ -39,7 +39,7 @@ $(document).ready(
 
     // backend 'static': initialize example that depends on backend-base system setting
     if ($('#shorty #backend-static #backend-static-base').val().length)
-      $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty key>');
+      $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty id>');
     // backend 'static': offer a clickable example link to verify the correct setup
     $('#shorty #backend-static #example').bind('click',function(event){
       event.preventDefault();

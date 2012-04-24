@@ -27,9 +27,9 @@
 /**
  * @file ajax/click.php
  * @brief Ajax method to register a 'click', a single hit on an existing and valid shorty
- * @param key (string) Internal key of a referenced shorty
+ * @param id (string) Internal id of a referenced shorty
  * @returns (json) success/error state indicator
- * @returns (json) Associative array holding the key of the shorty whose click was registered
+ * @returns (json) Associative array holding the id of the shorty whose click was registered
  * @author Christian Reiner
  */
 
@@ -44,15 +44,15 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $p_key = OC_Shorty_Type::req_argument ( $_GET['key'], OC_Shorty_Type::KEY, TRUE );
+  $p_id  = OC_Shorty_Type::req_argument ( $_GET['id'], OC_Shorty_Type::KEY, TRUE );
   $param = array
   (
     'user' => OC_User::getUser(),
-    'key'  => OC_Shorty_Tools::db_escape ( $p_key ),
+    'id'   => OC_Shorty_Tools::db_escape ( $p_id ),
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
   $query->execute ( $param );
-  OC_JSON::success ( array ( 'data'    => array('key'=>$p_key),
+  OC_JSON::success ( array ( 'data'    => array('id'=>$p_id),
                              'message' => OC_Shorty_L10n::t('Click registered') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

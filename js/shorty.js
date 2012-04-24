@@ -282,12 +282,12 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("delete entry "+entry.attr('id'));
         if (entry.hasClass('deleted')){
           // change status to deleted
-          Shorty.Action.Url.status(entry.attr('data-key'),'blocked');
+          Shorty.Action.Url.status(entry.attr('data-id'),'blocked');
           // mark row as undeleted
           entry.removeClass('deleted');
         }else{
           // change status to deleted
-          Shorty.Action.Url.status(entry.attr('data-key'),'deleted');
+          Shorty.Action.Url.status(entry.attr('data-id'),'deleted');
           // mark row as deleted
           entry.addClass('deleted');
         }
@@ -299,7 +299,7 @@ Shorty =
         // use the existing edit dialog for this
         var dialog=$('#controls #dialog-edit');
         // load entry into dialog
-        dialog.find('#key').val(entry.attr('data-key'));
+        dialog.find('#id').val(entry.attr('data-id'));
         dialog.find('#status').val(entry.attr('data-status')||'');
         dialog.find('#source').val(entry.attr('data-source'||''));
         dialog.find('#target').val(entry.attr('data-target'||''));
@@ -308,8 +308,9 @@ Shorty =
         dialog.find('#created').val(entry.attr('data-created')||'');
         dialog.find('#accessed').val(entry.attr('data-accessed')||'');
         dialog.find('#notes').val(entry.attr('data-notes')||'');
-//        dialog.find('#until').val(entry.attr('data-until')||'');
-        dialog.find('#until').datepicker('setDate',new Date(entry.attr('data-until'))||'');
+//         dialog.find('#until').datepicker('setDate',new Date(entry.attr('data-until'))||'');
+        dialog.find('#until').datepicker('setDate',new Date(entry.attr('data-until'))||'')
+                             .datepicker('refresh');
         // open edit dialog
         Shorty.WUI.Dialog.show(dialog)
         $.when(
@@ -345,8 +346,8 @@ Shorty =
         // use the existing 'share' dialog for this
         var dialog=$('#dialog-share');
         // fill and show dialog
-        dialog.find('#key').val(entry.attr('data-key'))
-                           .attr('data',entry.attr('data-key'));
+        dialog.find('#id').val(entry.attr('data-id'))
+                           .attr('data',entry.attr('data-id'));
         dialog.find('#source').attr('href',entry.attr('data-source'))
                               .text(entry.attr('data-source'));
         dialog.find('#relay').attr('href',entry.attr('data-relay'))
@@ -370,7 +371,7 @@ Shorty =
         // use the existing edit dialog for this
         var dialog=$('#controls #dialog-show');
         // load entry into dialog
-        dialog.find('#key').attr('data-key',entry.attr('data-key')).val(entry.attr('data-key'));
+        dialog.find('#id').attr('data-id',entry.attr('data-id')).val(entry.attr('data-id'));
         dialog.find('#status').attr('data-status',entry.attr('data-status')||'').val(entry.attr('data-status')||'');
         dialog.find('#source').attr('data-source',entry.attr('data-source')).val(entry.attr('data-source'));
         dialog.find('#target').attr('data-target',entry.attr('data-target')).val(entry.attr('data-target'));
@@ -446,10 +447,10 @@ Shorty =
         $.each(list,function(i,set){
           // clone dummy row from list header: dummy is the last row
           row = $('#desktop #list thead tr:last-child').eq(0).clone();
-          // set row id to entry key
-          row.attr('id',set.key);
+          // set row id to entry id
+          row.attr('id',set.id);
           // add attributes to row, as data and value
-          $.each(['key','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
+          $.each(['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
                  function(j,aspect){
             if (hidden)
               row.addClass('shorty-fresh'); // might lead to a pulsate effect later
@@ -667,8 +668,8 @@ Shorty =
         // modify list elements (sets) one by one
         var row,set;
         $.each(list,function(i,set){
-          // select row from list by key
-          row=$('#desktop #list tbody tr#'+set.key);
+          // select row from list by id
+          row=$('#desktop #list tbody tr#'+set.id);
           // modify attributes in row, as data and value
           $.each(['status','title','until','notes'],
                  function(j,aspect){
@@ -1113,7 +1114,7 @@ Shorty =
         popup.find('#hourglass').fadeIn('fast');
         var dfd = new $.Deferred();
         $.ajax({
-          // the '0000000000' below is a special key recognized for testing purposes
+          // the '0000000000' below is a special id recognized for testing purposes
           url:     target+'0000000000',
           cache:   false,
           data:    { },
@@ -1195,7 +1196,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("action modify url");
         var dfd=new $.Deferred();
         var dialog=$('#dialog-edit');
-        var key   =dialog.find('#key').val();
+        var id    =dialog.find('#id').val();
         var status=dialog.find('#status').val()||'public';
         var title =dialog.find('#title').val()||'';
         var until =dialog.find('#until').val()||'';
@@ -1208,7 +1209,7 @@ Shorty =
           Shorty.WUI.List.dim(false),
           Shorty.WUI.List.show()
         ).done(function(){
-          var data={key: key,
+          var data={id: id,
                     status: encodeURI(status),
                     title:  encodeURI(title),
                     notes:  encodeURI(notes),
@@ -1239,14 +1240,14 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("action delete url");
         var dfd = new $.Deferred();
         var dialog = $('#dialog-edit');
-        var key    = dialog.find('#key').val();
+        var id     = dialog.find('#id').val();
         $.when(
 //          Shorty.WUI.Notification.hide(),
           $.ajax({
             type:  'GET',
             url:   OC.filePath('shorty','ajax','del.php'),
             cache: false,
-            data:  { key: key }
+            data:  { id: id }
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -1273,10 +1274,10 @@ Shorty =
       show: function(){
         var dfd = new $.Deferred();
         var dialog = $('#dialog-show');
-        var key    = dialog.find('#key').val();
+        var id     = dialog.find('#id').val();
         var record = $(this).parent().parent();
-        $('#shorty-add-key').val(record.attr('data-key'));
-        $('#shorty-add-key').val(record.attr('data-status'));
+        $('#shorty-add-id').val(record.attr('data-id'));
+        $('#shorty-add-id').val(record.attr('data-status'));
         $('#shorty-add-source').val(record.children('.shorty-source:first').text());
         $('#shorty-add-target').val(record.children('.shorty-target:first').text());
         $('#shorty-add-notes').val(record.children('.shorty-notes:first').text());
@@ -1292,21 +1293,21 @@ Shorty =
         return dfd.promise();
       }, // ===== Shorty.Action.Url.show =====
       // ===== Shorty.Action.Url.status =====
-      status: function(key,status){
-        if (Shorty.Debug) Shorty.Debug.log("changing status of key "+key+" to "+status);
+      status: function(id,status){
+        if (Shorty.Debug) Shorty.Debug.log("changing status of id "+id+" to "+status);
         var dfd = new $.Deferred();
         $.ajax({
           type:  'GET',
           url:   OC.filePath('shorty','ajax','status.php'),
           cache: false,
-          data:  { key:    key,
+          data:  { id    : id,
                    status: status }
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
         ).done(function(){
           // update the rows content
-          var row=$('#list tbody tr#'+key);
+          var row=$('#list tbody tr#'+id);
           row.attr('data-status',status);
           row.find('td#status span').text(status);
           dfd.resolve();

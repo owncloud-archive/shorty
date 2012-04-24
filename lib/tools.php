@@ -85,24 +85,24 @@ class OC_Shorty_Tools
   } // function db_timestamp
 
   /**
-  * @method OC_Shorty_Tools::shorty_key
-  * @brief Creates a random key to be used for a new shorty entry
-  * @returns (string) valid and unique key
+  * @method OC_Shorty_Tools::shorty_id
+  * @brief Creates a unique id to be used for a new shorty entry
+  * @returns (string) valid and unique id
   * @access public
   * @author Christian Reiner
   */
-  static function shorty_key ( )
+  static function shorty_id ( )
   {
     // each shorty installation uses a (once self generated) 62 char alphabet
-    $alphabet=OC_Appconfig::getValue('shorty','key-alphabet');
+    $alphabet=OC_Appconfig::getValue('shorty','id-alphabet');
     if ( empty($alphabet) )
     {
       $alphabet = self::randomAlphabet(62);
-      OC_Appconfig::setValue ( 'shorty', 'key-alphabet', $alphabet );
+      OC_Appconfig::setValue ( 'shorty', 'id-alphabet', $alphabet );
     }
-    // use alphabet to generate a key being unique over time
+    // use alphabet to generate a id being unique over time
     return self::convertToAlphabet ( str_replace(array(' ','.'),'',microtime()), $alphabet );
-  } // function shorty_key
+  } // function shorty_id
 
   /**
    *
@@ -155,17 +155,17 @@ class OC_Shorty_Tools
 
   /**
    * @method OC_Shorty_Tools::relayUrl
-   * @brief Generates a relay url for a given key acting as a href target for all backends
-   * @param key (string) shorty key as shorty identification
+   * @brief Generates a relay url for a given id acting as a href target for all backends
+   * @param id (string) shorty id as shorty identification
    * @returns (string) generated absolute relay url
    * @access public
    * @author Christian Reiner
    */
-  static function relayUrl ($key)
+  static function relayUrl ($id)
   {
     return sprintf ( '%s://%s%s', (isset($_SERVER["HTTPS"])&&'on'==$_SERVER["HTTPS"])?'https':'http',
                                   $_SERVER['SERVER_NAME'],
-                                  OC_Helper::linkTo('apps/shorty','index.php?'.$key) );
+                                  OC_Helper::linkTo('apps/shorty','index.php?'.$id) );
   } // function relayUrl
 
 } // class OC_Shorty_Tools

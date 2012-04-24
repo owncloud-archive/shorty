@@ -27,11 +27,11 @@
 /**
  * @file ajax/status.php
  * @brief Ajax method to modify aspects of an existing shorty
- * @param key (string) Internal key of the referenced shorty
+ * @param id (string) Internal id of the referenced shorty
  * @param title (string) Human readable title
  * @param notes (string) Any additional information in free text form
  * @returns (json) success/error state indicator
- * @returns (json) Associative array holding the key of the shorty whose click was registered
+ * @returns (json) Associative array holding the id of the shorty whose click was registered
  * @author Christian Reiner
  */
 
@@ -46,17 +46,17 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $p_key    = OC_Shorty_Type::req_argument ( 'key',    OC_Shorty_Type::KEY,    TRUE );
+  $p_id     = OC_Shorty_Type::req_argument ( 'id',     OC_Shorty_Type::ID,     TRUE );
   $p_status = OC_Shorty_Type::req_argument ( 'status', OC_Shorty_Type::STATUS, FALSE );
   $param = array
   (
     'user'   => OC_User::getUser ( ),
-    'key'    => $p_key,
+    'id'     => $p_id,
     'status' => $p_status,
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_STATUS );
   $query->execute ( $param );
-  OC_JSON::success ( array ( 'data'    => array('key'=>$p_key),
-                             'message' => sprintf(OC_Shorty_L10n::t("Status change for shorty with key '%s' saved"),$p_key) )  );
+  OC_JSON::success ( array ( 'data'    => array('id'=>$p_id),
+                             'message' => sprintf(OC_Shorty_L10n::t("Status change for shorty with id '%s' saved"),$p_id) )  );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

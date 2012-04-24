@@ -27,11 +27,11 @@
 /**
  * @file ajax/edit.php
  * @brief Ajax method to modify aspects of an existing shorty
- * @param key (string) Internal key of the referenced shorty
+ * @param id (string) Internal id of the referenced shorty
  * @param title (string) Human readable title
  * @param notes (string) Any additional information in free text form
  * @returns (json) success/error state indicator
- * @returns (json) Associative array holding the key of the shorty whose click was registered
+ * @returns (json) Associative array holding the id of the shorty whose click was registered
  * @author Christian Reiner
  */
 
@@ -46,7 +46,7 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $p_key     = OC_Shorty_Type::req_argument ( 'key',     OC_Shorty_Type::KEY,    TRUE );
+  $p_id      = OC_Shorty_Type::req_argument ( 'id',      OC_Shorty_Type::ID,     TRUE );
   $p_status  = OC_Shorty_Type::req_argument ( 'status',  OC_Shorty_Type::STATUS, FALSE );
   $p_title   = OC_Shorty_Type::req_argument ( 'title',   OC_Shorty_Type::STRING, FALSE );
   $p_until   = OC_Shorty_Type::req_argument ( 'until',   OC_Shorty_Type::DATE,   FALSE );
@@ -54,7 +54,7 @@ try
   $param = array
   (
     ':user'  => OC_User::getUser ( ),
-    ':key'   => $p_key,
+    ':id'    => $p_id,
     ':status'=> $p_status  ? $p_status  : '',
     ':title' => $p_title   ? $p_title   : '',
     ':notes' => $p_notes   ? $p_notes   : '',
@@ -67,12 +67,12 @@ try
   $param = array
   (
     'user' => OC_User::getUser(),
-    'key'  => $p_key,
+    'id'   => $p_id,
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_VERIFY );
   $entries = $query->execute($param)->FetchAll();
-  $entries[0]['relay']=OC_Shorty_Tools::relayUrl ( $entries[0]['key'] );
+  $entries[0]['relay']=OC_Shorty_Tools::relayUrl ( $entries[0]['id'] );
   OC_JSON::success ( array ( 'data'    => $entries[0],
-                             'message' => OC_Shorty_L10n::t("Modifications for shorty with key '%s' saved",$p_key) ) );
+                             'message' => OC_Shorty_L10n::t("Modifications for shorty with id '%s' saved",$p_id) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

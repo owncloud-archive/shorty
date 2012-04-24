@@ -39,7 +39,7 @@
 class OC_Shorty_Type
 {
   // the 'types' of values we deal with, actually more something like flavours
-  const KEY         = 'key';
+  const ID          = 'id';
   const STATUS      = 'status';
   const SORTKEY     = 'sortkey';
   const SORTVAL     = 'sortval';
@@ -56,7 +56,7 @@ class OC_Shorty_Type
     'ca'=>'created',  'cd'=>'created DESC',
     'da'=>'until',    'dd'=>'until DESC',
     'ha'=>'clicks',   'hd'=>'clicks DESC',
-    'ka'=>'key',      'kd'=>'key DESC',
+    'ka'=>'id',       'kd'=>'id DESC',
     'sa'=>'status',   'sd'=>'status DESC',
     'ta'=>'title',    'td'=>'title DESC',
     'ua'=>'target',   'ud'=>'target DESC' );
@@ -151,7 +151,7 @@ class OC_Shorty_Type
   {
     switch ( $type )
     {
-      case self::KEY:
+      case self::ID:
         if ( preg_match ( '/^[a-z0-9]{2,20}$/i', $value ) )
           return $value;
         elseif ( ! $strict)
@@ -236,7 +236,7 @@ class OC_Shorty_Type
         throw new OC_Shorty_Exception ( "invalid value '%1\$s' for type '%2\$s'", array($value,$type) );
     switch ( $type )
     {
-      case self::KEY:       return trim ( $value );
+      case self::ID:        return trim ( $value );
       case self::STATUS:    return trim ( $value );
       case self::SORTKEY:   return trim ( $value );
       case self::SORTVAL:   return trim ( $value );

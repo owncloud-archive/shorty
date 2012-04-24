@@ -49,7 +49,7 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $p_key     = OC_Shorty_Tools::shorty_key ( );
+  $p_id      = OC_Shorty_Tools::shorty_id ( );
   $p_status  = OC_Shorty_Type::req_argument ( 'status',  OC_Shorty_Type::STATUS, FALSE );
   $p_title   = OC_Shorty_Type::req_argument ( 'title',   OC_Shorty_Type::STRING, FALSE );
   $p_target  = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL,    TRUE  );
@@ -57,14 +57,14 @@ try
   $p_notes   = OC_Shorty_Type::req_argument ( 'notes',   OC_Shorty_Type::STRING, FALSE );
   $p_favicon = OC_Shorty_Type::req_argument ( 'favicon', OC_Shorty_Type::URL,    FALSE );
   // register shorty at backend
-  $p_source = OC_Shorty_Backend::registerUrl ( $p_key );
+  $p_source = OC_Shorty_Backend::registerUrl ( $p_id );
   // fallback title: choose hostname if no title is specified
   $p_title = $p_title ? trim($p_title) : parse_url($p_target,PHP_URL_HOST);
   // insert new shorty into our database
   $param = array
   (
     ':user'    => OC_User::getUser(),
-    ':key'     => $p_key,
+    ':id'      => $p_id,
     ':status'  => $p_status  ? $p_status  : '',
     ':title'   => $p_title   ? $p_title   : '',
     ':favicon' => $p_favicon ? $p_favicon : '',
@@ -80,11 +80,11 @@ try
   $param = array
   (
     'user' => OC_User::getUser(),
-    'key'  => $p_key,
+    'id'   => $p_id,
   );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_VERIFY );
   $entries = $query->execute($param)->FetchAll();
-  $entries[0]['relay']=OC_Shorty_Tools::relayUrl ( $entries[0]['key'] );
+  $entries[0]['relay']=OC_Shorty_Tools::relayUrl ( $entries[0]['id'] );
   OC_JSON::success ( array ( 'data'    => $entries[0],
                              'message' => OC_Shorty_L10n::t("Url shortened to: %s",$p_source) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }

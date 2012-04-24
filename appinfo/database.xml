@@ -41,7 +41,7 @@
     <name>*dbprefix*shorty</name>
     <declaration>
       <field>
-        <name>key</name>
+        <name>id</name>
         <type>text</type>
         <notnull>true</notnull>
         <length>12</length>
@@ -120,10 +120,10 @@
       </field>
 
       <index>
-        <name>shorty_key</name>
+        <name>shorty_id</name>
         <unique>true</unique>
         <field>
-          <name>key</name>
+          <name>id</name>
           <sorting>descending</sorting>
         </field>
       </index>

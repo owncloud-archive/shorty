@@ -45,7 +45,7 @@
       </a>    
       <?php echo OC_Shorty_L10n::t('Modify shorty').':'; ?>
     </legend>
-    <input id="key" name="key" type="hidden" readonly data="" class="" readonly disabled />
+    <input id="id" name="id" type="hidden" readonly data="" class="" readonly disabled />
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
     <input id="source" name="source" type="text" data="" class="" readonly disabled />
     <br />

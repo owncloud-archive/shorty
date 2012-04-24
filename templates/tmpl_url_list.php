@@ -117,7 +117,7 @@
     </tr>
     <!-- the 'dummy' row, a blueprint -->
     <tr id=""
-        data-key=""
+        data-id=""
         data-status=""
         data-source=""
         data-relay=""

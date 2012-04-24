@@ -53,21 +53,21 @@ OC_Util::addStyle  ( 'shorty',  'shorty' );
 $act = 'index';
 $arg = NULL;
 // we try to guess what the request indicates:
-// - a (shorty) key to be looked up in the database resulting in a forwarding to the stored target
+// - a (shorty) id to be looked up in the database resulting in a forwarding to the stored target
 // - a (target) url to be added as a new shorty
 // - none of the two, so just a plain list of existing shortys
 foreach ($_GET as $key=>$val) // in case there are unexpected, additional arguments like a timestamp added by some stupid proxy
 {
   switch ($key)
   {
-    // any recognizable argument key indicating a key to be looked up ?
-    case 'key':
+    // any recognizable argument key indicating an id to be looked up ?
+    case 'id':
     case 'shorty':
     case 'ref':
     case 'entry':
-      // example: http://.../shorty/index.php?key=hf732J6Dk4
+      // example: http://.../shorty/index.php?id=hf732J6Dk4
       $act = 'forward';
-      $arg = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::KEY,FALSE);
+      $arg = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::ID,FALSE);
       break 2; // skip switch AND foreach
     // any recognizable argument key indicating a url to be added as new shorty ?
     case 'url':
@@ -84,7 +84,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
     // we restrict this 'guessing' to cases where only a single argument is specified
     default:
       if (  (1==sizeof($_GET))  // only one single request argument
-          &&( ! reset($_GET)) ) // no value, so maybe just a key
+          &&( ! reset($_GET)) ) // no value, so maybe just an id
       {
         // use that source instead of $key, since $key contains replaced chars (php specific exceptions due to var name problems)
         $raw = urldecode($_SERVER['QUERY_STRING']);
@@ -96,9 +96,9 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
           $arg = $raw;
           break 2;
         }
-        elseif (NULL!==($value=OC_Shorty_Type::normalize($raw,OC_Shorty_Type::KEY,FALSE)))
+        elseif (NULL!==($value=OC_Shorty_Type::normalize($raw,OC_Shorty_Type::ID,FALSE)))
         {
-          // the query string is a key, look for a shorty to forward to
+          // the query string is an id, look for a shorty to forward to
           $act = 'forward';
           $arg = $raw;
           break 2;
@@ -118,23 +118,23 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 // next, execute the "act" whilst considering the 'arg'
 switch ($act)
 {
-  case 'forward': // forward to a target identified by a key
+  case 'forward': // forward to a target identified by a id
     try
     {
-      // detect requested shorty key from request
-      $p_key = trim ( OC_Shorty_Type::normalize($_SERVER['QUERY_STRING'],OC_Shorty_Type::KEY) ) ;
-      // a key was specified, look for matching entry in database
-      if ( '0000000000'==$p_key )
+      // detect requested shorty id from request
+      $p_id = trim ( OC_Shorty_Type::normalize($_SERVER['QUERY_STRING'],OC_Shorty_Type::ID) ) ;
+      // an id was specified, look for matching entry in database
+      if ( '0000000000'==$p_id )
       {
-        // this is a pseudo key, used to test the setup, so return a positive message.
+        // this is a pseudo id, used to test the setup, so return a positive message.
         OC_JSON::success ( array ( ) );
         exit();
       }
-      else if ( $p_key )
+      else if ( $p_id )
       {
         $param = array
         (
-          'key' => OC_Shorty_Tools::db_escape ( $p_key ),
+          'id' => OC_Shorty_Tools::db_escape ( $p_id ),
         );
         $query  = OC_DB::prepare ( OC_Shorty_Query::URL_FORWARD );
         $result = $query->execute($param)->FetchAll();
@@ -190,7 +190,7 @@ switch ($act)
         $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
         $query->execute ( $param );
         exit();
-      } // if key
+      } // if id
     } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
     // cannot really come here, but let's stay on the safe side...
     exit();

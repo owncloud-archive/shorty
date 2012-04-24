@@ -50,7 +50,7 @@
       <span id="backend-example">
         <label for="example" class="aspect"><?php echo $l->t('Example:');?></label>
         <a id="example" class="example" title="<?php echo $l->t('Verify by clicking');?>">
-          <?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME']) ?>
+          <?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME']) ?>
         </a>
       </span>
       <br/>

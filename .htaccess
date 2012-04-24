@@ -23,7 +23,7 @@
 #
 
 # @file .htaccess
-# These rules try to detect any requests that carry a "shorty key" and map them to forward.php?<shorty key>
+# These rules try to detect any requests that carry a "shorty id" and map them to forward.php?<shorty id>
 # That way you can use shorter (or more simple) urls to publish or relay links
 # @author Christian Reiner
 

@@ -63,7 +63,7 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t('Example:');?></label>
-          <span id="example" class="example"><?php echo sprintf('http://%s%s<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME'],OC_Helper::linkTo('shorty','',false)) ?></span>
+          <span id="example" class="example"><?php echo sprintf('http://%s%s<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME'],OC_Helper::linkTo('shorty','',false)) ?></span>
         </span>
         <br/>
         <span id="explain" class="explain">
@@ -83,7 +83,7 @@
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t('Example:');?></label>
           <a id="example" class="example" title="<?php echo $l->t('Verify by clicking');?>">
-            <?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty key&gt;</em>',$_SERVER['SERVER_NAME']) ?>
+            <?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME']) ?>
           </a>
         </span>
         <br/>

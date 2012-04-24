@@ -27,7 +27,7 @@
 /**
  * @file ajax/del.php
  * @brief Ajax method to delete an existing shorty
- * @param key (string) Internal key of a referenced shorty
+ * @param id (string) Internal id of a referenced shorty
  * @returns (json) success/error state indicator
  * @returns (json) Key of shorty that was deleted
  * @author Christian Reiner
@@ -44,15 +44,15 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $p_key = OC_Shorty_Type::req_argument ( 'key', OC_Shorty_Type::KEY, TRUE );
+  $p_id  = OC_Shorty_Type::req_argument ( 'id', OC_Shorty_Type::KEY, TRUE );
   $param = array
   (
-    OC_Shorty_Tools::db_escape ( $p_key ),
+    OC_Shorty_Tools::db_escape ( $p_id ),
     OC_User::getUser()
     );
   $query = OC_DB::prepare ( OC_Shorty_Query::URL_DELETE );
   $query->execute($param);
-  OC_JSON::success ( array ( 'data'    => array('key'=>$p_key),
-                             'message' => OC_Shorty_L10n::t("Shorty with key '%s' deleted",$p_key) ) );
+  OC_JSON::success ( array ( 'data'    => array('id'=>$p_id),
+                             'message' => OC_Shorty_L10n::t("Shorty with id '%s' deleted",$p_id) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
