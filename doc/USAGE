@@ -34,14 +34,14 @@ A css3 capable and reasonably standards conform web browser.
 A scripting capable bookmarks feature for the optional Shortlet thing. 
 
 === Usage ===
-This is only a very basic description. The plugin should be faily intuitive to
+This is only a very basic description. The plugin should be fairly intuitive to
 use, just have a try with a few web urls. To get going I suggest that you
 - chose a backend (see configuration below).
 - import the shortlet into your preferred web browser (see configuration below).
 - define a few shorties either manually ("New") or by using the shortlet.
-All actions on existing shorties are accessed using the action icons shown left
-of the shorty in the list. Daily uses is probably based on selection the 'share'
-action and grabbing the visualized "source url".
+All actions on existing shorties are accessed using the action icons shown to
+the right of the shorty in the list. Daily uses is probably based on selection
+the 'share' action and grabbing the visualized "source url".
 By clicking on the header row of the list of shorties you can open (and close)
 a "toolbox" offering options to sort, filter and reload the list. The sorting
 you chose is stored in a persistant manner, not so any filters defined. You
@@ -60,5 +60,5 @@ However it is also very important to keep in mind that such form of control can
 never replace any serious form of access control over the content published via
 a published link. Shorty works as a short url resolver, meaning it forwards any
 requesting web browser to the real address of the published content. This might
-change when a proxy function is integrated in a future version, as opposed to
-the current forwarding mechanism. 
+change when if future an integrated proxy function gets implemented, as opposed
+to the current forwarding mechanism. 

@@ -36,7 +36,7 @@ Each Shorty contains a source and a target url. The source url can be used to
 be posted in forums, sent inside an email message or whatever. It is typically
 shorter than the target url, a full blown web url. But that actually depends
 on the target url and the backend used. The target url is the ressource
-identified by the shorty. Basic access control is implemented to control usage
-of posted shorties, but not on a per user or per group base. Existing shorties
-can blocked for usage, set to expire on a certain date and obviously can be
-removed permanently again.
+identified by the shorty. Basic access control is implemented to control the
+access of shorties posted to forums or sent per email, but not on a per user or
+per group base. Existing shorties can be blocked for usage, set to expire on a
+certain date and obviously can be removed permanently again.

@@ -27,7 +27,7 @@ The current status of this package is as follows:
 The initial release is definately buggy and contains annoying shortcomings.
 It has been developed on a linux system using a firefox browser, so this is
 most likely the best working combination. Basic usage test have been made with
-a few other browsers. The package appears to be working in general tough there
+a few other browsers. The package appears to be working in general though there
 might be some minor differences in apeparance.
 
 Known shortcomings are:
