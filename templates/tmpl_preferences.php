@@ -115,7 +115,7 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t("Example").':';?></label>
-          <span id="example" class="example"><?php echo sprintf('http://bitly.com/<em>&lt;key&gt;</em>') ?></span>
+          <span id="example" class="example"><?php echo sprintf('http://bitly.com/<em>&lt;shorty id&gt;</em>') ?></span>
         </span>
         <br/>
         <span id="explain" class="explain">
@@ -133,7 +133,7 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t("Example").':';?></label>
-          <span id="example" class="example"><?php echo sprintf('http://cli.gs/<em>&lt;key&gt;</em>') ?></span>
+          <span id="example" class="example"><?php echo sprintf('http://cli.gs/<em>&lt;shorty id&gt;</em>') ?></span>
         </span>
         <br/>
         <span id="explain" class="explain">
@@ -146,7 +146,7 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t("Example").':';?></label>
-          <span id="example" class="example"><?php echo sprintf('http://is.gd/<em>&lt;key&gt;</em>') ?></span>
+          <span id="example" class="example"><?php echo sprintf('http://is.gd/<em>&lt;shorty id&gt;</em>') ?></span>
         </span>
         <br/>
         <span id="explain" class="explain">
@@ -162,7 +162,7 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t("Example").':';?></label>
-          <span id="example" class="example"><?php echo sprintf('http://goo.gl/<em>&lt;key&gt;</em>') ?></span>
+          <span id="example" class="example"><?php echo sprintf('http://goo.gl/<em>&lt;shorty id&gt;</em>') ?></span>
         </span>
         <br/>
         <span id="explain" class="explain">
@@ -187,7 +187,7 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t("Example").':';?></label>
-          <span id="example" class="example"><?php echo sprintf('http://tiny.cc/<em>&lt;key&gt;</em>') ?></span>
+          <span id="example" class="example"><?php echo sprintf('http://tiny.cc/<em>&lt;shorty id&gt;</em>') ?></span>
         </span>
         <br/>
         <span id="explain" class="explain">
@@ -204,7 +204,7 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t("Example").':'; ?></label>
-          <span id="example" class="example"><?php echo sprintf('http://ti.ny/<em>&lt;key&gt;</em>') ?></span>
+          <span id="example" class="example"><?php echo sprintf('http://ti.ny/<em>&lt;shorty id&gt;</em>') ?></span>
         </span>
         <br/>
         <span id="explain" class="explain">
@@ -217,7 +217,7 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t("Example").':'; ?></label>
-          <span id="example" class="example"><?php echo sprintf('http://turl.ca/<em>&lt;key&gt;</em>') ?></span>
+          <span id="example" class="example"><?php echo sprintf('http://turl.ca/<em>&lt;shorty id&gt;</em>') ?></span>
         </span>
         <br/>
         <span id="explain" class="explain">
