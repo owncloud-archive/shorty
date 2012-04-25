@@ -176,8 +176,8 @@ class OC_Shorty_Type
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::STRING:
-        if ( preg_match ( '/^.*$/', $value ) )
-          return $value;
+        if ( preg_match ( '/^.*$/x', str_replace("\n","\\n",$value) ) )
+          return str_replace("\n","\\n",$value);
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
@@ -230,10 +230,12 @@ class OC_Shorty_Type
   static function normalize ( $value, $type, $strict=FALSE )
   {
     if (NULL===(self::validate($value,$type,$strict)))
+    {
       if ( ! $strict)
         return NULL;
       else
         throw new OC_Shorty_Exception ( "invalid value '%1\$s' for type '%2\$s'", array($value,$type) );
+    } // if
     switch ( $type )
     {
       case self::ID:        return trim ( $value );
@@ -266,7 +268,7 @@ class OC_Shorty_Type
     {
       case 'POST':
         if ( isset($_POST[$arg]) && !empty($_POST[$arg]) )
-          return self::normalize ( htmlspecialchars_decode($_POST[$arg]), $type ) ;
+          return self::normalize ( urldecode($_POST[$arg]), $type ) ;
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
