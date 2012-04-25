@@ -63,6 +63,8 @@ $(document).ready(function(){
     buttonImageOnly: true
   });
   $('#controls #until:not([readonly])').datepicker();
+  // bind usage to the usage icons
+  $('#dialog-share img.shorty-usage:not(.disabled)').live('click',function(e){Shorty.WUI.Entry.send(e,$(this));});
   // bind actions to the actions icons
   $('#list tbody .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
   // bind highlighting to clicks on a row, except for the action icons

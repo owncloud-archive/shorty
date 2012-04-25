@@ -339,6 +339,18 @@ Shorty =
         })
         return dfd.promise();
       }, // Shorty.WUI.Entry.edit
+      // ===== Shorty.WUI.Entry.send =====
+      send: function(event,element){
+        var dfd = new $.Deferred();
+        var action=element.attr('id');
+        var entry=element.parents('tr');
+        if (Shorty.Debug) Shorty.Debug.log("send action "+action+" on entry "+entry.attr('data-id'));
+        //
+        $.when(
+          Shorty.Action.Url.send(action,entry)
+        ).done(dfd.resolve)
+        return dfd.promise();
+      }, // Shorty.WUI.Entry.send
       // ===== Shorty.WUI.Entry.share =====
       share: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("share entry "+entry.attr('id'));
@@ -1271,6 +1283,18 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("opening target url '"+url+"' in new window");
         window.open(url);
       }, // Shorty.Action.Url.forward
+      // ===== Shorty.Action.Url.send =====
+      send: function(action,entry){
+        if (Shorty.Debug) Shorty.Debug.log("action send via "+action+" with entry "+entry.attr('id'));
+        switch (action){
+          case 'email':
+            window.location="mailto:////\"\"?subject="+encodeURIComponent(entry.attr('data-title')||'')+"&body="+entry.attr('data-source');
+            break;
+          case 'sms':
+          case 'clipboard':
+            if (Shorty.Debug) Shorty.Debug.log("action is disabled, refusing to comply");
+        }
+      }, // Shorty.Action.Url.send
       // ===== Shorty.Action.Url.show =====
       show: function(){
         var dfd = new $.Deferred();

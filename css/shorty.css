@@ -354,6 +354,16 @@
   border: 0 none;
   background-color: #F4F4F4;
 }
+.shorty-embedded img.shorty-usage {
+  opacity: 0.6;
+  margin: 1em 3em 0.2em;
+}
+.shorty-embedded img.shorty-usage.disabled {
+  opacity: 0.2;
+}
+.shorty-embedded img.shorty-usage:not(.disabled):hover {
+  cursor: pointer;
+}
 .shorty-dialog label {
   display: inline-block;
   clear:none;
