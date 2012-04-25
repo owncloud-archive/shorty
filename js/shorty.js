@@ -167,9 +167,26 @@ Shorty =
         if (dialog){
           // reset dialog fields
           $.when(
-            $.each(dialog.find('input'),function(){if($(this).is('[data]'))$(this).val($(this).attr('data'));}),
-            $.each(dialog.find('.shorty-value'),function(){if($(this).is('[data]'))$(this).text($(this).attr('data'));}),
-            $.each(dialog.find('.shorty-icon'), function(){if($(this).is('[data]'))$(this).attr('src',$(this).attr('data'));}),
+            $.each(dialog.find('#status'),function(){
+              if($(this).is('[data]'))
+                   $(this).val($(this).attr('data'));
+              else $(this).val('');
+            }),
+            $.each(dialog.find('input,textarea'),function(){
+              if($(this).is('[data]'))
+                   $(this).val($(this).attr('data')).attr('placeholder',$(this).attr('data'));
+              else $(this).val('').attr('placeholder','');
+            }),
+            $.each(dialog.find('.shorty-value'),function(){
+              if($(this).is('[data]'))
+                   $(this).text($(this).attr('data'));
+              else $(this).text('');
+            }),
+            $.each(dialog.find('.shorty-icon'), function(){
+              if($(this).is('[data]'))
+                   $(this).attr('src',$(this).attr('data'));
+              else $(this).attr('src','');
+            }),
             Shorty.WUI.Dialog.sharpen(dialog,false)
           ).done(dfd.resolve)
         }
@@ -247,6 +264,25 @@ Shorty =
           $.when(Shorty.WUI.Dialog.hide(dialog)).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Dialog.toggle
+      // ===== Shorty.WUI.Dialog.wipe =====
+      wipe: function(dialog){
+        if (Shorty.Debug) Shorty.Debug.log("wipe dialog "+dialog.attr('id'));
+        var dfd = new $.Deferred();
+        if (dialog){
+          // wipe dialog fields
+          $.when(
+            $.each(dialog.find('#status'),      function(){$(this).attr('data','blocked');$(this).val('blocked');}),
+            $.each(dialog.find('input'),        function(){$(this).attr('data','');$(this).val('');}),
+            $.each(dialog.find('textarea'),     function(){$(this).attr('data','');$(this).val('');}),
+            $.each(dialog.find('.shorty-value'),function(){$(this).attr('data','');$(this).text('');}),
+            $.each(dialog.find('.shorty-icon'), function(){$(this).attr('data','');$(this).attr('src','');}),
+            Shorty.WUI.Dialog.sharpen(dialog,false)
+          ).done(dfd.resolve)
+        }
+        else
+          dfd.resolve();
+        return dfd.promise();
+      }, // Shorty.WUI.Dialog.wipe
     }, // Shorty.WUI.Dialog
     // ===== Shorty.WUI.Entry =====
     Entry:
@@ -1193,7 +1229,8 @@ Shorty =
             function(response){return Shorty.Ajax.fail(response)}
           ).done(function(response){
             // wipe entries in dialog
-            Shorty.WUI.Dialog.reset(dialog);
+            Shorty.WUI.Dialog.reset(dialog)
+          }).done(function(response){
             // add shorty to existing list
             Shorty.WUI.List.add([response.data],true);
             Shorty.WUI.List.dim(true)
