@@ -59,7 +59,9 @@ visualized next to the configuration option. It runs a simple self-tests of the
 setup in background.
 There is no need that the base url must be served by the same http server that
 serves the owncoud system. A static rewrite setup may well forward short source
-urls to the shorty plugin inside a remote ownCloud installation.
+urls to the shorty plugin inside a remote ownCloud installation. However, it is
+a known issue that the internal validation of the setup won't work with such
+scenario. 
 
 2.) Selection of a backend per user (optional)
 To generate the a source url that is part of every shorty the plugin uses a
