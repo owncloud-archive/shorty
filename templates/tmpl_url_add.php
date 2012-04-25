@@ -76,8 +76,7 @@
     <br />
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes').':'; ?></label>
     <textarea id="notes" name="notes" maxlength="4096" data="" class=""
-              placeholder="<?php echo OC_Shorty_L10n::t('Anything that appears helpful …'); ?>">
-    </textarea>
+              placeholder="<?php echo OC_Shorty_L10n::t('Anything that appears helpful …'); ?>"></textarea>
     <br />
     <label for="confirm"></label>
     <button id="confirm" class="shorty-button-submit"><?php echo OC_Shorty_L10n::t('Add as new'); ?></button>
