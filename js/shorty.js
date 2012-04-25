@@ -167,7 +167,7 @@ Shorty =
         if (dialog){
           // reset dialog fields
           $.when(
-            $.each(dialog.find('.shorty-input'),function(){if($(this).is('[data]'))$(this).val($(this).attr('data'));}),
+            $.each(dialog.find('input'),function(){if($(this).is('[data]'))$(this).val($(this).attr('data'));}),
             $.each(dialog.find('.shorty-value'),function(){if($(this).is('[data]'))$(this).text($(this).attr('data'));}),
             $.each(dialog.find('.shorty-icon'), function(){if($(this).is('[data]'))$(this).attr('src',$(this).attr('data'));}),
             Shorty.WUI.Dialog.sharpen(dialog,false)
@@ -216,7 +216,7 @@ Shorty =
             }()
           ).pipe(function(){
             // wipe (reset) dialog
-            Shorty.WUI.Dialog.reset(dialog);
+//             Shorty.WUI.Dialog.reset(dialog);
             // show dialog
             dialog.slideDown(duration);
           }).pipe(function(){
@@ -1176,15 +1176,15 @@ Shorty =
           Shorty.WUI.List.dim(false),
           Shorty.WUI.List.show()
         ).done(function(){
-          var data={status:  encodeURIComponent(status),
-                    target:  encodeURIComponent(target),
-                    title:   encodeURIComponent(title),
-                    notes:   encodeURIComponent(notes),
-                    until:   encodeURIComponent(until),
-                    favicon: encodeURIComponent(favicon)};
+          var data={status:  status,
+                    target:  target,
+                    title:   title,
+                    notes:   notes,
+                    until:   until,
+                    favicon: favicon};
           if (Shorty.Debug) Shorty.Debug.log(data);
           $.ajax({
-            type:  'GET',
+            type:  'POST',
             url:   OC.filePath('shorty','ajax','add.php'),
             cache: false,
             data:  data
@@ -1192,6 +1192,7 @@ Shorty =
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
           ).done(function(response){
+            // wipe entries in dialog
             Shorty.WUI.Dialog.reset(dialog);
             // add shorty to existing list
             Shorty.WUI.List.add([response.data],true);
@@ -1223,13 +1224,13 @@ Shorty =
           Shorty.WUI.List.show()
         ).done(function(){
           var data={id: id,
-                    status: encodeURI(status),
-                    title:  encodeURI(title),
-                    notes:  encodeURI(notes),
-                    until:  encodeURI(until) };
+                    status: status,
+                    title:  title,
+                    notes:  notes,
+                    until:  until};
           if (Shorty.Debug) Shorty.Debug.log(data);
           $.ajax({
-            type:  'GET',
+            type:  'POST',
             url:   OC.filePath('shorty','ajax','edit.php'),
             cache: false,
             data:  data,
@@ -1237,6 +1238,7 @@ Shorty =
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
           ).done(function(response){
+            // wipe entries in dialog
             Shorty.WUI.Dialog.reset(dialog);
             // modify existing entry in list
             Shorty.WUI.List.modify([response.data],true);
