@@ -68,6 +68,7 @@
 "Base url"                                                   => "Basis-Url",
 "Specify a backend base url…"                                => "Lege eine Basis-Url für das Backend fest…",
 "Verification by click"                                      => "Prüfung durch Klicken",
+"Copy to clipboard: Ctrl+C, Enter"                           => "In Zwischenablage kopieren: Strg-C & Enter",
 "bit.ly user"         => "bit.ly-Nutzer",
 "bit.ly user name"    => "bit.ly-Nutzerkennung",
 "bit.ly key"          => "bit.ly-Schlüssel",

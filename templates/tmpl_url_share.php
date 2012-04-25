@@ -80,7 +80,7 @@
     <img id="sms" type="image" name="usage-sms" class="shorty-usage disabled" alt="sms"
          src="<?php echo OC_Helper::imagePath('apps/shorty','usage/64/sms.png');  ?>"
          title="<?php echo OC_Shorty_L10n::t("Send by SMS"); ?>" />
-    <img id="clipboard" type="image" name="usage-clipboard" class="shorty-usage disabled" alt="clipbaord"
+    <img id="clipboard" type="image" name="usage-clipboard" class="shorty-usage" alt="clipbaord"
          src="<?php echo OC_Helper::imagePath('apps/shorty','usage/64/clipboard.png');  ?>"
          title="<?php echo OC_Shorty_L10n::t("Copy to clipboard"); ?>" />
   </fieldset>

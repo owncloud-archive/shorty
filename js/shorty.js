@@ -1289,13 +1289,15 @@ Shorty =
       send: function(action,entry){
         if (Shorty.Debug) Shorty.Debug.log("action send via "+action+" with entry "+entry.attr('id'));
         switch (action){
+          case 'clipboard':
+            window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, Enter"), entry.attr('data-source'));
+            break;
           case 'email':
             window.location="mailto:////\"\"?"
                            +"subject="+encodeURIComponent(entry.attr('data-title')||'')
                            +"&body="+entry.attr('data-notes')+entry.attr('data-source');
             break;
           case 'sms':
-          case 'clipboard':
             if (Shorty.Debug) Shorty.Debug.log("action is disabled, refusing to comply");
         }
       }, // Shorty.Action.Url.send
