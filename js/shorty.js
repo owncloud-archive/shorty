@@ -1298,7 +1298,8 @@ Shorty =
                            +"&body="+entry.attr('data-notes')+entry.attr('data-source');
             break;
           case 'sms':
-            if (Shorty.Debug) Shorty.Debug.log("action is disabled, refusing to comply");
+          default:
+            if (Shorty.Debug) Shorty.Debug.log("usage action '"+action+"' is disabled, refusing to comply");
         }
       }, // Shorty.Action.Url.send
       // ===== Shorty.Action.Url.show =====
