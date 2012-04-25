@@ -1293,9 +1293,11 @@ Shorty =
             window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, Enter"), entry.attr('data-source'));
             break;
           case 'email':
-            window.location="mailto:////\"\"?"
-                           +"subject="+encodeURIComponent(entry.attr('data-title')||'')
-                           +"&body="+entry.attr('data-notes')+entry.attr('data-source');
+            var mailSubject=entry.attr('data-title')||'';
+            var mailBody=entry.attr('data-notes')+"\n\n"+entry.attr('data-source');
+            window.location='mailto:""?'
+                           +'subject='+encodeURIComponent(mailSubject)
+                           +'&body='+encodeURIComponent(mailBody);
             break;
           case 'sms':
           default:
