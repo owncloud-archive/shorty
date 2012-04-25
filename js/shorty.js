@@ -1288,7 +1288,9 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("action send via "+action+" with entry "+entry.attr('id'));
         switch (action){
           case 'email':
-            window.location="mailto:////\"\"?subject="+encodeURIComponent(entry.attr('data-title')||'')+"&body="+entry.attr('data-source');
+            window.location="mailto:////\"\"?"
+                           +"subject="+encodeURIComponent(entry.attr('data-title')||'')
+                           +"&body="+entry.attr('data-notes')+entry.attr('data-source');
             break;
           case 'sms':
           case 'clipboard':
