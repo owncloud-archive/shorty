@@ -23,11 +23,25 @@
 *****
 
 This package is a plugin for the ownCloud web application ("ownCloud app").
-The standard installation rules apply:
 
-Unpack the package in the "apps" subfolder of your ownCloud web root.
-Enable the plugin in the "Apps" section of the configuration ("*") inside ownClouds web gui (requires admin rights).
-The "Admin" section of that configuration allows to configure a base url to enable usage of the static backend (see USAGE).
+There are two ways of instalaltion: automatic and manual
+
+* Automatic installation:
+You need login to your ownCloud using an account with administrative rights.
+Open the 'Apps' section of the adminstration and select 'shorty', enable it.
+Then go on below with the basic configuration steps. 
+
+* Manual installation:
+Download the package from here: 
+http://apps.owncloud.com/content/show.php/Shorty?content=150401
+Create a subfolder 'shorty' in the "apps" subfolder of your ownCloud web root.
+Unpack the contents of the package into the new folder 'shorty'.
+Now load ownCloud in your favorite web browser and login with an administrative account.
+Enable the plugin in the "Apps" section of the configuration ("*") inside
+ownClouds web gui (requires admin rights).
+
+* Basic configuration steps for BOTH types of installation: 
+The "Admin" section of the configuration allows to configure a base url to enable usage of the static backend (see USAGE).
 The "Preferences" section of that configuration now offers two elements:
 - the "Shortlet" to be dragged to the browsers bookmark panel or area (see USAGE).
 - the configuration of a backend to use to generate source urls (see USAGE).
