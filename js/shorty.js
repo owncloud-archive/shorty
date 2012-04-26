@@ -594,6 +594,7 @@ Shorty =
             $(this).find('td').effect('pulsate');
           });
           $.when(
+            Shorty.WUI.List.vacuum(),
             body.fadeIn(duration)
           ).done(dfd.resolve)
         }else{
@@ -814,8 +815,8 @@ Shorty =
       // ===== Shorty.WUI.List.vacuum =====
       vacuum: function(){
         if (Shorty.Debug) Shorty.Debug.log("vacuum list");
-        // list if empty if one 1 row is contained (the dummy)
-        if ($('#list tbody').find('tr').length)
+        // list is empty if no row exists
+        if (0!=$('#list tbody').find('tr').length)
           $('#vacuum').fadeOut('fast');
         else
           $('#vacuum').fadeIn('slow');
