@@ -26,9 +26,8 @@
 
 /**
  * @file status.php
- * This is the plugins central position
- * All requests to the plugin are handled by this file.
- * Exceptions: system settings and user preferences dialogs
+ * This is the plugins fallback page to visualize problems or errors. 
+ * It more or less displays a generic error message according to http reply codes it is called upon. 
  * @access public
  * @author Christian Reiner
  */
@@ -38,7 +37,7 @@ OC_Util::checkAppEnabled ( 'shorty' );
 
 OC_App::setActiveNavigationEntry ( 'shorty_index' );
 
-OC_Util::addScript ( 'shorty',  'debug' );
+//OC_Util::addScript ( 'shorty',  'debug' );
 OC_Util::addScript ( 'shorty',  'shorty' );
 OC_Util::addScript ( 'shorty',  'init' );
 OC_Util::addScript ( 'shorty/3rdparty','jquery.tinysort.min' );
