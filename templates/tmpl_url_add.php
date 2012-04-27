@@ -48,7 +48,7 @@
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
     <input id="target" name="target" type="text" maxlength="4096" data="" class=""/>
     <br />
-    <label for="meta">&nbsp;</label>
+    <label for="meta">&nbsp;<img id="busy" height="12px" src="<?php echo OC_Helper::imagePath('shorty', 'loading-led.gif'); ?>"></label>
     <span id="meta" class="shorty-meta">
     <img id="staticon"  class="shorty-icon" src="" width="16" data="<?php echo OC_Helper::imagePath('shorty', 'status/neutral.png'); ?>">
     <img id="schemicon" class="shorty-icon" src="" width="16" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">

@@ -232,8 +232,8 @@ Shorty =
               return dfd.promise();
             }()
           ).pipe(function(){
-            // wipe (reset) dialog
-//             Shorty.WUI.Dialog.reset(dialog);
+            // prevent submission before entering anything
+            Shorty.WUI.Dialog.sharpen(dialog,false);
             // show dialog
             dialog.slideDown(duration);
           }).pipe(function(){
@@ -941,6 +941,8 @@ Shorty =
           dfd.resolve();
           return dfd.promise();
         }
+        // start expressing activity
+        $('#dialog-add #busy').fadeIn('fast');
         // fill in fallback protocol scheme 'http' if none is specified
         var regexp = /^[a-zA-Z0-9]+\:\//;
         if ( ! regexp.test(target) ){
@@ -965,6 +967,8 @@ Shorty =
             dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
             dialog.find('#meta').fadeTo('fast',1);
             Shorty.WUI.Dialog.sharpen(dialog,true);
+            // stop expressing activity
+            $('#dialog-add #busy').fadeOut('slow');
           });
           dfd.resolve(response);
         }).fail(function(reponse){
