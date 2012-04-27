@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* Fri Apr 27 2012 Christian Reiner: version 0.1.4
+Visualization of busy state in dialogs whilst fetch meta data from targets.
 * Fri Apr 27 2012 Christian Reiner: version 0.1.3
 Prevented untimely submission of dialogs before having validated their contents.
 * Fri Apr 27 2012 Christian Reiner: version 0.1.2

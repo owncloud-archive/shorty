@@ -44,8 +44,8 @@ is something like a Booklet, a JS based bookmark meant to be stored inside the
 bookmark toolbar or area of a web browser. When clicked, the page currently
 open in the browser will be offered to be added to the list of existing shorties.
 For more information see: http://apps.owncloud.com/content/show.php/Shorty?content=150401
-Current version: 0.1.3 (27.04.2012)</description>
-	<version>0.1.3</version>
+Current version: 0.1.4 (27.04.2012)</description>
+	<version>0.1.4</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
 	<require>2</require>
