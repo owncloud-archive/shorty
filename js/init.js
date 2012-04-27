@@ -29,10 +29,6 @@
  * @author Christian Reiner
  */
 
-/**
- * @brief General initialization of desktop elements
- * @author Christian Reiner
- */
 $(document).ready(function(){
   // make notification closeable
   $('#content #notification').bind('click',Shorty.WUI.Notification.hide);
