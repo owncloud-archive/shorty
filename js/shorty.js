@@ -232,8 +232,8 @@ Shorty =
               return dfd.promise();
             }()
           ).pipe(function(){
-            // wipe (reset) dialog
-//             Shorty.WUI.Dialog.reset(dialog);
+            // prevent submission before entering anything
+            Shorty.WUI.Dialog.sharpen(dialog,false);
             // show dialog
             dialog.slideDown(duration);
           }).pipe(function(){
