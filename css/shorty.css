@@ -87,6 +87,11 @@
   font-style: italic;
   background: transparent;
 }
+.shorty-standalone #busy {
+  display: none;
+  float: right;
+}
+
 /* the list of shorties */
 #list {
   display: inline;
@@ -371,6 +376,7 @@
   text-align: left;
   vertical-align: baseline;
   padding: 0.6em 0.5em 0.4em 0.3em;
+  cursor: default;
 }
 .shorty-dialog span {
   padding: 0.6em 0.5em 0.4em 0.3em;
