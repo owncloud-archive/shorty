@@ -230,7 +230,8 @@ switch ($act)
         $shorty_status[$status] = OC_Shorty_L10n::t($status);
       $tmpl->assign ( 'shorty-status', $shorty_status );
       // any referrer we want to hand over to the browser ?
-      $tmpl->assign ( 'shorty-referrer', $_SESSION['shorty-referrer'] );
+      if ( array_key_exists('shorty-referrer',$_SESSION) )
+        $tmpl->assign ( 'shorty-referrer', $_SESSION['shorty-referrer'] );
       // clean up session var so that a browser reload does not trigger the same action again
       unset ( $_SESSION['shorty-referrer'] );
       $tmpl->printPage();
