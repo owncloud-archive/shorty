@@ -35,7 +35,6 @@ $(document).ready(function(){
   if (type.length){
     $('#shorty #backend-'+type).show();
   }
-
   // backend 'static': initialize example that depends on backend-base system setting
   if ($('#shorty #backend-static #backend-static-base').val().length)
     $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty id>');
@@ -58,7 +57,6 @@ $(document).ready(function(){
       }
     }
   );
-
   // safe preferences
   $('#shorty .backend-supplement').focusout(function(){
     // save preference

@@ -29,7 +29,7 @@
  * @author Christian Reiner
  */
 
-$(document).load(function(){
+$(document).ready(function(){
   // initialize example that depends on backend-base
   if ($('#shorty #backend-static-base').val().length)
     $('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
