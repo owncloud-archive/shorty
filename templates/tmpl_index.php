@@ -38,7 +38,7 @@
 <div id='notification'></div>
 
 <!-- top control bar -->
-<div id="controls" class="controls shorty-controls" data-referrer="<?php echo $_['shorty-referrer']; ?>">
+<div id="controls" class="controls shorty-controls" data-referrer="<?php if (array_key_exists('shorty-referrer',$_)) echo $_['shorty-referrer']; ?>">
   <!-- button to add a new entry to list -->
   <input type="button" id="add" value="<?php echo OC_Shorty_L10n::t('New Shorty'); ?>"/>
   <!-- display label: number of entries in list -->
