@@ -24,6 +24,10 @@
 
 Changelog: 
 
+* Sat Apr 28 2012 Christian Reiner: version 0.1.5
+Target url verification is less strict now, this way also more 'exotic' urls notations are accepted.
+A few changes to the initilization scripts to prevent race conditions at startup.
+Changed url specification in the Shortlet to prevent conflicts with a serverside suhosin protection. 
 * Fri Apr 27 2012 Christian Reiner: version 0.1.4
 Visualization of busy state in dialogs whilst fetch meta data from targets.
 * Fri Apr 27 2012 Christian Reiner: version 0.1.3
