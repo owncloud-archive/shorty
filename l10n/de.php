@@ -88,21 +88,21 @@
 "tiny.cc user key"    => "tiny.cc-Nutzerschlüssel",
 
 "Use the 'bitly.com' service to register a short url for each generated shorty."
-=> "Den 'bitly.com'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
-"The service requires you to authenticate yourself by providing a valid bit.ly user name and an '%s'."
-=> "Dieser Dienst erfordert die Authentifizierung durch eine valide bit.ly-Nutzerkennung und einen '%s'",
+=> "'bitly.com'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
 "This means you have to register an '%s' at their site first."
 => "Das bedeutet, zunächst muss ein '%s' auf deren Seite registriert werden.",
 "Use 'turl' service to register a short url for each generated shorty."
-=> "Den 'turl'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
+=> "'turl'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
 "Use 'ti.ny' service to register a short url for each generated shorty."
-=> "Den 'ti.ny'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
+=> "'ti.ny'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
 "Use 'cli.gs' service to register a short url for each generated shorty."
-=> "Den 'cli.gs'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
+=> "'cli.gs'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
 "Use 'is.gd' service to register a short url for each generated shorty."
-=> "Den 'is.gd'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
+=> "'is.gd'-Dienst nutzen, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
 "Don't use any backend, simply generate direct links to your ownCloud."
 => "Kein Backend verwenden, einfache direkt Links zur ownCloud erzeugen.",
+"The service requires you to authenticate yourself by providing a valid bit.ly user name and an '%s'."
+=> "Dieser Dienst erfordert die Authentifizierung durch eine valide bit.ly-Nutzerkennung und einen '%s'",
 "Such links are most likely longer than those generated when using a backend."
 => "Solche Links werden sicherlich länger sein, als wenn ein Backend eingesetzt wird.",
 "However this option does not rely on any third party service and keeps your shortys under your control."
