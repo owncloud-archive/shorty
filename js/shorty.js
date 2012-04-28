@@ -199,6 +199,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("toggle sharpness of dialog '"+dialog.attr('id')+"' to "+sharpness);
         var confirm=dialog.find('#confirm');
         if (sharpness){
+          $('#dialog-add #busy').fadeOut('slow');
           confirm.unbind('click');
           confirm.bind('click',{dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);});
           confirm.addClass('sharp');
