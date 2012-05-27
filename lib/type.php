@@ -69,6 +69,7 @@ class OC_Shorty_Type
     'backend-google-key'  => OC_Shorty_Type::STRING,
     'backend-tinycc-user' => OC_Shorty_Type::STRING,
     'backend-tinycc-key'  => OC_Shorty_Type::STRING,
+    'sms-control'         => OC_Shorty_Type::STRING,
     'list-sort-code'      => OC_Shorty_Type::SORTKEY,
   );
   // valid status for entries

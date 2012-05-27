@@ -122,7 +122,7 @@ switch ($act)
     try
     {
       // detect requested shorty id from request
-      $p_id = trim ( OC_Shorty_Type::normalize($_SERVER['QUERY_STRING'],OC_Shorty_Type::ID) ) ;
+      $p_id = trim ( OC_Shorty_Type::normalize($arg,OC_Shorty_Type::ID) ) ;
       // an id was specified, look for matching entry in database
       if ( '0000000000'==$p_id )
       {
@@ -134,7 +134,6 @@ switch ($act)
       {
         $param = array
         (
-//           'id' => OC_Shorty_Tools::db_escape ( $p_id ),
           'id' => $p_id,
         );
         $query  = OC_DB::prepare ( OC_Shorty_Query::URL_FORWARD );
@@ -232,6 +231,8 @@ switch ($act)
       // any referrer we want to hand over to the browser ?
       if ( array_key_exists('shorty-referrer',$_SESSION) )
         $tmpl->assign ( 'shorty-referrer', $_SESSION['shorty-referrer'] );
+      // is sending sms enabled in the personal preferences ?
+      $tmpl->assign ( 'sms-control', OC_Preferences::getValue(OC_User::getUser(),'shorty','sms-control','disabled') );
       // clean up session var so that a browser reload does not trigger the same action again
       unset ( $_SESSION['shorty-referrer'] );
       $tmpl->printPage();

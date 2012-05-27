@@ -77,7 +77,8 @@
     <img id="email" name="usage-email" class="shorty-usage" alt="email"
          src="<?php echo OC_Helper::imagePath('apps/shorty','usage/64/email.png');  ?>"
          title="<?php echo OC_Shorty_L10n::t("Send by email"); ?>" />
-    <img id="sms" type="image" name="usage-sms" class="shorty-usage disabled" alt="sms"
+    <img id="sms" type="image" name="usage-sms" alt="sms"
+         class="shorty-usage <?php echo $_['sms-control']; ?>"
          src="<?php echo OC_Helper::imagePath('apps/shorty','usage/64/sms.png');  ?>"
          title="<?php echo OC_Shorty_L10n::t("Send by SMS"); ?>" />
     <img id="clipboard" type="image" name="usage-clipboard" class="shorty-usage" alt="clipbaord"

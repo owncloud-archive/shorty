@@ -6,6 +6,8 @@
 "never"                                                      => "niemals",
 "public"                                                     => "freigegeben",
 "shared"                                                     => "geteilt",
+"disabled"                                                   => "deaktiviert",
+"enabled"                                                    => "aktiviert",
 
 "Access"                                                     => "Zugriff",
 "Add a new shorty"                                           => "Neuen Shorty hinzufügen",
@@ -20,7 +22,8 @@
 "Clicks"                                                     => "Klicks",
 "Close"                                                      => "Schließen",
 "Copy to clipboard"                                          => "In die Zwischenablage kopieren",
-"Copy to clipboard: Ctrl+C, Enter"                           => "In Zwischenablage kopieren: Strg-C & Enter",
+"Copy to clipboard: Ctrl+C"                                  => "In Zwischenablage kopieren: Strg-C",
+"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"     => "In Zwischenablage kopieren: Strg-C, dann in SMS einfügen: Strg-V",
 "Counted entries and clicks"                                 => "Einträge und Klicks gezählt",
 "Creation"                                                   => "Generierung",
 "Delete shorty"                                              => "Shorty löschen",
@@ -129,4 +132,12 @@
 => "Das bedeutet, dass ein 'Google API console account' benötigt wird",
 "Register a new '%s' at their pages."
 => "Einen neuen '%s' auf deren Seite registrieren.",
+"Enabling the SMS option will offer sending a Shorty via SMS."
+=> "Aktivieren der SMS-Option bietet das Versenden von Shortys via SMS an.",
+"Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones."
+=> "Unglücklicherweise werden 'SMS-Urls' typischerweise nur auf mobilen Geräten wie etwa Smartphones unterstützt.",
+"In addition, the implementations found in Android or iOS are minimalistic, buggy and differ from system to system."
+=> "Darüber hinaus sind die Implementierungen, etwa die in Adroid oder auch iOS minimalistisch, fehlerhaft und unterschiedlich von System zu System.",
+"In short: this might not work for you, therefore you can disable it…"
+=> "Kurz gesagt: die mag nicht funktionieren, daher can die Option deaktiviert werden…",
 );

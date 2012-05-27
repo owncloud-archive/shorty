@@ -36,10 +36,13 @@
 
 <form id="shorty">
   <fieldset class="personalblock">
-    <div id="title" class="title"><strong>Shorty</strong></div>
+    <div id="title" class="title">
+      <img class="" src="<?php echo OC_Helper::imagePath("shorty","shorty.png"); ?> ">
+      <strong>Shorty</strong>
+    </div>
     <div id="settings">
       <!-- shortlet -->
-      <label for="shortlet" class="aspect"><?php echo $l->t("Shortlet");?></label>
+      <label for="shortlet" class="aspect"><?php echo $l->t("Shortlet").":";?></label>
       <span id="shortlet">
         <a class="shortlet"
            href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkTo('shorty', 'index.php', null, true); ?>?url='+url, 'owncloud-shorty')%20})()">
@@ -52,7 +55,7 @@
       </p>
       <p>
       <!-- backend selection -->
-      <label for="backend-type" class="aspect"><?php echo $l->t("Backend").':';?></label>
+      <label for="backend-type" class="aspect"><?php echo $l->t("Backend").":";?></label>
       <!-- list of available backend types -->
       <span style="margin-right:1em;">
         <select id="backend-type" name="backend-type" style="width:11em;" class="chosen"
@@ -224,6 +227,21 @@
           <?php echo $l->t("The external 'turl' service is used to register a short url for each generated shorty."); ?>
         </span>
       </span>
+      </p>
+      <p>
+      <!-- sms -->
+      <label for="sms" class="aspect"><?php echo $l->t("SMS").":";?></label>
+      <span id="sms" style="margin-right:1em;">
+        <select id="sms-control" name="sms-control" style="width:11em;" class="chosen">
+          <?php echo sprintf("<option value=\"disabled\" %s>disabled</option>\n", ('enabled'!=$_['sms-control']?'selected':'') ); ?>
+          <?php echo sprintf("<option value=\"enabled\" %s>enabled</option>\n", ('enabled'==$_['sms-control']?'selected':'') ); ?>
+        </select>
+        <em><?php echo $l->t("Enabling the SMS option will offer sending a Shorty via SMS."); ?></em>
+      </span>
+      <p>
+      <span class="explain"><em><?php echo $l->t("Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones.")."<br>\n";
+                                      echo $l->t("In addition, the implementations found in Android or iOS are minimalistic, buggy and differ from system to system.")."<br>\n";
+                                      echo $l->t("In short: this might not work for you, therefore you can disable it…")."<br>\n";?></em></span>
       </p>
     </div>
     <!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->

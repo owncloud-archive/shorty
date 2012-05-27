@@ -62,4 +62,8 @@ $(document).ready(function(){
     // save preference
     Shorty.Action.Preference.set($(this).find('input').serialize());
   });
+  // safe sms-control
+  $('#shorty #sms-control').change(function(){
+    Shorty.Action.Preference.set($('#shorty #sms-control').serialize());
+  });
 });

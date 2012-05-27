@@ -65,6 +65,7 @@ $tmpl->assign ( 'backend-google-key',  OC_Preferences::getValue(OC_User::getUser
 $tmpl->assign ( 'backend-tinycc-user', OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-tinycc-user','') );
 $tmpl->assign ( 'backend-tinycc-key',  OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-tinycc-key','') );
 $tmpl->assign ( 'backend-type',        OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') );
+$tmpl->assign ( 'sms-control',         OC_Preferences::getValue(OC_User::getUser(),'shorty','sms-control','disabled') );
 // render template
 return $tmpl->fetchPage ( );
 ?>

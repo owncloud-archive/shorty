@@ -1332,9 +1332,6 @@ Shorty =
       send: function(action,entry){
         if (Shorty.Debug) Shorty.Debug.log("action send via "+action+" with entry "+entry.attr('id'));
         switch (action){
-          case 'clipboard':
-            window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, Enter"), entry.attr('data-source'));
-            break;
           case 'email':
             var mailSubject=entry.attr('data-title')||'';
             var mailBody=entry.attr('data-notes')+"\n\n"+entry.attr('data-source');
@@ -1343,6 +1340,13 @@ Shorty =
                            +'&body='+encodeURIComponent(mailBody);
             break;
           case 'sms':
+            var smsBody=entry.attr('data-title')+"\n\n"+entry.attr('data-notes')+"\n\n"+entry.attr('data-source');
+            window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"), smsBody );
+            window.location='sms:';
+            break;
+          case 'clipboard':
+            window.prompt(t('shorty',"Copy to clipboard: Ctrl+C"), entry.attr('data-source'));
+            break;
           default:
             if (Shorty.Debug) Shorty.Debug.log("usage action '"+action+"' is disabled, refusing to comply");
         }
