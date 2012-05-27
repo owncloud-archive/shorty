@@ -31,7 +31,6 @@
  * @access public
  * @author Christian Reiner
  */
-require_once ( '../../lib/base.php' );
 
 OC_Util::checkAppEnabled ( 'shorty' );
 
