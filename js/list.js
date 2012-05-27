@@ -31,5 +31,9 @@
 
 $(document).ready(function(){
   // initialize desktop
-  $.when(Shorty.WUI.Controls.init()).then(Shorty.WUI.List.build);
+  $.when(
+    Shorty.WUI.Controls.init()
+  ).then(function(){
+    Shorty.WUI.List.build();
+  });
 }); // document.ready

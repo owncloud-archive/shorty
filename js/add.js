@@ -31,17 +31,21 @@
 
 $(document).ready(function(){
   // initialize desktop
-  $.when(Shorty.WUI.Controls.init()).then(function(){
-    $.when(Shorty.WUI.List.build()).then(function(){
-      var dialog = $('#dialog-add');
-      $.when(Shorty.WUI.Dialog.toggle(dialog)).then(function(){
-        // any referrer handed over from php (explicitly in markup) ?
-        var target=$('#controls').attr('data-referrer');
-        $('#controls').removeAttr('data-referrer');
-        dialog.find('#target').val(target);
-        dialog.find('#title').focus();
-        Shorty.WUI.Meta.collect(dialog);
-      });
-    });
-  });
+  var dialog = $('#dialog-add');
+  $.when(
+    Shorty.WUI.Controls.init()
+  ).pipe(function(){
+    Shorty.WUI.List.build();
+  }).done(function(){
+    $.when(
+      Shorty.WUI.Dialog.toggle(dialog)
+    ).done(function(){
+      // any referrer handed over from php (explicitly in markup) ?
+      var target=$('#controls').attr('data-referrer');
+      $('#controls').removeAttr('data-referrer');
+      dialog.find('#target').val(target);
+      dialog.find('#title').focus();
+      Shorty.WUI.Meta.collect(dialog);
+    })
+  })
 }); // document.ready

@@ -22,11 +22,12 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *****
 
-There are four aspects that can be configured:
+There are five aspects that can be configured:
 1.) System wide "static backend" (optional)
 2.) Selection of a backend per user (optional)
 3.) Import of the "shortlet" into a web browser (optional)
 4.) Access control inside each single "shorty" (implicit)
+5.) Sending of Shortys as SMS
 
 1.) System wide "static backend" (optional)
 (Requires adminisstrative rights)
@@ -100,3 +101,13 @@ There are a few attributres you can configure freely inside each stored shorty:
 - a title just shown inside the shorty plugin (serves recognition).
 - a notes area, maybe you want to write down whom you send the shorty ?
 - a status option that controls the usage of the shorty.
+
+5.) Sending of Shortys as SMS
+Besides sending of Shortys as email message and copying a Shortys source url 
+to the clipboard a third action can be enabled inside the sharing dialog: 
+To send a Shortys source url as SMS. 
+However, the approach is extremely minimalistic, it relies on the client system 
+to correctly handle a 'sms url'. This is typically only given on a mobile 
+device, a smart phone. In addition, such url does not allow to specify a message
+body, so the Shortys source url has to be copied and pasted manually. 
+The option is disabled by default. 

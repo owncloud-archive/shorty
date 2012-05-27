@@ -36,13 +36,16 @@
 
 <form id="shorty">
   <fieldset class="personalblock">
-    <div id="title" class="title"><strong>Shorty</strong></div>
+    <div id="title" class="title">
+      <img class="" src="<?php echo OC_Helper::imagePath("shorty","shorty.png"); ?> ">
+      <strong>Shorty</strong>
+    </div>
     <div id="settings">
       <!-- shortlet -->
-      <label for="shortlet" class="aspect"><?php echo $l->t("Shortlet");?></label>
+      <label for="shortlet" class="aspect"><?php echo $l->t("Shortlet").":";?></label>
       <span id="shortlet">
         <a class="shortlet"
-           href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkTo('shorty', 'index.php', null, true); ?>?'+url, 'owncloud-shorty')%20})()">
+           href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkTo('shorty', 'index.php', null, true); ?>?url='+url, 'owncloud-shorty')%20})()">
           <?php echo $l->t("Add as 'shorty' to ownCloud"); ?>
         </a>
       </span>
@@ -52,7 +55,7 @@
       </p>
       <p>
       <!-- backend selection -->
-      <label for="backend-type" class="aspect"><?php echo $l->t("Backend").':';?></label>
+      <label for="backend-type" class="aspect"><?php echo $l->t("Backend").":";?></label>
       <!-- list of available backend types -->
       <span style="margin-right:1em;">
         <select id="backend-type" name="backend-type" style="width:11em;" class="chosen"
@@ -75,7 +78,7 @@
         <br/>
         <span id="explain" class="explain">
           <?php echo sprintf('%s<br />%s<br />%s',
-                             $l->t("Don't use any backend, simply generate direct links to your ownCloud."),
+                             $l->t("No backend is used, direct links pointing to your ownCloud are generated."),
                              $l->t("Such links are most likely longer than those generated when using a backend."),
                              $l->t("However this option does not rely on any third party service and keeps your shortys under your control.") ); ?>
         </span>
@@ -97,7 +100,7 @@
         <br/>
         <span id="explain" class="explain">
           <?php echo sprintf("%s<br />\n%s<br />\n%s<br />\n%s",
-                             $l->t("Static, rule-based backend, generates shorty links relative to a given base url."),
+                             $l->t("A static, rule-based backend is used, shorty links are generated relative to a given base url."),
                              $l->t("Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration."),
                              $l->t("Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."),
                              $l->t("Only use this backend, if you can provide a short base url that is mapped the described way. Your shorties won't work otherwise.") ); ?>
@@ -120,7 +123,7 @@
         <br/>
         <span id="explain" class="explain">
           <?php echo sprintf("%s<br />\n%s<br />\n%s",
-                             $l->t("Use the 'bitly.com' service to register a short url for each generated shorty."),
+                             $l->t("The external 'bitly.com' service is used to register a short url for each generated shorty."),
                              $l->t("The service requires you to authenticate yourself by providing a valid bit.ly user name and an '%s'."),
                              $l->t("This means you have to '%s' at their site first.", array (
                                    sprintf('<a class="external" href="http://bitly.com/a/your_api_key" target="_blank">%s</a>',$l->t("API access key")),
@@ -137,7 +140,7 @@
         </span>
         <br/>
         <span id="explain" class="explain">
-          <?php echo $l->t("Use 'cli.gs' service to register a short url for each generated shorty.");?>
+          <?php echo $l->t("The external 'cli.gs' service is used to register a short url for each generated shorty.");?>
         </span>
       </span>
       <!-- backend is.gd -->
@@ -150,7 +153,7 @@
         </span>
         <br/>
         <span id="explain" class="explain">
-          <?php echo $l->t("Use 'is.gd' service to register a short url for each generated shorty.");?>
+          <?php echo $l->t("The external 'is.gd' service is used to register a short url for each generated shorty.");?>
         </span>
       </span>
       <!-- backend google -->
@@ -167,7 +170,7 @@
         <br/>
         <span id="explain" class="explain">
           <?php echo sprintf("%s<br />\n%s<br />\n%s<br />\n%s",
-                             $l->t("Use Googles 'goo.gl URL Shorten Service' to register a short url for each generated shorty."),
+                             $l->t("Googles external 'goo.gl service' is used to register a short url for each generated shorty."),
                              $l->t("You must provide a valid '%s' to use this service.",
                                    sprintf('<a class="external" href="https://code.google.com/apis/console/" target="_blank">%s</a>',$l->t("Google API key")) ),
                              $l->t("This means you require a 'Google API console account'."),
@@ -192,7 +195,7 @@
         <br/>
         <span id="explain" class="explain">
           <?php echo sprintf ( "%s<br />\n%s<br />\n%s",
-                               $l->t("Use the 'tiny.cc' service to register a short url for each generated shorty."),
+                               $l->t("The external 'tiny.cc' service is used to register a short url for each generated shorty."),
                                $l->t("The service requires you to authenticate yourself by providing a valid tiny.cc user name and an api access key."),
                                $l->t("This means you have to register an '%s' at their site first.", array (
                                      sprintf('<a class="external" href="http://tiny.ccc/" target="_blank">%s</a>', $l->t("account") ) ) ) ); ?>
@@ -208,7 +211,7 @@
         </span>
         <br/>
         <span id="explain" class="explain">
-          <?php echo $l->t("Use 'ti.ny' service to register a short url for each generated shorty.");?>
+          <?php echo $l->t("The external 'ti.ny' service is used to register a short url for each generated shorty.");?>
         </span>
       </span>
       <!-- backend turl -->
@@ -221,9 +224,24 @@
         </span>
         <br/>
         <span id="explain" class="explain">
-          <?php echo $l->t("Use 'turl' service to register a short url for each generated shorty."); ?>
+          <?php echo $l->t("The external 'turl' service is used to register a short url for each generated shorty."); ?>
         </span>
       </span>
+      </p>
+      <p>
+      <!-- sms -->
+      <label for="sms" class="aspect"><?php echo $l->t("SMS").":";?></label>
+      <span id="sms" style="margin-right:1em;">
+        <select id="sms-control" name="sms-control" style="width:11em;" class="chosen">
+          <?php echo sprintf("<option value=\"disabled\" %s>disabled</option>\n", ('enabled'!=$_['sms-control']?'selected':'') ); ?>
+          <?php echo sprintf("<option value=\"enabled\" %s>enabled</option>\n", ('enabled'==$_['sms-control']?'selected':'') ); ?>
+        </select>
+        <em><?php echo $l->t("Enabling the SMS option will offer sending a Shorty via SMS."); ?></em>
+      </span>
+      <p>
+      <span class="explain"><em><?php echo $l->t("Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones.")."<br>\n";
+                                      echo $l->t("In addition, the implementations found in Android or iOS are minimalistic, buggy and differ from system to system.")."<br>\n";
+                                      echo $l->t("In short: this might not work for you, therefore you can disable it…")."<br>\n";?></em></span>
       </p>
     </div>
     <!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
