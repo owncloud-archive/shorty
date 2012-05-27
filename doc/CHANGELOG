@@ -24,6 +24,9 @@
 
 Changelog: 
 
+* Sun May 28 2012 Christian Reiner: version 0.1.6
+Activation of Shorty sharing via SMS.
+Enhanced backend descriptions.
 * Sat Apr 28 2012 Christian Reiner: version 0.1.5
 Target url verification is less strict now, this way also more 'exotic' urls notations are accepted.
 A few changes to the initilization scripts to prevent race conditions at startup.
