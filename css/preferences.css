@@ -29,6 +29,11 @@
  * @author Christian Reiner
  */
 
+#shorty img {
+  vertical-align: middle;
+  margin:0;
+  padding:0;
+}
 #shorty #shortlet {
   outline: medium none;
   padding: 0.6em 0.8em;
@@ -42,7 +47,7 @@
   color: DarkSlateGray;
 }
 #shorty #shortlet:after {
-  content: url("../img/drag_me.png");
+  content: url("%appswebroot%/apps/shorty/img/drag_me.png");
   position: relative;
   top: -12px;
   margin-left: -160px;
@@ -77,7 +82,7 @@
   text-decoration:underline;
 }
 #shorty a.external:after {
-  content:url("../img/actions/external.png");
+  content:url("%appswebroot%/apps/shorty/img/actions/external.png");
   margin-left:0.3em;
 }
 

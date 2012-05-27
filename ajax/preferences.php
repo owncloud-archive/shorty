@@ -32,6 +32,7 @@
  * @param backend-google-key (string) Personal authentication key to use when the google backend is active
  * @param backend-bitly-key (string) Personal authentication key to use when the bit.li backend is active
  * @param backend-bitly-user (string) Personal authentication user to use when the bit.li backend is active
+ * @param sms-control (string) Controls wether a 'send as sms' action should be offered is the sharing dialog
  * @param list-sort-code (string) Two character sorting key controlling the active sorting of shorty lists
  * @returns (json) success/error state indicator
  * @returns (json) Associative array holding the stored values by their key
@@ -41,8 +42,6 @@
 
 //no apps or filesystem
 $RUNTIME_NOSETUPFS = true;
-
-require_once ( '../../../lib/base.php' );
 
 // Check if we are a user
 OC_JSON::checkLoggedIn ( );

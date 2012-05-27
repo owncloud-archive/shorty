@@ -32,7 +32,6 @@
  * @access public
  * @author Christian Reiner
  */
-require_once ( '../../lib/base.php' );
 
 OC_Util::checkAppEnabled ( 'shorty' );
 
@@ -60,6 +59,9 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 {
   switch ($key)
   {
+    // this is the OC4 argument used to identify the app called, we ignore it:
+    case 'app':
+      break;
     // any recognizable argument key indicating an id to be looked up ?
     case 'id':
     case 'shorty':

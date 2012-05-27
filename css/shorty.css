@@ -194,11 +194,11 @@
 #list tbody tr.deleted>#until {
   color: gray;
   text-decoration: line-through;
-  background: transparent url('../img/status/strike.png') 0 50% repeat-x;
+  background: transparent url('%appswebroot%/apps/shorty/img/status/strike.png') 0 50% repeat-x;
 }
 /* replace the 'delete' action icon by an 'undelete' icon */
 #list tbody tr.deleted>#actions #del:after {
-  content: url("../img/actions/recycle.png");
+  content: url("%appswebroot%/apps/shorty/img/actions/recycle.png");
   position: relative;
   top: 3px;
   margin-left: -19px;
@@ -350,7 +350,7 @@
   vertical-align: middle;
 }
 .shorty-embedded a.shorty-clickable:before {
-  content:url("../img/actions/external.png");
+  content:url("%appswebroot%/apps/shorty/img/actions/external.png");
   margin-right:0.3em;
 }
 .shorty-embedded select {
