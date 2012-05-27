@@ -1340,7 +1340,7 @@ Shorty =
                            +'&body='+encodeURIComponent(mailBody);
             break;
           case 'sms':
-            var smsBody=entry.attr('data-title')+"\n\n"+entry.attr('data-notes')+"\n\n"+entry.attr('data-source');
+            var smsBody=entry.attr('data-title')+" - "+entry.attr('data-notes')+" - "+entry.attr('data-source');
             window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"), smsBody );
             window.location='sms:';
             break;
