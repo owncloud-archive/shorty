@@ -171,5 +171,24 @@ class OC_Shorty_Tools
     return OC_Helper::linkToAbsolute('shorty','index.php')."&id=".$id;
   } // function relayUrl
 
+  /**
+   * @method OC_Shorty_Tools::countShortys
+   * @brief Returns the total number of entries and clicks from the database
+   * @returns (array) two elements sum_shortys & sum_clicks holding an integer each
+   * @access public
+   * @author Christian Reiner
+   */
+  static function countShorties ()
+  {
+    $param = array
+    (
+      ':user'   => OC_User::getUser ( ),
+    );
+    $query = OC_DB::prepare ( OC_Shorty_Query::URL_COUNT );
+    $result = $query->execute($param);
+    $reply = $result->fetchAll();
+    return $reply[0];
+  } // function countShorties
+
 } // class OC_Shorty_Tools
 ?>

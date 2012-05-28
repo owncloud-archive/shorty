@@ -41,14 +41,7 @@ OC_JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  $param = array
-  (
-    ':user'   => OC_User::getUser ( ),
-  );
-  $query = OC_DB::prepare ( OC_Shorty_Query::URL_COUNT );
-  $result = $query->execute($param);
-  $reply = $result->fetchAll();
-  OC_JSON::success ( array ( 'data'    => $reply[0],
+  OC_JSON::success ( array ( 'data'    => OC_Shorty_Tools::countShorties(),
                              'message' => OC_Shorty_L10n::t('Counted entries and clicks') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
