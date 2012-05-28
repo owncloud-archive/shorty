@@ -104,6 +104,49 @@ class OC_Shorty_Exception extends Exception
     return OC_JSON::error ( array ( 'title'   => $title,
                                     'message' => sprintf("%s: %s", $title, $message) ) );
   } // function error
-
 } // class OC_Shorty_Exception
+
+/**
+ * @class OC_Shorty_HttpException
+ * @brief Application specific exception class: protocol layer
+ * @access public
+ * @author Christian Reiner
+ */
+class OC_Shorty_HttpException extends OC_Shorty_Exception
+{
+
+  /**
+   * @method OC_Shorty_HttpException::__construct
+   * @brief: Constructs an exception based on a phrase and a set of parameters
+   * @param status (integer) Http status code
+   * @access public
+   * @author Christian Reiner
+   */
+  public function __construct ( $status )
+  {
+    if (   is_numeric($status)
+        && array_key_exists($status,OC_Shorty_Type::$HTTPCODE) )
+    {
+      $status = intval($status);
+      $phrase = OC_Shorty_Type::$HTTPCODE[$status];
+    }
+    else
+    {
+      $status = 400;
+      $phrase = OC_Shorty_Type::$HTTPCODE[400]; // "Bad Request"
+    } // switch
+
+    // return http status code to client (browser)
+    if ( ! headers_sent() )
+    {
+      header ( sprintf("HTTP/1.0 %s %s",$status,$phrase) );
+    }
+    $tmpl = new OC_Template("shorty", "tmpl_http_status", "guest");
+    $tmpl->assign("explanation", OC_Shorty_L10n::t($phrase));
+    $tmpl->printPage();
+    exit;
+  } // function __construct
+
+} // class OC_Shorty_HttpException
+
 ?>

@@ -147,26 +147,22 @@ switch ($act)
         elseif ( 0==sizeof($result) )
         {
           // no entry found => 404: Not Found
-          header ( sprintf('Location: status.php?%s', 404) );
-          exit;
+          throw new OC_Shorty_HttpException ( 404 );
         }
         elseif ( 1<sizeof($result) )
         {
           // multiple matches => 409: Conflict
-          header ( sprintf('Location: status.php?%s', 409) );
-          exit;
+          throw new OC_Shorty_HttpException ( 409 );
         }
         elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('target',$result[0])) )
         {
           // invalid entry => 500: Internal Server Error
-          header ( sprintf('Location: status.php?%s', 500) );
-          exit;
+          throw new OC_Shorty_HttpException ( 500 );
         }
         elseif ( (!array_key_exists('target',$result[0])) || ('1'==$result[0]['expired']) )
         {
           // entry expired => 410: Gone
-          header ( sprintf('Location: status.php?%s', 410) );
-          exit;
+          throw new OC_Shorty_HttpException ( 410 );
         }
         // an usable target !
         $target = trim($result[0]['target']);
@@ -176,8 +172,7 @@ switch ($act)
           default:
           case 'blocked':
             // refuse forwarding => 403: Forbidden
-            header ( sprintf('Location: status.php?%s', 403) );
-            exit;
+            throw new OC_Shorty_HttpException ( 403 );
           case 'shared':
             // check if we are a user, deny access if not
             OC_Util::checkLoggedIn ( );
