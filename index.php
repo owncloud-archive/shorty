@@ -197,7 +197,7 @@ switch ($act)
     OC_Util::checkLoggedIn ( );
     // keep the url specified as referer, that is the one we want to store
     $_SESSION['shorty-referrer'] = $arg;
-    header ( sprintf('Location: %s', OC_Helper::linkTo('shorty','',null,false)) ); // TODO index.php or not, that is the question
+    header ( sprintf('Location: %s', OC_Helper::linkTo('shorty','index.php')) );
     exit();
   // =====
   case 'index': // action 'index': list of shortys

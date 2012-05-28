@@ -50,7 +50,7 @@
       <?php echo $l->t("<p>Great, your setup appears to be working fine ! </p>".
                        "<p>Requests to the configured base url '%s' are mapped to this ownClouds shorty module at '%1\$s'</p>".
                        "<p>Usage of that static backend is fine and safe as long as this setup is not altered.</p>",
-                       array('<a id="verification-target" style="font-family:Monospace;"></a>',OC_Helper::linkTo('shorty','')) );?>
+                       array('<a id="verification-target" style="font-family:Monospace;"></a>',OC_Helper::linkToAbsolute('shorty','index.php')) );?>
     </fieldset>
   </div>
   <!-- failure -->
@@ -63,7 +63,7 @@
       <?php echo $l->t("Sorry, but your setup appears not be be working correctly yet.<p>".
                        "Please check your setup and make sure that the configured base url '%1\$s' is indeed correct ".
                        "and that all requests to it are somehow mapped to ownClouds shorty module at '%2\$s'.",
-                       array('<a id="verification-target" style="font-family:Monospace;"></a>',OC_Helper::linkTo('shorty','')) );?>
+                       array('<a id="verification-target" style="font-family:Monospace;"></a>',OC_Helper::linkToAbsolute('shorty','index.php')) );?>
     </fieldset>
   </div>
 </div>

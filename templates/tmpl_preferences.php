@@ -45,8 +45,8 @@
       <label for="shortlet" class="aspect"><?php echo $l->t("Shortlet").":";?></label>
       <span id="shortlet">
         <a class="shortlet"
-           href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkTo('shorty', 'index.php', null, true); ?>?url='+url, 'owncloud-shorty')%20})()">
-          <?php echo $l->t("Add as 'shorty' to ownCloud"); ?>
+           href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkToAbsolute('shorty', 'index.php'); ?>&url='+url, 'owncloud-shorty')%20})()">
+          <?php echo $l->t("Add page as 'Shorty' to ownCloud"); ?>
         </a>
       </span>
       <p>

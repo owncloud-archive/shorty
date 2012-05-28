@@ -12,7 +12,7 @@
 "Access"                                                     => "Zugriff",
 "Add a new shorty"                                           => "Neuen Shorty hinzufügen",
 "Add as new"                                                 => "Neu hinzufügen",
-"Add as 'shorty' to ownCloud"                                => "Als 'Shorty' zu ownCloud hinzufügen",
+"Add page as 'Shorty' to ownCloud"                           => "Seite als 'Shorty' zu ownCloud hinzufügen",
 "Anything that appears helpful …"                            => "Alles, was hilfreich erscheint …",
 "Backend"                                                    => "Backend",
 "Base url"                                                   => "Basis-Url",
