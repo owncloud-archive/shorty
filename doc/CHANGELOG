@@ -27,6 +27,7 @@ Changelog:
 * Fri Jun 01 2012 Christian Reiner: version 0.2.0
 Support of ownCloud version 4 (app interface incompatible to prior versions)
 Data migration support as introduced by OC4
+Additional status 'private' for Shortys only accessible for the owner himself
 * Sun May 28 2012 Christian Reiner: version 0.1.6
 Activation of Shorty sharing via SMS. 
 Enhanced backend descriptions. 
