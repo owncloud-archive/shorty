@@ -168,12 +168,7 @@ class OC_Shorty_Tools
    */
   static function relayUrl ($id)
   {
-//    return sprintf ( '%s://%s%s', (isset($_SERVER["HTTPS"])&&'on'==$_SERVER["HTTPS"])?'https':'http',
-//                                  $_SERVER['SERVER_NAME'],
-//                                  OC_Helper::linkTo('apps/shorty','index.php?'.$id) );
-    return sprintf ( '%s://%s%s&id=%s', (isset($_SERVER["HTTPS"])&&'on'==$_SERVER["HTTPS"])?'https':'http',
-                                        $_SERVER['SERVER_NAME'],
-                                        OC_Helper::linkTo('shorty','index.php'), $id );
+    return OC_Helper::linkToAbsolute('shorty','index.php')."&id=".$id;
   } // function relayUrl
 
 } // class OC_Shorty_Tools
