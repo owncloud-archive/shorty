@@ -32,10 +32,6 @@
  * @author Christian Reiner
  */
 
-// Check if we are a user
-OC_Util::checkLoggedIn ( );
-OC_Util::checkAppEnabled ( 'shorty' );
-
 OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OC_Util::addStyle  ( 'shorty',   'shorty' );
 OC_Util::addStyle  ( 'shorty',   'preferences' );

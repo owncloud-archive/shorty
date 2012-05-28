@@ -33,8 +33,6 @@
  * @author Christian Reiner
  */
 
-OC_Util::checkAppEnabled ( 'shorty' );
-
 OC_App::setActiveNavigationEntry ( 'shorty_index' );
 
 OC_Util::addStyle  ( 'shorty',  'shorty' );
