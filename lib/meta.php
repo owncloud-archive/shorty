@@ -33,7 +33,7 @@
 /**
  * @class OC_Shorty_Meta
  * @brief Static 'namespace' class for url meta information retrieval
- * ownCloud propagtes to use static classes as namespaces instead of OOP.
+ * ownCloud propagates to use static classes as namespaces instead of OOP.
  * This 'namespace' defines routines for the retrieval of meta information about remote urls. 
  * @access public
  * @author Christian Reiner

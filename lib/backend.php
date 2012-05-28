@@ -26,7 +26,7 @@
 
 /**
  * @file lib/backend.php
- * Routines to use rmeote (online) shortening services as backends in a local workflow
+ * Routines to use remote (online) shortening services as backends in a local workflow
  * @author Christian Reiner
  */
 
