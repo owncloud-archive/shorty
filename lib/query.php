@@ -46,7 +46,7 @@ class OC_Shorty_Query
   const URL_UPDATE            = "UPDATE *PREFIX*shorty SET status=:status,title=:title,until=:until,notes=:notes WHERE user=:user AND id=:id";
   const URL_STATUS            = "UPDATE *PREFIX*shorty SET status=:status WHERE user=:user AND id=:id";
   const URL_CLICK             = "UPDATE *PREFIX*shorty SET accessed=CURRENT_TIMESTAMP, clicks=(clicks+1) WHERE id=:id";
-  const URL_FORWARD           = "SELECT target,status,(until IS NOT NULL AND until!='' AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE id=:id";
+  const URL_FORWARD           = "SELECT user,target,status,(until IS NOT NULL AND until!='' AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE id=:id";
   const URL_VERIFY            = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND id=:id LIMIT 1";
 //   const URL_LIST              = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user ORDER BY :sort LIMIT :limit OFFSET :offset";
   const URL_LIST              = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user ORDER BY :sort";

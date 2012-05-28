@@ -1,11 +1,12 @@
 <?php $TRANSLATIONS = array(
 // folder js
 "all"                                                        => "alle",
-"blocked"                                                    => "blockiert",
 "deleted"                                                    => "gelöscht",
 "never"                                                      => "niemals",
-"public"                                                     => "freigegeben",
+"blocked"                                                    => "blockiert",
+"private"                                                    => "privat",
 "shared"                                                     => "geteilt",
+"public"                                                     => "öffentlich",
 "disabled"                                                   => "deaktiviert",
 "enabled"                                                    => "aktiviert",
 

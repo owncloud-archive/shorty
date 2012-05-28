@@ -48,15 +48,11 @@
     <input id="id" name="id" type="hidden" readonly data="" class="" readonly disabled />
     <label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>
     <select id="status" name="status" data="" class="" value="">
-      <option value="blocked">
-        <?php echo OC_Shorty_L10n::t('blocked'); ?>
-      </option>
-      <option value="shared" >
-        <?php echo OC_Shorty_L10n::t('shared');  ?>
-      </option>
-      <option value="public" >
-        <?php echo OC_Shorty_L10n::t('public');  ?>
-      </option>
+    <?php
+      foreach ( OC_Shorty_Type::$STATUS as $status )
+        if ( 'deleted'!=$status )
+          echo sprintf ( "<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status) );
+    ?>
     </select>
     <br />
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>

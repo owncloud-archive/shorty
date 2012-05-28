@@ -75,8 +75,10 @@ class OC_Shorty_Type
   // valid status for entries
   static $STATUS = array (
     'blocked',
+    'private',
     'shared',
     'public',
+    'deleted',
   );
   // a list of implemented backends
   static $BACKENDS = array (
@@ -159,7 +161,7 @@ class OC_Shorty_Type
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
       case self::STATUS:
-        if ( in_array($value,array('blocked','shared','public','deleted')) )
+        if ( in_array($value,OC_Shorty_Type::$STATUS) )
           return $value;
         elseif ( ! $strict)
           return NULL;

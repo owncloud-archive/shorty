@@ -173,6 +173,12 @@ switch ($act)
           case 'blocked':
             // refuse forwarding => 403: Forbidden
             throw new OC_Shorty_HttpException ( 403 );
+          case 'private':
+            // check if user owns the Shorty, deny access if not
+            if ( $result[0]['user']!=OC_User::getUser() )
+              // refuse forwarding => 403: Forbidden
+              throw new OC_Shorty_HttpException ( 403 );
+            // NO break;
           case 'shared':
             // check if we are a user, deny access if not
             OC_Util::checkLoggedIn ( );

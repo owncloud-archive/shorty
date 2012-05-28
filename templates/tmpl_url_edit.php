@@ -66,9 +66,11 @@
     <br />
     <label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>
     <select id="status" name="status" data="shared" value="shared" style="width:8em;" class="">
-      <option value="blocked"><?php echo OC_Shorty_L10n::t('blocked'); ?></option>
-      <option value="shared" ><?php echo OC_Shorty_L10n::t('shared');  ?></option>
-      <option value="public" ><?php echo OC_Shorty_L10n::t('public');  ?></option>
+    <?php
+      foreach ( OC_Shorty_Type::$STATUS as $status )
+        if ( 'deleted'!=$status )
+          echo sprintf ( "<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status) );
+    ?>
     </select>
     <span style="display:inline;">
     <label for="until"><?php echo OC_Shorty_L10n::t('Expiration').':'; ?></label>
