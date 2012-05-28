@@ -29,6 +29,11 @@
  * @author Christian Reiner
  */
 
+#shorty img {
+  vertical-align: middle;
+  margin:0;
+  padding:0;
+}
 #shorty .aspect {
   display: inline-block;
   font-weight: bold;

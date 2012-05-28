@@ -38,7 +38,10 @@
 <form id="shorty">
   <fieldset class="personalblock">
     <legend>
-      <span id="title" class="title"><strong>Shorty</strong></span>
+      <span id="title" class="title">
+        <img class="" src="<?php echo OC_Helper::imagePath("shorty","shorty.png"); ?> ">
+        <strong>Shorty</strong>
+      </span>
     </legend>
     <div id="backend-static" class="backend-supplement">
       <label for="backend-static-base" class="aspect"><?php echo $l->t("Base url").':';?></label>
