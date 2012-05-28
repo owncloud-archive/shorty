@@ -128,19 +128,11 @@
         </field>
       </index>
       <index>
-        <name>shorty_target</name>
+        <name>shorty_user</name>
         <unique>false</unique>
         <field>
-          <name>target</name>
-          <sorting>descending</sorting>
-        </field>
-      </index>
-      <index>
-        <name>shorty_title</name>
-        <unique>false</unique>
-        <field>
-          <name>title</name>
-          <sorting>descending</sorting>
+          <name>user</name>
+          <sorting>ascending</sorting>
         </field>
       </index>
     </declaration>
