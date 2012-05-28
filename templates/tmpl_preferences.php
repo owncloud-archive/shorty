@@ -124,10 +124,10 @@
         <span id="explain" class="explain">
           <?php echo sprintf("%s<br />\n%s<br />\n%s",
                              $l->t("The external 'bitly.com' service is used to register a short url for each generated shorty."),
-                             $l->t("The service requires you to authenticate yourself by providing a valid bit.ly user name and an '%s'."),
-                             $l->t("This means you have to '%s' at their site first.", array (
-                                   sprintf('<a class="external" href="http://bitly.com/a/your_api_key" target="_blank">%s</a>',$l->t("API access key")),
-                                   sprintf('<a class="external" href="http://bitly.com/a/sign_up" target="_blank">%s</a>',$l->t("register an account")) ) ) ); ?>
+                             $l->t("The service requires you to authenticate yourself by providing a valid bit.ly user name and an '%s'.",
+                                   sprintf('<a class="external" href="http://bitly.com/a/your_api_key" target="_blank">%s</a>',$l->t("API access key")) ),
+                             $l->t("This means you have to '%s' at their site first.", 
+                                   sprintf('<a class="external" href="http://bitly.com/a/sign_up" target="_blank">%s</a>',$l->t("register an account")) ) ); ?>
         </span>
       </span>
       <!-- backend cligs -->
