@@ -62,7 +62,10 @@
                 placeholder="<?php echo $l->t("Choose service…"); ?>" >
           <?php
             foreach ( $_['backend-types'] as $value=>$display )
-              echo sprintf ( "        <option value=\"%s\" %s>%s</option>\n", $value, ($value==$_['backend-type']?'selected':''), $display );
+              echo sprintf ( "        <option value=\"%s\" %s>%s</option>\n",
+                             $value,
+                             ($value==$_['backend-type']?'selected':''),
+                             $l->t($display) );
           ?>
         </select>
       </span>
@@ -233,8 +236,12 @@
       <label for="sms" class="aspect"><?php echo $l->t("SMS").":";?></label>
       <span id="sms" style="margin-right:1em;">
         <select id="sms-control" name="sms-control" style="width:11em;" class="chosen">
-          <?php echo sprintf("<option value=\"disabled\" %s>disabled</option>\n", ('enabled'!=$_['sms-control']?'selected':'') ); ?>
-          <?php echo sprintf("<option value=\"enabled\" %s>enabled</option>\n", ('enabled'==$_['sms-control']?'selected':'') ); ?>
+          <?php echo sprintf("<option value=\"disabled\" %s>%s</option>\n",
+                             ('enabled'!=$_['sms-control']?'selected':''),
+                             $l->t('disabled') ); ?>
+          <?php echo sprintf("<option value=\"enabled\" %s>%s</option>\n",
+                             ('enabled'==$_['sms-control']?'selected':''),
+                             $l->t('enabled')); ?>
         </select>
         <em><?php echo $l->t("Enabling the SMS option will offer sending a Shorty via SMS."); ?></em>
       </span>

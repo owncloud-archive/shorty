@@ -1,14 +1,22 @@
 <?php $TRANSLATIONS = array(
 // folder js
 "all"                                                        => "alle",
-"deleted"                                                    => "gelöscht",
-"never"                                                      => "niemals",
 "blocked"                                                    => "blockiert",
-"private"                                                    => "privat",
-"shared"                                                     => "geteilt",
-"public"                                                     => "öffentlich",
+"deleted"                                                    => "gelöscht",
 "disabled"                                                   => "deaktiviert",
 "enabled"                                                    => "aktiviert",
+"never"                                                      => "niemals",
+"private"                                                    => "privat",
+"public"                                                     => "öffentlich",
+"shared"                                                     => "geteilt",
+
+"bitly.com service"                                          => "bitly.com-Service",
+"cli.gs service"                                             => "cli.gs-Service",
+"goo.gl service"                                             => "goo.gl-Service",
+"is.gd service"                                              => "is.gd-Service",
+"ti.ny service"                                              => "ti.ny-Service",
+"tiny.cc service"                                            => "tiny.cc-Service",
+"static backend"                                             => "statisches Backend",
 
 "Access"                                                     => "Zugriff",
 "Add a new shorty"                                           => "Neuen Shorty hinzufügen",
