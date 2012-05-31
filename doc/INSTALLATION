@@ -50,39 +50,4 @@ The "Preferences" section of that configuration now offers two elements:
 The main part of the plugin can be accessed in the navigation menu as "Shorty".
 
 ***
-
-* Updating / Upgrading:
-Up to now ownCloud does NOT bring any means to update or upgrade an installed
-app. This is a major issue, since it is not even possible to update to a bug
-fixed version of an app. There is nothing, app developers can do about that.
-
-So currently, the only way to update or upgrade an installed app is to manually
-adjust things:
-- for a simple update (no database changes required) you have to replace the
-apps files on file system level. For this you empty the apps folder at
-/.../owncloud/apps/shorty and repopulate it by unpacking the new version of the
-app from app.owncloud.com. You might want to adjust the files ownership and
-rights. That's it, easy, _if_ you have access to the file system. Updating an
-app this way keeps all data.
-- if the new version of the app requires changes to the database content or
-even a modified structure of the apps table(s) you have to do a full upgrade.
-Most likely a fresh install of the app is the best option, though it means that
-all app specific data is lost. For an upgrade you delete the apps folder
-completely on file system level at /.../owncloud/apps/shorty. In addition you
-have to remove those two internal settings from the base tables of ownCloud,
-that mark the app as installed. Open the database with write permissions and
-remove all entries from the config table that refer to the app shorty:
-DELETE FROM oc_appconfig WHERE appid='shorty';
-Then, remove the app specific database table, since it might have to be
-recreated with another structure: DROP oc_shorty;
-After this, the app will be offered for installation as if it has never been
-installed. Activate it as described in doc/INSTALLATION and check the
-configuration. Some settings are preserved, some not.
-
-***
-
-Sorry for the inconveniences.
-However, as said, this is an ownCLoud issue.
-
-***
 Have fun !
