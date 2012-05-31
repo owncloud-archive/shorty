@@ -79,9 +79,9 @@ try
     $query  = OCP\DB::prepare ( OC_Shorty_Query::URL_FORWARD );
     $result = $query->execute($param)->FetchAll();
     if ( FALSE===$result )
-      throw new OC_Shorty_HttpException ( 404 );
+      throw new OC_Shorty_HttpException ( 500 );
     elseif ( ! is_array($result) )
-      throw new OC_Shorty_HttpException ( 404 );
+      throw new OC_Shorty_HttpException ( 500 );
     elseif ( 0==sizeof($result) )
     {
       // no entry found => 404: Not Found
