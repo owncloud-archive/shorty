@@ -42,8 +42,8 @@
 $RUNTIME_NOSETUPFS = true;
 
 // Check if we are a user
-OC_JSON::checkLoggedIn ( );
-OC_JSON::checkAppEnabled ( 'shorty' );
+OCP\JSON::checkLoggedIn ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
@@ -61,7 +61,7 @@ try
   // insert new shorty into our database
   $param = array
   (
-    ':user'    => OC_User::getUser(),
+    ':user'    => OCP\User::getUser(),
     ':id'      => $p_id,
     ':status'  => $p_status  ? $p_status  : '',
     ':title'   => $p_title   ? $p_title   : '',
@@ -71,19 +71,19 @@ try
     ':notes'   => $p_notes   ? $p_notes   : '',
     ':until'   => $p_until,
   );
-  $query = OC_DB::prepare ( OC_Shorty_Query::URL_INSERT );
+  $query = OCP\DB::prepare ( OC_Shorty_Query::URL_INSERT );
   $query->execute ( $param );
 
   // read new entry for feedback
   $param = array
   (
-    'user' => OC_User::getUser(),
+    'user' => OCP\User::getUser(),
     'id'   => $p_id,
   );
-  $query = OC_DB::prepare ( OC_Shorty_Query::URL_VERIFY );
+  $query = OCP\DB::prepare ( OC_Shorty_Query::URL_VERIFY );
   $entries = $query->execute($param)->FetchAll();
   $entries[0]['relay']=OC_Shorty_Tools::relayUrl ( $entries[0]['id'] );
-  OC_JSON::success ( array ( 'data'    => $entries[0],
-                             'message' => OC_Shorty_L10n::t("Url shortened to: %s",$p_source) ) );
+  OCP\JSON::success ( array ( 'data'    => $entries[0],
+                              'message' => OC_Shorty_L10n::t("Url shortened to: %s",$p_source) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

@@ -37,34 +37,34 @@
 $RUNTIME_NOSETUPFS = TRUE;
 
 // Check if we are a user
-OC_JSON::checkLoggedIn ( );
-OC_JSON::checkAppEnabled ( 'shorty' );
+OCP\JSON::checkLoggedIn ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
   // first remove any entries already marked as 'deleted'
-  $query = OC_DB::prepare ( OC_Shorty_Query::URL_REMOVE );
-  $result = $query->execute(array(':user'=>OC_User::getUser()));
+  $query = OCP\DB::prepare ( OC_Shorty_Query::URL_REMOVE );
+  $result = $query->execute(array(':user'=>OCP\User::getUser()));
   // now comes the real list selection
 //   define ('PAGE_SIZE', 100);
 //   $p_offset = OC_Shorty_Type::req_argument ( 'page', OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
   // pre-sort list according to user preferences
-  $p_sort = OC_Shorty_Type::$SORTING[OC_Preferences::getValue(OC_User::getUser(),'shorty','list-sort-code','cd')];
+  $p_sort = OC_Shorty_Type::$SORTING[OCP\Config::getUserValue(OCP\User::getUser(),'shorty','list-sort-code','cd')];
   $param = array
   (
-    ':user'   => OC_User::getUser ( ),
+    ':user'   => OCP\User::getUser ( ),
     ':sort'   => $p_sort,
 //     ':offset' => $p_offset,
 //     ':limit'  => PAGE_SIZE,
   );
-  $query = OC_DB::prepare ( OC_Shorty_Query::URL_LIST );
+  $query = OCP\DB::prepare ( OC_Shorty_Query::URL_LIST );
   $result = $query->execute($param);
   $reply = $result->fetchAll();
   // enhance all entries with the relay url
   foreach (array_keys($reply) as $key)
     $reply[$key]['relay']=OC_Shorty_Tools::relayUrl ( $reply[$key]['id'] );
-  OC_JSON::success ( array ( 'data'    => $reply,
-                             'count'   => sizeof($reply),
-                             'message' => OC_Shorty_L10n::t('Number of entries: %s', count($reply)) ) );
+  OCP\JSON::success ( array ( 'data'    => $reply,
+                              'count'   => sizeof($reply),
+                              'message' => OC_Shorty_L10n::t('Number of entries: %s', count($reply)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

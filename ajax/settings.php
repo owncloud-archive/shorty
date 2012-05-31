@@ -38,8 +38,8 @@
 $RUNTIME_NOSETUPFS = true;
 
 // Check if we are a user
-OC_JSON::checkAdminUser ( );
-OC_JSON::checkAppEnabled ( 'shorty' );
+OCP\JSON::checkAdminUser ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
@@ -56,7 +56,7 @@ try
       $data = array_diff ( $data, array(FALSE) );
       // store settings one by one
       foreach ( $data as $key=>$val )
-        OC_Appconfig::setValue( 'shorty', $key, $val );
+        OCP\Config::setAppValue( 'shorty', $key, $val );
       break;
     case 'GET':
       // detect requested settings
@@ -65,7 +65,7 @@ try
         if (  ('_'!=$key) // ignore ajax timestamp argument
             &&($type=OC_Shorty_Type::$PREFERENCE[$key]) )
         {
-          $data[$key] = OC_Preferences::getValue( OC_User::getUser(), 'shorty', $key);
+          $data[$key] = OCP\Config::getUserValue( OCP\User::getUser(), 'shorty', $key);
           // morph value into an explicit type
           switch ($type)
           {
@@ -94,7 +94,7 @@ try
       throw new OC_Shorty_Exception ( "unexpected request method '%s'", $_SERVER['REQUEST_METHOD'] );
   } // switch
     // a friendly reply, in case someone is interested
-  OC_JSON::success ( array ( 'data'    => $data,
-                             'message' => OC_Shorty_L10n::t('Setting saved.') ) );
+  OCP\JSON::success ( array ( 'data'    => $data,
+                              'message' => OC_Shorty_L10n::t('Setting saved.') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

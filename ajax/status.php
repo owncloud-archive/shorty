@@ -39,8 +39,8 @@
 $RUNTIME_NOSETUPFS = true;
 
 // Check if we are a user
-OC_JSON::checkLoggedIn ( );
-OC_JSON::checkAppEnabled ( 'shorty' );
+OCP\JSON::checkLoggedIn ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
@@ -48,13 +48,13 @@ try
   $p_status = OC_Shorty_Type::req_argument ( 'status', OC_Shorty_Type::STATUS, FALSE );
   $param = array
   (
-    'user'   => OC_User::getUser ( ),
+    'user'   => OCP\User::getUser ( ),
     'id'     => $p_id,
     'status' => $p_status,
   );
-  $query = OC_DB::prepare ( OC_Shorty_Query::URL_STATUS );
+  $query = OCP\DB::prepare ( OC_Shorty_Query::URL_STATUS );
   $query->execute ( $param );
-  OC_JSON::success ( array ( 'data'    => array('id'=>$p_id),
-                             'message' => sprintf(OC_Shorty_L10n::t("Status change for shorty with id '%s' saved"),$p_id) )  );
+  OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
+                              'message' => sprintf(OC_Shorty_L10n::t("Status change for shorty with id '%s' saved"),$p_id) )  );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

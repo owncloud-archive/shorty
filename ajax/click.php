@@ -37,21 +37,20 @@
 $RUNTIME_NOSETUPFS = true;
 
 // Check if we are a user
-OC_JSON::checkLoggedIn ( );
-OC_JSON::checkAppEnabled ( 'shorty' );
+OCP\JSON::checkLoggedIn ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
   $p_id  = OC_Shorty_Type::req_argument ( $_GET['id'], OC_Shorty_Type::ID, TRUE );
   $param = array
   (
-    'user' => OC_User::getUser(),
-//     'id'   => OC_Shorty_Tools::db_escape ( $p_id ),
+    'user' => OCP\User::getUser(),
     'id'   => $p_id,
   );
-  $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
+  $query = OCP\DB::prepare ( OC_Shorty_Query::URL_CLICK );
   $query->execute ( $param );
-  OC_JSON::success ( array ( 'data'    => array('id'=>$p_id),
-                             'message' => OC_Shorty_L10n::t('Click registered') ) );
+  OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
+                              'message' => OC_Shorty_L10n::t('Click registered') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

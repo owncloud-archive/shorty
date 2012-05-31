@@ -44,8 +44,8 @@
 $RUNTIME_NOSETUPFS = true;
 
 // Check if we are a user
-OC_JSON::checkLoggedIn ( );
-OC_JSON::checkAppEnabled ( 'shorty' );
+OCP\JSON::checkLoggedIn ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
@@ -62,10 +62,10 @@ try
       $data = array_diff ( $data, array(FALSE) );
       // store settings
       foreach ( $data as $key=>$val )
-        OC_Preferences::setValue( OC_User::getUser(), 'shorty', $key, $val );
+        OCP\Config::setUserValue( OCP\User::getUser(), 'shorty', $key, $val );
       // a friendly reply, in case someone is interested
-      OC_JSON::success ( array ( 'data'    => $data,
-                                 'message' => OC_Shorty_L10n::t('Preference saved.') ) );
+      OCP\JSON::success ( array ( 'data'    => $data,
+                                  'message' => OC_Shorty_L10n::t('Preference saved.') ) );
       break;
     case 'GET':
       // detect requested preferences
@@ -74,7 +74,7 @@ try
         if (  ('_'!=$key) // ignore ajax timestamp argument
             &&($type=OC_Shorty_Type::$PREFERENCE[$key]) )
         {
-          $data[$key] = OC_Preferences::getValue( OC_User::getUser(), 'shorty', $key);
+          $data[$key] = OCP\Config::getUserValue( OCP\User::getUser(), 'shorty', $key);
           // morph value into an explicit type
           switch ($type)
           {
@@ -99,8 +99,8 @@ try
         }
       } // foreach
       // a friendly reply, in case someone is interested
-      OC_JSON::success ( array ( 'data'    => $data,
-                                 'message' => OC_Shorty_L10n::t('Preference(s) retrieved.') ) );
+      OCP\JSON::success ( array ( 'data'    => $data,
+                                  'message' => OC_Shorty_L10n::t('Preference(s) retrieved.') ) );
       break;
     default:
       throw new OC_Shorty_Exception ( "unexpected request method '%s'", $_SERVER['REQUEST_METHOD'] );

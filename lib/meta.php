@@ -173,38 +173,38 @@ class OC_Shorty_Meta
       case 'state':
         switch ($identifier)
         {
-          case TRUE:  return OC_Helper::imagePath('shorty', 'status/good.png');
-          case FALSE: return OC_Helper::imagePath('shorty', 'status/bad.png');
-          default:    return OC_Helper::imagePath('shorty', 'status/neutral.png');
+          case TRUE:  return OCP\Util::imagePath('shorty', 'status/good.png');
+          case FALSE: return OCP\Util::imagePath('shorty', 'status/bad.png');
+          default:    return OCP\Util::imagePath('shorty', 'status/neutral.png');
         } // switch identifier
       case 'scheme':
         switch ($identifier)
         {
           case 'http':
-          case 'https':   return OC_Helper::imagePath('shorty', 'scheme/H.png');
+          case 'https':   return OCP\Util::imagePath('shorty', 'scheme/H.png');
           case 'ftp':
-          case 'ftps':    return OC_Helper::imagePath('shorty', 'scheme/F.png');
-          case 'sftp':    return OC_Helper::imagePath('shorty', 'scheme/S.png');
-          case 'mailto':  return OC_Helper::imagePath('shorty', 'scheme/M.png');
-          case 'gopher':  return OC_Helper::imagePath('shorty', 'scheme/G.png');
+          case 'ftps':    return OCP\Util::imagePath('shorty', 'scheme/F.png');
+          case 'sftp':    return OCP\Util::imagePath('shorty', 'scheme/S.png');
+          case 'mailto':  return OCP\Util::imagePath('shorty', 'scheme/M.png');
+          case 'gopher':  return OCP\Util::imagePath('shorty', 'scheme/G.png');
           case 'webdav':
-          case 'webdavs': return OC_Helper::imagePath('shorty', 'scheme/W.png');
-          default:        return OC_Helper::imagePath('shorty', 'blank.png');
+          case 'webdavs': return OCP\Util::imagePath('shorty', 'scheme/W.png');
+          default:        return OCP\Util::imagePath('shorty', 'blank.png');
         } // switch identifier
       case 'mimetype':
         $identifier = explode('/',$identifier);
         switch ($identifier[0])
         {
-          case 'audio':       return OC_Helper::imagePath('core', 'filetypes/audio.png');
-          case 'text':        return OC_Helper::imagePath('core', 'filetypes/text.png');
-          case 'video':       return OC_Helper::imagePath('core', 'filetypes/video.png');
+          case 'audio':       return OCP\Util::imagePath('core', 'filetypes/audio.png');
+          case 'text':        return OCP\Util::imagePath('core', 'filetypes/text.png');
+          case 'video':       return OCP\Util::imagePath('core', 'filetypes/video.png');
           case 'application':
             switch ($identifier[1])
             {
-              case 'pdf':     return OC_Helper::imagePath('core', 'filetypes/application-pdf.png');
-              default:        return OC_Helper::imagePath('shorty', 'blank.png');
+              case 'pdf':     return OCP\Util::imagePath('core', 'filetypes/application-pdf.png');
+              default:        return OCP\Util::imagePath('shorty', 'blank.png');
             } // switch identifier[1]
-          default:            return OC_Helper::imagePath('shorty', 'blank.png');
+          default:            return OCP\Util::imagePath('shorty', 'blank.png');
         } // switch identifier[0]
     } // switch aspect
   } // function selectIcon

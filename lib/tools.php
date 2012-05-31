@@ -51,7 +51,7 @@ class OC_Shorty_Tools
   */
   static function db_escape ( $value )
   {
-    $type = OC_Config::getValue ( 'dbtype', 'sqlite' );
+    $type = OCP\Config::getSystemValue ( 'dbtype', 'sqlite' );
     switch ( $type )
     {
       case 'sqlite':
@@ -78,7 +78,7 @@ class OC_Shorty_Tools
   */
   static function db_timestamp ( )
   {
-    $type = OC_Config::getValue( "dbtype", "sqlite" );
+    $type = OCP\Config::getSystemValue( "dbtype", "sqlite" );
     switch ( $type )
     {
       case 'sqlite':
@@ -99,11 +99,11 @@ class OC_Shorty_Tools
   static function shorty_id ( )
   {
     // each shorty installation uses a (once self generated) 62 char alphabet
-    $alphabet=OC_Appconfig::getValue('shorty','id-alphabet');
+    $alphabet=OCP\Config::getAppValue('shorty','id-alphabet');
     if ( empty($alphabet) )
     {
       $alphabet = self::randomAlphabet(62);
-      OC_Appconfig::setValue ( 'shorty', 'id-alphabet', $alphabet );
+      OCP\Config::setAppValue ( 'shorty', 'id-alphabet', $alphabet );
     }
     // use alphabet to generate a id being unique over time
     return self::convertToAlphabet ( str_replace(array(' ','.'),'',microtime()), $alphabet );
@@ -168,7 +168,7 @@ class OC_Shorty_Tools
    */
   static function relayUrl ($id)
   {
-    return OC_Helper::linkToAbsolute('shorty','index.php')."&id=".$id;
+    return OCP\Util::linkToAbsolute('shorty','index.php')."&id=".$id;
   } // function relayUrl
 
   /**
@@ -182,9 +182,9 @@ class OC_Shorty_Tools
   {
     $param = array
     (
-      ':user'   => OC_User::getUser ( ),
+      ':user'   => OCP\User::getUser ( ),
     );
-    $query = OC_DB::prepare ( OC_Shorty_Query::URL_COUNT );
+    $query = OCP\DB::prepare ( OC_Shorty_Query::URL_COUNT );
     $result = $query->execute($param);
     $reply = $result->fetchAll();
     return $reply[0];

@@ -73,9 +73,9 @@ class OC_Shorty_Exception extends Exception
 
   /**
    * @method OC_Shorty_Exception::JSONerror
-   * @brief Calls OC_JSON::error with a pretty formated version of an exception
+   * @brief Calls OCP\JSON::error with a pretty formated version of an exception
    * @param e (exception) an exception object holding information
-   * @returns (json) OC_JSON::error
+   * @returns (json) OCP\JSON::error
    * @access public
    * @author Christian Reiner
    */
@@ -101,8 +101,8 @@ class OC_Shorty_Exception extends Exception
              $message = OC_Shorty_L10n::t("Unexpected type of exception caught: %s", get_class($e));
         else $message = OC_Shorty_L10n::t("Unknown object of type caught: %s", get_class($e));
     } // switch
-    return OC_JSON::error ( array ( 'title'   => $title,
-                                    'message' => sprintf("%s: %s", $title, $message) ) );
+    return OCP\JSON::error ( array ( 'title'   => $title,
+                                     'message' => sprintf("%s: %s", $title, $message) ) );
   } // function error
 } // class OC_Shorty_Exception
 
@@ -141,7 +141,7 @@ class OC_Shorty_HttpException extends OC_Shorty_Exception
     {
       header ( sprintf("HTTP/1.0 %s %s",$status,$phrase) );
     }
-    $tmpl = new OC_Template("shorty", "tmpl_http_status", "guest");
+    $tmpl = new OCP\Template("shorty", "tmpl_http_status", "guest");
     $tmpl->assign("explanation", OC_Shorty_L10n::t($phrase));
     $tmpl->printPage();
     exit;

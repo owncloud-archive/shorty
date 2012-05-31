@@ -39,15 +39,15 @@ OC::$CLASSPATH['OC_Shorty_Query']         = 'apps/shorty/lib/query.php';
 OC::$CLASSPATH['OC_Shorty_Tools']         = 'apps/shorty/lib/tools.php';
 OC::$CLASSPATH['OC_Shorty_Type']          = 'apps/shorty/lib/type.php';
 
-OC_App::register ( array ( 'order' => 71, 'id' => 'shorty', 'name' => 'Shorty' ) );
-
-OC_App::addNavigationEntry ( array ( 'id' => 'shorty_index',
+OCP\App::addNavigationEntry ( array ( 'id' => 'shorty_index',
                                      'order' => 71,
-                                     'href' => OC_Helper::linkTo( 'shorty', 'index.php' ),
-                                     'icon' => OC_Helper::imagePath( 'shorty', 'shorty.svg' ),
+                                     'href' => OCP\Util::linkTo   ( 'shorty', 'index.php' ),
+                                     'icon' => OCP\Util::imagePath( 'shorty', 'shorty.svg' ),
                                      'name' => 'Shorty' ) );
 
-OC_APP::registerAdmin    ( 'shorty', 'settings' );
-OC_App::registerPersonal ( 'shorty', 'preferences' );
+OCP\App::register         ( array ( 'order' => 71, 'id' => 'shorty', 'name' => 'Shorty' ) );
+OCP\App::registerAdmin    ( 'shorty', 'settings' );
+OCP\App::registerPersonal ( 'shorty', 'preferences' );
+OCP\Util::connectHook ( 'OC_User', 'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
 
 ?>

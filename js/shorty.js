@@ -1341,6 +1341,7 @@ Shorty =
             break;
           case 'sms':
             var smsBody=entry.attr('data-title')+" - "+entry.attr('data-notes')+" - "+entry.attr('data-source');
+            // unfortunately there is no way to get the body over into the sms application on "sms urls"...
             window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"), smsBody );
             window.location='sms:';
             break;

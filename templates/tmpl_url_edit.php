@@ -41,7 +41,7 @@
       <a id="close" class="shorty-close-button"
         title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
         <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
-            src="<?php echo OC_Helper::imagePath('shorty','actions/shade.png');  ?>">
+            src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
       </a>    
       <?php echo OC_Shorty_L10n::t('Modify shorty').':'; ?>
     </legend>
@@ -54,10 +54,10 @@
     <br />
     <label for="meta">&nbsp;</label>
     <span id="meta">
-    <img id="staticon"  class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'status/neutral.png'); ?>">
-    <img id="schemicon" class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
-    <img id="favicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
-    <img id="mimicon"   class="shorty-icon" src="" data="<?php echo OC_Helper::imagePath('shorty', 'blank.png'); ?>">
+    <img id="staticon"  class="shorty-icon" src="" data="<?php echo OCP\Util::imagePath('shorty', 'status/neutral.png'); ?>">
+    <img id="schemicon" class="shorty-icon" src="" data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
+    <img id="favicon"   class="shorty-icon" src="" data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
+    <img id="mimicon"   class="shorty-icon" src="" data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
     <a id="explanation" maxlength="80" data="" class="shorty-value"></a>
     </span>
     <br />
@@ -77,7 +77,7 @@
     <input id="until" name="until" type="text" value=""
            maxlength="10" data="" class="" style="width:8em;"
            placeholder="-<?php echo OC_Shorty_L10n::t('never'); ?>-"
-           icon="<?php echo OC_Helper::imagePath('shorty', 'calendar.png'); ?>" />
+           icon="<?php echo OCP\Util::imagePath('shorty', 'calendar.png'); ?>" />
     </span>
     <br />
     <label for="notes"><?php echo OC_Shorty_L10n::t('Notes').':'; ?></label>

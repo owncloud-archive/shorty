@@ -37,14 +37,14 @@
 $RUNTIME_NOSETUPFS = true;
 
 // Check if we are a user
-OC_JSON::checkLoggedIn ( );
-OC_JSON::checkAppEnabled ( 'shorty' );
+OCP\JSON::checkLoggedIn ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
   $target  = OC_Shorty_Type::req_argument ( 'target', OC_Shorty_Type::URL, TRUE );
   $meta    = OC_Shorty_Meta::fetchMetaData(htmlspecialchars_decode($target));
-  OC_JSON::success ( array ( 'data'    => $meta,
-                             'message' => OC_Shorty_L10n::t("Target url '%s' is valid", $meta['target']) ) );
+  OCP\JSON::success ( array ( 'data'    => $meta,
+                              'message' => OC_Shorty_L10n::t("Target url '%s' is valid", $meta['target']) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

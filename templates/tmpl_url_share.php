@@ -41,7 +41,7 @@
       <a id="close" class="shorty-close-button"
         title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
         <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
-            src="<?php echo OC_Helper::imagePath('apps/shorty','actions/shade.png');  ?>">
+            src="<?php echo OCP\Util::imagePath('apps/shorty','actions/shade.png');  ?>">
       </a>
       <?php echo OC_Shorty_L10n::t('Test and use').':'; ?>
     </legend>
@@ -71,14 +71,14 @@
        href=""></a>
     <br />
     <img id="email" name="usage-email" class="shorty-usage" alt="email"
-         src="<?php echo OC_Helper::imagePath('apps/shorty','usage/64/email.png');  ?>"
+         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/email.png');  ?>"
          title="<?php echo OC_Shorty_L10n::t("Send by email"); ?>" />
     <img id="sms" type="image" name="usage-sms" alt="sms"
          class="shorty-usage <?php echo $_['sms-control']; ?>"
-         src="<?php echo OC_Helper::imagePath('apps/shorty','usage/64/sms.png');  ?>"
+         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/sms.png');  ?>"
          title="<?php echo OC_Shorty_L10n::t("Send by SMS"); ?>" />
     <img id="clipboard" type="image" name="usage-clipboard" class="shorty-usage" alt="clipbaord"
-         src="<?php echo OC_Helper::imagePath('apps/shorty','usage/64/clipboard.png');  ?>"
+         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/clipboard.png');  ?>"
          title="<?php echo OC_Shorty_L10n::t("Copy to clipboard"); ?>" />
   </fieldset>
 </form>

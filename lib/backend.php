@@ -54,7 +54,7 @@ class OC_Shorty_Backend
       // construct the $relay, the url to be called to reach THIS service (ownclouds shorty plugin)
       $relay = OC_Shorty_Tools::relayUrl ( $id );
       // call backend specific work horse
-      switch ( $type=OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-type','') )
+      switch ( $type=OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type','') )
       {
         default:        return OC_Shorty_Backend::registerUrl_default ( $id, $relay );
         case 'static':  return OC_Shorty_Backend::registerUrl_static  ( $id, $relay );
@@ -101,7 +101,7 @@ class OC_Shorty_Backend
    */
   static function registerUrl_static ( $id, $relay )
   {
-    $base = trim ( OC_Appconfig::getValue('shorty','backend-static-base',FALSE) );
+    $base = trim ( OCP\Config::getAppValue('shorty','backend-static-base',FALSE) );
     return OC_Shorty_Type::validate ( $base.$id, OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_static
   
@@ -116,8 +116,8 @@ class OC_Shorty_Backend
    */
   static function registerUrl_bitly ( $id, $relay )
   {
-    $bitly_api_user = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-user','');
-    $bitly_api_key  = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-bitly-key', '');
+    $bitly_api_user = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-user','');
+    $bitly_api_key  = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-key', '');
     if ( ! $bitly_api_key || ! $bitly_api_user )
       throw new OC_Shorty_Exception ( 'No API user or key configured' );
     $curl = curl_init ( );
@@ -154,7 +154,7 @@ class OC_Shorty_Backend
   static function registerUrl_cligs ( $id, $relay )
   {
     $curl = curl_init ( );
-    curl_setopt ( $curl, CURLOPT_URL, sprintf('http://cli.gs/api/v2/cligs/create?url=%s&appid=oc_shorty&test=1', urlencode(trim($relay))) );
+    curl_setopt ( $curl, CURLOPT_URL, sprintf('http://cli.gs/api/v2/cligs/create?url=%s&appid=owncloud_shorty&test=1', urlencode(trim($relay))) );
     curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
     if (  (FALSE===($reply=curl_exec($curl)))
         ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
@@ -199,7 +199,7 @@ class OC_Shorty_Backend
    */
   static function registerUrl_google ( $id, $relay )
   {
-    $api_key = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-google-key','');
+    $api_key = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-google-key','');
     if ( ! $api_key )
       throw new OC_Shorty_Exception ( 'No goo.gl API key configured' );
     $curl = curl_init ( );
@@ -232,8 +232,8 @@ class OC_Shorty_Backend
    */
   static function registerUrl_tinycc ( $id, $relay )
   {
-    $api_user = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-tinycc-user','');
-    $api_key  = OC_Preferences::getValue(OC_User::getUser(),'shorty','backend-tinycc-key','');
+    $api_user = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-tinycc-user','');
+    $api_key  = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-tinycc-key','');
     if ( ! $api_key || ! $api_user )
       throw new OC_Shorty_Exception ( 'No goo.gl API key configured' );
     $curl = curl_init ( );

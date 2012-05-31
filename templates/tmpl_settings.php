@@ -39,7 +39,7 @@
   <fieldset class="personalblock">
     <legend>
       <span id="title" class="title">
-        <img class="" src="<?php echo OC_Helper::imagePath("shorty","shorty.png"); ?> ">
+        <img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
         <strong>Shorty</strong>
       </span>
     </legend>

@@ -37,7 +37,7 @@
 <form id="shorty">
   <fieldset class="personalblock">
     <div id="title" class="title">
-      <img class="" src="<?php echo OC_Helper::imagePath("shorty","shorty.png"); ?> ">
+      <img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
       <strong>Shorty</strong>
     </div>
     <div id="settings">
@@ -45,7 +45,7 @@
       <label for="shortlet" class="aspect"><?php echo $l->t("Shortlet").":";?></label>
       <span id="shortlet">
         <a class="shortlet"
-           href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OC_Helper::linkToAbsolute('shorty', 'index.php'); ?>&url='+url, 'owncloud-shorty')%20})()">
+           href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OCP\Util::linkToAbsolute('shorty', 'index.php'); ?>&url='+url, 'owncloud-shorty')%20})()">
           <?php echo $l->t("Add page as 'Shorty' to ownCloud"); ?>
         </a>
       </span>
@@ -76,7 +76,7 @@
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t("Example").':';?></label>
-          <span id="example" class="example"><?php echo sprintf('http://%s%s<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME'],OC_Helper::linkTo('shorty','',false)) ?></span>
+          <span id="example" class="example"><?php echo sprintf('http://%s%s<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME'],OCP\Util::linkTo('shorty','',false)) ?></span>
         </span>
         <br/>
         <span id="explain" class="explain">

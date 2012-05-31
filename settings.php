@@ -32,20 +32,20 @@
  * @author Christian Reiner
  */
 
-OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
-OC_Util::addStyle  ( 'shorty',   'shorty' );
-OC_Util::addStyle  ( 'shorty',   'settings' );
+OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
+OCP\Util::addStyle  ( 'shorty',   'shorty' );
+OCP\Util::addStyle  ( 'shorty',   'settings' );
 
-OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
-OC_Util::addScript ( 'shorty',   'shorty' );
-// OC_Util::addScript ( 'shorty',   'debug' );
-OC_Util::addScript ( 'shorty',   'settings' );
+OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
+OCP\Util::addScript ( 'shorty',   'shorty' );
+// OCP\Util::addScript ( 'shorty',   'debug' );
+OCP\Util::addScript ( 'shorty',   'settings' );
 
 
 // fetch template
-$tmpl = new OC_Template ( 'shorty', 'tmpl_settings' );
+$tmpl = new OCP\Template ( 'shorty', 'tmpl_settings' );
 // inflate template
-$tmpl->assign ( 'backend-static-base', OC_Appconfig::getValue('shorty','backend-static-base','') );
+$tmpl->assign ( 'backend-static-base', OCP\Config::getAppValue('shorty','backend-static-base','') );
 // render template
 return $tmpl->fetchPage ( );
 ?>

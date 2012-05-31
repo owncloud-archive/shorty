@@ -32,7 +32,7 @@
 
 function export ( )
 {
-  OC_Log::write ( 'migration','starting export for Shorty', OC_Log::INFO );
+  OCP\Util::writeLog ( 'migration','starting export for Shorty', OCP\Util::INFO );
   $options = array(
     'table'=>'shorty',
     'matchcol'=>'user',
@@ -74,9 +74,9 @@ function import ( )
           'notes'    => $row['notes'],
         );
         // import each shorty one by one, no special treatment required, since no autoincrement id is used
-        $query = OC_DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty(%s) VALUES (%s)",
-                                          implode(',',array_keys($param)),
-                                          implode(',',array_fill(0,count($param),'?')) ) );
+        $query = OCP\DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty(%s) VALUES (%s)",
+                                            implode(',',array_keys($param)),
+                                            implode(',',array_fill(0,count($param),'?')) ) );
         $query->execute( $param );
       } // while
     } // if

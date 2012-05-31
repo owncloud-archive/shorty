@@ -30,16 +30,16 @@
 RewriteEngine On
 
 # example: http://.../apps/shorty/index.php/0123456789
-RewriteRule     index\.php/([a-z0-9]{4,12})$     index.php?$1 [NC,L]
+RewriteRule     index\.php/([a-z0-9]{4,12})$     public.php?service=shorty&id=$1 [NC,L]
 
 # example: http://.../apps/shorty/index.php?0123456789
 RewriteCond     %{QUERY_STRING}                 ^([a-z0-9]{4,12})$         [NC]
-RewriteRule     index\.php                     index.php?%{QUERY_STRING} [L]
+RewriteRule     index\.php                     public.php?service=shorty&id=%{QUERY_STRING} [L]
 
 # example: http://.../apps/shorty/?0123456789
 RewriteCond     %{QUERY_STRING}                ^([a-z0-9]{4,12})$          [NC]
 RewriteCond     %{REQUEST_URI}                 meta/.+\.php
-RewriteRule     -                              index.php?%{QUERY_STRING} [L]
+RewriteRule     -                              public.php?service=shorty&id=%{QUERY_STRING} [L]
 
 # example: http://.../apps/shorty/0123456789
-RewriteRule     ^([a-z0-9]{4,12})$                index.php?$1 [NC,L]
+RewriteRule     ^([a-z0-9]{4,12})$             public.php?service=shorty&id=$1 [NC,L]

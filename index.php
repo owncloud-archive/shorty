@@ -28,19 +28,19 @@
  * @file index.php
  * This is the plugins central position
  * All requests to the plugin are handled by this file.
- * Exceptions: system settings and user preferences dialogs
+ * Exceptions: system settings, user preferences and relaying
  * @access public
  * @author Christian Reiner
  */
 
-OC_App::setActiveNavigationEntry ( 'shorty_index' );
+OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 
-OC_Util::addStyle  ( 'shorty',  'shorty' );
+OCP\Util::addStyle  ( 'shorty',  'shorty' );
 
-OC_Util::addScript ( 'shorty/3rdparty','jquery.tinysort.min' );
-OC_Util::addScript ( 'shorty',  'shorty' );
-// OC_Util::addScript ( 'shorty',  'debug' );
-OC_Util::addScript ( 'shorty',  'init' );
+OCP\Util::addScript ( 'shorty/3rdparty','jquery.tinysort.min' );
+OCP\Util::addScript ( 'shorty',  'shorty' );
+// OCP\Util::addScript ( 'shorty',  'debug' );
+OCP\Util::addScript ( 'shorty',  'init' );
 
 // strategy:
 // - first: decide which action is requested
@@ -60,15 +60,6 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
     // this is the OC4 argument used to identify the app called, we ignore it:
     case 'app':
       break;
-    // any recognizable argument key indicating an id to be looked up ?
-    case 'id':
-    case 'shorty':
-    case 'ref':
-    case 'entry':
-      // example: http://.../shorty/index.php?id=hf732J6Dk4
-      $act = 'forward';
-      $arg = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::ID,FALSE);
-      break 2; // skip switch AND foreach
     // any recognizable argument key indicating a url to be added as new shorty ?
     case 'url':
     case 'uri':
@@ -96,13 +87,6 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
           $arg = $raw;
           break 2;
         }
-        elseif (NULL!==($value=OC_Shorty_Type::normalize($raw,OC_Shorty_Type::ID,FALSE)))
-        {
-          // the query string is an id, look for a shorty to forward to
-          $act = 'forward';
-          $arg = $raw;
-          break 2;
-        }
         else
         {
           // no pattern recognized, so we assume an ordinary index action
@@ -118,112 +102,34 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 // next, execute the "act" whilst considering the 'arg'
 switch ($act)
 {
-  case 'forward': // forward to a target identified by a id
-    try
-    {
-      // detect requested shorty id from request
-      $p_id = trim ( OC_Shorty_Type::normalize($arg,OC_Shorty_Type::ID) ) ;
-      // an id was specified, look for matching entry in database
-      if ( '0000000000'==$p_id )
-      {
-        // this is a pseudo id, used to test the setup, so return a positive message.
-        OC_JSON::success ( array ( ) );
-        exit();
-      }
-      else if ( $p_id )
-      {
-        $param = array
-        (
-          'id' => $p_id,
-        );
-        $query  = OC_DB::prepare ( OC_Shorty_Query::URL_FORWARD );
-        $result = $query->execute($param)->FetchAll();
-        if ( FALSE===$result )
-          throw new OC_Shorty_Exception ( "HTTP/1.0 404 Not Found", $param );
-        elseif ( ! is_array($result) )
-          throw new OC_Shorty_Exception ( "HTTP/1.0 404 Not Found", $param );
-        elseif ( 0==sizeof($result) )
-        {
-          // no entry found => 404: Not Found
-          throw new OC_Shorty_HttpException ( 404 );
-        }
-        elseif ( 1<sizeof($result) )
-        {
-          // multiple matches => 409: Conflict
-          throw new OC_Shorty_HttpException ( 409 );
-        }
-        elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('target',$result[0])) )
-        {
-          // invalid entry => 500: Internal Server Error
-          throw new OC_Shorty_HttpException ( 500 );
-        }
-        elseif ( (!array_key_exists('target',$result[0])) || ('1'==$result[0]['expired']) )
-        {
-          // entry expired => 410: Gone
-          throw new OC_Shorty_HttpException ( 410 );
-        }
-        // an usable target !
-        $target = trim($result[0]['target']);
-        // check status of matched entry
-        switch (trim($result[0]['status']))
-        {
-          default:
-          case 'blocked':
-            // refuse forwarding => 403: Forbidden
-            throw new OC_Shorty_HttpException ( 403 );
-          case 'private':
-            // check if user owns the Shorty, deny access if not
-            if ( $result[0]['user']!=OC_User::getUser() )
-              // refuse forwarding => 403: Forbidden
-              throw new OC_Shorty_HttpException ( 403 );
-            // NO break;
-          case 'shared':
-            // check if we are a user, deny access if not
-            OC_Util::checkLoggedIn ( );
-            // NO break;
-          case 'public':
-            // forward to target, regardless of who sends the request
-            header("HTTP/1.0 301 Moved Permanently");
-            // http forwarding header
-            header ( sprintf('Location: %s', $target) );
-        } // switch status
-        // register click in shorty
-        $query = OC_DB::prepare ( OC_Shorty_Query::URL_CLICK );
-        $query->execute ( $param );
-        exit();
-      } // if id
-    } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
-    // cannot really come here, but let's stay on the safe side...
-    exit();
-  // =====
   case 'acquire': // add url as new shorty
     // Check if we are a user
-    OC_Util::checkLoggedIn ( );
+    OCP\User::isLoggedIn ( );
     // keep the url specified as referer, that is the one we want to store
     $_SESSION['shorty-referrer'] = $arg;
-    header ( sprintf('Location: %s', OC_Helper::linkTo('shorty','index.php')) );
+    header ( sprintf('Location: %s', OCP\Helper::linkTo('shorty','index.php')) );
     exit();
   // =====
   case 'index': // action 'index': list of shortys
   default:
     // Check if we are a user
-    OC_Util::checkLoggedIn ( );
+    OCP\User::isLoggedIn ( );
     try
     {
       // is this a redirect from a call with a target url to be added ? 
       if ( isset($_SESSION['shorty-referrer']) )
       {
         // this takes care of handling the url on the client side
-        OC_Util::addScript ( 'shorty', 'add' );
+        OCP\Util::addScript ( 'shorty', 'add' );
         // add url taked from the session vars to anything contained in the query string
         $_SERVER['QUERY_STRING'] = implode('&',array_merge(array('url'=>$_SESSION['shorty-referrer']),explode('&',$_SERVER['QUERY_STRING'])));
       }
       else
       {
         // simple desktop initialization, no special actions contained
-        OC_Util::addScript ( 'shorty', 'list' );
+        OCP\Util::addScript ( 'shorty', 'list' );
       }
-      $tmpl = new OC_Template( 'shorty', 'tmpl_index', 'user' );
+      $tmpl = new OCP\Template( 'shorty', 'tmpl_index', 'user' );
       // available status (required for select filter in toolbox)
       $shorty_status['']=sprintf('- %s -',OC_Shorty_L10n::t('all'));
       foreach ( OC_Shorty_Type::$STATUS as $status )
@@ -233,11 +139,11 @@ switch ($act)
       if ( array_key_exists('shorty-referrer',$_SESSION) )
         $tmpl->assign ( 'shorty-referrer', $_SESSION['shorty-referrer'] );
       // is sending sms enabled in the personal preferences ?
-      $tmpl->assign ( 'sms-control', OC_Preferences::getValue(OC_User::getUser(),'shorty','sms-control','disabled') );
+      $tmpl->assign ( 'sms-control', OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
       // clean up session var so that a browser reload does not trigger the same action again
       unset ( $_SESSION['shorty-referrer'] );
       $tmpl->printPage();
-    } catch ( OC_Shorty_Exception $e ) { OC_JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
+    } catch ( OC_Shorty_Exception $e ) { OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
 } // switch
 
 ?>

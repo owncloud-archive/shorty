@@ -36,12 +36,12 @@
 $RUNTIME_NOSETUPFS = TRUE;
 
 // Check if we are a user
-OC_JSON::checkLoggedIn ( );
-OC_JSON::checkAppEnabled ( 'shorty' );
+OCP\JSON::checkLoggedIn ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
 
 try
 {
-  OC_JSON::success ( array ( 'data'    => OC_Shorty_Tools::countShorties(),
-                             'message' => OC_Shorty_L10n::t('Counted entries and clicks') ) );
+  OCP\JSON::success ( array ( 'data'    => OC_Shorty_Tools::countShorties(),
+                              'message' => OC_Shorty_L10n::t('Counted entries and clicks') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
