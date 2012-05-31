@@ -47,7 +47,7 @@
 "Modify attributes"                                          => "Attribute ändern",
 "Modify shorty"                                              => "Shorty ändern",
 "New Shorty"                                                 => "Neuer Shorty",
-"Notes"                                                      => "Anmerkungen",
+"Notes"                                                      => "Notizen",
 "Number of entries"                                          => "Anzahl der Einträge",
 "Number of entries: %s"                                      => "Anzahl der Einträge: %s",
 "Open source url"                                            => "Quell-Url öffnen",
