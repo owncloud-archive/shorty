@@ -108,7 +108,7 @@
           <span id="horst" class="shorty-select">
             <select id='filter' value="" data-placeholder=" ">
               <?php foreach($_['shorty-status'] as $status=>$label)
-                echo sprintf("<option value=\"%s\">%s</option>\n",$status,htmlentities($label));
+                echo sprintf("<option value=\"%s\">%s</option>\n",($status?$label:''),$label);
               ?>
             </select>
           </span>
