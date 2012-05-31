@@ -1,7 +1,7 @@
 <?php $TRANSLATIONS = array(
 // folder js
 "all"                                                        => "alle",
-"blocked"                                                    => "blockiert",
+"blocked"                                                    => "geblockt",
 "deleted"                                                    => "gelöscht",
 "disabled"                                                   => "deaktiviert",
 "enabled"                                                    => "aktiviert",
