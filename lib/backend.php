@@ -54,7 +54,7 @@ class OC_Shorty_Backend
       // construct the $relay, the url to be called to reach THIS service (ownclouds shorty plugin)
       $relay = OC_Shorty_Tools::relayUrl ( $id );
       // call backend specific work horse
-      switch ( $type=OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type','') )
+      switch ( $type=OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type','none') )
       {
         default:        return OC_Shorty_Backend::registerUrl_default ( $id, $relay );
         case 'static':  return OC_Shorty_Backend::registerUrl_static  ( $id, $relay );
@@ -101,7 +101,9 @@ class OC_Shorty_Backend
    */
   static function registerUrl_static ( $id, $relay )
   {
-    $base = trim ( OCP\Config::getAppValue('shorty','backend-static-base',FALSE) );
+    if (  (FALSE===($base=trim ( OCP\Config::getAppValue('shorty','backend-static-base',FALSE))))
+        ||(empty($base)) )
+      throw new OC_Shorty_Exception ( 'No base url defined for the static backend' );
     return OC_Shorty_Type::validate ( $base.$id, OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_static
   
