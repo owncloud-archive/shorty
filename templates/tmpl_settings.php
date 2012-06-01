@@ -64,7 +64,7 @@
         $l->t("Leave empty if you can't provide a short base url that is mapped the described way.") ); ?>
       </span>
     </div>
-    <!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
+
     <?php require_once('tmpl_dlg_verify.php'); ?>
   </fieldset>
 </form>

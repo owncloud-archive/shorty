@@ -34,8 +34,8 @@
  */
 ?>
 
-<!-- a short "things work as expected" confirmation -->
-<div id="verification" style="display:none;" title="<?php echo $l->t("'Static' backend: base url verification"); ?>">
+<!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
+<div id="dialog-verification" style="display:none;" title="<?php echo $l->t("'Static' backend: base url verification"); ?>">
   <!-- verification-in-progress -->
   <div id="hourglass">
     <img src="<?php echo OCP\Util::imagePath('shorty', 'loading-disk.gif'); ?>">
@@ -67,3 +67,4 @@
     </fieldset>
   </div>
 </div>
+<!-- end of verification dialog -->
