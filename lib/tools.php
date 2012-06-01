@@ -168,7 +168,7 @@ class OC_Shorty_Tools
    */
   static function relayUrl ($id)
   {
-    return OCP\Util::linkToAbsolute('shorty','index.php')."&id=".$id;
+    return sprintf ( '%s?service=%s&id=%s', OCP\Util::linkToAbsolute("", "public.php"), 'shorty_relay', $id );
   } // function relayUrl
 
   /**

@@ -382,7 +382,7 @@ Shorty =
         var action=element.attr('id');
         var entry=element.parents('tr');
         if (Shorty.Debug) Shorty.Debug.log("send action "+action+" on entry "+entry.attr('data-id'));
-        //
+        // take action
         $.when(
           Shorty.Action.Url.send(action,entry)
         ).done(dfd.resolve)
@@ -1149,7 +1149,7 @@ Shorty =
       // ===== Shorty.Action.Setting.verify =====
       verify:function(){
         if (!Shorty.Action.Setting.popup.dialog){
-         Shorty.Action.Setting.popup=$('#shorty #verification');
+         Shorty.Action.Setting.popup=$('#shorty #dialog-verification');
          Shorty.Action.Setting.popup.dialog({show:'fade',autoOpen:false,modal:true});
          Shorty.Action.Setting.popup.dialog('option','minHeight',240 );
         }
@@ -1332,20 +1332,26 @@ Shorty =
       send: function(action,entry){
         if (Shorty.Debug) Shorty.Debug.log("action send via "+action+" with entry "+entry.attr('id'));
         switch (action){
-          case 'email':
+          case 'usage-email':
             var mailSubject=entry.attr('data-title')||'';
             var mailBody=entry.attr('data-notes')+"\n\n"+entry.attr('data-source');
             window.location='mailto:""?'
                            +'subject='+encodeURIComponent(mailSubject)
                            +'&body='+encodeURIComponent(mailBody);
             break;
-          case 'sms':
+          case 'usage-sms':
             var smsBody=entry.attr('data-title')+" - "+entry.attr('data-notes')+" - "+entry.attr('data-source');
             // unfortunately there is no way to get the body over into the sms application on "sms urls"...
             window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"), smsBody );
             window.location='sms:';
             break;
-          case 'clipboard':
+          case 'usage-qrcode':
+            var title =entry.attr('data-title');
+            var source=entry.attr('data-source');
+            var target=entry.attr('data-target');
+            Shorty.Action.Usage.Dialog.qrcode(title,source,target);
+            break;
+          case 'usage-clipboard':
             window.prompt(t('shorty',"Copy to clipboard: Ctrl+C"), entry.attr('data-source'));
             break;
           default:
@@ -1397,6 +1403,36 @@ Shorty =
         return dfd.promise();
       } // Shorty.Action.Url.status
     }, // ===== Shorty.Action.Url =====
+    // ===== Shorty.Action.Usage =====
+    Usage:
+    {
+      // ===== Shorty.Action.Usage.Popup =====
+      Popup:
+      {
+        // ===== Shorty.Action.Usage.Popup.qrcode =====
+        qrcode:{},
+      }, // Shorty.Action.Usage.Popup
+      // ===== Shorty.Action.Usage.Dialog =====
+      Dialog:
+      {
+        // ===== Shorty.Action.Usage.Dialog.qrcode =====
+        qrcode:function(title,source,target){
+          if (!Shorty.Action.Usage.Popup.qrcode.dialog){
+            Shorty.Action.Usage.Popup.qrcode=$('#dialog-qrcode');
+            Shorty.Action.Usage.Popup.qrcode.dialog({show:'fade',autoOpen:false,modal:true});
+            Shorty.Action.Usage.Popup.qrcode.dialog('option','width',240 );
+            //Shorty.Action.Usage.Popup.qrcode.dialog('option','height',80 );
+          }
+          // a hidden input field ('qrcode-url') holds the base url to the qrcode generator
+          // we just add the url parameter for this specific entrys source url
+          var url=Shorty.Action.Usage.Popup.qrcode.find('#qrcode-url').val()+encodeURIComponent(source);
+          Shorty.Action.Usage.Popup.qrcode.dialog('option','title',title);
+          Shorty.Action.Usage.Popup.qrcode.find('a').attr('href',source).attr('title',source);
+          Shorty.Action.Usage.Popup.qrcode.find('img').attr('src',url).attr('title',source);
+          Shorty.Action.Usage.Popup.qrcode.dialog('open');
+        } // Shorty.Action.Usage.Dialog.qrcode
+      } // Shorty.Action.Usage.Dialog
+    } // Shorty.Action.Usage
   }, // Shorty.Action
 
   // ===========

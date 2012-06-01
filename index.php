@@ -130,6 +130,8 @@ switch ($act)
         OCP\Util::addScript ( 'shorty', 'list' );
       }
       $tmpl = new OCP\Template( 'shorty', 'tmpl_index', 'user' );
+      // the (remote) base url of the qrcode generator
+      $tmpl->assign ( 'qrcode-url', sprintf('%s?service=%s&url=',OCP\Util::linkToAbsolute("", "public.php"),'shorty_qrcode') );
       // available status (required for select filter in toolbox)
       $shorty_status['']=sprintf('- %s -',OC_Shorty_L10n::t('all'));
       foreach ( OC_Shorty_Type::$STATUS as $status )

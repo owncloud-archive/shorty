@@ -70,15 +70,20 @@
        title="<?php echo OC_Shorty_L10n::t('Open target url'); ?>"
        href=""></a>
     <br />
-    <img id="email" name="usage-email" class="shorty-usage" alt="email"
-         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/email.png');  ?>"
+    <img id="usage-email" name="usage-email" class="shorty-usage" alt="email"
+         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/email.png'); ?>"
          title="<?php echo OC_Shorty_L10n::t("Send by email"); ?>" />
-    <img id="sms" type="image" name="usage-sms" alt="sms"
+    <img id="usage-sms" type="image" name="usage-sms" alt="sms"
          class="shorty-usage <?php echo $_['sms-control']; ?>"
-         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/sms.png');  ?>"
+         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/sms.png'); ?>"
          title="<?php echo OC_Shorty_L10n::t("Send by SMS"); ?>" />
-    <img id="clipboard" type="image" name="usage-clipboard" class="shorty-usage" alt="clipbaord"
-         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/clipboard.png');  ?>"
+    <img id="usage-qrcode" type="image" name="usage-qrcode" class="shorty-usage" alt="qrcode"
+         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/qrcode.png'); ?>"
+         title="<?php echo OC_Shorty_L10n::t("Show as QRCode"); ?>" />
+    <img id="usage-clipboard" type="image" name="usage-clipboard" class="shorty-usage" alt="clipbaord"
+         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/clipboard.png'); ?>"
          title="<?php echo OC_Shorty_L10n::t("Copy to clipboard"); ?>" />
   </fieldset>
 </form>
+
+<?php require_once('tmpl_dlg_qrcode.php'); ?>
