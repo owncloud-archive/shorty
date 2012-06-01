@@ -48,13 +48,17 @@ class OC_Shorty_Hooks
   public static function deleteUser ( $parameters )
   {
     OCP\Util::writeLog ( 'user post delete','wiping all users Shortys', OCP\Util::INFO );
-    $param = array
-    (
-      'user' => OCP\User::getUser(),
-    );
-    $query = OCP\DB::prepare ( OC_Shorty_Query::URL_WIPE );
-    $result = $query->execute($param);
+    $result = TRUE;
+    $param  = array ( 'user' => OCP\User::getUser() );
+    // wipe shortys
+    $query = OCP\DB::prepare ( OC_Shorty_Query::WIPE_SHORTYS );
+    if ( FALSE===$query->execute($param) )
+      $result = FALSE;
+    // wipe preferences
+    $query = OCP\DB::prepare ( OC_Shorty_Query::WIPE_PREFERENCES );
+    if ( FALSE===$query->execute($param) )
+      $result = FALSE;
     // report completion success
-    return (FALSE===$result);
+    return $result;
   }
 }
