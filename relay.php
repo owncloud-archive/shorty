@@ -119,7 +119,9 @@ try
         // NO break; but fall through to the action in 'case public:'
       case 'shared':
         // check if we are a user, deny access if not
-        OCP\User::isLoggedIn ( );
+        if ( ! OCP\User::isLoggedIn() )
+          // refuse forwarding => 403: Forbidden
+          throw new OC_Shorty_HttpException ( 403 );
         // NO break; but fall through to the action in 'case public:'
       case 'public':
         // forward to target, regardless of who sends the request
