@@ -24,7 +24,9 @@
 
 Changelog: 
 
-* Fri Jun 02 2012 Christian Reiner: version 0.2.0
+* Sat Jun 02 2012 Christian Reiner: version 0.2.1
+Fixed broken Shortlet
+* Fri Jun 01 2012 Christian Reiner: version 0.2.0
 Support of ownCloud version 4 (app interface incompatible to prior versions)
 Additional status 'private' for Shortys only accessible for the owner himself
 Rudimentary SMS support for smart phones (more an assistance, can be disabled)
