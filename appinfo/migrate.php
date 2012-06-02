@@ -30,64 +30,72 @@
  * @author Christian Reiner
  */
 
-function export ( )
+class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 {
-  OCP\Util::writeLog ( 'migration','starting export for Shorty', OCP\Util::INFO );
-  $options = array(
-    'table'=>'shorty',
-    'matchcol'=>'user',
-    'matchval'=>$this->uid,
-    'idcol'=>'id'
-  );
-  $ids = $this->content->copyRows( $options );
-  $count = OC_Shorty_Tools::countShorties();
-  // check for success
-  if(   (is_array($ids) && is_array($count))
-     && (count($ids)==$count['sum_shortys']) )
-       return true;
-  else return false;
-} // function export
 
-function import ( )
-{
-  switch( $this->appinfo->version )
+  function export ( )
   {
-    default:
-    $query  = $this->content->prepare( "SELECT * FROM shorty WHERE user_id LIKE ?" );
-    $result = $query->execute( array( $this->olduid ) );
-    if (is_array(is_array($result)))
+    OCP\Util::writeLog ( 'migration','starting export for Shorty', OCP\Util::INFO );
+    $options = array(
+      'table'=>'shorty',
+      'matchcol'=>'user',
+      'matchval'=>$this->uid,
+      'idcol'=>'id'
+    );
+    $ids = $this->content->copyRows( $options );
+    $count = OC_Shorty_Tools::countShorties();
+    // check for success
+    if(   (is_array($ids) && is_array($count))
+      && (count($ids)==$count['sum_shortys']) )
+        return true;
+    else return false;
+  } // function export
+
+  function import ( )
+  {
+    switch( $this->appinfo->version )
     {
-      while( $row = $result->fetchRow() )
+      default:
+      $query  = $this->content->prepare( "SELECT * FROM shorty WHERE user_id LIKE ?" );
+      $result = $query->execute( array( $this->olduid ) );
+      if (is_array(is_array($result)))
       {
-        $param = array (
-          'id'       => $row['id'],
-          'status'   => $row['status'],
-          'title'    => $row['title'],
-          'favicon'  => $row['favicon'],
-          'source'   => $row['source'],
-          'target'   => $row['target'],
-          'user'     => $row['user'],
-          'until'    => $row['until'],
-          'created'  => $row['created'],
-          'accessed' => $row['accessed'],
-          'clicks'   => $row['clicks'],
-          'notes'    => $row['notes'],
-        );
-        // import each shorty one by one, no special treatment required, since no autoincrement id is used
-        $query = OCP\DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty(%s) VALUES (%s)",
-                                            implode(',',array_keys($param)),
-                                            implode(',',array_fill(0,count($param),'?')) ) );
-        $query->execute( $param );
-      } // while
-    } // if
-    break;
-  } // switch
-  // check for success by counting the generated entries
-  $count = OC_Shorty_Tools::countShorties();
-  if(   (is_array($result) && is_array($count))
-     && (count($result)==$count['sum_shortys']) )
-       return true;
-  else return false;
-} // function import
+        while( $row = $result->fetchRow() )
+        {
+          $param = array (
+            'id'       => $row['id'],
+            'status'   => $row['status'],
+            'title'    => $row['title'],
+            'favicon'  => $row['favicon'],
+            'source'   => $row['source'],
+            'target'   => $row['target'],
+            'user'     => $row['user'],
+            'until'    => $row['until'],
+            'created'  => $row['created'],
+            'accessed' => $row['accessed'],
+            'clicks'   => $row['clicks'],
+            'notes'    => $row['notes'],
+          );
+          // import each shorty one by one, no special treatment required, since no autoincrement id is used
+          $query = OCP\DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty(%s) VALUES (%s)",
+                                              implode(',',array_keys($param)),
+                                              implode(',',array_fill(0,count($param),'?')) ) );
+          $query->execute( $param );
+        } // while
+      } // if
+      break;
+    } // switch
+    // check for success by counting the generated entries
+    $count = OC_Shorty_Tools::countShorties();
+    if(   (is_array($result) && is_array($count))
+      && (count($result)==$count['sum_shortys']) )
+        return true;
+    else return false;
+  } // function import
+
+} // class OC_Migration_Provider_Shorty
+
+// Load the provider
+new OC_Migration_Provider_Shorty ( 'shortys' );
 
 ?>
