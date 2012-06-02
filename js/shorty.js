@@ -1423,8 +1423,6 @@ Shorty =
             qrcode.dialog({show:'fade',autoOpen:false,modal:true});
             qrcode.dialog('option','width',240 );
             //qrcode.dialog('option','height',80 );
-            qrcode.dialog({dragStop:function(event,ui){alert(ui.position);}});
-            qrcode.dialog({resizeStop:function(event,ui){alert(ui.size);}});
           }
           // a hidden input field ('qrcode-url') holds the base url to the qrcode generator
           // we just add the url parameter for this specific entrys source url
