@@ -103,8 +103,6 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 switch ($act)
 {
   case 'acquire': // add url as new shorty
-    // Check if we are a user
-    OCP\User::isLoggedIn ( );
     // keep the url specified as referer, that is the one we want to store
     $_SESSION['shorty-referrer'] = $arg;
     header ( sprintf('Location: %s', OCP\Helper::linkTo('shorty','index.php')) );
@@ -112,8 +110,6 @@ switch ($act)
   // =====
   case 'index': // action 'index': list of shortys
   default:
-    // Check if we are a user
-    OCP\User::isLoggedIn ( );
     try
     {
       // is this a redirect from a call with a target url to be added ? 
