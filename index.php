@@ -105,7 +105,7 @@ switch ($act)
   case 'acquire': // add url as new shorty
     // keep the url specified as referer, that is the one we want to store
     $_SESSION['shorty-referrer'] = $arg;
-    header ( sprintf('Location: %s', OCP\Helper::linkTo('shorty','index.php')) );
+    header ( sprintf('Location: %s', OCP\Util::linkTo('shorty','index.php')) );
     exit();
   // =====
   case 'index': // action 'index': list of shortys
