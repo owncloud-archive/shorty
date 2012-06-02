@@ -1417,19 +1417,26 @@ Shorty =
       {
         // ===== Shorty.Action.Usage.Dialog.qrcode =====
         qrcode:function(title,source,target){
-          if (!Shorty.Action.Usage.Popup.qrcode.dialog){
-            Shorty.Action.Usage.Popup.qrcode=$('#dialog-qrcode');
-            Shorty.Action.Usage.Popup.qrcode.dialog({show:'fade',autoOpen:false,modal:true});
-            Shorty.Action.Usage.Popup.qrcode.dialog('option','width',240 );
-            //Shorty.Action.Usage.Popup.qrcode.dialog('option','height',80 );
+          var qrcode=Shorty.Action.Usage.Popup.qrcode;
+          if (!qrcode.dialog){
+            qrcode=$('#dialog-qrcode');
+            qrcode.dialog({show:'fade',autoOpen:false,modal:true});
+            qrcode.dialog('option','width',240 );
+            //qrcode.dialog('option','height',80 );
+            qrcode.dialog({dragStop:function(event,ui){alert(ui.position);}});
+            qrcode.dialog({resizeStop:function(event,ui){alert(ui.size);}});
           }
           // a hidden input field ('qrcode-url') holds the base url to the qrcode generator
           // we just add the url parameter for this specific entrys source url
-          var url=Shorty.Action.Usage.Popup.qrcode.find('#qrcode-url').val()+encodeURIComponent(source);
-          Shorty.Action.Usage.Popup.qrcode.dialog('option','title',title);
-          Shorty.Action.Usage.Popup.qrcode.find('a').attr('href',source).attr('title',source);
-          Shorty.Action.Usage.Popup.qrcode.find('img').attr('src',url).attr('title',source);
-          Shorty.Action.Usage.Popup.qrcode.dialog('open');
+          var url=qrcode.find('#qrcode-url').val()+encodeURIComponent(source);
+          qrcode.dialog('option','title',title);
+          qrcode.find('#qrcode-img img').attr('src',url).attr('title',source);
+          qrcode.find('#qrcode-val a').text(url);
+          qrcode.bind('click',function(){
+            qrcode.find('#qrcode-img').toggle();
+            qrcode.find('#qrcode-val').toggle();
+          });
+          qrcode.dialog('open');
         } // Shorty.Action.Usage.Dialog.qrcode
       } // Shorty.Action.Usage.Dialog
     } // Shorty.Action.Usage

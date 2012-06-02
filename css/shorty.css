@@ -470,6 +470,12 @@
 .shorty-clickable {
   text-decoration: underline;
 }
+.shorty-framed {
+  display:inline-block;
+  padding:1em;
+  background-color:white;
+  border:1px solid black;
+}
 /* keep long entries like urls from disrupting the compact appearance of the list */
 .ellipsis {
   display: block;

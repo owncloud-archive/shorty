@@ -37,9 +37,16 @@
 <!-- additional (hidden) popup dialogs for specific usage actions -->
 <fieldset id="dialog-qrcode" style="display:none;" class="" style="align:center;">
   <input id="qrcode-url" type="hidden" value="<?php echo $_['qrcode-url']; ?>">
-  <a id="code" href="" target="_blank" title="<?php echo $l->t("Open source url")."…"; ?>">
-    <img width="100%" class="shorty-status" border="1" alt="<?php echo $l->t("QRCode"); ?>"
-         src="<?php echo OCP\Util::imagePath('shorty','loading-disk.gif'); ?>" >
-  </a>
+  <span id='qrcode-img'>
+    <?php echo $l->t("Click for qrcode url").":"; ?>
+    <br>
+  <img width="100%" class="shorty-status" border="1" alt="<?php echo $l->t("QRCode"); ?>"
+       src="<?php echo OCP\Util::imagePath('shorty','loading-disk.gif'); ?>" >
+  </span>
+  <span id='qrcode-val' style="display:none;">
+    <?php echo $l->t("Click for qrcode image").":"; ?>
+    <br>
+    <span class="shorty-framed"><a title="<?php echo $l->t("QRCode url").":"; ?>"></a></span>
+  </span>
 </fieldset>
 <!-- end of qrcode dialog -->

@@ -26,6 +26,8 @@
 "Backend"                                                    => "Backend",
 "Base url"                                                   => "Basis-Url",
 "Choose a service…"                                          => "Wähle einen Dienst…",
+"Click for qrcode image"                                     => "Klicken für QRCode-Bild",
+"Click for qrcode url"                                       => "Klicken für QRCode-Url",
 "Click it, for whatever site you want to create a Shorty."   => "Klicke es, für welche Seite auch immer Du ein 'Shorty' generieren willst.",
 "Click registered"                                           => "Click registriert",
 "Clicks"                                                     => "Klicks",
