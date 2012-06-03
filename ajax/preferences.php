@@ -56,8 +56,11 @@ try
       // detect provided preferences
       $data = array();
       foreach (array_keys($_POST) as $key)
-        if ( isset(OC_Shorty_Type::$PREFERENCE[$key]) ) // ignore unknown preference keys
-          $data[$key] = OC_Shorty_Type::req_argument ( $key, OC_Shorty_Type::$PREFERENCE[$key], FALSE );
+        if ( array_key_exists(OC_Shorty_Type::$PREFERENCE[$key]) ) // ignore unknown preference keys
+        {
+          $type = OC_Shorty_Type::$PREFERENCE[$key];
+          $data[$key] = OC_Shorty_Type::req_argument ( $key, $type, FALSE );
+        }
       // eliminate settings not explicitly set
       $data = array_diff ( $data, array(FALSE) );
       // store settings
@@ -71,8 +74,7 @@ try
       // detect requested preferences
       foreach (array_keys($_GET) as $key)
       {
-        if (  ('_'!=$key) // ignore ajax timestamp argument
-            && isset(OC_Shorty_Type::$PREFERENCE[$key]) ) // ignore unknown preference keys
+        if ( array_key_exists(OC_Shorty_Type::$PREFERENCE[$key]) ) // ignore unknown preference keys
         {
           $type = OC_Shorty_Type::$PREFERENCE[$key];
           $data[$key] = OCP\Config::getUserValue( OCP\User::getUser(), 'shorty', $key);
