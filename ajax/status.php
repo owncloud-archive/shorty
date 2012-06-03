@@ -26,7 +26,7 @@
 
 /**
  * @file ajax/status.php
- * @brief Ajax method to modify aspects of an existing shorty
+ * @brief Ajax method to modify the status of an existing shorty
  * @param id (string) Internal id of the referenced shorty
  * @param title (string) Human readable title
  * @param notes (string) Any additional information in free text form
