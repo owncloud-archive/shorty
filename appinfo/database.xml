@@ -135,6 +135,14 @@
           <sorting>ascending</sorting>
         </field>
       </index>
+      <index>
+        <name>shorty_source</name>
+        <unique>false</unique>
+        <field>
+          <name>source</name>
+          <sorting>ascending</sorting>
+        </field>
+      </index>
     </declaration>
  </table>
 </database>

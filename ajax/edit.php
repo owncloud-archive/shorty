@@ -69,7 +69,12 @@ try
   );
   $query = OCP\DB::prepare ( OC_Shorty_Query::URL_VERIFY );
   $entries = $query->execute($param)->FetchAll();
-  $entries[0]['relay']=OC_Shorty_Tools::relayUrl ( $entries[0]['id'] );
+  if (  (1==count($entries))
+      &&(isset($entries[0]['id']))
+      &&($p_id==$entries[0]['id']) )
+    $entries[0]['relay']=OC_Shorty_Tools::relayUrl ( $entries[0]['id'] );
+  else
+    throw new OC_Shorty_Exception ( "failed to verify stored shorty with id '%1s'", array($p_id) );
   OCP\JSON::success ( array ( 'data'    => $entries[0],
                               'message' => OC_Shorty_L10n::t("Modifications for shorty with id '%s' saved",$p_id) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
