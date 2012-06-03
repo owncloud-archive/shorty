@@ -56,7 +56,7 @@ try
       // detect provided preferences
       $data = array();
       foreach (array_keys($_POST) as $key)
-        if ( array_key_exists(OC_Shorty_Type::$PREFERENCE[$key]) ) // ignore unknown preference keys
+        if ( isset(OC_Shorty_Type::$PREFERENCE[$key]) ) // ignore unknown preference keys
         {
           $type = OC_Shorty_Type::$PREFERENCE[$key];
           $data[$key] = OC_Shorty_Type::req_argument ( $key, $type, FALSE );
@@ -74,7 +74,7 @@ try
       // detect requested preferences
       foreach (array_keys($_GET) as $key)
       {
-        if ( array_key_exists(OC_Shorty_Type::$PREFERENCE[$key]) ) // ignore unknown preference keys
+        if ( isset(OC_Shorty_Type::$PREFERENCE[$key]) ) // ignore unknown preference keys
         {
           $type = OC_Shorty_Type::$PREFERENCE[$key];
           $data[$key] = OCP\Config::getUserValue( OCP\User::getUser(), 'shorty', $key);
