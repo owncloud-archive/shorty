@@ -81,12 +81,6 @@ help framework with a documented api where other plugins (and core apps) can
 attach help texts or documents to. Context sensivity would then simply mean to
 update the reference in the help button for each action taken.
 
-* Offer QR-Codes or similar as an alterntive to the source urls:
-It might make sense to offer the source url information (the information that
-is to be posted or sent) in other forms than a simple url (link). QRcodes or
-similar metrics offered by shorty could be referenced from within web pages
-and act as an easy access option for non browser based clients. 
-
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.
 Drop me a note, an idea, a patch, a good bottle of wine, anything !
