@@ -24,6 +24,10 @@
 
 Changelog: 
 
+* ??? ??? ?? ???? Christian Reiner: version ?????
+Added swallowing of accidential outputs during ajax requests.
+This protects the replies JSON struction from being corrupted.
+Additional server side log entries on level INFO
 * Sat Jun 02 2012 Christian Reiner: version 0.2.1
 Fixed broken Shortlet
 * Fri Jun 01 2012 Christian Reiner: version 0.2.0
