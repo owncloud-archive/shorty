@@ -39,8 +39,9 @@ OCP\Util::addStyle  ( 'shorty',  'shorty' );
 
 OCP\Util::addScript ( 'shorty/3rdparty','jquery.tinysort.min' );
 OCP\Util::addScript ( 'shorty',  'shorty' );
-// OCP\Util::addScript ( 'shorty',  'debug' );
 OCP\Util::addScript ( 'shorty',  'init' );
+if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
+  OCP\Util::addScript ( 'shorty',  'debug' );
 
 // strategy:
 // - first: decide which action is requested

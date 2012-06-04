@@ -38,8 +38,9 @@ OCP\Util::addStyle  ( 'shorty',   'preferences' );
 
 OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 OCP\Util::addScript ( 'shorty',   'shorty' );
-// OCP\Util::addScript ( 'shorty', 'debug' );
 OCP\Util::addScript ( 'shorty',   'preferences' );
+if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
+  OCP\Util::addScript ( 'shorty',  'debug' );
 
 
 // fetch template
