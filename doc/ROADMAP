@@ -25,6 +25,16 @@
 Future versions might implement additional features and services. Currently
 planned are the following:
 
+* Ability to create Shortys directly from shared files inside ownCloud
+Creating a Shorty based on the public url generated for shared files works like
+charm. However it is not very convenient to do that manually. It would be great
+to offer that option directly where file sharing is done, in that very dialog.
+However I currently do not see any means to achieve that on ownCloud. There is
+no feature offered to hook additional functionality into exsiting apps.
+This means either the existing file sharing app has to be modified or such a
+modifying core feature has to be implemented into the ownCLoud core. 
+Or maybe someone has got another idea ?
+
 * Integrated proxy function as an alternative to forwarding:
 Currently all browser requests are forwarded to the final target url, provided
 that the referenced shorty is still valid and accessible. This is a simple but
