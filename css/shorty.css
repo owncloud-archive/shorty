@@ -362,6 +362,7 @@
 .shorty-embedded img.shorty-usage {
   opacity: 0.6;
   margin: 1em 1.5em 0.2em;
+  padding: 0;
 }
 .shorty-embedded img.shorty-usage.disabled {
   opacity: 0.2;
@@ -468,6 +469,7 @@
 }
 /* unlike elsewhere we underline clickable links in dialogs */
 .shorty-clickable {
+  white-space: nowrap;
   text-decoration: underline;
 }
 .shorty-framed {

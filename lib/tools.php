@@ -38,17 +38,58 @@
  */
 class OC_Shorty_Tools
 {
+  // internal flag indicating if output buffering should be used to prevent accidentially output during ajax requests
+  static $ob_usage  = TRUE;
+  // internal flag indicating if there is currently an output buffer active
+  static $ob_active = FALSE;
 
   /**
-  * @method OC_Shorty_Tools::db_escape
-  * @brief escape a value for incusion in db statements
-  * @param value (string) value to be escaped
-  * @returns (string) escaped string value
-  * @throws OC_Shorty_Exception in case of an unknown database engine
-  * @access public
-  * @author Christian Reiner
-  * @todo use mdb2::quote() / mdb2:.escape() instead ?
-  */
+   * @method OC_Shorty_Tools::ob_control
+   * @param on (boolean) wether to activate or deactivate the buffer
+   * @access public
+   * @author Christian Reiner
+   */
+  static function ob_control ( $on=TRUE )
+  {
+    $output = NULL;
+    if ( self::$ob_usage )
+    {
+      // attempt to use outpout buffering
+      if ( $on )
+      {
+        // start buffering if possible and not yet started before
+        if (   function_exists('ob_start')       // output buffers installed at all ?
+            && ! self::$ob_active  )  // don't stack buffers (create buffer only, if not yet started)
+        {
+          ob_implicit_flush ( FALSE );
+          ob_start ( );
+          self::$ob_active = TRUE;
+        }
+      } // if $on==TRUE
+      else
+      {
+        // end buffering _if_ it has been started before
+        if ( self::$ob_active )
+        {
+          $output = ob_get_contents ( );
+          ob_end_clean ( );
+          self::$ob_active = FALSE;
+        }
+      } // if $on==FALSE
+    } // if ob_usage
+    return $output;
+  } // function ob_control
+  
+  /**
+   * @method OC_Shorty_Tools::db_escape
+   * @brief escape a value for incusion in db statements
+   * @param value (string) value to be escaped
+   * @returns (string) escaped string value
+   * @throws OC_Shorty_Exception in case of an unknown database engine
+   * @access public
+   * @author Christian Reiner
+   * @todo use mdb2::quote() / mdb2:.escape() instead ?
+   */
   static function db_escape ( $value )
   {
     $type = OCP\Config::getSystemValue ( 'dbtype', 'sqlite' );
@@ -68,14 +109,14 @@ class OC_Shorty_Tools
   } // function db_escape
 
   /**
-  * @method OC_Shorty_Tools::db_timestamp
-  * @brief current timestamp as required by db engine
-  * @returns (string) current timestamp as required by db engine
-  * @throws OC_Shorty_Exception in case of an unknown database engine
-  * @access public
-  * @author Christian Reiner
-  * @todo not really required any more, we rely on CURRENT_TIMESTAMP instead
-  */
+   * @method OC_Shorty_Tools::db_timestamp
+   * @brief current timestamp as required by db engine
+   * @returns (string) current timestamp as required by db engine
+   * @throws OC_Shorty_Exception in case of an unknown database engine
+   * @access public
+   * @author Christian Reiner
+   * @todo not really required any more, we rely on CURRENT_TIMESTAMP instead
+   */
   static function db_timestamp ( )
   {
     $type = OCP\Config::getSystemValue( "dbtype", "sqlite" );
@@ -90,12 +131,12 @@ class OC_Shorty_Tools
   } // function db_timestamp
 
   /**
-  * @method OC_Shorty_Tools::shorty_id
-  * @brief Creates a unique id to be used for a new shorty entry
-  * @returns (string) valid and unique id
-  * @access public
-  * @author Christian Reiner
-  */
+   * @method OC_Shorty_Tools::shorty_id
+   * @brief Creates a unique id to be used for a new shorty entry
+   * @returns (string) valid and unique id
+   * @access public
+   * @author Christian Reiner
+   */
   static function shorty_id ( )
   {
     // each shorty installation uses a (once self generated) 62 char alphabet
@@ -122,13 +163,13 @@ class OC_Shorty_Tools
   } // function randomAlphabet
 
   /**
-  * @method OC_Shorty_Tools::convertToAlphabet
-  * @brief Converts a given decimal number into an arbitrary base (alphabet)
-  * @param number decimal value to be converted
-  * @returns (string) converted value in string notation
-  * @access public
-  * @author Christian Reiner
-  */
+   * @method OC_Shorty_Tools::convertToAlphabet
+   * @brief Converts a given decimal number into an arbitrary base (alphabet)
+   * @param number decimal value to be converted
+   * @returns (string) converted value in string notation
+   * @access public
+   * @author Christian Reiner
+   */
   static function convertToAlphabet ( $number, $alphabet )
   {
     $alphabetLen = strlen($alphabet);

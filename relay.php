@@ -61,6 +61,7 @@ if ( '0000000000'==$arg )
 {
   // this is a pseudo id, used to test the setup, so just return a positive message.
   // this is used to test the setup of the static backend, shorty calls itself from there
+  OCP\Util::writeLog( 'shorty', "Positiv validation of static backend base url", OC_Log::INFO );
   OCP\JSON::success ( array ( ) );
   exit();
 }
