@@ -158,8 +158,7 @@ class OC_Shorty_Tools
     if ( ! is_integer($length) )
       return FALSE;
     $c = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxwz0123456789";
-    for($l=0;$l<$length;$l++) $s .= $c{rand(0,strlen($c))};
-    return str_shuffle($s);
+    return substr ( str_shuffle($c), 0, $length );
   } // function randomAlphabet
 
   /**
