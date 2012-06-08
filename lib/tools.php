@@ -172,14 +172,16 @@ class OC_Shorty_Tools
   static function convertToAlphabet ( $number, $alphabet )
   {
     $alphabetLen = strlen($alphabet);
-    $decVal = (int) $number;
+    if ( is_numeric($number) )
+         $decVal = (int) $number;
+    else throw new OC_Shorty_Exception ( "non numerical timestamp value: '%1'", array($number) );
     $number = FALSE;
     $nslen = 0;
     $pos = 1;
     while ($decVal > 0)
     {
       $valPerChar = pow($alphabetLen, $pos);
-      $curChar = floor($decVal / $valPerChar);
+      $curChar = (int) floor($decVal / $valPerChar);
       if ($curChar >= $alphabetLen)
       {
         $pos++;
