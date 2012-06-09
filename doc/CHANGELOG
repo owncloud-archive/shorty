@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* Fri Jun 08 2012 Christian Reiner: version 0.2.3
+* Sat Jun 09 2012 Christian Reiner: version 0.2.3
 Bugfix for the routines generating shorty ids. 
 Fixes for usage under MS Windows platforms using php-5.4. 
 * Wed Jun 06 2012 Christian Reiner: version 0.2.2
