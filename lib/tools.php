@@ -173,7 +173,7 @@ class OC_Shorty_Tools
   {
     $alphabetLen = strlen($alphabet);
     if ( is_numeric($number) )
-         $decVal = (int) $number;
+         $decVal = $number;
     else throw new OC_Shorty_Exception ( "non numerical timestamp value: '%1'", array($number) );
     $number = FALSE;
     $nslen = 0;
@@ -181,7 +181,7 @@ class OC_Shorty_Tools
     while ($decVal > 0)
     {
       $valPerChar = pow($alphabetLen, $pos);
-      $curChar = (int) floor($decVal / $valPerChar);
+      $curChar = floor($decVal / $valPerChar);
       if ($curChar >= $alphabetLen)
       {
         $pos++;
@@ -192,7 +192,7 @@ class OC_Shorty_Tools
           $number = str_repeat($alphabet{1}, $pos);
           $nslen = $pos;
         }
-        $number = substr($number, 0, ($nslen - $pos)) . $alphabet{$curChar} . substr($number, (($nslen - $pos) + 1));
+        $number = substr($number, 0, ($nslen - $pos)) . $alphabet{(int)$curChar} . substr($number, (($nslen - $pos) + 1));
         $pos--;
       }
     }
