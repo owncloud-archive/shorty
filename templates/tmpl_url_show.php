@@ -48,6 +48,9 @@
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
     <input id="source" name="source" type="text" data="" class="" readonly disabled />
     <br />
+    <label for="relay"><?php echo OC_Shorty_L10n::t('Relay url').':'; ?></label>
+    <input id="relay" name="relay" type="text" data="" class="" readonly disabled />
+    <br />
     <label for="target"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
     <input id="target" name="target" data="" class="" readonly disabled />
     <br />

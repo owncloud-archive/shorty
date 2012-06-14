@@ -339,6 +339,7 @@ Shorty =
         dialog.find('#id').val(entry.attr('data-id'));
         dialog.find('#status').val(entry.attr('data-status')||'');
         dialog.find('#source').val(entry.attr('data-source'||''));
+        dialog.find('#relay').val(entry.attr('data-relay'||''));
         dialog.find('#target').val(entry.attr('data-target'||''));
         dialog.find('#title').val(entry.attr('data-title')||'');
         dialog.find('#clicks').val(entry.attr('data-clicks')||'');
@@ -423,6 +424,7 @@ Shorty =
         dialog.find('#id').attr('data-id',entry.attr('data-id')).val(entry.attr('data-id'));
         dialog.find('#status').attr('data-status',entry.attr('data-status')||'').val(t('shorty',entry.attr('data-status'))||'');
         dialog.find('#source').attr('data-source',entry.attr('data-source')).val(entry.attr('data-source'));
+        dialog.find('#relay').attr('data-relay',entry.attr('data-relay')).val(entry.attr('data-relay'));
         dialog.find('#target').attr('data-target',entry.attr('data-target')).val(entry.attr('data-target'));
         dialog.find('#title').attr('data-title',entry.attr('data-title')).val(entry.attr('data-title'));
         dialog.find('#until').attr('data-until',entry.attr('data-until')||'').val(entry.attr('data-until')||'');
@@ -1367,6 +1369,7 @@ Shorty =
         $('#shorty-add-id').val(record.attr('data-id'));
         $('#shorty-add-id').val(record.attr('data-status'));
         $('#shorty-add-source').val(record.children('.shorty-source:first').text());
+        $('#shorty-add-relay').val(record.children('.shorty-relay:first').text());
         $('#shorty-add-target').val(record.children('.shorty-target:first').text());
         $('#shorty-add-notes').val(record.children('.shorty-notes:first').text());
         $('#shorty-add-until').val(record.children('.shorty-until:first').text());
