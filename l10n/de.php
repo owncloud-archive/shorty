@@ -153,5 +153,5 @@
 "In addition, the implementations found in Android or iOS are minimalistic, buggy and differ from system to system."
 => "Darüber hinaus sind die Implementierungen, etwa die in Adroid oder auch iOS minimalistisch, fehlerhaft und unterschiedlich von System zu System.",
 "In short: this might not work for you, therefore you can disable it…"
-=> "Kurz gesagt: die mag nicht funktionieren, daher can die Option deaktiviert werden…",
+=> "Kurz gesagt: dies mag nicht funktionieren, daher kann die Option deaktiviert werden…",
 );
