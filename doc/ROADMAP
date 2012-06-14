@@ -91,6 +91,12 @@ help framework with a documented api where other plugins (and core apps) can
 attach help texts or documents to. Context sensivity would then simply mean to
 update the reference in the help button for each action taken.
 
+* Offer Shortlet when list is empty
+When the list of shortys is empty, a matching info is displayed to the user.
+It makes sense to add the "Shortlet" to this hint, since an empty list tyically
+is the case for first time users. So why not push them towards the Shortlet
+instead of expecting them to discover it in the user preferences ?
+
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.
 Drop me a note, an idea, a patch, a good bottle of wine, anything !
