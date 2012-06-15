@@ -670,9 +670,10 @@ Shorty =
         var dfd = new $.Deferred();
         $.when(
           $.ajax({
-            type:  'GET',
-            url:   OC.filePath('shorty','ajax','list.php'),
-            cache: false
+            type:     'GET',
+            url:      OC.filePath('shorty','ajax','list.php'),
+            cache:    false,
+            dataType: 'json'
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -985,10 +986,11 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("get meta data for target "+target);
         var dfd = new $.Deferred();
         $.ajax({
-          type:  'GET',
-          url:   OC.filePath('shorty','ajax','meta.php'),
-          cache: false,
-          data:  { target: encodeURIComponent(target) }
+          type:     'GET',
+          url:      OC.filePath('shorty','ajax','meta.php'),
+          cache:    false,
+          data:     { target: encodeURIComponent(target) },
+          dataType: 'json'
         }).pipe(
           function(response){return Shorty.Ajax.eval(response);},
           function(response){return Shorty.Ajax.fail(response);}
@@ -1032,10 +1034,11 @@ Shorty =
         var dfd = new $.Deferred();
         $.when(
           $.ajax({
-            type:  'GET',
-            url:   OC.filePath('shorty','ajax','count.php'),
-            cache: false,
-            data:  { }
+            type:     'GET',
+            url:      OC.filePath('shorty','ajax','count.php'),
+            cache:    false,
+            data:     { },
+            dataType: 'json'
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -1063,10 +1066,11 @@ Shorty =
         if (Shorty.Debug){Shorty.Debug.log("get preference(s):");Shorty.Debug.log(data);}
         var dfd = new $.Deferred();
         $.ajax({
-          type:  'GET',
-          url:   OC.filePath('shorty','ajax','preferences.php'),
-          cache: false,
-          data:  data
+          type:     'GET',
+          url:      OC.filePath('shorty','ajax','preferences.php'),
+          cache:    false,
+          data:     data,
+          dataType: 'json'
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
@@ -1084,10 +1088,11 @@ Shorty =
         if (Shorty.Debug){Shorty.Debug.log("set preference(s):");Shorty.Debug.log(data);}
         var dfd = new $.Deferred();
         $.ajax({
-          type:  'POST',
-          url:   OC.filePath('shorty','ajax','preferences.php'),
-          cache: false,
-          data:  data
+          type:     'POST',
+          url:      OC.filePath('shorty','ajax','preferences.php'),
+          cache:    false,
+          data:     data,
+          dataType: 'json'
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
@@ -1109,10 +1114,11 @@ Shorty =
         if (Shorty.Debug){Shorty.Debug.log("get setting(s):");Shorty.Debug.log(data);}
         var dfd = new $.Deferred();
         $.ajax({
-          type:  'GET',
-          url:   OC.filePath('shorty','ajax','settings.php'),
-          cache: false,
-          data:  data
+          type:     'GET',
+          url:      OC.filePath('shorty','ajax','settings.php'),
+          cache:    false,
+          data:     data,
+          dataType: 'json'
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
@@ -1130,10 +1136,11 @@ Shorty =
         if (Shorty.Debug){Shorty.Debug.log("set setting(s):");Shorty.Debug.log(data);}
         var dfd = new $.Deferred();
         $.ajax({
-          type:  'POST',
-          url:   OC.filePath('shorty','ajax','settings.php'),
-          cache: false,
-          data:  data
+          type:     'POST',
+          url:      OC.filePath('shorty','ajax','settings.php'),
+          cache:    false,
+          data:     data,
+          dataType: 'json'
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
@@ -1172,9 +1179,11 @@ Shorty =
         var dfd = new $.Deferred();
         $.ajax({
           // the '0000000000' below is a special id recognized for testing purposes
-          url:     target+'0000000000',
-          cache:   false,
-          data:    { },
+          url:         target+'0000000000',
+          cache:       false,
+          crossDomain: true, // required when using a "short named domain" and server side url rewriting
+          data:        { },
+          dataType:    'json'
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
@@ -1228,10 +1237,11 @@ Shorty =
                     favicon: favicon};
           if (Shorty.Debug) Shorty.Debug.log(data);
           $.ajax({
-            type:  'POST',
-            url:   OC.filePath('shorty','ajax','add.php'),
-            cache: false,
-            data:  data
+            type:     'POST',
+            url:      OC.filePath('shorty','ajax','add.php'),
+            cache:    false,
+            data:     data,
+            dataType: 'json'
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -1275,10 +1285,11 @@ Shorty =
                     until:  until};
           if (Shorty.Debug) Shorty.Debug.log(data);
           $.ajax({
-            type:  'POST',
-            url:   OC.filePath('shorty','ajax','edit.php'),
-            cache: false,
-            data:  data,
+            type:     'POST',
+            url:      OC.filePath('shorty','ajax','edit.php'),
+            cache:    false,
+            data:     data,
+            dataType: 'json'
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -1304,10 +1315,11 @@ Shorty =
         $.when(
 //          Shorty.WUI.Notification.hide(),
           $.ajax({
-            type:  'GET',
-            url:   OC.filePath('shorty','ajax','del.php'),
-            cache: false,
-            data:  { id: id }
+            type:     'GET',
+            url:      OC.filePath('shorty','ajax','del.php'),
+            cache:    false,
+            data:     { id: id },
+            dataType: 'json'
           }).pipe(
             function(response){return Shorty.Ajax.eval(response)},
             function(response){return Shorty.Ajax.fail(response)}
@@ -1388,11 +1400,12 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("changing status of id "+id+" to "+status);
         var dfd = new $.Deferred();
         $.ajax({
-          type:  'GET',
-          url:   OC.filePath('shorty','ajax','status.php'),
-          cache: false,
-          data:  { id    : id,
-                   status: status }
+          type:     'GET',
+          url:      OC.filePath('shorty','ajax','status.php'),
+          cache:    false,
+          data:     { id    : id,
+                      status: status },
+          dataType: 'json'
         }).pipe(
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
