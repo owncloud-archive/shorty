@@ -55,6 +55,7 @@ try
     );
     $query = OCP\DB::prepare ( OC_Shorty_Query::URL_CLICK );
     $query->execute ( $param );
+    OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.",$p_id), OC_Log::INFO );
     OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
                                 'message' => OC_Shorty_L10n::t('Click registered') ) );
   }
