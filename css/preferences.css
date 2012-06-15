@@ -76,6 +76,8 @@
 #shorty .example {
   font-family: Monospace;
   margin: 0.3em;
+  text-decoration: underline;
+  color: blue;
 }
 
 #shorty a.external {
