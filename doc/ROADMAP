@@ -57,12 +57,6 @@ to stability issues. Besides correcting the implementation for the disabled it
 might make sense to support further backends, especially other types besides
 online services.
 
-* Performance, stability and usability enhancements: 
-"Shorty" is my first web application using up to date web technologies.
-Therefore the implementation certainly is far from the quality one could expect
-from a serious and experienced web developer. One could also put this into more
-constructive terms: there is definately much room for enhancements   :-) 
-
 * Translations of the shorty module itself (i18n/l10n):
 Main development language is english (us), a german translation exists. I do
 not feel fit enough in other languages to create a translation myself. So I
@@ -90,6 +84,12 @@ core feature of ownCloud. Maybe as a separate plugin (app). SOmehing like a
 help framework with a documented api where other plugins (and core apps) can
 attach help texts or documents to. Context sensivity would then simply mean to
 update the reference in the help button for each action taken.
+
+* Performance, stability and usability enhancements:
+"Shorty" is my first web application using up to date web technologies.
+Therefore the implementation certainly is far from the quality one could expect
+from a serious and experienced web developer. One could also put this into more
+constructive terms: there is definately much room for enhancements   :-)
 
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.

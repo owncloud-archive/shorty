@@ -24,19 +24,27 @@
 
 Changelog: 
 
+* Sat Jun 16 2012 Christian reiner: version 0.2.4
+Fix of a false positive whilst verification of the static backend base.
+Offering the 'Shortlet' now when showing an empty list.
+Minor improvements to background logging.
+Minor gui improvements. 
+* Sat Jun 09 2012 Christian Reiner: version 0.2.3
+Bugfix for the routines generating shorty ids.
+Fixes for usage under MS Windows platforms using php-5.4.
 * Wed Jun 06 2012 Christian Reiner: version 0.2.2
 Added swallowing of accidential outputs during ajax requests.
 This protects the replies JSON struction from being corrupted.
-Additional server side log entries on level INFO
+Additional server side log entries on level INFO.
 * Sat Jun 02 2012 Christian Reiner: version 0.2.1
-Fixed broken Shortlet
+Fixed broken Shortlet.
 * Fri Jun 01 2012 Christian Reiner: version 0.2.0
-Support of ownCloud version 4 (app interface incompatible to prior versions)
-Additional status 'private' for Shortys only accessible for the owner himself
-Rudimentary SMS support for smart phones (more an assistance, can be disabled)
-Additional QRCodes to publish Shorty source urls on the web (or elsewhere)
-Data migration support as introduced by OC4
-Cleanup of Shortys upon user account deletion
+Support of ownCloud version 4 (app interface incompatible to prior versions).
+Additional status 'private' for Shortys only accessible for the owner himself.
+Rudimentary SMS support for smart phones (more an assistance, can be disabled).
+Additional QRCodes to publish Shorty source urls on the web (or elsewhere).
+Data migration support as introduced by OC4.
+Cleanup of Shortys upon user account deletion.
 * Sun May 28 2012 Christian Reiner: version 0.1.6
 Activation of Shorty sharing via SMS. 
 Enhanced backend descriptions. 

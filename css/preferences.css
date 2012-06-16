@@ -34,24 +34,6 @@
   margin:0;
   padding:0;
 }
-#shorty #shortlet {
-  outline: medium none;
-  padding: 0.6em 0.8em;
-  background-image: -moz-linear-gradient(center bottom, Lavender 0%, white 50%);
-  border: 1px solid #DDDDDD;
-  border-radius: 0.5em 0.5em 0.5em 0.5em;
-  box-shadow: 0 1px 0 #BBBBBB inset;
-}
-#shorty #shortlet a {
-  font-style: italic;
-  color: DarkSlateGray;
-}
-#shorty #shortlet:after {
-  content: url("%appswebroot%/apps/shorty/img/drag_me.png");
-  position: relative;
-  top: -12px;
-  margin-left: -160px;
-}
 #shorty .chzn-container {
     vertical-align: middle;
 }
@@ -76,6 +58,8 @@
 #shorty .example {
   font-family: Monospace;
   margin: 0.3em;
+  text-decoration: underline;
+  color: blue;
 }
 
 #shorty a.external {

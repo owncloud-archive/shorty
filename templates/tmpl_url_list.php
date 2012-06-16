@@ -34,10 +34,18 @@
  */
 ?>
 
+<!-- the 'hourglass', a general busy indicator -->
 <div id="hourglass" class="shorty-hourglass" style="left:10em;top:10em;"><img src="<?php echo OCP\Util::imagePath('shorty', 'loading-disk.gif'); ?>"></div>
-<div id="vacuum" class="shorty-vacuum"><span class="shorty-label"><?php echo OC_Shorty_L10n::t('List currently empty.') ?></span></div>
 
-<!-- the list of urls -->
+<!-- the list of urls, empty variant -->
+<div id="vacuum" class="shorty-vacuum personalblock">
+  <div class="factoid"><?php echo OC_Shorty_L10n::t("Nothing here")." !" ?></div>
+  <div class="suggestion"><?php echo OC_Shorty_L10n::t("Create a new 'Shorty' and share it").":" ?></div>
+  <div class="explanation"><?php echo OC_Shorty_L10n::t("Use the '%s' button above or the fine 'Shortlet'",OC_Shorty_L10n::t("New Shorty")).":" ?></div>
+<?php require_once('tmpl_wdg_shortlet.php'); ?>
+</div>
+
+<!-- the list of urls, non-empty variant -->
 <table id="list" class="shorty-list" style="display:none;">
   <thead>
     <tr id="titlebar">

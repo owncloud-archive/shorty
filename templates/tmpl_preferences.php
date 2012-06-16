@@ -41,18 +41,7 @@
       <strong>Shorty</strong>
     </div>
     <div id="settings">
-      <!-- shortlet -->
-      <label for="shortlet" class="aspect"><?php echo $l->t("Shortlet").":";?></label>
-      <span id="shortlet">
-        <a class="shortlet"
-           href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OCP\Util::linkToAbsolute('shorty', 'index.php'); ?>&url='+url, 'owncloud-shorty')%20})()">
-          <?php echo $l->t("Add page as 'Shorty' to ownCloud"); ?>
-        </a>
-      </span>
-      <p>
-      <span class="explain"><em><?php echo $l->t("Drag this to your browser bookmarks.");
-                                      echo $l->t("Click it, for whatever site you want to create a Shorty."); ?></em></span>
-      </p>
+<?php require_once('tmpl_wdg_shortlet.php'); ?>
       <p>
       <!-- backend selection -->
       <label for="backend-type" class="aspect"><?php echo $l->t("Backend").":";?></label>

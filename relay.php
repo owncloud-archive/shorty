@@ -56,19 +56,27 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
   } // switch
 } // foreach
 
-// an id was specified, ordinary or special meaning ?
-if ( '0000000000'==$arg )
-{
-  // this is a pseudo id, used to test the setup, so just return a positive message.
-  // this is used to test the setup of the static backend, shorty calls itself from there
-  OCP\Util::writeLog( 'shorty', "Positiv validation of static backend base url", OC_Log::INFO );
-  OCP\JSON::success ( array ( ) );
-  exit();
-}
-
 // now construct the target url and relay to it (if applicable)
 try
 {
+
+  // has an id been specified at all ?
+  if ( NULL==$arg )
+  {
+    // nothing to forward to => 400: Bad Request
+    throw new OC_Shorty_HttpException ( 400 );
+  }
+
+  // an id was specified, ordinary or special meaning ?
+  if ( '0000000000'==$arg )
+  {
+    // this is a pseudo id, used to test the setup, so just return a positive message.
+    // this is used to test the setup of the static backend, shorty calls itself from there
+    OCP\Util::writeLog( 'shorty', "Positiv validation of static backend base url.", OC_Log::DEBUG );
+    OCP\JSON::success ( array ( ) );
+    exit();
+  }
+
   // detect requested shorty id from request
   $p_id = trim ( OC_Shorty_Type::normalize($arg,OC_Shorty_Type::ID) ) ;
   if ( $p_id )

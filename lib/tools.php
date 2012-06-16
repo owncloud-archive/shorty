@@ -158,8 +158,7 @@ class OC_Shorty_Tools
     if ( ! is_integer($length) )
       return FALSE;
     $c = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxwz0123456789";
-    for($l=0;$l<$length;$l++) $s .= $c{rand(0,strlen($c))};
-    return str_shuffle($s);
+    return substr ( str_shuffle($c), 0, $length );
   } // function randomAlphabet
 
   /**
@@ -173,7 +172,9 @@ class OC_Shorty_Tools
   static function convertToAlphabet ( $number, $alphabet )
   {
     $alphabetLen = strlen($alphabet);
-    $decVal = (int) $number;
+    if ( is_numeric($number) )
+         $decVal = $number;
+    else throw new OC_Shorty_Exception ( "non numerical timestamp value: '%1'", array($number) );
     $number = FALSE;
     $nslen = 0;
     $pos = 1;
@@ -191,7 +192,7 @@ class OC_Shorty_Tools
           $number = str_repeat($alphabet{1}, $pos);
           $nslen = $pos;
         }
-        $number = substr($number, 0, ($nslen - $pos)) . $alphabet{$curChar} . substr($number, (($nslen - $pos) + 1));
+        $number = substr($number, 0, ($nslen - $pos)) . $alphabet{(int)$curChar} . substr($number, (($nslen - $pos) + 1));
         $pos--;
       }
     }
