@@ -80,13 +80,54 @@
 #vacuum {
   display: none;
   position: absolute;
-  left:8em; top:9em;
+  left:6em; top:8em;
   width: 100%; height: 100%;
   z-index: 2;
   white-space: nowrap;
-  font-style: italic;
   background: transparent;
+  text-shadow: 0 1px 0 #FFFFFF;
+  color: DarkSlateGray;
 }
+#vacuum .factoid {
+  font-size: 160%;
+  font-weight: bold;
+  font-style: normal;
+  color: gray;
+}
+#vacuum .suggestion {
+  font-size: 80%;
+  font-weight: light;
+  font-style: italic;
+  color: black;
+}
+#vacuum .explanation {
+  margin: 1em 0 2em;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+}
+#vacuum p {
+  margin: 0.6em 0 0.2em;
+}
+#shortlet {
+  outline: medium none;
+  padding: 0.6em 0.8em;
+  background-image: -moz-linear-gradient(center bottom, Lavender 0%, white 50%);
+  border: 1px solid #DDDDDD;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  box-shadow: 0 1px 0 #BBBBBB inset;
+}
+#shortlet a {
+  font-style: italic;
+  color: DarkSlateGray;
+}
+#shortlet:after {
+  content: url("%appswebroot%/apps/shorty/img/drag_me.png");
+  position: relative;
+  top: -12px;
+  margin-left: -160px;
+}
+
 .shorty-standalone #busy {
   display: none;
   float: right;

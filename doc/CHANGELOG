@@ -26,6 +26,7 @@ Changelog:
 
 * Sat Jun 16 2012 Christian reiner: version 0.2.4
 Fix of a false positive whilst verification of the static backend base.
+Offering the 'Shortlet' now when showing an empty list.
 Minor improvements to background logging.
 Minor gui improvements. 
 * Sat Jun 09 2012 Christian Reiner: version 0.2.3
