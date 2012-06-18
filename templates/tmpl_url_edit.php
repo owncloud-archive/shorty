@@ -77,8 +77,8 @@
     </select>
     <span style="display:inline;">
     <label for="until"><?php echo OC_Shorty_L10n::t('Expiration').':'; ?></label>
-    <input id="until" name="until" type="text" value=""
-           maxlength="10" data="" class="" style="width:8em;"
+    <input id="until" name="until" type="text" maxlength="10"
+           value="" data="" class="" style="width:8em;"
            placeholder="-<?php echo OC_Shorty_L10n::t('never'); ?>-"
            icon="<?php echo OCP\Util::imagePath('shorty', 'calendar.png'); ?>" />
     </span>
