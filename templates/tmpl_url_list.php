@@ -39,7 +39,7 @@
 
 <!-- the list of urls, empty variant -->
 <div id="vacuum" class="shorty-vacuum personalblock">
-  <div class="factoid"><?php echo OC_Shorty_L10n::t("Nothing here")." !" ?></div>
+  <div class="factoid"><?php echo OC_Shorty_L10n::t("Nothing here yet")." !" ?></div>
   <div class="suggestion"><?php echo OC_Shorty_L10n::t("Create a new 'Shorty' and share it").":" ?></div>
   <div class="explanation"><?php echo OC_Shorty_L10n::t("Use the '%s' button above or the fine 'Shortlet'",OC_Shorty_L10n::t("New Shorty")).":" ?></div>
 <?php require_once('tmpl_wdg_shortlet.php'); ?>

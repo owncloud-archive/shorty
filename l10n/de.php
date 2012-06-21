@@ -50,7 +50,7 @@
 "Modify shorty"                                              => "Shorty ändern",
 "New Shorty"                                                 => "Neuer Shorty",
 "Notes"                                                      => "Notizen",
-"Nothing here"                                               => "Hier gibt's nichts",
+"Nothing here yet"                                           => "Hier gibt's noch nichts",
 "Number of entries"                                          => "Anzahl der Einträge",
 "Number of entries: %s"                                      => "Anzahl der Einträge: %s",
 "QRCode"                                                     => "QRCode",
