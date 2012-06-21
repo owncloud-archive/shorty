@@ -75,7 +75,7 @@
 "Sort ascending"                                             => "aufsteigend sortieren",
 "Sort descending"                                            => "absteigend sortieren",
 "Source url"                                                 => "Quell-Url",
-"Specify a backend base url…"                                => "Lege eine Basis-Url für das Backend fest…",
+"Specify a static base url…"                                 => "Lege eine statische Basis-Url fest…",
 "Status"                                                     => "Status",
 "Status change for shorty with id '%s' saved"                => "Statusänderung für Shorty mit Kennung '%s' gespeichert",
 "Target"                                                     => "Ziel",
@@ -128,10 +128,10 @@
 => "Solche Links werden sicherlich länger sein, als wenn ein Backend eingesetzt wird.",
 "However this option does not rely on any third party service and keeps your shortys under your control."
 => "Dafür stützt sich diese Option aber nicht auf fremde Angebote und belässt die Shorties unter eigener Kontrolle.",
-"A static, rule-based backend is used, shorty links are generated relative to a given base url."
-=> "Ein statisches, regelbasiertes Backend wird genutzt, Shorty-Links werden relativ zu einer gegebenen Basis-Url generiert.",
 "Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration."
 => "Da diese Konfiguration von serverseitigen Konfigurationsregeln abhängt, kann die Basis-Url nur unter 'Verwaltung' in der Konfiguration festgelegt werden.",
+"Static, rule-based backend, generates shorty links relative to a given base url."
+=> "Ein statisches, regelbasiertes Backend wird genutzt, Shorty-Links werden relativ zu einer gegebenen Basis-Url generiert.",
 "You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."
 => "Es muss sicher gestellt werden, dass jede Anfrage an die hier konfigurierte URL intern umgesetzt wird auf das 'Shorty'-Modul",
 "Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."

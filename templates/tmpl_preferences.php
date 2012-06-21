@@ -80,7 +80,7 @@
         <label for="backend-static-base" class="aspect"><?php echo $l->t("Base url").':';?></label>
         <input id="backend-static-base" type="text" name="backend-static-base"
                readonly disabled value="<?php echo $_['backend-static-base']; ?>"
-               placeholder="<?php echo $l->t("Specify a backend base url…"); ?>" style="width:25em;">
+               placeholder="<?php echo $l->t("Specify a static base url…"); ?>" style="width:25em;">
         <br/>
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
