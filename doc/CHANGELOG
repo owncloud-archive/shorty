@@ -24,6 +24,7 @@
 
 Changelog: 
 
+Some additional explanatory hints in the sharing dialog.
 * Thu Jun 21 2012 Christian Reiner: version 0.2.5
 Fixed translation engine to be compatible with OC versions > 4.0.2
 A few minor linguistic corrections
