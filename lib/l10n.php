@@ -79,14 +79,17 @@ class OC_Shorty_L10n
     // handle different styles of how arguments can be handed over to this method
     switch ( func_num_args() )
     {
-      case 1:   return self::$instance->dictionary->t ( $phrase, array() );
-      case 2:   $arg = func_get_arg(1);
-                if ( is_array($arg) )
-                     return self::$instance->dictionary->t ( $phrase, $arg );
-                else return self::$instance->dictionary->t ( $phrase, array($arg) );
-      default:  $args = func_get_args();
-                array_shift ( $args );
-                return self::$instance->dictionary->t ( $phrase, $args );
+      case 1:
+        return htmlspecialchars ( self::$instance->dictionary->t ( $phrase, array() ) );
+      case 2:
+      $arg = func_get_arg(1);
+        if ( is_array($arg) )
+             return htmlspecialchars ( self::$instance->dictionary->t ( $phrase, $arg ) );
+        else return htmlspecialchars ( self::$instance->dictionary->t ( $phrase, array($arg) ) );
+      default:
+        $args = func_get_args();
+        array_shift ( $args );
+        return htmlspecialchars ( self::$instance->dictionary->t($phrase,$args) );
     }
   }
 } // class OC_Shorty_L10n

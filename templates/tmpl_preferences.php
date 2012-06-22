@@ -80,7 +80,7 @@
         <label for="backend-static-base" class="aspect"><?php echo $l->t("Base url").':';?></label>
         <input id="backend-static-base" type="text" name="backend-static-base"
                readonly disabled value="<?php echo $_['backend-static-base']; ?>"
-               placeholder="<?php echo $l->t("Specify a backend base url…"); ?>" style="width:25em;">
+               placeholder="<?php echo $l->t("Specify a static base url…"); ?>" style="width:25em;">
         <br/>
         <label for="backend-example" class="aspect"> </label>
         <span id="backend-example">
@@ -92,7 +92,7 @@
         <br/>
         <span id="explain" class="explain">
           <?php echo sprintf("%s<br />\n%s<br />\n%s<br />\n%s",
-                             $l->t("A static, rule-based backend is used, shorty links are generated relative to a given base url."),
+                             $l->t("Static, rule-based backend, generates shorty links relative to a given base url."),
                              $l->t("Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration."),
                              $l->t("Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."),
                              $l->t("Only use this backend, if you can provide a short base url that is mapped the described way. Your shorties won't work otherwise.") ); ?>

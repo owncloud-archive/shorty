@@ -61,8 +61,8 @@ class OC_Shorty_Tools
         if (   function_exists('ob_start')       // output buffers installed at all ?
             && ! self::$ob_active  )  // don't stack buffers (create buffer only, if not yet started)
         {
-          ob_implicit_flush ( FALSE );
-          ob_start ( );
+          @ob_implicit_flush ( FALSE );
+          @ob_start ( );
           self::$ob_active = TRUE;
         }
       } // if $on==TRUE
@@ -71,8 +71,8 @@ class OC_Shorty_Tools
         // end buffering _if_ it has been started before
         if ( self::$ob_active )
         {
-          $output = ob_get_contents ( );
-          ob_end_clean ( );
+          $output = @ob_get_contents ( );
+          @ob_end_clean ( );
           self::$ob_active = FALSE;
         }
       } // if $on==FALSE
