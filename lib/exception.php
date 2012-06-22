@@ -55,8 +55,9 @@ class OC_Shorty_Exception extends Exception
          $this->param = $param;
     else $this->param = array($param);
     $this->phrase  = $phrase;
-//    $this->message = vsprintf ( $phrase, $this->params );
-    Exception::__construct ( vsprintf($phrase,$this->param), 1 );
+    $message = vsprintf ( $phrase, $this->param );
+    OCP\Util::writeLog( 'shorty', $message, OC_Log::ERROR );
+    Exception::__construct ( $message, 1 );
   }
 
   /**
