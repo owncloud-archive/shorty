@@ -54,6 +54,10 @@
           echo sprintf ( "<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status) );
     ?>
     </select>
+    <span id="blocked" class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('for any access')."."; ?></span>
+    <span id="private" class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('for own usage')."."; ?></span>
+    <span id="shared"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('with ownCloud users')."."; ?></span>
+    <span id="public"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('available for everyone')."."; ?></span>
     <br />
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
     <a id="source" class="shorty-clickable" target="_blank"

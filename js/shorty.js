@@ -248,6 +248,13 @@ Shorty =
                 dialog.find('#title').focus();
                 Shorty.WUI.Dialog.sharpen(dialog,true);
                 break;
+              case 'dialog-share':
+                var status=dialog.find('#status');
+                dialog.find('.status-hint').hide().filter('#'+status.val()).show();
+                status.bind('change', {dialog: dialog}, function(event){
+                  dialog.find('.status-hint').hide().filter('#'+status.val()).fadeIn('fast');
+                });
+                break;
             } // switch
           }).done(dfd.resolve)
         }

@@ -18,6 +18,11 @@
 "tiny.cc service"                                            => "tiny.cc-Service",
 "static backend"                                             => "statisches Backend",
 
+"for any access"                                             => "für jeglichen Zugriff",
+"for own usage"                                              => "für eigenen Gebrauch",
+"with ownCloud users"                                        => "mit anderen ownCloud-Nutzern",
+"available for everyone"                                     => "verfügbar für jeden",
+
 "Access"                                                     => "Zugriff",
 "Add a new shorty"                                           => "Neuen Shorty hinzufügen",
 "Add as new"                                                 => "Neu hinzufügen",
