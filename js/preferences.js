@@ -57,12 +57,19 @@ $(document).ready(function(){
       }
     }
   );
-  // safe preferences
+  // safe backend supplement preferences
   $('#shorty .backend-supplement').focusout(function(){
     // save preference
     Shorty.Action.Preference.set($(this).find('input').serialize());
   });
-  // safe sms-control
+  // safe ssl-verification preference
+  var ssl=$('#shorty #backend-ssl-verify')
+  ssl.change(function(){
+    if (ssl.is(':checked'))
+         Shorty.Action.Preference.set('backend-ssl-verify=1');
+    else Shorty.Action.Preference.set('backend-ssl-verify=0');
+  });
+  // safe sms-control preferences
   $('#shorty #sms-control').change(function(){
     Shorty.Action.Preference.set($('#shorty #sms-control').serialize());
   });

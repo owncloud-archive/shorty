@@ -124,8 +124,8 @@ class OC_Shorty_Backend
       throw new OC_Shorty_Exception ( 'No API user or key configured.' );
     $curl = curl_init ( );
     curl_setopt ( $curl, CURLOPT_URL, 'https://api-ssl.bit.ly/shorten' );
-    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
-    curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, TRUE );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
     curl_setopt ( $curl, CURLOPT_POST, TRUE );
     curl_setopt ( $curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json') );
     curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array('version'=>'2.0.1',
@@ -210,8 +210,8 @@ class OC_Shorty_Backend
       throw new OC_Shorty_Exception ( 'No goo.gl API key configured' );
     $curl = curl_init ( );
     curl_setopt ( $curl, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url' );
-    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
-    curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, TRUE );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
     curl_setopt ( $curl, CURLOPT_POST, TRUE );
     curl_setopt ( $curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json') );
     curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array('longUrl'=>$relay,
@@ -246,8 +246,8 @@ class OC_Shorty_Backend
       throw new OC_Shorty_Exception ( 'No goo.gl API key configured' );
     $curl = curl_init ( );
     curl_setopt ( $curl, CURLOPT_URL, 'http://tiny.cc/?c=shorten' );
-    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
-    curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, TRUE );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
     curl_setopt ( $curl, CURLOPT_POST, TRUE );
     curl_setopt ( $curl, CURLOPT_HEADER, TRUE );
     curl_setopt ( $curl, CURLOPT_POSTFIELDS, array('longUrl'=>$relay,
