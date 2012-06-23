@@ -1363,7 +1363,7 @@ Shorty =
           case 'usage-sms':
             var smsBody=entry.attr('data-title')+" - "+entry.attr('data-notes')+" - "+entry.attr('data-source');
             // unfortunately there is no way to get the body over into the sms application on "sms urls"...
-            var proceed=window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"), smsBody );
+            var proceed=window.confirm(t('shorty',"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"), smsBody );
             if (proceed)
               window.location='sms:';
             break;
@@ -1374,7 +1374,7 @@ Shorty =
             Shorty.Action.Usage.Dialog.qrcode(title,source,target);
             break;
           case 'usage-clipboard':
-            window.prompt(t('shorty',"Copy to clipboard: Ctrl+C"), entry.attr('data-source'));
+            window.confirm(t('shorty',"Copy to clipboard: Ctrl+C"), entry.attr('data-source'));
             break;
           default:
             if (Shorty.Debug) Shorty.Debug.log("usage action '"+action+"' is disabled, refusing to comply");
