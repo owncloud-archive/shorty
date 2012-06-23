@@ -1363,8 +1363,9 @@ Shorty =
           case 'usage-sms':
             var smsBody=entry.attr('data-title')+" - "+entry.attr('data-notes')+" - "+entry.attr('data-source');
             // unfortunately there is no way to get the body over into the sms application on "sms urls"...
-            window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"), smsBody );
-            window.location='sms:';
+            var proceed=window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"), smsBody );
+            if (proceed)
+              window.location='sms:';
             break;
           case 'usage-qrcode':
             var title =entry.attr('data-title');
