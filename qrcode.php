@@ -88,6 +88,11 @@ try
       throw new OC_Shorty_HttpException ( 410 );
     }
     // generate qrcode, regardless of who sends the request
+    if ( isset($_GET['download']) )
+    {
+      // force download / storage of image
+      header('Content-Disposition: attachment; filename="qrcode.png"');
+    }
     QRcode::png ( $source );
   } // if $source
   else
