@@ -556,6 +556,9 @@ div.jqi {
   width:auto;
   padding:4px;
 }
+.jqiwarning .jqi .jqibuttons{
+  background-color: silver;
+}
 div.jqi .jqimessage {
   padding:4px;
 }
