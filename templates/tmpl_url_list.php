@@ -158,7 +158,7 @@
                  src="<?php echo OCP\Util::imagePath('core','actions/delete.png'); ?>" />
           </a>
           <a id="share" title="<?php echo $l->t('share');  ?>"   class="">
-            <img class="shorty-icon" alt="<?php echo $l->t('share'); ?>"  title="<?php echo $l->t('Test and use links'); ?>"
+            <img class="shorty-icon" alt="<?php echo $l->t('share'); ?>"  title="<?php echo $l->t('Share shorty'); ?>"
                  src="<?php echo OCP\Util::imagePath('core','actions/share.png');  ?>" />
           </a>
           <a id="open"  title="<?php echo $l->t('open');   ?>"   class="">
