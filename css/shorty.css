@@ -165,7 +165,7 @@
   margin: 0.4em;
   background: transparent;
   table-layout: fixed;
-  width: 100%;
+/*   width: 100%; */
 }
 /* the collapsable toolbar below the lists column title row */
 #list thead #toolbar img {
@@ -187,20 +187,24 @@
 #list thead #titlebar th span {
   display:inline-block;
 }
-#list tbody th#title,
+#list thead th#title,
 #list tbody td#title,
-#list tbody th#target,
+#list thead th#target,
 #list tbody td#target {
   width:10em;
 }
-#list thead #clicks span {
+#list thead th#clicks,
+#list tbody td#clicks {
   width:3em;
 }
-#list thead #until span {
+#list thead th#until,
+#list tbody td#until {
   width:5em;
 }
-#list thead #toolbar input,
-#list thead #toolbar .chzn-container {
+#list thead th#toolbar input,
+#list tbody td#toolbar input,
+#list thead th#toolbar .chzn-container,
+#list tbody td#toolbar .chzn-container {
   width:6em;
   font-size: 11px;
   margin: 0;
