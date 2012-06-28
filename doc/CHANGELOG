@@ -24,7 +24,7 @@
 
 Changelog: 
 
-*
+* Thu Jun 28 2012 Christian Reiner: version 0.2.6
 Complet reimplementation of usage popups (optical and technical).
 Per default suppress ssl certificate validation in backend communication.
 Some IE specific styles fixes, the whole UI was unusable before !
