@@ -24,9 +24,10 @@
 
 Changelog: 
 
-* 
-Compelet reimplementation of usage popups (optical and technical).
-Suppress ssl certificate validation in backend communication. 
+*
+Complet reimplementation of usage popups (optical and technical).
+Per default suppress ssl certificate validation in backend communication.
+Some IE specific styles fixes, the whole UI was unusable before !
 - this might help in case the goo.gl backend appears unusable.
 - additional preference to force that validation.
 Some additional explanatory hints in the sharing dialog.
