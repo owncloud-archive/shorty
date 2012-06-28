@@ -160,7 +160,7 @@
 /* the list of shorties */
 #list {
   display: inline;
-  position: absolute;
+/*   position: absolute; */
   z-index: 3;
   margin: 0.4em;
   background: transparent;

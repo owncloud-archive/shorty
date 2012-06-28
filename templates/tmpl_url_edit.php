@@ -57,10 +57,18 @@
     <br />
     <label for="meta">&nbsp;</label>
     <span id="meta">
-    <img id="staticon"  class="shorty-icon" src="" data="<?php echo OCP\Util::imagePath('shorty', 'status/neutral.png'); ?>">
-    <img id="schemicon" class="shorty-icon" src="" data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-    <img id="favicon"   class="shorty-icon" src="" data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-    <img id="mimicon"   class="shorty-icon" src="" data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
+    <img id="staticon"  class="shorty-icon"
+         src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
+         data="<?php echo OCP\Util::imagePath('shorty', 'status/neutral.png'); ?>">
+    <img id="schemicon" class="shorty-icon"
+         src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
+         data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
+    <img id="favicon"   class="shorty-icon"
+         src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
+         data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
+    <img id="mimicon"   class="shorty-icon"
+         src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
+         data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
     <a id="explanation" maxlength="80" data="" class="shorty-value"></a>
     </span>
     <br />
