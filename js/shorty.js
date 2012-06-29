@@ -248,6 +248,13 @@ Shorty =
                 dialog.find('#title').focus();
                 Shorty.WUI.Dialog.sharpen(dialog,true);
                 break;
+              case 'dialog-share':
+                var status=dialog.find('#status');
+                dialog.find('.status-hint').hide().filter('#'+status.val()).show();
+                status.bind('change', {dialog: dialog}, function(event){
+                  dialog.find('.status-hint').hide().filter('#'+status.val()).fadeIn('fast');
+                });
+                break;
             } // switch
           }).done(dfd.resolve)
         }
@@ -1346,27 +1353,68 @@ Shorty =
       send: function(action,entry){
         if (Shorty.Debug) Shorty.Debug.log("action send via "+action+" with entry "+entry.attr('id'));
         switch (action){
+          case 'usage-qrcode':
+            // take layout from hidden dialog template
+            var message=$('#dialog-qrcode').html();
+            // use the jquery.impromtu plugin for a popup
+            $.prompt({state0:{html:message,
+                              buttons:{Ok:true},
+                              position:{container:'#dialog-share',x:44,y:-160,width:'auto',arrow:'bl'} } });
+            var qrcodeUrl=$('#jqibox fieldset #qrcode-url').val()+encodeURIComponent(entry.attr('data-source'));
+            $('#jqibox fieldset #payload').val(qrcodeUrl);
+            $('#jqibox fieldset #payload').select().click(function(){this.select();});
+            // full url to the qrcode image
+            $('#jqibox fieldset img').attr('src',qrcodeUrl);
+            // download image when download button is clicked
+            $('#jqibox fieldset #download').click(function(){window.location.href=qrcodeUrl+"&download=1";});
+            // switch to details when image is clicked
+            $('#jqibox fieldset img').click(function(){
+              $('#jqibox fieldset #qrcode-img').hide();
+              $('#jqibox fieldset #qrcode-url').show();
+            });
+            break;
           case 'usage-email':
+            // we offer a 'mailto://' link for all devices supporting that or copying the address as a fallback
             var mailSubject=entry.attr('data-title')||'';
             var mailBody=entry.attr('data-notes')+"\n\n"+entry.attr('data-source');
-            window.location='mailto:""?'
-                           +'subject='+encodeURIComponent(mailSubject)
-                           +'&body='+encodeURIComponent(mailBody);
+            var mailLink='mailto:""?'
+                        +'subject='+encodeURIComponent(mailSubject)
+                        +'&body='+encodeURIComponent(mailBody);
+            // take layout from hidden dialog template
+            var message=$('#dialog-email').html();
+            // use the jquery.impromtu plugin for a popup
+            var proceed=$.prompt({state0:{html:message,
+                                          buttons:{Ok:true,Cancel:false},
+                                          position:{container:'#dialog-share',x:-43,y:-66,width:'auto',arrow:'bc'},
+                                          submit:function(e,v,m,f){if(v) window.location=mailLink;else  $.prompt.close();} }});
+            $('#jqibox fieldset #payload').val(mailBody);
+            $('#jqibox fieldset #payload').select().click(function(){this.select();});
             break;
           case 'usage-sms':
-            var smsBody=entry.attr('data-title')+" - "+entry.attr('data-notes')+" - "+entry.attr('data-source');
-            // unfortunately there is no way to get the body over into the sms application on "sms urls"...
-            window.prompt(t('shorty',"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"), smsBody );
-            window.location='sms:';
-            break;
-          case 'usage-qrcode':
-            var title =entry.attr('data-title');
-            var source=entry.attr('data-source');
-            var target=entry.attr('data-target');
-            Shorty.Action.Usage.Dialog.qrcode(title,source,target);
+            // since most client systems won't understand the sms:// protocol this action is often disabled
+            // in addition, the protocol implementations do NTO allow to specify any content in the link
+            // therefore we ask the user to copy&paste a prepared body to their clipboard...
+            var smsBody=entry.attr('data-title')+"\n"+entry.attr('data-notes')+"\n"+entry.attr('data-source');
+            // take layout from hidden dialog template
+            var message=$('#dialog-sms').html();
+            // use the jquery.impromtu plugin for a popup
+            var proceed=$.prompt({state0:{html:message,
+                                          buttons:{Ok:true,Cancel:false},
+                                          position:{container:'#dialog-share',x:72,y:-126,width:'auto',arrow:'bc'},
+                                          submit:function(e,v,m,f){if(v) window.location='sms:';else  $.prompt.close();} }});
+            $('#jqibox fieldset #payload').val(smsBody);
+            $('#jqibox fieldset #payload').select().click(function(){this.select();});
             break;
           case 'usage-clipboard':
-            window.prompt(t('shorty',"Copy to clipboard: Ctrl+C"), entry.attr('data-source'));
+            // take layout from hidden dialog template
+            var clipboardBody=entry.attr('data-source');
+            var message=$('#dialog-clipboard').html();
+            // use the jquery.impromtu plugin for a popup
+            $.prompt({state0:{html:message,
+                              buttons:{Ok:true},
+                              position:{container:'#dialog-share',x:-6,y:36,width:'auto',arrow:'br'} } });
+            $('#jqibox fieldset #payload').val(clipboardBody);
+            $('#jqibox fieldset #payload').select().click(function(){this.select();});
             break;
           default:
             if (Shorty.Debug) Shorty.Debug.log("usage action '"+action+"' is disabled, refusing to comply");
@@ -1418,42 +1466,7 @@ Shorty =
         }).fail(dfd.reject)
         return dfd.promise();
       } // Shorty.Action.Url.status
-    }, // ===== Shorty.Action.Url =====
-    // ===== Shorty.Action.Usage =====
-    Usage:
-    {
-      // ===== Shorty.Action.Usage.Popup =====
-      Popup:
-      {
-        // ===== Shorty.Action.Usage.Popup.qrcode =====
-        qrcode:{},
-      }, // Shorty.Action.Usage.Popup
-      // ===== Shorty.Action.Usage.Dialog =====
-      Dialog:
-      {
-        // ===== Shorty.Action.Usage.Dialog.qrcode =====
-        qrcode:function(title,source,target){
-          var qrcode=Shorty.Action.Usage.Popup.qrcode;
-          if (!qrcode.dialog){
-            qrcode=$('#dialog-qrcode');
-            qrcode.dialog({show:'fade',autoOpen:false,modal:true});
-            qrcode.dialog('option','width',240 );
-            //qrcode.dialog('option','height',80 );
-          }
-          // a hidden input field ('qrcode-url') holds the base url to the qrcode generator
-          // we just add the url parameter for this specific entrys source url
-          var url=qrcode.find('#qrcode-url').val()+encodeURIComponent(source);
-          qrcode.dialog('option','title',title);
-          qrcode.find('#qrcode-img img').attr('src',url).attr('title',source);
-          qrcode.find('#qrcode-val a').text(url);
-          qrcode.bind('click',function(){
-            qrcode.find('#qrcode-img').toggle();
-            qrcode.find('#qrcode-val').toggle();
-          });
-          qrcode.dialog('open');
-        } // Shorty.Action.Usage.Dialog.qrcode
-      } // Shorty.Action.Usage.Dialog
-    } // Shorty.Action.Usage
+    }, // Shorty.Action.Url
   }, // Shorty.Action
 
   // ===========

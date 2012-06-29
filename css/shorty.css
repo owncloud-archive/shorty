@@ -109,6 +109,30 @@
 #vacuum p {
   margin: 0.6em 0 0.2em;
 }
+.usage-explanation {
+  font-style: normal;
+}
+.usage-instruction {
+  font-size: 10px;
+  font-style: italic;
+/*   line-height: 0.8em; */
+}
+.usage-token {
+  font-size: 10px;
+  font-style: normal;
+  font-family: fixed;
+/*   line-height: 0.8em; */
+  margin: 0;
+  padding:1px 2px;
+  border: 1px solid gray;
+  background-color: lightgray;
+}
+.usage-qrcode {
+  width: 50%;
+  margin: 2px;
+  padding: 10px;
+  border:1px solid gray;
+}
 #shortlet {
   outline: medium none;
   padding: 0.6em 0.8em;
@@ -136,12 +160,12 @@
 /* the list of shorties */
 #list {
   display: inline;
-  position: absolute;
+/*   position: absolute; */
   z-index: 3;
   margin: 0.4em;
   background: transparent;
   table-layout: fixed;
-  width: 100%;
+/*   width: 100%; */
 }
 /* the collapsable toolbar below the lists column title row */
 #list thead #toolbar img {
@@ -163,20 +187,24 @@
 #list thead #titlebar th span {
   display:inline-block;
 }
-#list tbody th#title,
+#list thead th#title,
 #list tbody td#title,
-#list tbody th#target,
+#list thead th#target,
 #list tbody td#target {
   width:10em;
 }
-#list thead #clicks span {
+#list thead th#clicks,
+#list tbody td#clicks {
   width:3em;
 }
-#list thead #until span {
+#list thead th#until,
+#list tbody td#until {
   width:5em;
 }
-#list thead #toolbar input,
-#list thead #toolbar .chzn-container {
+#list thead th#toolbar input,
+#list tbody td#toolbar input,
+#list thead th#toolbar .chzn-container,
+#list tbody td#toolbar .chzn-container {
   width:6em;
   font-size: 11px;
   margin: 0;
@@ -414,7 +442,7 @@
 .shorty-dialog label {
   display: inline-block;
   clear:none;
-  width: 5.5em;
+  width: 5.7em;
   text-align: left;
   vertical-align: baseline;
   padding: 0.6em 0.5em 0.4em 0.3em;
@@ -526,4 +554,73 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   width: inherit;
+}
+/* customization of styles for the 3rdparty jquery.impromtu prompts */
+div.jqi {
+  width:auto;
+  padding:4px;
+}
+.jqiwarning .jqi .jqibuttons{
+  background-color: silver;
+}
+div.jqi .jqimessage {
+  padding:4px;
+}
+div.jqimessage {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: normal;
+  color: DarkSlateGray;
+  background-color:#FFFFFF;
+}
+div.jqimessage fieldset {
+  position:relative;
+  border-radius: 0.5em;
+  border: 1px solid gray;
+  padding: 2px 10px 4px;
+}
+div.jqimessage fieldset legend {
+  font-weight: bold;
+  /*line-height: 90%; */
+  margin: 0 0 0 5px;
+  padding: 0 0.5em 0 0.4em;
+}
+div.jqimessage input,
+div.jqimessage textarea {
+  width:96%;
+  margin: 0.5em 0 0;
+  padding: 0.4em 0.3em 0.2em;
+}
+div.jqimessage textarea {
+  height: 6em;
+}
+div.jqimessage input::selection,
+div.jqimessage input::-moz-selection,
+div.jqimessage input::-webkit-selection,
+div.jqimessage input::-o-selection,
+div.jqimessage input::-ms-selection{
+    background:green;
+}
+div.jqi .jqiclose {
+  color: white;
+}
+div.jqi .jqibuttons {
+    background-color: white;
+    border: 0px;
+    margin: 0;
+    padding: 2px 0;
+    text-align: right;
+}
+div.jqi button {
+    background-color: lightgray;
+    padding: 2px 6px;
+}
+div.jqi button:hover {
+    background-color: darkgray;
+}
+div.jqi button.jqidefaultbutton {
+    background-color: gray;
+}
+div.jqi button.jqidefaultbutton:hover {
+    background-color: dimgray;
 }

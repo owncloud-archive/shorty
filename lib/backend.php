@@ -72,7 +72,7 @@ class OC_Shorty_Backend
     } // catch
     catch (Exception $e)
     {
-      throw new OC_Shorty_Exception ( "Failed to register url '%s' at '%s' backend", array($relay,$type) );
+      throw new OC_Shorty_Exception ( "Failed to register url '%s' at '%s' backend.", array($relay,$type) );
     } // catch
   } // OC_Shorty_Backend::registerUrl
 
@@ -103,7 +103,7 @@ class OC_Shorty_Backend
   {
     if (  (FALSE===($base=trim ( OCP\Config::getAppValue('shorty','backend-static-base',FALSE))))
         ||(empty($base)) )
-      throw new OC_Shorty_Exception ( 'No base url defined for the static backend' );
+      throw new OC_Shorty_Exception ( 'No base url defined for the static backend.' );
     return OC_Shorty_Type::validate ( $base.$id, OC_Shorty_Type::URL );
   } // OC_Shorty_Backend::registerUrl_static
   
@@ -121,10 +121,11 @@ class OC_Shorty_Backend
     $bitly_api_user = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-user','');
     $bitly_api_key  = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-key', '');
     if ( ! $bitly_api_key || ! $bitly_api_user )
-      throw new OC_Shorty_Exception ( 'No API user or key configured' );
+      throw new OC_Shorty_Exception ( 'No API user or key configured.' );
     $curl = curl_init ( );
     curl_setopt ( $curl, CURLOPT_URL, 'https://api-ssl.bit.ly/shorten' );
-    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
     curl_setopt ( $curl, CURLOPT_POST, TRUE );
     curl_setopt ( $curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json') );
     curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array('version'=>'2.0.1',
@@ -138,7 +139,8 @@ class OC_Shorty_Backend
         ||(!is_object($payload))
         ||(!property_exists($payload,'id')) )
     {
-      throw new OC_Shorty_Exception ( "Failed to register url at backend 'static'" );
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'bit.ly'. \nError %s: %s",
+                                      array(curl_errno($curl),curl_error($curl))  );
     }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
@@ -161,7 +163,8 @@ class OC_Shorty_Backend
     if (  (FALSE===($reply=curl_exec($curl)))
         ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
     {
-      throw new OC_Shorty_Exception ( "Failed to register url at backend 'cli.gs'" );
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'cli.gs'. \nError %s: %s",
+                                      array(curl_errno($curl),curl_error($curl))  );
     }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
@@ -184,7 +187,8 @@ class OC_Shorty_Backend
     if (  (FALSE===($reply=curl_exec($curl)))
         ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
     {
-      throw new OC_Shorty_Exception ( "Failed to register url at backend 'is.gd'" );
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'is.gd'. \nError %s: %s",
+                                      array(curl_errno($curl),curl_error($curl))  );
     }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
@@ -206,7 +210,8 @@ class OC_Shorty_Backend
       throw new OC_Shorty_Exception ( 'No goo.gl API key configured' );
     $curl = curl_init ( );
     curl_setopt ( $curl, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url' );
-    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
     curl_setopt ( $curl, CURLOPT_POST, TRUE );
     curl_setopt ( $curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json') );
     curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array('longUrl'=>$relay,
@@ -217,7 +222,8 @@ class OC_Shorty_Backend
         ||(!is_object($payload))
         ||(!property_exists($payload,'id')) )
     {
-      throw new OC_Shorty_Exception ( "Failed to register url at backend 'goo.gl'" );
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'goo.gl'. \nError %s: %s",
+                                      array(curl_errno($curl),curl_error($curl)) );
     }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
@@ -240,7 +246,8 @@ class OC_Shorty_Backend
       throw new OC_Shorty_Exception ( 'No goo.gl API key configured' );
     $curl = curl_init ( );
     curl_setopt ( $curl, CURLOPT_URL, 'http://tiny.cc/?c=shorten' );
-    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, TRUE );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
+    curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
     curl_setopt ( $curl, CURLOPT_POST, TRUE );
     curl_setopt ( $curl, CURLOPT_HEADER, TRUE );
     curl_setopt ( $curl, CURLOPT_POSTFIELDS, array('longUrl'=>$relay,
@@ -254,7 +261,8 @@ class OC_Shorty_Backend
         ||(!is_object($payload))
         ||(!property_exists($payload,'id')) )
     {
-      throw new OC_Shorty_Exception ( "Failed to register url at backend 'tiny.cc'" );
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'tiny.cc'. \nError %s: %s",
+                                      array(curl_errno($curl),curl_error($curl))  );
     }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
@@ -277,7 +285,8 @@ class OC_Shorty_Backend
     if (  (FALSE===($reply=curl_exec($curl)))
         ||( ! preg_match( '/^(.+)$/', $reply, $match )) )
     {
-      throw new OC_Shorty_Exception ( "Failed to register url at backend 'tinyUrl'" );
+      throw new OC_Shorty_Exception ( "Failed to register url at backend 'tinyUrl'. \nError %s: %s",
+                                      array(curl_errno($curl),curl_error($curl))  );
     }
     curl_close ( $curl );
     return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );

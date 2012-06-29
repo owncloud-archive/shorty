@@ -69,6 +69,7 @@ class OC_Shorty_Type
     'backend-google-key'  => OC_Shorty_Type::STRING,
     'backend-tinycc-user' => OC_Shorty_Type::STRING,
     'backend-tinycc-key'  => OC_Shorty_Type::STRING,
+    'backend-ssl-verify'  => OC_Shorty_Type::INTEGER,
     'sms-control'         => OC_Shorty_Type::STRING,
     'list-sort-code'      => OC_Shorty_Type::SORTKEY,
   );
@@ -271,7 +272,7 @@ class OC_Shorty_Type
     switch ( $_SERVER['REQUEST_METHOD'] )
     {
       case 'POST':
-        if ( isset($_POST[$arg]) && !empty($_POST[$arg]) )
+        if ( isset($_POST[$arg]) && (''!=$_POST[$arg]) )
           return self::normalize ( urldecode($_POST[$arg]), $type ) ;
         elseif ( ! $strict)
           return NULL;

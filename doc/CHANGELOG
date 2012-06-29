@@ -24,6 +24,13 @@
 
 Changelog: 
 
+* Thu Jun 28 2012 Christian Reiner: version 0.2.6
+Complet reimplementation of usage popups (optical and technical).
+Per default suppress ssl certificate validation in backend communication.
+Some IE specific styles fixes, the whole UI was unusable before !
+- this might help in case the goo.gl backend appears unusable.
+- additional preference to force that validation.
+Some additional explanatory hints in the sharing dialog.
 * Thu Jun 21 2012 Christian Reiner: version 0.2.5
 Fixed translation engine to be compatible with OC versions > 4.0.2
 A few minor linguistic corrections

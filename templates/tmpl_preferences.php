@@ -158,6 +158,13 @@
         <span id="backend-example">
           <label for="example" class="aspect"><?php echo $l->t("Example").':';?></label>
           <span id="example" class="example"><?php echo sprintf('http://goo.gl/<em>&lt;shorty id&gt;</em>') ?></span>
+          <br/>
+          <label for="backend-ssl-verify" class="aspect"></label>
+          <span>
+            <input id="backend-ssl-verify" type="checkbox" name="backend-ssl-verify" value="1"
+                   <?php echo $_['backend-ssl-verify']?'checked':''; ?> >
+            <?php echo $l->t("Force verification of encryption certificates during communication with the backend").'.';?>
+          </span>
         </span>
         <br/>
         <span id="explain" class="explain">

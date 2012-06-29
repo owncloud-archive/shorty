@@ -43,7 +43,7 @@
         <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
             src="<?php echo OCP\Util::imagePath('apps/shorty','actions/shade.png');  ?>">
       </a>
-      <?php echo OC_Shorty_L10n::t('Test and use').':'; ?>
+      <?php echo OC_Shorty_L10n::t('Share and use').':'; ?>
     </legend>
     <input id="id" name="id" type="hidden" readonly data="" class="" readonly disabled />
     <label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>
@@ -54,6 +54,10 @@
           echo sprintf ( "<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status) );
     ?>
     </select>
+    <span id="blocked" class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('for any access')."."; ?></span>
+    <span id="private" class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('for own usage')."."; ?></span>
+    <span id="shared"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('with ownCloud users')."."; ?></span>
+    <span id="public"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('available for everyone')."."; ?></span>
     <br />
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
     <a id="source" class="shorty-clickable" target="_blank"
@@ -70,6 +74,9 @@
        title="<?php echo OC_Shorty_L10n::t('Open target url'); ?>"
        href=""></a>
     <br />
+    <img id="usage-qrcode" type="image" name="usage-qrcode" class="shorty-usage" alt="qrcode"
+         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/qrcode.png'); ?>"
+         title="<?php echo OC_Shorty_L10n::t("Show as QRCode"); ?>" />
     <img id="usage-email" name="usage-email" class="shorty-usage" alt="email"
          src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/email.png'); ?>"
          title="<?php echo OC_Shorty_L10n::t("Send by email"); ?>" />
@@ -77,13 +84,14 @@
          class="shorty-usage <?php echo $_['sms-control']; ?>"
          src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/sms.png'); ?>"
          title="<?php echo OC_Shorty_L10n::t("Send by SMS"); ?>" />
-    <img id="usage-qrcode" type="image" name="usage-qrcode" class="shorty-usage" alt="qrcode"
-         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/qrcode.png'); ?>"
-         title="<?php echo OC_Shorty_L10n::t("Show as QRCode"); ?>" />
     <img id="usage-clipboard" type="image" name="usage-clipboard" class="shorty-usage" alt="clipbaord"
          src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/clipboard.png'); ?>"
          title="<?php echo OC_Shorty_L10n::t("Copy to clipboard"); ?>" />
   </fieldset>
 </form>
 
+<!-- additional (hidden) popup dialogs for specific usage actions -->
+<?php require_once('tmpl_dlg_email.php'); ?>
+<?php require_once('tmpl_dlg_sms.php'); ?>
+<?php require_once('tmpl_dlg_clipboard.php'); ?>
 <?php require_once('tmpl_dlg_qrcode.php'); ?>

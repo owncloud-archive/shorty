@@ -27,7 +27,7 @@
 <!--
   /**
   * @file appinfo/database.xml
-  * @brief Database scheme definition for plugins tables
+  * @brief Database scheme definition for plugins table
   * @author Christian Reiner
   */
  -->
@@ -43,47 +43,47 @@
       <field>
         <name>id</name>
         <type>text</type>
-        <notnull>true</notnull>
         <length>12</length>
+        <notnull>true</notnull>
       </field>
       <field>
         <name>status</name>
         <type>text</type>
+        <length>10</length>
         <default>'shared'</default>
         <notnull>true</notnull>
-        <length>10</length>
       </field>
       <field>
         <name>title</name>
         <type>text</type>
+        <length>80</length>
         <default>''</default>
         <notnull>true</notnull>
-        <length>80</length>
       </field>
       <field>
         <name>favicon</name>
         <type>text</type>
+        <length>1024</length>
         <default>''</default>
         <notnull>false</notnull>
-        <length>1024</length>
       </field>
       <field>
         <name>source</name>
         <type>text</type>
-        <notnull>true</notnull>
         <length>4096</length>
+        <notnull>true</notnull>
       </field>
       <field>
         <name>target</name>
         <type>text</type>
-        <notnull>true</notnull>
         <length>4096</length>
+        <notnull>true</notnull>
       </field>
       <field>
         <name>user</name>
         <type>text</type>
-        <notnull>true</notnull>
         <length>64</length>
+        <notnull>true</notnull>
       </field>
       <field>
         <name>until</name>
@@ -106,17 +106,17 @@
       <field>
         <name>clicks</name>
         <type>integer</type>
+        <length>10</length>
         <default>0</default>
         <notnull>true</notnull>
         <unsigned>true</unsigned>
-        <length>10</length>
       </field>
       <field>
         <name>notes</name>
         <type>text</type>
+        <length>4096</length>
         <default>''</default>
         <notnull>true</notnull>
-        <length>4096</length>
       </field>
 
       <index>
