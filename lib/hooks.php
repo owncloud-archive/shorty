@@ -61,4 +61,4 @@ class OC_Shorty_Hooks
     // report completion success
     return $result;
   }
-}
+} // class OC_Shorty_Hooks
