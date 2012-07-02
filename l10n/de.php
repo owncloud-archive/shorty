@@ -107,6 +107,7 @@
 "This 2d barcode encodes the url pointing to this Shorty"    => "Dieser 2d-Barcode kodiert die URL die diesen Shorty referenziert",
 "This is the url referencing the QRCode shown before"        => "Dies ist die URL die den zuvor gezeigten QRCode referenziert",
 "Title"                                                      => "Titel",
+"Tobble toolbar"                                             => "Werkzeugleiste umschalten",
 "Total of clicks"                                            => "Summe der Klicks",
 "Typically this only works on devices like smart phones"     => "Typischerweise klappt dies nur auf Geräten wie Smartphones",
 "Unexpected type of exception caught: %s"                    => "Unerwarteter Type einer Ausnahme aufgetreten: %s",
