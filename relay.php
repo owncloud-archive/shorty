@@ -81,11 +81,8 @@ try
   $p_id = trim ( OC_Shorty_Type::normalize($arg,OC_Shorty_Type::ID) ) ;
   if ( $p_id )
   {
-    $param = array
-    (
-      'id' => $p_id,
-    );
-    $query  = OCP\DB::prepare ( OC_Shorty_Query::URL_FORWARD );
+    $param  = array ( 'id' => $p_id );
+    $query  = OCP\DB::prepare ( OC_Shorty_Query::URL_RELAY );
     $result = $query->execute($param)->FetchAll();
     if ( FALSE===$result )
       throw new OC_Shorty_HttpException ( 500 );
