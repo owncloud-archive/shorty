@@ -25,7 +25,7 @@
 
 /**
  * @file js/init.js
- * @brief Client side initialization of desktop actionss
+ * @brief Client side initialization of desktop actions
  * @author Christian Reiner
  */
 

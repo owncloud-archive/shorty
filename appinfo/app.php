@@ -32,6 +32,7 @@
 
 OC::$CLASSPATH['OC_Shorty_Backend']       = 'apps/shorty/lib/backend.php';
 OC::$CLASSPATH['OC_Shorty_Exception']     = 'apps/shorty/lib/exception.php';
+OC::$CLASSPATH['OC_Shorty_Hooks']         = 'apps/shorty/lib/hooks.php';
 OC::$CLASSPATH['OC_Shorty_HttpException'] = 'apps/shorty/lib/exception.php';
 OC::$CLASSPATH['OC_Shorty_L10n']          = 'apps/shorty/lib/l10n.php';
 OC::$CLASSPATH['OC_Shorty_Meta']          = 'apps/shorty/lib/meta.php';

@@ -50,7 +50,7 @@
   <thead>
     <tr id="titlebar">
       <!-- a button to open/close the toolbar below -->
-      <th id="favicon"><span><img id="tools" alt="toolbar" title="toggle toolbar"
+      <th id="favicon"><span><img id="tools" alt="toolbar" title="<?php echo $l->t('Toggle toolbar');?>"
                                   src="<?php echo OCP\Util::imagePath('shorty','actions/plus.png'); ?>"
                                   data-plus="<?php echo OCP\Util::imagePath('shorty','actions/plus.png'); ?>"
                                   data-minus="<?php echo OCP\Util::imagePath('shorty','actions/minus.png'); ?>"></span></th>
