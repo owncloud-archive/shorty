@@ -26,7 +26,7 @@
 
 /**
  * @file ajax/click.php
- * @brief Ajax method to register a 'click', a single hit on an existing and valid shorty
+ * @brief Ajax method to register a 'click', a single hit on an existing Shorty
  * @param id (string) Internal id of a referenced shorty
  * @returns (json) success/error state indicator
  * @returns (json) Associative array holding the id of the shorty whose click was registered
@@ -53,8 +53,33 @@ try
       'user' => OCP\User::getUser(),
       'id'   => $p_id,
     );
+
+    // record the click
     $query = OCP\DB::prepare ( OC_Shorty_Query::URL_CLICK );
     $query->execute ( $param );
+
+    // allow further processing by registered hooks
+    $details = array ( );
+    // for this we need two things: details about the Shorty AND about the requester
+    $query = OCP\DB::prepare ( OC_Shorty_Query::URL_VERIFY );
+    $entries = $query->execute($param)->FetchAll();
+    if (  (1==count($entries))
+        &&(isset($entries[0]['id']))
+        &&($p_id==$entries[0]['id']) )
+      $entries[0]['relay']=OC_Shorty_Tools::relayUrl ( $entries[0]['id'] );
+    else
+      throw new OC_Shorty_Exception ( "failed to verify clicked shorty with id '%1s'", array($p_id) );
+    $details['shorty'] = $entries[0];
+    // now collect some info about the requester
+    $details['click'] = array (
+      'address'   => $_SERVER['REMOTE_ADDR'],
+      'time'      => $details['shorty']['accessed'],
+      'requester' => OCP\User::getUser(),
+    };
+    // and off we go (IF any hooks were registered
+    OC_Hook::emit( "OC_Shorty", "post_clickShorty", $details );
+
+    // report result
     OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.",$p_id), OC_Log::INFO );
     OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
                                 'message' => OC_Shorty_L10n::t('Click registered') ) );

@@ -44,6 +44,8 @@ OCP\Util::addScript ( 'shorty',         'shorty' );
 OCP\Util::addScript ( 'shorty',         'init' );
 if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
   OCP\Util::addScript ( 'shorty',  'debug' );
+// any additional stuff to incude as registered into the hook ?
+OC_Shorty_Hooks::requestIncludes();
 
 // strategy:
 // - first: decide which action is requested
@@ -130,6 +132,8 @@ switch ($act)
         OCP\Util::addScript ( 'shorty', 'list' );
       }
       $tmpl = new OCP\Template( 'shorty', 'tmpl_index', 'user' );
+      // any additional actions registered via hooks that should be offered ?
+      $tmpl->assign ( 'shorty-actions', OC_Shorty_Hooks::requestActions() );
       // the (remote) base url of the qrcode generator
       $tmpl->assign ( 'qrcode-url', sprintf('%s?service=%s&url=',OCP\Util::linkToAbsolute("", "public.php"),'shorty_qrcode') );
       // available status (required for select filter in toolbox)

@@ -56,7 +56,7 @@ class OC_Migration_Provider_Shorty extends OC_Migration_Provider
     switch( $this->appinfo->version )
     {
       default:
-      $query  = $this->content->prepare( "SELECT * FROM shorty WHERE user_id LIKE ?" );
+      $query  = $this->content->prepare( "SELECT * FROM shorty WHERE user LIKE ?" );
       $result = $query->execute( array( $this->olduid ) );
       if (is_array(is_array($result)))
       {

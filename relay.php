@@ -81,9 +81,14 @@ try
   $p_id = trim ( OC_Shorty_Type::normalize($arg,OC_Shorty_Type::ID) ) ;
   if ( $p_id )
   {
-    $param  = array ( 'id' => $p_id );
-    $query  = OCP\DB::prepare ( OC_Shorty_Query::URL_RELAY );
-    $result = $query->execute($param)->FetchAll();
+    $param   = array ( 'id' => $p_id );
+    $query   = OCP\DB::prepare ( OC_Shorty_Query::URL_RELAY );
+    $result  = $query->execute($param)->FetchAll();
+    $request = array (
+      'address' => $_SERVER['REMOTE_ADDR'],
+      'time'    => $_SERVER['REQUEST_TIME'],
+      'account' => OCP\User::getUser(),
+    );
     if ( FALSE===$result )
       throw new OC_Shorty_HttpException ( 500 );
     elseif ( ! is_array($result) )
@@ -130,14 +135,17 @@ try
           throw new OC_Shorty_HttpException ( 403 );
         // NO break; but fall through to the action in 'case public:'
       case 'public':
+        // finish this script to record the click, even if the client detaches right after the redirect
+        ignore_user_abort ( TRUE );
         // forward to target, regardless of who sends the request
         header("HTTP/1.0 301 Moved Permanently");
         // http forwarding header
         header ( sprintf('Location: %s', $target) );
     } // switch status
-    // register click in shorty
-    $query = OCP\DB::prepare ( OC_Shorty_Query::URL_CLICK );
-    $query->execute ( $param );
+
+    // register click
+    OC_Shorty_Hooks::registerClick ( $result[0], $request );
+
     exit();
   } // if id
 } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }

@@ -27,7 +27,7 @@
 <!--
   /**
   * @file appinfo/database.xml
-  * @brief Database scheme definition for plugins table
+  * @brief Database scheme definition for apps table
   * @author Christian Reiner
   */
  -->
@@ -36,7 +36,7 @@
   <name>*dbname*</name>
   <create>true</create>
   <overwrite>false</overwrite>
-  <charset>latin1</charset>
+  <charset>utf8</charset>
   <table>
     <name>*dbprefix*shorty</name>
     <declaration>

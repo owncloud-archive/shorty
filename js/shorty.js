@@ -40,6 +40,19 @@ $.fn.min = function(selector) {
   return Math.min.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
 }
 
+// call a namespaced function named by a string
+// this is something like phps call_user_func()...
+function executeFunctionByName(functionName, context /*, args */) {
+  var args = Array.prototype.slice.call(arguments).splice(2);
+  var namespaces = functionName.split(".");
+  var func = namespaces.pop();
+  for(var i = 0; i < namespaces.length; i++) {
+    context = context[namespaces[i]];
+  }
+  return context[func].apply(this, args);
+}
+
+
 /**
  * @class Shorty
  * @brief Central activity library for the client side
@@ -315,6 +328,10 @@ Shorty =
                 case 'open':  Shorty.Action.Url.forward(entry); break;
                 case 'share': Shorty.WUI.Entry.share(entry);    break;
                 case 'show':  Shorty.WUI.Entry.show(entry);     break;
+                default: // probably an action registered by another plugin...
+                   // execute the function specified inside the clicked element: 
+                   if (Shorty.Debug) Shorty.Debug.log("handing control to registered action");
+                   executeFunctionByName($(element).attr('data_method'),window,entry);
               } // switch
             } // if click
           }).done(dfd.resolve)

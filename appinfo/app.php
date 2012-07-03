@@ -49,6 +49,7 @@ OCP\App::addNavigationEntry ( array ( 'id' => 'shorty_index',
 OCP\App::register         ( array ( 'order' => 71, 'id' => 'shorty', 'name' => 'Shorty' ) );
 OCP\App::registerAdmin    ( 'shorty', 'settings' );
 OCP\App::registerPersonal ( 'shorty', 'preferences' );
+
 OCP\Util::connectHook ( 'OC_User', 'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
 
 ?>

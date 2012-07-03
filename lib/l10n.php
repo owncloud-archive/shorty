@@ -60,7 +60,7 @@ class OC_Shorty_L10n
    * @access private
    * @author Christian Reiner
    */
-  private function __construct ( ) { $this->dictionary = new OC_L10n('shorty'); }
+  private function __construct ( $app='shorty' ) { $this->dictionary = new OC_L10n($app); }
 
   /**
    * @method OC_Shorty_L10n::t

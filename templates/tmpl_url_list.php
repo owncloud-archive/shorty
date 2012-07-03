@@ -145,23 +145,33 @@
       <td id="status" ></td>
       <td id="actions">
         <span class="shorty-actions">
-          <a id="show"  title="<?php echo $l->t('show');   ?>"   class="">
+<!-- IF any additional actions are registered via hooks, additional icons will appear here -->
+<?php foreach ( $_['shorty-actions']['list'] as $action ) { ?>
+          <a id="<?php echo $action['id'] ?>" title="<?php echo array_key_exists('title',$action)?$action['title']:''?>"
+             data_method="<?php echo $action['call'] ?>" class="">
+            <img class="shorty-icon"
+                 alt="<?php echo array_key_exists('alt',$action)?$action['alt']:''?>"
+                 title="<?php echo array_key_exists('title',$action)?$action['title']:''?>"
+                 src="<?php echo $action['icon']?>" />
+          </a>
+<?php } ?>
+          <a id="show"   title="<?php echo $l->t('show');   ?>"   class="">
             <img class="shorty-icon" alt="<?php echo $l->t('show'); ?>"   title="<?php echo $l->t('Show details'); ?>"
                  src="<?php echo OCP\Util::imagePath('shorty','actions/info.png');   ?>" />
           </a>
-          <a id="edit"  title="<?php echo $l->t('edit');   ?>"   class="">
+          <a id="edit"   title="<?php echo $l->t('edit');   ?>"   class="">
             <img class="shorty-icon" alt="<?php echo $l->t('modify'); ?>"   title="<?php echo $l->t('Modify shorty'); ?>"
                  src="<?php echo OCP\Util::imagePath('core','actions/rename.png'); ?>" />
           </a>
-          <a id="del"   title="<?php echo $l->t('delete'); ?>" class="">
+          <a id="del"    title="<?php echo $l->t('delete'); ?>" class="">
             <img class="shorty-icon" alt="<?php echo $l->t('delete'); ?>" title="<?php echo $l->t('Delete shorty'); ?>"
                  src="<?php echo OCP\Util::imagePath('core','actions/delete.png'); ?>" />
           </a>
-          <a id="share" title="<?php echo $l->t('share');  ?>"   class="">
+          <a id="share"  title="<?php echo $l->t('share');  ?>"   class="">
             <img class="shorty-icon" alt="<?php echo $l->t('share'); ?>"  title="<?php echo $l->t('Share shorty'); ?>"
                  src="<?php echo OCP\Util::imagePath('core','actions/share.png');  ?>" />
           </a>
-          <a id="open"  title="<?php echo $l->t('open');   ?>"   class="">
+          <a id="open"   title="<?php echo $l->t('open');   ?>"   class="">
             <img class="shorty-icon" alt="<?php echo $l->t('open'); ?>"   title="<?php echo $l->t('Open target'); ?>"
                  src="<?php echo OCP\Util::imagePath('shorty','actions/open.png'); ?>" />
           </a>
