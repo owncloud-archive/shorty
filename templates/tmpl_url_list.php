@@ -51,9 +51,9 @@
     <tr id="titlebar">
       <!-- a button to open/close the toolbar below -->
       <th id="favicon"><span><img id="tools" alt="toolbar" title="<?php echo $l->t('Toggle toolbar');?>"
-                                  src="<?php echo OCP\Util::imagePath('shorty','actions/plus.png'); ?>"
-                                  data-plus="<?php echo OCP\Util::imagePath('shorty','actions/plus.png'); ?>"
-                                  data-minus="<?php echo OCP\Util::imagePath('shorty','actions/minus.png'); ?>"></span></th>
+                                  src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
+                                  data-plus="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
+                                  data-minus="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>"></span></th>
       <th id="title"  ><span><?php echo OC_Shorty_L10n::t('Title')      ?></span></th>
       <th id="target" ><span><?php echo OC_Shorty_L10n::t('Target')     ?></span></th>
       <th id="clicks" ><span><?php echo OC_Shorty_L10n::t('Clicks')     ?></span></th>

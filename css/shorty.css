@@ -46,7 +46,6 @@
 #desktop {
   display: inline-block;
   position: absolute;
-/*   width: 100%; height: 100%; */
   background: transparent;
   text-align: left;
   margin-top: 30px;
@@ -144,6 +143,7 @@
 #shortlet a {
   font-style: italic;
   color: DarkSlateGray;
+  cursor: move;
 }
 #shortlet:after {
   content: url("%appswebroot%/apps/shorty/img/drag_me.png");
@@ -165,9 +165,8 @@
   margin: 0.4em;
   background: transparent;
   table-layout: fixed;
-/*   width: 100%; */
 }
-/* the collapsable toolbar below the lists column title row */
+/* the collapsible toolbar below the lists column title row */
 #list thead #toolbar img {
   cursor: pointer;
   vertical-align: middle;
@@ -187,6 +186,14 @@
 #list thead #titlebar th span {
   display:inline-block;
 }
+#list thead #titlebar th,
+#list thead #titlebar th img,
+#list thead #titlebar th span {
+  cursor: pointer;
+}
+#list thead #titlebar img {
+  opacity:0.7;
+}
 #list thead th#title,
 #list tbody td#title,
 #list thead th#target,
@@ -201,10 +208,10 @@
 #list tbody td#until {
   width:5em;
 }
-#list thead th#toolbar input,
-#list tbody td#toolbar input,
-#list thead th#toolbar .chzn-container,
-#list tbody td#toolbar .chzn-container {
+#list thead tr#toolbar th input,
+#list tbody tr#toolbar td input,
+#list thead tr#toolbar th .chzn-container,
+#list tbody tr#toolbar td .chzn-container {
   width:6em;
   font-size: 11px;
   margin: 0;
@@ -224,7 +231,10 @@
   text-align: center;
 }
 /* hide the dummy row */
-#list thead tr:last-child { display: none; }
+#list thead tr:last-child
+{
+  display: none;
+}
 /* hide the content of the 'actions' column, except when being hovered */
 #list tbody tr td span.shorty-actions {
   visibility:visible;
@@ -398,29 +408,59 @@
 }
 /* dialogs related to elements ('embedded in the content') */
 .shorty-embedded {
-  left: 6em;
-  width: 34em;
+  left: 5em;
+  width: 36em;
   margin: -1px 4em 0;
   padding: 0.5em;
   background: none repeat scroll 0 0 #EEEEEE;
   position: absolute;
 }
-.shorty-embedded fieldset {
-/*   width: 32em; */
+.shorty-embedded a {
+  padding: 0;
 }
 .shorty-embedded a#source,
 .shorty-embedded a#relay,
 .shorty-embedded a#target {
   display: inline-block;
-  width: 26em;
+  width: 34.4em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   vertical-align: middle;
 }
 .shorty-embedded a.shorty-clickable:before {
-  content:url("%appswebroot%/apps/shorty/img/actions/external.png");
+  content: url("%appswebroot%/apps/shorty/img/actions/external.png");
+  margin-right: 0.3em;
+  margin-left: 7.4em;
+}
+.shorty-embedded fieldset.shorty-collapsible span:before {
+  content: url("%appswebroot%/apps/shorty/img/actions/shade.png");
+  margin-right: 0.3em;
+  padding: 0;
+  vertical-align: baseline;
+  opacity: 0.7;
+}
+.shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
+  content:url("%appswebroot%/apps/shorty/img/actions/unshade.png");
   margin-right:0.3em;
+  vertical-align: baseline;
+  opacity: 0.7;
+}
+.shorty-embedded fieldset.shorty-collapsible span,
+.shorty-embedded fieldset.shorty-collapsible.collapsed span {
+  cursor: pointer;
+}
+.shorty-embedded fieldset.shorty-collapsible span {
+  margin:0;
+}
+.shorty-embedded fieldset.shorty-collapsible {
+  border-radius: 0.5em;
+  border: 1px solid #EEEEEE;
+  margin: 2px 1px;
+  padding: 0 0 2px;
+}
+.shorty-embedded fieldset.shorty-collapsible:not(.collapsed) {
+  border: 1px solid gray;
 }
 .shorty-embedded select {
   margin: 0 0 0.2em 1.0em;
@@ -430,8 +470,20 @@
 }
 .shorty-embedded img.shorty-usage {
   opacity: 0.6;
-  margin: 1em 1.5em 0.2em;
+/*   margin: 1em 1.5em 0.2em; */
+  margin: 0;
   padding: 0;
+}
+.shorty-embedded .shorty-grid {
+  width: 100%;
+  margin-top: 1em;
+}
+.shorty-embedded .shorty-grid tr:hover {
+  background-color:transparent;
+}
+.shorty-embedded .shorty-grid td {
+  text-align: center;
+  vertical-align: middle;
 }
 .shorty-embedded img.shorty-usage.disabled {
   opacity: 0.2;
@@ -445,11 +497,11 @@
   width: 5.7em;
   text-align: left;
   vertical-align: baseline;
-  padding: 0.6em 0.5em 0.4em 0.3em;
+  padding: 0.6em 0.5em 0.1em 0.3em;
   cursor: default;
 }
 .shorty-dialog span {
-  padding: 0.6em 0.5em 0.4em 0.3em;
+  padding: 0.6em 0.5em 0.1em 0.3em;
 }
 .shorty-dialog span.label-line {
   display: inline;

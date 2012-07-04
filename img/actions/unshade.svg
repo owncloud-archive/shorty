@@ -14,7 +14,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="shade.svg">
+   sodipodi:docname="shade.svg"
+   inkscape:export-filename="/srv/www/htdocs/owncloud-4.0.1/apps/shorty/img/actions/shade.png"
+   inkscape:export-xdpi="78.75"
+   inkscape:export-ydpi="78.75">
   <metadata
      id="metadata11">
     <rdf:RDF>
@@ -45,8 +48,8 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="41.955556"
-     inkscape:cx="9.9428315"
-     inkscape:cy="5.8623748"
+     inkscape:cx="8.0600906"
+     inkscape:cy="8.4645379"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
@@ -55,7 +58,7 @@
      id="defs4" />
   <g
      id="layer1"
-     transform="matrix(0.16959381,0,0,0.16947897,-17.540231,-20.519211)"
+     transform="matrix(0.16959381,0,0,-0.16947897,-17.540231,36.529924)"
      inkscape:export-xdpi="76.870003"
      inkscape:export-ydpi="76.870003">
     <path

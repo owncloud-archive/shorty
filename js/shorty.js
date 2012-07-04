@@ -387,12 +387,11 @@ Shorty =
       // ===== Shorty.WUI.Entry.send =====
       send: function(event,element){
         var dfd = new $.Deferred();
-        var action=element.attr('id');
-        var entry=element.parents('tr');
-        if (Shorty.Debug) Shorty.Debug.log("send action "+action+" on entry "+entry.attr('data-id'));
+        var entry=element.parents('table').parents('tr');
+        if (Shorty.Debug) Shorty.Debug.log("send action "+element.attr('id')+" on entry "+entry.attr('data-id'));
         // take action
         $.when(
-          Shorty.Action.Url.send(action,entry)
+          Shorty.Action.Url.send(element,entry)
         ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Entry.send
@@ -1350,16 +1349,19 @@ Shorty =
         window.open(url);
       }, // Shorty.Action.Url.forward
       // ===== Shorty.Action.Url.send =====
-      send: function(action,entry){
-        if (Shorty.Debug) Shorty.Debug.log("action send via "+action+" with entry "+entry.attr('id'));
+      send: function(element,entry){
+        var action=element.attr('id');
+        var position=element.position();
+        if (Shorty.Debug) Shorty.Debug.log("action 'send via "+action+"' with entry '"+entry.attr('id')+"'");
         switch (action){
           case 'usage-qrcode':
             // take layout from hidden dialog template
             var message=$('#dialog-qrcode').html();
             // use the jquery.impromtu plugin for a popup
-            $.prompt({state0:{html:message,
-                              buttons:{Ok:true},
-                              position:{container:'#dialog-share',x:44,y:-160,width:'auto',arrow:'bl'} } });
+            var proceed=$.prompt({state0:{html:message,
+                                          buttons:{Ok:true},
+                                          position:{container:'#dialog-share',width:'auto',arrow:'bl',
+                                                    x:position.left+19,y:position.top-330} } });
             var qrcodeUrl=$('#jqibox fieldset #qrcode-url').val()+encodeURIComponent(entry.attr('data-source'));
             $('#jqibox fieldset #payload').val(qrcodeUrl);
             $('#jqibox fieldset #payload').select().click(function(){this.select();});
@@ -1385,7 +1387,8 @@ Shorty =
             // use the jquery.impromtu plugin for a popup
             var proceed=$.prompt({state0:{html:message,
                                           buttons:{Ok:true,Cancel:false},
-                                          position:{container:'#dialog-share',x:-43,y:-66,width:'auto',arrow:'bc'},
+                                          position:{container:'#dialog-share',width:'auto',arrow:'bc',
+                                                    x:position.left-157,y:position.top-237},
                                           submit:function(e,v,m,f){if(v) window.location=mailLink;else  $.prompt.close();} }});
             $('#jqibox fieldset #payload').val(mailBody);
             $('#jqibox fieldset #payload').select().click(function(){this.select();});
@@ -1400,7 +1403,8 @@ Shorty =
             // use the jquery.impromtu plugin for a popup
             var proceed=$.prompt({state0:{html:message,
                                           buttons:{Ok:true,Cancel:false},
-                                          position:{container:'#dialog-share',x:72,y:-126,width:'auto',arrow:'bc'},
+                                          position:{container:'#dialog-share',width:'auto',arrow:'bc',
+                                                    x:position.left-153,y:position.top-297},
                                           submit:function(e,v,m,f){if(v) window.location='sms:';else  $.prompt.close();} }});
             $('#jqibox fieldset #payload').val(smsBody);
             $('#jqibox fieldset #payload').select().click(function(){this.select();});
@@ -1410,9 +1414,10 @@ Shorty =
             var clipboardBody=entry.attr('data-source');
             var message=$('#dialog-clipboard').html();
             // use the jquery.impromtu plugin for a popup
-            $.prompt({state0:{html:message,
-                              buttons:{Ok:true},
-                              position:{container:'#dialog-share',x:-6,y:36,width:'auto',arrow:'br'} } });
+            var proceed=$.prompt({state0:{html:message,
+                                          buttons:{Ok:true},
+                                          position:{container:'#dialog-share',width:'auto',arrow:'br',
+                                                    x:position.left-245,y:position.top-134} } });
             $('#jqibox fieldset #payload').val(clipboardBody);
             $('#jqibox fieldset #payload').select().click(function(){this.select();});
             break;

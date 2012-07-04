@@ -40,6 +40,13 @@ $(document).ready(function(){
   $('.shorty-embedded#dialog-share #status').bind('change',function(){
     Shorty.Action.Url.status($(this).siblings('#id').val(),$(this).val());
   });
+  // collapsible items in embedded dialogs
+  $('.shorty-embedded .shorty-collapsible span').bind('click',function(e){
+    var container=$(this).parent();
+    if (container.hasClass('collapsed'))
+         container.removeClass('collapsed').find('.shorty-collapsible-tail').slideDown('fast');
+    else container.addClass('collapsed').find('.shorty-collapsible-tail').slideUp('fast');
+  });
   // button to open the tools header row in the list
   $('#list #titlebar').bind('click',Shorty.WUI.List.Toolbar.toggle);
   // button to reload the list
@@ -60,11 +67,11 @@ $(document).ready(function(){
   });
   $('#controls #until:not([readonly])').datepicker();
   // bind usage to the usage icons
-  $('#dialog-share img.shorty-usage:not(.disabled)').live('click',function(e){Shorty.WUI.Entry.send(e,$(this));});
+  $('#dialog-share img.shorty-usage').live('click',function(e){Shorty.WUI.Entry.send(e,$(this));});
   // bind actions to the actions icons
   $('#list tbody .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
   // bind highlighting to clicks on a row, except for the action icons
-  $('#list tbody tr td:not(#actions)').live('click',function(){
+  $('#list not(.dialog-share) tbody tr td:not(#actions)').live('click',function(){
     Shorty.WUI.List.highlight($(this).parents('tr'));
     Shorty.WUI.Dialog.hide($('.shorty-embedded').eq(0));
   });
