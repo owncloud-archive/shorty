@@ -58,35 +58,62 @@
     <span id="private" class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('for own usage')."."; ?></span>
     <span id="shared"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('with ownCloud users')."."; ?></span>
     <span id="public"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('available for everyone')."."; ?></span>
-    <br />
-    <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
-    <a id="source" class="shorty-clickable" target="_blank"
-       title="<?php echo OC_Shorty_L10n::t('Open source url'); ?>"
-       href=""></a>
-    <br />
-    <label for="relay"><?php echo OC_Shorty_L10n::t('Relay url').':'; ?></label>
-    <a id="relay" class="shorty-clickable" target="_blank"
-       title="<?php echo OC_Shorty_L10n::t('Open relay url'); ?>"
-       href=""></a>
-    <br />
-    <label for="target"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
-    <a id="target" class="shorty-clickable" target="_blank"
-       title="<?php echo OC_Shorty_L10n::t('Open target url'); ?>"
-       href=""></a>
-    <br />
-    <img id="usage-qrcode" type="image" name="usage-qrcode" class="shorty-usage" alt="qrcode"
-         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/qrcode.png'); ?>"
-         title="<?php echo OC_Shorty_L10n::t("Show as QRCode"); ?>" />
-    <img id="usage-email" name="usage-email" class="shorty-usage" alt="email"
-         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/email.png'); ?>"
-         title="<?php echo OC_Shorty_L10n::t("Send by email"); ?>" />
-    <img id="usage-sms" type="image" name="usage-sms" alt="sms"
-         class="shorty-usage <?php echo $_['sms-control']; ?>"
-         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/sms.png'); ?>"
-         title="<?php echo OC_Shorty_L10n::t("Send by SMS"); ?>" />
-    <img id="usage-clipboard" type="image" name="usage-clipboard" class="shorty-usage" alt="clipbaord"
-         src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/clipboard.png'); ?>"
-         title="<?php echo OC_Shorty_L10n::t("Copy to clipboard"); ?>" />
+    <div class="shorty-usages">
+      <fieldset class="shorty-collapsible">
+        <label for="source-text"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
+        <span id="source-text">This is the shortened url registered at the backend. </span>
+        <div class="shorty-collapsible-tail">
+          <a id="source" class="shorty-clickable" target="_blank"
+            title="<?php echo OC_Shorty_L10n::t('Open source url'); ?>"
+            href=""></a>
+        </div>
+      </fieldset>
+      <fieldset class="shorty-collapsible collapsed">
+        <label for="relay-text"><?php echo OC_Shorty_L10n::t('Relay url').':'; ?></label>
+        <span id="relay-text">This is the internal url the 'official' one relays to. </span>
+        <div class="shorty-collapsible-tail" style="display:none;">
+          <a id="relay" class="shorty-clickable" target="_blank"
+            title="<?php echo OC_Shorty_L10n::t('Open relay url'); ?>"
+            href=""></a>
+        </div>
+      </fieldset>
+      <fieldset class="shorty-collapsible collapsed">
+        <label for="target-text"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
+        <span id="target-text">This is the target url specified when generating this Shorty. </span>
+        <div class="shorty-collapsible-tail" style="display:none;">
+          <a id="target" class="shorty-clickable" target="_blank"
+            title="<?php echo OC_Shorty_L10n::t('Open target url'); ?>"
+            href=""></a>
+        </div>
+      </fieldset>
+      <br/>
+    </div>
+    <table class="shorty-grid">
+      <tr>
+        <td>
+          <img id="usage-qrcode" type="image" name="usage-qrcode" class="shorty-usage" alt="qrcode"
+               src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/qrcode.png'); ?>"
+               title="<?php echo OC_Shorty_L10n::t("Show as QRCode"); ?>" />
+        </td>
+        <td>
+          <img id="usage-email" name="usage-email" class="shorty-usage" alt="email"
+               src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/email.png'); ?>"
+               title="<?php echo OC_Shorty_L10n::t("Send by email"); ?>" />
+        </td>
+<?php if ('disabled'!=$_['sms-control']) { ?>
+        <td>
+          <img id="usage-sms" name="usage-sms" class="shorty-usage" alt="sms"
+               src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/sms.png'); ?>"
+               title="<?php echo OC_Shorty_L10n::t("Send by SMS"); ?>" />
+        </td>
+<?php } ?>
+        <td>
+          <img id="usage-clipboard" type="image" name="usage-clipboard" class="shorty-usage" alt="clipbaord"
+               src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/clipboard.png'); ?>"
+               title="<?php echo OC_Shorty_L10n::t("Copy to clipboard"); ?>" />
+        </td>
+      </tr>
+    </table>
   </fieldset>
 </form>
 
