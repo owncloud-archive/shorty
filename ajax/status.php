@@ -62,6 +62,6 @@ try
   OC_Shorty_Tools::ob_control ( FALSE );
   OCP\Util::writeLog( 'shorty', sprintf("Status change for shorty with id '%s' saved",$p_id), OC_Log::INFO );
   OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
-                              'message' => sprintf(OC_Shorty_L10n::t("Status change for shorty with id '%s' saved"),$p_id) )  );
+                              'message' => OC_Shorty_L10n::t("Status change for shorty with id '%s' saved",$p_id) )  );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

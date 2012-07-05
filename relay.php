@@ -32,6 +32,7 @@
  * @author Christian Reiner
  */
 
+OC_App::loadApps();
 OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 
 $arg = NULL;
@@ -87,7 +88,7 @@ try
     $request = array (
       'address' => $_SERVER['REMOTE_ADDR'],
       'time'    => $_SERVER['REQUEST_TIME'],
-      'account' => OCP\User::getUser(),
+      'user'    => OCP\User::getUser(),
     );
     if ( FALSE===$result )
       throw new OC_Shorty_HttpException ( 500 );

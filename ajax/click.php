@@ -60,7 +60,7 @@ try
 
     // allow further processing by registered hooks
     $details = array ( );
-    // for this we need two things: details about the Shorty AND about the requester
+    // for this we need two things: details about the Shorty AND about the request
     $query = OCP\DB::prepare ( OC_Shorty_Query::URL_VERIFY );
     $entries = $query->execute($param)->FetchAll();
     if (  (1==count($entries))
@@ -70,11 +70,11 @@ try
     else
       throw new OC_Shorty_Exception ( "failed to verify clicked shorty with id '%1s'", array($p_id) );
     $details['shorty'] = $entries[0];
-    // now collect some info about the requester
+    // now collect some info about the request
     $details['click'] = array (
-      'address'   => $_SERVER['REMOTE_ADDR'],
-      'time'      => $details['shorty']['accessed'],
-      'requester' => OCP\User::getUser(),
+      'address' => $_SERVER['REMOTE_ADDR'],
+      'time'    => $details['shorty']['accessed'],
+      'user'    => OCP\User::getUser(),
     );
     // and off we go (IF any hooks were registered
     OC_Hook::emit( "OC_Shorty", "post_clickShorty", $details );
