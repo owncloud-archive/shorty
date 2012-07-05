@@ -513,18 +513,16 @@ Shorty =
     List:
     {
       // ===== Shorty.WUI.List.add =====
-      add: function(list,elements,append,hidden){
+      add: function(list,elements,callback,hidden){
         if (Shorty.Debug) Shorty.Debug.log("add entry to list holding "+elements.length+" entries");
         var dfd = new $.Deferred();
         // insert list elements (sets) one by one
         var row,set;
         $.each(elements,function(i,set,hidden){
           // clone dummy row from list header: dummy is the last row
-          row = $('#desktop #list thead tr:last-child').eq(0).clone();
-          // set row id to entry id
-          row.attr('id',set.id);
+          row = list.find('thead tr:last-child').eq(0).clone();
           // add attributes to row, as data and value
-          append(row,set);
+          callback(row,set);
           // insert new row in table
           list.find('tbody').prepend(row);
         }) // each
@@ -532,6 +530,8 @@ Shorty =
       }, // Shorty.WUI.List.add
       // ===== Shorty.WUI.List.append =====
       append: function(row,set,hidden){
+        // set row id to entry id
+        row.attr('id',set.id);
         $.each(['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
                function(j,aspect){
           if (hidden)
@@ -872,7 +872,6 @@ Shorty =
             if (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
                    &&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]').effect('pulsate')) )
                 ||(  (toolbar.find('th#status select :selected').val())
-//                   &&(toolbar.find('#status div.chzn-container').effect('pulsate')) )
                    &&(toolbar.find('#status').effect('pulsate')) )
                ) {
               if (Shorty.Debug) Shorty.Debug.log('active filter prevents closing of toolbar');
@@ -880,9 +879,10 @@ Shorty =
               // close toolbar
               $.when(
                 toolbar.find('div').slideUp(duration)
-              ).pipe(
+              ).done(function(){
                 button.attr('src',button.attr('data-unshade'))
-              ).done(dfd.resolve)
+                dfd.resolve();
+              })
             }
           }
           return dfd.promise();

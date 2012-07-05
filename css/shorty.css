@@ -194,18 +194,18 @@
 #list thead #titlebar img {
   opacity:0.7;
 }
-#list thead th#title,
-#list tbody td#title,
-#list thead th#target,
-#list tbody td#target {
+#desktop #list thead th#title,
+#desktop #list tbody td#title,
+#desktop #list thead th#target,
+#desktop #list tbody td#target {
   width:10em;
 }
-#list thead th#clicks,
-#list tbody td#clicks {
+#desktop #list thead th#clicks,
+#desktop #list tbody td#clicks {
   width:3em;
 }
-#list thead th#until,
-#list tbody td#until {
+#desktop #list thead th#until,
+#desktop #list tbody td#until {
   width:5em;
 }
 #list thead tr#toolbar th input,
@@ -236,7 +236,7 @@
   display: none;
 }
 /* hide the content of the 'actions' column, except when being hovered */
-#list tbody tr td span.shorty-actions {
+#desktop #list tbody tr td span.shorty-actions {
   visibility:visible;
   opacity:0;
   transition: opacity 500ms;
@@ -247,7 +247,7 @@
   width:100px;
   overflow:auto;
 }
-#list tbody tr:hover td span.shorty-actions {
+#desktop #list tbody tr:hover td span.shorty-actions {
   opacity:1;
   transition: opacity 500ms;
   -moz-transition: opacity 500ms;
