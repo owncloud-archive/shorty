@@ -35,7 +35,7 @@ class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 
   function export ( )
   {
-    OCP\Util::writeLog ( 'migration','starting export for Shorty', OCP\Util::INFO );
+    OCP\Util::writeLog ( 'shorty','Starting data migration export for Shorty', OCP\Util::INFO );
     $options = array(
       'table'=>'shorty',
       'matchcol'=>'user',
@@ -53,6 +53,7 @@ class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 
   function import ( )
   {
+    OCP\Util::writeLog ( 'shorty','Starting data migration import for Shorty', OCP\Util::INFO );
     switch( $this->appinfo->version )
     {
       default:

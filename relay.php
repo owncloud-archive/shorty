@@ -121,18 +121,25 @@ try
       default:
       case 'blocked':
         // refuse forwarding => 403: Forbidden
+        OC_Shorty_Hooks::registerClick ( $result[0], $request, 'blocked' );
         throw new OC_Shorty_HttpException ( 403 );
       case 'private':
         // check if user owns the Shorty, deny access if not
         if ( $result[0]['user']!=OCP\User::getUser() )
+        {
           // refuse forwarding => 403: Forbidden
+          OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
           throw new OC_Shorty_HttpException ( 403 );
+        }
         // NO break; but fall through to the action in 'case public:'
       case 'shared':
         // check if we are a user, deny access if not
         if ( ! OCP\User::isLoggedIn() )
+        {
           // refuse forwarding => 403: Forbidden
+          OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
           throw new OC_Shorty_HttpException ( 403 );
+        }
         // NO break; but fall through to the action in 'case public:'
       case 'public':
         // finish this script to record the click, even if the client detaches right after the redirect
@@ -141,10 +148,9 @@ try
         header("HTTP/1.0 301 Moved Permanently");
         // http forwarding header
         header ( sprintf('Location: %s', $target) );
+        // register click
+        OC_Shorty_Hooks::registerClick ( $result[0], $request, 'granted' );
     } // switch status
-
-    // register click
-    OC_Shorty_Hooks::registerClick ( $result[0], $request );
 
     exit();
   } // if id

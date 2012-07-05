@@ -75,12 +75,12 @@ try
       'address'   => $_SERVER['REMOTE_ADDR'],
       'time'      => $details['shorty']['accessed'],
       'requester' => OCP\User::getUser(),
-    };
+    );
     // and off we go (IF any hooks were registered
     OC_Hook::emit( "OC_Shorty", "post_clickShorty", $details );
 
     // report result
-    OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.",$p_id), OC_Log::INFO );
+    OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.",$p_id), OC_Log::DEBUG );
     OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
                                 'message' => OC_Shorty_L10n::t('Click registered') ) );
   }

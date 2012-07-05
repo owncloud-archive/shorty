@@ -513,77 +513,79 @@ Shorty =
     List:
     {
       // ===== Shorty.WUI.List.add =====
-      add: function(list,elements,hidden){
+      add: function(list,elements,append,hidden){
         if (Shorty.Debug) Shorty.Debug.log("add entry to list holding "+elements.length+" entries");
         var dfd = new $.Deferred();
         // insert list elements (sets) one by one
         var row,set;
-        $.each(elements,function(i,set){
+        $.each(elements,function(i,set,hidden){
           // clone dummy row from list header: dummy is the last row
           row = $('#desktop #list thead tr:last-child').eq(0).clone();
           // set row id to entry id
           row.attr('id',set.id);
           // add attributes to row, as data and value
-          $.each(['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
-                 function(j,aspect){
-            if (hidden)
-              row.addClass('shorty-fresh'); // might lead to a pulsate effect later
-            // we wrap the cells content into a span tag
-            var span=$('<span>');
-            // enhance row with real set values
-            if ('undefined'==set[aspect])
-                 row.attr('data-'+this,'');
-            else row.attr('data-'+this,set[aspect]);
-            // fill data into corresponsing column
-            var title, content, classes=[];
-            switch(aspect)
-            {
-              case 'favicon':
-                span.html('<img class="shorty-icon" width="16" src="'+set[aspect]+'">');
-                break;
-              case 'until':
-                if (null==set[aspect])
-                  span.text('-never-');
-                else{
-                  span.text(set[aspect]);
-                  if (Shorty.Date.expired(set[aspect]))
-                    row.addClass('shorty-expired');
-                }
-                break;
-              case 'title':
-                span.text(set[aspect]);
-                span.addClass('ellipsis');
-                break;
-              case 'target':
-                span.text(set[aspect]);
-                span.attr('title',set[aspect]);
-                span.addClass('ellipsis');
-                break;
-              case 'status':
-                if ('deleted'==set[aspect])
-                  row.addClass('deleted');
-//                 span.text(set[aspect]);
-                span.text(t('shorty',set[aspect]));
-                break;
-              default:
-                span.text(set[aspect]);
-            } // switch
-            row.find('td#'+aspect).empty().append(span);
-          }) // each aspect
+          append(row,set);
           // insert new row in table
           list.find('tbody').prepend(row);
         }) // each
         return dfd.promise();
       }, // Shorty.WUI.List.add
+      // ===== Shorty.WUI.List.append =====
+      append: function(row,set,hidden){
+        $.each(['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
+               function(j,aspect){
+          if (hidden)
+            row.addClass('shorty-fresh'); // might lead to a pulsate effect later
+          // we wrap the cells content into a span tag
+          var span=$('<span>');
+          // enhance row with real set values
+          if ('undefined'==set[aspect])
+               row.attr('data-'+this,'');
+          else row.attr('data-'+this,set[aspect]);
+          // fill data into corresponsing column
+          var title, content, classes=[];
+          switch(aspect)
+          {
+            case 'favicon':
+              span.html('<img class="shorty-icon" width="16" src="'+set[aspect]+'">');
+              break;
+            case 'until':
+              if (null==set[aspect])
+                span.text('-never-');
+              else{
+                span.text(set[aspect]);
+                if (Shorty.Date.expired(set[aspect]))
+                  row.addClass('shorty-expired');
+              }
+              break;
+            case 'title':
+              span.text(set[aspect]);
+              span.addClass('ellipsis');
+              break;
+            case 'target':
+              span.text(set[aspect]);
+              span.attr('title',set[aspect]);
+              span.addClass('ellipsis');
+              break;
+            case 'status':
+              if ('deleted'==set[aspect])
+                row.addClass('deleted');
+              span.text(t('shorty',set[aspect]));
+              break;
+            default:
+              span.text(set[aspect]);
+          } // switch
+          row.find('td#'+aspect).empty().append(span);
+        }) // each aspect
+      }, // Shorty.WUI.List.append
       // ===== Shorty.WUI.List.build =====
-      build: function()
-      {
+      build: function(){
         if (Shorty.Debug) Shorty.Debug.log("build list");
         var dfd = new $.Deferred();
         // prepare loading
         $.when(
           Shorty.WUI.Hourglass.toggle(true),
-          Shorty.WUI.List.dim(false)
+          Shorty.WUI.List.dim($('#desktop #list').eq(0),false)
         ).done(function(){
           // retrieve new entries
           $.when(
@@ -593,7 +595,7 @@ Shorty =
           }).done(function(){
             $.when(
               Shorty.WUI.List.show(),
-              Shorty.WUI.List.dim(true)
+              Shorty.WUI.List.dim($('#desktop #list').eq(0),true)
             ).always(function(){
               Shorty.WUI.Hourglass.toggle(false)
               dfd.resolve();
@@ -605,11 +607,10 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.build
       // ===== Shorty.WUI.List.dim =====
-      dim: function(show){
+      dim: function(list,show){
         if (Shorty.Debug) Shorty.Debug.log("dim list to "+(show?"true":"false"));
         var duration='slow';
         var dfd =new $.Deferred();
-        var list=$('#desktop #list').eq(0);
         var body=list.find('tbody');
         if (show)
         {
@@ -657,7 +658,7 @@ Shorty =
         $.when(
           Shorty.WUI.Sums.fill(),
           Shorty.WUI.List.empty(list),
-          Shorty.WUI.List.add(list,elements,false)
+          Shorty.WUI.List.add(list,elements,Shorty.WUI.List.append,false)
         ).pipe(
           // filter list
           Shorty.WUI.List.filter('target',list.find('thead tr#toolbar th#target #filter').val()),
@@ -1250,7 +1251,7 @@ Shorty =
           Shorty.WUI.Notification.hide(),
           // close and neutralize dialog
           Shorty.WUI.Dialog.hide(dialog),
-          Shorty.WUI.List.dim(false),
+          Shorty.WUI.List.dim($('#desktop #list').eq(0),false),
           Shorty.WUI.List.show()
         ).done(function(){
           var data={status:  status,
@@ -1274,11 +1275,11 @@ Shorty =
             Shorty.WUI.Dialog.reset(dialog)
           }).done(function(response){
             // add shorty to existing list
-            Shorty.WUI.List.add($('#desktop #list').eq(0),[response.data],true);
-            Shorty.WUI.List.dim(true)
+            Shorty.WUI.List.add($('#desktop #list').eq(0),[response.data],Shorty.WUI.List.append,true);
+            Shorty.WUI.List.dim($('#desktop #list').eq(0),true)
             dfd.resolve(response);
           }).fail(function(response){
-            Shorty.WUI.List.dim(true)
+            Shorty.WUI.List.dim($('#desktop #list').eq(0),true)
             dfd.reject(response);
           })
         })
@@ -1299,7 +1300,7 @@ Shorty =
           Shorty.WUI.Notification.hide(),
           // close and neutralize dialog
           Shorty.WUI.Dialog.hide(dialog),
-          Shorty.WUI.List.dim(false),
+          Shorty.WUI.List.dim($('#desktop #list').eq(0),false),
           Shorty.WUI.List.show()
         ).done(function(){
           var data={id: id,
@@ -1322,7 +1323,7 @@ Shorty =
             Shorty.WUI.Dialog.reset(dialog);
             // modify existing entry in list
             Shorty.WUI.List.modify([response.data],true);
-            Shorty.WUI.List.dim(true)
+            Shorty.WUI.List.dim($('#desktop #list').eq(0),true)
             dfd.resolve(response);
           }).fail(function(response){
             dfd.reject(response);

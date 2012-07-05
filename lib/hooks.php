@@ -47,7 +47,7 @@ class OC_Shorty_Hooks
    */
   public static function deleteUser ( $parameters )
   {
-    OCP\Util::writeLog ( 'user post delete',sprintf("wiping all Shortys belonging to user '%s'",$parameters['uid']), OCP\Util::INFO );
+    OCP\Util::writeLog ( 'shorty',sprintf("Wiping all Shortys belonging to user '%s'",$parameters['uid']), OCP\Util::INFO );
     $result = TRUE;
     $param  = array ( ':user' => $parameters['uid'] );
     // wipe preferences
@@ -66,7 +66,7 @@ class OC_Shorty_Hooks
 
   public static function requestActions ( )
   {
-    OCP\Util::writeLog ( 'OR_Shorty', 'requesting actions to be offered for Shortys by other apps', OCP\Util::INFO );
+    OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', OCP\Util::DEBUG );
     $actions = array ( 'list'=>array(), 'shorty'=>array() );
     // we hand over a container by reference and expect any app registering into this hook to obey this structure:
     // ... for every action register a new element in the container
@@ -76,20 +76,20 @@ class OC_Shorty_Hooks
     // validate and evaluate what was returned in the $container
     if ( ! is_array($container))
     {
-      OCP\Util::writeLog ( 'OC_Shorty', 'invalid reply from some app that registered into the registerAction hook, FIX THAT APP !', OCP\Util::INFO );
+      OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerAction hook, FIX THAT APP !', OCP\Util::WARN );
       return array();
     } // if
     foreach ( $container as $action )
     {
       if (  ! is_array($action)
-         || ! array_key_exists('id',$action)     || ! is_string($action['id'])
-         || ! array_key_exists('name',$action)   || ! is_string($action['name'])
-         || ! array_key_exists('icon',$action)   || ! is_string($action['icon'])
-         || ( array_key_exists('call',$action)   && ! is_string($action['call']) )
-         || ( array_key_exists('title',$action)  && ! is_string($action['title']) )
-         || ( array_key_exists('alt',$action)    && ! is_string($action['alt']) ) )
+         || ! array_key_exists('id',   $action) || ! is_string($action['id'])
+         || ! array_key_exists('name', $action) || ! is_string($action['name'])
+         || ! array_key_exists('icon', $action) || ! is_string($action['icon'])
+         || ( array_key_exists('call', $action) && ! is_string($action['call'] ) )
+         || ( array_key_exists('title',$action) && ! is_string($action['title']) )
+         || ( array_key_exists('alt',  $action) && ! is_string($action['alt']  ) ) )
       {
-        OCP\Util::writeLog ( 'OC_ShortyTracking', 'invalid reply from an app that registered into the registerAction hook, FIX THAT APP !', OCP\Util::INFO );
+        OCP\Util::writeLog ( 'shorty', 'Invalid reply from an app that registered into the registerAction hook, FIX THAT APP !', OCP\Util::WARN );
         break;
       }
     } // foreach action
@@ -98,21 +98,24 @@ class OC_Shorty_Hooks
 
   public static function requestIncludes ( )
   {
-    OCP\Util::writeLog ( 'OC_Shorty', 'requesting includes registered by other apps', OCP\Util::INFO );
+    OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', OCP\Util::DEBUG );
     OC_Hook::emit ( 'OC_Shorty', 'registerIncludes', array() );
   } // function requestIncludes
 
-  public static function registerClick ( $shorty, $request )
+  public static function registerClick ( $shorty, $request, $result )
   {
+    OCP\Util::writeLog ( 'shorty', sprintf("Registering click to shorty '%s'",$shorty['id']), OCP\Util::DEBUG );
+    // add result to details describing this request (click), important for emitting the event further down
+    $request['result'] = $result;
     // save click in the database
     $param = array (
-      'id'   => $shorty['id'],
-      'time' => $request['time'],
+      'id'     => $shorty['id'],
+      'time'   => $request['time'],
     );
     $query = OCP\DB::prepare ( OC_Shorty_Query::URL_CLICK );
     $query->execute ( $param );
 
     // allow further processing IF hooks are registered
-    OC_Hook::emit( "OC_Shorty", "registerClick", array('shorty'=>$shorty,'click'=>$request) );
+    OC_Hook::emit( 'OC_Shorty', 'registerClick', array('shorty'=>$shorty,'request'=>$request) );
   } // function registerClick
 } // class OC_Shorty_Hooks

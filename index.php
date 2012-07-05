@@ -110,7 +110,7 @@ switch ($act)
   case 'acquire': // add url as new shorty
     // keep the url specified as referer, that is the one we want to store
     $_SESSION['shorty-referrer'] = $arg;
-    OCP\Util::writeLog( 'shorty', sprintf("Detected an incoming Shortlet request for url '%s...'",substr($arg,0,80)), OC_Log::INFO );
+    OCP\Util::writeLog( 'shorty', sprintf("Detected an incoming Shortlet request for url '%s...'",substr($arg,0,80)), OC_Log::DEBUG );
     header ( sprintf('Location: %s', OCP\Util::linkTo('shorty','index.php')) );
     exit();
   // =====
