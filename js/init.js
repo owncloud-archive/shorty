@@ -47,12 +47,12 @@ $(document).ready(function(){
          container.removeClass('collapsed').find('.shorty-collapsible-tail').slideDown('fast');
     else container.addClass('collapsed').find('.shorty-collapsible-tail').slideUp('fast');
   });
-  // button to open the tools header row in the list
-  $('#list #titlebar').bind('click',Shorty.WUI.List.Toolbar.toggle);
+  // button (row click) to open the toolbar row in the list
+  $('#desktop #list #titlebar').bind('click',function(){Shorty.WUI.List.Toolbar.toggle($('#desktop #list'));});
   // button to reload the list
-  $('#list #toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
+  $('#desktop #list #toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
   // sort buttons
-  $('#list #toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
+  $('#desktop #list #toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
   // add date picker options
   $.datepicker.setDefaults({
     dateFormat :'yy-mm-dd',

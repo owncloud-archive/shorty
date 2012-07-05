@@ -513,12 +513,12 @@ Shorty =
     List:
     {
       // ===== Shorty.WUI.List.add =====
-      add: function(list,hidden){
-        if (Shorty.Debug) Shorty.Debug.log("add entry to list holding "+list.length+" entries");
+      add: function(list,elements,hidden){
+        if (Shorty.Debug) Shorty.Debug.log("add entry to list holding "+elements.length+" entries");
         var dfd = new $.Deferred();
         // insert list elements (sets) one by one
         var row,set;
-        $.each(list,function(i,set){
+        $.each(elements,function(i,set){
           // clone dummy row from list header: dummy is the last row
           row = $('#desktop #list thead tr:last-child').eq(0).clone();
           // set row id to entry id
@@ -571,7 +571,7 @@ Shorty =
             row.find('td#'+aspect).empty().append(span);
           }) // each aspect
           // insert new row in table
-          $('#desktop #list tbody').prepend(row);
+          list.find('tbody').prepend(row);
         }) // each
         return dfd.promise();
       }, // Shorty.WUI.List.add
@@ -589,7 +589,7 @@ Shorty =
           $.when(
             Shorty.WUI.List.get()
           ).pipe(function(response){
-            Shorty.WUI.List.fill(response.data);
+            Shorty.WUI.List.fill($('#desktop #list').eq(0),response.data);
           }).done(function(){
             $.when(
               Shorty.WUI.List.show(),
@@ -609,7 +609,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("dim list to "+(show?"true":"false"));
         var duration='slow';
         var dfd =new $.Deferred();
-        var list=$('#desktop #list');
+        var list=$('#desktop #list').eq(0);
         var body=list.find('tbody');
         if (show)
         {
@@ -636,14 +636,14 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.dim
       // ===== Shorty.WUI.List.empty =====
-      empty: function(){
+      empty: function(list){
         if (Shorty.Debug) Shorty.Debug.log("empty list");
         var dfd = new $.Deferred();
         // move embedded dialogs back to their safe place in the controls
         $('.shorty-embedded').appendTo($('#controls #dialog-show'));
         // remove all rows, one by one
         $.when(
-          $('#desktop').find('#list tbody tr').each(function(){
+          list.find('tbody tr').each(function(){
             if(''!=$(this).attr('id'))
               $(this).remove();
           })
@@ -651,18 +651,18 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.empty
       // ===== Shorty.WUI.List.fill =====
-      fill: function(list){
+      fill: function(list,elements){
         if (Shorty.Debug) Shorty.Debug.log("fill list");
         var dfd = new $.Deferred();
         $.when(
           Shorty.WUI.Sums.fill(),
-          Shorty.WUI.List.empty(),
-          Shorty.WUI.List.add(list,false)
+          Shorty.WUI.List.empty(list),
+          Shorty.WUI.List.add(list,elements,false)
         ).pipe(
           // filter list
-          Shorty.WUI.List.filter('target',$('#list thead tr#toolbar th#target #filter').val()),
-          Shorty.WUI.List.filter('title', $('#list thead tr#toolbar th#title #filter').val()),
-          Shorty.WUI.List.filter('status',$('#list thead tr#toolbar th#status select :selected').val())
+          Shorty.WUI.List.filter('target',list.find('thead tr#toolbar th#target #filter').val()),
+          Shorty.WUI.List.filter('title', list.find('thead tr#toolbar th#title #filter').val()),
+          Shorty.WUI.List.filter('status',list.find('thead tr#toolbar th#status select :selected').val())
         ).pipe(
           // sort list
           $.when(
@@ -678,10 +678,10 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("filter list by column "+column);
         var dfd = new $.Deferred();
         $.when(
-          $('#list tbody tr').filter(function(){
+          $('#desktop #list tbody tr').filter(function(){
             return (-1==$(this).find('td#'+column+' span').text().toLowerCase().indexOf(pattern.toLowerCase()));
           }).addClass('shorty-filtered'),
-          $('#list tbody tr').not(function(){
+          $('#desktop #list tbody tr').not(function(){
             return (-1==$(this).find('td#'+column+' span').text().toLowerCase().indexOf(pattern.toLowerCase()));
           }).removeClass('shorty-filtered')
         ).done(dfd.resolve)
@@ -852,19 +852,20 @@ Shorty =
       Toolbar:
       {
         // ===== Shorty.WUI.List.Toolbar.toggle =====
-        toggle: function(duration){
+        toggle: function(list,duration){
           if (Shorty.Debug) Shorty.Debug.log("toggle list toolbar");
           duration = duration || 'slow';
-          var button=$('#list #tools');
-          var toolbar=$('#list #toolbar');
+          var button =list.find('#tools');
+          var toolbar=list.find('#toolbar');
           var dfd = new $.Deferred();
           if (!toolbar.find('div').is(':visible')){
-            // tool NOT visible: open toolbar
+            // toolbar NOT visible: open toolbar
             $.when(
+              // each <th>'s content MUST be encapsulate in a 'div', otherwise the animation does not work
               toolbar.find('div').slideDown(duration)
-              ).pipe(
-              button.attr('src',button.attr('data-minus'))
-            ).done(dfd.resolve)
+            ).pipe(function(){
+              button.attr('src',button.attr('data-shade'));
+            }).done(dfd.resolve)
           }else{ // toolbar IS visible
             // any filters active? prevent closing of toolbar !
             if (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
@@ -879,7 +880,7 @@ Shorty =
               $.when(
                 toolbar.find('div').slideUp(duration)
               ).pipe(
-                button.attr('src',button.attr('data-plus'))
+                button.attr('src',button.attr('data-unshade'))
               ).done(dfd.resolve)
             }
           }
@@ -1273,7 +1274,7 @@ Shorty =
             Shorty.WUI.Dialog.reset(dialog)
           }).done(function(response){
             // add shorty to existing list
-            Shorty.WUI.List.add([response.data],true);
+            Shorty.WUI.List.add($('#desktop #list').eq(0),[response.data],true);
             Shorty.WUI.List.dim(true)
             dfd.resolve(response);
           }).fail(function(response){
