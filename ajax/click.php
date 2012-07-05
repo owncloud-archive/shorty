@@ -73,6 +73,7 @@ try
     // now collect some info about the request
     $details['click'] = array (
       'address' => $_SERVER['REMOTE_ADDR'],
+      'host'    => $_SERVER['REMOTE_HOST'],
       'time'    => $details['shorty']['accessed'],
       'user'    => OCP\User::getUser(),
     );

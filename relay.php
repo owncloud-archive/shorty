@@ -87,6 +87,7 @@ try
     $result  = $query->execute($param)->FetchAll();
     $request = array (
       'address' => $_SERVER['REMOTE_ADDR'],
+      'host'    => isset($_SERVER['REMOTE_HOST'])?$_SERVER['REMOTE_HOST']:gethostbyaddr($_SERVER['REMOTE_ADDR']),
       'time'    => $_SERVER['REQUEST_TIME'],
       'user'    => OCP\User::getUser(),
     );
