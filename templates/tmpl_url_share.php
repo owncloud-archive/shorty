@@ -59,10 +59,10 @@
     <span id="shared"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('with ownCloud users')."."; ?></span>
     <span id="public"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('available for everyone')."."; ?></span>
     <div class="shorty-usages">
-      <fieldset class="shorty-collapsible">
+      <fieldset class="shorty-collapsible collapsed">
         <label for="source-text"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
         <span id="source-text">This is the shortened url registered at the backend. </span>
-        <div class="shorty-collapsible-tail">
+        <div class="shorty-collapsible-tail" style="display:none;">
           <a id="source" class="shorty-clickable" target="_blank"
             title="<?php echo OC_Shorty_L10n::t('Open source url'); ?>"
             href=""></a>
