@@ -24,6 +24,9 @@
 
 Changelog: 
 
+* Thu Jul 05 2012 Christian Reiner: version 0.2.7
+Enhandements of the share dialog to get a clearer appearance.
+Fixed removal of Shortys belonging to a user deleted inside ownCloud.
 * Thu Jun 28 2012 Christian Reiner: version 0.2.6
 Complet reimplementation of usage popups (optical and technical).
 Per default suppress ssl certificate validation in backend communication.

@@ -1382,7 +1382,7 @@ Shorty =
                                                     x:position.left+19,y:position.top-330} } });
             var qrcodeUrl=$('#jqibox fieldset #qrcode-url').val()+encodeURIComponent(entry.attr('data-source'));
             $('#jqibox fieldset #payload').val(qrcodeUrl);
-            $('#jqibox fieldset #payload').select().click(function(){this.select();});
+            $('#jqibox fieldset #payload').focus().select();
             // full url to the qrcode image
             $('#jqibox fieldset img').attr('src',qrcodeUrl);
             // download image when download button is clicked
@@ -1409,7 +1409,7 @@ Shorty =
                                                     x:position.left-157,y:position.top-237},
                                           submit:function(e,v,m,f){if(v) window.location=mailLink;else  $.prompt.close();} }});
             $('#jqibox fieldset #payload').val(mailBody);
-            $('#jqibox fieldset #payload').select().click(function(){this.select();});
+            $('#jqibox fieldset #payload').focus().select();
             break;
           case 'usage-sms':
             // since most client systems won't understand the sms:// protocol this action is often disabled
@@ -1425,7 +1425,7 @@ Shorty =
                                                     x:position.left-153,y:position.top-297},
                                           submit:function(e,v,m,f){if(v) window.location='sms:';else  $.prompt.close();} }});
             $('#jqibox fieldset #payload').val(smsBody);
-            $('#jqibox fieldset #payload').select().click(function(){this.select();});
+            $('#jqibox fieldset #payload').focus().select();
             break;
           case 'usage-clipboard':
             // take layout from hidden dialog template
@@ -1437,7 +1437,7 @@ Shorty =
                                           position:{container:'#dialog-share',width:'auto',arrow:'br',
                                                     x:position.left-245,y:position.top-134} } });
             $('#jqibox fieldset #payload').val(clipboardBody);
-            $('#jqibox fieldset #payload').select().click(function(){this.select();});
+            $('#jqibox fieldset #payload').focus().select();
             break;
           default:
             if (Shorty.Debug) Shorty.Debug.log("usage action '"+action+"' is disabled, refusing to comply");
