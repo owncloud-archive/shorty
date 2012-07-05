@@ -409,7 +409,7 @@
 /* dialogs related to elements ('embedded in the content') */
 .shorty-embedded {
   left: 5em;
-  width: 36em;
+  width: 38em;
   margin: -1px 4em 0;
   padding: 0.5em;
   background: none repeat scroll 0 0 #EEEEEE;
@@ -422,7 +422,7 @@
 .shorty-embedded a#relay,
 .shorty-embedded a#target {
   display: inline-block;
-  width: 34.4em;
+  width: 36.4em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
