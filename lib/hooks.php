@@ -80,15 +80,14 @@ class OC_ShortyTracking_Hooks
    */
   public static function registerClick ( $parameters )
   {
-    OCP\Util::writeLog ( 'shorty-tracking', sprintf("Recording single click to Shorty %s: %s",
-                                                     $parameters['shorty']['id'],
-                                                     $parameters['shorty']['title']), OCP\Util::DEBUG );
+    OCP\Util::writeLog ( 'shorty-tracking', sprintf("Recording single click to Shorty '%s'",
+                                                     $parameters['shorty']['id']), OCP\Util::DEBUG );
     $param  = array (
-      'id'        => $parameters['shorty']['id'],
-      'time'      => $parameters['request']['time'],
-      'address'   => $parameters['request']['address'],
-      'user'      => $parameters['request']['user'],
-      'result'    => $parameters['request']['result'],
+      ':id'        => $parameters['shorty']['id'],
+      ':time'      => $parameters['request']['time'],
+      ':address'   => $parameters['request']['address'],
+      ':user'      => $parameters['request']['user'],
+      ':result'    => $parameters['request']['result'],
     );
     $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_RECORD );
     $query->execute ( $param );
