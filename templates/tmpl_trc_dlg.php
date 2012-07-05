@@ -59,7 +59,7 @@
           </th>
           <th id="time"   ><span><?php echo OC_Shorty_L10n::t('Time')   ?></span></th>
           <th id="address"><span><?php echo OC_Shorty_L10n::t('Address')?></span></th>
-          <th id="domain" ><span><?php echo OC_Shorty_L10n::t('Domain') ?></span></th>
+          <th id="host"   ><span><?php echo OC_Shorty_L10n::t('Host')   ?></span></th>
           <th id="user"   ><span><?php echo OC_Shorty_L10n::t('User')   ?></span></th>
           <th id="result" ><span><?php echo OC_Shorty_L10n::t('result') ?></span></th>
         </tr>
@@ -80,7 +80,7 @@
               <input id='filter' type="text" value="">
             </div>
           </th>
-          <th id="domain">
+          <th id="host">
             <div style="display:none;">
               <input id='filter' type="text" value="">
             </div>
@@ -108,7 +108,7 @@
           <td id="status"></td>
           <td id="time"></td>
           <td id="address"></td>
-          <td id="domain"></td>
+          <td id="host"></td>
           <td id="user"></td>
           <td id="result"></td>
         </tr>

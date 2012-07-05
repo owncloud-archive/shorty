@@ -60,9 +60,9 @@
         <default></default>
       </field>
       <field>
-        <name>domain</name>
+        <name>host</name>
         <type>text</type>
-        <length>23</length>
+        <length>80</length>
         <notnull>true</notnull>
         <default></default>
       </field>
@@ -83,7 +83,7 @@
 
       <index>
         <name>index_shorty</name>
-        <unique>true</unique>
+        <unique>false</unique>
         <field>
           <name>shorty</name>
           <sorting>descending</sorting>
@@ -91,7 +91,7 @@
       </index>
       <index>
         <name>index_time</name>
-        <unique>true</unique>
+        <unique>false</unique>
         <field>
           <name>time</name>
           <sorting>descending</sorting>
@@ -106,10 +106,10 @@
         </field>
       </index>
       <index>
-        <name>index_domain</name>
+        <name>index_host</name>
         <unique>false</unique>
         <field>
-          <name>domain</name>
+          <name>host</name>
           <sorting>descending</sorting>
         </field>
       </index>

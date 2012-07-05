@@ -40,7 +40,7 @@ Shorty.Tracking=
   append: function(row,set,hidden){
 
     // handle all aspects, one by one
-    $.each(['status','time','address','domain','requester','result'],
+    $.each(['status','time','address','host','requester','result'],
            function(j,aspect){
       if (hidden)
         row.addClass('shorty-fresh'); // might lead to a pulsate effect later
