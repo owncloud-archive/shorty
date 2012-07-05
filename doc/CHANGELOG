@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* Wed Jul 04 2012 Christian Reiner: version 0.2.7
+Enhandements of the share dialog to get a clearer appearance.
 * Thu Jun 28 2012 Christian Reiner: version 0.2.6
 Complet reimplementation of usage popups (optical and technical).
 Per default suppress ssl certificate validation in backend communication.
