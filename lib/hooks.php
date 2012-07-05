@@ -55,7 +55,7 @@ class OC_ShortyTracking_Hooks
    */
   public static function deleteShortyClicks ( $parameters )
   {
-    OCP\Util::writeLog ( 'OC_ShortyTracking', 'wiping all clicks without corresponding Shorty', OCP\Util::INFO );
+    OCP\Util::writeLog ( 'shorty-tracking', 'Wiping all clicks without corresponding Shorty', OCP\Util::INFO );
     $result = TRUE;
     // wipe shorty clicks
     $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_WIPE );
@@ -73,22 +73,22 @@ class OC_ShortyTracking_Hooks
    * This routine accepts an associative array of attributes that describe a
    * request click to a single shorty. The speicificartion of those details
    * MUST follow a strict syntactical layout that describes as this:
-   * two element must be present, called 'shorty' and 'click', both are again
+   * two parameters must be present, called 'shorty' and 'request', both are again
    * associative arrays holding these string memebers:
    * shorty: id, ...
-   * click: time, address, requester, result, ...
+   * request: time, address, requester, result, ...
    */
   public static function registerClick ( $parameters )
   {
-    OCP\Util::writeLog ( 'OC_ShortyTracking', sprintf("recording single click to Shorty %s: %s",
-                                                      $parameters['shorty']['id'],
-                                                      $parameters['shorty']['title']), OCP\Util::INFO );
+    OCP\Util::writeLog ( 'shorty-tracking', sprintf("Recording single click to Shorty %s: %s",
+                                                     $parameters['shorty']['id'],
+                                                     $parameters['shorty']['title']), OCP\Util::DEBUG );
     $param  = array (
       'id'        => $parameters['shorty']['id'],
-      'time'      => $parameters['click']['time'],
-      'address'   => $parameters['click']['address'],
-      'requester' => $parameters['click']['requester'],
-      'result'    => $parameters['click']['result'],
+      'time'      => $parameters['request']['time'],
+      'address'   => $parameters['request']['address'],
+      'user'      => $parameters['request']['user'],
+      'result'    => $parameters['request']['result'],
     );
     $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_RECORD );
     $query->execute ( $param );
@@ -102,7 +102,7 @@ class OC_ShortyTracking_Hooks
    */
   public static function registerIncludes ( $parameters )
   {
-    OCP\Util::writeLog ( 'OC_ShortyTracking', 'registering additional include files', OCP\Util::INFO );
+    OCP\Util::writeLog ( 'shorty-tracking', 'Registering additional include files', OCP\Util::DEBUG );
 //    OCP\Util::addStyle  ( 'shorty-tracking', 'tracking' );
     OCP\Util::addScript ( 'shorty-tracking', 'tracking' );
     return TRUE;
@@ -115,7 +115,7 @@ class OC_ShortyTracking_Hooks
    */
   public static function registerActions ( $parameters )
   {
-    OCP\Util::writeLog ( 'OC_ShortyTracking', 'registering additional Shorty actions', OCP\Util::INFO );
+    OCP\Util::writeLog ( 'shorty-tracking', 'Registering additional Shorty actions', OCP\Util::DEBUG );
     if ( ! is_array($parameters) )
     {
       return FALSE;

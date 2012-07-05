@@ -35,7 +35,7 @@ class OC_Migration_Provider_ShortyTracking extends OC_Migration_Provider
 
   function export ( )
   {
-    OCP\Util::writeLog ( 'migration','starting export for Shorty Tracking', OCP\Util::INFO );
+    OCP\Util::writeLog ( 'shorty-tracking','Starting data migration export for Shorty Tracking', OCP\Util::INFO );
     $options = array(
       'table'=>'shorty_tracking',
       'matchcol'=>'user',
@@ -53,6 +53,7 @@ class OC_Migration_Provider_ShortyTracking extends OC_Migration_Provider
 
   function import ( )
   {
+    OCP\Util::writeLog ( 'shorty-tracking','Starting data migration import for Shorty Tracking', OCP\Util::INFO );
     switch( $this->appinfo->version )
     {
       default:

@@ -36,23 +36,65 @@ $(document).ready(function(){
 
 Shorty.Tracking=
 {
-  // Shorty.Tracking.control
+  // ===== Shorty.WUI.List.append =====
+  append: function(row,set,hidden){
+
+    // handle all aspects, one by one
+    $.each(['status','time','address','domain','requester','result'],
+           function(j,aspect){
+      if (hidden)
+        row.addClass('shorty-fresh'); // might lead to a pulsate effect later
+      // we wrap the cells content into a span tag
+      var span=$('<span>');
+      // enhance row with real set values
+      if ('undefined'==set[aspect])
+           row.attr('data-'+this,'');
+      else row.attr('data-'+this,set[aspect]);
+      // fill data into corresponsing column
+      var title, content, classes=[];
+      switch(aspect){
+        case 'status':
+          var icon;
+          switch (set['result']){
+            case 'blocked': icon='bad';
+            case 'denied':  icon='neutral';
+            case 'granted': icon='good';
+            default:        icon='blank';
+          } // switch
+          span.html('<img class="shorty-icon" width="16" src="'+OC.filePath('shorty','img/status',icon+'.png')+'">');
+          break;
+        case 'time':
+          if (null==set[aspect])
+               span.text('-?-');
+          else span.text(set[aspect]);
+          break;
+        default:
+          span.text(set[aspect]);
+          span.addClass('ellipsis');
+      } // switch
+      row.find('td#'+aspect).empty().append(span);
+    }) // each aspect
+  }, // Shorty.WUI.List.append
+  // ===== Shorty.Tracking.control =====
   control:function(entry){
     if (Shorty.Debug) Shorty.Debug.log("tracking list controller");
     var dfd=new $.Deferred();
     var dialog=$('#controls #shorty-tracking-list-dialog');
     $.when(
     ).done(function(){
+      Shorty.WUI.List.empty(dialog)
       Shorty.WUI.Dialog.show(dialog)
       dfd.resolve();
     }).fail(function(){
       dfd.reject();
     })
+    // load first content into the list
+    Shorty.Tracking.list(entry.attr('id'));
     return dfd.promise();
   }, // Shorty.Tracking.control
-  // Shorty.Tracking.dialog
+  // ===== Shorty.Tracking.dialog =====
   dialog:{},
-  // Shorty.Tracking.init
+  // ===== Shorty.Tracking.init =====
   init:function(){
     if (Shorty.Debug) Shorty.Debug.log("initializing tracking list");
     var dfd=new $.Deferred();
@@ -88,14 +130,15 @@ Shorty.Tracking=
     } // else
     return dfd.promise();
   },
-  // Shorty.Tracking.list
-  list:function(id,offset){
+  // ===== Shorty.Tracking.list =====
+  list:function(shorty,offset){
     if (Shorty.Debug) Shorty.Debug.log("loading clicks into tracking list");
+    // no offset specified ? then start at the beginning
+    offset = offset || 0;
     var dfd=new $.Deferred();
     // retrieve list template
-    var data={
-      id:    id,
-      offset:offset};
+//     var data={shorty:shorty,offset:offset};
+    var data={shorty:shorty}
     $.ajax({
       type:     'GET',
       url:      OC.filePath('shorty-tracking','ajax','list.php'),
@@ -106,18 +149,14 @@ Shorty.Tracking=
       function(response){return Shorty.Ajax.eval(response)},
       function(response){return Shorty.Ajax.fail(response)}
     ).done(function(response){
-      $(list).dialog();
-
-    // wipe entries in dialog
-            Shorty.WUI.Dialog.reset(dialog)
-          }).done(function(response){
-            // add shorty to existing list
-            Shorty.WUI.List.add([response.data],true);
-            Shorty.WUI.List.dim(true)
-            dfd.resolve(response);
-          }).fail(function(response){
-            Shorty.WUI.List.dim(true)
-            dfd.reject(response);
-          })
+      // add shorty to existing list
+      var list=Shorty.Tracking.dialog.find('#list').eq(0);
+      Shorty.WUI.List.dim(list,false)
+      Shorty.WUI.List.add(list,[response.data],Shorty.Tracking.append,true);
+      Shorty.WUI.List.dim(list,true)
+      dfd.resolve(response);
+    }).fail(function(response){
+      dfd.reject(response);
+    })
   }, // Shorty.Tracking.list
 } // Shorty.Tracking

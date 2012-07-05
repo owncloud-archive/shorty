@@ -41,7 +41,7 @@
     <name>*dbprefix*shorty_tracking</name>
     <declaration>
       <field>
-        <name>id</name>
+        <name>shorty</name>
         <type>text</type>
         <length>12</length>
         <notnull>true</notnull>
@@ -85,7 +85,7 @@
         <name>index_shorty</name>
         <unique>true</unique>
         <field>
-          <name>id</name>
+          <name>shorty</name>
           <sorting>descending</sorting>
         </field>
       </index>
