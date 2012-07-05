@@ -59,7 +59,7 @@ Shorty.Tracking=
     // does the dialog holding the list exist already ?
     if (!$.isEmptyObject(Shorty.Tracking.dialog)){
       // remove all (real) entries so that the table can be filled again
-      $('#shorty-tracking-list-dialog #shorty-tracking-list-table tr:not(#)').remove();
+      $('#shorty-tracking-list-dialog #list tr:not(#)').remove();
       dfd.resolve();
     }else{
       // load dialog layout via ajax and create a freshly populated dialog
@@ -78,6 +78,9 @@ Shorty.Tracking=
         Shorty.Tracking.dialog=$('#controls #shorty-tracking-list-dialog');
         // bind actions to basic buttons
         Shorty.Tracking.dialog.find('#close').bind('click',function(){Shorty.WUI.Dialog.hide(Shorty.Tracking.dialog);});
+        Shorty.Tracking.dialog.find('#list #titlebar').bind('click',function(){Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.dialog.find('#list'));});
+//         Shorty.Tracking.dialog.find('#list #toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
+//         Shorty.Tracking.dialog.find('#list #toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
         dfd.resolve(response);
       }).fail(function(response){
         dfd.reject(response);
