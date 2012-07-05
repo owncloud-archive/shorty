@@ -51,7 +51,7 @@
       <thead>
         <tr id="titlebar">
           <th id="state"  >
-            <span><img id="shorty-tracking-list-tools" alt="toolbar" title="<?php echo $l->t('Toggle toolbar');?>"
+            <span><img id="tools" alt="toolbar" title="<?php echo $l->t('Toggle toolbar');?>"
                       src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
                       data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
                       data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">

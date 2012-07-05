@@ -29,3 +29,17 @@
  * @author Christian Reiner
  */
 
+#shorty-tracking-list-dialog #list thead th#time,
+#shorty-tracking-list-dialog #list tbody td#time,
+#shorty-tracking-list-dialog #list thead th#address,
+#shorty-tracking-list-dialog #list tbody td#address,
+#shorty-tracking-list-dialog #list thead th#user,
+#shorty-tracking-list-dialog #list tbody td#user,
+#shorty-tracking-list-dialog #list thead th#result,
+#shorty-tracking-list-dialog #list tbody td#result {
+  width:6em;
+}
+#shorty-tracking-list-dialog #list thead th#host,
+#shorty-tracking-list-dialog #list tbody td#host {
+  width:8em;
+}
