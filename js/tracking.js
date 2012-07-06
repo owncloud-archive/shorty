@@ -66,18 +66,29 @@ $(document).ready(function(){
 
 /**
  * @brief Method collection private to this plugin
+ * @author Christian Reiner
  */
 Shorty.Tracking=
 {
-  // ===== Shorty.Tracking.dialog =====
+  /**
+   * @brief Persistent jQuery object holding the dialog implemented by this plugin
+   * @author Christian Reiner
+   */
   dialog:{},
-  // ===== Shorty.Tracking.id =====
+  /**
+   * @brief Persistent alphanumerical id referencing the Shorty this plugin currently deals with
+   * @author Christian Reiner
+   */
   id:{},
-  // ===== Shorty.Tracking.list =====
+  /**
+   * @brief Persistent jQuery object describing the list contained in this plugins dialog
+   * @author Christian Reiner
+   */
   list:{},
   /**
    * @brief Builds the content of the list of tracked clicks
    * @return deferred.promise
+   * @author Christian Reiner
    */
   build: function(){
     if (Shorty.Debug) Shorty.Debug.log("building tracking list");
@@ -110,6 +121,7 @@ Shorty.Tracking=
    * @param entry jQuery object holding the clicked entry, in this case a row in the list of Shortys
    * @return deferred.promise
    * @description This is the method specified as control in slot "registerActions"
+   * @author Christian Reiner
    */
   control:function(entry){
     if (Shorty.Debug) Shorty.Debug.log("tracking list controller");
@@ -140,6 +152,7 @@ Shorty.Tracking=
    * @param shorty string Id of the Shorty the click list is requested for
    * @param offset Numeric id of the last click that is already present in the list (ids being in chronological order!)
    * @return deferred.promise
+   * @author Christian Reiner
    */
   get:function(shorty,offset){
     if (Shorty.Debug) Shorty.Debug.log("loading clicks into tracking list");
@@ -169,6 +182,7 @@ Shorty.Tracking=
    * @brief Initializes the dialog this aplugin adds to the Shorty app
    * @description The html content of the dialog is fetched via ajax
    * @return deferred.promise
+   * @author Christian Reiner
    */
   init:function(){
     if (Shorty.Debug) Shorty.Debug.log("initializing tracking list");
@@ -209,6 +223,7 @@ Shorty.Tracking=
  * @param set object This is the set of attributes describing a single registered click
  * @param hidden bool Indicats if new entries in lists should be held back for later highlighting (flashing) optically or not
  * @description This replacement uses the plugin specific column names
+ * @author Christian Reiner
  */
 Shorty.WUI.List.append_tracking=function(row,set,hidden){
   // set row id to entry id
@@ -256,6 +271,7 @@ Shorty.WUI.List.append_tracking=function(row,set,hidden){
  * @return bool Indicates if an existing filter prevents the closing or not
  * @description Used as a replacement for the default used in Shorty.WUI.List.Toolbar.toggle()
  * This version is private to this plugin and uses the filter names specific to the list of tracked clicks
+ * @author Christian Reiner
  */
 Shorty.WUI.List.Toolbar.checkFilter_tracking=function(toolbar){
   return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').length)
