@@ -44,11 +44,17 @@
         <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
             src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
       </a>
-      <?php echo $l->t("List of tracked clicks"); ?>
+      <span id="slogan"><?php echo $l->t("List of tracked clicks");?></span>
     </legend>
     <table id="list">
       <!-- table header -->
       <thead>
+        <!-- linguistic reference to the shorty -->
+        <tr id="referencebar">
+          <th> </th>
+          <th><span id="clicks" class="shorty-tracking-reference" data-slogan="<?php echo $l->t("Clicks");?>"></span></th>
+          <th colspan="4"><span id="title" class="ellipsis shorty-tracking-reference" data-slogan="<?php echo $l->t("Title");?>"></span></th>
+        </tr>
         <tr id="titlebar">
           <th id="state"  >
             <span><img id="tools" alt="toolbar" title="<?php echo $l->t('Toggle toolbar');?>"
@@ -95,8 +101,8 @@
             <div style="display:none;">
               <span id="horst" class="shorty-select">
                 <select id='filter' value="" data-placeholder=" ">
-                  <?php foreach($_['shorty-result'] as $result=>$label)
-                    echo sprintf("<option value=\"%s\">%s</option>\n",($status?$label:''),$label);
+                  <?php foreach($_['shorty-result'] as $option=>$label)
+                    echo sprintf("<option value=\"%s\">%s</option>\n",($option?$label:''),$label);
                   ?>
                 </select>
               </span>

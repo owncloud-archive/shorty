@@ -30,69 +30,64 @@
  */
 
 $(document).ready(function(){
-  // load layout of dialog to show the list of tracked clicks
-  Shorty.Tracking.init();
+  var dfd = new $.Deferred();
+  $.when(
+    // load layout of dialog to show the list of tracked clicks
+    Shorty.Tracking.init()
+  ).pipe(function(){
+  // bind actions to basic buttons
+  Shorty.Tracking.dialog.find('#close').bind('click',function(){
+    Shorty.WUI.Dialog.hide(Shorty.Tracking.dialog);
+  });
+  Shorty.Tracking.dialog.find('#list #titlebar').bind('click',function(){
+    Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.list,Shorty.WUI.List.Toolbar.checkFilter_tracking);
+  });
+  Shorty.Tracking.dialog.find('#list #toolbar').find('#reload').bind('click',Shorty.Tracking.build);
+    // title & target filter reaction
+    Shorty.Tracking.list.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter').bind('keyup',function(){
+      Shorty.WUI.List.filter(
+        Shorty.Tracking.list,
+        $($(this).context.parentElement.parentElement).attr('id'),
+        $(this).val()
+      );
+    });
+    // status filter reaction
+    Shorty.Tracking.list.find('thead tr#toolbar th#result select').change(function(){
+      Shorty.WUI.List.filter(
+        Shorty.Tracking.list,
+        $(this).parents('th').attr('id'),
+        $(this).find(':selected').val()
+      );
+    });
+  }).done(dfd.resolve).fail(dfd.reject);
+  return dfd.promise();
 }); // document.ready
 
 Shorty.Tracking=
 {
-  // ===== Shorty.Tracking.append =====
-  append: function(row,set,hidden){
-    // set row id to entry id
-    row.attr('id',set.id);
-    // handle all aspects, one by one
-    $.each(['status','time','address','host','user','result'],
-           function(j,aspect){
-      if (hidden)
-        row.addClass('shorty-fresh'); // might lead to a pulsate effect later
-      // we wrap the cells content into a span tag
-      var span=$('<span>');
-      // enhance row with real set values
-      if ('undefined'==set[aspect])
-           row.attr('data-'+this,'');
-      else row.attr('data-'+this,set[aspect]);
-      // fill data into corresponsing column
-      var title, content, classes=[];
-      switch(aspect){
-        case 'status':
-          var icon;
-          switch (set['result']){
-            case 'blocked': icon='bad';
-            case 'denied':  icon='neutral';
-            case 'granted': icon='good';
-            default:        icon='blank';
-          } // switch
-          span.html('<img class="shorty-icon" width="16" src="'+OC.filePath('shorty','img/status',icon+'.png')+'">');
-          break;
-        case 'time':
-          if (null==set[aspect])
-               span.text('-?-');
-          else span.text(set[aspect]);
-          break;
-        default:
-          span.text(set[aspect]);
-          span.addClass('ellipsis');
-      } // switch
-      row.find('td#'+aspect).empty().append(span);
-    }) // each aspect
-  }, // Shorty.Tracking.append
+  // ===== Shorty.Tracking.dialog =====
+  dialog:{},
+  // ===== Shorty.Tracking.id =====
+  id:{},
+  // ===== Shorty.Tracking.list =====
+  list:{},
   // ===== Shorty.Tracking.build =====
   build: function(){
     if (Shorty.Debug) Shorty.Debug.log("building tracking list");
     var dfd = new $.Deferred();
     // prepare loading
     $.when(
-      Shorty.WUI.List.dim(Shorty.Tracking.list(),false)
+      Shorty.WUI.List.dim(Shorty.Tracking.list,false)
     ).done(function(){
       // retrieve new entries
-      Shorty.WUI.List.empty(Shorty.Tracking.list());
+      Shorty.WUI.List.empty(Shorty.Tracking.list);
       $.when(
         Shorty.Tracking.get(Shorty.Tracking.id)
       ).done(function(response){
         $.when(
-          Shorty.WUI.List.add(Shorty.Tracking.list(),response.data,Shorty.Tracking.append,false)
+          Shorty.WUI.List.add(Shorty.Tracking.list,response.data,false,Shorty.WUI.List.append_tracking)
         ).done(function(){
-          Shorty.WUI.List.dim(Shorty.Tracking.list(),true);
+          Shorty.WUI.List.dim(Shorty.Tracking.list,true);
           dfd.resolve();
         }).fail(function(){
           dfd.reject();
@@ -107,8 +102,15 @@ Shorty.Tracking=
   control:function(entry){
     if (Shorty.Debug) Shorty.Debug.log("tracking list controller");
     var dfd=new $.Deferred();
-    var dialog=$('#controls #shorty-tracking-list-dialog');
+    var dialog=Shorty.Tracking.dialog;
+    // this is the shortys id
     Shorty.Tracking.id=entry.attr('id');
+    // update lists reference bar content to improve intuitivity
+    var title=Shorty.Tracking.dialog.find('#list thead tr#referencebar #title');
+    title.html(title.attr('data-slogan')+': '+entry.attr('data-title'));
+    var clicks=Shorty.Tracking.dialog.find('#list thead tr#referencebar #clicks');
+    clicks.html(clicks.attr('data-slogan')+': '+entry.attr('data-clicks'));
+    // prepare to (re-)fill the list
     $.when(
       Shorty.WUI.List.empty(dialog)
     ).done(function(){
@@ -121,8 +123,6 @@ Shorty.Tracking=
     Shorty.Tracking.build(Shorty.Tracking.id);
     return dfd.promise();
   }, // Shorty.Tracking.control
-  // ===== Shorty.Tracking.dialog =====
-  dialog:{},
   // ===== Shorty.Tracking.get =====
   get:function(shorty,offset){
     if (Shorty.Debug) Shorty.Debug.log("loading clicks into tracking list");
@@ -148,8 +148,6 @@ Shorty.Tracking=
     })
     return dfd.promise();
   }, // Shorty.Tracking.get
-  // ===== Shorty.Tracking.id =====
-  id:{},
   // ===== Shorty.Tracking.init =====
   init:function(){
     if (Shorty.Debug) Shorty.Debug.log("initializing tracking list");
@@ -174,20 +172,61 @@ Shorty.Tracking=
         $('#controls').append(response.layout);
         // keep that new dialog for alter usage and control
         Shorty.Tracking.dialog=$('#controls #shorty-tracking-list-dialog');
-        // bind actions to basic buttons
-        Shorty.Tracking.dialog.find('#close').bind('click',function(){Shorty.WUI.Dialog.hide(Shorty.Tracking.dialog);});
-        Shorty.Tracking.dialog.find('#list #titlebar').bind('click',function(){Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.list());});
-        Shorty.Tracking.dialog.find('#list #toolbar').find('#reload').bind('click',Shorty.Tracking.build);
-//         Shorty.Tracking.dialog.find('#list #toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
+        Shorty.Tracking.list  =Shorty.Tracking.dialog.find('#list').eq(0);
         dfd.resolve(response);
       }).fail(function(response){
         dfd.reject(response);
       })
     } // else
     return dfd.promise();
-  },
-  // ===== Shorty.Tracking.list =====
-  list:function(){
-    return Shorty.Tracking.dialog.find('#list').eq(0);
-  } // Shorty.Tracking.list
+  }
 } // Shorty.Tracking
+
+// ===== Shorty.WUI.List.append_tracking =====
+Shorty.WUI.List.append_tracking=function(row,set,hidden){
+  // set row id to entry id
+  row.attr('id',set.id);
+  // handle all aspects, one by one
+  $.each(['status','time','address','host','user','result'],
+         function(j,aspect){
+    if (hidden)
+      row.addClass('shorty-fresh'); // might lead to a pulsate effect later
+    // we wrap the cells content into a span tag
+    var span=$('<span>');
+    // enhance row with real set values
+    if ('undefined'==set[aspect])
+         row.attr('data-'+this,'');
+    else row.attr('data-'+this,set[aspect]);
+    // fill data into corresponsing column
+    var title, content, classes=[];
+    switch(aspect){
+      case 'status':
+        var icon;
+        switch (set['result']){
+          case 'blocked': icon='bad';
+          case 'denied':  icon='neutral';
+          case 'granted': icon='good';
+          default:        icon='blank';
+        } // switch
+        span.html('<img class="shorty-icon" width="16" src="'+OC.filePath('shorty','img/status',icon+'.png')+'">');
+        break;
+      case 'time':
+        if (null==set[aspect])
+             span.text('-?-');
+        else span.text(set[aspect]);
+        break;
+      default:
+        span.text(set[aspect]);
+        span.addClass('ellipsis');
+    } // switch
+    row.find('td#'+aspect).empty().append(span);
+  }) // each aspect
+}, // Shorty.WUI.List.append_tracking
+
+// ===== Shorty.WUI.List.Toolbar.checkFilter_tracking =====
+Shorty.WUI.List.Toolbar.checkFilter_tracking=function(toolbar){
+  return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').length)
+             &&(toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').effect('pulsate')) )
+          ||(  (toolbar.find('th#result select :selected').val())
+             &&(toolbar.find('#result').effect('pulsate')) ) );
+} // Shorty.WUI.List.Toolbar.checkFilter_tracking
