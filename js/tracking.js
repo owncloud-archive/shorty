@@ -203,9 +203,9 @@ Shorty.WUI.List.append_tracking=function(row,set,hidden){
       case 'status':
         var icon;
         switch (set['result']){
-          case 'blocked': icon='bad';
-          case 'denied':  icon='neutral';
-          case 'granted': icon='good';
+          case 'blocked': icon='bad';     break;
+          case 'denied':  icon='neutral'; break;
+          case 'granted': icon='good';    break;
           default:        icon='blank';
         } // switch
         span.html('<img class="shorty-icon" width="16" src="'+OC.filePath('shorty','img/status',icon+'.png')+'">');
