@@ -38,6 +38,8 @@ Shorty.Tracking=
 {
   // ===== Shorty.Tracking.append =====
   append: function(row,set,hidden){
+    // set row id to entry id
+    row.attr('id',set.id);
     // handle all aspects, one by one
     $.each(['status','time','address','host','user','result'],
            function(j,aspect){
