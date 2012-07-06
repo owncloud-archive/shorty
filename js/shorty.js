@@ -513,7 +513,8 @@ Shorty =
     List:
     {
       // ===== Shorty.WUI.List.add =====
-      add: function(list,elements,callback,hidden){
+      add: function(list,elements,hidden,callback){
+        callback=callback||Shorty.WUI.List.Append;
         if (Shorty.Debug) Shorty.Debug.log("add entry to list holding "+elements.length+" entries");
         var dfd = new $.Deferred();
         // insert list elements (sets) one by one
@@ -525,11 +526,12 @@ Shorty =
           callback(row,set);
           // insert new row in table
           list.find('tbody').prepend(row);
+          dfd.resolve();
         }) // each
         return dfd.promise();
       }, // Shorty.WUI.List.add
-      // ===== Shorty.WUI.List.append =====
-      append: function(row,set,hidden){
+      // ===== Shorty.WUI.List.Append =====
+      Append: function(row,set,hidden){
         // set row id to entry id
         row.attr('id',set.id);
         $.each(['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
@@ -577,7 +579,7 @@ Shorty =
           } // switch
           row.find('td#'+aspect).empty().append(span);
         }) // each aspect
-      }, // Shorty.WUI.List.append
+      }, // Shorty.WUI.List.Append
       // ===== Shorty.WUI.List.build =====
       build: function(){
         if (Shorty.Debug) Shorty.Debug.log("build list");
@@ -645,8 +647,7 @@ Shorty =
         // remove all rows, one by one
         $.when(
           list.find('tbody tr').each(function(){
-            if(''!=$(this).attr('id'))
-              $(this).remove();
+            $(this).remove();
           })
         ).done(dfd.resolve)
         return dfd.promise();
@@ -658,12 +659,12 @@ Shorty =
         $.when(
           Shorty.WUI.Sums.fill(),
           Shorty.WUI.List.empty(list),
-          Shorty.WUI.List.add(list,elements,Shorty.WUI.List.append,false)
+          Shorty.WUI.List.add(list,elements,false)
         ).pipe(
           // filter list
-          Shorty.WUI.List.filter('target',list.find('thead tr#toolbar th#target #filter').val()),
-          Shorty.WUI.List.filter('title', list.find('thead tr#toolbar th#title #filter').val()),
-          Shorty.WUI.List.filter('status',list.find('thead tr#toolbar th#status select :selected').val())
+          Shorty.WUI.List.filter(list,'target',list.find('thead tr#toolbar th#target #filter').val()),
+          Shorty.WUI.List.filter(list,'title', list.find('thead tr#toolbar th#title #filter').val()),
+          Shorty.WUI.List.filter(list,'status',list.find('thead tr#toolbar th#status select :selected').val())
         ).pipe(
           // sort list
           $.when(
@@ -675,14 +676,14 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.fill
       // ===== Shorty.WUI.List.filter =====
-      filter: function(column,pattern){
-        if (Shorty.Debug) Shorty.Debug.log("filter list by column "+column);
+      filter: function(list,column,pattern){
+        if (Shorty.Debug) Shorty.Debug.log("filter list by column '"+column+"'");
         var dfd = new $.Deferred();
         $.when(
-          $('#desktop #list tbody tr').filter(function(){
+          list.find('tbody tr').filter(function(){
             return (-1==$(this).find('td#'+column+' span').text().toLowerCase().indexOf(pattern.toLowerCase()));
           }).addClass('shorty-filtered'),
-          $('#desktop #list tbody tr').not(function(){
+          list.find('tbody tr').not(function(){
             return (-1==$(this).find('td#'+column+' span').text().toLowerCase().indexOf(pattern.toLowerCase()));
           }).removeClass('shorty-filtered')
         ).done(dfd.resolve)
@@ -731,7 +732,10 @@ Shorty =
         var dfd = new $.Deferred();
         // close any open embedded dialog
         $.when(
-          Shorty.WUI.Dialog.hide($('.shorty-dialog'))
+          // close any potentially open embedded dialogs
+          // this closes action dialogs when clicking on another row
+          // appears to be less intuitive otherwise, since you'd have to EXPLICITLY close an open dialog otherwise
+          Shorty.WUI.Dialog.hide($('.shorty-embedded'))
         ).pipe(function(){
           // neutralize all rows that might have been highlighted
           $('#desktop #list tr').removeClass('clicked');
@@ -852,10 +856,17 @@ Shorty =
       // ===== Shorty.WUI.List.Toolbar =====
       Toolbar:
       {
+        // ===== Shorty.WUI.List.Toolbar.checkFilter =====
+        checkFilter: function(toolbar){
+          return (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
+                     &&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]').effect('pulsate')) )
+                  ||(  (toolbar.find('th#status select :selected').val())
+                     &&(toolbar.find('#status').effect('pulsate')) ) );
+        }, // Shorty.WUI.List.Toolbar.checkFilter
         // ===== Shorty.WUI.List.Toolbar.toggle =====
-        toggle: function(list,duration){
+        toggle: function(list,callback){
+          callback=callback||Shorty.WUI.List.Toolbar.checkFilter;
           if (Shorty.Debug) Shorty.Debug.log("toggle list toolbar");
-          duration = duration || 'slow';
           var button =list.find('#tools');
           var toolbar=list.find('#toolbar');
           var dfd = new $.Deferred();
@@ -863,22 +874,18 @@ Shorty =
             // toolbar NOT visible: open toolbar
             $.when(
               // each <th>'s content MUST be encapsulate in a 'div', otherwise the animation does not work
-              toolbar.find('div').slideDown(duration)
+              toolbar.find('div').slideDown('slow')
             ).pipe(function(){
               button.attr('src',button.attr('data-shade'));
             }).done(dfd.resolve)
           }else{ // toolbar IS visible
             // any filters active? prevent closing of toolbar !
-            if (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
-                   &&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]').effect('pulsate')) )
-                ||(  (toolbar.find('th#status select :selected').val())
-                   &&(toolbar.find('#status').effect('pulsate')) )
-               ) {
+            if (callback(toolbar)) {
               if (Shorty.Debug) Shorty.Debug.log('active filter prevents closing of toolbar');
             }else{
               // close toolbar
               $.when(
-                toolbar.find('div').slideUp(duration)
+                toolbar.find('div').slideUp('slow')
               ).done(function(){
                 button.attr('src',button.attr('data-unshade'))
                 dfd.resolve();
@@ -1275,7 +1282,7 @@ Shorty =
             Shorty.WUI.Dialog.reset(dialog)
           }).done(function(response){
             // add shorty to existing list
-            Shorty.WUI.List.add($('#desktop #list').eq(0),[response.data],Shorty.WUI.List.append,true);
+            Shorty.WUI.List.add($('#desktop #list').eq(0),[response.data],true);
             Shorty.WUI.List.dim($('#desktop #list').eq(0),true)
             dfd.resolve(response);
           }).fail(function(response){

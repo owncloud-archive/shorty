@@ -81,6 +81,12 @@ class OC_Shorty_Type
     'public',
     'deleted',
   );
+  // valid results of requests
+  static $RESULT = array (
+    'blocked',
+    'denied',
+    'granted',
+  );
   // a list of implemented backends
   static $BACKENDS = array (
     'none'    => ' [ none ] ',

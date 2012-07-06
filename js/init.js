@@ -77,16 +77,20 @@ $(document).ready(function(){
   });
   // pretty select boxes where applicable (class controlled)
   $('.chosen').chosen();
+  // filter actions
+  var list=$('#desktop #list');
   // title & target filter reaction
-  $('#list thead tr#toolbar').find('th#target,th#title').find('#filter').bind('keyup',function(){
+  list.find('thead tr#toolbar').find('th#target,th#title').find('#filter').bind('keyup',function(){
     Shorty.WUI.List.filter(
+      list,
       $($(this).context.parentElement.parentElement).attr('id'),
       $(this).val()
     );
   });
   // status filter reaction
-  $('#list thead tr#toolbar th#status select').change(function(){
+  list.find('thead tr#toolbar th#status select').change(function(){
     Shorty.WUI.List.filter(
+      list,
       $(this).parents('th').attr('id'),
       $(this).find(':selected').val()
     );
