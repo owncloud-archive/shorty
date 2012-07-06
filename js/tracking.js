@@ -26,6 +26,7 @@
 /**
  * @file js/tracking.js
  * @brief Client side initialization of desktop actions
+ * @access public
  * @author Christian Reiner
  */
 
@@ -63,6 +64,9 @@ $(document).ready(function(){
   return dfd.promise();
 }); // document.ready
 
+/**
+ * @brief Method collection private to this plugin
+ */
 Shorty.Tracking=
 {
   // ===== Shorty.Tracking.dialog =====
@@ -71,7 +75,10 @@ Shorty.Tracking=
   id:{},
   // ===== Shorty.Tracking.list =====
   list:{},
-  // ===== Shorty.Tracking.build =====
+  /**
+   * @brief Builds the content of the list of tracked clicks
+   * @return deferred.promise
+   */
   build: function(){
     if (Shorty.Debug) Shorty.Debug.log("building tracking list");
     var dfd = new $.Deferred();
@@ -98,7 +105,12 @@ Shorty.Tracking=
     })
     return dfd.promise();
   }, // Shorty.Tracking.build
-  // ===== Shorty.Tracking.control =====
+  /**
+   * @brief Central control method, called by the app to hand over control
+   * @param entry jQuery object holding the clicked entry, in this case a row in the list of Shortys
+   * @return deferred.promise
+   * @description This is the method specified as control in slot "registerActions"
+   */
   control:function(entry){
     if (Shorty.Debug) Shorty.Debug.log("tracking list controller");
     var dfd=new $.Deferred();
@@ -123,7 +135,12 @@ Shorty.Tracking=
     Shorty.Tracking.build(Shorty.Tracking.id);
     return dfd.promise();
   }, // Shorty.Tracking.control
-  // ===== Shorty.Tracking.get =====
+  /**
+   * @brief Fetches a list of all registered clicks matching a specified Shorty
+   * @param shorty string Id of the Shorty the click list is requested for
+   * @param offset Numeric id of the last click that is already present in the list (ids being in chronological order!)
+   * @return deferred.promise
+   */
   get:function(shorty,offset){
     if (Shorty.Debug) Shorty.Debug.log("loading clicks into tracking list");
     // no offset specified ? then start at the beginning
@@ -148,7 +165,11 @@ Shorty.Tracking=
     })
     return dfd.promise();
   }, // Shorty.Tracking.get
-  // ===== Shorty.Tracking.init =====
+  /**
+   * @brief Initializes the dialog this aplugin adds to the Shorty app
+   * @description The html content of the dialog is fetched via ajax
+   * @return deferred.promise
+   */
   init:function(){
     if (Shorty.Debug) Shorty.Debug.log("initializing tracking list");
     var dfd=new $.Deferred();
@@ -182,7 +203,13 @@ Shorty.Tracking=
   }
 } // Shorty.Tracking
 
-// ===== Shorty.WUI.List.append_tracking =====
+/**
+ * @brief Callback function replacing the default used in Shorty.WUI.List.add()
+ * @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
+ * @param set object This is the set of attributes describing a single registered click
+ * @param hidden bool Indicats if new entries in lists should be held back for later highlighting (flashing) optically or not
+ * @description This replacement uses the plugin specific column names
+ */
 Shorty.WUI.List.append_tracking=function(row,set,hidden){
   // set row id to entry id
   row.attr('id',set.id);
@@ -223,7 +250,13 @@ Shorty.WUI.List.append_tracking=function(row,set,hidden){
   }) // each aspect
 }, // Shorty.WUI.List.append_tracking
 
-// ===== Shorty.WUI.List.Toolbar.checkFilter_tracking =====
+/**
+ * @brief Callback used to check if any filters prevent closing a lists toolbar
+ * @param toolbar jQueryObject The lists toolbar filters should be checked in
+ * @return bool Indicates if an existing filter prevents the closing or not
+ * @description Used as a replacement for the default used in Shorty.WUI.List.Toolbar.toggle()
+ * This version is private to this plugin and uses the filter names specific to the list of tracked clicks
+ */
 Shorty.WUI.List.Toolbar.checkFilter_tracking=function(toolbar){
   return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').length)
              &&(toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').effect('pulsate')) )
