@@ -29,19 +29,29 @@
  * @author Christian Reiner
  */
 
-// max()-selector
-// usage: var maxWidth = $("a").max(function() {return $(this).width(); });
+/**
+ * @brief max()-selector
+ * @usage: var maxWidth = $("a").max(function() {return $(this).width(); });
+ * @param selector jQueryObject Selector of objects whos values are to be compared
+ * @return value Maximum of values represented by the selector
+ */
 $.fn.max = function(selector) {
   return Math.max.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
 }
-// min()-selector
-// usage: var minWidth = $("a").min(function() {return $(this).width(); });
+/**
+ * @brief min()-selector
+ * @usage: var minWidth = $("a").min(function() {return $(this).width(); });
+ * @param selector jQueryObject Selector of objects whos values are to be compared
+ * @return value Minimum of values represented by the selector
+ */
 $.fn.min = function(selector) {
   return Math.min.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
 }
 
-// call a namespaced function named by a string
-// this is something like phps call_user_func()...
+/**
+ * @brief Calls a namespaced function named by a string
+ * @description This is something like phps call_user_func()...
+ */
 function executeFunctionByName(functionName, context /*, args */) {
   var args = Array.prototype.slice.call(arguments).splice(2);
   var namespaces = functionName.split(".");
@@ -52,7 +62,6 @@ function executeFunctionByName(functionName, context /*, args */) {
   return context[func].apply(this, args);
 }
 
-
 /**
  * @class Shorty
  * @brief Central activity library for the client side
@@ -60,13 +69,23 @@ function executeFunctionByName(functionName, context /*, args */) {
  */
 Shorty =
 {
-  // ===== Shorty.WUI =====
+  /**
+   * @brief Collection of all methods implementing the UI of this app
+   * @description "WUI" stands for "Web User Interface" :-)
+   * @author Christian Reiner
+   */
   WUI:
   {
-    // ===== Shorty.WUI.Controls =====
+    /**
+     * @brief Collection of methods implementing the top control bar
+     * @author Christian Reiner
+     */
     Controls:
     {
-      // ===== Shorty.WUI.Controls.init =====
+      /**
+       * @brief Initializes the control bar after it loaded
+       * @author Christian Reiner
+       */
       init: function(){
         if (Shorty.Debug) Shorty.Debug.log("init controls");
         var dfd = new $.Deferred();
@@ -76,7 +95,10 @@ Shorty =
         ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Controls.init
-      // ===== Shorty.WUI.Controls.toggle =====
+      /**
+       * @brief Toggles the control bar (open/close)
+       * @author Christian Reiner
+       */
       toggle: function(){
         if (Shorty.Debug) Shorty.Debug.log("toggle controls");
         var dfd = new $.Deferred();
@@ -97,10 +119,16 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Controls.toggle
     }, // Shorty.WUI.Controls
-    // ===== Shorty.WUI.Desktop =====
+    /**
+     * @brief Collection of methods implementing the central 'Desktop' where all real action takes place
+     * @author Christian Reiner
+     */
     Desktop:
     {
-      // ===== Shorty.WUI.Desktop.show =====
+      /**
+       * @brief Shows the central desktop
+       * @author Christian Reiner
+       */
       show: function(duration){
         if (Shorty.Debug) Shorty.Debug.log("show desktop");
         duration = duration || 'slow';
@@ -108,7 +136,10 @@ Shorty =
         $.when($('#desktop').fadeTo(duration,1.0)).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Desktop.show
-      // ===== Shorty.WUI.Desktop.hide =====
+      /**
+       * @brief Hides the central desktop
+       * @author Christian Reiner
+       */
       hide: function(duration){
         if (Shorty.Debug) Shorty.Debug.log("hide desktop");
         duration = duration || 'slow';
