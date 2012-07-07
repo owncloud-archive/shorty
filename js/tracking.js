@@ -36,20 +36,21 @@ $(document).ready(function(){
     // load layout of dialog to show the list of tracked clicks
     Shorty.Tracking.init()
   ).pipe(function(){
-  // bind actions to basic buttons
-  Shorty.Tracking.dialog.find('#close').bind('click',function(){
-    Shorty.WUI.Dialog.hide(Shorty.Tracking.dialog);
-  });
-  Shorty.Tracking.dialog.find('#list #titlebar').bind('click',function(){
-    Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.list,Shorty.WUI.List.Toolbar.checkFilter_tracking);
-  });
-  Shorty.Tracking.dialog.find('#list #toolbar').find('#reload').bind('click',Shorty.Tracking.build);
+    // bind actions to basic buttons
+    Shorty.Tracking.dialog.find('#close').bind('click',function(){
+      Shorty.WUI.Dialog.hide(Shorty.Tracking.dialog);
+    });
+    Shorty.Tracking.dialog.find('#list #titlebar').bind('click',function(){
+      Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.list,Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking);
+    });
+    Shorty.Tracking.dialog.find('#list #toolbar').find('#reload').bind('click',Shorty.Tracking.build);
     // title & target filter reaction
     Shorty.Tracking.list.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter').bind('keyup',function(){
       Shorty.WUI.List.filter(
         Shorty.Tracking.list,
         $($(this).context.parentElement.parentElement).attr('id'),
-        $(this).val()
+        $(this).val(),
+        Shorty.WUI.List.fill_callbackFilter_tracking
       );
     });
     // status filter reaction
@@ -57,7 +58,8 @@ $(document).ready(function(){
       Shorty.WUI.List.filter(
         Shorty.Tracking.list,
         $(this).parents('th').attr('id'),
-        $(this).find(':selected').val()
+        $(this).find(':selected').val(),
+        Shorty.WUI.List.fill_callbackFilter_tracking
       );
     });
   }).done(dfd.resolve).fail(dfd.reject);
@@ -86,6 +88,7 @@ Shorty.Tracking=
    */
   list:{},
   /**
+   * @method Shorty.Tracking.build
    * @brief Builds the content of the list of tracked clicks
    * @return deferred.promise
    * @author Christian Reiner
@@ -101,15 +104,16 @@ Shorty.Tracking=
       Shorty.WUI.List.empty(Shorty.Tracking.list);
       $.when(
         Shorty.Tracking.get(Shorty.Tracking.id)
-      ).done(function(response){
+      ).pipe(function(response){
+//         Shorty.WUI.List.add(Shorty.Tracking.list,response.data,false,Shorty.WUI.List.add_callbackAppend_tracking)
+        Shorty.WUI.List.fill(Shorty.Tracking.list,
+                             response.data,
+                             Shorty.WUI.List.fill_callbackFilter_tracking,
+                             Shorty.WUI.List.add_callbackAppend_tracking);
+      }).done(function(){
         $.when(
-          Shorty.WUI.List.add(Shorty.Tracking.list,response.data,false,Shorty.WUI.List.append_tracking)
-        ).done(function(){
-          Shorty.WUI.List.dim(Shorty.Tracking.list,true);
-          dfd.resolve();
-        }).fail(function(){
-          dfd.reject();
-        })
+          Shorty.WUI.List.dim(Shorty.Tracking.list,true)
+        ).done(dfd.resolve).fail(dfd.reject)
       }).fail(function(){
         dfd.reject();
       })
@@ -117,6 +121,7 @@ Shorty.Tracking=
     return dfd.promise();
   }, // Shorty.Tracking.build
   /**
+   * @method Shorty.Tracking.control
    * @brief Central control method, called by the app to hand over control
    * @param entry jQuery object holding the clicked entry, in this case a row in the list of Shortys
    * @return deferred.promise
@@ -144,10 +149,11 @@ Shorty.Tracking=
       dfd.reject();
     })
     // load first content into the list
-    Shorty.Tracking.build(Shorty.Tracking.id);
+    Shorty.Tracking.build();
     return dfd.promise();
   }, // Shorty.Tracking.control
   /**
+   * @method Shorty.Tracking.get
    * @brief Fetches a list of all registered clicks matching a specified Shorty
    * @param shorty string Id of the Shorty the click list is requested for
    * @param offset Numeric id of the last click that is already present in the list (ids being in chronological order!)
@@ -179,6 +185,7 @@ Shorty.Tracking=
     return dfd.promise();
   }, // Shorty.Tracking.get
   /**
+   * @class Shorty.Tracking
    * @brief Initializes the dialog this aplugin adds to the Shorty app
    * @description The html content of the dialog is fetched via ajax
    * @return deferred.promise
@@ -218,6 +225,7 @@ Shorty.Tracking=
 } // Shorty.Tracking
 
 /**
+ * @method Shorty.WUI.List.add_callbackAppend_tracking
  * @brief Callback function replacing the default used in Shorty.WUI.List.add()
  * @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
  * @param set object This is the set of attributes describing a single registered click
@@ -225,7 +233,7 @@ Shorty.Tracking=
  * @description This replacement uses the plugin specific column names
  * @author Christian Reiner
  */
-Shorty.WUI.List.append_tracking=function(row,set,hidden){
+Shorty.WUI.List.add_callbackAppend_tracking=function(row,set,hidden){
   // set row id to entry id
   row.attr('id',set.id);
   // handle all aspects, one by one
@@ -263,9 +271,25 @@ Shorty.WUI.List.append_tracking=function(row,set,hidden){
     } // switch
     row.find('td#'+aspect).empty().append(span);
   }) // each aspect
-}, // Shorty.WUI.List.append_tracking
+}, // Shorty.WUI.List.add_callbackAppend_tracking
 
 /**
+ * @method Shorty.WUI.List.fill_callbackFilter_tracking
+ * @brief Column filter rules specific to this plugins list
+ * @author Christian Reiner
+ */
+Shorty.WUI.List.fill_callbackFilter_tracking=function(list){
+  if (Shorty.Debug) Shorty.Debug.log("using 'tracking' method to filter filled list");
+  // filter list
+  Shorty.WUI.List.filter(list,'time',   list.find('thead tr#toolbar th#time    #filter').val()),
+  Shorty.WUI.List.filter(list,'address',list.find('thead tr#toolbar th#address #filter').val()),
+  Shorty.WUI.List.filter(list,'host',   list.find('thead tr#toolbar th#host    #filter').val()),
+  Shorty.WUI.List.filter(list,'user',   list.find('thead tr#toolbar th#user    #filter').val()),
+  Shorty.WUI.List.filter(list,'result', list.find('thead tr#toolbar th#result  select :selected').val())
+} // Shorty.WUI.List.fill_callbackFilter_tracking
+
+/**
+ * @method Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking
  * @brief Callback used to check if any filters prevent closing a lists toolbar
  * @param toolbar jQueryObject The lists toolbar filters should be checked in
  * @return bool Indicates if an existing filter prevents the closing or not
@@ -273,9 +297,9 @@ Shorty.WUI.List.append_tracking=function(row,set,hidden){
  * This version is private to this plugin and uses the filter names specific to the list of tracked clicks
  * @author Christian Reiner
  */
-Shorty.WUI.List.Toolbar.checkFilter_tracking=function(toolbar){
+Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking=function(toolbar){
   return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').length)
              &&(toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').effect('pulsate')) )
           ||(  (toolbar.find('th#result select :selected').val())
              &&(toolbar.find('#result').effect('pulsate')) ) );
-} // Shorty.WUI.List.Toolbar.checkFilter_tracking
+} // Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking
