@@ -730,7 +730,11 @@ Shorty =
           row.find('td#'+aspect).empty().append(span);
         }) // each aspect
       }, // Shorty.WUI.List.Append
-      // ===== Shorty.WUI.List.build =====
+      /**
+       * @method Shorty.WUI.List.build
+       * @brief Builds the content of a list by retrieving and adding entries
+       * @author Christian Reiner
+       */
       build: function(){
         if (Shorty.Debug) Shorty.Debug.log("build list");
         var dfd = new $.Deferred();
@@ -758,7 +762,13 @@ Shorty =
         })
         return dfd.promise();
       }, // Shorty.WUI.List.build
-      // ===== Shorty.WUI.List.dim =====
+      /**
+       * @method Shorty.WUI.List.dim
+       * @brief Dims the content of a list so that manipulations can be done without having to close it
+       * @param list jQueryObject Representing the list to be handled
+       * @param show bool Flag indicating of the list should be dimmed of re-shown
+       * @author Christian Reiner
+       */
       dim: function(list,show){
         if (Shorty.Debug) Shorty.Debug.log("dim list to "+(show?"true":"false"));
         var duration='slow';
@@ -788,7 +798,13 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.List.dim
-      // ===== Shorty.WUI.List.empty =====
+      /**
+       * @method Shorty.WUI.List.empty
+       * @brief Clears a list by removing all its rows
+       * @param list jQueryObject Represents the list to be handled
+       * @description Will only clear the list body, header entries like titlebar and toolbar will be left untouched
+       * @author Christian Reiner
+       */
       empty: function(list){
         if (Shorty.Debug) Shorty.Debug.log("empty list");
         var dfd = new $.Deferred();
