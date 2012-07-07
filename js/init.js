@@ -52,7 +52,7 @@ $(document).ready(function(){
   // button to reload the list
   $('#desktop #list #toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
   // sort buttons
-  $('#desktop #list #toolbar').find('shorty-sorter').bind('click',Shorty.WUI.List.sort);
+  $('#desktop #list #toolbar').find('shorty-sorter').bind('click',function(){Shorty.WUI.List.sort($('#desktop #list'));});
   // add date picker options
   $.datepicker.setDefaults({
     dateFormat :'yy-mm-dd',
@@ -96,8 +96,8 @@ $(document).ready(function(){
     );
   });
   // column sorting reaction
-  $('#list thead tr#toolbar div img.shorty-sorter').bind('click',function(){
-    Shorty.WUI.List.sort($(this).attr('data-sort-code'));
+  list.find('thead tr#toolbar div img.shorty-sorter').bind('click',function(){
+    Shorty.WUI.List.sort(list,$(this).attr('data-sort-code'));
   });
 }); // document.ready
 

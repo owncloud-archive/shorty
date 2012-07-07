@@ -657,8 +657,8 @@ Shorty =
        * @author Christian Reiner
        */
       add: function(list,elements,hidden,callback){
-        callback=callback||Shorty.WUI.List.Append;
-        if (Shorty.Debug) Shorty.Debug.log("add entry to list holding "+elements.length+" entries");
+        callback=callback||Shorty.WUI.List.add_callbackAppend_default;
+        if (Shorty.Debug) Shorty.Debug.log("add "+elements.length+" entries to list");
         var dfd = new $.Deferred();
         // insert list elements (sets) one by one
         var row,set;
@@ -674,14 +674,14 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.add
       /**
-       * @method Shorty.WUI.List.Append
+       * @method Shorty.WUI.List.add_callbackAppend_default
        * @brief Enriches a raw list entry with usage specific values taken from a sepcified set of attributes
        * @param row jQueryObject Represents the raw row, freshly cloned
        * @param set array A set of attributes (values) defining an element to re represented by the row
        * @param hidden bool Flag that controls if added entries should be kept hidden for a later visualization (highlighting)
        * @author Christian Reiner
        */
-      Append: function(row,set,hidden){
+      add_callbackAppend_default: function(row,set,hidden){
         // set row id to entry id
         row.attr('id',set.id);
         $.each(['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
@@ -729,7 +729,7 @@ Shorty =
           } // switch
           row.find('td#'+aspect).empty().append(span);
         }) // each aspect
-      }, // Shorty.WUI.List.Append
+      }, // Shorty.WUI.List.add_callbackAppend_default
       /**
        * @method Shorty.WUI.List.build
        * @brief Builds the content of a list by retrieving and adding entries
@@ -818,41 +818,61 @@ Shorty =
         ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.List.empty
-      // ===== Shorty.WUI.List.fill =====
-      fill: function(list,elements){
+      /**
+       * @method Shorty.WUI.List.fill
+       * @brief (Re-)Fills a list with al elements from the given set
+       * @param list jQueryObject Represents the list to be handled
+       * @param elements array list of elements to be filled in the lists
+       * @callback function Method used to handle list/cell specific handling of element attributes
+       * @author Christian Reiner
+       */
+      fill: function(list,elements,callback_filter,callback_append){
+        callback_filter=callback_filter||Shorty.WUI.List.fill_callbackFilter_default;
+        callback_append=callback_append||Shorty.WUI.List.add_callbackAppend_default;
         if (Shorty.Debug) Shorty.Debug.log("fill list");
         var dfd = new $.Deferred();
         $.when(
-          Shorty.WUI.Sums.fill(),
           Shorty.WUI.List.empty(list),
-          Shorty.WUI.List.add(list,elements,false)
+          Shorty.WUI.List.add(list,elements,false,callback_append)
         ).pipe(
-          // filter list
-          Shorty.WUI.List.filter(list,'target',list.find('thead tr#toolbar th#target #filter').val()),
-          Shorty.WUI.List.filter(list,'title', list.find('thead tr#toolbar th#title #filter').val()),
-          Shorty.WUI.List.filter(list,'status',list.find('thead tr#toolbar th#status select :selected').val())
-        ).pipe(
-          // sort list
-          $.when(
-            Shorty.Action.Preference.get('list-sort-code')
-          ).done(function(pref){
-            Shorty.WUI.List.sort(pref['list-sort-code']);
-          })
-        ).done(dfd.resolve)
+          callback_filter(list)
+        ).done(dfd.resolve).fail(dfd.reject)
         return dfd.promise();
       }, // Shorty.WUI.List.fill
+      /**
+       * @method Shorty.WUI.List.fill_callbackFilter_default
+       * @param list jQueryObject Represents the list to be handled
+       * @author Christian Reiner
+       */
+      fill_callbackFilter_default: function(list){
+        if (Shorty.Debug) Shorty.Debug.log("using 'default' method to filter filled list");
+        // only makes sense for default Shorty list
+        Shorty.WUI.Sums.fill(),
+        // filter list
+        Shorty.WUI.List.filter(list,'target',list.find('thead tr#toolbar th#target #filter').val()),
+        Shorty.WUI.List.filter(list,'title', list.find('thead tr#toolbar th#title #filter').val()),
+        Shorty.WUI.List.filter(list,'status',list.find('thead tr#toolbar th#status select :selected').val())
+        // sort list
+        $.when(
+          Shorty.Action.Preference.get('list-sort-code')
+        ).done(function(pref){
+          Shorty.WUI.List.sort(list,pref['list-sort-code']);
+        })
+      }, // Shorty.WUI.List.fill_callbackFilter_default
       // ===== Shorty.WUI.List.filter =====
       filter: function(list,column,pattern){
-        if (Shorty.Debug) Shorty.Debug.log("filter list by column '"+column+"'");
+        if (Shorty.Debug) Shorty.Debug.log("filter list by column '"+column+"' and pattern '"+pattern+"'");
         var dfd = new $.Deferred();
         $.when(
-          list.find('tbody tr').filter(function(){
-            return (-1==$(this).find('td#'+column+' span').text().toLowerCase().indexOf(pattern.toLowerCase()));
+          list.find('tbody tr td#'+column).filter(function(){
+            return (-1==$(this).find('span').text().toLowerCase().indexOf(pattern.toLowerCase()));
           }).addClass('shorty-filtered'),
-          list.find('tbody tr').not(function(){
-            return (-1==$(this).find('td#'+column+' span').text().toLowerCase().indexOf(pattern.toLowerCase()));
-          }).removeClass('shorty-filtered')
-        ).done(dfd.resolve)
+          list.find('tbody tr td#'+column).filter(function(){
+            return (-1!=$(this).find('span').text().toLowerCase().indexOf(pattern.toLowerCase()));
+          }).removeClass('shorty-filtered'),
+          list.find('tbody tr').filter(':has(td.shorty-filtered)').addClass('shorty-filtered'),
+          list.find('tbody tr').not(':has(td.shorty-filtered)').removeClass('shorty-filtered')
+        ).done(dfd.resolve).fail(dfd.reject)
         return dfd.promise();
       }, // Shorty.WUI.List.filter
       // ===== Shorty.WUI.List.get =====
@@ -979,22 +999,22 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.List.show
       // ===== Shorty.WUI.List.sort =====
-      sort: function(sortCode){
+      sort: function(list,sortCode){
         sortCore = sortCode || 'cd';
-        var icon=$('#list thead tr#toolbar th div img[data-sort-code="'+sortCode+'"]');
+        var icon=list.find('thead tr#toolbar th div img[data-sort-code="'+sortCode+'"]');
         var sortCol=icon.parents('th').attr('id');
         var sortDir=icon.attr('data-sort-direction');
         if (Shorty.Debug) Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
         // use the 'tinysort' jquery plugin for sorting
         switch (sortCol){
           case 'until':
-            $('#list tbody>tr').tsort('td#until',{order:sortDir});
+            list.find('tbody>tr').tsort('td#until',{order:sortDir});
             break;
           default:
-            $('#list tbody>tr').tsort({attr:'data-'+sortCol,order:sortDir});
+            list.find('tbody>tr').tsort({attr:'data-'+sortCol,order:sortDir});
         } // switch 
         // mark currently active sort icon
-        var icons=$('#list thead tr#toolbar img.shorty-sorter');
+        var icons=list.find('thead tr#toolbar img.shorty-sorter');
         icons.removeClass('shorty-active');
         icons.filter('[data-sort-code="'+sortCode+'"]').addClass('shorty-active');
         // store the sorting code as preference, for returning list retrievals
@@ -1022,16 +1042,16 @@ Shorty =
       // ===== Shorty.WUI.List.Toolbar =====
       Toolbar:
       {
-        // ===== Shorty.WUI.List.Toolbar.checkFilter =====
-        checkFilter: function(toolbar){
+        // ===== Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_default =====
+        toggle_callbackCheckFilter_default: function(toolbar){
           return (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
                      &&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]').effect('pulsate')) )
                   ||(  (toolbar.find('th#status select :selected').val())
                      &&(toolbar.find('#status').effect('pulsate')) ) );
-        }, // Shorty.WUI.List.Toolbar.checkFilter
+        }, // Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_default
         // ===== Shorty.WUI.List.Toolbar.toggle =====
         toggle: function(list,callback){
-          callback=callback||Shorty.WUI.List.Toolbar.checkFilter;
+          callback=callback||Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_default;
           if (Shorty.Debug) Shorty.Debug.log("toggle list toolbar");
           var button =list.find('#tools');
           var toolbar=list.find('#toolbar');

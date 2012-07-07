@@ -514,7 +514,7 @@
   display: none;
 }
 /* elements (rows) currently filtered out (toolbars column filter options) */
-.shorty-filtered {
+tr.shorty-filtered {
   display: none;
 }
 /* style of all icons (as opposed to all images) */
