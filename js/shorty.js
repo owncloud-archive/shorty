@@ -30,6 +30,7 @@
  */
 
 /**
+ * @function max
  * @brief max()-selector
  * @usage: var maxWidth = $("a").max(function() {return $(this).width(); });
  * @param selector jQueryObject Selector of objects whos values are to be compared
@@ -39,6 +40,7 @@ $.fn.max = function(selector) {
   return Math.max.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
 }
 /**
+ * @function min
  * @brief min()-selector
  * @usage: var minWidth = $("a").min(function() {return $(this).width(); });
  * @param selector jQueryObject Selector of objects whos values are to be compared
@@ -49,6 +51,7 @@ $.fn.min = function(selector) {
 }
 
 /**
+ * @function executeFunctionByName
  * @brief Calls a namespaced function named by a string
  * @description This is something like phps call_user_func()...
  */
@@ -70,6 +73,7 @@ function executeFunctionByName(functionName, context /*, args */) {
 Shorty =
 {
   /**
+   * @class Shorty.WUI
    * @brief Collection of all methods implementing the UI of this app
    * @description "WUI" stands for "Web User Interface" :-)
    * @author Christian Reiner
@@ -77,12 +81,14 @@ Shorty =
   WUI:
   {
     /**
+     * @class Shorty.WUI.Controls
      * @brief Collection of methods implementing the top control bar
      * @author Christian Reiner
      */
     Controls:
     {
       /**
+       * @method Shorty.WUI.Controls.init
        * @brief Initializes the control bar after it loaded
        * @author Christian Reiner
        */
@@ -96,6 +102,7 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Controls.init
       /**
+       * @method Shorty.WUI.Controls.toggle
        * @brief Toggles the control bar (open/close)
        * @author Christian Reiner
        */
@@ -126,6 +133,7 @@ Shorty =
     Desktop:
     {
       /**
+       * @class Shorty.WUI.Desktop
        * @brief Shows the central desktop
        * @author Christian Reiner
        */
@@ -137,6 +145,7 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Desktop.show
       /**
+       * @class Shorty.WUI.Desktop.hide
        * @brief Hides the central desktop
        * @author Christian Reiner
        */
@@ -148,10 +157,19 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Desktop.hide
     }, // Shorty.WUI.Desktop
-    // ===== Shorty.WUI.Dialog =====
+    /**
+     * @class Shorty.WUI.Dialog
+     * @brief A collection of methods used for handling dialogs
+     * @author Christian Reiner
+     */
     Dialog:
     {
-      // ===== Shorty.WUI.Dialog.execute =====
+      /**
+       * @method Shorty.WUI.Dialog.execute
+       * @brief Execute a dialog, including preparing the desktop beforehand
+       * @param dialog jQueryObject Representation of the existing dialog
+       * @author Christian Reiner
+       */
       execute: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("execute dialog "+dialog.attr('id'));
         var dfd = new $.Deferred();
@@ -179,7 +197,15 @@ Shorty =
         } // switch
         return dfd.promise();
       }, // Shorty.WUI.Dialog.execute
-      // ===== Shorty.WUI.Dialog.hide =====
+      /**
+       * @method Shorty.WUI.Dialog.hide
+       * @brief Hides a dialog
+       * @param dialog jQueryObject Represents the dialog to be handled
+       * @desrciption
+       * Also moves the dialog code back to its 'parking place' in case of embedded dialogs.
+       * This method is save for already hidden dialogs. 
+       * @author Christian Reiner
+       */
       hide: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("hide dialog "+dialog.attr('id'));
         var duration = 'slow';
@@ -204,7 +230,13 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.Dialog.hide
-      // ===== Shorty.WUI.Dialog.reset =====
+      /**
+       * @method Shorty.WUI.Dialog.reset
+       * @brief Resets a dialog to its default values
+       * @param dialog jQueryObject Represents the dialog to be handled
+       * @description The default values are read from the 'data-...' attributes stored in the specifically handled item.
+       * @author Christian Reiner
+       */
       reset: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("reset dialog "+dialog.attr('id'));
         var dfd = new $.Deferred();
@@ -238,7 +270,16 @@ Shorty =
           dfd.resolve();
         return dfd.promise();
       }, // Shorty.WUI.Dialog.reset
-      // ===== Shorty.WUI.Dialog.sharpen =====
+      /**
+       * @method Shorty.WUI.Dialog.sharpen
+       * @brief Activates the button that triggers an action
+       * @param dialog jQueryObject Represents the dialog to be handled
+       * @param sharpness bool Flag indicating if the dialog should be sharpened or unsharpened
+       * @description
+       * Before dialogs are 'sharpened' clicking the finalizing action button is suppressed.
+       * This is done to allow some in-dialog validation routines to complete (like fetching url meta data)
+       * @author Christian Reiner
+       */
       sharpen: function(dialog,sharpness){
         if (Shorty.Debug) Shorty.Debug.log("toggle sharpness of dialog '"+dialog.attr('id')+"' to "+sharpness);
         var confirm=dialog.find('#confirm');
@@ -253,7 +294,12 @@ Shorty =
           confirm.removeClass('sharp');
         }
       }, // Shorty.WUI.Dialog.sharpen
-      // ===== Shorty.WUI.Dialog.show =====
+      /**
+       * @method Shorty.WUI.Dialog.show
+       * @brief Makes an existing dialog visible
+       * @param dialog jQueryObject Represents the dialog to be handled
+       * @author Christian Reiner
+       */
       show: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("show dialog "+dialog.attr('id'));
         var duration = 'slow';
@@ -304,7 +350,12 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.Dialog.show
-      // ===== Shorty.WUI.Dialog.toggle =====
+      /**
+       * @method Shorty.WUI.Dialog.toggle
+       * @brief Toggles the visibility of an existing dialog
+       * @param dialog jQueryObject Represents the dialog to be handled
+       * @author Christian Reiner
+       */
       toggle: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("toggle dialog "+dialog.attr('id'));
         var dfd = new $.Deferred();
@@ -316,7 +367,13 @@ Shorty =
           $.when(Shorty.WUI.Dialog.hide(dialog)).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Dialog.toggle
-      // ===== Shorty.WUI.Dialog.wipe =====
+      /**
+       * @method Shorty.WUI.Dialog.wipe
+       * @brief Wipes all values inside an existing dialog
+       * @param dialog jQueryObject Represents the dialog to be handled
+       * @description Helps to remove left overs from a previous usage of a dialog
+       * @author Christian Reiner
+       */
       wipe: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("wipe dialog "+dialog.attr('id'));
         var dfd = new $.Deferred();
@@ -336,10 +393,19 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Dialog.wipe
     }, // Shorty.WUI.Dialog
-    // ===== Shorty.WUI.Entry =====
+    /**
+     * @class Shorty.WUI.Entry
+     * @brief Collection of methods handling entries (represented objects like Shortys)
+     * @author Christian Reiner
+     */
     Entry:
     {
-      // ===== Shorty.WUI.Entry.click =====
+      /**
+       * @method Shorty.WUI.Entry.click
+       * @brief Triggers the action specific for each action button offered for a list item
+       * @param entry jQueryObject Representation of a lists item to be handled
+       * @author Christian Reiner
+       */
       click: function(event,element){
         var dfd = new $.Deferred();
         var entry=element.parents('tr').eq(0);
@@ -369,7 +435,12 @@ Shorty =
         } // else
         return dfd.promise();
       }, // Shorty.WUI.Entry.click
-      // ===== Shorty.WUI.Entry.del =====
+      /**
+       * @method Shorty.WUI.Entry.del
+       * @brief Marks a list item as 'deleted' by changing its 'status'
+       * @param entry jQueryObject Representation of a lists item to be handled
+       * @author Christian Reiner
+       */
       del: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("delete entry "+entry.attr('id'));
         if (entry.hasClass('deleted')){
@@ -384,7 +455,12 @@ Shorty =
           entry.addClass('deleted');
         }
       }, // Shorty.WUI.Entry.del
-      // ===== Shorty.WUI.Entry.edit =====
+      /**
+       * @method Shorty.WUI.Entry.edit
+       * @brief prepares the 'edit' action/dialog
+       * @param entry jQueryObject Representation of a lists item to be handled
+       * @author Christian Reiner
+       */
       edit: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("modify entry "+entry.attr('id'));
         var dfd = new $.Deferred();
@@ -432,7 +508,12 @@ Shorty =
         })
         return dfd.promise();
       }, // Shorty.WUI.Entry.edit
-      // ===== Shorty.WUI.Entry.send =====
+      /**
+       * @method Shorty.WUI.Entry.send
+       * @brief prepares the 'send' action
+       * @param entry jQueryObject Representation of a lists item to be handled
+       * @author Christian Reiner
+       */
       send: function(event,element){
         var dfd = new $.Deferred();
         var entry=element.parents('table').parents('tr');
@@ -443,7 +524,12 @@ Shorty =
         ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Entry.send
-      // ===== Shorty.WUI.Entry.share =====
+      /**
+       * @method Shorty.WUI.Entry.share
+       * @brief prepares the 'share' action/dialog
+       * @param entry jQueryObject Representation of a lists item to be handled
+       * @author Christian Reiner
+       */
       share: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("share entry "+entry.attr('id'));
         var dfd = new $.Deferred();
@@ -468,7 +554,12 @@ Shorty =
         ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Entry.share
-      // ===== Shorty.WUI.Entry.show =====
+      /**
+       * @method Shorty.WUI.Entry.show
+       * @brief prepares the 'show' action/dialog
+       * @param entry jQueryObject Representation of a lists item to be handled
+       * @author Christian Reiner
+       */
       show: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("show entry "+entry.attr('id'));
         var dfd = new $.Deferred();
@@ -513,11 +604,19 @@ Shorty =
         return dfd.promise();
       } // Shorty.WUI.Entry.show
     }, // Shorty.WUI.Entry
-    // ===== Shorty.WUI.Hourglass =====
-    // Shorty.WUI.Hourglass
+    /**
+     * @class Shorty.WUI.Hourglass
+     * @brief Handling of the desktops 'hourglass' activity indicator
+     * @author Christian Reiner
+     */
     Hourglass:
     {
-      // ===== Shorty.WUI.Hourglass.toggle =====
+      /**
+       * @method Shorty.WUI.Hourglass.toggle
+       * @brief Toggles the visibility of the desktop hourglass
+       * @param show bool Flag indicating of the list should be shown or hidden
+       * @author Christian Reiner
+       */
       toggle: function(show){
         if (Shorty.Debug) Shorty.Debug.log("toggle hourglass to "+show?"true":"false");
         var dfd = new $.Deferred();
@@ -540,10 +639,23 @@ Shorty =
         return dfd.promise();
       }, // Shorty.WUI.Hourglass.toggle
     }, // Shorty.WUI.Hourglass
-    // ===== Shorty.WUI.List =====
+    /*
+     * @class Shorty.WUI.List
+     * @brief Collection of methods handling lists
+     * @author Christian Reiner
+     */
     List:
     {
-      // ===== Shorty.WUI.List.add =====
+      /**
+       * @method Shorty.WUI.List.add
+       * @brief Adds a list of elements to an existing list
+       * @param list jQueryObject Representation of the 'list'
+       * @param elements array List of elements to be added
+       * @param hidden bool Flag that controls if added entries should be kept hidden for a later visualization (highlighting)
+       * @param callback a callback method that implements list/attribute specific handling
+       * @return Deferred.promise
+       * @author Christian Reiner
+       */
       add: function(list,elements,hidden,callback){
         callback=callback||Shorty.WUI.List.Append;
         if (Shorty.Debug) Shorty.Debug.log("add entry to list holding "+elements.length+" entries");
@@ -561,7 +673,14 @@ Shorty =
         }) // each
         return dfd.promise();
       }, // Shorty.WUI.List.add
-      // ===== Shorty.WUI.List.Append =====
+      /**
+       * @method Shorty.WUI.List.Append
+       * @brief Enriches a raw list entry with usage specific values taken from a sepcified set of attributes
+       * @param row jQueryObject Represents the raw row, freshly cloned
+       * @param set array A set of attributes (values) defining an element to re represented by the row
+       * @param hidden bool Flag that controls if added entries should be kept hidden for a later visualization (highlighting)
+       * @author Christian Reiner
+       */
       Append: function(row,set,hidden){
         // set row id to entry id
         row.attr('id',set.id);
