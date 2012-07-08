@@ -96,22 +96,26 @@ Shorty.Tracking=
   build: function(){
     if (Shorty.Debug) Shorty.Debug.log("building tracking list");
     var dfd = new $.Deferred();
+    var fieldset=Shorty.Tracking.dialog.find('fieldset');
     // prepare loading
     $.when(
-      Shorty.WUI.List.dim(Shorty.Tracking.list,false)
+      Shorty.WUI.List.dim(Shorty.Tracking.list,false),
+      // force current height of dialog whilst refreshing the content to prevent flickering height
+      Shorty.Tracking.list.parent().css('height',Shorty.Tracking.list.parent().css('height'))
     ).done(function(){
       // retrieve new entries
       Shorty.WUI.List.empty(Shorty.Tracking.list);
       $.when(
         Shorty.Tracking.get(Shorty.Tracking.id)
       ).pipe(function(response){
-//         Shorty.WUI.List.add(Shorty.Tracking.list,response.data,false,Shorty.WUI.List.add_callbackAppend_tracking)
         Shorty.WUI.List.fill(Shorty.Tracking.list,
                              response.data,
                              Shorty.WUI.List.fill_callbackFilter_tracking,
                              Shorty.WUI.List.add_callbackAppend_tracking);
       }).done(function(){
         $.when(
+          // remove forced height added above to prevent fickering height
+          Shorty.Tracking.list.parent().css('height',''),
           Shorty.WUI.List.dim(Shorty.Tracking.list,true)
         ).done(dfd.resolve).fail(dfd.reject)
       }).fail(function(){
@@ -263,7 +267,7 @@ Shorty.WUI.List.add_callbackAppend_tracking=function(row,set,hidden){
       case 'time':
         if (null==set[aspect])
              span.text('-?-');
-        else span.text(set[aspect]);
+        else span.text(formatDate(1000*set[aspect]));
         break;
       default:
         span.text(set[aspect]);
