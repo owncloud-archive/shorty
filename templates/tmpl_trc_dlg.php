@@ -63,11 +63,11 @@
                       data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
             </span>
           </th>
-          <th id="time"   ><span><?php echo OC_Shorty_L10n::t('Time')   ?></span></th>
+          <th id="result" ><span><?php echo OC_Shorty_L10n::t('result') ?></span></th>
           <th id="address"><span><?php echo OC_Shorty_L10n::t('Address')?></span></th>
           <th id="host"   ><span><?php echo OC_Shorty_L10n::t('Host')   ?></span></th>
           <th id="user"   ><span><?php echo OC_Shorty_L10n::t('User')   ?></span></th>
-          <th id="result" ><span><?php echo OC_Shorty_L10n::t('result') ?></span></th>
+          <th id="time"   ><span><?php echo OC_Shorty_L10n::t('Time')   ?></span></th>
         </tr>
         <!-- table toolbar -->
         <tr id="toolbar">
@@ -76,9 +76,15 @@
               <a id="reload"><img alt="<?php echo $l->t('reload'); ?>" title="<?php echo $l->t('Reload list'); ?>" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>"></a>
             </div>
           </th>
-          <th id="time">
+          <th id="result">
             <div style="display:none;">
-              <input id='filter' type="text" value="">
+              <span id="horst" class="shorty-select">
+                <select id='filter' value="" data-placeholder=" ">
+                  <?php foreach($_['shorty-result'] as $option=>$label)
+                    echo sprintf("<option value=\"%s\">%s</option>\n",($option?$label:''),$label);
+                  ?>
+                </select>
+              </span>
             </div>
           </th>
           <th id="address">
@@ -96,27 +102,20 @@
               <input id='filter' type="text" value="">
             </div>
           </th>
-          <!-- status filter, colspan 2 to prevent width enhancement of column -->
-          <th id="result" colspan=2>
+          <th id="time">
             <div style="display:none;">
-              <span id="horst" class="shorty-select">
-                <select id='filter' value="" data-placeholder=" ">
-                  <?php foreach($_['shorty-result'] as $option=>$label)
-                    echo sprintf("<option value=\"%s\">%s</option>\n",($option?$label:''),$label);
-                  ?>
-                </select>
-              </span>
+              <input id='filter' type="text" value="">
             </div>
           </th>
         </tr>
         <!-- the 'dummy' row, a blueprint -->
         <tr id="">
           <td id="status"></td>
-          <td id="time"></td>
+          <td id="result"></td>
           <td id="address"></td>
           <td id="host"></td>
           <td id="user"></td>
-          <td id="result"></td>
+          <td id="time"></td>
         </tr>
       </thead>
       <tbody>
