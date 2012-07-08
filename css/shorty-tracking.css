@@ -43,7 +43,9 @@
 #shorty-tracking-list-dialog #list tbody td#host {
   width:8em;
 }
-
+#shorty-tracking-list-dialog #list tbody tr:hover, tr:active {
+  background-color: #F2F2F2;
+}
 .shorty-tracking-reference {
   display: block;
   font-style: normal;
