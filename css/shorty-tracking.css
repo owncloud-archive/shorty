@@ -29,6 +29,11 @@
  * @author Christian Reiner
  */
 
+#shorty-tracking-list-dialog #shorty-reference span {
+  display: inline;
+  font-style: normal;
+  font-weight: normal;
+}
 #shorty-tracking-list-dialog #list thead th#time,
 #shorty-tracking-list-dialog #list tbody td#time,
 #shorty-tracking-list-dialog #list thead th#address,
@@ -48,9 +53,4 @@
 }
 #shorty-tracking-list-dialog #list tbody tr:hover, tr:active {
   background-color: #F0F0F0;
-}
-.shorty-tracking-reference {
-  display: block;
-  font-style: normal;
-  font-weight: normal;
 }

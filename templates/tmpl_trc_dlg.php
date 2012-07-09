@@ -44,17 +44,17 @@
         <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
             src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
       </a>
-      <span id="slogan"><?php echo $l->t("List of tracked clicks");?></span>
+      <span id="slogan"><?php echo $l->t("List of tracked clicks");?></span><br>
     </legend>
+    <!-- linguistic reference to the shorty -->
+    <div id="shorty-reference">
+      <span id="clicks" class="shorty-tracking-reference" data-slogan="<?php echo $l->t("Totel clicks");?>"></span>
+      <span id="title" class="ellipsis shorty-tracking-reference" data-slogan="<?php echo $l->t("Title");?>"></span>
+    </div>
+    <hr>
     <table id="list">
       <!-- table header -->
       <thead>
-        <!-- linguistic reference to the shorty -->
-        <tr id="referencebar">
-          <th> </th>
-          <th><span id="clicks" class="shorty-tracking-reference" data-slogan="<?php echo $l->t("Clicks");?>"></span></th>
-          <th colspan="4"><span id="title" class="ellipsis shorty-tracking-reference" data-slogan="<?php echo $l->t("Title");?>"></span></th>
-        </tr>
         <tr id="titlebar">
           <th id="state"  >
             <span><img id="tools" alt="toolbar" title="<?php echo $l->t('Toggle toolbar');?>"

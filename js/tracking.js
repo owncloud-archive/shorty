@@ -139,9 +139,9 @@ Shorty.Tracking=
     // this is the shortys id
     Shorty.Tracking.id=entry.attr('id');
     // update lists reference bar content to improve intuitivity
-    var title=Shorty.Tracking.dialog.find('#list thead tr#referencebar #title');
+    var title=Shorty.Tracking.dialog.find('#shorty-reference #title');
     title.html(title.attr('data-slogan')+': '+entry.attr('data-title'));
-    var clicks=Shorty.Tracking.dialog.find('#list thead tr#referencebar #clicks');
+    var clicks=Shorty.Tracking.dialog.find('#shorty-reference #clicks');
     clicks.html(clicks.attr('data-slogan')+': '+entry.attr('data-clicks'));
     // prepare to (re-)fill the list
     $.when(
