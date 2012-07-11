@@ -99,9 +99,7 @@ Shorty.Tracking=
     var fieldset=Shorty.Tracking.dialog.find('fieldset');
     // prepare loading
     $.when(
-      Shorty.WUI.List.dim(Shorty.Tracking.list,false),
       // force current height of dialog whilst refreshing the content to prevent flickering height
-      Shorty.Tracking.list.parent().css('height',Shorty.Tracking.list.parent().css('height'))
     ).done(function(){
       // retrieve new entries
       Shorty.WUI.List.empty(Shorty.Tracking.list);
@@ -115,9 +113,17 @@ Shorty.Tracking=
       }).done(function(){
         $.when(
           // remove forced height added above to prevent fickering height
-          Shorty.Tracking.list.parent().css('height',''),
           Shorty.WUI.List.dim(Shorty.Tracking.list,true)
         ).done(dfd.resolve).fail(dfd.reject)
+        // make table scrollable, when more than ... entries
+        if (17<Shorty.Tracking.list.find('tbody tr:not(.shorty-filtered)').length)
+        {
+          Shorty.Tracking.list.addClass('scrollingTable');
+          Shorty.Tracking.list.find('tbody').css('height','406px');
+        }else{
+          Shorty.Tracking.list.removeClass('scrollingTable');
+          Shorty.Tracking.list.find('tbody').css('height','');
+        }
       }).fail(function(){
         dfd.reject();
       })

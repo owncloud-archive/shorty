@@ -29,28 +29,58 @@
  * @author Christian Reiner
  */
 
+
 #shorty-tracking-list-dialog #shorty-reference span {
   display: inline;
   font-style: normal;
   font-weight: normal;
 }
+/*#shorty-tracking-list-dialog #list thead th {
+  margin: 0;
+  padding: 0;
+}*/
 #shorty-tracking-list-dialog #list thead th#time,
 #shorty-tracking-list-dialog #list tbody td#time,
 #shorty-tracking-list-dialog #list thead th#address,
 #shorty-tracking-list-dialog #list tbody td#address,
 #shorty-tracking-list-dialog #list thead th#user,
-#shorty-tracking-list-dialog #list tbody td#user,
-#shorty-tracking-list-dialog #list thead th#result,
-#shorty-tracking-list-dialog #list tbody td#result {
+#shorty-tracking-list-dialog #list tbody td#user {
   width:6em;
 }
-#shorty-tracking-list-dialog #list tbody td span {
-  padding: 0.1em 0.3em 0.1em 0.1em;
+#shorty-tracking-list-dialog #list thead th#result,
+#shorty-tracking-list-dialog #list tbody td#result {
+  width:5em;
 }
 #shorty-tracking-list-dialog #list thead th#host,
 #shorty-tracking-list-dialog #list tbody td#host {
   width:8em;
 }
+#shorty-tracking-list-dialog #list tbody td span {
+  padding: 0.1em 0.3em 0.1em 0.1em;
+}
 #shorty-tracking-list-dialog #list tbody tr:hover, tr:active {
   background-color: #F0F0F0;
+}
+/* #shorty-tracking-list-dialog #list tfoot tr td { */
+#shorty-tracking-list-dialog #list tfoot tr td {
+  width: 100%;
+}
+#shorty-tracking-list-dialog #list tfoot tr td span {
+  display: inline;
+  text-align: center;
+}
+
+#shorty-tracking-list-dialog table#list.scrollingTable thead {
+  display: block;
+}
+#shorty-tracking-list-dialog table#list.scrollingTable tbody {
+  display: block;
+/*   clear: both; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+}
+#shorty-tracking-list-dialog table#list.scrollingTable thead,
+#shorty-tracking-list-dialog table#list.scrollingTable tfoot {
+  width: 100%;
 }

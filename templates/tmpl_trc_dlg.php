@@ -52,75 +52,84 @@
       <span id="title" class="ellipsis shorty-tracking-reference" data-slogan="<?php echo $l->t("Title");?>"></span>
     </div>
     <hr>
-    <table id="list">
-      <!-- table header -->
-      <thead>
-        <tr id="titlebar">
-          <th id="state"  >
-            <span><img id="tools" alt="toolbar" title="<?php echo $l->t('Toggle toolbar');?>"
-                      src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
-                      data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
-                      data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
-            </span>
-          </th>
-          <th id="result" ><span><?php echo OC_Shorty_L10n::t('result') ?></span></th>
-          <th id="address"><span><?php echo OC_Shorty_L10n::t('Address')?></span></th>
-          <th id="host"   ><span><?php echo OC_Shorty_L10n::t('Host')   ?></span></th>
-          <th id="user"   ><span><?php echo OC_Shorty_L10n::t('User')   ?></span></th>
-          <th id="time"   ><span><?php echo OC_Shorty_L10n::t('Time')   ?></span></th>
-        </tr>
-        <!-- table toolbar -->
-        <tr id="toolbar">
-          <th id="status">
-            <div style="display:none;">
-              <a id="reload"><img alt="<?php echo $l->t('reload'); ?>" title="<?php echo $l->t('Reload list'); ?>" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>"></a>
-            </div>
-          </th>
-          <th id="result">
-            <div style="display:none;">
-              <span id="horst" class="shorty-select">
-                <select id='filter' value="" data-placeholder=" ">
-                  <?php foreach($_['shorty-result'] as $option=>$label)
-                    echo sprintf("<option value=\"%s\">%s</option>\n",($option?$label:''),$label);
-                  ?>
-                </select>
+      <table id="list">
+        <!-- table header -->
+        <thead>
+          <tr id="titlebar">
+            <th id="state"  >
+              <span><img id="tools" alt="toolbar" title="<?php echo $l->t('Toggle toolbar');?>"
+                        src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
+                        data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
+                        data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
               </span>
-            </div>
-          </th>
-          <th id="address">
-            <div style="display:none;">
-              <input id='filter' type="text" value="">
-            </div>
-          </th>
-          <th id="host">
-            <div style="display:none;">
-              <input id='filter' type="text" value="">
-            </div>
-          </th>
-          <th id="user">
-            <div style="display:none;">
-              <input id='filter' type="text" value="">
-            </div>
-          </th>
-          <th id="time">
-            <div style="display:none;">
-              <input id='filter' type="text" value="">
-            </div>
-          </th>
-        </tr>
-        <!-- the 'dummy' row, a blueprint -->
-        <tr id="">
-          <td id="status"></td>
-          <td id="result"></td>
-          <td id="address"></td>
-          <td id="host"></td>
-          <td id="user"></td>
-          <td id="time"></td>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+            </th>
+            <th id="result" ><span><?php echo OC_Shorty_L10n::t('result') ?></span></th>
+            <th id="address"><span><?php echo OC_Shorty_L10n::t('Address')?></span></th>
+            <th id="host"   ><span><?php echo OC_Shorty_L10n::t('Host')   ?></span></th>
+            <th id="user"   ><span><?php echo OC_Shorty_L10n::t('User')   ?></span></th>
+            <th id="time"   ><span><?php echo OC_Shorty_L10n::t('Time')   ?></span></th>
+          </tr>
+          <!-- table toolbar -->
+          <tr id="toolbar">
+            <th id="status">
+              <div style="display:none;">
+                <a id="reload"><img alt="<?php echo $l->t('reload'); ?>" title="<?php echo $l->t('Reload list'); ?>" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>"></a>
+              </div>
+            </th>
+            <th id="result">
+              <div style="display:none;">
+                <span class="shorty-select">
+                  <select id='filter' value="" data-placeholder=" ">
+                    <?php foreach($_['shorty-result'] as $option=>$label)
+                      echo sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label);
+                    ?>
+                  </select>
+                </span>
+              </div>
+            </th>
+            <th id="address">
+              <div style="display:none;">
+                <input id='filter' type="text" value="">
+              </div>
+            </th>
+            <th id="host">
+              <div style="display:none;">
+                <input id='filter' type="text" value="">
+              </div>
+            </th>
+            <th id="user">
+              <div style="display:none;">
+                <input id='filter' type="text" value="">
+              </div>
+            </th>
+            <th id="time">
+              <div style="display:none;">
+                <input id='filter' type="text" value="">
+              </div>
+            </th>
+          </tr>
+          <!-- the 'dummy' row, a blueprint -->
+          <tr id="">
+            <td id="status"></td>
+            <td id="result"></td>
+            <td id="address"></td>
+            <td id="host"></td>
+            <td id="user"></td>
+            <td id="time"></td>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td id="footer" colspan="6">
+              <span>
+                <img id="XXXbusy" height="12px" src="<?php echo OCP\Util::imagePath('shorty','loading-led.gif'); ?>">
+              </span>
+            </td>
+          <tr>
+        </tfoot>
+      </table>
   </fieldset>
 </div>
 <!-- end of verification dialog -->
