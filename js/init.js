@@ -35,7 +35,7 @@ $(document).ready(function(){
   // button to open the 'add' dialog
   $('#controls #add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
   // close button in dialogs
-  $('.shorty-dialog #close').bind('click',function(){Shorty.WUI.Dialog.hide($(this).parents('form').eq(0));});
+  $('.shorty-dialog #close').bind('click',function(){Shorty.WUI.Dialog.hide($(this).parents('form').first());});
   // status selection in embedded share dialog
   $('.shorty-embedded#dialog-share #status').bind('change',function(){
     Shorty.Action.Url.status($(this).siblings('#id').val(),$(this).val());
@@ -62,7 +62,7 @@ $(document).ready(function(){
     showOtherMonths: true,
     selectOtherMonths: true,
     showOn: 'button',
-    buttonImage: $('#controls').find('#until').eq(0).attr('icon'),
+    buttonImage: $('#controls').find('#until').first().attr('icon'),
     buttonImageOnly: true
   });
   $('#controls #until:not([readonly])').datepicker();
@@ -73,7 +73,7 @@ $(document).ready(function(){
   // bind highlighting to clicks on a row, except for the action icons
   $('#list not(.dialog-share) tbody tr td:not(#actions)').live('click',function(){
     Shorty.WUI.List.highlight($(this).parents('tr'));
-    Shorty.WUI.Dialog.hide($('.shorty-embedded').eq(0));
+    Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
   });
   // pretty select boxes where applicable (class controlled)
   $('.chosen').chosen();

@@ -372,7 +372,7 @@ Shorty =
        */
       click: function(event,element){
         var dfd = new $.Deferred();
-        var entry=element.parents('tr').eq(0);
+        var entry=element.parents('tr').first();
         if (Shorty.Debug) Shorty.Debug.log(event.type+" on action "+element.attr('id')+" for entry "+entry.attr('id'));
         //
         if ($('.shorty-dialog').is(':visible'))
@@ -620,32 +620,34 @@ Shorty =
        * @return Deferred.promise
        * @author Christian Reiner
        */
-      add: function(list,elements,hidden,callback){
-        callback=callback||Shorty.WUI.List.add_callbackAppend_default;
+      add: function(list,elements,hidden,callbackEnrich,callbackInsert){
+        callbackEnrich=callbackEnrich||Shorty.WUI.List.add_callbackEnrich_default;
+        callbackInsert=callbackInsert||Shorty.WUI.List.add_callbackInsert_default;
         if (Shorty.Debug) Shorty.Debug.log("add "+elements.length+" entries to list");
         var dfd = new $.Deferred();
         // insert list elements (sets) one by one
         var row,set;
         $.each(elements,function(i,set,hidden){
           // clone dummy row from list header: dummy is the last row
-          row = list.find('thead tr:last-child').eq(0).clone();
+          row = list.find('thead tr:last-child').first().clone();
           // add attributes to row, as data and value
-          callback(row,set);
+          callbackEnrich(row,set);
           // insert new row in table
+          callbackInsert(list,row);
           list.find('tbody').prepend(row);
           dfd.resolve();
         }) // each
         return dfd.promise();
       }, // Shorty.WUI.List.add
       /**
-       * @method Shorty.WUI.List.add_callbackAppend_default
+       * @method Shorty.WUI.List.add_callbackEnrich_default
        * @brief Enriches a raw list entry with usage specific values taken from a sepcified set of attributes
        * @param row jQueryObject Represents the raw row, freshly cloned
        * @param set array A set of attributes (values) defining an element to re represented by the row
        * @param hidden bool Flag that controls if added entries should be kept hidden for a later visualization (highlighting)
        * @author Christian Reiner
        */
-      add_callbackAppend_default: function(row,set,hidden){
+      add_callbackEnrich_default: function(row,set,hidden){
         // set row id to entry id
         row.attr('id',set.id);
         $.each(['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
@@ -693,7 +695,18 @@ Shorty =
           } // switch
           row.find('td#'+aspect).empty().append(span);
         }) // each aspect
-      }, // Shorty.WUI.List.add_callbackAppend_default
+      }, // Shorty.WUI.List.add_callbackEnrich_default
+      /**
+       * @method Shorty.WUI.List.add_callbackInsert_default
+       * @brief Inserts a cloned and enriched row into the table at a usage specific place
+       * @description
+       * Shortys always get inserted at the BEGIN of the table, regardless of its sorting
+       * This is important to always have the new entry flashing at the top of the list
+       * @author Christian Reiner
+       */
+      add_callbackInsert_default: function(list,row){
+          list.find('tbody').prepend(row);
+      }, // Shorty.WUI.List.add_callbackInsert_default
       /**
        * @method Shorty.WUI.List.build
        * @brief Builds the content of a list by retrieving and adding entries
@@ -705,17 +718,18 @@ Shorty =
         // prepare loading
         $.when(
           Shorty.WUI.Hourglass.toggle(true),
-          Shorty.WUI.List.dim($('#desktop #list').eq(0),false)
+          Shorty.WUI.List.dim($('#desktop #list').first(),false)
         ).done(function(){
           // retrieve new entries
           $.when(
             Shorty.WUI.List.get()
           ).pipe(function(response){
-            Shorty.WUI.List.fill($('#desktop #list').eq(0),response.data);
+            Shorty.WUI.List.empty($('#desktop #list').first());
+            Shorty.WUI.List.fill($('#desktop #list').first(),response.data);
           }).done(function(){
             $.when(
               Shorty.WUI.List.show(),
-              Shorty.WUI.List.dim($('#desktop #list').eq(0),true)
+              Shorty.WUI.List.dim($('#desktop #list').first(),true)
             ).always(function(){
               Shorty.WUI.Hourglass.toggle(false)
               dfd.resolve();
@@ -741,7 +755,7 @@ Shorty =
         if (show)
         {
           var rows=body.find('tr.shorty-fresh');
-          Shorty.WUI.List.highlight(rows.eq(0));
+          Shorty.WUI.List.highlight(rows.first());
           rows.each(function(){
             $(this).removeClass('shorty-fresh');
             $(this).find('td').effect('pulsate');
@@ -792,11 +806,10 @@ Shorty =
        */
       fill: function(list,elements,callback_filter,callback_append){
         callback_filter=callback_filter||Shorty.WUI.List.fill_callbackFilter_default;
-        callback_append=callback_append||Shorty.WUI.List.add_callbackAppend_default;
+        callback_append=callback_append||Shorty.WUI.List.add_callbackEnrich_default;
         if (Shorty.Debug) Shorty.Debug.log("fill list");
         var dfd = new $.Deferred();
         $.when(
-          Shorty.WUI.List.empty(list),
           Shorty.WUI.List.add(list,elements,false,callback_append)
         ).pipe(
           callback_filter(list)
@@ -1408,7 +1421,7 @@ Shorty =
           Shorty.WUI.Notification.hide(),
           // close and neutralize dialog
           Shorty.WUI.Dialog.hide(dialog),
-          Shorty.WUI.List.dim($('#desktop #list').eq(0),false),
+          Shorty.WUI.List.dim($('#desktop #list').first(),false),
           Shorty.WUI.List.show()
         ).done(function(){
           var data={status:  status,
@@ -1432,11 +1445,11 @@ Shorty =
             Shorty.WUI.Dialog.reset(dialog)
           }).done(function(response){
             // add shorty to existing list
-            Shorty.WUI.List.add($('#desktop #list').eq(0),[response.data],true);
-            Shorty.WUI.List.dim($('#desktop #list').eq(0),true)
+            Shorty.WUI.List.add($('#desktop #list').first(),[response.data],true);
+            Shorty.WUI.List.dim($('#desktop #list').first(),true)
             dfd.resolve(response);
           }).fail(function(response){
-            Shorty.WUI.List.dim($('#desktop #list').eq(0),true)
+            Shorty.WUI.List.dim($('#desktop #list').first(),true)
             dfd.reject(response);
           })
         })
@@ -1457,7 +1470,7 @@ Shorty =
           Shorty.WUI.Notification.hide(),
           // close and neutralize dialog
           Shorty.WUI.Dialog.hide(dialog),
-          Shorty.WUI.List.dim($('#desktop #list').eq(0),false),
+          Shorty.WUI.List.dim($('#desktop #list').first(),false),
           Shorty.WUI.List.show()
         ).done(function(){
           var data={id: id,
@@ -1480,7 +1493,7 @@ Shorty =
             Shorty.WUI.Dialog.reset(dialog);
             // modify existing entry in list
             Shorty.WUI.List.modify([response.data],true);
-            Shorty.WUI.List.dim($('#desktop #list').eq(0),true)
+            Shorty.WUI.List.dim($('#desktop #list').first(),true)
             dfd.resolve(response);
           }).fail(function(response){
             dfd.reject(response);
