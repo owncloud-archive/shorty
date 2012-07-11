@@ -121,9 +121,10 @@
         <tbody>
         </tbody>
       </table>
-      <span id="footer">
-        <img id="XXXbusy" height="12px" src="<?php echo OCP\Util::imagePath('shorty','loading-led.gif'); ?>">
-      </span>
+      <div id="footer">
+        <img id="load" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">
+        <img id="busy" src="<?php echo OCP\Util::imagePath('shorty','loading-led.gif'); ?>">
+      </div>
   </fieldset>
 </div>
 <!-- end of verification dialog -->
