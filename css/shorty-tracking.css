@@ -61,14 +61,6 @@
 #shorty-tracking-list-dialog #list tbody tr:hover, tr:active {
   background-color: #F0F0F0;
 }
-/* #shorty-tracking-list-dialog #list tfoot tr td { */
-#shorty-tracking-list-dialog #list tfoot tr td {
-  width: 100%;
-}
-#shorty-tracking-list-dialog #list tfoot tr td span {
-  display: inline;
-  text-align: center;
-}
 
 #shorty-tracking-list-dialog table#list.scrollingTable thead {
   display: block;
@@ -83,4 +75,9 @@
 #shorty-tracking-list-dialog table#list.scrollingTable thead,
 #shorty-tracking-list-dialog table#list.scrollingTable tfoot {
   width: 100%;
+}
+
+#shorty-tracking-list-dialog #footer {
+  width: 100%;
+  text-align: center;
 }

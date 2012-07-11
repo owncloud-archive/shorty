@@ -50,8 +50,8 @@
     <div id="shorty-reference">
       <span id="clicks" class="shorty-tracking-reference" data-slogan="<?php echo $l->t("Totel clicks");?>"></span>
       <span id="title" class="ellipsis shorty-tracking-reference" data-slogan="<?php echo $l->t("Title");?>"></span>
+      <hr>
     </div>
-    <hr>
       <table id="list">
         <!-- table header -->
         <thead>
@@ -120,16 +120,10 @@
         </thead>
         <tbody>
         </tbody>
-        <tfoot>
-          <tr>
-            <td id="footer" colspan="6">
-              <span>
-                <img id="XXXbusy" height="12px" src="<?php echo OCP\Util::imagePath('shorty','loading-led.gif'); ?>">
-              </span>
-            </td>
-          <tr>
-        </tfoot>
       </table>
+      <span id="footer">
+        <img id="XXXbusy" height="12px" src="<?php echo OCP\Util::imagePath('shorty','loading-led.gif'); ?>">
+      </span>
   </fieldset>
 </div>
 <!-- end of verification dialog -->

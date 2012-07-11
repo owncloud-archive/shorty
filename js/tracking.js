@@ -115,11 +115,15 @@ Shorty.Tracking=
           // remove forced height added above to prevent fickering height
           Shorty.WUI.List.dim(Shorty.Tracking.list,true)
         ).done(dfd.resolve).fail(dfd.reject)
+        var maxHeight=$(document).height()
+                     -$('#header').outerHeight(true)-$('#controls').outerHeight(true)
+                     -Shorty.Tracking.dialog.find('#shorty-reference').outerHeight(true)
+                     -Shorty.Tracking.dialog.find('tr').outerHeight(true);
         // make table scrollable, when more than ... entries
-        if (17<Shorty.Tracking.list.find('tbody tr:not(.shorty-filtered)').length)
+        if (maxHeight<Shorty.Tracking.dialog.outerHeight(true))
         {
           Shorty.Tracking.list.addClass('scrollingTable');
-          Shorty.Tracking.list.find('tbody').css('height','406px');
+          Shorty.Tracking.list.find('tbody').css('height',(maxHeight-200)+'px');
         }else{
           Shorty.Tracking.list.removeClass('scrollingTable');
           Shorty.Tracking.list.find('tbody').css('height','');
