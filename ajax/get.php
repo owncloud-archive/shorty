@@ -48,11 +48,11 @@ try
 {
   define ('PAGE_SIZE', 100);
   $p_shorty = OC_Shorty_Type::req_argument ( 'shorty', OC_Shorty_Type::ID,      TRUE );
-//   $p_offset = OC_Shorty_Type::req_argument ( 'offset', OC_Shorty_Type::INTEGER, FALSE);
+  $p_offset = OC_Shorty_Type::req_argument ( 'offset', OC_Shorty_Type::INTEGER, FALSE);
   $param = array
   (
     ':shorty' => $p_shorty,
-//     ':offset' => $p_offset||0,
+    ':offset' => $p_offset?$p_offset:0,
     ':limit'  => PAGE_SIZE,
   );
   $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_LIST );

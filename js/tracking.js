@@ -43,7 +43,8 @@ $(document).ready(function(){
     Shorty.Tracking.dialog.find('#list #titlebar').bind('click',function(){
       Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.list,Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking);
     });
-    Shorty.Tracking.dialog.find('#list #toolbar').find('#reload').bind('click',Shorty.Tracking.build);
+    Shorty.Tracking.dialog.find('#list #toolbar #reload').bind('click',function(){Shorty.Tracking.build(false);});
+    Shorty.Tracking.dialog.find('#footer #load').bind('click',function(){Shorty.Tracking.build(true);});
     // title & target filter reaction
     Shorty.Tracking.list.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter').bind('keyup',function(){
       Shorty.WUI.List.filter(
@@ -93,45 +94,49 @@ Shorty.Tracking=
    * @return deferred.promise
    * @author Christian Reiner
    */
-  build: function(){
+  build: function(keep){
+    keep=keep||false;
     if (Shorty.Debug) Shorty.Debug.log("building tracking list");
     var dfd = new $.Deferred();
     var fieldset=Shorty.Tracking.dialog.find('fieldset');
+    var offset=0;
+    if (keep){
+      if (Shorty.Debug) Shorty.Debug.log("keeping existing entries");
+      // compute offset of next chunk to retrieve
+      offset=Shorty.Tracking.list.find('tbody tr').last().attr('id');
+    }else{
+      // drop existing, old entries
+      Shorty.WUI.List.empty(Shorty.Tracking.list);
+    }
     // prepare loading
     $.when(
-      // force current height of dialog whilst refreshing the content to prevent flickering height
-    ).done(function(){
       // retrieve new entries
-      Shorty.WUI.List.empty(Shorty.Tracking.list);
+      Shorty.Tracking.get(Shorty.Tracking.id,offset)
+    ).pipe(function(response){
+      Shorty.WUI.List.fill(Shorty.Tracking.list,
+                           response.data,
+                           Shorty.WUI.List.fill_callbackFilter_tracking,
+                           Shorty.WUI.List.add_callbackEnrich_tracking,
+                           Shorty.WUI.List.add_callbackInsert_tracking);
+    }).pipe(function(){
       $.when(
-        Shorty.Tracking.get(Shorty.Tracking.id)
-      ).pipe(function(response){
-        Shorty.WUI.List.fill(Shorty.Tracking.list,
-                             response.data,
-                             Shorty.WUI.List.fill_callbackFilter_tracking,
-                             Shorty.WUI.List.add_callbackAppend_tracking);
-      }).done(function(){
-        $.when(
-          // remove forced height added above to prevent fickering height
-          Shorty.WUI.List.dim(Shorty.Tracking.list,true)
-        ).done(dfd.resolve).fail(dfd.reject)
-        var maxHeight=$(document).height()
-                     -$('#header').outerHeight(true)-$('#controls').outerHeight(true)
-                     -Shorty.Tracking.dialog.find('#shorty-reference').outerHeight(true)
-                     -Shorty.Tracking.dialog.find('tr').outerHeight(true);
-        // make table scrollable, when more than ... entries
-        if (maxHeight<Shorty.Tracking.dialog.outerHeight(true))
-        {
-          Shorty.Tracking.list.addClass('scrollingTable');
-          Shorty.Tracking.list.find('tbody').css('height',(maxHeight-200)+'px');
-        }else{
-          Shorty.Tracking.list.removeClass('scrollingTable');
-          Shorty.Tracking.list.find('tbody').css('height','');
-        }
-      }).fail(function(){
-        dfd.reject();
-      })
-    })
+        // remove forced height added above to prevent fickering height
+        Shorty.WUI.List.dim(Shorty.Tracking.list,true)
+      ).done(dfd.resolve).fail(dfd.reject)
+      var maxHeight=$(document).height()
+                   -$('#header').outerHeight(true)-$('#controls').outerHeight(true)
+                   -Shorty.Tracking.dialog.find('#shorty-reference').outerHeight(true)
+                   -Shorty.Tracking.dialog.find('tr').outerHeight(true);
+      // make table scrollable, when more than ... entries
+      if (maxHeight<Shorty.Tracking.dialog.outerHeight(true))
+      {
+        Shorty.Tracking.list.addClass('scrollingTable');
+        Shorty.Tracking.list.find('tbody').css('height',(maxHeight-200)+'px');
+      }else{
+        Shorty.Tracking.list.removeClass('scrollingTable');
+        Shorty.Tracking.list.find('tbody').css('height','');
+      }
+    }).done(dfd.resolve).fail(dfd.reject)
     return dfd.promise();
   }, // Shorty.Tracking.build
   /**
@@ -180,8 +185,7 @@ Shorty.Tracking=
     offset = offset || 0;
     var dfd=new $.Deferred();
     // retrieve list template
-//     var data={shorty:shorty,offset:offset};
-    var data={shorty:shorty}
+    var data={shorty:shorty,offset:offset};
     $.ajax({
       type:     'GET',
       url:      OC.filePath('shorty-tracking','ajax','get.php'),
@@ -239,7 +243,7 @@ Shorty.Tracking=
 } // Shorty.Tracking
 
 /**
- * @method Shorty.WUI.List.add_callbackAppend_tracking
+ * @method Shorty.WUI.List.add_callbackEnrich_tracking
  * @brief Callback function replacing the default used in Shorty.WUI.List.add()
  * @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
  * @param set object This is the set of attributes describing a single registered click
@@ -247,7 +251,7 @@ Shorty.Tracking=
  * @description This replacement uses the plugin specific column names
  * @author Christian Reiner
  */
-Shorty.WUI.List.add_callbackAppend_tracking=function(row,set,hidden){
+Shorty.WUI.List.add_callbackEnrich_tracking=function(row,set,hidden){
   // set row id to entry id
   row.attr('id',set.id);
   // handle all aspects, one by one
@@ -285,7 +289,17 @@ Shorty.WUI.List.add_callbackAppend_tracking=function(row,set,hidden){
     } // switch
     row.find('td#'+aspect).empty().append(span);
   }) // each aspect
-}, // Shorty.WUI.List.add_callbackAppend_tracking
+} // Shorty.WUI.List.add_callbackEnrich_tracking
+/**
+ * @method Shorty.WUI.List.add_callbackInsert_tracking
+ * @brief Inserts a cloned and enriched row into the table at a usage specific place
+ * @description
+ * New entries always get appended to the list of already existing entries, since those are always sorted in a chronological order
+ * @author Christian Reiner
+ */
+Shorty.WUI.List.add_callbackInsert_tracking=function(list,row){
+    list.find('tbody').prepend(row);
+} // Shorty.WUI.List.add_callbackInsert_tracking
 
 /**
  * @method Shorty.WUI.List.fill_callbackFilter_tracking
