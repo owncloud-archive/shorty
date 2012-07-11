@@ -145,7 +145,7 @@ Shorty.Tracking=
   control:function(entry){
     if (Shorty.Debug) Shorty.Debug.log("tracking list controller");
     var dfd=new $.Deferred();
-    var dialog=Shorty.Tracking.dialog;
+//     var dialog=Shorty.Tracking.dialog;
     // this is the shortys id
     Shorty.Tracking.id=entry.attr('id');
     // update lists reference bar content to improve intuitivity
@@ -155,9 +155,9 @@ Shorty.Tracking=
     clicks.html(clicks.attr('data-slogan')+': '+entry.attr('data-clicks'));
     // prepare to (re-)fill the list
     $.when(
-      Shorty.WUI.List.empty(dialog)
+      Shorty.WUI.List.empty(Shorty.Tracking.dialog)
     ).done(function(){
-      Shorty.WUI.Dialog.show(dialog)
+      Shorty.WUI.Dialog.show(Shorty.Tracking.dialog)
       dfd.resolve();
     }).fail(function(){
       dfd.reject();
