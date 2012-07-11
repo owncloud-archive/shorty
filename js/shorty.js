@@ -30,42 +30,6 @@
  */
 
 /**
- * @function max
- * @brief max()-selector
- * @usage: var maxWidth = $("a").max(function() {return $(this).width(); });
- * @param selector jQueryObject Selector of objects whos values are to be compared
- * @return value Maximum of values represented by the selector
- */
-$.fn.max = function(selector) {
-  return Math.max.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
-}
-/**
- * @function min
- * @brief min()-selector
- * @usage: var minWidth = $("a").min(function() {return $(this).width(); });
- * @param selector jQueryObject Selector of objects whos values are to be compared
- * @return value Minimum of values represented by the selector
- */
-$.fn.min = function(selector) {
-  return Math.min.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
-}
-
-/**
- * @function executeFunctionByName
- * @brief Calls a namespaced function named by a string
- * @description This is something like phps call_user_func()...
- */
-function executeFunctionByName(functionName, context /*, args */) {
-  var args = Array.prototype.slice.call(arguments).splice(2);
-  var namespaces = functionName.split(".");
-  var func = namespaces.pop();
-  for(var i = 0; i < namespaces.length; i++) {
-    context = context[namespaces[i]];
-  }
-  return context[func].apply(this, args);
-}
-
-/**
  * @class Shorty
  * @brief Central activity library for the client side
  * @author Christian Reiner
@@ -865,10 +829,10 @@ Shorty =
         var dfd = new $.Deferred();
         $.when(
           list.find('tbody tr td#'+column).filter(function(){
-            return (-1==$(this).find('span').text().toLowerCase().indexOf(pattern.toLowerCase()));
+            return (-1==$(this).parent().attr('data-'+column).toLowerCase().indexOf(pattern.toLowerCase()));
           }).addClass('shorty-filtered'),
           list.find('tbody tr td#'+column).filter(function(){
-            return (-1!=$(this).find('span').text().toLowerCase().indexOf(pattern.toLowerCase()));
+            return (-1!=$(this).parent().attr('data-'+column).toLowerCase().indexOf(pattern.toLowerCase()));
           }).removeClass('shorty-filtered'),
           list.find('tbody tr').filter(':has(td.shorty-filtered)').addClass('shorty-filtered'),
           list.find('tbody tr').not(':has(td.shorty-filtered)').removeClass('shorty-filtered')

@@ -41,6 +41,7 @@ OCP\Util::addStyle  ( 'shorty',         'shorty' );
 OCP\Util::addScript ( 'shorty/3rdparty','jquery.tinysort.min' );
 OCP\Util::addScript ( 'shorty/3rdparty','jquery.impromptu.min' );
 OCP\Util::addScript ( 'shorty',         'shorty' );
+OCP\Util::addScript ( 'shorty',         'util' );
 OCP\Util::addScript ( 'shorty',         'init' );
 if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
   OCP\Util::addScript ( 'shorty',  'debug' );

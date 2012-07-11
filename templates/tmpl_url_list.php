@@ -113,10 +113,10 @@
       <!-- status filter, colspan 2 to prevent width enhancement of column -->
       <th id="status" colspan=2>
         <div style="display:none;">
-          <span id="horst" class="shorty-select">
+          <span class="shorty-select">
             <select id='filter' value="" data-placeholder=" ">
               <?php foreach($_['shorty-status'] as $option=>$label)
-                echo sprintf("<option value=\"%s\">%s</option>\n",($option?$label:''),$label);
+                echo sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label);
               ?>
             </select>
           </span>
