@@ -44,8 +44,8 @@ class OC_Shorty_Exception extends Exception
   /**
    * @method OC_Shorty_Exception::__construct
    * @brief: Constructs an exception based on a phrase and a set of parameters
-   * @param phrase (string) Human readable message that should be translatable
-   * @param param  (array) Set of parameters to be used as sprintf arguments to fill the phrase
+   * @param string phrase: Human readable message that should be translatable
+   * @param array param: Set of parameters to be used as sprintf arguments to fill the phrase
    * @access public
    * @author Christian Reiner
    */
@@ -63,7 +63,7 @@ class OC_Shorty_Exception extends Exception
   /**
    * @method OC_Shorty_Exception::getTranslation
    * @brief: Returns the translated message of the exception
-   * @returns (string) Translated message including the filled in set of arguments
+   * @return string: Translated message including the filled in set of arguments
    * @access public
    * @author Christian Reiner
    */
@@ -75,8 +75,8 @@ class OC_Shorty_Exception extends Exception
   /**
    * @method OC_Shorty_Exception::JSONerror
    * @brief Calls OCP\JSON::error with a pretty formated version of an exception
-   * @param e (exception) an exception object holding information
-   * @returns (json) OCP\JSON::error
+   * @param exception: An exception object holding information
+   * @return json: OCP\JSON::error
    * @access public
    * @author Christian Reiner
    */
@@ -129,7 +129,7 @@ class OC_Shorty_HttpException extends OC_Shorty_Exception
   /**
    * @method OC_Shorty_HttpException::__construct
    * @brief: Constructs an exception based on a phrase and a set of parameters
-   * @param status (integer) Http status code
+   * @param integer status: Http status code
    * @access public
    * @author Christian Reiner
    */

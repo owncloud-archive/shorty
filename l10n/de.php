@@ -26,7 +26,7 @@
 
 /**
  * @file l10n/de.php
- * Internationalization / localization file for language DE (german)
+ * @brief Internationalization / localization file for language DE (german)
  * @author Christian Reiner
  */
 

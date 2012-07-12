@@ -27,14 +27,14 @@
 /**
  * @file ajax/add.php
  * @brief Ajax method to add a new shorty defined by request arguments
- * @param title (string) Human readable title of the shorty
- * @param target (url) Remote target url meant to be shortened
- * @param until (date) Date until when the created shorty is valid and usable
- * @param notes (string) Any additional information in text form
- * @param favicon (url) Reference to the shortcut icon used in target url
- * @returns (json) success/error state indicator
- * @returns (json) Associative array of attributes of the generated shorty
- * @returns (json) Human readable message
+ * @param string title: Human readable title of the shorty
+ * @param url target: Remote target url meant to be shortened
+ * @param date until: Date until when the created shorty is valid and usable
+ * @param string notes: Any additional information in text form
+ * @param url favicon: Reference to the shortcut icon used in target url
+ * @return json: success/error state indicator
+ * @return json: Associative array of attributes of the generated shorty
+ * @return json: Human readable message
  * @author Christian Reiner
  */
 

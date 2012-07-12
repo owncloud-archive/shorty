@@ -27,8 +27,8 @@
 /**
  * @file ajax/count.php
  * @brief Ajax method to retrieve a list of important sums, counts of the existing set of shortys
- * @returns (json) success/error state indicator
- * @returns (json) Associative array of counts
+ * @return json: success/error state indicator
+ * @return json: Associative array of counts
  * @author Christian Reiner
  */
 

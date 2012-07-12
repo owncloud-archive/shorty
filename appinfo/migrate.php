@@ -30,9 +30,18 @@
  * @author Christian Reiner
  */
 
+ /**
+ * @class OC_Migration_Provider_Shorty
+ * @brief App specific extension of OCs migration class
+ * @author Christian Reiner
+ */
 class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 {
-
+  /**
+   * @method export
+   * @brief Collects all data relevant for this app
+   * @author Christian Reiner
+   */
   function export ( )
   {
     OCP\Util::writeLog ( 'shorty','Starting data migration export for Shorty', OCP\Util::INFO );
@@ -51,6 +60,11 @@ class OC_Migration_Provider_Shorty extends OC_Migration_Provider
     else return false;
   } // function export
 
+  /**
+   * @method import
+   * @brief Imports all data from a given resource into this apps storage areas
+   * @author Christian Reiner
+   */
   function import ( )
   {
     OCP\Util::writeLog ( 'shorty','Starting data migration import for Shorty', OCP\Util::INFO );

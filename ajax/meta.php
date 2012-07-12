@@ -27,9 +27,9 @@
 /**
  * @file ajax/meta.php
  * @brief Ajax method to query meta information about a given remote url
- * @param target (string) Url of a remote web resource
- * @returns (json) success/error state indicator
- * @returns (array) Associative array of meta data aspects
+ * @param string target: Url of a remote web resource
+ * @return json: success/error state indicator
+ * @return array: Associative array of meta data aspects
  * @author Christian Reiner
  */
 

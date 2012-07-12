@@ -33,6 +33,7 @@
 /**
  * @class OC_Shorty_Meta
  * @brief Static 'namespace' class for url meta information retrieval
+ * @description
  * ownCloud propagates to use static classes as namespaces instead of OOP.
  * This 'namespace' defines routines for the retrieval of meta information about remote urls. 
  * @access public
@@ -44,8 +45,8 @@ class OC_Shorty_Meta
   /**
    * @method OC_Shorty_Meta::fetchMetaData
    * @brief Retrieves the meta information to a given remote url
-   * @param url decoded target url for which meta information if requested
-   * @returns associative array holding the requested meta data
+   * @param url url: Decoded target url for which meta information if requested
+   * @return array: Associative array holding the requested meta data
    * @access public
    * @author Christian Reiner
    */
@@ -118,9 +119,9 @@ class OC_Shorty_Meta
   /**
    * @method OC_Shorty_Meta::selectCode
    * @brief Some helper utility used to resolve numeric http status codes into human readable strings
-   * @param aspect a string indicating a section/pool a code is to be resolved in
-   * @param identifier a string indicating a specific code to be resolved
-   * @returns a human readable string resolving the specified numeric status code
+   * @param string aspect: String indicating a section/pool a code is to be resolved in
+   * @param string identifier: String indicating a specific code to be resolved
+   * @return string: Human readable string resolving the specified numeric status code
    * @throws OC_Shorty_Exception in case of an undefined code to be resolved
    * @access public
    * @author Christian Reiner
@@ -160,9 +161,9 @@ class OC_Shorty_Meta
   /**
    * @method OC_Shorty_Meta::selectIcon
    * @brief Some helper utility for the easy integrate of icon references into templates and alike
-   * @param aspect a string indicating a section/pool an icon is to be chosen from
-   * @param identifier a string indicating a specific icon to be referenced
-   * @returns a hyper reference to an icon in form of a string
+   * @param string aspect: String indicating a section/pool an icon is to be chosen from
+   * @param string identifier: String indicating a specific icon to be referenced
+   * @return string: Hyper reference to an icon in form of a string
    * @access public
    * @author Christian Reiner
    */

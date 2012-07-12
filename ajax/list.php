@@ -27,9 +27,9 @@
 /**
  * @file ajax/list.php
  * @brief Ajax method to retrieve a list of existing shortys
- * @returns (json) success/error state indicator
- * @returns (number) Total number of shortys in the list
- * @returns (json) Numeric array of all shortys, associative array of attributes as values for every single shorty contained
+ * @return json: success/error state indicator
+ * @return number: Total number of shortys in the list
+ * @return json: Numeric array of all shortys, associative array of attributes as values for every single shorty contained
  * @author Christian Reiner
  */
 

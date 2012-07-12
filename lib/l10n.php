@@ -65,9 +65,9 @@ class OC_Shorty_L10n
   /**
    * @method OC_Shorty_L10n::t
    * @brief Translates a given string into the users session language and fills any placeolders
-   * @param phrase to be translated
-   * @param … further arguments used as filling tokens in the tradition of printf strategies
-   * @returns translated phrase or the original phrase incase no translation could be found
+   * @param string phrase: Phrase to be translated
+   * @param … Further arguments used as filling tokens in the tradition of printf strategies
+   * @return string: Translated phrase or the original phrase incase no translation could be found
    * @access public
    * @author Christian Reiner
    */

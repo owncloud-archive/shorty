@@ -45,7 +45,8 @@ class OC_Shorty_Tools
 
   /**
    * @method OC_Shorty_Tools::ob_control
-   * @param on (boolean) wether to activate or deactivate the buffer
+   * @param bool on: Wether to activate or deactivate the buffer
+   * @return NULL|string: NULL when starting buffering, buffered content when stopping buffering
    * @access public
    * @author Christian Reiner
    */
@@ -82,10 +83,10 @@ class OC_Shorty_Tools
   
   /**
    * @method OC_Shorty_Tools::db_escape
-   * @brief escape a value for incusion in db statements
-   * @param value (string) value to be escaped
-   * @returns (string) escaped string value
-   * @throws OC_Shorty_Exception in case of an unknown database engine
+   * @brief Escape a value for incusion in db statements
+   * @param string value: Value to be escaped
+   * @return string: Escaped string value
+   * @throws OC_Shorty_Exception In case of an unknown database engine
    * @access public
    * @author Christian Reiner
    * @todo use mdb2::quote() / mdb2:.escape() instead ?
@@ -110,9 +111,9 @@ class OC_Shorty_Tools
 
   /**
    * @method OC_Shorty_Tools::db_timestamp
-   * @brief current timestamp as required by db engine
-   * @returns (string) current timestamp as required by db engine
-   * @throws OC_Shorty_Exception in case of an unknown database engine
+   * @brief Current timestamp as required by db engine
+   * @return string: Current timestamp as required by db engine
+   * @throws OC_Shorty_Exception In case of an unknown database engine
    * @access public
    * @author Christian Reiner
    * @todo not really required any more, we rely on CURRENT_TIMESTAMP instead
@@ -133,7 +134,7 @@ class OC_Shorty_Tools
   /**
    * @method OC_Shorty_Tools::shorty_id
    * @brief Creates a unique id to be used for a new shorty entry
-   * @returns (string) valid and unique id
+   * @return string: Valid and unique id
    * @access public
    * @author Christian Reiner
    */
@@ -151,7 +152,10 @@ class OC_Shorty_Tools
   } // function shorty_id
 
   /**
-   *
+   * @method randomAlphabet
+   * @brief Creates a random alphabet, unique but static for an installation
+   * @access public
+   * @author Christian Reiner
    */
   static function randomAlphabet ($length)
   {
@@ -164,8 +168,8 @@ class OC_Shorty_Tools
   /**
    * @method OC_Shorty_Tools::convertToAlphabet
    * @brief Converts a given decimal number into an arbitrary base (alphabet)
-   * @param number decimal value to be converted
-   * @returns (string) converted value in string notation
+   * @param integer number: Decimal numeric value to be converted
+   * @return string: Converted value in string notation
    * @access public
    * @author Christian Reiner
    */
@@ -203,8 +207,8 @@ class OC_Shorty_Tools
   /**
    * @method OC_Shorty_Tools::relayUrl
    * @brief Generates a relay url for a given id acting as a href target for all backends
-   * @param id (string) shorty id as shorty identification
-   * @returns (string) generated absolute relay url
+   * @param string id: Shorty id as shorty identification
+   * @return string: Generated absolute relay url
    * @access public
    * @author Christian Reiner
    */
@@ -216,7 +220,7 @@ class OC_Shorty_Tools
   /**
    * @method OC_Shorty_Tools::countShortys
    * @brief Returns the total number of entries and clicks from the database
-   * @returns (array) two elements sum_shortys & sum_clicks holding an integer each
+   * @return array: Two elements sum_shortys & sum_clicks holding an integer each
    * @access public
    * @author Christian Reiner
    */

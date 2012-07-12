@@ -149,11 +149,11 @@ class OC_Shorty_Type
    * @brief Validates a given value against a type specific regular expression
    * Validates a given value according to the claimed type of the value.
    * Validation is done by matching the value against a type specific regular expression. 
-   * @param value the value to be verified according to the specified type
-   * @param type the type the value is said to belong to, important for verification
-   * @param strict flag indicating if the verification should be done strict, that is if an exception should be thrown in case of a failure
-   * @returns the value itself in case of a positive validation, NULL or an exception in case of a failure, depending on the flag indication strict mode
-   * @throws error indicating a failed validation in case of strict mode
+   * @param mixed value: Value to be verified according to the specified type
+   * @param OC_Shorty_Type::type type: Type the value is said to belong to, important for verification
+   * @param bool strict: Flag indicating if the verification should be done strict, that is if an exception should be thrown in case of a failure
+   * @return mixed|NULL The value itself in case of a positive validation, NULL or an exception in case of a failure, depending on the flag indication strict mode
+   * @throws error Indicating a failed validation in case of strict mode
    * @access public
    * @author Christian Reiner
    */
@@ -227,14 +227,14 @@ class OC_Shorty_Type
 
   /**
    * @method OC_Shorty_Type::normalize
-   * @brief cleanup and formal normalization of a given value according to its type
+   * @brief Cleanup and formal normalization of a given value according to its type
    * Normalizes a given value according to its claimed type.
    * This typically means trimming of string values, but sometimes also more specific actions. 
-   * @param value the value to be normalized
-   * @param type the supposed type of the value
-   * @param strict boolean flag indicating if the normalization should be done in a strict way
-   * @returns the normalized value
-   * @throws error indicating a parameter violation
+   * @param mixed value: Value to be normalized
+   * @param OC_Shorty_Type::type type: Supposed type of the value
+   * @param bool strict: Flag indicating if the normalization should be done in a strict way
+   * @return mixed: The normalized value
+   * @throws error Indicating a parameter violation
    * @access public
    * @author Christian Reiner
    */
@@ -265,11 +265,11 @@ class OC_Shorty_Type
 
   /**
    * @method OC_Shorty_Type::req_argument
-   * @brief returns checked request argument or throws an error
-   * @param arg (string) name of the request argument to get_argument
-   * @param strict (bool) controls if an exception will be thrown upon a missing argument
-   * @returns (string) checked and prepared value of request argument
-   * @throws error indicating a parameter violation
+   * @brief Returns checked request argument or throws an error
+   * @param string arg: Name of the request argument to get_argument
+   * @param bool strict: Controls if an exception will be thrown upon a missing argument
+   * @return string: Checked and prepared value of request argument
+   * @throws error Indicating a parameter violation
    * @access public
    * @author Christian Reiner
    */

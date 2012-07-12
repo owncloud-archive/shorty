@@ -27,9 +27,9 @@
 /**
  * @file ajax/del.php
  * @brief Ajax method to delete an existing shorty
- * @param id (string) Internal id of a referenced shorty
- * @returns (json) success/error state indicator
- * @returns (json) Key of shorty that was deleted
+ * @param string id: Internal id of a referenced shorty
+ * @return json: success/error state indicator
+ * @return json: Key of shorty that was deleted
  * @author Christian Reiner
  */
 

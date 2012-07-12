@@ -41,9 +41,12 @@
 class OC_Shorty_Hooks
 {
   /**
+   * @method OC_Shorty_Hooks::deleteUser
    * @brief Deletes all Shortys and preferences of a certain user
-   * @param paramters (array) parameters from postDeleteUser-Hook
+   * @param array paramters: Array of parameters from postDeleteUser-Hook
    * @return bool
+   * @access public
+   * @author Christian Reiner
    */
   public static function deleteUser ( $parameters )
   {
@@ -64,6 +67,13 @@ class OC_Shorty_Hooks
     return $result;
   }
 
+  /**
+   * @method OC_Shorty_Hooks::requestActions
+   * @brief Hook that requests any actions plugins may want to register
+   * @return array: Array of descriptions of actions
+   * @access public
+   * @author Christian Reiner
+   */
   public static function requestActions ( )
   {
     OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', OCP\Util::DEBUG );
@@ -96,12 +106,25 @@ class OC_Shorty_Hooks
     return $actions;
   } // function requestActions
 
+  /**
+   * @method OC_Shorty_Hooks::requestIncludes
+   * @brief Hook that requests any actions plugins may want to register
+   * @return array: Array of descriptions of actions
+   * @access public
+   * @author Christian Reiner
+   */
   public static function requestIncludes ( )
   {
     OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', OCP\Util::DEBUG );
     OC_Hook::emit ( 'OC_Shorty', 'registerIncludes', array() );
   } // function requestIncludes
 
+  /**
+   * @method OC_Shorty_Hooks::registerClicks
+   * @brief Hook offering informations about each click relayed by this app
+   * @access public
+   * @author Christian Reiner
+   */
   public static function registerClick ( $shorty, $request, $result )
   {
     OCP\Util::writeLog ( 'shorty', sprintf("Registering click to shorty '%s'",$shorty['id']), OCP\Util::DEBUG );

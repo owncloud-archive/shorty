@@ -33,6 +33,7 @@
 /**
  * @class OC_Shorty_Query
  * @brief Static catalog of sql queries
+ * @description
  * These query templates are referenced by a OC_Shorty_Query::URL_...
  * They have to be prapared by adding an array of parameters
  * @access public
