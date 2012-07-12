@@ -51,9 +51,9 @@ try
   $p_offset = OC_Shorty_Type::req_argument ( 'offset', OC_Shorty_Type::INTEGER, FALSE);
   $param = array
   (
-    ':shorty' => $p_shorty,
-    ':offset' => $p_offset?$p_offset:0,
-    ':limit'  => PAGE_SIZE,
+    ':shorty'     => $p_shorty,
+//     ':offset'     => intval($p_offset?$p_offset:0),
+    ':limit'      => PAGE_SIZE,
   );
   $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_LIST );
   $result = $query->execute($param);
@@ -64,6 +64,7 @@ try
   OCP\Util::writeLog( 'shorty-tracking', sprintf("Prepared list of clicks holding %s entries.",sizeof($reply)), OC_Log::DEBUG );
   OCP\JSON::success ( array ( 'data'    => $reply,
                               'count'   => sizeof($reply),
+                              'rest'    => (PAGE_SIZE>sizeof($reply)) ? FALSE : TRUE,
                               'message' => OC_ShortyTracking_L10n::t('Number of entries: %s', count($reply)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

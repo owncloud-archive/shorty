@@ -122,8 +122,8 @@
         </tbody>
       </table>
       <div id="footer">
-        <img id="load" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">
-        <img id="busy" src="<?php echo OCP\Util::imagePath('shorty','loading-led.gif'); ?>">
+        <img id="load" style="display:none;" alt="load" title="<?php echo $l->t('load');?>"
+             src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">
       </div>
   </fieldset>
 </div>

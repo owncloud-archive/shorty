@@ -51,8 +51,7 @@ $(document).ready(function(){
         Shorty.Tracking.list,
         $($(this).context.parentElement.parentElement).attr('id'),
         $(this).val(),
-        Shorty.WUI.List.fill_callbackFilter_tracking
-      );
+        Shorty.WUI.List.fill_callbackFilter_tracking);
     });
     // status filter reaction
     Shorty.Tracking.list.find('thead tr#toolbar th#result select').change(function(){
@@ -60,8 +59,7 @@ $(document).ready(function(){
         Shorty.Tracking.list,
         $(this).parents('th').attr('id'),
         $(this).find(':selected').val(),
-        Shorty.WUI.List.fill_callbackFilter_tracking
-      );
+        Shorty.WUI.List.fill_callbackFilter_tracking);
     });
   }).done(dfd.resolve).fail(dfd.reject);
   return dfd.promise();
@@ -108,7 +106,6 @@ Shorty.Tracking=
       // drop existing, old entries
       Shorty.WUI.List.empty(Shorty.Tracking.list);
     }
-    // prepare loading
     $.when(
       // retrieve new entries
       Shorty.Tracking.get(Shorty.Tracking.id,offset)
@@ -118,6 +115,9 @@ Shorty.Tracking=
                            Shorty.WUI.List.fill_callbackFilter_tracking,
                            Shorty.WUI.List.add_callbackEnrich_tracking,
                            Shorty.WUI.List.add_callbackInsert_tracking);
+      if (response.rest)
+           Shorty.Tracking.dialog.find('#footer #load').fadeIn('fast');
+      else Shorty.Tracking.dialog.find('#footer #load').fadeOut('fast');
     }).pipe(function(){
       $.when(
         // remove forced height added above to prevent fickering height
@@ -298,7 +298,7 @@ Shorty.WUI.List.add_callbackEnrich_tracking=function(row,set,hidden){
  * @author Christian Reiner
  */
 Shorty.WUI.List.add_callbackInsert_tracking=function(list,row){
-    list.find('tbody').prepend(row);
+  list.find('tbody').append(row);
 } // Shorty.WUI.List.add_callbackInsert_tracking
 
 /**
