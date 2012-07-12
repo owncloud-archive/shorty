@@ -705,7 +705,7 @@ Shorty =
        * @author Christian Reiner
        */
       add_callbackInsert_default: function(list,row){
-          list.find('tbody').prepend(row);
+        list.find('tbody').prepend(row);
       }, // Shorty.WUI.List.add_callbackInsert_default
       /**
        * @method Shorty.WUI.List.build
@@ -804,15 +804,16 @@ Shorty =
        * @callback function Method used to handle list/cell specific handling of element attributes
        * @author Christian Reiner
        */
-      fill: function(list,elements,callback_filter,callback_append){
-        callback_filter=callback_filter||Shorty.WUI.List.fill_callbackFilter_default;
-        callback_append=callback_append||Shorty.WUI.List.add_callbackEnrich_default;
+      fill: function(list,elements,callbackFilter,callbackAppend,callbackInsert){
+        callbackFilter=callbackFilter||Shorty.WUI.List.fill_callbackFilter_default;
+        callbackAppend=callbackAppend||Shorty.WUI.List.add_callbackEnrich_default;
+        callbackInsert=callbackInsert||Shorty.WUI.List.add_callbackInsert_default;
         if (Shorty.Debug) Shorty.Debug.log("fill list");
         var dfd = new $.Deferred();
         $.when(
-          Shorty.WUI.List.add(list,elements,false,callback_append)
+          Shorty.WUI.List.add(list,elements,false,callbackAppend,callbackInsert)
         ).pipe(
-          callback_filter(list)
+          callbackFilter(list)
         ).done(dfd.resolve).fail(dfd.reject)
         return dfd.promise();
       }, // Shorty.WUI.List.fill
