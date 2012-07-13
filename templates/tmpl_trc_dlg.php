@@ -48,7 +48,7 @@
     </legend>
     <!-- linguistic reference to the shorty -->
     <div id="shorty-reference">
-      <span id="clicks" class="shorty-tracking-reference" data-slogan="<?php echo $l->t("Totel clicks");?>"></span>
+      <span id="clicks" class="shorty-tracking-reference" data-slogan="<?php echo $l->t("Total clicks");?>"></span>
       <span id="title" class="ellipsis shorty-tracking-reference" data-slogan="<?php echo $l->t("Title");?>"></span>
       <hr>
     </div>
