@@ -44,7 +44,6 @@
       <?php echo $l->t("Typically this only works on devices like smart phones");?>.
       <br>
       <?php echo $l->t("Unfortunately the implementation of this scheme is limited");?>,
-      <br>
       <?php echo $l->t("therefore the content must be copied manually");?>:
     </div>
     <textarea id="payload" readonly></textarea>

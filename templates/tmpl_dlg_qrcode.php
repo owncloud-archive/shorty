@@ -44,7 +44,6 @@
         <?php echo $l->t("This 2d barcode encodes the url pointing to this Shorty");?>.
         <br>
         <?php echo $l->t("Use it in web pages by referencing or embedding");?>,
-        <br>
         <?php echo $l->t("or simpy print or download it for off-line usage");?>!
       </div>
       <div style="text-align:center;">

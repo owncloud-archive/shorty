@@ -24,6 +24,9 @@
 
 Changelog: 
 
+* Fri Jul 13 2012 Christian Reiner: version 0.2.8
+Some optical corrections to the share dialog.
+Updated static backend configuration in doc files.
 * Thu Jul 05 2012 Christian Reiner: version 0.2.7
 Enhandements of the share dialog to get a clearer appearance.
 Fixed removal of Shortys belonging to a user deleted inside ownCloud.
