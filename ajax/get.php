@@ -52,10 +52,15 @@ try
   $param = array
   (
     ':shorty'     => $p_shorty,
-//     ':offset'     => intval($p_offset?$p_offset:0),
     ':limit'      => PAGE_SIZE,
   );
-  $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_LIST );
+  if ($p_offset)
+  {
+    $param[':offset'] = $p_offset;
+    $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_LIST_CHUNK );
+  }
+  else
+    $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_LIST_START );
   $result = $query->execute($param);
   $reply = $result->fetchAll();
 
