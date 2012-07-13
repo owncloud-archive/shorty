@@ -634,7 +634,6 @@ Shorty =
           callbackEnrich(row,set);
           // insert new row in table
           callbackInsert(list,row);
-          list.find('tbody').prepend(row);
           dfd.resolve();
         }) // each
         return dfd.promise();
@@ -837,7 +836,15 @@ Shorty =
           Shorty.WUI.List.sort(list,pref['list-sort-code']);
         })
       }, // Shorty.WUI.List.fill_callbackFilter_default
-      // ===== Shorty.WUI.List.filter =====
+      /**
+       * @method Shorty.WUI.List.filter
+       * @brief Filters a given list by comparing column values to a given value pattern
+       * @param object list: jQuery object representing the list to filter (html table)
+       * @param string column: Name (id) of the column to consider
+       * @param strong pattern: Pattern to compare the cells content against
+       * @return object Deferred object
+       * @author Christian Reiner
+       */
       filter: function(list,column,pattern){
         if (Shorty.Debug) Shorty.Debug.log("filter list by column '"+column+"' and pattern '"+pattern+"'");
         var dfd = new $.Deferred();
@@ -853,7 +860,12 @@ Shorty =
         ).done(dfd.resolve).fail(dfd.reject)
         return dfd.promise();
       }, // Shorty.WUI.List.filter
-      // ===== Shorty.WUI.List.get =====
+      /**
+       * @method Shorty.WUI.List.get
+       * @brief Retrieves the list of Shortys from the server
+       * @return object Deferred object
+       * @author Christian Reiner
+       */
       get: function(){
         if (Shorty.Debug) Shorty.Debug.log("get list");
         var dfd = new $.Deferred();
@@ -874,7 +886,13 @@ Shorty =
         })
         return dfd.promise();
       }, // Shorty.WUI.List.get
-      // ===== Shorty.WUI.List.hide =====
+      /**
+       * @method Shorty.WUI.List.hide
+       * @brief Hides the list of Shortys
+       * @param string duration: The duration the hiding animation should take (optional)
+       * @return object Deferred object
+       * @author Christian Reiner
+       */
       hide: function(duration){
         if (Shorty.Debug) Shorty.Debug.log("hide list");
         duration = 'slow';
@@ -890,7 +908,13 @@ Shorty =
         }
         return dfd.promise();
       }, // Shorty.WUI.List.hide
-      // ===== Shorty.WUI.List.highlight =====
+      /**
+       * @method Shorty.WUI.List.highlight
+       * @brief highlights a given entry in the list of Shortys
+       * @param object entry: jQuery object representing the entry to highlight
+       * @return object Deferred object
+       * @author Christian Reiner
+       */
       highlight: function(entry){
         if (Shorty.Debug) Shorty.Debug.log("highlighting list entry "+entry.attr('id'));
         var dfd = new $.Deferred();
@@ -907,7 +931,14 @@ Shorty =
         }).always(dfd.resolve);
         return dfd.promise();
       }, // Shorty.WUI.List.highlight
-      // ===== Shorty.WUI.List.modify =====
+      /**
+       * @method Shorty.WUI.List.modify
+       * @brief Modifies existing entries in the list to match updated data
+       * @param object list: jQuery object representing the list
+       * @param bool hidden: Flag indicating if modified rows should be kept hidden for later highlighting
+       * @return object Deferred object
+       * @author Christian Reiner
+       */
       modify: function(list,hidden){
         if (Shorty.Debug) Shorty.Debug.log("modify entry in list holding "+list.length+" entries");
         var dfd = new $.Deferred();
@@ -955,7 +986,13 @@ Shorty =
         }) // each entry
         return dfd.resolve().promise();
       }, // Shorty.WUI.List.modify
-      // ===== Shorty.WUI.List.show =====
+      /**
+       * @method Shorty.WUI.List.show
+       * @brief Shows the list if it was hidden
+       * @param string duration Duration the asnimation shoudl take (optional)
+       * @return object Deferred object
+       * @author Christian Reiner
+       */
       show: function(duration){
         if (Shorty.Debug) Shorty.Debug.log("show list");
         duration = 'slow';
@@ -1666,10 +1703,24 @@ Shorty =
 
   // ===========
 
-  // ===== Shorty.Ajax =====
+  /**
+   * @class Shorty.Ajax
+   * @brief Tool collection handling ajax requests
+   * @author Christian Reiner
+   */
   Ajax:
   {
-    // ===== Shorty.Ajax.eval =====
+    /**
+     * @method Shorty.Ajax.eval
+     * @brief Filters and converts ajax responses into internal format
+     * @description
+     * The ajax replies we get contain an error or a success structure.
+     * In case of an error the data is converted into a normal ajax failure.
+     * This makes dealing with failures easier, since all failures have the same format. 
+     * @param object Ajax response
+     * @return object Deferred object, rejected or resolved
+     * @author Christian Reiner
+     */
     eval:function(response){
       if (Shorty.Debug) Shorty.Debug.log("eval ajax response of status "+response.status);
       // Check to see if the response is truely successful.
@@ -1690,7 +1741,13 @@ Shorty =
       }
     }, // Shorty.Ajax.eval
 
-    // ===== Shorty.Ajax.fail =====
+    /**
+     * @method Shorty.Ajax.fail
+     * @brief Filters and converts ajax failures into internal format
+     * @param object Ajax response
+     * @return object Rejected deferred object
+     * @author Christian Reiner
+     */
     fail:function(response){
       if (Shorty.Debug) Shorty.Debug.log("handle ajax failure");
       return new $.Deferred().reject({
@@ -1701,10 +1758,20 @@ Shorty =
     } // Shorty.Ajax.fail
   }, // Shorty.Ajax
 
-  // ==== Shorty.Date =====
+  /**
+   * @class Shorty.Date
+   * @brief Tool collection dealing with date handling
+   * @author Christian Reiner
+   */
   Date:
   {
-    // ===== Shorty.Date.expired =====
+    /**
+     * @method Shorty.Date.expired
+     * @brief Checks if a given date has already expired
+     * @param date Date to check
+     * @return bool Wether or not the date has expired
+     * @author Christian Reiner
+     */
     expired:function(date){
       return (Date.parse(date)<=Date.parse(Date()));
     } // Shorty.Date.expired
