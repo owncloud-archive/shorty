@@ -43,6 +43,9 @@ listing because of the leading dot (.) in the name). The rules must be
 configured such that all requests to urls of the scheme <base url><shorty key>
 are mapped directly onto the relay service web url of the shorty plugin
 (http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty key>).
+If in doubt refer to the url shown as "relay url" inside the sharing dialog for
+each Shorty. That scheme is the one you want to rewrite your requests to, you
+just have to make sure the individual shorty key survives the redirect.
 The <shorty key> is a string, 6-12 characters long, hard to predict. It is
 guaranteed to be unique throughout the system (though in a technically crude
 manner...). The perfect situation for the definition of a meaningful static
