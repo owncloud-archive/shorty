@@ -53,6 +53,12 @@ $(document).ready(function(){
         $(this).val(),
         Shorty.WUI.List.fill_callbackFilter_tracking);
     });
+    // detect if the list has been scrolled to the bottom, retrieve next chunk of clicks if so
+    Shorty.Tracking.list.find('tbody').bind('scroll',function(){
+      if(  (Shorty.Tracking.dialog.find('#footer #load').is(':visible'))
+         &&($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight-50) )
+        Shorty.Tracking.build(true);
+    });
     // status filter reaction
     Shorty.Tracking.list.find('thead tr#toolbar th#result select').change(function(){
       Shorty.WUI.List.filter(
