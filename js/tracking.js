@@ -120,22 +120,32 @@ Shorty.Tracking=
       else Shorty.Tracking.dialog.find('#footer #load').fadeOut('fast');
     }).pipe(function(){
       $.when(
-        // remove forced height added above to prevent fickering height
+        // visualize table
+        Shorty.Tracking.list.removeClass('scrollingTable'),
         Shorty.WUI.List.dim(Shorty.Tracking.list,true)
-      ).done(dfd.resolve).fail(dfd.reject)
-      var maxHeight=$(document).height()
-                   -$('#header').outerHeight(true)-$('#controls').outerHeight(true)
-                   -Shorty.Tracking.dialog.find('#shorty-reference').outerHeight(true)
-                   -Shorty.Tracking.dialog.find('tr').outerHeight(true);
-      // make table scrollable, when more than ... entries
-      if (maxHeight<Shorty.Tracking.dialog.outerHeight(true))
-      {
-        Shorty.Tracking.list.addClass('scrollingTable');
-        Shorty.Tracking.list.find('tbody').css('height',(maxHeight-200)+'px');
-      }else{
-        Shorty.Tracking.list.removeClass('scrollingTable');
-        Shorty.Tracking.list.find('tbody').css('height','');
-      }
+      ).done(function(){
+        // decide if table needs to become scrollable
+        // if so compute the right size and apply it to the body
+        // this appears to be the most 'working' control
+        var bodyHeight=Shorty.Tracking.dialog.find('#list tbody').outerHeight(true);
+        var restHeight=Shorty.Tracking.dialog.find('fieldset legend').outerHeight(true)
+                      +Shorty.Tracking.dialog.find('#shorty-reference').outerHeight(true)
+                      +Shorty.Tracking.dialog.find('#titlebar').outerHeight(true)
+                      +28 // room for potentially invisible #toolbar
+                      +Shorty.Tracking.dialog.find('#footer').outerHeight(true)
+                      +30;// some stuff I could not identify :-(
+        var roomHeight=$('#content').outerHeight();
+        // make table scrollable, when more than ... entries
+        if (roomHeight<bodyHeight+restHeight)
+        {
+          Shorty.Tracking.list.addClass('scrollingTable');
+           Shorty.Tracking.list.find('tbody').css('height',(roomHeight-restHeight-20)+'px');
+        }else{
+          Shorty.Tracking.list.removeClass('scrollingTable');
+          Shorty.Tracking.list.find('tbody').css('height','');
+        }
+        dfd.resolve();
+      }).fail(dfd.reject)
     }).done(dfd.resolve).fail(dfd.reject)
     return dfd.promise();
   }, // Shorty.Tracking.build
