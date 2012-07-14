@@ -79,6 +79,11 @@ Shorty.Tracking=
    */
   dialog:{},
   /**
+   * @brief Persistent referencing the Shorty this plugin currently deals with
+   * @author Christian Reiner
+   */
+  entry:{},
+  /**
    * @brief Persistent alphanumerical id referencing the Shorty this plugin currently deals with
    * @author Christian Reiner
    */
@@ -113,6 +118,7 @@ Shorty.Tracking=
     if (Shorty.Debug) Shorty.Debug.log("building tracking list");
     var dfd = new $.Deferred();
     var fieldset=Shorty.Tracking.dialog.find('fieldset');
+    var clicks=Shorty.Tracking.dialog.find('#shorty-reference #clicks');
     var offset=0;
     if (keep){
       if (Shorty.Debug) Shorty.Debug.log("keeping existing entries in list");
@@ -133,9 +139,11 @@ Shorty.Tracking=
                            Shorty.WUI.List.fill_callbackFilter_tracking,
                            Shorty.WUI.List.add_callbackEnrich_tracking,
                            Shorty.WUI.List.add_callbackInsert_tracking);
+      clicks.html(clicks.attr('data-slogan')+': '
+        +Shorty.Tracking.list.find('tbody tr').length+'/'+Shorty.Tracking.entry.attr('data-clicks'));
       if (response.rest)
            Shorty.Tracking.dialog.find('#footer #load').fadeIn('fast');
-      else Shorty.Tracking.dialog.find('#footer #load').fadeOut('fast');
+      else Shorty.Tracking.dialog.find('#footer #load').fadeOut('slow');
     }).pipe(function(){
       $.when(
         // visualize table
@@ -149,7 +157,7 @@ Shorty.Tracking=
         var restHeight=Shorty.Tracking.dialog.find('fieldset legend').outerHeight(true)
                       +Shorty.Tracking.dialog.find('#shorty-reference').outerHeight(true)
                       +Shorty.Tracking.dialog.find('#titlebar').outerHeight(true)
-                      +28 // room for potentially invisible #toolbar
+                      +38 // room for potentially invisible #toolbar
                       +Shorty.Tracking.dialog.find('#footer').outerHeight(true)
                       +30;// some stuff I could not identify :-(
         var roomHeight=$('#content').outerHeight();
@@ -178,6 +186,7 @@ Shorty.Tracking=
 //     var dialog=Shorty.Tracking.dialog;
     // this is the shortys id
     Shorty.Tracking.id=entry.attr('id');
+    Shorty.Tracking.entry=entry;
     // update lists reference bar content to improve intuitivity
     var title=Shorty.Tracking.dialog.find('#shorty-reference #title');
     title.html(title.attr('data-slogan')+': '+entry.attr('data-title'));

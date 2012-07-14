@@ -48,7 +48,7 @@
     </legend>
     <!-- linguistic reference to the shorty -->
     <div id="shorty-reference">
-      <span id="clicks" class="shorty-tracking-reference" data-slogan="<?php echo $l->t("Total clicks");?>"></span>
+      <span id="clicks" class="shorty-tracking-reference" data-slogan="<?php echo $l->t("Clicks");?>"></span>
       <span id="title" class="ellipsis shorty-tracking-reference" data-slogan="<?php echo $l->t("Title");?>"></span>
       <hr>
     </div>
@@ -122,7 +122,7 @@
         </tbody>
       </table>
       <div id="footer">
-        <img id="load" style="display:none;" alt="load" title="<?php echo $l->t('load');?>"
+        <img id="load" alt="load" title="<?php echo $l->t('load');?>"
              src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">
       </div>
   </fieldset>
