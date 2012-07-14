@@ -36,10 +36,6 @@
   font-weight: normal;
   margin: 0 0.6em;
 }
-/*#shorty-tracking-list-dialog #list thead th {
-  margin: 0;
-  padding: 0;
-}*/
 #shorty-tracking-list-dialog #list thead th#time,
 #shorty-tracking-list-dialog #list tbody td#time,
 #shorty-tracking-list-dialog #list thead th#address,
@@ -63,9 +59,6 @@
   background-color: #F0F0F0;
 }
 
-#shorty-tracking-list-dialog table#list.scrollingTable thead {
-  display: block;
-}
 #shorty-tracking-list-dialog table#list.scrollingTable tbody {
   display: block;
 /*   clear: both; */
