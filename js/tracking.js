@@ -37,16 +37,16 @@ $(document).ready(function(){
     Shorty.Tracking.init()
   ).pipe(function(){
     // bind actions to basic buttons
-    Shorty.Tracking.dialog.find('#close').bind('click',function(){
+    Shorty.Tracking.dialog.find('#close').on('click',function(){
       Shorty.WUI.Dialog.hide(Shorty.Tracking.dialog);
     });
-    Shorty.Tracking.dialog.find('#list #titlebar').bind('click',function(){
+    Shorty.Tracking.dialog.find('#list #titlebar').on('click',function(){
       Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.list,Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking);
     });
-    Shorty.Tracking.dialog.find('#list #toolbar #reload').bind('click',function(){Shorty.Tracking.build(false);});
-    Shorty.Tracking.dialog.find('#footer #load').bind('click',function(){Shorty.Tracking.build(true);});
+    Shorty.Tracking.dialog.find('#list #toolbar #reload').on('click',function(){Shorty.Tracking.build(false);});
+    Shorty.Tracking.dialog.find('#footer #load').on('click',function(){Shorty.Tracking.build(true);});
     // title & target filter reaction
-    Shorty.Tracking.list.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter').bind('keyup',function(){
+    Shorty.Tracking.list.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter').on('keyup',function(){
       Shorty.WUI.List.filter(
         Shorty.Tracking.list,
         $($(this).context.parentElement.parentElement).attr('id'),
@@ -54,11 +54,7 @@ $(document).ready(function(){
         Shorty.WUI.List.fill_callbackFilter_tracking);
     });
     // detect if the list has been scrolled to the bottom, retrieve next chunk of clicks if so
-    Shorty.Tracking.list.find('tbody').bind('scroll',function(){
-      if(  (Shorty.Tracking.dialog.find('#footer #load').is(':visible'))
-         &&($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight-50) )
-        Shorty.Tracking.build(true);
-    });
+    Shorty.Tracking.list.find('tbody').on('scroll',Shorty.Tracking.bottom);
     // status filter reaction
     Shorty.Tracking.list.find('thead tr#toolbar th#result select').change(function(){
       Shorty.WUI.List.filter(
@@ -93,6 +89,20 @@ Shorty.Tracking=
    */
   list:{},
   /**
+   *
+   */
+  bottom: function(){
+    if (Shorty.Debug) Shorty.Debug.log("list scrolled towards its bottom");
+    // prevent additional events, whilst processing this one
+    Shorty.Tracking.list.find('tbody').off('scroll');
+    // attempt to retrieve next chunk of clicks only if it makes sense
+    if(  (Shorty.Tracking.dialog.find('#footer #load').is(':visible'))
+       &&($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight) )
+      Shorty.Tracking.build(true);
+    // rebind this method to the event
+    Shorty.Tracking.list.find('tbody').on('scroll',Shorty.Tracking.bottom);
+  }, // Shorty.Tracking.bottom
+  /**
    * @method Shorty.Tracking.build
    * @brief Builds the content of the list of tracked clicks
    * @return deferred.promise
@@ -105,12 +115,14 @@ Shorty.Tracking=
     var fieldset=Shorty.Tracking.dialog.find('fieldset');
     var offset=0;
     if (keep){
-      if (Shorty.Debug) Shorty.Debug.log("keeping existing entries");
+      if (Shorty.Debug) Shorty.Debug.log("keeping existing entries in list");
       // compute offset of next chunk to retrieve
       offset=Shorty.Tracking.list.find('tbody tr').last().attr('id');
     }else{
-      // drop existing, old entries
+      if (Shorty.Debug) Shorty.Debug.log("dropping existing entries in list");
       Shorty.WUI.List.empty(Shorty.Tracking.list);
+      Shorty.Tracking.list.removeClass('scrollingTable'),
+      Shorty.Tracking.list.find('tbody').css('height','');
     }
     $.when(
       // retrieve new entries
@@ -145,10 +157,7 @@ Shorty.Tracking=
         if (roomHeight<bodyHeight+restHeight)
         {
           Shorty.Tracking.list.addClass('scrollingTable');
-           Shorty.Tracking.list.find('tbody').css('height',(roomHeight-restHeight-20)+'px');
-        }else{
-          Shorty.Tracking.list.removeClass('scrollingTable');
-          Shorty.Tracking.list.find('tbody').css('height','');
+          Shorty.Tracking.list.find('tbody').css('height',(roomHeight-restHeight-20)+'px');
         }
         dfd.resolve();
       }).fail(dfd.reject)
