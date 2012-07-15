@@ -143,7 +143,7 @@ Shorty.Tracking=
         +Shorty.Tracking.list.find('tbody tr').length+'/'+Shorty.Tracking.entry.attr('data-clicks'));
       if (response.rest)
            Shorty.Tracking.dialog.find('#footer #load').fadeIn('fast');
-      else Shorty.Tracking.dialog.find('#footer #load').fadeOut('slow');
+      else Shorty.Tracking.dialog.find('#footer #load').hide();
     }).pipe(function(){
       $.when(
         // visualize table
