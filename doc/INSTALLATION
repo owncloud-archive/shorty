@@ -23,5 +23,5 @@
 *****
 
 This package is a plugin for the ownCloud web application ("ownCloud app").
-It depends on the main 'Shorty' plugin bein installed and activated. 
-There is absolutely no use if that main plugin is available. 
+It depends on the main 'Shorty' app bein installed and enabled.
+There is absolutely no use if that main app is available.

@@ -22,3 +22,12 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *****
 
+This "shorty-tracking" package implements a plugin for the ownCloud web
+application. It plugs in into another such plugin, the 'Shorty' app and
+enhances that with additional features:
+- detailed tracking of all clicks refering to Shortys
+- visualization of all clicks registered for a Shorty
+
+The app does not register any own settings or preference dialog and no separate
+navigation entry. Instead it adds an additional 'action' icon (sparkline) to
+every Shorty that exists in the main 'Shorty' app.
