@@ -317,6 +317,10 @@ Shorty.WUI.List.add_callbackEnrich_tracking=function(row,set,hidden){
              span.text('-?-');
         else span.text(formatDate(1000*set[aspect]));
         break;
+      case 'result':
+        span.text(t('shorty-tracking',set[aspect]));
+        span.addClass('ellipsis');
+        break;
       default:
         span.text(set[aspect]);
         span.addClass('ellipsis');
