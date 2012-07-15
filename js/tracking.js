@@ -206,6 +206,13 @@ Shorty.Tracking=
     return dfd.promise();
   }, // Shorty.Tracking.control
   /**
+   * @method Shorty.Tracking.disabled
+   * @brief Popups a note stating that the plugin is disabled because the minimum requirements are not met
+   * @author Christian Reiner
+   */
+  disabled:function(entry){
+  }, // Shorty.Tracking.disabled
+  /**
    * @method Shorty.Tracking.get
    * @brief Fetches a list of all registered clicks matching a specified Shorty
    * @param shorty string Id of the Shorty the click list is requested for

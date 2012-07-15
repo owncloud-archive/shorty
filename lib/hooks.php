@@ -41,6 +41,7 @@
 class OC_ShortyTracking_Hooks
 {
   /**
+   * @method OC_ShortyTracking_Hooks::deleteShortyClicks
    * @brief Deletes all alien clicks, clicks that have no corresponding Shorty any more (deleted)
    * @param paramters (array) parameters from emitted signal
    * @return bool
@@ -66,6 +67,7 @@ class OC_ShortyTracking_Hooks
   } // function deleteShortyClicks
 
   /**
+   * @method OC_ShortyTracking_Hooks::registerClick
    * @brief Records details of request clicks targeting existing Shortys
    * @param paramters (array) parameters from emitted signal
    * @return bool
@@ -97,6 +99,7 @@ class OC_ShortyTracking_Hooks
   } // function registerClick
 
   /**
+   * @method OC_ShortyTracking_Hooks::registerIncludes
    * @brief Registers additional includes required by this plugin
    * @param paramters (array) parameters from emitted signal
    * @return bool
@@ -110,6 +113,7 @@ class OC_ShortyTracking_Hooks
   } // function registerIncludes
 
   /**
+   * @method OC_ShortyTracking_Hooks::registerActions
    * @brief Registers additional actions as expected by the Shorty app
    * @param paramters (array) parameters from emitted signal
    * @return bool
