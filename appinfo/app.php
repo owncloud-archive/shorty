@@ -39,9 +39,25 @@ OC::$CLASSPATH['OC_ShortyTracking_L10n']  = 'apps/shorty-tracking/lib/l10n.php';
 OC::$CLASSPATH['OC_ShortyTracking_Hooks'] = 'apps/shorty-tracking/lib/hooks.php';
 OC::$CLASSPATH['OC_ShortyTracking_Query'] = 'apps/shorty-tracking/lib/query.php';
 
-OCP\Util::connectHook ( 'OC_Shorty', 'post_deleteShorty', 'OC_ShortyTracking_Hooks', 'deleteShortyClicks');
-OCP\Util::connectHook ( 'OC_Shorty', 'registerClick',     'OC_ShortyTracking_Hooks', 'registerClick');
-OCP\Util::connectHook ( 'OC_Shorty', 'registerActions',   'OC_ShortyTracking_Hooks', 'registerActions');
-OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
+// only plug into the mother app 'Shorty' if that one is installed AND has the minimum required version:
+// minimim requirement currently is shorty-0.3.0
+if ( OCP\App::isEnabled('shorty') )
+{
+  $shortyVersion = explode ( '.', OCP\App::getAppVersion('shorty') );
+  if (  (3==sizeof($shortyVersion))
+      &&( (0<=$shortyVersion[0])&&(3<=$shortyVersion[1])&&(0<=$shortyVersion[2])) )
+  {
+    OCP\Util::connectHook ( 'OC_Shorty', 'post_deleteShorty', 'OC_ShortyTracking_Hooks', 'deleteShortyClicks');
+    OCP\Util::connectHook ( 'OC_Shorty', 'registerClick',     'OC_ShortyTracking_Hooks', 'registerClick');
+    OCP\Util::connectHook ( 'OC_Shorty', 'registerActions',   'OC_ShortyTracking_Hooks', 'registerActions');
+    OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
+  }
+}
+else
+{
+  // set global flag to be evaluated in hook 'registerActions'
+  OCP\Util::connectHook ( 'OC_Shorty', 'registerActions',   'OC_ShortyTracking_Hooks', 'registerActions');
+  OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
+}
 
 ?>
