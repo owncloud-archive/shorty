@@ -31,4 +31,23 @@
  */
 
 $TRANSLATIONS = array(
+"Clicks"        => "Klicks",
+"Title"         => "Titel",
+"Result"        => "Resultat",
+"Address"       => "Adresse",
+"Host"          => "Host",
+"User"          => "Nutzer",
+"Time"          => "Zeitpunkt",
+
+"granted"       => "erlaubt",
+"denied"        => "abgewiesen",
+"blocked"       => "geblockt",
+
+"close"         => "schließen",
+"load"          => "laden",
+"reload"        => "aktualisieren",
+
+"List of tracked clicks"      => "Liste der aufgezeichneten Klicks",
+"Reload list"                 => "Liste aktualisieren",
+"Toggle toolbar"              => "Werkzeugleiste umschalten",
 );
