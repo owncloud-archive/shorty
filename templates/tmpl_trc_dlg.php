@@ -123,6 +123,7 @@
       </table>
       <div id="footer">
         <img id="load" alt="load" title="<?php echo $l->t('load');?>"
+             style="diaplay:none;" 
              src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">
       </div>
   </fieldset>
