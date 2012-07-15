@@ -336,6 +336,7 @@
   clear: left;
 }
 .shorty-dialog legend {
+  white-space: nowrap;
   font-weight: bold;
   margin: 5px 0px 5px 10px;
   padding: 0 0.5em 0 0.2em;

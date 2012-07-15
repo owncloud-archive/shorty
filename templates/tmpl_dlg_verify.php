@@ -35,7 +35,7 @@
 ?>
 
 <!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
-<div id="dialog-verification" style="display:none;" title="<?php echo $l->t("'Static' backend: base url verification"); ?>">
+<div id="dialog-verification" style="display:none;" title="<?php echo OC_Shorty_L10n::t("'Static' backend: base url verification"); ?>">
   <!-- verification-in-progress -->
   <div id="hourglass">
     <img src="<?php echo OCP\Util::imagePath('shorty', 'loading-disk.gif'); ?>">
@@ -44,10 +44,10 @@
   <div id="success" style="display:none;">
     <fieldset>
       <legend>
-        <img class="shorty-status" src="<?php echo OCP\Util::imagePath('shorty','status/good.png'); ?>" alt="<?php $l->t('Success') ?>" title="<?php $l->t('Verification successful') ?>">
+        <img class="shorty-status" src="<?php echo OCP\Util::imagePath('shorty','status/good.png'); ?>" alt="<?php OC_Shorty_L10n::t('Success') ?>" title="<?php OC_Shorty_L10n::t('Verification successful') ?>">
         <span id="title" class="title"><strong>Verification successful !</strong></span>
       </legend>
-      <?php echo $l->t("<p>Great, your setup appears to be working fine ! </p>".
+      <?php echo OC_Shorty_L10n::t("<p>Great, your setup appears to be working fine ! </p>".
                        "<p>Requests to the configured base url '%s' are mapped to this ownClouds shorty module at '%1\$s'</p>".
                        "<p>Usage of that static backend is fine and safe as long as this setup is not altered.</p>",
                        array('<a id="verification-target" style="font-family:Monospace;"></a>',OCP\Util::linkToAbsolute('shorty','index.php')) );?>
@@ -57,10 +57,10 @@
   <div id="failure" style="display:none;">
     <fieldset>
       <legend>
-        <img class="shorty-status" src="<?php echo OCP\Util::imagePath('shorty','status/bad.png'); ?>" alt="<?php $l->t('Success') ?>" title="<?php $l->t('Verification successful') ?>">
+        <img class="shorty-status" src="<?php echo OCP\Util::imagePath('shorty','status/bad.png'); ?>" alt="<?php OC_Shorty_L10n::t('Success') ?>" title="<?php OC_Shorty_L10n::t('Verification successful') ?>">
         <span id="title" class="title"><strong>Verification failed !</strong></span>
       </legend>
-      <?php echo $l->t("Sorry, but your setup appears not be be working correctly yet.<p>".
+      <?php echo OC_Shorty_L10n::t("Sorry, but your setup appears not be be working correctly yet.<p>".
                        "Please check your setup and make sure that the configured base url '%1\$s' is indeed correct ".
                        "and that all requests to it are somehow mapped to ownClouds shorty module at '%2\$s'.",
                        array('<a id="verification-target" style="font-family:Monospace;"></a>',OCP\Util::linkToAbsolute('shorty','index.php')) );?>

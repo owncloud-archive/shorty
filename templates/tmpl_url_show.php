@@ -71,7 +71,7 @@
       <a id="explanation" maxlength="80" data="" class="shorty-value"></a>
     </span>
     <br />
-    <label for="title"><?php echo OC_Shorty_L10n::t('Shorty title').':'; ?></label>
+    <label for="title"><?php echo OC_Shorty_L10n::t('Title').':'; ?></label>
     <input id="title" name="title" type="text" data="" class="" readonly disabled />
     <br />
     <label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>

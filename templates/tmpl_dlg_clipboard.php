@@ -37,13 +37,13 @@
 <!-- begin of clipboard dialog -->
 <div id="dialog-clipboard" style="display:none;">
   <fieldset class="">
-    <legend><?php echo $l->t("Copy to clipboard");?>:</legend>
+    <legend><?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:</legend>
     <div class="usage-explanation">
-      <?php echo $l->t("The link below can be copied for usage apart");?>:
+      <?php echo OC_Shorty_L10n::t("The link below can be copied for usage apart");?>:
     </div>
     <input id="payload" readonly value="">
     <div class="usage-instruction">
-      <?php echo $l->t("Copy to clipboard");?>:<span class="usage-token"><?php echo $l->t("Ctrl-C");?></span>
+      <?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-C");?></span>
     </div>
   </fieldset>
 </div>
