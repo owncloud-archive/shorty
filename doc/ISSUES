@@ -24,5 +24,16 @@
 
 This is a short list of known issues:
 
-- when reloading lists, the filters are not applied again
-- a graphical output (diagram) would be welcome
+* the dialog flickers in height whilst being reloaded
+this is actually not suprising from a technical point of view, but it would be
+great to suppress the flickerning. Unfortunately my attempts to prevent this
+all break the list getting scrollable when required.
+
+* loading subsequent chunks of clicks moves scrollbar slider
+In scrollable lists of tracked clicks the position of the scrollbar slider is
+moved to an odd place sometimes, when subsequent chunks of clicks are loaded
+into an existing list. 
+
+Contributions:
+I'd be more than happy to welcome all contributions to this little experiment.
+Drop me a note, an idea, a patch, a good bottle of wine, anything !
