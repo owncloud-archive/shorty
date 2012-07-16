@@ -89,20 +89,28 @@ class OC_Shorty_Hooks
       OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerAction hook, FIX THAT APP !', OCP\Util::WARN );
       return array();
     } // if
-    foreach ( $container as $action )
+    foreach ( $container as $target )
     {
-      if (  ! is_array($action)
-         || ! array_key_exists('id',   $action) || ! is_string($action['id'])
-         || ! array_key_exists('name', $action) || ! is_string($action['name'])
-         || ! array_key_exists('icon', $action) || ! is_string($action['icon'])
-         || ( array_key_exists('call', $action) && ! is_string($action['call'] ) )
-         || ( array_key_exists('title',$action) && ! is_string($action['title']) )
-         || ( array_key_exists('alt',  $action) && ! is_string($action['alt']  ) ) )
+      if ( ! is_array($target) )
       {
-        OCP\Util::writeLog ( 'shorty', 'Invalid reply from an app that registered into the registerAction hook, FIX THAT APP !', OCP\Util::WARN );
+        OCP\Util::writeLog ( 'shorty', 'Invalid reply structure from an app that registered into the registerAction hook, FIX THAT APP !', OCP\Util::WARN );
         break;
       }
-    } // foreach action
+      foreach ( $target as $action )
+      {
+        if (  ! is_array($action)
+            || ! array_key_exists('id',   $action) || ! is_string($action['id'])
+            || ! array_key_exists('name', $action) || ! is_string($action['name'])
+            || ! array_key_exists('icon', $action) || ! is_string($action['icon'])
+            || ( array_key_exists('call', $action) && ! is_string($action['call'] ) )
+            || ( array_key_exists('title',$action) && ! is_string($action['title']) )
+            || ( array_key_exists('alt',  $action) && ! is_string($action['alt']  ) ) )
+        {
+          OCP\Util::writeLog ( 'shorty', 'Invalid reply from an app that registered into the registerAction hook, FIX THAT APP !', OCP\Util::WARN );
+          break;
+        }
+      } // foreach action
+    } // foreach target
     return $actions;
   } // function requestActions
 
