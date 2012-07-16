@@ -31,28 +31,28 @@
 
 $(document).ready(function(){
   // make notification closeable
-  $('#content #notification').bind('click',Shorty.WUI.Notification.hide);
+  $('#content #notification').on('click',Shorty.WUI.Notification.hide);
   // button to open the 'add' dialog
-  $('#controls #add').bind('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
+  $('#controls #add').on('click',function(){Shorty.WUI.Dialog.toggle($('#dialog-add'))});
   // close button in dialogs
-  $('.shorty-dialog #close').bind('click',function(){Shorty.WUI.Dialog.hide($(this).parents('form').first());});
+  $('.shorty-dialog #close').on('click',function(){Shorty.WUI.Dialog.hide($(this).parents('form').first());});
   // status selection in embedded share dialog
-  $('.shorty-embedded#dialog-share #status').bind('change',function(){
+  $('.shorty-embedded#dialog-share #status').on('change',function(){
     Shorty.Action.Url.status($(this).siblings('#id').val(),$(this).val());
   });
   // collapsible items in embedded dialogs
-  $('.shorty-embedded .shorty-collapsible span').bind('click',function(e){
+  $('.shorty-embedded .shorty-collapsible span').on('click',function(e){
     var container=$(this).parent();
     if (container.hasClass('collapsed'))
          container.removeClass('collapsed').find('.shorty-collapsible-tail').slideDown('fast');
     else container.addClass('collapsed').find('.shorty-collapsible-tail').slideUp('fast');
   });
   // button (row click) to open the toolbar row in the list
-  $('#desktop #list #titlebar').bind('click',function(){Shorty.WUI.List.Toolbar.toggle($('#desktop #list'));});
+  $('#desktop #list #titlebar').on('click',function(){Shorty.WUI.List.Toolbar.toggle($('#desktop #list'));});
   // button to reload the list
-  $('#desktop #list #toolbar').find('#reload').bind('click',Shorty.WUI.List.build);
+  $('#desktop #list #toolbar').find('#reload').on('click',Shorty.WUI.List.build);
   // sort buttons
-  $('#desktop #list #toolbar').find('shorty-sorter').bind('click',function(){Shorty.WUI.List.sort($('#desktop #list'));});
+  $('#desktop #list #toolbar').find('shorty-sorter').on('click',function(){Shorty.WUI.List.sort($('#desktop #list'));});
   // add date picker options
   $.datepicker.setDefaults({
     dateFormat :'yy-mm-dd',
@@ -67,11 +67,11 @@ $(document).ready(function(){
   });
   $('#controls #until:not([readonly])').datepicker();
   // bind usage to the usage icons
-  $('#dialog-share img.shorty-usage').live('click',function(e){Shorty.WUI.Entry.send(e,$(this));});
+  $(document).on('click',$('#dialog-share img.shorty-usage'),[],function(e){Shorty.WUI.Entry.send(e,$(this));});
   // bind actions to the actions icons
-  $('#list tbody .shorty-actions a').live('click',function(e){Shorty.WUI.Entry.click(e,$(this));});
+  $(document).on('click',$('#list tbody .shorty-actions a'),[],function(e){Shorty.WUI.Entry.click(e,$(this));});
   // bind highlighting to clicks on a row, except for the action icons
-  $('#list not(.dialog-share) tbody tr td:not(#actions)').live('click',function(){
+  $(document).on('click',$('#list not(.dialog-share) tbody tr td:not(#actions)'),[],function(){
     Shorty.WUI.List.highlight($(this).parents('tr'));
     Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
   });
@@ -80,7 +80,7 @@ $(document).ready(function(){
   // filter actions
   var list=$('#desktop #list');
   // title & target filter reaction
-  list.find('thead tr#toolbar').find('th#target,th#title').find('#filter').bind('keyup',function(){
+  list.find('thead tr#toolbar').find('th#target,th#title').find('#filter').on('keyup',function(){
     Shorty.WUI.List.filter(
       list,
       $($(this).context.parentElement.parentElement).attr('id'),
@@ -96,7 +96,7 @@ $(document).ready(function(){
     );
   });
   // column sorting reaction
-  list.find('thead tr#toolbar div img.shorty-sorter').bind('click',function(){
+  list.find('thead tr#toolbar div img.shorty-sorter').on('click',function(){
     Shorty.WUI.List.sort(list,$(this).attr('data-sort-code'));
   });
 }); // document.ready

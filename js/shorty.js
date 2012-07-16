@@ -182,8 +182,8 @@ Shorty =
           ).pipe(function(){
             switch ( dialog.attr('id') ){
               case 'dialog-add':
-                dialog.find('#confirm').unbind('click');
-                dialog.find('#target').unbind('focusout');
+                dialog.find('#confirm').off('click');
+                dialog.find('#target').off('focusout');
                 break;
               default:
             } // switch
@@ -249,12 +249,12 @@ Shorty =
         var confirm=dialog.find('#confirm');
         if (sharpness){
           $('#dialog-add #busy').fadeOut('slow');
-          confirm.unbind('click');
-          confirm.bind('click',{dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);});
+          confirm.off('click');
+          confirm.on('click',{dialog: dialog}, function(event){event.preventDefault();Shorty.WUI.Dialog.execute(event.data.dialog);});
           confirm.addClass('sharp');
         }else{
-          confirm.unbind('click');
-          confirm.bind('click',function(event){event.preventDefault();dialog.find('#target').effect('highlight',{'color':'#CCCCCC'},500);});
+          confirm.off('click');
+          confirm.on('click',function(event){event.preventDefault();dialog.find('#target').effect('highlight',{'color':'#CCCCCC'},500);});
           confirm.removeClass('sharp');
         }
       }, // Shorty.WUI.Dialog.sharpen
@@ -296,7 +296,7 @@ Shorty =
             switch(dialog.attr('id')){
               case 'dialog-add':
                 dialog.find('#target').focus();
-                dialog.find('#target').bind('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);});
+                dialog.find('#target').on('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);});
                 break;
               case 'dialog-edit':
                 dialog.find('#title').focus();
@@ -305,7 +305,7 @@ Shorty =
               case 'dialog-share':
                 var status=dialog.find('#status');
                 dialog.find('.status-hint').hide().filter('#'+status.val()).show();
-                status.bind('change', {dialog: dialog}, function(event){
+                status.on('change', {dialog: dialog}, function(event){
                   dialog.find('.status-hint').hide().filter('#'+status.val()).fadeIn('fast');
                 });
                 break;
