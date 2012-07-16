@@ -295,11 +295,12 @@ Shorty.Tracking=
 Shorty.WUI.List.add_callbackEnrich_tracking=function(row,set,hidden){
   // set row id to entry id
   row.attr('id',set.id);
-  // handle all aspects, one by one
+  // hold back rows for later highlighting effect
+  if (hidden)
+    row.addClass('shorty-fresh'); // might lead to a pulsate effect later
+  // add aspects as content to the rows cells
   $.each(['status','time','address','host','user','result'],
          function(j,aspect){
-    if (hidden)
-      row.addClass('shorty-fresh'); // might lead to a pulsate effect later
     // we wrap the cells content into a span tag
     var span=$('<span>');
     // enhance row with real set values
