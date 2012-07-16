@@ -67,11 +67,11 @@ $(document).ready(function(){
   });
   $('#controls #until:not([readonly])').datepicker();
   // bind usage to the usage icons
-  $(document).on('click',$('#dialog-share img.shorty-usage'),[],function(e){Shorty.WUI.Entry.send(e,$(this));});
+  $(document).on('click','#dialog-share img.shorty-usage',[],function(e){Shorty.WUI.Entry.send(e,$(this));});
   // bind actions to the actions icons
-  $(document).on('click',$('#list tbody .shorty-actions a'),[],function(e){Shorty.WUI.Entry.click(e,$(this));});
+  $(document).on('click','#desktop #list tbody .shorty-actions a',[],function(e){Shorty.WUI.Entry.click(e,$(this));});
   // bind highlighting to clicks on a row, except for the action icons
-  $(document).on('click',$('#list not(.dialog-share) tbody tr td:not(#actions)'),[],function(){
+  $(document).on('click','#desktop #list not(.dialog-share) tbody tr td:not(#actions)',[],function(){
     Shorty.WUI.List.highlight($(this).parents('tr'));
     Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
   });
