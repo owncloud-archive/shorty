@@ -57,7 +57,9 @@
       </field>
       <field>
         <name>time</name>
-        <type>timestamp</type>
+        <type>integer</type>
+        <unsigned>true</unsigned>
+        <length>8</length>
         <notnull>false</notnull>
         <default></default>
       </field>
