@@ -627,11 +627,11 @@ Shorty =
         var dfd = new $.Deferred();
         // insert list elements (sets) one by one
         var row,set;
-        $.each(elements,function(i,set,hidden){
+        $(elements).each(function(i,set){
           // clone dummy row from list header: dummy is the last row
           row = list.find('thead tr:last-child').first().clone();
           // add attributes to row, as data and value
-          callbackEnrich(row,set);
+          callbackEnrich(row,set,hidden);
           // insert new row in table
           callbackInsert(list,row);
           dfd.resolve();
@@ -649,10 +649,12 @@ Shorty =
       add_callbackEnrich_default: function(row,set,hidden){
         // set row id to entry id
         row.attr('id',set.id);
+        // hold back rows for later highlighting effect
+        if (hidden)
+          row.addClass('shorty-fresh'); // might lead to a pulsate effect later
+        // add aspects as content to the rows cells
         $.each(['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
                function(j,aspect){
-          if (hidden)
-            row.addClass('shorty-fresh'); // might lead to a pulsate effect later
           // we wrap the cells content into a span tag
           var span=$('<span>');
           // enhance row with real set values
