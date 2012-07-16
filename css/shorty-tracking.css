@@ -36,21 +36,28 @@
   font-weight: normal;
   margin: 0 0.6em;
 }
+
+#shorty-tracking-list-dialog #list th,
+#shorty-tracking-list-dialog #list td {
+  padding: 1px 2px;
+}
+#shorty-tracking-list-dialog #list thead th#address,
+#shorty-tracking-list-dialog #list tbody td#address{
+  width:7em;
+}
 #shorty-tracking-list-dialog #list thead th#time,
 #shorty-tracking-list-dialog #list tbody td#time,
-#shorty-tracking-list-dialog #list thead th#address,
-#shorty-tracking-list-dialog #list tbody td#address,
 #shorty-tracking-list-dialog #list thead th#user,
 #shorty-tracking-list-dialog #list tbody td#user {
   width:6em;
 }
 #shorty-tracking-list-dialog #list thead th#result,
 #shorty-tracking-list-dialog #list tbody td#result {
-  width:5em;
+  width:5.1em;
 }
 #shorty-tracking-list-dialog #list thead th#host,
 #shorty-tracking-list-dialog #list tbody td#host {
-  width:8em;
+  width:10em;
 }
 #shorty-tracking-list-dialog #list tbody td span {
   padding: 0.1em 0.3em 0.1em 0.1em;
