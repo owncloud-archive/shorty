@@ -505,10 +505,6 @@
   margin: 0;
   padding: 0;
 }
-/* elements (rows) freshly added to the list, this calss might trigger visual effects like pulsation */
-.shorty-fresh {
-  display: none;
-}
 /* elements (rows) currently filtered out (toolbars column filter options) */
 tr.shorty-filtered {
   display: none;
