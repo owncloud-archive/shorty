@@ -27,5 +27,4 @@ Changelog:
 * Mon Jul 16 2012 Christian Reiner: version 0.1.1
 Fixed database issues when used under mysql engines
 * Sun Jul 15 2012 Christian Reiner: version 0.1.0
-Initial implementation, only party working
-Version number 0.3.0 explains itself as being in sync with version of Shorty
+Initial implementation, basic things working but lacks features
