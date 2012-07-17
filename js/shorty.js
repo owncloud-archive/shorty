@@ -441,9 +441,11 @@ Shorty =
         dialog.find('#created').val(entry.attr('data-created')||'');
         dialog.find('#accessed').val(entry.attr('data-accessed')||'');
         dialog.find('#notes').val(entry.attr('data-notes')||'');
-//         dialog.find('#until').datepicker('setDate',new Date(entry.attr('data-until'))||'');
-        dialog.find('#until').datepicker('setDate',new Date(entry.attr('data-until'))||'')
-                             .datepicker('refresh');
+        // leave until date empty if not specify (do NOT fill in the current date)
+        if (entry.attr('data-until'))
+             dialog.find('#until').datepicker('setDate',new Date(entry.attr('data-until'))||'')
+                                  .datepicker('refresh');
+        else dialog.find('#until').datepicker('refresh');
         // open edit dialog
         Shorty.WUI.Dialog.show(dialog)
         $.when(
@@ -952,7 +954,7 @@ Shorty =
           // modify attributes in row, as data and value
           $.each(['status','title','until','notes'],
                  function(j,aspect){
-            if (set[aspect]){
+            if (undefined!=set[aspect]){
               // enhance row with actual set values
               row.attr('data-'+this,set[aspect]);
               if (hidden) row.addClass('shorty-fresh');
@@ -961,7 +963,7 @@ Shorty =
               switch(aspect)
               {
                 case 'until':
-                  if (null==set[aspect])
+                  if ( (null==set[aspect]) || (''==set[aspect]) )
                     content='-never-';
                   else{
                     content=set[aspect];
