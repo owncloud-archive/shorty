@@ -28,7 +28,9 @@ Changelog:
 Fixed sanity checks in registration of actions inside the plugin interface. 
 Fixed highlighting of freshly added entries in lists (flashing). 
 Some internal recoding to remove depreciated library methods. 
-Fixed updating of Shortys in the list right after changing them. 
+Fixed updating of Shortys in the list right after changing them.
+Further enhancements in support of plugins
+Rewritten and enhanced handling of clicks on Shortys.
 * Sun Jul 15 2012 Christian Reiner: version 0.3.0
 Implementation of a plugin interface including a partly redesign:
 this enables plugins to register actions and thus enhance Shortys features. 
