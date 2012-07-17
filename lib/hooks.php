@@ -127,6 +127,7 @@ class OC_ShortyTracking_Hooks
     }
     if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
     {
+      // action 'tracking-list' in list-of-shortys
       $parameters['list'][] = array (
         'id'    => 'clicks',
         'name'  => 'clicks',

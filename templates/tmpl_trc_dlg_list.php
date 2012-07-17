@@ -34,7 +34,7 @@
  */
 ?>
 
-<!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
+<!-- a (usually hidden) dialog used to display a list of all tracked clicks hitting a Shorty -->
 <div id="shorty-tracking-list-dialog"
      class="shorty-dialog shorty-standalone">
   <fieldset>
@@ -52,7 +52,7 @@
       <span id="title" class="ellipsis shorty-tracking-reference" data-slogan="<?php echo OC_ShortyTracking_L10n::t("Title");?>"></span>
       <hr>
     </div>
-      <table id="list">
+      <table id="list-of-clicks" class="shorty-list">
         <!-- table header -->
         <thead>
           <tr id="titlebar">
@@ -68,6 +68,7 @@
             <th id="host"   ><span><?php echo OC_ShortyTracking_L10n::t("Host")   ?></span></th>
             <th id="user"   ><span><?php echo OC_ShortyTracking_L10n::t("User")   ?></span></th>
             <th id="time"   ><span><?php echo OC_ShortyTracking_L10n::t("Time")   ?></span></th>
+            <th id="action" ><span>&nbsp;</span></th>
           </tr>
           <!-- table toolbar -->
           <tr id="toolbar">
@@ -116,6 +117,15 @@
             <td id="host"></td>
             <td id="user"></td>
             <td id="time"></td>
+            <td id="actions">
+              <span class="shorty-actions">
+                <a id="details" title="<?php echo OC_Shorty_L10n::t("details"); ?>" data_method="Shorty.Tracking.details">
+                  <img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t("details"); ?>"
+                       title="<?php echo OC_Shorty_L10n::t('Show details'); ?>"
+                       src="<?php echo OCP\Util::imagePath('shorty','actions/info.png');   ?>" />
+                </a>
+              </span>
+            </td>
           </tr>
         </thead>
         <tbody>
@@ -128,4 +138,4 @@
       </div>
   </fieldset>
 </div>
-<!-- end of verification dialog -->
+<!-- end of clicks tracking list dialog -->

@@ -37,14 +37,14 @@ $(document).ready(function(){
     Shorty.Tracking.init()
   ).pipe(function(){
     // bind actions to basic buttons
-    Shorty.Tracking.dialog.find('#close').on('click',function(){
-      Shorty.WUI.Dialog.hide(Shorty.Tracking.dialog);
+    Shorty.Tracking.dialogList.find('#close').on('click',function(){
+      Shorty.WUI.Dialog.hide(Shorty.Tracking.dialogList);
     });
-    Shorty.Tracking.dialog.find('#list #titlebar').on('click',function(){
+    Shorty.Tracking.dialogList.find('#list-of-clicks #titlebar').on('click',function(){
       Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.list,Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking);
     });
-    Shorty.Tracking.dialog.find('#list #toolbar #reload').on('click',function(){Shorty.Tracking.build(false);});
-    Shorty.Tracking.dialog.find('#footer #load').on('click',function(){Shorty.Tracking.build(true);});
+    Shorty.Tracking.dialogList.find('#list-of-clicks #toolbar #reload').on('click',function(){Shorty.Tracking.build(false);});
+    Shorty.Tracking.dialogList.find('#footer #load').on('click',function(){Shorty.Tracking.build(true);});
     // title & target filter reaction
     Shorty.Tracking.list.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter').on('keyup',function(){
       Shorty.WUI.List.filter(
@@ -74,10 +74,15 @@ $(document).ready(function(){
 Shorty.Tracking=
 {
   /**
-   * @brief Persistent jQuery object holding the dialog implemented by this plugin
+   * @brief Persistent jQuery object holding the list dialog implemented by this plugin
    * @author Christian Reiner
    */
-  dialog:{},
+  dialogList:{},
+  /**
+   * @brief Persistent jQuery object holding the click dialog implemented by this plugin
+   * @author Christian Reiner
+   */
+  dialogClick:{},
   /**
    * @brief Persistent referencing the Shorty this plugin currently deals with
    * @author Christian Reiner
@@ -101,7 +106,7 @@ Shorty.Tracking=
     // prevent additional events, whilst processing this one
     Shorty.Tracking.list.find('tbody').off('scroll');
     // attempt to retrieve next chunk of clicks only if it makes sense
-    if(  (Shorty.Tracking.dialog.find('#footer #load').is(':visible'))
+    if(  (Shorty.Tracking.dialogList.find('#footer #load').is(':visible'))
        &&($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight) )
       Shorty.Tracking.build(true);
     // rebind this method to the event
@@ -117,8 +122,8 @@ Shorty.Tracking=
     keep=keep||false;
     if (Shorty.Debug) Shorty.Debug.log("building tracking list");
     var dfd = new $.Deferred();
-    var fieldset=Shorty.Tracking.dialog.find('fieldset');
-    var clicks=Shorty.Tracking.dialog.find('#shorty-reference #clicks');
+    var fieldset=Shorty.Tracking.dialogList.find('fieldset');
+    var clicks=Shorty.Tracking.dialogList.find('#shorty-reference #clicks');
     var offset=0;
     if (keep){
       if (Shorty.Debug) Shorty.Debug.log("keeping existing entries in list");
@@ -140,10 +145,10 @@ Shorty.Tracking=
                            Shorty.WUI.List.add_callbackEnrich_tracking,
                            Shorty.WUI.List.add_callbackInsert_tracking);
       clicks.html(clicks.attr('data-slogan')+': '
-        +Shorty.Tracking.list.find('tbody tr').length+'/'+Shorty.Tracking.entry.attr('data-clicks'));
+        +Shorty.Tracking.list.find('tbody tr').length+'/'+response.stats[0]['length']);
       if (response.rest)
-           Shorty.Tracking.dialog.find('#footer #load').fadeIn('fast');
-      else Shorty.Tracking.dialog.find('#footer #load').fadeOut('slow');
+           Shorty.Tracking.dialogList.find('#footer #load').fadeIn('fast');
+      else Shorty.Tracking.dialogList.find('#footer #load').fadeOut('slow');
     }).pipe(function(){
       $.when(
         // visualize table
@@ -153,12 +158,12 @@ Shorty.Tracking=
         // decide if table needs to become scrollable
         // if so compute the right size and apply it to the body
         // this appears to be the most 'working' control
-        var bodyHeight=Shorty.Tracking.dialog.find('#list tbody').outerHeight(true);
-        var restHeight=Shorty.Tracking.dialog.find('fieldset legend').outerHeight(true)
-                      +Shorty.Tracking.dialog.find('#shorty-reference').outerHeight(true)
-                      +Shorty.Tracking.dialog.find('#titlebar').outerHeight(true)
+        var bodyHeight=Shorty.Tracking.dialogList.find('#list-of-clicks tbody').outerHeight(true);
+        var restHeight=Shorty.Tracking.dialogList.find('fieldset legend').outerHeight(true)
+                      +Shorty.Tracking.dialogList.find('#shorty-reference').outerHeight(true)
+                      +Shorty.Tracking.dialogList.find('#titlebar').outerHeight(true)
                       +38 // room for potentially invisible #toolbar
-                      +Shorty.Tracking.dialog.find('#footer').outerHeight(true)
+                      +Shorty.Tracking.dialogList.find('#footer').outerHeight(true)
                       +30;// some stuff I could not identify :-(
         var roomHeight=$('#content').outerHeight();
         // make table scrollable, when more than ... entries
@@ -183,20 +188,19 @@ Shorty.Tracking=
   control:function(entry){
     if (Shorty.Debug) Shorty.Debug.log("tracking list controller");
     var dfd=new $.Deferred();
-//     var dialog=Shorty.Tracking.dialog;
     // this is the shortys id
     Shorty.Tracking.id=entry.attr('id');
     Shorty.Tracking.entry=entry;
     // update lists reference bar content to improve intuitivity
-    var title=Shorty.Tracking.dialog.find('#shorty-reference #title');
+    var title=Shorty.Tracking.dialogList.find('#shorty-reference #title');
     title.html(title.attr('data-slogan')+': '+entry.attr('data-title'));
-    var clicks=Shorty.Tracking.dialog.find('#shorty-reference #clicks');
+    var clicks=Shorty.Tracking.dialogList.find('#shorty-reference #clicks');
     clicks.html(clicks.attr('data-slogan')+': '+entry.attr('data-clicks'));
     // prepare to (re-)fill the list
     $.when(
-      Shorty.WUI.List.empty(Shorty.Tracking.dialog)
+      Shorty.WUI.List.empty(Shorty.Tracking.dialogList)
     ).done(function(){
-      Shorty.WUI.Dialog.show(Shorty.Tracking.dialog)
+      Shorty.WUI.Dialog.show(Shorty.Tracking.dialogList)
       dfd.resolve();
     }).fail(function(){
       dfd.reject();
@@ -206,12 +210,47 @@ Shorty.Tracking=
     return dfd.promise();
   }, // Shorty.Tracking.control
   /**
-   * @method Shorty.Tracking.disabled
-   * @brief Popups a note stating that the plugin is disabled because the minimum requirements are not met
+   * @method Shorty.Tracking.details
+   * @brief Visualizes clicks details inside a popup
    * @author Christian Reiner
    */
-  disabled:function(entry){
-  }, // Shorty.Tracking.disabled
+  details:function(element){
+    if (Shorty.Debug) Shorty.Debug.log("visualizing details on click '"+element.attr('id')+"' in tracking list");
+    var dfd = new $.Deferred();
+    // use the existing 'share' dialog for this
+    var entry =Shorty.Tracking.entry;
+    var dialog=$('#shorty-tracking-click-dialog');
+    // fill and dialog
+    $.each(['title'],function(i,item){
+      switch(item){
+        default:
+          dialog.find('#shorty-'+item).text(entry.attr('data-'+item))
+                                      .attr('data-'+item,entry.attr('data-'+item));
+      } // switch
+    })
+    $.each(['result','address','host','user','time'],function(i,item){
+      switch(item){
+        case 'result':
+          dialog.find('#click-'+item).text(t('shorty-tracking',element.attr('data-'+item)))
+                                     .attr('data-'+item,element.attr('data-'+item));
+          break;
+        case 'time':
+          dialog.find('#click-'+item).text(formatDate(1000*element.attr('data-'+item)))
+                                     .attr('data-'+item,element.attr('data-'+item));
+          break;
+        default:
+          dialog.find('#click-'+item).text(element.attr('data-'+item))
+                                     .attr('data-'+item,element.attr('data-'+item));
+      } // switch
+    })
+    // move 'share' dialog towards entry
+    dialog.appendTo(element.find('td#actions')),
+    // open dialog
+    $.when(
+      Shorty.WUI.Dialog.show(dialog)
+    ).done(dfd.resolve)
+    return dfd.promise();
+  }, // Shorty.Tracking.details
   /**
    * @method Shorty.Tracking.get
    * @brief Fetches a list of all registered clicks matching a specified Shorty
@@ -253,32 +292,48 @@ Shorty.Tracking=
   init:function(){
     if (Shorty.Debug) Shorty.Debug.log("initializing tracking list");
     var dfd=new $.Deferred();
-    // does the dialog holding the list exist already ?
-    if (!$.isEmptyObject(Shorty.Tracking.dialog)){
-      // remove all (real) entries so that the table can be filled again
-      $('#shorty-tracking-list-dialog #list tr:not(#)').remove();
-      dfd.resolve();
-    }else{
-      // load dialog layout via ajax and create a freshly populated dialog
-      $.ajax({
-        type:     'GET',
-        url:      OC.filePath('shorty-tracking','ajax','layout.php'),
-        cache:    false,
-        dataType: 'json'
-      }).pipe(
-        function(response){return Shorty.Ajax.eval(response)},
-        function(response){return Shorty.Ajax.fail(response)}
-      ).done(function(response){
-        // create a fresh dialog and insert it alongside theesting dialogs in the top controls bar
-        $('#controls').append(response.layout);
-        // keep that new dialog for alter usage and control
-        Shorty.Tracking.dialog=$('#controls #shorty-tracking-list-dialog');
-        Shorty.Tracking.list  =Shorty.Tracking.dialog.find('#list').eq(0);
-        dfd.resolve(response);
-      }).fail(function(response){
-        dfd.reject(response);
-      })
-    } // else
+    // two dialogs are used by this plugin
+    var dialogs={
+      'list':  Shorty.Tracking.dialogList,
+      'click': Shorty.Tracking.dialogClick
+    };
+    // load dialogs from server
+    $.each(['list','click'],function(i,dialog){
+      // does the dialog holding the list exist already ?
+      if (!$.isEmptyObject(dialogs[dialog])){
+        // remove all (real) entries so that the table can be filled again
+        if ('list'==dialog)
+          $('#shorty-tracking-list-dialog #list-of-clicks tr:not(#)').remove();
+        dfd.resolve();
+      }else{
+        // load dialog layout via ajax and create a freshly populated dialog
+        $.ajax({
+          type:     'GET',
+          url:      OC.filePath('shorty-tracking','ajax','layout.php'),
+          data:     { dialog: dialog},
+          cache:    false,
+          dataType: 'json'
+        }).pipe(
+          function(response){return Shorty.Ajax.eval(response)},
+          function(response){return Shorty.Ajax.fail(response)}
+        ).done(function(response){
+          // create a fresh dialog and insert it alongside theesting dialogs in the top controls bar
+          $('#controls').append(response.layout);
+          switch (dialog){
+            case 'list':
+              Shorty.Tracking.dialogList=$('#controls #shorty-tracking-list-dialog').first();
+              Shorty.Tracking.list  =Shorty.Tracking.dialogList.find('#list-of-clicks').first();
+              break;
+            case 'click':
+              Shorty.Tracking.dialogClick=$('#controls #shorty-tracking-click-dialog').first();
+         } // switch
+          dialogs[dialog]
+          dfd.resolve(response);
+        }).fail(function(response){
+          dfd.reject(response);
+        })
+      } // else
+    }); // each
     return dfd.promise();
   }
 } // Shorty.Tracking
