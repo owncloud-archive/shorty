@@ -25,13 +25,14 @@
 Changelog: 
 
 * Mon Jul 16 2012 Christian Reiner: version 0.3.1
-Fixed sanity checks in registration of actions inside the plugin interface
-Fixed highlighting of freshly added entries in lists (flashing)
-Some internal recoding to remove depreciated library methods
+Fixed sanity checks in registration of actions inside the plugin interface. 
+Fixed highlighting of freshly added entries in lists (flashing). 
+Some internal recoding to remove depreciated library methods. 
+Fixed updating of Shortys in the list right after changing them. 
 * Sun Jul 15 2012 Christian Reiner: version 0.3.0
 Implementation of a plugin interface including a partly redesign:
-this enables plugins to register actions and thus enhance Shortys features
-Some internal code and comment cleanups
+this enables plugins to register actions and thus enhance Shortys features. 
+Some internal code and comment cleanups. 
 * Fri Jul 13 2012 Christian Reiner: version 0.2.8
 Some optical corrections to the share dialog.
 Updated static backend configuration in doc files.
