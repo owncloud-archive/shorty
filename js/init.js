@@ -71,7 +71,8 @@ $(document).ready(function(){
   // bind actions to the actions icons
   $(document).on('click','#desktop #list tbody .shorty-actions a',[],function(e){Shorty.WUI.Entry.click(e,$(this));});
   // bind highlighting to clicks on a row, except for the action icons
-  $(document).on('click','#desktop #list not(.dialog-share) tbody tr td:not(#actions)',[],function(){
+//   $(document).on('click','#desktop #list not(.dialog-share) tbody tr td:not(#actions)',[],function(){
+  $(document).on('click','#desktop #list tbody tr td:not(#actions)',[],function(){
     Shorty.WUI.List.highlight($(this).parents('tr'));
     Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
   });
