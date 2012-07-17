@@ -71,7 +71,8 @@ $(document).ready(function(){
     e.stopPropagation();
     Shorty.WUI.Entry.send(e,$(this));
   });
-  $(document).on('click','.shorty-list tbody tr:not(.clicked) td:not(#actions)',[],function(e){
+//   $(document).on('click','.shorty-list tbody tr:not(.clicked) td:not(#actions)',[],function(e){
+  $(document).on('click','.shorty-list tbody tr td:not(#actions)',[],function(e){
     // hide any open embedded dialog
     Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
     // highlight clicked entry
