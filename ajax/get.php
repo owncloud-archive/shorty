@@ -61,8 +61,8 @@ try
 //   );
   if ($p_offset)
   {
-    $param[':offset'] = $p_offset;
     $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_LIST_CHUNK );
+    $query->bindValue(':offset', $p_offset);
   }
   else
     $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_LIST_START );
@@ -84,8 +84,9 @@ try
   OCP\Util::writeLog( 'shorty-tracking', sprintf("Prepared list of clicks holding %s entries.",sizeof($chunk)), OC_Log::DEBUG );
   OCP\JSON::success ( array ( 'data'    => $chunk,
                               'count'   => sizeof($chunk),
-                              'stats'   => $stats,
+                              'offset'  => $p_offset,
                               'rest'    => (PAGE_SIZE>=sizeof($chunk)) ? FALSE : TRUE,
+                              'stats'   => $stats,
                               'message' => sprintf('%s: %s',OC_ShortyTracking_L10n::t("Number of entries"), count($chunk)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>
