@@ -46,7 +46,7 @@
 </div>
 
 <!-- the list of urls, non-empty variant -->
-<table id="list" class="shorty-list" style="display:none;">
+<table id="list-of-shortys" class="shorty-list" style="display:none;">
   <thead>
     <tr id="titlebar">
       <!-- a button to open/close the toolbar below -->

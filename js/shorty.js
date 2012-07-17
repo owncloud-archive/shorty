@@ -272,7 +272,7 @@ Shorty =
           // dialog already open, nothing to do...
           dfd.resolve();
         else{
-          $('#content .shorty-dialog').each(function(){
+          $('.shorty-dialog').not(dialog.parents('.shorty-dialog')).each(function(){
             Shorty.WUI.Dialog.hide($(this));
           });
           // hide 'old' notifications
@@ -374,29 +374,30 @@ Shorty =
         var dfd = new $.Deferred();
         var entry=element.parents('tr').first();
         if (Shorty.Debug) Shorty.Debug.log(event.type+" on action "+element.attr('id')+" for entry "+entry.attr('id'));
-        //
-        if ($('.shorty-dialog').is(':visible'))
-          $('.shorty-dialog').each(function(){Shorty.WUI.Dialog.hide($(this));});
-        else{
-          // highlight clicked row as active entry
-          $.when(
-            Shorty.WUI.List.highlight($('#desktop #list'),entry)
-          ).pipe(function(){
-            if ('click'==event.type){
-              switch(element.attr('id')){
-                case 'del':   Shorty.WUI.Entry.del(entry);      break;
-                case 'edit':  Shorty.WUI.Entry.edit(entry);     break;
-                case 'open':  Shorty.Action.Url.forward(entry); break;
-                case 'share': Shorty.WUI.Entry.share(entry);    break;
-                case 'show':  Shorty.WUI.Entry.show(entry);     break;
-                default: // probably an action registered by another plugin...
-                   // execute the function specified inside the clicked element: 
-                   if (Shorty.Debug) Shorty.Debug.log("handing control to registered action");
-                   executeFunctionByName($(element).attr('data_method'),window,entry);
-              } // switch
-            } // if click
-          }).done(dfd.resolve)
-        } // else
+        // close any visible dialogs first (exception: dialogs containing the clicked element)
+        if ($('.shorty-standalone').is(':visible')){
+          $('.shorty-standalone').not(element.parents('.shorty-dialog')).each(function(){
+            Shorty.WUI.Dialog.hide($(this));
+          });
+        }
+        // highlight clicked row as active entry
+        $.when(
+          Shorty.WUI.List.highlight($('#list-of-shortys'),entry)
+        ).pipe(function(){
+          if ('click'==event.type){
+            switch(element.attr('id')){
+              case 'del':   Shorty.WUI.Entry.del(entry);      break;
+              case 'edit':  Shorty.WUI.Entry.edit(entry);     break;
+              case 'open':  Shorty.Action.Url.forward(entry); break;
+              case 'share': Shorty.WUI.Entry.share(entry);    break;
+              case 'show':  Shorty.WUI.Entry.show(entry);     break;
+              default: // probably an action registered by another plugin...
+                 // execute the function specified inside the clicked element:
+                 if (Shorty.Debug) Shorty.Debug.log("handing control to registered action");
+                 executeFunctionByName($(element).attr('data_method'),window,entry);
+            } // switch
+          } // if click
+        }).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Entry.click
       /**
@@ -721,18 +722,18 @@ Shorty =
         // prepare loading
         $.when(
           Shorty.WUI.Hourglass.toggle(true),
-          Shorty.WUI.List.dim($('#desktop #list').first(),false)
+          Shorty.WUI.List.dim($('#list-of-shortys').first(),false)
         ).done(function(){
           // retrieve new entries
           $.when(
             Shorty.WUI.List.get()
           ).pipe(function(response){
-            Shorty.WUI.List.empty($('#desktop #list').first());
-            Shorty.WUI.List.fill($('#desktop #list').first(),response.data);
+            Shorty.WUI.List.empty($('#list-of-shortys').first());
+            Shorty.WUI.List.fill($('#list-of-shortys').first(),response.data);
           }).done(function(){
             $.when(
               Shorty.WUI.List.show(),
-              Shorty.WUI.List.dim($('#desktop #list').first(),true)
+              Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
             ).always(function(){
               Shorty.WUI.Hourglass.toggle(false)
               dfd.resolve();
@@ -901,7 +902,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("hide list");
         duration = 'slow';
         var dfd = new $.Deferred();
-        var list = $('#desktop #list');
+        var list = $('#list-of-shortys');
         if ( ! list.is(':visible'))
           dfd.resolve();
         else
@@ -950,7 +951,7 @@ Shorty =
         var row,set;
         $.each(list,function(i,set){
           // select row from list by id
-          row=$('#desktop #list tbody tr#'+set.id);
+          row=$('#list-of-shortys tbody tr#'+set.id);
           // modify attributes in row, as data and value
           $.each(['status','title','until','notes'],
                  function(j,aspect){
@@ -1001,7 +1002,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("show list");
         duration = 'slow';
         var dfd = new $.Deferred();
-        var list = $('#desktop #list');
+        var list = $('#list-of-shortys');
         if (list.is(':visible'))
           dfd.resolve();
         else
@@ -1053,7 +1054,7 @@ Shorty =
       vacuum: function(){
         if (Shorty.Debug) Shorty.Debug.log("vacuum list");
         // list is empty if no row exists
-        if (0!=$('#list tbody').find('tr').length)
+        if (0!=$('#list-of-shortys tbody').find('tr').length)
           $('#vacuum').fadeOut('fast');
         else
           $('#vacuum').fadeIn('slow');
@@ -1463,7 +1464,7 @@ Shorty =
           Shorty.WUI.Notification.hide(),
           // close and neutralize dialog
           Shorty.WUI.Dialog.hide(dialog),
-          Shorty.WUI.List.dim($('#desktop #list').first(),false),
+          Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
           Shorty.WUI.List.show()
         ).done(function(){
           var data={status:  status,
@@ -1487,11 +1488,11 @@ Shorty =
             Shorty.WUI.Dialog.reset(dialog)
           }).done(function(response){
             // add shorty to existing list
-            Shorty.WUI.List.add($('#desktop #list').first(),[response.data],true);
-            Shorty.WUI.List.dim($('#desktop #list').first(),true)
+            Shorty.WUI.List.add($('#list-of-shortys').first(),[response.data],true);
+            Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
             dfd.resolve(response);
           }).fail(function(response){
-            Shorty.WUI.List.dim($('#desktop #list').first(),true)
+            Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
             dfd.reject(response);
           })
         })
@@ -1512,7 +1513,7 @@ Shorty =
           Shorty.WUI.Notification.hide(),
           // close and neutralize dialog
           Shorty.WUI.Dialog.hide(dialog),
-          Shorty.WUI.List.dim($('#desktop #list').first(),false),
+          Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
           Shorty.WUI.List.show()
         ).done(function(){
           var data={id: id,
@@ -1535,7 +1536,7 @@ Shorty =
             Shorty.WUI.Dialog.reset(dialog);
             // modify existing entry in list
             Shorty.WUI.List.modify([response.data],true);
-            Shorty.WUI.List.dim($('#desktop #list').first(),true)
+            Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
             dfd.resolve(response);
           }).fail(function(response){
             dfd.reject(response);
@@ -1695,7 +1696,7 @@ Shorty =
           function(response){return Shorty.Ajax.fail(response)}
         ).done(function(){
           // update the rows content
-          var row=$('#list tbody tr#'+id);
+          var row=$('#list-of-shortys tbody tr#'+id);
           row.attr('data-status',status);
           row.find('td#status span').text(t('shorty',status));
           dfd.resolve();

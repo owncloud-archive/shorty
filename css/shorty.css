@@ -157,58 +157,58 @@
 }
 
 /* the list of shorties */
-#list {
+.shorty-list {
   display: inline;
   z-index: 3;
   background: transparent;
   table-layout: fixed;
 }
 /* the collapsible toolbar below the lists column title row */
-#list thead #toolbar img {
+.shorty-list thead #toolbar img {
   cursor: pointer;
   vertical-align: middle;
 }
-#list thead #toolbar img.shorty-sorter {
+.shorty-list thead #toolbar img.shorty-sorter {
   opacity:0.6;
 }
 /* last column in the list, content usually invisible, except when hovered */
-#list thead #toolbar img.shorty-active {
+.shorty-list thead #toolbar img.shorty-active {
   border:1px solid #888888;
   border-radius: 0.3em;
 }
-#list thead tr:nth-child(2) > th {
+.shorty-list thead tr:nth-child(2) > th {
   padding-bottom:0.5em;
 }
 /* somewhat more fixed layout for the table */
-#list thead #titlebar th span {
+.shorty-list thead #titlebar th span {
   display:inline-block;
 }
-#list thead #titlebar th,
-#list thead #titlebar th img,
-#list thead #titlebar th span {
+.shorty-list thead #titlebar th,
+.shorty-list thead #titlebar th img,
+.shorty-list thead #titlebar th span {
   cursor: pointer;
 }
-#list thead #titlebar img {
+.shorty-list thead #titlebar img {
   opacity:0.7;
 }
-#desktop #list thead th#title,
-#desktop #list tbody td#title,
-#desktop #list thead th#target,
-#desktop #list tbody td#target {
+#desktop .shorty-list thead th#title,
+#desktop .shorty-list tbody td#title,
+#desktop .shorty-list thead th#target,
+#desktop .shorty-list tbody td#target {
   width:10em;
 }
-#desktop #list thead th#clicks,
-#desktop #list tbody td#clicks {
+#desktop .shorty-list thead th#clicks,
+#desktop .shorty-list tbody td#clicks {
   width:3em;
 }
-#desktop #list thead th#until,
-#desktop #list tbody td#until {
+#desktop .shorty-list thead th#until,
+#desktop .shorty-list tbody td#until {
   width:5em;
 }
-#list thead tr#toolbar th input,
-#list tbody tr#toolbar td input,
-#list thead tr#toolbar th .chzn-container,
-#list tbody tr#toolbar td .chzn-container {
+.shorty-list thead tr#toolbar th input,
+.shorty-list tbody tr#toolbar td input,
+.shorty-list thead tr#toolbar th .chzn-container,
+.shorty-list tbody tr#toolbar td .chzn-container {
   width:6em;
   font-size: 11px;
   margin: 0;
@@ -218,22 +218,22 @@
 }
 
 /* column title apeparance */
-#list thead th {
+.shorty-list thead th {
   font-weight: bold;
   padding: 1px 6px;
 }
-#list thead th#clicks,
-#list thead th#until,
-#list thead th#actions {
+.shorty-list thead th#clicks,
+.shorty-list thead th#until,
+.shorty-list thead th#actions {
   text-align: center;
 }
 /* hide the dummy row */
-#list thead tr:last-child
+.shorty-list thead tr:last-child
 {
   display: none;
 }
 /* hide the content of the 'actions' column, except when being hovered */
-#desktop #list tbody tr td span.shorty-actions {
+.shorty-list tbody tr td span.shorty-actions {
   visibility:visible;
   opacity:0;
   transition: opacity 500ms;
@@ -244,7 +244,7 @@
   width:100px;
   overflow:auto;
 }
-#desktop #list tbody tr:hover td span.shorty-actions {
+.shorty-list tbody tr:hover td span.shorty-actions {
   opacity:1;
   transition: opacity 500ms;
   -moz-transition: opacity 500ms;
@@ -253,7 +253,7 @@
   -o-transition: opacity 500ms;
 }
 /* highlight a specific, 'clicked' row in the list */
-#list tbody tr.clicked {
+.shorty-list tbody tr.clicked {
   border-radius: 0.5em;
   background-color:#EEEEEE;
   box-shadow: 0 0 0.5px #777777;
@@ -264,16 +264,16 @@
   -o-transition: background-color 500ms;
 }
 /* strike through visible content of rows (entries) marked as deleted */
-#list tbody tr.deleted>#title,
-#list tbody tr.deleted>#target,
-#list tbody tr.deleted>#clicks,
-#list tbody tr.deleted>#until {
+.shorty-list tbody tr.deleted>#title,
+.shorty-list tbody tr.deleted>#target,
+.shorty-list tbody tr.deleted>#clicks,
+.shorty-list tbody tr.deleted>#until {
   color: gray;
   text-decoration: line-through;
   background: transparent url('%appswebroot%/apps/shorty/img/status/strike.png') 0 50% repeat-x;
 }
 /* replace the 'delete' action icon by an 'undelete' icon */
-#list tbody tr.deleted>#actions #del:after {
+.shorty-list tbody tr.deleted>#actions #del:after {
   content: url("%appswebroot%/apps/shorty/img/actions/recycle.png");
   position: relative;
   top: 3px;
@@ -281,20 +281,20 @@
   padding: 0;
   opacity: 0;
 }
-#list tbody tr.deleted:hover>#actions #del>img {
+.shorty-list tbody tr.deleted:hover>#actions #del>img {
   opacity: 0;
 }
-#list tbody tr.deleted:hover>#actions #del:after {
+.shorty-list tbody tr.deleted:hover>#actions #del:after {
   opacity: 1;
 }
 /* general table cell appearance */
-#list tbody td {
+.shorty-list tbody td {
   padding: 1px 6px;
 }
-#list tbody td#until {
+.shorty-list tbody td#until {
   text-align: center;
 }
-#list tbody td#clicks {
+.shorty-list tbody td#clicks {
   text-align: right;
   margin-right: 0.4em;
 }
@@ -330,7 +330,7 @@
   border-bottom-right-radius: 0.5em;
   border: 1px solid gray;
 /*   padding: 2px 4px 8px; */
-  padding: 0;
+  padding: 0 0 2px;
 }
 .shorty-dialog br {
   clear: left;
@@ -397,7 +397,8 @@
 }
 
 /* dialogs floating above other content ('standing alone') */
-.shorty-standalone {
+/* .shorty-standalone { */
+.shorty-dialog {
   width: 46em;
   margin: -1px 1em 0;
   padding: 0.5em;
