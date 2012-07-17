@@ -67,14 +67,19 @@ $(document).ready(function(){
   });
   $('#controls #until:not([readonly])').datepicker();
   // bind usage to the usage icons
-  $(document).on('click','#dialog-share img.shorty-usage',[],function(e){Shorty.WUI.Entry.send(e,$(this));});
-  // bind actions to the actions icons
-  $(document).on('click','#desktop #list tbody .shorty-actions a',[],function(e){Shorty.WUI.Entry.click(e,$(this));});
-  // bind highlighting to clicks on a row, except for the action icons
-//   $(document).on('click','#desktop #list not(.dialog-share) tbody tr td:not(#actions)',[],function(){
-  $(document).on('click','#desktop #list tbody tr td:not(#actions)',[],function(){
-    Shorty.WUI.List.highlight($(this).parents('tr'));
+  $(document).on('click','#dialog-share img.shorty-usage',[],function(e){
+    e.stopPropagation();
+    Shorty.WUI.Entry.send(e,$(this));
+  });
+  $(document).on('click','#list tbody tr:not(.clicked) td:not(#actions)',[],function(e){
+// alert($(this).parents('table').attr('id')+': '+$(this).parents('tr').hasClass('.clicked'));
+    // hide any open embedded dialog
     Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
+    // highlight clicked entry
+    Shorty.WUI.List.highlight($(this).parents('table'),$(this).parent('tr'));
+  });
+  $(document).on('click','#list tbody tr td#actions a',[],function(e){
+    Shorty.WUI.Entry.click(e,$(this));
   });
   // pretty select boxes where applicable (class controlled)
   $('.chosen').chosen();

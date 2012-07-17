@@ -380,7 +380,7 @@ Shorty =
         else{
           // highlight clicked row as active entry
           $.when(
-            Shorty.WUI.List.highlight(entry)
+            Shorty.WUI.List.highlight($('#desktop #list'),entry)
           ).pipe(function(){
             if ('click'==event.type){
               switch(element.attr('id')){
@@ -758,7 +758,7 @@ Shorty =
         if (show)
         {
           var rows=body.find('tr.shorty-fresh');
-          Shorty.WUI.List.highlight(rows.first());
+          Shorty.WUI.List.highlight(list,rows.first());
           rows.each(function(){
             $(this).removeClass('shorty-fresh');
             $(this).find('td').effect('pulsate');
@@ -919,7 +919,7 @@ Shorty =
        * @return object Deferred object
        * @author Christian Reiner
        */
-      highlight: function(entry){
+      highlight: function(list,entry){
         if (Shorty.Debug) Shorty.Debug.log("highlighting list entry "+entry.attr('id'));
         var dfd = new $.Deferred();
         // close any open embedded dialog
@@ -930,7 +930,7 @@ Shorty =
           Shorty.WUI.Dialog.hide($('.shorty-embedded'))
         ).pipe(function(){
           // neutralize all rows that might have been highlighted
-          $('#desktop #list tr').removeClass('clicked');
+          list.find('tr').removeClass('clicked');
           entry.addClass('clicked');
         }).always(dfd.resolve);
         return dfd.promise();
