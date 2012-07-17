@@ -156,6 +156,19 @@
   float: right;
 }
 
+table.shorty-list.scrollingTable tbody {
+  display: block;
+/*   clear: both; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+table.shorty-list.scrollingTable thead,
+table.shorty-list.scrollingTable tfoot {
+  width: 100%;
+}
+
 /* the list of shorties */
 .shorty-list {
   display: inline;
