@@ -59,7 +59,7 @@ try
     ':status'=> $p_status  ? $p_status  : '',
     ':title' => $p_title   ? $p_title   : '',
     ':notes' => $p_notes   ? $p_notes   : '',
-    ':until' => $p_until,
+    ':until' => $p_until   ? $p_until   : '',
   );
   $query = OCP\DB::prepare ( OC_Shorty_Query::URL_UPDATE );
   $query->execute ( $param );
