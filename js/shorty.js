@@ -382,7 +382,7 @@ Shorty =
         }
         // highlight clicked row as active entry
         $.when(
-          Shorty.WUI.List.highlight($('#list-of-shortys'),entry)
+          Shorty.WUI.List.highlight(element.parents('.shorty-list'),entry)
         ).pipe(function(){
           if ('click'==event.type){
             switch(element.attr('id')){
@@ -931,7 +931,7 @@ Shorty =
           Shorty.WUI.Dialog.hide($('.shorty-embedded'))
         ).pipe(function(){
           // neutralize all rows that might have been highlighted
-          list.find('tr').removeClass('clicked');
+          list.find('tr.clicked').removeClass('clicked');
           entry.addClass('clicked');
         }).always(dfd.resolve);
         return dfd.promise();
