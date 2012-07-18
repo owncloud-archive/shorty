@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* Mon Jul 16 2012 Christian Reiner: version 0.1.1
+* Wed Jul 18 2012 Christian Reiner: version 0.1.1
 Fixed database issues when used under mysql engines
 Added dialog showing the details of a single tracked click
 Some ui / usability enhancements
