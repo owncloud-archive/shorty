@@ -40,22 +40,22 @@
   <fieldset>
     <legend class="">
       <a id="close" class="shorty-close-button"
-        title="<?php echo OC_ShortyTracking_L10n::t("close"); ?>">
-        <img alt="<?php echo OC_ShortyTracking_L10n::t("close"); ?>"
+        title="<?php echo OC_Shorty_L10n::t("close"); ?>">
+        <img alt="<?php echo OC_Shorty_L10n::t("close"); ?>"
             src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
       </a>
       <span id="slogan"><?php echo OC_ShortyTracking_L10n::t("List of tracked clicks");?></span><br>
     </legend>
     <!-- linguistic reference to the shorty -->
     <div id="shorty-reference">
-      <label for="shorty-title"><?php echo OC_ShortyTracking_L10n::t("Title");?>: </label>
+      <label for="shorty-title"><?php echo OC_Shorty_L10n::t("Title");?>: </label>
       <span id="shorty-title" class="ellipsis shorty-tracking-reference"></span>
       <br/>
-      <label for="shorty-status"><?php echo OC_ShortyTracking_L10n::t("Status");?>: </label>
+      <label for="shorty-status"><?php echo OC_Shorty_L10n::t("Status");?>: </label>
       <span id="shorty-status" class="shorty-tracking-reference"></span>
-      <label for="shorty-created"><?php echo OC_ShortyTracking_L10n::t("Creation");?>: </label>
+      <label for="shorty-created"><?php echo OC_Shorty_L10n::t("Creation");?>: </label>
       <span id="shorty-created" class="shorty-tracking-reference"></span>
-      <label for="shorty-until"><?php echo OC_ShortyTracking_L10n::t("Expiration");?>: </label>
+      <label for="shorty-until"><?php echo OC_Shorty_L10n::t("Expiration");?>: </label>
       <span id="shorty-until" class="shorty-tracking-reference"></span>
       <hr>
     </div>
@@ -64,7 +64,7 @@
       <thead>
         <tr id="titlebar">
           <th id="state"  >
-            <span><img id="tools" alt="toolbar" title="<?php echo OC_ShortyTracking_L10n::t("Toggle toolbar");?>"
+            <span><img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
                       src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
                       data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
                       data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
@@ -81,7 +81,7 @@
         <tr id="toolbar">
           <th id="status">
             <div style="display:none;">
-              <a id="reload"><img alt="<?php echo OC_ShortyTracking_L10n::t("reload"); ?>" title="<?php echo OC_ShortyTracking_L10n::t("Reload list"); ?>" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>"></a>
+              <a id="reload"><img alt="<?php echo OC_Shorty_L10n::t("Reload"); ?>" title="<?php echo OC_Shorty_L10n::t("Reload list"); ?>" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>"></a>
             </div>
           </th>
           <th id="result">

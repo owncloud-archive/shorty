@@ -31,6 +31,7 @@
  */
 
 $TRANSLATIONS = array(
+"Click details" => "Klick-Details",
 "Clicks"        => "Klicks",
 "Title"         => "Titel",
 "Result"        => "Resultat",
@@ -43,11 +44,7 @@ $TRANSLATIONS = array(
 "denied"        => "abgewiesen",
 "blocked"       => "geblockt",
 
-"close"         => "schließen",
 "load"          => "laden",
-"reload"        => "aktualisieren",
 
 "List of tracked clicks"      => "Liste der aufgezeichneten Klicks",
-"Reload list"                 => "Liste aktualisieren",
-"Toggle toolbar"              => "Werkzeugleiste umschalten",
 );

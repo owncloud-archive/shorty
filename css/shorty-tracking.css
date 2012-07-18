@@ -46,14 +46,14 @@
 }
 #list-of-clicks thead th#result,
 #list-of-clicks tbody td#result {
-  width:5.1em;
+  width:5.5em;
 }
 #list-of-clicks thead th#host,
 #list-of-clicks tbody td#host {
-  width:10em;
+  width:11em;
 }
 #list-of-clicks tbody td span {
-  padding: 0.1em 0.3em 0.1em 0.1em;
+  padding: 0.1em 0.1em 0.1em 0.1em;
 }
 #list-of-clicks tbody tr:hover, tr:active {
   background-color: #F0F0F0;

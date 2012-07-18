@@ -64,7 +64,7 @@ try
       throw new OC_Shorty_Exception ( 'No such dialog defined: %s', $p_dialog );
   } // switch
   // available status options (required for select filter in toolbox)
-  $shorty_result['']=sprintf('- %s -',OC_ShortyTracking_L10n::t("all"));
+  $shorty_result['']=sprintf('- %s -',OC_Shorty_L10n::t("all"));
   foreach ( OC_Shorty_Type::$RESULT as $result )
     $shorty_result[$result] = OC_ShortyTracking_L10n::t($result);
   $tmpl->assign ( 'shorty-result', $shorty_result );

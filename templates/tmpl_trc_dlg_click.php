@@ -39,11 +39,11 @@
   <fieldset class="">
     <legend class="">
       <a id="close" class="shorty-close-button"
-        title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
-        <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
+        title="<?php echo OC_Shorty_L10n::t("Close"); ?>">
+        <img alt="<?php echo OC_Shorty_L10n::t("Close"); ?>"
             src="<?php echo OCP\Util::imagePath('apps/shorty','actions/shade.png');  ?>">
       </a>
-      <?php echo OC_Shorty_L10n::t("Click details").':'; ?>
+      <?php echo OC_ShortyTracking_L10n::t("Click details").':'; ?>
     </legend>
     <label for="shorty-title"><?php echo OC_ShortyTracking_L10n::t("Title");?>: </label>
     <span id="shorty-title" class="ellipsis"></span>
