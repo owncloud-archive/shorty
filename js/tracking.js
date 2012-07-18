@@ -105,7 +105,7 @@ Shorty.Tracking=
     // prevent additional events, whilst processing this one
     Shorty.Tracking.list.find('tbody').off('scroll');
     // attempt to retrieve next chunk of clicks only if it makes sense
-    if(  (Shorty.Tracking.dialogList.find('#shorty-footer #load').is(':visible'))
+    if(  ( ! Shorty.Tracking.dialogList.find('#shorty-footer #scrollingTurn').hasClass('disabled'))
        &&($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight) ){
       if (Shorty.Debug) Shorty.Debug.log("list scrolled towards its bottom");
       Shorty.Tracking.build(true);
@@ -132,8 +132,8 @@ Shorty.Tracking=
     }else{
       if (Shorty.Debug) Shorty.Debug.log("dropping existing entries in list");
       Shorty.WUI.List.empty(Shorty.Tracking.list);
-      Shorty.Tracking.dialogList.find('#shorty-footer #load').show()
-      Shorty.Tracking.list.removeClass('scrollingTable'),
+      Shorty.Tracking.dialogList.find('#shorty-footer #scrollingTurn').removeClass('disabled');
+      Shorty.Tracking.list.removeClass('scrollingTable');
       Shorty.Tracking.list.find('tbody').css('height','');
     }
     $.when(
@@ -148,9 +148,10 @@ Shorty.Tracking=
       // updte a few general informations
       Shorty.Tracking.dialogList.find('#shorty-clicks').html(
         Shorty.Tracking.list.find('tbody tr').length+'/'+response.stats[0]['length']);
+      // offer load button if there is a rest of clicks left
       if (response.rest)
-           Shorty.Tracking.dialogList.find('#shorty-footer #load').fadeIn('fast');
-      else Shorty.Tracking.dialogList.find('#shorty-footer #load').fadeOut('slow');
+           Shorty.Tracking.dialogList.find('#shorty-footer #scrollingTurn').removeClass('disabled');
+      else Shorty.Tracking.dialogList.find('#shorty-footer #scrollingTurn').addClass('disabled');
     }).pipe(function(){
       $.when(
         // visualize table
@@ -197,12 +198,13 @@ Shorty.Tracking=
     Shorty.Tracking.dialogList.find('#shorty-title').html(entry.attr('data-title'));
     Shorty.Tracking.dialogList.find('#shorty-status').html(entry.attr('data-status'));
     Shorty.Tracking.dialogList.find('#shorty-created').html(entry.attr('data-created'));
+    Shorty.Tracking.dialogList.find('#shorty-until').html(entry.attr('data-until'));
     var clicks=Shorty.Tracking.dialogList.find('#shorty-reference #clicks');
     clicks.html(clicks.attr('data-slogan')+': '+entry.attr('data-clicks'));
     // prepare to (re-)fill the list
     $.when(
       Shorty.WUI.List.empty(Shorty.Tracking.dialogList),
-      Shorty.Tracking.dialogList.find('#shorty-footer #load').show()
+      Shorty.Tracking.dialogList.find('#shorty-footer #scrollingTurn').removeClass('disabled')
     ).done(function(){
       Shorty.WUI.Dialog.show(Shorty.Tracking.dialogList)
       dfd.resolve();

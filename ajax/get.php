@@ -85,7 +85,7 @@ try
   OCP\JSON::success ( array ( 'data'    => $chunk,
                               'count'   => sizeof($chunk),
                               'offset'  => $p_offset,
-                              'rest'    => ($stats[0]['first']==$chunk[sizeof($chunk)-1]['id']) ? FALSE : TRUE,
+                              'rest'    => (empty($chunk)||($stats[0]['first']==$chunk[sizeof($chunk)-1]['id'])) ? FALSE : TRUE,
                               'stats'   => $stats,
                               'message' => sprintf('%s: %s',OC_ShortyTracking_L10n::t("Number of entries"), count($chunk)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }

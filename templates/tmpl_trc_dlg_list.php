@@ -53,10 +53,12 @@
       <br/>
       <label for="shorty-status"><?php echo OC_ShortyTracking_L10n::t("Status");?>: </label>
       <span id="shorty-status" class="shorty-tracking-reference"></span>
-      <label for="shorty-created"><?php echo OC_ShortyTracking_L10n::t("Created");?>: </label>
+      <label for="shorty-created"><?php echo OC_ShortyTracking_L10n::t("Creation");?>: </label>
       <span id="shorty-created" class="shorty-tracking-reference"></span>
+      <label for="shorty-until"><?php echo OC_ShortyTracking_L10n::t("Expiration");?>: </label>
+      <span id="shorty-until" class="shorty-tracking-reference"></span>
+      <hr>
     </div>
-    <hr>
     <table id="list-of-clicks" class="shorty-list">
       <!-- table header -->
       <thead>
@@ -137,12 +139,11 @@
       </tbody>
     </table>
     <div id="shorty-footer">
-      <div id="scrollingTurn">
-        <img id="load" alt="load" title="<?php echo OC_ShortyTracking_L10n::t("load");?>"
-             style="diaplay:none;"
-             src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">
-      </div>
       <hr>
+      <span id="scrollingTurn">
+        <img id="load" alt="load" title="<?php echo OC_ShortyTracking_L10n::t("load");?>"
+             src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">
+      </span>
       <label for="shorty-clicks"><?php echo OC_ShortyTracking_L10n::t("Clicks");?>: </label>
       <span id="shorty-clicks" class="shorty-tracking-reference"></span>
     </div>
