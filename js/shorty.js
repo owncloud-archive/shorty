@@ -674,8 +674,8 @@ Shorty =
               span.html('<img class="shorty-icon" width="16" src="'+set[aspect]+'">');
               break;
             case 'until':
-              if (null==set[aspect])
-                span.text('-never-');
+              if (!set[aspect])
+                span.text("-"+t('shorty',"never")+"-");
               else{
                 span.text(set[aspect]);
                 if (Shorty.Date.expired(set[aspect]))
@@ -964,8 +964,8 @@ Shorty =
               switch(aspect)
               {
                 case 'until':
-                  if ( (null==set[aspect]) || (''==set[aspect]) )
-                    content='-never-';
+                  if (!set[aspect])
+                    content="-"+t('shorty',"never")+"-";
                   else{
                     content=set[aspect];
                     if (Shorty.Date.expired(set[aspect]))
