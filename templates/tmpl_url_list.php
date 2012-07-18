@@ -50,7 +50,7 @@
   <thead>
     <tr id="titlebar">
       <!-- a button to open/close the toolbar below -->
-      <th id="favicon"><span><img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t('Toggle toolbar');?>"
+      <th id="favicon"><span><img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
                                   src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
                                   data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
                                   data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>"></span></th>
