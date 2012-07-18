@@ -163,6 +163,7 @@ table.shorty-list.scrollingTable tbody {
   overflow-x: hidden;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 table.shorty-list.scrollingTable thead,
 table.shorty-list.scrollingTable tfoot {
@@ -412,7 +413,7 @@ table.shorty-list.scrollingTable tfoot {
 /* dialogs floating above other content ('standing alone') */
 /* .shorty-standalone { */
 .shorty-dialog {
-  width: 46em;
+  width: 47em;
   margin: -1px 1em 0;
   padding: 0.5em;
   background: none repeat scroll 0 0 #F7F7F7;
@@ -507,7 +508,8 @@ table.shorty-list.scrollingTable tfoot {
   width: 5.7em;
   text-align: left;
   vertical-align: baseline;
-  padding: 0.6em 0.5em 0.1em 0.3em;
+/*   padding: 0.6em 0.5em 0.1em 0.3em; */
+  padding: 0.2em 0.5em 0.1em 0.2em;
   cursor: default;
 }
 .shorty-dialog span {
@@ -613,6 +615,11 @@ tr.shorty-filtered {
   text-overflow: ellipsis;
   width: inherit;
 }
+
+hr {
+  margin: 0.2em;
+}
+
 /* customization of styles for the 3rdparty jquery.impromtu prompts */
 div.jqi {
   width:480px;
