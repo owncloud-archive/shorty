@@ -48,94 +48,104 @@
     </legend>
     <!-- linguistic reference to the shorty -->
     <div id="shorty-reference">
-      <span id="clicks" class="shorty-tracking-reference" data-slogan="<?php echo OC_ShortyTracking_L10n::t("Clicks");?>"></span>
-      <span id="title" class="ellipsis shorty-tracking-reference" data-slogan="<?php echo OC_ShortyTracking_L10n::t("Title");?>"></span>
-      <hr>
+      <label for="shorty-title"><?php echo OC_ShortyTracking_L10n::t("Title");?>: </label>
+      <span id="shorty-title" class="ellipsis shorty-tracking-reference"></span>
+      <br/>
+      <label for="shorty-status"><?php echo OC_ShortyTracking_L10n::t("Status");?>: </label>
+      <span id="shorty-status" class="shorty-tracking-reference"></span>
+      <label for="shorty-created"><?php echo OC_ShortyTracking_L10n::t("Created");?>: </label>
+      <span id="shorty-created" class="shorty-tracking-reference"></span>
     </div>
-      <table id="list-of-clicks" class="shorty-list">
-        <!-- table header -->
-        <thead>
-          <tr id="titlebar">
-            <th id="state"  >
-              <span><img id="tools" alt="toolbar" title="<?php echo OC_ShortyTracking_L10n::t("Toggle toolbar");?>"
-                        src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
-                        data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
-                        data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
+    <hr>
+    <table id="list-of-clicks" class="shorty-list">
+      <!-- table header -->
+      <thead>
+        <tr id="titlebar">
+          <th id="state"  >
+            <span><img id="tools" alt="toolbar" title="<?php echo OC_ShortyTracking_L10n::t("Toggle toolbar");?>"
+                      src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
+                      data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
+                      data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
+            </span>
+          </th>
+          <th id="result" ><span><?php echo OC_ShortyTracking_L10n::t("Result") ?></span></th>
+          <th id="address"><span><?php echo OC_ShortyTracking_L10n::t("Address")?></span></th>
+          <th id="host"   ><span><?php echo OC_ShortyTracking_L10n::t("Host")   ?></span></th>
+          <th id="user"   ><span><?php echo OC_ShortyTracking_L10n::t("User")   ?></span></th>
+          <th id="time"   ><span><?php echo OC_ShortyTracking_L10n::t("Time")   ?></span></th>
+          <th id="action" ><span>&nbsp;</span></th>
+        </tr>
+        <!-- table toolbar -->
+        <tr id="toolbar">
+          <th id="status">
+            <div style="display:none;">
+              <a id="reload"><img alt="<?php echo OC_ShortyTracking_L10n::t("reload"); ?>" title="<?php echo OC_ShortyTracking_L10n::t("Reload list"); ?>" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>"></a>
+            </div>
+          </th>
+          <th id="result">
+            <div style="display:none;">
+              <span class="shorty-select">
+                <select id='filter' value="" data-placeholder=" ">
+                  <?php foreach($_['shorty-result'] as $option=>$label)
+                    echo sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label);
+                  ?>
+                </select>
               </span>
-            </th>
-            <th id="result" ><span><?php echo OC_ShortyTracking_L10n::t("Result") ?></span></th>
-            <th id="address"><span><?php echo OC_ShortyTracking_L10n::t("Address")?></span></th>
-            <th id="host"   ><span><?php echo OC_ShortyTracking_L10n::t("Host")   ?></span></th>
-            <th id="user"   ><span><?php echo OC_ShortyTracking_L10n::t("User")   ?></span></th>
-            <th id="time"   ><span><?php echo OC_ShortyTracking_L10n::t("Time")   ?></span></th>
-            <th id="action" ><span>&nbsp;</span></th>
-          </tr>
-          <!-- table toolbar -->
-          <tr id="toolbar">
-            <th id="status">
-              <div style="display:none;">
-                <a id="reload"><img alt="<?php echo OC_ShortyTracking_L10n::t("reload"); ?>" title="<?php echo OC_ShortyTracking_L10n::t("Reload list"); ?>" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>"></a>
-              </div>
-            </th>
-            <th id="result">
-              <div style="display:none;">
-                <span class="shorty-select">
-                  <select id='filter' value="" data-placeholder=" ">
-                    <?php foreach($_['shorty-result'] as $option=>$label)
-                      echo sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label);
-                    ?>
-                  </select>
-                </span>
-              </div>
-            </th>
-            <th id="address">
-              <div style="display:none;">
-                <input id='filter' type="text" value="">
-              </div>
-            </th>
-            <th id="host">
-              <div style="display:none;">
-                <input id='filter' type="text" value="">
-              </div>
-            </th>
-            <th id="user">
-              <div style="display:none;">
-                <input id='filter' type="text" value="">
-              </div>
-            </th>
-            <th id="time">
-              <div style="display:none;">
-                <input id='filter' type="text" value="">
-              </div>
-            </th>
-          </tr>
-          <!-- the 'dummy' row, a blueprint -->
-          <tr id="">
-            <td id="status"></td>
-            <td id="result"></td>
-            <td id="address"></td>
-            <td id="host"></td>
-            <td id="user"></td>
-            <td id="time"></td>
-            <td id="actions">
-              <span class="shorty-actions">
-                <a id="details" title="<?php echo OC_Shorty_L10n::t("details"); ?>" data_method="Shorty.Tracking.details">
-                  <img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t("details"); ?>"
-                       title="<?php echo OC_Shorty_L10n::t('Show details'); ?>"
-                       src="<?php echo OCP\Util::imagePath('shorty','actions/info.png');   ?>" />
-                </a>
-              </span>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-      <div id="footer">
+            </div>
+          </th>
+          <th id="address">
+            <div style="display:none;">
+              <input id='filter' type="text" value="">
+            </div>
+          </th>
+          <th id="host">
+            <div style="display:none;">
+              <input id='filter' type="text" value="">
+            </div>
+          </th>
+          <th id="user">
+            <div style="display:none;">
+              <input id='filter' type="text" value="">
+            </div>
+          </th>
+          <th id="time">
+            <div style="display:none;">
+              <input id='filter' type="text" value="">
+            </div>
+          </th>
+        </tr>
+        <!-- the 'dummy' row, a blueprint -->
+        <tr id="">
+          <td id="status"></td>
+          <td id="result"></td>
+          <td id="address"></td>
+          <td id="host"></td>
+          <td id="user"></td>
+          <td id="time"></td>
+          <td id="actions">
+            <span class="shorty-actions">
+              <a id="details" title="<?php echo OC_Shorty_L10n::t("details"); ?>" data_method="Shorty.Tracking.details">
+                <img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t("details"); ?>"
+                     title="<?php echo OC_Shorty_L10n::t('Show details'); ?>"
+                     src="<?php echo OCP\Util::imagePath('shorty','actions/info.png');   ?>" />
+              </a>
+            </span>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div id="shorty-footer">
+      <div id="scrollingTurn">
         <img id="load" alt="load" title="<?php echo OC_ShortyTracking_L10n::t("load");?>"
-             style="diaplay:none;" 
+             style="diaplay:none;"
              src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">
       </div>
+      <hr>
+      <label for="shorty-clicks"><?php echo OC_ShortyTracking_L10n::t("Clicks");?>: </label>
+      <span id="shorty-clicks" class="shorty-tracking-reference"></span>
+    </div>
   </fieldset>
 </div>
 <!-- end of clicks tracking list dialog -->

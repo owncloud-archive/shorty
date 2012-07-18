@@ -44,7 +44,7 @@ $(document).ready(function(){
       Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.list,Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking);
     });
     Shorty.Tracking.dialogList.find('#list-of-clicks #toolbar #reload').on('click',function(){Shorty.Tracking.build(false);});
-    Shorty.Tracking.dialogList.find('#footer #load').on('click',function(){Shorty.Tracking.build(true);});
+    Shorty.Tracking.dialogList.find('#shorty-footer #load').on('click',function(){Shorty.Tracking.build(true);});
     // title & target filter reaction
     Shorty.Tracking.list.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter').on('keyup',function(){
       Shorty.WUI.List.filter(
@@ -105,7 +105,7 @@ Shorty.Tracking=
     // prevent additional events, whilst processing this one
     Shorty.Tracking.list.find('tbody').off('scroll');
     // attempt to retrieve next chunk of clicks only if it makes sense
-    if(  (Shorty.Tracking.dialogList.find('#footer #load').is(':visible'))
+    if(  (Shorty.Tracking.dialogList.find('#shorty-footer #load').is(':visible'))
        &&($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight) ){
       if (Shorty.Debug) Shorty.Debug.log("list scrolled towards its bottom");
       Shorty.Tracking.build(true);
@@ -124,7 +124,6 @@ Shorty.Tracking=
     if (Shorty.Debug) Shorty.Debug.log("building tracking list");
     var dfd = new $.Deferred();
     var fieldset=Shorty.Tracking.dialogList.find('fieldset');
-    var clicks=Shorty.Tracking.dialogList.find('#shorty-reference #clicks');
     var offset=0;
     if (keep){
       if (Shorty.Debug) Shorty.Debug.log("keeping existing entries in list");
@@ -133,6 +132,7 @@ Shorty.Tracking=
     }else{
       if (Shorty.Debug) Shorty.Debug.log("dropping existing entries in list");
       Shorty.WUI.List.empty(Shorty.Tracking.list);
+      Shorty.Tracking.dialogList.find('#shorty-footer #load').show()
       Shorty.Tracking.list.removeClass('scrollingTable'),
       Shorty.Tracking.list.find('tbody').css('height','');
     }
@@ -145,11 +145,12 @@ Shorty.Tracking=
                            Shorty.WUI.List.fill_callbackFilter_tracking,
                            Shorty.WUI.List.add_callbackEnrich_tracking,
                            Shorty.WUI.List.add_callbackInsert_tracking);
-      clicks.html(clicks.attr('data-slogan')+': '
-        +Shorty.Tracking.list.find('tbody tr').length+'/'+response.stats[0]['length']);
+      // updte a few general informations
+      Shorty.Tracking.dialogList.find('#shorty-clicks').html(
+        Shorty.Tracking.list.find('tbody tr').length+'/'+response.stats[0]['length']);
       if (response.rest)
-           Shorty.Tracking.dialogList.find('#footer #load').fadeIn('fast');
-      else Shorty.Tracking.dialogList.find('#footer #load').fadeOut('slow');
+           Shorty.Tracking.dialogList.find('#shorty-footer #load').fadeIn('fast');
+      else Shorty.Tracking.dialogList.find('#shorty-footer #load').fadeOut('slow');
     }).pipe(function(){
       $.when(
         // visualize table
@@ -164,7 +165,7 @@ Shorty.Tracking=
                       +Shorty.Tracking.dialogList.find('#shorty-reference').outerHeight(true)
                       +Shorty.Tracking.dialogList.find('#titlebar').outerHeight(true)
                       +38 // room for potentially invisible #toolbar
-                      +Shorty.Tracking.dialogList.find('#footer').outerHeight(true)
+                      +Shorty.Tracking.dialogList.find('#shorty-footer').outerHeight(true)
                       +30;// some stuff I could not identify :-(
         var roomHeight=$('#content').outerHeight();
         // make table scrollable, when more than ... entries
@@ -193,13 +194,15 @@ Shorty.Tracking=
     Shorty.Tracking.id=entry.attr('id');
     Shorty.Tracking.entry=entry;
     // update lists reference bar content to improve intuitivity
-    var title=Shorty.Tracking.dialogList.find('#shorty-reference #title');
-    title.html(title.attr('data-slogan')+': '+entry.attr('data-title'));
+    Shorty.Tracking.dialogList.find('#shorty-title').html(entry.attr('data-title'));
+    Shorty.Tracking.dialogList.find('#shorty-status').html(entry.attr('data-status'));
+    Shorty.Tracking.dialogList.find('#shorty-created').html(entry.attr('data-created'));
     var clicks=Shorty.Tracking.dialogList.find('#shorty-reference #clicks');
     clicks.html(clicks.attr('data-slogan')+': '+entry.attr('data-clicks'));
     // prepare to (re-)fill the list
     $.when(
-      Shorty.WUI.List.empty(Shorty.Tracking.dialogList)
+      Shorty.WUI.List.empty(Shorty.Tracking.dialogList),
+      Shorty.Tracking.dialogList.find('#shorty-footer #load').show()
     ).done(function(){
       Shorty.WUI.Dialog.show(Shorty.Tracking.dialogList)
       dfd.resolve();
