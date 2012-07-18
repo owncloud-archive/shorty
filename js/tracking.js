@@ -102,13 +102,14 @@ Shorty.Tracking=
    *
    */
   bottom: function(){
-    if (Shorty.Debug) Shorty.Debug.log("list scrolled towards its bottom");
     // prevent additional events, whilst processing this one
     Shorty.Tracking.list.find('tbody').off('scroll');
     // attempt to retrieve next chunk of clicks only if it makes sense
     if(  (Shorty.Tracking.dialogList.find('#footer #load').is(':visible'))
-       &&($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight) )
+       &&($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight) ){
+      if (Shorty.Debug) Shorty.Debug.log("list scrolled towards its bottom");
       Shorty.Tracking.build(true);
+    }
     // rebind this method to the event
     Shorty.Tracking.list.find('tbody').on('scroll',Shorty.Tracking.bottom);
   }, // Shorty.Tracking.bottom
@@ -244,7 +245,7 @@ Shorty.Tracking=
       } // switch
     })
     // move 'share' dialog towards entry
-    dialog.appendTo(element.find('td#actions')),
+    dialog.appendTo(element.find('td#actions'));
     // open dialog
     $.when(
       Shorty.WUI.Dialog.show(dialog)
