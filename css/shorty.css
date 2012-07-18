@@ -343,8 +343,7 @@ table.shorty-list.scrollingTable tfoot {
   border-bottom-left-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
   border: 1px solid gray;
-/*   padding: 2px 4px 8px; */
-  padding: 0 0 2px;
+  padding: 2px 4px 8px;
 }
 .shorty-dialog br {
   clear: left;
@@ -411,7 +410,6 @@ table.shorty-list.scrollingTable tfoot {
 }
 
 /* dialogs floating above other content ('standing alone') */
-/* .shorty-standalone { */
 .shorty-dialog {
   width: 47em;
   margin: -1px 1em 0;
@@ -646,7 +644,6 @@ div.jqimessage fieldset {
 }
 div.jqimessage fieldset legend {
   font-weight: bold;
-  /*line-height: 90%; */
   margin: 0 0 0 5px;
   padding: 0 0.5em 0 0.4em;
 }

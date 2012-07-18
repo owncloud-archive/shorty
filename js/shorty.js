@@ -386,6 +386,7 @@ Shorty =
         ).pipe(function(){
           if ('click'==event.type){
             switch(element.attr('id')){
+              case 'close': break;
               case 'del':   Shorty.WUI.Entry.del(entry);      break;
               case 'edit':  Shorty.WUI.Entry.edit(entry);     break;
               case 'open':  Shorty.Action.Url.forward(entry); break;
@@ -660,6 +661,7 @@ Shorty =
                function(j,aspect){
           // we wrap the cells content into a span tag
           var span=$('<span>');
+          span.addClass('ellipsis');
           // enhance row with real set values
           if ('undefined'==set[aspect])
                row.attr('data-'+this,'');
@@ -682,12 +684,10 @@ Shorty =
               break;
             case 'title':
               span.text(set[aspect]);
-              span.addClass('ellipsis');
               break;
             case 'target':
               span.text(set[aspect]);
               span.attr('title',set[aspect]);
-              span.addClass('ellipsis');
               break;
             case 'status':
               if ('deleted'==set[aspect])
