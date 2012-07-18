@@ -46,7 +46,7 @@ OCP\JSON::checkAppEnabled ( 'shorty-tracking' );
 
 try
 {
-  define ('PAGE_SIZE', 20);
+  define ('PAGE_SIZE', 100);
   $p_shorty = OC_Shorty_Type::req_argument ( 'shorty', OC_Shorty_Type::ID,      TRUE );
   $p_offset = OC_Shorty_Type::req_argument ( 'offset', OC_Shorty_Type::INTEGER, FALSE);
 
@@ -85,7 +85,7 @@ try
   OCP\JSON::success ( array ( 'data'    => $chunk,
                               'count'   => sizeof($chunk),
                               'offset'  => $p_offset,
-                              'rest'    => (PAGE_SIZE>=sizeof($chunk)) ? FALSE : TRUE,
+                              'rest'    => ($stats[0]['first']==$chunk[sizeof($chunk)-1]['id']) ? FALSE : TRUE,
                               'stats'   => $stats,
                               'message' => sprintf('%s: %s',OC_ShortyTracking_L10n::t("Number of entries"), count($chunk)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }

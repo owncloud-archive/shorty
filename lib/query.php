@@ -43,7 +43,7 @@ class OC_ShortyTracking_Query
   const CLICK_RECORD            = "INSERT INTO *PREFIX*shorty_tracking (shorty,time,address,host,user,result) VALUES (:shorty,:time,:address,:host,:user,:result)";
   const CLICK_LIST_START        = "SELECT id,time,address,host,user,result FROM *PREFIX*shorty_tracking WHERE shorty=:shorty ORDER BY id desc LIMIT :limit";
   const CLICK_LIST_CHUNK        = "SELECT id,time,address,host,user,result FROM *PREFIX*shorty_tracking WHERE shorty=:shorty AND id<:offset ORDER BY id desc LIMIT :limit";
-  const CLICK_LIST_STATS        = "SELECT count(*) AS length,MIN(time) AS earliest,MAX(time) AS latest FROM *PREFIX*shorty_tracking WHERE shorty=:shorty";
+  const CLICK_LIST_STATS        = "SELECT count(*) AS length,MIN(time) AS earliest,MAX(time) AS latest,MIN(id) as first FROM *PREFIX*shorty_tracking WHERE shorty=:shorty";
   const CLICK_WIPE              = "DELETE FROM *PREFIX*shorty_tracking ..... all clicks where entry in *PREFIX*shorty does NOT exist any more";
 } // class OC_ShortyTracking_Query
 ?>
