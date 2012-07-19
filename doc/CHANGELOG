@@ -24,6 +24,9 @@
 
 Changelog: 
 
+* Thu Jul 19 2012 Christian Reiner: version 0.3.2
+Fixed a few problems with updating a currently listed Shorty after a modification.
+Fixed storage of empty expiration dates when used with a MySQL database system.
 * Mon Jul 18 2012 Christian Reiner: version 0.3.1
 Fixed sanity checks in registration of actions inside the plugin interface. 
 Fixed highlighting of freshly added entries in lists (flashing). 
