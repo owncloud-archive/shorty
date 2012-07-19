@@ -72,7 +72,7 @@ try
     ':source'  => $p_source  ? $p_source  : '',
     ':target'  => $p_target  ? $p_target  : '',
     ':notes'   => $p_notes   ? $p_notes   : '',
-    ':until'   => $p_until   ? $p_until   : '',
+    ':until'   => $p_until   ? $p_until   : null,
   );
   $query = OCP\DB::prepare ( OC_Shorty_Query::URL_INSERT );
   $query->execute ( $param );

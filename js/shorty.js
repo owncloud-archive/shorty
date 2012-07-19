@@ -955,38 +955,38 @@ Shorty =
           // modify attributes in row, as data and value
           $.each(['status','title','until','notes'],
                  function(j,aspect){
-            if (undefined!=set[aspect]){
-              // enhance row with actual set values
-              row.attr('data-'+this,set[aspect]);
-              if (hidden) row.addClass('shorty-fresh');
-              // fill data into corresponsing column
-              var content, classes=[];
-              switch(aspect)
-              {
-                case 'until':
-                  if (!set[aspect])
-                    content="-"+t('shorty',"never")+"-";
-                  else{
-                    content=set[aspect];
-                    if (Shorty.Date.expired(set[aspect]))
-                      row.addClass('shorty-expired');
-                  }
-                  break;
-                case 'title':
-                  classes.push('ellipsis');
+            if (undefined==set[aspect])
+              set[aspect]='';
+            // enhance row with actual set values
+            row.attr('data-'+this,set[aspect]);
+            if (hidden) row.addClass('shorty-fresh');
+            // fill data into corresponsing column
+            var content, classes=[];
+            switch(aspect)
+            {
+              case 'until':
+                if (!set[aspect])
+                  content="-"+t('shorty',"never")+"-";
+                else{
                   content=set[aspect];
-                  break;
-                case 'status':
-                  if ('deleted'==set[aspect])
-                    row.addClass('deleted');
-                  content=set[aspect];
-                  break;
-                default:
-                  content=set[aspect];
-              } // switch
-              // show modified column immediately or keep it for a later pulsation effect ?
-              row.find('td').filter('#'+aspect).html('<span class="'+classes.join(' ')+'">'+content+'</span>');
-            } // if aspect
+                  if (Shorty.Date.expired(set[aspect]))
+                    row.addClass('shorty-expired');
+                }
+                break;
+              case 'title':
+                classes.push('ellipsis');
+                content=set[aspect];
+                break;
+              case 'status':
+                if ('deleted'==set[aspect])
+                  row.addClass('deleted');
+                content=t('shorty',set[aspect]);
+                break;
+              default:
+                content=set[aspect];
+            } // switch
+            // show modified column immediately or keep it for a later pulsation effect ?
+            row.find('td').filter('#'+aspect).html('<span class="'+classes.join(' ')+'">'+content+'</span>');
           }) // each aspect
         }) // each entry
         return dfd.resolve().promise();
