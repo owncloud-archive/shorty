@@ -145,8 +145,6 @@
         <span id="shorty-clicks" class="shorty-tracking-reference"></span>
       </span>
       <span style="float:right;">
-        <label for="shorty-created" ><?php echo OC_Shorty_L10n::t("Creation");?>: </label>
-        <span id="shorty-created" class="shorty-tracking-reference"></span>
         <label for="shorty-until"><?php echo OC_Shorty_L10n::t("Expiration");?>: </label>
         <span id="shorty-until" class="shorty-tracking-reference"></span>
       </span>

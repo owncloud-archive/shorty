@@ -197,7 +197,6 @@ Shorty.Tracking=
     // update lists reference bar content to improve intuitivity
     Shorty.Tracking.dialogList.find('#shorty-title').html(entry.attr('data-title'));
     Shorty.Tracking.dialogList.find('#shorty-status').html(entry.attr('data-status'));
-    Shorty.Tracking.dialogList.find('#shorty-created').html(entry.attr('data-created'));
     Shorty.Tracking.dialogList.find('#shorty-until').html(
       ((!entry.attr('data-until')) ? "-"+t('shorty',"never")+"-" : entry.attr('data-until')) );
     var clicks=Shorty.Tracking.dialogList.find('#shorty-reference #clicks');
