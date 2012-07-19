@@ -965,12 +965,14 @@ Shorty =
             switch(aspect)
             {
               case 'until':
-                if (!set[aspect])
+                if (!set[aspect]){
                   content="-"+t('shorty',"never")+"-";
-                else{
+                  row.removeClass('shorty-expired');
+                }else{
                   content=set[aspect];
                   if (Shorty.Date.expired(set[aspect]))
-                    row.addClass('shorty-expired');
+                       row.addClass('shorty-expired');
+                  else row.removeClass('shorty-expired');
                 }
                 break;
               case 'title':
@@ -1505,7 +1507,7 @@ Shorty =
         var dialog=$('#dialog-edit');
         var id    =dialog.find('#id').val();
         var status=dialog.find('#status').val()||'blocked';
-        var title =dialog.find('#title').val()||'';
+        var title =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
         var until =dialog.find('#until').val()||'';
         var notes =dialog.find('#notes').val()||'';
         // perform modification of existing shorty
