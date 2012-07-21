@@ -30,6 +30,9 @@
  */
 
 $(document).ready(function(){
+  // refresh the ajax request token in regular intervals
+  // required to make use of long lasting sessions whilst using CSRF protection with a small tokens lifetime
+  setInterval(Shorty.Action.Token.refresh, 1000*60*57.87); // ~58 minutes, close to the timeout of 1 hour
   // make notification closeable
   $('#content #notification').on('click',Shorty.WUI.Notification.hide);
   // button to open the 'add' dialog

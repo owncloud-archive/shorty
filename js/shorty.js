@@ -60,8 +60,7 @@ Shorty =
         if (Shorty.Debug) Shorty.Debug.log("init controls");
         var dfd = new $.Deferred();
         $.when(
-          Shorty.WUI.Controls.toggle(),
-          Shorty.WUI.Sums.fill()
+          Shorty.WUI.Controls.toggle()
         ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Controls.init
@@ -78,9 +77,7 @@ Shorty =
         var controls = $('#controls');
         if ( ! controls.is(':visible')){
           $.when(
-            $.when(
-              controls.slideDown('slow')
-            ).done(Shorty.WUI.Sums.fill)
+            controls.slideDown('slow')
           ).done(dfd.resolve)
         }else{
           $.when(
@@ -1445,6 +1442,30 @@ Shorty =
         return dfd.promise();
       } // Shorty.Action.Setting.check
     }, // Shorty.Action.Setting
+    // ===== Shorty.Action.Token =====
+    Token:
+    {
+      // ===== Shorty.Action.Token.refresh =====
+      refresh:function(){
+        if (Shorty.Debug) Shorty.Debug.log("refreshing request token (lifebeat)");
+        var dfd=new $.Deferred();
+        $.ajax({
+          type:     'POST',
+          url:      OC.filePath('shorty','ajax','token.php'),
+          cache:    false,
+          data:     { },
+          dataType: 'json'
+        }).pipe(
+          function(response){return Shorty.Ajax.eval(response)},
+          function(response){return Shorty.Ajax.fail(response)}
+        ).done(function(response){
+          var token=response.token;
+          $(document).bind('ajaxSend','');
+          $(document).bind('ajaxSend',function(elm,xhr,s){xhr.setRequestHeader('requesttoken',token);});
+          dfd.resolve();
+        }).fail(dfd.reject)
+      } // Shorty.Action.Token.refresh
+    }, // Shorty.Action.Token
     // ===== Shorty.Action.Url =====
     Url:
     {
@@ -1736,15 +1757,14 @@ Shorty =
         if ('success'==response.status){
           Shorty.WUI.Notification.show(response.message,'debug');
           return new $.Deferred().resolve(response);
-        } else {
+        }else{
+//           // is this an expired request token (CSRF protection mechanism) ?
+//           if (response.message.indexOf("Token expired")>=0)
+//             // reload apps base page
+//             window.location.href=OC.filePath('shorty','','');
           Shorty.WUI.Notification.show(response.message,'error');
           return new $.Deferred().reject(response);
         }
-//       }else{
-  // TEST (regex) if this is a DB error:
-  // DB Error: "SQLSTATE[HY000]: General error: 1 near "WHERE": syntax error".....
-//         // not a valid response, maybe a DB error ?
-//         if ('DB error'==response)
       }
     }, // Shorty.Ajax.eval
 
