@@ -46,8 +46,8 @@
       </a>
       <span id="slogan"><?php echo OC_ShortyTracking_L10n::t("List of tracked clicks");?></span><br>
     </legend>
-    <!-- linguistic reference to the shorty -->
-    <div id="shorty-reference">
+    <!-- begin: the dialogs header: linguistic reference to the Shorty and the sparkline -->
+    <div id="shorty-header">
       <label for="shorty-title"><?php echo OC_Shorty_L10n::t("Title");?>: </label>
       <span id="shorty-title" class="ellipsis shorty-tracking-reference"></span>
       <br/>
@@ -55,6 +55,8 @@
       <span id="shorty-status" class="shorty-tracking-reference"></span>
       <hr>
     </div>
+    <!-- end: the dialogs header -->
+    <!-- begin: the dialogs list: contains a list header and a list body -->
     <table id="list-of-clicks" class="shorty-list">
       <!-- table header -->
       <thead>
@@ -134,6 +136,8 @@
       <tbody>
       </tbody>
     </table>
+    <!-- end: the dialogs list -->
+    <!-- begin: the dialogs footer: status information and an icon to load the next chunk -->
     <div id="shorty-footer">
       <hr>
       <span id="scrollingTurn">
@@ -149,6 +153,7 @@
         <span id="shorty-until" class="shorty-tracking-reference"></span>
       </span>
     </div>
+    <!-- end: the dialogs footer -->
   </fieldset>
 </div>
 <!-- end of clicks tracking list dialog -->

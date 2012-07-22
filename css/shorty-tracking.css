@@ -59,7 +59,8 @@
   background-color: #F0F0F0;
 }
 
-#shorty-tracking-list-dialog #shorty-reference span {
+/* #shorty-tracking-list-dialog #shorty-tracking-reference { */
+#shorty-tracking-list-dialog .shorty-tracking-reference {
   display: inline;
   width: 100%;
   font-style: normal;
@@ -71,13 +72,13 @@
   position: relative;
   padding: 3px;
 }
-#shorty-tracking-list-dialog #shorty-footer #scrollingTurn {
+#shorty-tracking-list-dialog #scrollingTurn {
   position: absolute;
   display: block;
   width: 100%;
   text-align: center;
 }
-#shorty-tracking-list-dialog #shorty-footer #scrollingTurn.disabled {
+#shorty-tracking-list-dialog #scrollingTurn.disabled {
   display: none;
 }
 

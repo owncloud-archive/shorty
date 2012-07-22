@@ -171,7 +171,7 @@ Shorty.Tracking=
         // this appears to be the most 'working' control
         var bodyHeight=Shorty.Tracking.dialogList.find('#list-of-clicks tbody').outerHeight(true);
         var restHeight=Shorty.Tracking.dialogList.find('fieldset legend').outerHeight(true)
-                      +Shorty.Tracking.dialogList.find('#shorty-reference').outerHeight(true)
+                      +Shorty.Tracking.dialogList.find('#shorty-header').outerHeight(true)
                       +Shorty.Tracking.dialogList.find('#titlebar').outerHeight(true)
                       +38 // room for potentially invisible #toolbar
                       +Shorty.Tracking.dialogList.find('#shorty-footer').outerHeight(true)
@@ -208,7 +208,7 @@ Shorty.Tracking=
     Shorty.Tracking.dialogList.find('#shorty-status').html(entry.attr('data-status'));
     Shorty.Tracking.dialogList.find('#shorty-until').html(
       ((!entry.attr('data-until')) ? "-"+t('shorty',"never")+"-" : entry.attr('data-until')) );
-    var clicks=Shorty.Tracking.dialogList.find('#shorty-reference #clicks');
+    var clicks=Shorty.Tracking.dialogList.find('#shorty-header #clicks');
     clicks.html(clicks.attr('data-slogan')+': '+entry.attr('data-clicks'));
     // prepare to (re-)fill the list
     $.when(
