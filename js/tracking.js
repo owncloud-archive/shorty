@@ -30,7 +30,10 @@
  * @author Christian Reiner
  */
 
-$(document).ready(function(){
+// we use the late event $(window).load() instead of $(document).ready(), 
+// since otherwise the binding of the ajax request token (CSRF protection)
+// has not yet finished before we try to use it...
+$(window).load(function(){
   var dfd = new $.Deferred();
   $.when(
     // load layout of dialog to show the list of tracked clicks
