@@ -42,7 +42,8 @@ OC_Shorty_Tools::ob_control ( TRUE );
 $RUNTIME_NOSETUPFS = TRUE;
 $RUNTIME_NOAPPS = TRUE;
 
-// Check if we are a user
+// Sanity checks
+OCP\JSON::callCheck ( );
 OCP\JSON::checkLoggedIn ( );
 OCP\JSON::checkAppEnabled ( 'shorty' );
 OCP\JSON::checkAppEnabled ( 'shorty-tracking' );
