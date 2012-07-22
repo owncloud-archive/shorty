@@ -99,7 +99,11 @@ Shorty.Tracking=
    */
   list:{},
   /**
-   *
+   * @method Shorty.Tracking.bottom
+   * @brief Decides if a scrolling event has reached the bottom of the list
+   * @description If the list has been scrolled to its bottom the retrieval of the next chunk of clicks will be triggered
+   * @access private
+   * @author Christian Reiner
    */
   bottom: function(){
     // prevent additional events, whilst processing this one
@@ -117,6 +121,7 @@ Shorty.Tracking=
    * @method Shorty.Tracking.build
    * @brief Builds the content of the list of tracked clicks
    * @return deferred.promise
+   * @access private
    * @author Christian Reiner
    */
   build: function(keep){
@@ -183,9 +188,10 @@ Shorty.Tracking=
   /**
    * @method Shorty.Tracking.control
    * @brief Central control method, called by the app to hand over control
+   * @description This is the method specified as control in slot "registerActions"
    * @param entry jQuery object holding the clicked entry, in this case a row in the list of Shortys
    * @return deferred.promise
-   * @description This is the method specified as control in slot "registerActions"
+   * @access public
    * @author Christian Reiner
    */
   control:function(entry){
@@ -218,6 +224,7 @@ Shorty.Tracking=
   /**
    * @method Shorty.Tracking.details
    * @brief Visualizes clicks details inside a popup
+   * @access private
    * @author Christian Reiner
    */
   details:function(element){
@@ -263,6 +270,7 @@ Shorty.Tracking=
    * @param shorty string Id of the Shorty the click list is requested for
    * @param offset Numeric id of the last click that is already present in the list (ids being in chronological order!)
    * @return deferred.promise
+   * @access private
    * @author Christian Reiner
    */
   get:function(shorty,offset){
@@ -289,10 +297,11 @@ Shorty.Tracking=
     return dfd.promise();
   }, // Shorty.Tracking.get
   /**
-   * @class Shorty.Tracking
+   * method Shorty.Tracking.init
    * @brief Initializes the dialog this aplugin adds to the Shorty app
    * @description The html content of the dialog is fetched via ajax
    * @return deferred.promise
+   * @access public
    * @author Christian Reiner
    */
   init:function(){
@@ -351,6 +360,7 @@ Shorty.Tracking=
  * @param set object This is the set of attributes describing a single registered click
  * @param hidden bool Indicats if new entries in lists should be held back for later highlighting (flashing) optically or not
  * @description This replacement uses the plugin specific column names
+ * @access public
  * @author Christian Reiner
  */
 Shorty.WUI.List.add_callbackEnrich_tracking=function(row,set,hidden){
@@ -400,8 +410,9 @@ Shorty.WUI.List.add_callbackEnrich_tracking=function(row,set,hidden){
 /**
  * @method Shorty.WUI.List.add_callbackInsert_tracking
  * @brief Inserts a cloned and enriched row into the table at a usage specific place
- * @description
- * New entries always get appended to the list of already existing entries, since those are always sorted in a chronological order
+ * @description New entries always get appended to the list of already existing entries,
+ *              since those are always sorted in a chronological order
+ * @access public
  * @author Christian Reiner
  */
 Shorty.WUI.List.add_callbackInsert_tracking=function(list,row){
@@ -411,6 +422,7 @@ Shorty.WUI.List.add_callbackInsert_tracking=function(list,row){
 /**
  * @method Shorty.WUI.List.fill_callbackFilter_tracking
  * @brief Column filter rules specific to this plugins list
+ * @access public
  * @author Christian Reiner
  */
 Shorty.WUI.List.fill_callbackFilter_tracking=function(list){
@@ -430,6 +442,7 @@ Shorty.WUI.List.fill_callbackFilter_tracking=function(list){
  * @return bool Indicates if an existing filter prevents the closing or not
  * @description Used as a replacement for the default used in Shorty.WUI.List.Toolbar.toggle()
  * This version is private to this plugin and uses the filter names specific to the list of tracked clicks
+ * @access public
  * @author Christian Reiner
  */
 Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking=function(toolbar){
