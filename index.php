@@ -35,8 +35,10 @@
 
 OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 
+$OC_version = OCP\Util::getVersion();
 OCP\Util::addStyle  ( 'shorty/3rdparty','jquery.impromptu' );
-OCP\Util::addStyle  ( 'shorty',         'shorty' );
+// OCP\Util::addStyle  ( 'shorty',   'shorty' );
+OCP\Util::addStyle  ( 'shorty',   (5<=$OC_version[0]||(4==$OC_version[0]&&80<=$OC_version[1]))?'shorty-oc5':'shorty-oc4' );
 
 OCP\Util::addScript ( 'shorty/3rdparty','jquery.tinysort.min' );
 OCP\Util::addScript ( 'shorty/3rdparty','jquery.impromptu.min' );

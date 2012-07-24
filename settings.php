@@ -32,8 +32,10 @@
  * @author Christian Reiner
  */
 
+$OC_version = OCP\Util::getVersion();
 OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
-OCP\Util::addStyle  ( 'shorty',   'shorty' );
+// OCP\Util::addStyle  ( 'shorty',   'shorty' );
+OCP\Util::addStyle  ( 'shorty',   (5<=$OC_version[0]||(4==$OC_version[0]&&80<=$OC_version[1]))?'shorty-oc5':'shorty-oc4' );
 OCP\Util::addStyle  ( 'shorty',   'settings' );
 
 OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );

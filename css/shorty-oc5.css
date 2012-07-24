@@ -1,0 +1,688 @@
+/**
+* @package shorty an ownCloud url shortener plugin
+* @category internet
+* @author Christian Reiner
+* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
+*
+* This library is free software; you can redistribute it and/or
+* modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+* License as published by the Free Software Foundation; either
+* version 3 of the license, or any later version.
+*
+* This library is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+*
+* You should have received a copy of the GNU Affero General Public
+* License along with this library.
+* If not, see <http://www.gnu.org/licenses/>.
+*
+*/
+
+/**
+ * @file css/shorty.css
+ * @brief Style definitions of the plugins own view
+ * @author Christian Reiner
+ */
+
+/* everything :-) */
+#content { overflow: auto; }
+
+/* a case sensitive help button */
+#content #controls #help {
+/*   float:right; */
+}
+/* adapt optical appearance in case the help button is pushed into the header */
+#header #help {
+  float:right;
+  background-color:blue;
+}
+
+/* the shorty desktop, a canvas, contains all elements except of those pushed into the header */
+#desktop {
+  display: inline-block;
+  position: absolute;
+  background: transparent;
+  text-align: left;
+  margin-top: 30px;
+  padding: 2.5em 0.5em;
+  padding-top: 20px;
+}
+/* top bar, holding main control elements */
+#controls {
+  display: none;
+}
+/* a dialog for verification of the static backend setup */
+#verification {
+  overflow: hidden;
+}
+#verification p {
+  padding-bottom:0.4em;
+}
+
+/* an activity visualizer, currently a 'rotating timer wheel' */
+#hourglass {
+  display: none;
+  position: absolute;
+  width: 100%; height: 100%;
+  z-index: 1;
+  background: transparent;
+}
+#hourglass img {
+  margin:4em 8em;
+}
+/* a replacement list visualized in case the 'real' list is empty */
+#vacuum {
+  display: none;
+  position: absolute;
+  left:6em; top:8em;
+  width: 100%; height: 100%;
+  z-index: 2;
+  white-space: nowrap;
+  background: transparent;
+  text-shadow: 0 1px 0 #FFFFFF;
+  color: DarkSlateGray;
+}
+#vacuum .factoid {
+  font-size: 160%;
+  font-weight: bold;
+  font-style: normal;
+  color: gray;
+}
+#vacuum .suggestion {
+  font-size: 80%;
+  font-weight: light;
+  font-style: italic;
+  color: black;
+}
+#vacuum .explanation {
+  margin: 1em 0 2em;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+}
+#vacuum p {
+  margin: 0.6em 0 0.2em;
+}
+.usage-explanation {
+  font-style: normal;
+}
+.usage-instruction {
+  font-size: 10px;
+  font-style: italic;
+/*   line-height: 0.8em; */
+}
+.usage-token {
+  font-size: 10px;
+  font-style: normal;
+  font-family: fixed;
+  margin: 0;
+  padding:1px 2px;
+  border: 1px solid gray;
+  background-color: lightgray;
+}
+.usage-qrcode {
+  width: 50%;
+  margin: 2px;
+  padding: 10px;
+  border:1px solid gray;
+}
+#shortlet {
+  outline: medium none;
+  padding: 0.6em 0.8em;
+  background-image: -moz-linear-gradient(center bottom, Lavender 0%, white 50%);
+  border: 1px solid #DDDDDD;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  box-shadow: 0 1px 0 #BBBBBB inset;
+}
+#shortlet a {
+  font-style: italic;
+  color: DarkSlateGray;
+  cursor: move;
+}
+#shortlet:after {
+  content: url("%appswebroot%/shorty/img/drag_me.png");
+  position: relative;
+  top: -12px;
+  margin-left: -160px;
+}
+
+.shorty-standalone #busy {
+  display: none;
+  float: right;
+}
+
+table.shorty-list.scrollingTable tbody {
+  display: block;
+/*   clear: both; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+table.shorty-list.scrollingTable thead,
+table.shorty-list.scrollingTable tfoot {
+  width: 100%;
+}
+
+/* the list of shorties */
+.shorty-list {
+  display: inline;
+  z-index: 3;
+  background: transparent;
+  table-layout: fixed;
+}
+/* the collapsible toolbar below the lists column title row */
+.shorty-list thead #toolbar img {
+  cursor: pointer;
+  vertical-align: middle;
+}
+.shorty-list thead #toolbar img.shorty-sorter {
+  opacity:0.6;
+}
+/* last column in the list, content usually invisible, except when hovered */
+.shorty-list thead #toolbar img.shorty-active {
+  border:1px solid #888888;
+  border-radius: 0.3em;
+}
+.shorty-list thead tr:nth-child(2) > th {
+  padding-bottom:0.5em;
+}
+/* somewhat more fixed layout for the table */
+.shorty-list thead #titlebar th span {
+  display:inline-block;
+}
+.shorty-list thead #titlebar th,
+.shorty-list thead #titlebar th img,
+.shorty-list thead #titlebar th span {
+  cursor: pointer;
+}
+.shorty-list thead #titlebar img {
+  opacity:0.7;
+}
+#desktop .shorty-list thead th#title,
+#desktop .shorty-list tbody td#title,
+#desktop .shorty-list thead th#target,
+#desktop .shorty-list tbody td#target {
+  width:10em;
+}
+#desktop .shorty-list thead th#clicks,
+#desktop .shorty-list tbody td#clicks {
+  width:3em;
+}
+#desktop .shorty-list thead th#until,
+#desktop .shorty-list tbody td#until {
+  width:5em;
+}
+.shorty-list thead tr#toolbar th input,
+.shorty-list tbody tr#toolbar td input,
+.shorty-list thead tr#toolbar th .chzn-container,
+.shorty-list tbody tr#toolbar td .chzn-container {
+  width:6em;
+  font-size: 11px;
+  margin: 0;
+  padding: 0.4em 0.3em 0.2em;
+  vertical-align: baseline;
+  background-color:#FFFFFF;
+}
+
+/* column title apeparance */
+.shorty-list thead th {
+  font-weight: bold;
+  padding: 1px 6px;
+}
+.shorty-list thead th#clicks,
+.shorty-list thead th#until,
+.shorty-list thead th#actions {
+  text-align: center;
+}
+/* hide the dummy row */
+.shorty-list thead tr:last-child
+{
+  display: none;
+}
+/* hide the content of the 'actions' column, except when being hovered */
+.shorty-list tbody tr td span.shorty-actions {
+  visibility:visible;
+  opacity:0;
+  transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  width:100px;
+  overflow:auto;
+}
+.shorty-list tbody tr:hover td span.shorty-actions {
+  opacity:1;
+  transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -webkit-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+}
+/* highlight a specific, 'clicked' row in the list */
+.shorty-list tbody tr.clicked {
+  border-radius: 0.5em;
+  background-color:#EEEEEE;
+  box-shadow: 0 0 0.5px #777777;
+  transition: background-color 500ms;
+  -moz-transition: background-color 500ms;
+  -webkit-transition: background-color 500ms;
+  -ms-transition: background-color 500ms;
+  -o-transition: background-color 500ms;
+}
+/* strike through visible content of rows (entries) marked as deleted */
+.shorty-list tbody tr.deleted>#title,
+.shorty-list tbody tr.deleted>#target,
+.shorty-list tbody tr.deleted>#clicks,
+.shorty-list tbody tr.deleted>#until {
+  color: gray;
+  text-decoration: line-through;
+  background: transparent url('%appswebroot%/shorty/img/status/strike.png') 0 50% repeat-x;
+}
+/* replace the 'delete' action icon by an 'undelete' icon */
+.shorty-list tbody tr.deleted>#actions #del:after {
+  content: url("%appswebroot%/shorty/img/actions/recycle.png");
+  position: relative;
+  top: 3px;
+  margin-left: -19px;
+  padding: 0;
+  opacity: 0;
+}
+.shorty-list tbody tr.deleted:hover>#actions #del>img {
+  opacity: 0;
+}
+.shorty-list tbody tr.deleted:hover>#actions #del:after {
+  opacity: 1;
+}
+/* general table cell appearance */
+.shorty-list tbody td {
+  padding: 1px 6px;
+}
+.shorty-list tbody td#until {
+  text-align: center;
+}
+.shorty-list tbody td#clicks {
+  text-align: right;
+  margin-right: 0.4em;
+}
+/* prettyfied select boxes */
+#content span.shorty-select select {
+  width: 6.4em;
+  margin: 0;
+  padding: 0.2em;
+  opacity:0.8;
+  border:0 none;
+  font-size: 10px;
+}
+#content span.shorty-select {
+  border: 1px solid #DDDDDD;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  box-shadow: 0 1px 1px #FFFFFF, 0 1px 0 #BBBBBB inset;
+  outline: medium none;
+  padding: 2px;
+}
+/* general style of interactive dialogs */
+.shorty-dialog {
+  display: none;
+  color: black;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  box-shadow: 0 2px 1px #777777;
+  vertical-align:middle;
+  z-index:100;
+}
+.shorty-dialog fieldset {
+  position:relative;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border: 1px solid gray;
+  padding: 2px 4px 8px;
+}
+.shorty-dialog br {
+  clear: left;
+}
+.shorty-dialog legend {
+  white-space: nowrap;
+  font-weight: bold;
+  margin: 5px 0px 5px 10px;
+  padding: 0 0.5em 0 0.2em;
+}
+.shorty-dialog legend a {
+  margin: 0;
+  padding: 0;
+}
+.shorty-dialog textarea {
+  width: 80%; height: 5em;
+  background: none repeat scroll 0 0 #F8F8F8;
+  color: #555555;
+  border: 1px solid #DDDDDD;
+  border-radius: 0.5em;
+  cursor: text;
+  vertical-align:baseline;
+  margin: 0.3em;
+}
+.shorty-dialog textarea:hover,
+.shorty-dialog textarea:active {
+  background-color: #FFFFFF;
+  color: #333333;
+  opacity: 1;
+}
+.shorty-dialog input {
+  width: 80%;
+}
+.shorty-dialog a,
+.shorty-dialog input,
+.shorty-dialog select,
+.shorty-dialog textarea,
+.shorty-dialog button {
+  padding: 0.4em 0.2em;
+}
+.shorty-dialog input[readonly],
+.shorty-dialog select[readonly],
+.shorty-dialog textarea[readonly],
+.shorty-dialog button[readonly] {
+  border: 0 none;
+/*   box-shadow: 0 0 0; */
+  box-shadow: 0 0 0 #FFFFFF;
+  outline: none;
+  background: none;
+  background-color: #F7F7F7;
+  padding: 0.3em 0.3em;
+}
+.shorty-dialog button#confirm {
+  width: 12em; height: 2em;
+  border: 1px solid lightgray;
+  background-color: #EEEEEE;
+}
+.shorty-dialog button#confirm.sharp {
+  background-color: white;
+}
+.shorty-dialog button#confirm.sharp:hover {
+/*   border-color: green; */
+  border: 1px solid gray;
+}
+
+/* dialogs floating above other content ('standing alone') */
+.shorty-dialog {
+  width: 47em;
+  margin: -1px 1em 0;
+  padding: 0.5em;
+  background: none repeat scroll 0 0 #F7F7F7;
+}
+/* dialogs related to elements ('embedded in the content') */
+.shorty-embedded {
+  left: 5em;
+  width: 38em;
+  margin: -1px 4em 0;
+  padding: 0.5em;
+  background: none repeat scroll 0 0 #EEEEEE;
+  position: absolute;
+}
+.shorty-embedded a {
+  padding: 0;
+}
+.shorty-embedded a#source,
+.shorty-embedded a#relay,
+.shorty-embedded a#target {
+  display: inline-block;
+  width: 36.4em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+.shorty-embedded a.shorty-clickable:before {
+  content: url("%appswebroot%/shorty/img/actions/external.png");
+  margin-right: 0.3em;
+  margin-left: 7.4em;
+}
+.shorty-embedded fieldset.shorty-collapsible span:before {
+  content: url("%appswebroot%/shorty/img/actions/shade.png");
+  margin-right: 0.3em;
+  padding: 0;
+  vertical-align: baseline;
+  opacity: 0.7;
+}
+.shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
+  content:url("%appswebroot%/shorty/img/actions/unshade.png");
+  margin-right:0.3em;
+  vertical-align: baseline;
+  opacity: 0.7;
+}
+.shorty-embedded fieldset.shorty-collapsible span,
+.shorty-embedded fieldset.shorty-collapsible.collapsed span {
+  cursor: pointer;
+}
+.shorty-embedded fieldset.shorty-collapsible span {
+  margin:0;
+}
+.shorty-embedded fieldset.shorty-collapsible {
+  border-radius: 0.5em;
+  border: 1px solid #EEEEEE;
+  margin: 2px 1px;
+  padding: 0 0 2px;
+}
+.shorty-embedded fieldset.shorty-collapsible:not(.collapsed) {
+  border: 1px solid gray;
+}
+.shorty-embedded select {
+  margin: 0 0 0.2em 1.0em;
+  padding: 0.2em 0.4em 0.2em 0.2em;
+  border: 0 none;
+  background-color: #F4F4F4;
+}
+.shorty-embedded img.shorty-usage {
+  opacity: 0.6;
+  margin: 0;
+  padding: 0;
+}
+.shorty-embedded .shorty-grid {
+  width: 100%;
+  margin-top: 1em;
+}
+.shorty-embedded .shorty-grid tr:hover {
+  background-color:transparent;
+}
+.shorty-embedded .shorty-grid td {
+  text-align: center;
+  vertical-align: middle;
+}
+.shorty-embedded img.shorty-usage.disabled {
+  opacity: 0.2;
+}
+.shorty-embedded img.shorty-usage:not(.disabled):hover {
+  cursor: pointer;
+}
+.shorty-dialog label {
+  display: inline-block;
+  clear:none;
+  width: 5.7em;
+  text-align: left;
+  vertical-align: baseline;
+/*   padding: 0.6em 0.5em 0.1em 0.3em; */
+  padding: 0.2em 0.5em 0.1em 0.2em;
+  cursor: default;
+}
+.shorty-dialog span {
+  padding: 0.6em 0.5em 0.1em 0.3em;
+}
+.shorty-dialog span.label-line {
+  display: inline;
+  clear: none;
+  margin: 0;
+  padding: 0;
+}
+/* elements (rows) currently filtered out (toolbars column filter options) */
+tr.shorty-filtered {
+  display: none;
+}
+/* style of all icons (as opposed to all images) */
+.shorty-icon {
+  display: inline;
+  background: transparent;
+  vertical-align: middle;
+  padding: 1px;
+}
+/* dim entries with expired 'until' dates */
+.shorty-expired {
+  color: gray;
+}
+/* but keep embedded dialogs readable */
+.shorty-expired .shorty-dialog {
+  color: black;
+}
+.shorty-expired img {
+  opacity : 0.2;
+}
+.shorty-expired .shorty-dialog img {
+  opacity : 1;
+}
+.shorty-expired #until {
+  text-decoration: line-through;
+}
+/* some general style flavours */
+.shorty-prompt {
+  margin-left: 4px;
+}
+.shorty-value {
+  margin-right: 4px;
+}
+.shorty-single {
+  padding: 0.5em 1em;
+}
+.shorty-single:hover {
+  background-color: #EAEAEA;
+}
+.shorty-single:hover .shorty-actions {
+  display: block;
+}
+.shorty-id {
+  color: black;
+}
+.shorty-date {
+  width: 40%;
+}
+.shorty-notes {
+  color: blue;
+  text-decoration: none;
+}
+.shorty-source {
+  color: gray;
+}
+.shorty-target {
+  color: green;
+}
+.shorty-meta {
+  margin: 0.1em;
+}
+/* close buttons in dialogs, embedded or standalone */
+.shorty-close-button {
+  display:inline;
+  float:left;
+  margin:0 0.8em 0 0.3em;
+  padding:0;
+}
+.shorty-close-button img {
+  vertical-align: baseline;
+  margin: 2px;
+  padding: 0;
+}
+/* unlike elsewhere we underline clickable links in dialogs */
+.shorty-clickable {
+  white-space: nowrap;
+  text-decoration: underline;
+}
+.shorty-framed {
+  display:inline-block;
+  padding:1em;
+  background-color:white;
+  border:1px solid black;
+}
+/* keep long entries like urls from disrupting the compact appearance of the list */
+.ellipsis {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: inherit;
+}
+
+hr {
+  margin: 0.2em;
+}
+
+/* customization of styles for the 3rdparty jquery.impromtu prompts */
+div.jqi {
+  width:480px;
+  padding:4px;
+}
+.jqiwarning .jqi .jqibuttons{
+  background-color: silver;
+}
+div.jqi .jqimessage {
+  padding:4px;
+}
+div.jqimessage {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: normal;
+  color: DarkSlateGray;
+  background-color:#FFFFFF;
+}
+div.jqimessage fieldset {
+  position:relative;
+  border-radius: 0.5em;
+  border: 1px solid gray;
+  padding: 2px 10px 4px;
+}
+div.jqimessage fieldset legend {
+  font-weight: bold;
+  margin: 0 0 0 5px;
+  padding: 0 0.5em 0 0.4em;
+}
+div.jqimessage input,
+div.jqimessage textarea {
+  width:96%;
+  margin: 0.5em 0 0;
+  padding: 0.4em 0.3em 0.2em;
+}
+div.jqimessage textarea {
+  height: 6em;
+}
+div.jqimessage input::selection,
+div.jqimessage input::-moz-selection,
+div.jqimessage input::-webkit-selection,
+div.jqimessage input::-o-selection,
+div.jqimessage input::-ms-selection{
+    background:green;
+}
+div.jqi .jqiclose {
+  color: white;
+}
+div.jqi .jqibuttons {
+    background-color: white;
+    border: 0px;
+    margin: 0;
+    padding: 2px 0;
+    text-align: right;
+}
+div.jqi button {
+    background-color: lightgray;
+    padding: 2px 6px;
+}
+div.jqi button:hover {
+    background-color: darkgray;
+}
+div.jqi button.jqidefaultbutton {
+    background-color: gray;
+}
+div.jqi button.jqidefaultbutton:hover {
+    background-color: dimgray;
+}
