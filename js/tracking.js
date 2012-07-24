@@ -38,7 +38,7 @@ $(window).load(function(){
   $.when(
     // load layout of dialog to show the list of tracked clicks
     Shorty.Tracking.init()
-  ).pipe(function(){
+  ).done(function(){
     // bind actions to basic buttons
     Shorty.Tracking.dialogList.find('#close').on('click',function(){
       Shorty.WUI.Dialog.hide(Shorty.Tracking.dialogList);
@@ -66,7 +66,8 @@ $(window).load(function(){
         $(this).find(':selected').val(),
         Shorty.WUI.List.fill_callbackFilter_tracking);
     });
-  }).done(dfd.resolve).fail(dfd.reject);
+    dfd.resolve();
+  }).fail(dfd.reject);
   return dfd.promise();
 }); // document.ready
 
@@ -335,21 +336,18 @@ Shorty.Tracking=
           function(response){return Shorty.Ajax.eval(response)},
           function(response){return Shorty.Ajax.fail(response)}
         ).done(function(response){
-          // create a fresh dialog and insert it alongside theesting dialogs in the top controls bar
+          // create a fresh dialog and insert it alongside the existing dialogs in the top controls bar
           $('#controls').append(response.layout);
           switch (dialog){
             case 'list':
               Shorty.Tracking.dialogList=$('#controls #shorty-tracking-list-dialog').first();
-              Shorty.Tracking.list  =Shorty.Tracking.dialogList.find('#list-of-clicks').first();
+              Shorty.Tracking.list=Shorty.Tracking.dialogList.find('#list-of-clicks').first();
               break;
             case 'click':
               Shorty.Tracking.dialogClick=$('#controls #shorty-tracking-click-dialog').first();
-         } // switch
-          dialogs[dialog]
-          dfd.resolve(response);
-        }).fail(function(response){
-          dfd.reject(response);
-        })
+          } // switch
+          dfd.resolve();
+        }).fail(dfd.reject)
       } // else
     }); // each
     return dfd.promise();
