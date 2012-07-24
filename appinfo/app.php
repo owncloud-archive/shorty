@@ -40,15 +40,13 @@ OC::$CLASSPATH['OC_Shorty_Query']         = 'apps/shorty/lib/query.php';
 OC::$CLASSPATH['OC_Shorty_Tools']         = 'apps/shorty/lib/tools.php';
 OC::$CLASSPATH['OC_Shorty_Type']          = 'apps/shorty/lib/type.php';
 
+OCP\App::registerAdmin      ( 'shorty', 'settings' );
+OCP\App::registerPersonal   ( 'shorty', 'preferences' );
 OCP\App::addNavigationEntry ( array ( 'id' => 'shorty_index',
                                      'order' => 71,
                                      'href' => OCP\Util::linkTo   ( 'shorty', 'index.php' ),
                                      'icon' => OCP\Util::imagePath( 'shorty', 'shorty.svg' ),
                                      'name' => 'Shorty' ) );
-
-OCP\App::register         ( array ( 'order' => 71, 'id' => 'shorty', 'name' => 'Shorty' ) );
-OCP\App::registerAdmin    ( 'shorty', 'settings' );
-OCP\App::registerPersonal ( 'shorty', 'preferences' );
 
 OCP\Util::connectHook ( 'OC_User', 'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
 
