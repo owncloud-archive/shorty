@@ -24,8 +24,9 @@
 
 Changelog: 
 
-* ??? ??? ?? 2012 Christian Reiner: version 0.1.2
-Usage of CSRF protection framework as used by Shorty.
+* Tue Jul 24 2012 Christian Reiner: version 0.1.2
+Use OCs CSRF protection framework for ajax requests.
+Fixed a few compatibility issues with OC5-pre versions.
 * Wed Jul 18 2012 Christian Reiner: version 0.1.1
 Fixed database issues when used under mysql engines.
 Added dialog showing the details of a single tracked click.
