@@ -24,8 +24,9 @@
 
 Changelog: 
 
-* ??? ??? ?? 2012 Christian Reiner: version 0.3.3
-Use OC CSRF protection framework for ajax requests.
+* Tue Jul 24 2012 Christian Reiner: version 0.3.3
+Use OCs CSRF protection framework for ajax requests.
+Fixed a few compatibility issues with OC5-pre versions. 
 * Thu Jul 19 2012 Christian Reiner: version 0.3.2
 Fixed a few problems with updating a currently listed Shorty after a modification.
 Fixed storage of empty expiration dates when used with a MySQL database system.
