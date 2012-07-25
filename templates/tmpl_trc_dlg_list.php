@@ -57,8 +57,8 @@
         <img alt="loading…" title="<?php echo OC_Shorty_L10n::t("Loading");?>…"
              src="<?php echo OCP\Util::imagePath('shorty', 'loading-led.gif'); ?>">
       </span>
+      <hr>
     </div>
-    <hr>
     <!-- end: the dialogs header -->
     <!-- begin: the dialogs list: contains a list header and a list body -->
     <table id="list-of-clicks" class="shorty-list">
@@ -142,8 +142,8 @@
     </table>
     <!-- end: the dialogs list -->
     <!-- begin: the dialogs footer: status information and an icon to load the next chunk -->
-    <hr>
     <div id="shorty-footer">
+      <hr>
       <span id="scrollingTurn">
         <img id="load" alt="load" title="<?php echo OC_ShortyTracking_L10n::t("load");?>"
              src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">

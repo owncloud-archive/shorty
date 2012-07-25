@@ -189,9 +189,9 @@ Shorty.Tracking=
         var restHeight=Shorty.Tracking.dialogList.find('fieldset legend').outerHeight(true)
                       +Shorty.Tracking.dialogList.find('#shorty-header').outerHeight(true)
                       +Shorty.Tracking.dialogList.find('#titlebar').outerHeight(true)
-                      +38 // room for potentially invisible #toolbar
+                      +38 // room for potentially visible #toolbar
                       +Shorty.Tracking.dialogList.find('#shorty-footer').outerHeight(true)
-                      +30;// some stuff I could not identify :-(
+                      +80;// safety margin
         var roomHeight=$('#content').outerHeight();
         // make table scrollable, when more than ... entries
         if (roomHeight<bodyHeight+restHeight)
