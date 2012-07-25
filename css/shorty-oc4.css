@@ -614,10 +614,6 @@ tr.shorty-filtered {
   width: inherit;
 }
 
-hr {
-  margin: 0.2em;
-}
-
 /* customization of styles for the 3rdparty jquery.impromtu prompts */
 div.jqi {
   width:480px;
