@@ -29,7 +29,7 @@
  * @author Christian Reiner
  */
 
-$(document).ready(function(){
+$(window).load(function(){
   // initialize desktop
   var dialog = $('#dialog-add');
   $.when(
