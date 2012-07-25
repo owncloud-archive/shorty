@@ -68,9 +68,11 @@
   margin: 0 0.6em;
 }
 
+#shorty-tracking-list-dialog #shorty-header,
 #shorty-tracking-list-dialog #shorty-footer {
   position: relative;
-  padding: 3px;
+  margin: 0;
+  padding: 0;
 }
 #shorty-tracking-list-dialog #scrollingTurn {
   position: absolute;
@@ -81,7 +83,14 @@
 #shorty-tracking-list-dialog #scrollingTurn.disabled {
   display: none;
 }
-
+#shorty-tracking-list-dialog .sparkline {
+  float: right;
+  margin: 0 0.2em;
+  padding: 0;
+}
+#shorty-tracking-list-dialog .sparkline .jqstooltip {
+  z-index: 1000;
+}
 #shorty-tracking-click-dialog {
   width: 35em;
   line-height: 1.2em;
@@ -94,4 +103,3 @@
   margin: 0 0.2em;
   padding: 0;
 }
-

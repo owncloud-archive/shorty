@@ -79,29 +79,44 @@ Shorty.Tracking=
 {
   /**
    * @brief Persistent jQuery object holding the list dialog implemented by this plugin
+   * @access private
    * @author Christian Reiner
    */
   dialogList:{},
   /**
    * @brief Persistent jQuery object holding the click dialog implemented by this plugin
+   * @access private
    * @author Christian Reiner
    */
   dialogClick:{},
   /**
    * @brief Persistent referencing the Shorty this plugin currently deals with
+   * @access private
    * @author Christian Reiner
    */
   entry:{},
   /**
    * @brief Persistent alphanumerical id referencing the Shorty this plugin currently deals with
+   * @access private
    * @author Christian Reiner
    */
   id:{},
   /**
    * @brief Persistent jQuery object describing the list contained in this plugins dialog
+   * @access private
    * @author Christian Reiner
    */
   list:{},
+  /**
+   * @brief Persistent jQuery object describing the list contained in this plugins dialog
+   * @access private
+   * @author Christian Reiner
+   */
+  stats:{
+    blocked:[],
+    denied: [],
+    granted:[]
+  },
   /**
    * @method Shorty.Tracking.bottom
    * @brief Decides if a scrolling event has reached the bottom of the list
@@ -184,6 +199,8 @@ Shorty.Tracking=
           Shorty.Tracking.list.addClass('scrollingTable');
           Shorty.Tracking.list.find('tbody').css('height',(roomHeight-restHeight-20)+'px');
         }
+        // show sparkline at the right of the reference head
+        Shorty.Tracking.sparkle();
         dfd.resolve();
       }).fail(dfd.reject)
     }).done(dfd.resolve).fail(dfd.reject)
@@ -351,7 +368,44 @@ Shorty.Tracking=
       } // else
     }); // each
     return dfd.promise();
-  }
+  },
+  /**
+   * @method Shorty.Tracking.sparkle
+   * @brief Creates a 'click sparkline' at the top right of the dialog
+   * @author Christian Reiner
+   */
+  sparkle:function(){
+    var sparkline=Shorty.Tracking.dialogList.find('#stats').first();
+    // set range of sparkline as [Shorty-creation...now]
+    var rangeMin=Math.floor($.datepicker.formatDate('@',new Date(Shorty.Tracking.entry.attr('data-created')))/1000);
+    var rangeMax=Math.ceil(0.5+$.datepicker.formatDate('@',new Date())/1000);
+    var range   =rangeMax-rangeMin;
+    // we need to compute a value notation the jquery sparkline extension understands:
+    // []
+    var granted=new Array();
+    var denied =new Array();
+    var blocked=new Array();
+    var column, steps=20;
+    // initialize all columns as zero value
+    for (column=0;column<=steps;column=column+1){granted[column]=0;denied[column]=0;blocked[column]=0;}
+    // increment matching range column for each click
+    $.each(Shorty.Tracking.stats.granted,function(i,time){granted[Math.round((time-rangeMin)/(range/steps))]++;});
+    $.each(Shorty.Tracking.stats.denied, function(i,time){ denied[Math.round((time-rangeMin)/(range/steps))]++;});
+    $.each(Shorty.Tracking.stats.blocked,function(i,time){blocked[Math.round((time-rangeMin)/(range/steps))]++;});
+    // initialize stats sparkline
+    $(stats).sparkline(granted,{width:'160px',height:'1.6em',type:'line',lineColor:'green' ,fillColor:false} );
+    $(stats).sparkline(denied, {width:'160px',height:'1.6em',type:'line',lineColor:'yellow',fillColor:false,composite:true} );
+    $(stats).sparkline(blocked,{width:'160px',height:'1.6em',type:'line',lineColor:'red',   fillColor:false,composite:true} );
+    $(stats).off('sparklineRegionChange');
+    $(stats).on('sparklineRegionChange', function(ev) {
+      var sparkline = ev.sparklines[0],
+      region = sparkline.getCurrentRegionFields();
+      value = region.y;
+      $('.mouseoverregion').text("x="+region.x+" y="+region.y);
+    }).bind('mouseleave', function() {
+      $('.mouseoverregion').text('');
+    });
+  } // Shorty.Tracking.sparkle
 } // Shorty.Tracking
 
 /**
@@ -396,6 +450,12 @@ Shorty.WUI.List.add_callbackEnrich_tracking=function(row,set,hidden){
         if (null==set[aspect])
              span.text('-?-');
         else span.text(formatDate(1000*set[aspect]));
+        // add value to the sparkline value set in the header
+        switch (set['result']){
+          case 'blocked': Shorty.Tracking.stats.blocked.push(set[aspect]); break;
+          case 'denied':  Shorty.Tracking.stats.denied.push (set[aspect]); break;
+          case 'granted': Shorty.Tracking.stats.granted.push(set[aspect]); break;
+        } // switch
         break;
       case 'result':
         span.text(t('shorty-tracking',set[aspect]));

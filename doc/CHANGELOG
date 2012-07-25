@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* ??? ??? ?? 2012 Christian Reiner: version 0.1.3
+A sparkline giving an impression of a Shortys usage. 
 * Tue Jul 24 2012 Christian Reiner: version 0.1.2
 Use OCs CSRF protection framework for ajax requests.
 Fixed a few compatibility issues with OC5-pre versions.
