@@ -336,7 +336,7 @@ table.shorty-list.scrollingTable tfoot {
   border-bottom-right-radius: 1em;
   box-shadow: 0 2px 1px #777777;
   vertical-align:middle;
-  z-index:100;
+  z-index:4;
 }
 .shorty-dialog fieldset {
   position:relative;
