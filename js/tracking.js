@@ -239,6 +239,9 @@ Shorty.Tracking=
       dfd.reject();
     })
     // load first content into the list
+    Shorty.Tracking.stats.granted=[];
+    Shorty.Tracking.stats.denied =[];
+    Shorty.Tracking.stats.blocked=[];
     Shorty.Tracking.build();
     return dfd.promise();
   }, // Shorty.Tracking.control
@@ -376,6 +379,8 @@ Shorty.Tracking=
    */
   sparkle:function(){
     var sparkline=Shorty.Tracking.dialogList.find('#stats').first();
+    // reset previous sparkline
+    sparkline.find('canvas').remove();
     // set range of sparkline as [Shorty-creation...now]
     var rangeMin=Math.floor($.datepicker.formatDate('@',new Date(Shorty.Tracking.entry.attr('data-created')))/1000);
     var rangeMax=Math.ceil(0.5+$.datepicker.formatDate('@',new Date())/1000);
