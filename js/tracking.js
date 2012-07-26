@@ -385,7 +385,7 @@ Shorty.Tracking=
     var granted=new Array();
     var denied =new Array();
     var blocked=new Array();
-    var column, steps=20;
+    var column, steps=80;
     // initialize all columns as zero value
     for (column=0;column<=steps;column=column+1){granted[column]=0;denied[column]=0;blocked[column]=0;}
     // increment matching range column for each click
@@ -393,9 +393,10 @@ Shorty.Tracking=
     $.each(Shorty.Tracking.stats.denied, function(i,time){ denied[Math.round((time-rangeMin)/(range/steps))]++;});
     $.each(Shorty.Tracking.stats.blocked,function(i,time){blocked[Math.round((time-rangeMin)/(range/steps))]++;});
     // initialize stats sparkline
-    $(stats).sparkline(granted,{width:'160px',height:'1.6em',type:'line',lineColor:'green' ,fillColor:false} );
-    $(stats).sparkline(denied, {width:'160px',height:'1.6em',type:'line',lineColor:'yellow',fillColor:false,composite:true} );
-    $(stats).sparkline(blocked,{width:'160px',height:'1.6em',type:'line',lineColor:'red',   fillColor:false,composite:true} );
+    $(stats).sparkline(granted,{width:(steps*2)+'px',height:'1.6em',type:'line',lineColor:'green',     fillColor:false} );
+    $(stats).sparkline(denied, {width:(steps*2)+'px',height:'1.6em',type:'line',lineColor:'darkorange',fillColor:false,composite:true} );
+    $(stats).sparkline(blocked,{width:(steps*2)+'px',height:'1.6em',type:'line',lineColor:'red',       fillColor:false,composite:true} );
+//     $(stats).sparkline([granted,denied,blocked],{width:(steps*2)+'px',height:'1.6em',type:'bar',stackedBarColor:['green','darkorange','red']});
     $(stats).off('sparklineRegionChange');
     $(stats).on('sparklineRegionChange', function(ev) {
       var sparkline = ev.sparklines[0],
