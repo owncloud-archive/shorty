@@ -396,7 +396,8 @@ Shorty.Tracking=
     $(stats).sparkline(granted,{width:(steps*2)+'px',height:'1.6em',type:'line',lineColor:'green',     fillColor:false} );
     $(stats).sparkline(denied, {width:(steps*2)+'px',height:'1.6em',type:'line',lineColor:'darkorange',fillColor:false,composite:true} );
     $(stats).sparkline(blocked,{width:(steps*2)+'px',height:'1.6em',type:'line',lineColor:'red',       fillColor:false,composite:true} );
-//     $(stats).sparkline([granted,denied,blocked],{width:(steps*2)+'px',height:'1.6em',type:'bar',stackedBarColor:['green','darkorange','red']});
+//     $(stats).sparkline([granted,denied,blocked],{width:(steps*2)+'px',height:'1.6em',type:'bar',
+//                                                  stackedBarColor:['green','darkorange','red'],nullColor:'gray'});
     $(stats).off('sparklineRegionChange');
     $(stats).on('sparklineRegionChange', function(ev) {
       var sparkline = ev.sparklines[0],
