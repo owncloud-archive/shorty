@@ -29,12 +29,6 @@ A wheel above the list of clicks. When clicked it starts turning, whilst it is
 turning all clicks reaching the monitored Shorty will be immediately added to
 the list currently visualized. Like a heartbeat monitor.
 
-* a sparkline at the top of the list:
-A sparkline is a small graphical visualization of 'hits' or 'values' meant to
-give a quick overview. It would be of great help to get an impression about the
-real usage of a Shorty, more intuitive than reading a column of times.
-Currently all my efforts to generate a sparkline all end in a browser crash :-(
-
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.
 Drop me a note, an idea, a patch, a good bottle of wine, anything !
