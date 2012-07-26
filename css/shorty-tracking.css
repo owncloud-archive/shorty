@@ -88,9 +88,6 @@
   margin: 0 0.2em;
   padding: 0;
 }
-#shorty-tracking-list-dialog .sparkline .jqstooltip {
-  z-index: 1000;
-}
 #shorty-tracking-click-dialog {
   width: 35em;
   line-height: 1.2em;

@@ -393,11 +393,29 @@ Shorty.Tracking=
     $.each(Shorty.Tracking.stats.denied, function(i,time){ denied[Math.round((time-rangeMin)/(range/steps))]++;});
     $.each(Shorty.Tracking.stats.blocked,function(i,time){blocked[Math.round((time-rangeMin)/(range/steps))]++;});
     // initialize stats sparkline
-    $(stats).sparkline(granted,{width:(steps*2)+'px',height:'1.6em',type:'line',lineColor:'green',     fillColor:false} );
-    $(stats).sparkline(denied, {width:(steps*2)+'px',height:'1.6em',type:'line',lineColor:'darkorange',fillColor:false,composite:true} );
-    $(stats).sparkline(blocked,{width:(steps*2)+'px',height:'1.6em',type:'line',lineColor:'red',       fillColor:false,composite:true} );
-//     $(stats).sparkline([granted,denied,blocked],{width:(steps*2)+'px',height:'1.6em',type:'bar',
-//                                                  stackedBarColor:['green','darkorange','red'],nullColor:'gray'});
+    var sparklineOpts={width:(steps*2)+'px',
+                       height:'1.6em',
+                       tooltipSkipNull:true,
+                       tooltipContainer:Shorty.Tracking.dialogList,
+                       tooltipSuffix:' '+t('shorty-tracking','granted'),
+                       type:'line',
+                       numberDigitGroupSep:' '
+                      }
+    $(stats).sparkline(granted,$.extend({}, sparklineOpts,{composite:false,
+                                                           tooltipSuffix:' '+t('shorty-tracking','granted'),
+                                                           lineColor:'green',
+                                                           fillColor:'limegreen',
+                                                          }));
+    $(stats).sparkline(denied, $.extend({}, sparklineOpts,{composite:true,
+                                                           tooltipSuffix:' '+t('shorty-tracking','denied'),
+                                                           lineColor:'darkorange',
+                                                           fillColor:false,
+                                                          }));
+    $(stats).sparkline(blocked,$.extend({}, sparklineOpts,{composite:true,
+                                                           tooltipSuffix:' '+t('shorty-tracking','blocked'),
+                                                           lineColor:'red',
+                                                           fillColor:false
+                                                          }));
     $(stats).off('sparklineRegionChange');
     $(stats).on('sparklineRegionChange', function(ev) {
       var sparkline = ev.sparklines[0],
