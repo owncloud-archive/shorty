@@ -34,23 +34,20 @@
  * @brief Central activity library for the client side
  * @author Christian Reiner
  */
-Shorty =
-{
+Shorty={
   /**
    * @class Shorty.WUI
    * @brief Collection of all methods implementing the UI of this app
    * @description "WUI" stands for "Web User Interface" :-)
    * @author Christian Reiner
    */
-  WUI:
-  {
+  WUI:{
     /**
      * @class Shorty.WUI.Controls
      * @brief Collection of methods implementing the top control bar
      * @author Christian Reiner
      */
-    Controls:
-    {
+    Controls:{
       /**
        * @method Shorty.WUI.Controls.init
        * @brief Initializes the control bar after it loaded
@@ -91,8 +88,7 @@ Shorty =
      * @brief Collection of methods implementing the central 'Desktop' where all real action takes place
      * @author Christian Reiner
      */
-    Desktop:
-    {
+    Desktop:{
       /**
        * @class Shorty.WUI.Desktop
        * @brief Shows the central desktop
@@ -123,8 +119,7 @@ Shorty =
      * @brief A collection of methods used for handling dialogs
      * @author Christian Reiner
      */
-    Dialog:
-    {
+    Dialog:{
       /**
        * @method Shorty.WUI.Dialog.execute
        * @brief Execute a dialog, including preparing the desktop beforehand
@@ -359,8 +354,7 @@ Shorty =
      * @brief Collection of methods handling entries (represented objects like Shortys)
      * @author Christian Reiner
      */
-    Entry:
-    {
+    Entry:{
       /**
        * @method Shorty.WUI.Entry.click
        * @brief Triggers the action specific for each action button offered for a list item
@@ -574,8 +568,7 @@ Shorty =
      * @brief Handling of the desktops 'hourglass' activity indicator
      * @author Christian Reiner
      */
-    Hourglass:
-    {
+    Hourglass:{
       /**
        * @method Shorty.WUI.Hourglass.toggle
        * @brief Toggles the visibility of the desktop hourglass
@@ -609,8 +602,7 @@ Shorty =
      * @brief Collection of methods handling lists
      * @author Christian Reiner
      */
-    List:
-    {
+    List:{
       /**
        * @method Shorty.WUI.List.add
        * @brief Adds a list of elements to an existing list
@@ -1059,8 +1051,7 @@ Shorty =
           $('#vacuum').fadeIn('slow');
       }, // Shorty.WUI.List.vacuum
       // ===== Shorty.WUI.List.Toolbar =====
-      Toolbar:
-      {
+      Toolbar:{
         // ===== Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_default =====
         toggle_callbackCheckFilter_default: function(toolbar){
           return (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
@@ -1102,8 +1093,7 @@ Shorty =
       }, // Shorty.WUI.List.Toolbar
     }, // Shorty.WUI.List
     // ===== Shorty.WUI.Notification =====
-    Notification:
-    {
+    Notification:{
       // ===== Shorty.WUI.Notification.hide =====
       hide: function(){
         if (Shorty.Debug) Shorty.Debug.log("hide notification");
@@ -1169,8 +1159,7 @@ Shorty =
       }, // Shorty.WUI.Notification.show
     }, // Shorty.WUI.Notification
     // ===== Shorty.WUI.Meta: =====
-    Meta:
-    {
+    Meta:{
       // ===== Shorty.WUI.Meta.collect =====
       collect: function(dialog){
         if (Shorty.Debug) Shorty.Debug.log("collect meta data");
@@ -1250,8 +1239,7 @@ Shorty =
       }, // Shorty.WUI.Meta.reset
     }, // Shorty.WUI.Meta
     // ===== Shorty.WUI.Sums =====
-    Sums:
-    {
+    Sums:{
       // ===== Shorty.WUI.Sums.fill =====
       fill: function(){
         if (Shorty.Debug) Shorty.Debug.log("fill sums");
@@ -1293,8 +1281,7 @@ Shorty =
 
   //==========
 
-  Action:
-  {
+  Action:{
     // ===== Shorty.Action.Preference =====
     Preference:
     {
@@ -1344,8 +1331,7 @@ Shorty =
       }, // Shorty.Action.Preference.set
     }, // Shorty.Action.Preference
     // ===== Shorty.Action.Setting =====
-    Setting:
-    {
+    Setting:{
       // ===== Shorty.Action.Setting.get =====
       get:function(data){
         if (Shorty.Debug){Shorty.Debug.log("get setting(s):");Shorty.Debug.log(data);}
@@ -1443,8 +1429,7 @@ Shorty =
       } // Shorty.Action.Setting.check
     }, // Shorty.Action.Setting
     // ===== Shorty.Action.Token =====
-    Token:
-    {
+    Token:{
       // ===== Shorty.Action.Token.refresh =====
       refresh:function(){
         if (Shorty.Debug) Shorty.Debug.log("refreshing request token (lifebeat)");
@@ -1467,8 +1452,7 @@ Shorty =
       } // Shorty.Action.Token.refresh
     }, // Shorty.Action.Token
     // ===== Shorty.Action.Url =====
-    Url:
-    {
+    Url:{
       // ===== Shorty.Action.Url.add =====
       add:function(){
         if (Shorty.Debug) Shorty.Debug.log("action add url");
@@ -1736,8 +1720,7 @@ Shorty =
    * @brief Tool collection handling ajax requests
    * @author Christian Reiner
    */
-  Ajax:
-  {
+  Ajax:{
     /**
      * @method Shorty.Ajax.eval
      * @brief Filters and converts ajax responses into internal format
@@ -1790,8 +1773,7 @@ Shorty =
    * @brief Tool collection dealing with date handling
    * @author Christian Reiner
    */
-  Date:
-  {
+  Date:{
     /**
      * @method Shorty.Date.expired
      * @brief Checks if a given date has already expired
