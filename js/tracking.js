@@ -187,7 +187,7 @@ Shorty.Tracking=
         var restHeight=Shorty.Tracking.Dialog.List.find('fieldset legend').outerHeight(true)
                       +Shorty.Tracking.Dialog.List.find('#shorty-header').outerHeight(true)
                       +Shorty.Tracking.Dialog.List.find('#titlebar').outerHeight(true)
-                      +38 // room for potentially visible #toolbar
+                      +40 // room for potentially visible #toolbar
                       +Shorty.Tracking.Dialog.List.find('#shorty-footer').outerHeight(true)
                       +80;// safety margin
         var roomHeight=$('#content').outerHeight();
@@ -327,23 +327,18 @@ Shorty.Tracking=
    */
   init:function(){
     if (Shorty.Debug) Shorty.Debug.log("initializing tracking list");
-    var dfd=new $.Deferred();
-    // two dialogs are used by this plugin
-    var dialogs={
-      'list':  Shorty.Tracking.Dialog.List,
-      'click': Shorty.Tracking.Dialog.Click
-    };
-    // load dialogs from server
-    $.each(['list','click'],function(i,dialog){
-      // does the dialog holding the list exist already ?
-      if (!$.isEmptyObject(dialogs[dialog])){
-        // remove all (real) entries so that the table can be filled again
-        if ('list'==dialog)
-          $('#shorty-tracking-list-dialog #list-of-clicks tr:not(#)').remove();
-        dfd.resolve();
-      }else{
-        // load dialog layout via ajax and create a freshly populated dialog
-        $.ajax({
+    // check if dialogs already exist
+    if (   $.isEmptyObject(Shorty.Tracking.Dialog.List)
+        && $.isEmptyObject(Shorty.Tracking.Dialog.Click) ){
+      // two dialogs are used by this plugin
+      var dialogs={
+        'list':  Shorty.Tracking.Dialog.List,
+        'click': Shorty.Tracking.Dialog.Click
+      };
+      // load dialogs from server
+      var dfds=$.map(dialogs,function(obj,dialog){
+        // load dialog layout via ajax and append it to the collection of dialogs in the controls
+        return $.ajax({
           type:     'GET',
           url:      OC.filePath('shorty-tracking','ajax','layout.php'),
           data:     { dialog: dialog},
@@ -355,18 +350,23 @@ Shorty.Tracking=
         ).done(function(response){
           // create a fresh dialog and insert it alongside the existing dialogs in the top controls bar
           $('#controls').append(response.layout);
-          switch (dialog){
+//           obj=$('#controls #shorty-tracking-'+dialog+'-dialog').first();
+          switch(dialog){
             case 'list':
               Shorty.Tracking.Dialog.List=$('#controls #shorty-tracking-list-dialog').first();
               break;
             case 'click':
               Shorty.Tracking.Dialog.Click=$('#controls #shorty-tracking-click-dialog').first();
+              break;
           } // switch
-          dfd.resolve();
-        }).fail(dfd.reject)
-      } // else
-    }); // each
-    return dfd.promise();
+        })
+      }) // map
+      return $.when.apply(null, dfds);
+    }else{
+      // dialogs already loaded, just clean them for usage
+      Shorty.Tracking.Dialog.List.find('#list-of-clicks tbody tr').remove();
+      new Deferred().resolve();
+    } // else
   },
   /**
    * @method Shorty.Tracking.sparkle
