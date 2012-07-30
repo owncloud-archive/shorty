@@ -255,6 +255,7 @@ Shorty.Tracking=
         default:
           dialog.find('#shorty-'+item).text(entry.attr('data-'+item))
                                       .attr('data-'+item,entry.attr('data-'+item));
+
       } // switch
     })
     $.each(['result','address','host','user','time'],function(i,item){
@@ -263,10 +264,12 @@ Shorty.Tracking=
           dialog.find('#click-'+item).text(t('shorty-tracking',element.attr('data-'+item)))
                                      .attr('data-'+item,element.attr('data-'+item));
           break;
+
         case 'time':
           dialog.find('#click-'+item).text(formatDate(1000*element.attr('data-'+item)))
                                      .attr('data-'+item,element.attr('data-'+item));
           break;
+
         default:
           dialog.find('#click-'+item).text(element.attr('data-'+item))
                                      .attr('data-'+item,element.attr('data-'+item));
@@ -350,6 +353,7 @@ Shorty.Tracking=
             case 'list':
               Shorty.Tracking.Dialog.List=$('#controls #shorty-tracking-list-dialog').first();
               break;
+
             case 'click':
               Shorty.Tracking.Dialog.Click=$('#controls #shorty-tracking-click-dialog').first();
               break;
@@ -466,9 +470,10 @@ Shorty.Runtime.Context.ListOfClicks={
           } // switch
           span.html('<img class="shorty-icon" width="16" src="'+OC.filePath('shorty','img/status',icon+'.png')+'">');
           break;
+
         case 'time':
           if (null==set[aspect])
-              span.text('-?-');
+               span.text('-?-');
           else span.text(formatDate(1000*set[aspect]));
           // add value to the sparkline value set in the header
           switch (set['result']){
@@ -477,10 +482,12 @@ Shorty.Runtime.Context.ListOfClicks={
             case 'granted': Shorty.Tracking.Stats.granted.push(set[aspect]); break;
           } // switch
           break;
+
         case 'result':
           span.text(t('shorty-tracking',set[aspect]));
           span.addClass('ellipsis');
           break;
+
         default:
           span.text(set[aspect]);
           span.addClass('ellipsis');

@@ -58,9 +58,11 @@ try
     case 'list':
       $tmpl = new OCP\Template( 'shorty-tracking', 'tmpl_trc_dlg_list' );
       break;
+
     case 'click':
       $tmpl = new OCP\Template( 'shorty-tracking', 'tmpl_trc_dlg_click' );
       break;
+
     default:
       throw new OC_Shorty_Exception ( 'No such dialog defined: %s', $p_dialog );
   } // switch
