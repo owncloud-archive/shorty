@@ -99,8 +99,10 @@ class OC_Shorty_Tools
       case 'sqlite':
       case 'sqlite3':
         return sqlite_escape_string     ( $value );
+
       case 'pgsql':
         return pg_escape_string         ( $value );
+
       case 'mysql':
         if (get_magic_quotes_gpc())
              return mysql_real_escape_string ( stripslashes($value) );
@@ -124,9 +126,14 @@ class OC_Shorty_Tools
     switch ( $type )
     {
       case 'sqlite':
-      case 'sqlite3': return "strftime('%s','now')";
-      case 'mysql':   return 'UNIX_TIMESTAMP()';
-      case 'pgsql':   return "date_part('epoch',now())::integer";
+      case 'sqlite3':
+        return "strftime('%s','now')";
+
+      case 'mysql':
+        return 'UNIX_TIMESTAMP()';
+
+      case 'pgsql':
+        return "date_part('epoch',now())::integer";
     }
     throw new OC_Shorty_Exception ( "unknown database backend type '%1'", array($type) );
   } // function db_timestamp

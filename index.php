@@ -68,6 +68,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
     // this is the OC4 argument used to identify the app called, we ignore it:
     case 'app':
       break;
+
     // any recognizable argument key indicating a url to be added as new shorty ?
     case 'url':
     case 'uri':
@@ -81,6 +82,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
     // this _might_ be some unexcepted argument, or:
     // it is an expected argument, but without recognizable key, so we try to guess by examining the content
     // we restrict this 'guessing' to cases where only a single argument is specified
+
     default:
       if (  (1==sizeof($_GET))  // only one single request argument
           &&( ! reset($_GET)) ) // no value, so maybe just an id
@@ -116,6 +118,7 @@ switch ($act)
     OCP\Util::writeLog( 'shorty', sprintf("Detected an incoming Shortlet request for url '%s...'",substr($arg,0,80)), OC_Log::DEBUG );
     header ( sprintf('Location: %s', OCP\Util::linkTo('shorty','index.php')) );
     exit();
+
   // =====
   case 'index': // action 'index': list of shortys
   default:

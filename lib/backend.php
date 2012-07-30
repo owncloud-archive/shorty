@@ -56,14 +56,29 @@ class OC_Shorty_Backend
       // call backend specific work horse
       switch ( $type=OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type','none') )
       {
-        default:        return OC_Shorty_Backend::registerUrl_default ( $id, $relay );
-        case 'static':  return OC_Shorty_Backend::registerUrl_static  ( $id, $relay );
-        case 'bitly':   return OC_Shorty_Backend::registerUrl_bitly   ( $id, $relay );
-        case 'cligs':   return OC_Shorty_Backend::registerUrl_cligs   ( $id, $relay );
-        case 'google':  return OC_Shorty_Backend::registerUrl_google  ( $id, $relay );
-        case 'isgd':    return OC_Shorty_Backend::registerUrl_isgd    ( $id, $relay );
-        case 'tinyurl': return OC_Shorty_Backend::registerUrl_tinyurl ( $id, $relay );
-        case 'tinycc':  return OC_Shorty_Backend::registerUrl_tinycc  ( $id, $relay );
+        default:
+          return OC_Shorty_Backend::registerUrl_default ( $id, $relay );
+
+        case 'static':
+          return OC_Shorty_Backend::registerUrl_static  ( $id, $relay );
+
+        case 'bitly':
+          return OC_Shorty_Backend::registerUrl_bitly   ( $id, $relay );
+
+        case 'cligs':
+          return OC_Shorty_Backend::registerUrl_cligs   ( $id, $relay );
+
+        case 'google':
+          return OC_Shorty_Backend::registerUrl_google  ( $id, $relay );
+
+        case 'isgd':
+          return OC_Shorty_Backend::registerUrl_isgd    ( $id, $relay );
+
+        case 'tinyurl':
+          return OC_Shorty_Backend::registerUrl_tinyurl ( $id, $relay );
+
+        case 'tinycc':
+          return OC_Shorty_Backend::registerUrl_tinycc  ( $id, $relay );
       } // switch
     } // try
     catch (OC_Shorty_Exception $e)

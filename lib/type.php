@@ -167,54 +167,62 @@ class OC_Shorty_Type
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
       case self::STATUS:
         if ( in_array($value,OC_Shorty_Type::$STATUS) )
           return $value;
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
       case self::SORTKEY:
         if ( array_key_exists ( trim($value), self::$SORTING ) )
           return $value;
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
       case self::SORTVAL:
         if ( in_array ( trim($value), self::$SORTING ) )
           return $value;
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
       case self::STRING:
         if ( preg_match ( '/^.*$/x', str_replace("\n","\\n",$value) ) )
           return str_replace("\n","\\n",$value);
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
       case self::URL:
-//        $pattern = '/^([a-zA-Z][a-zA-Z][a-zA-Z0-9]+)\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(\/($|[a-zA-Z0-9\.\;\:\,\@\?\'\\\+&amp;%\$#\=~_\-]+)?)*$/';
         $pattern = '/^([a-zA-Z][a-zA-Z][a-zA-Z0-9]+)\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(\/($|.+)?)*$/';
         if ( preg_match ( $pattern, $value ) )
           return $value;
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
       case self::INTEGER:
         if ( preg_match ( '/^[0-9]+$/', $value ) )
           return $value;
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
       case self::FLOAT:
         if ( preg_match ( '/^[0-9]+(\.[0-9]+)?$/', $value ) )
           return $value;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
       case self::TIMESTAMP:
         if ( preg_match ( '/^[0-9]{10}$/', $value ) )
           return $value;
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
       case self::DATE:
         if (FALSE!==($time=strtotime($value)))
           return $time;
@@ -249,16 +257,35 @@ class OC_Shorty_Type
     } // if
     switch ( $type )
     {
-      case self::ID:        return trim ( $value );
-      case self::STATUS:    return trim ( $value );
-      case self::SORTKEY:   return trim ( $value );
-      case self::SORTVAL:   return trim ( $value );
-      case self::STRING:    return trim ( $value );
-      case self::URL:       return trim ( $value );
-      case self::INTEGER:   return sprintf ( '%d', $value );
-      case self::FLOAT:     return sprintf ( '%f', $value );
-      case self::TIMESTAMP: return trim ( $value );
-      case self::DATE:      return date ( 'Y-m-d', self::validate($value,OC_Shorty_Type::DATE) );
+      case self::ID:
+        return trim ( $value );
+
+      case self::STATUS:
+        return trim ( $value );
+
+      case self::SORTKEY:
+        return trim ( $value );
+
+      case self::SORTVAL:
+        return trim ( $value );
+
+      case self::STRING:
+        return trim ( $value );
+
+      case self::URL:
+        return trim ( $value );
+
+      case self::INTEGER:
+        return sprintf ( '%d', $value );
+
+      case self::FLOAT:
+        return sprintf ( '%f', $value );
+
+      case self::TIMESTAMP:
+        return trim ( $value );
+
+      case self::DATE:
+        return date ( 'Y-m-d', self::validate($value,OC_Shorty_Type::DATE) );
     } // switch $type
     throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
   } // function normalize
@@ -283,12 +310,14 @@ class OC_Shorty_Type
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
+
       case 'GET':
         if ( isset($_GET[$arg]) && !empty($_GET[$arg]) )
           return self::normalize ( urldecode(trim($_GET[$arg])), $type, $strict );
         elseif ( ! $strict)
           return NULL;
         throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
+
       default:
         throw new OC_Shorty_Exception ( "unexpected http request method '%1s'", array($_SERVER['REQUEST_METHOD']) );
     }

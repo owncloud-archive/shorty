@@ -43,6 +43,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
     default:
       // unrecognized key, we ignore it
       break;
+
     case 'url':
     case 'uri':
     case 'ref':

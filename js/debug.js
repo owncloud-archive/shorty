@@ -38,6 +38,7 @@ $(document).ready(function(){
           case 'string':
             console.log(issue);
             break;
+
           default:
             console.log(this.dump(issue));
         } // switch

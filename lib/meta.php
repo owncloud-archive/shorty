@@ -150,10 +150,15 @@ class OC_Shorty_Meta
     {
       switch ( $aspect )
       {
-        case 'status':      return sprintf("Status %s [unknown]",$identifier);
-        case 'explanation': return sprintf("[Undefined status code '%s']",$identifier);
-        default: throw new OC_Shorty_Exception ( "unknown aspect '%s' requested to resolve code '%s'",
-                                                 array($aspect,$identifier) );
+        case 'status':
+         return sprintf("Status %s [unknown]",$identifier);
+
+        case 'explanation':
+          return sprintf("[Undefined status code '%s']",$identifier);
+
+        default:
+          throw new OC_Shorty_Exception ( "unknown aspect '%s' requested to resolve code '%s'",
+                                          array($aspect,$identifier) );
       } // switch
     }
   } // function selectCode
@@ -174,38 +179,70 @@ class OC_Shorty_Meta
       case 'state':
         switch ($identifier)
         {
-          case TRUE:  return OCP\Util::imagePath('shorty', 'status/good.png');
-          case FALSE: return OCP\Util::imagePath('shorty', 'status/bad.png');
-          default:    return OCP\Util::imagePath('shorty', 'status/neutral.png');
+          case TRUE:
+           return OCP\Util::imagePath('shorty', 'status/good.png');
+
+          case FALSE:
+            return OCP\Util::imagePath('shorty', 'status/bad.png');
+
+          default:
+            return OCP\Util::imagePath('shorty', 'status/neutral.png');
         } // switch identifier
+
       case 'scheme':
         switch ($identifier)
         {
           case 'http':
-          case 'https':   return OCP\Util::imagePath('shorty', 'scheme/H.png');
+          case 'https':
+            return OCP\Util::imagePath('shorty', 'scheme/H.png');
+
           case 'ftp':
-          case 'ftps':    return OCP\Util::imagePath('shorty', 'scheme/F.png');
-          case 'sftp':    return OCP\Util::imagePath('shorty', 'scheme/S.png');
-          case 'mailto':  return OCP\Util::imagePath('shorty', 'scheme/M.png');
-          case 'gopher':  return OCP\Util::imagePath('shorty', 'scheme/G.png');
+          case 'ftps':
+            return OCP\Util::imagePath('shorty', 'scheme/F.png');
+
+          case 'sftp':
+            return OCP\Util::imagePath('shorty', 'scheme/S.png');
+
+          case 'mailto':
+            return OCP\Util::imagePath('shorty', 'scheme/M.png');
+
+          case 'gopher':
+            return OCP\Util::imagePath('shorty', 'scheme/G.png');
+
           case 'webdav':
-          case 'webdavs': return OCP\Util::imagePath('shorty', 'scheme/W.png');
-          default:        return OCP\Util::imagePath('shorty', 'blank.png');
+          case 'webdavs':
+            return OCP\Util::imagePath('shorty', 'scheme/W.png');
+
+          default:
+            return OCP\Util::imagePath('shorty', 'blank.png');
         } // switch identifier
+
       case 'mimetype':
         $identifier = explode('/',$identifier);
         switch ($identifier[0])
         {
-          case 'audio':       return OCP\Util::imagePath('core', 'filetypes/audio.png');
-          case 'text':        return OCP\Util::imagePath('core', 'filetypes/text.png');
-          case 'video':       return OCP\Util::imagePath('core', 'filetypes/video.png');
+          case 'audio':
+            return OCP\Util::imagePath('core', 'filetypes/audio.png');
+
+          case 'text':
+            return OCP\Util::imagePath('core', 'filetypes/text.png');
+
+          case 'video':
+            return OCP\Util::imagePath('core', 'filetypes/video.png');
+
           case 'application':
             switch ($identifier[1])
             {
-              case 'pdf':     return OCP\Util::imagePath('core', 'filetypes/application-pdf.png');
-              default:        return OCP\Util::imagePath('shorty', 'blank.png');
+              case 'pdf':
+                return OCP\Util::imagePath('core', 'filetypes/application-pdf.png');
+
+              default:
+                return OCP\Util::imagePath('shorty', 'blank.png');
+
             } // switch identifier[1]
-          default:            return OCP\Util::imagePath('shorty', 'blank.png');
+
+          default:
+            return OCP\Util::imagePath('shorty', 'blank.png');
         } // switch identifier[0]
     } // switch aspect
   } // function selectIcon

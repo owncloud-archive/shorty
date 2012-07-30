@@ -76,6 +76,7 @@ try
       OCP\JSON::success ( array ( 'data'    => $data,
                                   'message' => OC_Shorty_L10n::t("Preference(s) '%s' saved.",implode(',',array_keys($data))) ) );
       break;
+
     case 'GET':
       // detect requested preferences
       foreach (array_keys($_GET) as $key)
@@ -113,6 +114,7 @@ try
       OCP\JSON::success ( array ( 'data'    => $data,
                                   'message' => OC_Shorty_L10n::t('Preference(s) retrieved.') ) );
       break;
+
     default:
       throw new OC_Shorty_Exception ( "unexpected request method '%s'", $_SERVER['REQUEST_METHOD'] );
   } // switch

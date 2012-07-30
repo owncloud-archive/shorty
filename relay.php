@@ -47,6 +47,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
     default:
       // unrecognized key, we ignore it
       break;
+
     case 'id':
     case 'shorty':
     case 'ref':
@@ -125,6 +126,7 @@ try
         // refuse forwarding => 403: Forbidden
         OC_Shorty_Hooks::registerClick ( $result[0], $request, 'blocked' );
         throw new OC_Shorty_HttpException ( 403 );
+
       case 'private':
         // check if user owns the Shorty, deny access if not
         if ( $result[0]['user']!=OCP\User::getUser() )
@@ -133,6 +135,7 @@ try
           OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
           throw new OC_Shorty_HttpException ( 403 );
         }
+
         // NO break; but fall through to the action in 'case public:'
       case 'shared':
         // check if we are a user, deny access if not
@@ -142,6 +145,7 @@ try
           OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
           throw new OC_Shorty_HttpException ( 403 );
         }
+
         // NO break; but fall through to the action in 'case public:'
       case 'public':
         // finish this script to record the click, even if the client detaches right after the redirect

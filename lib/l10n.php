@@ -99,11 +99,13 @@ class OC_Shorty_L10n
     {
       case 1:
         return htmlspecialchars ( self::$instance[static::identity()]->dictionary->t ( $phrase, array() ) );
+
       case 2:
       $arg = func_get_arg(1);
         if ( is_array($arg) )
              return htmlspecialchars ( self::$instance[static::identity()]->dictionary->t ( $phrase, $arg ) );
         else return htmlspecialchars ( self::$instance[static::identity()]->dictionary->t ( $phrase, array($arg) ) );
+
       default:
         $args = func_get_args();
         array_shift ( $args );

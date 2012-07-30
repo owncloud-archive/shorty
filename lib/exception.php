@@ -88,6 +88,7 @@ class OC_Shorty_Exception extends Exception
       case 'OC_Shorty_Exception':
         $message = $e->getTranslation();
         break;
+
       case 'PDOException':
         $message = sprintf ( OC_Shorty_L10n::t( "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s",
                                                 OC_Shorty_L10n::t("Exception (%s)", get_class($e)),
@@ -97,6 +98,7 @@ class OC_Shorty_Exception extends Exception
                                                 htmlspecialchars($e->getLine()) ),
                              (method_exists($e,'errorInfo') ? trim($e->errorInfo()) : '-/-') );
         break;
+
       default:
         if ( is_a($e,'Exception') )
              $message = OC_Shorty_L10n::t("Unexpected type of exception caught: %s", get_class($e));
@@ -145,7 +147,7 @@ class OC_Shorty_HttpException extends OC_Shorty_Exception
     {
       $status = 400;
       $phrase = OC_Shorty_Type::$HTTPCODE[400]; // "Bad Request"
-    } // switch
+    } // else
 
     // return http status code to client (browser)
     if ( ! headers_sent() )

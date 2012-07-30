@@ -71,34 +71,34 @@ class OC_Migration_Provider_Shorty extends OC_Migration_Provider
     switch( $this->appinfo->version )
     {
       default:
-      $query  = $this->content->prepare( "SELECT * FROM shorty WHERE user LIKE ?" );
-      $result = $query->execute( array( $this->olduid ) );
-      if (is_array(is_array($result)))
-      {
-        while( $row = $result->fetchRow() )
+        $query  = $this->content->prepare( "SELECT * FROM shorty WHERE user LIKE ?" );
+        $result = $query->execute( array( $this->olduid ) );
+        if (is_array(is_array($result)))
         {
-          $param = array (
-            'id'       => $row['id'],
-            'status'   => $row['status'],
-            'title'    => $row['title'],
-            'favicon'  => $row['favicon'],
-            'source'   => $row['source'],
-            'target'   => $row['target'],
-            'user'     => $row['user'],
-            'until'    => $row['until'],
-            'created'  => $row['created'],
-            'accessed' => $row['accessed'],
-            'clicks'   => $row['clicks'],
-            'notes'    => $row['notes'],
-          );
-          // import each shorty one by one, no special treatment required, since no autoincrement id is used
-          $query = OCP\DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty(%s) VALUES (%s)",
-                                              implode(',',array_keys($param)),
-                                              implode(',',array_fill(0,count($param),'?')) ) );
-          $query->execute( $param );
-        } // while
-      } // if
-      break;
+          while( $row = $result->fetchRow() )
+          {
+            $param = array (
+              'id'       => $row['id'],
+              'status'   => $row['status'],
+              'title'    => $row['title'],
+              'favicon'  => $row['favicon'],
+              'source'   => $row['source'],
+              'target'   => $row['target'],
+              'user'     => $row['user'],
+              'until'    => $row['until'],
+              'created'  => $row['created'],
+              'accessed' => $row['accessed'],
+              'clicks'   => $row['clicks'],
+              'notes'    => $row['notes'],
+            );
+            // import each shorty one by one, no special treatment required, since no autoincrement id is used
+            $query = OCP\DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty(%s) VALUES (%s)",
+                                                implode(',',array_keys($param)),
+                                                implode(',',array_fill(0,count($param),'?')) ) );
+            $query->execute( $param );
+          } // while
+        } // if
+        break;
     } // switch
     // check for success by counting the generated entries
     $count = OC_Shorty_Tools::countShorties();

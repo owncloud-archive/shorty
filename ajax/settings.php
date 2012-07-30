@@ -65,6 +65,7 @@ try
       foreach ( $data as $key=>$val )
         OCP\Config::setAppValue( 'shorty', $key, $val );
       break;
+
     case 'GET':
       // detect requested settings
       foreach (array_keys($_GET) as $key)
@@ -85,18 +86,22 @@ try
             case OC_Shorty_Type::DATE:
               settype ( $data[$key], 'string' );
               break;
+
             case OC_Shorty_Type::INTEGER:
             case OC_Shorty_Type::TIMESTAMP:
               settype ( $data[$key], 'integer' );
               break;
+
             case OC_Shorty_Type::FLOAT:
               settype ( $data[$key], 'float' );
               break;
+
             default:
           } // switch
         }
       } // foreach
       break;
+
     default:
       throw new OC_Shorty_Exception ( "unexpected request method '%s'", $_SERVER['REQUEST_METHOD'] );
   } // switch

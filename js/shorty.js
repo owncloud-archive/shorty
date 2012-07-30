@@ -136,18 +136,21 @@ Shorty={
               Shorty.Action.Url.add()
             ).done(dfd.resolve)
             break;
+
           case 'dialog-edit':
             $.when(
               Shorty.WUI.Notification.hide(),
               Shorty.Action.Url.edit()
             ).done(dfd.resolve)
             break;
+
           case 'dialog-del':
             $.when(
               Shorty.WUI.Notification.hide(),
               Shorty.Action.Url.del()
             ).done(dfd.resolve)
             break;
+
           default:
             dfd.resolve();
         } // switch
@@ -177,6 +180,7 @@ Shorty={
                 dialog.find('#confirm').off('click');
                 dialog.find('#target').off('focusout');
                 break;
+
               default:
             } // switch
           }).pipe(function(){
@@ -290,10 +294,12 @@ Shorty={
                 dialog.find('#target').focus();
                 dialog.find('#target').on('focusout', {dialog: dialog}, function(event){Shorty.WUI.Meta.collect(event.data.dialog);});
                 break;
+
               case 'dialog-edit':
                 dialog.find('#title').focus();
                 Shorty.WUI.Dialog.sharpen(dialog,true);
                 break;
+
               case 'dialog-share':
                 var status=dialog.find('#status');
                 dialog.find('.status-hint').hide().filter('#'+status.val()).show();
@@ -377,12 +383,29 @@ Shorty={
         ).pipe(function(){
           if ('click'==event.type){
             switch(element.attr('id')){
-              case 'close': break;
-              case 'del':   Shorty.WUI.Entry.del(entry);      break;
-              case 'edit':  Shorty.WUI.Entry.edit(entry);     break;
-              case 'open':  Shorty.Action.Url.forward(entry); break;
-              case 'share': Shorty.WUI.Entry.share(entry);    break;
-              case 'show':  Shorty.WUI.Entry.show(entry);     break;
+              case 'close':
+                break;
+
+              case 'del':
+                Shorty.WUI.Entry.del(entry);
+                break;
+
+              case 'edit':
+                Shorty.WUI.Entry.edit(entry);
+                break;
+
+              case 'open':
+                Shorty.Action.Url.forward(entry);
+                break;
+
+              case 'share':
+                Shorty.WUI.Entry.share(entry);
+                break;
+
+              case 'show':
+                Shorty.WUI.Entry.show(entry);
+                break;
+
               default: // probably an action registered by another plugin...
                  // execute the function specified inside the clicked element:
                  if (Shorty.Debug) Shorty.Debug.log("handing control to registered action");
@@ -869,15 +892,18 @@ Shorty={
                   else row.removeClass('shorty-expired');
                 }
                 break;
+
               case 'title':
                 classes.push('ellipsis');
                 content=set[aspect];
                 break;
+
               case 'status':
                 if ('deleted'==set[aspect])
                   row.addClass('deleted');
                 content=t('shorty',set[aspect]);
                 break;
+
               default:
                 content=set[aspect];
             } // switch
@@ -926,6 +952,7 @@ Shorty={
           case 'until':
             list.find('tbody>tr').tsort('td#until',{order:sortDir});
             break;
+
           default:
             list.find('tbody>tr').tsort({attr:'data-'+sortCol,order:sortDir});
         } // switch 
@@ -1027,6 +1054,7 @@ Shorty={
                 else
                   dfd.resolve();
                 break;
+
               case 'error':
                 if (Shorty.Debug)
                   Shorty.Debug.log('Error: '+message);
@@ -1036,6 +1064,7 @@ Shorty={
                   notification.slideDown(duration)
                 ).done(dfd.resolve)
                 break;
+
               default: // 'info'
                 if ( message.length ){
                   if (Shorty.Debug)
@@ -1509,6 +1538,7 @@ Shorty={
               $('#jqibox fieldset #qrcode-url').show();
             });
             break;
+
           case 'usage-email':
             // we offer a 'mailto://' link for all devices supporting that or copying the address as a fallback
             var mailSubject=entry.attr('data-title')||'';
@@ -1527,6 +1557,7 @@ Shorty={
             $('#jqibox fieldset #payload').val(mailBody);
             $('#jqibox fieldset #payload').focus().select();
             break;
+
           case 'usage-sms':
             // since most client systems won't understand the sms:// protocol this action is often disabled
             // in addition, the protocol implementations do NTO allow to specify any content in the link
@@ -1543,6 +1574,7 @@ Shorty={
             $('#jqibox fieldset #payload').val(smsBody);
             $('#jqibox fieldset #payload').focus().select();
             break;
+
           case 'usage-clipboard':
             // take layout from hidden dialog template
             var clipboardBody=entry.attr('data-source');
@@ -1718,6 +1750,7 @@ Shorty.Runtime.Context.ListOfShortys={
         case 'favicon':
           span.html('<img class="shorty-icon" width="16" src="'+set[aspect]+'">');
           break;
+
         case 'until':
           if (!set[aspect])
             span.text("-"+t('shorty',"never")+"-");
@@ -1727,18 +1760,22 @@ Shorty.Runtime.Context.ListOfShortys={
               row.addClass('shorty-expired');
           }
           break;
+
         case 'title':
           span.text(set[aspect]);
           break;
+
         case 'target':
           span.text(set[aspect]);
           span.attr('title',set[aspect]);
           break;
+
         case 'status':
           if ('deleted'==set[aspect])
             row.addClass('deleted');
           span.text(t('shorty',set[aspect]));
           break;
+
         default:
           span.text(set[aspect]);
       } // switch
