@@ -38,13 +38,13 @@
 <div id="shorty-tracking-list-dialog"
      class="shorty-dialog shorty-standalone">
   <fieldset>
-    <legend class="">
+    <legend>
       <a id="close" class="shorty-close-button"
-        title="<?php echo OC_Shorty_L10n::t("close"); ?>">
-        <img alt="<?php echo OC_Shorty_L10n::t("close"); ?>"
-            src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
+         title="<?php echo OC_Shorty_L10n::t("close"); ?>">
+         <img alt="<?php echo OC_Shorty_L10n::t("close"); ?>"
+              src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
       </a>
-      <span id="slogan"><?php echo OC_ShortyTracking_L10n::t("List of tracked clicks");?></span><br>
+      <span class="heading"><?php echo OC_ShortyTracking_L10n::t("List of tracked clicks").':';?></span>
     </legend>
     <!-- begin: the dialogs header: linguistic reference to the Shorty and the sparkline -->
     <div id="shorty-header">

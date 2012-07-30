@@ -92,7 +92,7 @@
   width: 35em;
   line-height: 1.2em;
 }
-#shorty-tracking-click-dialog span {
+#shorty-tracking-click-dialog .shorty-click-detail {
   display: inline-block;
   width: 26em;
   font-style: normal;
