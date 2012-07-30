@@ -328,6 +328,7 @@ table.shorty-list.scrollingTable tfoot {
   outline: medium none;
   padding: 2px;
 }
+
 /* general style of interactive dialogs */
 .shorty-dialog {
   display: none;
@@ -337,6 +338,10 @@ table.shorty-list.scrollingTable tfoot {
   box-shadow: 0 2px 1px #777777;
   vertical-align:middle;
   z-index:4;
+  width: 47em;
+  margin: -1px 1em 0;
+  padding: 0.5em;
+  background: none repeat scroll 0 0 #F7F7F7;
 }
 .shorty-dialog fieldset {
   position:relative;
@@ -344,9 +349,6 @@ table.shorty-list.scrollingTable tfoot {
   border-bottom-right-radius: 0.5em;
   border: 1px solid gray;
   padding: 2px 4px 8px;
-}
-.shorty-dialog br {
-  clear: left;
 }
 .shorty-dialog legend {
   white-space: nowrap;
@@ -357,6 +359,9 @@ table.shorty-list.scrollingTable tfoot {
 .shorty-dialog legend a {
   margin: 0;
   padding: 0;
+}
+.shorty-dialog legend .heading {
+  padding: 0.6em 0.5em 0.1em 0.3em;
 }
 .shorty-dialog textarea {
   width: 80%; height: 5em;
@@ -408,17 +413,12 @@ table.shorty-list.scrollingTable tfoot {
 /*   border-color: green; */
   border: 1px solid gray;
 }
-
-/* dialogs floating above other content ('standing alone') */
-.shorty-dialog {
-  width: 47em;
-  margin: -1px 1em 0;
-  padding: 0.5em;
-  background: none repeat scroll 0 0 #F7F7F7;
+.shorty-dialog br {
+  clear: left;
 }
 /* dialogs related to elements ('embedded in the content') */
 .shorty-embedded {
-  left: 5em;
+  left: 4em;
   width: 38em;
   margin: -1px 4em 0;
   padding: 0.5em;

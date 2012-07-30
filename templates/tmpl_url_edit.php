@@ -39,11 +39,11 @@
   <fieldset>
     <legend class="">
       <a id="close" class="shorty-close-button"
-        title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
-        <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
-            src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
-      </a>    
-      <?php echo OC_Shorty_L10n::t('Modify shorty').':'; ?>
+         title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
+         <img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
+              src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
+      </a>
+      <span class="heading"><?php echo OC_Shorty_L10n::t('Modify shorty').':'; ?></span>
     </legend>
     <input id="id" name="id" type="hidden" readonly data="" class="" readonly disabled />
     <label for="source"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
