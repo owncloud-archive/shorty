@@ -45,7 +45,7 @@ $(window).load(function(){
     });
     Shorty.Tracking.Dialog.List.find('#list-of-clicks #titlebar').on('click',function(){
       Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-                                     Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking);
+                                     Shorty.Runtime.Catalog.Callbacks.ListOfClicks);
     });
     Shorty.Tracking.Dialog.List.find('#list-of-clicks #toolbar #reload').on('click',function(){Shorty.Tracking.build(false);});
     Shorty.Tracking.Dialog.List.find('#shorty-footer #load').on('click',function(){Shorty.Tracking.build(true);});
@@ -57,7 +57,7 @@ $(window).load(function(){
         Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
         $($(this).context.parentElement.parentElement).attr('id'),
         $(this).val(),
-        Shorty.WUI.List.fill_callbackFilter_tracking);
+        Shorty.Runtime.Catalog.Callbacks.ListOfClicks);
     });
     // detect if the list has been scrolled to the bottom, retrieve next chunk of clicks if so
     Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').on('scroll',Shorty.Tracking.bottom);
@@ -67,7 +67,7 @@ $(window).load(function(){
         Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
         $(this).parents('th').attr('id'),
         $(this).find(':selected').val(),
-        Shorty.WUI.List.fill_callbackFilter_tracking);
+        Shorty.Runtime.Catalog.Callbacks.ListOfClicks);
     });
     dfd.resolve();
   }).fail(dfd.reject);
@@ -164,9 +164,7 @@ Shorty.Tracking=
     ).pipe(function(response){
       Shorty.WUI.List.fill(Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
                            response.data,
-                           Shorty.WUI.List.fill_callbackFilter_tracking,
-                           Shorty.WUI.List.add_callbackEnrich_tracking,
-                           Shorty.WUI.List.add_callbackInsert_tracking);
+                           Shorty.Runtime.Catalog.Callbacks.ListOfClicks);
       // updte a few general informations
       Shorty.Tracking.Dialog.List.find('#shorty-clicks').html(
         Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody tr').length+'/'+response.stats[0]['length']);
@@ -428,7 +426,7 @@ Shorty.Tracking=
 } // Shorty.Tracking
 
 /**
- * @method Shorty.WUI.List.add_callbackEnrich_tracking
+ * @method Shorty.WUI.List.add_callbackEnrich_ListOfClicks
  * @brief Callback function replacing the default used in Shorty.WUI.List.add()
  * @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
  * @param set object This is the set of attributes describing a single registered click
@@ -437,7 +435,7 @@ Shorty.Tracking=
  * @access public
  * @author Christian Reiner
  */
-Shorty.WUI.List.add_callbackEnrich_tracking=function(row,set,hidden){
+Shorty.WUI.List.add_callbackEnrich_ListOfClicks=function(row,set,hidden){
   // set row id to entry id
   row.attr('id',set.id);
   // hold back rows for later highlighting effect
@@ -486,26 +484,26 @@ Shorty.WUI.List.add_callbackEnrich_tracking=function(row,set,hidden){
     } // switch
     row.find('td#'+aspect).empty().append(span);
   }) // each aspect
-} // Shorty.WUI.List.add_callbackEnrich_tracking
+} // Shorty.WUI.List.add_callbackEnrich_ListOfClicks
 /**
- * @method Shorty.WUI.List.add_callbackInsert_tracking
+ * @method Shorty.WUI.List.add_callbackInsert_ListOfClicks
  * @brief Inserts a cloned and enriched row into the table at a usage specific place
  * @description New entries always get appended to the list of already existing entries,
  *              since those are always sorted in a chronological order
  * @access public
  * @author Christian Reiner
  */
-Shorty.WUI.List.add_callbackInsert_tracking=function(list,row){
+Shorty.WUI.List.add_callbackInsert_ListOfClicks=function(list,row){
   list.find('tbody').append(row);
-} // Shorty.WUI.List.add_callbackInsert_tracking
+} // Shorty.WUI.List.add_callbackInsert_ListOfClicks
 
 /**
- * @method Shorty.WUI.List.fill_callbackFilter_tracking
+ * @method Shorty.WUI.List.fill_callbackFilter_ListOfClicks
  * @brief Column filter rules specific to this plugins list
  * @access public
  * @author Christian Reiner
  */
-Shorty.WUI.List.fill_callbackFilter_tracking=function(list){
+Shorty.WUI.List.fill_callbackFilter_ListOfClicks=function(list){
   if (Shorty.Debug) Shorty.Debug.log("using 'tracking' method to filter filled list");
   // filter list
   Shorty.WUI.List.filter(list,'time',   list.find('thead tr#toolbar th#time    #filter').val()),
@@ -513,10 +511,10 @@ Shorty.WUI.List.fill_callbackFilter_tracking=function(list){
   Shorty.WUI.List.filter(list,'host',   list.find('thead tr#toolbar th#host    #filter').val()),
   Shorty.WUI.List.filter(list,'user',   list.find('thead tr#toolbar th#user    #filter').val()),
   Shorty.WUI.List.filter(list,'result', list.find('thead tr#toolbar th#result  select :selected').val())
-} // Shorty.WUI.List.fill_callbackFilter_tracking
+} // Shorty.WUI.List.fill_callbackFilter_ListOfClicks
 
 /**
- * @method Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking
+ * @method Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfClicks
  * @brief Callback used to check if any filters prevent closing a lists toolbar
  * @param toolbar jQueryObject The lists toolbar filters should be checked in
  * @return bool Indicates if an existing filter prevents the closing or not
@@ -525,9 +523,18 @@ Shorty.WUI.List.fill_callbackFilter_tracking=function(list){
  * @access public
  * @author Christian Reiner
  */
-Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking=function(toolbar){
+Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfClicks=function(toolbar){
   return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').length)
              &&(toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').effect('pulsate')) )
           ||(  (toolbar.find('th#result select :selected').val())
              &&(toolbar.find('#result').effect('pulsate')) ) );
-} // Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_tracking
+} // Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfClicks
+
+// make sure these lines to fill the callback catalog are always AT THE END of this file cause they refer to previously defined routines
+// register runtime callback connections
+Shorty.Runtime.Catalog.Callbacks.ListOfClicks={},
+Shorty.Runtime.Catalog.Callbacks.ListOfClicks.ListAddEnrich=     Shorty.WUI.List.add_callbackEnrich_ListOfClicks;
+Shorty.Runtime.Catalog.Callbacks.ListOfClicks.ListAddInsert=     Shorty.WUI.List.add_callbackInsert_ListOfClicks;
+Shorty.Runtime.Catalog.Callbacks.ListOfClicks.ListFillFilter=    Shorty.WUI.List.fill_callbackFilter_ListOfClicks;
+Shorty.Runtime.Catalog.Callbacks.ListOfClicks.ToolbarCheckFilter=Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfClicks;
+Shorty.Runtime.Catalog.Callbacks.ListOfClicks.MetaFillSums=      Shorty.WUI.Sums.get_callbackMeta_ListOfClicks;
