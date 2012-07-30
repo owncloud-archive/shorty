@@ -973,7 +973,7 @@ Shorty={
             }).done(dfd.resolve)
           }else{ // toolbar IS visible
             // any filters active? prevent closing of toolbar !
-            if (context.ToolbarCheckFilter.apply(context,[toolbar])) {
+            if (this.ToolbarCheckFilter.apply(this,[toolbar])) {
               if (Shorty.Debug) Shorty.Debug.log('active filter prevents closing of toolbar');
             }else{
               // close toolbar
@@ -1772,9 +1772,9 @@ Shorty.Runtime.Context.ListOfShortys={
     });
     Shorty.WUI.Sums.fill.apply(Shorty.Runtime.Context.ListOfShortys,[data]),
     // filter list
-    Shorty.WUI.List.filter(list,'target',list.find('thead tr#toolbar th#target #filter').val()),
-    Shorty.WUI.List.filter(list,'title', list.find('thead tr#toolbar th#title #filter').val()),
-    Shorty.WUI.List.filter(list,'status',list.find('thead tr#toolbar th#status select :selected').val())
+    Shorty.WUI.List.filter.apply(this,[list,'target',list.find('thead tr#toolbar th#target #filter').val()]),
+    Shorty.WUI.List.filter.apply(this,[list,'title', list.find('thead tr#toolbar th#title #filter').val()]),
+    Shorty.WUI.List.filter.apply(this,[list,'status',list.find('thead tr#toolbar th#status select :selected').val()])
     // sort list
     $.when(
       Shorty.Action.Preference.get('list-sort-code')
