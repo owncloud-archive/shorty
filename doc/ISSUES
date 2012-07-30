@@ -34,6 +34,9 @@ In scrollable lists of tracked clicks the position of the scrollbar slider is
 moved to an odd place sometimes, when subsequent chunks of clicks are loaded
 into an existing list. 
 
+* Filtering the time column in the list of clicks appears to filter an timstamps,
+not on the displayed date time. 
+
 Contributions:
 I'd be more than happy to welcome all contributions to this little experiment.
 Drop me a note, an idea, a patch, a good bottle of wine, anything !

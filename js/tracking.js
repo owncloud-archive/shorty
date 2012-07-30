@@ -508,11 +508,11 @@ Shorty.Runtime.Context.ListOfClicks={
   ListFillFilter:function(list){
     if (Shorty.Debug) Shorty.Debug.log("using 'tracking' method to filter filled list");
     // filter list
-    Shorty.WUI.List.filter(list,'time',   list.find('thead tr#toolbar th#time    #filter').val()),
-    Shorty.WUI.List.filter(list,'address',list.find('thead tr#toolbar th#address #filter').val()),
-    Shorty.WUI.List.filter(list,'host',   list.find('thead tr#toolbar th#host    #filter').val()),
-    Shorty.WUI.List.filter(list,'user',   list.find('thead tr#toolbar th#user    #filter').val()),
-    Shorty.WUI.List.filter(list,'result', list.find('thead tr#toolbar th#result  select :selected').val())
+    Shorty.WUI.List.filter.apply(this,[list,'time',   list.find('thead tr#toolbar th#time    #filter').val()]),
+    Shorty.WUI.List.filter.apply(this,[list,'address',list.find('thead tr#toolbar th#address #filter').val()]),
+    Shorty.WUI.List.filter.apply(this,[list,'host',   list.find('thead tr#toolbar th#host    #filter').val()]),
+    Shorty.WUI.List.filter.apply(this,[list,'user',   list.find('thead tr#toolbar th#user    #filter').val()]),
+    Shorty.WUI.List.filter.apply(this,[list,'result', list.find('thead tr#toolbar th#result  select :selected').val()])
   }, // Shorty.Runtime.Context.ListOfClicks.ListFillFilter
   /**
   * @method Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
