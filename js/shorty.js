@@ -609,13 +609,11 @@ Shorty={
        * @param list jQueryObject Representation of the 'list'
        * @param elements array List of elements to be added
        * @param hidden bool Flag that controls if added entries should be kept hidden for a later visualization (highlighting)
-       * @param callback a callback method that implements list/attribute specific handling
+       * @param context Optional context identifier to select runtime callback slots
        * @return Deferred.promise
        * @author Christian Reiner
        */
-      add: function(list,elements,hidden,callbackEnrich,callbackInsert){
-        callbackEnrich=callbackEnrich||Shorty.WUI.List.add_callbackEnrich_default;
-        callbackInsert=callbackInsert||Shorty.WUI.List.add_callbackInsert_default;
+      add:function(list,elements,hidden,context){
         if (Shorty.Debug) Shorty.Debug.log("add "+elements.length+" entries to list");
         var dfd = new $.Deferred();
         // insert list elements (sets) one by one
@@ -624,22 +622,22 @@ Shorty={
           // clone dummy row from list header: dummy is the last row
           row = list.find('thead tr:last-child').first().clone();
           // add attributes to row, as data and value
-          callbackEnrich(row,set,hidden);
+          Shorty.Runtime.Callback(context,'ListAddEnrich')(row,set,hidden);
           // insert new row in table
-          callbackInsert(list,row);
+          Shorty.Runtime.Callback(context,'ListAddInsert')(list,row);
           dfd.resolve();
         }) // each
         return dfd.promise();
       }, // Shorty.WUI.List.add
       /**
-       * @method Shorty.WUI.List.add_callbackEnrich_default
+       * @method Shorty.WUI.List.add_callbackEnrich_ListOfShortys
        * @brief Enriches a raw list entry with usage specific values taken from a sepcified set of attributes
        * @param row jQueryObject Represents the raw row, freshly cloned
        * @param set array A set of attributes (values) defining an element to re represented by the row
        * @param hidden bool Flag that controls if added entries should be kept hidden for a later visualization (highlighting)
        * @author Christian Reiner
        */
-      add_callbackEnrich_default: function(row,set,hidden){
+      add_callbackEnrich_ListOfShortys: function(row,set,hidden){
         // set row id to entry id
         row.attr('id',set.id);
         // hold back rows for later highlighting effect
@@ -688,18 +686,18 @@ Shorty={
           } // switch
           row.find('td#'+aspect).empty().append(span);
         }) // each aspect
-      }, // Shorty.WUI.List.add_callbackEnrich_default
+      }, // Shorty.WUI.List.add_callbackEnrich_ListOfShortys
       /**
-       * @method Shorty.WUI.List.add_callbackInsert_default
+       * @method Shorty.WUI.List.add_callbackInsert_ListOfShortys
        * @brief Inserts a cloned and enriched row into the table at a usage specific place
        * @description
        * Shortys always get inserted at the BEGIN of the table, regardless of its sorting
        * This is important to always have the new entry flashing at the top of the list
        * @author Christian Reiner
        */
-      add_callbackInsert_default: function(list,row){
+      add_callbackInsert_ListOfShortys: function(list,row){
         list.find('tbody').prepend(row);
-      }, // Shorty.WUI.List.add_callbackInsert_default
+      }, // Shorty.WUI.List.add_callbackInsert_ListOfShortys
       /**
        * @method Shorty.WUI.List.build
        * @brief Builds the content of a list by retrieving and adding entries
@@ -718,7 +716,7 @@ Shorty={
             Shorty.WUI.List.get()
           ).pipe(function(response){
             Shorty.WUI.List.empty($('#list-of-shortys').first());
-            Shorty.WUI.List.fill($('#list-of-shortys').first(),response.data);
+            Shorty.WUI.List.fill($('#list-of-shortys').first(),response.data,Shorty.Runtime.Catalog.Callbacks.ListOfShortys);
           }).done(function(){
             $.when(
               Shorty.WUI.List.show(),
@@ -794,31 +792,34 @@ Shorty={
        * @brief (Re-)Fills a list with al elements from the given set
        * @param list jQueryObject Represents the list to be handled
        * @param elements array list of elements to be filled in the lists
-       * @callback function Method used to handle list/cell specific handling of element attributes
+       * @context Context identifier referencing the runtime callback methods
        * @author Christian Reiner
        */
-      fill: function(list,elements,callbackFilter,callbackAppend,callbackInsert){
-        callbackFilter=callbackFilter||Shorty.WUI.List.fill_callbackFilter_default;
-        callbackAppend=callbackAppend||Shorty.WUI.List.add_callbackEnrich_default;
-        callbackInsert=callbackInsert||Shorty.WUI.List.add_callbackInsert_default;
+      fill: function(list,elements,context){
         if (Shorty.Debug) Shorty.Debug.log("fill list");
         var dfd = new $.Deferred();
         $.when(
-          Shorty.WUI.List.add(list,elements,false,callbackAppend,callbackInsert)
+          Shorty.WUI.List.add(list,elements,false,context)
         ).pipe(
-          callbackFilter(list)
+          Shorty.Runtime.Callback(context,'ListFillFilter')(list)
         ).done(dfd.resolve).fail(dfd.reject)
         return dfd.promise();
       }, // Shorty.WUI.List.fill
       /**
-       * @method Shorty.WUI.List.fill_callbackFilter_default
+       * @method Shorty.WUI.List.fill_callbackFilter_ListOfShortys
        * @param list jQueryObject Represents the list to be handled
        * @author Christian Reiner
        */
-      fill_callbackFilter_default: function(list){
+      fill_callbackFilter_ListOfShortys: function(list){
         if (Shorty.Debug) Shorty.Debug.log("using 'default' method to filter filled list");
         // only makes sense for default Shorty list
-        Shorty.WUI.Sums.fill(),
+        var data=new Array();
+        data['sum_shortys']=$('#desktop #list-of-shortys tbody tr').length;
+        data['sum_clicks']=0;
+        $('#desktop #list-of-shortys tbody tr').each(function(){
+          data['sum_clicks']+=parseInt($(this).attr('data-clicks'),10);
+        });
+        Shorty.WUI.Sums.fill(Shorty.Runtime.Catalog.Callbacks.ListOfShortys,data),
         // filter list
         Shorty.WUI.List.filter(list,'target',list.find('thead tr#toolbar th#target #filter').val()),
         Shorty.WUI.List.filter(list,'title', list.find('thead tr#toolbar th#title #filter').val()),
@@ -829,7 +830,7 @@ Shorty={
         ).done(function(pref){
           Shorty.WUI.List.sort(list,pref['list-sort-code']);
         })
-      }, // Shorty.WUI.List.fill_callbackFilter_default
+      }, // Shorty.WUI.List.fill_callbackFilter_ListOfShortys
       /**
        * @method Shorty.WUI.List.filter
        * @brief Filters a given list by comparing column values to a given value pattern
@@ -1052,16 +1053,15 @@ Shorty={
       }, // Shorty.WUI.List.vacuum
       // ===== Shorty.WUI.List.Toolbar =====
       Toolbar:{
-        // ===== Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_default =====
-        toggle_callbackCheckFilter_default: function(toolbar){
+        // ===== Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfShortys =====
+        toggle_callbackCheckFilter_ListOfShortys: function(toolbar){
           return (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
                      &&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]').effect('pulsate')) )
                   ||(  (toolbar.find('th#status select :selected').val())
                      &&(toolbar.find('#status').effect('pulsate')) ) );
-        }, // Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_default
+        }, // Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfShortys
         // ===== Shorty.WUI.List.Toolbar.toggle =====
-        toggle: function(list,callback){
-          callback=callback||Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_default;
+        toggle: function(list,context){
           if (Shorty.Debug) Shorty.Debug.log("toggle list toolbar");
           var button =list.find('#tools');
           var toolbar=list.find('#toolbar');
@@ -1076,7 +1076,7 @@ Shorty={
             }).done(dfd.resolve)
           }else{ // toolbar IS visible
             // any filters active? prevent closing of toolbar !
-            if (callback(toolbar)) {
+            if (Shorty.Runtime.Callback(context,'ToolbarCheckFilter')(toolbar)) {
               if (Shorty.Debug) Shorty.Debug.log('active filter prevents closing of toolbar');
             }else{
               // close toolbar
@@ -1241,20 +1241,17 @@ Shorty={
     // ===== Shorty.WUI.Sums =====
     Sums:{
       // ===== Shorty.WUI.Sums.fill =====
-      fill: function(){
+      fill: function(context,data){
         if (Shorty.Debug) Shorty.Debug.log("fill sums");
         var dfd = new $.Deferred();
         $.when(
           // update (set) sum values in the control bar
-          Shorty.WUI.Sums.get(function(data){
-            $('#controls #sum_shortys').text(data.sum_shortys);
-            $('#controls #sum_clicks').text(data.sum_clicks);
-          })
+          Shorty.Runtime.Callback(context,'MetaFillSums')(data)
         ).done(dfd.resolve)
         return dfd.promise();
       }, // Shorty.WUI.Sums.fill
       // ===== Shorty.WUI.Sums.get =====
-      get: function(callback){
+      get: function(context){
         if (Shorty.Debug) Shorty.Debug.log("get sums");
         var dfd = new $.Deferred();
         $.when(
@@ -1269,14 +1266,19 @@ Shorty={
             function(response){return Shorty.Ajax.fail(response)}
           )
         ).done(function(response){
-          if (callback) callback(response.data);
+          Shorty.Runtime.Callback(context,'MetaFillSums')(response.data);
           dfd.resolve(response);
         }).fail(function(response){
           dfd.reject(response);
         })
         return dfd.promise();
       }, // Shorty.WUI.Sums.get
-    }, // Shorty.WUI.Sums
+      // ===== Shorty.WUI.Sums.get_callbackMeta_ListOfShortys =====
+      get_callbackMeta_ListOfShortys:function(data){
+        $('#controls #sum_shortys').text(data.sum_shortys);
+        $('#controls #sum_clicks').text(data.sum_clicks);
+      } // Shorty.WUI.Sums.get_callbackMeta_ListOfShortys
+    } // Shorty.WUI.Sums
   }, // Shorty.WUI
 
   //==========
@@ -1495,7 +1497,7 @@ Shorty={
             Shorty.WUI.Dialog.reset(dialog)
           }).done(function(response){
             // add shorty to existing list
-            Shorty.WUI.List.add($('#list-of-shortys').first(),[response.data],true);
+            Shorty.WUI.List.add($('#list-of-shortys').first(),[response.data],true,Shorty.Runtime.Catalog.Callbacks.ListOfShortys);
             Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
             dfd.resolve(response);
           }).fail(function(response){
@@ -1768,6 +1770,39 @@ Shorty={
     } // Shorty.Ajax.fail
   }, // Shorty.Ajax
 
+  // ===========
+
+  /**
+   * @class Shorty.Runtime
+   * @brief Catalog of references to runtime callback methods
+   * @author Christian Reiner
+   */
+  Runtime:{
+    /**
+    * @class Shorty.Runtime.Callback
+    * @brief Refrence to an existing runtime callback method
+    * @author Christian Reiner
+    */
+    Callback:function(context,slot){
+      if (context[slot]){
+        if (Shorty.Debug) Shorty.Debug.log("referencing runtime catalog callback for context '"+context+"' and slot '"+slot+"'");
+        return context[slot];
+      }else{
+        if (Shorty.Debug) Shorty.Debug.log("no matching runtime catalog callback for context '"+context+"' and slot '"+slot+"'");
+        return function(){};
+      }
+    }, // Shorty.Runtime.Callback
+    /**
+    * @class Shorty.Runtime.Catalog
+    * @brief Catalog of runtime callback methods
+    * @author Christian Reiner
+    */
+    Catalog:{
+      Callbacks:[]
+    } // Shorty.Runtime.Catalog
+  }, // Shorty.Runtime
+  // ===========
+
   /**
    * @class Shorty.Date
    * @brief Tool collection dealing with date handling
@@ -1785,5 +1820,13 @@ Shorty={
       return (Date.parse(date)<=Date.parse(Date()));
     } // Shorty.Date.expired
   } // Shorty.Date
-
 } // Shorty
+
+// make sure these lines to fill the callback catalog are always AT THE END of this file cause they refer to previously defined routines
+// register runtime callback connections
+Shorty.Runtime.Catalog.Callbacks.ListOfShortys={},
+Shorty.Runtime.Catalog.Callbacks.ListOfShortys.ListAddEnrich=     Shorty.WUI.List.add_callbackEnrich_ListOfShortys;
+Shorty.Runtime.Catalog.Callbacks.ListOfShortys.ListAddInsert=     Shorty.WUI.List.add_callbackInsert_ListOfShortys;
+Shorty.Runtime.Catalog.Callbacks.ListOfShortys.ListFillFilter=    Shorty.WUI.List.fill_callbackFilter_ListOfShortys;
+Shorty.Runtime.Catalog.Callbacks.ListOfShortys.ToolbarCheckFilter=Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfShortys;
+Shorty.Runtime.Catalog.Callbacks.ListOfShortys.MetaFillSums=      Shorty.WUI.Sums.get_callbackMeta_ListOfShortys;

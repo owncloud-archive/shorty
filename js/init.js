@@ -51,7 +51,9 @@ $(document).ready(function(){
     else container.addClass('collapsed').find('.shorty-collapsible-tail').slideUp('fast');
   });
   // button (row click) to open the toolbar row in the list
-  $('#list-of-shortys #titlebar').on('click',function(){Shorty.WUI.List.Toolbar.toggle($('#list-of-shortys'));});
+  $('#list-of-shortys #titlebar').on('click',function(){
+    Shorty.WUI.List.Toolbar.toggle($('#list-of-shortys'),Shorty.Runtime.Catalog.Callbacks.ListOfShortys);
+  });
   // button to reload the list
   $('#list-of-shortys #toolbar').find('#reload').on('click',Shorty.WUI.List.build);
   // sort buttons
