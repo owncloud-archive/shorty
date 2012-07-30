@@ -87,3 +87,26 @@ function executeFunctionByName(functionName, context /*, args */) {
   }
   return context[func].apply(this, args);
 }
+
+/**
+ * @function dateExpired
+ * @brief Checks if a given date has already expired
+ * @param date Date to check
+ * @return bool Whether or not the date has expired
+ * @author Christian Reiner
+ */
+function dateExpired(date){
+  return (Date.parse(date)<=Date.parse(Date()));
+} // dateExpired
+
+/**
+ * @function jsFunctionName
+ * @brief Returns the name of a specified function
+ * @author Christian Reiner
+ */
+function jsFunctionName(func){
+  var name = func.toString();
+  name = name.substr('function '.length);
+  name = name.substr(0, name.indexOf('('));
+  return name;
+} // jsFunctionName

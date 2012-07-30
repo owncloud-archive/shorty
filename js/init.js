@@ -52,7 +52,7 @@ $(document).ready(function(){
   });
   // button (row click) to open the toolbar row in the list
   $('#list-of-shortys #titlebar').on('click',function(){
-    Shorty.WUI.List.Toolbar.toggle($('#list-of-shortys'),Shorty.Runtime.Catalog.Callbacks.ListOfShortys);
+    Shorty.WUI.List.Toolbar.toggle($('#list-of-shortys'),Shorty.Runtime.Context.ListOfShortys);
   });
   // button to reload the list
   $('#list-of-shortys #toolbar').find('#reload').on('click',Shorty.WUI.List.build);
