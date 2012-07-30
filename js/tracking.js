@@ -44,8 +44,8 @@ $(window).load(function(){
       Shorty.WUI.Dialog.hide(Shorty.Tracking.Dialog.List);
     });
     Shorty.Tracking.Dialog.List.find('#list-of-clicks #titlebar').on('click',function(){
-      Shorty.WUI.List.Toolbar.toggle(Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-                                     Shorty.Runtime.Catalog.Callbacks.ListOfClicks);
+      Shorty.WUI.List.Toolbar.toggle.apply(Shorty.Runtime.Context.ListOfClicks,
+                                           [Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()]);
     });
     Shorty.Tracking.Dialog.List.find('#list-of-clicks #toolbar #reload').on('click',function(){Shorty.Tracking.build(false);});
     Shorty.Tracking.Dialog.List.find('#shorty-footer #load').on('click',function(){Shorty.Tracking.build(true);});
@@ -53,21 +53,19 @@ $(window).load(function(){
     Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
                               .find('thead tr#toolbar').find('th#time,th#address,th#host,th#user')
                               .find('#filter').on('keyup',function(){
-      Shorty.WUI.List.filter(
-        Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-        $($(this).context.parentElement.parentElement).attr('id'),
-        $(this).val(),
-        Shorty.Runtime.Catalog.Callbacks.ListOfClicks);
+      Shorty.WUI.List.filter.apply(Shorty.Runtime.Context.ListOfClicks,
+                                   [Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
+                                    $($(this).context.parentElement.parentElement).attr('id'),
+                                    $(this).val()]);
     });
     // detect if the list has been scrolled to the bottom, retrieve next chunk of clicks if so
     Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').on('scroll',Shorty.Tracking.bottom);
     // status filter reaction
     Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('thead tr#toolbar th#result select').on('change',function(){
-      Shorty.WUI.List.filter(
-        Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-        $(this).parents('th').attr('id'),
-        $(this).find(':selected').val(),
-        Shorty.Runtime.Catalog.Callbacks.ListOfClicks);
+      Shorty.WUI.List.filter.apply(Shorty.Runtime.Context.ListOfClicks,
+                                   [Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
+                                    $(this).parents('th').attr('id'),
+                                    $(this).find(':selected').val()]);
     });
     dfd.resolve();
   }).fail(dfd.reject);
@@ -162,9 +160,8 @@ Shorty.Tracking=
       // retrieve new entries
       Shorty.Tracking.get(Shorty.Tracking.Entry.attr('id'),offset)
     ).pipe(function(response){
-      Shorty.WUI.List.fill(Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-                           response.data,
-                           Shorty.Runtime.Catalog.Callbacks.ListOfClicks);
+      Shorty.WUI.List.fill.apply(Shorty.Runtime.Context.ListOfClicks,
+                                 [Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),response.data]);
       // updte a few general informations
       Shorty.Tracking.Dialog.List.find('#shorty-clicks').html(
         Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody tr').length+'/'+response.stats[0]['length']);
@@ -426,115 +423,112 @@ Shorty.Tracking=
 } // Shorty.Tracking
 
 /**
- * @method Shorty.WUI.List.add_callbackEnrich_ListOfClicks
- * @brief Callback function replacing the default used in Shorty.WUI.List.add()
- * @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
- * @param set object This is the set of attributes describing a single registered click
- * @param hidden bool Indicats if new entries in lists should be held back for later highlighting (flashing) optically or not
- * @description This replacement uses the plugin specific column names
- * @access public
+ * @class Shorty.Runtime.Context.ListOfClicks
+ * @brief Catalog of callbacks required for list of shorty
  * @author Christian Reiner
  */
-Shorty.WUI.List.add_callbackEnrich_ListOfClicks=function(row,set,hidden){
-  // set row id to entry id
-  row.attr('id',set.id);
-  // hold back rows for later highlighting effect
-  if (hidden)
-    row.addClass('shorty-fresh'); // might lead to a pulsate effect later
-  // add aspects as content to the rows cells
-  $.each(['status','time','address','host','user','result'],
-         function(j,aspect){
-    // we wrap the cells content into a span tag
-    var span=$('<span>');
-    // enhance row with real set values
-    if ('undefined'==set[aspect])
-         row.attr('data-'+this,'');
-    else row.attr('data-'+this,set[aspect]);
-    // fill data into corresponsing column
-    var title, content, classes=[];
-    switch(aspect){
-      case 'status':
-        var icon;
-        switch (set['result']){
-          case 'blocked': icon='bad';     break;
-          case 'denied':  icon='neutral'; break;
-          case 'granted': icon='good';    break;
-          default:        icon='blank';
-        } // switch
-        span.html('<img class="shorty-icon" width="16" src="'+OC.filePath('shorty','img/status',icon+'.png')+'">');
-        break;
-      case 'time':
-        if (null==set[aspect])
-             span.text('-?-');
-        else span.text(formatDate(1000*set[aspect]));
-        // add value to the sparkline value set in the header
-        switch (set['result']){
-          case 'blocked': Shorty.Tracking.Stats.blocked.push(set[aspect]); break;
-          case 'denied':  Shorty.Tracking.Stats.denied.push (set[aspect]); break;
-          case 'granted': Shorty.Tracking.Stats.granted.push(set[aspect]); break;
-        } // switch
-        break;
-      case 'result':
-        span.text(t('shorty-tracking',set[aspect]));
-        span.addClass('ellipsis');
-        break;
-      default:
-        span.text(set[aspect]);
-        span.addClass('ellipsis');
-    } // switch
-    row.find('td#'+aspect).empty().append(span);
-  }) // each aspect
-} // Shorty.WUI.List.add_callbackEnrich_ListOfClicks
-/**
- * @method Shorty.WUI.List.add_callbackInsert_ListOfClicks
- * @brief Inserts a cloned and enriched row into the table at a usage specific place
- * @description New entries always get appended to the list of already existing entries,
- *              since those are always sorted in a chronological order
- * @access public
- * @author Christian Reiner
- */
-Shorty.WUI.List.add_callbackInsert_ListOfClicks=function(list,row){
-  list.find('tbody').append(row);
-} // Shorty.WUI.List.add_callbackInsert_ListOfClicks
+Shorty.Runtime.Context.ListOfClicks={
+  /**
+  * @method Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
+  * @brief Callback function replacing the default used in Shorty.WUI.List.add()
+  * @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
+  * @param set object This is the set of attributes describing a single registered click
+  * @param hidden bool Indicats if new entries in lists should be held back for later highlighting (flashing) optically or not
+  * @description This replacement uses the plugin specific column names
+  * @access public
+  * @author Christian Reiner
+  */
+  ListAddEnrich:function(row,set,hidden){
+    // set row id to entry id
+    row.attr('id',set.id);
+    // hold back rows for later highlighting effect
+    if (hidden)
+      row.addClass('shorty-fresh'); // might lead to a pulsate effect later
+    // add aspects as content to the rows cells
+    $.each(['status','time','address','host','user','result'],
+          function(j,aspect){
+      // we wrap the cells content into a span tag
+      var span=$('<span>');
+      // enhance row with real set values
+      if ('undefined'==set[aspect])
+          row.attr('data-'+this,'');
+      else row.attr('data-'+this,set[aspect]);
+      // fill data into corresponsing column
+      var title, content, classes=[];
+      switch(aspect){
+        case 'status':
+          var icon;
+          switch (set['result']){
+            case 'blocked': icon='bad';     break;
+            case 'denied':  icon='neutral'; break;
+            case 'granted': icon='good';    break;
+            default:        icon='blank';
+          } // switch
+          span.html('<img class="shorty-icon" width="16" src="'+OC.filePath('shorty','img/status',icon+'.png')+'">');
+          break;
+        case 'time':
+          if (null==set[aspect])
+              span.text('-?-');
+          else span.text(formatDate(1000*set[aspect]));
+          // add value to the sparkline value set in the header
+          switch (set['result']){
+            case 'blocked': Shorty.Tracking.Stats.blocked.push(set[aspect]); break;
+            case 'denied':  Shorty.Tracking.Stats.denied.push (set[aspect]); break;
+            case 'granted': Shorty.Tracking.Stats.granted.push(set[aspect]); break;
+          } // switch
+          break;
+        case 'result':
+          span.text(t('shorty-tracking',set[aspect]));
+          span.addClass('ellipsis');
+          break;
+        default:
+          span.text(set[aspect]);
+          span.addClass('ellipsis');
+      } // switch
+      row.find('td#'+aspect).empty().append(span);
+    }) // each aspect
+  }, // Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
+  /**
+  * @method Shorty.Runtime.Context.ListOfClicks.ListAddInsert
+  * @brief Inserts a cloned and enriched row into the table at a usage specific place
+  * @description New entries always get appended to the list of already existing entries,
+  *              since those are always sorted in a chronological order
+  * @access public
+  * @author Christian Reiner
+  */
+  ListAddInsert:function(list,row){
+    list.find('tbody').append(row);
+  }, // Shorty.Runtime.Context.ListOfClicks.ListAddInsert
+  /**
+  * @method Shorty.Runtime.Context.ListOfClicks.ListFillFilter
+  * @brief Column filter rules specific to this plugins list
+  * @access public
+  * @author Christian Reiner
+  */
+  ListFillFilter:function(list){
+    if (Shorty.Debug) Shorty.Debug.log("using 'tracking' method to filter filled list");
+    // filter list
+    Shorty.WUI.List.filter(list,'time',   list.find('thead tr#toolbar th#time    #filter').val()),
+    Shorty.WUI.List.filter(list,'address',list.find('thead tr#toolbar th#address #filter').val()),
+    Shorty.WUI.List.filter(list,'host',   list.find('thead tr#toolbar th#host    #filter').val()),
+    Shorty.WUI.List.filter(list,'user',   list.find('thead tr#toolbar th#user    #filter').val()),
+    Shorty.WUI.List.filter(list,'result', list.find('thead tr#toolbar th#result  select :selected').val())
+  }, // Shorty.Runtime.Context.ListOfClicks.ListFillFilter
+  /**
+  * @method Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
+  * @brief Callback used to check if any filters prevent closing a lists toolbar
+  * @param toolbar jQueryObject The lists toolbar filters should be checked in
+  * @return bool Indicates if an existing filter prevents the closing or not
+  * @description Used as a replacement for the default used in Shorty.WUI.List.Toolbar.toggle()
+  * This version is private to this plugin and uses the filter names specific to the list of tracked clicks
+  * @access public
+  * @author Christian Reiner
+  */
+  ToolbarCheckFilter:function(toolbar){
+    return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').length)
+              &&(toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').effect('pulsate')) )
+            ||(  (toolbar.find('th#result select :selected').val())
+              &&(toolbar.find('#result').effect('pulsate')) ) );
+  } // Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
 
-/**
- * @method Shorty.WUI.List.fill_callbackFilter_ListOfClicks
- * @brief Column filter rules specific to this plugins list
- * @access public
- * @author Christian Reiner
- */
-Shorty.WUI.List.fill_callbackFilter_ListOfClicks=function(list){
-  if (Shorty.Debug) Shorty.Debug.log("using 'tracking' method to filter filled list");
-  // filter list
-  Shorty.WUI.List.filter(list,'time',   list.find('thead tr#toolbar th#time    #filter').val()),
-  Shorty.WUI.List.filter(list,'address',list.find('thead tr#toolbar th#address #filter').val()),
-  Shorty.WUI.List.filter(list,'host',   list.find('thead tr#toolbar th#host    #filter').val()),
-  Shorty.WUI.List.filter(list,'user',   list.find('thead tr#toolbar th#user    #filter').val()),
-  Shorty.WUI.List.filter(list,'result', list.find('thead tr#toolbar th#result  select :selected').val())
-} // Shorty.WUI.List.fill_callbackFilter_ListOfClicks
-
-/**
- * @method Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfClicks
- * @brief Callback used to check if any filters prevent closing a lists toolbar
- * @param toolbar jQueryObject The lists toolbar filters should be checked in
- * @return bool Indicates if an existing filter prevents the closing or not
- * @description Used as a replacement for the default used in Shorty.WUI.List.Toolbar.toggle()
- * This version is private to this plugin and uses the filter names specific to the list of tracked clicks
- * @access public
- * @author Christian Reiner
- */
-Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfClicks=function(toolbar){
-  return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').length)
-             &&(toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').effect('pulsate')) )
-          ||(  (toolbar.find('th#result select :selected').val())
-             &&(toolbar.find('#result').effect('pulsate')) ) );
-} // Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfClicks
-
-// make sure these lines to fill the callback catalog are always AT THE END of this file cause they refer to previously defined routines
-// register runtime callback connections
-Shorty.Runtime.Catalog.Callbacks.ListOfClicks={},
-Shorty.Runtime.Catalog.Callbacks.ListOfClicks.ListAddEnrich=     Shorty.WUI.List.add_callbackEnrich_ListOfClicks;
-Shorty.Runtime.Catalog.Callbacks.ListOfClicks.ListAddInsert=     Shorty.WUI.List.add_callbackInsert_ListOfClicks;
-Shorty.Runtime.Catalog.Callbacks.ListOfClicks.ListFillFilter=    Shorty.WUI.List.fill_callbackFilter_ListOfClicks;
-Shorty.Runtime.Catalog.Callbacks.ListOfClicks.ToolbarCheckFilter=Shorty.WUI.List.Toolbar.toggle_callbackCheckFilter_ListOfClicks;
-Shorty.Runtime.Catalog.Callbacks.ListOfClicks.MetaFillSums=      Shorty.WUI.Sums.get_callbackMeta_ListOfClicks;
+} // Shorty.Runtime.Context.ListOfClicks
