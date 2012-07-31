@@ -914,13 +914,13 @@ OC.Shorty={
 			/**
 			* @method OC.Shorty.WUI.List.show
 			* @brief Shows the list if it was hidden
-			* @param string duration Duration the asnimation shoudl take (optional)
+			* @param string duration Duration the animation should take (optional)
 			* @return object Deferred object
 			* @author Christian Reiner
 			*/
 			show: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show list");
-				duration = 'slow';
+				duration = duration | 'slow';
 				var dfd = new $.Deferred();
 				var list = $('#list-of-shortys');
 				if (list.is(':visible'))
@@ -938,7 +938,13 @@ OC.Shorty={
 				}
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.show
-			// ===== OC.Shorty.WUI.List.sort =====
+			/**
+			* @method OC.Shorty.WUI.List.sort
+			* @brief Sorts a list by the values of a specified column
+			* @param object list The list object in the DOM
+			* @param string A two letter code as defined in lib/type.php
+			* @author Christian Reiner
+			*/
 			sort: function(list,sortCode){
 				sortCore = sortCode || 'cd';
 				var icon=list.find('thead tr#toolbar th div img[data-sort-code="'+sortCode+'"]');
@@ -961,26 +967,44 @@ OC.Shorty={
 				// store the sorting code as preference, for returning list retrievals
 				OC.Shorty.Action.Preference.set({'list-sort-code':sortCode});
 			}, // OC.Shorty.WUI.List.sort
-			// ===== OC.Shorty.WUI.List.toggle =====
+			/**
+			* @method OC.Shorty.WUI.List.toggle
+			* @brief: Toggles the visibility of the list
+			* @param string duration Duration the animation should take
+			* @author Christian Reiner
+			*/
 			toggle: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list");
 				duration = 'slow';
 				var dfd = new $.Deferred();
 				if (list.is(':visible'))
-					return OC.Shorty.WUI.List.hide();
+					 return OC.Shorty.WUI.List.hide();
 				else return OC.Shorty.WUI.List.show();
 			}, // OC.Shorty.WUI.List.toggle
-			// ===== OC.Shorty.WUI.List.vacuum =====
+			/**
+			* @method OC.Shorty.WUI.List.vacuum
+			* @brief Controls the visibility of the vacuum version of the list
+			* @author Christian Reiner
+			*/
 			vacuum: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("vacuum list");
 				// list is empty if no row exists
 				if (0!=$('#list-of-shortys tbody').find('tr').length)
-					$('#vacuum').fadeOut('fast');
+					 $('#vacuum').fadeOut('fast');
 				else $('#vacuum').fadeIn('slow');
 			}, // OC.Shorty.WUI.List.vacuum
-			// ===== OC.Shorty.WUI.List.Toolbar =====
+			/**
+			* @class OC.Shorty.WUI.List.Toolbar
+			* @brief Collection of methods to control a lists toolbar
+			* author Christian Reiner
+			*/
 			Toolbar:{
-				// ===== OC.Shorty.WUI.List.Toolbar.toggle =====
+				/**
+				* @method OC.Shorty.WUI.List.Toolbar.toggle
+				* @brief Toggles the visibility of a lists toolbar
+				* @param object list The list whos toolbars is to be toggled
+				* @author Christian Reiner
+				*/
 				toggle: function(list){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list toolbar");
 					var button =list.find('#tools');
@@ -1012,9 +1036,17 @@ OC.Shorty={
 				}, // OC.Shorty.WUI.List.Toolbar.toggle
 			}, // OC.Shorty.WUI.List.Toolbar
 		}, // OC.Shorty.WUI.List
-		// ===== OC.Shorty.WUI.Notification =====
+		/**
+		 * @class OC.Shorty.WUI.Notification
+		 * @brief Collection of methods controling the central notification area
+		 * @author Christian Reiner
+		 */
 		Notification:{
-			// ===== OC.Shorty.WUI.Notification.hide =====
+			/**
+			* @method OC.Shorty.WUI.Notification.hide
+			* @brief Hides the notification area and clears the content
+			* @author Christian Reiner
+			*/
 			hide: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide notification");
 				var dfd = new $.Deferred();
@@ -1025,7 +1057,11 @@ OC.Shorty={
 				}).done(dfd.resolve)
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Notification.hide
-			// ===== OC.Shorty.WUI.Notification.show =====
+			/**
+			* @method OC.Shorty.WUI.Notification.show
+			* @brief Populates the notification area with the specified text and shows it
+			* @author Christian Reiner
+			*/
 			show: function(message,level){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show notification with level "+level);
 				level = level || 'info';
@@ -1080,9 +1116,18 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Notification.show
 		}, // OC.Shorty.WUI.Notification
-		// ===== OC.Shorty.WUI.Meta: =====
+		/**
+		* @class OC.Shorty.WUI.Meta
+		* @brief Collection of methods to handle url meta data
+		* @author Christian Reiner
+		*/
 		Meta:{
-			// ===== OC.Shorty.WUI.Meta.collect =====
+			/**
+			* @method OC.Shorty.WUI.Meta.collect
+			* @brief Collects meta data about an url specified in the dialog
+			* @param object dialog The dialog that takes the meta data tokens
+			* @author Christian Reiner
+			*/
 			collect: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("collect meta data");
 				var dfd = new $.Deferred();
@@ -1129,9 +1174,14 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Meta.collect
-			// ===== OC.Shorty.WUI.Meta.get =====
+			/**
+			* @method OC.Shorty.WUI.Meta.get
+			* @brief Fetches the meta data of a given target url
+			* @param string target The target url to fetch meta data about
+			* @author Christian Reiner
+			*/
 			get: function(target){
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("get meta data for target "+target);
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("get meta data for target url '"+target+"'");
 				var dfd = new $.Deferred();
 				$.ajax({
 					type:     'GET',
@@ -1149,7 +1199,12 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Meta.get
-			// ===== OC.Shorty.WUI.Meta.reset =====
+			/**
+			* @class OC.Shorty.WUI.Meta.reset
+			* @brief Resets meta data that is currently contained in the specified dialog
+			* @param object dialog The dialog the be altered
+			* @author Christian Reiner
+			*/
 			reset: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("reset meta data");
 				dialog.find('#staticon').attr('src',dialog.find('#staticon').attr('data'));
@@ -1160,9 +1215,18 @@ OC.Shorty={
 				dialog.find('#meta').fadeTo('fast',1);
 			}, // OC.Shorty.WUI.Meta.reset
 		}, // OC.Shorty.WUI.Meta
-		// ===== OC.Shorty.WUI.Sums =====
+		/**
+		* @class OC.Shorty.WUI.Sums
+		* @brief Collection of methods to handle and visualize statistical sums
+		* @author Christian Reiner
+		*/
 		Sums:{
-			// ===== OC.Shorty.WUI.Sums.fill =====
+			/**
+			* @method OC.Shorty.WUI.Sums.fill
+			* @brief Fills the sums as specified in the provided data into the desktop
+			* @param array data The data as specified during a server request
+			* @author Christian Reiner
+			*/
 			fill: function(data){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("fill sums");
 				var dfd = new $.Deferred();
@@ -1172,7 +1236,11 @@ OC.Shorty={
 				).done(dfd.resolve)
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Sums.fill
-			// ===== OC.Shorty.WUI.Sums.get =====
+			/**
+			* @method OC.Shorty.WUI.Sums.get
+			* @brief Retrieves the statistical sums from the server
+			* @author Christian Reiner
+			*/
 			get: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("get sums");
 				var dfd = new $.Deferred();
