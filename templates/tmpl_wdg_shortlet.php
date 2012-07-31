@@ -34,20 +34,20 @@
  */
 ?>
 
-      <!-- shortlet -->
-      <label for="shortlet" class="aspect"><?php echo OC_Shorty_L10n::t("Shortlet").":";?></label>
-      <span id="shortlet">
-        <a class="shortlet"
-           href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OCP\Util::linkToAbsolute('shorty', 'index.php'); ?>&url='+url, 'owncloud-shorty')%20})()">
-          <?php echo OC_Shorty_L10n::t("Add page as 'Shorty' to ownCloud"); ?>
-        </a>
-      </span>
-      <p>
-      <span class="explain">
-        <em>
-          <?php echo OC_Shorty_L10n::t("Drag this to your browser bookmarks."); ?>
-        <br>
-          <?php echo OC_Shorty_L10n::t("Click it, for whatever site you want to create a Shorty."); ?>
-        </em>
-      </span>
-      </p>
+	<!-- shortlet -->
+	<label for="shortlet" class="aspect"><?php echo OC_Shorty_L10n::t("Shortlet").":";?></label>
+	<span id="shortlet">
+		<a class="shortlet"
+			href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OCP\Util::linkToAbsolute('shorty', 'index.php'); ?>&url='+url, 'owncloud-shorty')%20})()">
+			<?php echo OC_Shorty_L10n::t("Add page as 'Shorty' to ownCloud"); ?>
+		</a>
+	</span>
+	<p>
+		<span class="explain">
+			<em>
+				<?php echo OC_Shorty_L10n::t("Drag this to your browser bookmarks."); ?>
+				<br>
+				<?php echo OC_Shorty_L10n::t("Click it, for whatever site you want to create a Shorty."); ?>
+			</em>
+		</span>
+	</p>

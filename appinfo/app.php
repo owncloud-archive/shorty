@@ -42,11 +42,11 @@ OC::$CLASSPATH['OC_Shorty_Type']          = 'apps/shorty/lib/type.php';
 
 OCP\App::registerAdmin      ( 'shorty', 'settings' );
 OCP\App::registerPersonal   ( 'shorty', 'preferences' );
-OCP\App::addNavigationEntry ( array ( 'id' => 'shorty_index',
-                                     'order' => 71,
-                                     'href' => OCP\Util::linkTo   ( 'shorty', 'index.php' ),
-                                     'icon' => OCP\Util::imagePath( 'shorty', 'shorty.svg' ),
-                                     'name' => 'Shorty' ) );
+OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
+										'order' => 71,
+										'href' => OCP\Util::linkTo   ( 'shorty', 'index.php' ),
+										'icon' => OCP\Util::imagePath( 'shorty', 'shorty.svg' ),
+										'name' => 'Shorty' ) );
 
 OCP\Util::connectHook ( 'OC_User', 'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
 

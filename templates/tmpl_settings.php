@@ -36,35 +36,35 @@
 
 <!-- settings of app 'shorty' -->
 <form id="shorty">
-  <fieldset class="personalblock">
-    <legend>
-      <span id="title" class="title">
-        <img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
-        <strong>Shorty</strong>
-      </span>
-    </legend>
-    <div id="backend-static" class="backend-supplement">
-      <label for="backend-static-base" class="aspect"><?php echo OC_Shorty_L10n::t("Base url").':';?></label>
-      <input id="backend-static-base" type="text" name="backend-static-base"
-            value="<?php echo $_['backend-static-base']; ?>"
-            maxlength="256" placeholder="<?php echo OC_Shorty_L10n::t('Specify a static base url…');?>" style="width:25em;">
-      <br/>
-      <label for="backend-example" class="aspect"> </label>
-      <span id="backend-example">
-        <label for="example" class="aspect"><?php echo OC_Shorty_L10n::t("Example").':';?></label>
-        <a id="example" class="example" title="<?php echo OC_Shorty_L10n::t("Verification by click");?>">
-          <?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME']) ?>
-        </a>
-      </span>
-      <br/>
-      <span id="explain" class="explain"><?php echo sprintf("%s<br />\n%s<br />\n%s<br />\n%s",
-        OC_Shorty_L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
-        OC_Shorty_L10n::t("You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."),
-        OC_Shorty_L10n::t("Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."),
-        OC_Shorty_L10n::t("Leave empty if you can't provide a short base url that is mapped the described way.") ); ?>
-      </span>
-    </div>
+	<fieldset class="personalblock">
+		<legend>
+			<span id="title" class="title">
+				<img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
+				<strong>Shorty</strong>
+			</span>
+		</legend>
+		<div id="backend-static" class="backend-supplement">
+			<label for="backend-static-base" class="aspect"><?php echo OC_Shorty_L10n::t("Base url").':';?></label>
+			<input id="backend-static-base" type="text" name="backend-static-base"
+					value="<?php echo $_['backend-static-base']; ?>"
+					maxlength="256" placeholder="<?php echo OC_Shorty_L10n::t('Specify a static base url…');?>" style="width:25em;">
+			<br/>
+			<label for="backend-example" class="aspect"> </label>
+			<span id="backend-example">
+				<label for="example" class="aspect"><?php echo OC_Shorty_L10n::t("Example").':';?></label>
+				<a id="example" class="example" title="<?php echo OC_Shorty_L10n::t("Verification by click");?>">
+				<?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME']) ?>
+				</a>
+			</span>
+			<br/>
+			<span id="explain" class="explain"><?php echo sprintf("%s<br />\n%s<br />\n%s<br />\n%s",
+				OC_Shorty_L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
+				OC_Shorty_L10n::t("You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."),
+				OC_Shorty_L10n::t("Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."),
+				OC_Shorty_L10n::t("Leave empty if you can't provide a short base url that is mapped the described way.") ); ?>
+			</span>
+		</div>
 
-    <?php require_once('tmpl_dlg_verify.php'); ?>
+		<?php require_once('tmpl_dlg_verify.php'); ?>
   </fieldset>
 </form>

@@ -36,45 +36,45 @@
 
 <!-- begin of qrcode dialog -->
 <div id="dialog-qrcode" style="display:none;">
-  <fieldset class="">
-    <legend><?php echo OC_Shorty_L10n::t("Shorty as QRCode");?>:</legend>
-    <input id="qrcode-url" type="hidden" value="<?php echo $_['qrcode-url']; ?>">
-    <div id='qrcode-img'>
-      <div class="usage-explanation">
-        <?php echo OC_Shorty_L10n::t("This 2d barcode encodes the url pointing to this Shorty");?>.
-        <br>
-        <?php echo OC_Shorty_L10n::t("Use it in web pages by referencing or embedding");?>,
-        <?php echo OC_Shorty_L10n::t("or simpy print or download it for off-line usage");?>!
-      </div>
-      <div style="text-align:center;">
-        <img style="width:154px;" class="usage-qrcode" alt="<?php echo OC_Shorty_L10n::t("QRCode"); ?>"
-            src="<?php echo OCP\Util::imagePath('shorty','loading-disk.gif'); ?>" >
-        <div class="usage-instruction">
-          <?php echo OC_Shorty_L10n::t("Click for embedding details");?>…
-        </div>
-      </div>
-    </div>
-    <div id='qrcode-url' style="display:none;">
-      <div class="usage-explanation">
-        <?php echo OC_Shorty_L10n::t("This is the url referencing the QRCode shown before");?>.
-        <br>
-        <?php echo OC_Shorty_L10n::t("Copy and embed it into an img tag on some web page");?>.
-      </div>
-      <textarea id="payload" readonly></textarea>
-      <div class="usage-instruction">
-        <?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-C");?></span>
-        <br>
-        <?php echo OC_Shorty_L10n::t("Paste to embed elsewhere");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-V");?></span>
-      </div>
-      <hr>
-      <div class="usage-explanation">
-        <?php echo OC_Shorty_L10n::t("Alternatively get the image for printout or storage");?>:
-        <br>
-        <div style="text-align:center;">
-          <button id="download" style="margin:1.6em;" class="shorty-button">Download QRCode</button>
-        </div>
-      </div>
-    </div>
-  </fieldset>
+	<fieldset class="">
+		<legend><?php echo OC_Shorty_L10n::t("Shorty as QRCode");?>:</legend>
+		<input id="qrcode-url" type="hidden" value="<?php echo $_['qrcode-url']; ?>">
+		<div id='qrcode-img'>
+			<div class="usage-explanation">
+				<?php echo OC_Shorty_L10n::t("This 2d barcode encodes the url pointing to this Shorty");?>.
+				<br>
+				<?php echo OC_Shorty_L10n::t("Use it in web pages by referencing or embedding");?>,
+				<?php echo OC_Shorty_L10n::t("or simpy print or download it for off-line usage");?>!
+			</div>
+			<div style="text-align:center;">
+				<img style="width:154px;" class="usage-qrcode" alt="<?php echo OC_Shorty_L10n::t("QRCode"); ?>"
+					src="<?php echo OCP\Util::imagePath('shorty','loading-disk.gif'); ?>" >
+				<div class="usage-instruction">
+					<?php echo OC_Shorty_L10n::t("Click for embedding details");?>…
+				</div>
+			</div>
+		</div>
+		<div id='qrcode-url' style="display:none;">
+			<div class="usage-explanation">
+				<?php echo OC_Shorty_L10n::t("This is the url referencing the QRCode shown before");?>.
+				<br>
+				<?php echo OC_Shorty_L10n::t("Copy and embed it into an img tag on some web page");?>.
+			</div>
+			<textarea id="payload" readonly></textarea>
+			<div class="usage-instruction">
+				<?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-C");?></span>
+				<br>
+				<?php echo OC_Shorty_L10n::t("Paste to embed elsewhere");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-V");?></span>
+			</div>
+			<hr>
+			<div class="usage-explanation">
+				<?php echo OC_Shorty_L10n::t("Alternatively get the image for printout or storage");?>:
+				<br>
+				<div style="text-align:center;">
+				<button id="download" style="margin:1.6em;" class="shorty-button">Download QRCode</button>
+				</div>
+			</div>
+		</div>
+	</fieldset>
 </div>
 <!-- end of qrcode dialog -->

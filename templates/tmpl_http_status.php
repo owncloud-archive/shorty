@@ -35,7 +35,7 @@
 ?>
 
 <ul>
-  <li class='error'>
-    <?php echo $_['explanation']; ?>
-  </li>
+	<li class='error'>
+		<?php echo $_['explanation']; ?>
+	</li>
 </ul>

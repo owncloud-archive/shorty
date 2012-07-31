@@ -36,19 +36,27 @@
 
 <!-- begin of email dialog -->
 <div id="dialog-email" style="display:none;">
-  <fieldset class="">
-    <legend><?php echo OC_Shorty_L10n::t("Send link by email");?>:</legend>
-    <div class="usage-explanation">
-      <span class="explanation"><?php echo OC_Shorty_L10n::t("Clicking 'Ok' below will try to launch an email composer");?>.<br>
-                                <?php echo OC_Shorty_L10n::t("Alternatively the link can be copied into a message manually");?>:
-      </span>
-    </div>
-    <textarea id="payload" readonly></textarea>
-    <div class="usage-instruction">
-      <?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-C");?></span>
-      <br>
-      <?php echo OC_Shorty_L10n::t("then paste into message");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-V");?></span>
-    </div>
-  </fieldset>
+	<fieldset class="">
+		<legend><?php echo OC_Shorty_L10n::t("Send link by email");?>:</legend>
+		<div class="usage-explanation">
+			<span class="explanation">
+				<?php echo OC_Shorty_L10n::t("Clicking 'Ok' below will try to launch an email composer");?>.
+				<br>
+				<?php echo OC_Shorty_L10n::t("Alternatively the link can be copied into a message manually");?>:
+			</span>
+		</div>
+		<textarea id="payload" readonly></textarea>
+		<div class="usage-instruction">
+			<?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:
+			<span class="usage-token">
+				<?php echo OC_Shorty_L10n::t("Ctrl-C");?>
+			</span>
+			<br>
+			<?php echo OC_Shorty_L10n::t("then paste into message");?>:
+			<span class="usage-token">
+				<?php echo OC_Shorty_L10n::t("Ctrl-V");?>
+			</span>
+		</div>
+	</fieldset>
 </div>
 <!-- end of email dialog -->

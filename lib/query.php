@@ -41,18 +41,18 @@
  */
 class OC_Shorty_Query
 {
-  const URL_INSERT            = "INSERT INTO *PREFIX*shorty (id,status,favicon,title,source,target,user,until,created,notes) VALUES (:id,:status,:favicon,:title,:source,:target,:user,:until,CURRENT_DATE,:notes)";
-  const URL_DELETE            = "DELETE FROM *PREFIX*shorty WHERE user=:user AND id=:id";
-  const URL_REMOVE            = "DELETE FROM *PREFIX*shorty WHERE user=:user AND 'deleted'=status";
-  const URL_UPDATE            = "UPDATE *PREFIX*shorty SET status=:status,title=:title,until=:until,notes=:notes WHERE user=:user AND id=:id";
-  const URL_STATUS            = "UPDATE *PREFIX*shorty SET status=:status WHERE user=:user AND id=:id";
-  const URL_CLICK             = "UPDATE *PREFIX*shorty SET accessed=:time, clicks=(clicks+1) WHERE id=:id";
-  const URL_RELAY             = "SELECT id,source,target,status,user,(until IS NOT NULL AND until!='' AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE id=:id";
-  const URL_SOURCE            = "SELECT id,source,target,status,(until IS NOT NULL AND until!='' AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE source=:source";
-  const URL_VERIFY            = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND id=:id LIMIT 1";
-  const URL_LIST              = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user ORDER BY :sort";
-  const URL_COUNT             = "SELECT count(*) AS sum_shortys,IFNULL(sum(clicks),0) AS sum_clicks FROM *PREFIX*shorty WHERE user=:user";
-  const WIPE_SHORTYS          = "DELETE FROM *PREFIX*shorty WHERE user=:user";
-  const WIPE_PREFERENCES      = "DELETE FROM *PREFIX*preferences WHERE user=:user";
+		const URL_INSERT	= "INSERT INTO *PREFIX*shorty (id,status,favicon,title,source,target,user,until,created,notes) VALUES (:id,:status,:favicon,:title,:source,:target,:user,:until,CURRENT_DATE,:notes)";
+		const URL_DELETE	= "DELETE FROM *PREFIX*shorty WHERE user=:user AND id=:id";
+		const URL_REMOVE	= "DELETE FROM *PREFIX*shorty WHERE user=:user AND 'deleted'=status";
+		const URL_UPDATE	= "UPDATE *PREFIX*shorty SET status=:status,title=:title,until=:until,notes=:notes WHERE user=:user AND id=:id";
+		const URL_STATUS	= "UPDATE *PREFIX*shorty SET status=:status WHERE user=:user AND id=:id";
+		const URL_CLICK		= "UPDATE *PREFIX*shorty SET accessed=:time, clicks=(clicks+1) WHERE id=:id";
+		const URL_RELAY		= "SELECT id,source,target,status,user,(until IS NOT NULL AND until!='' AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE id=:id";
+		const URL_SOURCE	= "SELECT id,source,target,status,(until IS NOT NULL AND until!='' AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE source=:source";
+		const URL_VERIFY	= "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND id=:id LIMIT 1";
+		const URL_LIST		= "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user ORDER BY :sort";
+		const URL_COUNT		= "SELECT count(*) AS sum_shortys,IFNULL(sum(clicks),0) AS sum_clicks FROM *PREFIX*shorty WHERE user=:user";
+		const WIPE_SHORTYS	= "DELETE FROM *PREFIX*shorty WHERE user=:user";
+  const WIPE_PREFERENCES	= "DELETE FROM *PREFIX*preferences WHERE user=:user";
 } // class OC_Shorty_Query
 ?>

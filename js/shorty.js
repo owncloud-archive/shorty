@@ -1460,12 +1460,14 @@ OC.Shorty={
 					OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
 					OC.Shorty.WUI.List.show()
 				).done(function(){
-					var data={status:  status,
-								target:  target,
-								title:   title,
-								notes:   notes,
-								until:   until,
-								favicon: favicon};
+					var data={
+						status:  status,
+						target:  target,
+						title:   title,
+						notes:   notes,
+						until:   until,
+						favicon: favicon
+					};
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log(data);
 					$.ajax({
 						type:     'POST',

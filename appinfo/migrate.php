@@ -37,76 +37,76 @@
  */
 class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 {
-  /**
-   * @method export
-   * @brief Collects all data relevant for this app
-   * @author Christian Reiner
-   */
-  function export ( )
-  {
-    OCP\Util::writeLog ( 'shorty','Starting data migration export for Shorty', OCP\Util::INFO );
-    $options = array(
-      'table'=>'shorty',
-      'matchcol'=>'user',
-      'matchval'=>$this->uid,
-      'idcol'=>'id'
-    );
-    $ids = $this->content->copyRows( $options );
-    $count = OC_Shorty_Tools::countShorties();
-    // check for success
-    if(   (is_array($ids) && is_array($count))
-      && (count($ids)==$count['sum_shortys']) )
-        return true;
-    else return false;
-  } // function export
+	/**
+	* @method export
+	* @brief Collects all data relevant for this app
+	* @author Christian Reiner
+	*/
+	function export ( )
+	{
+		OCP\Util::writeLog ( 'shorty','Starting data migration export for Shorty', OCP\Util::INFO );
+		$options = array(
+			'table'=>'shorty',
+			'matchcol'=>'user',
+			'matchval'=>$this->uid,
+			'idcol'=>'id'
+		);
+		$ids = $this->content->copyRows( $options );
+		$count = OC_Shorty_Tools::countShorties();
+		// check for success
+		if(   (is_array($ids) && is_array($count))
+			&& (count($ids)==$count['sum_shortys']) )
+			return TRUE;
+		else return FALSE;
+	} // function export
 
-  /**
-   * @method import
-   * @brief Imports all data from a given resource into this apps storage areas
-   * @author Christian Reiner
-   */
-  function import ( )
-  {
-    OCP\Util::writeLog ( 'shorty','Starting data migration import for Shorty', OCP\Util::INFO );
-    switch( $this->appinfo->version )
-    {
-      default:
-        $query  = $this->content->prepare( "SELECT * FROM shorty WHERE user LIKE ?" );
-        $result = $query->execute( array( $this->olduid ) );
-        if (is_array(is_array($result)))
-        {
-          while( $row = $result->fetchRow() )
-          {
-            $param = array (
-              'id'       => $row['id'],
-              'status'   => $row['status'],
-              'title'    => $row['title'],
-              'favicon'  => $row['favicon'],
-              'source'   => $row['source'],
-              'target'   => $row['target'],
-              'user'     => $row['user'],
-              'until'    => $row['until'],
-              'created'  => $row['created'],
-              'accessed' => $row['accessed'],
-              'clicks'   => $row['clicks'],
-              'notes'    => $row['notes'],
-            );
-            // import each shorty one by one, no special treatment required, since no autoincrement id is used
-            $query = OCP\DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty(%s) VALUES (%s)",
-                                                implode(',',array_keys($param)),
-                                                implode(',',array_fill(0,count($param),'?')) ) );
-            $query->execute( $param );
-          } // while
-        } // if
-        break;
-    } // switch
-    // check for success by counting the generated entries
-    $count = OC_Shorty_Tools::countShorties();
-    if(   (is_array($result) && is_array($count))
-      && (count($result)==$count['sum_shortys']) )
-        return true;
-    else return false;
-  } // function import
+	/**
+	* @method import
+	* @brief Imports all data from a given resource into this apps storage areas
+	* @author Christian Reiner
+	*/
+	function import ( )
+	{
+		OCP\Util::writeLog ( 'shorty','Starting data migration import for Shorty', OCP\Util::INFO );
+		switch( $this->appinfo->version )
+		{
+			default:
+				$query  = $this->content->prepare( "SELECT * FROM shorty WHERE user LIKE ?" );
+				$result = $query->execute( array( $this->olduid ) );
+				if (is_array(is_array($result)))
+				{
+					while( $row = $result->fetchRow() )
+					{
+						$param = array (
+							'id'       => $row['id'],
+							'status'   => $row['status'],
+							'title'    => $row['title'],
+							'favicon'  => $row['favicon'],
+							'source'   => $row['source'],
+							'target'   => $row['target'],
+							'user'     => $row['user'],
+							'until'    => $row['until'],
+							'created'  => $row['created'],
+							'accessed' => $row['accessed'],
+							'clicks'   => $row['clicks'],
+							'notes'    => $row['notes'],
+						);
+						// import each shorty one by one, no special treatment required, since no autoincrement id is used
+						$query = OCP\DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty(%s) VALUES (%s)",
+															implode(',',array_keys($param)),
+															implode(',',array_fill(0,count($param),'?')) ) );
+						$query->execute( $param );
+					} // while
+				} // if
+				break;
+		} // switch
+		// check for success by counting the generated entries
+		$count = OC_Shorty_Tools::countShorties();
+		if(   (is_array($result) && is_array($count))
+		&& (count($result)==$count['sum_shortys']) )
+			return true;
+		else return false;
+	} // function import
 
 } // class OC_Migration_Provider_Shorty
 
