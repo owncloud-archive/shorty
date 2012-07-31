@@ -30,22 +30,22 @@
  */
 
 $(window).load(function(){
-  // initialize desktop
-  var dialog = $('#dialog-add');
-  $.when(
-    OC.Shorty.WUI.Controls.init()
-  ).pipe(function(){
-    OC.Shorty.WUI.List.build();
-  }).done(function(){
-    $.when(
-      OC.Shorty.WUI.Dialog.toggle(dialog)
-    ).done(function(){
-      // any referrer handed over from php (explicitly in markup) ?
-      var target=$('#controls').attr('data-referrer');
-      $('#controls').removeAttr('data-referrer');
-      dialog.find('#target').val(target);
-      dialog.find('#title').focus();
-      OC.Shorty.WUI.Meta.collect(dialog);
-    })
+	// initialize desktop
+	var dialog = $('#dialog-add');
+	$.when(
+		OC.Shorty.WUI.Controls.init()
+	).pipe(function(){
+		OC.Shorty.WUI.List.build();
+	}).done(function(){
+		$.when(
+			OC.Shorty.WUI.Dialog.toggle(dialog)
+		).done(function(){
+			// any referrer handed over from php (explicitly in markup) ?
+			var target=$('#controls').attr('data-referrer');
+			$('#controls').removeAttr('data-referrer');
+			dialog.find('#target').val(target);
+			dialog.find('#title').focus();
+			OC.Shorty.WUI.Meta.collect(dialog);
+		})
   })
 }); // document.ready

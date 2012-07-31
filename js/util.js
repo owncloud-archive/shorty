@@ -35,10 +35,11 @@
  * author Christian Reiner
  */
 Array.prototype.max = function() {
-  var max = this[0];
-  var len = this.length;
-  for (var i = 1; i < len; i++) if (this[i] > max) max = this[i];
-  return max;
+	var max = this[0];
+	var len = this.length;
+	for (var i = 1; i < len; i++)
+		if (this[i] > max) max = this[i];
+	return max;
 }
 /**
  * @function min
@@ -46,9 +47,10 @@ Array.prototype.max = function() {
  * author Christian Reiner
  */
 Array.prototype.min = function() {
-  var min = this[0];
-  var len = this.length;
-  for (var i = 1; i < len; i++) if (this[i] < min) min = this[i];
+	var min = this[0];
+	var len = this.length;
+	for (var i = 1; i < len; i++)
+		if (this[i] < min) min = this[i];
   return min;
 }
 
@@ -60,7 +62,9 @@ Array.prototype.min = function() {
  * @return value Maximum of values represented by the selector
  */
 $.fn.max = function(selector) {
-  return Math.max.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
+	return Math.max.apply(null, this.map(function(index, el) {
+		return selector.apply(el);
+	}).get() );
 }
 /**
  * @function min
@@ -70,7 +74,9 @@ $.fn.max = function(selector) {
  * @return value Minimum of values represented by the selector
  */
 $.fn.min = function(selector) {
-  return Math.min.apply(null, this.map(function(index, el) { return selector.apply(el); }).get() );
+	return Math.min.apply(null, this.map(function(index, el) {
+		return selector.apply(el);
+	}).get() );
 }
 
 /**
@@ -105,8 +111,8 @@ function dateExpired(date){
  * @author Christian Reiner
  */
 function jsFunctionName(func){
-  var name = func.toString();
-  name = name.substr('function '.length);
-  name = name.substr(0, name.indexOf('('));
-  return name;
+	var name = func.toString();
+	name = name.substr('function '.length);
+	name = name.substr(0, name.indexOf('('));
+	return name;
 } // jsFunctionName

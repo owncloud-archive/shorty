@@ -30,10 +30,10 @@
  */
 
 $(document).ready(function(){
-  // initialize desktop
-  $.when(
-    OC.Shorty.WUI.Controls.init()
-  ).then(function(){
-    OC.Shorty.WUI.List.build();
+	// initialize desktop
+	$.when(
+		OC.Shorty.WUI.Controls.init()
+	).then(function(){
+		OC.Shorty.WUI.List.build();
   });
 }); // document.ready

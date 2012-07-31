@@ -30,85 +30,86 @@
  */
 
 $(document).ready(function(){
-  // refresh the ajax request token in regular intervals
-  // required to make use of long lasting sessions whilst using CSRF protection with a small tokens lifetime
-  setInterval(OC.Shorty.Action.Token.refresh, 1000*60*57.87); // ~58 minutes, close to the timeout of 1 hour
-  // make notification closeable
-  $('#content #notification').on('click',OC.Shorty.WUI.Notification.hide);
-  // button to open the 'add' dialog
-  $('#controls #add').on('click',function(){OC.Shorty.WUI.Dialog.toggle($('#dialog-add'))});
-  // close button in dialogs
-  $('.shorty-dialog #close').on('click',function(){OC.Shorty.WUI.Dialog.hide($(this).parents('form').first());});
-  // status selection in embedded share dialog
-  $('.shorty-embedded#dialog-share #status').on('change',function(){
-    OC.Shorty.Action.Url.status($(this).siblings('#id').val(),$(this).val());
-  });
-  // collapsible items in embedded dialogs
-  $('.shorty-embedded .shorty-collapsible span').on('click',function(e){
-    var container=$(this).parent();
-    if (container.hasClass('collapsed'))
-         container.removeClass('collapsed').find('.shorty-collapsible-tail').slideDown('fast');
-    else container.addClass('collapsed').find('.shorty-collapsible-tail').slideUp('fast');
-  });
-  // button (row click) to open the toolbar row in the list
-  $('#list-of-shortys #titlebar').on('click',function(){
-    OC.Shorty.WUI.List.Toolbar.toggle.apply(OC.Shorty.Runtime.Context.ListOfShortys,
-                                         [$('#list-of-shortys'),OC.Shorty.Runtime.Context.ListOfShortys]);
-  });
-  // button to reload the list
-  $('#list-of-shortys #toolbar').find('#reload').on('click',OC.Shorty.WUI.List.build);
-  // sort buttons
-  $('#list-of-shortys #toolbar').find('shorty-sorter').on('click',function(){OC.Shorty.WUI.List.sort($('#list-of-shortys'));});
-  // add date picker options
-  $.datepicker.setDefaults({
-    dateFormat :'yy-mm-dd',
-    appendText: "(yyyy-mm-dd)",
-    changeMonth: true,
-    changeYear: true,
-    showOtherMonths: true,
-    selectOtherMonths: true,
-    showOn: 'button',
-    buttonImage: $('#controls').find('#until').first().attr('icon'),
-    buttonImageOnly: true
-  });
-  $('#controls #until:not([readonly])').datepicker();
-  // bind usage to the usage icons
-  $(document).on('click','#dialog-share img.shorty-usage',[],function(e){
-    e.stopPropagation();
-    OC.Shorty.WUI.Entry.send(e,$(this));
-  });
-  $(document).on('click','.shorty-list tbody tr td:not(#actions)',[],function(e){
-    // hide any open embedded dialog
-    OC.Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
-    // highlight clicked entry
-    OC.Shorty.WUI.List.highlight($(this).parents('table'),$(this).parent('tr'));
-  });
-  $(document).on('click','.shorty-list tbody tr td#actions a',[],function(e){
-    OC.Shorty.WUI.Entry.click(e,$(this));
-  });
-  // pretty select boxes where applicable (class controlled)
-  $('.chosen').chosen();
-  // filter actions
-  var list=$('#list-of-shortys');
-  // title & target filter reaction
-  list.find('thead tr#toolbar').find('th#target,th#title').find('#filter').on('keyup',function(){
-    OC.Shorty.WUI.List.filter(
-      list,
-      $($(this).context.parentElement.parentElement).attr('id'),
-      $(this).val()
-    );
-  });
-  // status filter reaction
-  list.find('thead tr#toolbar th#status select').change(function(){
-    OC.Shorty.WUI.List.filter(
-      list,
-      $(this).parents('th').attr('id'),
-      $(this).find(':selected').val()
-    );
-  });
-  // column sorting reaction
-  list.find('thead tr#toolbar div img.shorty-sorter').on('click',function(){
-    OC.Shorty.WUI.List.sort(list,$(this).attr('data-sort-code'));
+	// refresh the ajax request token in regular intervals
+	// required to make use of long lasting sessions whilst using CSRF protection with a small tokens lifetime
+	setInterval(OC.Shorty.Action.Token.refresh, 1000*60*57.87); // ~58 minutes, close to the timeout of 1 hour
+	// make notification closeable
+	$('#content #notification').on('click',OC.Shorty.WUI.Notification.hide);
+	// button to open the 'add' dialog
+	$('#controls #add').on('click',function(){OC.Shorty.WUI.Dialog.toggle($('#dialog-add'))});
+	// close button in dialogs
+	$('.shorty-dialog #close').on('click',function(){OC.Shorty.WUI.Dialog.hide($(this).parents('form').first());});
+	// status selection in embedded share dialog
+	$('.shorty-embedded#dialog-share #status').on('change',function(){
+		OC.Shorty.Action.Url.status($(this).siblings('#id').val(),$(this).val());
+	});
+	// collapsible items in embedded dialogs
+	$('.shorty-embedded .shorty-collapsible span').on('click',function(e){
+		var container=$(this).parent();
+		if (container.hasClass('collapsed'))
+			 container.removeClass('collapsed').find('.shorty-collapsible-tail').slideDown('fast');
+		else container.addClass('collapsed').find('.shorty-collapsible-tail').slideUp('fast');
+	});
+	// button (row click) to open the toolbar row in the list
+	$('#list-of-shortys #titlebar').on('click',function(){
+		OC.Shorty.WUI.List.Toolbar.toggle.apply(
+			OC.Shorty.Runtime.Context.ListOfShortys,
+			[$('#list-of-shortys'),OC.Shorty.Runtime.Context.ListOfShortys]);
+	});
+	// button to reload the list
+	$('#list-of-shortys #toolbar').find('#reload').on('click',OC.Shorty.WUI.List.build);
+	// sort buttons
+	$('#list-of-shortys #toolbar').find('shorty-sorter').on('click',function(){OC.Shorty.WUI.List.sort($('#list-of-shortys'));});
+	// add date picker options
+	$.datepicker.setDefaults({
+		dateFormat :'yy-mm-dd',
+		appendText: "(yyyy-mm-dd)",
+		changeMonth: true,
+		changeYear: true,
+		showOtherMonths: true,
+		selectOtherMonths: true,
+		showOn: 'button',
+		buttonImage: $('#controls').find('#until').first().attr('icon'),
+		buttonImageOnly: true
+	});
+	$('#controls #until:not([readonly])').datepicker();
+	// bind usage to the usage icons
+	$(document).on('click','#dialog-share img.shorty-usage',[],function(e){
+		e.stopPropagation();
+		OC.Shorty.WUI.Entry.send(e,$(this));
+	});
+	$(document).on('click','.shorty-list tbody tr td:not(#actions)',[],function(e){
+		// hide any open embedded dialog
+		OC.Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
+		// highlight clicked entry
+		OC.Shorty.WUI.List.highlight($(this).parents('table'),$(this).parent('tr'));
+	});
+	$(document).on('click','.shorty-list tbody tr td#actions a',[],function(e){
+		OC.Shorty.WUI.Entry.click(e,$(this));
+	});
+	// pretty select boxes where applicable (class controlled)
+	$('.chosen').chosen();
+	// filter actions
+	var list=$('#list-of-shortys');
+	// title & target filter reaction
+	list.find('thead tr#toolbar').find('th#target,th#title').find('#filter').on('keyup',function(){
+		OC.Shorty.WUI.List.filter(
+			list,
+			$($(this).context.parentElement.parentElement).attr('id'),
+			$(this).val()
+		);
+	});
+	// status filter reaction
+	list.find('thead tr#toolbar th#status select').change(function(){
+		OC.Shorty.WUI.List.filter(
+			list,
+			$(this).parents('th').attr('id'),
+			$(this).find(':selected').val()
+		);
+	});
+	// column sorting reaction
+	list.find('thead tr#toolbar div img.shorty-sorter').on('click',function(){
+		OC.Shorty.WUI.List.sort(list,$(this).attr('data-sort-code'));
   });
 }); // document.ready
 

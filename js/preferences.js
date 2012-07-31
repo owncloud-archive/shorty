@@ -30,47 +30,47 @@
  */
 
 $(document).ready(function(){
-  // backend preferences, activate hints for currently selected backend
-  var type=$('#shorty #backend-type').val()||'';
-  if (type.length){
-    $('#shorty #backend-'+type).show();
-  }
-  // backend 'static': initialize example that depends on backend-base system setting
-  if ($('#shorty #backend-static #backend-static-base').val().length)
-    $('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty id>');
-  // backend 'static': offer a clickable example link to verify the correct setup
-  $('#shorty #backend-static #example').bind('click',function(event){
-    event.preventDefault();
-    OC.Shorty.Action.Setting.verify();
-  });
-  // react with a matching explanation and example url when backend type is chosen
-  $('.chosen').chosen();
-  $('#shorty #backend-type').change(
-    function(){
-      var type=$('#shorty #backend-type').val();
-      $('#shorty .backend-supplement').hide();
-      if (type.length){
-        $('#shorty .backend-supplement').filter('#backend-'+type).fadeIn('slow');
-        // save preference
-        OC.Shorty.Action.Preference.set($('#shorty #backend-type').serialize());
-        return false;
-      }
-    }
-  );
-  // safe backend supplement preferences
-  $('#shorty .backend-supplement').focusout(function(){
-    // save preference
-    OC.Shorty.Action.Preference.set($(this).find('input').serialize());
-  });
-  // safe ssl-verification preference
-  var ssl=$('#shorty #backend-ssl-verify')
-  ssl.change(function(){
-    if (ssl.is(':checked'))
-         OC.Shorty.Action.Preference.set('backend-ssl-verify=1');
-    else OC.Shorty.Action.Preference.set('backend-ssl-verify=0');
-  });
-  // safe sms-control preferences
-  $('#shorty #sms-control').change(function(){
-    OC.Shorty.Action.Preference.set($('#shorty #sms-control').serialize());
+	// backend preferences, activate hints for currently selected backend
+	var type=$('#shorty #backend-type').val()||'';
+	if (type.length){
+		$('#shorty #backend-'+type).show();
+	}
+	// backend 'static': initialize example that depends on backend-base system setting
+	if ($('#shorty #backend-static #backend-static-base').val().length)
+		$('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty id>');
+	// backend 'static': offer a clickable example link to verify the correct setup
+	$('#shorty #backend-static #example').bind('click',function(event){
+		event.preventDefault();
+		OC.Shorty.Action.Setting.verify();
+	});
+	// react with a matching explanation and example url when backend type is chosen
+	$('.chosen').chosen();
+	$('#shorty #backend-type').change(
+		function(){
+			var type=$('#shorty #backend-type').val();
+			$('#shorty .backend-supplement').hide();
+			if (type.length){
+				$('#shorty .backend-supplement').filter('#backend-'+type).fadeIn('slow');
+				// save preference
+				OC.Shorty.Action.Preference.set($('#shorty #backend-type').serialize());
+				return false;
+			}
+		}
+	);
+	// safe backend supplement preferences
+	$('#shorty .backend-supplement').focusout(function(){
+		// save preference
+		OC.Shorty.Action.Preference.set($(this).find('input').serialize());
+	});
+	// safe ssl-verification preference
+	var ssl=$('#shorty #backend-ssl-verify')
+	ssl.change(function(){
+		if (ssl.is(':checked'))
+			OC.Shorty.Action.Preference.set('backend-ssl-verify=1');
+		else OC.Shorty.Action.Preference.set('backend-ssl-verify=0');
+	});
+	// safe sms-control preferences
+	$('#shorty #sms-control').change(function(){
+		OC.Shorty.Action.Preference.set($('#shorty #sms-control').serialize());
   });
 });
