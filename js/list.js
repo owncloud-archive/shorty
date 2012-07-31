@@ -32,8 +32,8 @@
 $(document).ready(function(){
   // initialize desktop
   $.when(
-    Shorty.WUI.Controls.init()
+    OC.Shorty.WUI.Controls.init()
   ).then(function(){
-    Shorty.WUI.List.build();
+    OC.Shorty.WUI.List.build();
   });
 }); // document.ready

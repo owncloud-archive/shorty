@@ -33,19 +33,19 @@ $(window).load(function(){
   // initialize desktop
   var dialog = $('#dialog-add');
   $.when(
-    Shorty.WUI.Controls.init()
+    OC.Shorty.WUI.Controls.init()
   ).pipe(function(){
-    Shorty.WUI.List.build();
+    OC.Shorty.WUI.List.build();
   }).done(function(){
     $.when(
-      Shorty.WUI.Dialog.toggle(dialog)
+      OC.Shorty.WUI.Dialog.toggle(dialog)
     ).done(function(){
       // any referrer handed over from php (explicitly in markup) ?
       var target=$('#controls').attr('data-referrer');
       $('#controls').removeAttr('data-referrer');
       dialog.find('#target').val(target);
       dialog.find('#title').focus();
-      Shorty.WUI.Meta.collect(dialog);
+      OC.Shorty.WUI.Meta.collect(dialog);
     })
   })
 }); // document.ready

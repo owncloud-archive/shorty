@@ -31,7 +31,7 @@
  */
 
 $(document).ready(function(){
-  $.extend(Shorty,{
+  $.extend(OC.Shorty,{
     Debug:{
       log: function(issue){
         switch (typeof(issue)){
@@ -42,7 +42,7 @@ $(document).ready(function(){
           default:
             console.log(this.dump(issue));
         } // switch
-      }, // Shorty.Debuglog()
+      }, // OC.Shorty.Debuglog()
 
       dump: function(payload,level){
         var dumped_text = "";
@@ -66,7 +66,7 @@ $(document).ready(function(){
           dumped_text = "==>"+payload+"<==("+typeof(payload)+")";
         }
         return dumped_text;
-      } // Shorty.Debug.dump()
-    } // Shorty.Debug
+      } // OC.Shorty.Debug.dump()
+    } // OC.Shorty.Debug
   });
 });

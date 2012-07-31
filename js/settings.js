@@ -40,14 +40,14 @@ $(document).ready(function(){
   // backend 'static': offer a clickable example link to verify the correct setup
   $('#shorty #backend-static #example').bind('click',function(event){
     event.preventDefault();
-    Shorty.Action.Setting.verify();
+    OC.Shorty.Action.Setting.verify();
   });
   // store setting
   $('#shorty #backend-static-base').focusout(function(){
     // modify example
     $('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
     // save setting
-    Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize());
+    OC.Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize());
     return false;
   });
 });

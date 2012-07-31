@@ -41,7 +41,7 @@ $(document).ready(function(){
   // backend 'static': offer a clickable example link to verify the correct setup
   $('#shorty #backend-static #example').bind('click',function(event){
     event.preventDefault();
-    Shorty.Action.Setting.verify();
+    OC.Shorty.Action.Setting.verify();
   });
   // react with a matching explanation and example url when backend type is chosen
   $('.chosen').chosen();
@@ -52,7 +52,7 @@ $(document).ready(function(){
       if (type.length){
         $('#shorty .backend-supplement').filter('#backend-'+type).fadeIn('slow');
         // save preference
-        Shorty.Action.Preference.set($('#shorty #backend-type').serialize());
+        OC.Shorty.Action.Preference.set($('#shorty #backend-type').serialize());
         return false;
       }
     }
@@ -60,17 +60,17 @@ $(document).ready(function(){
   // safe backend supplement preferences
   $('#shorty .backend-supplement').focusout(function(){
     // save preference
-    Shorty.Action.Preference.set($(this).find('input').serialize());
+    OC.Shorty.Action.Preference.set($(this).find('input').serialize());
   });
   // safe ssl-verification preference
   var ssl=$('#shorty #backend-ssl-verify')
   ssl.change(function(){
     if (ssl.is(':checked'))
-         Shorty.Action.Preference.set('backend-ssl-verify=1');
-    else Shorty.Action.Preference.set('backend-ssl-verify=0');
+         OC.Shorty.Action.Preference.set('backend-ssl-verify=1');
+    else OC.Shorty.Action.Preference.set('backend-ssl-verify=0');
   });
   // safe sms-control preferences
   $('#shorty #sms-control').change(function(){
-    Shorty.Action.Preference.set($('#shorty #sms-control').serialize());
+    OC.Shorty.Action.Preference.set($('#shorty #sms-control').serialize());
   });
 });
