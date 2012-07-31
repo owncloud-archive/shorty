@@ -133,7 +133,7 @@ class OC_ShortyTracking_Hooks
         'id'    => 'clicks',
         'name'  => 'clicks',
         'icon'  => OCP\Util::imagePath('shorty-tracking','actions/hits.png'),
-        'call'  => 'Shorty.Tracking.control',
+        'call'  => 'OC.Shorty.Tracking.control',
         'title' => OC_ShortyTracking_L10n::t("Click listing"),
         'alt'   => OC_ShortyTracking_L10n::t("Clicks"),
       );

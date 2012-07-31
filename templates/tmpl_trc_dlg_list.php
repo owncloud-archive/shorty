@@ -128,7 +128,7 @@
           <td id="time"></td>
           <td id="actions">
             <span class="shorty-actions">
-              <a id="details" title="<?php echo OC_Shorty_L10n::t("details"); ?>" data_method="Shorty.Tracking.details">
+              <a id="details" title="<?php echo OC_Shorty_L10n::t("details"); ?>" data_method="OC.Shorty.Tracking.details">
                 <img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t("details"); ?>"
                      title="<?php echo OC_Shorty_L10n::t('Show details'); ?>"
                      src="<?php echo OCP\Util::imagePath('shorty','actions/info.png');   ?>" />

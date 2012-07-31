@@ -37,33 +37,33 @@ $(window).load(function(){
   var dfd = new $.Deferred();
   $.when(
     // load layout of dialog to show the list of tracked clicks
-    Shorty.Tracking.init()
+    OC.Shorty.Tracking.init()
   ).done(function(){
     // bind actions to basic buttons
-    Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
-      Shorty.WUI.Dialog.hide(Shorty.Tracking.Dialog.List);
+    OC.Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
+      OC.Shorty.WUI.Dialog.hide(OC.Shorty.Tracking.Dialog.List);
     });
-    Shorty.Tracking.Dialog.List.find('#list-of-clicks #titlebar').on('click',function(){
-      Shorty.WUI.List.Toolbar.toggle.apply(Shorty.Runtime.Context.ListOfClicks,
-                                           [Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()]);
+    OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks #titlebar').on('click',function(){
+      OC.Shorty.WUI.List.Toolbar.toggle.apply(OC.Shorty.Runtime.Context.ListOfClicks,
+                                           [OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()]);
     });
-    Shorty.Tracking.Dialog.List.find('#list-of-clicks #toolbar #reload').on('click',function(){Shorty.Tracking.build(false);});
-    Shorty.Tracking.Dialog.List.find('#shorty-footer #load').on('click',function(){Shorty.Tracking.build(true);});
+    OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks #toolbar #reload').on('click',function(){OC.Shorty.Tracking.build(false);});
+    OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load').on('click',function(){OC.Shorty.Tracking.build(true);});
     // title & target filter reaction
-    Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
+    OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
                               .find('thead tr#toolbar').find('th#time,th#address,th#host,th#user')
                               .find('#filter').on('keyup',function(){
-      Shorty.WUI.List.filter.apply(Shorty.Runtime.Context.ListOfClicks,
-                                   [Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
+      OC.Shorty.WUI.List.filter.apply(OC.Shorty.Runtime.Context.ListOfClicks,
+                                   [OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
                                     $($(this).context.parentElement.parentElement).attr('id'),
                                     $(this).val()]);
     });
     // detect if the list has been scrolled to the bottom, retrieve next chunk of clicks if so
-    Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').on('scroll',Shorty.Tracking.bottom);
+    OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').on('scroll',OC.Shorty.Tracking.bottom);
     // status filter reaction
-    Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('thead tr#toolbar th#result select').on('change',function(){
-      Shorty.WUI.List.filter.apply(Shorty.Runtime.Context.ListOfClicks,
-                                   [Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
+    OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('thead tr#toolbar th#result select').on('change',function(){
+      OC.Shorty.WUI.List.filter.apply(OC.Shorty.Runtime.Context.ListOfClicks,
+                                   [OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
                                     $(this).parents('th').attr('id'),
                                     $(this).find(':selected').val()]);
     });
@@ -76,7 +76,7 @@ $(window).load(function(){
  * @brief Method collection private to this plugin
  * @author Christian Reiner
  */
-Shorty.Tracking=
+OC.Shorty.Tracking=
 {
   /**
   * @brief Collection of dialog selectors used as a shortcut during the scripts
@@ -114,7 +114,7 @@ Shorty.Tracking=
     granted:[]
   },
   /**
-   * @method Shorty.Tracking.bottom
+   * @method OC.Shorty.Tracking.bottom
    * @brief Decides if a scrolling event has reached the bottom of the list
    * @description If the list has been scrolled to its bottom the retrieval of the next chunk of clicks will be triggered
    * @access private
@@ -122,18 +122,18 @@ Shorty.Tracking=
    */
   bottom: function(){
     // prevent additional events, whilst processing this one
-    Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').off('scroll');
+    OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').off('scroll');
     // attempt to retrieve next chunk of clicks only if it makes sense
-    if(  ( ! Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').hasClass('disabled'))
+    if(  ( ! OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').hasClass('disabled'))
        &&($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight) ){
-      if (Shorty.Debug) Shorty.Debug.log("list scrolled towards its bottom");
-      Shorty.Tracking.build(true);
+      if (OC.Shorty.Debug) OC.Shorty.Debug.log("list scrolled towards its bottom");
+      OC.Shorty.Tracking.build(true);
     }
     // rebind this method to the event
-    Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').on('scroll',Shorty.Tracking.bottom);
-  }, // Shorty.Tracking.bottom
+    OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').on('scroll',OC.Shorty.Tracking.bottom);
+  }, // OC.Shorty.Tracking.bottom
   /**
-   * @method Shorty.Tracking.build
+   * @method OC.Shorty.Tracking.build
    * @brief Builds the content of the list of tracked clicks
    * @return deferred.promise
    * @access private
@@ -141,66 +141,66 @@ Shorty.Tracking=
    */
   build: function(keep){
     keep=keep||false;
-    if (Shorty.Debug) Shorty.Debug.log("building tracking list");
+    if (OC.Shorty.Debug) OC.Shorty.Debug.log("building tracking list");
     var dfd = new $.Deferred();
-    var fieldset=Shorty.Tracking.Dialog.List.find('fieldset');
+    var fieldset=OC.Shorty.Tracking.Dialog.List.find('fieldset');
     var offset=0;
     if (keep){
-      if (Shorty.Debug) Shorty.Debug.log("keeping existing entries in list");
+      if (OC.Shorty.Debug) OC.Shorty.Debug.log("keeping existing entries in list");
       // compute offset of next chunk to retrieve
-      offset=Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody tr').last().attr('id');
+      offset=OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody tr').last().attr('id');
     }else{
-      if (Shorty.Debug) Shorty.Debug.log("dropping existing entries in list");
-      Shorty.WUI.List.empty(Shorty.Tracking.Dialog.List.find('#list-of-clicks').first());
-      Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled');
-      Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().removeClass('scrollingTable');
-      Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').css('height','');
+      if (OC.Shorty.Debug) OC.Shorty.Debug.log("dropping existing entries in list");
+      OC.Shorty.WUI.List.empty(OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first());
+      OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled');
+      OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().removeClass('scrollingTable');
+      OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').css('height','');
     }
     $.when(
       // retrieve new entries
-      Shorty.Tracking.get(Shorty.Tracking.Entry.attr('id'),offset)
+      OC.Shorty.Tracking.get(OC.Shorty.Tracking.Entry.attr('id'),offset)
     ).pipe(function(response){
-      Shorty.WUI.List.fill.apply(Shorty.Runtime.Context.ListOfClicks,
-                                 [Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),response.data]);
+      OC.Shorty.WUI.List.fill.apply(OC.Shorty.Runtime.Context.ListOfClicks,
+                                 [OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),response.data]);
       // updte a few general informations
-      Shorty.Tracking.Dialog.List.find('#shorty-clicks').html(
-        Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody tr').length+'/'+response.stats[0]['length']);
+      OC.Shorty.Tracking.Dialog.List.find('#shorty-clicks').html(
+        OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody tr').length+'/'+response.stats[0]['length']);
       // offer load button if there is a rest of clicks left
       if (response.rest)
-           Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled');
-      else Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').addClass('disabled');
+           OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled');
+      else OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').addClass('disabled');
     }).pipe(function(){
       $.when(
         // visualize table
-        Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().removeClass('scrollingTable'),
-        Shorty.WUI.List.dim(Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),true)
+        OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().removeClass('scrollingTable'),
+        OC.Shorty.WUI.List.dim(OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),true)
       ).done(function(){
         // decide if table needs to become scrollable
         // if so compute the right size and apply it to the body
         // this appears to be the most 'working' control
-        var bodyHeight=Shorty.Tracking.Dialog.List.find('#list-of-clicks tbody').outerHeight(true);
-        var restHeight=Shorty.Tracking.Dialog.List.find('fieldset legend').outerHeight(true)
-                      +Shorty.Tracking.Dialog.List.find('#shorty-header').outerHeight(true)
-                      +Shorty.Tracking.Dialog.List.find('#titlebar').outerHeight(true)
+        var bodyHeight=OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tbody').outerHeight(true);
+        var restHeight=OC.Shorty.Tracking.Dialog.List.find('fieldset legend').outerHeight(true)
+                      +OC.Shorty.Tracking.Dialog.List.find('#shorty-header').outerHeight(true)
+                      +OC.Shorty.Tracking.Dialog.List.find('#titlebar').outerHeight(true)
                       +40 // room for potentially visible #toolbar
-                      +Shorty.Tracking.Dialog.List.find('#shorty-footer').outerHeight(true)
+                      +OC.Shorty.Tracking.Dialog.List.find('#shorty-footer').outerHeight(true)
                       +80;// safety margin
         var roomHeight=$('#content').outerHeight();
         // make table scrollable, when more than ... entries
         if (roomHeight<bodyHeight+restHeight)
         {
-          Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().addClass('scrollingTable');
-          Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').css('height',(roomHeight-restHeight-20)+'px');
+          OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().addClass('scrollingTable');
+          OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').css('height',(roomHeight-restHeight-20)+'px');
         }
         // show sparkline at the right of the reference head
-        Shorty.Tracking.sparkle();
+        OC.Shorty.Tracking.sparkle();
         dfd.resolve();
       }).fail(dfd.reject)
     }).done(dfd.resolve).fail(dfd.reject)
     return dfd.promise();
-  }, // Shorty.Tracking.build
+  }, // OC.Shorty.Tracking.build
   /**
-   * @method Shorty.Tracking.control
+   * @method OC.Shorty.Tracking.control
    * @brief Central control method, called by the app to hand over control
    * @description This is the method specified as control in slot "registerActions"
    * @param entry jQuery object holding the clicked entry, in this case a row in the list of Shortys
@@ -209,45 +209,45 @@ Shorty.Tracking=
    * @author Christian Reiner
    */
   control:function(entry){
-    if (Shorty.Debug) Shorty.Debug.log("tracking list controller");
+    if (OC.Shorty.Debug) OC.Shorty.Debug.log("tracking list controller");
     var dfd=new $.Deferred();
     // this is the shortys id
-    Shorty.Tracking.Entry=entry;
+    OC.Shorty.Tracking.Entry=entry;
     // update lists reference bar content to improve intuitivity
-    Shorty.Tracking.Dialog.List.find('#shorty-title').html(entry.attr('data-title'));
-    Shorty.Tracking.Dialog.List.find('#shorty-status').html(entry.attr('data-status'));
-    Shorty.Tracking.Dialog.List.find('#shorty-until').html(
+    OC.Shorty.Tracking.Dialog.List.find('#shorty-title').html(entry.attr('data-title'));
+    OC.Shorty.Tracking.Dialog.List.find('#shorty-status').html(entry.attr('data-status'));
+    OC.Shorty.Tracking.Dialog.List.find('#shorty-until').html(
       ((!entry.attr('data-until')) ? "-"+t('shorty',"never")+"-" : entry.attr('data-until')) );
-    var clicks=Shorty.Tracking.Dialog.List.find('#shorty-header #clicks');
+    var clicks=OC.Shorty.Tracking.Dialog.List.find('#shorty-header #clicks');
     clicks.html(clicks.attr('data-slogan')+': '+entry.attr('data-clicks'));
     // prepare to (re-)fill the list
     $.when(
-      Shorty.WUI.List.empty(Shorty.Tracking.Dialog.List),
-      Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled')
+      OC.Shorty.WUI.List.empty(OC.Shorty.Tracking.Dialog.List),
+      OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled')
     ).done(function(){
-      Shorty.WUI.Dialog.show(Shorty.Tracking.Dialog.List)
+      OC.Shorty.WUI.Dialog.show(OC.Shorty.Tracking.Dialog.List)
       dfd.resolve();
     }).fail(function(){
       dfd.reject();
     })
     // load first content into the list
-    Shorty.Tracking.Stats.granted=[];
-    Shorty.Tracking.Stats.denied =[];
-    Shorty.Tracking.Stats.blocked=[];
-    Shorty.Tracking.build();
+    OC.Shorty.Tracking.Stats.granted=[];
+    OC.Shorty.Tracking.Stats.denied =[];
+    OC.Shorty.Tracking.Stats.blocked=[];
+    OC.Shorty.Tracking.build();
     return dfd.promise();
-  }, // Shorty.Tracking.control
+  }, // OC.Shorty.Tracking.control
   /**
-   * @method Shorty.Tracking.details
+   * @method OC.Shorty.Tracking.details
    * @brief Visualizes clicks details inside a popup
    * @access private
    * @author Christian Reiner
    */
   details:function(element){
-    if (Shorty.Debug) Shorty.Debug.log("visualizing details on click '"+element.attr('id')+"' in tracking list");
+    if (OC.Shorty.Debug) OC.Shorty.Debug.log("visualizing details on click '"+element.attr('id')+"' in tracking list");
     var dfd = new $.Deferred();
     // use the existing 'share' dialog for this
-    var entry =Shorty.Tracking.Entry;
+    var entry =OC.Shorty.Tracking.Entry;
     var dialog=$('#shorty-tracking-click-dialog');
     // fill and dialog
     $.each(['title'],function(i,item){
@@ -279,12 +279,12 @@ Shorty.Tracking=
     dialog.appendTo(element.find('td#actions'));
     // open dialog
     $.when(
-      Shorty.WUI.Dialog.show(dialog)
+      OC.Shorty.WUI.Dialog.show(dialog)
     ).done(dfd.resolve)
     return dfd.promise();
-  }, // Shorty.Tracking.details
+  }, // OC.Shorty.Tracking.details
   /**
-   * @method Shorty.Tracking.get
+   * @method OC.Shorty.Tracking.get
    * @brief Fetches a list of all registered clicks matching a specified Shorty
    * @param shorty string Id of the Shorty the click list is requested for
    * @param offset Numeric id of the last click that is already present in the list (ids being in chronological order!)
@@ -293,7 +293,7 @@ Shorty.Tracking=
    * @author Christian Reiner
    */
   get:function(shorty,offset){
-    if (Shorty.Debug) Shorty.Debug.log("loading clicks into tracking list");
+    if (OC.Shorty.Debug) OC.Shorty.Debug.log("loading clicks into tracking list");
     // no offset specified ? then start at the beginning
     offset = offset || 0;
     var dfd=new $.Deferred();
@@ -306,17 +306,17 @@ Shorty.Tracking=
       data:     data,
       dataType: 'json'
     }).pipe(
-      function(response){return Shorty.Ajax.eval(response)},
-      function(response){return Shorty.Ajax.fail(response)}
+      function(response){return OC.Shorty.Ajax.eval(response)},
+      function(response){return OC.Shorty.Ajax.fail(response)}
     ).done(function(response){
       dfd.resolve(response);
     }).fail(function(response){
       dfd.reject(response);
     })
     return dfd.promise();
-  }, // Shorty.Tracking.get
+  }, // OC.Shorty.Tracking.get
   /**
-   * method Shorty.Tracking.init
+   * method OC.Shorty.Tracking.init
    * @brief Initializes the dialog this aplugin adds to the Shorty app
    * @description The html content of the dialog is fetched via ajax
    * @return deferred.promise
@@ -324,14 +324,14 @@ Shorty.Tracking=
    * @author Christian Reiner
    */
   init:function(){
-    if (Shorty.Debug) Shorty.Debug.log("initializing tracking list");
+    if (OC.Shorty.Debug) OC.Shorty.Debug.log("initializing tracking list");
     // check if dialogs already exist
-    if (   $.isEmptyObject(Shorty.Tracking.Dialog.List)
-        && $.isEmptyObject(Shorty.Tracking.Dialog.Click) ){
+    if (   $.isEmptyObject(OC.Shorty.Tracking.Dialog.List)
+        && $.isEmptyObject(OC.Shorty.Tracking.Dialog.Click) ){
       // two dialogs are used by this plugin
       var dialogs={
-        'list':  Shorty.Tracking.Dialog.List,
-        'click': Shorty.Tracking.Dialog.Click
+        'list':  OC.Shorty.Tracking.Dialog.List,
+        'click': OC.Shorty.Tracking.Dialog.Click
       };
       // load dialogs from server
       var dfds=$.map(dialogs,function(obj,dialog){
@@ -343,19 +343,19 @@ Shorty.Tracking=
           cache:    false,
           dataType: 'json'
         }).pipe(
-          function(response){return Shorty.Ajax.eval(response)},
-          function(response){return Shorty.Ajax.fail(response)}
+          function(response){return OC.Shorty.Ajax.eval(response)},
+          function(response){return OC.Shorty.Ajax.fail(response)}
         ).done(function(response){
           // create a fresh dialog and insert it alongside the existing dialogs in the top controls bar
           $('#controls').append(response.layout);
 //           obj=$('#controls #shorty-tracking-'+dialog+'-dialog').first();
           switch(dialog){
             case 'list':
-              Shorty.Tracking.Dialog.List=$('#controls #shorty-tracking-list-dialog').first();
+              OC.Shorty.Tracking.Dialog.List=$('#controls #shorty-tracking-list-dialog').first();
               break;
 
             case 'click':
-              Shorty.Tracking.Dialog.Click=$('#controls #shorty-tracking-click-dialog').first();
+              OC.Shorty.Tracking.Dialog.Click=$('#controls #shorty-tracking-click-dialog').first();
               break;
           } // switch
         })
@@ -363,21 +363,21 @@ Shorty.Tracking=
       return $.when.apply(null, dfds);
     }else{
       // dialogs already loaded, just clean them for usage
-      Shorty.Tracking.Dialog.List.find('#list-of-clicks tbody tr').remove();
+      OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tbody tr').remove();
       new Deferred().resolve();
     } // else
   },
   /**
-   * @method Shorty.Tracking.sparkle
+   * @method OC.Shorty.Tracking.sparkle
    * @brief Creates a 'click sparkline' at the top right of the dialog
    * @author Christian Reiner
    */
   sparkle:function(){
-    var sparkline=Shorty.Tracking.Dialog.List.find('#stats').first();
+    var sparkline=OC.Shorty.Tracking.Dialog.List.find('#stats').first();
     // reset previous sparkline
     sparkline.find('canvas').remove();
     // set range of sparkline as [Shorty-creation...now]
-    var rangeMin=Math.floor($.datepicker.formatDate('@',new Date(Shorty.Tracking.Entry.attr('data-created')))/1000);
+    var rangeMin=Math.floor($.datepicker.formatDate('@',new Date(OC.Shorty.Tracking.Entry.attr('data-created')))/1000);
     var rangeMax=Math.ceil(0.5+$.datepicker.formatDate('@',new Date())/1000);
     var range   =rangeMax-rangeMin;
     // we need to compute a value notation the jquery sparkline extension understands:
@@ -389,14 +389,14 @@ Shorty.Tracking=
     // initialize all columns as zero value
     for (column=0;column<=steps;column=column+1){granted[column]=0;denied[column]=0;blocked[column]=0;}
     // increment matching range column for each click
-    $.each(Shorty.Tracking.Stats.granted,function(i,time){granted[Math.round((time-rangeMin)/(range/steps))]++;});
-    $.each(Shorty.Tracking.Stats.denied, function(i,time){ denied[Math.round((time-rangeMin)/(range/steps))]++;});
-    $.each(Shorty.Tracking.Stats.blocked,function(i,time){blocked[Math.round((time-rangeMin)/(range/steps))]++;});
+    $.each(OC.Shorty.Tracking.Stats.granted,function(i,time){granted[Math.round((time-rangeMin)/(range/steps))]++;});
+    $.each(OC.Shorty.Tracking.Stats.denied, function(i,time){ denied[Math.round((time-rangeMin)/(range/steps))]++;});
+    $.each(OC.Shorty.Tracking.Stats.blocked,function(i,time){blocked[Math.round((time-rangeMin)/(range/steps))]++;});
     // initialize stats sparkline
     var sparklineOpts={width:(steps*2)+'px',
                        height:'1.6em',
                        tooltipSkipNull:true,
-                       tooltipContainer:Shorty.Tracking.Dialog.List,
+                       tooltipContainer:OC.Shorty.Tracking.Dialog.List,
                        tooltipSuffix:' '+t('shorty-tracking','granted'),
                        type:'line',
                        numberDigitGroupSep:' '
@@ -423,18 +423,18 @@ Shorty.Tracking=
       value = region.y;
       $('.mouseoverregion').text("x="+region.x+" y="+region.y);
     }).on('mouseleave',function(){$('.mouseoverregion').text('');});
-  } // Shorty.Tracking.sparkle
-} // Shorty.Tracking
+  } // OC.Shorty.Tracking.sparkle
+} // OC.Shorty.Tracking
 
 /**
- * @class Shorty.Runtime.Context.ListOfClicks
+ * @class OC.Shorty.Runtime.Context.ListOfClicks
  * @brief Catalog of callbacks required for list of shorty
  * @author Christian Reiner
  */
-Shorty.Runtime.Context.ListOfClicks={
+OC.Shorty.Runtime.Context.ListOfClicks={
   /**
-  * @method Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
-  * @brief Callback function replacing the default used in Shorty.WUI.List.add()
+  * @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
+  * @brief Callback function replacing the default used in OC.Shorty.WUI.List.add()
   * @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
   * @param set object This is the set of attributes describing a single registered click
   * @param hidden bool Indicats if new entries in lists should be held back for later highlighting (flashing) optically or not
@@ -477,9 +477,9 @@ Shorty.Runtime.Context.ListOfClicks={
           else span.text(formatDate(1000*set[aspect]));
           // add value to the sparkline value set in the header
           switch (set['result']){
-            case 'blocked': Shorty.Tracking.Stats.blocked.push(set[aspect]); break;
-            case 'denied':  Shorty.Tracking.Stats.denied.push (set[aspect]); break;
-            case 'granted': Shorty.Tracking.Stats.granted.push(set[aspect]); break;
+            case 'blocked': OC.Shorty.Tracking.Stats.blocked.push(set[aspect]); break;
+            case 'denied':  OC.Shorty.Tracking.Stats.denied.push (set[aspect]); break;
+            case 'granted': OC.Shorty.Tracking.Stats.granted.push(set[aspect]); break;
           } // switch
           break;
 
@@ -494,9 +494,9 @@ Shorty.Runtime.Context.ListOfClicks={
       } // switch
       row.find('td#'+aspect).empty().append(span);
     }) // each aspect
-  }, // Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
+  }, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
   /**
-  * @method Shorty.Runtime.Context.ListOfClicks.ListAddInsert
+  * @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddInsert
   * @brief Inserts a cloned and enriched row into the table at a usage specific place
   * @description New entries always get appended to the list of already existing entries,
   *              since those are always sorted in a chronological order
@@ -505,28 +505,28 @@ Shorty.Runtime.Context.ListOfClicks={
   */
   ListAddInsert:function(list,row){
     list.find('tbody').append(row);
-  }, // Shorty.Runtime.Context.ListOfClicks.ListAddInsert
+  }, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddInsert
   /**
-  * @method Shorty.Runtime.Context.ListOfClicks.ListFillFilter
+  * @method OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
   * @brief Column filter rules specific to this plugins list
   * @access public
   * @author Christian Reiner
   */
   ListFillFilter:function(list){
-    if (Shorty.Debug) Shorty.Debug.log("using 'tracking' method to filter filled list");
+    if (OC.Shorty.Debug) OC.Shorty.Debug.log("using 'tracking' method to filter filled list");
     // filter list
-    Shorty.WUI.List.filter.apply(this,[list,'time',   list.find('thead tr#toolbar th#time    #filter').val()]),
-    Shorty.WUI.List.filter.apply(this,[list,'address',list.find('thead tr#toolbar th#address #filter').val()]),
-    Shorty.WUI.List.filter.apply(this,[list,'host',   list.find('thead tr#toolbar th#host    #filter').val()]),
-    Shorty.WUI.List.filter.apply(this,[list,'user',   list.find('thead tr#toolbar th#user    #filter').val()]),
-    Shorty.WUI.List.filter.apply(this,[list,'result', list.find('thead tr#toolbar th#result  select :selected').val()])
-  }, // Shorty.Runtime.Context.ListOfClicks.ListFillFilter
+    OC.Shorty.WUI.List.filter.apply(this,[list,'time',   list.find('thead tr#toolbar th#time    #filter').val()]),
+    OC.Shorty.WUI.List.filter.apply(this,[list,'address',list.find('thead tr#toolbar th#address #filter').val()]),
+    OC.Shorty.WUI.List.filter.apply(this,[list,'host',   list.find('thead tr#toolbar th#host    #filter').val()]),
+    OC.Shorty.WUI.List.filter.apply(this,[list,'user',   list.find('thead tr#toolbar th#user    #filter').val()]),
+    OC.Shorty.WUI.List.filter.apply(this,[list,'result', list.find('thead tr#toolbar th#result  select :selected').val()])
+  }, // OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
   /**
-  * @method Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
+  * @method OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
   * @brief Callback used to check if any filters prevent closing a lists toolbar
   * @param toolbar jQueryObject The lists toolbar filters should be checked in
   * @return bool Indicates if an existing filter prevents the closing or not
-  * @description Used as a replacement for the default used in Shorty.WUI.List.Toolbar.toggle()
+  * @description Used as a replacement for the default used in OC.Shorty.WUI.List.Toolbar.toggle()
   * This version is private to this plugin and uses the filter names specific to the list of tracked clicks
   * @access public
   * @author Christian Reiner
@@ -536,6 +536,6 @@ Shorty.Runtime.Context.ListOfClicks={
               &&(toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').effect('pulsate')) )
             ||(  (toolbar.find('th#result select :selected').val())
               &&(toolbar.find('#result').effect('pulsate')) ) );
-  } // Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
+  } // OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
 
-} // Shorty.Runtime.Context.ListOfClicks
+} // OC.Shorty.Runtime.Context.ListOfClicks
