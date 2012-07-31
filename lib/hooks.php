@@ -40,105 +40,105 @@
  */
 class OC_ShortyTracking_Hooks
 {
-  /**
-   * @method OC_ShortyTracking_Hooks::deleteShortyClicks
-   * @brief Deletes all alien clicks, clicks that have no corresponding Shorty any more (deleted)
-   * @param paramters (array) parameters from emitted signal
-   * @return bool
-   * @description
-   * This is a cleanup routine. It removes all previously recorded clicks from the database table that
-   * do not (any more) reference an existing Shorty. Such 'stale entries' typically arise when Shortys
-   * get deleted, for example because of the deletion of a user account.
-   * Instead of directly targeting recorded clicks to a specific Shorty identified by its ID instead
-   * this routine takes a more general approach to simply wipe all stale entries. IN addition to being
-   * less complex (no ID required) this also is more stable, since also leftovers from prior operations
-   * are cleaned up. 
-   */
-  public static function deleteShortyClicks ( $parameters )
-  {
-    OCP\Util::writeLog ( 'shorty-tracking', 'Wiping all clicks without corresponding Shorty', OCP\Util::INFO );
-    $result = TRUE;
-    // wipe shorty clicks
-    $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_WIPE );
-    if ( FALSE===$query->execute() )
-      $result = FALSE;
-    // report completion success
-    return $result;
-  } // function deleteShortyClicks
+	/**
+	* @method OC_ShortyTracking_Hooks::deleteShortyClicks
+	* @brief Deletes all alien clicks, clicks that have no corresponding Shorty any more (deleted)
+	* @param paramters (array) parameters from emitted signal
+	* @return bool
+	* @description
+	* This is a cleanup routine. It removes all previously recorded clicks from the database table that
+	* do not (any more) reference an existing Shorty. Such 'stale entries' typically arise when Shortys
+	* get deleted, for example because of the deletion of a user account.
+	* Instead of directly targeting recorded clicks to a specific Shorty identified by its ID instead
+	* this routine takes a more general approach to simply wipe all stale entries. IN addition to being
+	* less complex (no ID required) this also is more stable, since also leftovers from prior operations
+	* are cleaned up.
+	*/
+	public static function deleteShortyClicks ( $parameters )
+	{
+		OCP\Util::writeLog ( 'shorty-tracking', 'Wiping all clicks without corresponding Shorty', OCP\Util::INFO );
+		$result = TRUE;
+		// wipe shorty clicks
+		$query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_WIPE );
+		if ( FALSE===$query->execute() )
+			$result = FALSE;
+		// report completion success
+		return $result;
+	} // function deleteShortyClicks
 
-  /**
-   * @method OC_ShortyTracking_Hooks::registerClick
-   * @brief Records details of request clicks targeting existing Shortys
-   * @param paramters (array) parameters from emitted signal
-   * @return bool
-   * @description
-   * This routine accepts an associative array of attributes that describe a
-   * request click to a single shorty. The speicificartion of those details
-   * MUST follow a strict syntactical layout that describes as this:
-   * two parameters must be present, called 'shorty' and 'request', both are again
-   * associative arrays holding these string memebers:
-   * shorty: id, ...
-   * request: time, address, requester, result, ...
-   */
-  public static function registerClick ( $parameters )
-  {
-    OCP\Util::writeLog ( 'shorty-tracking', sprintf("Recording single click to Shorty '%s' with result '%s'",
-                                                     $parameters['shorty']['id'],
-                                                     $parameters['request']['result']), OCP\Util::DEBUG );
-    $param  = array (
-      ':shorty'    => $parameters['shorty']['id'],
-      ':time'      => $parameters['request']['time'],
-      ':address'   => $parameters['request']['address'],
-      ':host'      => $parameters['request']['host'],
-      ':user'      => $parameters['request']['user'],
-      ':result'    => $parameters['request']['result'],
-    );
-    $query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_RECORD );
-    $query->execute ( $param );
-    return TRUE;
-  } // function registerClick
+	/**
+	* @method OC_ShortyTracking_Hooks::registerClick
+	* @brief Records details of request clicks targeting existing Shortys
+	* @param paramters (array) parameters from emitted signal
+	* @return bool
+	* @description
+	* This routine accepts an associative array of attributes that describe a
+	* request click to a single shorty. The speicificartion of those details
+	* MUST follow a strict syntactical layout that describes as this:
+	* two parameters must be present, called 'shorty' and 'request', both are again
+	* associative arrays holding these string memebers:
+	* shorty: id, ...
+	* request: time, address, requester, result, ...
+	*/
+	public static function registerClick ( $parameters )
+	{
+		OCP\Util::writeLog ( 'shorty-tracking', sprintf("Recording single click to Shorty '%s' with result '%s'",
+														$parameters['shorty']['id'],
+														$parameters['request']['result']), OCP\Util::DEBUG );
+		$param  = array (
+			':shorty'    => $parameters['shorty']['id'],
+			':time'      => $parameters['request']['time'],
+			':address'   => $parameters['request']['address'],
+			':host'      => $parameters['request']['host'],
+			':user'      => $parameters['request']['user'],
+			':result'    => $parameters['request']['result'],
+		);
+		$query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_RECORD );
+		$query->execute ( $param );
+		return TRUE;
+	} // function registerClick
 
-  /**
-   * @method OC_ShortyTracking_Hooks::registerIncludes
-   * @brief Registers additional includes required by this plugin
-   * @param paramters (array) parameters from emitted signal
-   * @return bool
-   */
-  public static function registerIncludes ( $parameters )
-  {
-    OCP\Util::writeLog ( 'shorty-tracking', 'Registering additional include files', OCP\Util::DEBUG );
-    OCP\Util::addStyle  ( 'shorty-tracking',          'shorty-tracking' );
-    OCP\Util::addScript ( 'shorty-tracking',          'tracking' );
-    OCP\Util::addScript ( 'shorty-tracking/3rdparty', 'jquery.sparkline.min' );
-    return TRUE;
-  } // function registerIncludes
+	/**
+	* @method OC_ShortyTracking_Hooks::registerIncludes
+	* @brief Registers additional includes required by this plugin
+	* @param paramters (array) parameters from emitted signal
+	* @return bool
+	*/
+	public static function registerIncludes ( $parameters )
+	{
+		OCP\Util::writeLog ( 'shorty-tracking', 'Registering additional include files', OCP\Util::DEBUG );
+		OCP\Util::addStyle  ( 'shorty-tracking',          'shorty-tracking' );
+		OCP\Util::addScript ( 'shorty-tracking',          'tracking' );
+		OCP\Util::addScript ( 'shorty-tracking/3rdparty', 'jquery.sparkline.min' );
+		return TRUE;
+	} // function registerIncludes
 
-  /**
-   * @method OC_ShortyTracking_Hooks::registerActions
-   * @brief Registers additional actions as expected by the Shorty app
-   * @param paramters (array) parameters from emitted signal
-   * @return bool
-   */
-  public static function registerActions ( $parameters )
-  {
-    OCP\Util::writeLog ( 'shorty-tracking', 'Registering additional Shorty actions', OCP\Util::DEBUG );
-    if ( ! is_array($parameters) )
-    {
-      return FALSE;
-    }
-    if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
-    {
-      // action 'tracking-list' in list-of-shortys
-      $parameters['list'][] = array (
-        'id'    => 'clicks',
-        'name'  => 'clicks',
-        'icon'  => OCP\Util::imagePath('shorty-tracking','actions/hits.png'),
-        'call'  => 'OC.Shorty.Tracking.control',
-        'title' => OC_ShortyTracking_L10n::t("Click listing"),
-        'alt'   => OC_ShortyTracking_L10n::t("Clicks"),
-      );
-    }
-    return TRUE;
-  } // function registerActions
+	/**
+	* @method OC_ShortyTracking_Hooks::registerActions
+	* @brief Registers additional actions as expected by the Shorty app
+	* @param paramters (array) parameters from emitted signal
+	* @return bool
+	*/
+	public static function registerActions ( $parameters )
+	{
+		OCP\Util::writeLog ( 'shorty-tracking', 'Registering additional Shorty actions', OCP\Util::DEBUG );
+		if ( ! is_array($parameters) )
+		{
+			return FALSE;
+		}
+		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
+		{
+			// action 'tracking-list' in list-of-shortys
+			$parameters['list'][] = array (
+				'id'    => 'clicks',
+				'name'  => 'clicks',
+				'icon'  => OCP\Util::imagePath('shorty-tracking','actions/hits.png'),
+				'call'  => 'OC.Shorty.Tracking.control',
+				'title' => OC_ShortyTracking_L10n::t("Click listing"),
+				'alt'   => OC_ShortyTracking_L10n::t("Clicks"),
+			);
+		}
+		return TRUE;
+	} // function registerActions
 
 } // class OC_ShortyTracking_Hooks

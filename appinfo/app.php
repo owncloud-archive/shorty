@@ -41,29 +41,29 @@ OC::$CLASSPATH['OC_ShortyTracking_Query'] = 'apps/shorty-tracking/lib/query.php'
 
 try
 {
-  // only plug into the mother app 'Shorty' if that one is installed AND has the minimum required version:
-  // minimim requirement currently is shorty-0.3.0
-  if ( OCP\App::isEnabled('shorty') )
-  {
-    // check Shorty version: installed version required
-    $insV = explode ( '.', OCP\App::getAppVersion('shorty') );
-    $reqV = explode ( '.', '0.3.0' );
-    if (  (sizeof($reqV)==sizeof($insV))
-        &&( ($reqV[0]<=$insV[0])&&($reqV[1]<=$insV[1])&&($reqV[2]<=$insV[2])) )
-    {
-      OCP\Util::connectHook ( 'OC_Shorty', 'post_deleteShorty', 'OC_ShortyTracking_Hooks', 'deleteShortyClicks');
-      OCP\Util::connectHook ( 'OC_Shorty', 'registerClick',     'OC_ShortyTracking_Hooks', 'registerClick');
-      OCP\Util::connectHook ( 'OC_Shorty', 'registerActions',   'OC_ShortyTracking_Hooks', 'registerActions');
-      OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
-    }
-    else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires 'Shorty' in version > %s.%s.%s !", $reqV );
-  }
-  else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires app 'Shorty' to be installed !" );
+	// only plug into the mother app 'Shorty' if that one is installed AND has the minimum required version:
+	// minimim requirement currently is shorty-0.3.0
+	if ( OCP\App::isEnabled('shorty') )
+	{
+		// check Shorty version: installed version required
+		$insV = explode ( '.', OCP\App::getAppVersion('shorty') );
+		$reqV = explode ( '.', '0.3.0' );
+		if (  (sizeof($reqV)==sizeof($insV))
+			&&( ($reqV[0]<=$insV[0])&&($reqV[1]<=$insV[1])&&($reqV[2]<=$insV[2])) )
+		{
+			OCP\Util::connectHook ( 'OC_Shorty', 'post_deleteShorty', 'OC_ShortyTracking_Hooks', 'deleteShortyClicks');
+			OCP\Util::connectHook ( 'OC_Shorty', 'registerClick',     'OC_ShortyTracking_Hooks', 'registerClick');
+			OCP\Util::connectHook ( 'OC_Shorty', 'registerActions',   'OC_ShortyTracking_Hooks', 'registerActions');
+			OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
+		}
+		else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires 'Shorty' in version > %s.%s.%s !", $reqV );
+	}
+	else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires app 'Shorty' to be installed !" );
 }
 catch ( Exception $e )
 {
-  OC_App::disable    ( 'shorty-tracking' );
-  OCP\Util::writeLog ( 'shorty-tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), OCP\Util::WARN );
+	OC_App::disable    ( 'shorty-tracking' );
+	OCP\Util::writeLog ( 'shorty-tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), OCP\Util::WARN );
 }
 
 ?>

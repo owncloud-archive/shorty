@@ -32,71 +32,71 @@
 
 #list-of-clicks th,
 #list-of-clicks td {
-  padding: 1px 2px;
+	padding: 1px 2px;
 }
 #list-of-clicks thead th#address,
 #list-of-clicks tbody td#address{
-  width:7em;
+	width:7em;
 }
 #list-of-clicks thead th#time,
 #list-of-clicks tbody td#time,
 #list-of-clicks thead th#user,
 #list-of-clicks tbody td#user {
-  width:6em;
+	width:6em;
 }
 #list-of-clicks thead th#result,
 #list-of-clicks tbody td#result {
-  width:5.5em;
+	width:5.5em;
 }
 #list-of-clicks thead th#host,
 #list-of-clicks tbody td#host {
-  width:11em;
+	width:11em;
 }
 #list-of-clicks tbody td span {
-  padding: 0.1em 0.1em 0.1em 0.1em;
+	padding: 0.1em 0.1em 0.1em 0.1em;
 }
 #list-of-clicks tbody tr:hover, tr:active {
-  background-color: #F0F0F0;
+	background-color: #F0F0F0;
 }
 
 /* #shorty-tracking-list-dialog #shorty-tracking-reference { */
 #shorty-tracking-list-dialog .shorty-tracking-reference {
-  display: inline;
-  width: 100%;
-  font-style: normal;
-  font-weight: normal;
-  margin: 0 0.6em;
+	display: inline;
+	width: 100%;
+	font-style: normal;
+	font-weight: normal;
+	margin: 0 0.6em;
 }
 
 #shorty-tracking-list-dialog #shorty-header,
 #shorty-tracking-list-dialog #shorty-footer {
-  position: relative;
-  margin: 0;
-  padding: 0;
+	position: relative;
+	margin: 0;
+	padding: 0;
 }
 #shorty-tracking-list-dialog #scrollingTurn {
-  position: absolute;
-  display: block;
-  width: 100%;
-  text-align: center;
+	position: absolute;
+	display: block;
+	width: 100%;
+	text-align: center;
 }
 #shorty-tracking-list-dialog #scrollingTurn.disabled {
-  display: none;
+	display: none;
 }
 #shorty-tracking-list-dialog .sparkline {
-  float: right;
-  margin: 0 0.2em;
-  padding: 0;
+	float: right;
+	margin: 0 0.2em;
+	padding: 0;
 }
 #shorty-tracking-click-dialog {
-  width: 35em;
-  line-height: 1.2em;
+	width: 35em;
+	line-height: 1.2em;
 }
 #shorty-tracking-click-dialog .shorty-click-detail {
-  display: inline-block;
-  width: 26em;
-  font-style: normal;
-  font-weight: normal;
-  margin: 0 0.2em;
-  padding: 0;
+	display: inline-block;
+	width: 26em;
+	font-style: normal;
+	font-weight: normal;
+	margin: 0 0.2em;
+	padding: 0;
 }

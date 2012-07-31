@@ -33,9 +33,9 @@
  -->
 
 <info>
-  <id>shorty-tracking</id>
-  <name>Shorty Tracking</name>
-  <description>Shorty Tracking offers an additional tracking feature to
+	<id>shorty-tracking</id>
+	<name>Shorty Tracking</name>
+	<description>Shorty Tracking offers an additional tracking feature to
 the Shorty app. It records additional details to all clicks being relayed by
 Shorty. Collected data can be visualized and filtered interactively.
 In addition to that a service (API) allows external packages to use shorty as a
@@ -44,17 +44,17 @@ visualization.
 The Shorty app is a mandatory prerequisite to use this module.
 For more information see:
 http://apps.owncloud.com/content/show.php/Shorty-Tracking
-  </description>
-  <version>0.1.3</version>
-  <licence>AGPL</licence>
-  <author>Christian Reiner</author>
-  <require>4</require>
-    <types>
-      <internet/>
-      <bookmark/>
-    </types>
-    <public>
-      <shorty_tracking>tracking.php</shorty_tracking>
-      <shorty_stats>statistics.php</shorty_stats>
-    </public>
+	</description>
+	<version>0.1.3</version>
+	<licence>AGPL</licence>
+	<author>Christian Reiner</author>
+	<require>4</require>
+		<types>
+			<internet/>
+			<bookmark/>
+		</types>
+		<public>
+			<shorty_tracking>tracking.php</shorty_tracking>
+			<shorty_stats>statistics.php</shorty_stats>
+		</public>
 </info>
