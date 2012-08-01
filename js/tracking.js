@@ -328,7 +328,7 @@ OC.Shorty.Tracking=
 		var data={shorty:shorty,offset:offset};
 		$.ajax({
 			type:     'GET',
-			url:      OC.filePath('shorty-tracking','ajax','get.php'),
+			url:      OC.filePath('shorty-tracking','ajax','list.php'),
 			cache:    false,
 			data:     data,
 			dataType: 'json'
