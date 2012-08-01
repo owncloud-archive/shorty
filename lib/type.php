@@ -325,23 +325,3 @@ class OC_Shorty_Type
 
 } // class OC_Shorty_Query
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                              

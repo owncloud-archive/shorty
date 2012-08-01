@@ -872,7 +872,7 @@ OC.Shorty={
 					row=$('#list-of-shortys tbody tr#'+set.id);
 					// modify attributes in row, as data and value
 					$.each(['status','title','until','notes'],function(j,aspect){
-						if (undefined==set[aspect]) set[aspect]='';
+						if (typeof set[aspect]==='undefined') set[aspect]='';
 						// enhance row with actual set values
 						row.attr('data-'+this,set[aspect]);
 						if (hidden) row.addClass('shorty-fresh');
@@ -1850,7 +1850,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 				var span=$('<span>');
 				span.addClass('ellipsis');
 				// enhance row with real set values
-				if ('undefined'==set[aspect])
+				if (typeof set[aspect]==='undefined')
 					row.attr('data-'+this,'');
 				else row.attr('data-'+this,set[aspect]);
 				// fill data into corresponsing column
