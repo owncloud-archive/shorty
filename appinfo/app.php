@@ -42,12 +42,13 @@ OC::$CLASSPATH['OC_ShortyTracking_Query'] = 'apps/shorty-tracking/lib/query.php'
 try
 {
 	// only plug into the mother app 'Shorty' if that one is installed AND has the minimum required version:
-	// minimim requirement currently is shorty-0.3.0
+	// minimim requirement currently is as specified below:
+	$SHORTY_VERSION_MIN = '0.3.3';
 	if ( OCP\App::isEnabled('shorty') )
 	{
 		// check Shorty version: installed version required
 		$insV = explode ( '.', OCP\App::getAppVersion('shorty') );
-		$reqV = explode ( '.', '0.3.0' );
+		$reqV = explode ( '.', $SHORTY_VERSION_MIN );
 		if (  (sizeof($reqV)==sizeof($insV))
 			&&( ($reqV[0]<=$insV[0])&&($reqV[1]<=$insV[1])&&($reqV[2]<=$insV[2])) )
 		{
