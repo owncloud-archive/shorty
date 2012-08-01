@@ -38,69 +38,69 @@ $source = NULL;
 // - a (source) url to be looked up in the database
 foreach ($_GET as $key=>$val) // in case there are unexpected, additional arguments like a timestamp added by some stupid proxy
 {
-  switch ($key)
-  {
-    default:
-      // unrecognized key, we ignore it
-      break;
+	switch ($key)
+	{
+		default:
+			// unrecognized key, we ignore it
+			break;
 
-    case 'url':
-    case 'uri':
-    case 'ref':
-    case 'source':
-    case 'target':
-      // a recognized argument key indicating an id to be looked up
-      $source = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::URL,FALSE);
-      break 2; // skip switch AND foreach
-  } // switch
+		case 'url':
+		case 'uri':
+		case 'ref':
+		case 'source':
+		case 'target':
+			// a recognized argument key indicating an id to be looked up
+			$source = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::URL,FALSE);
+			break 2; // skip switch AND foreach
+	} // switch
 } // foreach
 
 // generate qr code for the specified url, IF it exists and is usable in the database
 try
 {
-  if ( $source )
-  {
-    $param = array ( 'source' => OC_Shorty_Type::normalize($source,OC_Shorty_Type::URL) );
-    $query  = OCP\DB::prepare ( OC_Shorty_Query::URL_SOURCE );
-    $result = $query->execute($param)->FetchAll();
+	if ( $source )
+	{
+		$param = array ( 'source' => OC_Shorty_Type::normalize($source,OC_Shorty_Type::URL) );
+		$query  = OCP\DB::prepare ( OC_Shorty_Query::URL_SOURCE );
+		$result = $query->execute($param)->FetchAll();
 
-    if ( FALSE===$result )
-      throw new OC_Shorty_HttpException ( 500 );
-    elseif ( ! is_array($result) )
-      throw new OC_Shorty_HttpException ( 500 );
-    elseif ( 0==sizeof($result) )
-    {
-      // no entry found => 404: Not Found
-      throw new OC_Shorty_HttpException ( 404 );
-    }
-    elseif ( 1<sizeof($result) )
-    {
-      // multiple matches => 409: Conflict
-      throw new OC_Shorty_HttpException ( 409 );
-    }
-    elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('source',$result[0])) )
-    {
-      // invalid entry => 500: Internal Server Error
-      throw new OC_Shorty_HttpException ( 500 );
-    }
-    elseif ( (!array_key_exists('source',$result[0])) || ('1'==$result[0]['expired']) )
-    {
-      // entry expired => 410: Gone
-      throw new OC_Shorty_HttpException ( 410 );
-    }
-    // generate qrcode, regardless of who sends the request
-    if ( isset($_GET['download']) )
-    {
-      // force download / storage of image
-      header('Content-Disposition: attachment; filename="qrcode.png"');
-    }
-    QRcode::png ( $source );
-  } // if $source
-  else
-  {
-    // refuse forwarding => 403: Forbidden
-    throw new OC_Shorty_HttpException ( 403 );
-  }
+		if ( FALSE===$result )
+			throw new OC_Shorty_HttpException ( 500 );
+		elseif ( ! is_array($result) )
+			throw new OC_Shorty_HttpException ( 500 );
+		elseif ( 0==sizeof($result) )
+		{
+			// no entry found => 404: Not Found
+			throw new OC_Shorty_HttpException ( 404 );
+		}
+		elseif ( 1<sizeof($result) )
+		{
+			// multiple matches => 409: Conflict
+			throw new OC_Shorty_HttpException ( 409 );
+		}
+		elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('source',$result[0])) )
+		{
+			// invalid entry => 500: Internal Server Error
+			throw new OC_Shorty_HttpException ( 500 );
+		}
+		elseif ( (!array_key_exists('source',$result[0])) || ('1'==$result[0]['expired']) )
+		{
+			// entry expired => 410: Gone
+			throw new OC_Shorty_HttpException ( 410 );
+		}
+		// generate qrcode, regardless of who sends the request
+		if ( isset($_GET['download']) )
+		{
+			// force download / storage of image
+			header('Content-Disposition: attachment; filename="qrcode.png"');
+		}
+		QRcode::png ( $source );
+	} // if $source
+	else
+	{
+		// refuse forwarding => 403: Forbidden
+		throw new OC_Shorty_HttpException ( 403 );
+	}
 } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
 
 ?>

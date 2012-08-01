@@ -42,7 +42,7 @@ OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 OCP\Util::addScript ( 'shorty',   'shorty' );
 OCP\Util::addScript ( 'shorty',   'preferences' );
 if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
-  OCP\Util::addScript ( 'shorty',  'debug' );
+	OCP\Util::addScript ( 'shorty',  'debug' );
 
 
 // fetch template
@@ -52,9 +52,9 @@ $backend_types = OC_Shorty_Type::$BACKENDS;
 // kick out static option again if no global backend base has been specified in the system settings
 $backend_static_base = OCP\Config::getAppValue('shorty','backend-static-base','');
 if (   empty($backend_static_base)
-    || !parse_url($backend_static_base,PHP_URL_SCHEME)
-    || !parse_url($backend_static_base,PHP_URL_HOST) )
-  unset($backend_types['static']);
+	|| !parse_url($backend_static_base,PHP_URL_SCHEME)
+	|| !parse_url($backend_static_base,PHP_URL_HOST) )
+	unset($backend_types['static']);
 // feed template engine
 $tmpl->assign ( 'backend-types',       $backend_types );
 $tmpl->assign ( 'backend-static-base', $backend_static_base );

@@ -42,124 +42,124 @@ $arg = NULL;
 // - none of the two, so just a plain list of existing shortys
 foreach ($_GET as $key=>$val) // in case there are unexpected, additional arguments like a timestamp added by some stupid proxy
 {
-  switch ($key)
-  {
-    default:
-      // unrecognized key, we ignore it
-      break;
+	switch ($key)
+	{
+		default:
+			// unrecognized key, we ignore it
+			break;
 
-    case 'id':
-    case 'shorty':
-    case 'ref':
-    case 'entry':
-      // a recognized argument key indicating an id to be looked up
-      $arg = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::ID,FALSE);
-      break 2; // skip switch AND foreach
-  } // switch
+		case 'id':
+		case 'shorty':
+		case 'ref':
+		case 'entry':
+			// a recognized argument key indicating an id to be looked up
+			$arg = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::ID,FALSE);
+			break 2; // skip switch AND foreach
+	} // switch
 } // foreach
 
 // now construct the target url and relay to it (if applicable)
 try
 {
 
-  // has an id been specified at all ?
-  if ( NULL==$arg )
-  {
-    // nothing to forward to => 400: Bad Request
-    throw new OC_Shorty_HttpException ( 400 );
-  }
+	// has an id been specified at all ?
+	if ( NULL==$arg )
+	{
+		// nothing to forward to => 400: Bad Request
+		throw new OC_Shorty_HttpException ( 400 );
+	}
 
-  // an id was specified, ordinary or special meaning ?
-  if ( '0000000000'==$arg )
-  {
-    // this is a pseudo id, used to test the setup, so just return a positive message.
-    // this is used to test the setup of the static backend, shorty calls itself from there
-    OCP\Util::writeLog( 'shorty', "Positiv validation of static backend base url.", OC_Log::DEBUG );
-    OCP\JSON::success ( array ( ) );
-    exit();
-  }
+	// an id was specified, ordinary or special meaning ?
+	if ( '0000000000'==$arg )
+	{
+		// this is a pseudo id, used to test the setup, so just return a positive message.
+		// this is used to test the setup of the static backend, shorty calls itself from there
+		OCP\Util::writeLog( 'shorty', "Positiv validation of static backend base url.", OC_Log::DEBUG );
+		OCP\JSON::success ( array ( ) );
+		exit();
+	}
 
-  // detect requested shorty id from request
-  $p_id = trim ( OC_Shorty_Type::normalize($arg,OC_Shorty_Type::ID) ) ;
-  if ( $p_id )
-  {
-    $param   = array ( 'id' => $p_id );
-    $query   = OCP\DB::prepare ( OC_Shorty_Query::URL_RELAY );
-    $result  = $query->execute($param)->FetchAll();
-    $request = array (
-      'address' => $_SERVER['REMOTE_ADDR'],
-      'host'    => isset($_SERVER['REMOTE_HOST'])?$_SERVER['REMOTE_HOST']:gethostbyaddr($_SERVER['REMOTE_ADDR']),
-      'time'    => $_SERVER['REQUEST_TIME'],
-      'user'    => OCP\User::getUser(),
-    );
-    if ( FALSE===$result )
-      throw new OC_Shorty_HttpException ( 500 );
-    elseif ( ! is_array($result) )
-      throw new OC_Shorty_HttpException ( 500 );
-    elseif ( 0==sizeof($result) )
-    {
-      // no entry found => 404: Not Found
-      throw new OC_Shorty_HttpException ( 404 );
-    }
-    elseif ( 1<sizeof($result) )
-    {
-      // multiple matches => 409: Conflict
-      throw new OC_Shorty_HttpException ( 409 );
-    }
-    elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('target',$result[0])) )
-    {
-      // invalid entry => 500: Internal Server Error
-      throw new OC_Shorty_HttpException ( 500 );
-    }
-    elseif ( (!array_key_exists('target',$result[0])) || ('1'==$result[0]['expired']) )
-    {
-      // entry expired => 410: Gone
-      throw new OC_Shorty_HttpException ( 410 );
-    }
-    // an usable target !
-    $target = trim($result[0]['target']);
-    // check status of matched entry
-    switch (trim($result[0]['status']))
-    {
-      default:
-      case 'blocked':
-        // refuse forwarding => 403: Forbidden
-        OC_Shorty_Hooks::registerClick ( $result[0], $request, 'blocked' );
-        throw new OC_Shorty_HttpException ( 403 );
+	// detect requested shorty id from request
+	$p_id = trim ( OC_Shorty_Type::normalize($arg,OC_Shorty_Type::ID) ) ;
+	if ( $p_id )
+	{
+		$param   = array ( 'id' => $p_id );
+		$query   = OCP\DB::prepare ( OC_Shorty_Query::URL_RELAY );
+		$result  = $query->execute($param)->FetchAll();
+		$request = array (
+		'address' => $_SERVER['REMOTE_ADDR'],
+		'host'    => isset($_SERVER['REMOTE_HOST'])?$_SERVER['REMOTE_HOST']:gethostbyaddr($_SERVER['REMOTE_ADDR']),
+		'time'    => $_SERVER['REQUEST_TIME'],
+		'user'    => OCP\User::getUser(),
+		);
+		if ( FALSE===$result )
+			throw new OC_Shorty_HttpException ( 500 );
+		elseif ( ! is_array($result) )
+			throw new OC_Shorty_HttpException ( 500 );
+		elseif ( 0==sizeof($result) )
+		{
+			// no entry found => 404: Not Found
+			throw new OC_Shorty_HttpException ( 404 );
+		}
+		elseif ( 1<sizeof($result) )
+		{
+			// multiple matches => 409: Conflict
+			throw new OC_Shorty_HttpException ( 409 );
+		}
+		elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('target',$result[0])) )
+		{
+			// invalid entry => 500: Internal Server Error
+			throw new OC_Shorty_HttpException ( 500 );
+		}
+		elseif ( (!array_key_exists('target',$result[0])) || ('1'==$result[0]['expired']) )
+		{
+			// entry expired => 410: Gone
+			throw new OC_Shorty_HttpException ( 410 );
+		}
+		// an usable target !
+		$target = trim($result[0]['target']);
+		// check status of matched entry
+		switch (trim($result[0]['status']))
+		{
+			default:
+			case 'blocked':
+				// refuse forwarding => 403: Forbidden
+				OC_Shorty_Hooks::registerClick ( $result[0], $request, 'blocked' );
+				throw new OC_Shorty_HttpException ( 403 );
 
-      case 'private':
-        // check if user owns the Shorty, deny access if not
-        if ( $result[0]['user']!=OCP\User::getUser() )
-        {
-          // refuse forwarding => 403: Forbidden
-          OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
-          throw new OC_Shorty_HttpException ( 403 );
-        }
+			case 'private':
+				// check if user owns the Shorty, deny access if not
+				if ( $result[0]['user']!=OCP\User::getUser() )
+				{
+					// refuse forwarding => 403: Forbidden
+					OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
+					throw new OC_Shorty_HttpException ( 403 );
+				}
 
-        // NO break; but fall through to the action in 'case public:'
-      case 'shared':
-        // check if we are a user, deny access if not
-        if ( ! OCP\User::isLoggedIn() )
-        {
-          // refuse forwarding => 403: Forbidden
-          OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
-          throw new OC_Shorty_HttpException ( 403 );
-        }
+				// NO break; but fall through to the action in 'case public:'
+			case 'shared':
+				// check if we are a user, deny access if not
+				if ( ! OCP\User::isLoggedIn() )
+				{
+					// refuse forwarding => 403: Forbidden
+					OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
+					throw new OC_Shorty_HttpException ( 403 );
+				}
 
-        // NO break; but fall through to the action in 'case public:'
-      case 'public':
-        // finish this script to record the click, even if the client detaches right after the redirect
-        ignore_user_abort ( TRUE );
-        // forward to target, regardless of who sends the request
-        header("HTTP/1.0 301 Moved Permanently");
-        // http forwarding header
-        header ( sprintf('Location: %s', $target) );
-        // register click
-        OC_Shorty_Hooks::registerClick ( $result[0], $request, 'granted' );
-    } // switch status
+				// NO break; but fall through to the action in 'case public:'
+			case 'public':
+				// finish this script to record the click, even if the client detaches right after the redirect
+				ignore_user_abort ( TRUE );
+				// forward to target, regardless of who sends the request
+				header("HTTP/1.0 301 Moved Permanently");
+				// http forwarding header
+				header ( sprintf('Location: %s', $target) );
+				// register click
+				OC_Shorty_Hooks::registerClick ( $result[0], $request, 'granted' );
+		} // switch status
 
-    exit();
-  } // if id
+		exit();
+	} // if id
 } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
 
 ?>
