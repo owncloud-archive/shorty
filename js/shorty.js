@@ -243,7 +243,6 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle sharpness of dialog '"+dialog.attr('id')+"' to "+sharpness);
 				var confirm=dialog.find('#confirm');
 				if (sharpness){
-					$('#dialog-add #busy').fadeOut('slow');
 					confirm.off('click');
 					confirm.on('click',{dialog: dialog}, function(event){
 						event.preventDefault();
@@ -296,9 +295,16 @@ OC.Shorty={
 						// initialize dialog actions
 						switch(dialog.attr('id')){
 							case 'dialog-add':
+								OC.Shorty.WUI.Dialog.sharpen(dialog,false);
 								dialog.find('#target').focus();
 								dialog.find('#target').on('focusout', {dialog: dialog}, function(event){
-									OC.Shorty.WUI.Meta.collect(event.data.dialog);
+									$.when(
+										OC.Shorty.WUI.Meta.collect(event.data.dialog)
+									).done(function(){
+										OC.Shorty.WUI.Dialog.sharpen(dialog,true);
+									}).fail(function(){
+										OC.Shorty.WUI.Dialog.sharpen(dialog,false);
+									})
 								});
 								break;
 
@@ -315,7 +321,7 @@ OC.Shorty={
 								});
 								break;
 						} // switch
-					}).done(dfd.resolve)
+					}).done(dfd.resolve).fail(dfd.reject)
 				} // else
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.show
@@ -469,31 +475,11 @@ OC.Shorty={
 										  .datepicker('refresh');
 				else dialog.find('#until').datepicker('refresh');
 				// open edit dialog
-				OC.Shorty.WUI.Dialog.show(dialog)
 				$.when(
-					OC.Shorty.WUI.Meta.get(entry.attr('data-target'))
-				).pipe(function(response){
-					var meta=response.data;
-					if (meta.final)
-						dialog.find('#target').val(meta.final);
-					dialog.find('#title').attr('placeholder',meta.title);
-					dialog.find('#meta').fadeTo('fast',0,function(){
-						OC.Shorty.WUI.Meta.reset(dialog);
-						// specify the icons and information to be shown as meta data
-						dialog.find('#staticon').attr('src',meta.staticon);
-						dialog.find('#schemicon').attr('src',meta.schemicon);
-						dialog.find('#favicon').attr('src',meta.favicon);
-						dialog.find('#mimicon').attr('src',meta.mimicon);
-						dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
-						dialog.find('#meta').fadeTo('fast',1);
-					})
-				}).done(function(){
-					OC.Shorty.WUI.Dialog.sharpen(dialog,true);
-					dfd.resolve();
-				}).fail(function(){
-					OC.Shorty.WUI.Dialog.sharpen(dialog,false);
-					dfd.reject();
-				})
+					OC.Shorty.WUI.Dialog.show(dialog)
+				).done(function(){
+					OC.Shorty.WUI.Meta.collect(dialog);
+				});
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.edit
 			/**
@@ -565,30 +551,12 @@ OC.Shorty={
 				dialog.find('#created').attr('data-created',entry.attr('data-created')||'').val(entry.attr('data-created')||'');
 				dialog.find('#accessed').attr('data-accessed',entry.attr('data-accessed')||'').val(entry.attr('data-accessed')||'');
 				dialog.find('#notes').attr('data-notes',entry.attr('data-notes')).val(entry.attr('data-notes'));
-				// open edit dialog
-				OC.Shorty.WUI.Dialog.show(dialog)
+				// open show dialog
 				$.when(
-					OC.Shorty.WUI.Meta.get(entry.attr('data-target'))
-				).pipe(function(response){
-					var meta=response.data;
-					if (meta.final)
-						dialog.find('#target').val(meta.final);
-					dialog.find('#title').attr('placeholder',meta.title);
-					dialog.find('#meta').fadeTo('fast',0,function(){
-						OC.Shorty.WUI.Meta.reset(dialog);
-						// specify the icons and information to be shown as meta data
-						dialog.find('#staticon').attr('src',meta.staticon);
-						dialog.find('#schemicon').attr('src',meta.schemicon);
-						dialog.find('#favicon').attr('src',meta.favicon);
-						dialog.find('#mimicon').attr('src',meta.mimicon);
-						dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
-						dialog.find('#meta').fadeTo('fast',1);
-					})
-				}).done(function(){
-					dfd.resolve();
-				}).fail(function(){
-					dfd.reject();
-				})
+					OC.Shorty.WUI.Dialog.show(dialog)
+				).done(function(){
+					OC.Shorty.WUI.Meta.collect(dialog);
+				});
 				return dfd.promise();
 			} // OC.Shorty.WUI.Entry.show
 		}, // OC.Shorty.WUI.Entry
@@ -1131,21 +1099,21 @@ OC.Shorty={
 			collect: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("collect meta data");
 				var dfd = new $.Deferred();
-				var target = $('#dialog-add #target').val().trim();
+				var target = dialog.find('#target').val().trim();
 				// don't bother getting active on empty input
 				if ( ! target.length ){
-					dialog.find('#target').focus();
+					dialog.find('#target').focus().select();
 					dfd.resolve();
 					return dfd.promise();
 				}
-				// start expressing activity
-				$('#dialog-add #busy').fadeIn('fast');
 				// fill in fallback protocol scheme 'http' if none is specified
 				var regexp = /^[a-zA-Z0-9]+\:\//;
 				if ( ! regexp.test(target) ){
 					target = 'http://' + target;
 					dialog.find('#target').val(target);
 				}
+				// start expressing activity
+				dialog.find('#busy').fadeIn('fast');
 				// query meta data from target
 				$.when(
 					OC.Shorty.WUI.Meta.get(target)
@@ -1153,9 +1121,10 @@ OC.Shorty={
 					var meta=response.data;
 					if (meta.final)
 						dialog.find('#target').val(meta.final);
-					dialog.find('#title').attr('placeholder',meta.title);
-					dialog.find('#meta').fadeTo('fast',0,function(){
-						OC.Shorty.WUI.Meta.reset(dialog);
+					$.when(
+						OC.Shorty.WUI.Meta.reset(dialog)
+					).done(function(){
+						dialog.find('#title').attr('placeholder',meta.title);
 						// specify the icons and information to be shown as meta data
 						dialog.find('#staticon').attr('src',meta.staticon);
 						dialog.find('#schemicon').attr('src',meta.schemicon);
@@ -1163,13 +1132,20 @@ OC.Shorty={
 						dialog.find('#mimicon').attr('src',meta.mimicon);
 						dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
 						dialog.find('#meta').fadeTo('fast',1);
-						OC.Shorty.WUI.Dialog.sharpen(dialog,true);
 						// stop expressing activity
-						$('#dialog-add #busy').fadeOut('slow');
+						dialog.find('#busy').fadeOut('slow');
 					});
 					dfd.resolve(response);
-				}).fail(function(reponse){
-					OC.Shorty.WUI.Dialog.sharpen(dialog,false);
+				}).fail(function(response){
+					$.when(
+						OC.Shorty.WUI.Meta.reset(dialog)
+					).done(function(){
+						dialog.find('#title').attr('placeholder','');
+						dialog.find('#explanation').html('- '+t('shorty','Sorry, that target is invalid!')+' -');
+						dialog.find('#meta').fadeTo('fast',1);
+						// stop expressing activity
+						dialog.find('#busy').fadeOut('slow');
+					})
 					dfd.reject(response);
 				})
 				return dfd.promise();
@@ -1207,13 +1183,19 @@ OC.Shorty={
 			*/
 			reset: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("reset meta data");
-				dialog.find('#staticon').attr('src',dialog.find('#staticon').attr('data'));
-				dialog.find('#schemicon').attr('src',dialog.find('#schemicon').attr('data'));
-				dialog.find('#favicon').attr('src',dialog.find('#favicon').attr('data'));
-				dialog.find('#mimicon').attr('src',dialog.find('#mimicon').attr('data'));
-				dialog.find('#explanation').html(dialog.find('#explanation').attr('data'));
-				dialog.find('#meta').fadeTo('fast',1);
-			}, // OC.Shorty.WUI.Meta.reset
+				var dfd = new $.Deferred();
+				$.when(
+					dialog.find('#meta').fadeTo('fast',0)
+				).always(function(){
+					dialog.find('#staticon').attr('src',dialog.find('#staticon').attr('data'));
+					dialog.find('#schemicon').attr('src',dialog.find('#schemicon').attr('data'));
+					dialog.find('#favicon').attr('src',dialog.find('#favicon').attr('data'));
+					dialog.find('#mimicon').attr('src',dialog.find('#mimicon').attr('data'));
+					dialog.find('#explanation').html(dialog.find('#explanation').attr('data'));
+					dfd.resolve();
+				});
+				return dfd.promise();
+			} // OC.Shorty.WUI.Meta.reset
 		}, // OC.Shorty.WUI.Meta
 		/**
 		* @class OC.Shorty.WUI.Sums
@@ -1800,7 +1782,7 @@ OC.Shorty={
 			return new $.Deferred().reject({
 				status: 'error',
 				data: null,
-				message: [ "Unexpected error: " + response.status + " " + response.statusText ]
+				message: "Unexpected error: " + response.status + " " + response.statusText
 			});
 		} // OC.Shorty.Ajax.fail
 	}, // OC.Shorty.Ajax
