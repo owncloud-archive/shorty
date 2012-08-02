@@ -107,7 +107,7 @@ class OC_ShortyTracking_Hooks
 	public static function registerIncludes ( $parameters )
 	{
 		OCP\Util::writeLog ( 'shorty-tracking', 'Registering additional include files', OCP\Util::DEBUG );
-		OCP\Util::addStyle  ( 'shorty-tracking',          'shorty-tracking' );
+		OCP\Util::addStyle  ( 'shorty-tracking',          'tracking' );
 		OCP\Util::addScript ( 'shorty-tracking',          'tracking' );
 		OCP\Util::addScript ( 'shorty-tracking/3rdparty', 'jquery.sparkline.min' );
 		return TRUE;
