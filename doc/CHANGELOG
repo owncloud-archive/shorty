@@ -24,6 +24,11 @@
 
 Changelog: 
 
+* ??? ??? ?? 2012 Christian Reiner: version 0.1.4
+Fixed filtering of list of clicks by time column.
+Fixed reset of counters in sparklines when switching between lists.
+Fixed close button on lists of clicks.
+Internal code and namespace changes to match the OC Code of Conduct.
 * Thu Jul 26 2012 Christian Reiner: version 0.1.3
 A sparkline giving an impression of a Shortys usage. 
 * Tue Jul 24 2012 Christian Reiner: version 0.1.2

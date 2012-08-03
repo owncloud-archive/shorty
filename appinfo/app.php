@@ -43,7 +43,7 @@ try
 {
 	// only plug into the mother app 'Shorty' if that one is installed AND has the minimum required version:
 	// minimim requirement currently is as specified below:
-	$SHORTY_VERSION_MIN = '0.3.3';
+	$SHORTY_VERSION_MIN = '0.3.4';
 	if ( OCP\App::isEnabled('shorty') )
 	{
 		// check Shorty version: installed version required
