@@ -53,7 +53,7 @@ $(window).load(function(){
 		.on('click',function(){OC.Shorty.Tracking.build(false);});
 	OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load')
 		.on('click',function(){OC.Shorty.Tracking.build(true);});
-	// title & target filter reaction
+	// column filter reaction
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
 		.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter')
 		.on('keyup',function(){
@@ -486,6 +486,16 @@ OC.Shorty.Tracking=
  */
 OC.Shorty.Runtime.Context.ListOfClicks={
 	/**
+	 * @class OC.Shorty.Runtime.Context.ListOfClicks.ColumnValueReference
+	 * @brief collection of callback methods to use a list columns value
+	 * @author Christian Reiner
+	 * @description These callbacks are used in column filtering, a default for
+	 * non existing methods here exists in the filtering function
+	 */
+	ColumnValueReference:{
+		time:function(){return $(this).find('span').text();}
+	},
+	/**
 	* @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
 	* @brief Callback function replacing the default used in OC.Shorty.WUI.List.add()
 	* @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
@@ -528,9 +538,9 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 				else span.text(formatDate(1000*set[aspect]));
 				// add value to the sparkline value set in the header
 				switch (set['result']){
-				case 'blocked': OC.Shorty.Tracking.Stats.blocked.push(set[aspect]); break;
-				case 'denied':  OC.Shorty.Tracking.Stats.denied.push (set[aspect]); break;
-				case 'granted': OC.Shorty.Tracking.Stats.granted.push(set[aspect]); break;
+					case 'blocked': OC.Shorty.Tracking.Stats.blocked.push(set[aspect]); break;
+					case 'denied':  OC.Shorty.Tracking.Stats.denied.push (set[aspect]); break;
+					case 'granted': OC.Shorty.Tracking.Stats.granted.push(set[aspect]); break;
 				} // switch
 				break;
 
@@ -567,11 +577,17 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 	ListFillFilter:function(list){
 		if (OC.Shorty.Debug) OC.Shorty.Debug.log("using 'tracking' method to filter filled list");
 		// filter list
-		OC.Shorty.WUI.List.filter.apply(this,[list,'time',   list.find('thead tr#toolbar th#time    #filter').val()]),
-		OC.Shorty.WUI.List.filter.apply(this,[list,'address',list.find('thead tr#toolbar th#address #filter').val()]),
-		OC.Shorty.WUI.List.filter.apply(this,[list,'host',   list.find('thead tr#toolbar th#host    #filter').val()]),
-		OC.Shorty.WUI.List.filter.apply(this,[list,'user',   list.find('thead tr#toolbar th#user    #filter').val()]),
-		OC.Shorty.WUI.List.filter.apply(this,[list,'result', list.find('thead tr#toolbar th#result  select :selected').val()])
+		var toolbar=list.find('thead tr#toolbar');
+		OC.Shorty.WUI.List.filter.apply(this,
+			[list,'time',   toolbar.find('th#time    #filter').val()]);
+		OC.Shorty.WUI.List.filter.apply(this,
+			[list,'address',toolbar.find('th#address #filter').val()]);
+		OC.Shorty.WUI.List.filter.apply(this,
+			[list,'host',   toolbar.find('th#host    #filter').val()]);
+		OC.Shorty.WUI.List.filter.apply(this,
+			[list,'user',   toolbar.find('th#user    #filter').val()]);
+		OC.Shorty.WUI.List.filter.apply(this,
+			[list,'result', toolbar.find('th#result  select :selected').val()]);
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
 	/**
 	* @method OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
