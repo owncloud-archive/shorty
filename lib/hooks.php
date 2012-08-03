@@ -142,3 +142,4 @@ class OC_ShortyTracking_Hooks
 	} // function registerActions
 
 } // class OC_ShortyTracking_Hooks
+?>

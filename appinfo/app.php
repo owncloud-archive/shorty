@@ -66,5 +66,4 @@ catch ( Exception $e )
 	OC_App::disable    ( 'shorty-tracking' );
 	OCP\Util::writeLog ( 'shorty-tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), OCP\Util::WARN );
 }
-
 ?>

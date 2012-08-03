@@ -49,3 +49,4 @@ $TRANSLATIONS = array(
 
 "List of tracked clicks"      => "Liste der aufgezeichneten Klicks",
 );
+?>
