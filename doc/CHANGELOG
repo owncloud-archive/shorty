@@ -24,6 +24,11 @@
 
 Changelog: 
 
+* ??? ??? ?? 2012 Christian Reiner: version 0.3.4
+Implementation of a runtime callback catalog to ease plugin development.
+Internal code and namespace changes to match OCs Coding Style Guide.
+Simplified retrieval of meta data for urls to work the same in all dialogs.
+More flexible list filtering by using callbacks for column value retrieval. 
 * Tue Jul 24 2012 Christian Reiner: version 0.3.3
 Use OCs CSRF protection framework for ajax requests.
 Fixed a few compatibility issues with OC5-pre versions. 
