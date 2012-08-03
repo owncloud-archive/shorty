@@ -742,17 +742,22 @@ OC.Shorty={
 			* @author Christian Reiner
 			*/
 			filter: function(list,column,pattern){
+				// we define a default reference callback function referencing the 'data-...' attributes in the rows
+				var reference=  this.ColumnValueReference[column]
+				              ||function(){return $(this).parent().attr('data-'+column);};
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("filter list by column '"+column+"' and pattern '"+pattern+"'");
 				var dfd = new $.Deferred();
 				$.when(
 					list.find('tbody tr td#'+column).filter(function(){
-						return (-1==$(this).parent().attr('data-'+column).toLowerCase().indexOf(pattern.toLowerCase()));
-				}).addClass('shorty-filtered'),
-				list.find('tbody tr td#'+column).filter(function(){
-					return (-1!=$(this).parent().attr('data-'+column).toLowerCase().indexOf(pattern.toLowerCase()));
-				}).removeClass('shorty-filtered'),
-				list.find('tbody tr').filter(':has(td.shorty-filtered)').addClass('shorty-filtered'),
-				list.find('tbody tr').not(':has(td.shorty-filtered)').removeClass('shorty-filtered')
+						// compare equality of value and pattern using the reference callback as value
+						return (-1==reference.call(this).toLowerCase().indexOf(pattern.toLowerCase()));
+					}).addClass('shorty-filtered'),
+					list.find('tbody tr td#'+column).filter(function(){
+						// compare NON-equality of value and pattern using the reference callback as value
+						return (-1!=reference.call(this).toLowerCase().indexOf(pattern.toLowerCase()));
+					}).removeClass('shorty-filtered'),
+					list.find('tbody tr').filter(':has(td.shorty-filtered)').addClass('shorty-filtered'),
+					list.find('tbody tr').not(':has(td.shorty-filtered)').removeClass('shorty-filtered')
 				).done(dfd.resolve).fail(dfd.reject)
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.filter
@@ -1812,6 +1817,15 @@ OC.Shorty={
  */
 OC.Shorty.Runtime.Context.ListOfShortys={
 	/**
+	 * @class OC.Shorty.Runtime.Context.ListOfShortys.ColumnValueReference
+	 * @brief collection of callback methods to use a list columns value
+	 * @author Christian Reiner
+	 * @description These callbacks are used in column filtering, a default for
+	 * non existing methods here exists in the filtering function
+	 */
+	ColumnValueReference:{
+	},
+	/**
 	* @method OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
 	* @brief Enriches a raw list entry with usage specific values taken from a sepcified set of attributes
 	* @param row jQueryObject Represents the raw row, freshly cloned
@@ -1900,18 +1914,22 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		$('#desktop #list-of-shortys tbody tr').each(function(){
 			data['sum_clicks']+=parseInt($(this).attr('data-clicks'),10);
 		});
-		OC.Shorty.WUI.Sums.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[data]),
+		OC.Shorty.WUI.Sums.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[data]);
 		// filter list
-		OC.Shorty.WUI.List.filter.apply(this,[list,'target',list.find('thead tr#toolbar th#target #filter').val()]),
-		OC.Shorty.WUI.List.filter.apply(this,[list,'title', list.find('thead tr#toolbar th#title #filter').val()]),
-		OC.Shorty.WUI.List.filter.apply(this,[list,'status',list.find('thead tr#toolbar th#status select :selected').val()])
+		var toolbar=list.find('thead tr#toolbar');
+		OC.Shorty.WUI.List.filter.apply(this,
+			[list,'target',toolbar.find('th#target #filter').val()]);
+		OC.Shorty.WUI.List.filter.apply(this,
+			[list,'title', toolbar.find('th#title #filter').val()]);
+		OC.Shorty.WUI.List.filter.apply(this,
+			[list,'status',toolbar.find('th#status select :selected').val()]);
 		// sort list
 		$.when(
 			OC.Shorty.Action.Preference.get('list-sort-code')
 		).done(function(pref){
-			OC.Shorty.WUI.List.sort(list,pref['list-sort-code']);
+			OC.Shorty.WUI.List.sort.apply(OC.Shorty.Runtime.Context.ListOfShortys,[list,pref['list-sort-code']]);
 		})
-	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddInsert
+	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListFillFilter
 	/**
 	* @class OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	* @brief Checks and signals visually if any active filters prevent closing the list toolbar

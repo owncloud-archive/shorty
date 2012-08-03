@@ -59,7 +59,9 @@ $(document).ready(function(){
 	// button to reload the list
 	$('#list-of-shortys #toolbar').find('#reload').on('click',OC.Shorty.WUI.List.build);
 	// sort buttons
-	$('#list-of-shortys #toolbar').find('shorty-sorter').on('click',function(){OC.Shorty.WUI.List.sort($('#list-of-shortys'));});
+	$('#list-of-shortys #toolbar').find('shorty-sorter').on('click',function(){
+		OC.Shorty.WUI.List.sort.apply(OC.Shorty.Runtime.Context.ListOfShortys,[$('#list-of-shortys')]);
+	});
 	// add date picker options
 	$.datepicker.setDefaults({
 		dateFormat :'yy-mm-dd',
@@ -93,19 +95,13 @@ $(document).ready(function(){
 	var list=$('#list-of-shortys');
 	// title & target filter reaction
 	list.find('thead tr#toolbar').find('th#target,th#title').find('#filter').on('keyup',function(){
-		OC.Shorty.WUI.List.filter(
-			list,
-			$($(this).context.parentElement.parentElement).attr('id'),
-			$(this).val()
-		);
+		OC.Shorty.WUI.List.filter.apply(OC.Shorty.Runtime.Context.ListOfShortys,
+			[list,$($(this).context.parentElement.parentElement).attr('id'),$(this).val()]);
 	});
 	// status filter reaction
 	list.find('thead tr#toolbar th#status select').change(function(){
-		OC.Shorty.WUI.List.filter(
-			list,
-			$(this).parents('th').attr('id'),
-			$(this).find(':selected').val()
-		);
+		OC.Shorty.WUI.List.filter.apply(OC.Shorty.Runtime.Context.ListOfShortys,
+			[list,$(this).parents('th').attr('id'),$(this).find(':selected').val()]);
 	});
 	// column sorting reaction
 	list.find('thead tr#toolbar div img.shorty-sorter').on('click',function(){
