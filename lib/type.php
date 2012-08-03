@@ -45,6 +45,7 @@ class OC_Shorty_Type
 	const SORTVAL     = 'sortval';
 	const STRING      = 'string';
 	const URL         = 'url';
+	const PATH        = 'path';
 	const INTEGER     = 'integer';
 	const FLOAT       = 'float';
 	const DATE        = 'date';
@@ -173,28 +174,28 @@ class OC_Shorty_Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for t  ype '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::SORTKEY:
 				if ( array_key_exists ( trim($value), self::$SORTING ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for t  ype '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::SORTVAL:
 				if ( in_array ( trim($value), self::$SORTING ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for t  ype '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::STRING:
 				if ( preg_match ( '/^.*$/x', str_replace("\n","\\n",$value) ) )
 					return str_replace("\n","\\n",$value);
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for t  ype '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::URL:
 				$pattern = '/^([a-zA-Z][a-zA-Z][a-zA-Z0-9]+)\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(\/($|.+)?)*$/';
@@ -202,33 +203,41 @@ class OC_Shorty_Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for t  ype '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+
+			case self::PATH:
+				$pattern = '/(\/($|.+)?)*$/';
+				if ( preg_match ( $pattern, $value ) )
+					return $value;
+				elseif ( ! $strict)
+					return NULL;
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::INTEGER:
 				if ( preg_match ( '/^[0-9]+$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for t  ype '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::FLOAT:
 				if ( preg_match ( '/^[0-9]+(\.[0-9]+)?$/', $value ) )
 					return $value;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for t  ype '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::TIMESTAMP:
 				if ( preg_match ( '/^[0-9]{10}$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for t  ype '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::DATE:
 				if (FALSE!==($time=strtotime($value)))
 					return $time;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for t  ype '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 		} // switch $type
 		throw new OC_Shorty_Exception ( "unknown request argument   type '%s'", array($type) );
 	} // function is_valid
@@ -273,6 +282,9 @@ class OC_Shorty_Type
 				return trim ( $value );
 
 			case self::URL:
+				return trim ( $value );
+
+			case self::PATH:
 				return trim ( $value );
 
 			case self::INTEGER:

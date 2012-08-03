@@ -150,3 +150,4 @@ class OC_Shorty_Hooks
 		OC_Hook::emit( 'OC_Shorty', 'registerClick', array('shorty'=>$shorty,'request'=>$request) );
 	} // function registerClick
 } // class OC_Shorty_Hooks
+?>

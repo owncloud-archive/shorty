@@ -161,5 +161,4 @@ try
 		exit();
 	} // if id
 } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
-
 ?>

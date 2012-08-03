@@ -308,3 +308,4 @@ class OC_Shorty_Backend
 	} // OC_Shorty_Backend::registerUrl_tinyurl
 
 } // class OC_Shorty_Backend
+?>

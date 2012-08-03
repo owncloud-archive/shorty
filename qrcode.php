@@ -102,5 +102,4 @@ try
 		throw new OC_Shorty_HttpException ( 403 );
 	}
 } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
-
 ?>

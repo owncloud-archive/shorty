@@ -217,3 +217,5 @@ $TRANSLATIONS = array(
 "In short: this might not work for you, therefore you can disable it…"
 => "Kurz gesagt: dies mag nicht funktionieren, daher kann die Option deaktiviert werden…",
 );
+
+?>

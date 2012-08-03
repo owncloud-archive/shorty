@@ -161,5 +161,4 @@ class OC_Shorty_HttpException extends OC_Shorty_Exception
   } // function __construct
 
 } // class OC_Shorty_HttpException
-
 ?>

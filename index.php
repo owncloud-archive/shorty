@@ -69,10 +69,18 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 		case 'app':
 			break;
 
+		// any recognizable argument key indicating a file to be added as new shorty ?
+		case 'file':
+		case 'dir':
+		case 'folder':
+			// example: http://.../shorty/index.php?file=%3cfolder%3cfile
+			$act = 'acquire';
+			$arg = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::PATH,FALSE);
+			break 2; // skip switch AND foreach
+
 		// any recognizable argument key indicating a url to be added as new shorty ?
 		case 'url':
 		case 'uri':
-		case 'target':
 		case 'link':
 			// example: http://.../shorty/index.php?url=http%...
 			$act = 'acquire';
@@ -157,5 +165,4 @@ switch ($act)
 			$tmpl->printPage();
 		} catch ( OC_Shorty_Exception $e ) { OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
 } // switch
-
 ?>
