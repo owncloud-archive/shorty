@@ -36,10 +36,6 @@ All appears to be working fine except for one annoying thing:
 the standalone dialogs won't open ! (show, create and edit entries)
 Therefore Shorty is currently more or less useless in this browser.
 
-- Shorty does not work in the rekonq web browser
-The basic navigation elements (menu left) work, but the desktop stays empty.
-Apparently no script is executed, an issue with the js document.ready event.
-
 - It appears there is an issue with setting opacity in the Safari browser:
 The status filter in the lists toolbar shows an ugly black brick instead of a
 dimmed icon overlay. Also some other style issues appear, but the plugin seems
