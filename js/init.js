@@ -43,6 +43,12 @@ $(document).ready(function(){
 	$('.shorty-embedded#dialog-share #status').on('change',function(){
 		OC.Shorty.Action.Url.status($(this).siblings('#id').val(),$(this).val());
 	});
+	// refresh click count when clicking source or relay in embedded share dialog
+	$('.shorty-embedded#dialog-share .shorty-usages a#source').on('click',function(){
+		OC.Shorty.WUI.Sums.increment.apply(
+			OC.Shorty.Runtime.Context.ListOfShortys,
+			[$(this).parents('tr')]);
+	});
 	// collapsible items in embedded dialogs
 	$('.shorty-embedded .shorty-collapsible span').on('click',function(e){
 		var container=$(this).parent();
@@ -54,13 +60,15 @@ $(document).ready(function(){
 	$('#list-of-shortys #titlebar').on('click',function(){
 		OC.Shorty.WUI.List.Toolbar.toggle.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
-			[$('#list-of-shortys'),OC.Shorty.Runtime.Context.ListOfShortys]);
+			[$('#list-of-shortys')]);
 	});
 	// button to reload the list
 	$('#list-of-shortys #toolbar').find('#reload').on('click',OC.Shorty.WUI.List.build);
 	// sort buttons
 	$('#list-of-shortys #toolbar').find('shorty-sorter').on('click',function(){
-		OC.Shorty.WUI.List.sort.apply(OC.Shorty.Runtime.Context.ListOfShortys,[$('#list-of-shortys')]);
+		OC.Shorty.WUI.List.sort.apply(
+			OC.Shorty.Runtime.Context.ListOfShortys,
+			[$('#list-of-shortys')]);
 	});
 	// add date picker options
 	$.datepicker.setDefaults({
@@ -95,12 +103,14 @@ $(document).ready(function(){
 	var list=$('#list-of-shortys');
 	// title & target filter reaction
 	list.find('thead tr#toolbar').find('th#target,th#title').find('#filter').on('keyup',function(){
-		OC.Shorty.WUI.List.filter.apply(OC.Shorty.Runtime.Context.ListOfShortys,
+		OC.Shorty.WUI.List.filter.apply(
+			OC.Shorty.Runtime.Context.ListOfShortys,
 			[list,$($(this).context.parentElement.parentElement).attr('id'),$(this).val()]);
 	});
 	// status filter reaction
 	list.find('thead tr#toolbar th#status select').change(function(){
-		OC.Shorty.WUI.List.filter.apply(OC.Shorty.Runtime.Context.ListOfShortys,
+		OC.Shorty.WUI.List.filter.apply(
+			OC.Shorty.Runtime.Context.ListOfShortys,
 			[list,$(this).parents('th').attr('id'),$(this).find(':selected').val()]);
 	});
 	// column sorting reaction

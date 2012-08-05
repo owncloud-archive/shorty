@@ -420,8 +420,10 @@ OC.Shorty={
 
 							default: // probably an action registered by another plugin...
 								// execute the function specified inside the clicked element:
-								if (OC.Shorty.Debug) OC.Shorty.Debug.log("handing control to registered action");
-								executeFunctionByName($(element).attr('data_method'),window,entry);
+								if (typeof $(element).attr('data_method')!=='undefined'){
+									if (OC.Shorty.Debug) OC.Shorty.Debug.log("handing control to registered action");
+									executeFunctionByName($(element).attr('data_method'),window,entry);
+								}
 						} // switch
 					} // if click
 				}).done(dfd.resolve)
@@ -1250,6 +1252,18 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Sums.get
+			/**
+			* @method OC.Shorty.WUI.Sums.increment
+			* @brief Increments the click counter for a single entry in the visible list
+			* @param entry object Jquery object representing the clicked entry (row)
+			* @author Christian Reiner
+			*/
+			increment: function(entry){
+				var clicks=parseInt(entry.attr('data-clicks'),10)+1;
+				entry.attr('data-clicks',clicks);
+				entry.find('td#clicks span').text(clicks);
+				$('#controls #sum_clicks').text(parseInt($('#controls #sum_clicks').text(),10)+1);
+			} // OC.Shorty.WUI.Sums.increment
 		} // OC.Shorty.WUI.Sums
 	}, // OC.Shorty.WUI
 
