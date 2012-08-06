@@ -47,10 +47,13 @@
 				<img class="shorty-status" src="<?php echo OCP\Util::imagePath('shorty','status/good.png'); ?>" alt="<?php OC_Shorty_L10n::t('Success') ?>" title="<?php OC_Shorty_L10n::t('Verification successful') ?>">
 				<span id="title" class="title"><strong>Verification successful !</strong></span>
 			</legend>
-			<?php echo OC_Shorty_L10n::t("<p>Great, your setup appears to be working fine ! </p>".
-							"<p>Requests to the configured base url '%s' are mapped to this ownClouds shorty module at '%1\$s'</p>".
-							"<p>Usage of that static backend is fine and safe as long as this setup is not altered.</p>",
-							array('<a id="verification-target" style="font-family:Monospace;"></a>',OCP\Util::linkToAbsolute('shorty','index.php')) );?>
+			<p><?php	echo OC_Shorty_L10n::t("Great, your setup appears to be working fine!");?></p>
+			<p><?php	echo OC_Shorty_L10n::t(
+							"Requests to the configured base url are mapped to this ownClouds relay service.");
+						echo OC_Shorty_L10n::t(
+							"Usage of that static backend is fine and safe as long as this setup is not altered.");?></p>
+			<p><?php	echo OC_Shorty_L10n::t(
+							"This backend will now be offered as an additional backend alternative to all local users inside their personal preferences.");?></p>
 		</fieldset>
 	</div>
 	<!-- failure -->
@@ -60,10 +63,12 @@
 				<img class="shorty-status" src="<?php echo OCP\Util::imagePath('shorty','status/bad.png'); ?>" alt="<?php OC_Shorty_L10n::t('Success') ?>" title="<?php OC_Shorty_L10n::t('Verification successful') ?>">
 				<span id="title" class="title"><strong>Verification failed !</strong></span>
 			</legend>
-			<?php echo OC_Shorty_L10n::t("Sorry, but your setup appears not be be working correctly yet.<p>".
-							"Please check your setup and make sure that the configured base url '%1\$s' is indeed correct ".
-							"and that all requests to it are somehow mapped to ownClouds shorty module at '%2\$s'.",
-							array('<a id="verification-target" style="font-family:Monospace;"></a>',OCP\Util::linkToAbsolute('shorty','index.php')) );?>
+			<p><?php	echo OC_Shorty_L10n::t("Sorry, but your setup appears not to be working correctly yet!");?></p>
+			<p><?php	echo OC_Shorty_L10n::t("Please check your setup and make sure that the configured base url is indeed correct.");
+						echo OC_Shorty_L10n::t("Make sure that all requests to it are somehow mapped to Shortys relay service.");?></p>
+			<p><?php	echo OC_Shorty_L10n::t("Relay service");?>:
+				<br>
+				<a><?php	echo OCP\Util::linkToAbsolute('','public.php?service=shorty_relay&id=')."&lt;shorty-key&gt;";?></a></p>
 		</fieldset>
 	</div>
 </div>

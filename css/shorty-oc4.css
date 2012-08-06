@@ -52,13 +52,6 @@
 #controls {
 	display: none;
 }
-/* a dialog for verification of the static backend setup */
-#verification {
-	overflow: hidden;
-}
-#verification p {
-	padding-bottom:0.4em;
-}
 
 /* an activity visualizer, currently a 'rotating timer wheel' */
 #hourglass {

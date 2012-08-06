@@ -57,3 +57,32 @@
 #shorty .title {
 	margin-bottom: 0.6em;
 }
+
+/* a dialog for verification of the static backend setup */
+#dialog-verification legend {
+	width: 100%;
+	text-align: center;
+}
+#dialog-verification p {
+	padding:0.6em 0;
+}
+#dialog-verification a {
+	font-family:Monospace;
+	font-size:140%;
+	line-height: 100%;
+	background-color:silver;
+}
+#dialog-verification #hourglass {
+	display: block;
+	text-align: center;
+	width: 100%; height: 100%;
+	margin-top: 20px;
+}
+#dialog-verification #failure {
+	display: none;
+	position: absolute;
+}
+#dialog-verification #success {
+	display: none;
+	position: absolute;
+}

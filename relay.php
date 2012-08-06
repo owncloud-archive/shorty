@@ -61,14 +61,12 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 // now construct the target url and relay to it (if applicable)
 try
 {
-
 	// has an id been specified at all ?
 	if ( NULL==$arg )
 	{
 		// nothing to forward to => 400: Bad Request
 		throw new OC_Shorty_HttpException ( 400 );
 	}
-
 	// an id was specified, ordinary or special meaning ?
 	if ( '0000000000'==$arg )
 	{
