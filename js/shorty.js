@@ -1407,7 +1407,7 @@ OC.Shorty={
 				if (!OC.Shorty.Action.Setting.popup.dialog){
 					OC.Shorty.Action.Setting.popup=$('#shorty #dialog-verification');
 					OC.Shorty.Action.Setting.popup.dialog({show:'fade',autoOpen:false,modal:true});
-					OC.Shorty.Action.Setting.popup.dialog('option','minHeight',270 );
+					OC.Shorty.Action.Setting.popup.dialog('option','minHeight',280 );
 					OC.Shorty.Action.Setting.popup.dialog('option','minWidth',400 );
 				}
 				var dfd = new $.Deferred();
