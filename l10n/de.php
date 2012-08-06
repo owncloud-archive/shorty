@@ -231,7 +231,7 @@ $TRANSLATIONS = array(
 "Please check your setup and make sure that the configured base url is indeed correct."
 =>"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die konfigurierte Basis-Url wirklich korrekt ist.",
 "Make sure that all requests to it are somehow mapped to Shortys relay service."
-=>"Es ist darauf zu achten, dass alle Anfragen daran irgendwie abgebildet werden auf Shortys Relais-Service.",
+=>"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shortys Relais-Service.",
 
 
 
