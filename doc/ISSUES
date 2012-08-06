@@ -35,6 +35,7 @@ its date value ? No idea...
 All appears to be working fine except for one annoying thing:
 the standalone dialogs won't open ! (show, create and edit entries)
 Therefore Shorty is currently more or less useless in this browser.
+The issue lies inside the jQuery library used throughout the OC project. 
 
 - When internally validating the setup of the base url used in the static
 backend you get a failure report ("doesn't work") although things are fine, if
