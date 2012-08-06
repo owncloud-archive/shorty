@@ -1267,13 +1267,25 @@ OC.Shorty={
 		} // OC.Shorty.WUI.Sums
 	}, // OC.Shorty.WUI
 
-	//==========
+	/**
+	 * @class Action
+	 * @brief Collection of actions methods serving as backend for the WUI methods.
+	 * @author Christian Reiner
+	 */
 
 	Action:{
-		// ===== OC.Shorty.Action.Preference =====
+		/**
+		 * @class OC.Shorty.Action.Preference
+		 * @brief Collection of methods handling user preference values
+		 * @author Christian Reiner
+		 */
 		Preference:
 		{
-			// ===== OC.Shorty.Action.Preference.get =====
+			/**
+			 * @method OC.Shorty.Action.Preference.get
+			 * @brief: Gets a specified users preference value
+			 * @author Christian Reiner
+			 */
 			get:function(data){
 				if (OC.Shorty.Debug){OC.Shorty.Debug.log("get preference(s):");OC.Shorty.Debug.log(data);}
 				var dfd = new $.Deferred();
@@ -1295,7 +1307,11 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // OC.Shorty.Action.Preference.get
-			// ===== OC.Shorty.Action.Preference.set =====
+			/**
+			 * @method OC.Shorty.Action.Preference.get
+			 * @brief: Sets a specified users preference value
+			 * @author Christian Reiner
+			 */
 			set:function(data){
 				if (OC.Shorty.Debug){OC.Shorty.Debug.log("set preference(s):");OC.Shorty.Debug.log(data);}
 				var dfd = new $.Deferred();
@@ -1318,9 +1334,17 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.Action.Preference.set
 		}, // OC.Shorty.Action.Preference
-		// ===== OC.Shorty.Action.Setting =====
+		/**
+		 * @class OC.Shorty.Action.Setting
+		 * @brief Collection of methods handling system settings values
+		 * @author Christian Reiner
+		 */
 		Setting:{
-			// ===== OC.Shorty.Action.Setting.get =====
+			/**
+			 * @method OC.Shorty.Action.Setting.get
+			 * @brief: Gets a specified system settings value
+			 * @author Christian Reiner
+			 */
 			get:function(data){
 				if (OC.Shorty.Debug){OC.Shorty.Debug.log("get setting(s):");OC.Shorty.Debug.log(data);}
 				var dfd = new $.Deferred();
@@ -1342,7 +1366,11 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // OC.Shorty.Action.Setting.get
-			// ===== OC.Shorty.Action.Setting.set =====
+			/**
+			 * @method OC.Shorty.Action.Setting.set
+			 * @brief: Sets a specified system settings value
+			 * @author Christian Reiner
+			 */
 			set:function(data){
 				if (OC.Shorty.Debug){OC.Shorty.Debug.log("set setting(s):");OC.Shorty.Debug.log(data);}
 				var dfd = new $.Deferred();
@@ -1364,9 +1392,17 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // OC.Shorty.Action.Setting.set
-			// ===== OC.Shorty.Action.Setting.popup =====
+			/**
+			 * @object OC.Shorty.Action.Setting.popup
+			 * @brief A persistent object representing a popup dialog
+			 * @author Christian Reiner
+			 */
 			popup:{},
-			// ===== OC.Shorty.Action.Setting.verify =====
+			/**
+			 * @method OC.Shorty.Action.Setting.verify
+			 * @brief Controls the verification of the current setting of the static backends base url.
+			 * @author Christian Reiner
+			 */
 			verify:function(){
 				if (!OC.Shorty.Action.Setting.popup.dialog){
 					OC.Shorty.Action.Setting.popup=$('#shorty #dialog-verification');
@@ -1380,7 +1416,11 @@ OC.Shorty={
 				).done(dfd.resolve)
 				return dfd.promise();
 			}, // OC.Shorty.Action.Setting.verify
-			// ===== OC.Shorty.Action.Setting.check =====
+			/**
+			 * @method OC.Shorty.Action.Setting.check
+			 * @brief Verifies if the current setting of the static backends base url is usable.
+			 * @author Christian Reiner
+			 */
 			check:function(popup,target){
 				popup.find('#verification-target').text(target);
 				popup.dialog('open');
@@ -1416,9 +1456,17 @@ OC.Shorty={
 				return dfd.promise();
 			} // OC.Shorty.Action.Setting.check
 		}, // OC.Shorty.Action.Setting
-		// ===== OC.Shorty.Action.Token =====
+		/**
+		 * @class OC.Shorty.Action.Token
+		 * @brief Collection of methods handling OCs CSRF protection token
+		 * @author Christian Reiner
+		 */
 		Token:{
-			// ===== OC.Shorty.Action.Token.refresh =====
+			/**
+			 * @method OC.Shorty.Action.Token.refresh
+			 * @brief Retrieves a fresh token and replaces the existing one in the DOM tree.
+			 * @author Christian Reiner
+			 */
 			refresh:function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("refreshing request token (lifebeat)");
 				var dfd=new $.Deferred();
@@ -1439,9 +1487,17 @@ OC.Shorty={
 				}).fail(dfd.reject)
 			} // OC.Shorty.Action.Token.refresh
 		}, // OC.Shorty.Action.Token
-		// ===== OC.Shorty.Action.Url =====
+		/**
+		 * @class OC.Shorty.Action.Url
+		 * @brief Collection of methods handling URLs
+		 * @author Christian Reiner
+		 */
 		Url:{
-			// ===== OC.Shorty.Action.Url.add =====
+			/**
+			 * @,ethod OC.Shorty.Action.Url.add
+			 * @brief Adds a URL including meta data as specified as a new Shorty.
+			 * @author Christian Reiner
+			 */
 			add:function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action add url");
 				var dfd=new $.Deferred();
@@ -1496,7 +1552,10 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.add =====
-			// ===== OC.Shorty.Action.Url.edit =====
+			/** OC.Shorty.Action.Url.edit
+			 * @brief Modifies an existign Shorty by storing the specified attributes.
+			 * @author Christian Reiner
+			 */
 			edit: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action modify url");
 				var dfd=new $.Deferred();
@@ -1542,7 +1601,11 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.edit =====
-			// ===== OC.Shorty.Action.Url.del =====
+			/**
+			 * @method OC.Shorty.Action.Url.del
+			 * @brief Marks an existing Shorty as deleted. 
+			 * @author Christian Reiner
+			 */
 			del: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action delete url");
 				var dfd = new $.Deferred();
@@ -1571,14 +1634,21 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.del =====
-			// ===== OC.Shorty.Action.Url.forward =====
+			/** OC.Shorty.Action.Url.forward
+			 * @brief Redirects to the target URL of a given Shorty.
+			 * @author Christian Reiner
+			 */
 			forward: function(entry){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action forward to entry "+entry.attr('id'));
 				var url=entry.attr('data-target');
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("opening target url '"+url+"' in new window");
 				window.open(url);
 			}, // OC.Shorty.Action.Url.forward
-			// ===== OC.Shorty.Action.Url.send =====
+			/**
+			 * @method OC.Shorty.Action.Url.send
+			 * @brief RUns the specific action defined for a chosen sharing usage. 
+			 * @author Christian Reiner
+			 */
 			send: function(element,entry){
 				var action=element.attr('id');
 				var position=element.position();
@@ -1702,7 +1772,10 @@ OC.Shorty={
 						if (OC.Shorty.Debug) OC.Shorty.Debug.log("usage action '"+action+"' is disabled, refusing to comply");
 				}
 			}, // OC.Shorty.Action.Url.send
-			// ===== OC.Shorty.Action.Url.show =====
+			/** OC.Shorty.Action.Url.show
+			 * @brief Visualizes all attributes of an existing Shorty. 
+			 * @author Christian Reiner
+			 */
 			show: function(){
 				var dfd = new $.Deferred();
 				var dialog = $('#dialog-show');
@@ -1724,7 +1797,11 @@ OC.Shorty={
 				).done(dfd.resolve)
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.show =====
-			// ===== OC.Shorty.Action.Url.status =====
+			/**
+			 * @method OC.Shorty.Action.Url.status
+			 * @brief Changes the status of an existing Shorty as specified. 
+			 * @author Christian Reiner
+			 */
 			status: function(id,status){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("changing status of id "+id+" to "+status);
 				var dfd = new $.Deferred();
@@ -1751,8 +1828,6 @@ OC.Shorty={
 			} // OC.Shorty.Action.Url.status
 		}, // OC.Shorty.Action.Url
 	}, // OC.Shorty.Action
-
-	// ===========
 
 	/**
 	* @class OC.Shorty.Ajax
