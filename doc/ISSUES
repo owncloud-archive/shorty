@@ -37,9 +37,8 @@ the standalone dialogs won't open ! (show, create and edit entries)
 Therefore Shorty is currently more or less useless in this browser.
 
 - When internally validating the setup of the base url used in the static
-backend you get a false positive ("doesn't work") although things are fine, if
-the mapping of base url to shorty plugin is done via a redirect. This is for
-exaple the case if you implement the mapping on a remote server because you
-want to use a different domain name for statically shortened urls.
-The reason is that jqueries ajax calls won't handle redirects internally. A
-wrapper will have to be implemented. 
+backend you get a failure report ("doesn't work") although things are fine, if
+the mapping of base url to shorty plugin is done by a remote server. This is
+due to cross site aatack prevention.
+The reason is that jqueries ajax calls won't handle such redirects internally.
+A wrapper will have to be implemented. 
