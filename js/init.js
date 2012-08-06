@@ -94,7 +94,7 @@ $(document).ready(function(){
 		// highlight clicked entry
 		OC.Shorty.WUI.List.highlight($(this).parents('table'),$(this).parent('tr'));
 	});
-	$(document).on('click','.shorty-list tbody tr td#actions a',[],function(e){
+	$(document).on('click','.shorty-list tbody tr td#actions span.shorty-actions a',[],function(e){
 		OC.Shorty.WUI.Entry.click(e,$(this));
 	});
 	// pretty select boxes where applicable (class controlled)
