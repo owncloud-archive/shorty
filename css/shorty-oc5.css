@@ -29,17 +29,8 @@
  * @author Christian Reiner
  */
 
-/* everything :-) */
-#content { overflow: auto; }
-
-/* adapt optical appearance in case the help button is pushed into the header */
-#header #help {
-	float:right;
-	background-color:blue;
-}
-
 /* the shorty desktop, a canvas, contains all elements except of those pushed into the header */
-#desktop {
+.shorty-desktop {
 	display: inline-block;
 	position: absolute;
 	background: transparent;
@@ -49,23 +40,23 @@
   padding-top: 20px;
 }
 /* top bar, holding main control elements */
-#controls {
+.shorty-controls {
 	display: none;
 }
 
 /* an activity visualizer, currently a 'rotating timer wheel' */
-#hourglass {
+.shorty-hourglass {
 	display: none;
 	position: absolute;
 	width: 100%; height: 100%;
 	z-index: 1;
   background: transparent;
 }
-#hourglass img {
+.shorty-hourglass img {
 	margin:4em 8em;
 }
 /* a replacement list visualized in case the 'real' list is empty */
-#vacuum {
+.shorty-vacuum {
 	display: none;
 	position: absolute;
 	left:6em; top:8em;
@@ -76,25 +67,25 @@
 	text-shadow: 0 1px 0 #FFFFFF;
   color: DarkSlateGray;
 }
-#vacuum .factoid {
+.shorty-vacuum .factoid {
 	font-size: 160%;
 	font-weight: bold;
 	font-style: normal;
 	color: gray;
 }
-#vacuum .suggestion {
+.shorty-vacuum .suggestion {
 	font-size: 80%;
 	font-weight: light;
 	font-style: italic;
   color: black;
 }
-#vacuum .explanation {
+.shorty-vacuum .explanation {
 	margin: 1em 0 2em;
 	font-size: 100%;
 	font-weight: normal;
 	font-style: normal;
 }
-#vacuum p {
+.shorty-vacuum p {
 	margin: 0.6em 0 0.2em;
 }
 .usage-explanation {
@@ -194,18 +185,18 @@ table.shorty-list.scrollingTable tfoot {
 .shorty-list thead #titlebar img {
 	opacity:0.7;
 }
-#desktop .shorty-list thead th#title,
-#desktop .shorty-list tbody td#title,
-#desktop .shorty-list thead th#target,
-#desktop .shorty-list tbody td#target {
+.shorty-desktop .shorty-list thead th#title,
+.shorty-desktop .shorty-list tbody td#title,
+.shorty-desktop .shorty-list thead th#target,
+.shorty-desktop .shorty-list tbody td#target {
 	width:10em;
 }
-#desktop .shorty-list thead th#clicks,
-#desktop .shorty-list tbody td#clicks {
+.shorty-desktop .shorty-list thead th#clicks,
+.shorty-desktop .shorty-list tbody td#clicks {
 	width:3em;
 }
-#desktop .shorty-list thead th#until,
-#desktop .shorty-list tbody td#until {
+.shorty-desktop .shorty-list thead th#until,
+.shorty-desktop .shorty-list tbody td#until {
 	width:5em;
 }
 .shorty-list thead tr#toolbar th input,
@@ -302,7 +293,7 @@ table.shorty-list.scrollingTable tfoot {
 	margin-right: 0.4em;
 }
 /* prettyfied select boxes */
-#content span.shorty-select select {
+.shorty-desktop span.shorty-select select {
 	width: 6.4em;
 	margin: 0;
 	padding: 0.2em;
@@ -310,7 +301,7 @@ table.shorty-list.scrollingTable tfoot {
 	border:0 none;
 	font-size: 10px;
 }
-#content span.shorty-select {
+.shorty-desktop span.shorty-select {
 	border: 1px solid #DDDDDD;
 	border-radius: 0.5em 0.5em 0.5em 0.5em;
 	box-shadow: 0 1px 1px #FFFFFF, 0 1px 0 #BBBBBB inset;

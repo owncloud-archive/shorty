@@ -35,21 +35,21 @@
 ?>
 
 <!-- central notification area -->
-<div id='notification'></div>
+<div id="notification" class="shorty-notification"></div>
 
 <!-- top control bar -->
-<div id="controls" class="controls shorty-controls" data-referrer="<?php if (array_key_exists('shorty-referrer',$_)) echo $_['shorty-referrer']; ?>">
+<div id="controls" class="shorty-controls" data-referrer="<?php if (array_key_exists('shorty-referrer',$_)) echo $_['shorty-referrer']; ?>">
 	<!-- button to add a new entry to list -->
 	<input type="button" id="add" value="<?php echo OC_Shorty_L10n::t('New Shorty'); ?>"/>
 	<!-- display label: number of entries in list -->
-	<span>
+	<span id="controls-sum-shortys">
 			<a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Number of entries') ?>:</a>
 			<a id="sum_shortys" class="shorty-value">
 				<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>" />
 			</a>
 	</span>
 	<!-- display label: total of clicks in list -->
-	<span>
+	<span id="controls-sum-clicks">
 			<a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Total of clicks') ?>:</a>
 			<a id="sum_clicks" class="shorty-value">
 				<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>" />

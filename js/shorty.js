@@ -74,7 +74,9 @@ OC.Shorty={
 				var controls = $('#controls');
 				if ( ! controls.is(':visible')){
 					$.when(
-						controls.slideDown('slow')
+						controls.slideDown('slow'),
+						// required for standalone dialogs, all of them being embedded in the controls
+ 						controls.css('overflow','visible')
 					).done(dfd.resolve)
 				}else{
 					$.when(
