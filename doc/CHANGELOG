@@ -24,6 +24,9 @@
 
 Changelog: 
 
+*            2012 Christian Reiner: version 0.3.5
+Fixed standalone dialogs not being visible in rare circumstances.
+Some cleanups in the style rule selectors.
 * Mon Aug 06 2012 Christian Reiner: version 0.3.4
 Implementation of a runtime callback catalog to ease plugin development.
 Internal code and namespace changes to match OCs Coding Style Guide.
