@@ -4,7 +4,7 @@
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -30,10 +30,10 @@
  */
 
 $(document).ready(function(){
-  // initialize desktop
-  $.when(
-    Shorty.WUI.Controls.init()
-  ).then(function(){
-    Shorty.WUI.List.build();
+	// initialize desktop
+	$.when(
+		OC.Shorty.WUI.Controls.init()
+	).then(function(){
+		OC.Shorty.WUI.List.build();
   });
 }); // document.ready

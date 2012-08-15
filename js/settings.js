@@ -4,7 +4,7 @@
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -30,24 +30,24 @@
  */
 
 $(document).ready(function(){
-  // initialize example that depends on backend-base
-  if ($('#shorty #backend-static-base').val().length)
-    $('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
-  // modify example upon input of a base
-  $('#shorty #backend-static-base').bind('input',function(){
-    $('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
-  });
-  // backend 'static': offer a clickable example link to verify the correct setup
-  $('#shorty #backend-static #example').bind('click',function(event){
-    event.preventDefault();
-    Shorty.Action.Setting.verify();
-  });
-  // store setting
-  $('#shorty #backend-static-base').focusout(function(){
-    // modify example
-    $('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
-    // save setting
-    Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize());
-    return false;
-  });
+	// initialize example that depends on backend-base
+	if ($('#shorty #backend-static-base').val().length)
+		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
+	// modify example upon input of a base
+	$('#shorty #backend-static-base').bind('input',function(){
+		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
+	});
+	// backend 'static': offer a clickable example link to verify the correct setup
+	$('#shorty #backend-static #example').bind('click',function(event){
+		event.preventDefault();
+		OC.Shorty.Action.Setting.verify();
+	});
+	// store setting
+	$('#shorty #backend-static-base').focusout(function(){
+		// modify example
+		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
+		// save setting
+		OC.Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize());
+		return false;
+	});
 });

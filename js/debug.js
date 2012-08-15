@@ -4,7 +4,7 @@
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -31,41 +31,42 @@
  */
 
 $(document).ready(function(){
-  $.extend(Shorty,{
-    Debug:{
-      log: function(issue){
-        switch (typeof(issue)){
-          case 'string':
-            console.log(issue);
-            break;
-          default:
-            console.log(this.dump(issue));
-        } // switch
-      }, // Shorty.Debuglog()
+	$.extend(OC.Shorty,{
+		Debug:{
+			log: function(issue){
+				switch (typeof(issue)){
+					case 'string':
+						console.log(issue);
+						break;
 
-      dump: function(payload,level){
-        var dumped_text = "";
-        if(!level) level = 0;
-        // some padding given at the beginning of the line
-        var level_padding = "";
-        for(var j=0;j<level+1;j++) level_padding += "    ";
+					default:
+						console.log(this.dump(issue));
+				} // switch
+			}, // OC.Shorty.Debuglog()
 
-        if(typeof(payload) == 'object') {
-          for(var item in payload) {
-            var value = payload[item];
+			dump: function(payload,level){
+				var dumped_text = "";
+				if(!level) level = 0;
+				// some padding given at the beginning of the line
+				var level_padding = "";
+				for(var j=0;j<level+1;j++) level_padding += "    ";
 
-            if(typeof(value) == 'object') {
-              dumped_text += level_padding + "'" + item + "' ...\n";
-              dumped_text += dump(value,level+1);
-            } else {
-              dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
-            }
-          }
-        } else { //Stings/Chars/Numbers etc.
-          dumped_text = "==>"+payload+"<==("+typeof(payload)+")";
-        }
-        return dumped_text;
-      } // Shorty.Debug.dump()
-    } // Shorty.Debug
+				if(typeof(payload) == 'object') {
+					for(var item in payload) {
+						var value = payload[item];
+
+						if(typeof(value) == 'object') {
+								dumped_text += level_padding + "'" + item + "' ...\n";
+								dumped_text += dump(value,level+1);
+							} else {
+								dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+						}
+					}
+				} else { //Stings/Chars/Numbers etc.
+					dumped_text = "==>"+payload+"<==("+typeof(payload)+")";
+				}
+				return dumped_text;
+			} // OC.Shorty.Debug.dump()
+		} // OC.Shorty.Debug
   });
 });

@@ -5,7 +5,7 @@
 * @author Christian Reiner
 * @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -32,24 +32,23 @@
  * @author Christian Reiner
  */
 
-// Check if we are a user
-OC_Util::checkAdminUser ( );
-OC_Util::checkAppEnabled ( 'shorty' );
+$OC_version = OCP\Util::getVersion();
+OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
+// OCP\Util::addStyle  ( 'shorty',   'shorty' );
+OCP\Util::addStyle  ( 'shorty',   (5<=$OC_version[0]||(4==$OC_version[0]&&80<=$OC_version[1]))?'shorty-oc5':'shorty-oc4' );
+OCP\Util::addStyle  ( 'shorty',   'settings' );
 
-OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
-OC_Util::addStyle  ( 'shorty',   'shorty' );
-OC_Util::addStyle  ( 'shorty',   'settings' );
-
-OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
-OC_Util::addScript ( 'shorty',   'shorty' );
-// OC_Util::addScript ( 'shorty',   'debug' );
-OC_Util::addScript ( 'shorty',   'settings' );
+OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
+OCP\Util::addScript ( 'shorty',   'shorty' );
+OCP\Util::addScript ( 'shorty',   'settings' );
+if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
+	OCP\Util::addScript ( 'shorty',  'debug' );
 
 
 // fetch template
-$tmpl = new OC_Template ( 'shorty', 'tmpl_settings' );
+$tmpl = new OCP\Template ( 'shorty', 'tmpl_settings' );
 // inflate template
-$tmpl->assign ( 'backend-static-base', OC_Appconfig::getValue('shorty','backend-static-base','') );
+$tmpl->assign ( 'backend-static-base', OCP\Config::getAppValue('shorty','backend-static-base','') );
 // render template
 return $tmpl->fetchPage ( );
 ?>

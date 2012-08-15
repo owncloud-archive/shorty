@@ -1,80 +1,157 @@
-<?php $TRANSLATIONS = array(
+<?php
+/**
+* @package shorty an ownCloud url shortener plugin
+* @category internet
+* @author Christian Reiner
+* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @license GNU Affero General Public license (AGPL)
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
+* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
+*
+* This library is free software; you can redistribute it and/or
+* modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+* License as published by the Free Software Foundation; either
+* version 3 of the license, or any later version.
+*
+* This library is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+*
+* You should have received a copy of the GNU Affero General Public
+* License along with this library.
+* If not, see <http://www.gnu.org/licenses/>.
+*
+*/
+
+/**
+ * @file l10n/de.php
+ * @brief Internationalization / localization file for language DE (german)
+ * @author Christian Reiner
+ */
+
+$TRANSLATIONS = array(
 // folder js
-"all"                                                        => "alle",
-"blocked"                                                    => "blockiert",
-"deleted"                                                    => "gelöscht",
-"never"                                                      => "niemals",
-"public"                                                     => "freigegeben",
-"shared"                                                     => "geteilt",
-"disabled"                                                   => "deaktiviert",
-"enabled"                                                    => "aktiviert",
+"all"                                                          => "alle",
+"blocked"                                                      => "geblockt",
+"deleted"                                                      => "gelöscht",
+"disabled"                                                     => "deaktiviert",
+"enabled"                                                      => "aktiviert",
+"never"                                                        => "niemals",
+"private"                                                      => "privat",
+"public"                                                       => "öffentlich",
+"shared"                                                       => "geteilt",
 
-"Access"                                                     => "Zugriff",
-"Add a new shorty"                                           => "Neuen Shorty hinzufügen",
-"Add as new"                                                 => "Neu hinzufügen",
-"Add as 'shorty' to ownCloud"                                => "Als 'Shorty' zu ownCloud hinzufügen",
-"Anything that appears helpful …"                            => "Alles, was hilfreich erscheint …",
-"Backend"                                                    => "Backend",
-"Base url"                                                   => "Basis-Url",
-"Choose a service…"                                          => "Wähle einen Dienst…",
-"Click it, for whatever site you want to create a Shorty."   => "Klicke es, für welche Seite auch immer Du ein 'Shorty' generieren willst.",
-"Click registered"                                           => "Click registriert",
-"Clicks"                                                     => "Klicks",
-"Close"                                                      => "Schließen",
-"Copy to clipboard"                                          => "In die Zwischenablage kopieren",
-"Copy to clipboard: Ctrl+C"                                  => "In Zwischenablage kopieren: Strg-C",
-"Copy to clipboard: Ctrl+C, then paste into SMS: Ctrl-V"     => "In Zwischenablage kopieren: Strg-C, dann in SMS einfügen: Strg-V",
-"Counted entries and clicks"                                 => "Einträge und Klicks gezählt",
-"Creation"                                                   => "Generierung",
-"Delete shorty"                                              => "Shorty löschen",
-"Drag this to your browser bookmarks."                       => "Zieh' dies in die Lesezeichen Deines Browsers.",
-"Example"                                                    => "Beispiel",
-"Exception"                                                  => "Ausnahme",
-"Exception (%s)"                                             => "Ausnahme (%s)",
-"Expiration"                                                 => "Verfall",
-"List currently empty."                                      => "Liste derzeit leer.",
-"Loading"                                                    => "Lade",
-"Modifications for shorty with id '%s' saved"                => "Änderungen zu Shorty mit Kennung '%s' gespeichert",
-"Modify attributes"                                          => "Attribute ändern",
-"Modify shorty"                                              => "Shorty ändern",
-"New Shorty"                                                 => "Neuer Shorty",
-"Notes"                                                      => "Anmerkungen",
-"Number of entries"                                          => "Anzahl der Einträge",
-"Number of entries: %s"                                      => "Anzahl der Einträge: %s",
-"Open source url"                                            => "Quell-Url öffnen",
-"Open relay url"                                             => "Relais-Url öffnen",
-"Open target"                                                => "Ziel öffnen",
-"Open target url"                                            => "Ziel-Url öffnen",
-"Preference saved."                                          => "Präferenz gespeichert.",
-"Preference(s) retrieved."                                   => "Präferenz(en) abgefragt.",
-"Relay url"                                                  => "Relais-Url",
-"Reload list"                                                => "Liste neu laden",
-"Save"                                                       => "Speichern",
-"Send by email"                                              => "Als E-Mail verschicken",
-"Send by SMS"                                                => "Als SMS verschicken",
-"Setting saved."                                             => "Einstellung gespeichert.",
-"Shortlet"                                                   => "Shortlet",
-"Shorty with id '%s' deleted"                                => "Shorty mit Kennung '%s' gelöscht",
-"Shorty title"                                               => "Shorty-Titel",
-"Show details"                                               => "Details zeigen",
-"Sort ascending"                                             => "aufsteigend sortieren",
-"Sort descending"                                            => "absteigend sortieren",
-"Source url"                                                 => "Quell-Url",
-"Specify a backend base url…"                                => "Lege eine Basis-Url für das Backend fest…",
-"Status"                                                     => "Status",
-"Status change for shorty with id '%s' saved"                => "Statusänderung für Shorty mit Kennung '%s' gespeichert",
-"Target"                                                     => "Ziel",
-"Target url"                                                 => "Ziel-Url",
-"Target url '%s' is valid"                                   => "Ziel-Url '%s' ist valide",
-"Test and use"                                               => "Testen und nutzen",
-"Title"                                                      => "Titel",
-"Total of clicks"                                            => "Summe der Klicks",
-"Unexpected type of exception caught: %s"                    => "Unerwarteter Type einer Ausnahme aufgetreten: %s",
-"Unknown object of type caught: %s"                          => "Unbekanntes Objekttyp aufgetreten: %s",
-"Url shortened to: %s"                                       => "Url gekürzt zu: %s",
-"Verification by click"                                      => "Prüfung durch Klicken",
+"Ctrl-C"                                                       => "Strg-C",
+"Ctrl-V"                                                       => "Strg-V",
 
-"%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s" => "%s\Nachricht(Code): %s (%s)\nDatei(Zeile): %s (%s)\nInfo: %%s",
+"bitly.com service"                                            => "bitly.com-Service",
+"cli.gs service"                                               => "cli.gs-Service",
+"goo.gl service"                                               => "goo.gl-Service",
+"is.gd service"                                                => "is.gd-Service",
+"ti.ny service"                                                => "ti.ny-Service",
+"tiny.cc service"                                              => "tiny.cc-Service",
+"static backend"                                               => "statisches Backend",
+
+"for any access"                                               => "für jeglichen Zugriff",
+"for own usage"                                                => "für eigenen Gebrauch",
+"with ownCloud users"                                          => "mit anderen ownCloud-Nutzern",
+"available for everyone"                                       => "verfügbar für jeden",
+
+"Access"                                                       => "Zugriff",
+"Add a new shorty"                                             => "Neuen Shorty hinzufügen",
+"Add as new"                                                   => "Neu hinzufügen",
+"Add page as 'Shorty' to ownCloud"                             => "Seite als 'Shorty' zu ownCloud hinzufügen",
+"after the SMS has been launched"                              => "nachdem die SMS gestartet wurde",
+"Alternatively get the image for printout or storage"          => "Alternativ ist die Grafik auch für Ausdruck oder Speicherung ladbar",
+"alternatively the link can be copied for usage apart"         => "alternativ kann der Link kopiert werden für anderweitige Nutzung",
+"Alternatively the link can be copied manually"                => "Alternativ kann der Link manuell kopiert werden",
+"Alternatively the link can be copied into a message manually" => "Alternativ kann der Link manuell in eine Nachricht kopiert werden",
+"Anything that appears helpful …"                              => "Alles, was hilfreich erscheint …",
+"Backend"                                                      => "Backend",
+"Base url"                                                     => "Basis-Url",
+"Choose a service…"                                            => "Wähle einen Dienst…",
+"Click for embedding details"                                  => "Klicken für Einbinde-Details",
+"Click it, for whatever site you want to create a Shorty."     => "Klicke es, für welche Seite auch immer Du ein 'Shorty' generieren willst.",
+"Click registered"                                             => "Click registriert",
+"Clicks"                                                       => "Klicks",
+"Clicking 'Ok' below will try to launch an email composer"     => "Klicken von 'Ok' unten versucht, einen E-Mail-Editor zu starten",
+"Clicking 'Ok' below will try to launch an sms composer"       => "Klicken von 'Ok' unten versucht, einen SMS-Editor zu starten",
+"Close"                                                        => "Schließen",
+"Copy and embed it into an img tag on some web page"           => "Er kann als Kopie in einer Webseite verlinkt werden",
+"Copy to clipboard"                                            => "In Zwischenablage kopieren",
+"Counted entries and clicks"                                   => "Einträge und Klicks gezählt",
+"Create a new 'Shorty' and share it"                           => "Lege einen neuen 'Shorty' an und teile ihn",
+"Creation"                                                     => "Generierung",
+"Delete shorty"                                                => "Shorty löschen",
+"Drag this to your browser bookmarks."                         => "Zieh' dies in die Lesezeichen Deines Browsers.",
+"Example"                                                      => "Beispiel",
+"Exception"                                                    => "Ausnahme",
+"Exception (%s)"                                               => "Ausnahme (%s)",
+"Expiration"                                                   => "Verfall",
+"Loading"                                                      => "Ladend",
+"Modifications for shorty with id '%s' saved"                  => "Änderungen zu Shorty mit Kennung '%s' gespeichert",
+"Modify attributes"                                            => "Attribute ändern",
+"Modify shorty"                                                => "Shorty ändern",
+"New Shorty"                                                   => "Neuer Shorty",
+"Notes"                                                        => "Notizen",
+"Nothing here yet"                                             => "Hier gibt's noch nichts",
+"Number of entries"                                            => "Anzahl der Einträge",
+"Number of entries: %s"                                        => "Anzahl der Einträge: %s",
+"QRCode"                                                       => "QRCode",
+"Open source url"                                              => "Quell-Url öffnen",
+"Open relay url"                                               => "Relais-Url öffnen",
+"Open target"                                                  => "Ziel öffnen",
+"Open target url"                                              => "Ziel-Url öffnen",
+"or simpy print or download it for off-line usage"             => "oder auch einfach durch Ausdruck oder Speicherung",
+"Paste to embed elsewhere"                                     => "Anderweitig wieder einfügen",
+"Preference saved."                                            => "Präferenz gespeichert.",
+"Preference(s) retrieved."                                     => "Präferenz(en) abgefragt.",
+"Prepare to send as SMS"                                       => "Vorbereitung zum Senden per SMS",
+"Relay service"                                                => "Relais-Service",
+"Relay url"                                                    => "Relais-Url",
+"Reload"                                                       => "aktualisieren",
+"Reload list"                                                  => "Liste aktualisieren",
+"Save"                                                         => "Speichern",
+"Send by email"                                                => "Als E-Mail verschicken",
+"Send link by email"                                           => "Link als E-Mail verschicken",
+"Send by SMS"                                                  => "Als SMS verschicken",
+"Setting saved."                                               => "Einstellung gespeichert.",
+"Share shorty"                                                 => "Shorty teilen",
+"Shortlet"                                                     => "Shortlet",
+"Shorty as QRCode"                                             => "Shorty als QRCode",
+"Shorty with id '%s' deleted"                                  => "Shorty mit Kennung '%s' gelöscht",
+"Show as QRCode"                                               => "Als QRCode anzeigen",
+"Show details"                                                 => "Details anzeigen",
+"Show usage"                                                   => "Aufrufe anzeigen",
+"Sort ascending"                                               => "aufsteigend sortieren",
+"Sort descending"                                              => "absteigend sortieren",
+"Source url"                                                   => "Quell-Url",
+"Specify a static base url…"                                   => "Lege eine statische Basis-Url fest…",
+"Status"                                                       => "Status",
+"Status change for shorty with id '%s' saved"                  => "Statusänderung für Shorty mit Kennung '%s' gespeichert",
+"Target"                                                       => "Ziel",
+"Target url"                                                   => "Ziel-Url",
+"Target url '%s' is valid"                                     => "Ziel-Url '%s' ist valide",
+"Share and use"                                                => "Teilen und nutzen",
+"The link below can be copied for usage apart"                 => "Der Link unten kann kopiert werden für anderweitige Nutzung",
+"therefore the content must be copied manually"                => "daher muss der Inhalt manuell kopiert werden",
+"then paste into message"                                      => "dann in Nachricht einfügen",
+"This 2d barcode encodes the url pointing to this Shorty"      => "Dieser 2d-Barcode kodiert die URL die diesen Shorty referenziert",
+"This is the url referencing the QRCode shown before"          => "Dies ist die URL die den zuvor gezeigten QRCode referenziert",
+"Title"                                                        => "Titel",
+"Toggle toolbar"                                               => "Werkzeugleiste umschalten",
+"Total of clicks"                                              => "Summe der Klicks",
+"Typically this only works on devices like smart phones"       => "Typischerweise klappt dies nur auf Geräten wie Smartphones",
+"Unexpected type of exception caught: %s"                      => "Unerwarteter Type einer Ausnahme aufgetreten: %s",
+"Unfortunately the implementation of this scheme is limited"   => "Leider ist die Umsetzung dieses Schemas sehr limitiert",
+"Unknown object of type caught: %s"                            => "Unbekanntes Objekttyp aufgetreten: %s",
+"Url shortened to: %s"                                         => "Url gekürzt zu: %s",
+"Use it in web pages by referencing or embedding"              => "Zur Nutzung in Webseiten durch Referenzieren oder Einbinden",
+"Use the '%s' button above or the fine 'Shortlet'"             => "Nutze den Knopf '%s' oben oder das tolle 'Shortlet'",
+"Verification by click"                                        => "Prüfung durch Klicken",
+
+"%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s"   => "%s\Nachricht(Code): %s (%s)\nDatei(Zeile): %s (%s)\nInfo: %%s",
 
 "API access key"      => "API-Zugriffsschlüssel",
 "Account"             => "Nutzerkonto",
@@ -112,10 +189,10 @@
 => "Solche Links werden sicherlich länger sein, als wenn ein Backend eingesetzt wird.",
 "However this option does not rely on any third party service and keeps your shortys under your control."
 => "Dafür stützt sich diese Option aber nicht auf fremde Angebote und belässt die Shorties unter eigener Kontrolle.",
-"A static, rule-based backend is used, shorty links are generated relative to a given base url."
-=> "Ein statisches, regelbasiertes Backend wird genutzt, Shorty-Links werden relativ zu einer gegebenen Basis-Url generiert.",
 "Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration."
 => "Da diese Konfiguration von serverseitigen Konfigurationsregeln abhängt, kann die Basis-Url nur unter 'Verwaltung' in der Konfiguration festgelegt werden.",
+"Static, rule-based backend, generates shorty links relative to a given base url."
+=> "Ein statisches, regelbasiertes Backend wird genutzt, Shorty-Links werden relativ zu einer gegebenen Basis-Url generiert.",
 "You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."
 => "Es muss sicher gestellt werden, dass jede Anfrage an die hier konfigurierte URL intern umgesetzt wird auf das 'Shorty'-Modul",
 "Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."
@@ -139,5 +216,25 @@
 "In addition, the implementations found in Android or iOS are minimalistic, buggy and differ from system to system."
 => "Darüber hinaus sind die Implementierungen, etwa die in Adroid oder auch iOS minimalistisch, fehlerhaft und unterschiedlich von System zu System.",
 "In short: this might not work for you, therefore you can disable it…"
-=> "Kurz gesagt: die mag nicht funktionieren, daher can die Option deaktiviert werden…",
+=> "Kurz gesagt: dies mag nicht funktionieren, daher kann die Option deaktiviert werden…",
+
+"Great, your setup appears to be working fine!"
+=>"Prima, die Konfiguration scheint korrekt zu funktionieren!",
+"Requests to the configured base url are mapped to this ownClouds relay service."
+=>"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-Service abgebildet.",
+"Usage of that static backend is fine and safe as long as this setup is not altered."
+=>"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese Konfiguration nicht geändert wird.",
+"This backend will now be offered as an additional backend alternative to all local users inside their personal preferences."
+=>"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als zusätzliche Alternative zu den verfügbaren Backends angeboten.",
+"Sorry, but your setup appears not to be working correctly yet!"
+=>"Entschuldigung, aber die Konfiguration scheint noch nicht korrekt zu funktionieren!",
+"Please check your setup and make sure that the configured base url is indeed correct."
+=>"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die konfigurierte Basis-Url wirklich korrekt ist.",
+"Make sure that all requests to it are somehow mapped to Shortys relay service."
+=>"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty Relais-Service.",
+
+
+
 );
+
+?>
