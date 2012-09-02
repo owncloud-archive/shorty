@@ -56,7 +56,7 @@ class OC_ShortyTracking_Hooks
 	*/
 	public static function deleteShortyClicks ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty-tracking', 'Wiping all clicks without corresponding Shorty', OCP\Util::INFO );
+		OCP\Util::writeLog ( 'shorty_tracking', 'Wiping all clicks without corresponding Shorty', OCP\Util::INFO );
 		$result = TRUE;
 		// wipe shorty clicks
 		$query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_WIPE );
@@ -82,7 +82,7 @@ class OC_ShortyTracking_Hooks
 	*/
 	public static function registerClick ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty-tracking', sprintf("Recording single click to Shorty '%s' with result '%s'",
+		OCP\Util::writeLog ( 'shorty_tracking', sprintf("Recording single click to Shorty '%s' with result '%s'",
 														$parameters['shorty']['id'],
 														$parameters['request']['result']), OCP\Util::DEBUG );
 		$param  = array (
@@ -106,10 +106,10 @@ class OC_ShortyTracking_Hooks
 	*/
 	public static function registerIncludes ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty-tracking', 'Registering additional include files', OCP\Util::DEBUG );
-		OCP\Util::addStyle  ( 'shorty-tracking',          'tracking' );
-		OCP\Util::addScript ( 'shorty-tracking',          'tracking' );
-		OCP\Util::addScript ( 'shorty-tracking/3rdparty', 'jquery.sparkline.min' );
+		OCP\Util::writeLog  ( 'shorty_tracking', 'Registering additional include files', OCP\Util::DEBUG );
+		OCP\Util::addStyle  ( 'shorty_tracking',          'tracking' );
+		OCP\Util::addScript ( 'shorty_tracking',          'tracking' );
+		OCP\Util::addScript ( 'shorty_tracking/3rdparty', 'jquery.sparkline.min' );
 		return TRUE;
 	} // function registerIncludes
 
@@ -121,7 +121,7 @@ class OC_ShortyTracking_Hooks
 	*/
 	public static function registerActions ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty-tracking', 'Registering additional Shorty actions', OCP\Util::DEBUG );
+		OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional Shorty actions', OCP\Util::DEBUG );
 		if ( ! is_array($parameters) )
 		{
 			return FALSE;
@@ -132,7 +132,7 @@ class OC_ShortyTracking_Hooks
 			$parameters['list'][] = array (
 				'id'    => 'clicks',
 				'name'  => 'clicks',
-				'icon'  => OCP\Util::imagePath('shorty-tracking','actions/hits.png'),
+				'icon'  => OCP\Util::imagePath('shorty_tracking','actions/hits.png'),
 				'call'  => 'OC.Shorty.Tracking.control',
 				'title' => OC_ShortyTracking_L10n::t("Click listing"),
 				'alt'   => OC_ShortyTracking_L10n::t("Clicks"),

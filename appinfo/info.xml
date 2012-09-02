@@ -33,7 +33,7 @@
  -->
 
 <info>
-	<id>shorty-tracking</id>
+	<id>shorty_tracking</id>
 	<name>Shorty Tracking</name>
 	<description>Shorty Tracking offers an additional tracking feature to
 the Shorty app. It records additional details to all clicks being relayed by

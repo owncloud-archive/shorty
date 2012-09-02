@@ -51,7 +51,7 @@ class OC_ShortyTracking_L10n extends OC_Shorty_L10n
 	* @access protected
 	* @author Christian Reiner
 	*/
-	protected function __construct ( $app='shorty-tracking' ) { parent::__construct($app); }
+	protected function __construct ( $app='shorty_tracking' ) { parent::__construct($app); }
 
 	/**
 	* @method OC_Shorty_L10n::identity

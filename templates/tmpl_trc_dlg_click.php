@@ -41,7 +41,7 @@
 			<a id="close" class="shorty-close-button"
 				title="<?php echo OC_Shorty_L10n::t("Close"); ?>">
 				<img alt="<?php echo OC_Shorty_L10n::t("Close"); ?>"
-					src="<?php echo OCP\Util::imagePath('apps/shorty','actions/shade.png'); ?>">
+					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
 			</a>
 			<span class="heading"><?php echo OC_ShortyTracking_L10n::t("Click details").':'; ?></span>
 		</legend>

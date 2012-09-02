@@ -30,14 +30,14 @@
  * @author Christian Reiner
  */
 
-OC::$CLASSPATH['OC_Shorty_Exception']     = 'apps/shorty/lib/exception.php';
-OC::$CLASSPATH['OC_Shorty_L10n']          = 'apps/shorty/lib/l10n.php';
-OC::$CLASSPATH['OC_Shorty_Tools']         = 'apps/shorty/lib/tools.php';
-OC::$CLASSPATH['OC_Shorty_Type']          = 'apps/shorty/lib/type.php';
-OC::$CLASSPATH['OC_Shorty_Query']         = 'apps/shorty/lib/query.php';
-OC::$CLASSPATH['OC_ShortyTracking_L10n']  = 'apps/shorty-tracking/lib/l10n.php';
-OC::$CLASSPATH['OC_ShortyTracking_Hooks'] = 'apps/shorty-tracking/lib/hooks.php';
-OC::$CLASSPATH['OC_ShortyTracking_Query'] = 'apps/shorty-tracking/lib/query.php';
+OC::$CLASSPATH['OC_Shorty_Exception']     = 'shorty/lib/exception.php';
+OC::$CLASSPATH['OC_Shorty_L10n']          = 'shorty/lib/l10n.php';
+OC::$CLASSPATH['OC_Shorty_Tools']         = 'shorty/lib/tools.php';
+OC::$CLASSPATH['OC_Shorty_Type']          = 'shorty/lib/type.php';
+OC::$CLASSPATH['OC_Shorty_Query']         = 'shorty/lib/query.php';
+OC::$CLASSPATH['OC_ShortyTracking_L10n']  = 'shorty_tracking/lib/l10n.php';
+OC::$CLASSPATH['OC_ShortyTracking_Hooks'] = 'shorty_tracking/lib/hooks.php';
+OC::$CLASSPATH['OC_ShortyTracking_Query'] = 'shorty_tracking/lib/query.php';
 
 try
 {
@@ -63,7 +63,7 @@ try
 }
 catch ( Exception $e )
 {
-	OC_App::disable    ( 'shorty-tracking' );
-	OCP\Util::writeLog ( 'shorty-tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), OCP\Util::WARN );
+	OC_App::disable    ( 'shorty_tracking' );
+	OCP\Util::writeLog ( 'shorty_tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), OCP\Util::WARN );
 }
 ?>

@@ -286,7 +286,7 @@ OC.Shorty.Tracking=
 		switch(item){
 		case 'result':
 			dialog.find('#click-'+item)
-				.text(t('shorty-tracking',element.attr('data-'+item)))
+				.text(t('shorty_tracking',element.attr('data-'+item)))
 				.attr('data-'+item,element.attr('data-'+item));
 			break;
 
@@ -328,7 +328,7 @@ OC.Shorty.Tracking=
 		var data={shorty:shorty,offset:offset};
 		$.ajax({
 			type:     'GET',
-			url:      OC.filePath('shorty-tracking','ajax','list.php'),
+			url:      OC.filePath('shorty_tracking','ajax','list.php'),
 			cache:    false,
 			data:     data,
 			dataType: 'json'
@@ -365,7 +365,7 @@ OC.Shorty.Tracking=
 				// load dialog layout via ajax and append it to the collection of dialogs in the controls
 				return $.ajax({
 					type:     'GET',
-					url:      OC.filePath('shorty-tracking','ajax','layout.php'),
+					url:      OC.filePath('shorty_tracking','ajax','layout.php'),
 					data:     { dialog: dialog},
 					cache:    false,
 					dataType: 'json'
@@ -429,7 +429,7 @@ OC.Shorty.Tracking=
 			height:'1.6em',
 			tooltipSkipNull:true,
 			tooltipContainer:OC.Shorty.Tracking.Dialog.List,
-			tooltipSuffix:' '+t('shorty-tracking','granted'),
+			tooltipSuffix:' '+t('shorty_tracking','granted'),
 			type:'line',
 			numberDigitGroupSep:' '
 		}
@@ -439,7 +439,7 @@ OC.Shorty.Tracking=
 				{},
 				sparklineOpts,{
 					composite:false,
-					tooltipSuffix:' '+t('shorty-tracking','granted'),
+					tooltipSuffix:' '+t('shorty_tracking','granted'),
 					lineColor:'green',
 					fillColor:'limegreen',
 				}
@@ -451,7 +451,7 @@ OC.Shorty.Tracking=
 				{},
 				sparklineOpts,{
 					composite:true,
-					tooltipSuffix:' '+t('shorty-tracking','denied'),
+					tooltipSuffix:' '+t('shorty_tracking','denied'),
 					lineColor:'darkorange',
 					fillColor:false,
 				}
@@ -463,7 +463,7 @@ OC.Shorty.Tracking=
 				{},
 				sparklineOpts,{
 					composite:true,
-					tooltipSuffix:' '+t('shorty-tracking','blocked'),
+					tooltipSuffix:' '+t('shorty_tracking','blocked'),
 					lineColor:'red',
 					fillColor:false
 				}
@@ -545,7 +545,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 				break;
 
 			case 'result':
-				span.text(t('shorty-tracking',set[aspect]));
+				span.text(t('shorty_tracking',set[aspect]));
 				span.addClass('ellipsis');
 				break;
 
