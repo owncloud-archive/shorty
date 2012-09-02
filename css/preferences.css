@@ -66,6 +66,6 @@
 	text-decoration:underline;
 }
 #shorty a.external:after {
-	content:url("%appswebroot%/apps/shorty/img/actions/external.png");
+	content:url("../img/actions/external.png");
 	margin-left:0.3em;
 }

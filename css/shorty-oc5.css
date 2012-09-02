@@ -125,7 +125,7 @@
 	cursor: move;
 }
 #shortlet:after {
-	content: url("%appswebroot%/shorty/img/drag_me.png");
+	content: url("../img/drag_me.png");
 	position: relative;
 	top: -12px;
   margin-left: -160px;
@@ -264,11 +264,11 @@ table.shorty-list.scrollingTable tfoot {
 .shorty-list tbody tr.deleted>#until {
 	color: gray;
 	text-decoration: line-through;
-	background: transparent url('%appswebroot%/shorty/img/status/strike.png') 0 50% repeat-x;
+	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
 }
 /* replace the 'delete' action icon by an 'undelete' icon */
 .shorty-list tbody tr.deleted>#actions #del:after {
-	content: url("%appswebroot%/shorty/img/actions/recycle.png");
+	content: url("../img/actions/recycle.png");
 	position: relative;
 	top: 3px;
 	margin-left: -19px;
@@ -419,19 +419,19 @@ table.shorty-list.scrollingTable tfoot {
 	vertical-align: middle;
 }
 .shorty-embedded a.shorty-clickable:before {
-	content: url("%appswebroot%/shorty/img/actions/external.png");
+	content: url("../img/actions/external.png");
 	margin-right: 0.3em;
 	margin-left: 7.4em;
 }
 .shorty-embedded fieldset.shorty-collapsible span:before {
-	content: url("%appswebroot%/shorty/img/actions/shade.png");
+	content: url("../img/actions/shade.png");
 	margin-right: 0.3em;
 	padding: 0;
 	vertical-align: baseline;
 	opacity: 0.7;
 }
 .shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
-	content:url("%appswebroot%/shorty/img/actions/unshade.png");
+	content:url("../img/actions/unshade.png");
 	margin-right:0.3em;
 	vertical-align: baseline;
 	opacity: 0.7;

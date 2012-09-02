@@ -86,7 +86,7 @@
 		<br />
 		<span class="label-line">
 		<label for="clicks"><?php echo OC_Shorty_L10n::t('Clicks').':'; ?></label>
-		<input id="clicks" name="clicks" data="" type="textarea" class="" style="width:1em;" readonly disabled />
+		<input id="clicks" name="clicks" data="" type="textarea" class="" style="width:3em;" readonly disabled />
 		<label for="created"><?php echo OC_Shorty_L10n::t('Creation').':'; ?></label>
 		<input id="created" name="created" type="text" data="" class="" style="width:7em;" readonly disabled />
 		<label for="accessed"><?php echo OC_Shorty_L10n::t('Access').':'; ?></label>

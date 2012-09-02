@@ -30,15 +30,15 @@
  * @author Christian Reiner
  */
 
-OC::$CLASSPATH['OC_Shorty_Backend']       = 'apps/shorty/lib/backend.php';
-OC::$CLASSPATH['OC_Shorty_Exception']     = 'apps/shorty/lib/exception.php';
-OC::$CLASSPATH['OC_Shorty_Hooks']         = 'apps/shorty/lib/hooks.php';
-OC::$CLASSPATH['OC_Shorty_HttpException'] = 'apps/shorty/lib/exception.php';
-OC::$CLASSPATH['OC_Shorty_L10n']          = 'apps/shorty/lib/l10n.php';
-OC::$CLASSPATH['OC_Shorty_Meta']          = 'apps/shorty/lib/meta.php';
-OC::$CLASSPATH['OC_Shorty_Query']         = 'apps/shorty/lib/query.php';
-OC::$CLASSPATH['OC_Shorty_Tools']         = 'apps/shorty/lib/tools.php';
-OC::$CLASSPATH['OC_Shorty_Type']          = 'apps/shorty/lib/type.php';
+OC::$CLASSPATH['OC_Shorty_Backend']       = 'shorty/lib/backend.php';
+OC::$CLASSPATH['OC_Shorty_Exception']     = 'shorty/lib/exception.php';
+OC::$CLASSPATH['OC_Shorty_Hooks']         = 'shorty/lib/hooks.php';
+OC::$CLASSPATH['OC_Shorty_HttpException'] = 'shorty/lib/exception.php';
+OC::$CLASSPATH['OC_Shorty_L10n']          = 'shorty/lib/l10n.php';
+OC::$CLASSPATH['OC_Shorty_Meta']          = 'shorty/lib/meta.php';
+OC::$CLASSPATH['OC_Shorty_Query']         = 'shorty/lib/query.php';
+OC::$CLASSPATH['OC_Shorty_Tools']         = 'shorty/lib/tools.php';
+OC::$CLASSPATH['OC_Shorty_Type']          = 'shorty/lib/type.php';
 
 OCP\App::registerAdmin      ( 'shorty', 'settings' );
 OCP\App::registerPersonal   ( 'shorty', 'preferences' );

@@ -41,7 +41,7 @@
 			<a id="close" class="shorty-close-button"
 				title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
 				<img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
-					src="<?php echo OCP\Util::imagePath('apps/shorty','actions/shade.png');  ?>">
+					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
 			</a>
 			<span class="heading"><?php echo OC_Shorty_L10n::t('Share and use').':'; ?></span>
 		</legend>
@@ -92,24 +92,24 @@
 			<tr>
 				<td>
 					<img id="usage-qrcode" type="image" name="usage-qrcode" class="shorty-usage" alt="qrcode"
-						src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/qrcode.png'); ?>"
+						src="<?php echo OCP\Util::imagePath('shorty','usage/64/qrcode.png'); ?>"
 						title="<?php echo OC_Shorty_L10n::t("Show as QRCode"); ?>" />
 				</td>
 				<td>
 					<img id="usage-email" name="usage-email" class="shorty-usage" alt="email"
-						src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/email.png'); ?>"
+						src="<?php echo OCP\Util::imagePath('shorty','usage/64/email.png'); ?>"
 						title="<?php echo OC_Shorty_L10n::t("Send by email"); ?>" />
 				</td>
 <?php if ('disabled'!=$_['sms-control']) { ?>
 				<td>
 					<img id="usage-sms" name="usage-sms" class="shorty-usage" alt="sms"
-						src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/sms.png'); ?>"
+						src="<?php echo OCP\Util::imagePath('shorty','usage/64/sms.png'); ?>"
 						title="<?php echo OC_Shorty_L10n::t("Send by SMS"); ?>" />
 				</td>
 <?php } ?>
 				<td>
 					<img id="usage-clipboard" type="image" name="usage-clipboard" class="shorty-usage" alt="clipbaord"
-						src="<?php echo OCP\Util::imagePath('apps/shorty','usage/64/clipboard.png'); ?>"
+						src="<?php echo OCP\Util::imagePath('shorty','usage/64/clipboard.png'); ?>"
 						title="<?php echo OC_Shorty_L10n::t("Copy to clipboard"); ?>" />
 				</td>
 			</tr>
