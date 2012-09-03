@@ -490,6 +490,9 @@ table.shorty-list.scrollingTable tfoot {
 	padding: 0.2em 0.5em 0.1em 0.2em;
 	cursor: default;
 }
+.shorty-dialog span.label-line label{
+	text-align: right;
+}
 .shorty-dialog span {
 	padding: 0.6em 0.5em 0.1em 0.3em;
 }
