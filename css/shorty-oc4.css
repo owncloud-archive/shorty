@@ -319,13 +319,12 @@ table.shorty-list.scrollingTable tfoot {
 	vertical-align:middle;
 	z-index:4;
 	width: 47em;
-	margin: -1px 1em 0;
+	margin: -1px 0 0;
 	padding: 0.5em;
 	background: none repeat scroll 0 0 #F7F7F7;
 }
 .shorty-dialog fieldset {
 	position:relative;
-	width:46.2em;
 	border-bottom-left-radius: 0.5em;
 	border-bottom-right-radius: 0.5em;
 	border: 1px solid gray;

@@ -48,7 +48,7 @@ For more information see: http://apps.owncloud.com/content/show.php/Shorty?conte
 	<version>0.3.5</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
-	<require>4</require>
+	<require>5</require>
 		<types>
 			<internet/>
 			<bookmark/>
