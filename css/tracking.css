@@ -31,7 +31,7 @@
 
 #list-of-clicks th,
 #list-of-clicks td {
-	padding: 1px 2px;
+	padding: 1px 0;
 }
 #list-of-clicks thead th#address,
 #list-of-clicks tbody td#address{
@@ -45,11 +45,11 @@
 }
 #list-of-clicks thead th#result,
 #list-of-clicks tbody td#result {
-	width:5.5em;
+	width:7.0em;
 }
 #list-of-clicks thead th#host,
 #list-of-clicks tbody td#host {
-	width:11em;
+	width:10em;
 }
 #list-of-clicks tbody td span {
 	padding: 0.1em 0.1em 0.1em 0.1em;
