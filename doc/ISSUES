@@ -26,7 +26,7 @@ This is a short list of known issues:
 
 - The datepicker popup in the edit dialog fails to set the expiration date: 
 I have no idea what the problem is. Exactly the same object works flawlessly
-in the dialog to create a new shorty. I can't see any difference, except in
+in the dialog to create a new Shorty. I can't see any difference, except in
 the edit dialog the date is taken from the existing row entry (working fine).
 Maybe there is some sort of magic spell to awake a datepicker after changing
 its date value ? No idea...
@@ -40,6 +40,6 @@ The issue lies inside the jQuery library used throughout the OC project.
 - When internally validating the setup of the base url used in the static
 backend you get a failure report ("doesn't work") although things are fine, if
 the mapping of base url to shorty plugin is done by a remote server. This is
-due to cross site aatack prevention.
+due to cross site attack prevention.
 The reason is that jqueries ajax calls won't handle such redirects internally.
 A wrapper will have to be implemented. 
