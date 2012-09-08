@@ -57,11 +57,6 @@
 				     alt="<?php echo OC_Shorty_L10n::t('Loading') ?>..." />
 			</a>
 	</span>
-	<!-- the dialogs, hidden by default -->
-	<?php require_once('tmpl_url_add.php'); ?>
-	<?php require_once('tmpl_url_edit.php'); ?>
-	<?php require_once('tmpl_url_show.php'); ?>
-	<?php require_once('tmpl_url_share.php'); ?>
 <?php if (5<=OC_Shorty_Tools::CompatVersion(true)) { ?>
 	<!-- the 'home' button currently links to the entry in the OC app store -->
 	<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
@@ -78,6 +73,11 @@
 	<!-- a container that will hold the preferences dialog -->
 	<div id="appsettings" class="popup topright hidden"></div>
 <?php } ?>
+	<!-- the dialogs, hidden by default -->
+	<?php require_once('tmpl_url_add.php'); ?>
+	<?php require_once('tmpl_url_edit.php'); ?>
+	<?php require_once('tmpl_url_show.php'); ?>
+	<?php require_once('tmpl_url_share.php'); ?>
 </div>
 
 <!-- the "desktop where the action takes place -->
