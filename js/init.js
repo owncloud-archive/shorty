@@ -73,7 +73,7 @@ $(document).ready(function(){
 	// add date picker options
 	$.datepicker.setDefaults({
 		dateFormat :'yy-mm-dd',
-		appendText: "(yyyy-mm-dd)",
+// 		appendText: "(yyyy-mm-dd)",
 		changeMonth: true,
 		changeYear: true,
 		showOtherMonths: true,
