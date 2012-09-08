@@ -75,20 +75,22 @@
 		<label for="title"><?php echo OC_Shorty_L10n::t('Title').':'; ?></label>
 		<input id="title" name="title" type="text" maxlength="80" data="" class="" />
 		<br />
-		<label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>
-		<select id="status" name="status" data="shared" value="shared" style="width:8em;" class="">
-			<?php
-				foreach ( OC_Shorty_Type::$STATUS as $status )
-					if ( 'deleted'!=$status )
-					echo sprintf ( "<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status) );
-			?>
-		</select>
-		<span style="display:inline;">
-			<label for="until"><?php echo OC_Shorty_L10n::t('Expiration').':'; ?></label>
-			<input id="until" name="until" type="text" maxlength="10"
-				value="" data="" class="" style="width:8em;"
-				placeholder="-<?php echo OC_Shorty_L10n::t('never'); ?>-"
-				icon="<?php echo OCP\Util::imagePath('shorty', 'calendar.png'); ?>" />
+		<span class="label-line">
+			<label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>
+			<select id="status" name="status" data="shared" value="shared" style="width:8em;" class="">
+<?php
+					foreach ( OC_Shorty_Type::$STATUS as $status )
+						if ( 'deleted'!=$status )
+						echo sprintf ( "<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status) );
+?>
+			</select>
+			<span style="display:inline;">
+				<label for="until"><?php echo OC_Shorty_L10n::t('Expiration').':'; ?></label>
+				<input id="until" name="until" type="text" maxlength="10"
+					value="" data="" class="" style="width:8em;"
+					placeholder="-<?php echo OC_Shorty_L10n::t('never'); ?>-"
+					icon="<?php echo OCP\Util::imagePath('shorty', 'calendar.png'); ?>" />
+			</span>
 		</span>
 		<br />
 		<label for="notes"><?php echo OC_Shorty_L10n::t('Notes').':'; ?></label>
