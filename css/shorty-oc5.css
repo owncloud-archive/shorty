@@ -43,6 +43,14 @@
 .shorty-controls {
 	display: none;
 }
+.shorty-config {
+	margin-right: 172px;
+	float: right;
+	padding-bottom: 0.2em;
+}
+.shorty-config img {
+	cursor: inherit;
+}
 
 /* an activity visualizer, currently a 'rotating timer wheel' */
 .shorty-hourglass {
@@ -74,7 +82,7 @@
 	color: gray;
 }
 .shorty-vacuum .suggestion {
-	font-size: 80%;
+	font-size: 90%;
 	font-weight: light;
 	font-style: italic;
   color: black;
@@ -128,7 +136,7 @@
 	content: url("../img/drag_me.png");
 	position: relative;
 	top: -12px;
-  margin-left: -160px;
+	margin-left: -160px;
 }
 
 .shorty-standalone #busy {

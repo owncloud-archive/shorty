@@ -36,11 +36,13 @@
 
 <form id="shorty">
 	<fieldset class="personalblock">
+<?php if (5>OC_Shorty_Tools::CompatVersion(true)) { ?>
 		<div id="title" class="title">
 			<img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
 			<strong>Shorty</strong>
 		</div>
 		<div id="settings">
+<?php } ?>
 <?php require_once('tmpl_wdg_shortlet.php'); ?>
 			<p>
 			<!-- backend selection -->

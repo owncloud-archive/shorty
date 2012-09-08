@@ -32,10 +32,10 @@
  * @author Christian Reiner
  */
 
-$OC_version = OCP\Util::getVersion();
 OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 // OCP\Util::addStyle  ( 'shorty',   'shorty' );
-OCP\Util::addStyle  ( 'shorty',   (5<=$OC_version[0]||(4==$OC_version[0]&&80<=$OC_version[1]))?'shorty-oc5':'shorty-oc4' );
+// TODO: OC4-compatibility
+OCP\Util::addStyle  ( 'shorty',   (5<=OC_Shorty_Tools::CompatVersion(true))?'shorty-oc5':'shorty-oc4' );
 OCP\Util::addStyle  ( 'shorty',   'preferences' );
 
 OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
@@ -67,5 +67,10 @@ $tmpl->assign ( 'backend-type',        OCP\Config::getUserValue(OCP\User::getUse
 $tmpl->assign ( 'backend-ssl-verify',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify','0') );
 $tmpl->assign ( 'sms-control',         OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
 // render template
-return $tmpl->fetchPage ( );
+// TODO: OC4-compatibility
+if (5<=OC_Shorty_Tools::CompatVersion(true))
+	$tmpl->printPage();
+else
+	return $tmpl->fetchPage ( );
+
 ?>

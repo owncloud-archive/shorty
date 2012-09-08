@@ -116,6 +116,10 @@ $(document).ready(function(){
 	// column sorting reaction
 	list.find('thead tr#toolbar div img.shorty-sorter').on('click',function(){
 		OC.Shorty.WUI.List.sort(list,$(this).attr('data-sort-code'));
-  });
+	});
+	// open preferences popup when button is clicked
+	$('#controls-preferences.settings').on('click keydown', function() {
+		OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
+	});
 }); // document.ready
 

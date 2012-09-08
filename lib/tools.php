@@ -246,5 +246,27 @@ class OC_Shorty_Tools
 		return $reply[0];
 	} // function countShorties
 
+	/**
+	* @method OC_Shorty_Tools::CompatVersion
+	* @brief Returns the major version number of the OC framework
+	* @param beta boolean flag indicating of high subversion numbers should be accepted as beta of the comming version
+	* @return integer the major version number
+	* @access public
+	* @author Christian Reiner
+	* @description
+	* The major version of the OC framework is relevant for a few compatibility issues.
+	* It has to be checked against often when for example rendering templates, to add or suppres version dependant options.
+	* The plusBeta flag helps to recognize typical version numbers like x.86 indicating beta version of an upcoming version x+1.
+	* This method makes the checks more readable. 
+	*/
+	static function CompatVersion ($beta=true)
+	{
+		$OC_version = OCP\Util::getVersion();
+		$CP_version = $OC_version[0];
+		if ($beta && 80<=$OC_version[1])
+			$CP_version++;
+		return $CP_version;
+	}
+
 } // class OC_Shorty_Tools
 ?>

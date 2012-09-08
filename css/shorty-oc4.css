@@ -43,6 +43,9 @@
 .shorty-controls {
 	display: none;
 }
+.shorty-config {
+	display: none;
+}
 
 /* an activity visualizer, currently a 'rotating timer wheel' */
 .shorty-hourglass {

@@ -45,14 +45,16 @@
 	<span id="controls-sum-shortys">
 			<a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Number of entries') ?>:</a>
 			<a id="sum_shortys" class="shorty-value">
-				<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>" />
+				<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>"
+				     alt="<?php echo OC_Shorty_L10n::t('Loading') ?>..."/>
 			</a>
 	</span>
 	<!-- display label: total of clicks in list -->
 	<span id="controls-sum-clicks">
 			<a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Total of clicks') ?>:</a>
 			<a id="sum_clicks" class="shorty-value">
-				<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>" />
+				<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>"
+				     alt="<?php echo OC_Shorty_L10n::t('Loading') ?>..." />
 			</a>
 	</span>
 	<!-- the dialogs, hidden by default -->
@@ -60,6 +62,15 @@
 	<?php require_once('tmpl_url_edit.php'); ?>
 	<?php require_once('tmpl_url_show.php'); ?>
 	<?php require_once('tmpl_url_share.php'); ?>
+<?php if (5<=OC_Shorty_Tools::CompatVersion(true)) { ?>
+	<!-- the internal settings button -->
+	<button id="controls-preferences" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Configuration') ?>">
+		<img class="svg" src="<?php echo OCP\Util::imagePath('core', 'actions/settings.svg'); ?>"
+		     alt="<?php echo OC_Shorty_L10n::t('Configuration') ?>" />
+	</button>
+	<!-- a container that will hold the preferences dialog -->
+	<div id="appsettings" class="popup topright hidden"></div>
+<?php } ?>
 </div>
 
 <!-- the "desktop where the action takes place -->
