@@ -40,7 +40,7 @@
 		<legend>
 			<span id="title" class="title">
 				<img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
-				<strong>Shorty</strong>
+				<a name="shorty"><strong>Shorty</strong></a>
 			</span>
 		</legend>
 		<div id="backend-static" class="backend-supplement">
