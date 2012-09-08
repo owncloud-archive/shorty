@@ -37,7 +37,7 @@
 <fieldset class="personalblock">
 <?php if (5>OC_Shorty_Tools::CompatVersion(true)) { ?>
 	<div id="title" class="title">
-		<img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
+		<img src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
 		<strong>Shorty</strong>
 	</div>
 	<div id="settings">
@@ -49,7 +49,7 @@
 				<label for="backend-type" class="aspect"><?php echo OC_Shorty_L10n::t("Backend").":";?></label>
 				<!-- list of available backend types -->
 				<span style="margin-right:1em;">
-					<select id="backend-type" name="backend-type" style="width:11em;" class="chosen"
+					<select id="backend-type" name="backend-type" style="width:11em;"
 							placeholder="<?php echo OC_Shorty_L10n::t("Choose service…"); ?>" >
 						<?php
 							foreach ( $_['backend-types'] as $value=>$display )
@@ -233,7 +233,7 @@
 				<!-- sms -->
 				<label for="sms" class="aspect"><?php echo OC_Shorty_L10n::t("SMS").":";?></label>
 				<span id="sms" style="margin-right:1em;">
-					<select id="sms-control" name="sms-control" style="width:11em;" class="chosen">
+					<select id="sms-control" name="sms-control" style="width:11em;">
 						<?php echo sprintf("<option value=\"disabled\" %s>%s</option>\n",
 											('enabled'!=$_['sms-control']?'selected':''),
 											OC_Shorty_L10n::t('disabled') ); ?>
