@@ -44,9 +44,12 @@
 	display: none;
 }
 .shorty-config {
-	margin-right: 172px;
 	float: right;
 	padding-bottom: 0.2em;
+	margin: 0.3em 0.2em;
+}
+.shorty-config:first-child {
+	margin-right: 170px;
 }
 .shorty-config img {
 	cursor: inherit;

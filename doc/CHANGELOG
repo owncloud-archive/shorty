@@ -29,6 +29,7 @@ General appearance enhancements for some dialog details.
 Some internal changes required by the changes in the upcoming OC5 release:
 - most visible change: the personal preferences moved to a popup dialog inside the Shorty app.
 - convenient reference to the system settings from within the personal preferences of admin users.
+- additional 'home page' button referencing the apps page in the OC app store. 
 * Sun Aug 12 2012 Christian Reiner: version 0.3.5
 Fixed standalone dialogs not being visible in rare circumstances.
 Some cleanups in the style rule selectors.

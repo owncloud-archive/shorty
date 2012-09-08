@@ -63,6 +63,13 @@
 	<?php require_once('tmpl_url_show.php'); ?>
 	<?php require_once('tmpl_url_share.php'); ?>
 <?php if (5<=OC_Shorty_Tools::CompatVersion(true)) { ?>
+	<!-- the 'home' button currently links to the entry in the OC app store -->
+	<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
+		<button id="controls-home" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Home') ?>">
+			<img class="svg" src="<?php echo OCP\Util::imagePath('core', 'places/home.svg'); ?>"
+				alt="<?php echo OC_Shorty_L10n::t('Home') ?>" />
+		</button>
+	</a>
 	<!-- the internal settings button -->
 	<button id="controls-preferences" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Configuration') ?>">
 		<img class="svg" src="<?php echo OCP\Util::imagePath('core', 'actions/settings.svg'); ?>"
