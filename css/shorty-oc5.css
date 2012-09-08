@@ -208,7 +208,7 @@ table.shorty-list.scrollingTable tfoot {
 }
 .shorty-desktop .shorty-list thead th#until,
 .shorty-desktop .shorty-list tbody td#until {
-	width:5em;
+	width:5.2em;
 }
 .shorty-list thead tr#toolbar th input,
 .shorty-list tbody tr#toolbar td input,
