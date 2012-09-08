@@ -40,16 +40,17 @@
 <!-- the list of urls, empty variant -->
 <div id="vacuum" class="shorty-vacuum personalblock">
 	<div class="factoid"><?php echo OC_Shorty_L10n::t("Nothing here yet")." !" ?></div>
-<?php if (5<=OC_Shorty_Tools::CompatVersion(true)) { ?>
 	<!-- a hint to use the personal preferences -->
 	<p>
 		<div class="suggestion"><?php echo OC_Shorty_L10n::t("If you just started using Shorty").":" ?></div>
 		<div class="explanation">
-			<?php echo sprintf(OC_Shorty_L10n::t("Set personal preferences using the cog wheel (%%s) on the upper right")."!",
+			<?php echo sprintf(OC_Shorty_L10n::t(
+									(5<=OC_Shorty_Tools::CompatVersion(true)) ?
+									"Set personal preferences using the cog wheel (%%s) on the upper right" :
+									"Set personal preferences using the cog wheel (%%s) on the bottom left")."!",
 								'<img class="svg" style="vertical-align:bottom;" src="'.OCP\Util::imagePath('core', 'actions/settings.svg').'" />'); ?>
 		</div>
 	</p>
-<?php } ?>
 	<!-- a hint explaining how to create content -->
 	<p>
 		<div class="suggestion"><?php echo OC_Shorty_L10n::t("Create a new 'Shorty' and share it").":" ?></div>

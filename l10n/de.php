@@ -117,6 +117,7 @@ $TRANSLATIONS = array(
 "Send by email"                                                         => "Als E-Mail verschicken",
 "Send link by email"                                                    => "Link als E-Mail verschicken",
 "Send by SMS"                                                           => "Als SMS verschicken",
+"Set personal preferences using the cog wheel (%%s) on the bottom left" => "Lege persönlichen Einstellungen fest mit dem Zahnrad (%%s) unten links",
 "Set personal preferences using the cog wheel (%%s) on the upper right" => "Lege persönlichen Einstellungen fest mit dem Zahnrad (%%s) oben rechts",
 "Settings"                                                              => "Einstellungen",
 "Setting saved"                                                         => "Einstellung gespeichert",
