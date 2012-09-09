@@ -45,10 +45,12 @@
 		<div class="suggestion"><?php echo OC_Shorty_L10n::t("If you just started using Shorty").":" ?></div>
 		<div class="explanation">
 			<?php echo sprintf(OC_Shorty_L10n::t(
-									(5<=OC_Shorty_Tools::CompatVersion(true)) ?
-									"Set personal preferences using the cog wheel (%%s) on the upper right" :
-									"Set personal preferences using the cog wheel (%%s) on the bottom left")."!",
-								'<img class="svg" style="vertical-align:bottom;" src="'.OCP\Util::imagePath('core', 'actions/settings.svg').'" />'); ?>
+									(5<=OC_Shorty_Tools::CompatVersion(true))
+									? "Set personal preferences using the cog wheel (%%s) on the upper right!"
+									: "Set personal preferences using the cog wheel (%%s) on the bottom left!" ),
+									sprintf('<img id="controls-preferences" class="svg settings" style="vertical-align:bottom;cursor:pointer;" src="%s" />',
+											OCP\Util::imagePath('core', 'actions/settings.svg'))
+								); ?>
 		</div>
 	</p>
 	<!-- a hint explaining how to create content -->
