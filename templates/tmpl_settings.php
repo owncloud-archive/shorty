@@ -44,6 +44,8 @@
 			</span>
 		</legend>
 		<div id="backend-static" class="backend-supplement">
+			<span><?php echo OC_Shorty_L10n::t("Optional configuration of a 'Static Backend':");?></span>
+			<br/>
 			<label for="backend-static-base" class="aspect"><?php echo OC_Shorty_L10n::t("Base url").':';?></label>
 			<input id="backend-static-base" type="text" name="backend-static-base"
 					value="<?php echo $_['backend-static-base']; ?>"
@@ -53,15 +55,17 @@
 			<span id="backend-example">
 				<label for="example" class="aspect"><?php echo OC_Shorty_L10n::t("Example").':';?></label>
 				<a id="example" class="example" title="<?php echo OC_Shorty_L10n::t("Verification by click");?>">
-				<?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME']) ?>
+				<?php echo sprintf(htmlspecialchars('http://%s/<service><shorty id>'),$_SERVER['SERVER_NAME']) ?>
 				</a>
 			</span>
 			<br/>
-			<span id="explain" class="explain"><?php echo sprintf("%s<br />\n%s<br />\n%s<br />\n%s",
+			<span id="explain" class="explain"><?php echo sprintf("%1\$s<br />\n%2\$s<br />\n%3\$s <span class=\"example\">%6\$s</span><br />\n%4\$s<br />\n%5\$s",
 				OC_Shorty_L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
 				OC_Shorty_L10n::t("You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."),
+				OC_Shorty_L10n::t("The target of that mapping must be some URL like:"),
 				OC_Shorty_L10n::t("Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."),
-				OC_Shorty_L10n::t("Leave empty if you can't provide a short base url that is mapped the described way.") ); ?>
+				OC_Shorty_L10n::t("Leave empty if you can't provide a short base url that is mapped the described way."),
+				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty id>') ); ?>
 			</span>
 		</div>
 

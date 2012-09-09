@@ -49,6 +49,8 @@
 
 #shorty .example {
 	font-family: Monospace;
+	font-style: normal;
+	font-size:110%;
 	margin: 0.3em;
 	text-decoration: underline;
 	color: blue;
