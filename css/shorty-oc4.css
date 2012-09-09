@@ -44,7 +44,15 @@
 	display: none;
 }
 .shorty-config {
-	display: none;
+	float: right;
+	padding-bottom: 0.2em;
+	margin: 0.3em 0.2em;
+}
+.shorty-config:first-child {
+	margin-right: 170px;
+}
+.shorty-config img {
+	cursor: inherit;
 }
 
 /* an activity visualizer, currently a 'rotating timer wheel' */
