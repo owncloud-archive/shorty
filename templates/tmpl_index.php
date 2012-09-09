@@ -57,7 +57,6 @@
 				     alt="<?php echo OC_Shorty_L10n::t('Loading') ?>..." />
 			</a>
 	</span>
-<?php if (5<=OC_Shorty_Tools::CompatVersion(true)) { ?>
 	<!-- the 'home' button currently links to the entry in the OC app store -->
 	<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
 		<button id="controls-home" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Home') ?>">
@@ -65,6 +64,7 @@
 				alt="<?php echo OC_Shorty_L10n::t('Home') ?>" />
 		</button>
 	</a>
+<?php if (5<=OC_Shorty_Tools::CompatVersion(true)) { ?>
 	<!-- the internal settings button -->
 	<button id="controls-preferences" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Configuration') ?>">
 		<img class="svg" src="<?php echo OCP\Util::imagePath('core', 'actions/settings.svg'); ?>"
