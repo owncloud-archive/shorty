@@ -24,8 +24,9 @@
 
 Changelog: 
 
-* Sat Sep 08 2012 Christian Reiner: version 0.3.6
+* Sat Sep 09 2012 Christian Reiner: version 0.3.6
 General appearance enhancements for some dialog details.
+Clearified explanations and hints for preferences and settings. 
 Some internal changes required by the changes in the upcoming OC5 release:
 - most visible change: the personal preferences moved to a popup dialog inside the Shorty app.
 - convenient reference to the system settings from within the personal preferences of admin users.
