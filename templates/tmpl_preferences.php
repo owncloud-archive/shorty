@@ -246,7 +246,7 @@
 			</p>
 			<p>
 				<span class="explain"><em><?php echo OC_Shorty_L10n::t("Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones.")."<br>\n";
-												echo OC_Shorty_L10n::t("In addition, the implementations found in Android or iOS are minimalistic, buggy and differ from system to system.")."<br>\n";
+												echo OC_Shorty_L10n::t("In addition, those implementations are minimalistic, buggy and differ from system to system.")."<br>\n";
 												echo OC_Shorty_L10n::t("In short: this might not work for you, therefore you can disable it…")."<br>\n";?></em></span>
 			</p>
 		</div>
@@ -255,8 +255,7 @@
 	<!-- for admin users only: a reference to the system settings -->
 	<p>
 		<span id="admin" class="explain">
-			<?php echo sprintf(OC_Shorty_L10n::t(
-								"Also check the apps system wide settings: %%s"),
+			<?php echo sprintf(OC_Shorty_L10n::t("Administrative, system wide settings of this app:")." %s",
 								'<a href="'.OCP\Util::linkToAbsolute("settings", "admin.php#shorty").'" class="clickable">'.
 								'<button>'.OC_Shorty_L10n::t("Administration").'</button>'.
 								'</a>' ); ?>

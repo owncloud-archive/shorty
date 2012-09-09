@@ -63,8 +63,8 @@ $TRANSLATIONS = array(
 "Add as new"                                                            => "Neu hinzufügen",
 "Add page as 'Shorty' to ownCloud"                                      => "Seite als 'Shorty' zu ownCloud hinzufügen",
 "Administration"                                                        => "Administration",
+"Administrative, system wide settings of this app:"                     => "Administrative, systemweite Einstellungen dieser App:",
 "after the SMS has been launched"                                       => "nachdem die SMS gestartet wurde",
-"Also check the apps system wide settings: %%s"                         => "Auch systemweite Einstellungen der App berücksichtigen: %%s",
 "Alternatively get the image for printout or storage"                   => "Alternativ ist die Grafik auch für Ausdruck oder Speicherung ladbar",
 "alternatively the link can be copied for usage apart"                  => "alternativ kann der Link kopiert werden für anderweitige Nutzung",
 "Alternatively the link can be copied manually"                         => "Alternativ kann der Link manuell kopiert werden",
@@ -221,8 +221,8 @@ $TRANSLATIONS = array(
 => "Aktivieren der SMS-Option bietet das Versenden von Shortys via SMS an.",
 "Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones."
 => "Unglücklicherweise werden 'SMS-Urls' typischerweise nur auf mobilen Geräten wie etwa Smartphones unterstützt.",
-"In addition, the implementations found in Android or iOS are minimalistic, buggy and differ from system to system."
-=> "Darüber hinaus sind die Implementierungen, etwa die in Adroid oder auch iOS minimalistisch, fehlerhaft und unterschiedlich von System zu System.",
+"In addition, the implementations are minimalistic, buggy and differ from system to system."
+=> "Darüber hinaus sind diese Implementierungen minimalistisch, fehlerhaft und unterschiedlich von System zu System.",
 "In short: this might not work for you, therefore you can disable it…"
 => "Kurz gesagt: dies mag nicht funktionieren, daher kann die Option deaktiviert werden…",
 
