@@ -24,7 +24,9 @@
 
 Changelog: 
 
+* Mon Sep 13 2012 Christian Reiner: version 0.1.5
 Internal corrections required by changes in the upcoming OC5 release.
+Internal rename from 'shorty-tracking' to 'shorty_tracking'...
 * Mon Aug 06 2012 Christian Reiner: version 0.1.4
 Fixed filtering of list of clicks by time column.
 Fixed reset of counters in sparklines when switching between lists.
