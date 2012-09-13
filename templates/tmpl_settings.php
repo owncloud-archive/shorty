@@ -35,14 +35,14 @@
 ?>
 
 <!-- settings of app 'shorty' -->
-<form id="shorty">
-	<fieldset class="personalblock">
-		<legend>
-			<span id="title" class="title">
-				<img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
-				<a name="shorty"><strong>Shorty</strong></a>
-			</span>
-		</legend>
+<fieldset class="personalblock">
+	<legend>
+		<span id="title" class="title">
+			<img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
+			<a name="shorty"><strong>Shorty</strong></a>
+		</span>
+	</legend>
+	<form id="shorty">
 		<div id="backend-static" class="backend-supplement">
 			<span><?php echo OC_Shorty_L10n::t("Optional configuration of a 'Static Backend':");?></span>
 			<br/>
@@ -68,7 +68,20 @@
 				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty id>') ); ?>
 			</span>
 		</div>
+	</form>
+<?php if ( ! OCP\App::isEnabled('shorty_tracking') ) { ?>
+	<p>
+		<span id="plugins" class="suggestion">
+			<?php echo sprintf(OC_Shorty_L10n::t("The additional plugin '%%s' tracks the usage of existing Shortys!"),
+												'<strong>Shorty Tracking</strong>'); ?>
+			<br/>
+			<?php echo sprintf(OC_Shorty_L10n::t("It can be enabled by a single click in the administration:")." %s",
+								'<a href="'.OCP\Util::linkToAbsolute("settings", "apps.php").'" class="clickable">'.
+								'<button>'.OC_Shorty_L10n::t("Apps selector").'</button>'.
+								'</a>' ); ?>
+		</span>
+	</p>
+<?php } ?>
 
-		<?php require_once('tmpl_dlg_verify.php'); ?>
-  </fieldset>
-</form>
+	<?php require_once('tmpl_dlg_verify.php'); ?>
+</fieldset>
