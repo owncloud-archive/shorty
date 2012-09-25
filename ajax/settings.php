@@ -60,8 +60,6 @@ try
 					$data[$key] = OC_Shorty_Type::req_argument ( $key, $type, FALSE );
 				}
 			} // foreach
-			// eliminate settings not explicitly set
-			$data = array_diff ( $data, array(FALSE) );
 			// store settings one by one
 			foreach ( $data as $key=>$val )
 				OCP\Config::setAppValue( 'shorty', $key, $val );

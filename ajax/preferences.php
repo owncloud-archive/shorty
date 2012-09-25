@@ -67,8 +67,6 @@ try
 					$data[$key] = OC_Shorty_Type::req_argument ( $key, $type, FALSE );
 				}
 			}
-			// eliminate settings not explicitly set
-			$data = array_diff ( $data, array(FALSE) );
 			// store settings
 			foreach ( $data as $key=>$val )
 			{

@@ -1310,7 +1310,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.Action.Preference.get
 			/**
-			 * @method OC.Shorty.Action.Preference.get
+			 * @method OC.Shorty.Action.Preference.set
 			 * @brief: Sets a specified users preference value
 			 * @author Christian Reiner
 			 */

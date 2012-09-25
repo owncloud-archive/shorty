@@ -24,6 +24,9 @@
 
 Changelog: 
 
+* ??? Sep ?? 2012 Christian Reiner: version 0.3.7
+Fixed missleading debug statement in ajax hooks for settings and preferences control
+Fixed settings and preferences control not to ignore empty values
 * Sat Sep 09 2012 Christian Reiner: version 0.3.6
 General appearance enhancements for some dialog details.
 Clearified explanations and hints for preferences and settings. 
