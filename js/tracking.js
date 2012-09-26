@@ -96,18 +96,18 @@ OC.Shorty.Tracking=
 	* @author Christian Reiner
 	*/
 	Dialog:{
-	/**
-	* @brief Persistent jQuery object holding the list dialog implemented by this plugin
-	* @access private
-	* @author Christian Reiner
-	*/
-	List:{},
-	/**
-	* @brief Persistent jQuery object holding the click dialog implemented by this plugin
-	* @access private
-	* @author Christian Reiner
-	*/
-	Click:{}
+		/**
+		* @brief Persistent jQuery object holding the list dialog implemented by this plugin
+		* @access private
+		* @author Christian Reiner
+		*/
+		List:{},
+		/**
+		* @brief Persistent jQuery object holding the click dialog implemented by this plugin
+		* @access private
+		* @author Christian Reiner
+		*/
+		Click:{}
 	},
 	/**
 	* @brief Persistent referencing the Shorty this plugin currently deals with
