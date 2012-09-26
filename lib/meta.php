@@ -60,12 +60,40 @@ class OC_Shorty_Meta
 		$meta['scheme']    = strtolower ( $url_token['scheme'] );
 		$meta['mimetype']  = 'application/octet-stream';
 		$meta['schemicon'] = self::selectIcon ( 'scheme', strtolower($url_token['scheme']) );
-		// we wont bother retrieving data about other protocols than http or ftp
-		if ( ! in_array(strtolower($url_token['scheme']),array('http','https','ftp','ftps')) )
-			return $meta;
+		// enrich meta data by consulting the target live
+		switch (strtolower($url_token['scheme']))
+		{
+			default:
+				// we wont bother retrieving data about other protocols than http or ftp
+				break;
+			case 'file':
+				self::enrichMetaDataFile ( $url, $meta );
+				break;
+			case 'http':
+			case 'https':
+			case 'ftp':
+			case 'ftps':
+				self::enrichMetaDataCurl ( $url, $meta );
+		}
+		return $meta;
+	} // function fetchMetaData
+
+	static function enrichMetaDataFile ( $url, &$meta )
+	{
+		OCP\Share::getItemsShared('file');
+		// consult the sharing API for more details
+			$meta['mimetype']    = preg_replace ( '/^([^;]+);.*/i', '$1', curl_getinfo($handle,CURLINFO_CONTENT_TYPE) );
+			$meta['mimicon']     = self::selectIcon ( 'mimetype', $meta['mimetype'] );
+			$meta['code']        = curl_getinfo ( $handle, CURLINFO_HTTP_CODE );
+			$meta['status']      = OC_Shorty_L10n::t ( self::selectCode('status',$meta['code']) );
+			$meta['explanation'] = OC_Shorty_L10n::t ( self::selectCode('explanation',$meta['code']) );
+	} // function enrichMetaDataFile
+	
+	static function enrichMetaDataCurl ( $url, &$meta )
+	{
 		// to fetch meta data we rely on curl being installed
 		if ( ! function_exists('curl_init') )
-			return $meta;
+			return;
 		// try to retrieve the meta data
 		$handle = curl_init ( );
 		curl_setopt ( $handle, CURLOPT_URL, $url );
@@ -113,8 +141,7 @@ class OC_Shorty_Meta
 		} // if
 		curl_close ( $handle );
 		// that's it !
-		return $meta;
-	} // function fetchMetaData
+	} // function enrichMetaDataCurl
 
 	/**
 	* @method OC_Shorty_Meta::selectCode

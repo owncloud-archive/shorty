@@ -30,6 +30,12 @@
  * @author Christian Reiner
  */
 
+define ( '__rx_path',		'(\/($|.+)?)*' );
+define ( '__rx_domain_tld',	'(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2})' );
+define ( '__rx_domain_ip',	'(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])' );
+define ( '__rx_domain_name',__rx_domain_ip.'|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.'.__rx_domain_tld );
+define ( '__rx_file_url',	'file\:\/\/'.__rx_path );
+
 /**
  * @class OC_Shorty_Type
  * @brief Static 'namespace' class offering routines and constants used to handle type recognition and value verification
@@ -144,6 +150,18 @@ class OC_Shorty_Type
 		504 => 'Gateway Timeout',
 		505 => 'HTTP Version Not Supported',
 	);
+	// a catalog of regular expressions
+	static $RX = array (
+		'DOMAIN_TLD'	=>	__rx_domain_tld,
+		'DOMAIN_IP'		=>	__rx_domain_ip,
+		'DOMAIN_NAME'	=>	__rx_domain_name,
+		'NUMBER'		=>	'[0-9]+',
+		'SHORTY_ID'		=>	'[a-z0-9]{2,20}',
+		'TIMESTAMP'		=>	'[0-9]{10}',
+		'URL_SCHEME'	=>	'([a-zA-Z][a-zA-Z][a-zA-Z0-9]+)',
+		'PATH'			=>	__rx_path,
+		'FILE_URL'		=>	__rx_file_url,
+	);
 
 	/**
 	* @method OC_Shorty_Type::validate
@@ -163,7 +181,7 @@ class OC_Shorty_Type
 		switch ( $type )
 		{
 			case self::ID:
-				if ( preg_match ( '/^[a-z0-9]{2,20}$/i', $value ) )
+				if ( preg_match ( '/^'.self::$RX['SHORTY_ID'].'$/i', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
@@ -198,7 +216,7 @@ class OC_Shorty_Type
 				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::URL:
-				$pattern = '/^([a-zA-Z][a-zA-Z][a-zA-Z0-9]+)\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(\/($|.+)?)*$/';
+				$pattern = '/^'.self::$RX['URL_SCHEME'].'\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*'.self::$RX['DOMAIN_NAME'].'(\:'.self::$RX['NUMBER'].')*(\/($|.+)?)*$/';
 				if ( preg_match ( $pattern, $value ) )
 					return $value;
 				elseif ( ! $strict)
@@ -206,7 +224,7 @@ class OC_Shorty_Type
 				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::PATH:
-				$pattern = '/(\/($|.+)?)*$/';
+				$pattern = '/^'.self::$RX['PATH'].'$/';
 				if ( preg_match ( $pattern, $value ) )
 					return $value;
 				elseif ( ! $strict)
@@ -214,19 +232,19 @@ class OC_Shorty_Type
 				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::INTEGER:
-				if ( preg_match ( '/^[0-9]+$/', $value ) )
+				if ( preg_match ( '/^'.self::$RX['NUMBER'].'$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
 				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::FLOAT:
-				if ( preg_match ( '/^[0-9]+(\.[0-9]+)?$/', $value ) )
+				if ( preg_match ( '/^'.self::$RX['NUMBER'].'(\.'.self::$RX['NUMBER'].')?$/', $value ) )
 					return $value;
 				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((24<sizeof($value))?$value:substr($value,0,21).'…'),$type) );
 
 			case self::TIMESTAMP:
-				if ( preg_match ( '/^[0-9]{10}$/', $value ) )
+				if ( preg_match ( '/^'.self::$RX['TIMESTAMP'].'$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
