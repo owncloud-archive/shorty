@@ -40,6 +40,7 @@ OCP\Util::addStyle  ( 'shorty/3rdparty','jquery.impromptu' );
 // TODO: OC4-compatibility
 OCP\Util::addStyle  ( 'shorty',   (5<=OC_Shorty_Tools::CompatVersion(true))?'shorty-oc5':'shorty-oc4' );
 
+OCP\Util::addscript ( '3rdparty',       'chosen/chosen.jquery.min');
 OCP\Util::addScript ( 'shorty/3rdparty','jquery.tinysort.min' );
 OCP\Util::addScript ( 'shorty/3rdparty','jquery.impromptu.min' );
 OCP\Util::addScript ( 'shorty',         'shorty' );
