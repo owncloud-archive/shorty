@@ -1459,37 +1459,6 @@ OC.Shorty={
 			} // OC.Shorty.Action.Setting.check
 		}, // OC.Shorty.Action.Setting
 		/**
-		 * @class OC.Shorty.Action.Token
-		 * @brief Collection of methods handling OCs CSRF protection token
-		 * @author Christian Reiner
-		 */
-		Token:{
-			/**
-			 * @method OC.Shorty.Action.Token.refresh
-			 * @brief Retrieves a fresh token and replaces the existing one in the DOM tree.
-			 * @author Christian Reiner
-			 */
-			refresh:function(){
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("refreshing request token (lifebeat)");
-				var dfd=new $.Deferred();
-				$.ajax({
-					type:     'POST',
-					url:      OC.filePath('shorty','ajax','token.php'),
-					cache:    false,
-					data:     { },
-					dataType: 'json'
-				}).pipe(
-					function(response){return OC.Shorty.Ajax.eval(response)},
-					function(response){return OC.Shorty.Ajax.fail(response)}
-				).done(function(response){
-					var token=response.token;
-					$(document).bind('ajaxSend','');
-					$(document).bind('ajaxSend',function(elm,xhr,s){xhr.setRequestHeader('requesttoken',token);});
-					dfd.resolve();
-				}).fail(dfd.reject)
-			} // OC.Shorty.Action.Token.refresh
-		}, // OC.Shorty.Action.Token
-		/**
 		 * @class OC.Shorty.Action.Url
 		 * @brief Collection of methods handling URLs
 		 * @author Christian Reiner
@@ -1866,7 +1835,6 @@ OC.Shorty={
 				}
 			}
 		}, // OC.Shorty.Ajax.eval
-
 		/**
 		* @method OC.Shorty.Ajax.fail
 		* @brief Filters and converts ajax failures into internal format
@@ -1883,6 +1851,45 @@ OC.Shorty={
 			});
 		} // OC.Shorty.Ajax.fail
 	}, // OC.Shorty.Ajax
+
+	// ===========
+
+	/**
+	 * @class OC.Shorty.Request
+	 * @brief Collection of methods handling OCs CSRF protection token
+	 * @author Christian Reiner
+	 */
+	// TODO: OC4 compatibility: remove whole class when dropping OC4 compatibility
+	Request:{
+		/**
+		 * @method OC.Shorty.Request.Refresh
+		 * @brief Retrieves a fresh token and registers it for future use
+		 * @author Christian Reiner
+		 */
+		Refresh:function(){
+			if (OC.Shorty.Debug) OC.Shorty.Debug.log("refreshing request token (lifebeat)");
+			var dfd=new $.Deferred();
+			$.ajax({
+				type:     'POST',
+				url:      OC.filePath('shorty','ajax','requesttoken.php'),
+				cache:    false,
+				data:     { },
+				dataType: 'json'
+			}).pipe(
+				function(response){return OC.Shorty.Ajax.eval(response)},
+				function(response){return OC.Shorty.Ajax.fail(response)}
+			).done(function(response){
+				var token=response.token;
+				// (re-)bind request protection token to ajax calls
+				// TODO: check if there is a more precise way to remove ONLY the previously bound token (which has just been replaced)
+				$(document).bind('ajaxSend','');
+				$(document).bind('ajaxSend',function(elm,xhr,s){xhr.setRequestHeader('requesttoken',token);});
+				// store refreshed request token in EventSource routines
+				OC.EventSource.requesttoken=token;
+				dfd.resolve();
+			}).fail(dfd.reject)
+		} // OC.Shorty.Request.Refresh
+	}, // OC.Shorty.Request
 
 	// ===========
 

@@ -30,9 +30,18 @@
  */
 
 $(document).ready(function(){
+	// TODO: OC4 compatibility: remove following setInterval command when dropping OC4 compatibility
 	// refresh the ajax request token in regular intervals
 	// required to make use of long lasting sessions whilst using CSRF protection with a small tokens lifetime
-	setInterval(OC.Shorty.Action.Token.refresh, 1000*60*57.87); // ~58 minutes, close to the timeout of 1 hour
+	// handle this inside the app only, if the feature is NOT present in OC core
+ 	if (undefined===OC.Request){
+		console.log("relying on app internal implementation to refresh the request token");
+		setInterval(OC.Shorty.Request.Refresh, 1000*60*56.87); // ~57 minutes, close to the timeout of 1 hour
+		// again: note that this is not required from OC 4.5 on upwards
+		// Shortys token refresh strategy has been accepted into the core
+	}else{
+		console.log("relying on core implementation to refresh the request token");
+	}
 	// make notification closeable
 	$('#content #notification').on('click',OC.Shorty.WUI.Notification.hide);
 	// button to open the 'add' dialog
