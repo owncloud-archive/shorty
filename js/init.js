@@ -43,38 +43,42 @@ $(document).ready(function(){
 		console.log("relying on core implementation to refresh the request token");
 	}
 	// make notification closeable
-	$('#content #notification').on('click',OC.Shorty.WUI.Notification.hide);
+	$(document).on('click','#content #notification',[],OC.Shorty.WUI.Notification.hide);
 	// button to open the 'add' dialog
-	$('#controls #add').on('click',function(){OC.Shorty.WUI.Dialog.toggle($('#dialog-add'))});
+	$(document).on('click','#controls #add',[],function(){
+		OC.Shorty.WUI.Dialog.toggle($('#dialog-add'))
+	});
 	// close button in dialogs
-	$('.shorty-dialog #close').on('click',function(){OC.Shorty.WUI.Dialog.hide($(this).parents('form').first());});
+	$(document).on('click','.shorty-dialog #close',[],function(){
+		OC.Shorty.WUI.Dialog.hide($(this).parents('form').first());
+	});
 	// status selection in embedded share dialog
-	$('.shorty-embedded#dialog-share #status').on('change',function(){
+	$(document).on('change','.shorty-embedded#dialog-share #status',[],function(){
 		OC.Shorty.Action.Url.status($(this).siblings('#id').val(),$(this).val());
 	});
 	// refresh click count when clicking source or relay in embedded share dialog
-	$('.shorty-embedded#dialog-share .shorty-usages a#source').on('click',function(){
+	$(document).on('click','.shorty-embedded#dialog-share .shorty-usages a#source',[],function(){
 		OC.Shorty.WUI.Sums.increment.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$(this).parents('tr')]);
 	});
 	// collapsible items in embedded dialogs
-	$('.shorty-embedded .shorty-collapsible span').on('click',function(e){
+	$(document).on('click','.shorty-embedded .shorty-collapsible span',[],function(e){
 		var container=$(this).parent();
 		if (container.hasClass('collapsed'))
 			 container.removeClass('collapsed').find('.shorty-collapsible-tail').slideDown('fast');
 		else container.addClass('collapsed').find('.shorty-collapsible-tail').slideUp('fast');
 	});
 	// button (row click) to open the toolbar row in the list
-	$('#list-of-shortys #titlebar').on('click',function(){
+	$(document).on('click','#list-of-shortys #titlebar',[],function(){
 		OC.Shorty.WUI.List.Toolbar.toggle.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]);
 	});
 	// button to reload the list
-	$('#list-of-shortys #toolbar').find('#reload').on('click',OC.Shorty.WUI.List.build);
+	$(document).on('click','#list-of-shortys #toolbar #reload',[],OC.Shorty.WUI.List.build);
 	// sort buttons
-	$('#list-of-shortys #toolbar').find('shorty-sorter').on('click',function(){
+	$(document).on('click','#list-of-shortys #toolbar shorty-sorter',[],function(){
 		OC.Shorty.WUI.List.sort.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]);
@@ -111,23 +115,23 @@ $(document).ready(function(){
 	// filter actions
 	var list=$('#list-of-shortys');
 	// title & target filter reaction
-	list.find('thead tr#toolbar').find('th#target,th#title').find('#filter').on('keyup',function(){
+	$(document).on('keyup','#list-of-shortys thead tr#toolbar th#target,th#title #filter',[],function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[list,$($(this).context.parentElement.parentElement).attr('id'),$(this).val()]);
 	});
 	// status filter reaction
-	list.find('thead tr#toolbar th#status select').change(function(){
+	$(document).on('change','#list-of-shortys thead tr#toolbar th#status select',[],function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[list,$(this).parents('th').attr('id'),$(this).find(':selected').val()]);
 	});
 	// column sorting reaction
-	list.find('thead tr#toolbar div img.shorty-sorter').on('click',function(){
+	$(document).on('click','#list-of-shortys thead tr#toolbar div img.shorty-sorter',[],function(){
 		OC.Shorty.WUI.List.sort(list,$(this).attr('data-sort-code'));
 	});
 	// open preferences popup when button is clicked
-	$('#controls-preferences.settings').on('click keydown', function() {
+	$(document).on('click keydown','#controls-preferences.settings',[],function() {
 		OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
 	});
 }); // document.ready
