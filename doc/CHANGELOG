@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* ??? Sep ?? 2012 Christian Reiner: version 0.3.7
+* Fri Sep 28 2012 Christian Reiner: version 0.3.7
 Preparations to rely on the OC core to refresh the request token if implemented.
 - the Shorty strategy and code is to be accepted into the OC core :-)
 - for version prior to that Shorty still handles refreshing itself
