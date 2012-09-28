@@ -25,6 +25,14 @@
 Changelog: 
 
 * ??? Sep ?? 2012 Christian Reiner: version 0.3.7
+Preparations to rely on the OC core to refresh the request token if implemented.
+- the Shorty strategy and code is to be accepted into the OC core :-)
+- for version prior to that Shorty still handles refreshing itself
+Fixed a crash that was introduced by changes in the OC core in recent beta versions.
+Some preparations for future referencing of files stored inside OC as opposed to URLs.
+Some internal code changes to reflect advances in the underlying jquery library.
+A few logical fixes to detection of special runtime exceptions. 
+Some more small optical layout fixes. 
 Fixed missleading debug statement in ajax hooks for settings and preferences control
 Fixed settings and preferences control not to ignore empty values
 * Sat Sep 09 2012 Christian Reiner: version 0.3.6
