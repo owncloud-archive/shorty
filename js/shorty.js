@@ -1953,7 +1953,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 				switch(aspect)
 				{
 					case 'favicon':
-						span.html('<img class="shorty-icon" width="16" src="'+set[aspect]+'">');
+						span.html('<img class="shorty-icon" width="16px" src="'+set[aspect]+'">');
 						break;
 
 					case 'until':

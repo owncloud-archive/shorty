@@ -50,16 +50,16 @@
 		<br />
 		<label for="meta"><img id="busy" height="12px" src="<?php echo OCP\Util::imagePath('shorty', 'loading-led.gif'); ?>"></label>
 		<span id="meta" class="shorty-meta">
-			<img id="staticon"  class="shorty-icon"
+			<img id="staticon"  class="shorty-icon" width="16px"
 				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 				data="<?php echo OCP\Util::imagePath('shorty', 'status/neutral.png'); ?>">
-			<img id="schemicon" class="shorty-icon"
+			<img id="schemicon" class="shorty-icon" width="16px"
 				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 				data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-			<img id="favicon"   class="shorty-icon"
+			<img id="favicon"   class="shorty-icon" width="16px"
 				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 				data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-			<img id="mimicon"   class="shorty-icon"
+			<img id="mimicon"   class="shorty-icon" width="16px"
 				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 				data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
 			<a id="explanation" maxlength="80" data="" class="shorty-value"></a>
