@@ -33,9 +33,10 @@
  */
 
 OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
-// OCP\Util::addStyle  ( 'shorty',   'shorty' );
-// TODO: OC4-compatibility
-OCP\Util::addStyle  ( 'shorty',   (5<=OC_Shorty_Tools::CompatVersion(true))?'shorty-oc5':'shorty-oc4' );
+OCP\Util::addStyle  ( 'shorty',   'shorty' );
+// TODO: remove OC4-compatibility
+if (4==OC_Shorty_Tools::CompatVersion(true))
+	OCP\Util::addStyle ( 'shorty', 'shorty-oc4' );
 OCP\Util::addStyle  ( 'shorty',   'preferences' );
 
 OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
