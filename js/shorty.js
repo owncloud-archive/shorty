@@ -1628,7 +1628,7 @@ OC.Shorty={
 					case 'usage-qrcode':
 						// take layout from hidden dialog template
 						var message=$('#dialog-qrcode').html();
-						// use the jquery.impromtu plugin for a popup
+						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt({
 							state0:{
 								html:message,
@@ -1667,7 +1667,7 @@ OC.Shorty={
 									+'&body='+encodeURIComponent(mailBody);
 						// take layout from hidden dialog template
 						var message=$('#dialog-email').html();
-						// use the jquery.impromtu plugin for a popup
+						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt({
 							state0:{
 								html:message,
@@ -1696,7 +1696,7 @@ OC.Shorty={
 						var smsBody=entry.attr('data-title')+"\n"+entry.attr('data-notes')+"\n"+entry.attr('data-source');
 						// take layout from hidden dialog template
 						var message=$('#dialog-sms').html();
-						// use the jquery.impromtu plugin for a popup
+						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt({
 							state0:{
 								html:message,
@@ -1722,7 +1722,7 @@ OC.Shorty={
 						// take layout from hidden dialog template
 						var clipboardBody=entry.attr('data-source');
 						var message=$('#dialog-clipboard').html();
-						// use the jquery.impromtu plugin for a popup
+						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt({
 							state0:{
 								html:message,
