@@ -865,6 +865,7 @@ OC.Shorty={
 								break;
 
 							case 'title':
+							case 'target':
 								classes.push('ellipsis');
 								content=set[aspect];
 								break;
@@ -1938,7 +1939,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 			['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
 			function(j,aspect){
 				// we wrap the cells content into a span tag
-				var span=$('<span>');
+				var span=$('<span />');
 				span.addClass('ellipsis');
 				// enhance row with real set values
 				if (typeof set[aspect]===undefined)
@@ -1963,9 +1964,6 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 						break;
 
 					case 'title':
-						span.text(set[aspect]);
-						break;
-
 					case 'target':
 						span.text(set[aspect]);
 						span.attr('title',set[aspect]);
