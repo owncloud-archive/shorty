@@ -59,7 +59,7 @@
 .shorty-embedded a.shorty-clickable:before {
 	content: url("%appswebroot%/apps/shorty/img/actions/external.png");
 	margin-right: 0.3em;
-	margin-left: 7.4em;
+	margin-left: 7.0em;
 }
 .shorty-embedded fieldset.shorty-collapsible span:before {
 	content: url("%appswebroot%/apps/shorty/img/actions/shade.png");

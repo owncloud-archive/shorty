@@ -422,6 +422,9 @@ table.shorty-list.scrollingTable tfoot {
 	background: none repeat scroll 0 0 #EEEEEE;
 	position: absolute;
 }
+.shorty-embedded span {
+	width: 29em;
+}
 .shorty-embedded a {
 	padding: 0;
 }
@@ -438,7 +441,7 @@ table.shorty-list.scrollingTable tfoot {
 .shorty-embedded a.shorty-clickable:before {
 	content: url("../img/actions/external.png");
 	margin-right: 0.3em;
-	margin-left: 7.4em;
+	margin-left: 7.0em;
 }
 .shorty-embedded fieldset.shorty-collapsible span:before {
 	content: url("../img/actions/shade.png");
@@ -470,7 +473,6 @@ table.shorty-list.scrollingTable tfoot {
 	border: 1px solid gray;
 }
 .shorty-embedded select {
-	margin: 0 0 0.2em 1.0em;
 	padding: 0.2em 0.4em 0.2em 0.2em;
 	border: 0 none;
 	background-color: #F4F4F4;
@@ -479,6 +481,12 @@ table.shorty-list.scrollingTable tfoot {
 	opacity: 0.6;
 	margin: 0;
 	padding: 0;
+}
+.shorty-embedded img.shorty-usage.disabled {
+	opacity: 0.2;
+}
+.shorty-embedded img.shorty-usage:not(.disabled):hover {
+	cursor: pointer;
 }
 .shorty-embedded .shorty-grid {
 	width: 100%;
@@ -490,12 +498,6 @@ table.shorty-list.scrollingTable tfoot {
 .shorty-embedded .shorty-grid td {
 	text-align: center;
 	vertical-align: middle;
-}
-.shorty-embedded img.shorty-usage.disabled {
-	opacity: 0.2;
-}
-.shorty-embedded img.shorty-usage:not(.disabled):hover {
-	cursor: pointer;
 }
 .shorty-dialog label {
 	display: inline-block;
@@ -603,7 +605,7 @@ table.shorty-list.scrollingTable tfoot {
 }
 /* keep long entries like urls from disrupting the compact appearance of the list */
 .ellipsis {
-	display: block;
+	display: inline-block;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;

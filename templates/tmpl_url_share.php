@@ -46,6 +46,9 @@
 			<span class="heading"><?php echo OC_Shorty_L10n::t('Share and use').':'; ?></span>
 		</legend>
 		<input id="id" name="id" type="hidden" readonly data="" class="" readonly disabled />
+		<label for="title"><?php echo OC_Shorty_L10n::t('Title').':'; ?></label>
+		<span id="title" class="ellipsis"></span>
+		<br />
 		<label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>
 		<select id="status" name="status" data="" class="" value="">
 			<?php

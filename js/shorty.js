@@ -514,16 +514,12 @@ OC.Shorty={
 				// use the existing 'share' dialog for this
 				var dialog=$('#dialog-share');
 				// fill and show dialog
-				dialog.find('#id').val(entry.attr('data-id'))
-								.attr('data',entry.attr('data-id'));
-				dialog.find('#source').attr('href',entry.attr('data-source'))
-									.text(entry.attr('data-source'));
-				dialog.find('#relay').attr('href',entry.attr('data-relay'))
-									.text(entry.attr('data-relay'));
-				dialog.find('#target').attr('href',entry.attr('data-target'))
-									.text(entry.attr('data-target'));
-				dialog.find('#status').attr('value',entry.attr('data-status'))
-									.attr('data',entry.attr('data-status'));
+				dialog.find('#id'    ).attr('data-id',    entry.attr('data-id'    )).val (entry.attr('data-id'    ));
+				dialog.find('#title' ).attr('data-title', entry.attr('data-title' )).text(entry.attr('data-title' ));
+				dialog.find('#source').attr('href',       entry.attr('data-source')).text(entry.attr('data-source'));
+				dialog.find('#relay' ).attr('href',       entry.attr('data-relay' )).text(entry.attr('data-relay' ));
+				dialog.find('#target').attr('href',       entry.attr('data-target')).text(entry.attr('data-target'));
+				dialog.find('#status').attr('data-status',entry.attr('data-status')).val (entry.attr('data-status'));
 				// move 'share' dialog towards entry
 				dialog.appendTo(entry.find('td#actions')),
 				// open dialog
@@ -1662,7 +1658,7 @@ OC.Shorty={
 						// we offer a 'mailto://' link for all devices supporting that or copying the address as a fallback
 						var mailSubject=entry.attr('data-title')||'';
 						var mailBody=entry.attr('data-notes')+"\n\n"+entry.attr('data-source');
-						var mailLink='mailto:""?'
+						var mailLink='mailto:?'
 									+'subject='+encodeURIComponent(mailSubject)
 									+'&body='+encodeURIComponent(mailBody);
 						// take layout from hidden dialog template
