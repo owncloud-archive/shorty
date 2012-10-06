@@ -76,7 +76,7 @@
 			<th id="clicks" ><span><?php echo OC_Shorty_L10n::t('Clicks')     ?></span></th>
 			<th id="until"  ><span><?php echo OC_Shorty_L10n::t('Expiration') ?></span></th>
 			<th id="status" ><span><?php echo OC_Shorty_L10n::t('Status')     ?></span></th>
-			<th id="action" ><span>&nbsp;</span></th>
+			<th id="actions"><span>&nbsp;</span></th>
 		</tr>
 		<!-- toolbar opened/closed by the button above -->
 		<tr id="toolbar">
@@ -127,8 +127,8 @@
 						src="<?php echo OCP\Util::imagePath('shorty','actions/down.png'); ?>">
 				</div>
 			</th>
-			<!-- status filter, colspan 2 to prevent width enhancement of column -->
-			<th id="status" colspan=2>
+			<!-- status filter -->
+			<th id="status">
 				<div style="display:none;">
 					<span class="shorty-select">
 						<select id='filter' value="" data-placeholder=" ">

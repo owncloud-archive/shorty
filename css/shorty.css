@@ -33,11 +33,10 @@
 .shorty-desktop {
 	display: inline-block;
 	position: absolute;
+	width: 100%;
 	background: transparent;
 	text-align: left;
-	margin-top: 30px;
-	padding: 2.5em 0.5em;
-	padding-top: 20px;
+	margin-top: 3.4em;
 }
 /* top bar, holding main control elements */
 .shorty-controls {
@@ -149,26 +148,14 @@
 	float: right;
 }
 
-table.shorty-list.scrollingTable tbody {
-	display: block;
-/*	clear: both; */
-	overflow-y: scroll;
-	overflow-x: hidden;
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-table.shorty-list.scrollingTable thead,
-table.shorty-list.scrollingTable tfoot {
-	width: 100%;
-}
-
 /* the list of shorties */
 .shorty-list {
-	display: inline;
+	display: table;
+	table-layout: fixed;
 	z-index: 3;
 	background: transparent;
-	table-layout: fixed;
+	width: 98%; /* rpbust against right scrollbar */
+	height: 100%;
 }
 /* the collapsible toolbar below the lists column title row */
 .shorty-list thead #toolbar img {
@@ -183,12 +170,9 @@ table.shorty-list.scrollingTable tfoot {
 	border:1px solid #888888;
 	border-radius: 0.3em;
 }
+/* a slight gap between table header and body */
 .shorty-list thead tr:nth-child(2) > th {
 	padding-bottom:0.5em;
-}
-/* somewhat more fixed layout for the table */
-.shorty-list thead #titlebar th span {
-	display:inline-block;
 }
 .shorty-list thead #titlebar th,
 .shorty-list thead #titlebar th img,
@@ -198,36 +182,62 @@ table.shorty-list.scrollingTable tfoot {
 .shorty-list thead #titlebar img {
 	opacity:0.7;
 }
-.shorty-desktop .shorty-list thead th#title,
-.shorty-desktop .shorty-list tbody td#title,
-.shorty-desktop .shorty-list thead th#target,
-.shorty-desktop .shorty-list tbody td#target {
-	width:10em;
+/* scrolling lists have a scrollbar INSIDE the tbody */
+.shorty-list.scrollingTable {
+	table-layout: fixed;
+	width: auto;
 }
-.shorty-desktop .shorty-list thead th#clicks,
-.shorty-desktop .shorty-list tbody td#clicks {
-	width:3em;
+.shorty-list.scrollingTable tbody {
+/* 	display: inline-block; */
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100%;
+	position: relative;
 }
-.shorty-desktop .shorty-list thead th#until,
-.shorty-desktop .shorty-list tbody td#until {
-	width:5.2em;
+
+.shorty-desktop .shorty-list th#favicon,
+.shorty-desktop .shorty-list td#favicon {
+	width: 22px;
+}
+.shorty-desktop .shorty-list th#title,
+.shorty-desktop .shorty-list td#title {
+	width: 100%;
+}
+.shorty-desktop .shorty-list th#target,
+.shorty-desktop .shorty-list td#target {
+	width: 14em;
+}
+.shorty-desktop .shorty-list th#clicks,
+.shorty-desktop .shorty-list td#clicks {
+	width: 3em;
+}
+.shorty-desktop .shorty-list th#until,
+.shorty-desktop .shorty-list td#until {
+	width: 5.2em;
+}
+.shorty-desktop .shorty-list th#status,
+.shorty-desktop .shorty-list td#status {
+	width: 5.5em;
+}
+.shorty-desktop .shorty-list th#actions,
+.shorty-desktop .shorty-list td#actions {
+	width: 120px;
 }
 .shorty-list thead tr#toolbar th input,
 .shorty-list tbody tr#toolbar td input,
 .shorty-list thead tr#toolbar th .chzn-container,
 .shorty-list tbody tr#toolbar td .chzn-container {
-	width:6em;
+	width: 6em;
 	font-size: 11px;
 	margin: 0;
 	padding: 0.4em 0.3em 0.2em;
 	vertical-align: baseline;
-	background-color:#FFFFFF;
+	background-color: #FFFFFF;
 }
 
 /* column title apeparance */
 .shorty-list thead th {
 	font-weight: bold;
-	padding: 1px 6px;
 }
 .shorty-list thead th#clicks,
 .shorty-list thead th#until,
@@ -248,8 +258,6 @@ table.shorty-list.scrollingTable tfoot {
 	-webkit-transition: opacity 500ms;
 	-ms-transition: opacity 500ms;
 	-o-transition: opacity 500ms;
-	width:100px;
-	overflow:auto;
 }
 .shorty-list tbody tr:hover td span.shorty-actions {
 	opacity:1;
@@ -299,8 +307,13 @@ table.shorty-list.scrollingTable tfoot {
 	display: none;
 }
 /* general table cell appearance */
+.shorty-list thead th,
 .shorty-list tbody td {
-	padding: 1px 6px;
+	padding: 1px 2px;
+}
+.shorty-list thead th#favicon,
+.shorty-list tbody td#favicon {
+	text-align: center;
 }
 .shorty-list tbody td#until {
 	text-align: center;
