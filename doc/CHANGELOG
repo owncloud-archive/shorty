@@ -24,6 +24,9 @@
 
 Changelog: 
 
+* Sun Oct 08 2012 Christian Reiner: version 0.1.6
+Switched layout of list of clicks to liquid style.
+Switched apps activation requirement to OC version 5 (to satisfy OCs stupid compatibility check).
 * Mon Sep 13 2012 Christian Reiner: version 0.1.5
 Internal corrections required by changes in the upcoming OC5 release.
 Internal rename from 'shorty-tracking' to 'shorty_tracking'...
