@@ -154,7 +154,7 @@
 	table-layout: fixed;
 	z-index: 3;
 	background: transparent;
-	width: 98%; /* rpbust against right scrollbar */
+	width: 98%; /* robust against right scrollbar */
 	height: 100%;
 }
 /* the collapsible toolbar below the lists column title row */
@@ -184,8 +184,8 @@
 }
 /* scrolling lists have a scrollbar INSIDE the tbody */
 .shorty-list.scrollingTable {
+	display: table;
 	table-layout: fixed;
-	width: auto;
 }
 .shorty-list.scrollingTable tbody {
 /* 	display: inline-block; */
@@ -349,7 +349,7 @@
 	vertical-align:middle;
 	z-index:4;
 	width: 48em;
-	margin: -1px 0 0;
+	margin: -1px 0 0 -2px;
 	padding: 0.5em;
 	background: none repeat scroll 0 0 #F7F7F7;
 }
