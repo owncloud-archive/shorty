@@ -35,6 +35,7 @@
 }
 #list-of-clicks th,
 #list-of-clicks td {
+	margin: 0;
 	padding: 1px 0;
 }
 #list-of-clicks thead th#status,
@@ -62,7 +63,8 @@
 	width:10.6em;
 }
 #list-of-clicks tbody td span {
-	padding: 0.1em 0.1em 0.1em 0.1em;
+	margin: 0;
+	padding: 0 0.1em;
 }
 #list-of-clicks tbody tr:hover, tr:active {
 	background-color: #F0F0F0;
