@@ -35,8 +35,9 @@
 ?>
 
 <!-- a (usually hidden) dialog used to display a list of all tracked clicks hitting a Shorty -->
-<div id="shorty-tracking-list-dialog"
-		class="shorty-dialog shorty-standalone">
+<div	id="shorty-tracking-list-dialog"
+		class="shorty-dialog shorty-standalone"
+		style="max-width:90%">
 	<fieldset>
 		<legend>
 			<a id="close" class="shorty-close-button"
@@ -65,7 +66,7 @@
 			<!-- table header -->
 			<thead>
 				<tr id="titlebar">
-					<th id="state"  >
+					<th id="status" >
 						<span><img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
 								src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
 								data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
