@@ -47,7 +47,7 @@ OCP\JSON::checkAppEnabled ( 'shorty_tracking' );
 
 try
 {
-	define ('PAGE_SIZE', 100);
+	define ('PAGE_SIZE', 25);
 	$p_shorty = OC_Shorty_Type::req_argument ( 'shorty', OC_Shorty_Type::ID,      TRUE );
 	$p_offset = OC_Shorty_Type::req_argument ( 'offset', OC_Shorty_Type::INTEGER, FALSE);
 
