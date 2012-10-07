@@ -207,7 +207,7 @@
 }
 .shorty-desktop .shorty-list th#until,
 .shorty-desktop .shorty-list td#until {
-	width: 5.2em;
+	width: 6em;
 }
 .shorty-desktop .shorty-list th#status,
 .shorty-desktop .shorty-list td#status {
@@ -446,6 +446,7 @@
 }
 .shorty-embedded a {
 	padding: 0;
+	text-decoration: none;
 }
 .shorty-embedded a#source,
 .shorty-embedded a#relay,
