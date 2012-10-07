@@ -33,7 +33,8 @@
 // we use the late event $(window).load() instead of $(document).ready(), 
 // since otherwise the binding of the ajax request token (CSRF protection)
 // has not yet finished before we try to use it...
-$(document).ready(function(){
+// TODO: OC-4 compatibility: use document.ready instead of window.load when dropping OC-4 compatibility
+$(window).load(function(){
 	var dfd = new $.Deferred();
 	$.when(
 		// load layout of dialog to show the list of tracked clicks
