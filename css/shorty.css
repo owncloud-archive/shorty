@@ -179,14 +179,13 @@
 }
 /* scrolling lists have a scrollbar INSIDE the tbody */
 .shorty-list.scrollingTable {
-	display: table;
+	display: block;
 	table-layout: fixed;
 }
 .shorty-list.scrollingTable tbody {
-/* 	display: inline-block; */
+	display: block;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	height: 100%;
 	position: relative;
 }
 
