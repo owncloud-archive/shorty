@@ -143,11 +143,6 @@
 	margin-left: -160px;
 }
 
-.shorty-standalone #busy {
-	display: none;
-	float: right;
-}
-
 /* the list of shorties */
 .shorty-list {
 	display: table;
@@ -349,7 +344,7 @@
 	vertical-align:middle;
 	z-index:4;
 	width: 48em;
-	margin: -1px 0 0 -2px;
+	margin: -1px 0 0;
 	padding: 0.5em;
 	background: none repeat scroll 0 0 #F7F7F7;
 }
@@ -426,6 +421,18 @@
 .shorty-dialog br {
 	clear: left;
 }
+
+/* absolut dialogs ('standalone') */
+.shorty-standalone {
+	position: relative;
+	left: 1.5em;
+}
+.shorty-standalone #busy {
+	display: none;
+	float: right;
+}
+
+
 /* dialogs related to elements ('embedded in the content') */
 .shorty-embedded {
 	left: 4em;
