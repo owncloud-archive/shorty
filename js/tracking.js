@@ -238,7 +238,7 @@ OC.Shorty.Tracking=
 		OC.Shorty.Tracking.Entry=entry;
 		// update lists reference bar content to improve intuitivity
 		OC.Shorty.Tracking.Dialog.List.find('#shorty-title').html(entry.attr('data-title'));
-		OC.Shorty.Tracking.Dialog.List.find('#shorty-status').html(entry.attr('data-status'));
+		OC.Shorty.Tracking.Dialog.List.find('#shorty-status').html(t('shorty',entry.attr('data-status')));
 		OC.Shorty.Tracking.Dialog.List.find('#shorty-until').html(
 			((!entry.attr('data-until')) ? "-"+t('shorty',"never")+"-" : entry.attr('data-until'))
 		);
