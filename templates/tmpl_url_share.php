@@ -36,6 +36,7 @@
 
 <!-- (hidden) dialog to share a shorty from the list -->
 <form id="dialog-share" class="shorty-dialog shorty-embedded">
+	<input id="id" name="id" type="hidden" readonly data="" class="" readonly disabled />
 	<fieldset>
 		<legend class="">
 			<a id="close" class="shorty-close-button"
@@ -45,7 +46,6 @@
 			</a>
 			<span class="heading"><?php echo OC_Shorty_L10n::t('Share and use').':'; ?></span>
 		</legend>
-		<input id="id" name="id" type="hidden" readonly data="" class="" readonly disabled />
 		<label for="title"><?php echo OC_Shorty_L10n::t('Title').':'; ?></label>
 		<span id="title" class="ellipsis"></span>
 		<br />
