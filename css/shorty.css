@@ -521,11 +521,10 @@
 }
 .shorty-dialog label {
 	display: inline-block;
-	clear:none;
+	clear: none;
 	width: 5.7em;
 	text-align: left;
 	vertical-align: baseline;
-/*	padding: 0.6em 0.5em 0.1em 0.3em; */
 	padding: 0.2em 0.5em 0.1em 0.2em;
 	cursor: default;
 }
