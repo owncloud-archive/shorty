@@ -41,7 +41,3 @@
 #shorty a.external {
 	text-decoration:underline;
 }
-#shorty a.external:after {
-	content:url("../img/actions/external.png");
-	margin-left:0.3em;
-}

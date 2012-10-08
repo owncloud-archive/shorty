@@ -482,6 +482,10 @@
 	text-overflow: ellipsis;
 	vertical-align: middle;
 }
+.external:after {
+	content:url("../img/actions/external.png");
+	margin-left:0.3em;
+}
 .shorty-embedded a.shorty-clickable:before {
 	content: url("../img/actions/external.png");
 	margin-right: 0.3em;
