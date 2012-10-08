@@ -49,7 +49,7 @@
 				<label for="backend-type" class="shorty-aspect"><?php echo OC_Shorty_L10n::t("Backend").":";?></label>
 				<!-- list of available backend types -->
 				<span style="margin-right:1em;">
-					<select id="backend-type" name="backend-type" style="width:11em;"
+					<select id="backend-type" name="backend-type" style="width:13em;"
 							placeholder="<?php echo OC_Shorty_L10n::t("Choose service…"); ?>" >
 						<?php
 							foreach ( $_['backend-types'] as $value=>$display )
