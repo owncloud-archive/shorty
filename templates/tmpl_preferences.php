@@ -172,11 +172,11 @@
 					<span id="explain" class="shorty-explain">
 						<?php echo sprintf("%s<br />\n%s<br />\n%s<br />\n%s",
 											OC_Shorty_L10n::t("Googles external 'goo.gl service' is used to register a short url for each generated shorty."),
-											OC_Shorty_L10n::t("You must provide a valid '%s' to use this service.",
-												sprintf('<a class="external" href="https://code.google.com/apis/console/" target="_blank">%s</a>',OC_Shorty_L10n::t("Google API key")) ),
+											sprintf(OC_Shorty_L10n::t("You must provide a valid '%%s' to use this service."),
+												sprintf('<a class="external shorty-clickable" href="https://code.google.com/apis/console/" target="_blank">%s</a>',OC_Shorty_L10n::t("Google API key")) ),
 											OC_Shorty_L10n::t("This means you require a 'Google API console account'."),
-											OC_Shorty_L10n::t("Register a new '%s' at their pages.", array(
-												sprintf('<a class="external" href="https://code.google.com/apis/console/" target="_blank">%s</a>',OC_Shorty_L10n::t("Google API account")) ) ) );?>
+											sprintf(OC_Shorty_L10n::t("Register a new '%%s' at their pages."), 
+												sprintf('<a class="external shorty-clickable" href="https://code.google.com/apis/console/" target="_blank">%s</a>',OC_Shorty_L10n::t("Google API account")) ) );?>
 					</span>
 				</span>
 				<!-- backend tinycc -->

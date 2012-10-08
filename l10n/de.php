@@ -216,12 +216,12 @@ $TRANSLATIONS = array(
 => "Dieses Backend kann nur verwendet werden, wenn die Basis-Url in der beschriebenen Art umgesetzt wird. Die Shorties werden andernfalls nicht nutzbar sein.",
 "Googles external 'goo.gl service' is used to register a short url for each generated shorty."
 => "Googles externer 'goo.gl'-Dienst wird genutzt, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
-"You must provide a valid '%s' to use this service."
-=> "Es muss eine valide '%s' angegeben werden um diesen Dienst nutzen zu können. ",
+"You must provide a valid '%%s' to use this service."
+=> "Es muss ein valider '%%s' angegeben werden um diesen Dienst nutzen zu können. ",
 "This means you require a 'Google API console account'."
 => "Das bedeutet, dass ein 'Google API console account' benötigt wird",
-"Register a new '%s' at their pages."
-=> "Einen neuen '%s' auf deren Seite registrieren.",
+"Register a new '%%s' at their pages."
+=> "Einen neuen '%%s' auf deren Seite registrieren.",
 "Enabling the SMS option will offer sending a Shorty via SMS."
 => "Aktivieren der SMS-Option bietet das Versenden von Shortys via SMS an.",
 "Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones."
