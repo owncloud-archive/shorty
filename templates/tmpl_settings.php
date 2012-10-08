@@ -35,31 +35,32 @@
 ?>
 
 <!-- settings of app 'shorty' -->
+<form id="shorty">
 <fieldset class="personalblock">
 	<legend>
-		<span id="title" class="title">
+		<span id="title" class="shorty-title">
 			<img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
 			<a name="shorty"><strong>Shorty</strong></a>
 		</span>
 	</legend>
 	<form id="shorty">
 		<div id="backend-static" class="backend-supplement">
-			<span><?php echo OC_Shorty_L10n::t("Optional configuration of a 'Static Backend':");?></span>
+			<span><?php echo OC_Shorty_L10n::t("Optional configuration of a 'Static Backend'").":";?></span>
 			<br/>
-			<label for="backend-static-base" class="aspect"><?php echo OC_Shorty_L10n::t("Base url").':';?></label>
+			<label for="backend-static-base" class="shorty-aspect"><?php echo OC_Shorty_L10n::t("Base url").':';?></label>
 			<input id="backend-static-base" type="text" name="backend-static-base"
 					value="<?php echo $_['backend-static-base']; ?>"
 					maxlength="256" placeholder="<?php echo OC_Shorty_L10n::t('Specify a static base url…');?>" style="width:25em;">
 			<br/>
-			<label for="backend-example" class="aspect"> </label>
+			<label for="backend-example" class="shorty-aspect"> </label>
 			<span id="backend-example">
-				<label for="example" class="aspect"><?php echo OC_Shorty_L10n::t("Example").':';?></label>
-				<a id="example" class="example" title="<?php echo OC_Shorty_L10n::t("Verification by click");?>">
+				<label for="example" class="shorty-aspect"><?php echo OC_Shorty_L10n::t("Example").':';?></label>
+				<a id="example" class="shorty-example" title="<?php echo OC_Shorty_L10n::t("Verification by click");?>">
 				<?php echo sprintf(htmlspecialchars('http://%s/<service><shorty id>'),$_SERVER['SERVER_NAME']) ?>
 				</a>
 			</span>
 			<br/>
-			<span id="explain" class="explain"><?php echo sprintf("%1\$s<br />\n%2\$s<br />\n%3\$s <span class=\"example\">%6\$s</span><br />\n%4\$s<br />\n%5\$s",
+			<span id="explain" class="shorty-explain"><?php echo sprintf("%1\$s<br />\n%2\$s<br />\n%3\$s <span class=\"shorty-example\">%6\$s</span><br />\n%4\$s<br />\n%5\$s",
 				OC_Shorty_L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
 				OC_Shorty_L10n::t("You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."),
 				OC_Shorty_L10n::t("The target of that mapping must be some URL like:"),
@@ -85,3 +86,4 @@
 
 	<?php require_once('tmpl_dlg_verify.php'); ?>
 </fieldset>
+</form>

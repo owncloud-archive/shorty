@@ -89,7 +89,6 @@
 						href=""></a>
 				</div>
 			</fieldset>
-			<br/>
 		</div>
 		<table class="shorty-grid">
 			<tr>

@@ -35,7 +35,7 @@
 ?>
 
 	<!-- shortlet -->
-	<label for="shortlet" class="aspect"><?php echo OC_Shorty_L10n::t("Shortlet").":";?></label>
+	<label for="shortlet" class="shorty-aspect"><?php echo OC_Shorty_L10n::t("Shortlet").":";?></label>
 	<span id="shortlet">
 		<a class="shortlet"
 			href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OCP\Util::linkToAbsolute('shorty', 'index.php'); ?>&url='+url, 'owncloud-shorty')%20})()">
@@ -43,7 +43,7 @@
 		</a>
 	</span>
 	<p>
-		<span class="explain">
+		<span class="shorty-explain">
 			<em>
 				<?php echo OC_Shorty_L10n::t("Drag this to your browser bookmarks."); ?>
 				<br>
