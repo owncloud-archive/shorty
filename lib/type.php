@@ -339,14 +339,14 @@ class OC_Shorty_Type
 					return self::normalize ( urldecode($_POST[$arg]), $type ) ;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "missing mandatory argume  nt '%1s'", array($arg) );
+				throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
 
 			case 'GET':
 				if ( isset($_GET[$arg]) && !empty($_GET[$arg]) )
 					return self::normalize ( urldecode(trim($_GET[$arg])), $type, $strict );
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "missing mandatory argume  nt '%1s'", array($arg) );
+				throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
 
 			default:
 				throw new OC_Shorty_Exception ( "unexpected http request   method '%1s'", array($_SERVER['REQUEST_METHOD']) );
