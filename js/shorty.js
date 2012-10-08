@@ -422,7 +422,7 @@ OC.Shorty={
 
 							default: // probably an action registered by another plugin...
 								// execute the function specified inside the clicked element:
-								if (typeof $(element).attr('data_method')!==undefined){
+								if (typeof $(element).attr('data_method')!=undefined){
 									if (OC.Shorty.Debug) OC.Shorty.Debug.log("handing control to registered action");
 									executeFunctionByName($(element).attr('data_method'),window,entry);
 								}
@@ -845,7 +845,7 @@ OC.Shorty={
 					row=$('#list-of-shortys tbody tr#'+set.id);
 					// modify attributes in row, as data and value
 					$.each(['status','title','until','notes'],function(j,aspect){
-						if (typeof set[aspect]===undefined) set[aspect]='';
+						if (typeof set[aspect]==undefined) set[aspect]='';
 						// enhance row with actual set values
 						row.attr('data-'+this,set[aspect]);
 						if (hidden) row.addClass('shorty-fresh');
@@ -1942,7 +1942,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 				var span=$('<span />');
 				span.addClass('ellipsis');
 				// enhance row with real set values
-				if (typeof set[aspect]===undefined)
+				if (typeof set[aspect]==undefined)
 					row.attr('data-'+this,'');
 				else row.attr('data-'+this,set[aspect]);
 				// fill data into corresponsing column
