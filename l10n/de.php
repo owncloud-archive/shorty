@@ -107,6 +107,7 @@ $TRANSLATIONS = array(
 "Open relay url"                                                         => "Relais-Url öffnen",
 "Open target"                                                            => "Ziel öffnen",
 "Open target url"                                                        => "Ziel-Url öffnen",
+"Optional configuration of a 'Static Backend'"                           => "Optionale Konfiguration eines 'Statischen Backends'",
 "or simpy print or download it for off-line usage"                       => "oder auch einfach durch Ausdruck oder Speicherung",
 "Paste to embed elsewhere"                                               => "Anderweitig wieder einfügen",
 "Preference saved"                                                       => "Präferenz gespeichert",
@@ -175,6 +176,8 @@ $TRANSLATIONS = array(
 "tiny.cc key"         => "tiny.cc-Schlüssel",
 "tiny.cc user key"    => "tiny.cc-Nutzerschlüssel",
 
+"Force verification of encryption certificates during communication with the backend"
+=>"Erzwingen der Verifizierung der Verschlüsselungs-Zertifikate während der Kommunikation mit dem Backend",
 "The external 'bitly.com' service is used to register a short url for each generated shorty."
 => "Der externe 'bitly.com'-Dienst wird genutzt, um eine Kurz-Url für jeden generierten Shorty zu registrieren.",
 "This means you have to register an '%s' at their site first."
@@ -223,7 +226,7 @@ $TRANSLATIONS = array(
 => "Aktivieren der SMS-Option bietet das Versenden von Shortys via SMS an.",
 "Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones."
 => "Unglücklicherweise werden 'SMS-Urls' typischerweise nur auf mobilen Geräten wie etwa Smartphones unterstützt.",
-"In addition, the implementations are minimalistic, buggy and differ from system to system."
+"In addition, those implementations are minimalistic, buggy and differ from system to system."
 => "Darüber hinaus sind diese Implementierungen minimalistisch, fehlerhaft und unterschiedlich von System zu System.",
 "In short: this might not work for you, therefore you can disable it…"
 => "Kurz gesagt: dies mag nicht funktionieren, daher kann die Option deaktiviert werden…",
