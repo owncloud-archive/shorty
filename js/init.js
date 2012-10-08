@@ -35,12 +35,14 @@ $(document).ready(function(){
 	// required to make use of long lasting sessions whilst using CSRF protection with a small tokens lifetime
 	// handle this inside the app only, if the feature is NOT present in OC core
  	if (typeof OC.Request==undefined){
-		console.log("relying on app internal implementation to refresh the request token");
+		if (OC.Shorty.Debug)
+			OC.Shorty.Debug.log("Info","relying on app internal implementation to refresh the request token");
 		setInterval(OC.Shorty.Request.Refresh, 1000*60*56.87); // ~57 minutes, close to the timeout of 1 hour
 		// again: note that this is not required from OC 4.5 on upwards
 		// Shortys token refresh strategy has been accepted into the core
 	}else{
-		console.log("relying on core implementation to refresh the request token");
+		if (OC.Shorty.Debug)
+			OC.Shorty.Debug.log("Info","relying on core implementation to refresh the request token");
 	}
 	// make notification closeable
 	$(document).on('click','#content #notification',[],OC.Shorty.WUI.Notification.hide);

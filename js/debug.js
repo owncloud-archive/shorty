@@ -36,11 +36,12 @@ $(document).ready(function(){
 			log: function(issue){
 				switch (typeof(issue)){
 					case 'string':
-						console.log(issue);
+						// don't crash when no console object present (IE9 workaround)
+						try { console.log(issue); } catch (error) {}
 						break;
-
 					default:
-						console.log(this.dump(issue));
+						// don't crash when no console object present (IE9 workaround)
+						try { console.log(this.dump(issue)); } catch (error) {}
 				} // switch
 			}, // OC.Shorty.Debuglog()
 
