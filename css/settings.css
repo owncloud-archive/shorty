@@ -34,31 +34,6 @@
 	margin:0;
 	padding:0;
 }
-#shorty .aspect {
-	display: inline-block;
-	font-weight: bold;
-	width: 6em;
-	margin: 0 0.2em 0.4em;
-}
-
-#shorty .explain {
-	display: inline-block;
-	font-style: italic;
-	margin: 0.3em;
-}
-
-#shorty .example {
-	font-family: Monospace;
-	font-style: normal;
-	font-size:110%;
-	margin: 0.3em;
-	text-decoration: underline;
-	color: blue;
-}
-
-#shorty .title {
-	margin-bottom: 0.6em;
-}
 
 /* a dialog for verification of the static backend setup */
 #dialog-verification legend {

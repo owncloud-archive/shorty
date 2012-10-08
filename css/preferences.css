@@ -38,30 +38,6 @@
 	vertical-align: middle;
 }
 
-#shorty .title {
-	margin-bottom: 0.6em;
-}
-
-#shorty .aspect {
-	display: inline-block;
-	font-weight: bold;
-	width: 6em;
-	margin: 0 0.2em 0.4em 0;
-}
-
-#shorty .explain {
-	display: inline-block;
-	font-style: italic;
-	margin: 0.3em;
-}
-
-#shorty .example {
-	font-family: Monospace;
-	margin: 0.3em;
-	text-decoration: underline;
-	color: blue;
-}
-
 #shorty a.external {
 	text-decoration:underline;
 }

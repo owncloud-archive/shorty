@@ -53,6 +53,30 @@
 .shorty-config img {
 	cursor: inherit;
 }
+.shorty-title {
+	margin-bottom: 0.6em;
+}
+
+.shorty-aspect {
+	display: inline-block;
+	font-weight: bold;
+	width: 7em;
+	margin: 0 0.2em 0.4em 0.3em;
+}
+
+.shorty-explain {
+	display: inline-block;
+	font-style: italic;
+	margin: 0.3em;
+}
+
+.shorty-example {
+	font-family: Monospace;
+	margin: 0.3em;
+	text-decoration: underline;
+	color: blue;
+}
+
 
 /* an activity visualizer, currently a 'rotating timer wheel' */
 .shorty-hourglass {
@@ -434,9 +458,9 @@
 
 /* dialogs related to elements ('embedded in the content') */
 .shorty-embedded {
-	left: 4em;
+	right: 4em;
 	width: 38em;
-	margin: -1px 4em 0;
+	margin: 0 2.4em 0;
 	padding: 0.5em;
 	background: none repeat scroll 0 0 #EEEEEE;
 	position: absolute;
@@ -453,7 +477,7 @@
 .shorty-embedded a#target {
 	display: inline-block;
 	width: 36.4em;
-	overflow: hidden;
+	overflow-x: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	vertical-align: middle;
@@ -625,7 +649,7 @@
 /* keep long entries like urls from disrupting the compact appearance of the list */
 .ellipsis {
 	display: inline-block;
-	overflow: hidden;
+	overflow-x: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	width: inherit;
