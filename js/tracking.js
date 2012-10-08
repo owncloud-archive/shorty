@@ -516,7 +516,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 			// we wrap the cells content into a span tag
 			var span=$('<span>');
 			// enhance row with real set values
-			if (typeof set[aspect]==='undefined')
+			if (typeof set[aspect]=='undefined')
 				 row.attr('data-'+this,'');
 			else row.attr('data-'+this,set[aspect]);
 			// fill data into corresponsing column
