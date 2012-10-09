@@ -409,6 +409,9 @@
 }
 .shorty-dialog input {
 	width: 80%;
+/* these are required by the datepicker plugin to compute the correct z-index */
+	position: relative;
+	z-index: 100;
 }
 .shorty-dialog a,
 .shorty-dialog input,
