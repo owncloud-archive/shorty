@@ -1110,7 +1110,7 @@ OC.Shorty={
 				// don't bother getting active on empty input
 				if ( ! target.length ){
 					dialog.find('#target').focus().select();
-					dfd.resolve();
+					dfd.reject();
 					return dfd.promise();
 				}
 				// fill in fallback protocol scheme 'http' if none is specified
