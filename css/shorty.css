@@ -269,8 +269,8 @@
 }
 /* hide the content of the 'actions' column, except when being hovered */
 .shorty-list tbody tr td span.shorty-actions {
-	visibility:visible;
-	opacity:0;
+	visibility: visible;
+	opacity: 0;
 	transition: opacity 500ms;
 	-moz-transition: opacity 500ms;
 	-webkit-transition: opacity 500ms;
@@ -278,7 +278,7 @@
 	-o-transition: opacity 500ms;
 }
 .shorty-list tbody tr:hover td span.shorty-actions {
-	opacity:1;
+	opacity: 1;
 	transition: opacity 500ms;
 	-moz-transition: opacity 500ms;
 	-webkit-transition: opacity 500ms;
