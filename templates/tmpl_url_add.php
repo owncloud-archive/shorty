@@ -45,9 +45,9 @@
 			</a>
 			<span class="heading"><?php echo OC_Shorty_L10n::t('Add a new shorty').':'; ?></span>
 		</legend>
-		<label for="target_hint"></label>
-		<span id="target_hint" class="hint"><?php echo OC_Shorty_L10n::t('The target this Shorty refers to').":"; ?></span>
-		<br />
+<!--		<label for="target_hint"></label>
+		<span id="target_hint" class="explain"><?php echo OC_Shorty_L10n::t('The target this Shorty refers to').":"; ?></span>
+		<br />-->
 		<label for="target"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
 		<input id="target" name="target" type="text" maxlength="4096" data="" class=""/>
 		<br />
