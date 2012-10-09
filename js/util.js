@@ -85,13 +85,14 @@ $.fn.min = function(selector) {
  * @description This is something like phps call_user_func()...
  */
 function executeFunctionByName(functionName, context /*, args */) {
-  var args = Array.prototype.slice.call(arguments).splice(2);
-  var namespaces = functionName.split(".");
-  var func = namespaces.pop();
-  for(var i = 0; i < namespaces.length; i++) {
-    context = context[namespaces[i]];
-  }
-  return context[func].apply(this, args);
+	/* Note: the number 10 below is only required by stupid MS-IE<9 cause splice() is broken in there when using only one argument */
+	var args = Array.prototype.slice.call(arguments).splice(2,10);
+	var namespaces = functionName.split(".");
+	var func = namespaces.pop();
+	for(var i = 0; i < namespaces.length; i++) {
+		context = context[namespaces[i]];
+	}
+	return context[func].apply(this, args);
 }
 
 /**
@@ -102,7 +103,7 @@ function executeFunctionByName(functionName, context /*, args */) {
  * @author Christian Reiner
  */
 function dateExpired(date){
-  return (Date.parse(date)<=Date.parse(Date()));
+	return (Date.parse(date)<=Date.parse(Date()));
 } // dateExpired
 
 /**

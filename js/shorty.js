@@ -423,7 +423,7 @@ OC.Shorty={
 							default: // probably an action registered by another plugin...
 								// execute the function specified inside the clicked element:
 								if (typeof $(element).attr('data_method')!=undefined){
-									if (OC.Shorty.Debug) OC.Shorty.Debug.log("handing control to registered action");
+									if (OC.Shorty.Debug) OC.Shorty.Debug.log("handing control over entry '"+entry.attr('id')+"' to registered action");
 									executeFunctionByName($(element).attr('data_method'),window,entry);
 								}
 						} // switch
