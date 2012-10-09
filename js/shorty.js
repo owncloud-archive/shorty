@@ -1105,7 +1105,8 @@ OC.Shorty={
 			collect: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("collect meta data");
 				var dfd = new $.Deferred();
-				var target = dialog.find('#target').val().trim();
+				// MS IE<9 has no js trim()... so we use jQueries trim() instead
+				var target = $.trim(dialog.find('#target').val());
 				// don't bother getting active on empty input
 				if ( ! target.length ){
 					dialog.find('#target').focus().select();
