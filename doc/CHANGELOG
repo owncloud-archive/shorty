@@ -24,11 +24,16 @@
 
 Changelog: 
 
-* Sun Oct 08 2012 Christian Reiner: version 0.3.8
+* Tue Oct 09 2012 Christian Reiner: version 0.3.8
 Switched apps activation requirement to OC version 5 (to satisfy OCs stupid compatibility check)
 Switched layout of list of shortys to a liquid style (using the whole screens width).
 Fixed display size for some exotic favicons inside dialogs.
 Internal style reorganisation to isolate OC4 backwards compatibility exceptions.
+Fixed visualization of explanations for goo.gl backend in preferences dialog.
+Fixed sharpness control of dialogs.
+Fixed datepicker dialog sometimes being hidden by other widgets.
+Some fixes for usage under MS Internet Explorer though still a lot of issues remain.
+A few layout enhancements and german translation completion.
 * Fri Sep 28 2012 Christian Reiner: version 0.3.7
 Preparations to rely on the OC core to refresh the request token if implemented.
 - the Shorty strategy and code is to be accepted into the OC core :-)
