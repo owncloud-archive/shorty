@@ -42,6 +42,33 @@
 .shorty-controls {
 	display: none;
 }
+.shorty-notification {
+	text-align: center;
+	padding: 0.5em;
+}
+.shorty-notification fieldset {
+	position:relative;
+	top: -0.3em;
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	border: 1px solid gray;
+	padding: 0.5em;
+}
+.shorty-notification #symbol {
+	vertical-align: top;
+	margin: 0 2em;
+}
+.shorty-notification #title {
+	text-align: center;
+	font-weight: bold;
+	margin: 0;
+}
+.shorty-notification #close {
+	float: right;
+	vertical-align: top;
+	margin: 0;
+	opacity: 0.6;
+}
 .shorty-config {
 	float: right;
 	padding-bottom: 0.2em;

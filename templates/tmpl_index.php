@@ -28,14 +28,23 @@
 <?php
 /**
  * @file templates/tmpl_index.php
- * The general html environment where specific templates are bedded into. 
+ * The general html environment where specific templates are embedded into. 
  * @access public
  * @author Christian Reiner
  */
 ?>
 
 <!-- central notification area -->
-<div id="notification" class="shorty-notification"></div>
+<div id="notification" class="shorty-notification">
+	<fieldset>
+	<img id="close" title="" src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
+	<img id="symbol" title="" src="">
+	<span id="title"></span>
+	<img id="symbol" title="" src="">
+	<hr>
+	<div id="message"></div>
+	</fieldset>
+</div>
 
 <!-- top control bar -->
 <div id="controls" class="shorty-controls" data-referrer="<?php if (array_key_exists('shorty-referrer',$_)) echo $_['shorty-referrer']; ?>">

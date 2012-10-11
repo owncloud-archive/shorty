@@ -117,3 +117,13 @@ function jsFunctionName(func){
 	name = name.substr(0, name.indexOf('('));
 	return name;
 } // jsFunctionName
+
+/**
+ * @function nl2br
+ * @brief Converts newlines inside strings to html <br> tags
+ * @author Christian Reiner
+ */
+function nl2br (str, is_xhtml) {
+    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+}

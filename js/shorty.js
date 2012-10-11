@@ -1027,7 +1027,8 @@ OC.Shorty={
 				$.when(
 					$('#notification').slideUp('fast')
 				).pipe(function(){
-					$('#notification').text('');
+					$('#notification #symbol').attr('title','').attr('src','');
+					$('#notification #message').text('');
 				}).done(dfd.resolve)
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Notification.hide
@@ -1050,39 +1051,47 @@ OC.Shorty={
 							case 'debug':
 								// detect debug mode by checking, of function 'debug()' exists
 								if ( OC.Shorty.Debug ){
-								OC.Shorty.Debug.log('Debug: '+message);
-								$.when(
-									notification.attr('title', 'debug message'),
-									notification.text('Debug: '+message),
-									notification.slideDown(duration)
-								).done(dfd.resolve)
+									OC.Shorty.Debug.log('Debug: '+message);
+									$.when(
+										notification.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/neutral.png')),
+										notification.find('#title').text('Debug'),
+										notification.find('#message').html(nl2br(message)),
+										notification.slideDown(duration)
+									).done(dfd.resolve)
 								}
 								else
-								dfd.resolve();
+									dfd.resolve();
 								break;
 
 							case 'error':
-								if (OC.Shorty.Debug)
-								OC.Shorty.Debug.log('Error: '+message);
+								if (OC.Shorty.Debug){
+									OC.Shorty.Debug.log('Error: '+message);
+								}
 								$.when(
-								notification.attr('title', 'error message'),
-								notification.text('Error: ' + message),
-								notification.slideDown(duration)
+									notification.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/bad.png')),
+									notification.find('#title').text('Error'),
+									notification.find('#message').html(nl2br(message)),
+									notification.slideDown(duration)
 								).done(dfd.resolve)
 								break;
 
 							default: // 'info'
 								if ( message.length ){
-								if (OC.Shorty.Debug)
-									OC.Shorty.Debug.log('Info: '+message);
-								$.when(
-									notification.text(message),
-									notification.slideDown(duration)
-								).done(dfd.resolve)
+									if (OC.Shorty.Debug){
+										OC.Shorty.Debug.log('Info: '+message);
+									}
+									$.when(
+										notification.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png')),
+										notification.find('#title').text('Info'),
+										notification.find('#message').html(nl2br(message)),
+										notification.slideDown(duration)
+									).done(dfd.resolve)
 								}else{
-								$.when(
-									notification.text('')
-								).done(dfd.resolve)
+									$.when(
+										notification.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png')),
+										notification.find('#title').text('Info'),
+										notification.text('')
+									).done(dfd.resolve)
 								}
 						} // switch
 					})
