@@ -41,7 +41,7 @@
 .shorty-list tbody tr.deleted>#target,
 .shorty-list tbody tr.deleted>#clicks,
 .shorty-list tbody tr.deleted>#until {
-	color: gray;
+	color: #808080;
 	text-decoration: line-through;
 	background: transparent url('%appswebroot%/apps/shorty/img/status/strike.png') 0 50% repeat-x;
 }
@@ -69,11 +69,11 @@
 	opacity: 0.7;
 }
 .shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
-	content:url("%appswebroot%/apps/shorty/img/actions/unshade.png");
-	margin-right:0.3em;
+	content: url("%appswebroot%/apps/shorty/img/actions/unshade.png");
+	margin-right: 0.3em;
 	vertical-align: baseline;
 	opacity: 0.7;
 }
 a.external:after {
-	content:url("%appswebroot%/apps/shorty/img/actions/external.png");
+	content: url("%appswebroot%/apps/shorty/img/actions/external.png");
 }
