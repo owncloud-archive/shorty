@@ -41,7 +41,7 @@
 			<a id="close" class="shorty-close-button"
 				title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
 				<img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
-					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
+				     src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
 			</a>
 		<span class="heading"><?php echo OC_Shorty_L10n::t('Modify shorty').':'; ?></span>
 		</legend>
@@ -53,9 +53,13 @@
 		<input id="relay" name="relay" type="text" data="" class="" readonly disabled />
 		<br />
 		<label for="target"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
-		<input id="target" name="target" type="text" data="" class="" readonly />
+		<span class="clickable">
+			<input id="target" name="target" type="text" data="" class="" readonly />
+		</span>
 		<br />
-		<label for="meta"><img id="busy" height="12px" src="<?php echo OCP\Util::imagePath('shorty', 'loading-led.gif'); ?>"></label>
+		<label for="meta">
+			<img id="busy" height="12px" src="<?php echo OCP\Util::imagePath('shorty', 'loading-led.gif'); ?>">
+		</label>
 		<span id="meta">
 			<img id="staticon"  class="shorty-icon" width="16px"
 				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"

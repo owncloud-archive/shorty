@@ -44,7 +44,7 @@ class OC_Shorty_Query
 		const URL_INSERT	= "INSERT INTO *PREFIX*shorty (id,status,favicon,title,source,target,user,until,created,notes) VALUES (:id,:status,:favicon,:title,:source,:target,:user,:until,CURRENT_DATE,:notes)";
 		const URL_DELETE	= "DELETE FROM *PREFIX*shorty WHERE user=:user AND id=:id";
 		const URL_REMOVE	= "DELETE FROM *PREFIX*shorty WHERE user=:user AND 'deleted'=status";
-		const URL_UPDATE	= "UPDATE *PREFIX*shorty SET status=:status,title=:title,until=:until,notes=:notes WHERE user=:user AND id=:id";
+		const URL_UPDATE	= "UPDATE *PREFIX*shorty SET status=:status,title=:title,target=:target,until=:until,notes=:notes WHERE user=:user AND id=:id";
 		const URL_STATUS	= "UPDATE *PREFIX*shorty SET status=:status WHERE user=:user AND id=:id";
 		const URL_CLICK		= "UPDATE *PREFIX*shorty SET accessed=:time, clicks=(clicks+1) WHERE id=:id";
 		const URL_RELAY		= "SELECT id,source,target,status,user,(until IS NOT NULL AND until!='' AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE id=:id";

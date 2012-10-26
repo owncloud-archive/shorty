@@ -47,11 +47,11 @@
 	padding: 0.5em;
 }
 .shorty-notification fieldset {
-	position:relative;
+	position: relative;
 	top: -0.3em;
 	border-bottom-left-radius: 0.5em;
 	border-bottom-right-radius: 0.5em;
-	border: 1px solid gray;
+	border: 1px solid #808080;
 	padding: 0.5em;
 }
 .shorty-notification #symbol {
@@ -101,7 +101,7 @@
 	font-family: Monospace;
 	margin: 0.3em;
 	text-decoration: underline;
-	color: blue;
+	color: #0000FF;
 }
 
 
@@ -121,26 +121,27 @@
 .shorty-vacuum {
 	display: none;
 	position: absolute;
-	left:6em; top:8em;
+	left:6em;
+	top:8em;
 	width: 100%;
 	height: 100%;
 	z-index: 2;
 	white-space: nowrap;
 	background: transparent;
 	text-shadow: 0 1px 0 #FFFFFF;
-	color: DarkSlateGray;
+	color: #2F4F4F;
 }
 .shorty-vacuum .factoid {
 	font-size: 160%;
 	font-weight: bold;
 	font-style: normal;
-	color: gray;
+	color: #808080;
 }
 .shorty-vacuum .suggestion {
 	font-size: 90%;
 	font-weight: light;
 	font-style: italic;
-	color: black;
+	color: #000000;
 }
 .shorty-vacuum .explanation {
 	margin: 1em 0 2em;
@@ -165,14 +166,14 @@
 	font-family: fixed;
 	margin: 0;
 	padding:1px 2px;
-	border: 1px solid gray;
-	background-color: lightgray;
+	border: 1px solid #808080;
+	background-color: #D3D3D3;
 }
 .usage-qrcode {
 	width: 50%;
 	margin: 2px;
 	padding: 10px;
-	border:1px solid gray;
+	border: 1px solid #808080;
 }
 #shortlet {
 	outline: medium none;
@@ -184,7 +185,7 @@
 }
 #shortlet a {
 	font-style: italic;
-	color: DarkSlateGray;
+	color: #2F4F4F;
 	cursor: move;
 }
 #shortlet:after {
@@ -209,16 +210,16 @@
 	vertical-align: middle;
 }
 .shorty-list thead #toolbar img.shorty-sorter {
-	opacity:0.6;
+	opacity: 0.6;
 }
 /* last column in the list, content usually invisible, except when hovered */
 .shorty-list thead #toolbar img.shorty-active {
-	border:1px solid #888888;
+	border: 1px solid #888888;
 	border-radius: 0.3em;
 }
 /* a slight gap between table header and body */
 .shorty-list thead tr:nth-child(2) > th {
-	padding-bottom:0.5em;
+	padding-bottom: 0.5em;
 }
 .shorty-list thead #titlebar th,
 .shorty-list thead #titlebar th img,
@@ -226,7 +227,7 @@
 	cursor: pointer;
 }
 .shorty-list thead #titlebar img {
-	opacity:0.7;
+	opacity: 0.7;
 }
 /* scrolling lists have a scrollbar INSIDE the tbody */
 .shorty-list.scrollingTable {
@@ -315,7 +316,7 @@
 /* highlight a specific, 'clicked' row in the list */
 .shorty-list tbody tr.clicked {
 	border-radius: 0.5em;
-	background-color:#EEEEEE;
+	background-color: #EEEEEE;
 	box-shadow: 0 0 0.5px #777777;
 	transition: background-color 500ms;
 	-moz-transition: background-color 500ms;
@@ -328,7 +329,7 @@
 .shorty-list tbody tr.deleted>#target,
 .shorty-list tbody tr.deleted>#clicks,
 .shorty-list tbody tr.deleted>#until {
-	color: gray;
+	color: #808080;
 	text-decoration: line-through;
 	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
 }
@@ -372,8 +373,8 @@
 	width: 6.4em;
 	margin: 0;
 	padding: 0.2em;
-	opacity:0.8;
-	border:0 none;
+	opacity: 0.8;
+	border: 0 none;
 	font-size: 10px;
 }
 .shorty-desktop span.shorty-select {
@@ -387,22 +388,22 @@
 /* general style of interactive dialogs */
 .shorty-dialog {
 	display: none;
-	color: black;
+	color: #000000;
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;
 	box-shadow: 0 2px 1px #777777;
-	vertical-align:middle;
-	z-index:4;
+	vertical-align: middle;
+	z-index: 4;
 	width: 48em;
 	margin: -1px 0 0;
 	padding: 0.5em;
 	background: none repeat scroll 0 0 #F7F7F7;
 }
 .shorty-dialog fieldset {
-	position:relative;
+	position: relative;
 	border-bottom-left-radius: 0.5em;
 	border-bottom-right-radius: 0.5em;
-	border: 1px solid gray;
+	border: 1px solid #808080;
 	padding: 2px 4px 8px;
 }
 .shorty-dialog legend {
@@ -425,7 +426,7 @@
 	border: 1px solid #DDDDDD;
 	border-radius: 0.5em;
 	cursor: text;
-	vertical-align:baseline;
+	vertical-align: baseline;
 	margin: 0.3em;
 }
 .shorty-dialog textarea:hover,
@@ -461,18 +462,53 @@
 }
 .shorty-dialog button#confirm {
 	width: 12em; height: 2em;
-	border: 1px solid lightgray;
+	border: 1px solid #D3D3D3;
 	background-color: #EEEEEE;
 }
 .shorty-dialog button#confirm.sharp {
-	background-color: white;
+	background-color: #FFFFFF;
 }
 .shorty-dialog button#confirm.sharp:hover {
-/*	border-color: green; */
-	border: 1px solid gray;
+	border: 1px solid #808080;
 }
 .shorty-dialog br {
 	clear: left;
+}
+/* highlight readonly input #target as clickable */
+.shorty-dialog span.clickable {
+	display: inline-block;
+	width: 82%;
+	white-space: nowrap;
+	border-radius: 0.5em;
+	margin: 0;
+	padding: 0;
+}
+.shorty-dialog span.clickable:not(.clicked) {
+	cursor: pointer;
+}
+.shorty-dialog span.clickable.clicked {
+	cursor: normal;
+}
+.shorty-dialog span.clickable:not(.clicked):hover {
+	border: 1px solid #D3D3D3;
+	margin: -1px;
+}
+.shorty-dialog span.clickable:not(.clicked):after {
+	content: url("../../../core/img/actions/rename.png");
+/* 	vertical-align: middle; */
+	position: relative;
+	top: 0.3em;
+	float: right;
+	margin: 0 1em 0 -1em;
+	padding: 0;
+}
+.shorty-dialog span.clickable:not(.clicked) * {
+	cursor: pointer;
+	width: 92%;
+	margin: 0.1em;
+}
+.shorty-dialog span.clickable.clicked * {
+	width: 98%;
 }
 
 /* absolut dialogs ('standalone') */
@@ -514,7 +550,7 @@
 }
 .external:after {
 	content:url("../img/actions/external.png");
-	margin-left:0.3em;
+	margin-left: 0.3em;
 }
 .shorty-embedded a.shorty-clickable:before {
 	content: url("../img/actions/external.png");
@@ -529,8 +565,8 @@
 	opacity: 0.7;
 }
 .shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
-	content:url("../img/actions/unshade.png");
-	margin-right:0.3em;
+	content: url("../img/actions/unshade.png");
+	margin-right: 0.3em;
 	vertical-align: baseline;
 	opacity: 0.7;
 }
@@ -539,7 +575,7 @@
 	cursor: pointer;
 }
 .shorty-embedded fieldset.shorty-collapsible span {
-	margin:0;
+	margin: 0;
 }
 .shorty-embedded fieldset.shorty-collapsible {
 	border-radius: 0.5em;
@@ -548,7 +584,7 @@
 	padding: 0 0 2px;
 }
 .shorty-embedded fieldset.shorty-collapsible:not(.collapsed) {
-	border: 1px solid gray;
+	border: 1px solid #808080;
 }
 .shorty-embedded select {
 	padding: 0.2em 0.4em 0.2em 0.2em;
@@ -571,7 +607,7 @@
 	margin-top: 1em;
 }
 .shorty-embedded .shorty-grid tr:hover {
-	background-color:transparent;
+	background-color: transparent;
 }
 .shorty-embedded .shorty-grid td {
 	text-align: center;
@@ -607,17 +643,17 @@
 }
 /* dim entries with expired 'until' dates */
 .shorty-expired {
-	color: gray;
+	color: #808080;
 }
 /* but keep embedded dialogs readable */
 .shorty-expired .shorty-dialog {
-	color: black;
+	color: #000000;
 }
 .shorty-expired img {
-	opacity : 0.2;
+	opacity: 0.2;
 }
 .shorty-expired .shorty-dialog img {
-	opacity : 1;
+	opacity: 1;
 }
 .shorty-expired #until {
 	text-decoration: line-through;
@@ -639,30 +675,30 @@
 	display: block;
 }
 .shorty-id {
-	color: black;
+	color: #000000;
 }
 .shorty-date {
 	width: 40%;
 }
 .shorty-notes {
-	color: blue;
+	color: #0000FF;
 	text-decoration: none;
 }
 .shorty-source {
-	color: gray;
+	color: #808080;
 }
 .shorty-target {
-	color: green;
+	color: #008000;
 }
 .shorty-meta {
 	margin: 0.1em;
 }
 /* close buttons in dialogs, embedded or standalone */
 .shorty-close-button {
-	display:inline;
-	float:left;
-	margin:0 0.8em 0 0.3em;
-	padding:0;
+	display: inline;
+	float: left;
+	margin: 0 0.8em 0 0.3em;
+	padding: 0;
 }
 .shorty-close-button img {
 	vertical-align: baseline;
@@ -675,10 +711,10 @@
 	text-decoration: underline;
 }
 .shorty-framed {
-	display:inline-block;
-	padding:1em;
-	background-color:white;
-	border:1px solid black;
+	display: inline-block;
+	padding: 1em;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
 }
 /* keep long entries like urls from disrupting the compact appearance of the list */
 .ellipsis {
@@ -691,49 +727,49 @@
 
 /* customization of styles for the 3rdparty jquery.impromtu prompts */
 div.jqi {
-	width:480px;
-	padding:4px;
+	width: 480px;
+	padding: 4px;
 }
 .jqiwarning .jqi .jqibuttons{
-	background-color: silver;
+	background-color: #C0C0C0;
 }
 div.jqi .jqimessage {
-	padding:4px;
+	padding: 4px;
 }
 div.jqi .jqiclose {
-	color: white;
+	color: #FFFFFF;
 }
 div.jqi .jqibuttons {
-	background-color: white;
+	background-color: #FFFFFF;
 	border: 0px;
 	margin: 0;
 	padding: 2px 0;
 	text-align: right;
 }
 div.jqi button {
-	background-color: lightgray;
+	background-color: #D3D3D3;
 	padding: 2px 6px;
 }
 div.jqi button:hover {
-	background-color: darkgray;
+	background-color: #A9A9A9;
 }
 div.jqi button.jqidefaultbutton {
-	background-color: gray;
+	background-color: #808080;
 }
 div.jqi button.jqidefaultbutton:hover {
-	background-color: dimgray;
+	background-color: #696969;
 }
 div.jqimessage {
 	font-size: 12px;
 	font-style: italic;
 	font-weight: normal;
-	color: DarkSlateGray;
-	background-color:#FFFFFF;
+	color: #2F4F4F;
+	background-color: #FFFFFF;
 }
 div.jqimessage fieldset {
-	position:relative;
+	position: relative;
 	border-radius: 0.5em;
-	border: 1px solid gray;
+	border: 1px solid #808080;
 	padding: 2px 10px 4px;
 }
 div.jqimessage fieldset legend {
@@ -743,7 +779,7 @@ div.jqimessage fieldset legend {
 }
 div.jqimessage input,
 div.jqimessage textarea {
-	width:96%;
+	width: 96%;
 	margin: 0.5em 0 0;
 	padding: 0.4em 0.3em 0.2em;
 }
@@ -755,5 +791,5 @@ div.jqimessage input::-moz-selection,
 div.jqimessage input::-webkit-selection,
 div.jqimessage input::-o-selection,
 div.jqimessage input::-ms-selection{
-	background:green;
+	background: green;
 }

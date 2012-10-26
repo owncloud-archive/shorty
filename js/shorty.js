@@ -289,30 +289,47 @@ OC.Shorty={
 							return dfd.promise();
 						}()
 					).pipe(function(){
-						// prevent submission before entering anything
-						OC.Shorty.WUI.Dialog.sharpen(dialog,false);
 						// show dialog
 						dialog.slideDown(duration);
 					}).pipe(function(){
 						// initialize dialog actions
 						switch(dialog.attr('id')){
 							case 'dialog-add':
+								// prevent submission before entering anything
 								OC.Shorty.WUI.Dialog.sharpen(dialog,false);
 								dialog.find('#target').focus();
-								dialog.find('#target').on('focusout', {dialog: dialog}, function(event){
-									$.when(
-										OC.Shorty.WUI.Meta.collect(event.data.dialog)
-									).done(function(){
-										OC.Shorty.WUI.Dialog.sharpen(dialog,true);
-									}).fail(function(){
-										OC.Shorty.WUI.Dialog.sharpen(dialog,false);
-									})
+								dialog.find('#target').on('focusout', {dialog: dialog}, function(){
+									OC.Shorty.WUI.Dialog.validate(dialog);
 								});
 								break;
 
 							case 'dialog-edit':
-								dialog.find('#title').focus();
+								// grant submission 'cause the target was obviously valid before
 								OC.Shorty.WUI.Dialog.sharpen(dialog,true);
+								dialog.find('#title').focus();
+								dialog.find('#target').prop('readonly', true);
+								dialog.find('span.clickable.clicked').removeClass('clicked');
+								// clicking the target removes the 'readonly'
+								dialog.find('span.clickable:not(.clicked),span.clickable:not(.clicked)>*')
+								      .on('click', {dialog: dialog}, function(){
+									// deactivate click reaction
+									dialog.find('span.clickable:not(.clicked),span.clickable:not(.clicked)>*').off('click');
+									// prevent dialog submission
+									OC.Shorty.WUI.Dialog.sharpen(dialog,false);
+									// suppress further clicking sensivity
+									dialog.find('span.clickable').addClass('clicked');
+									// make target writeable
+									var target=dialog.find('#target');
+									target.prop('readonly',false).focus();
+									// prevent submission when target has been altered
+									target.on('keypress', {dialog: dialog}, function(){
+										OC.Shorty.WUI.Dialog.sharpen(dialog,false);
+									});
+									// react on changed target
+									target.on('focusout', {dialog: dialog}, function(){
+										OC.Shorty.WUI.Dialog.validate(dialog);
+									});
+								});
 								break;
 
 							case 'dialog-share':
@@ -343,6 +360,27 @@ OC.Shorty={
 				else $.when(OC.Shorty.WUI.Dialog.hide(dialog)).done(dfd.resolve)
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.toggle
+			/**
+			* @method OC.Shorty.WUI.Dialog.validate
+			* @brief Validates the specified target
+			* @param dialog jQueryObject Represents the dialog to be handled
+			* @author Christian Reiner
+			*/
+			validate: function(dialog){
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("validate target in dialog "+dialog.attr('id'));
+				var dfd = new $.Deferred();
+				OC.Shorty.WUI.Notification.hide();
+				$.when(
+					OC.Shorty.WUI.Meta.collect(dialog)
+				).done(function(){
+					// allow dialog submission
+					OC.Shorty.WUI.Dialog.sharpen(dialog,true);
+					dfd.resolve();
+				}).fail(function(){
+					dfd.reject();
+				})
+				return dfd.promise();
+			}, // OC.Shorty.WUI.Dialog.validate
 			/**
 			* @method OC.Shorty.WUI.Dialog.wipe
 			* @brief Wipes all values inside an existing dialog
@@ -482,7 +520,7 @@ OC.Shorty={
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
 				).done(function(){
-					OC.Shorty.WUI.Meta.collect(dialog);
+					OC.Shorty.WUI.Dialog.validate(dialog);
 				});
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.edit
@@ -555,7 +593,7 @@ OC.Shorty={
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
 				).done(function(){
-					OC.Shorty.WUI.Meta.collect(dialog);
+					OC.Shorty.WUI.Dialog.validate(dialog);
 				});
 				return dfd.promise();
 			} // OC.Shorty.WUI.Entry.show
@@ -844,7 +882,7 @@ OC.Shorty={
 					// select row from list by id
 					row=$('#list-of-shortys tbody tr#'+set.id);
 					// modify attributes in row, as data and value
-					$.each(['status','title','until','notes'],function(j,aspect){
+					$.each(['status','title','target','until','notes'],function(j,aspect){
 						if (typeof set[aspect]==undefined) set[aspect]='';
 						// enhance row with actual set values
 						row.attr('data-'+this,set[aspect]);
@@ -1118,7 +1156,7 @@ OC.Shorty={
 				var target = $.trim(dialog.find('#target').val());
 				// don't bother getting active on empty input
 				if ( ! target.length ){
-					dialog.find('#target').focus().select();
+					dialog.find('#target').focus();
 					dfd.reject();
 					return dfd.promise();
 				}
@@ -1148,8 +1186,6 @@ OC.Shorty={
 						dialog.find('#mimicon').attr('src',meta.mimicon);
 						dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
 						dialog.find('#meta').fadeTo('fast',1);
-						// stop expressing activity
-						dialog.find('#busy').fadeOut('slow');
 					});
 					dfd.resolve(response);
 				}).fail(function(response){
@@ -1159,11 +1195,11 @@ OC.Shorty={
 						dialog.find('#title').attr('placeholder','');
 						dialog.find('#explanation').html('- '+t('shorty','Sorry, that target is invalid!')+' -');
 						dialog.find('#meta').fadeTo('fast',1);
-						// stop expressing activity
-						dialog.find('#busy').fadeOut('slow');
 					})
 					dfd.reject(response);
 				})
+				// stop expressing activity
+				dialog.find('#busy').fadeOut('slow');
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Meta.collect
 			/**
@@ -1198,6 +1234,7 @@ OC.Shorty={
 			* @author Christian Reiner
 			*/
 			reset: function(dialog){
+				return;
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("reset meta data");
 				var dfd = new $.Deferred();
 				$.when(
@@ -1541,6 +1578,7 @@ OC.Shorty={
 				var id    =dialog.find('#id').val();
 				var status=dialog.find('#status').val()||'blocked';
 				var title =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
+				var target=dialog.find('#target').val()||'';
 				var until =dialog.find('#until').val()||'';
 				var notes =dialog.find('#notes').val()||'';
 				// perform modification of existing shorty
@@ -1554,6 +1592,7 @@ OC.Shorty={
 					var data={	id: id,
 								status: status,
 								title:  title,
+								target: target,
 								notes:  notes,
 								until:  until};
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log(data);
