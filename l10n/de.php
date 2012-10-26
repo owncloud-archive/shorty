@@ -42,6 +42,12 @@ $TRANSLATIONS = array(
 "public"                         => "öffentlich",
 "shared"                         => "geteilt",
 
+"delete"                         => "löschen",
+"edit"                           => "ändern",
+"open"                           => "öffnen",
+"share"                          => "teilen",
+"show"                           => "anzeigen",
+
 "Ctrl-C"                         => "Strg-C",
 "Ctrl-V"                         => "Strg-V",
 
