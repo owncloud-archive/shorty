@@ -1519,7 +1519,7 @@ OC.Shorty={
 				var dialog=$('#dialog-add');
 				var status=dialog.find('#status').val()||'public';
 				var target=dialog.find('#target').val()||'';
-				var title =dialog.find('#title').val()||'';
+				var title =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');;
 				var notes =dialog.find('#notes').val()||'';
 				var until =dialog.find('#until').val()||'';
 				// store favicon from meta data, except it is the internal default blank
