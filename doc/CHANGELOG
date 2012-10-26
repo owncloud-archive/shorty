@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* ??? Oct ?? 2012 Christian Reiner: version 0.3.9
+* Fri Oct 26 2012 Christian Reiner: version 0.3.9
 Targets of existing Shortys can be modified as an explicit action now.
 Enhanced notification layout and handling.
 Enhanced exception visualization. 
