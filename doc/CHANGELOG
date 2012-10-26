@@ -26,8 +26,7 @@ Changelog:
 
 * Fri Oct 26 2012 Christian Reiner: version 0.3.9
 Targets of existing Shortys can be modified as an explicit action now.
-Enhanced notification layout and handling.
-Enhanced exception visualization. 
+Enhanced notification and exception visualization and handling.
 Some further layout and style fixes, cleanups. 
 * Tue Oct 09 2012 Christian Reiner: version 0.3.8
 Switched apps activation requirement to OC version 5 (to satisfy OCs stupid compatibility check)
