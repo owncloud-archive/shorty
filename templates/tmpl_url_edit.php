@@ -60,7 +60,7 @@
 		<label for="meta">
 			<img id="busy" height="12px" src="<?php echo OCP\Util::imagePath('shorty', 'loading-led.gif'); ?>">
 		</label>
-		<span id="meta">
+		<span id="meta" class="shorty-meta">
 			<img id="staticon"  class="shorty-icon" width="16px"
 				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 				data="<?php echo OCP\Util::imagePath('shorty', 'status/neutral.png'); ?>">
