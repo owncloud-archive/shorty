@@ -692,6 +692,7 @@
 }
 .shorty-meta {
 	margin: 0.1em;
+	width: 60%;
 }
 /* close buttons in dialogs, embedded or standalone */
 .shorty-close-button {
