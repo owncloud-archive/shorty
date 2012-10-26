@@ -30,6 +30,9 @@
  * @author Christian Reiner
  */
 
+// the general length where list content is chopped by an ellipsis for narrow columns
+define ( 'CL', 44 );
+// some basic regular expressions to build our catalog further down
 define ( '__rx_path',		'(\/($|.+)?)*' );
 define ( '__rx_domain_tld',	'(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2})' );
 define ( '__rx_domain_ip',	'(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])' );
@@ -178,7 +181,6 @@ class OC_Shorty_Type
 	*/
 	static function validate ( $value, $type, $strict=FALSE )
 	{
-		define ( 'CL', 44 );
 		switch ( $type )
 		{
 			case self::ID:
