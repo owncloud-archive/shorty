@@ -529,6 +529,7 @@
 	padding: 8px 0;
 }
 .shorty-standalone .shorty-meta #explanation {
+	overflow-y: hidden;
 	margin: 0 0 0 1em;
 	padding: 3px 4px;
 }
