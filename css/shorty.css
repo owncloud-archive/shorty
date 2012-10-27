@@ -495,7 +495,6 @@
 }
 .shorty-dialog span.clickable:not(.clicked):after {
 	content: url("../../../core/img/actions/rename.png");
-/* 	vertical-align: middle; */
 	position: relative;
 	top: 0.3em;
 	float: right;
@@ -521,6 +520,33 @@
 	float: right;
 }
 
+.shorty-standalone .shorty-meta {
+	width: 65%;
+	padding: 0;
+}
+.shorty-standalone .shorty-meta>* {
+	margin-left: 0.1em;
+	padding: 8px 0;
+}
+.shorty-standalone .shorty-meta #explanation {
+	margin: 0 0 0 1em;
+	padding: 3px 4px;
+}
+.shorty-standalone .shorty-meta #explanation.filled:hover {
+	cursor: pointer;
+	border-radius: 0.5em;
+	border: 1px solid #D3D3D3;
+	padding: 3px 2px 3px 3px;
+}
+.shorty-standalone .shorty-meta #explanation.filled:hover:after {
+	content: url("../img/actions/down.png");
+	position: relative;
+	top: 0.3em;
+	float: right;
+/* 	margin: 0; */
+	margin: 0 1em 0 -1em;
+	padding: 0;	
+}
 
 /* dialogs related to elements ('embedded in the content') */
 .shorty-embedded {
@@ -689,10 +715,6 @@
 }
 .shorty-target {
 	color: #008000;
-}
-.shorty-meta {
-	margin: 0.1em;
-	width: 60%;
 }
 /* close buttons in dialogs, embedded or standalone */
 .shorty-close-button {

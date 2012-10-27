@@ -1184,7 +1184,10 @@ OC.Shorty={
 						dialog.find('#schemicon').attr('src',meta.schemicon);
 						dialog.find('#favicon').attr('src',meta.favicon);
 						dialog.find('#mimicon').attr('src',meta.mimicon);
-						dialog.find('#explanation').html(meta.title?meta.title:'[ '+meta.explanation+' ]');
+						if (meta.title)
+							dialog.find('#explanation').html(meta.title).addClass('filled');
+						else
+							dialog.find('#explanation').html('[ '+meta.explanation+' ]');
 						dialog.find('#meta').fadeTo('fast',1);
 					});
 					dfd.resolve(response);
@@ -1244,7 +1247,7 @@ OC.Shorty={
 					dialog.find('#schemicon').attr('src',dialog.find('#schemicon').attr('data'));
 					dialog.find('#favicon').attr('src',dialog.find('#favicon').attr('data'));
 					dialog.find('#mimicon').attr('src',dialog.find('#mimicon').attr('data'));
-					dialog.find('#explanation').html(dialog.find('#explanation').attr('data'));
+					dialog.find('#explanation').html(dialog.find('#explanation').attr('data')).removeClass('filled');
 					dfd.resolve();
 				});
 				return dfd.promise();
