@@ -48,7 +48,7 @@ http://apps.owncloud.com/content/show.php/Shorty-Tracking
 	<version>0.1.6</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
-	<require>5</require>
+	<require>4</require>
 	<types>
 		<internet/>
 		<bookmark/>
