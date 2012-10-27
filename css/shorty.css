@@ -521,7 +521,7 @@
 }
 
 .shorty-standalone .shorty-meta {
-	width: 65%;
+	width: 67%;
 	padding: 0;
 }
 .shorty-standalone .shorty-meta>* {
@@ -530,7 +530,7 @@
 }
 .shorty-standalone .shorty-meta #explanation {
 	overflow-y: hidden;
-	margin: 0 0 0 1em;
+	margin: 0;
 	padding: 3px 4px;
 }
 .shorty-standalone .shorty-meta #explanation.filled:hover {
@@ -544,9 +544,7 @@
 	position: relative;
 	top: 0.3em;
 	float: right;
-/* 	margin: 0; */
-	margin: 0 1em 0 -1em;
-	padding: 0;	
+	margin-left: -12em;
 }
 
 /* dialogs related to elements ('embedded in the content') */
