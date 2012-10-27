@@ -540,7 +540,7 @@
 	padding: 3px 2px 3px 3px;
 }
 .shorty-standalone .shorty-meta #explanation.filled:hover:after {
-	content: url("../img/actions/down.png");
+	content: url("../img/actions/takeover.png");
 	position: relative;
 	top: 0.3em;
 	float: right;
