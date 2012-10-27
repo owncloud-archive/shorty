@@ -511,10 +511,7 @@ OC.Shorty={
 				dialog.find('#created').val(entry.attr('data-created')||'');
 				dialog.find('#accessed').val(entry.attr('data-accessed')||'');
 				dialog.find('#notes').val(entry.attr('data-notes')||'');
-				// leave until date empty if not specify (do NOT fill in the current date)
-				if (entry.attr('data-until'))
-					 dialog.find('#until').datepicker('setDate',new Date(entry.attr('data-until'))||'')
-										  .datepicker('refresh');
+				dialog.find('#until').val(entry.attr('data-until')||'');
 				// open edit dialog
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)

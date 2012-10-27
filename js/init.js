@@ -101,7 +101,7 @@ $(document).ready(function(){
 		buttonImage: $('#controls #until').first().attr('icon'),
 		buttonImageOnly: true
 	});
-	$('#controls #until:not([readonly])').datepicker();
+	$('#controls #dialog-add #until:not([readonly])').datepicker();
 	// bind usage to the usage icons
 	$(document).on('click','#dialog-share img.shorty-usage',[],function(e){
 		e.stopPropagation();
