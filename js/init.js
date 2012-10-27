@@ -91,13 +91,14 @@ $(document).ready(function(){
 	// add date picker options
 	$.datepicker.setDefaults({
 		dateFormat :'yy-mm-dd',
-// 		appendText: "(yyyy-mm-dd)",
 		changeMonth: true,
 		changeYear: true,
+// 		minDate: '+1',
+		firstDay: 1,
 		showOtherMonths: true,
 		selectOtherMonths: true,
 		showOn: 'button',
-		buttonImage: $('#controls').find('#until').first().attr('icon'),
+		buttonImage: $('#controls #until').first().attr('icon'),
 		buttonImageOnly: true
 	});
 	$('#controls #until:not([readonly])').datepicker();

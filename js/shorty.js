@@ -515,7 +515,6 @@ OC.Shorty={
 				if (entry.attr('data-until'))
 					 dialog.find('#until').datepicker('setDate',new Date(entry.attr('data-until'))||'')
 										  .datepicker('refresh');
-				else dialog.find('#until').datepicker('refresh');
 				// open edit dialog
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
