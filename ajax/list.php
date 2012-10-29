@@ -49,7 +49,7 @@ try
 	// first remove any entries already marked as 'deleted'
 	$query = OCP\DB::prepare ( OC_Shorty_Query::URL_REMOVE );
 	$result = $query->execute(array(':user'=>OCP\User::getUser()));
-  // now comes the real list selection
+	// now comes the real list selection
 //   define ('PAGE_SIZE', 100);
 //   $p_offset = OC_Shorty_Type::req_argument ( 'page', OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
 	// pre-sort list according to user preferences

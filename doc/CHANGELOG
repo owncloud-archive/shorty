@@ -24,6 +24,7 @@
 
 Changelog: 
 
+An additional service 'shorty_stats' allows to remotely retrieve data.
 * Fri Oct 26 2012 Christian Reiner: version 0.3.9
 Targets of existing Shortys can be modified as an explicit action now.
 Enhanced notification and exception visualization and handling.

@@ -56,5 +56,6 @@ For more information see: http://apps.owncloud.com/content/show.php/Shorty?conte
 		<public>
 			<shorty_relay>relay.php</shorty_relay>
 			<shorty_qrcode>qrcode.php</shorty_qrcode>
+			<shorty_stats>stats.php</shorty_stats>
 		</public>
 </info>
