@@ -71,8 +71,8 @@ $(document).ready(function(){
 			 container.removeClass('collapsed').find('.shorty-collapsible-tail').slideDown('fast');
 		else container.addClass('collapsed').find('.shorty-collapsible-tail').slideUp('fast');
 	});
-	$(document).on('click','#meta #explanation.filled',[], function(e){
-		$('#content .shorty-dialog #title').val($('#content .shorty-dialog #explanation').val());
+	$(document).on('click','#controls .shorty-dialog #meta #explanation.filled',[], function(e){
+		$(e.currentTarget).closest('.shorty-dialog').find('input#title').val($(e.currentTarget).html());
 	});
 	// button (row click) to open the toolbar row in the list
 	$(document).on('click','#list-of-shortys #titlebar',[],function(){
