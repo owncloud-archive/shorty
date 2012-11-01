@@ -50,6 +50,7 @@ OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
 										'icon' => OCP\Util::imagePath( 'shorty', 'shorty.svg' ),
 										'name' => 'Shorty' ) );
 
-OCP\Util::connectHook ( 'OC_User', 'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
+OCP\Util::connectHook ( 'OC_User',   'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
+OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries', 'OC_Shorty_Hooks', 'registerQueries');
 
 ?>

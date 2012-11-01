@@ -128,6 +128,50 @@ class OC_Shorty_Hooks
 	} // function requestIncludes
 
 	/**
+	* @method OC_Shorty_Hooks::requestQueries
+	* @brief Hook that requests any queries plugins may want to offer
+	* @return array: Array of descriptions of queries
+	* @access public
+	* @author Christian Reiner
+	*/
+	public static function requestQueries ( )
+	{
+		OCP\Util::writeLog ( 'shorty', 'Requesting queries to be offered from other apps', OCP\Util::DEBUG );
+		$queries = array ( 'list'=>array(), 'shorty'=>array() );
+		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
+		// ... for every action register a new element in the container
+		// ... ... such element must be an array holding the entries tested below
+		$container = array ( 'list'=>&$queries['list'], 'shorty'=>&$queries['shorty'] );
+		OC_Hook::emit ( 'OC_Shorty', 'registerQueries', $container );
+		// validate and evaluate what was returned in the $container
+		if ( ! is_array($container))
+		{
+			OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerQueries hook, FIX THAT APP !', OCP\Util::WARN );
+			return array();
+		} // if
+		foreach ( $container as $aspect )
+		{
+			if ( ! is_array($aspect) )
+			{
+				OCP\Util::writeLog ( 'shorty', 'Invalid reply structure from an app that registered into the registerQueries hook, FIX THAT APP !', OCP\Util::WARN );
+				break;
+			}
+			foreach ( $aspect as $query )
+			{
+				if (  ! is_array($query)
+					|| ! array_key_exists('id',    $query) || ! is_string($query['id'])
+					|| ! array_key_exists('query', $query) || ! is_string($query['query'])
+					|| ! array_key_exists('param', $query) || ! is_array($query['param']) )
+				{
+					OCP\Util::writeLog ( 'shorty', 'Invalid reply from an app that registered into the registerQueries hook, FIX THAT APP !', OCP\Util::WARN );
+					break;
+				}
+			} // foreach query
+		} // foreach aspect
+		return $queries;
+	} // function requestQueries
+
+	/**
 	* @method OC_Shorty_Hooks::registerClicks
 	* @brief Hook offering informations about each click relayed by this app
 	* @access public
@@ -149,5 +193,35 @@ class OC_Shorty_Hooks
 		// allow further processing IF hooks are registered
 		OC_Hook::emit( 'OC_Shorty', 'registerClick', array('shorty'=>$shorty,'request'=>$request) );
 	} // function registerClick
+
+	/**
+	* @method OC_ShortyTracking_Hooks::registerQueries
+	* @brief Registers queries to be offered as expected by the Shorty app
+	* @param paramters (array) parameters from emitted signal
+	* @return bool
+	*/
+	public static function registerQueries ( $parameters )
+	{
+		OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional queries to be offered', OCP\Util::DEBUG );
+		if ( ! is_array($parameters) )
+		{
+			return FALSE;
+		}
+		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
+		{
+			$parameters['list'][] = array (
+				'id'    => 'shorty-list',
+				'query' => OC_Shorty_Query::QUERY_SHORTY_LIST,
+				'param' => array(':sort'),
+			);
+			$parameters['list'][] = array (
+				'id'    => 'shorty-single',
+				'query' => OC_Shorty_Query::QUERY_SHORTY_SINGLE,
+				'param' => array(':id'),
+			);
+		}
+		return TRUE;
+	} // function registerQueries
+
 } // class OC_Shorty_Hooks
 ?>
