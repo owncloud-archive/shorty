@@ -141,5 +141,44 @@ class OC_ShortyTracking_Hooks
 		return TRUE;
 	} // function registerActions
 
+	/**
+	* @method OC_ShortyTracking_Hooks::registerQueries
+	* @brief Registers queries to be offered as expected by the Shorty app
+	* @param paramters (array) parameters from emitted signal
+	* @return bool
+	*/
+	public static function registerQueries ( $parameters )
+	{
+		OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional queries to be offered', OCP\Util::DEBUG );
+		if ( ! is_array($parameters) )
+		{
+			return FALSE;
+		}
+		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
+		{
+			$parameters['list'][] = array (
+				'id'    => 'tracking-single-usage',
+				'query' => OC_ShortyTracking_Query::QUERY_TRACKING_SINGLE_USAGE,
+				'param' => array(':shorty'),
+			);
+			$parameters['list'][] = array (
+				'id'    => 'tracking-single-list',
+				'query' => OC_ShortyTracking_Query::QUERY_TRACKING_SINGLE_LIST,
+				'param' => array(':shorty'),
+			);
+			$parameters['list'][] = array (
+				'id'    => 'tracking-total-usage',
+				'query' => OC_ShortyTracking_Query::QUERY_TRACKING_TOTAL_USAGE,
+				'param' => array(':sort'),
+			);
+			$parameters['list'][] = array (
+				'id'    => 'tracking-total-list',
+				'query' => OC_ShortyTracking_Query::QUERY_TRACKING_TOTAL_LIST,
+				'param' => array(':sort'),
+			);
+		}
+		return TRUE;
+	} // function registerQueries
+
 } // class OC_ShortyTracking_Hooks
 ?>

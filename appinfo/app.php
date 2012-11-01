@@ -56,6 +56,7 @@ try
 			OCP\Util::connectHook ( 'OC_Shorty', 'registerClick',     'OC_ShortyTracking_Hooks', 'registerClick');
 			OCP\Util::connectHook ( 'OC_Shorty', 'registerActions',   'OC_ShortyTracking_Hooks', 'registerActions');
 			OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
+			OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries',   'OC_ShortyTracking_Hooks', 'registerQueries');
 		}
 		else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires 'Shorty' in version > %s.%s.%s !", $reqV );
 	}
