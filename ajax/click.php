@@ -50,8 +50,8 @@ try
 	{
 		$p_id  = OC_Shorty_Type::req_argument ( $_GET['id'], OC_Shorty_Type::ID, TRUE );
 		$param = array (
-			'user' => OCP\User::getUser(),
-			'id'   => $p_id,
+			':id'   => $p_id,
+			':time' => 'NOW()',
 		);
 
 		// record the click
