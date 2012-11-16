@@ -293,7 +293,8 @@ OC.Shorty.Tracking=
 
 		case 'time':
 			dialog.find('#click-'+item)
-				.text(formatDate(1000*element.attr('data-'+item)))
+// 				.text(formatDate(1000*element.attr('data-'+item)))
+				.text(dateTimeToHuman(element.attr('data-'+item),'- / -'))
 				.attr('data-'+item,element.attr('data-'+item));
 			break;
 
@@ -536,7 +537,8 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 			case 'time':
 				if (null==set[aspect])
 					 span.text('-?-');
-				else span.text(formatDate(1000*set[aspect]));
+// 				else span.text(formatDate(1000*set[aspect]));
+				else span.text(dateTimeToHuman(set[aspect],'- / -'));
 				// add value to the sparkline value set in the header
 				switch (set['result']){
 					case 'blocked': OC.Shorty.Tracking.Stats.blocked.push(set[aspect]); break;
