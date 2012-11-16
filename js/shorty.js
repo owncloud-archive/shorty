@@ -1305,6 +1305,7 @@ OC.Shorty={
 			*/
 			increment: function(entry){
 				var clicks=parseInt(entry.attr('data-clicks'),10)+1;
+				entry.attr('data-accessed',Math.round((new Date()).getTime()/1000));
 				entry.attr('data-clicks',clicks);
 				entry.find('td#clicks span').text(clicks);
 				$('#controls #sum_clicks').text(parseInt($('#controls #sum_clicks').text(),10)+1);
