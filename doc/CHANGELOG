@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* Fri Nov 16 2012 Christian Reiner: version 0.3.11
+Fixed visualization of last access time inside Shorty dialogs.
 * Tue Nov 01 2012 Christian Reiner: version 0.3.10
 Some fixed to the actions inside dialogs when used inside OC-4.0.x installations. 
 An additional service 'shorty_stats' allows to remotely retrieve data.
