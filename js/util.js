@@ -107,6 +107,39 @@ function dateExpired(date){
 } // dateExpired
 
 /**
+ * @function dateTimeToHuman
+ * @brief Formats a given dateTime into international standard format (YYYY-MM-DD hh:mm:ss)
+ * @param date integer timestamp
+ * @return string formatted dateTime
+ * @author Christian Reiner
+ */
+function dateTimeToHuman(timestamp,placeholder){
+	if (undefined==timestamp)
+		return placeholder||'';
+	var d=new Date(1000*timestamp);
+	return 	d.getFullYear()
+		+'-'+padLeadingZeros(d.getMonth(),2)
+		+'-'+padLeadingZeros(d.getDay(),2)
+		+' '+padLeadingZeros(d.getHours(),2)
+		+':'+padLeadingZeros(d.getMinutes(),2)
+		+':'+padLeadingZeros(d.getSeconds(),2);
+} // dateTimeToHuman
+
+/**
+ * @function padLeadingZeros
+ * @brief Pads a given number with leading zeros up to the specified total length
+ * @param number Integer number
+ * @return string padded number
+ * @author Christian Reiner
+ */
+function padLeadingZeros(number,length){
+	length=length|0;
+	var num=new Number(number).toString();
+	var pad=new Array(length-num.length+1).join('0');
+	return pad+num;
+} // padLeadingZeros
+
+/**
  * @function jsFunctionName
  * @brief Returns the name of a specified function
  * @author Christian Reiner

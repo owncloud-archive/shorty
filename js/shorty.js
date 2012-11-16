@@ -509,7 +509,7 @@ OC.Shorty={
 				dialog.find('#title').val(entry.attr('data-title')||'');
 				dialog.find('#clicks').val(entry.attr('data-clicks')||'');
 				dialog.find('#created').val(entry.attr('data-created')||'');
-				dialog.find('#accessed').val(entry.attr('data-accessed')||'');
+				dialog.find('#accessed').val(dateTimeToHuman(entry.attr('data-accessed'),'- / -'));
 				dialog.find('#notes').val(entry.attr('data-notes')||'');
 				dialog.find('#until').val(entry.attr('data-until')||'');
 				// open edit dialog
@@ -583,7 +583,7 @@ OC.Shorty={
 				dialog.find('#until').attr('data-until',entry.attr('data-until')||'').val(entry.attr('data-until')||'');
 				dialog.find('#clicks').attr('data-clicks',entry.attr('data-clicks')||'').val(entry.attr('data-clicks')||'');
 				dialog.find('#created').attr('data-created',entry.attr('data-created')||'').val(entry.attr('data-created')||'');
-				dialog.find('#accessed').attr('data-accessed',entry.attr('data-accessed')||'').val(entry.attr('data-accessed')||'');
+				dialog.find('#accessed').val(dateTimeToHuman(entry.attr('data-accessed'),'- / -'));
 				dialog.find('#notes').attr('data-notes',entry.attr('data-notes')).val(entry.attr('data-notes'));
 				// open show dialog
 				$.when(
@@ -1973,7 +1973,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	* @method OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
 	* @brief Enriches a raw list entry with usage specific values taken from a sepcified set of attributes
 	* @param row jQueryObject Represents the raw row, freshly cloned
-	* @param set array A set of attributes (values) defining an element to re represented by the row
+	* @param set array A set of attributes (values) defining an element to be represented by the row
 	* @param hidden bool Flag that controls if added entries should be kept hidden for a later visualization (highlighting)
 	* @author Christian Reiner
 	*/
