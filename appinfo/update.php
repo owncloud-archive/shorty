@@ -49,7 +49,7 @@ if (version_compare($installedVersion, '0.3.11', '<')) {
 			// alter type of column 'accessed' to numerical, this offers less differences between different database engines
 			OCP\Util::writeLog( 'shorty', "Updating database: altering type of column 'accessed' to numerical", OC_Log::INFO );
 			$query = OCP\DB::prepare ( "ALTER TABLE `*PREFIX*shorty` MODIFY COLUMN accessed BIGINT(20) UNSIGNED NOT NULL");
-			$result = $stmt->execute ( array() );
+			$result = $query->execute ( array() );
 
 			break;
 	} // switch
