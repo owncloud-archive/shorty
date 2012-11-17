@@ -46,7 +46,7 @@ class OC_ShortyTracking_L10n extends OC_Shorty_L10n
 	*/
 
 	/**
-	* @method OC_Shorty_L10n::__construct
+	* @method OC_ShortyTracking_L10n::__construct
 	* @brief
 	* @access protected
 	* @author Christian Reiner
@@ -54,7 +54,7 @@ class OC_ShortyTracking_L10n extends OC_Shorty_L10n
 	protected function __construct ( $app='shorty_tracking' ) { parent::__construct($app); }
 
 	/**
-	* @method OC_Shorty_L10n::identity
+	* @method OC_ShortyTracking_L10n::identity
 	* @brief Used for late state binding to identify the class
 	* @description This method must be reimplemented without change in all derived classes
 	* @access protected

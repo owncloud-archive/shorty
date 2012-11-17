@@ -86,7 +86,8 @@ $(window).load(function(){
 }); // document.ready
 
 /**
- * @brief Method collection private to this plugin
+ * @class OC.Shorty.Files
+ * @brief Subclass that serves as a collection of methods private to this plugin
  * @author Christian Reiner
  */
 OC.Shorty.Tracking=

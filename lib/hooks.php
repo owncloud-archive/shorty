@@ -64,7 +64,7 @@ class OC_ShortyTracking_Hooks
 			$result = FALSE;
 		// report completion success
 		return $result;
-	} // function deleteShortyClicks
+	} // function OC_ShortyTracking_Hooks::deleteShortyClicks
 
 	/**
 	* @method OC_ShortyTracking_Hooks::registerClick
@@ -96,7 +96,7 @@ class OC_ShortyTracking_Hooks
 		$query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_RECORD );
 		$query->execute ( $param );
 		return TRUE;
-	} // function registerClick
+	} // function OC_ShortyTracking_Hooks::registerClick
 
 	/**
 	* @method OC_ShortyTracking_Hooks::registerIncludes
@@ -111,7 +111,7 @@ class OC_ShortyTracking_Hooks
 		OCP\Util::addScript ( 'shorty_tracking',          'tracking' );
 		OCP\Util::addScript ( 'shorty_tracking/3rdparty', 'jquery.sparkline.min' );
 		return TRUE;
-	} // function registerIncludes
+	} // function OC_ShortyTracking_Hooks::registerIncludes
 
 	/**
 	* @method OC_ShortyTracking_Hooks::registerActions
@@ -139,7 +139,7 @@ class OC_ShortyTracking_Hooks
 			);
 		}
 		return TRUE;
-	} // function registerActions
+	} // function OC_ShortyTracking_Hooks::registerActions
 
 	/**
 	* @method OC_ShortyTracking_Hooks::registerQueries
