@@ -50,7 +50,9 @@ try
 		$insV = explode ( '.', OCP\App::getAppVersion('shorty') );
 		$reqV = explode ( '.', $SHORTY_VERSION_MIN );
 		if (  (sizeof($reqV)==sizeof($insV))
-			&&( ($reqV[0]<=$insV[0])&&($reqV[1]<=$insV[1])&&($reqV[2]<=$insV[2])) )
+			&&(		  ($reqV[0]<$insV[0])
+				||	( ($reqV[0]==$insV[0])&&($reqV[1]<$insV[1]) )
+				||	( ($reqV[0]==$insV[0])&&($reqV[1]==$insV[1])&&($reqV[2]<=$insV[2]) ) ) )
 		{
 			OCP\Util::connectHook ( 'OC_Shorty', 'post_deleteShorty', 'OC_ShortyTracking_Hooks', 'deleteShortyClicks');
 			OCP\Util::connectHook ( 'OC_Shorty', 'registerClick',     'OC_ShortyTracking_Hooks', 'registerClick');
@@ -58,7 +60,7 @@ try
 			OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
 			OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries',   'OC_ShortyTracking_Hooks', 'registerQueries');
 		}
-		else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires 'Shorty' in version > %s.%s.%s !", $reqV );
+		else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires app 'Shorty' in version >= %s.%s.%s !", $reqV );
 	}
 	else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires app 'Shorty' to be installed !" );
 }
