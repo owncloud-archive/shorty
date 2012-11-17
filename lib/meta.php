@@ -73,6 +73,9 @@ class OC_Shorty_Meta
 			case 'https':
 			case 'ftp':
 			case 'ftps':
+			case 'ipp':
+			case 'webdav':
+			case 'webdas':
 				self::enrichMetaDataCurl ( $url, $meta );
 		}
 		return $meta;
