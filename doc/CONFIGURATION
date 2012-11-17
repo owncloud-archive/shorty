@@ -25,4 +25,4 @@
 There is no configuration required for this app apart from activating it. 
 Note that the app will deactivate itself automatically if the minimum requirements are not matched:
 - app 'Shorty' must be installed and enabled
-- app 'Shorty' must have at least version 0.3.0
+- app 'Shorty' must have a minimum required version
