@@ -43,6 +43,7 @@
 	display: none;
 }
 .shorty-notification {
+	min-width: 300px;
 	text-align: center;
 	padding: 0.5em;
 }
