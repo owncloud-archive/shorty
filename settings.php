@@ -32,6 +32,9 @@
  * @author Christian Reiner
  */
 
+$RUNTIME_NOSETUPFS = true;
+OC_App::loadApps();
+
 OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OCP\Util::addStyle  ( 'shorty',   'shorty' );
 OCP\Util::addStyle  ( 'shorty',   'settings' );

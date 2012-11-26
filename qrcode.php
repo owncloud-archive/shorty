@@ -31,6 +31,8 @@
  * @author Christian Reiner
  */
 
+$RUNTIME_NOSETUPFS = true;
+
 require_once ( '3rdparty/php/phpqrcode.php' );
 
 $source = NULL;
