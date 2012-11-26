@@ -113,7 +113,7 @@ try
 
 	} // switch format
 	
-	OCP\Util::writeLog( 'shorty', sprintf("Delivered response to remote query call", OC_Log::DEBUG ) );
+	OCP\Util::writeLog( 'shorty', sprintf("Delivered response to remote call of query '%s'",$p_query), OC_Log::DEBUG );
 
 } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
 ?>
