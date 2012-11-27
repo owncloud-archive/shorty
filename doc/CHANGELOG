@@ -24,8 +24,14 @@
 
 Changelog: 
 
+* ??? ??? ?? 2012 Christian Reiner: version 0.1.9
+Added an enhancement to the list of clicks:
+- hovering over entry details highlights other entries sharing the same value.
+- clicking entry detail accepts its value as filter expression for its column.
+Fixed usage of remote queries offered by this app.
+Some fixes to the internal documentation.
 * Fri Nov 16 2012 Christian Reiner: version 0.1.8
-Changed visualization of access times in list and details. 
+Changed visualization of access times in list and details.
 * Wed Nov 01 2012 Christian Reiner: version 0.1.7
 Support for remote queries via Shortys public service.
 * Tue Oct 09 2012 Christian Reiner: version 0.1.6
