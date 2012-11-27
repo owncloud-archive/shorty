@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* ??? ??? ?? 2012 Christian Reiner: version 0.3.12
+Some minor performance and logging enhancements.
 * Fri Nov 16 2012 Christian Reiner: version 0.3.11
 Fixed visualization of last access time inside Shorty dialogs.
 Enabled forwarding to more http based protocol schemes: shttp, ipp, webdav, webdavs
