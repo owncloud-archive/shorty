@@ -122,10 +122,10 @@
 				<!-- the 'dummy' row, a blueprint -->
 				<tr id="">
 					<td id="status"></td>
-					<td id="result"></td>
-					<td id="address"></td>
-					<td id="host"></td>
-					<td id="user"></td>
+					<td id="result" class="associative"></td>
+					<td id="address" class="associative"></td>
+					<td id="host" class="associative"></td>
+					<td id="user" class="associative"></td>
 					<td id="time"></td>
 					<td id="actions">
 						<span class="shorty-actions">

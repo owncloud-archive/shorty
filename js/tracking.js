@@ -44,7 +44,7 @@ $(window).load(function(){
 	OC.Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
 		OC.Shorty.WUI.Dialog.hide(OC.Shorty.Tracking.Dialog.List);
 	});
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks #titlebar').on('click',function(){
+	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr#titlebar').on('click',function(){
 			OC.Shorty.WUI.List.Toolbar.toggle.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
 				[OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()]
@@ -54,6 +54,34 @@ $(window).load(function(){
 		.on('click',function(){OC.Shorty.Tracking.build(false);});
 	OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load')
 		.on('click',function(){OC.Shorty.Tracking.build(true);});
+	// when clicking inside cells: highlight 'associated' cells: cells with same content
+	$(document).on('mouseenter','#list-of-clicks tbody tr td.associative span',[],function(){
+		// look for cells inside the same column that have the same content (text)
+		var cells=$(this).parents('tbody').find('tr td#'+$(this).parent().attr('id'));
+		// add class 'associated' to matching columns
+		cells.find('span:contains('+$(this).text()+')').addClass("associated");
+		// add class 'DEsociated' to matching columns
+		cells.find('span:not(.associated)').addClass("desociated");
+	});
+	// neutralize the hover effect of the previous lines
+	$(document).on('mouseleave','#list-of-clicks tbody tr td.associative span.associated',[],function(){
+		$(this).parents('tbody').find('tr td#'+$(this).parent().attr('id')+' span').removeClass("associated").removeClass("desociated");});
+	// when clicking inside cells: set column filter
+	$(document).on('click','#list-of-clicks tbody tr td.associative span',[],function(){
+		var input=$(this).parents('table').find('thead tr#toolbar th#'+$(this).parent().attr('id')).find('input,select');
+		// open toolbar if still hidden
+		if (input.parent().is(':hidden'))
+			OC.Shorty.WUI.List.Toolbar.toggle.apply(OC.Shorty.Runtime.Context.ListOfClicks,[$('#list-of-clicks')]);
+		// set filter value
+		input.val($(this).text()).effect('pulsate');
+		// apply filter value
+			OC.Shorty.WUI.List.filter.apply(
+				OC.Shorty.Runtime.Context.ListOfClicks,
+				[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
+					$(this).parent().attr('id'),
+					$(this).text()
+				]);
+	});
 	// column filter reaction
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
 		.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter')

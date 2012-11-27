@@ -69,6 +69,15 @@
 #list-of-clicks tbody tr:hover, tr:active {
 	background-color: #F0F0F0;
 }
+#list-of-clicks tbody tr td span.associated {
+	opacity: 1.0;
+}
+#list-of-clicks tbody tr td span.desociated {
+	opacity: 0.4;
+}
+#list-of-clicks tbody tr td.associative span {
+	cursor: pointer;
+}
 
 /* #shorty-tracking-list-dialog #shorty-tracking-reference { */
 #shorty-tracking-list-dialog .shorty-tracking-reference {
