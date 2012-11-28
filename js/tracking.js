@@ -69,18 +69,27 @@ $(window).load(function(){
 	// when clicking inside cells: set column filter
 	$(document).on('click','#list-of-clicks tbody tr td.associative span',[],function(){
 		var input=$(this).parents('table').find('thead tr#toolbar th#'+$(this).parent().attr('id')).find('input,select');
+		var value;
 		// open toolbar if still hidden
 		if (input.parent().is(':hidden'))
 			OC.Shorty.WUI.List.Toolbar.toggle.apply(OC.Shorty.Runtime.Context.ListOfClicks,[$('#list-of-clicks')]);
 		// set filter value
-		input.val($(this).text()).effect('pulsate');
+		if(input.is('select')){
+			// use technical value of the matching option instead of the translated value
+			value=input.find('option:contains('+$(this).text()+')').first().attr('value');
+			input.val(value).effect('pulsate');
+		}else{ // fallback: text input field
+			// value is not ranslated but literal, so use it directly
+			value=$(this).text();
+			input.val(value).effect('pulsate');
+		} // if-else
 		// apply filter value
-			OC.Shorty.WUI.List.filter.apply(
-				OC.Shorty.Runtime.Context.ListOfClicks,
-				[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-					$(this).parent().attr('id'),
-					$(this).text()
-				]);
+		OC.Shorty.WUI.List.filter.apply(
+			OC.Shorty.Runtime.Context.ListOfClicks,
+			[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
+				$(this).parent().attr('id'),
+				input.val()
+			]);
 	});
 	// column filter reaction
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
