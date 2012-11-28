@@ -449,6 +449,11 @@
 .shorty-dialog button {
 	padding: 0.4em 0.2em;
 }
+/* keep to toolbar compact */
+.shorty-dialog #toolbar select {
+	margin: 0;
+	padding: 0.1em 0;
+}
 .shorty-dialog input[readonly],
 .shorty-dialog select[readonly],
 .shorty-dialog textarea[readonly],
