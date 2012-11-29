@@ -164,7 +164,7 @@ $TRANSLATIONS = array(
 "Url shortened to: %s"                                                   => "Url gekürzt zu: %s",
 "Use it in web pages by referencing or embedding"                        => "Zur Nutzung in Webseiten durch Referenzieren oder Einbinden",
 "Use the '%s' button above or the fine 'Shortlet'"                       => "Nutze den Knopf '%s' oben oder das tolle 'Shortlet'",
-"Verification by click"                                                  => "Prüfung durch Klicken",
+"Verify by clicking…"                                                    => "Überprüfen durch klicken…",
 
 "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s"             => "%s\Nachricht(Code): %s (%s)\nDatei(Zeile): %s (%s)\nInfo: %%s",
 

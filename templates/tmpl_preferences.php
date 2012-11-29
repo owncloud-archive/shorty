@@ -87,7 +87,7 @@
 					<label for="backend-example" class="shorty-aspect"> </label>
 					<span id="backend-example">
 						<label for="example" class="shorty-aspect"><?php echo OC_Shorty_L10n::t("Example").':';?></label>
-						<a id="example" class="shorty-example" title="<?php echo OC_Shorty_L10n::t("Verification by click");?>">
+						<a id="example" class="shorty-example" title="<?php echo OC_Shorty_L10n::t("Verify by clicking…");?>">
 							<?php echo sprintf('http://%s/<em>&lt;service&gt;</em>/<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME']) ?>
 						</a>
 					</span>
