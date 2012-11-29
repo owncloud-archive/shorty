@@ -34,7 +34,7 @@
  */
 ?>
 
-<fieldset class="personalblock">
+<fieldset id="shorty-fieldset" class="personalblock">
 <?php if (5>OC_Shorty_Tools::CompatVersion(true)) { ?>
 	<div id="title" class="shorty-title">
 		<img src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">

@@ -1451,7 +1451,7 @@ OC.Shorty={
 			 */
 			verify:function(){
 				if (!OC.Shorty.Action.Setting.popup.dialog){
-					OC.Shorty.Action.Setting.popup=$('#shorty #dialog-verification');
+					OC.Shorty.Action.Setting.popup=$('#shorty-fieldset #dialog-verification');
 					OC.Shorty.Action.Setting.popup.dialog({show:'fade',autoOpen:false,modal:true});
 					OC.Shorty.Action.Setting.popup.dialog('option','minHeight',290 );
 					OC.Shorty.Action.Setting.popup.dialog('option','minWidth',400 );

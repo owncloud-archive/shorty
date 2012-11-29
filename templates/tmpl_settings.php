@@ -35,8 +35,7 @@
 ?>
 
 <!-- settings of app 'shorty' -->
-<form id="shorty">
-<fieldset class="personalblock">
+<fieldset id="shorty-fieldset" class="personalblock">
 	<legend>
 		<span id="title" class="shorty-title">
 			<img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
@@ -83,7 +82,6 @@
 		</span>
 	</p>
 <?php } ?>
-
+	<!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
 	<?php require_once('tmpl_dlg_verify.php'); ?>
 </fieldset>
-</form>
