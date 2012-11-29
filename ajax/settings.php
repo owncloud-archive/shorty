@@ -72,7 +72,7 @@ try
 			if ( isset(OC_Shorty_Type::$SETTING[$key]) ) // ignore unknown preference keys
 			{
 				$type = OC_Shorty_Type::$SETTING[$key];
-				$data[$key] = OCP\Config::getUserValue( OCP\User::getUser(), 'shorty', $key);
+				$data[$key] = OCP\Config::getAppValue( 'shorty', $key );
 				// morph value into an explicit type
 				switch ($type)
 				{
