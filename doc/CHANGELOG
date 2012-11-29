@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* ??? ??? ?? 2012 Christian Reiner: version 0.1.9
+* Thu Nov 29 2012 Christian Reiner: version 0.1.9
 Added an enhancement to the list of clicks:
 - hovering over entry details highlights other entries sharing the same value.
 - clicking entry detail accepts its value as filter expression for its column.
