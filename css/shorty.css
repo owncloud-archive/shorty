@@ -301,18 +301,18 @@
 	visibility: visible;
 	opacity: 0;
 	transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	-ms-transition: opacity 500ms;
 	-moz-transition: opacity 500ms;
 	-webkit-transition: opacity 500ms;
-	-ms-transition: opacity 500ms;
-	-o-transition: opacity 500ms;
 }
 .shorty-list tbody tr:hover td span.shorty-actions {
 	opacity: 1;
 	transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	-ms-transition: opacity 500ms;
 	-moz-transition: opacity 500ms;
 	-webkit-transition: opacity 500ms;
-	-ms-transition: opacity 500ms;
-	-o-transition: opacity 500ms;
 }
 /* highlight a specific, 'clicked' row in the list */
 .shorty-list tbody tr.clicked {
@@ -320,10 +320,10 @@
 	background-color: #EEEEEE;
 	box-shadow: 0 0 0.5px #777777;
 	transition: background-color 500ms;
+	-o-transition: background-color 500ms;
+	-ms-transition: background-color 500ms;
 	-moz-transition: background-color 500ms;
 	-webkit-transition: background-color 500ms;
-	-ms-transition: background-color 500ms;
-	-o-transition: background-color 500ms;
 }
 /* strike through visible content of rows (entries) marked as deleted */
 .shorty-list tbody tr.deleted>#title,
