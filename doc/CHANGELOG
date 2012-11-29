@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* ??? ??? ?? 2012 Christian Reiner: version 0.3.12
+* Thu Nov 29 2012 Christian Reiner: version 0.3.12
 Fixed a small glitch in settings handling. 
 Some minor performance and logging enhancements.
 * Fri Nov 16 2012 Christian Reiner: version 0.3.11
