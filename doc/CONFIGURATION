@@ -22,12 +22,13 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *****
 
-There are five aspects that can be configured:
+There are six aspects that can be configured, all optional:
 1.) System wide "static backend" (optional)
 2.) Selection of a backend per user (optional)
 3.) Import of the "shortlet" into a web browser (optional)
 4.) Access control inside each single "shorty" (implicit)
-5.) Sending of Shortys as SMS
+5.) Enabling of sending of Shortys as SMS (optional)
+6.) Installation of the additional tracking plugin (optional)
 
 1.) System wide "static backend" (optional)
 (Requires adminisstrative rights)
@@ -115,3 +116,14 @@ to correctly handle a 'sms url'. This is typically only given on a mobile
 device, a smart phone. In addition, such url does not allow to specify a message
 body, so the Shortys source url has to be copied and pasted manually. 
 The option is disabled by default. 
+
+6.) Installation of the optional tracking plugin
+There is a separate app available: 'Shorty Tracking'. The app acts as a plugin
+to the main 'Shorty' app, meaning it requires the main app to be installed and
+enhances that with additional features. When installed additional details about
+each single request to an existing Shorty are stored and can be visualized.
+This helps maintaining a collection of Shortys and offers a more detailed
+insight into how those Shortys are used. Keep in mind however that tracking
+users raises legal issues. You probably have to inform users about the fact
+that their clicks are tracked if your site does not serve a private purpose
+only. 

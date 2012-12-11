@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* Wed Dec 11 2012 Christian Reiner: version 0.3.13
+Fixed layout of share dialog getting distorted under certain circumstances. 
 * Thu Nov 29 2012 Christian Reiner: version 0.3.12
 Fixed a small glitch in settings handling. 
 Some minor performance and logging enhancements.
