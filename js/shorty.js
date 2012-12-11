@@ -1239,10 +1239,10 @@ OC.Shorty={
 				$.when(
 					dialog.find('#meta').fadeTo('fast',0)
 				).always(function(){
-					dialog.find('#staticon').attr('src',dialog.find('#staticon').attr('data'));
+					dialog.find('#staticon' ).attr('src',dialog.find('#staticon' ).attr('data'));
 					dialog.find('#schemicon').attr('src',dialog.find('#schemicon').attr('data'));
-					dialog.find('#favicon').attr('src',dialog.find('#favicon').attr('data'));
-					dialog.find('#mimicon').attr('src',dialog.find('#mimicon').attr('data'));
+					dialog.find('#favicon'  ).attr('src',dialog.find('#favicon'  ).attr('data'));
+					dialog.find('#mimicon'  ).attr('src',dialog.find('#mimicon'  ).attr('data'));
 					dialog.find('#explanation').html(dialog.find('#explanation').attr('data')).removeClass('filled');
 					dfd.resolve();
 				});
@@ -2040,7 +2040,8 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	* @author Christian Reiner
 	*/
 	ListAddInsert: function(list,row){
-		list.find('tbody').prepend(row);
+		// add row in list of Shortys (NOT in any embedded tables body: dialog-share)
+		list.find('>tbody').prepend(row);
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddInsert
 	/**
 	* @method OC.Shorty.Runtime.Context.ListOfShortys.ListFillFilter
