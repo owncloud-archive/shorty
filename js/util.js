@@ -118,8 +118,8 @@ function dateTimeToHuman(timestamp,placeholder){
 		return placeholder||'';
 	var d=new Date(1000*timestamp);
 	return 	d.getFullYear()
-		+'-'+padLeadingZeros(d.getMonth(),2)
-		+'-'+padLeadingZeros(d.getDay(),2)
+		+'-'+padLeadingZeros(d.getMonth()+1,2)
+		+'-'+padLeadingZeros(d.getDate(),2)
 		+' '+padLeadingZeros(d.getHours(),2)
 		+':'+padLeadingZeros(d.getMinutes(),2)
 		+':'+padLeadingZeros(d.getSeconds(),2);
