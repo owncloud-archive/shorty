@@ -28,10 +28,3 @@ This is a short list of known issues:
 this is actually not suprising from a technical point of view, but it would be
 great to suppress the flickerning. Unfortunately my attempts to prevent this
 all break the list getting scrollable when required.
-
-* Filtering the time column in the list of clicks appears to filter on timstamps,
-not on the displayed date time. 
-
-Contributions:
-I'd be more than happy to welcome all contributions to this little experiment.
-Drop me a note, an idea, a patch, a good bottle of wine, anything !
