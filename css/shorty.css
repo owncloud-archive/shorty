@@ -207,28 +207,25 @@
 	height: 100%;
 }
 /* the collapsible toolbar below the lists column title row */
-.shorty-list thead #toolbar img {
+.shorty-list thead tr#toolbar img {
 	cursor: pointer;
 	vertical-align: middle;
 }
-.shorty-list thead #toolbar a#reload, 
-.shorty-list thead #toolbar a#reload img {
+.shorty-list thead tr#toolbar a#reload, 
+.shorty-list thead tr#toolbar a#reload img {
 	cursor: wait;
 }
-.shorty-list thead #toolbar img#sort-up {
+.shorty-list thead tr#toolbar img#sort-up {
 	cursor: n-resize;
 }
-.shorty-list thead #toolbar img#sort-down {
+.shorty-list thead tr#toolbar img#sort-down {
 	cursor: s-resize;
 }
-.shorty-list thead #titlebar img#tools {
-	cursor: row-resize;
-}
-.shorty-list thead #toolbar img.shorty-sorter {
+.shorty-list thead tr#toolbar img.shorty-sorter {
 	opacity: 0.6;
 }
 /* last column in the list, content usually invisible, except when hovered */
-.shorty-list thead #toolbar img.shorty-active {
+.shorty-list thead tr#toolbar img.shorty-active {
 	border: 1px solid #888888;
 	border-radius: 0.3em;
 }
@@ -236,12 +233,17 @@
 .shorty-list thead tr:nth-child(2) > th {
 	padding-bottom: 0.5em;
 }
-.shorty-list thead #titlebar th,
-.shorty-list thead #titlebar th img,
-.shorty-list thead #titlebar th span {
-	cursor: pointer;
+.shorty-list thead tr#titlebar th,
+.shorty-list thead tr#titlebar th img,
+.shorty-list thead tr#titlebar th span {
+	cursor: s-resize;
 }
-.shorty-list thead #titlebar img {
+.shorty-list thead tr#titlebar.shorty-clicked th,
+.shorty-list thead tr#titlebar.shorty-clicked th img,
+.shorty-list thead tr#titlebar.shorty-clicked th span {
+	cursor: n-resize;
+}
+.shorty-list thead tr#titlebar img {
 	opacity: 0.7;
 }
 /* scrolling lists have a scrollbar INSIDE the tbody */
@@ -431,9 +433,11 @@
 	margin: 5px 0px 5px 10px;
 	padding: 0 0.5em 0 0.2em;
 }
-.shorty-dialog legend a {
+.shorty-dialog legend a,
+.shorty-dialog legend a img {
 	margin: 0;
 	padding: 0;
+	cursor: n-resize;
 }
 .shorty-dialog legend .heading {
 	padding: 0.6em 0.5em 0.1em 0.3em;
@@ -619,7 +623,9 @@
 	vertical-align: baseline;
 	opacity: 0.7;
 }
-.shorty-embedded fieldset.shorty-collapsible span,
+.shorty-embedded fieldset.shorty-collapsible span {
+	cursor: n-resize;
+}
 .shorty-embedded fieldset.shorty-collapsible.collapsed span {
 	cursor: s-resize;
 }

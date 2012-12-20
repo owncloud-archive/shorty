@@ -1015,8 +1015,9 @@ OC.Shorty={
 				*/
 				toggle: function(list){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list toolbar");
-					var button =list.find('#tools');
-					var toolbar=list.find('#toolbar');
+					var button  =list.find('img#tools');
+					var titlebar=list.find('tr#titlebar');
+					var toolbar =list.find('tr#toolbar');
 					var dfd = new $.Deferred();
 					if (!toolbar.find('div').is(':visible')){
 						// toolbar NOT visible: open toolbar
@@ -1024,6 +1025,7 @@ OC.Shorty={
 							// each <th>'s content MUST be encapsulate in a 'div', otherwise the animation does not work
 							toolbar.find('div').slideDown('slow')
 						).pipe(function(){
+							titlebar.addClass('shorty-clicked');
 							button.attr('src',button.attr('data-shade'));
 						}).done(dfd.resolve)
 					}else{ // toolbar IS visible
@@ -1035,7 +1037,8 @@ OC.Shorty={
 							$.when(
 								toolbar.find('div').slideUp('slow')
 							).done(function(){
-								button.attr('src',button.attr('data-unshade'))
+								titlebar.removeClass('shorty-clicked');
+								button.attr('src',button.attr('data-unshade'));
 								dfd.resolve();
 							})
 						}
