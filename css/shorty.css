@@ -828,9 +828,11 @@ div.jqimessage textarea {
 	width: 96%;
 	margin: 0.5em 0 0;
 	padding: 0.4em 0.3em 0.2em;
+	cursor: text;
 }
 div.jqimessage textarea {
 	height: 6em;
+	cursor: text;
 }
 div.jqimessage input::selection,
 div.jqimessage input::-moz-selection,
@@ -838,4 +840,7 @@ div.jqimessage input::-webkit-selection,
 div.jqimessage input::-o-selection,
 div.jqimessage input::-ms-selection{
 	background: green;
+}
+div.jqimessage fieldset div#qrcode-img img.usage-qrcode {
+	cursor: pointer;
 }
