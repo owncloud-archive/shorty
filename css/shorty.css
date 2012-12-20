@@ -160,7 +160,6 @@
 .usage-instruction {
 	font-size: 10px;
 	font-style: italic;
-/* 	line-height: 0.8em; */
 }
 .usage-token {
 	font-size: 10px;
@@ -401,7 +400,9 @@
 /* general table cell appearance */
 .shorty-list thead th,
 .shorty-list tbody td {
+	margin: 0;
 	padding: 1px 4px 1px 2px;
+	line-height: 1.2em;
 }
 .shorty-list thead th#favicon,
 .shorty-list tbody td#favicon {
