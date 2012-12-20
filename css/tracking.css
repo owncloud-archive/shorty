@@ -63,14 +63,11 @@
 }
 #list-of-clicks thead th#time,
 #list-of-clicks tbody td#time {
-	width:10.6em;
+	width:10.4em;
 }
 #list-of-clicks tbody td span {
 	margin: 0;
 	padding: 0 0.1em;
-}
-#list-of-clicks tbody tr:hover {
-	background-color: #F0F0F0;
 }
 #list-of-clicks tbody tr:active {
 	background-color: #EEEEEE;
@@ -92,7 +89,7 @@
 	-webkit-transition: opacity 1000ms;
 }
 #list-of-clicks tbody tr td.associative span {
-	cursor: pointer;
+	cursor:url('../../shorty/img/actions/filter.png'),pointer;
 }
 
 /* #shorty-tracking-list-dialog #shorty-tracking-reference { */
