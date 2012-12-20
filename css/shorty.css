@@ -211,6 +211,19 @@
 	cursor: pointer;
 	vertical-align: middle;
 }
+.shorty-list thead #toolbar a#reload, 
+.shorty-list thead #toolbar a#reload img {
+	cursor: wait;
+}
+.shorty-list thead #toolbar img#sort-up {
+	cursor: n-resize;
+}
+.shorty-list thead #toolbar img#sort-down {
+	cursor: s-resize;
+}
+.shorty-list thead #titlebar img#tools {
+	cursor: row-resize;
+}
 .shorty-list thead #toolbar img.shorty-sorter {
 	opacity: 0.6;
 }
@@ -301,30 +314,34 @@
 .shorty-list tbody tr td span.shorty-actions {
 	visibility: visible;
 	opacity: 0;
-	transition: opacity 500ms;
-	-o-transition: opacity 500ms;
-	-ms-transition: opacity 500ms;
-	-moz-transition: opacity 500ms;
-	-webkit-transition: opacity 500ms;
+	transition: opacity 600ms;
+	-o-transition: opacity 600ms;
+	-ms-transition: opacity 600ms;
+	-moz-transition: opacity 600ms;
+	-webkit-transition: opacity 600ms;
 }
 .shorty-list tbody tr:hover td span.shorty-actions {
 	opacity: 1;
-	transition: opacity 500ms;
-	-o-transition: opacity 500ms;
-	-ms-transition: opacity 500ms;
-	-moz-transition: opacity 500ms;
-	-webkit-transition: opacity 500ms;
+	transition: opacity 600ms;
+	-o-transition: opacity 600ms;
+	-ms-transition: opacity 600ms;
+	-moz-transition: opacity 600ms;
+	-webkit-transition: opacity 600ms;
+}
+/* highlight hovered rows in the list */
+.shorty-list tbody tr:hover {
+	background-color: #F0F0F0;
+	transition: background-color 600ms;
+	-o-transition: background-color 600ms;
+	-ms-transition: background-color 600ms;
+	-moz-transition: background-color 600ms;
+	-webkit-transition: background-color 600ms;
 }
 /* highlight a specific, 'clicked' row in the list */
 .shorty-list tbody tr.clicked {
 	border-radius: 0.5em;
-	background-color: #EEEEEE;
+	background-color: #F0F0F0;
 	box-shadow: 0 0 0.5px #777777;
-	transition: background-color 500ms;
-	-o-transition: background-color 500ms;
-	-ms-transition: background-color 500ms;
-	-moz-transition: background-color 500ms;
-	-webkit-transition: background-color 500ms;
 }
 /* strike through visible content of rows (entries) marked as deleted */
 .shorty-list tbody tr.deleted>#title,
@@ -604,7 +621,7 @@
 }
 .shorty-embedded fieldset.shorty-collapsible span,
 .shorty-embedded fieldset.shorty-collapsible.collapsed span {
-	cursor: pointer;
+	cursor: s-resize;
 }
 .shorty-embedded fieldset.shorty-collapsible span {
 	margin: 0;
