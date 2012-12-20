@@ -180,8 +180,8 @@ OC.Shorty.Tracking=
 		if (	( ! OC.Shorty.Tracking.Dialog.List
 						.find('#shorty-footer #scrollingTurn')
 						.hasClass('disabled') )
-			&&	($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight)
-		){
+			&&	($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight) )
+		{
 			if (OC.Shorty.Debug) OC.Shorty.Debug.log("list scrolled towards its bottom");
 			OC.Shorty.Tracking.build(true);
 		}
