@@ -78,7 +78,7 @@
 					<th id="host"   ><span><?php echo OC_ShortyTracking_L10n::t("Host")   ?></span></th>
 					<th id="user"   ><span><?php echo OC_ShortyTracking_L10n::t("User")   ?></span></th>
 					<th id="time"   ><span><?php echo OC_ShortyTracking_L10n::t("Time")   ?></span></th>
-					<th id="action" ><span>&nbsp;</span></th>
+					<th id="actions"><span>&nbsp;</span></th>
 				</tr>
 				<!-- table toolbar -->
 				<tr id="toolbar">

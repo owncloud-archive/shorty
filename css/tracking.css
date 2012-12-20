@@ -65,6 +65,10 @@
 #list-of-clicks tbody td#time {
 	width:10.4em;
 }
+#list-of-clicks thead th#actions,
+#list-of-clicks tbody td#actions {
+	width: 20px;
+}
 #list-of-clicks tbody td span {
 	margin: 0;
 	padding: 0 0.1em;
