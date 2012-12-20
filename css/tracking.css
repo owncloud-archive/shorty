@@ -78,19 +78,19 @@
 }
 #list-of-clicks tbody tr td span.associated {
 	opacity: 1.0;
+	transition: opacity 300ms;
+	-o-transition: opacity 300ms;
+	-ms-transition: opacity 300ms;
+	-moz-transition: opacity 300ms;
+	-webkit-transition: opacity 300ms;
+}
+#list-of-clicks tbody tr td span.desociated {
+	opacity: 0.2;
 	transition: opacity 500ms;
 	-o-transition: opacity 500ms;
 	-ms-transition: opacity 500ms;
 	-moz-transition: opacity 500ms;
 	-webkit-transition: opacity 500ms;
-}
-#list-of-clicks tbody tr td span.desociated {
-	opacity: 0.4;
-	transition: opacity 1000ms;
-	-o-transition: opacity 1000ms;
-	-ms-transition: opacity 1000ms;
-	-moz-transition: opacity 1000ms;
-	-webkit-transition: opacity 1000ms;
 }
 #list-of-clicks tbody tr td.associative span {
 	cursor:url('../../shorty/img/actions/filter.png'),pointer;
