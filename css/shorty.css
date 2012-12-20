@@ -213,7 +213,7 @@
 }
 .shorty-list thead tr#toolbar a#reload, 
 .shorty-list thead tr#toolbar a#reload img {
-	cursor: wait;
+	cursor: pointer;
 }
 .shorty-list thead tr#toolbar img#sort-up {
 	cursor: n-resize;
@@ -233,13 +233,14 @@
 .shorty-list thead tr:nth-child(2) > th {
 	padding-bottom: 0.5em;
 }
+.shorty-list thead tr#titlebar th img {
+	cursor: pointer;
+}
 .shorty-list thead tr#titlebar th,
-.shorty-list thead tr#titlebar th img,
 .shorty-list thead tr#titlebar th span {
 	cursor: s-resize;
 }
 .shorty-list thead tr#titlebar.shorty-clicked th,
-.shorty-list thead tr#titlebar.shorty-clicked th img,
 .shorty-list thead tr#titlebar.shorty-clicked th span {
 	cursor: n-resize;
 }
@@ -312,6 +313,12 @@
 {
 	display: none;
 }
+.shorty-list tbody tr td {
+	/* these invisible borders are plaveholders: they get visible upon hover */
+	/* this prevents a 2px change in row height which looks funny in a table cause it moves content */
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
 /* hide the content of the 'actions' column, except when being hovered */
 .shorty-list tbody tr td span.shorty-actions {
 	visibility: visible;
@@ -331,7 +338,7 @@
 	-webkit-transition: opacity 600ms;
 }
 /* highlight hovered rows in the list */
-.shorty-list tbody tr:hover {
+.shorty-list tbody tr:hover td {
 	background-color: #F0F0F0;
 	transition: background-color 600ms;
 	-o-transition: background-color 600ms;
@@ -339,11 +346,29 @@
 	-moz-transition: background-color 600ms;
 	-webkit-transition: background-color 600ms;
 }
+.shorty-list tbody tr:hover td:first-child {
+	border-top-left-radius: 0.5em;
+	border-bottom-left-radius: 0.5em;
+}
+.shorty-list tbody tr:hover td:last-child {
+	border-top-right-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+}
 /* highlight a specific, 'clicked' row in the list */
-.shorty-list tbody tr.clicked {
-	border-radius: 0.5em;
+.shorty-list tbody tr.clicked td {
 	background-color: #F0F0F0;
-	box-shadow: 0 0 0.5px #777777;
+	border-top: 1px solid #AAAAAA;
+	border-bottom: 1px solid #AAAAAA;
+}
+.shorty-list tbody tr.clicked td:first-child {
+	border-top-left-radius: 0.5em;
+	border-bottom-left-radius: 0.5em;
+	border-left: 1px solid #AAAAAA;
+}
+.shorty-list tbody tr.clicked td:last-child {
+	border-top-right-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	border-right: 1px solid #AAAAAA;
 }
 /* strike through visible content of rows (entries) marked as deleted */
 .shorty-list tbody tr.deleted>#title,
@@ -437,7 +462,7 @@
 .shorty-dialog legend a img {
 	margin: 0;
 	padding: 0;
-	cursor: n-resize;
+	cursor: pointer;
 }
 .shorty-dialog legend .heading {
 	padding: 0.6em 0.5em 0.1em 0.3em;
@@ -583,6 +608,8 @@
 	padding: 0.5em;
 	background: none repeat scroll 0 0 #EEEEEE;
 	position: absolute;
+	border: 1px solid #AAAAAA;
+	border-top: 1px solid transparent;
 }
 .shorty-embedded span {
 	width: 29em;
