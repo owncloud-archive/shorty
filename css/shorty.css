@@ -206,6 +206,9 @@
 	height: 100%;
 }
 /* the collapsible toolbar below the lists column title row */
+.shorty-list thead tr#toolbar span {
+	padding: 0;
+}
 .shorty-list thead tr#toolbar img {
 	cursor: pointer;
 	vertical-align: middle;
@@ -441,7 +444,7 @@
 	box-shadow: 0 2px 1px #777777;
 	vertical-align: middle;
 	z-index: 4;
-	width: 48em;
+	width: 50em;
 	margin: -1px 0 0;
 	padding: 0.5em;
 	background: none repeat scroll 0 0 #F7F7F7;
