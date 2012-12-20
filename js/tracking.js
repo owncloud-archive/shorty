@@ -248,10 +248,17 @@ OC.Shorty.Tracking=
 				var roomHeight=$('#content').outerHeight();
 				// make table scrollable, when more than ... entries
 				if (roomHeight<bodyHeight+restHeight){
+					// mark list as a scrollableTable
 					OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
 						.addClass('scrollingTable');
 					OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody')
 						.css('height',(roomHeight-restHeight-20)+'px');
+					// this is a workaround to preserve column width inside the header when we modify the body
+					$.each(OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks thead th'),function(){
+						var column=$(this).attr('id');
+						$(this).css('width',$(this).parents('table').find('thead tr#toolbar td#'+column).css('width'));
+						$(this).css('width',$(this).parents('table').find('tbody tr:first td#'+column).css('width'));
+					});
 				}
 				// show sparkline at the right of the reference head
 				OC.Shorty.Tracking.sparkle();
