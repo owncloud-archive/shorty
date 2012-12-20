@@ -33,6 +33,9 @@
 	margin-right: 5em;
 	width: 96%;
 }
+#list-of-clicks tbody {
+	padding: 0 0.1em;
+}
 #list-of-clicks th,
 #list-of-clicks td {
 	margin: 0;
@@ -66,8 +69,11 @@
 	margin: 0;
 	padding: 0 0.1em;
 }
-#list-of-clicks tbody tr:hover, tr:active {
+#list-of-clicks tbody tr:hover {
 	background-color: #F0F0F0;
+}
+#list-of-clicks tbody tr:active {
+	background-color: #EEEEEE;
 }
 #list-of-clicks tbody tr td span.associated {
 	opacity: 1.0;
