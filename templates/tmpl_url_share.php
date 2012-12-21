@@ -39,17 +39,17 @@
 	<fieldset>
 		<legend class="">
 			<a id="close" class="shorty-close-button"
-				title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
-				<img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
+				title="<?php echo OC_Shorty_L10n::t("Close"); ?>">
+				<img alt="<?php echo OC_Shorty_L10n::t("Close"); ?>"
 					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
 			</a>
-			<span class="heading"><?php echo OC_Shorty_L10n::t('Share and use').':'; ?></span>
+			<span class="heading"><?php echo OC_Shorty_L10n::t("Share and use").':'; ?></span>
 		</legend>
 		<input id="id" name="id" type="hidden" readonly data="" class="" readonly disabled />
-		<label for="title"><?php echo OC_Shorty_L10n::t('Title').':'; ?></label>
+		<label for="title"><?php echo OC_Shorty_L10n::t("Title").':'; ?></label>
 		<span id="title" class="ellipsis"></span>
 		<br />
-		<label for="status"><?php echo OC_Shorty_L10n::t('Status').':'; ?></label>
+		<label for="status"><?php echo OC_Shorty_L10n::t("Status").':'; ?></label>
 		<select id="status" name="status" data="" class="" value="">
 			<?php
 				foreach ( OC_Shorty_Type::$STATUS as $status )
@@ -57,35 +57,35 @@
 						echo sprintf ( "<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status) );
 			?>
 		</select>
-		<span id="blocked" class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('for any access')."."; ?></span>
-		<span id="private" class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('for own usage')."."; ?></span>
-		<span id="shared"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('with ownCloud users')."."; ?></span>
-		<span id="public"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t('available for everyone')."."; ?></span>
+		<span id="blocked" class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t("for any access")."."; ?></span>
+		<span id="private" class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t("for own usage")."."; ?></span>
+		<span id="shared"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t("with ownCloud users")."."; ?></span>
+		<span id="public"  class="status-hint" style="display:none;"><?php echo OC_Shorty_L10n::t("available for everyone")."."; ?></span>
 		<div class="shorty-usages">
 			<fieldset class="shorty-collapsible collapsed">
-				<label for="source-text"><?php echo OC_Shorty_L10n::t('Source url').':'; ?></label>
-				<span id="source-text">This is the shortened url registered at the backend. </span>
+				<label for="source-text"><?php echo OC_Shorty_L10n::t("Source url").':'; ?></label>
+				<span id="source-text"><?php echo OC_Shorty_L10n::t("This is the shortened url registered at the backend").'.'; ?></span>
 				<div class="shorty-collapsible-tail" style="display:none;">
 					<a id="source" class="shorty-clickable" target="_blank"
-						title="<?php echo OC_Shorty_L10n::t('Open source url'); ?>"
+						title="<?php echo OC_Shorty_L10n::t("Open source url"); ?>"
 						href=""></a>
 				</div>
 			</fieldset>
 			<fieldset class="shorty-collapsible collapsed">
-				<label for="relay-text"><?php echo OC_Shorty_L10n::t('Relay url').':'; ?></label>
-				<span id="relay-text">This is the internal url the 'official' one relays to. </span>
+				<label for="relay-text"><?php echo OC_Shorty_L10n::t("Relay url").':'; ?></label>
+				<span id="relay-text"><?php echo OC_Shorty_L10n::t("This is the internal url that the 'official' one relays to").'.'; ?></span>
 				<div class="shorty-collapsible-tail" style="display:none;">
 					<a id="relay" class="shorty-clickable" target="_blank"
-						title="<?php echo OC_Shorty_L10n::t('Open relay url'); ?>"
+						title="<?php echo OC_Shorty_L10n::t("Open relay url"); ?>"
 						href=""></a>
 				</div>
 			</fieldset>
 			<fieldset class="shorty-collapsible collapsed">
-				<label for="target-text"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
-				<span id="target-text">This is the target url specified when generating this Shorty. </span>
+				<label for="target-text"><?php echo OC_Shorty_L10n::t("Target url").':'; ?></label>
+				<span id="target-text"><?php echo OC_Shorty_L10n::t("This is the target url specified when generating this Shorty").'.'; ?></span>
 				<div class="shorty-collapsible-tail" style="display:none;">
 					<a id="target" class="shorty-clickable" target="_blank"
-						title="<?php echo OC_Shorty_L10n::t('Open target url'); ?>"
+						title="<?php echo OC_Shorty_L10n::t("Open target url"); ?>"
 						href=""></a>
 				</div>
 			</fieldset>
