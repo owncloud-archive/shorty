@@ -25,6 +25,7 @@
 Changelog: 
 
 * Fri Dec 21 2012 Christian Reiner: version 0.1.10
+Support for the postgresql database engine.
 Several style and layout fixes, especially for webkit based browsers.
 Enhanced visualization of filter capabilities inside the list of clicks.
 * Thu Nov 29 2012 Christian Reiner: version 0.1.9
