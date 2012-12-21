@@ -195,7 +195,7 @@ class OC_Shorty_Hooks
 	} // function registerClick
 
 	/**
-	* @method OC_ShortyTracking_Hooks::registerQueries
+	* @method OC_Shorty_Hooks::registerQueries
 	* @brief Registers queries to be offered as expected by the Shorty app
 	* @param paramters (array) parameters from emitted signal
 	* @return bool
