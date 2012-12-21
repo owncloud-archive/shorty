@@ -24,18 +24,9 @@
 
 This is a short list of known issues:
 
-- The datepicker popup in the edit dialog fails to set the expiration date: 
-I have no idea what the problem is. Exactly the same object works flawlessly
-in the dialog to create a new Shorty. I can't see any difference, except in
-the edit dialog the date is taken from the existing row entry (working fine).
-Maybe there is some sort of magic spell to awake a datepicker after changing
-its date value ? No idea...
-
-- Shorty does not work in the konqueror web browser
-All appears to be working fine except for one annoying thing:
-the standalone dialogs won't open ! (show, create and edit entries)
-Therefore Shorty is currently more or less useless in this browser.
-The issue lies inside the jQuery library used throughout the OC project. 
+- Shorty does not work with the khtml rendering engine (konqueror browser).
+Konqueror using webkit engine works fine though. 
+This is unlikely to be fixed, since the problem originates in the jQuery library.
 
 - When internally validating the setup of the base url used in the static
 backend you get a failure report ("doesn't work") although things are fine, if
