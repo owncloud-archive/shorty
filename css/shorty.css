@@ -576,9 +576,17 @@
 }
 
 .shorty-standalone .shorty-meta {
-	width: 66%;
+	width: 62%;
 	margin: 0;
-/* 	padding: 0.3em 0.2em; */
+}
+.shorty-standalone .shorty-meta img {
+	position: relative;
+	top: 5px;
+	max-height: 16px;
+	max-width: 16px;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
 }
 .shorty-standalone .shorty-meta span {
 	height: 22px;
@@ -590,26 +598,24 @@
 .shorty-standalone .shorty-meta span#explanation {
 	border-radius: 0.5em;
 	border: 1px solid transparent;
+	display: inline-block;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: inherit;
 }
-.shorty-standalone .shorty-meta img {
+.shorty-standalone:not(#dialog-show) .shorty-meta span#explanation.filled:hover {
 	position: relative;
-	top: 5px;
-	max-height: 16px;
-	max-width: 16px;
-	vertical-align: top;
-	margin: 0;
-	padding: 0;
-}
-.shorty-standalone:not(#dialog-show) .shorty-meta #explanation.filled:hover {
-	white-space: normal !important;
 	cursor: pointer;
 	border: 1px solid #D3D3D3;
+	padding-right: 30px;
 }
-.shorty-standalone:not(#dialog-show) .shorty-meta #explanation.filled:hover:after {
+.shorty-standalone:not(#dialog-show) .shorty-meta span#explanation.filled:hover:after {
 	content: url("../img/actions/takeover.png");
+	position: absolute;
 	float: right;
-	position: relative;
-	top: 3px;
+	top: 6px;
+	right: 10px;
 }
 
 /* dialogs related to elements ('embedded in the content') */

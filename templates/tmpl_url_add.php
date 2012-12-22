@@ -64,7 +64,7 @@
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
 			</span>
-			<span id="explanation" class="shorty-value ellipsis"></span>
+			<span id="explanation" class="shorty-value"></span>
 		</span>
 		<br />
 		<label for="title"><?php echo OC_Shorty_L10n::t('Title').':'; ?></label>
