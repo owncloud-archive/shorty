@@ -67,13 +67,13 @@ try
 	(
 		':user'    => OCP\User::getUser(),
 		':id'      => $p_id,
-		':status'  => $p_status  ? $p_status  : '',
-		':title'   => $p_title   ? $p_title   : '',
-		':favicon' => $p_favicon ? $p_favicon : '',
-		':source'  => $p_source  ? $p_source  : '',
-		':target'  => $p_target  ? $p_target  : '',
-		':notes'   => $p_notes   ? $p_notes   : '',
-		':until'   => $p_until   ? $p_until   : null,
+		':status'  => $p_status  ?        $p_status          : '',
+		':title'   => $p_title   ? substr($p_title,  0,  80) : '',
+		':favicon' => $p_favicon ? substr($p_favicon,0,1024) : '',
+		':source'  => $p_source  ?        $p_source          : '',
+		':target'  => $p_target  ? substr($p_target, 0,4096) : '',
+		':notes'   => $p_notes   ? substr($p_notes,  0,4096) : '',
+		':until'   => $p_until   ?        $p_until           : null,
 	);
 	$query = OCP\DB::prepare ( OC_Shorty_Query::URL_INSERT );
 	$query->execute ( $param );

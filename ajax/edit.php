@@ -58,11 +58,11 @@ try
 	(
 		':user'   => OCP\User::getUser ( ),
 		':id'     => $p_id,
-		':status' => $p_status  ? $p_status  : '',
-		':title'  => $p_title   ? $p_title   : '',
-		':target' => $p_target  ? $p_target  : '',
-		':notes'  => $p_notes   ? $p_notes   : '',
-		':until'  => $p_until   ? $p_until   : null,
+		':status' => $p_status  ?        $p_status          : '',
+		':title'  => $p_title   ? substr($p_title,  0,  80) : '',
+		':target' => $p_target  ? substr($p_target, 0,4096) : '',
+		':notes'  => $p_notes   ? substr($p_notes,  0,4096) : '',
+		':until'  => $p_until   ?        $p_until           : null,
 	);
 	$query = OCP\DB::prepare ( OC_Shorty_Query::URL_UPDATE );
 	$query->execute ( $param );
