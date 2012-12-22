@@ -515,7 +515,7 @@
 	outline: none;
 	background: none;
 	background-color: #F7F7F7;
-	padding: 0.3em 0.3em;
+	padding: 4px;
 }
 .shorty-dialog button#confirm {
 	width: 12em; height: 2em;
@@ -537,31 +537,29 @@
 	width: 82%;
 	white-space: nowrap;
 	border-radius: 0.5em;
+	border: 1px solid transparent;
 	margin: 0;
 	padding: 0;
 }
 .shorty-dialog span.clickable:not(.clicked) {
 	cursor: pointer;
+	margin: 2px 0;
 }
 .shorty-dialog span.clickable.clicked {
 	cursor: normal;
 }
 .shorty-dialog span.clickable:not(.clicked):hover {
 	border: 1px solid #D3D3D3;
-	margin: -1px;
 }
 .shorty-dialog span.clickable:not(.clicked):after {
 	content: url("../../../core/img/actions/rename.png");
 	position: relative;
-	top: 0.3em;
-	float: right;
-	margin: 0 1em 0 -1em;
-	padding: 0;
+	top: 3px;
 }
 .shorty-dialog span.clickable:not(.clicked) * {
 	cursor: pointer;
 	width: 92%;
-	margin: 0.1em;
+	margin: 0.1em 0.2em;
 }
 .shorty-dialog span.clickable.clicked * {
 	width: 98%;
@@ -578,30 +576,40 @@
 }
 
 .shorty-standalone .shorty-meta {
-	width: 67%;
-	padding: 0;
+	width: 66%;
+	margin: 0;
+/* 	padding: 0.3em 0.2em; */
 }
-.shorty-standalone .shorty-meta>* {
-	margin-left: 0.1em;
-	padding: 8px 0;
-}
-.shorty-standalone .shorty-meta #explanation {
+.shorty-standalone .shorty-meta span {
+	height: 22px;
 	overflow-y: hidden;
+	white-space: normal;
 	margin: 0;
 	padding: 3px 4px;
 }
-.shorty-standalone .shorty-meta #explanation.filled:hover {
-	cursor: pointer;
+.shorty-standalone .shorty-meta span#explanation {
 	border-radius: 0.5em;
-	border: 1px solid #D3D3D3;
-	padding: 3px 2px 3px 3px;
+	border: 1px solid transparent;
 }
-.shorty-standalone .shorty-meta #explanation.filled:hover:after {
-	content: url("../img/actions/takeover.png");
+.shorty-standalone .shorty-meta img {
 	position: relative;
-	top: 0.3em;
+	top: 5px;
+	max-height: 16px;
+	max-width: 16px;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+}
+.shorty-standalone:not(#dialog-show) .shorty-meta #explanation.filled:hover {
+	white-space: normal !important;
+	cursor: pointer;
+	border: 1px solid #D3D3D3;
+}
+.shorty-standalone:not(#dialog-show) .shorty-meta #explanation.filled:hover:after {
+	content: url("../img/actions/takeover.png");
 	float: right;
-	margin-left: -12em;
+	position: relative;
+	top: 3px;
 }
 
 /* dialogs related to elements ('embedded in the content') */
@@ -724,7 +732,7 @@
 .shorty-icon {
 	display: inline;
 	background: transparent;
-	vertical-align: middle;
+	vertical-align: baseline;
 	padding: 1px;
 }
 /* dim entries with expired 'until' dates */

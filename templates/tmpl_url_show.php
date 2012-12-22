@@ -52,23 +52,25 @@
 		<input id="relay" name="relay" type="text" data="" class="" readonly disabled />
 		<br />
 		<label for="target"><?php echo OC_Shorty_L10n::t('Target url').':'; ?></label>
-		<input id="target" name="target" data="" class="" readonly disabled />
+		<input id="target" name="target" type="text" data="" class="" readonly disabled />
 		<br />
 		<label for="meta"><img id="busy" height="12px" src="<?php echo OCP\Util::imagePath('shorty', 'loading-led.gif'); ?>"></label>
-		<span id="meta">
-			<img id="staticon"  class="shorty-icon" width="16px"
-				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
-				data="<?php echo OCP\Util::imagePath('shorty', 'status/neutral.png'); ?>">
-			<img id="schemicon" class="shorty-icon" width="16px"
-				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
-				data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-			<img id="favicon"   class="shorty-icon" width="16px"
-				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
-				data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-			<img id="mimicon"   class="shorty-icon" width="16px"
-				src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
-				data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-			<a id="explanation" maxlength="80" data="" class="shorty-value"></a>
+		<span id="meta" class="shorty-meta">
+			<span class="shorty-value">
+				<img id="staticon"  class="shorty-icon" width="16px"
+					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
+					data="<?php echo OCP\Util::imagePath('shorty', 'status/neutral.png'); ?>">
+				<img id="schemicon" class="shorty-icon" width="16px"
+					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
+					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
+				<img id="favicon"   class="shorty-icon" width="16px"
+					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
+					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
+				<img id="mimicon"   class="shorty-icon" width="16px"
+					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
+					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
+			</span>
+			<span id="explanation" maxlength="80" data="" class="shorty-value"></span>
 		</span>
 		<br />
 		<label for="title"><?php echo OC_Shorty_L10n::t('Title').':'; ?></label>

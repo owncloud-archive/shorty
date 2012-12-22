@@ -318,15 +318,14 @@ OC.Shorty={
 									OC.Shorty.WUI.Dialog.sharpen(dialog,false);
 									// suppress further clicking sensivity
 									dialog.find('span.clickable').addClass('clicked');
-									// make target writeable
-									var target=dialog.find('#target');
-									target.prop('readonly',false).focus();
-									// prevent submission when target has been altered
-									target.on('keypress', {dialog: dialog}, function(){
+									// make element writeable
+									$(this).prop('readonly',false).focus();
+									// prevent submission when element has been altered
+									$(this).on('keypress', {dialog: dialog}, function(){
 										OC.Shorty.WUI.Dialog.sharpen(dialog,false);
 									});
-									// react on changed target
-									target.on('focusout', {dialog: dialog}, function(){
+									// react on changed element
+									$(this).on('focusout', {dialog: dialog}, function(){
 										OC.Shorty.WUI.Dialog.validate(dialog);
 									});
 								});
