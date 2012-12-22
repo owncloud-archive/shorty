@@ -45,8 +45,9 @@ $(document).ready(function(){
 			OC.Shorty.Debug.log("Info","relying on core implementation to refresh the request token");
 	}
 	// close any open dialog when the canvas is clicked
+	$(document).on('click','#content>*',[],function(e){e.stopPropagation();});
 	$(document).on('click','#content',[],function(){
-		$.each($('.shorty-standalone:visible'),function(){
+		$.each($('.shorty-dialog:visible'),function(){
 			OC.Shorty.WUI.Dialog.hide($(this));
 		});
 	});
