@@ -56,21 +56,17 @@
 	opacity: 0;
 }
 
-.shorty-dialog span.clickable:not(.clicked):after {
+.shorty-dialog:not(#dialog-show) span.clickable:not(.clicked):after {
 	content: url("%appswebroot%/core/img/actions/rename.png");
 	position: relative;
-	top: 0.3em;
-	float: right;
-	margin: 0 1em 0 -1em;
-	padding: 0;
+	top: 3px;
 }
 
-.shorty-standalone .shorty-meta #explanation.filled:hover:after {
+.shorty-standalone:not(#dialog-show) .shorty-meta #explanation.filled:hover:after {
 	content: url("%appswebroot%/apps/shorty/img/actions/takeover.png");
-	position: relative;
-	top: 0.3em;
 	float: right;
-	margin-left: -12em;
+	position: relative;
+	top: 3px;
 }
 
 .shorty-embedded a.shorty-clickable:before {
