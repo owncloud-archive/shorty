@@ -44,6 +44,12 @@ $(document).ready(function(){
 		if (OC.Shorty.Debug)
 			OC.Shorty.Debug.log("Info","relying on core implementation to refresh the request token");
 	}
+	// close any open dialog when the canvas is clicked
+	$(document).on('click','#content',[],function(){
+		$.each($('.shorty-standalone:visible'),function(){
+			OC.Shorty.WUI.Dialog.hide($(this));
+		});
+	});
 	// make notification closeable
 	$(document).on('click','#content #notification',[],OC.Shorty.WUI.Notification.hide);
 	// button to open the 'add' dialog
