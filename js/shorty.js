@@ -1459,9 +1459,18 @@ OC.Shorty={
 					OC.Shorty.Action.Setting.popup.dialog('option','minWidth',400 );
 				}
 				var dfd = new $.Deferred();
-				$.when(
-					this.check(OC.Shorty.Action.Setting.popup,$('#shorty #backend-static #backend-static-base').val())
-				).done(dfd.resolve)
+				var target=$('#shorty #backend-static #backend-static-base').val();
+				if (target){
+					// we have a target, make a request to it
+					$.when(
+						this.check(OC.Shorty.Action.Setting.popup,target)
+					).done(dfd.resolve).fail(dfd.reject)
+				}else{
+					// no targt given: show user where to fill in target
+					$.when(
+						$('#shorty #backend-static #backend-static-base').effect('pulsate')
+					).done(dfd.resolve).fail(dfd.reject)
+				}
 				return dfd.promise();
 			}, // OC.Shorty.Action.Setting.verify
 			/**
