@@ -27,6 +27,7 @@ Changelog:
 * Fri Dec 21 2012 Christian Reiner: version 0.3.15
 Support for the postgresql database engine.
 Some style and layout corrections especially for webkit based browsers.
+Fixed validation of the static backend setup for cross domain situations.
 * Sat Dec 15 2012 Christian Reiner: version 0.3.14
 Fixed big oops display of access times that gave the wrong month and day!
 * Wed Dec 11 2012 Christian Reiner: version 0.3.13

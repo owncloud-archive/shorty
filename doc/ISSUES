@@ -25,12 +25,6 @@
 This is a short list of known issues:
 
 - Shorty does not work with the khtml rendering engine (konqueror browser).
-Konqueror using webkit engine works fine though. 
-This is unlikely to be fixed, since the problem originates in the jQuery library.
-
-- When internally validating the setup of the base url used in the static
-backend you get a failure report ("doesn't work") although things are fine, if
-the mapping of base url to shorty plugin is done by a remote server. This is
-due to cross site attack prevention.
-The reason is that jqueries ajax calls won't handle such redirects internally.
-A wrapper will have to be implemented. 
+Konqueror using webkit engine works fine though. This issue is unlikely to be
+fixed, since the problem originates in the jQuery library not supporting the
+khtml engine. 

@@ -1476,13 +1476,17 @@ OC.Shorty={
 				popup.find('#failure').hide();
 				popup.find('#hourglass').fadeIn('fast');
 				var dfd = new $.Deferred();
+				// note: this is a jsonp request, cause the static backend provider might be a separate host
+				// to escape the cross domain protection by browsers we use the jsonp pattern
 				$.ajax({
 					// the '0000000000' below is a special id recognized for testing purposes
-					url:         target+'0000000000',
-					cache:       false,
-					crossDomain: true, // required when using a "short named domain" and server side url rewriting
-					data:        { },
-					dataType:    'json'
+					url:           target+'0000000000',
+					cache:         false,
+					crossDomain:   true, // required when using a "short named domain" and server side url rewriting
+					data:          { },
+					dataType:      'jsonp',
+					jsonp:         false,
+					jsonpCallback: 'verifyStaticBackend'
 				}).pipe(
 					function(response){return OC.Shorty.Ajax.eval(response)},
 					function(response){return OC.Shorty.Ajax.fail(response)}
