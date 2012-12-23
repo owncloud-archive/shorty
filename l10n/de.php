@@ -142,7 +142,8 @@ $TRANSLATIONS = array(
 "Sort ascending"                                                         => "aufsteigend sortieren",
 "Sort descending"                                                        => "absteigend sortieren",
 "Source url"                                                             => "Quell-Url",
-"Specify a static base url…"                                             => "Lege eine statische Basis-Url fest…",
+"Specify a static base url…"                                             => "Lege eine statische Basis-URL fest…",
+"Static backend: base url verification"                                  => "Statisches Backend: Verifizierung der Basis-URL",
 "Status"                                                                 => "Status",
 "Status change for shorty with id '%s' saved"                            => "Statusänderung für Shorty mit Kennung '%s' gespeichert",
 "Target"                                                                 => "Ziel",
@@ -168,6 +169,7 @@ $TRANSLATIONS = array(
 "Use it in web pages by referencing or embedding"                        => "Zur Nutzung in Webseiten durch Referenzieren oder Einbinden",
 "Use the '%s' button above or the fine 'Shortlet'"                       => "Nutze den Knopf '%s' oben oder das tolle 'Shortlet'",
 "Verify by clicking…"                                                    => "Überprüfen durch klicken…",
+"Verification failed"                                                    => "Verifizierung fehlgeschlagen",
 
 "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s"             => "%s\Nachricht(Code): %s (%s)\nDatei(Zeile): %s (%s)\nInfo: %%s",
 
@@ -249,7 +251,7 @@ $TRANSLATIONS = array(
 "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences."
 =>"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als zusätzliche Alternative zu den verfügbaren Backends angeboten.",
 "Sorry, but your setup appears not to be working correctly yet!"
-=>"Entschuldigung, aber die Konfiguration scheint noch nicht korrekt zu funktionieren!",
+=>"Die Konfiguration scheint noch nicht korrekt zu funktionieren!",
 "Please check your setup and make sure that the configured base url is indeed correct."
 =>"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die konfigurierte Basis-Url wirklich korrekt ist.",
 "Make sure that all requests to it are somehow mapped to Shortys relay service."
