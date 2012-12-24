@@ -1467,9 +1467,8 @@ OC.Shorty={
 					).done(dfd.resolve).fail(dfd.reject)
 				}else{
 					// no targt given: show user where to fill in target
-					$.when(
-						$('#shorty #backend-static #backend-static-base').effect('pulsate')
-					).done(dfd.resolve).fail(dfd.reject)
+					$('#shorty #backend-static #backend-static-base').effect('pulsate');
+					dfd.reject();
 				}
 				return dfd.promise();
 			}, // OC.Shorty.Action.Setting.verify
@@ -1495,7 +1494,8 @@ OC.Shorty={
 					data:          { },
 					dataType:      'jsonp',
 					jsonp:         false,
-					jsonpCallback: 'verifyStaticBackend'
+					jsonpCallback: 'verifyStaticBackend',
+					timeout:       6000 // to catch silent failures, like a 404
 				}).pipe(
 					function(response){return OC.Shorty.Ajax.eval(response)},
 					function(response){return OC.Shorty.Ajax.fail(response)}
