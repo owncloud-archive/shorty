@@ -59,7 +59,7 @@ try
 		':user'   => OCP\User::getUser ( ),
 		':id'     => $p_id,
 		':status' => $p_status  ?        $p_status          : '',
-		':title'  => $p_title   ? substr($p_title,  0,  80) : '',
+		':title'  => $p_title   ? substr($p_title,  0,1024) : '',
 		':target' => $p_target  ? substr($p_target, 0,4096) : '',
 		':notes'  => $p_notes   ? substr($p_notes,  0,4096) : '',
 		':until'  => $p_until   ?        $p_until           : null,

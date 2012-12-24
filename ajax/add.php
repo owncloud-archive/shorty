@@ -68,7 +68,7 @@ try
 		':user'    => OCP\User::getUser(),
 		':id'      => $p_id,
 		':status'  => $p_status  ?        $p_status          : '',
-		':title'   => $p_title   ? substr($p_title,  0,  80) : '',
+		':title'   => $p_title   ? substr($p_title,  0,1024) : '',
 		':favicon' => $p_favicon ? substr($p_favicon,0,1024) : '',
 		':source'  => $p_source  ?        $p_source          : '',
 		':target'  => $p_target  ? substr($p_target, 0,4096) : '',
