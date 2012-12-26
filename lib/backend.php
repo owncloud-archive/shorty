@@ -26,7 +26,16 @@
 
 /**
  * @file lib/backend.php
- * Routines to use remote (online) shortening services as backends in a local workflow
+ * Routines to use remote (online) shortening services as backends for the local workflow
+ * Currently implemented backends are:
+ * default: just a dummy, no backend used
+ * static:  a passive, static backend typically based on rewriting rules
+ * bitly:   the bit.ly service
+ * cligs:   the cli.gs service
+ * isgd:    the is.gd service
+ * google:  the google shortening service
+ * tinycc:  the tiny.cc service
+ * tinyurl: the famous ti.ny service
  * @author Christian Reiner
  */
 
