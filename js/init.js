@@ -26,6 +26,10 @@
 /**
  * @file js/init.js
  * @brief Client side initialization of desktop actions
+ * @description
+ * This file takes care of initializing all activities required by the app to
+ * work as expected, namely reactions to events like mouse cicks, keyboard 
+ * presses and the like.
  * @author Christian Reiner
  */
 

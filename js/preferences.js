@@ -26,7 +26,12 @@
 /**
  * @file js/preferences.js
  * @brief Client side activity initialization for the user preferences dialog
- * @author Christian Reiner
+ * @description
+ * This script takes care if initializing the client side reactions to events
+ * during an opened (user) preferences dialog. Shorty follows the paradigm of
+ * change-and-store, so all inputs and changes are stored right away, no
+ * specific 'save' button has to be used, nor does it exist.
+ * @author Christian Reinerpreferences
  */
 
 $(document).ready(function(){

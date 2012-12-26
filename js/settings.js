@@ -26,6 +26,11 @@
 /**
  * @file js/settings.js
  * @brief Client side activity initialization for the system settings dialog
+ * @description
+ * This script takes care if initializing the client side reactions to events
+ * during an opened (system) settings dialog. Shorty follows the paradigm of
+ * change-and-store, so all inputs and changes are stored right away, no
+ * specific 'save' button has to be used, nor does it exist.
  * @author Christian Reiner
  */
 

@@ -26,6 +26,11 @@
 /**
  * @file js/shorty.js
  * @brief Client side activity library
+ * @description
+ * This script codes all most of internal, client side logic implemented by the
+ * Shorty app. That logic may be extended by plugins registering into the app.
+ * A few internal functions are called via such plugin hooks too, this allows
+ * to use a uniform call scheme by plugins and this main app.
  * @author Christian Reiner
  */
 

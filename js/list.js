@@ -26,6 +26,10 @@
 /**
  * @file js/list.js
  * @brief Client side desktop initialization for normal calls of the plugin
+ * @description
+ * This script takes care of initializing the list of Shortys. Creation of that
+ * list requires a fully initialized app, so it takes care that process has
+ * finished before initializing the list creation.
  * @author Christian Reiner
  */
 

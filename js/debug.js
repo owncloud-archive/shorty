@@ -26,7 +26,8 @@
 /**
  * @file js/debug.js
  * @brief Client side debugging methods
- * The inclusion of these definitions trigger additional debug outputs
+ * @description
+ * The (manual) inclusion of these definitions trigger additional debug output.
  * @author Christian Reiner
  */
 
