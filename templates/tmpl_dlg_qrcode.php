@@ -38,7 +38,7 @@
 <div id="dialog-qrcode" style="display:none;">
 	<fieldset class="">
 		<legend><?php echo OC_Shorty_L10n::t("Shorty as QRCode");?>:</legend>
-		<input id="qrcode-url" type="hidden" value="<?php echo $_['qrcode-url']; ?>">
+		<input id="qrcode-ref" type="hidden" value="<?php echo $_['qrcode-ref']; ?>">
 		<div id='qrcode-img'>
 			<div class="usage-explanation">
 				<?php echo OC_Shorty_L10n::t("This 2d barcode encodes the url pointing to this Shorty");?>.

@@ -1708,14 +1708,16 @@ OC.Shorty={
 								}
 							}
 						});
-						var qrcodeUrl=$('#jqibox fieldset #qrcode-url').val()+encodeURIComponent(entry.attr('data-source'));
-						$('#jqibox fieldset #payload').val(qrcodeUrl);
+						var qrcodeRef = $('#jqibox fieldset #qrcode-ref').val()+encodeURIComponent(entry.attr('data-id'));
+// 						var qrcodeRef = $('#jqibox fieldset #qrcode-ref').val()+encodeURIComponent(entry.attr('data-source'));
+						$('#jqibox fieldset #payload').val(qrcodeRef);
+						// try to pre-select the payload, so that it can be copied by a CTRL-C right away
 						$('#jqibox fieldset #payload').focus().select();
 						// full url to the qrcode image
-						$('#jqibox fieldset img').attr('src',qrcodeUrl);
+						$('#jqibox fieldset img').attr('src',qrcodeRef);
 						// download image when download button is clicked
 						$('#jqibox fieldset #download').click(function(){
-							window.location.href=qrcodeUrl+"&download=1";
+							window.location.href=qrcodeRef+"&download=1";
 						});
 						// switch to details when image is clicked
 						$('#jqibox fieldset img').click(function(){
@@ -1752,6 +1754,7 @@ OC.Shorty={
 							}
 						});
 						$('#jqibox fieldset #payload').val(mailBody);
+						// try to pre-select the payload, so that it can be copied by a CTRL-C right away
 						$('#jqibox fieldset #payload').focus().select();
 						break;
 
@@ -1781,6 +1784,7 @@ OC.Shorty={
 							}
 						});
 						$('#jqibox fieldset #payload').val(smsBody);
+						// try to pre-select the payload, so that it can be copied by a CTRL-C right away
 						$('#jqibox fieldset #payload').focus().select();
 						break;
 
@@ -1803,6 +1807,7 @@ OC.Shorty={
 							}
 						});
 						$('#jqibox fieldset #payload').val(clipboardBody);
+						// try to pre-select the payload, so that it can be copied by a CTRL-C right away
 						$('#jqibox fieldset #payload').focus().select();
 						break;
 					default:

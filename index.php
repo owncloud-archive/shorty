@@ -151,7 +151,8 @@ switch ($act)
 			// any additional actions registered via hooks that should be offered ?
 			$tmpl->assign ( 'shorty-actions', OC_Shorty_Hooks::requestActions() );
 			// the (remote) base url of the qrcode generator
-			$tmpl->assign ( 'qrcode-url', sprintf('%s?service=%s&url=',OCP\Util::linkToAbsolute("", "public.php"),'shorty_qrcode') );
+// 			$tmpl->assign ( 'qrcode-ref', sprintf('%s?service=%s&url=', OCP\Util::linkToAbsolute('', 'public.php'), 'shorty_qrcode') );
+			$tmpl->assign ( 'qrcode-ref', sprintf('%s?service=%s&id=',  OCP\Util::linkToAbsolute('', 'public.php'), 'shorty_qrcode') );
 			// available status options (required for select filter in toolbox)
 			$shorty_status['']=sprintf('- %s -',OC_Shorty_L10n::t('all'));
 			foreach ( OC_Shorty_Type::$STATUS as $status )

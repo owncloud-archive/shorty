@@ -710,8 +710,8 @@
 	background-color: transparent;
 }
 .shorty-embedded .shorty-grid td {
+	padding: 0.2em;
 	text-align: center;
-	vertical-align: middle;
 }
 .shorty-dialog label {
 	display: inline-block;
