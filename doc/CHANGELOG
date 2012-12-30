@@ -26,8 +26,10 @@ Changelog:
 
 * Fri Dec 31 2012 Christian Reiner: version 0.3.15
 Support for the postgresql database engine.
+The apps top controls panel can be hidden now and got an enhanced layout.
 Some style and layout corrections especially for webkit based browsers.
 Fixed validation of the static backend setup for cross domain situations.
+Better support for cross domain verification for the static backend configuration.
 * Sat Dec 15 2012 Christian Reiner: version 0.3.14
 Fixed big oops display of access times that gave the wrong month and day!
 * Wed Dec 11 2012 Christian Reiner: version 0.3.13
