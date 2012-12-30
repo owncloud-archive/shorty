@@ -87,7 +87,8 @@ OC.Shorty={
 					).done(function(){
 						dfd.resolve();
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-													.attr('src',OC.linkTo('shorty','img/actions/unshade.png'))
+													.attr('src',OC.linkTo('shorty','img/actions/unshade.png'));
+						OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
 					}).fail(dfd.reject)}
 				else dfd.resolve();
 				return dfd.promise();
@@ -107,7 +108,8 @@ OC.Shorty={
 					).done(function(){
 						dfd.resolve();
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-													.attr('src',OC.linkTo('shorty','img/actions/shade.png'))
+													.attr('src',OC.linkTo('shorty','img/actions/shade.png'));
+						OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
 					}).fail(dfd.reject)}
 				else dfd.resolve();
 				return dfd.promise();

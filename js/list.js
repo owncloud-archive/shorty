@@ -36,8 +36,19 @@
 $(document).ready(function(){
 	// initialize desktop
 	$.when(
+		// prepare the controls panel
 		OC.Shorty.WUI.Controls.init()
 	).then(function(){
+		// hide or show the controls panel in a persistent manner
+		$.when(
+			OC.Shorty.Action.Preference.get('controls-panel-visible')
+		).done(function(pref){
+			if (pref['controls-panel-visible'])
+				OC.Shorty.WUI.Controls.show();
+			else
+				OC.Shorty.WUI.Controls.hide();
+		});
+		// build and show list of Shortys
 		OC.Shorty.WUI.List.build();
   });
 }); // document.ready

@@ -59,6 +59,7 @@ class OC_Shorty_Type
 	const FLOAT       = 'float';
 	const DATE        = 'date';
 	const TIMESTAMP   = 'timestamp';
+	const BOOLEAN     = 'boolean';
 	// a list of all valid list sorting codes
 	static $SORTING = array (
 		''  =>'created DESC', // default
@@ -72,16 +73,17 @@ class OC_Shorty_Type
 		'ua'=>'target',   'ud'=>'target DESC' );
 	// a list of all valid user preferences
 	static $PREFERENCE = array (
-		'backend-type'        => OC_Shorty_Type::STRING,
-		'backend-static-base' => OC_Shorty_Type::URL,
-		'backend-bitly-user'  => OC_Shorty_Type::STRING,
-		'backend-bitly-key'   => OC_Shorty_Type::STRING,
-		'backend-google-key'  => OC_Shorty_Type::STRING,
-		'backend-tinycc-user' => OC_Shorty_Type::STRING,
-		'backend-tinycc-key'  => OC_Shorty_Type::STRING,
-		'backend-ssl-verify'  => OC_Shorty_Type::INTEGER,
-		'sms-control'         => OC_Shorty_Type::STRING,
-		'list-sort-code'      => OC_Shorty_Type::SORTKEY,
+		'backend-type'           => OC_Shorty_Type::STRING,
+		'backend-static-base'    => OC_Shorty_Type::URL,
+		'backend-bitly-user'     => OC_Shorty_Type::STRING,
+		'backend-bitly-key'      => OC_Shorty_Type::STRING,
+		'backend-google-key'     => OC_Shorty_Type::STRING,
+		'backend-tinycc-user'    => OC_Shorty_Type::STRING,
+		'backend-tinycc-key'     => OC_Shorty_Type::STRING,
+		'backend-ssl-verify'     => OC_Shorty_Type::INTEGER,
+		'sms-control'            => OC_Shorty_Type::STRING,
+		'list-sort-code'         => OC_Shorty_Type::SORTKEY,
+		'controls-panel-visible' => OC_Shorty_Type::BOOLEAN,
 	);
 	// valid status for entries
 	static $STATUS = array (
@@ -259,6 +261,14 @@ class OC_Shorty_Type
 				elseif ( ! $strict)
 					return NULL;
 				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+
+			case self::BOOLEAN:
+				if ( OC_Shorty_Tools::toBoolean(trim($value),$strict) )
+					return TRUE;
+				elseif ( ! $strict)
+					return FALSE;
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+
 		} // switch $type
 		throw new OC_Shorty_Exception ( "unknown request argument   type '%s'", array($type) );
 	} // function validate
@@ -319,6 +329,10 @@ class OC_Shorty_Type
 
 			case self::DATE:
 				return date ( 'Y-m-d', self::validate($value,OC_Shorty_Type::DATE) );
+
+			case self::BOOLEAN:
+				return OC_Shorty_Tools::toBoolean(trim($value)) ? TRUE : FALSE;
+
 		} // switch $type
 		throw new OC_Shorty_Exception ( "unknown request argument   type '%s'", array($type) );
 	} // function normalize
