@@ -1446,29 +1446,29 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.Action.Setting.set
 			/**
-			 * @object OC.Shorty.Action.Setting.popup
+			 * @object OC.Shorty.Action.Setting.Popup
 			 * @brief A persistent object representing a popup dialog
 			 * @author Christian Reiner
 			 */
-			popup:{},
+			Popup:{},
 			/**
 			 * @method OC.Shorty.Action.Setting.verify
 			 * @brief Controls the verification of the current setting of the static backends base url.
 			 * @author Christian Reiner
 			 */
 			verify:function(){
-				if (!OC.Shorty.Action.Setting.popup.dialog){
-					OC.Shorty.Action.Setting.popup=$('#shorty-fieldset #dialog-verification');
-					OC.Shorty.Action.Setting.popup.dialog({show:'fade',autoOpen:false,modal:true});
-					OC.Shorty.Action.Setting.popup.dialog('option','minHeight',290 );
-					OC.Shorty.Action.Setting.popup.dialog('option','minWidth',400 );
+				if (!OC.Shorty.Action.Setting.Popup.dialog){
+					OC.Shorty.Action.Setting.Popup=$('#shorty-fieldset #dialog-verification');
+					OC.Shorty.Action.Setting.Popup.dialog({show:'fade',autoOpen:false,modal:true});
+					OC.Shorty.Action.Setting.Popup.dialog('option','minHeight',290 );
+					OC.Shorty.Action.Setting.Popup.dialog('option','minWidth',400 );
 				}
 				var dfd = new $.Deferred();
 				var target=$('#shorty #backend-static #backend-static-base').val();
 				if (target){
 					// we have a target, make a request to it
 					$.when(
-						this.check(OC.Shorty.Action.Setting.popup,target)
+						this.check(OC.Shorty.Action.Setting.Popup,target)
 					).done(dfd.resolve).fail(dfd.reject)
 				}else{
 					// no targt given: show user where to fill in target
