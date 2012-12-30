@@ -266,7 +266,36 @@ class OC_Shorty_Tools
 		if ($beta && 80<=$OC_version[1])
 			$CP_version++;
 		return $CP_version;
-	}
+	} // function countShorties
+
+	/**
+	* @method OC_Shorty_Tools::toBoolean
+	* @brief Propper conversion of a value to boolean
+	* @param value boolean some value to be casted to boolean
+	* @return boolean the casted boolean value or NULL
+	* @access public
+	* @author Christian Reiner
+	*/
+	static function toBoolean ( $value, $strict=FALSE )
+	{
+		switch ( strtolower(trim($value)) )
+		{
+			case 1:
+			case '1':
+			case 'true':
+				return TRUE;
+			case 0:
+			case '0':
+			case 'false':
+				return FALSE;
+			default:
+				if ( $strict)
+					return NULL;
+				else
+					return FALSE;
+		} // switch
+	} // function toBoolean
+
 
 } // class OC_Shorty_Tools
 ?>
