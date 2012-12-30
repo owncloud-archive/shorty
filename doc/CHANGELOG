@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* Fri Dec 31 2012 Christian Reiner: version 0.3.15
+* Mon Dec 31 2012 Christian Reiner: version 0.3.15
 Changed supported OC version to 4.9 (OC-4.5).
 Support for the postgresql database engine.
 The apps top controls panel can be hidden now and got an enhanced layout.
