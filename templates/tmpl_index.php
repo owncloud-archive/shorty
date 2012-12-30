@@ -72,7 +72,7 @@
 		<div id="appsettings" class="popup topright hidden"></div>
 <?php } ?>
 		<!-- handle to hide/show the panel -->
-		<span class="shorty-handle shorty-handle-top"">
+		<span class="shorty-handle shorty-handle-top">
 			<img src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>" class="shorty-icon">
 		</span>
 	</span>
