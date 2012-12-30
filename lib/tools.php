@@ -278,6 +278,8 @@ class OC_Shorty_Tools
 	*/
 	static function toBoolean ( $value, $strict=FALSE )
 	{
+		if ( is_bool($value) )
+			return $value;
 		switch ( strtolower(trim($value)) )
 		{
 			case 1:
