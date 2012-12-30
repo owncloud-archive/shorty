@@ -190,35 +190,35 @@ class OC_Shorty_Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::STATUS:
 				if ( in_array($value,OC_Shorty_Type::$STATUS) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::SORTKEY:
 				if ( array_key_exists ( trim($value), self::$SORTING ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::SORTVAL:
 				if ( in_array ( trim($value), self::$SORTING ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::STRING:
 				if ( preg_match ( '/^.*$/x', str_replace("\n","\\n",$value) ) )
 					return str_replace("\n","\\n",$value);
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::URL:
 				$pattern = '/^'.self::$RX['URL_SCHEME'].'\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*'.self::$RX['DOMAIN_NAME'].'(\:'.self::$RX['NUMBER'].')*(\/($|.+)?)*$/';
@@ -226,7 +226,7 @@ class OC_Shorty_Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::PATH:
 				$pattern = '/^'.self::$RX['PATH'].'$/';
@@ -234,40 +234,40 @@ class OC_Shorty_Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::INTEGER:
 				if ( preg_match ( '/^'.self::$RX['NUMBER'].'$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::FLOAT:
 				if ( preg_match ( '/^'.self::$RX['NUMBER'].'(\.'.self::$RX['NUMBER'].')?$/', $value ) )
 					return $value;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::TIMESTAMP:
 				if ( preg_match ( '/^'.self::$RX['TIMESTAMP'].'$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::DATE:
 				if (FALSE!==($time=strtotime($value)))
 					return $time;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::BOOLEAN:
 				if ( OC_Shorty_Tools::toBoolean(trim($value),$strict) )
 					return TRUE;
 				elseif ( ! $strict)
 					return FALSE;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<sizeof($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 		} // switch $type
 		throw new OC_Shorty_Exception ( "unknown request argument   type '%s'", array($type) );
