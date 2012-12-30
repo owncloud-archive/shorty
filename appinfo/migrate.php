@@ -52,7 +52,7 @@ class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 			'idcol'=>'id'
 		);
 		$ids = $this->content->copyRows( $options );
-		$count = OC_Shorty_Tools::countShorties();
+		$count = OC_Shorty_Tools::countShortys();
 		// check for success
 		if(   (is_array($ids) && is_array($count))
 			&& (count($ids)==$count['sum_shortys']) )
@@ -101,7 +101,7 @@ class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 				break;
 		} // switch
 		// check for success by counting the generated entries
-		$count = OC_Shorty_Tools::countShorties();
+		$count = OC_Shorty_Tools::countShortys();
 		if(   (is_array($result) && is_array($count))
 		&& (count($result)==$count['sum_shortys']) )
 			return true;

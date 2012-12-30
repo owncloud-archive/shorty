@@ -234,7 +234,7 @@ class OC_Shorty_Tools
 	* @access public
 	* @author Christian Reiner
 	*/
-	static function countShorties ()
+	static function countShortys ()
 	{
 		$param = array
 		(
@@ -244,7 +244,7 @@ class OC_Shorty_Tools
 		$result = $query->execute($param);
 		$reply = $result->fetchAll();
 		return $reply[0];
-	} // function countShorties
+	} // function countShortys
 
 	/**
 	* @method OC_Shorty_Tools::CompatVersion
@@ -266,7 +266,7 @@ class OC_Shorty_Tools
 		if ($beta && 80<=$OC_version[1])
 			$CP_version++;
 		return $CP_version;
-	} // function countShorties
+	} // function CompatVersion
 
 	/**
 	* @method OC_Shorty_Tools::toBoolean
