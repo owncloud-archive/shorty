@@ -33,7 +33,7 @@
 .shorty-desktop {
 	display: inline-block;
 	position: absolute;
-	width: 100%;
+	width: 99%;
 	background: transparent;
 	text-align: left;
 	margin-top: 3.4em;
@@ -41,8 +41,57 @@
 }
 /* top bar, holding main control elements */
 .shorty-controls {
-	display: none;
 }
+.shorty-controls-left {
+	display: inline-block;
+	float: left;
+}
+.shorty-controls-right {
+	display: inline-block;
+	float: right;
+}
+.shorty-controls-center {
+	display: block;
+	width: 100%;
+	height: inherit;
+	line-height: 300%;
+	text-align: center;
+	vertical-align: bottom;
+	white-space: nowrap;
+}
+.shorty-controls-center span {
+	display: inline-block;
+	height: inherit;
+	vertical-align: bottom;
+}
+.shorty-controls-center span.shorty-value {
+	width: 2em;
+}
+/* the handle of the controls panel */
+.shorty-controls .shorty-handle img {
+	margin-top: 2px;
+	opacity: 0.6;
+}
+.shorty-controls .shorty-handle {
+	position: relative;
+	display: inline-block;
+	top: 2.8em;
+	right: -3.5em;
+	background: #f7f7f7;
+	z-index: 50;
+	border: 1px solid #bbb;
+	text-align: center;
+}
+.shorty-controls .shorty-handle-top {
+/* 	float: right; */
+	width: 24px;
+	height: 20px;
+	border-top: 0;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+	box-shadow: 0 2px 1px #777777;
+}
+/* the top notification area (debugging only) */
 .shorty-notification {
 	min-width: 300px;
 	text-align: center;
@@ -655,6 +704,12 @@
 	margin-right: 0.3em;
 	margin-left: 7.0em;
 }
+.shorty-embedded fieldset.shorty-collapsible span {
+	cursor: n-resize;
+}
+.shorty-embedded fieldset.shorty-collapsible.collapsed span {
+	cursor: s-resize;
+}
 .shorty-embedded fieldset.shorty-collapsible span:before {
 	content: url("../img/actions/shade.png");
 	margin-right: 0.3em;
@@ -667,12 +722,6 @@
 	margin-right: 0.3em;
 	vertical-align: baseline;
 	opacity: 0.7;
-}
-.shorty-embedded fieldset.shorty-collapsible span {
-	cursor: n-resize;
-}
-.shorty-embedded fieldset.shorty-collapsible.collapsed span {
-	cursor: s-resize;
 }
 .shorty-embedded fieldset.shorty-collapsible span {
 	margin: 0;

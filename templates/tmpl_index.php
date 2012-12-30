@@ -47,41 +47,50 @@
 </div>
 
 <!-- top control bar -->
-<div id="controls" class="shorty-controls" data-referrer="<?php if (array_key_exists('shorty-referrer',$_)) echo $_['shorty-referrer']; ?>">
-	<!-- button to add a new entry to list -->
-	<input type="button" id="add" value="<?php echo OC_Shorty_L10n::t('New Shorty'); ?>"/>
-	<!-- display label: number of entries in list -->
-	<span id="controls-sum-shortys">
-			<a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Number of entries') ?>:</a>
-			<a id="sum_shortys" class="shorty-value">
-				<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>"
-				     alt="<?php echo OC_Shorty_L10n::t('Loading') ?>..."/>
-			</a>
+<div id="controls" class="shorty-controls shorty-panel-visible" data-referrer="<?php if (array_key_exists('shorty-referrer',$_)) echo $_['shorty-referrer']; ?>">
+	<!-- controls: left area, buttons -->
+	<span class="shorty-controls-left">
+		<!-- button to add a new entry to list -->
+		<input type="button" id="add" value="<?php echo OC_Shorty_L10n::t('New Shorty'); ?>"/>
 	</span>
-	<!-- display label: total of clicks in list -->
-	<span id="controls-sum-clicks">
-			<a class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Total of clicks') ?>:</a>
-			<a id="sum_clicks" class="shorty-value">
-				<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>"
-				     alt="<?php echo OC_Shorty_L10n::t('Loading') ?>..." />
-			</a>
-	</span>
-	<!-- the 'home' button currently links to the entry in the OC app store -->
-	<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
-		<button id="controls-home" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Home') ?>">
-			<img class="svg" src="<?php echo OCP\Util::imagePath('core', 'places/home.svg'); ?>"
-				alt="<?php echo OC_Shorty_L10n::t('Home') ?>" />
-		</button>
-	</a>
+	<!-- controls: right area, buttons -->
+	<span class="shorty-controls-right">
+		<!-- the 'home' button currently links to the entry in the OC app store -->
+		<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
+			<button id="controls-home" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Home') ?>">
+				<img class="svg" src="<?php echo OCP\Util::imagePath('core', 'places/home.svg'); ?>"
+					alt="<?php echo OC_Shorty_L10n::t('Home') ?>" />
+			</button>
+		</a>
 <?php if (5<=OC_Shorty_Tools::CompatVersion(true)) { ?>
-	<!-- the internal settings button -->
-	<button id="controls-preferences" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Configuration') ?>">
-		<img class="svg" src="<?php echo OCP\Util::imagePath('core', 'actions/settings.svg'); ?>"
-		     alt="<?php echo OC_Shorty_L10n::t('Configuration') ?>" />
-	</button>
-	<!-- a container that will hold the preferences dialog -->
-	<div id="appsettings" class="popup topright hidden"></div>
+		<!-- the internal settings button -->
+		<button id="controls-preferences" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Configuration') ?>">
+			<img class="svg" src="<?php echo OCP\Util::imagePath('core', 'actions/settings.svg'); ?>"
+				alt="<?php echo OC_Shorty_L10n::t('Configuration') ?>" />
+		</button>
+		<!-- a container that will hold the preferences dialog -->
+		<div id="appsettings" class="popup topright hidden"></div>
 <?php } ?>
+		<!-- handle to hide/show the panel -->
+		<span class="shorty-handle shorty-handle-top"">
+			<img src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>" class="shorty-icon">
+		</span>
+	</span>
+	<!-- controls: center area, some  passive information -->
+	<span class="shorty-controls-center">
+		<!-- display label: number of entries in list -->
+		<span class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Number of entries') ?>:</span>
+		<span id="sum_shortys" class="shorty-value">
+			<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>"
+				alt="<?php echo OC_Shorty_L10n::t('Loading') ?>..."/>
+		</span>
+		<!-- display label: total of clicks in list -->
+		<span class="shorty-prompt"><?php echo OC_Shorty_L10n::t('Total of clicks') ?>:</span>
+		<span id="sum_clicks" class="shorty-value">
+			<img src="<?php echo OCP\Util::imagePath('core', 'loading.gif'); ?>"
+				alt="<?php echo OC_Shorty_L10n::t('Loading') ?>..." />
+		</span>
+	</span>
 	<!-- the dialogs, hidden by default -->
 	<?php require_once('tmpl_url_add.php'); ?>
 	<?php require_once('tmpl_url_edit.php'); ?>

@@ -54,42 +54,86 @@ OC.Shorty={
 		*/
 		Controls:{
 			/**
+			* @object OC.Shorty.WUI.Controls.Panel
+			* @brief Persistent reference to the top controls panel inside the apps content area
+			* @author Christian Reiner
+			*/
+			Panel: {},
+			Handle: {},
+			/**
 			* @method OC.Shorty.WUI.Controls.init
 			* @brief Initializes the control bar after it loaded
 			* @author Christian Reiner
 			*/
 			init: function(){
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("init controls");
-				var dfd = new $.Deferred();
-				$.when(
-					OC.Shorty.WUI.Controls.toggle()
-				).done(dfd.resolve)
-				return dfd.promise();
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("init controls panel");
+				// set presistent reference to the controls panel
+				OC.Shorty.WUI.Controls.Panel=$('#controls');
+				// toggle controls panel when handle is clicked
+				OC.Shorty.WUI.Controls.Panel.on('click','.shorty-handle',OC.Shorty.WUI.Controls.toggle);
 			}, // OC.Shorty.WUI.Controls.init
 			/**
+			* @method OC.Shorty.WUI.Controls.hide
+			* @brief Hide the controls panel if visible
+			* @author Christian Reiner
+			*/
+			hide: function(){
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide controls panel");
+				var dfd = new $.Deferred();
+				if (OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
+					$.when(
+						OC.Shorty.WUI.Controls.Panel.removeClass('shorty-panel-visible'),
+						$('#content,#controls').animate({top: "-="+OC.Shorty.WUI.Controls.Panel.css('height')}, 'fast')
+					).done(function(){
+						dfd.resolve();
+						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
+													.attr('src',OC.linkTo('shorty','img/actions/unshade.png'))
+					}).fail(dfd.reject)}
+				else dfd.resolve();
+				return dfd.promise();
+			},
+			/**
+			* @method OC.Shorty.WUI.Controls.show
+			* @brief Show the controls panel if not visible
+			* @author Christian Reiner
+			*/
+			show: function(){
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show controls panel");
+				var dfd = new $.Deferred();
+				if ( ! OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
+					$.when(
+						OC.Shorty.WUI.Controls.Panel.addClass('shorty-panel-visible'),
+						$('#content,#controls').animate({top: "+="+OC.Shorty.WUI.Controls.Panel.css('height'),}, 'fast')
+					).done(function(){
+						dfd.resolve();
+						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
+													.attr('src',OC.linkTo('shorty','img/actions/shade.png'))
+					}).fail(dfd.reject)}
+				else dfd.resolve();
+				return dfd.promise();
+			},
+			/**
 			* @method OC.Shorty.WUI.Controls.toggle
-			* @brief Toggles the control bar (open/close)
+			* @brief Toggles the visibility of the controls panel
 			* @author Christian Reiner
 			*/
 			toggle: function(){
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle controls");
-				var dfd = new $.Deferred();
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle controls panel");
 				OC.Shorty.WUI.Notification.hide();
+				var dfd = new $.Deferred();
 				// show or hide dialog
-				var controls = $('#controls');
-				if ( ! controls.is(':visible')){
+				if (OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
 					$.when(
-						controls.slideDown('slow'),
+						OC.Shorty.WUI.Controls.hide()
+					).done(dfd.resolve)}
+				else{
+					$.when(
+						OC.Shorty.WUI.Controls.show()
 						// required for standalone dialogs, all of them being embedded in the controls
- 						controls.css('overflow','visible')
-					).done(dfd.resolve)
-				}else{
-					$.when(
-						controls.slideUp('fast')
-					).done(dfd.resolve)
-				}
+// 						Shorty.WUI.Controls.panel.css('overflow','visible')
+					).done(dfd.resolve)}
 				return dfd.promise();
-			}, // OC.Shorty.WUI.Controls.toggle
+			} // OC.Shorty.WUI.Controls.toggle
 		}, // OC.Shorty.WUI.Controls
 		/**
 		* @brief Collection of methods implementing the central 'Desktop' where all real action takes place
@@ -615,12 +659,12 @@ OC.Shorty={
 				var dfd = new $.Deferred();
 				var hourglass = $('#desktop .shorty-hourglass');
 				if (show){
-				if (hourglass.is(':visible'))
-					dfd.resolve();
-				else
-					$.when(
-						hourglass.fadeIn('fast')
-					).done(dfd.resolve)
+					if (hourglass.is(':visible'))
+						dfd.resolve();
+					else
+						$.when(
+							hourglass.fadeIn('fast')
+						).done(dfd.resolve)
 				}else{
 					if (!hourglass.is(':visible'))
 						dfd.resolve();
