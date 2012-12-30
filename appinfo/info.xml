@@ -50,7 +50,7 @@ http://apps.owncloud.com/content/show.php/Shorty?content=150401
 	<version>0.3.15</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
-	<require>4</require>
+	<require>4.9</require>
 	<types>
 		<internet/>
 		<bookmark/>
