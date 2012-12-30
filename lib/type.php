@@ -270,7 +270,7 @@ class OC_Shorty_Type
 				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 		} // switch $type
-		throw new OC_Shorty_Exception ( "unknown request argument   type '%s'", array($type) );
+		throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
 	} // function validate
 
 	/**
@@ -293,7 +293,7 @@ class OC_Shorty_Type
 			if ( ! $strict)
 				return NULL;
 			else
-				throw new OC_Shorty_Exception ( "invalid value '%1\$s' fo  r type '%2\$s'", array($value,$type) );
+				throw new OC_Shorty_Exception ( "invalid value '%1\$s' for type '%2\$s'", array($value,$type) );
 		} // if
 		switch ( $type )
 		{
@@ -334,7 +334,7 @@ class OC_Shorty_Type
 				return OC_Shorty_Tools::toBoolean(trim($value)) ? TRUE : FALSE;
 
 		} // switch $type
-		throw new OC_Shorty_Exception ( "unknown request argument   type '%s'", array($type) );
+		throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
 	} // function normalize
 
 	/**
@@ -366,7 +366,7 @@ class OC_Shorty_Type
 				throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
 
 			default:
-				throw new OC_Shorty_Exception ( "unexpected http request   method '%1s'", array($_SERVER['REQUEST_METHOD']) );
+				throw new OC_Shorty_Exception ( "unexpected http request method '%1s'", array($_SERVER['REQUEST_METHOD']) );
 		}
   } // function req_argument
 
