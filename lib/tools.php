@@ -296,6 +296,5 @@ class OC_Shorty_Tools
 		} // switch
 	} // function toBoolean
 
-
 } // class OC_Shorty_Tools
 ?>
