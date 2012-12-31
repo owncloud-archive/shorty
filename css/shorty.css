@@ -183,22 +183,23 @@
 	color: #2F4F4F;
 }
 .shorty-vacuum .factoid {
-	font-size: 160%;
+	font-size: 200%;
 	font-weight: bold;
 	font-style: normal;
 	color: #808080;
+	margin: 1em 0;
 }
 .shorty-vacuum .suggestion {
-	font-size: 90%;
-	font-weight: light;
-	font-style: italic;
-	color: #000000;
+	font-size: 110%;
+	font-weight: bold;
+	color: #2F4F4F;
 }
 .shorty-vacuum .explanation {
 	margin: 1em 0 2em;
-	font-size: 100%;
+	font-size: 110%;
 	font-weight: normal;
 	font-style: normal;
+	font-style: italic;
 }
 .shorty-vacuum p {
 	margin: 0.6em 0 0.2em;
