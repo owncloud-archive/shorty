@@ -1048,8 +1048,12 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("vacuum list");
 				// list is empty if no row exists
 				if (0!=$('#list-of-shortys tbody').find('tr').length)
-					 $('#vacuum').fadeOut('fast');
-				else $('#vacuum').fadeIn('slow');
+					$('#vacuum').fadeOut('fast');
+				else{
+					// make sure the top controls panel is visible
+					OC.Shorty.WUI.Controls.show();
+					$('#vacuum').fadeIn('slow');
+				}
 			}, // OC.Shorty.WUI.List.vacuum
 			/**
 			* @class OC.Shorty.WUI.List.Toolbar
