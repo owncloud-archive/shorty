@@ -13,11 +13,13 @@
    height="16"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.2 r9819"
+   inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="hits.svg"
    inkscape:export-filename="/home/arkascha/Projects/ownCloud/shorty-trunk-tracking-plugin/img/actions/hits.png"
    inkscape:export-xdpi="90.709999"
    inkscape:export-ydpi="90.709999">
+  <title
+     id="title2983">hits</title>
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -28,7 +30,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="31.678384"
-     inkscape:cx="16.888532"
+     inkscape:cx="-1.8150734"
      inkscape:cy="10.187009"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -46,8 +48,47 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title>hits</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Christian Reiner</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Copyright 2012, Christian Reiner, Hamburg, Germany</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>Christian Reiner</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>hits action</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
       </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:prohibits
+           rdf:resource="http://creativecommons.org/ns#CommercialUse" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
     </rdf:RDF>
   </metadata>
   <g
@@ -56,8 +97,8 @@
      id="layer1"
      transform="translate(0,-1036.3622)">
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.79169589px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 0.48272359,1048.6373 c 1.48393571,-4.0406 2.23167121,-6.6607 2.23167121,-6.6607 l 2.279133,3.5986 1.6623682,-3.5671 1.8637511,5.0508 1.5196219,-7.6077 1.842634,4.0722 1.440839,-4.8614"
+       style="fill:none;stroke:#000000;stroke-width:0.9052307px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 0.53949098,1049.9064 c 1.72984122,-4.5317 2.60148522,-7.4702 2.60148522,-7.4702 l 2.656812,4.0359 1.937842,-4.0006 2.1725965,5.6646 1.7714413,-8.5322 2.14798,4.5671 1.679603,-5.4522"
        id="path2989"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc"
