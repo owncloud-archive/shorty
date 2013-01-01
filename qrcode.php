@@ -100,10 +100,10 @@ try
 		}
 		// force download / storage of image
 		header('Content-Type: image/png');
-		if ( dirname($_SERVER['HTTP_REFERER']) == dirname(OCP\Util::linkToAbsolute('','')) )
-			header ( sprintf('Content-Disposition: attachment; filename="qrcode-%s.png"',$result[0]['id']) );
-		else
+		if ( FALSE===strpos($_SERVER['HTTP_REFERER'],dirname(OCP\Util::linkToAbsolute('',''))) )
 			header ( sprintf('Content-Disposition: inline; filename="qrcode-%s.png"',$result[0]['id']) );
+		else
+			header ( sprintf('Content-Disposition: attachment; filename="qrcode-%s.png"',$result[0]['id']) );
 		// generate qrcode, regardless of who sends the request
 		QRcode::png ( $result[0]['source'] );
 	} // if $source
