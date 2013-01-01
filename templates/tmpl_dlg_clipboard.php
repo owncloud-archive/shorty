@@ -41,7 +41,7 @@
 		<div class="usage-explanation">
 			<?php echo OC_Shorty_L10n::t("The link below can be copied for usage apart");?>:
 		</div>
-		<input id="payload" readonly value="">
+		<input class="payload" readonly>
 		<div class="usage-instruction">
 			<?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-C");?></span>
 		</div>

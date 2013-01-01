@@ -39,7 +39,7 @@
 	<fieldset class="">
 		<legend><?php echo OC_Shorty_L10n::t("Shorty as QRCode");?>:</legend>
 		<input id="qrcode-ref" type="hidden" value="<?php echo $_['qrcode-ref']; ?>">
-		<div id='qrcode-img'>
+		<div class='qrcode-img'>
 			<div class="usage-explanation">
 				<?php echo OC_Shorty_L10n::t("This 2d barcode encodes the url pointing to this Shorty");?>.
 				<br>
@@ -54,13 +54,13 @@
 				</div>
 			</div>
 		</div>
-		<div id='qrcode-url' style="display:none;">
+		<div class='qrcode-ref' style="display:none;">
 			<div class="usage-explanation">
 				<?php echo OC_Shorty_L10n::t("This is the url referencing the QRCode shown before");?>.
 				<br>
-				<?php echo OC_Shorty_L10n::t("Copy and embed it into an img tag on some web page");?>.
+				<?php echo OC_Shorty_L10n::t("Embed the QRCode as an image into some web page using this url");?>.
 			</div>
-			<textarea id="payload" readonly></textarea>
+			<input class="payload" readonly>
 			<div class="usage-instruction">
 				<?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-C");?></span>
 				<br>
@@ -68,10 +68,11 @@
 			</div>
 			<hr>
 			<div class="usage-explanation">
-				<?php echo OC_Shorty_L10n::t("Alternatively get the image for printout or storage");?>:
+				<?php echo OC_Shorty_L10n::t("Alternatively the image can be downloaded for printout or storage");?>.
+				<?php echo OC_Shorty_L10n::t("That image can be used when writing documents or setting up web sites");?>:
 				<br>
 				<div style="text-align:center;">
-				<button id="download" style="margin:1.6em;" class="shorty-button">Download QRCode</button>
+				<button id="download" style="margin:1.2em;" class="shorty-button">Download QRCode</button>
 				</div>
 			</div>
 		</div>

@@ -46,7 +46,7 @@
 			<?php echo OC_Shorty_L10n::t("Unfortunately the implementation of this scheme is limited");?>,
 			<?php echo OC_Shorty_L10n::t("therefore the content must be copied manually");?>:
 		</div>
-		<textarea id="payload" readonly></textarea>
+		<textarea class="payload" readonly></textarea>
 		<div class="usage-instruction">
 			<?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:<span class="usage-token"><?php echo OC_Shorty_L10n::t("Ctrl-C");?></span>
 			<br>

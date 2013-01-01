@@ -1742,70 +1742,70 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action 'send via "+action+"' with entry '"+entry.attr('id')+"'");
 				switch (action){
 					case 'usage-qrcode':
+						// reference to the service offering the qrcode image
+						var qrcodeRef = $('#dialog-qrcode #qrcode-ref').val()+encodeURIComponent(entry.attr('data-id'));
+// 						var qrcodeRef = $('#dialog-qrcode #qrcode-ref').val()+encodeURIComponent(entry.attr('data-source'));
 						// take layout from hidden dialog template
 						var message=$('#dialog-qrcode').html();
 						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt({
-							state0:{
-								html:message,
-								buttons:{Ok:true},
-								position:{
-									container:'#dialog-share',
-									width:'auto',
-									arrow:'bl',
-									x:position.left+19,
-									y:position.top-332
-								}
-							}
-						});
-						var qrcodeRef = $('#jqibox fieldset #qrcode-ref').val()+encodeURIComponent(entry.attr('data-id'));
-// 						var qrcodeRef = $('#jqibox fieldset #qrcode-ref').val()+encodeURIComponent(entry.attr('data-source'));
-						$('#jqibox fieldset #payload').val(qrcodeRef);
-						// try to pre-select the payload, so that it can be copied by a CTRL-C right away
-						$('#jqibox fieldset #payload').focus().select();
-						// full url to the qrcode image
-						$('#jqibox fieldset img').attr('src',qrcodeRef);
-						// download image when download button is clicked
-						$('#jqibox fieldset #download').click(function(){
-							window.location.href=qrcodeRef+"&download=1";
-						});
-						// switch to details when image is clicked
-						$('#jqibox fieldset img').click(function(){
-							$('#jqibox fieldset #qrcode-img').hide();
-							$('#jqibox fieldset #qrcode-url').show();
+						var proceed=$.prompt(message,{
+							loaded:function(){
+								// show graphical qrcode first
+								$('.qrcode-ref').hide();
+								$('.qrcode-img').show();
+								// add qrcode image
+								$('.qrcode-img img').attr('src',qrcodeRef);
+								// add qrcode reference
+								$('.qrcode-ref .payload').val(qrcodeRef);
+								// switch to details when image is clicked
+								$('.qrcode-img img').on('click',function(){
+									$('.qrcode-img').hide();
+									$('.qrcode-ref').show();
+									$('.qrcode-ref .payload').select();
+								});
+								// download image when download button is clicked
+								$('.qrcode-ref #download').on('click',function(){
+// 									window.location.href=qrcodeRef+"&download=1";
+									window.location.href=qrcodeRef;
+								});
+							},
+							buttons:{Ok:true},
+							position:{
+								container:'#dialog-share',
+								width:'auto',
+								arrow:'bl',
+								x:position.left+19,
+								y:position.top-317
+							},
+							close:function(){$('.qrcode-img img').off('click');}
 						});
 						break;
 
 					case 'usage-email':
 						// we offer a 'mailto://' link for all devices supporting that or copying the address as a fallback
 						var mailSubject=entry.attr('data-title')||'';
-						var mailBody=entry.attr('data-notes')+"\n\n"+entry.attr('data-source');
+						var mailBody=entry.attr('data-notes')+"\n"+entry.attr('data-source');
 						var mailLink='mailto:?'
 									+'subject='+encodeURIComponent(mailSubject)
 									+'&body='+encodeURIComponent(mailBody);
 						// take layout from hidden dialog template
 						var message=$('#dialog-email').html();
 						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt({
-							state0:{
-								html:message,
-								buttons:{Ok:true,Cancel:false},
-								position:{
-									container:'#dialog-share',
-									width:'auto',
-									arrow:'bc',
-									x:position.left-206,
-									y:position.top-239
-								},
-								submit:function(e,v,m,f){
-									if(v) window.location=mailLink;
-									else  $.prompt.close();
-								}
+						var proceed=$.prompt(message,{
+							loaded:function(){$('.payload').val(mailBody).select();},
+							buttons:{Ok:true,Cancel:false},
+							position:{
+								container:'#dialog-share',
+								width:'auto',
+								arrow:'bc',
+								x:position.left-206,
+								y:position.top-239
+							},
+							submit:function(e,v,m,f){
+								if(v) window.location=mailLink;
+								else  $.prompt.close();
 							}
 						});
-						$('#jqibox fieldset #payload').val(mailBody);
-						// try to pre-select the payload, so that it can be copied by a CTRL-C right away
-						$('#jqibox fieldset #payload').focus().select();
 						break;
 
 					case 'usage-sms':
@@ -1816,49 +1816,40 @@ OC.Shorty={
 						// take layout from hidden dialog template
 						var message=$('#dialog-sms').html();
 						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt({
-							state0:{
-								html:message,
-								buttons:{Ok:true,Cancel:false},
-								position:{
-									container:'#dialog-share',
-									width:'auto',
-									arrow:'bc',
-									x:position.left-204,
-									y:position.top-299
-								},
-								submit:function(e,v,m,f){
-									if(v) window.location='sms:';
-									else  $.prompt.close();
-								}
+						var proceed=$.prompt(message,{
+							loaded:function(){$('.payload').val(smsBody).select();},
+							buttons:{Ok:true,Cancel:false},
+							position:{
+								container:'#dialog-share',
+								width:'auto',
+								arrow:'bc',
+								x:position.left-204,
+								y:position.top-299
+							},
+							submit:function(e,v,m,f){
+								if(v) window.location='sms:';
+								else  $.prompt.close();
 							}
 						});
-						$('#jqibox fieldset #payload').val(smsBody);
-						// try to pre-select the payload, so that it can be copied by a CTRL-C right away
-						$('#jqibox fieldset #payload').focus().select();
 						break;
 
 					case 'usage-clipboard':
 						// take layout from hidden dialog template
 						var clipboardBody=entry.attr('data-source');
+						// take layout from hidden dialog template
 						var message=$('#dialog-clipboard').html();
 						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt({
-							state0:{
-								html:message,
-								buttons:{Ok:true},
-								position:{
-									container:'#dialog-share',
-									width:'auto',
-									arrow:'br',
-									x:position.left-428,
-									y:position.top-138
-								}
+						var proceed=$.prompt(message,{
+							loaded:function(){$('.payload').val(clipboardBody).select();},
+							buttons:{Ok:true},
+							position:{
+								container:'#dialog-share',
+								width:'auto',
+								arrow:'br',
+								x:position.left-428,
+								y:position.top-138
 							}
 						});
-						$('#jqibox fieldset #payload').val(clipboardBody);
-						// try to pre-select the payload, so that it can be copied by a CTRL-C right away
-						$('#jqibox fieldset #payload').focus().select();
 						break;
 					default:
 						if (OC.Shorty.Debug) OC.Shorty.Debug.log("usage action '"+action+"' is disabled, refusing to comply");

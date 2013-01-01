@@ -45,7 +45,7 @@
 				<?php echo OC_Shorty_L10n::t("Alternatively the link can be copied into a message manually");?>:
 			</span>
 		</div>
-		<textarea id="payload" readonly></textarea>
+		<textarea class="payload" readonly></textarea>
 		<div class="usage-instruction">
 			<?php echo OC_Shorty_L10n::t("Copy to clipboard");?>:
 			<span class="usage-token">
