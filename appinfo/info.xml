@@ -47,7 +47,7 @@ open in the browser will be offered to be added to the list of existing shorties
 For more information see: 
 http://apps.owncloud.com/content/show.php/Shorty?content=150401
 	</description>
-	<version>0.3.15</version>
+	<version>0.3.16</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
 	<require>4.9</require>
