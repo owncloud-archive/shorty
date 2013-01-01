@@ -71,6 +71,7 @@
 .shorty-controls .shorty-handle img {
 	margin-top: 2px;
 	opacity: 0.6;
+	cursor: inherit;
 }
 .shorty-controls .shorty-handle {
 	position: relative;
@@ -81,6 +82,7 @@
 	z-index: 50;
 	border: 1px solid #bbb;
 	text-align: center;
+	cursor: pointer;
 }
 .shorty-controls .shorty-handle-top {
 /* 	float: right; */
