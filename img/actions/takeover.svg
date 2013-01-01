@@ -29,7 +29,7 @@
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title>takeover</dc:title>
-        <dc:date>28.10.2012</dc:date>
+        <dc:date />
         <dc:creator>
           <cc:Agent>
             <dc:title>Christian Reiner</dc:title>
@@ -37,7 +37,7 @@
         </dc:creator>
         <dc:rights>
           <cc:Agent>
-            <dc:title>Copyiright 2012 Christian Reiner</dc:title>
+            <dc:title>Copyiright 2012, Christian Reiner, Hamburg, Germany</dc:title>
           </cc:Agent>
         </dc:rights>
         <dc:publisher>
@@ -47,26 +47,29 @@
         </dc:publisher>
         <dc:subject>
           <rdf:Bag>
-            <rdf:li>action takeover</rdf:li>
+            <rdf:li>takeover</rdf:li>
+            <rdf:li>action</rdf:li>
           </rdf:Bag>
         </dc:subject>
         <cc:license
-           rdf:resource="http://artlibre.org/licence/lal" />
+           rdf:resource="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
       </cc:Work>
       <cc:License
-         rdf:about="http://artlibre.org/licence/lal">
+         rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
         <cc:permits
            rdf:resource="http://creativecommons.org/ns#Reproduction" />
         <cc:permits
            rdf:resource="http://creativecommons.org/ns#Distribution" />
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
         <cc:requires
            rdf:resource="http://creativecommons.org/ns#Notice" />
         <cc:requires
            rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:prohibits
+           rdf:resource="http://creativecommons.org/ns#CommercialUse" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
       </cc:License>
     </rdf:RDF>
   </metadata>
@@ -88,7 +91,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="1.6622351"
-     inkscape:cx="113.40039"
+     inkscape:cx="-124.23146"
      inkscape:cy="64.124368"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
