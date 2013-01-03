@@ -90,44 +90,44 @@
 			</th>
 			<th id="title">
 				<div style="display:none;">
-					<img id="sort-up" class="shorty-sorter" data-sort-code="ta" data-sort-type="string" data-sort-direction='asc'
+					<img id="sort-up" data-sort-code="ta" data-sort-type="string" data-sort-direction='asc'
 						alt="<?php echo OC_Shorty_L10n::t('up');   ?>" title="<?php echo OC_Shorty_L10n::t('Sort ascending');  ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/up.svg');   ?>">
-					<img id="sort-down" class="shorty-sorter" data-sort-code="td" data-sort-type="string" data-sort-direction='desc'
+						class="shorty-sorter svg" src="<?php echo OCP\Util::imagePath('shorty','actions/up.svg');   ?>">
+					<img id="sort-down" data-sort-code="td" data-sort-type="string" data-sort-direction='desc'
 						alt="<?php echo OC_Shorty_L10n::t('down'); ?>" title="<?php echo OC_Shorty_L10n::t('Sort descending'); ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/down.svg'); ?>">
+						class="shorty-sorter svg" src="<?php echo OCP\Util::imagePath('shorty','actions/down.svg'); ?>">
 					<input id='filter' type="text" value="">
 				</div>
 			</th>
 			<th id="target">
 				<div style="display:none;">
-					<img id="sort-up" class="shorty-sorter" data-sort-code="ua" data-sort-type="string" data-sort-direction='asc'
+					<img id="sort-up" data-sort-code="ua" data-sort-type="string" data-sort-direction='asc'
 						alt="<?php echo OC_Shorty_L10n::t('up');   ?>" title="<?php echo OC_Shorty_L10n::t('Sort ascending');  ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/up.svg');   ?>">
-					<img id="sort-down" class="shorty-sorter" data-sort-code="ud" data-sort-type="string" data-sort-direction='desc'
+						class="shorty-sorter svg" src="<?php echo OCP\Util::imagePath('shorty','actions/up.svg');   ?>">
+					<img id="sort-down" data-sort-code="ud" data-sort-type="string" data-sort-direction='desc'
 						alt="<?php echo OC_Shorty_L10n::t('down'); ?>" title="<?php echo OC_Shorty_L10n::t('Sort descending'); ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/down.svg'); ?>">
+						class="shorty-sorter svg" src="<?php echo OCP\Util::imagePath('shorty','actions/down.svg'); ?>">
 					<input id='filter' type="text" value="">
 				</div>
 			</th>
 			<th id="clicks">
 				<div style="display:none;">
-					<img id="sort-up"   class="shorty-sorter" data-sort-code="ha" data-sort-type="int" data-sort-direction='asc'
+					<img id="sort-up" data-sort-code="ha" data-sort-type="int" data-sort-direction='asc'
 						alt="<?php echo OC_Shorty_L10n::t('up');   ?>" title="<?php echo OC_Shorty_L10n::t('Sort ascending');  ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/up.svg');   ?>">
-					<img id="sort-down" class="shorty-sorter" data-sort-code="hd" data-sort-type="int" data-sort-direction='desc'
+						class="shorty-sorter svg" src="<?php echo OCP\Util::imagePath('shorty','actions/up.svg');   ?>">
+					<img id="sort-down" data-sort-code="hd" data-sort-type="int" data-sort-direction='desc'
 						alt="<?php echo OC_Shorty_L10n::t('down'); ?>" title="<?php echo OC_Shorty_L10n::t('Sort descending'); ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/down.svg'); ?>">
+						class="shorty-sorter svg" src="<?php echo OCP\Util::imagePath('shorty','actions/down.svg'); ?>">
 				</div>
 			</th>
 			<th id="until">
 				<div style="display:none;">
-					<img id="sort-up"   class="shorty-sorter" data-sort-code="da" data-sort-type="date" data-sort-direction='asc'
+					<img id="sort-up"  data-sort-code="da" data-sort-type="date" data-sort-direction='asc'
 						alt="<?php echo OC_Shorty_L10n::t('up');   ?>" title="<?php echo OC_Shorty_L10n::t('Sort ascending');  ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/up.svg');   ?>">
-					<img id="sort-down" class="shorty-sorter" data-sort-code="dd" data-sort-type="date" data-sort-direction='desc'
+						class="shorty-sorter svg" src="<?php echo OCP\Util::imagePath('shorty','actions/up.svg');   ?>">
+					<img id="sort-down" data-sort-code="dd" data-sort-type="date" data-sort-direction='desc'
 						alt="<?php echo OC_Shorty_L10n::t('down'); ?>" title="<?php echo OC_Shorty_L10n::t('Sort descending'); ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/down.svg'); ?>">
+						class="shorty-sorter svg" src="<?php echo OCP\Util::imagePath('shorty','actions/down.svg'); ?>">
 				</div>
 			</th>
 			<!-- status filter -->
@@ -176,24 +176,24 @@
 					</a>
 <?php } ?>
 				<a id="show"   title="<?php echo OC_Shorty_L10n::t('show');   ?>"   class="">
-					<img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t('show'); ?>"   title="<?php echo OC_Shorty_L10n::t('Show details'); ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/info.svg');   ?>" />
+					<img alt="<?php echo OC_Shorty_L10n::t('show'); ?>"   title="<?php echo OC_Shorty_L10n::t('Show details'); ?>"
+						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('shorty','actions/info.svg');   ?>" />
 				</a>
 				<a id="edit"   title="<?php echo OC_Shorty_L10n::t('edit');   ?>"   class="">
-					<img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t('modify'); ?>"   title="<?php echo OC_Shorty_L10n::t('Modify shorty'); ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('core','actions/rename.svg'); ?>" />
+					<img alt="<?php echo OC_Shorty_L10n::t('modify'); ?>"   title="<?php echo OC_Shorty_L10n::t('Modify shorty'); ?>"
+						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('core','actions/rename.svg'); ?>" />
 				</a>
 				<a id="del"    title="<?php echo OC_Shorty_L10n::t('delete'); ?>" class="">
-					<img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t('delete'); ?>" title="<?php echo OC_Shorty_L10n::t('Delete shorty'); ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('core','actions/delete.svg'); ?>" />
+					<img alt="<?php echo OC_Shorty_L10n::t('delete'); ?>" title="<?php echo OC_Shorty_L10n::t('Delete shorty'); ?>"
+						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('core','actions/delete.svg'); ?>" />
 				</a>
 				<a id="share"  title="<?php echo OC_Shorty_L10n::t('share');  ?>"   class="">
-					<img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t('share'); ?>"  title="<?php echo OC_Shorty_L10n::t('Share shorty'); ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('core','actions/share.svg');  ?>" />
+					<img alt="<?php echo OC_Shorty_L10n::t('share'); ?>"  title="<?php echo OC_Shorty_L10n::t('Share shorty'); ?>"
+						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('core','actions/share.svg');  ?>" />
 				</a>
 				<a id="open"   title="<?php echo OC_Shorty_L10n::t('open');   ?>"   class="">
-					<img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t('open'); ?>"   title="<?php echo OC_Shorty_L10n::t('Open target'); ?>"
-						class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/open.svg'); ?>" />
+					<img alt="<?php echo OC_Shorty_L10n::t('open'); ?>"   title="<?php echo OC_Shorty_L10n::t('Open target'); ?>"
+						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('shorty','actions/open.svg'); ?>" />
 				</a>
 				</span>
 			</td>
