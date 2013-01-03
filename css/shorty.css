@@ -86,6 +86,9 @@ html input, html textarea {
 /* the handle of the controls panel */
 .shorty-controls .shorty-handle img {
 	margin-top: 2px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	filter: alpha(opacity=60);
 	opacity: 0.6;
 	cursor: inherit;
 	width: 14px;
@@ -138,6 +141,9 @@ html input, html textarea {
 	float: right;
 	vertical-align: top;
 	margin: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	filter: alpha(opacity=60);
 	opacity: 0.6;
 }
 .shorty-config {
@@ -291,6 +297,9 @@ html input, html textarea {
 	cursor: pointer;
 	width: 16px;
 	height: 16px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+	filter: alpha(opacity=80);
 	opacity: 0.8;
 }
 .shorty-list thead tr#toolbar img#sort-up {
@@ -300,6 +309,9 @@ html input, html textarea {
 	cursor: s-resize;
 }
 .shorty-list thead tr#toolbar img.shorty-sorter {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	filter: alpha(opacity=60);
 	opacity: 0.6;
 }
 /* last column in the list, content usually invisible, except when hovered */
@@ -397,6 +409,9 @@ html input, html textarea {
 /* hide the content of the 'actions' column, except when being hovered */
 .shorty-list tbody tr td span.shorty-actions {
 	visibility: visible;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	filter: alpha(opacity=0);
 	opacity: 0;
 	transition: opacity 600ms;
 	-o-transition: opacity 600ms;
@@ -406,6 +421,9 @@ html input, html textarea {
 	-webkit-transition: opacity 600ms;
 }
 .shorty-list tbody tr:hover td span.shorty-actions {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	filter: alpha(opacity=100);
 	opacity: 1;
 	transition: opacity 600ms;
 	-o-transition: opacity 600ms;
@@ -464,12 +482,21 @@ html input, html textarea {
 	top: 3px;
 	margin-left: -19px;
 	padding: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	filter: alpha(opacity=0);
 	opacity: 0;
 }
 .shorty-list tbody tr.deleted:hover>#actions #del>img {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	filter: alpha(opacity=0);
 	opacity: 0;
 }
 .shorty-list tbody tr.deleted:hover>#actions #del:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	filter: alpha(opacity=100);
 	opacity: 1;
 }
 /* elements (rows) currently filtered out (toolbars column filter options) */
@@ -499,6 +526,9 @@ html input, html textarea {
 	width: 6.4em;
 	margin: 0;
 	padding: 0.2em;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+	filter: alpha(opacity=80);
 	opacity: 0.8;
 	border: 0 none;
 	font-size: 10px;
@@ -561,6 +591,9 @@ html input, html textarea {
 .shorty-dialog textarea:active {
 	background-color: #FFFFFF;
 	color: #333333;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	filter: alpha(opacity=100);
 	opacity: 1;
 }
 .shorty-dialog input {
@@ -742,12 +775,18 @@ html input, html textarea {
 	margin-right: 0.3em;
 	padding: 0;
 	vertical-align: baseline;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+	filter: alpha(opacity=70);
 	opacity: 0.7;
 }
 .shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
 	content: url("../img/actions/unshade.png");
 	margin-right: 0.3em;
 	vertical-align: baseline;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+	filter: alpha(opacity=70);
 	opacity: 0.7;
 }
 .shorty-embedded fieldset.shorty-collapsible span {
@@ -768,6 +807,9 @@ html input, html textarea {
 	background-color: #F4F4F4;
 }
 .shorty-embedded img.shorty-usage {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	filter: alpha(opacity=60);
 	opacity: 0.6;
 	margin: 0;
 	padding: 0;
@@ -775,6 +817,9 @@ html input, html textarea {
 	height: 64px;
 }
 .shorty-embedded img.shorty-usage.disabled {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+	filter: alpha(opacity=20);
 	opacity: 0.2;
 }
 .shorty-embedded img.shorty-usage:not(.disabled):hover {
@@ -830,9 +875,15 @@ html input, html textarea {
 	color: #000000;
 }
 .shorty-expired img {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+	filter: alpha(opacity=20);
 	opacity: 0.2;
 }
 .shorty-expired .shorty-dialog img {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	filter: alpha(opacity=100);
 	opacity: 1;
 }
 .shorty-expired #until {
