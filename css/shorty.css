@@ -47,13 +47,13 @@ html input, html textarea {
 
 /* the shorty desktop, a canvas, contains all elements except of those pushed into the header */
 .shorty-desktop {
-	display: inline-block;
-	position: absolute;
-	width: 99%;
+	position: relative;
+	width: 100%;
 	background: transparent;
 	text-align: left;
-	margin-top: 3.4em;
-	margin-left: 0.3em;
+	top: 3.3em;
+	margin: 0;
+	padding: 0;
 }
 /* top bar, holding main control elements */
 .shorty-controls {
@@ -276,6 +276,9 @@ html input, html textarea {
 	height: 100%;
 }
 /* the collapsible toolbar below the lists column title row */
+.shorty-list thead tr#toolbar div {
+	overflow:visible;
+}
 .shorty-list thead tr#toolbar span {
 	padding: 0;
 }
