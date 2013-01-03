@@ -11,44 +11,47 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="133.098pt"
    height="134.778pt"
-   id="svg3060"
+   id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="clipboard.svg">
+   sodipodi:docname="clipboard.svg"
+   inkscape:export-filename="/srv/www/htdocs/owncloud-4.5.5/apps/shorty/img/usage/clipboard.png"
+   inkscape:export-xdpi="34.619999"
+   inkscape:export-ydpi="34.619999">
   <title
-     id="title3553">clipboard</title>
+     id="title4007">clipboard</title>
   <metadata
-     id="metadata3089">
+     id="metadata31">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <cc:license
-           rdf:resource="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
         <dc:title>clipboard</dc:title>
         <dc:creator>
           <cc:Agent>
             <dc:title>Christian Reiner</dc:title>
           </cc:Agent>
         </dc:creator>
-        <dc:rights>
-          <cc:Agent>
-            <dc:title>Copyright 2012, Christian Reiner, Hamburg, Germany</dc:title>
-          </cc:Agent>
-        </dc:rights>
         <dc:publisher>
           <cc:Agent>
             <dc:title>Christian Reiner</dc:title>
           </cc:Agent>
         </dc:publisher>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Copyright 2012, Christian Reiner, Hamburg, Germany</dc:title>
+          </cc:Agent>
+        </dc:rights>
         <dc:subject>
           <rdf:Bag>
             <rdf:li>clipboard</rdf:li>
             <rdf:li>usage</rdf:li>
           </rdf:Bag>
         </dc:subject>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
       </cc:Work>
       <cc:License
          rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
@@ -80,17 +83,17 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1114"
-     id="namedview3087"
+     id="namedview29"
      showgrid="false"
      inkscape:zoom="1.4008221"
-     inkscape:cx="-57.802385"
+     inkscape:cx="83.186256"
      inkscape:cy="84.236252"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3060" />
+     inkscape:current-layer="svg2" />
   <defs
-     id="defs3062">
+     id="defs4">
     <linearGradient
        id="gradient0"
        gradientTransform="matrix(0.935714 0 0 0.971429 -260.198 309.044)"
@@ -104,141 +107,141 @@
          stop-color="#edf4fd"
          offset="0.00000000000"
          stop-opacity="0.52845044633"
-         id="stop3065" />
+         id="stop7" />
       <stop
          stop-color="#175bb3"
          offset="1.00000000000"
          stop-opacity="0.00000000000"
-         id="stop3067" />
+         id="stop9" />
     </linearGradient>
   </defs>
   <g
      id="layer1">
     <g
        id="g5381"
-       transform="translate(-5.94477e-06, 2.56921e-06)"
+       transform="translate(-0.474085, -0.480063)"
        fill="none">
       <path
          id="path4167"
-         transform="matrix(0.758527 0 0 0.768105 -8.17197e-15 -3.02746e-16)"
+         transform="matrix(0.758527 0 0 0.768105 0.474079 0.480066)"
          fill="#000000"
          d="M219.336 109.668C219.336 170.236 170.236 219.336 109.668 219.336C49.1001 219.336 0 170.236 0 109.668C0 49.1001 49.1001 0 109.668 0C170.236 0 219.336 49.1001 219.336 109.668Z" />
       <path
          id="path4169"
-         transform="matrix(0.709764 0 0 0.736855 5.34768 4.47751)"
+         transform="matrix(0.709764 0 0 0.736855 5.82176 4.95758)"
          fill="#000000"
          d="M219.336 109.668C219.336 170.236 170.236 219.336 109.668 219.336C49.1001 219.336 0 170.236 0 109.668C0 49.1001 49.1001 0 109.668 0C170.236 0 219.336 49.1001 219.336 109.668Z" />
       <g
          id="text4182"
-         transform="translate(66.8213, 30.5499)"
+         transform="translate(0.474085, 0.480063)"
          fill="none" />
       <path
          id="path4171"
-         transform="matrix(0.758527 0 0 0.758527 5.33866 4.46647)"
+         transform="matrix(0.758527 0 0 0.758527 5.81274 4.94654)"
          fill="url(#gradient0)"
          d="M102.625 0C45.9507 0 0 47.725 0 106.562C0 110.315 0.1979 114.004 0.5625 117.656C50.6291 136.382 127.144 150.025 205.25 107.062C205.251 106.896 205.25 106.73 205.25 106.562C205.25 47.725 159.299 0 102.625 0Z" />
     </g>
     <g
        id="g4549"
-       transform="translate(42.322, 7.02379)"
+       transform="translate(35.322, 37.3695)"
        fill="none">
       <g
          id="g4542"
-         transform="translate(-3.5, 49.2276)"
+         transform="translate(-8.88178e-15, 15.3818)"
          fill="none">
         <rect
            id="rect812"
-           transform="translate(3.5, 3.5)"
+           transform="translate(13.9215, -7.70326)"
            fill="none"
            stroke="#ffffff"
            stroke-width="7.00000000000"
            stroke-linecap="butt"
            stroke-linejoin="round"
-           width="52.59049680000pt"
-           height="52.21751680000pt"
-           rx="2.07274704000pt"
-           ry="2.07274704000pt" />
+           width="54.02653413772pt"
+           height="60.50944627932pt"
+           rx="2.12934551923pt"
+           ry="2.40189084724pt" />
         <path
            id="path842"
-           transform="translate(10.9597, 16.8727)"
+           transform="translate(21.5849, 7.79297)"
            fill="none"
            stroke="#ffffff"
            stroke-width="7.00000000000"
            stroke-linecap="round"
            stroke-linejoin="round"
-           d="M0 0L49.8864 0" />
+           d="M0 0L51.2486 0" />
         <path
            id="path845"
-           transform="translate(10.9597, 29.7461)"
+           transform="translate(21.5849, 22.7106)"
            fill="none"
            stroke="#ffffff"
            stroke-width="7.00000000000"
            stroke-linecap="round"
            stroke-linejoin="round"
-           d="M0 0L49.8864 0" />
+           d="M0 0L51.2486 0" />
         <path
            id="path846"
-           transform="translate(10.9597, 42.6194)"
+           transform="translate(21.5849, 37.6281)"
            fill="none"
            stroke="#ffffff"
            stroke-width="7.00000000000"
            stroke-linecap="round"
            stroke-linejoin="round"
-           d="M0 0L49.8864 0" />
+           d="M0 0L51.2486 0" />
         <path
            id="path848"
-           transform="translate(10.8847, 55.4927)"
+           transform="translate(21.5078, 52.5457)"
            fill="none"
            stroke="#ffffff"
            stroke-width="7.00000000000"
            stroke-linecap="round"
            stroke-linejoin="round"
-           d="M0 0L27.6572 0" />
+           d="M0 0L28.4124 0" />
       </g>
       <g
          id="g886"
-         transform="translate(24.5258, 32.1333)"
+         transform="translate(30.1748, 0)"
          fill="none">
         <path
            id="path599"
-           transform="translate(1.56892, 48.6283)"
+           transform="translate(7.27534, 44.3219)"
            fill="#ffffff"
            stroke="#b3b3b3"
            stroke-width="3.13784003000"
            stroke-linecap="round"
            stroke-linejoin="round"
-           d="M16.3475 5.47447C0 17.0594 0 17.0594 0 17.0594L10.0728 0Z" />
+           d="M16.7939 6.34379C0 19.7684 0 19.7684 0 19.7684L10.3478 0Z" />
         <rect
            id="rect598"
-           transform="matrix(-0.911191 -0.824059 0.824059 -0.911191 17.3856 54.0244)"
+           transform="matrix(-0.861576 -0.87892 0.769855 -0.960212 23.5239 50.5748)"
            fill="#ffffff"
            stroke="#b3b3b3"
            stroke-width="3.13783836000"
            stroke-linecap="round"
            stroke-linejoin="round"
-           width="5.23702200000pt"
-           height="37.70656160000pt" />
+           width="5.68984158066pt"
+           height="41.46352535660pt" />
         <path
            id="path600"
-           transform="translate(4.47967, 60.1754)"
+           transform="translate(10.2656, 57.7026)"
            fill="#ffffff"
            stroke="#b3b3b3"
            stroke-width="2.31749964000"
            stroke-linecap="butt"
            stroke-linejoin="round"
-           d="M0.264548 0.337176C0.643913 -0.0822999 1.2915 -0.114817 1.71098 0.264548C2.13045 0.643913 2.16297 1.2915 1.7836 1.71098C1.40424 2.13045 0.756651 2.16297 0.337175 1.7836C-0.0823005 1.40424 -0.114816 0.756651 0.264548 0.337176Z" />
+           d="M0.271772 0.390718C0.661496 -0.0953689 1.32677 -0.13305 1.7577 0.306557C2.18862 0.746164 2.22203 1.49658 1.8323 1.98268C1.44258 2.46876 0.777312 2.50644 0.346382 2.06683C-0.084548 1.62723 -0.117951 0.876804 0.271772 0.390718Z" />
         <rect
            id="rect601"
-           transform="matrix(-0.911191 -0.824059 0.824059 -0.911191 56.463 11.5345)"
+           transform="matrix(-0.861576 -0.87892 0.769855 -0.960212 63.6684 1.33771)"
            fill="#ffffff"
            stroke="#b3b3b3"
            stroke-width="3.13783836000"
            stroke-linecap="butt"
            stroke-linejoin="round"
-           width="5.97020528000pt"
-           height="3.24695360000pt"
-           rx="1.64633232000pt"
-           ry="1.62347680000pt" />
+           width="6.48641961924pt"
+           height="3.57046989204pt"
+           rx="1.78868259288pt"
+           ry="1.78523494602pt" />
       </g>
     </g>
   </g>
