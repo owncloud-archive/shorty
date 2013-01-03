@@ -63,14 +63,6 @@ not feel fit enough in other languages to create a translation myself. So I
 certainly welcome any assistance in that aspect. The effort consists of editing
 one single file, take a look at the german example in file l10n/de.php. 
 
-* Usage of svg icons instead of png graphics:
-I created all icons in svg format. ownCloud implements a mechanism to use those
-in browsers supporting svg directly. However I did not yet figure out how to
-use that feature without adding too much scripting overhead. Is it possible
-to reference icons the ownCloud way directly in a php based template, without
-the need to explicit handling via javascript ?
-I wish a better API documentation would exist for ownCloud !
-
 * Localization for the date picker fields
 Currently date inputs (expiration date) are not validated explicitly.
 A number of formats work, are accepted correct, but there is no localization

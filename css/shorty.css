@@ -300,9 +300,6 @@
 .shorty-list thead tr#titlebar.shorty-clicked th:not(#actions) span {
 	cursor: n-resize;
 }
-.shorty-list thead tr#titlebar img {
-	opacity: 0.7;
-}
 /* scrolling lists have a scrollbar INSIDE the tbody */
 .shorty-list.scrollingTable {
 	display: block;
@@ -749,6 +746,8 @@
 	opacity: 0.6;
 	margin: 0;
 	padding: 0;
+	width: 64px;
+	height: 64px;
 }
 .shorty-embedded img.shorty-usage.disabled {
 	opacity: 0.2;
@@ -794,6 +793,8 @@
 	background: transparent;
 	vertical-align: baseline;
 	padding: 1px;
+	width: 16px;
+	height: 16px;
 }
 /* dim entries with expired 'until' dates */
 .shorty-expired {
@@ -852,7 +853,7 @@
 	padding: 0;
 }
 .shorty-close-button img {
-	vertical-align: baseline;
+	vertical-align: middle;
 	margin: 2px;
 	padding: 0;
 }

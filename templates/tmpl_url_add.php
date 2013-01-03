@@ -40,8 +40,8 @@
 		<legend class="">
 			<a id="close" class="shorty-close-button"
 				title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
-				<img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
-					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
+				<img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>" class="svg"
+					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg');  ?>">
 			</a>
 			<span class="heading"><?php echo OC_Shorty_L10n::t('Add a new shorty').':'; ?></span>
 		</legend>
@@ -51,16 +51,16 @@
 		<label for="meta"><img id="busy" height="12px" src="<?php echo OCP\Util::imagePath('shorty', 'loading-led.gif'); ?>"></label>
 		<span id="meta" class="shorty-meta">
 			<span class="shorty-value">
-				<img id="staticon"  class="shorty-icon" width="16px"
+				<img id="staticon"  class="shorty-icon" width="16px" class="svg"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 					data="<?php echo OCP\Util::imagePath('shorty', 'status/neutral.png'); ?>">
-				<img id="schemicon" class="shorty-icon" width="16px"
+				<img id="schemicon" class="shorty-icon" width="16px" class="svg"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-				<img id="favicon"   class="shorty-icon" width="16px"
+				<img id="favicon"   class="shorty-icon" width="16px" class="svg"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-				<img id="mimicon"   class="shorty-icon" width="16px"
+				<img id="mimicon"   class="shorty-icon" width="16px" class="svg"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
 			</span>

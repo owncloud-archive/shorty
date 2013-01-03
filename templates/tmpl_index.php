@@ -37,7 +37,7 @@
 <!-- central notification area -->
 <div id="notification" class="shorty-notification">
 	<fieldset>
-	<img id="close" title="" src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
+	<img id="close" title="" class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg');  ?>">
 	<img id="symbol" title="" src="">
 	<span id="title"></span>
 	<img id="symbol" title="" src="">

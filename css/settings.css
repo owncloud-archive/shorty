@@ -30,7 +30,7 @@
  */
 
 #shorty img {
-	vertical-align: middle;
+	vertical-align: baseline;
 	margin: 0;
 	padding: 0;
 }

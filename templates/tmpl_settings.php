@@ -38,7 +38,8 @@
 <fieldset id="shorty-fieldset" class="personalblock">
 	<legend>
 		<span id="title" class="shorty-title">
-			<img class="" src="<?php echo OCP\Util::imagePath("shorty","shorty.png"); ?> ">
+			<img class="svg" style="vertical-align: bottom;"
+				src="<?php echo OCP\Util::imagePath("shorty","shorty.svg"); ?> ">
 			<a name="shorty"><strong>Shorty</strong></a>
 		</span>
 	</legend>

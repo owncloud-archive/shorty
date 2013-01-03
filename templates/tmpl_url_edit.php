@@ -40,8 +40,8 @@
 		<legend class="">
 			<a id="close" class="shorty-close-button"
 				title="<?php echo OC_Shorty_L10n::t('Close'); ?>">
-				<img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>"
-				     src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png');  ?>">
+				<img alt="<?php echo OC_Shorty_L10n::t('Close'); ?>" class="svg"
+				     src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg');  ?>">
 			</a>
 		<span class="heading"><?php echo OC_Shorty_L10n::t('Modify shorty').':'; ?></span>
 		</legend>
