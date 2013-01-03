@@ -358,9 +358,10 @@ OC.Shorty={
 								// grant submission 'cause the target was obviously valid before
 								OC.Shorty.WUI.Dialog.sharpen(dialog,true);
 								dialog.find('#title').focus();
-								dialog.find('#target').prop('readonly', true);
+// 								dialog.find('#target').prop('readonly','true');
+								dialog.find('#target').attr('readonly','true');
 								dialog.find('span.clickable.clicked').removeClass('clicked');
-								// clicking the target removes the 'readonly'
+								// clicking the target removes the 'readonly' property
 								dialog.find('span.clickable:not(.clicked),span.clickable:not(.clicked)>*')
 								      .on('click', {dialog: dialog}, function(){
 									// deactivate click reaction
@@ -370,7 +371,8 @@ OC.Shorty={
 									// suppress further clicking sensivity
 									dialog.find('span.clickable').addClass('clicked');
 									// make element writeable
-									$(this).prop('readonly',false).focus();
+// 									$(this).removeProp('readonly').focus();
+									$(this).removeAttr('readonly').focus();
 									// prevent submission when element has been altered
 									$(this).on('keypress', {dialog: dialog}, function(){
 										OC.Shorty.WUI.Dialog.sharpen(dialog,false);

@@ -30,12 +30,19 @@
  */
 
 /* prevent selection of icons and the like */
-html, html *:not(input):not(textarea) {
+html, html *:not(input), html *:not(textarea) {
 	user-select: none;
 	-o-user-select: none;
 	-ms-user-select: none;
-/* 	-moz-user-select: none; */
+	-moz-user-select: -moz-none;
 	-webkit-user-select: none;
+}
+html input, html textarea {
+	user-select: text;
+	-o-user-select: text;
+	-ms-user-select: text;
+	-moz-user-select: text;
+	-webkit-user-select: text;
 }
 
 /* the shorty desktop, a canvas, contains all elements except of those pushed into the header */
