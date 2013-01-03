@@ -380,6 +380,7 @@
 	-o-transition: opacity 600ms;
 	-ms-transition: opacity 600ms;
 	-moz-transition: opacity 600ms;
+	-khtml-transition: opacity 600ms;
 	-webkit-transition: opacity 600ms;
 }
 .shorty-list tbody tr:hover td span.shorty-actions {
@@ -388,6 +389,7 @@
 	-o-transition: opacity 600ms;
 	-ms-transition: opacity 600ms;
 	-moz-transition: opacity 600ms;
+	-khtml-transition: opacity 600ms;
 	-webkit-transition: opacity 600ms;
 }
 /* highlight hovered rows in the list */
@@ -397,6 +399,7 @@
 	-o-transition: background-color 600ms;
 	-ms-transition: background-color 600ms;
 	-moz-transition: background-color 600ms;
+	-khtml-transition: background-color 600ms;
 	-webkit-transition: background-color 600ms;
 }
 .shorty-list tbody tr:hover td:first-child {
@@ -941,10 +944,11 @@ div.jqimessage textarea {
 	cursor: text;
 }
 div.jqimessage input::selection,
-div.jqimessage input::-moz-selection,
-div.jqimessage input::-webkit-selection,
 div.jqimessage input::-o-selection,
-div.jqimessage input::-ms-selection{
+div.jqimessage input::-ms-selection,
+div.jqimessage input::-moz-selection,
+div.jqimessage input::-moz-selection,
+div.jqimessage input::-webkit-selection{
 	background: green;
 }
 div.jqimessage fieldset div#qrcode-img img.usage-qrcode {
