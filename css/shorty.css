@@ -91,7 +91,7 @@
 	border-top: 0;
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;
-	box-shadow: 0 2px 1px #777777;
+	box-shadow: 0 1px 2px #bbb;
 }
 /* the top notification area (debugging only) */
 .shorty-notification {
