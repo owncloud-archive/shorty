@@ -73,7 +73,7 @@
 <?php } ?>
 		<!-- handle to hide/show the panel -->
 		<span if="controls-handle" class="shorty-handle shorty-handle-top shorty-panel-visible">
-			<img src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>" class="shorty-icon">
+			<img class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg'); ?>" class="shorty-icon">
 		</span>
 	</span>
 	<!-- controls: center area, some  passive information -->

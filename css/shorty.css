@@ -72,6 +72,8 @@
 	margin-top: 2px;
 	opacity: 0.6;
 	cursor: inherit;
+	width: 14px;
+	height: 14px;
 }
 .shorty-controls .shorty-handle {
 	position: relative;
