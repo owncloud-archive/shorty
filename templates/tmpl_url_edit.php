@@ -62,16 +62,16 @@
 		</label>
 		<span id="meta" class="shorty-meta">
 			<span class="shorty-value">
-				<img id="staticon"  class="shorty-icon" width="16px"
+				<img id="staticon"  class="shorty-icon svg" width="16px"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 					data="<?php echo OCP\Util::imagePath('shorty', 'status/neutral.png'); ?>">
-				<img id="schemicon" class="shorty-icon" width="16px"
+				<img id="schemicon" class="shorty-icon svg" width="16px"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-				<img id="favicon"   class="shorty-icon" width="16px"
+				<img id="favicon"   class="shorty-icon svg" width="16px"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
-				<img id="mimicon"   class="shorty-icon" width="16px"
+				<img id="mimicon"   class="shorty-icon svg" width="16px"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>"
 					data="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
 			</span>

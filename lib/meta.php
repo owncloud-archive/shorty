@@ -211,13 +211,13 @@ class OC_Shorty_Meta
 				switch ($identifier)
 				{
 					case TRUE:
-						return OCP\Util::imagePath('shorty', 'status/good.png');
+						return OCP\Util::imagePath('shorty', 'status/good.svg');
 
 					case FALSE:
-						return OCP\Util::imagePath('shorty', 'status/bad.png');
+						return OCP\Util::imagePath('shorty', 'status/bad.svg');
 
 					default:
-						return OCP\Util::imagePath('shorty', 'status/neutral.png');
+						return OCP\Util::imagePath('shorty', 'status/neutral.svg');
 				} // switch identifier
 
 			case 'scheme':
