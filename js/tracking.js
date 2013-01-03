@@ -576,7 +576,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 				case 'granted': icon='good';    break;
 				default:        icon='blank';
 				} // switch
-				span.html('<img class="shorty-icon" width="16" src="'+OC.filePath('shorty','img/status',icon+'.png')+'">');
+				span.html('<img class="shorty-icon svg" width="16" src="'+OC.filePath('shorty','img/status',icon+'.png')+'">');
 				break;
 
 			case 'time':

@@ -132,7 +132,7 @@ class OC_ShortyTracking_Hooks
 			$parameters['list'][] = array (
 				'id'    => 'clicks',
 				'name'  => 'clicks',
-				'icon'  => OCP\Util::imagePath('shorty_tracking','actions/hits.png'),
+				'icon'  => OCP\Util::imagePath('shorty_tracking','actions/hits.svg'),
 				'call'  => 'OC.Shorty.Tracking.control',
 				'title' => OC_ShortyTracking_L10n::t("Click listing"),
 				'alt'   => OC_ShortyTracking_L10n::t("Clicks"),

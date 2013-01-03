@@ -69,7 +69,7 @@
 #list-of-clicks tbody td#actions {
 	width: 20px;
 }
-#list-of-clicks tbody td span {
+#list-of-clicks tbody td span:not(.heading) {
 	margin: 0;
 	padding: 0 0.1em;
 }

@@ -42,8 +42,8 @@
 		<legend>
 			<a id="close" class="shorty-close-button"
 				title="<?php echo OC_Shorty_L10n::t("close"); ?>">
-				<img alt="<?php echo OC_Shorty_L10n::t("close"); ?>"
-					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
+				<img alt="<?php echo OC_Shorty_L10n::t("close"); ?>" class="svg"
+					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg'); ?>">
 			</a>
 			<span class="heading"><?php echo OC_ShortyTracking_L10n::t("List of tracked clicks").':';?></span>
 		</legend>
@@ -68,9 +68,9 @@
 				<tr id="titlebar">
 					<th id="status" >
 						<span><img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
-								src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
-								data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>"
-								data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.png'); ?>">
+								class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>"
+								data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>"
+								data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg'); ?>">
 						</span>
 					</th>
 					<th id="result" ><span><?php echo OC_ShortyTracking_L10n::t("Result") ?></span></th>
@@ -84,7 +84,10 @@
 				<tr id="toolbar">
 					<th id="status">
 						<div style="display:none;">
-							<a id="reload"><img alt="<?php echo OC_Shorty_L10n::t("Reload"); ?>" title="<?php echo OC_Shorty_L10n::t("Reload list"); ?>" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>"></a>
+							<a id="reload">
+								<img alt="<?php echo OC_Shorty_L10n::t("Reload"); ?>" title="<?php echo OC_Shorty_L10n::t("Reload list"); ?>"
+									class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>">
+							</a>
 						</div>
 					</th>
 					<th id="result">
@@ -131,8 +134,8 @@
 						<span class="shorty-actions">
 							<a id="details" title="<?php echo OC_Shorty_L10n::t("details"); ?>" data_method="OC.Shorty.Tracking.details">
 								<img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t("details"); ?>"
-									title="<?php echo OC_Shorty_L10n::t('Show details'); ?>"
-									src="<?php echo OCP\Util::imagePath('shorty','actions/info.png');   ?>" />
+									title="<?php echo OC_Shorty_L10n::t('Show details'); ?>" class="svg"
+									src="<?php echo OCP\Util::imagePath('shorty','actions/info.svg');   ?>" />
 							</a>
 						</span>
 					</td>
@@ -147,7 +150,7 @@
 			<hr>
 			<span id="scrollingTurn">
 				<img id="load" alt="load" title="<?php echo OC_ShortyTracking_L10n::t("load");?>"
-					src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.png'); ?>">
+					class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>">
 			</span>
 			<span style="float:left;">
 				<label for="shorty-clicks"><?php echo OC_ShortyTracking_L10n::t("Clicks");?>: </label>
