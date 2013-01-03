@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* ??? Jan ?? 2013 Christian Reiner: version 0.3.17
+* Thu Jan 03 2013 Christian Reiner: version 0.3.17
 Use svg version of icons where applicable.
 Prevent selections except for input elements. 
 * Tue Jan 01 2013 Christian Reiner: version 0.3.16
