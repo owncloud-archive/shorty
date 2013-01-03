@@ -279,6 +279,9 @@ html, html *:not(input):not(textarea) {
 .shorty-list thead tr#toolbar a#reload, 
 .shorty-list thead tr#toolbar a#reload img {
 	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	opacity: 0.8;
 }
 .shorty-list thead tr#toolbar img#sort-up {
 	cursor: n-resize;
