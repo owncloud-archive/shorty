@@ -86,7 +86,7 @@
 						<div style="display:none;">
 							<a id="reload">
 								<img alt="<?php echo OC_Shorty_L10n::t("Reload"); ?>" title="<?php echo OC_Shorty_L10n::t("Reload list"); ?>"
-									class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.png'); ?>">
+									class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.svg'); ?>">
 							</a>
 						</div>
 					</th>
