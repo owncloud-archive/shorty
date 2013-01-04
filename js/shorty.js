@@ -272,7 +272,7 @@ OC.Shorty={
 						}),
 						$.each(dialog.find('.shorty-icon'), function(){
 							if($(this).is('[data]'))
-								 $(this).attr('src',$(this).attr('data'));
+								 $(this).attr('src',OC.imagePath('shorty',$(this).attr('data')));
 							else $(this).attr('src','');
 						}),
 						OC.Shorty.WUI.Dialog.sharpen(dialog,false)
