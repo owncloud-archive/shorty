@@ -87,7 +87,7 @@ OC.Shorty={
 					).done(function(){
 						dfd.resolve();
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-													.attr('src',OC.filePath('shorty','img','actions/unshade.svg'));
+													.attr('src',OC.imagePath('shorty','actions/unshade'));
 						OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
 					}).fail(dfd.reject)}
 				else dfd.resolve();
@@ -108,7 +108,7 @@ OC.Shorty={
 					).done(function(){
 						dfd.resolve();
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-													.attr('src',OC.filePath('shorty','img','actions/shade.svg'));
+													.attr('src',OC.imagePath('shorty','actions/shade'));
 						OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
 					}).fail(dfd.reject)}
 				else dfd.resolve();
@@ -1082,7 +1082,7 @@ OC.Shorty={
 							toolbar.find('div').slideDown('slow')
 						).pipe(function(){
 							titlebar.addClass('shorty-clicked');
-							button.attr('src',button.attr('data-shade'));
+							button.attr('src',OC.imagePath('shorty',button.attr('data-shade')));
 						}).done(dfd.resolve)
 					}else{ // toolbar IS visible
 						// any filters active? prevent closing of toolbar !
@@ -1094,7 +1094,7 @@ OC.Shorty={
 								toolbar.find('div').slideUp('slow')
 							).done(function(){
 								titlebar.removeClass('shorty-clicked');
-								button.attr('src',button.attr('data-unshade'));
+								button.attr('src',OC.imagePath('shorty',button.attr('data-unshade')));
 								dfd.resolve();
 							})
 						}

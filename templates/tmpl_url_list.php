@@ -69,8 +69,8 @@
 			<th id="favicon"><span>
 				<img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
 					class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>"
-					data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>"
-					data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg'); ?>"></span></th>
+					data-unshade="actions/unshade"
+					data-shade="actions/shade"></span></th>
 			<th id="title"  ><span><?php echo OC_Shorty_L10n::t('Title')      ?></span></th>
 			<th id="target" ><span><?php echo OC_Shorty_L10n::t('Target')     ?></span></th>
 			<th id="clicks" ><span><?php echo OC_Shorty_L10n::t('Clicks')     ?></span></th>
