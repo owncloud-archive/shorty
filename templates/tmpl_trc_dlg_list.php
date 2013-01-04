@@ -69,8 +69,8 @@
 					<th id="status" >
 						<span><img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
 								class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>"
-								data-unshade="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>"
-								data-shade="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg'); ?>">
+								data-unshade="actions/unshade"
+								data-shade="actions/shade">
 						</span>
 					</th>
 					<th id="result" ><span><?php echo OC_ShortyTracking_L10n::t("Result") ?></span></th>

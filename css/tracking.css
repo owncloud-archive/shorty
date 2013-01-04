@@ -63,11 +63,11 @@
 }
 #list-of-clicks thead th#time,
 #list-of-clicks tbody td#time {
-	width:10.4em;
+	width:10.2em;
 }
 #list-of-clicks thead th#actions,
 #list-of-clicks tbody td#actions {
-	width: 20px;
+	width: 28px;
 }
 #list-of-clicks tbody td span:not(.heading) {
 	margin: 0;
