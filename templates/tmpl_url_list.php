@@ -66,17 +66,17 @@
 	<thead>
 		<tr id="titlebar">
 			<!-- a button to open/close the toolbar below -->
-			<th id="favicon"><span>
+			<th id="favicon"><div>
 				<img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
 					class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>"
 					data-unshade="actions/unshade"
-					data-shade="actions/shade"></span></th>
-			<th id="title"  ><span><?php echo OC_Shorty_L10n::t('Title')      ?></span></th>
-			<th id="target" ><span><?php echo OC_Shorty_L10n::t('Target')     ?></span></th>
-			<th id="clicks" ><span><?php echo OC_Shorty_L10n::t('Clicks')     ?></span></th>
-			<th id="until"  ><span><?php echo OC_Shorty_L10n::t('Expiration') ?></span></th>
-			<th id="status" ><span><?php echo OC_Shorty_L10n::t('Status')     ?></span></th>
-			<th id="actions"><span>&nbsp;</span></th>
+					data-shade="actions/shade"></div></th>
+			<th id="title"  ><div><?php echo OC_Shorty_L10n::t('Title')      ?></div></th>
+			<th id="target" ><div><?php echo OC_Shorty_L10n::t('Target')     ?></div></th>
+			<th id="clicks" ><div><?php echo OC_Shorty_L10n::t('Clicks')     ?></div></th>
+			<th id="until"  ><div><?php echo OC_Shorty_L10n::t('Expiration') ?></div></th>
+			<th id="status" ><div><?php echo OC_Shorty_L10n::t('Status')     ?></div></th>
+			<th id="actions"><div>&nbsp;</div></th>
 		</tr>
 		<!-- toolbar opened/closed by the button above -->
 		<tr id="toolbar">
