@@ -67,18 +67,18 @@
 			<thead>
 				<tr id="titlebar">
 					<th id="status" >
-						<span><img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
+						<div><img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
 								class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>"
 								data-unshade="actions/unshade"
 								data-shade="actions/shade">
-						</span>
+						</div>
 					</th>
-					<th id="result" ><span><?php echo OC_ShortyTracking_L10n::t("Result") ?></span></th>
-					<th id="address"><span><?php echo OC_ShortyTracking_L10n::t("Address")?></span></th>
-					<th id="host"   ><span><?php echo OC_ShortyTracking_L10n::t("Host")   ?></span></th>
-					<th id="user"   ><span><?php echo OC_ShortyTracking_L10n::t("User")   ?></span></th>
-					<th id="time"   ><span><?php echo OC_ShortyTracking_L10n::t("Time")   ?></span></th>
-					<th id="actions"><span>&nbsp;</span></th>
+					<th id="result" ><div><?php echo OC_ShortyTracking_L10n::t("Result") ?></div></th>
+					<th id="address"><div><?php echo OC_ShortyTracking_L10n::t("Address")?></div></th>
+					<th id="host"   ><div><?php echo OC_ShortyTracking_L10n::t("Host")   ?></div></th>
+					<th id="user"   ><div><?php echo OC_ShortyTracking_L10n::t("User")   ?></div></th>
+					<th id="time"   ><div><?php echo OC_ShortyTracking_L10n::t("Time")   ?></div></th>
+					<th id="actions"><div>&nbsp;</div></th>
 				</tr>
 				<!-- table toolbar -->
 				<tr id="toolbar">
