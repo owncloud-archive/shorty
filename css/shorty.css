@@ -708,7 +708,7 @@ html input, html textarea {
 .shorty-embedded span {
 	width: 29em;
 }
-.shorty-embedded a {
+.shorty-embedded a:not(.shorty-clickable) {
 	padding: 0;
 	text-decoration: none;
 }
