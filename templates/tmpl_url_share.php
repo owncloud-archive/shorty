@@ -73,7 +73,7 @@
 			</fieldset>
 			<fieldset class="shorty-collapsible collapsed">
 				<label for="relay-text"><?php echo OC_Shorty_L10n::t("Relay url").':'; ?></label>
-				<span id="relay-text"><?php echo OC_Shorty_L10n::t("This is the internal url that the 'official' one relays to").'.'; ?></span>
+				<span id="relay-text"><?php echo OC_Shorty_L10n::t("This is a internal url that the shortened url relays to").'.'; ?></span>
 				<div class="shorty-collapsible-tail" style="display:none;">
 					<a id="relay" class="shorty-clickable" target="_blank"
 						title="<?php echo OC_Shorty_L10n::t("Open relay url"); ?>"
