@@ -9,11 +9,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="160"
-   height="160"
+   width="16"
+   height="16"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="takeover.svg"
    inkscape:export-filename="/home/arkascha/Downloads/takeover.png"
    inkscape:export-xdpi="9"
@@ -90,9 +90,9 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="1.6622351"
-     inkscape:cx="-124.23146"
-     inkscape:cy="64.124368"
+     inkscape:zoom="37.612087"
+     inkscape:cx="6.8792015"
+     inkscape:cy="7.15487"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
@@ -101,7 +101,7 @@
      id="defs4" />
   <g
      id="layer0"
-     transform="matrix(2.0021053,-0.0526452,0.20608092,1.2215974,-18.709251,-3.9756852)">
+     transform="matrix(0.20056521,-0.005275,0.0206446,0.12240268,-1.9327975,-0.49424458)">
     <path
        id="arrow"
        transform="matrix(-0.00163303,-0.999999,-0.999999,0.00163303,76.8989,134.01)"

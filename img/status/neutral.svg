@@ -9,11 +9,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="102.4pt"
-   height="102.4pt"
+   width="16"
+   height="16"
    id="svg3296"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="neutral.svg">
   <title
      id="title3401">neutral</title>
@@ -82,9 +82,9 @@
      inkscape:window-height="1114"
      id="namedview3397"
      showgrid="false"
-     inkscape:zoom="5.2149125"
-     inkscape:cx="26.12784"
-     inkscape:cy="64"
+     inkscape:zoom="41.7193"
+     inkscape:cx="0.53665964"
+     inkscape:cy="9.3490351"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
@@ -95,13 +95,13 @@
        id="filter0"
        filterUnits="objectBoundingBox"
        primitiveUnits="objectBoundingBox"
-       x="-0.10000000000"
-       y="-0.10000000000"
-       width="1.20000000000"
-       height="1.20000000000">
+       x="-0.1"
+       y="-0.1"
+       width="1.2"
+       height="1.2"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
          result=""
-         in=""
          x="0.00000000000"
          y="0.00000000000"
          width="1.00000000000"
@@ -113,13 +113,13 @@
        id="filter1"
        filterUnits="objectBoundingBox"
        primitiveUnits="objectBoundingBox"
-       x="-0.10000000000"
-       y="-0.10000000000"
-       width="1.20000000000"
-       height="1.20000000000">
+       x="-0.1"
+       y="-0.1"
+       width="1.2"
+       height="1.2"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
          result=""
-         in=""
          x="0.00000000000"
          y="0.00000000000"
          width="1.00000000000"
@@ -131,11 +131,11 @@
        id="gradient0"
        gradientTransform="scale(0.95742711,1.0444659)"
        gradientUnits="userSpaceOnUse"
-       cx="66.845821"
+       cx="66.845818"
        cy="61.275337"
-       fx="66.845821"
+       fx="66.845818"
        fy="61.275337"
-       r="31.053939"
+       r="31.05394"
        spreadMethod="pad">
       <stop
          stop-color="#eeeeee"
@@ -152,13 +152,13 @@
        id="filter2"
        filterUnits="objectBoundingBox"
        primitiveUnits="objectBoundingBox"
-       x="-0.10000000000"
-       y="-0.10000000000"
-       width="1.20000000000"
-       height="1.20000000000">
+       x="-0.1"
+       y="-0.1"
+       width="1.2"
+       height="1.2"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
          result=""
-         in=""
          x="0.00000000000"
          y="0.00000000000"
          width="1.00000000000"
@@ -170,8 +170,9 @@
        id="clippath0"
        clipPathUnits="userSpaceOnUse">
       <path
-         d="M36.25 1.47245C26.7775 10.9408 6.92707 19.3862 0 21.3116C0 51.0518 19.9547 96 44 96C67.9916 96 88 51.0518 88 21.3116C81.0729 19.3862 61.2225 10.9408 51.75 1.47245C49.0625 -0.491399 38.9376 -0.490231 36.25 1.47245Z"
-         id="path3315" />
+         d="M 36.25,1.47245 C 26.7775,10.9408 6.92707,19.3862 0,21.3116 0,51.0518 19.9547,96 44,96 67.9916,96 88,51.0518 88,21.3116 81.0729,19.3862 61.2225,10.9408 51.75,1.47245 c -2.6875,-1.963849 -12.8124,-1.962681 -15.5,0 z"
+         id="path3315"
+         inkscape:connector-curvature="0" />
     </clipPath>
     <linearGradient
        id="gradient1"
@@ -179,7 +180,7 @@
        gradientUnits="userSpaceOnUse"
        x1="104.31459"
        y1="71.9235"
-       x2="61.979081"
+       x2="61.97908"
        y2="61.279572"
        spreadMethod="pad">
       <stop
@@ -197,9 +198,9 @@
        id="gradient2"
        gradientTransform="scale(1.6566953,0.60361129)"
        gradientUnits="userSpaceOnUse"
-       x1="39.31388"
+       x1="39.313881"
        y1="15.859876"
-       x2="39.31388"
+       x2="39.313881"
        y2="100.30147"
        spreadMethod="pad">
       <stop
@@ -217,9 +218,9 @@
        id="gradient3"
        gradientTransform="scale(2.8610336,0.34952403)"
        gradientUnits="userSpaceOnUse"
-       x1="22.764892"
-       y1="27.389276"
-       x2="22.764892"
+       x1="22.764893"
+       y1="27.389277"
+       x2="22.764893"
        y2="173.21602"
        spreadMethod="pad">
       <stop
@@ -237,11 +238,11 @@
        id="gradient4"
        gradientTransform="scale(0.95742711,1.0444659)"
        gradientUnits="userSpaceOnUse"
-       cx="66.845821"
+       cx="66.845818"
        cy="61.275337"
-       fx="66.845832"
+       fx="66.845833"
        fy="48.409798"
-       r="31.053939"
+       r="31.05394"
        spreadMethod="pad">
       <stop
          stop-color="#ffffff"
@@ -259,9 +260,9 @@
        gradientTransform="scale(0.95742683,1.0444662)"
        gradientUnits="userSpaceOnUse"
        cx="66.84584"
-       cy="50.094775"
+       cy="50.094776"
        fx="66.683098"
-       fy="45.772988"
+       fy="45.772987"
        r="25.407776"
        spreadMethod="pad">
       <stop
@@ -282,7 +283,7 @@
        x1="66.84584"
        y1="23.67457"
        x2="66.84584"
-       y2="81.381322"
+       y2="81.381325"
        spreadMethod="pad">
       <stop
          stop-color="#000000"
@@ -299,13 +300,13 @@
        id="filter3"
        filterUnits="objectBoundingBox"
        primitiveUnits="objectBoundingBox"
-       x="-0.12421242000"
-       y="-0.11386138000"
-       width="1.24842480000"
-       height="1.22772280000">
+       x="-0.12421242"
+       y="-0.11386138"
+       width="1.2484248"
+       height="1.2277228"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
          result=""
-         in=""
          x="0.00000000000"
          y="0.00000000000"
          width="1.00000000000"
@@ -317,16 +318,17 @@
        id="clippath1"
        clipPathUnits="userSpaceOnUse">
       <path
-         d="M29.6591 1.20473C21.9089 8.9516 5.66761 15.8614 0 17.4367C0 41.7697 16.3266 78.5455 36 78.5455C55.6295 78.5455 72 41.7697 72 17.4367C66.3324 15.8614 50.0911 8.9516 42.3409 1.20473C40.142 -0.402054 31.858 -0.401098 29.6591 1.20473Z"
-         id="path3351" />
+         d="M 29.6591,1.20473 C 21.9089,8.9516 5.66761,15.8614 0,17.4367 c 0,24.333 16.3266,61.1088 36,61.1088 19.6295,0 36,-36.7758 36,-61.1088 C 66.3324,15.8614 50.0911,8.9516 42.3409,1.20473 c -2.1989,-1.606784 -10.4829,-1.605828 -12.6818,0 z"
+         id="path3351"
+         inkscape:connector-curvature="0" />
     </clipPath>
     <linearGradient
        id="gradient7"
        gradientTransform="scale(1.0853122,0.92139387)"
        gradientUnits="userSpaceOnUse"
-       x1="61.01287"
+       x1="61.012871"
        y1="121.49794"
-       x2="61.01287"
+       x2="61.012871"
        y2="38.036621"
        spreadMethod="pad">
       <stop
@@ -345,9 +347,9 @@
        gradientTransform="scale(1.985945,0.50353861)"
        gradientUnits="userSpaceOnUse"
        x1="32.980583"
-       y1="35.056497"
+       y1="35.056496"
        x2="32.980583"
-       y2="67.59273"
+       y2="67.592728"
        spreadMethod="pad">
       <stop
          stop-color="#ffffff"
@@ -366,8 +368,8 @@
        gradientUnits="userSpaceOnUse"
        cx="67.311928"
        cy="61.702328"
-       fx="66.884676"
-       fy="70.857116"
+       fx="66.884674"
+       fy="70.857117"
        r="17.182476"
        spreadMethod="pad">
       <stop
@@ -385,13 +387,13 @@
        id="filter4"
        filterUnits="objectBoundingBox"
        primitiveUnits="objectBoundingBox"
-       x="-0.18010801000"
-       y="-0.16509901000"
-       width="1.36021600000"
-       height="1.33019800000">
+       x="-0.18010801"
+       y="-0.16509901"
+       width="1.360216"
+       height="1.330198"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
          result=""
-         in=""
          x="0.00000000000"
          y="0.00000000000"
          width="1.00000000000"
@@ -404,9 +406,9 @@
        gradientTransform="scale(0.5193354,1.9255379)"
        gradientUnits="userSpaceOnUse"
        cx="189.04161"
-       cy="35.540602"
+       cy="35.540604"
        fx="189.04161"
-       fy="35.540602"
+       fy="35.540604"
        r="3.3930809"
        spreadMethod="pad">
       <stop
@@ -424,13 +426,13 @@
        id="filter5"
        filterUnits="objectBoundingBox"
        primitiveUnits="objectBoundingBox"
-       x="-0.11600000000"
-       y="-0.03026087000"
-       width="1.23200000000"
-       height="1.06052170000">
+       x="-0.116"
+       y="-0.03026087"
+       width="1.232"
+       height="1.0605217"
+       color-interpolation-filters="sRGB">
       <feGaussianBlur
          result=""
-         in=""
          x="0.00000000000"
          y="0.00000000000"
          width="1.00000000000"
@@ -441,7 +443,7 @@
   </defs>
   <g
      id="layer1"
-     transform="matrix(1.28,0,0,1.28,-17.728242,-19.045887)">
+     transform="matrix(0.15181812,0,0,0.15895334,-1.7186176,-2.3794997)">
     <g
        id="g3256"
        transform="translate(11.2,6.4)"

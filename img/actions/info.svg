@@ -9,11 +9,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="595.277pt"
-   height="841.891pt"
+   width="16"
+   height="16"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="info.svg"
    inkscape:export-filename="/srv/www/htdocs/owncloud/apps/shorty/img/actions/info.png"
    inkscape:export-xdpi="1.4732735"
@@ -85,18 +85,20 @@
      inkscape:window-height="1114"
      id="namedview9"
      showgrid="false"
-     inkscape:zoom="0.22425706"
-     inkscape:cx="-1389.3235"
-     inkscape:cy="526.1819"
+     inkscape:zoom="162.37945"
+     inkscape:cx="7.20824"
+     inkscape:cy="14.546439"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     showborder="true"
+     inkscape:showpageshadow="false" />
   <defs
      id="defs4" />
   <g
      id="layer0"
-     transform="matrix(1,0,0,0.92242868,0,1.2000589)">
+     transform="matrix(0.01971178,0,0,0.01559867,0.52084295,0.01126753)">
     <g
        id="g4314"
        transform="translate(212.946,163.839)"

@@ -9,11 +9,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="75.4697pt"
-   height="75.4697pt"
+   width="16"
+   height="16"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="active.svg">
   <title
      id="title2987">active</title>
@@ -82,9 +82,9 @@
      inkscape:window-height="1114"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="2.5016662"
-     inkscape:cx="-110.72621"
-     inkscape:cy="31.179222"
+     inkscape:zoom="80.053317"
+     inkscape:cx="10.839103"
+     inkscape:cy="8.1945409"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
@@ -92,18 +92,20 @@
   <defs
      id="defs4" />
   <g
-     id="layer1">
+     id="layer1"
+     transform="matrix(0.16974467,0,0,0.16962433,5.6982793e-4,-0.00183565)">
     <circle
        id="shape1"
-       transform="translate(2.87717, 2.87717)"
-       r="35.43313280000pt"
-       cx="35.43313280000pt"
-       cy="35.43313280000pt"
-       fill="none"
-       stroke="#000000"
-       stroke-width="5.75434065000"
-       stroke-linecap="square"
-       stroke-linejoin="miter"
-       stroke-miterlimit="2.00000000000" />
+       transform="translate(2.87717,2.87717)"
+       r="44.291416"
+       cx="44.291416"
+       cy="44.291416"
+       stroke-miterlimit="2.00000000000"
+       sodipodi:cx="44.291416"
+       sodipodi:cy="44.291416"
+       sodipodi:rx="44.291416"
+       sodipodi:ry="44.291416"
+       style="fill:none;stroke:#000000;stroke-width:5.75434065;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2"
+       d="m 88.582832,44.291416 c 0,24.461474 -19.829942,44.291416 -44.291416,44.291416 C 19.829942,88.582832 0,68.75289 0,44.291416 0,19.829942 19.829942,0 44.291416,0 68.75289,0 88.582832,19.829942 88.582832,44.291416 z" />
   </g>
 </svg>

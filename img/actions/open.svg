@@ -2,6 +2,7 @@
 <!-- Created using Karbon14, part of koffice: http://www.koffice.org/karbon -->
 
 <svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -13,8 +14,11 @@
    height="12.8pt"
    id="svg3203"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="open.svg">
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="open.svg"
+   inkscape:export-filename="/srv/www/htdocs/owncloud-4.5.5/apps/shorty/img/actions/open.png"
+   inkscape:export-xdpi="5.625"
+   inkscape:export-ydpi="5.625">
   <title
      id="title3269">open</title>
   <metadata
@@ -82,21 +86,70 @@
      inkscape:window-height="1114"
      id="namedview3209"
      showgrid="false"
-     inkscape:zoom="14.75"
-     inkscape:cx="-5.3898305"
-     inkscape:cy="8"
+     inkscape:zoom="128"
+     inkscape:cx="11.533247"
+     inkscape:cy="6.9002723"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3203" />
+     inkscape:current-layer="svg3203"
+     showguides="true"
+     inkscape:guide-bbox="true" />
   <defs
-     id="defs3205" />
-  <g
-     id="layer1">
-    <path
-       id="path3086"
-       fill="#000000"
-       d="M9 14L5 14L4 7L0 7L7 0L14 7L10 7Z"
-       transform="matrix(0.704343 0.70986 -0.70986 0.704343 8.03052 -1.90816)" />
-  </g>
+     id="defs3205">
+    <linearGradient
+       id="linearGradient5278"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5280" />
+    </linearGradient>
+  </defs>
+  <rect
+     style="fill:#000000;fill-opacity:1"
+     id="rect3790"
+     width="11.495445"
+     height="1.9992298"
+     x="0.50116539"
+     y="0.49795073" />
+  <rect
+     style="fill:#000000;fill-opacity:1"
+     id="rect3790-7"
+     width="11.495445"
+     height="1.9992298"
+     x="0.50243998"
+     y="13.503852" />
+  <rect
+     style="fill:#000000;fill-opacity:1"
+     id="rect3828"
+     width="2.0039062"
+     height="15"
+     x="0.49609375"
+     y="0.50390625" />
+  <path
+     sodipodi:type="star"
+     style="fill:#000000;fill-opacity:1"
+     id="path5288"
+     sodipodi:sides="3"
+     sodipodi:cx="-13.75"
+     sodipodi:cy="5.46875"
+     sodipodi:r1="4.3528457"
+     sodipodi:r2="2.1582763"
+     sodipodi:arg1="2.089052"
+     sodipodi:arg2="3.1064362"
+     inkscape:flatsided="false"
+     inkscape:rounded="0"
+     inkscape:randomized="0"
+     d="m -15.90625,9.2499999 -6.93e-4,-3.7053882 -0.03959,-3.833854 3.209306,1.8520943 3.3400105,1.8826404 -3.2086135,1.8532939 z"
+     inkscape:transform-center-x="-0.56501395"
+     inkscape:transform-center-y="0.013882004"
+     transform="matrix(0.61013536,0,0,1.1937777,21.23156,1.4575558)" />
+  <rect
+     style="fill:#000000;fill-opacity:1"
+     id="rect3790-9"
+     width="7.4954453"
+     height="2.9992297"
+     x="6.0022774"
+     y="6.5003853" />
 </svg>

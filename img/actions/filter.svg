@@ -9,11 +9,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="144pt"
-   height="168pt"
+   width="16"
+   height="16"
    id="svg3175"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="filter.svg">
   <title
      id="title3275">filter</title>
@@ -82,9 +82,9 @@
      inkscape:window-height="1114"
      id="namedview3182"
      showgrid="false"
-     inkscape:zoom="1.1238095"
-     inkscape:cx="-261.48305"
-     inkscape:cy="105"
+     inkscape:zoom="101.71563"
+     inkscape:cx="9.0306121"
+     inkscape:cy="9.2314274"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
@@ -92,16 +92,18 @@
   <defs
      id="defs3177" />
   <g
-     id="layer1">
+     id="layer1"
+     transform="matrix(0.08889295,0,0,0.07617756,0,0.00271351)">
     <path
        id="path3777"
-       transform=""
-       fill="#000000"
-       d="M0 2.84217e-14L180 2.84217e-14L180 20L110 110L110 210L70 190L70 110L0 20L0 0" />
+       d="m 0,0 180,0 0,20 -70,90 0,100 L 70,190 70,110 0,20 0,0"
+       inkscape:connector-curvature="0"
+       style="fill:#000000" />
     <path
        id="path37771"
-       transform="translate(32.694, 12.8433)"
-       fill="#ffffff"
-       d="M0 2.38779e-14L114.883 2.38779e-14L114.883 16.8026L70.2064 92.4142L70.2064 176.427L44.6768 159.624L44.6768 92.4142L0 16.8026L0 0" />
+       transform="translate(32.694,12.8433)"
+       d="m 0,0 114.883,0 0,16.8026 -44.6766,75.6116 0,84.0128 -25.5296,-16.803 0,-67.2098 L 0,16.8026 0,0"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff" />
   </g>
 </svg>
