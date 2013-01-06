@@ -767,12 +767,12 @@ html input, html textarea {
 	border: 0 none;
 	background-color: #F4F4F4;
 }
-.shorty-embedded img.shorty-usage {
+.shorty-embedded td img.shorty-usage {
 	opacity: 0.6;
 	margin: 0;
 	padding: 0;
 	width: 64px;
-	height: 64px;
+	height: auto;
 }
 .shorty-embedded img.shorty-usage.disabled {
 	opacity: 0.2;
