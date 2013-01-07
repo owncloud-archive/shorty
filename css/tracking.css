@@ -95,7 +95,7 @@
 	-webkit-transition: opacity 500ms;
 }
 #list-of-clicks tbody tr td.associative span {
-	cursor:url('../../shorty/img/actions/filter.png'),pointer;
+	cursor: url('../../shorty/img/actions/filter.svg'),pointer;
 }
 
 /* #shorty-tracking-list-dialog #shorty-tracking-reference { */
