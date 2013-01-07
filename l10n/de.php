@@ -31,22 +31,21 @@
  */
 
 $TRANSLATIONS = array(
-"Click details" => "Klick-Details",
-"Clicks"        => "Klicks",
-"List clicks"   => "Klicks auflisten",
-"Title"         => "Titel",
-"Result"        => "Resultat",
-"Address"       => "Adresse",
-"Host"          => "Host",
-"User"          => "Nutzer",
-"Time"          => "Zeitpunkt",
+"granted"                     => "erlaubt",
+"denied"                      => "abgewiesen",
+"blocked"                     => "geblockt",
 
-"granted"       => "erlaubt",
-"denied"        => "abgewiesen",
-"blocked"       => "geblockt",
+"load"                        => "laden",
 
-"load"          => "laden",
-
+"Address"                     => "Adresse",
+"Click details"               => "Klick-Details",
+"Clicks"                      => "Klicks",
+"Host"                        => "Host",
+"List clicks"                 => "Klicks auflisten",
 "List of tracked clicks"      => "Liste der aufgezeichneten Klicks",
+"Result"                      => "Resultat",
+"Time"                        => "Zeitpunkt",
+"Title"                       => "Titel",
+"User"                        => "Nutzer",
 );
 ?>
