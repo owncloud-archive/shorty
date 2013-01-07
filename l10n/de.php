@@ -32,8 +32,8 @@
 
 $TRANSLATIONS = array(
 "Click details" => "Klick-Details",
-"Click listing" => "Klicks-Auflistung",
 "Clicks"        => "Klicks",
+"List clicks"   => "Klicks auflisten",
 "Title"         => "Titel",
 "Result"        => "Resultat",
 "Address"       => "Adresse",
