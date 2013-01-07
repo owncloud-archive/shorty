@@ -24,7 +24,24 @@
 
 This is a short list of known issues:
 
-- Shorty does not work with the khtml rendering engine (konqueror browser).
+- Shorty does not completely with the khtml rendering engine (konqueror browser).
 Konqueror using webkit engine works fine though. This issue is unlikely to be
 fixed, since the problem originates in the jQuery library not supporting the
-khtml engine. 
+khtml engine.
+
+- There are some issues when using Shorty with a MS IE browser:
+Versions prior to 9 are not supported at all, they violate too many web standards.
+From version 9 onwards Shorty is usable, but a few issues remain:
+* some style glitches like missing rounded corners in dialogs fieldset frames.
+* the usage popups in the sharing dialog won't close, I have no idea why.
+These and probably many more issues are the result of the fact that this browser
+still is not as compatible to wide spread standards as other, competetive browsers.
+Things improved over the last years, but a lot remains to get fixed and brushed by
+Microsoft. Though I actually hesitate to expect that these issues really will get
+spoted out. Microsoft has endlessly played the game of 'nearly' being compatible
+over the past decades to keep users in their monopolistic and progress ignoring
+grip. I doubt they really changed. Why should they?
+So: sorry for users of that browser. Not your fault, but getting Shorty as far
+as it is today, 'nearly usable' on that browser already took quite some effort.
+I really want to concentrate more on features and fixes than on trying to tame
+that stupid and annoying beat called Internet Explorer. Complain at Microsoft.
