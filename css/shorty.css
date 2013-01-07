@@ -85,31 +85,32 @@ html input, html textarea {
 }
 /* the handle of the controls panel */
 .shorty-controls .shorty-handle img {
-	margin-top: 2px;
+/* 	margin-top: 1px; */
 	opacity: 0.6;
 	cursor: inherit;
-	width: 14px;
-	height: 14px;
+	width: 16px;
+	height: 16px;
 }
 .shorty-controls .shorty-handle {
 	position: relative;
 	display: inline-block;
-	top: 2.8em;
-	right: -3.5em;
 	background: #f7f7f7;
 	z-index: 50;
-	border: 1px solid #bbb;
-	text-align: center;
+	border: 0;
 	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
 }
 .shorty-controls .shorty-handle-top {
-/* 	float: right; */
-	width: 24px;
-	height: 20px;
+	width: 26px;
+	height: 22px;
+	top: 35px;
+	right: -45px;
 	border-top: 0;
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;
-	box-shadow: 0 1px 2px #bbb;
+	box-shadow: 0 2px 3px #ddd;
+	padding-top: 2px;
 }
 /* the top notification area (debugging only) */
 .shorty-notification {
