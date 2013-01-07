@@ -24,8 +24,9 @@
 
 Changelog: 
 
-* Thu Jan 03 2013 Christian Reiner: version 0.1.11
+* Thu Jan 07 2013 Christian Reiner: version 0.1.11
 Use svg version of icons where applicable.
+Some style fixes expecially to better support MS IE browsers. 
 * Mon Dec 31 2012 Christian Reiner: version 0.1.10
 Changed supported OC version to 4.9 (OC-4.5).
 Support for the postgresql database engine.
