@@ -26,7 +26,9 @@ Changelog:
 
 * Thu Jan 03 2013 Christian Reiner: version 0.3.17
 Use svg version of icons where applicable.
-Prevent selections except for input elements. 
+Fixed qrcode retrieval uder PostgreSQL database engines.
+Generally prevent text and content selections except for input elements.
+Numerous fixes to get Shorty usable under MS Internet Explorer.
 * Tue Jan 01 2013 Christian Reiner: version 0.3.16
 Fixed automatic text selection inside the usage popups.
 Force downloading of a qrcode image when self referencing it.
