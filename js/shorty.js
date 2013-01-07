@@ -1748,9 +1748,12 @@ OC.Shorty={
 						var qrcodeRef = $('#dialog-qrcode #qrcode-ref').val()+encodeURIComponent(entry.attr('data-id'));
 // 						var qrcodeRef = $('#dialog-qrcode #qrcode-ref').val()+encodeURIComponent(entry.attr('data-source'));
 						// take layout from hidden dialog template
-						var message=$('#dialog-qrcode').html();
+						var p_message=$('#dialog-qrcode').html();
+						// the dialog buttons
+						var p_buttons={}
+							p_buttons[t('shorty','Close')]=true;
 						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt(message,{
+						var p_proceed=$.prompt(p_message,{
 							loaded:function(){
 								// show graphical qrcode first
 								$('.qrcode-ref').hide();
@@ -1771,7 +1774,7 @@ OC.Shorty={
 									window.location.href=qrcodeRef;
 								});
 							},
-							buttons:{Ok:true},
+							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
 								width:'auto',
@@ -1791,11 +1794,15 @@ OC.Shorty={
 									+'subject='+encodeURIComponent(mailSubject)
 									+'&body='+encodeURIComponent(mailBody);
 						// take layout from hidden dialog template
-						var message=$('#dialog-email').html();
+						var p_message=$('#dialog-email').html();
+						// the dialog buttons
+						var p_buttons={};
+							p_buttons[t('shorty','Mail client')]=true;
+							p_buttons[t('shorty','Cancel')]=false;
 						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt(message,{
+						var proceed=$.prompt(p_message,{
 							loaded:function(){$('.payload').val(mailBody).select();},
-							buttons:{Ok:true,Cancel:false},
+							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
 								width:'auto',
@@ -1816,11 +1823,15 @@ OC.Shorty={
 						// therefore we ask the user to copy&paste a prepared body to their clipboard...
 						var smsBody=entry.attr('data-title')+"\n"+entry.attr('data-notes')+"\n"+entry.attr('data-source');
 						// take layout from hidden dialog template
-						var message=$('#dialog-sms').html();
+						var p_message=$('#dialog-sms').html();
+						// the dialog buttons
+						var p_buttons={};
+							p_buttons[t('shorty','SMS composer')]=true;
+							p_buttons[t('shorty','Cancel')]=false;
 						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt(message,{
+						var proceed=$.prompt(p_message,{
 							loaded:function(){$('.payload').val(smsBody).select();},
-							buttons:{Ok:true,Cancel:false},
+							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
 								width:'auto',
@@ -1839,11 +1850,14 @@ OC.Shorty={
 						// take layout from hidden dialog template
 						var clipboardBody=entry.attr('data-source');
 						// take layout from hidden dialog template
-						var message=$('#dialog-clipboard').html();
+						var p_message=$('#dialog-clipboard').html();
+						// the dialog buttons
+						var p_buttons={}
+							p_buttons[t('shorty','Close')]=true;
 						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt(message,{
+						var proceed=$.prompt(p_message,{
 							loaded:function(){$('.payload').val(clipboardBody).select();},
-							buttons:{Ok:true},
+							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
 								width:'auto',
