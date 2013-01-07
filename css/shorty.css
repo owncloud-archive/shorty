@@ -774,7 +774,7 @@ html input, html textarea {
 	margin: 0;
 	padding: 0;
 	width: 64px;
-	height: auto;
+	height: 64px;
 }
 .shorty-embedded img.shorty-usage.disabled {
 	opacity: 0.2;
