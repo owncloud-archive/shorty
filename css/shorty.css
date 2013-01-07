@@ -143,8 +143,9 @@ html input, html textarea {
 }
 .shorty-config {
 	float: right;
-	padding-bottom: 0.2em;
 	margin: 0.3em 0.2em;
+	vertical-align: middle;
+	height: 28px;
 }
 .shorty-config:first-child {
 	margin-right: 170px;
