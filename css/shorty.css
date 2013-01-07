@@ -481,7 +481,7 @@ html input, html textarea {
 .shorty-list thead th,
 .shorty-list tbody td {
 	margin: 0;
-	padding: 1px 4px 1px 2px;
+	padding: 2px 4px 0px 2px;
 	line-height: 1.2em;
 }
 .shorty-list thead th#favicon,
@@ -817,7 +817,6 @@ html input, html textarea {
 .shorty-icon {
 	display: inline;
 	background: transparent;
-	vertical-align: baseline;
 	padding: 1px;
 	width: 16px;
 	height: 16px;
