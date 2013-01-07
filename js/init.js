@@ -151,5 +151,7 @@ $(document).ready(function(){
 	$(document).on('click keydown','#controls-preferences.settings',[],function() {
 		OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
 	});
+	// prevent vertical scroll bar in content area triggered by the additional controls bar handle
+	$('#content').height(($('#content').height()-$('#controls #controls-handle').height())+'px');
 }); // document.ready
 
