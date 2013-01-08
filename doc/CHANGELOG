@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* Thu Jan 07 2013 Christian Reiner: version 0.1.11
+* Mon Jan 07 2013 Christian Reiner: version 0.1.11
 Use svg version of icons where applicable.
 Some style fixes expecially to better support MS IE browsers. 
 * Mon Dec 31 2012 Christian Reiner: version 0.1.10
