@@ -1766,7 +1766,7 @@ OC.Shorty={
 								$('.qrcode-img img').on('click',function(){
 									$('.qrcode-img').hide();
 									$('.qrcode-ref').show();
-									$('.qrcode-ref .payload').select();
+									$('.qrcode-ref .payload').focus();
 								});
 								// download image when download button is clicked
 								$('.qrcode-ref #download').on('click',function(){
@@ -1801,7 +1801,7 @@ OC.Shorty={
 							p_buttons[t('shorty','Cancel')]=false;
 						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt(p_message,{
-							loaded:function(){$('.payload').val(mailBody).select();},
+							loaded:function(){$('.payload').val(mailBody).focus();},
 							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
@@ -1830,7 +1830,7 @@ OC.Shorty={
 							p_buttons[t('shorty','Cancel')]=false;
 						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt(p_message,{
-							loaded:function(){$('.payload').val(smsBody).select();},
+							loaded:function(){$('.payload').val(smsBody).focus();},
 							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
@@ -1856,7 +1856,7 @@ OC.Shorty={
 							p_buttons[t('shorty','Close')]=true;
 						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt(p_message,{
-							loaded:function(){$('.payload').val(clipboardBody).select();},
+							loaded:function(){$('.payload').val(clipboardBody).focus();},
 							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
