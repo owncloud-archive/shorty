@@ -24,7 +24,7 @@
 
 Changelog: 
 
-* Thu Jan 07 2013 Christian Reiner: version 0.3.17
+* Mon Jan 07 2013 Christian Reiner: version 0.3.17
 Use svg version of icons where applicable.
 Recreated most icons for a more unified look and feel.
 Fixed qrcode retrieval uder PostgreSQL database engines.
