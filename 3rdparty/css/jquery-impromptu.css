@@ -1,63 +1,68 @@
+/*
+------------------------------
+	Impromptu
+------------------------------
+*/
 .jqifade{
-	position: absolute;
-	background-color: #777777;
+	position: absolute; 
+	background-color: #777777; 
 }
-div.jqi{
-	width: 400px;
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	position: absolute;
-	background-color: #ffffff;
-	font-size: 11px;
-	text-align: left;
+div.jqi{ 
+	width: 400px; 
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	position: absolute; 
+	background-color: #ffffff; 
+	font-size: 11px; 
+	text-align: left; 
 	border: solid 1px #eeeeee;
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	padding: 7px;
 }
-div.jqi .jqicontainer{
+div.jqi .jqicontainer{ 
 }
-div.jqi .jqiclose{
+div.jqi .jqiclose{ 
 	position: absolute;
-	top: 4px; right: -2px;
-	width: 18px;
-	cursor: default;
-	color: #bbbbbb;
-	font-weight: bold;
+	top: 4px; right: -2px; 
+	width: 18px; 
+	cursor: default; 
+	color: #bbbbbb; 
+	font-weight: bold; 
 }
 div.jqi .jqititle{
 	padding: 5px 10px;
-	font-size: 16px;
-	line-height: 20px;
+	font-size: 16px; 
+	line-height: 20px; 
 	border-bottom: solid 1px #eeeeee;
 }
-div.jqi .jqimessage{
-	padding: 10px;
-	line-height: 20px;
-	color: #444444;
+div.jqi .jqimessage{ 
+	padding: 10px; 
+	line-height: 20px; 
+	color: #444444; 
 }
-div.jqi .jqibuttons{
-	text-align: right;
-	padding: 5px 0 5px 0;
-	border: solid 1px #eeeeee;
+div.jqi .jqibuttons{ 
+	text-align: right; 
+	padding: 5px 0 5px 0; 
+	border: solid 1px #eeeeee; 
 	background-color: #f4f4f4;
 }
-div.jqi button{
-	padding: 3px 10px;
-	margin: 0 10px;
-	background-color: #2F6073;
-	border: solid 1px #f4f4f4;
-	color: #ffffff;
-	font-weight: bold;
-	font-size: 12px;
+div.jqi button{ 
+	padding: 3px 10px; 
+	margin: 0 10px; 
+	background-color: #2F6073; 
+	border: solid 1px #f4f4f4; 
+	color: #ffffff; 
+	font-weight: bold; 
+	font-size: 12px; 
 }
-div.jqi button:hover{
+div.jqi button:hover{ 
 	background-color: #728A8C;
 }
 div.jqi button.jqidefaultbutton{
 	background-color: #BF5E26;
 }
-.jqiwarning .jqi .jqibuttons{
+.jqiwarning .jqi .jqibuttons{ 
 	background-color: #BF5E26;
 }
 
@@ -78,3 +83,4 @@ div.jqi button.jqidefaultbutton{
 .jqi .jqiarrowrt{ right: -20px; top: 10px; border-left-color: #ffffff; }
 .jqi .jqiarrowrm{ right: -20px; top: 50%; border-left-color: #ffffff; margin-top: -10px; }
 .jqi .jqiarrowrb{ right: -20px; bottom: 10px; border-left-color: #ffffff; }
+
