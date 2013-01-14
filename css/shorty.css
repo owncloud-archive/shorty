@@ -467,6 +467,7 @@ html input, html textarea {
 .shorty-list tbody tr.deleted>td#actions #del:after {
 	content: url("../img/actions/recycle.svg");
 	position: relative;
+	top: -1px;
 	margin-left: -19.5px;
 	padding: 0;
 	opacity: 0;

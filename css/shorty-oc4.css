@@ -50,6 +50,7 @@
 .shorty-list tbody tr.deleted>#actions #del:after {
 	content: url("%appswebroot%/apps/shorty/img/actions/recycle.svg");
 	position: relative;
+	top: -1px;
 	margin-left: -19.5px;
 	padding: 0;
 	opacity: 0;
