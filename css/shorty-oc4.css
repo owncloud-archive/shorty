@@ -48,10 +48,9 @@
 
 /* replace the 'delete' action icon by an 'undelete' icon */
 .shorty-list tbody tr.deleted>#actions #del:after {
-	content: url("%appswebroot%/apps/shorty/img/actions/recycle.png");
+	content: url("%appswebroot%/apps/shorty/img/actions/recycle.svg");
 	position: relative;
-	top: 3px;
-	margin-left: -19px;
+	margin-left: -19.5px;
 	padding: 0;
 	opacity: 0;
 }

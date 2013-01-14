@@ -455,27 +455,28 @@ html input, html textarea {
 	border-right: 1px solid #AAAAAA;
 }
 /* strike through visible content of rows (entries) marked as deleted */
-.shorty-list tbody tr.deleted>#title,
-.shorty-list tbody tr.deleted>#target,
-.shorty-list tbody tr.deleted>#clicks,
-.shorty-list tbody tr.deleted>#until {
+.shorty-list tbody tr.deleted>td#title,
+.shorty-list tbody tr.deleted>td#target,
+.shorty-list tbody tr.deleted>td#clicks,
+.shorty-list tbody tr.deleted>td#until {
 	color: #808080;
 	text-decoration: line-through;
 	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
 }
 /* replace the 'delete' action icon by an 'undelete' icon */
-.shorty-list tbody tr.deleted>#actions #del:after {
-	content: url("../img/actions/recycle.png");
+.shorty-list tbody tr.deleted>td#actions #del:after {
+	content: url("../img/actions/recycle.svg");
 	position: relative;
-	top: 3px;
-	margin-left: -19px;
+	margin-left: -19.5px;
 	padding: 0;
 	opacity: 0;
 }
-.shorty-list tbody tr.deleted:hover>#actions #del>img {
+.shorty-list tbody tr.deleted.clicked>td#actions #del>img,
+.shorty-list tbody tr.deleted:hover>td#actions #del>img {
 	opacity: 0;
 }
-.shorty-list tbody tr.deleted:hover>#actions #del:after {
+.shorty-list tbody tr.deleted.clicked>td#actions #del:after,
+.shorty-list tbody tr.deleted:hover>td#actions #del:after {
 	opacity: 1;
 }
 /* elements (rows) currently filtered out (toolbars column filter options) */
