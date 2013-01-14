@@ -37,17 +37,17 @@
 }
 
 /* strike through visible content of rows (entries) marked as deleted */
-.shorty-list tbody tr.deleted>#title,
-.shorty-list tbody tr.deleted>#target,
-.shorty-list tbody tr.deleted>#clicks,
-.shorty-list tbody tr.deleted>#until {
+.shorty-list tbody tr.deleted>td#title,
+.shorty-list tbody tr.deleted>td#target,
+.shorty-list tbody tr.deleted>td#clicks,
+.shorty-list tbody tr.deleted>td#until {
 	color: #808080;
 	text-decoration: line-through;
 	background: transparent url('%appswebroot%/apps/shorty/img/status/strike.png') 0 50% repeat-x;
 }
 
 /* replace the 'delete' action icon by an 'undelete' icon */
-.shorty-list tbody tr.deleted>#actions #del:after {
+.shorty-list tbody tr.deleted>td#actions #del:after {
 	content: url("%appswebroot%/apps/shorty/img/actions/recycle.svg");
 	position: relative;
 	top: -1px;
