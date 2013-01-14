@@ -416,6 +416,10 @@ html input, html textarea {
 	-khtml-transition: opacity 600ms;
 	-webkit-transition: opacity 600ms;
 }
+/* keep action icons visible for active row */
+.shorty-list tbody tr.clicked td span.shorty-actions {
+	opacity: 0.7;
+}
 /* highlight hovered rows in the list */
 .shorty-list tbody tr:hover td {
 	background-color: #F0F0F0;
