@@ -90,3 +90,8 @@
 a.external:after {
 	content: url("%appswebroot%/apps/shorty/img/actions/external.png");
 }
+
+/* use a different right shift for the controls panel handle to make up for the missing settings icon in OC4 */
+.shorty-controls .shorty-handle-top {
+	right: -30px;
+}
