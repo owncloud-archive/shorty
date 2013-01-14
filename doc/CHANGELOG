@@ -24,6 +24,12 @@
 
 Changelog: 
 
+* Mon Jan 14 2013 Christian Reiner: version 0.3.18
+Fixed the 'recycle' icon for rows marked as deleted, to not scrumble row layout.
+Switched more (dynamically controlled) icons to svg format.
+Fixed some problems in compatibility to ownCloud version 4.0 based installations.
+Action icons now stay visible inside the active row when not hovering.
+Size optimization for the png versions of icons.
 * Mon Jan 07 2013 Christian Reiner: version 0.3.17
 Use svg version of icons where applicable.
 Recreated most icons for a more unified look and feel.
