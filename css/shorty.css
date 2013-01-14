@@ -635,8 +635,8 @@ html input, html textarea {
 .shorty-dialog span.clickable:not(.clicked):hover {
 	border: 1px solid #D3D3D3;
 }
-.shorty-dialog span.clickable:not(.clicked):after {
-	content: url("../../../core/img/actions/rename.png");
+.shorty-dialog:not(#dialog-show) span.clickable:not(.clicked):after {
+	content: url("../../../core/img/actions/rename.svg");
 	position: relative;
 	top: 3px;
 }
@@ -695,7 +695,7 @@ html input, html textarea {
 	padding-right: 30px;
 }
 .shorty-standalone:not(#dialog-show) .shorty-meta span#explanation.filled:hover:after {
-	content: url("../img/actions/takeover.png");
+	content: url("../img/actions/takeover.svg");
 	position: absolute;
 	float: right;
 	top: 6px;
@@ -731,11 +731,11 @@ html input, html textarea {
 	vertical-align: middle;
 }
 .external:after {
-	content:url("../img/actions/external.png");
+	content:url("../img/actions/external.svg");
 	margin-left: 0.3em;
 }
 .shorty-embedded a.shorty-clickable:before {
-	content: url("../img/actions/external.png");
+	content: url("../img/actions/external.svg");
 	margin-right: 0.3em;
 	margin-left: 7.0em;
 }
@@ -746,14 +746,14 @@ html input, html textarea {
 	cursor: s-resize;
 }
 .shorty-embedded fieldset.shorty-collapsible span:before {
-	content: url("../img/actions/shade.png");
+	content: url("../img/actions/shade.svg");
 	margin-right: 0.3em;
 	padding: 0;
 	vertical-align: baseline;
 	opacity: 0.7;
 }
 .shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
-	content: url("../img/actions/unshade.png");
+	content: url("../img/actions/unshade.svg");
 	margin-right: 0.3em;
 	vertical-align: baseline;
 	opacity: 0.7;

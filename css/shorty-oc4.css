@@ -31,9 +31,6 @@
 
 #shortlet:after {
 	content: url("%appswebroot%/apps/shorty/img/drag_me.png");
-	position: relative;
-	top: -12px;
-	margin-left: -160px;
 }
 
 /* strike through visible content of rows (entries) marked as deleted */
@@ -41,54 +38,33 @@
 .shorty-list tbody tr.deleted>td#target,
 .shorty-list tbody tr.deleted>td#clicks,
 .shorty-list tbody tr.deleted>td#until {
-	color: #808080;
-	text-decoration: line-through;
 	background: transparent url('%appswebroot%/apps/shorty/img/status/strike.png') 0 50% repeat-x;
 }
 
 /* replace the 'delete' action icon by an 'undelete' icon */
 .shorty-list tbody tr.deleted>td#actions #del:after {
 	content: url("%appswebroot%/apps/shorty/img/actions/recycle.svg");
-	position: relative;
-	top: -1px;
-	margin-left: -19.5px;
-	padding: 0;
-	opacity: 0;
 }
 
 .shorty-dialog:not(#dialog-show) span.clickable:not(.clicked):after {
-	content: url("%appswebroot%/core/img/actions/rename.png");
-	position: relative;
-	top: 3px;
+	content: url("%appswebroot%/core/img/actions/rename.svg");
 }
 
-.shorty-standalone:not(#dialog-show) .shorty-meta #explanation.filled:hover:after {
-	content: url("%appswebroot%/apps/shorty/img/actions/takeover.png");
-	float: right;
-	position: relative;
-	top: 3px;
+.shorty-standalone:not(#dialog-show) .shorty-meta span#explanation.filled:hover:after {
+	content: url("%appswebroot%/apps/shorty/img/actions/takeover.svg");
 }
 
 .shorty-embedded a.shorty-clickable:before {
-	content: url("%appswebroot%/apps/shorty/img/actions/external.png");
-	margin-right: 0.3em;
-	margin-left: 7.0em;
+	content: url("%appswebroot%/apps/shorty/img/actions/external.svg");
 }
 .shorty-embedded fieldset.shorty-collapsible span:before {
-	content: url("%appswebroot%/apps/shorty/img/actions/shade.png");
-	margin-right: 0.3em;
-	padding: 0;
-	vertical-align: baseline;
-	opacity: 0.7;
+	content: url("%appswebroot%/apps/shorty/img/actions/shade.svg");
 }
 .shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
-	content: url("%appswebroot%/apps/shorty/img/actions/unshade.png");
-	margin-right: 0.3em;
-	vertical-align: baseline;
-	opacity: 0.7;
+	content: url("%appswebroot%/apps/shorty/img/actions/unshade.svg");
 }
 a.external:after {
-	content: url("%appswebroot%/apps/shorty/img/actions/external.png");
+	content: url("%appswebroot%/apps/shorty/img/actions/external.svg");
 }
 
 /* use a different right shift for the controls panel handle to make up for the missing settings icon in OC4 */
