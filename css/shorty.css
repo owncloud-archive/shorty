@@ -339,13 +339,13 @@ html input, html textarea {
 .shorty-desktop .shorty-list td#favicon {
 	width: 26px;
 }
-.shorty-desktop .shorty-list th#title,
-.shorty-desktop .shorty-list td#title {
-	width: 100%;
+.shorty-desktop .shorty-list th#title, 
+.shorty-desktop .shorty-list th#target {
+	min-width: 3em;
 }
-.shorty-desktop .shorty-list th#target,
+.shorty-desktop .shorty-list td#title,
 .shorty-desktop .shorty-list td#target {
-	width: 14em;
+	width: 100%;
 }
 .shorty-desktop .shorty-list th#clicks,
 .shorty-desktop .shorty-list td#clicks {

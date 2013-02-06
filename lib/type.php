@@ -103,11 +103,11 @@ class OC_Shorty_Type
 	static $BACKENDS = array (
 		'none'    => ' [ none ] ',
 		'static'  => 'static backend',
-	//     'bitly'   => 'bitly.com service',
-	//     'cligs'   => 'cli.gs service',
+// 		'bitly'   => 'bitly.com service',
+// 		'cligs'   => 'cli.gs service',
 		'isgd'    => 'is.gd service',
 		'google'  => 'goo.gl service',
-//     'tinycc'  => 'tiny.cc service',
+// 		'tinycc'  => 'tiny.cc service',
 		'tinyurl' => 'ti.ny service',
 	);
 	// a list of all valid system settings
@@ -132,7 +132,7 @@ class OC_Shorty_Type
 		307 => 'Temporary Redirect',
 		400 => 'Bad Request',
 		401 => 'Unauthorized',
-		402 => 'Payment Required',                                  
+		402 => 'Payment Required',
 		403 => 'Forbidden',
 		404 => 'Not Found',
 		405 => 'Method Not Allowed',
