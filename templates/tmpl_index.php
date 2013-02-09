@@ -62,7 +62,7 @@
 					alt="<?php echo OC_Shorty_L10n::t('Home') ?>" />
 			</button>
 		</a>
-<?php if (5<=OC_Shorty_Tools::CompatVersion(true)) { ?>
+<?php if (OC_Shorty_Tools::versionCompare('<=',5)) { ?>
 		<!-- the internal settings button -->
 		<button id="controls-preferences" class="shorty-config settings" title="<?php echo OC_Shorty_L10n::t('Configuration') ?>">
 			<img class="svg" src="<?php echo OCP\Util::imagePath('core', 'actions/settings.svg'); ?>"

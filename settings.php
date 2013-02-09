@@ -38,9 +38,12 @@ OC_App::loadApps();
 OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OCP\Util::addStyle  ( 'shorty',   'shorty' );
 OCP\Util::addStyle  ( 'shorty',   'settings' );
-// TODO: remove OC4-compatibility
-if (4==OC_Shorty_Tools::CompatVersion(true))
-	OCP\Util::addStyle ( 'shorty', 'shorty-oc4' );
+// TODO: remove OC-4.0-compatibility:
+if (OC_Shorty_Tools::versionCompare('<','4.0.80'))
+	OCP\Util::addStyle ( 'shorty', 'shorty-oc40' );
+// TODO: remove OC-4.5-compatibility:
+if (OC_Shorty_Tools::versionCompare('<','4.5.90'))
+	OCP\Util::addStyle ( 'shorty', 'shorty-oc45' );
 
 OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 OCP\Util::addScript ( 'shorty',   'shorty' );

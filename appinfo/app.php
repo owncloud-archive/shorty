@@ -41,13 +41,15 @@ OC::$CLASSPATH['OC_Shorty_Tools']         = 'shorty/lib/tools.php';
 OC::$CLASSPATH['OC_Shorty_Type']          = 'shorty/lib/type.php';
 
 OCP\App::registerAdmin      ( 'shorty', 'settings' );
-// TODO: OC4-compatibility
-if (5>OC_Shorty_Tools::CompatVersion(true))
+// TODO: remove OC-4.0-compatibility:
+if (OC_Shorty_Tools::versionCompare('<','4.0.80'))
 	OCP\App::registerPersonal   ( 'shorty', 'preferences' );
 OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
 										'order' => 71,
 										'href' => OCP\Util::linkTo   ( 'shorty', 'index.php' ),
-										'icon' => OCP\Util::imagePath( 'shorty', 'shorty.svg' ),
+										'icon' => (OC_Shorty_Tools::versionCompare('>','4.90'))
+													? OCP\Util::imagePath( 'shorty', 'shorty-light.svg' )
+													: OCP\Util::imagePath( 'shorty', 'shorty-dusky.svg' ),
 										'name' => 'Shorty' ) );
 
 OCP\Util::connectHook ( 'OC_User',   'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');

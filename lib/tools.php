@@ -247,8 +247,8 @@ class OC_Shorty_Tools
 	} // function countShortys
 
 	/**
-	* @method OC_Shorty_Tools::CompatVersion
-	* @brief Returns the major version number of the OC framework
+	* @method OC_Shorty_Tools::versionCompare
+	* @brief Compares a given version (string notation) with the running ownCloud version
 	* @param beta boolean flag indicating of high subversion numbers should be accepted as beta of the comming version
 	* @return integer the major version number
 	* @access public
@@ -259,14 +259,11 @@ class OC_Shorty_Tools
 	* The plusBeta flag helps to recognize typical version numbers like x.86 indicating beta version of an upcoming version x+1.
 	* This method makes the checks more readable. 
 	*/
-	static function CompatVersion ($beta=true)
+	static function versionCompare ($operator,$cpVersion)
 	{
-		$OC_version = OCP\Util::getVersion();
-		$CP_version = $OC_version[0];
-		if ($beta && 80<=$OC_version[1])
-			$CP_version++;
-		return $CP_version;
-	} // function CompatVersion
+		$OCVersion = implode('.',OCP\Util::getVersion());
+		return (version_compare($OCVersion,$cpVersion,$operator));
+	} // function versionCompare
 
 	/**
 	* @method OC_Shorty_Tools::toBoolean

@@ -39,7 +39,7 @@
 	<legend>
 		<span id="title" class="shorty-title">
 			<img class="svg" style="vertical-align: bottom;"
-				src="<?php echo OCP\Util::imagePath("shorty","shorty.svg"); ?> ">
+				src="<?php echo OCP\Util::imagePath("shorty","shorty-dusky.svg"); ?> ">
 			<a name="shorty"><strong>Shorty</strong></a>
 		</span>
 	</legend>

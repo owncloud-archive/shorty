@@ -45,7 +45,8 @@
 		<div class="suggestion"><?php echo OC_Shorty_L10n::t("If you just started using Shorty").":" ?></div>
 		<div class="explanation">
 			<?php echo sprintf(OC_Shorty_L10n::t(
-									(5<=OC_Shorty_Tools::CompatVersion(true))
+									// TODO: remove OC-4 compatibility
+									(OC_Shorty_Tools::versionCompare('>=','4.0.80'))
 									? "Set personal preferences using the cog wheel (%%s) on the upper right!"
 									: "Set personal preferences using the cog wheel (%%s) on the bottom left!" ),
 									sprintf('<img id="controls-preferences" class="svg settings" style="vertical-align:bottom;cursor:pointer;" src="%s" />',
@@ -175,23 +176,23 @@
 							src="<?php echo $action['icon']?>" />
 					</a>
 <?php } ?>
-				<a id="show"   title="<?php echo OC_Shorty_L10n::t('show');   ?>"   class="">
+				<a id="shorty-action-show"   title="<?php echo OC_Shorty_L10n::t('show');   ?>"   class="">
 					<img alt="<?php echo OC_Shorty_L10n::t('show'); ?>"   title="<?php echo OC_Shorty_L10n::t('Show details'); ?>"
 						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('shorty','actions/info.svg');   ?>" />
 				</a>
-				<a id="edit"   title="<?php echo OC_Shorty_L10n::t('edit');   ?>"   class="">
+				<a id="shorty-action-edit"   title="<?php echo OC_Shorty_L10n::t('edit');   ?>"   class="">
 					<img alt="<?php echo OC_Shorty_L10n::t('modify'); ?>"   title="<?php echo OC_Shorty_L10n::t('Modify shorty'); ?>"
 						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('core','actions/rename.svg'); ?>" />
 				</a>
-				<a id="del"    title="<?php echo OC_Shorty_L10n::t('delete'); ?>" class="">
+				<a id="shorty-action-del"    title="<?php echo OC_Shorty_L10n::t('delete'); ?>" class="">
 					<img alt="<?php echo OC_Shorty_L10n::t('delete'); ?>" title="<?php echo OC_Shorty_L10n::t('Delete shorty'); ?>"
 						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('core','actions/delete.svg'); ?>" />
 				</a>
-				<a id="share"  title="<?php echo OC_Shorty_L10n::t('share');  ?>"   class="">
+				<a id="shorty-action-share"  title="<?php echo OC_Shorty_L10n::t('share');  ?>"   class="">
 					<img alt="<?php echo OC_Shorty_L10n::t('share'); ?>"  title="<?php echo OC_Shorty_L10n::t('Share shorty'); ?>"
 						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('core','actions/share.svg');  ?>" />
 				</a>
-				<a id="open"   title="<?php echo OC_Shorty_L10n::t('open');   ?>"   class="">
+				<a id="shorty-action-open"   title="<?php echo OC_Shorty_L10n::t('open');   ?>"   class="">
 					<img alt="<?php echo OC_Shorty_L10n::t('open'); ?>"   title="<?php echo OC_Shorty_L10n::t('Open target'); ?>"
 						class="shorty-icon svg" src="<?php echo OCP\Util::imagePath('shorty','actions/open.svg'); ?>" />
 				</a>

@@ -35,10 +35,10 @@
 ?>
 
 <fieldset id="shorty-fieldset" class="personalblock">
-<?php if (5>OC_Shorty_Tools::CompatVersion(true)) { ?>
+<?php if (OC_Shorty_Tools::versionCompare('<','4.0.80')) { ?>
 	<div id="title" class="shorty-title">
 		<img class="svg" style="vertical-align: bottom;"
-			src="<?php echo OCP\Util::imagePath("shorty","shorty.svg"); ?> ">
+			src="<?php echo OCP\Util::imagePath("shorty","shorty-dusky.svg"); ?> ">
 		<strong>Shorty</strong>
 	</div>
 	<div id="settings">

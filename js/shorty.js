@@ -460,26 +460,26 @@ OC.Shorty={
 				).pipe(function(){
 					if ('click'==event.type){
 						switch(element.attr('id')){
-							case 'close':
+							case 'shorty-action-close':
 								break;
 
-							case 'del':
+							case 'shorty-action-del':
 								OC.Shorty.WUI.Entry.del(entry);
 								break;
 
-							case 'edit':
+							case 'shorty-action-edit':
 								OC.Shorty.WUI.Entry.edit(entry);
 								break;
 
-							case 'open':
+							case 'shorty-action-open':
 								OC.Shorty.Action.Url.forward(entry);
 								break;
 
-							case 'share':
+							case 'shorty-action-share':
 								OC.Shorty.WUI.Entry.share(entry);
 								break;
 
-							case 'show':
+							case 'shorty-action-show':
 								OC.Shorty.WUI.Entry.show(entry);
 								break;
 
@@ -738,14 +738,15 @@ OC.Shorty={
 				{
 					var rows=body.find('tr.shorty-fresh');
 					OC.Shorty.WUI.List.highlight(list,rows.first());
-					rows.each(function(){
-						$(this).removeClass('shorty-fresh');
-						$(this).find('td').effect('pulsate');
-					});
 					$.when(
 						OC.Shorty.WUI.List.vacuum(),
 						body.fadeIn(duration)
-					).done(dfd.resolve)
+					).pipe(function(){
+						rows.each(function(){
+							$(this).removeClass('shorty-fresh');
+							$(this).find('td').effect('pulsate', { times:3 }, 2000);
+						});
+					}).done(dfd.resolve)
 				}else{
 					if (!body.is(':visible'))
 						dfd.resolve();

@@ -85,7 +85,6 @@ html input, html textarea {
 }
 /* the handle of the controls panel */
 .shorty-controls .shorty-handle img {
-/* 	margin-top: 1px; */
 	opacity: 0.6;
 	cursor: inherit;
 	width: 16px;
@@ -147,9 +146,6 @@ html input, html textarea {
 	vertical-align: middle;
 	height: 28px;
 }
-.shorty-config:first-child {
-	margin-right: 170px;
-}
 .shorty-config img {
 	cursor: inherit;
 }
@@ -195,7 +191,7 @@ html input, html textarea {
 	display: none;
 	position: absolute;
 	left:6em;
-	top:8em;
+	top:3em;
 	width: 92%;
 	z-index: 2;
 	white-space: nowrap;
