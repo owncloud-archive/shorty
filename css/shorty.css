@@ -417,6 +417,9 @@ html input, html textarea {
 }
 /* keep action icons visible for active row */
 .shorty-list tbody tr.clicked td span.shorty-actions {
+	opacity: 0.2;
+}
+.shorty-list tbody tr.clicked:hover td span.shorty-actions {
 	opacity: 0.7;
 }
 /* highlight hovered rows in the list */
