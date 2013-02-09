@@ -50,8 +50,8 @@
 		<br />
 		<label for="meta"><img id="busy" height="12px" src="<?php echo OCP\Util::imagePath('shorty', 'loading-led.gif'); ?>"></label>
 		<span id="meta" class="shorty-meta">
-			<span class="shorty-value">
-				<img id="staticon"  class="shorty-icon svg" width="16px" data="status/neutral"
+			<span class="">
+				<img id="staticon"  class="shorty-icon svg" width="16px" data="blank"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
 				<img id="schemicon" class="shorty-icon svg" width="16px" data="blank"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
@@ -60,7 +60,7 @@
 				<img id="mimicon"   class="shorty-icon svg" width="16px" data="blank"
 					src="<?php echo OCP\Util::imagePath('shorty', 'blank.png'); ?>">
 			</span>
-			<span id="explanation" class="shorty-value"></span>
+			<span id="explanation" class="shorty-value" data=""></span>
 		</span>
 		<br />
 		<label for="title"><?php echo OC_Shorty_L10n::t('Title').':'; ?></label>

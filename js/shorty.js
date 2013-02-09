@@ -279,7 +279,7 @@ OC.Shorty={
 					).done(dfd.resolve)
 				}
 				else
-				dfd.resolve();
+					dfd.resolve();
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.reset
 			/**
@@ -358,7 +358,6 @@ OC.Shorty={
 								// grant submission 'cause the target was obviously valid before
 								OC.Shorty.WUI.Dialog.sharpen(dialog,true);
 								dialog.find('#title').focus();
-// 								dialog.find('#target').prop('readonly','true');
 								dialog.find('#target').attr('readonly','true');
 								dialog.find('span.clickable.clicked').removeClass('clicked');
 								// clicking the target removes the 'readonly' property
@@ -371,7 +370,6 @@ OC.Shorty={
 									// suppress further clicking sensivity
 									dialog.find('span.clickable').addClass('clicked');
 									// make element writeable
-// 									$(this).removeProp('readonly').focus();
 									$(this).removeAttr('readonly').focus();
 									// prevent submission when element has been altered
 									$(this).on('keypress', {dialog: dialog}, function(){
@@ -432,32 +430,7 @@ OC.Shorty={
 					dfd.reject();
 				})
 				return dfd.promise();
-			}, // OC.Shorty.WUI.Dialog.validate
-			/**
-			* @method OC.Shorty.WUI.Dialog.wipe
-			* @brief Wipes all values inside an existing dialog
-			* @param dialog jQueryObject Represents the dialog to be handled
-			* @description Helps to remove left overs from a previous usage of a dialog
-			* @author Christian Reiner
-			*/
-			wipe: function(dialog){
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("wipe dialog "+dialog.attr('id'));
-				var dfd = new $.Deferred();
-				if (dialog){
-					// wipe dialog fields
-					$.when(
-						$.each(dialog.find('#status'),      function(){$(this).attr('data','blocked');$(this).val('blocked');}),
-						$.each(dialog.find('input'),        function(){$(this).attr('data','');$(this).val('');}),
-						$.each(dialog.find('textarea'),     function(){$(this).attr('data','');$(this).val('');}),
-						$.each(dialog.find('.shorty-value'),function(){$(this).attr('data','');$(this).text('');}),
-						$.each(dialog.find('.shorty-icon'), function(){$(this).attr('data','');$(this).attr('src','');}),
-						OC.Shorty.WUI.Dialog.sharpen(dialog,false)
-					).done(dfd.resolve)
-				}
-				else
-					dfd.resolve();
-				return dfd.promise();
-			}, // OC.Shorty.WUI.Dialog.wipe
+			} // OC.Shorty.WUI.Dialog.validate
 		}, // OC.Shorty.WUI.Dialog
 		/**
 		* @class OC.Shorty.WUI.Entry
@@ -930,7 +903,7 @@ OC.Shorty={
 					// select row from list by id
 					row=$('#list-of-shortys tbody tr#'+set.id);
 					// modify attributes in row, as data and value
-					$.each(['status','title','target','until','notes'],function(j,aspect){
+					$.each(['status','title','favicon','target','until','notes'],function(j,aspect){
 						if (typeof set[aspect]==undefined) set[aspect]='';
 						// enhance row with actual set values
 						row.attr('data-'+this,set[aspect]);
@@ -954,6 +927,10 @@ OC.Shorty={
 							case 'target':
 								classes.push('ellipsis');
 								content=set[aspect];
+								break;
+
+							case 'favicon':
+								content='<img class="shorty-icon" width="16px" src="'+set[aspect]+'">';
 								break;
 
 							case 'status':
@@ -1292,16 +1269,16 @@ OC.Shorty={
 			* @author Christian Reiner
 			*/
 			reset: function(dialog){
-				return;
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("reset meta data");
 				var dfd = new $.Deferred();
 				$.when(
 					dialog.find('#meta').fadeTo('fast',0)
 				).always(function(){
-					dialog.find('#staticon' ).attr('src',dialog.find('#staticon' ).attr('data'));
-					dialog.find('#schemicon').attr('src',dialog.find('#schemicon').attr('data'));
-					dialog.find('#favicon'  ).attr('src',dialog.find('#favicon'  ).attr('data'));
-					dialog.find('#mimicon'  ).attr('src',dialog.find('#mimicon'  ).attr('data'));
+					// reset icon src attribute
+					$.each(['#staticon','#schemicon','#favicon','#mimicon'],function(i,aspect){
+						dialog.find(aspect).attr('src',OC.imagePath('shorty',dialog.find(aspect).attr('data')));
+					});
+					// reset explanation
 					dialog.find('#explanation').html(dialog.find('#explanation').attr('data')).removeClass('filled');
 					dfd.resolve();
 				});
@@ -1651,8 +1628,11 @@ OC.Shorty={
 				var status=dialog.find('#status').val()||'blocked';
 				var title =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
 				var target=dialog.find('#target').val()||'';
-				var until =dialog.find('#until').val()||'';
 				var notes =dialog.find('#notes').val()||'';
+				var until =dialog.find('#until').val()||'';
+				// store favicon from meta data, except it is the internal default blank
+				var favicon = dialog.find('#meta #favicon').attr('src');
+				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
 				// perform modification of existing shorty
 				$.when(
 				OC.Shorty.WUI.Notification.hide(),
@@ -1661,12 +1641,14 @@ OC.Shorty={
 				OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
 				OC.Shorty.WUI.List.show()
 				).done(function(){
-					var data={	id: id,
-								status: status,
-								title:  title,
-								target: target,
-								notes:  notes,
-								until:  until};
+					var data={
+						id: id,
+						status:  status,
+						title:   title,
+						target:  target,
+						notes:   notes,
+						until:   until,
+						favicon: favicon};
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log(data);
 					$.ajax({
 						type:     'POST',

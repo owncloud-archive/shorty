@@ -54,15 +54,17 @@ try
 	$p_target  = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL,    FALSE );
 	$p_until   = OC_Shorty_Type::req_argument ( 'until',   OC_Shorty_Type::DATE,   FALSE );
 	$p_notes   = OC_Shorty_Type::req_argument ( 'notes',   OC_Shorty_Type::STRING, FALSE );
+	$p_favicon = OC_Shorty_Type::req_argument ( 'favicon', OC_Shorty_Type::URL,    FALSE );
 	$param = array
 	(
-		':user'   => OCP\User::getUser ( ),
-		':id'     => $p_id,
-		':status' => $p_status  ?        $p_status          : '',
-		':title'  => $p_title   ? substr($p_title,  0,1024) : '',
-		':target' => $p_target  ? substr($p_target, 0,4096) : '',
-		':notes'  => $p_notes   ? substr($p_notes,  0,4096) : '',
-		':until'  => $p_until   ?        $p_until           : null,
+		':user'    => OCP\User::getUser ( ),
+		':id'      => $p_id,
+		':status'  => $p_status  ?        $p_status          : '',
+		':title'   => $p_title   ? substr($p_title,  0,1024) : '',
+		':favicon' => $p_favicon ? substr($p_favicon,0,1024) : '',
+		':target'  => $p_target  ? substr($p_target, 0,4096) : '',
+		':notes'   => $p_notes   ? substr($p_notes,  0,4096) : '',
+		':until'   => $p_until   ?        $p_until           : null,
 	);
 	$query = OCP\DB::prepare ( OC_Shorty_Query::URL_UPDATE );
 	$query->execute ( $param );
