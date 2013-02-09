@@ -525,6 +525,8 @@ OC.Shorty={
 				var dfd = new $.Deferred();
 				// use the existing edit dialog for this
 				var dialog=$('#controls #dialog-edit');
+				// reset meta data
+				OC.Shorty.WUI.Meta.reset(dialog);
 				// load entry into dialog
 				dialog.find('#id').val(entry.attr('data-id'));
 				dialog.find('#status').val(entry.attr('data-status')||'');
@@ -598,6 +600,8 @@ OC.Shorty={
 				var dfd = new $.Deferred();
 				// use the existing edit dialog for this
 				var dialog=$('#controls #dialog-show');
+				// reset meta data
+				OC.Shorty.WUI.Meta.reset(dialog);
 				// load entry into dialog
 				dialog.find('#id').attr('data-id',entry.attr('data-id')).val(entry.attr('data-id'));
 				dialog.find('#status').attr('data-status',entry.attr('data-status')||'').val(t('shorty',entry.attr('data-status'))||'');
