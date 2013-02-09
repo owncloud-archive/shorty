@@ -130,7 +130,7 @@ class OC_ShortyTracking_Hooks
 		{
 			// action 'tracking-list' in list-of-shortys
 			$parameters['list'][] = array (
-				'id'    => 'clicks',
+				'id'    => 'shorty-action-clicks',
 				'name'  => 'clicks',
 				'icon'  => OCP\Util::imagePath('shorty_tracking','actions/hits.svg'),
 				'call'  => 'OC.Shorty.Tracking.control',
