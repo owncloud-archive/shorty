@@ -42,7 +42,7 @@
 }
 
 /* replace the 'delete' action icon by an 'undelete' icon */
-.shorty-list tbody tr.deleted>td#actions #del:after {
+.shorty-list tbody tr.deleted>td#actions #shorty-action-del:after {
 	content: url("%appswebroot%/apps/shorty/img/actions/recycle.svg");
 }
 

@@ -462,7 +462,7 @@ html input, html textarea {
 	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
 }
 /* replace the 'delete' action icon by an 'undelete' icon */
-.shorty-list tbody tr.deleted>td#actions #del:after {
+.shorty-list tbody tr.deleted>td#actions #shorty-action-del:after {
 	content: url("../img/actions/recycle.svg");
 	position: relative;
 	top: -1px;
@@ -470,12 +470,12 @@ html input, html textarea {
 	padding: 0;
 	opacity: 0;
 }
-.shorty-list tbody tr.deleted.clicked>td#actions #del>img,
-.shorty-list tbody tr.deleted:hover>td#actions #del>img {
+.shorty-list tbody tr.deleted.clicked>td#actions #shorty-action-del>img,
+.shorty-list tbody tr.deleted:hover>td#actions #shorty-action-del>img {
 	opacity: 0;
 }
-.shorty-list tbody tr.deleted.clicked>td#actions #del:after,
-.shorty-list tbody tr.deleted:hover>td#actions #del:after {
+.shorty-list tbody tr.deleted.clicked>td#actions #shorty-action-del:after,
+.shorty-list tbody tr.deleted:hover>td#actions #shorty-action-del:after {
 	opacity: 1;
 }
 /* elements (rows) currently filtered out (toolbars column filter options) */
