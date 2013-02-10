@@ -42,12 +42,12 @@ OC::$CLASSPATH['OC_Shorty_Type']          = 'shorty/lib/type.php';
 
 OCP\App::registerAdmin      ( 'shorty', 'settings' );
 // TODO: remove OC-4.0-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.0.80'))
+if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
 	OCP\App::registerPersonal   ( 'shorty', 'preferences' );
 OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
 										'order' => 71,
 										'href' => OCP\Util::linkTo   ( 'shorty', 'index.php' ),
-										'icon' => (OC_Shorty_Tools::versionCompare('>','4.90'))
+										'icon' => (OC_Shorty_Tools::versionCompare('>=','4.91')) // OC-5pre
 													? OCP\Util::imagePath( 'shorty', 'shorty-light.svg' )
 													: OCP\Util::imagePath( 'shorty', 'shorty-dusky.svg' ),
 										'name' => 'Shorty' ) );

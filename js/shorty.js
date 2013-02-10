@@ -83,7 +83,8 @@ OC.Shorty={
 				if (OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
 					$.when(
 						OC.Shorty.WUI.Controls.Panel.removeClass('shorty-panel-visible'),
-						$('#content,#controls').animate({top: "-="+OC.Shorty.WUI.Controls.Panel.css('height')}, 'fast')
+// 						$('#content,#controls').animate({top:"-="+OC.Shorty.WUI.Controls.Panel.css('height')}, 'fast')
+						$('#content').animate({'margin-top':"-="+$('#controls').css('height')}, 'fast')
 					).done(function(){
 						dfd.resolve();
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
@@ -104,7 +105,8 @@ OC.Shorty={
 				if ( ! OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
 					$.when(
 						OC.Shorty.WUI.Controls.Panel.addClass('shorty-panel-visible'),
-						$('#content,#controls').animate({top: "+="+OC.Shorty.WUI.Controls.Panel.css('height'),}, 'fast')
+// 						$('#content,#controls').animate({top:"+="+OC.Shorty.WUI.Controls.Panel.css('height'),}, 'fast')
+						$('#content').animate({'margin-top':"+="+$('#controls').css('height'),}, 'fast')
 					).done(function(){
 						dfd.resolve();
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
