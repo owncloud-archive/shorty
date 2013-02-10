@@ -98,7 +98,10 @@
 	cursor: url('../../shorty/img/actions/filter.svg'),pointer;
 }
 
-/* #shorty-tracking-list-dialog #shorty-tracking-reference { */
+/* the click list dialog */
+#shorty-tracking-list-dialog {
+	width: inherit;
+}
 #shorty-tracking-list-dialog .shorty-tracking-reference {
 	display: inline;
 	width: 100%;
@@ -127,6 +130,8 @@
 	margin: 0 0.2em;
 	padding: 0;
 }
+
+/* the click dialog */
 #shorty-tracking-click-dialog {
 	width: 35em;
 	line-height: 1.2em;
