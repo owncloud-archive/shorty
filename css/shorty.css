@@ -459,7 +459,7 @@ html input, html textarea {
 .shorty-list tbody tr.deleted>td#until {
 	color: #808080;
 	text-decoration: line-through;
-	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
+	background: #eee url('../img/status/strike.png') 0 50% repeat-x;
 }
 /* replace the 'delete' action icon by an 'undelete' icon */
 .shorty-list tbody tr.deleted>td#actions #shorty-action-del:after {
