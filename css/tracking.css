@@ -102,6 +102,11 @@
 #shorty-tracking-list-dialog {
 	width: inherit;
 }
+/* room for the info slideout */
+#shorty-tracking-list-dialog > fieldset {
+	min-height: 25em;
+}
+
 #shorty-tracking-list-dialog .shorty-tracking-reference {
 	display: inline;
 	width: 100%;
