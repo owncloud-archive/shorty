@@ -24,11 +24,11 @@
 
 Changelog: 
 
-* Mon Feb 10 2013 Christian Reiner: version 0.3.19
+* Mon Feb 11 2013 Christian Reiner: version 0.3.19
 Support for ownCloud version 5. 
 Fixed handling of favicons when adding multiple Shortys. 
 Update the favicon when a Shortys target url is changed. 
-Small enhancement to the list layout to improve readability. 
+Enhancement to the list layout and apeparance to improve readability. 
 * Mon Jan 14 2013 Christian Reiner: version 0.3.18
 Fixed the 'recycle' icon for rows marked as deleted, to not scrumble row layout.
 Switched more (dynamically controlled) icons to svg format.
