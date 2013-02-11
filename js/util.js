@@ -163,4 +163,49 @@ function jsFunctionName(func){
 function nl2br (str, is_xhtml) {
     var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
     return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
-}
+} // nl2br
+
+/**
+ * @dictionary applyVersionOperator
+ * @brief Dictionary of comparision operators
+ * @author Christian Reiner
+ */
+var applyVersionOperator = {
+	'<' : function(a,b){return ( 1==compareVersionNumbers(a,b))?true:false;},
+	'<=': function(a,b){return (-1!=compareVersionNumbers(a,b))?true:false;},
+	'=<': function(a,b){return (-1!=compareVersionNumbers(a,b))?true:false;},
+	'==': function(a,b){return ( 0==compareVersionNumbers(a,b))?true:false;},
+	'!=': function(a,b){return ( 0!=compareVersionNumbers(a,b))?true:false;},
+	'=>': function(a,b){return ( 1!=compareVersionNumbers(a,b))?true:false;},
+	'>=': function(a,b){return ( 1!=compareVersionNumbers(a,b))?true:false;},
+	'>' : function(a,b){return (-1==compareVersionNumbers(a,b))?true:false;}
+} // applyVersionOperator
+
+/**
+ * @function compareVersionNumbers
+ * @brief Compares two given version numbers noted as dictionaries
+ * @return -1|0|1 (a<b=>1,a==b=>0,a>b=>-1)
+ * @author Christian Reiner
+ */
+function compareVersionNumbers(a,b) {
+    var ax, bx;
+    for (var i=0; i<Math.max(a.length,b.length); ++i) {
+        ax=a[i]||0;
+        bx=b[i]||0;
+        if (bx>ax)
+            return 1;
+        else if (ax>bx)
+            return -1;
+    }
+    return 0;
+} // compareVersionNumbers
+
+/**
+ * @function parseVersionString
+ * @brief Parses a given version notation in string format into a dictionary
+ * @author Christian Reiner
+ */
+function parseVersionString (str) {
+    if (typeof(str) != 'string') { return false; }
+    return str.split('.');
+} // parseVersionString

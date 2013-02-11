@@ -81,15 +81,18 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide controls panel");
 				var dfd = new $.Deferred();
 				if (OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
+					var selector;
 					$.when(
-						OC.Shorty.WUI.Controls.Panel.removeClass('shorty-panel-visible'),
-// 						$('#content,#controls').animate({top:"-="+OC.Shorty.WUI.Controls.Panel.css('height')}, 'fast')
-						$('#content').animate({'margin-top':"-="+$('#controls').css('height')}, 'fast')
-					).done(function(){
-						dfd.resolve();
+						OC.Shorty.Status.versionCompare('>','4.90')
+					).pipe(function(result){
+						selector=result?'#content':'#content,#control';
+						$(selector).animate({'margin-top':"-="+$('#controls').css('height')}, 'fast'),
+						OC.Shorty.WUI.Controls.Panel.removeClass('shorty-panel-visible')
+					}).done(function(){
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
 													.attr('src',OC.imagePath('shorty','actions/unshade'));
 						OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
+						dfd.resolve();
 					}).fail(dfd.reject)}
 				else dfd.resolve();
 				return dfd.promise();
@@ -103,15 +106,15 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show controls panel");
 				var dfd = new $.Deferred();
 				if ( ! OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
+					var selector=(OC.Shorty.Status.versionCompare('>','4.90'))?'#content':'#content,#control';
 					$.when(
 						OC.Shorty.WUI.Controls.Panel.addClass('shorty-panel-visible'),
-// 						$('#content,#controls').animate({top:"+="+OC.Shorty.WUI.Controls.Panel.css('height'),}, 'fast')
-						$('#content').animate({'margin-top':"+="+$('#controls').css('height'),}, 'fast')
+						$(selector).animate({'margin-top':"+="+$('#controls').css('height'),}, 'fast')
 					).done(function(){
-						dfd.resolve();
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
 													.attr('src',OC.imagePath('shorty','actions/shade'));
 						OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
+						dfd.resolve();
 					}).fail(dfd.reject)}
 				else dfd.resolve();
 				return dfd.promise();
@@ -1362,6 +1365,8 @@ OC.Shorty={
 	 * @author Christian Reiner
 	 */
 
+	// ===========
+
 	Action:{
 		/**
 		 * @class OC.Shorty.Action.Preference
@@ -2023,7 +2028,96 @@ OC.Shorty={
 		*/
 		Context:{}
 	}, // OC.Shorty.Runtime
+
 	// ===========
+
+	/**
+	* @class OC.Shorty.Status
+	* @brief Status of server, installation and situation
+	* @description 
+	* This is a temporary workaround for the fact that currently an ajax request is required for such basic information
+	* Hopefully in later versions the ajax request can be replaced by an access to some predefined values already available
+	* @author Christian Reiner
+	*/
+	Status:{
+		/**
+		* @object OC.Shorty.Status.Cache
+		* @brief Cache structure holding information details
+		* @author Christian Reiner
+		 */
+		Cache:{
+			Valid:false,
+			Server:{}
+		},
+		
+		/**
+		* @method OC.Shorty.Status.fetch
+		* @brief Retrieve information from server and feed it into the cache
+		* @author Christian Reiner
+		*/
+		fetch:function(){
+			var dfd = new $.Deferred();
+			if (OC.Shorty.Status.Cache.Valid){
+				return dfd.resolve().promise();
+			}else{
+				if (OC.Shorty.Debug){OC.Shorty.Debug.log("fetching status information from server");}
+				$.ajax({
+					type:     'GET',
+					url:      OC.filePath('','','status.php'),
+					cache:    true,
+					dataType: 'json'
+				}).done(function(response){
+					$.each(response,function(key,val){
+						OC.Shorty.Status.Cache.Server[key]=val;
+					});
+					OC.Shorty.Status.Cache.Server.versionset=parseVersionString(OC.Shorty.Status.Cache.Server.version);
+					OC.Shorty.Status.Cache.Valid=true;
+					dfd.resolve(response.data);
+				}).fail(function(response){
+					dfd.reject({});
+				})
+				if (OC.Shorty.Debug){OC.Shorty.Debug.log(OC.Shorty.Status.Cache);}
+				return dfd.promise();
+			}
+		}, // OC.Shorty.Status.OCVersion
+		/**
+		* @method OC.Shorty.Status.getOCVersion
+		* @brief Return the OC-version
+		* @author Christian Reiner
+		*/
+		getOCVersion:function(aspect){
+			var dfd = new $.Deferred();
+			$.when(
+				OC.Shorty.Status.fetch()
+			).done(function(){
+				dfd.resolve(OC.Shorty.Status.Cache.Server[aspect]);
+			}).fail(function(response){
+				dfd.reject({});
+			})
+			return dfd.promise();
+		}, // OC.Shorty.Status.OCVersion
+		/**
+		* @method OC.Shorty.Status.versionCompare
+		* @brief Compare the OC version with a given one using the specifed operand
+		* @author Christian Reiner
+		*/
+		versionCompare:function(operator,cpVersion){
+			var dfd = new $.Deferred();
+			// prepare given version to be compared, case into an array, if required
+			if ('string'==typeof(cpVersion))
+				cpVersion=parseVersionString(cpVersion);
+			// compare prepared versions
+			$.when(
+				OC.Shorty.Status.getOCVersion('versionset')
+			).done(function(ocVersion){
+				dfd.resolve(applyVersionOperator[operator](ocVersion,cpVersion));
+			}).fail(function(response){
+				dfd.reject({});
+			})
+			return dfd.promise();
+		} // OC.Shorty.Status.versionCompare
+	}, // OC.Shorty.Runtime
+
 } // OC.Shorty
 
 /**
