@@ -149,7 +149,14 @@ $(document).ready(function(){
 	});
 	// open preferences popup when button is clicked
 	$(document).on('click keydown','#controls-preferences.settings',[],function() {
-		OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
+		$.when(
+			OC.Shorty.Status.versionCompare('>=','4.80')
+		).pipe(function(result){
+			if (result)
+				OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
+			else
+				window.location.href=OC.linkTo('settings','personal.php');
+		});
 	});
 	// prevent vertical scroll bar in content area triggered by the additional controls bar handle
 	$('#content').height(($('#content').height()-$('#controls #controls-handle').height())+'px');
