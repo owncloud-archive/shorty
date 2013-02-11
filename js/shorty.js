@@ -83,9 +83,9 @@ OC.Shorty={
 				if (OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
 					var selector;
 					$.when(
-						OC.Shorty.Status.versionCompare('>','4.90')
+						OC.Shorty.Status.versionCompare('>=','4.91')
 					).pipe(function(result){
-						selector=result?'#content':'#content,#control';
+						selector=result?'#content':'#content,#controls';
 						$(selector).animate({'margin-top':"-="+$('#controls').css('height')}, 'fast'),
 						OC.Shorty.WUI.Controls.Panel.removeClass('shorty-panel-visible')
 					}).done(function(){
@@ -106,11 +106,14 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show controls panel");
 				var dfd = new $.Deferred();
 				if ( ! OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
-					var selector=(OC.Shorty.Status.versionCompare('>','4.90'))?'#content':'#content,#control';
+					var selector;
 					$.when(
-						OC.Shorty.WUI.Controls.Panel.addClass('shorty-panel-visible'),
-						$(selector).animate({'margin-top':"+="+$('#controls').css('height'),}, 'fast')
-					).done(function(){
+						OC.Shorty.Status.versionCompare('>=','4.91')
+					).pipe(function(result){
+						selector=result?'#content':'#content,#controls';
+						$(selector).animate({'margin-top':"+="+$('#controls').css('height')}, 'fast'),
+						OC.Shorty.WUI.Controls.Panel.addClass('shorty-panel-visible')
+					}).done(function(){
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
 													.attr('src',OC.imagePath('shorty','actions/shade'));
 						OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
