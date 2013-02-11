@@ -420,7 +420,7 @@ html input, html textarea {
 }
 /* highlight hovered rows in the list */
 .shorty-list tbody tr:hover td {
-	background-color: #F0F0F0;
+	background-color: #F4F4F4;
 	transition: background-color 600ms;
 	-o-transition: background-color 600ms;
 	-ms-transition: background-color 600ms;
@@ -438,9 +438,9 @@ html input, html textarea {
 }
 /* highlight a specific, 'clicked' row in the list */
 .shorty-list tbody tr.clicked td {
-	background-color: #F0F0F0;
-	border-top: 1px solid #AAAAAA;
-	border-bottom: 1px solid #AAAAAA;
+	background-color: #EEE;
+	border-top: 1px solid #AAA;
+	border-bottom: 1px solid #AAA;
 }
 .shorty-list tbody tr.clicked td:first-child {
 	border-top-left-radius: 0.5em;
@@ -450,16 +450,30 @@ html input, html textarea {
 .shorty-list tbody tr.clicked td:last-child {
 	border-top-right-radius: 0.5em;
 	border-bottom-right-radius: 0.5em;
-	border-right: 1px solid #AAAAAA;
+	border-right: 1px solid #AAA;
 }
 /* strike through visible content of rows (entries) marked as deleted */
 .shorty-list tbody tr.deleted>td#title,
 .shorty-list tbody tr.deleted>td#target,
 .shorty-list tbody tr.deleted>td#clicks,
 .shorty-list tbody tr.deleted>td#until {
-	color: #808080;
 	text-decoration: line-through;
-	background: #eee url('../img/status/strike.png') 0 50% repeat-x;
+	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
+}
+/* strike through visible content of rows (entries) marked as deleted */
+.shorty-list tbody tr.deleted:hover>td#title,
+.shorty-list tbody tr.deleted:hover>td#target,
+.shorty-list tbody tr.deleted:hover>td#clicks,
+.shorty-list tbody tr.deleted:hover>td#until {
+	text-decoration: line-through;
+	background: #F4F4F4 url('../img/status/strike.png') 0 50% repeat-x;
+}
+.shorty-list tbody tr.deleted.clicked>td#title,
+.shorty-list tbody tr.deleted.clicked>td#target,
+.shorty-list tbody tr.deleted.clicked>td#clicks,
+.shorty-list tbody tr.deleted.clicked>td#until {
+	text-decoration: line-through;
+	background: #EEE url('../img/status/strike.png') 0 50% repeat-x;
 }
 /* replace the 'delete' action icon by an 'undelete' icon */
 .shorty-list tbody tr.deleted>td#actions #shorty-action-del:after {
