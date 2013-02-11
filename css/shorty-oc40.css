@@ -40,6 +40,18 @@
 .shorty-list tbody tr.deleted>td#until {
 	background: transparent url('%appswebroot%/apps/shorty/img/status/strike.png') 0 50% repeat-x;
 }
+.shorty-list tbody tr.deleted:hover>td#title,
+.shorty-list tbody tr.deleted:hover>td#target,
+.shorty-list tbody tr.deleted:hover>td#clicks,
+.shorty-list tbody tr.deleted:hover>td#until {
+	background: #F4F4F4 url('%appswebroot%/apps/shorty/img/status/strike.png') 0 50% repeat-x;
+}
+.shorty-list tbody tr.deleted.clicked>td#title,
+.shorty-list tbody tr.deleted.clicked>td#target,
+.shorty-list tbody tr.deleted.clicked>td#clicks,
+.shorty-list tbody tr.deleted.clicked>td#until {
+	background: #EEE url('%appswebroot%/apps/shorty/img/status/strike.png') 0 50% repeat-x;
+}
 
 /* replace the 'delete' action icon by an 'undelete' icon */
 .shorty-list tbody tr.deleted>td#actions #shorty-action-del:after {
