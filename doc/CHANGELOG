@@ -24,8 +24,9 @@
 
 Changelog: 
 
-* Sun Feb 09 2013 Christian Reiner: version 0.1.12
+* Mon Feb 11 2013 Christian Reiner: version 0.1.12
 Widened maximum width of click list to prevent a broken layout. 
+Use a minimum height for the click list to have room for the details dialog. 
 * Mon Jan 07 2013 Christian Reiner: version 0.1.11
 Use svg version of icons where applicable.
 Some style fixes expecially to better support MS IE browsers. 
