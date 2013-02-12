@@ -257,7 +257,11 @@
 	<p>
 		<span id="admin" class="shorty-explain">
 			<?php echo sprintf(OC_Shorty_L10n::t("Administrative, system wide settings of this app:")." %s",
-								'<a href="'.OCP\Util::linkToAbsolute("settings", "admin.php#shorty").'" class="clickable">'.
+								sprintf('<a href="%s" class="clickable">',
+										(OC_Shorty_Tools::versionCompare('>=','4.91'))
+										?OCP\Util::linkToAbsolute("index.php", "settings/admin#shorty")
+										:OCP\Util::linkToAbsolute("settings", "admin.php#shorty")
+								).
 								'<button>'.OC_Shorty_L10n::t("Administration").'</button>'.
 								'</a>' ); ?>
 		</span>
