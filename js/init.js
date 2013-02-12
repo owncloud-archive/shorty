@@ -34,6 +34,8 @@
  */
 
 $(document).ready(function(){
+	// initialize status dictionary since that _might_ require an ajax request
+	OC.Shorty.Status.fetch();
 	// TODO: OC4 compatibility: remove following setInterval command when dropping OC4 compatibility
 	// refresh the ajax request token in regular intervals
 	// required to make use of long lasting sessions whilst using CSRF protection with a small tokens lifetime

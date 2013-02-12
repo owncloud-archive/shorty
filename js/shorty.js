@@ -81,19 +81,19 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide controls panel");
 				var dfd = new $.Deferred();
 				if (OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
-					var selector;
-					$.when(
-						OC.Shorty.Status.versionCompare('>=','4.91')
-					).pipe(function(result){
-						selector=result?'#content':'#content,#controls';
-						$(selector).animate({'margin-top':"-="+$('#controls').css('height')}, 'fast'),
-						OC.Shorty.WUI.Controls.Panel.removeClass('shorty-panel-visible')
-					}).done(function(){
-						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-													.attr('src',OC.imagePath('shorty','actions/unshade'));
-						OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
-						dfd.resolve();
-					}).fail(dfd.reject)}
+					OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
+						var selector=result?'#content':'#content,#controls';
+						$.when(
+							$(selector).animate({'margin-top':"-="+$('#controls').css('height')}, 'fast'),
+							OC.Shorty.WUI.Controls.Panel.removeClass('shorty-panel-visible')
+						).done(function(){
+							OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
+							OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
+														.attr('src',OC.imagePath('shorty','actions/unshade'));
+							dfd.resolve();
+						}).fail(dfd.reject)
+					})
+				}
 				else dfd.resolve();
 				return dfd.promise();
 			},
@@ -106,19 +106,19 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show controls panel");
 				var dfd = new $.Deferred();
 				if ( ! OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
-					var selector;
-					$.when(
-						OC.Shorty.Status.versionCompare('>=','4.91')
-					).pipe(function(result){
-						selector=result?'#content':'#content,#controls';
-						$(selector).animate({'margin-top':"+="+$('#controls').css('height')}, 'fast'),
-						OC.Shorty.WUI.Controls.Panel.addClass('shorty-panel-visible')
-					}).done(function(){
-						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-													.attr('src',OC.imagePath('shorty','actions/shade'));
-						OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
-						dfd.resolve();
-					}).fail(dfd.reject)}
+					OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
+						var selector=result?'#content':'#content,#controls';
+						$.when(
+							$(selector).animate({'margin-top':"+="+$('#controls').css('height')}, 'fast'),
+							OC.Shorty.WUI.Controls.Panel.addClass('shorty-panel-visible')
+						).done(function(){
+							OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
+							OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
+														.attr('src',OC.imagePath('shorty','actions/unshade'));
+							dfd.resolve();
+						}).fail(dfd.reject)
+					})
+				}
 				else dfd.resolve();
 				return dfd.promise();
 			},
@@ -2036,22 +2036,20 @@ OC.Shorty={
 
 	/**
 	* @class OC.Shorty.Status
-	* @brief Status of server, installation and situation
+	* @brief Cache structure holding information details like versions, installation and situation
 	* @description 
-	* This is a temporary workaround for the fact that currently an ajax request is required for such basic information
+	* This is currently a temporary workaround for the fact that currently an ajax request is required for such basic information
 	* Hopefully in later versions the ajax request can be replaced by an access to some predefined values already available
 	* @author Christian Reiner
 	*/
 	Status:{
 		/**
-		* @object OC.Shorty.Status.Cache
-		* @brief Cache structure holding information details
+		* @object OC.Shorty.Server
+		* @brief 
 		* @author Christian Reiner
 		 */
-		Cache:{
-			Valid:false,
-			Server:{}
-		},
+		Valid:new $.Deferred(),
+		Server:{},
 		
 		/**
 		* @method OC.Shorty.Status.fetch
@@ -2059,10 +2057,11 @@ OC.Shorty={
 		* @author Christian Reiner
 		*/
 		fetch:function(){
-			var dfd = new $.Deferred();
-			if (OC.Shorty.Status.Cache.Valid){
-				return dfd.resolve().promise();
+			if (OC.Shorty.Status.Valid.isResolved()){
+				// status already present due to a past request, just return that requests deferred object
+				return OC.Shorty.Status.Valid.promise();
 			}else{
+				// fetch status information from server
 				if (OC.Shorty.Debug){OC.Shorty.Debug.log("fetching status information from server");}
 				$.ajax({
 					type:     'GET',
@@ -2071,56 +2070,42 @@ OC.Shorty={
 					dataType: 'json'
 				}).done(function(response){
 					$.each(response,function(key,val){
-						OC.Shorty.Status.Cache.Server[key]=val;
+						OC.Shorty.Status.Server[key]=val;
 					});
-					OC.Shorty.Status.Cache.Server.versionset=parseVersionString(OC.Shorty.Status.Cache.Server.version);
-					OC.Shorty.Status.Cache.Valid=true;
-					dfd.resolve(response.data);
+					OC.Shorty.Status.Server.versionset=parseVersionString(OC.Shorty.Status.Server.version);
+					OC.Shorty.Status.Valid.resolve(OC.Shorty.Status);
 				}).fail(function(response){
-					dfd.reject({});
-				})
-				if (OC.Shorty.Debug){OC.Shorty.Debug.log(OC.Shorty.Status.Cache);}
-				return dfd.promise();
+					OC.Shorty.Status.Valid.reject(NaN);
+				});
+				if (OC.Shorty.Debug){OC.Shorty.Debug.log(OC.Shorty.Status);}
+				return OC.Shorty.Status.Valid.promise();
 			}
 		}, // OC.Shorty.Status.OCVersion
 		/**
-		* @method OC.Shorty.Status.getOCVersion
-		* @brief Return the OC-version
+		* @method OC.Shorty.Status.getValues
+		* @brief Return the status values
 		* @author Christian Reiner
 		*/
-		getOCVersion:function(aspect){
-			var dfd = new $.Deferred();
-			$.when(
-				OC.Shorty.Status.fetch()
-			).done(function(){
-				dfd.resolve(OC.Shorty.Status.Cache.Server[aspect]);
-			}).fail(function(response){
-				dfd.reject({});
-			})
-			return dfd.promise();
-		}, // OC.Shorty.Status.OCVersion
+		getValues:function(category,aspect){
+			return OC.Shorty.Status.Valid.promise();
+		}, // OC.Shorty.Status.getValues
 		/**
 		* @method OC.Shorty.Status.versionCompare
 		* @brief Compare the OC version with a given one using the specifed operand
 		* @author Christian Reiner
 		*/
-		versionCompare:function(operator,cpVersion){
-			var dfd = new $.Deferred();
+		versionCompare:function(operator,version){
+			var dfd=new $.Deferred();
 			// prepare given version to be compared, case into an array, if required
-			if ('string'==typeof(cpVersion))
-				cpVersion=parseVersionString(cpVersion);
-			// compare prepared versions
-			$.when(
-				OC.Shorty.Status.getOCVersion('versionset')
-			).done(function(ocVersion){
+			var cpVersion=parseVersionString(version);
+			// the OC version
+			OC.Shorty.Status.getValues().done(function(values){
+				var ocVersion=values['Server']['versionset'];
 				dfd.resolve(applyVersionOperator[operator](ocVersion,cpVersion));
-			}).fail(function(response){
-				dfd.reject({});
 			})
 			return dfd.promise();
 		} // OC.Shorty.Status.versionCompare
-	}, // OC.Shorty.Runtime
-
+	} // OC.Shorty.Status
 } // OC.Shorty
 
 /**

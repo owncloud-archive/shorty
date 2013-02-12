@@ -33,3 +33,7 @@
 .shorty-config:first-child {
 	margin-right: 170px;
 }
+/* slightly different setup of the content part */
+.shorty-desktop {
+	top: 3.3em;
+}
