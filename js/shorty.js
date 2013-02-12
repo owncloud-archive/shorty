@@ -750,9 +750,13 @@ OC.Shorty={
 						OC.Shorty.WUI.List.vacuum(),
 						body.fadeIn(duration)
 					).pipe(function(){
-						rows.each(function(){
-							$(this).removeClass('shorty-fresh');
-							$(this).find('td').effect('pulsate', { times:3 }, 2000);
+						OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
+							// time to use for pulsation: changed in OC-5 due to different configurations
+							var timespan=result?2000:500;
+							rows.each(function(){
+								$(this).removeClass('shorty-fresh');
+								$(this).find('td').effect('pulsate', { times:3 }, timespan);
+							});
 						});
 					}).done(dfd.resolve)
 				}else{
