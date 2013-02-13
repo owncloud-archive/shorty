@@ -3,9 +3,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -30,23 +30,29 @@
  * @author Christian Reiner
  */
 
-OC::$CLASSPATH['OC_Shorty_Backend']   = 'apps/shorty/lib/backend.php';
-OC::$CLASSPATH['OC_Shorty_Exception'] = 'apps/shorty/lib/exception.php';
-OC::$CLASSPATH['OC_Shorty_L10n']      = 'apps/shorty/lib/l10n.php';
-OC::$CLASSPATH['OC_Shorty_Meta']      = 'apps/shorty/lib/meta.php';
-OC::$CLASSPATH['OC_Shorty_Query']     = 'apps/shorty/lib/query.php';
-OC::$CLASSPATH['OC_Shorty_Tools']     = 'apps/shorty/lib/tools.php';
-OC::$CLASSPATH['OC_Shorty_Type']      = 'apps/shorty/lib/type.php';
+OC::$CLASSPATH['OC_Shorty_Backend']       = 'shorty/lib/backend.php';
+OC::$CLASSPATH['OC_Shorty_Exception']     = 'shorty/lib/exception.php';
+OC::$CLASSPATH['OC_Shorty_Hooks']         = 'shorty/lib/hooks.php';
+OC::$CLASSPATH['OC_Shorty_HttpException'] = 'shorty/lib/exception.php';
+OC::$CLASSPATH['OC_Shorty_L10n']          = 'shorty/lib/l10n.php';
+OC::$CLASSPATH['OC_Shorty_Meta']          = 'shorty/lib/meta.php';
+OC::$CLASSPATH['OC_Shorty_Query']         = 'shorty/lib/query.php';
+OC::$CLASSPATH['OC_Shorty_Tools']         = 'shorty/lib/tools.php';
+OC::$CLASSPATH['OC_Shorty_Type']          = 'shorty/lib/type.php';
 
-OC_App::register ( array ( 'order' => 71, 'id' => 'shorty', 'name' => 'Shorty' ) );
+OCP\App::registerAdmin      ( 'shorty', 'settings' );
+// TODO: remove OC-4.0-compatibility:
+if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
+	OCP\App::registerPersonal   ( 'shorty', 'preferences' );
+OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
+										'order' => 71,
+										'href' => OCP\Util::linkTo   ( 'shorty', 'index.php' ),
+										'icon' => (OC_Shorty_Tools::versionCompare('>=','4.91')) // OC-5pre
+													? OCP\Util::imagePath( 'shorty', 'shorty-light.svg' )
+													: OCP\Util::imagePath( 'shorty', 'shorty-dusky.svg' ),
+										'name' => 'Shorty' ) );
 
-OC_App::addNavigationEntry ( array ( 'id' => 'shorty_index',
-                                     'order' => 71,
-                                     'href' => OC_Helper::linkTo( 'shorty', 'index.php' ),
-                                     'icon' => OC_Helper::imagePath( 'shorty', 'shorty.svg' ),
-                                     'name' => 'Shorty' ) );
-
-OC_APP::registerAdmin    ( 'shorty', 'settings' );
-OC_App::registerPersonal ( 'shorty', 'preferences' );
+OCP\Util::connectHook ( 'OC_User',   'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
+OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries', 'OC_Shorty_Hooks', 'registerQueries');
 
 ?>

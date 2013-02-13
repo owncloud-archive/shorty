@@ -2,9 +2,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -26,14 +26,29 @@
 /**
  * @file js/list.js
  * @brief Client side desktop initialization for normal calls of the plugin
+ * @description
+ * This script takes care of initializing the list of Shortys. Creation of that
+ * list requires a fully initialized app, so it takes care that process has
+ * finished before initializing the list creation.
  * @author Christian Reiner
  */
 
 $(document).ready(function(){
-  // initialize desktop
-  $.when(
-    Shorty.WUI.Controls.init()
-  ).then(function(){
-    Shorty.WUI.List.build();
+	// initialize desktop
+	$.when(
+		// prepare the controls panel
+		OC.Shorty.WUI.Controls.init()
+	).then(function(){
+		// hide or show the controls panel in a persistent manner
+		$.when(
+			OC.Shorty.Action.Preference.get('controls-panel-visible')
+		).done(function(pref){
+			if (pref['controls-panel-visible'])
+				OC.Shorty.WUI.Controls.show();
+			else
+				OC.Shorty.WUI.Controls.hide();
+		});
+		// build and show list of Shortys
+		OC.Shorty.WUI.List.build();
   });
 }); // document.ready

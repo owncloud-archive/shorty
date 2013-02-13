@@ -2,9 +2,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -29,76 +29,16 @@
  * @author Christian Reiner
  */
 
-#shorty #shortlet {
-  outline: medium none;
-  padding: 0.6em 0.8em;
-  background-image: -moz-linear-gradient(center bottom, Lavender 0%, white 50%);
-  border: 1px solid #DDDDDD;
-  border-radius: 0.5em 0.5em 0.5em 0.5em;
-  box-shadow: 0 1px 0 #BBBBBB inset;
+#shorty img {
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0;
 }
-#shorty #shortlet a {
-  font-style: italic;
-  color: DarkSlateGray;
-}
-#shorty #shortlet:after {
-  content: url("../img/drag_me.png");
-  position: relative;
-  top: -12px;
-  margin-left: -160px;
-}
+
 #shorty .chzn-container {
-    vertical-align: middle;
-}
-
-#shorty .title {
-  margin-bottom: 0.6em;
-}
-
-#shorty .aspect {
-  display: inline-block;
-  font-weight: bold;
-  width: 6em;
-  margin: 0 0.2em 0.4em 0;
-}
-
-#shorty .explain {
-  display: inline-block;
-  font-style: italic;
-  margin: 0.3em;
-}
-
-#shorty .example {
-  font-family: Monospace;
-  margin: 0.3em;
+	vertical-align: middle;
 }
 
 #shorty a.external {
-  text-decoration:underline;
-}
-#shorty a.external:after {
-  content:url("../img/actions/external.png");
-  margin-left:0.3em;
-}
-
-#verification #hourglass {
-  display: block;
-  text-align: center;
-  width: 100%; height: 100%;
-  margin-top: 20px;
-}
-
-#verification #failure {
-  display: none;
-  position: absolute;
-}
-
-#verification #success {
-  display: none;
-  position: absolute;
-}
-
-#verification legend {
-  width: 100%;
-  text-align: center;
+	text-decoration: underline;
 }

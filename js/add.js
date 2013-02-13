@@ -2,9 +2,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -26,26 +26,34 @@
 /**
  * @file js/add.js
  * @brief Client side desktop initialization in case of a call with an url to add
+ * @description
+ * The Shorty app comes with a javascript bookmarklet ('Shortlet'). This calls
+ * the app and specifies a url to be shortened, this makes shortening an open
+ * web pages url muhc easier: just click-and-store as Shorty. So the user does
+ * not ahve to manually open his ownCloud, navigate the the Shorty app and open
+ * the 'New Shorty' dialog. This script is added in case such a request is
+ * detected, it takes case that the dialog is opened and filled with the url
+ * to be shortened. 
  * @author Christian Reiner
  */
 
-$(document).ready(function(){
-  // initialize desktop
-  var dialog = $('#dialog-add');
-  $.when(
-    Shorty.WUI.Controls.init()
-  ).pipe(function(){
-    Shorty.WUI.List.build();
-  }).done(function(){
-    $.when(
-      Shorty.WUI.Dialog.toggle(dialog)
-    ).done(function(){
-      // any referrer handed over from php (explicitly in markup) ?
-      var target=$('#controls').attr('data-referrer');
-      $('#controls').removeAttr('data-referrer');
-      dialog.find('#target').val(target);
-      dialog.find('#title').focus();
-      Shorty.WUI.Meta.collect(dialog);
-    })
+$(window).load(function(){
+	// initialize desktop
+	var dialog = $('#dialog-add');
+	$.when(
+		OC.Shorty.WUI.Controls.init()
+	).pipe(function(){
+		OC.Shorty.WUI.List.build();
+	}).done(function(){
+		$.when(
+			OC.Shorty.WUI.Dialog.toggle(dialog)
+		).done(function(){
+			// any referrer handed over from php (explicitly in markup) ?
+			var target=$('#controls').attr('data-referrer');
+			$('#controls').removeAttr('data-referrer');
+			dialog.find('#target').val(target);
+			dialog.find('#title').focus();
+			OC.Shorty.WUI.Meta.collect(dialog);
+		})
   })
 }); // document.ready

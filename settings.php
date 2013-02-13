@@ -3,9 +3,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2012 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 * @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
@@ -32,24 +32,30 @@
  * @author Christian Reiner
  */
 
-// Check if we are a user
-OC_Util::checkAdminUser ( );
-OC_Util::checkAppEnabled ( 'shorty' );
+$RUNTIME_NOSETUPFS = true;
+OC_App::loadApps();
 
-OC_Util::addStyle  ( '3rdparty', 'chosen/chosen' );
-OC_Util::addStyle  ( 'shorty',   'shorty' );
-OC_Util::addStyle  ( 'shorty',   'settings' );
+OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
+OCP\Util::addStyle  ( 'shorty',   'shorty' );
+OCP\Util::addStyle  ( 'shorty',   'settings' );
+// TODO: remove OC-4.0-compatibility:
+if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
+	OCP\Util::addStyle ( 'shorty', 'shorty-oc40' );
+// TODO: remove OC-4.5-compatibility:
+if (OC_Shorty_Tools::versionCompare('<','4.91')) // OC-4.5
+	OCP\Util::addStyle ( 'shorty', 'shorty-oc45' );
 
-OC_Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
-OC_Util::addScript ( 'shorty',   'shorty' );
-// OC_Util::addScript ( 'shorty',   'debug' );
-OC_Util::addScript ( 'shorty',   'settings' );
+OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
+OCP\Util::addScript ( 'shorty',   'shorty' );
+OCP\Util::addScript ( 'shorty',   'settings' );
+if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
+	OCP\Util::addScript ( 'shorty',  'debug' );
 
 
 // fetch template
-$tmpl = new OC_Template ( 'shorty', 'tmpl_settings' );
+$tmpl = new OCP\Template ( 'shorty', 'tmpl_settings' );
 // inflate template
-$tmpl->assign ( 'backend-static-base', OC_Appconfig::getValue('shorty','backend-static-base','') );
+$tmpl->assign ( 'backend-static-base', OCP\Config::getAppValue('shorty','backend-static-base','') );
 // render template
 return $tmpl->fetchPage ( );
 ?>
