@@ -108,7 +108,8 @@ class OC_Shorty_Meta
 		{
 			// try to extract title from page
 			preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
-			$meta['title']    = isset($match[1]) ? htmlspecialchars_decode ( trim($match[1]) ) : '';
+// 			$meta['title']    = isset($match[1]) ? htmlspecialchars_decode ( trim($match[1]) ) : '';
+			$meta['title']    = isset($match[1]) ? html_entity_decode ( trim($match[1]),  ENT_COMPAT, 'UTF-8' ) : '';
 			$meta['staticon'] = self::selectIcon ( 'state', TRUE );
 			// final url after a possible redirection
 			$meta['final']       = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
