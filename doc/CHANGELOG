@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* Tue Feb 15 2013 Christian Reiner: version 0.3.20
+Fixed decoding of titles when scraping meta data from target pages. 
 * Tue Feb 12 2013 Christian Reiner: version 0.3.19
 Support for ownCloud version 5. 
 Fixed handling of favicons when adding multiple Shortys. 
