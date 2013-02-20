@@ -24,6 +24,10 @@
 
 Changelog: 
 
+* Wed Feb 20 2013 Christian Reiner: version 0.3.21
+Fixed display of feedback on actions by reimplementing the messenger area. 
+Added a new preference to control the level of verbosity of feedback on actions.
+Optimized preference retrieval (caching strategy).
 * Tue Feb 15 2013 Christian Reiner: version 0.3.20
 Fixed decoding of titles when scraping meta data from target pages. 
 * Tue Feb 12 2013 Christian Reiner: version 0.3.19
