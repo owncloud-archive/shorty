@@ -25,6 +25,7 @@
 Changelog: 
 
 * Wed Feb 20 2013 Christian Reiner: version 0.3.21
+Fixed visibility of list header which was accidentially hidden below the control panel.
 Fixed display of feedback on actions by reimplementing the messenger area. 
 Added a new preference to control the level of verbosity of feedback on actions.
 Optimized preference retrieval (caching strategy).
