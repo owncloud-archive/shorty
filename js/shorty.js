@@ -1108,15 +1108,28 @@ OC.Shorty={
 			* @brief Hides the messenger area and clears the content
 			* @author Christian Reiner
 			*/
-			hide: function(){
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide messenger");
+			hide: function(object){
 				var dfd = new $.Deferred();
-				$.when(
-					$('#messenger').slideUp('fast')
-				).pipe(function(){
-					$('#messenger #symbol').attr('title','').attr('src','');
-					$('#messenger #message').text('');
-				}).done(dfd.resolve)
+				if (object){
+					// hide specific messenger object
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("hiding messenger");
+					$.when(
+						object.slideUp('fast')
+					).done(function(){
+						object.remove();
+						dfd.resolve();
+					})
+				}else{
+					// hide _all_ messenger objects
+					// pick all existing messengers except for the (invisible) blueprint (#shorty-messenger)
+					var objects=$('body #content .shorty-messenger').not('#shorty-messenger');
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("hiding "+objects.length+" messengers");
+					$.when(
+						$.each(objects,function(){
+							OC.Shorty.WUI.Messenger.hide($(this));
+						})
+					).done(dfd.resolve)
+				}
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Messenger.hide
 			/**
@@ -1129,59 +1142,51 @@ OC.Shorty={
 				level = level || 'info';
 				var dfd = new $.Deferred();
 				var duration = 'slow';
-				var messenger = $('#messenger');
+				var messenger = $('body #shorty-messenger');
+				var object;
 				if (message && message.length){
-					$.when(
-						messenger.slideUp('fast')
-					).done(function(){
-						switch(level){
-							case 'debug':
-								// detect debug mode by checking, of function 'debug()' exists
-								if ( OC.Shorty.Debug ){
-									OC.Shorty.Debug.log('Debug: '+message);
-									$.when(
-										messenger.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/neutral.png')),
-										messenger.find('#title').text('Debug'),
-										messenger.find('#message').html(nl2br(message)),
-										messenger.slideDown(duration)
-									).done(dfd.resolve)
-								}
-								else
-									dfd.resolve();
-								break;
+					// log to browser console when debugging is enabled in system config file
+					if ( OC.Shorty.Debug ){
+						OC.Shorty.Debug.log(level+': '+message);
+					}
+					switch(level){
+						case 'debug':
+							// detect debug mode by checking, of function 'debug()' exists
+							if (true){
+								object=$(messenger).after($(messenger).clone());
+								object.attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
+								object.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/neutral.png'));
+								object.find('#title').text('Debug');
+								object.find('#message').html(nl2br(message));
+								object.slideDown(duration);
+							}
+							else
+								dfd.resolve();
+							break;
 
-							case 'error':
-								if (OC.Shorty.Debug){
-									OC.Shorty.Debug.log('Error: '+message);
-								}
-								$.when(
-									messenger.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/bad.png')),
-									messenger.find('#title').text('Error'),
-									messenger.find('#message').html(nl2br(message)),
-									messenger.slideDown(duration)
-								).done(dfd.resolve)
-								break;
+						case 'error':
+							if (true){
+								object=$(messenger).after($(messenger).clone());
+								object.attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
+								object.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/bad.png'));
+								object.find('#title').text('Error');
+								object.find('#message').html(nl2br(message));
+								object.slideDown(duration);
+							}
+							break;
 
-							default: // 'info'
-								if ( message.length ){
-									if (OC.Shorty.Debug){
-										OC.Shorty.Debug.log('Info: '+message);
-									}
-									$.when(
-										messenger.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png')),
-										messenger.find('#title').text('Info'),
-										messenger.find('#message').html(nl2br(message)),
-										messenger.slideDown(duration)
-									).done(dfd.resolve)
-								}else{
-									$.when(
-										messenger.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png')),
-										messenger.find('#title').text('Info'),
-										messenger.text('')
-									).done(dfd.resolve)
-								}
-						} // switch
-					})
+						default:
+						case 'info':
+							if (true){
+								object=$(messenger).after($(messenger).clone());
+								object.attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
+								object.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png'));
+								object.find('#title').text('Info');
+								object.find('#message').html(nl2br(message));
+								object.slideDown(duration);
+							}
+							break;
+					} // switch
 				} // if message
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Messenger.show

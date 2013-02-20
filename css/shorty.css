@@ -113,8 +113,8 @@ html input, html textarea {
 }
 /* the top messenger area (debugging only) */
 .shorty-messenger {
+	display: none;
 	position: absolute;
-	z-index: 160;
 	left: 50%;
 	width: 30em;
 	border-bottom-left-radius: 1em;

@@ -35,7 +35,7 @@
 ?>
 
 <!-- central messenger area -->
-<div id="messenger" class="shorty-messenger">
+<div id="shorty-messenger" class="shorty-messenger" style="z-index:9250;">
 	<fieldset>
 		<img id="close" title="" class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg');  ?>">
 		<img id="symbol" title="" src="">

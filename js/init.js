@@ -57,8 +57,10 @@ $(document).ready(function(){
 			OC.Shorty.WUI.Dialog.hide($(this));
 		});
 	});
-	// make messenger closeable
-	$(document).on('click','#content #messenger',[],OC.Shorty.WUI.Messenger.hide);
+	// make messengers closeable
+	$(document).on('click','#content .shorty-messenger',[],function(){
+		OC.Shorty.WUI.Messenger.hide($(this));
+	});
 	// button to open the 'add' dialog
 	$(document).on('click','#controls #add',[],function(){
 		OC.Shorty.WUI.Dialog.toggle($('#dialog-add'))
