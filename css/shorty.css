@@ -51,12 +51,21 @@ html input, html textarea {
 	width: 99%;
 	background: transparent;
 	text-align: left;
-	top: 3.0em;
+	top: 3.5em;
 	margin: 0;
 	padding: 4px;
+	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
+}
+#content.shorty-panel-hidden .shorty-desktop {
+	top: 0.7em;
 }
 /* top bar, holding main control elements */
 .shorty-controls {
+	top: 3.5em;
+	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
+}
+#content.shorty-panel-hidden .shorty-controls {
+	top: 0.7em;
 }
 .shorty-controls-left {
 	display: inline-block;

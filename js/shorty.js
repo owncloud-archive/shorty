@@ -58,6 +58,7 @@ OC.Shorty={
 			* @brief Persistent reference to the top controls panel inside the apps content area
 			* @author Christian Reiner
 			*/
+			Content: {},
 			Panel: {},
 			Handle: {},
 			/**
@@ -80,12 +81,11 @@ OC.Shorty={
 			hide: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide controls panel");
 				var dfd = new $.Deferred();
-				if (OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
+				if ( ! $('#content').hasClass('shorty-panel-hidden')){
 					OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
 						var selector=result?'#content':'#content,#controls';
 						$.when(
-							$(selector).animate({'margin-top':"-="+$('#controls').css('height')}, 'fast'),
-							OC.Shorty.WUI.Controls.Panel.removeClass('shorty-panel-visible')
+							$('#content').addClass('shorty-panel-hidden')
 						).done(function(){
 							OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
 							OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
@@ -105,16 +105,15 @@ OC.Shorty={
 			show: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show controls panel");
 				var dfd = new $.Deferred();
-				if ( ! OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
+				if ($('#content').hasClass('shorty-panel-hidden')){
 					OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
 						var selector=result?'#content':'#content,#controls';
 						$.when(
-							$(selector).animate({'margin-top':"+="+$('#controls').css('height')}, 'fast'),
-							OC.Shorty.WUI.Controls.Panel.addClass('shorty-panel-visible')
+							$('#content').removeClass('shorty-panel-hidden')
 						).done(function(){
 							OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
 							OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-														.attr('src',OC.imagePath('shorty','actions/unshade'));
+														.attr('src',OC.imagePath('shorty','actions/shade'));
 							dfd.resolve();
 						}).fail(dfd.reject)
 					})
@@ -132,15 +131,13 @@ OC.Shorty={
 				OC.Shorty.WUI.Messenger.hide();
 				var dfd = new $.Deferred();
 				// show or hide dialog
-				if (OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
+				if ($('#content').hasClass('shorty-panel-hidden')){
 					$.when(
-						OC.Shorty.WUI.Controls.hide()
+						OC.Shorty.WUI.Controls.show()
 					).done(dfd.resolve)}
 				else{
 					$.when(
-						OC.Shorty.WUI.Controls.show()
-						// required for standalone dialogs, all of them being embedded in the controls
-// 						Shorty.WUI.Controls.panel.css('overflow','visible')
+						OC.Shorty.WUI.Controls.hide()
 					).done(dfd.resolve)}
 				return dfd.promise();
 			} // OC.Shorty.WUI.Controls.toggle

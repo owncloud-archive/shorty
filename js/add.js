@@ -55,5 +55,5 @@ $(window).load(function(){
 			dialog.find('#title').focus();
 			OC.Shorty.WUI.Meta.collect(dialog);
 		})
-  })
+	});
 }); // document.ready

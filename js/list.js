@@ -38,7 +38,7 @@ $(document).ready(function(){
 	$.when(
 		// prepare the controls panel
 		OC.Shorty.WUI.Controls.init()
-	).then(function(){
+	).done(function(){
 		// hide or show the controls panel in a persistent manner
 		$.when(
 			OC.Shorty.Action.Preference.get('controls-panel-visible')
@@ -50,5 +50,5 @@ $(document).ready(function(){
 		});
 		// build and show list of Shortys
 		OC.Shorty.WUI.List.build();
-  });
+	});
 }); // document.ready
