@@ -50,6 +50,7 @@ try
 	OC_Shorty_Tools::ob_control ( FALSE );
 	OCP\Util::writeLog( 'shorty', sprintf("Counting shortys resulted in %s entries and %s clicks.",$countResult['sum_shortys'],$countResult['sum_clicks']), OC_Log::DEBUG );
 	OCP\JSON::success ( array ( 'data'    => $countResult,
+								'level'   => 'info',
 								'message' => OC_Shorty_L10n::t('Counted entries and clicks') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

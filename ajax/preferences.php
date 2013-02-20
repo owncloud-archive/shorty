@@ -76,6 +76,7 @@ try
 			OC_Shorty_Tools::ob_control ( FALSE );
 			OCP\Util::writeLog( 'shorty', sprintf("Preference(s) '%s' saved.",implode(',',array_keys($data))), OC_Log::DEBUG );
 			OCP\JSON::success ( array ( 'data'    => $data,
+										'level'   => 'debug',
  										'message' => OC_Shorty_L10n::t("Preference(s) '%s' saved.",implode(',',array_keys($data))) ) );
 			break;
 
@@ -114,6 +115,7 @@ try
 			OC_Shorty_Tools::ob_control ( FALSE );
 			OCP\Util::writeLog( 'shorty', sprintf("Preference(s) '%s' saved.",implode(',',array_keys($data))), OC_Log::DEBUG );
 			OCP\JSON::success ( array ( 'data'    => $data,
+										'level'   => 'debug',
 										'message' => OC_Shorty_L10n::t('Preference(s) retrieved') ) );
 			break;
 

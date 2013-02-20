@@ -97,6 +97,7 @@ try
 	OC_Shorty_Tools::ob_control ( FALSE );
 	OCP\Util::writeLog( 'shorty', sprintf("Created Shorty '%s' for target url '%s'",$p_source,$p_target), OC_Log::INFO );
 	OCP\JSON::success ( array ( 'data'    => $entries[0],
+								'level'   => 'info',
 								'message' => OC_Shorty_L10n::t("Url shortened to: %s",$p_source) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

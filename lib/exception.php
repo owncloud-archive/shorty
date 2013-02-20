@@ -114,7 +114,8 @@ class OC_Shorty_Exception extends Exception
 			OCP\Util::writeLog( 'shorty', $message, OC_Log::WARN );
 		} // output
 		// return a clean JSON error
-		return OCP\JSON::error ( array ( 'title'  => $title,
+		return OCP\JSON::error ( array ('title'   => $title,
+										'level'   => 'error',
 										'message' => sprintf("%s:\n%s", $title, $message) ) );
 	} // function error
 } // class OC_Shorty_Exception

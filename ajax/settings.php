@@ -109,6 +109,7 @@ try
 	OC_Shorty_Tools::ob_control ( FALSE );
 	OCP\Util::writeLog( 'shorty', sprintf("Setting(s) '%s' saved",implode(',',array_keys($data))), OC_Log::DEBUG );
 	OCP\JSON::success ( array ( 'data'    => $data,
+								'level'   => 'debug',
 								'message' => OC_Shorty_L10n::t('Setting saved') ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

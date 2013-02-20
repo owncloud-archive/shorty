@@ -1148,6 +1148,7 @@ OC.Shorty={
 					OC.Shorty.Action.Preference.get('verbosity-control')
 				).done(function(result){
 					verbosity = result['verbosity-control'];
+console.log('***',verbosity);
 					if (message && message.length){
 						// log to browser console when debugging is enabled in system config file
 						if ( OC.Shorty.Debug ){
@@ -1449,6 +1450,11 @@ OC.Shorty={
 				).always(function(response){
 					if (OC.Shorty.Debug){OC.Shorty.Debug.log("got preference(s):");OC.Shorty.Debug.log(response.data);}
 				}).done(function(response){
+					// update value in local cache, it is outdated
+					$.each(response.data,function(key,val){
+						OC.Shorty.Action.Preference.Cache[key]=new $.Deferred();
+						OC.Shorty.Action.Preference.Cache[key].resolve(response.data);
+					});
 					dfd.resolve(response.data);
 				}).fail(function(response){
 					dfd.reject({});
@@ -1479,7 +1485,7 @@ OC.Shorty={
 					function(response){return OC.Shorty.Ajax.eval(response)},
 					function(response){return OC.Shorty.Ajax.fail(response)}
 				).always(function(response){
-					if (OC.Shorty.Debug){OC.Shorty.Debug.log("got preference(s):");OC.Shorty.Debug.log(response.data);}
+					if (OC.Shorty.Debug){OC.Shorty.Debug.log("got setting(s):");OC.Shorty.Debug.log(response.data);}
 				}).done(function(response){
 					dfd.resolve(response.data);
 				}).fail(function(response){
@@ -1505,7 +1511,7 @@ OC.Shorty={
 					function(response){return OC.Shorty.Ajax.eval(response)},
 					function(response){return OC.Shorty.Ajax.fail(response)}
 				).always(function(response){
-					if (OC.Shorty.Debug){OC.Shorty.Debug.log("got preference(s):");OC.Shorty.Debug.log(response.data);}
+					if (OC.Shorty.Debug){OC.Shorty.Debug.log("got setting(s):");OC.Shorty.Debug.log(response.data);}
 				}).done(function(response){
 					dfd.resolve(response.data);
 				}).fail(function(response){
@@ -1722,7 +1728,6 @@ OC.Shorty={
 				var dialog = $('#dialog-edit');
 				var id     = dialog.find('#id').val();
 				$.when(
-					// OC.Shorty.WUI.Messenger.hide(),
 					$.ajax({
 						type:     'GET',
 						url:      OC.filePath('shorty','ajax','del.php'),
@@ -1972,7 +1977,7 @@ OC.Shorty={
 			if (response.status){
 				// this is a valid response
 				if ('success'==response.status){
-					OC.Shorty.WUI.Messenger.show(response.message,'debug');
+					OC.Shorty.WUI.Messenger.show(response.message,response.level);
 					return new $.Deferred().resolve(response);
 				}else{
 			//           // is this an expired request token (CSRF protection mechanism) ?

@@ -59,6 +59,7 @@ try
 	OC_Shorty_Tools::ob_control ( FALSE );
 	OCP\Util::writeLog( 'shorty', sprintf("Deleted Shorty with id '%s'",$p_id), OC_Log::INFO );
 	OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
+								'level'   => 'info',
 								'message' => OC_Shorty_L10n::t("Shorty with id '%s' deleted",$p_id) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

@@ -78,6 +78,7 @@ try
 	OC_Shorty_Tools::ob_control ( FALSE );
 	OCP\Util::writeLog( 'shorty', sprintf("Constructed list of defined shortys holding %s entries.",sizeof($reply)), OC_Log::DEBUG );
 	OCP\JSON::success ( array ( 'data'    => $reply,
+								'level'   => 'debug',
 								'count'   => sizeof($reply),
 								'message' => OC_Shorty_L10n::t('Number of entries: %s', count($reply)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }

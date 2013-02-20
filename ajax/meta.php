@@ -53,6 +53,7 @@ try
 	OC_Shorty_Tools::ob_control ( FALSE );
 	OCP\Util::writeLog( 'shorty', sprintf("Target meta data retrieved for url '%s'.",$target), OC_Log::DEBUG );
 	OCP\JSON::success ( array ( 'data'    => $meta,
+								'level'   => 'info',
 								'message' => OC_Shorty_L10n::t("Target url '%s' is valid", $meta['target']) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

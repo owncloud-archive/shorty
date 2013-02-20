@@ -88,6 +88,7 @@ try
 	OC_Shorty_Tools::ob_control ( FALSE );
 	OCP\Util::writeLog( 'shorty', sprintf("Modifications for shorty with id '%s' saved.",$p_id), OC_Log::INFO );
 	OCP\JSON::success ( array ( 'data'    => $entries[0],
+								'level'   => 'info',
 								'message' => OC_Shorty_L10n::t("Modifications for shorty with id '%s' saved",$p_id) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
 ?>

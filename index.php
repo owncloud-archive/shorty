@@ -169,6 +169,6 @@ switch ($act)
 			// clean up session var so that a browser reload does not trigger the same action again
 			unset ( $_SESSION['shorty-referrer'] );
 			$tmpl->printPage();
-		} catch ( OC_Shorty_Exception $e ) { OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'data'=>$result ) ); }
+		} catch ( OC_Shorty_Exception $e ) { OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'level'=>'error', 'data'=>$result ) ); }
 } // switch
 ?>
