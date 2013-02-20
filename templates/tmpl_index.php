@@ -34,15 +34,15 @@
  */
 ?>
 
-<!-- central notification area -->
-<div id="notification" class="shorty-notification">
+<!-- central messenger area -->
+<div id="messenger" class="shorty-messenger">
 	<fieldset>
-	<img id="close" title="" class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg');  ?>">
-	<img id="symbol" title="" src="">
-	<span id="title"></span>
-	<img id="symbol" title="" src="">
-	<hr>
-	<div id="message"></div>
+		<img id="close" title="" class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg');  ?>">
+		<img id="symbol" title="" src="">
+		<span id="title"></span>
+		<img id="symbol" title="" src="">
+		<hr>
+		<div id="message"></div>
 	</fieldset>
 </div>
 

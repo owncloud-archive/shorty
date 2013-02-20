@@ -111,30 +111,38 @@ html input, html textarea {
 	box-shadow: 0 2px 3px #ddd;
 	padding-top: 2px;
 }
-/* the top notification area (debugging only) */
-.shorty-notification {
-	min-width: 300px;
-	text-align: center;
-	padding: 0.5em;
+/* the top messenger area (debugging only) */
+.shorty-messenger {
+	position: absolute;
+	z-index: 160;
+	left: 50%;
+	width: 30em;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+	box-shadow: 0 2px 1px #777777;
+	border: 0;
+	margin: 0 0 0 -15em;
+	padding: 0 0.5em 0.5em 0.5em;
+	background-color: #eee;
 }
-.shorty-notification fieldset {
+.shorty-messenger fieldset {
 	position: relative;
-	top: -0.3em;
 	border-bottom-left-radius: 0.5em;
 	border-bottom-right-radius: 0.5em;
 	border: 1px solid #808080;
 	padding: 0.5em;
+	text-align: center;
 }
-.shorty-notification #symbol {
+.shorty-messenger #symbol {
 	vertical-align: top;
 	margin: 0 2em;
 }
-.shorty-notification #title {
+.shorty-messenger #title {
 	text-align: center;
 	font-weight: bold;
 	margin: 0;
 }
-.shorty-notification #close {
+.shorty-messenger #close {
 	float: right;
 	vertical-align: top;
 	margin: 0;

@@ -129,7 +129,7 @@ OC.Shorty={
 			*/
 			toggle: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle controls panel");
-				OC.Shorty.WUI.Notification.hide();
+				OC.Shorty.WUI.Messenger.hide();
 				var dfd = new $.Deferred();
 				// show or hide dialog
 				if (OC.Shorty.WUI.Controls.Panel.hasClass('shorty-panel-visible')){
@@ -193,21 +193,21 @@ OC.Shorty={
 				switch ( dialog.attr('id') ){
 					case 'dialog-add':
 						$.when(
-							OC.Shorty.WUI.Notification.hide(),
+							OC.Shorty.WUI.Messenger.hide(),
 							OC.Shorty.Action.Url.add()
 						).done(dfd.resolve)
 						break;
 
 					case 'dialog-edit':
 						$.when(
-							OC.Shorty.WUI.Notification.hide(),
+							OC.Shorty.WUI.Messenger.hide(),
 							OC.Shorty.Action.Url.edit()
 						).done(dfd.resolve)
 						break;
 
 					case 'dialog-del':
 						$.when(
-							OC.Shorty.WUI.Notification.hide(),
+							OC.Shorty.WUI.Messenger.hide(),
 							OC.Shorty.Action.Url.del()
 						).done(dfd.resolve)
 						break;
@@ -336,8 +336,8 @@ OC.Shorty={
 					$('.shorty-dialog').not(dialog.parents('.shorty-dialog')).each(function(){
 						OC.Shorty.WUI.Dialog.hide($(this));
 					});
-					// hide 'old' notifications
-					OC.Shorty.WUI.Notification.hide(),
+					// hide 'old' messengers
+					OC.Shorty.WUI.Messenger.hide(),
 					// some preparations
 					$.when(
 						function(){
@@ -411,7 +411,7 @@ OC.Shorty={
 			toggle: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle dialog "+dialog.attr('id'));
 				var dfd = new $.Deferred();
-				OC.Shorty.WUI.Notification.hide();
+				OC.Shorty.WUI.Messenger.hide();
 				// show or hide dialog
 				if ( ! dialog.is(':visible'))
 					 $.when(OC.Shorty.WUI.Dialog.show(dialog)).done(dfd.resolve)
@@ -427,7 +427,7 @@ OC.Shorty={
 			validate: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("validate target in dialog "+dialog.attr('id'));
 				var dfd = new $.Deferred();
-				OC.Shorty.WUI.Notification.hide();
+				OC.Shorty.WUI.Messenger.hide();
 				$.when(
 					OC.Shorty.WUI.Meta.collect(dialog)
 				).done(function(){
@@ -1098,41 +1098,41 @@ OC.Shorty={
 			}, // OC.Shorty.WUI.List.Toolbar
 		}, // OC.Shorty.WUI.List
 		/**
-		 * @class OC.Shorty.WUI.Notification
-		 * @brief Collection of methods controling the central notification area
+		 * @class OC.Shorty.WUI.Messenger
+		 * @brief Collection of methods controling the central messenger area
 		 * @author Christian Reiner
 		 */
-		Notification:{
+		Messenger:{
 			/**
-			* @method OC.Shorty.WUI.Notification.hide
-			* @brief Hides the notification area and clears the content
+			* @method OC.Shorty.WUI.Messenger.hide
+			* @brief Hides the messenger area and clears the content
 			* @author Christian Reiner
 			*/
 			hide: function(){
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide notification");
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide messenger");
 				var dfd = new $.Deferred();
 				$.when(
-					$('#notification').slideUp('fast')
+					$('#messenger').slideUp('fast')
 				).pipe(function(){
-					$('#notification #symbol').attr('title','').attr('src','');
-					$('#notification #message').text('');
+					$('#messenger #symbol').attr('title','').attr('src','');
+					$('#messenger #message').text('');
 				}).done(dfd.resolve)
 				return dfd.promise();
-			}, // OC.Shorty.WUI.Notification.hide
+			}, // OC.Shorty.WUI.Messenger.hide
 			/**
-			* @method OC.Shorty.WUI.Notification.show
-			* @brief Populates the notification area with the specified text and shows it
+			* @method OC.Shorty.WUI.Messenger.show
+			* @brief Populates the messenger area with the specified text and shows it
 			* @author Christian Reiner
 			*/
 			show: function(message,level){
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show notification with level "+level);
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show messenger with level "+level);
 				level = level || 'info';
 				var dfd = new $.Deferred();
 				var duration = 'slow';
-				var notification = $('#notification');
+				var messenger = $('#messenger');
 				if (message && message.length){
 					$.when(
-						notification.slideUp('fast')
+						messenger.slideUp('fast')
 					).done(function(){
 						switch(level){
 							case 'debug':
@@ -1140,10 +1140,10 @@ OC.Shorty={
 								if ( OC.Shorty.Debug ){
 									OC.Shorty.Debug.log('Debug: '+message);
 									$.when(
-										notification.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/neutral.png')),
-										notification.find('#title').text('Debug'),
-										notification.find('#message').html(nl2br(message)),
-										notification.slideDown(duration)
+										messenger.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/neutral.png')),
+										messenger.find('#title').text('Debug'),
+										messenger.find('#message').html(nl2br(message)),
+										messenger.slideDown(duration)
 									).done(dfd.resolve)
 								}
 								else
@@ -1155,10 +1155,10 @@ OC.Shorty={
 									OC.Shorty.Debug.log('Error: '+message);
 								}
 								$.when(
-									notification.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/bad.png')),
-									notification.find('#title').text('Error'),
-									notification.find('#message').html(nl2br(message)),
-									notification.slideDown(duration)
+									messenger.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/bad.png')),
+									messenger.find('#title').text('Error'),
+									messenger.find('#message').html(nl2br(message)),
+									messenger.slideDown(duration)
 								).done(dfd.resolve)
 								break;
 
@@ -1168,24 +1168,24 @@ OC.Shorty={
 										OC.Shorty.Debug.log('Info: '+message);
 									}
 									$.when(
-										notification.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png')),
-										notification.find('#title').text('Info'),
-										notification.find('#message').html(nl2br(message)),
-										notification.slideDown(duration)
+										messenger.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png')),
+										messenger.find('#title').text('Info'),
+										messenger.find('#message').html(nl2br(message)),
+										messenger.slideDown(duration)
 									).done(dfd.resolve)
 								}else{
 									$.when(
-										notification.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png')),
-										notification.find('#title').text('Info'),
-										notification.text('')
+										messenger.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png')),
+										messenger.find('#title').text('Info'),
+										messenger.text('')
 									).done(dfd.resolve)
 								}
 						} // switch
 					})
 				} // if message
 				return dfd.promise();
-			}, // OC.Shorty.WUI.Notification.show
-		}, // OC.Shorty.WUI.Notification
+			}, // OC.Shorty.WUI.Messenger.show
+		}, // OC.Shorty.WUI.Messenger
 		/**
 		* @class OC.Shorty.WUI.Meta
 		* @brief Collection of methods to handle url meta data
@@ -1595,7 +1595,7 @@ OC.Shorty={
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
 				// perform upload of new shorty
 				$.when(
-					OC.Shorty.WUI.Notification.hide(),
+					OC.Shorty.WUI.Messenger.hide(),
 					// close and neutralize dialog
 					OC.Shorty.WUI.Dialog.hide(dialog),
 					OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
@@ -1654,7 +1654,7 @@ OC.Shorty={
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
 				// perform modification of existing shorty
 				$.when(
-				OC.Shorty.WUI.Notification.hide(),
+				OC.Shorty.WUI.Messenger.hide(),
 				// close and neutralize dialog
 				OC.Shorty.WUI.Dialog.hide(dialog),
 				OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
@@ -1702,7 +1702,7 @@ OC.Shorty={
 				var dialog = $('#dialog-edit');
 				var id     = dialog.find('#id').val();
 				$.when(
-					// OC.Shorty.WUI.Notification.hide(),
+					// OC.Shorty.WUI.Messenger.hide(),
 					$.ajax({
 						type:     'GET',
 						url:      OC.filePath('shorty','ajax','del.php'),
@@ -1952,14 +1952,14 @@ OC.Shorty={
 			if (response.status){
 				// this is a valid response
 				if ('success'==response.status){
-					OC.Shorty.WUI.Notification.show(response.message,'debug');
+					OC.Shorty.WUI.Messenger.show(response.message,'debug');
 					return new $.Deferred().resolve(response);
 				}else{
 			//           // is this an expired request token (CSRF protection mechanism) ?
 			//           if (response.message.indexOf("Token expired")>=0)
 			//             // reload apps base page
 			//             window.location.href=OC.filePath('shorty','','');
-					OC.Shorty.WUI.Notification.show(response.message,'error');
+					OC.Shorty.WUI.Messenger.show(response.message,'error');
 					return new $.Deferred().reject(response);
 				}
 			}
