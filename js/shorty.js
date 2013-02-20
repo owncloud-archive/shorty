@@ -1143,51 +1143,57 @@ OC.Shorty={
 				var dfd = new $.Deferred();
 				var duration = 'slow';
 				var messenger = $('body #shorty-messenger');
-				var object;
-				if (message && message.length){
-					// log to browser console when debugging is enabled in system config file
-					if ( OC.Shorty.Debug ){
-						OC.Shorty.Debug.log(level+': '+message);
-					}
-					switch(level){
-						case 'debug':
-							// detect debug mode by checking, of function 'debug()' exists
-							if (true){
-								object=$(messenger).after($(messenger).clone());
-								object.attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
-								object.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/neutral.png'));
-								object.find('#title').text('Debug');
-								object.find('#message').html(nl2br(message));
-								object.slideDown(duration);
-							}
-							else
-								dfd.resolve();
-							break;
+				var object, verbosity;
+				$.when(
+					OC.Shorty.Action.Preference.get('verbosity-control')
+				).done(function(result){
+					verbosity = result['verbosity-control'];
+					if (message && message.length){
+						// log to browser console when debugging is enabled in system config file
+						if ( OC.Shorty.Debug ){
+							OC.Shorty.Debug.log(level+': '+message);
+						}
+						switch(level){
+							case 'debug':
+								// detect debug mode by checking, of function 'debug()' exists
+								if (-1<$.inArray(verbosity,['debug'])){
+									object=$(messenger).after($(messenger).clone());
+									object.attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
+									object.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/neutral.png'));
+									object.find('#title').text('Debug');
+									object.find('#message').html(nl2br(message));
+									object.slideDown(duration);
+								}
+								else
+									dfd.resolve();
+								break;
 
-						case 'error':
-							if (true){
-								object=$(messenger).after($(messenger).clone());
-								object.attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
-								object.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/bad.png'));
-								object.find('#title').text('Error');
-								object.find('#message').html(nl2br(message));
-								object.slideDown(duration);
-							}
-							break;
+							case 'info':
+								if (-1<$.inArray(verbosity,['info','debug'])){
+									object=$(messenger).after($(messenger).clone());
+									object.attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
+									object.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png'));
+									object.find('#title').text('Info');
+									object.find('#message').html(nl2br(message));
+									object.slideDown(duration);
+								}
+								break;
 
-						default:
-						case 'info':
-							if (true){
-								object=$(messenger).after($(messenger).clone());
-								object.attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
-								object.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png'));
-								object.find('#title').text('Info');
-								object.find('#message').html(nl2br(message));
-								object.slideDown(duration);
-							}
-							break;
-					} // switch
-				} // if message
+							default:
+							case 'error':
+								if (-1<$.inArray(verbosity,['error','info','debug'])){
+									object=$(messenger).after($(messenger).clone());
+									object.attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
+									object.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/bad.png'));
+									object.find('#title').text('Error');
+									object.find('#message').html(nl2br(message));
+									object.slideDown(duration);
+								}
+								break;
+
+						} // switch
+					} // if message
+				})
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Messenger.show
 		}, // OC.Shorty.WUI.Messenger
@@ -1388,30 +1394,40 @@ OC.Shorty={
 		Preference:
 		{
 			/**
+			 * @method OC.Shorty.Action.Preference.Cache
+			 * @brief: A cache holding preferences already retrieved
+			 * @author Christian Reiner
+			 */
+			Cache:{},
+			/**
 			 * @method OC.Shorty.Action.Preference.get
 			 * @brief: Gets a specified users preference value
 			 * @author Christian Reiner
 			 */
 			get:function(data){
-				if (OC.Shorty.Debug){OC.Shorty.Debug.log("get preference(s):");OC.Shorty.Debug.log(data);}
-				var dfd = new $.Deferred();
-				$.ajax({
-					type:     'GET',
-					url:      OC.filePath('shorty','ajax','preferences.php'),
-					cache:    false,
-					data:     data,
-					dataType: 'json'
-				}).pipe(
-					function(response){return OC.Shorty.Ajax.eval(response)},
-					function(response){return OC.Shorty.Ajax.fail(response)}
-				).always(function(response){
-					if (OC.Shorty.Debug){OC.Shorty.Debug.log("got preference(s):");OC.Shorty.Debug.log(response.data);}
-				}).done(function(response){
-					dfd.resolve(response.data);
-				}).fail(function(response){
-					dfd.reject({});
-				})
-				return dfd.promise();
+				if (-1<$.inArray(data,Object.keys(OC.Shorty.Action.Preference.Cache))){
+					return OC.Shorty.Action.Preference.Cache[data].promise();
+				}else{
+					OC.Shorty.Action.Preference.Cache[data] = new $.Deferred();
+					var dfd = OC.Shorty.Action.Preference.Cache[data];
+					$.ajax({
+						type:     'GET',
+						url:      OC.filePath('shorty','ajax','preferences.php'),
+						cache:    false,
+						data:     data,
+						dataType: 'json'
+					}).pipe(
+						function(response){return OC.Shorty.Ajax.eval(response)},
+						function(response){return OC.Shorty.Ajax.fail(response)}
+					).always(function(response){
+						if (OC.Shorty.Debug){OC.Shorty.Debug.log("got preference(s):");OC.Shorty.Debug.log(response.data);}
+					}).done(function(response){
+						dfd.resolve(response.data);
+					}).fail(function(response){
+						dfd.reject({});
+					})
+					return dfd.promise();
+				}
 			}, // OC.Shorty.Action.Preference.get
 			/**
 			 * @method OC.Shorty.Action.Preference.set
@@ -1452,7 +1468,6 @@ OC.Shorty={
 			 * @author Christian Reiner
 			 */
 			get:function(data){
-				if (OC.Shorty.Debug){OC.Shorty.Debug.log("get setting(s):");OC.Shorty.Debug.log(data);}
 				var dfd = new $.Deferred();
 				$.ajax({
 					type:     'GET',
