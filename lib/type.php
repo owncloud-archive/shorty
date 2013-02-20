@@ -82,6 +82,7 @@ class OC_Shorty_Type
 		'backend-tinycc-key'     => OC_Shorty_Type::STRING,
 		'backend-ssl-verify'     => OC_Shorty_Type::INTEGER,
 		'sms-control'            => OC_Shorty_Type::STRING,
+		'verbosity-control'      => OC_Shorty_Type::STRING,
 		'list-sort-code'         => OC_Shorty_Type::SORTKEY,
 		'controls-panel-visible' => OC_Shorty_Type::BOOLEAN,
 	);

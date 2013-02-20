@@ -48,6 +48,11 @@ $TRANSLATIONS = array(
 "share"                          => "teilen",
 "show"                           => "anzeigen",
 
+"none"                           => "Keine",
+"error"                          => "Fehler",
+"info"                           => "Info",
+"debug"                          => "Debug",
+
 "Ctrl-C"                         => "Strg-C",
 "Ctrl-V"                         => "Strg-V",
 
@@ -87,6 +92,7 @@ $TRANSLATIONS = array(
 "Clicking 'Ok' below will try to launch an sms composer"                 => "Klicken von 'Ok' unten versucht, einen SMS-Editor zu starten",
 "Close"                                                                  => "Schließen",
 "Configuration"                                                          => "Konfiguration",
+"The amount of feedback messages shown."                                 => "Die Menge von Rückmeldungen die gezeigt wird.",
 "Copy to clipboard"                                                      => "In Zwischenablage kopieren",
 "Counted entries and clicks"                                             => "Einträge und Klicks gezählt",
 "Create a new 'Shorty' and share it"                                     => "Lege einen neuen 'Shorty' an und teile ihn",
@@ -98,6 +104,7 @@ $TRANSLATIONS = array(
 "Exception"                                                              => "Ausnahme",
 "Exception (%s)"                                                         => "Ausnahme (%s)",
 "Expiration"                                                             => "Verfall",
+"Feedback"                                                               => "Meldungen",
 "It can be enabled by a single click in the administration:"             => "Es kann mit einem einzigen Klick in der Administration aktivieren werden:",
 "Loading"                                                                => "Ladend",
 "Mail client"                                                            => "E-Mail-Programm",
@@ -140,6 +147,7 @@ $TRANSLATIONS = array(
 "Show as QRCode"                                                         => "Als QRCode anzeigen",
 "Show details"                                                           => "Details anzeigen",
 "Show usage"                                                             => "Aufrufe anzeigen",
+"SMS"                                                                    => "SMS",
 "SMS composer"                                                           => "SMS-Programm",
 "Sort ascending"                                                         => "aufsteigend sortieren",
 "Sort descending"                                                        => "absteigend sortieren",

@@ -73,6 +73,7 @@ $tmpl->assign ( 'backend-tinycc-key',  OCP\Config::getUserValue(OCP\User::getUse
 $tmpl->assign ( 'backend-type',        OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type','') );
 $tmpl->assign ( 'backend-ssl-verify',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify','0') );
 $tmpl->assign ( 'sms-control',         OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
+$tmpl->assign ( 'verbosity-control',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-control','info') );
 // render template
 // TODO: remove OC4-compatibility
 if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0

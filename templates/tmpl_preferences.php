@@ -250,6 +250,21 @@
 												echo OC_Shorty_L10n::t("In addition, those implementations are minimalistic, buggy and differ from system to system.")."<br>\n";
 												echo OC_Shorty_L10n::t("In short: this might not work for you, therefore you can disable it…")."<br>\n";?></em></span>
 			</p>
+			<p>
+				<!-- verbosity -->
+				<label for="verbosity" class="shorty-aspect"><?php echo OC_Shorty_L10n::t("Feedback").":";?></label>
+				<span id="verbosity" style="margin-right:1em;">
+					<select id="verbosity-control" name="verbosity-control" style="width:11em;">
+						<?php foreach (array('none','error','info','debug') as $verbosity)
+								echo sprintf('<option value="%1$s" %2$s>%3$s</option>'."\n",
+											$verbosity,
+											($verbosity==$_['verbosity-control']?'selected':''),
+											OC_Shorty_L10n::t($verbosity) ); 
+						?>
+					</select>
+					<em><?php echo OC_Shorty_L10n::t("The amount of feedback messages shown."); ?></em>
+				</span>
+			</p>
 		</div>
 	</form>
 <?php if ( OC_Group::inGroup(OC_User::getUser(),'admin') ) { ?>

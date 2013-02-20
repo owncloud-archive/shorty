@@ -74,8 +74,8 @@ $(document).ready(function(){
 			OC.Shorty.Action.Preference.set('backend-ssl-verify=1');
 		else OC.Shorty.Action.Preference.set('backend-ssl-verify=0');
 	});
-	// save scalar preferences: sms-control
-	$('#shorty #sms-control').change(function(){
+	// save scalar preferences: sms-control, verbosity-control
+	$('#shorty #sms-control,#shorty #verbosity-control').change(function(){
 		OC.Shorty.Action.Preference.set($(this).serialize());
 	});
 });
