@@ -701,6 +701,7 @@ OC.Shorty={
 			*/
 			build: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("build list");
+				OC.Shorty.WUI.Messenger.hide();
 				var dfd = new $.Deferred();
 				// prepare loading
 				$.when(
