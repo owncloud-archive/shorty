@@ -33,6 +33,10 @@
  * @author Christian Reiner
  */
 
+// Session checks
+OCP\JSON::checkLoggedIn ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
+
 OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 
 OCP\Util::addStyle  ( 'shorty/3rdparty', 'jquery-impromptu' );

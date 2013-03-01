@@ -32,6 +32,10 @@
  * @author Christian Reiner
  */
 
+// Session checks
+OCP\JSON::checkLoggedIn ( );
+OCP\JSON::checkAppEnabled ( 'shorty' );
+
 $RUNTIME_NOSETUPFS = true;
 OC_App::loadApps();
 

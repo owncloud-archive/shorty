@@ -31,6 +31,9 @@
  * @author Christian Reiner
  */
 
+// Session checks
+OCP\JSON::checkAppEnabled ( 'shorty' );
+
 $RUNTIME_NOSETUPFS = true;
 
 require_once ( '3rdparty/php/phpqrcode.php' );
