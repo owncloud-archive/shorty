@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* Fri Mar 01 2013 Christian Reiner: version 0.3.22
+Some general security fix to the apps framework.
 * Wed Feb 20 2013 Christian Reiner: version 0.3.21
 Fixed visibility of list header which was accidentially hidden below the control panel.
 Fixed display of feedback on actions by reimplementing the messenger area. 
