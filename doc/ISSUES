@@ -24,14 +24,19 @@
 
 This is a short list of known issues:
 
-- Shorty does not completely with the khtml rendering engine (konqueror browser).
+- for ownCloud 5 based installations there is an issue with the validation of 
+the setup for the static backend. Due to tightened security rules the validation 
+strategy fail in cross domain setups. 
+
+- Shorty does not completely work with the khtml rendering engine (konqueror browser).
 Konqueror using webkit engine works fine though. This issue is unlikely to be
 fixed, since the problem originates in the jQuery library not supporting the
 khtml engine.
 
 - There are some issues when using Shorty with a MS IE browser:
-MS IE versions prior to 9 are not supported at all, they violate too many web
-standards. From version 9 onwards Shorty is usable, but a few issues remain:
+MS IE versions prior to 9 are not supported at all, those browsers simply violate 
+too many web standards. From version 9 onwards Shorty is usable, but a few 
+issues remain:
 * some style glitches like missing rounded corners in dialogs fieldset frames.
 * text payloads inside the usage popups in the sharing dialog won't be preselected.
 These and probably many more issues are the result of the fact that this browser
