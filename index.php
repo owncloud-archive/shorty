@@ -34,8 +34,8 @@
  */
 
 // Session checks
-OCP\JSON::checkLoggedIn ( );
-OCP\JSON::checkAppEnabled ( 'shorty' );
+OCP\User::checkLoggedIn  ( );
+OCP\App::checkAppEnabled ( 'shorty' );
 
 OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 

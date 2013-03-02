@@ -36,7 +36,7 @@
 OC_Shorty_Tools::ob_control ( TRUE );
 
 // Session checks
-OCP\JSON::checkAppEnabled ( 'shorty' );
+OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
 OC_App::loadApps();

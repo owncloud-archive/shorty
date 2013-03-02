@@ -33,9 +33,9 @@
  */
 
 // Session checks
-OCP\JSON::checkLoggedIn ( );
-OCP\JSON::checkAdminUser ( );
-OCP\JSON::checkAppEnabled ( 'shorty' );
+OCP\User::checkLoggedIn  ( );
+OCP\User::checkAdminUser ( );
+OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
 OC_App::loadApps();

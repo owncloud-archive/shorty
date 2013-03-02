@@ -32,7 +32,7 @@
  */
 
 // Session checks
-OCP\JSON::checkAppEnabled ( 'shorty' );
+OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
 
