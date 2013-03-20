@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* Wed Mar 20 2013 Christian Reiner: version 0.1.13
+Allow direct activation in ownCloud5 based installations.
 * Mon Feb 11 2013 Christian Reiner: version 0.1.12
 Widened maximum width of click list to prevent a broken layout. 
 Use a minimum height for the click list to have room for the details dialog. 

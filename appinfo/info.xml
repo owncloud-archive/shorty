@@ -45,10 +45,10 @@ The Shorty app is a mandatory prerequisite to use this module.
 For more information see:
 http://apps.owncloud.com/content/show.php/Shorty-Tracking
 	</description>
-	<version>0.1.12</version>
+	<version>0.1.13</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
-	<require>4.9</require>
+	<require>5.0</require>
 	<types>
 		<internet/>
 		<bookmark/>
