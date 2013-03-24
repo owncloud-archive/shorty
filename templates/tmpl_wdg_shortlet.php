@@ -38,7 +38,7 @@
 	<label for="shortlet" class="shorty-aspect"><?php echo OC_Shorty_L10n::t("Shortlet").":";?></label>
 	<span id="shortlet">
 		<a class="shortlet"
-			href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OCP\Util::linkToAbsolute('shorty', 'index.php'); ?>&url='+url, 'owncloud-shorty')%20})()">
+			href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php echo OCP\Util::linkToAbsolute('shorty', 'index.php'); ?>?url='+url, 'owncloud-shorty')%20})()">
 			<?php echo OC_Shorty_L10n::t("Add page as 'Shorty' to ownCloud"); ?>
 		</a>
 	</span>
