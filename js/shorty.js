@@ -5,7 +5,6 @@
 * @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/OC.Shorty?content=150401
-* @link repository https://svn.christian-reiner.info/svn/app/oc/shorty
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
