@@ -24,6 +24,8 @@
 
 Changelog: 
 
+* Sun Mar 24 2013 Christian Reiner: version 0.3.24
+Fixed shortlet not to result in an error when being used.
 * Wed Mar 20 2013 Christian Reiner: version 0.3.23
 Allow direct activation in ownCloud5 based installations. 
 * Fri Mar 01 2013 Christian Reiner: version 0.3.22
