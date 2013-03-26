@@ -38,28 +38,28 @@
 	<fieldset>
 		<legend>
 			<a id="close" class="shorty-close-button"
-				title="<?php echo OC_Shorty_L10n::t("Close"); ?>">
-				<img alt="<?php echo OC_Shorty_L10n::t("Close"); ?>" class="svg"
-					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg'); ?>">
+				title="<?php p(OC_Shorty_L10n::t("Close")); ?>">
+				<img alt="<?php p(OC_Shorty_L10n::t("Close")); ?>" class="svg"
+					src="<?php p(OCP\Util::imagePath('shorty','actions/shade.svg')); ?>">
 			</a>
-			<span class="heading"><?php echo OC_ShortyTracking_L10n::t("Click details").':'; ?></span>
+			<span class="heading"><?php p(OC_ShortyTracking_L10n::t("Click details").':'); ?></span>
 		</legend>
-		<label for="shorty-title"><?php echo OC_ShortyTracking_L10n::t("Title");?>: </label>
+		<label for="shorty-title"><?php p(OC_ShortyTracking_L10n::t("Title")); ?>: </label>
 		<span id="shorty-title" class="shorty-click-detail ellipsis"></span>
 		<hr>
-		<label for="click-result"><?php echo OC_ShortyTracking_L10n::t("Result");?>: </label>
+		<label for="click-result"><?php p(OC_ShortyTracking_L10n::t("Result")); ?>: </label>
 		<span id="click-result" class="shorty-click-detail"></span>
 		<br />
-		<label for="click-address"><?php echo OC_ShortyTracking_L10n::t("Address");?>: </label>
+		<label for="click-address"><?php p(OC_ShortyTracking_L10n::t("Address")); ?>: </label>
 		<span id="click-address" class="shorty-click-detail"></span>
 		<br />
-		<label for="click-host"><?php echo OC_ShortyTracking_L10n::t("Host");?>: </label>
+		<label for="click-host"><?php p(OC_ShortyTracking_L10n::t("Host")); ?>: </label>
 		<span id="click-host" class="shorty-click-detail"></span>
 		<br />
-		<label for="click-user"><?php echo OC_ShortyTracking_L10n::t("User");?>: </label>
+		<label for="click-user"><?php p(OC_ShortyTracking_L10n::t("User")); ?>: </label>
 		<span id="click-user" class="shorty-click-detail"></span>
 		<br />
-		<label for="click-time"><?php echo OC_ShortyTracking_L10n::t("Time");?>: </label>
+		<label for="click-time"><?php p(OC_ShortyTracking_L10n::t("Time")); ?>: </label>
 		<span id="click-time" class="shorty-click-detail"></span>
 	</fieldset>
 </form>
