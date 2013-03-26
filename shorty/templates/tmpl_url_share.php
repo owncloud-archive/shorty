@@ -53,7 +53,7 @@
 			<?php
 				foreach ( OC_Shorty_Type::$STATUS as $status )
 					if ( 'deleted'!=$status )
-						p(sprintf("<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status)));
+						print_unescaped(sprintf("<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status)));
 			?>
 		</select>
 		<span id="blocked" class="status-hint" style="display:none;"><?php p(OC_Shorty_L10n::t("for any access")."."); ?></span>
