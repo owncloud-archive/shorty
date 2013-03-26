@@ -40,22 +40,22 @@
 	<fieldset>
 		<legend>
 			<a id="close" class="shorty-close-button"
-				title="<?php echo OC_Shorty_L10n::t("close"); ?>">
-				<img alt="<?php echo OC_Shorty_L10n::t("close"); ?>" class="svg"
-					src="<?php echo OCP\Util::imagePath('shorty','actions/shade.svg'); ?>">
+				title="<?php p(OC_Shorty_L10n::t("close")); ?>">
+				<img alt="<?php p(OC_Shorty_L10n::t("close")); ?>" class="svg"
+					src="<?php p(OCP\Util::imagePath('shorty','actions/shade.svg')); ?>">
 			</a>
-			<span class="heading"><?php echo OC_ShortyTracking_L10n::t("List of tracked clicks").':';?></span>
+			<span class="heading"><?php p(OC_ShortyTracking_L10n::t("List of tracked clicks").':');?></span>
 		</legend>
 		<!-- begin: the dialogs header: linguistic reference to the Shorty and the sparkline -->
 		<div id="shorty-header">
-			<label for="shorty-title"><?php echo OC_Shorty_L10n::t("Title");?>: </label>
+			<label for="shorty-title"><?php p(OC_Shorty_L10n::t("Title")); ?>: </label>
 			<span id="shorty-title" class="ellipsis shorty-tracking-reference"></span>
 			<br/>
-			<label for="shorty-status"><?php echo OC_Shorty_L10n::t("Status");?>: </label>
+			<label for="shorty-status"><?php p(OC_Shorty_L10n::t("Status")); ?>: </label>
 			<span id="shorty-status" class="shorty-tracking-reference"></span>
 			<span id="stats" class="sparkline">
-				<img alt="loading…" title="<?php echo OC_Shorty_L10n::t("Loading");?>…"
-					src="<?php echo OCP\Util::imagePath('shorty', 'loading-led.gif'); ?>">
+				<img alt="loading…" title="<?php p(OC_Shorty_L10n::t("Loading")); ?>…"
+					src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>">
 			</span>
 			<hr>
 		</div>
@@ -66,17 +66,17 @@
 			<thead>
 				<tr id="titlebar">
 					<th id="status" >
-						<div><img id="tools" alt="toolbar" title="<?php echo OC_Shorty_L10n::t("Toggle toolbar");?>"
-								class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>"
+						<div><img id="tools" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
+								class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
 								data-unshade="actions/unshade"
 								data-shade="actions/shade">
 						</div>
 					</th>
-					<th id="result" ><div><?php echo OC_ShortyTracking_L10n::t("Result") ?></div></th>
-					<th id="address"><div><?php echo OC_ShortyTracking_L10n::t("Address")?></div></th>
-					<th id="host"   ><div><?php echo OC_ShortyTracking_L10n::t("Host")   ?></div></th>
-					<th id="user"   ><div><?php echo OC_ShortyTracking_L10n::t("User")   ?></div></th>
-					<th id="time"   ><div><?php echo OC_ShortyTracking_L10n::t("Time")   ?></div></th>
+					<th id="result" ><div><?php p(OC_ShortyTracking_L10n::t("Result"));  ?></div></th>
+					<th id="address"><div><?php p(OC_ShortyTracking_L10n::t("Address")); ?></div></th>
+					<th id="host"   ><div><?php p(OC_ShortyTracking_L10n::t("Host"));    ?></div></th>
+					<th id="user"   ><div><?php p(OC_ShortyTracking_L10n::t("User"));    ?></div></th>
+					<th id="time"   ><div><?php p(OC_ShortyTracking_L10n::t("Time"));    ?></div></th>
 					<th id="actions"><div>&nbsp;</div></th>
 				</tr>
 				<!-- table toolbar -->
@@ -84,8 +84,8 @@
 					<th id="status">
 						<div style="display:none;">
 							<a id="reload">
-								<img alt="<?php echo OC_Shorty_L10n::t("Reload"); ?>" title="<?php echo OC_Shorty_L10n::t("Reload list"); ?>"
-									class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/reload.svg'); ?>">
+								<img alt="<?php p(OC_Shorty_L10n::t("Reload")); ?>" title="<?php p(OC_Shorty_L10n::t("Reload list")); ?>"
+									class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/reload.svg')); ?>">
 							</a>
 						</div>
 					</th>
@@ -94,7 +94,7 @@
 							<span class="shorty-select">
 								<select id='filter' value="" data-placeholder=" ">
 									<?php foreach($_['shorty-result'] as $option=>$label)
-										echo sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label);
+										p(sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label));
 									?>
 								</select>
 							</span>
@@ -131,10 +131,10 @@
 					<td id="time"></td>
 					<td id="actions">
 						<span class="shorty-actions">
-							<a id="shorty-tracking-action-details" title="<?php echo OC_Shorty_L10n::t("details"); ?>" data_method="OC.Shorty.Tracking.details">
-								<img class="shorty-icon" alt="<?php echo OC_Shorty_L10n::t("details"); ?>"
-									title="<?php echo OC_Shorty_L10n::t('Show details'); ?>" class="svg"
-									src="<?php echo OCP\Util::imagePath('shorty','actions/info.svg');   ?>" />
+							<a id="shorty-tracking-action-details" title="<?php p(OC_Shorty_L10n::t("details")); ?>" data_method="OC.Shorty.Tracking.details">
+								<img class="shorty-icon" alt="<?php p(OC_Shorty_L10n::t("details")); ?>"
+									title="<?php p(OC_Shorty_L10n::t('Show details')); ?>" class="svg"
+									src="<?php p(OCP\Util::imagePath('shorty','actions/info.svg')); ?>" />
 							</a>
 						</span>
 					</td>
@@ -148,15 +148,15 @@
 		<div id="shorty-footer">
 			<hr>
 			<span id="scrollingTurn">
-				<img id="load" alt="load" title="<?php echo OC_ShortyTracking_L10n::t("load");?>"
-					class="svg" src="<?php echo OCP\Util::imagePath('shorty','actions/unshade.svg'); ?>">
+				<img id="load" alt="load" title="<?php p(OC_ShortyTracking_L10n::t("load")); ?>"
+					class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>">
 			</span>
 			<span style="float:left;">
-				<label for="shorty-clicks"><?php echo OC_ShortyTracking_L10n::t("Clicks");?>: </label>
+				<label for="shorty-clicks"><?php p(OC_ShortyTracking_L10n::t("Clicks")); ?>: </label>
 				<span id="shorty-clicks" class="shorty-tracking-reference"></span>
 			</span>
 			<span style="float:right;">
-				<label for="shorty-until"><?php echo OC_Shorty_L10n::t("Expiration");?>: </label>
+				<label for="shorty-until"><?php p(OC_Shorty_L10n::t("Expiration")); ?>: </label>
 				<span id="shorty-until" class="shorty-tracking-reference"></span>
 			</span>
 		</div>
