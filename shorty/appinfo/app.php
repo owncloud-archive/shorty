@@ -54,4 +54,18 @@ OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
 OCP\Util::connectHook ( 'OC_User',   'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
 OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries', 'OC_Shorty_Hooks', 'registerQueries');
 
+// backwards compatibility for OC5's global p() functions
+if ( ! function_exists('p'))
+{
+	function p($string) {
+		print(OC_Util::sanitizeHTML($string));
+	}
+}
+if ( ! function_exists('print_unescaped'))
+{
+	function print_unescaped($string) {
+		print($string);
+	}
+}
+
 ?>
