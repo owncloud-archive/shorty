@@ -68,4 +68,19 @@ catch ( Exception $e )
 	OC_App::disable    ( 'shorty_tracking' );
 	OCP\Util::writeLog ( 'shorty_tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), OCP\Util::WARN );
 }
+
+// backwards compatibility for OC5's global p() functions
+if ( ! function_exists('p'))
+{
+	function p($string) {
+		print(OC_Util::sanitizeHTML($string));
+	}
+}
+if ( ! function_exists('print_unescaped'))
+{
+	function print_unescaped($string) {
+		print($string);
+	}
+}
+
 ?>
