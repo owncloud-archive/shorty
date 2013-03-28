@@ -38,47 +38,47 @@
 	<legend>
 		<span id="title" class="shorty-title">
 			<img class="svg" style="vertical-align: bottom;"
-				src="<?php echo OCP\Util::imagePath("shorty","shorty-dusky.svg"); ?> ">
+				src="<?php p(OCP\Util::imagePath("shorty","shorty-dusky.svg")); ?> ">
 			<a name="shorty"><strong>Shorty</strong></a>
 		</span>
 	</legend>
 	<form id="shorty">
 		<div id="backend-static" class="backend-supplement">
-			<span><?php echo OC_Shorty_L10n::t("Optional configuration of a 'Static Backend'").":";?></span>
+			<span><?php p(OC_Shorty_L10n::t("Optional configuration of a 'Static Backend'").":"); ?></span>
 			<br/>
-			<label for="backend-static-base" class="shorty-aspect"><?php echo OC_Shorty_L10n::t("Base url").':';?></label>
+			<label for="backend-static-base" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Base url").':'); ?></label>
 			<input id="backend-static-base" type="text" name="backend-static-base"
-					value="<?php echo $_['backend-static-base']; ?>"
-					maxlength="256" placeholder="<?php echo OC_Shorty_L10n::t('Specify a static base url…');?>" style="width:25em;">
+					value="<?php p($_['backend-static-base']); ?>"
+					maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t('Specify a static base url…')); ?>" style="width:25em;">
 			<br/>
 			<label for="backend-example" class="shorty-aspect"> </label>
 			<span id="backend-example">
-				<label for="example" class="shorty-aspect"><?php echo OC_Shorty_L10n::t("Example").':';?></label>
-				<a id="example" class="shorty-example" title="<?php echo OC_Shorty_L10n::t("Verify by clicking…");?>">
-				<?php echo sprintf(htmlspecialchars('http://%s/<service><shorty id>'),$_SERVER['SERVER_NAME']) ?>
+				<label for="example" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+				<a id="example" class="shorty-example" title="<?php p(OC_Shorty_L10n::t("Verify by clicking…")); ?>">
+				<?php print_unescaped(sprintf(htmlspecialchars('http://%s/<service><shorty id>'),$_SERVER['SERVER_NAME'])); ?>
 				</a>
 			</span>
 			<br/>
-			<span id="explain" class="shorty-explain"><?php echo sprintf("%1\$s<br />\n%2\$s<br />\n%3\$s <span class=\"shorty-example\">%6\$s</span><br />\n%4\$s<br />\n%5\$s",
+			<span id="explain" class="shorty-explain"><?php print_unescaped(sprintf("%1\$s<br />\n%2\$s<br />\n%3\$s <span class=\"shorty-example\">%6\$s</span><br />\n%4\$s<br />\n%5\$s",
 				OC_Shorty_L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
 				OC_Shorty_L10n::t("You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."),
 				OC_Shorty_L10n::t("The target of that mapping must be some URL like:"),
 				OC_Shorty_L10n::t("Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."),
 				OC_Shorty_L10n::t("Leave empty if you can't provide a short base url that is mapped the described way."),
-				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty id>') ); ?>
+				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty id>'))); ?>
 			</span>
 		</div>
 	</form>
 <?php if ( ! OCP\App::isEnabled('shorty_tracking') ) { ?>
 	<p>
 		<span id="plugins" class="suggestion">
-			<?php echo sprintf(OC_Shorty_L10n::t("The additional plugin '%%s' tracks the usage of existing Shortys!"),
-												'<strong>Shorty Tracking</strong>'); ?>
+			<?php print_unescaped(sprintf(OC_Shorty_L10n::t("The additional plugin '%%s' tracks the usage of existing Shortys!"),
+												'<strong>Shorty Tracking</strong>')); ?>
 			<br/>
-			<?php echo sprintf(OC_Shorty_L10n::t("It can be enabled by a single click in the administration:")." %s",
+			<?php print_unescaped(sprintf(OC_Shorty_L10n::t("It can be enabled by a single click in the administration:")." %s",
 								'<a href="'.OCP\Util::linkToAbsolute("settings", "apps.php").'" class="clickable">'.
 								'<button>'.OC_Shorty_L10n::t("Apps selector").'</button>'.
-								'</a>' ); ?>
+								'</a>' )); ?>
 		</span>
 	</p>
 <?php } ?>
