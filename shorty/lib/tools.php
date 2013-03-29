@@ -248,20 +248,17 @@ class OC_Shorty_Tools
 	/**
 	* @method OC_Shorty_Tools::versionCompare
 	* @brief Compares a given version (string notation) with the running ownCloud version
-	* @param beta boolean flag indicating of high subversion numbers should be accepted as beta of the comming version
 	* @return integer the major version number
 	* @access public
 	* @author Christian Reiner
 	* @description
 	* The major version of the OC framework is relevant for a few compatibility issues.
 	* It has to be checked against often when for example rendering templates, to add or suppres version dependant options.
-	* The plusBeta flag helps to recognize typical version numbers like x.86 indicating beta version of an upcoming version x+1.
-	* This method makes the checks more readable. 
 	*/
 	static function versionCompare ($operator,$cpVersion)
 	{
-		$OCVersion = implode('.',OCP\Util::getVersion());
-		return (version_compare($OCVersion,$cpVersion,$operator));
+		$ocVersion = implode('.',OCP\Util::getVersion());
+		return (version_compare($ocVersion,$cpVersion,$operator));
 	} // function versionCompare
 
 	/**
