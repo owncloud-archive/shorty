@@ -51,7 +51,11 @@ $(document).ready(function(){
 		// modify example
 		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
 		// save setting
-		OC.Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize());
+		$.when(
+			OC.Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize())
+		).fail(function(response){
+			OC.Notification.show(response.message);
+		})
 		return false;
 	});
 });

@@ -1150,15 +1150,15 @@ OC.Shorty={
 							OC.Shorty.Debug.log(level+': '+message);
 						}
 						var object;
+						object=messenger.clone().attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
+						object.find('#message').html(nl2br(message));
 						switch(level){
 							case 'debug':
 								// detect debug mode by checking, of function 'debug()' exists
 								if (-1<$.inArray(verbosity,['debug'])){
-									object=messenger.clone().attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
 									messenger.after(object);
 									object.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/neutral.png'));
 									object.find('#title').text('Debug');
-									object.find('#message').html(nl2br(message));
 									$.when(
 										object.slideDown(duration)
 									).done(dfd.resolve)
@@ -1169,11 +1169,9 @@ OC.Shorty={
 
 							case 'info':
 								if (-1<$.inArray(verbosity,['info','debug'])){
-									object=messenger.clone().attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
 									messenger.after(object);
 									object.find('#symbol').attr('title','Info').attr('src',OC.linkTo('shorty','img/status/good.png'));
 									object.find('#title').text('Info');
-									object.find('#message').html(nl2br(message));
 									$.when(
 										object.slideDown(duration)
 									).done(dfd.resolve)
@@ -1185,11 +1183,9 @@ OC.Shorty={
 							default:
 							case 'error':
 								if (-1<$.inArray(verbosity,['error','info','debug'])){
-									object=messenger.clone().attr('id','').css('z-index','+='+($('.shorty-messenger').length-1));
 									messenger.after(object);
 									object.find('#symbol').attr('title','Debug').attr('src',OC.linkTo('shorty','img/status/bad.png'));
 									object.find('#title').text('Error');
-									object.find('#message').html(nl2br(message));
 									object.attr('id','');
 									$.when(
 										object.slideDown(duration)
@@ -1522,7 +1518,7 @@ OC.Shorty={
 				}).done(function(response){
 					dfd.resolve(response.data);
 				}).fail(function(response){
-					dfd.reject({});
+					dfd.reject(response);
 				})
 				return dfd.promise();
 			}, // OC.Shorty.Action.Setting.set
