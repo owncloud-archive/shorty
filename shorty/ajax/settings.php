@@ -57,6 +57,9 @@ try
 				{
 					$type = OC_Shorty_Type::$SETTING[$key];
 					$data[$key] = OC_Shorty_Type::req_argument ( $key, $type, FALSE );
+					// allow setting an empty content (removing the settings content), but insist on a valid empty string for valid sql
+					if ( ! $data[$key]) 
+						$data[$key] = '';
 				}
 			} // foreach
 			// store settings one by one
