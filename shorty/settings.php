@@ -51,6 +51,7 @@ if (OC_Shorty_Tools::versionCompare('<','4.91')) // OC-4.5
 
 OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 OCP\Util::addScript ( 'shorty',   'shorty' );
+OCP\Util::addScript ( 'shorty',   'util' );
 OCP\Util::addScript ( 'shorty',   'settings' );
 if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
 	OCP\Util::addScript ( 'shorty',  'debug' );
