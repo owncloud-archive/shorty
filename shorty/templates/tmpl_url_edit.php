@@ -78,7 +78,7 @@
 		<br />
 		<span class="label-line">
 			<label for="status"><?php p(OC_Shorty_L10n::t('Status').':'); ?></label>
-			<select id="status" name="status" data="shared" value="shared" style="width:8em;" class="">
+			<select id="status" name="status" data="" value="" class="" style="width:8em;">
 <?php
 					foreach ( OC_Shorty_Type::$STATUS as $status )
 						if ( 'deleted'!=$status )

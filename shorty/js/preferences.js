@@ -35,21 +35,21 @@
 
 $(document).ready(function(){
 	// backend preferences, activate hints for currently selected backend
-	var type=$('#shorty #backend-type').val()||'';
+	var type=$('form#shorty #backend-type').val()||'';
 	if (type.length){
-		$('#shorty #backend-'+type).show();
+		$('form#shorty #backend-'+type).show();
 	}
 	// backend 'static': initialize example that depends on backend-base system setting
-	if ($('#shorty #backend-static #backend-static-base').val().length)
-		$('#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty id>');
+	if ($('form#shorty #backend-static #backend-static-base').val().length)
+		$('form#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty id>');
 	// backend 'static': offer a clickable example link to verify the correct setup
-	$('#shorty #backend-static #example').bind('click',function(event){
+	$('form#shorty #backend-static #example').bind('click',function(event){
 		event.preventDefault();
 		OC.Shorty.Action.Setting.verify();
 	});
 	// react with a matching explanation and example url when backend type is chosen
 	$('.chosen').chosen();
-	$('#shorty #backend-type').change(
+	$('form#shorty #backend-type').change(
 		function(){
 			var type=$('#shorty #backend-type').val();
 			$('#shorty .backend-supplement').hide();
@@ -62,7 +62,7 @@ $(document).ready(function(){
 		}
 	);
 	// safe backend supplement preferences
-	$('#shorty .backend-supplement').focusout(function(){
+	$('form#shorty .backend-supplement').focusout(function(){
 		// save preference
 		OC.Shorty.Action.Preference.set($(this).find('input').serialize());
 	});
@@ -73,8 +73,13 @@ $(document).ready(function(){
 			OC.Shorty.Action.Preference.set('backend-ssl-verify=1');
 		else OC.Shorty.Action.Preference.set('backend-ssl-verify=0');
 	});
-	// save scalar preferences: sms-control, verbosity-control
-	$('#shorty #sms-control,#shorty #verbosity-control').change(function(){
+	// save scalar preferences: default-status, sms-control, verbosity-control
+	$('form#shorty #sms-control,#shorty #verbosity-control').change(function(){
 		OC.Shorty.Action.Preference.set($(this).serialize());
+	});
+	$('form#shorty #default-status').change(function(){
+		OC.Shorty.Action.Preference.set($(this).serialize());
+		console.log($(this).attr('value'));
+		$('#controls #dialog-add select#status').attr('data',$(this).attr('value'));
 	});
 });

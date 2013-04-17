@@ -163,6 +163,7 @@ switch ($act)
 			foreach ( OC_Shorty_Type::$STATUS as $status )
 				$shorty_status[$status] = OC_Shorty_L10n::t($status);
 			$tmpl->assign ( 'shorty-status', $shorty_status );
+			$tmpl->assign ( 'default-status', OCP\Config::getUserValue(OCP\User::getUser(),'shorty','default-status','private') );
 			// any referrer we want to hand over to the browser ?
 			if ( array_key_exists('shorty-referrer',$_SESSION) )
 				$tmpl->assign ( 'shorty-referrer', $_SESSION['shorty-referrer'] );
