@@ -23,6 +23,8 @@
 
 Changelog: 
 
+Addional personal preference to set the default status for new Shortys.
+Fixed a layout glitch for backend selection in the preference dialog. 
 * Sun Mar 24 2013 Christian Reiner: version 0.3.24
 Fixed shortlet not to result in an error when being used.
 * Wed Mar 20 2013 Christian Reiner: version 0.3.23
