@@ -45,6 +45,21 @@
 	<form id="shorty">
 <?php require_once('tmpl_wdg_shortlet.php'); ?>
 			<p>
+				<!-- default-status -->
+				<label for="status" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Status").":"); ?></label>
+				<span id="status" style="margin-right:1em;">
+					<select id="default-status" name="default-status" data="<?php echo $_['default-status'];?>">
+<?php
+						foreach ( OC_Shorty_Type::$STATUS as $status )
+							if ( 'deleted'!=$status )
+								print_unescaped(sprintf("<option value=\"%s\" %s>%s</option>\n", 
+														$status, ($_['default-status']==$status)?'selected':'', OC_Shorty_L10n::t($status)));
+?>
+					</select>
+					<em><?php p(OC_Shorty_L10n::t("The default status as suggested for new Shortys.")); ?></em>
+				</span>
+			</p>
+			<p>
 				<!-- backend selection -->
 				<label for="backend-type" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Backend").":"); ?></label>
 				<!-- list of available backend types -->
@@ -59,6 +74,7 @@
 												OC_Shorty_L10n::t($display)));
 						?>
 					</select>
+					<em><?php p(OC_Shorty_L10n::t("The backend service used to generate shortened URLs.")); ?></em>
 				</span>
 				<!-- some additional fields: input, explanation and example -->
 				<!-- depending on the chosen backend-type above only one of the following span tags will be displayed -->
@@ -151,6 +167,7 @@
 					</span>
 				</span>
 				<!-- backend google -->
+				<br/>
 				<span id="backend-google" class="backend-supplement" style="display:none;">
 					<label for="backend-google-key" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("API key").':'); ?></label>
 					<input id="backend-google-key" type="text" name="backend-google-key" value="<?php p($_['backend-google-key']); ?>"

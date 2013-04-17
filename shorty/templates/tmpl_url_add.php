@@ -67,11 +67,13 @@
 		<br />
 		<span class="label-line">
 			<label for="status"><?php p(OC_Shorty_L10n::t('Status').':'); ?></label>
-			<select id="status" name="status" data="shared" value="shared" class="">
+			<select id="status" name="status" class=""
+					data="<?php echo $_['default-status'];?>" value="<?php echo $_['default-status'];?>" >
 <?php
 				foreach ( OC_Shorty_Type::$STATUS as $status )
 					if ( 'deleted'!=$status )
-						print_unescaped(sprintf("<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status)));
+						print_unescaped(sprintf("<option value=\"%s\" %s>%s</option>\n", 
+												$status, ($status==$_['default-status'])?'selected':'', OC_Shorty_L10n::t($status)));
 ?>
 			</select>
 			<span style="display:inline-block;">
