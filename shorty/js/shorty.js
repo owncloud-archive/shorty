@@ -815,6 +815,7 @@ OC.Shorty={
 			* @author Christian Reiner
 			*/
 			filter: function(list,column,pattern){
+				pattern = pattern || ''
 				// we define a default reference callback function referencing the 'data-...' attributes in the rows
 				var reference=  this.ColumnValueReference[column]
 				              ||function(){return $(this).parent().attr('data-'+column);};
