@@ -94,7 +94,7 @@
 							<span class="shorty-select">
 								<select id='filter' value="" data-placeholder=" ">
 									<?php foreach($_['shorty-result'] as $option=>$label)
-										p(sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label));
+										print_unescaped(sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label));
 									?>
 								</select>
 							</span>
