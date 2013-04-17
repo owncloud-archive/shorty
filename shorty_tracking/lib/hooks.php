@@ -87,10 +87,11 @@ class OC_ShortyTracking_Hooks
 		$param  = array (
 			':shorty'    => $parameters['shorty']['id'],
 			':time'      => $parameters['request']['time'],
-			':address'   => $parameters['request']['address'],
-			':host'      => $parameters['request']['host'],
 			':user'      => $parameters['request']['user'],
 			':result'    => $parameters['request']['result'],
+			':address'   => $parameters['request']['address'],
+			':host'      => $parameters['request']['address']==$parameters['request']['host'] ? 
+							' - ? - ' : $parameters['request']['host'],
 		);
 		$query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_RECORD );
 		$query->execute ( $param );
