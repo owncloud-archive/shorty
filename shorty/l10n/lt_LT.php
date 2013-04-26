@@ -8,5 +8,6 @@
 "Configuration" => "Konfigūracija",
 "Notes" => "Pastabos",
 "Save" => "Išsaugoti",
+"Settings" => "Nustatymai",
 "Title" => "Pavadinimas"
 );

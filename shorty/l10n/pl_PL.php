@@ -1,3 +1,4 @@
 <?php $TRANSLATIONS = array(
-"Save" => "Zapisz"
+"Save" => "Zapisz",
+"Settings" => "Ustawienia"
 );

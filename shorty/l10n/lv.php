@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "izdzests",
 "never" => "nekad",
 "delete" => "dzēst",
 "share" => "dalīties",
@@ -8,5 +9,6 @@
 "Configuration" => "Konfigurācija",
 "Notes" => "Piezīmes",
 "Save" => "Saglabāt",
+"Settings" => "Iestatījumi",
 "Title" => "Nosaukums"
 );

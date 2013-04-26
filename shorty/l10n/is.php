@@ -6,5 +6,6 @@
 "Close" => "Loka",
 "Configuration" => "Uppsetning",
 "Save" => "Vista",
+"Settings" => "Stillingar",
 "Title" => "Titill"
 );

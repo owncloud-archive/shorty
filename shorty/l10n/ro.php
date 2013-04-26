@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "șters",
 "never" => "niciodată",
 "delete" => "ștergere",
 "share" => "partajare",
@@ -11,8 +12,10 @@
 "Loading" => "încărcare",
 "Notes" => "Notă",
 "Nothing here yet" => "Nimic aici. Încarcă ceva!",
+"Reload" => "Reîncarca",
 "Reload list" => "Reîncarca listă",
 "Save" => "Salvează",
+"Settings" => "Setări",
 "Show details" => "Arată detali",
 "Status" => "Stare",
 "Title" => "Titlu",

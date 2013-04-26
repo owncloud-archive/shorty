@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "forigita",
 "never" => "neniam",
 "delete" => "forigi",
 "share" => "kunhavigi",
@@ -8,5 +9,6 @@
 "Configuration" => "Agordo",
 "Notes" => "Notoj",
 "Save" => "Konservi",
+"Settings" => "Agordo",
 "Title" => "Titolo"
 );

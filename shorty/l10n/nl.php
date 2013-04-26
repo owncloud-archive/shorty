@@ -1,5 +1,7 @@
 <?php $TRANSLATIONS = array(
 "all" => "alle",
+"blocked" => "geblokkeerd",
+"deleted" => "verwijderd",
 "disabled" => "uitgeschakeld",
 "enabled" => "ingeschakeld",
 "never" => "geen",
@@ -69,6 +71,7 @@
 "Prepare to send as SMS" => "Klaarmaken om als SMS te versturen",
 "Relay service" => "Relay service",
 "Relay url" => "Relay url",
+"Reload" => "Herladen",
 "Reload list" => "Herladen lijst",
 "Save" => "Bewaren",
 "Send by email" => "Versturen per e-mail",
@@ -76,6 +79,7 @@
 "Send by SMS" => "Versturen per SMS",
 "Set personal preferences using the cog wheel (%%s) on the bottom left!" => "Stel uw persoonlijke voorkeuren in gebruik makend van het tandwiel (%%s) linksonder!",
 "Setting '%s' saved" => "Instelling '%s' bewaard",
+"Settings" => "Instellingen",
 "Share and use" => "Delen en gebruiken",
 "Share shorty" => "Delen shorty",
 "Shorty as QRCode" => "Shorty als QRCode",

@@ -1,5 +1,7 @@
 <?php $TRANSLATIONS = array(
 "all" => "všetko",
+"blocked" => "blokované",
+"deleted" => "zmazané",
 "disabled" => "vypnuté",
 "enabled" => "zapnuté",
 "never" => "nikdy",
@@ -70,6 +72,7 @@
 "Prepare to send as SMS" => "Príprava na odoslanie ako SMS",
 "Relay service" => "Služba prenosu",
 "Relay url" => "Prenesená URL",
+"Reload" => "Znovu načítať",
 "Reload list" => "Zoznam znovu načítaných",
 "Save" => "Uložiť",
 "Send by email" => "Poslať emailom",
@@ -77,6 +80,7 @@
 "Send by SMS" => "Poslať SMS-kou",
 "Set personal preferences using the cog wheel (%%s) on the bottom left!" => "Nastav osobné preferencie, za použitia ikony 'ozubeného kolesa' (%%s) vľavo dolu!",
 "Setting '%s' saved" => "Nastavenia '%s' uložené",
+"Settings" => "Nastavenia",
 "Share and use" => "Zdieľanie a používanie",
 "Share shorty" => "Zdieľať skrátenie",
 "Shortlet" => "'Shortlet'",

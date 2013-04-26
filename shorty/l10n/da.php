@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "Slettet",
 "never" => "aldrig",
 "delete" => "slet",
 "share" => "del",
@@ -8,5 +9,6 @@
 "Configuration" => "Opsætning",
 "Notes" => "Noter",
 "Save" => "Gem",
+"Settings" => "Indstillinger",
 "Title" => "Titel"
 );

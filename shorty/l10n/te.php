@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "delete" => "తొలగించు",
 "Close" => "మూసివేయి",
-"Save" => "భద్రపరచు"
+"Save" => "భద్రపరచు",
+"Settings" => "అమరికలు"
 );

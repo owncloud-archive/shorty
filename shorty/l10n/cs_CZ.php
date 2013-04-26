@@ -1,5 +1,7 @@
 <?php $TRANSLATIONS = array(
 "all" => "vše",
+"blocked" => "zablokováno",
+"deleted" => "smazáno",
 "disabled" => "zakázáno",
 "enabled" => "povoleno",
 "never" => "nikdy",
@@ -70,6 +72,7 @@
 "Prepare to send as SMS" => "Připravit k odeslání jako SMS",
 "Relay service" => "Předávací služba",
 "Relay url" => "Předávací URL",
+"Reload" => "Obnovit",
 "Reload list" => "Obnovit seznam",
 "Save" => "Uložit",
 "Send by email" => "Poslat e-mailem",
@@ -77,6 +80,7 @@
 "Send by SMS" => "Poslat jako SMS",
 "Set personal preferences using the cog wheel (%%s) on the bottom left!" => "Osobní předvolby nastavte použitím ozubeného kolečka (%%s) na konci strany vlevo.",
 "Setting '%s' saved" => "Nastavení '%s' bylo uloženo",
+"Settings" => "Nastavení",
 "Share and use" => "Sdílet a použít",
 "Share shorty" => "Sdílet shorty",
 "Shortlet" => "Shortlet",

@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "حذف شده",
 "never" => "هرگز",
 "delete" => "پاک کردن",
 "share" => "به اشتراک گذاشتن",
@@ -7,5 +8,6 @@
 "Configuration" => "پیکربندی",
 "Notes" => "یادداشت ها",
 "Save" => "ذخیره",
+"Settings" => "تنظیمات",
 "Title" => "عنوان"
 );

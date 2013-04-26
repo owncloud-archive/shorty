@@ -4,5 +4,6 @@
 "Close" => "Clauder",
 "Notes" => "Notas",
 "Save" => "Salveguardar",
+"Settings" => "Configurationes",
 "Title" => "Titulo"
 );

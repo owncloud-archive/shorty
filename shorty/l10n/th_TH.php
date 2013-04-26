@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "ลบแล้ว",
 "never" => "ไม่ต้องเลย",
 "delete" => "ลบ",
 "share" => "แชร์",
@@ -8,5 +9,6 @@
 "Configuration" => "การกำหนดค่า",
 "Notes" => "บันทึกย่อ",
 "Save" => "บันทึก",
+"Settings" => "ตั้งค่า",
 "Title" => "ชื่อ"
 );

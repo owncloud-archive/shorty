@@ -1,5 +1,7 @@
 <?php $TRANSLATIONS = array(
 "all" => "kõik",
+"blocked" => "blokeeritud",
+"deleted" => "kustutatud",
 "disabled" => "keelatud",
 "enabled" => "lubatud",
 "never" => "mitte kunagi",
@@ -70,6 +72,7 @@
 "Prepare to send as SMS" => "Valmistu saatma SMSina",
 "Relay service" => "Vahendusteenus",
 "Relay url" => "Vahendusaadress",
+"Reload" => "Lae uuesti",
 "Reload list" => "Lae nimekiri uuesti",
 "Save" => "Salvesta",
 "Send by email" => "Saada e-mail",
@@ -77,6 +80,7 @@
 "Send by SMS" => "Saada SMS",
 "Set personal preferences using the cog wheel (%%s) on the bottom left!" => "Määra isiklikud eelistused kasutades paremal ülal asuvat hammasratta ikooni (%%s)! ",
 "Setting '%s' saved" => "Säte '%s' salvestatud",
+"Settings" => "Seaded",
 "Share and use" => "Jaga ja kasuta",
 "Share shorty" => "Jaga",
 "Shortlet" => "Shortlet",

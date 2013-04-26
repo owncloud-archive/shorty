@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "обрисано",
 "never" => "никада",
 "delete" => "обриши",
 "share" => "подели",
@@ -6,5 +7,6 @@
 "Close" => "Затвори",
 "Notes" => "Белешке",
 "Save" => "Сачувај",
+"Settings" => "Поставке",
 "Title" => "Наслов"
 );

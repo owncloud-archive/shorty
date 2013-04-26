@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "удалено",
 "never" => "никогда",
 "delete" => "удалить",
 "share" => "сделать общим",
@@ -8,5 +9,6 @@
 "Configuration" => "Конфигурация",
 "Notes" => "Заметки",
 "Save" => "Сохранить",
+"Settings" => "Настройки",
 "Title" => "Название"
 );

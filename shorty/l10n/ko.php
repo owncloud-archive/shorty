@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "all" => "모두",
+"deleted" => "삭제",
 "disabled" => "불가능한",
 "enabled" => "가능한",
 "never" => "없음",
@@ -51,6 +52,7 @@
 "Send link by email" => "이메일로 링크 전송",
 "Send by SMS" => "SMS 전송",
 "Setting '%s' saved" => "설정한 '%s' 저장",
+"Settings" => "설정",
 "Share and use" => "공유하고 사용하기",
 "Share shorty" => "짧은 주소 공유",
 "Shorty with id '%s' deleted" => "짧은 주소 id '%s'를 삭제",

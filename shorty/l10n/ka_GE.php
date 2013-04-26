@@ -1,5 +1,7 @@
 <?php $TRANSLATIONS = array(
 "all" => "ყველა",
+"blocked" => "დაბლოკილი",
+"deleted" => "წაშლილი",
 "disabled" => "გათიშულია",
 "enabled" => "ჩართულია",
 "never" => "არასდროს",
@@ -70,6 +72,7 @@
 "Prepare to send as SMS" => "მოამზადე SMS–ით გასაგზავნად",
 "Relay service" => "რელე სერვისი",
 "Relay url" => "url რელე",
+"Reload" => "გადატვირთვა",
 "Reload list" => "სიის გადატვირთვა",
 "Save" => "შენახვა",
 "Send by email" => "გააგზავნე იმეილით",
@@ -77,6 +80,7 @@
 "Send by SMS" => "გააგზავნე SMS–ით",
 "Set personal preferences using the cog wheel (%%s) on the bottom left!" => "დააყენეთ პერსონალური პარამეტრები კბილანას  (%%s) გამოყენებით მარცხენა ქვედა კუთხეში!",
 "Setting '%s' saved" => "სეთინგი '%s' შენახულია",
+"Settings" => "პარამეტრები",
 "Share and use" => "გააზიარე და გამოიყენე",
 "Share shorty" => "შემოკლების გაზიარება",
 "Shortlet" => "შემამოკლებელი",

@@ -1,5 +1,7 @@
 <?php $TRANSLATIONS = array(
 "all" => "tous",
+"blocked" => "bloqué",
+"deleted" => "supprimé",
 "disabled" => "désactiver",
 "enabled" => "activer",
 "never" => "jamais",
@@ -70,6 +72,7 @@
 "Prepare to send as SMS" => "Prépare à envoyer comme un SMS",
 "Relay service" => "Service de relais",
 "Relay url" => "url de relais",
+"Reload" => "Recharger",
 "Reload list" => "Recharger la liste",
 "Save" => "Sauvegarder",
 "Send by email" => "Envoyer par email",
@@ -77,6 +80,7 @@
 "Send by SMS" => "Envoyer par SMS",
 "Set personal preferences using the cog wheel (%%s) on the bottom left!" => "Définir vos préférences personnelles en utilisant le \"cog whell\" (%%S) en bas à gauche!",
 "Setting '%s' saved" => "Réglage '%s' enregistré",
+"Settings" => "Paramètres",
 "Share and use" => "Partage and utiliser",
 "Share shorty" => "Partager le lien-raccourci",
 "Shortlet" => "Shortlet",

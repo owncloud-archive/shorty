@@ -1,5 +1,7 @@
 <?php $TRANSLATIONS = array(
 "all" => "tots",
+"blocked" => "bloquejat",
+"deleted" => "esborrat",
 "never" => "mai",
 "delete" => "elimina",
 "share" => "comparteix",
@@ -13,8 +15,10 @@
 "Notes" => "Anotacions",
 "Nothing here yet" => "Aquí encara no hi ha res",
 "Number of entries" => "Nombre d'entrades",
+"Reload" => "Carrega de nou",
 "Reload list" => "Carrega la llista de nou",
 "Save" => "Desa",
+"Settings" => "Configuració",
 "Show details" => "Mostra detalls",
 "Status" => "Estat",
 "Title" => "Títol",

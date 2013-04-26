@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "all" => "tudo",
+"deleted" => "excluído",
 "never" => "nunca",
 "delete" => "remover",
 "share" => "compartilhar",
@@ -24,6 +25,7 @@
 "Save" => "Guardar",
 "Send link by email" => "Enviar link por e-mail",
 "Setting '%s' saved" => "Configuração '%s' salva",
+"Settings" => "Ajustes",
 "Shorty with id '%s' deleted" => "Shorty com id '%s' excluído",
 "Status change for shorty with id '%s' saved" => "Alteração no status do shorty com id '%s' salva",
 "Target url '%s' is valid" => "Url alvo '%s' é válida",

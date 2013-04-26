@@ -1,5 +1,7 @@
 <?php $TRANSLATIONS = array(
 "all" => "όλα",
+"blocked" => "μπλοκαρίστηκε",
+"deleted" => "διαγράφηκε",
 "disabled" => "απενεργοποιημένο",
 "enabled" => "ενεργοποιημένο",
 "never" => "ποτέ",
@@ -70,6 +72,7 @@
 "Prepare to send as SMS" => "Ετοιμαστείτε να στείλετε SMS",
 "Relay service" => "Υπηρεσια συντομευσης",
 "Relay url" => "Αν μόλις αρχίσατε να χρησιμοποιείτε συντόμευση ",
+"Reload" => "Επαναφόρτωση",
 "Reload list" => "Επαναφόρτωση λίστας",
 "Save" => "Αποθήκευση",
 "Send by email" => "Αποστολή με αλληλογραφία",
@@ -77,6 +80,7 @@
 "Send by SMS" => "Αποστολή με SMS",
 "Set personal preferences using the cog wheel (%%s) on the bottom left!" => "Βάλτε προσωπικές προτιμήσεις με κυκλική φορά (%%s) κάτω αριστερά.",
 "Setting '%s' saved" => "Η ρύθμιση '%s' αποθηκεύτηκε",
+"Settings" => "Ρυθμίσεις",
 "Share and use" => "Διαμοιρασμος και χρησιμοποιηση",
 "Share shorty" => "Διαμοιράστηκε από",
 "Shortlet" => "Shortlet",

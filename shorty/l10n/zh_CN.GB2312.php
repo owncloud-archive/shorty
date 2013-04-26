@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "all" => "全部",
+"deleted" => "删除",
 "disabled" => "不可用",
 "enabled" => "可用",
 "never" => "从不",
@@ -50,6 +51,7 @@
 "Send link by email" => "通过电子邮件发送链接",
 "Send by SMS" => "通过短信发送",
 "Setting '%s' saved" => "“%s”的设置已被保存",
+"Settings" => "设置",
 "Share and use" => "分享并使用",
 "Share shorty" => "分享短链",
 "Shorty as QRCode" => "二维码短链",

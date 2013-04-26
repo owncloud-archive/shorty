@@ -1,5 +1,7 @@
 <?php $TRANSLATIONS = array(
 "all" => "alla",
+"blocked" => "blockerad",
+"deleted" => "raderad",
 "never" => "aldrig",
 "delete" => "radera",
 "share" => "dela",
@@ -13,8 +15,10 @@
 "Notes" => "Anteckningar",
 "Nothing here yet" => "Ingenting här än",
 "Number of entries" => "Antal poster",
+"Reload" => "Ladda om",
 "Reload list" => "Ladda om listan",
 "Save" => "Spara",
+"Settings" => "Inställningar",
 "Show details" => "Visa detaljer",
 "Status" => "Status",
 "Title" => "Titel",

@@ -8,5 +8,6 @@
 "Configuration" => "הגדרות",
 "Notes" => "הערות",
 "Save" => "שמירה",
+"Settings" => "הגדרות",
 "Title" => "כותרת"
 );

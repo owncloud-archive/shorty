@@ -4,5 +4,6 @@
 "share" => "rhannu",
 "Close" => "Cau",
 "Save" => "Cadw",
+"Settings" => "Gosodiadau",
 "Title" => "Teitl"
 );

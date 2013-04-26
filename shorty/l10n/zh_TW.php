@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "all" => "所有",
+"deleted" => "已刪除",
 "never" => "絕不",
 "delete" => "刪除",
 "share" => "分享",
@@ -29,6 +30,7 @@
 "Save" => "儲存",
 "Send link by email" => "使用電子郵件傳送連結",
 "Setting '%s' saved" => "設定 '%s' 已儲存",
+"Settings" => "設定",
 "Shorty with id '%s' deleted" => "'%s' 的短網址已刪除",
 "SMS composer" => "SMS 編輯器",
 "Status change for shorty with id '%s' saved" => "已儲存短網址 '%s' 的狀態改變",
