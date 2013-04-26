@@ -39,499 +39,499 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "all"                            
+msgid "all"
 msgstr ""
 
-msgid "blocked"                        
+msgid "blocked"
 msgstr ""
 
-msgid "deleted"                        
+msgid "deleted"
 msgstr ""
 
-msgid "disabled"                       
+msgid "disabled"
 msgstr ""
 
-msgid "enabled"                        
+msgid "enabled"
 msgstr ""
 
-msgid "never"                          
+msgid "never"
 msgstr ""
 
-msgid "private"                        
+msgid "private"
 msgstr ""
 
-msgid "public"                         
+msgid "public"
 msgstr ""
 
-msgid "shared"                         
+msgid "shared"
 msgstr ""
 
-msgid "delete"                         
+msgid "delete"
 msgstr ""
 
-msgid "edit"                           
+msgid "edit"
 msgstr ""
 
-msgid "open"                           
+msgid "open"
 msgstr ""
 
-msgid "share"                          
+msgid "share"
 msgstr ""
 
-msgid "show"                           
+msgid "show"
 msgstr ""
 
-msgid "none"                           
+msgid "none"
 msgstr ""
 
-msgid "error"                          
+msgid "error"
 msgstr ""
 
-msgid "info"                           
+msgid "info"
 msgstr ""
 
-msgid "debug"                          
+msgid "debug"
 msgstr ""
 
-msgid "Ctrl-C"                         
+msgid "Ctrl-C"
 msgstr ""
 
-msgid "Ctrl-V"                         
+msgid "Ctrl-V"
 msgstr ""
 
-msgid "bitly.com service"                       
+msgid "bitly.com service"
 msgstr ""
 
-msgid "cli.gs service"                          
+msgid "cli.gs service"
 msgstr ""
 
-msgid "goo.gl service"                          
+msgid "goo.gl service"
 msgstr ""
 
-msgid "is.gd service"                           
+msgid "is.gd service"
 msgstr ""
 
-msgid "ti.ny service"                           
+msgid "ti.ny service"
 msgstr ""
 
-msgid "tiny.cc service"                         
+msgid "tiny.cc service"
 msgstr ""
 
-msgid "static backend"                          
+msgid "static backend"
 msgstr ""
 
-msgid "for any access"                          
+msgid "for any access"
 msgstr ""
 
-msgid "for own usage"                           
+msgid "for own usage"
 msgstr ""
 
-msgid "with ownCloud users"                     
+msgid "with ownCloud users"
 msgstr ""
 
-msgid "available for everyone"                  
+msgid "available for everyone"
 msgstr ""
 
-msgid "Access"                                                                 
+msgid "Access"
 msgstr ""
 
-msgid "Add a new shorty"                                                       
+msgid "Add a new shorty"
 msgstr ""
 
-msgid "Add as new"                                                             
+msgid "Add as new"
 msgstr ""
 
-msgid "Add page as 'Shorty' to ownCloud"                                       
+msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
-msgid "Administration"                                                         
+msgid "Administration"
 msgstr ""
 
-msgid "Administrative, system wide settings of this app:"                      
+msgid "Administrative, system wide settings of this app:"
 msgstr ""
 
-msgid "after the SMS has been launched"                                        
+msgid "after the SMS has been launched"
 msgstr ""
 
-msgid "Alternatively the image can be downloaded for printout or storage"      
+msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr ""
 
-msgid "alternatively the link can be copied for usage apart"                   
+msgid "alternatively the link can be copied for usage apart"
 msgstr ""
 
-msgid "Alternatively the link can be copied manually"                          
+msgid "Alternatively the link can be copied manually"
 msgstr ""
 
-msgid "Alternatively the link can be copied into a message manually"           
+msgid "Alternatively the link can be copied into a message manually"
 msgstr ""
 
-msgid "Anything that appears helpful …"                                        
+msgid "Anything that appears helpful …"
 msgstr ""
 
-msgid "Backend"                                                                
+msgid "Backend"
 msgstr ""
 
-msgid "Base url"                                                               
+msgid "Base url"
 msgstr ""
 
-msgid "Choose a service…"                                                      
+msgid "Choose a service…"
 msgstr ""
 
-msgid "Click for embedding details"                                            
+msgid "Click for embedding details"
 msgstr ""
 
-msgid "Click it, for whatever site you want to create a Shorty."               
+msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
 
-msgid "Click registered"                                                       
+msgid "Click registered"
 msgstr ""
 
-msgid "Clicks"                                                                 
+msgid "Clicks"
 msgstr ""
 
-msgid "Clicking 'Ok' below will try to launch an email composer"               
+msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
 
-msgid "Clicking 'Ok' below will try to launch an sms composer"                 
+msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
-msgid "Close"                                                                  
+msgid "Close"
 msgstr ""
 
-msgid "Configuration"                                                          
+msgid "Configuration"
 msgstr ""
 
-msgid "The amount of feedback messages shown."                                 
+msgid "The amount of feedback messages shown."
 msgstr ""
 
-msgid "Copy to clipboard"                                                      
+msgid "Copy to clipboard"
 msgstr ""
 
-msgid "Counted entries and clicks"                                            
+msgid "Counted entries and clicks"
 msgstr ""
 
-msgid "Create a new 'Shorty' and share it"                                     
+msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
-msgid "Creation"                                                               
+msgid "Creation"
 msgstr ""
 
-msgid "Delete shorty"                                                          
+msgid "Delete shorty"
 msgstr ""
 
-msgid "Drag this to your browser bookmarks."                                   
+msgid "Drag this to your browser bookmarks."
 msgstr ""
 
-msgid "Embed the QRCode as an image into some web page using this url"         
+msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
-msgid "Example"                                                                
+msgid "Example"
 msgstr ""
 
-msgid "Exception"                                                              
+msgid "Exception"
 msgstr ""
 
-msgid "Exception (%s)"                                                         
+msgid "Exception (%s)"
 msgstr ""
 
-msgid "Expiration"                                                             
+msgid "Expiration"
 msgstr ""
 
-msgid "Feedback"                                                               
+msgid "Feedback"
 msgstr ""
 
-msgid "It can be enabled by a single click in the administration:"             
+msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
-msgid "Loading"                                                                
+msgid "Loading"
 msgstr ""
 
-msgid "Mail client"                                                            
+msgid "Mail client"
 msgstr ""
 
-msgid "Modifications for shorty with id '%s' saved"                            
+msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
 
-msgid "Modify attributes"                                                      
+msgid "Modify attributes"
 msgstr ""
 
-msgid "Modify shorty"                                                          
+msgid "Modify shorty"
 msgstr ""
 
-msgid "New Shorty"                                                             
+msgid "New Shorty"
 msgstr ""
 
-msgid "Notes"                                                                  
+msgid "Notes"
 msgstr ""
 
-msgid "Nothing here yet"                                                       
+msgid "Nothing here yet"
 msgstr ""
 
-msgid "Number of entries"                                                      
+msgid "Number of entries"
 msgstr ""
 
-msgid "Number of entries: %s"                                                  
+msgid "Number of entries: %s"
 msgstr ""
 
-msgid "QRCode"                                                                 
+msgid "QRCode"
 msgstr ""
 
-msgid "Open source url"                                                        
+msgid "Open source url"
 msgstr ""
 
-msgid "Open relay url"                                                         
+msgid "Open relay url"
 msgstr ""
 
-msgid "Open target"                                                            
+msgid "Open target"
 msgstr ""
 
-msgid "Open target url"                                                        
+msgid "Open target url"
 msgstr ""
 
-msgid "Optional configuration of a 'Static Backend'"                           
+msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
 
-msgid "or simpy print or download it for off-line usage"                       
+msgid "or simpy print or download it for off-line usage"
 msgstr ""
 
-msgid "Paste to embed elsewhere"                                               
+msgid "Paste to embed elsewhere"
 msgstr ""
 
-msgid "Preference retrieved"                                                   
+msgid "Preference retrieved"
 msgstr ""
 
-msgid "Preference saved"                                                       
+msgid "Preference saved"
 msgstr ""
 
-msgid "Preference '%s' retrieved"                                              
+msgid "Preference '%s' retrieved"
 msgstr ""
 
-msgid "Preference '%s' saved"                                                  
+msgid "Preference '%s' saved"
 msgstr ""
 
-msgid "Preferences"                                                            
+msgid "Preferences"
 msgstr ""
 
-msgid "Prepare to send as SMS"                                                 
+msgid "Prepare to send as SMS"
 msgstr ""
 
-msgid "Relay service"                                                          
+msgid "Relay service"
 msgstr ""
 
-msgid "Relay url"                                                              
+msgid "Relay url"
 msgstr ""
 
-msgid "Reload"                                                                 
+msgid "Reload"
 msgstr ""
 
-msgid "Reload list"                                                            
+msgid "Reload list"
 msgstr ""
 
-msgid "Save"                                                                   
+msgid "Save"
 msgstr ""
 
-msgid "Send by email"                                                          
+msgid "Send by email"
 msgstr ""
 
-msgid "Send link by email"                                                     
+msgid "Send link by email"
 msgstr ""
 
-msgid "Send by SMS"                                                            
+msgid "Send by SMS"
 msgstr ""
 
-msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!" 
+msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
 
-msgid "Set personal preferences using the cog wheel (%%s) on the upper right!" 
+msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
 
-msgid "Setting retrieved"                                                      
+msgid "Setting retrieved"
 msgstr ""
 
-msgid "Setting saved"                                                          
+msgid "Setting saved"
 msgstr ""
 
-msgid "Setting '%s' retrieved"                                                 
+msgid "Setting '%s' retrieved"
 msgstr ""
 
-msgid "Setting '%s' saved"                                                     
+msgid "Setting '%s' saved"
 msgstr ""
 
-msgid "Settings"                                                               
+msgid "Settings"
 msgstr ""
 
-msgid "Share and use"                                                          
+msgid "Share and use"
 msgstr ""
 
-msgid "Share shorty"                                                           
+msgid "Share shorty"
 msgstr ""
 
-msgid "Shortlet"                                                               
+msgid "Shortlet"
 msgstr ""
 
-msgid "Shorty as QRCode"                                                       
+msgid "Shorty as QRCode"
 msgstr ""
 
-msgid "Shorty with id '%s' deleted"                                            
+msgid "Shorty with id '%s' deleted"
 msgstr ""
 
-msgid "Show as QRCode"                                                         
+msgid "Show as QRCode"
 msgstr ""
 
-msgid "Show details"                                                           
+msgid "Show details"
 msgstr ""
 
-msgid "Show usage"                                                             
+msgid "Show usage"
 msgstr ""
 
-msgid "SMS"                                                                    
+msgid "SMS"
 msgstr ""
 
-msgid "SMS composer"                                                           
+msgid "SMS composer"
 msgstr ""
 
-msgid "Sort ascending"                                                         
+msgid "Sort ascending"
 msgstr ""
 
-msgid "Sort descending"                                                        
+msgid "Sort descending"
 msgstr ""
 
-msgid "Source url"                                                             
+msgid "Source url"
 msgstr ""
 
-msgid "Specify a static base url…"                                             
+msgid "Specify a static base url…"
 msgstr ""
 
-msgid "Static backend: base url verification"                                  
+msgid "Static backend: base url verification"
 msgstr ""
 
-msgid "Status"                                                                 
+msgid "Status"
 msgstr ""
 
-msgid "Status change for shorty with id '%s' saved"                            
+msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
-msgid "Target"                                                                 
+msgid "Target"
 msgstr ""
 
-msgid "Target url"                                                             
+msgid "Target url"
 msgstr ""
 
-msgid "Target url '%s' is valid"                                               
+msgid "Target url '%s' is valid"
 msgstr ""
 
-msgid "That image can be used when writing documents or setting up web sites"  
+msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
 
-msgid "The backend service used to generate shortened URLs."                   
+msgid "The backend service used to generate shortened URLs."
 msgstr ""
 
-msgid "The default status as suggested for new Shortys."                       
+msgid "The default status as suggested for new Shortys."
 msgstr ""
 
-msgid "The link below can be copied for usage apart"                           
+msgid "The link below can be copied for usage apart"
 msgstr ""
 
-msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"      
+msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
 
-msgid "therefore the content must be copied manually"                          
+msgid "therefore the content must be copied manually"
 msgstr ""
 
-msgid "then paste into message"                                                
+msgid "then paste into message"
 msgstr ""
 
-msgid "This 2d barcode encodes the url pointing to this Shorty"                
+msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr ""
 
-msgid "This is a internal url that the shortened url relays to"                
+msgid "This is a internal url that the shortened url relays to"
 msgstr ""
 
-msgid "This is the shortened url registered at the backend"                    
+msgid "This is the shortened url registered at the backend"
 msgstr ""
 
-msgid "This is the target url specified when generating this Shorty"           
+msgid "This is the target url specified when generating this Shorty"
 msgstr ""
 
-msgid "This is the url referencing the QRCode shown before"                    
+msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
-msgid "Title"                                                                  
+msgid "Title"
 msgstr ""
 
-msgid "Toggle toolbar"                                                         
+msgid "Toggle toolbar"
 msgstr ""
 
-msgid "Total of clicks"                                                        
+msgid "Total of clicks"
 msgstr ""
 
-msgid "Typically this only works on devices like smart phones"                 
+msgid "Typically this only works on devices like smart phones"
 msgstr ""
 
-msgid "Unexpected type of exception caught: %s"                                
+msgid "Unexpected type of exception caught: %s"
 msgstr ""
 
-msgid "Unfortunately the implementation of this scheme is limited"             
+msgid "Unfortunately the implementation of this scheme is limited"
 msgstr ""
 
-msgid "Unknown object of type caught: %s"                                      
+msgid "Unknown object of type caught: %s"
 msgstr ""
 
-msgid "Url shortened to: %s"                                                   
+msgid "Url shortened to: %s"
 msgstr ""
 
-msgid "Use it in web pages by referencing or embedding"                        
+msgid "Use it in web pages by referencing or embedding"
 msgstr ""
 
-msgid "Use the '%s' button above or the fine 'Shortlet'"                       
+msgid "Use the '%s' button above or the fine 'Shortlet'"
 msgstr ""
 
-msgid "Verify by clicking…"                                                    
+msgid "Verify by clicking…"
 msgstr ""
 
-msgid "Verification failed"                                                    
+msgid "Verification failed"
 msgstr ""
 
-msgid "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s"             
+msgid "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s"
 msgstr ""
 
-msgid "API access key"      
+msgid "API access key"
 msgstr ""
 
-msgid "Account"             
+msgid "Account"
 msgstr ""
 
-msgid "API key"             
+msgid "API key"
 msgstr ""
 
-msgid "bit.ly user"         
+msgid "bit.ly user"
 msgstr ""
 
-msgid "bit.ly user name"    
+msgid "bit.ly user name"
 msgstr ""
 
-msgid "bit.ly key"          
+msgid "bit.ly key"
 msgstr ""
 
-msgid "bit.ly users key"    
+msgid "bit.ly users key"
 msgstr ""
 
-msgid "Google API key"      
+msgid "Google API key"
 msgstr ""
 
-msgid "Google API account"  
+msgid "Google API account"
 msgstr ""
 
-msgid "tiny.cc user"        
+msgid "tiny.cc user"
 msgstr ""
 
-msgid "tiny.cc user name"   
+msgid "tiny.cc user name"
 msgstr ""
 
-msgid "tiny.cc key"         
+msgid "tiny.cc key"
 msgstr ""
 
-msgid "tiny.cc user key"    
+msgid "tiny.cc user key"
 msgstr ""
 
 msgid "Force verification of encryption certificates during communication with the backend"

@@ -68,7 +68,7 @@ msgstr ""
 
 msgid "List of tracked clicks"
 msgstr ""
-a
+
 msgid "Result"
 msgstr ""
 
