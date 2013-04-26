@@ -83,7 +83,7 @@ try
 		OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.",$p_id), OC_Log::DEBUG );
 		OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
 									'level'   => 'info',
-									'message' => OC_Shorty_L10n::t('Click registered') ) );
+									'message' => OC_Shorty_L10n::t("Click registered") ) );
 	}
 	else
 		throw new OC_Shorty_Exception ( "request failed: missing mandatory argument 'id'" );
