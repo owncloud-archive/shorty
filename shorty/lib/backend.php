@@ -126,7 +126,7 @@ class OC_Shorty_Backend
 	{
 		if (  (FALSE===($base=trim ( OCP\Config::getAppValue('shorty','backend-static-base',FALSE))))
 			||(empty($base)) )
-			throw new OC_Shorty_Exception ( 'No base url defined for the static backend.' );
+			throw new OC_Shorty_Exception ( "No base url defined for the static backend." );
 		return OC_Shorty_Type::validate ( $base.$id, OC_Shorty_Type::URL );
 	} // OC_Shorty_Backend::registerUrl_static
 
@@ -144,7 +144,7 @@ class OC_Shorty_Backend
 		$bitly_api_user = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-user','');
 		$bitly_api_key  = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-key', '');
 		if ( ! $bitly_api_key || ! $bitly_api_user )
-			throw new OC_Shorty_Exception ( 'No API user or key configured.' );
+			throw new OC_Shorty_Exception ( "No API user or key configured." );
 		$curl = curl_init ( );
 		curl_setopt ( $curl, CURLOPT_URL, 'https://api-ssl.bit.ly/shorten' );
 		curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
