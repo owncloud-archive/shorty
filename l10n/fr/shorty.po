@@ -1,0 +1,723 @@
+# @package shorty an ownCloud url shortener plugin
+# @category internet
+# @author Christian Reiner
+# @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+# @license GNU Affero General Public license (AGPL)
+# @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
+# 
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+# License as published by the Free Software Foundation; either
+# version 3 of the license, or any later version.
+# 
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+# 
+# You should have received a copy of the GNU Affero General Public
+# License along with this library.
+# If not, see <http://www.gnu.org/licenses/>.
+# 
+# @file l10n/de.php
+# @brief Internationalization / localization file for language DE (german)
+# @author Christian Reiner
+# 
+# Translators:
+# froozeify <froozeify@mail.com>, 2013
+# guiguidu31300 <guiguidu31300@gmail.com>, 2013
+# plachance <patlachance@gmail.com>, 2013
+# Romain DEP. <rom1dep@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"POT-Creation-Date: 2013-04-26 15:00+0200\n"
+"PO-Revision-Date: 2013-04-26 16:05+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/owncloud/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "all"
+msgstr "tous"
+
+msgid "blocked"
+msgstr ""
+
+msgid "deleted"
+msgstr ""
+
+msgid "disabled"
+msgstr "désactiver"
+
+msgid "enabled"
+msgstr "activer"
+
+msgid "never"
+msgstr "jamais"
+
+msgid "private"
+msgstr ""
+
+msgid "public"
+msgstr ""
+
+msgid "shared"
+msgstr ""
+
+msgid "delete"
+msgstr "supprimer"
+
+msgid "edit"
+msgstr "éditer"
+
+msgid "open"
+msgstr "ouvrir"
+
+msgid "share"
+msgstr "partager"
+
+msgid "show"
+msgstr "Afficher"
+
+msgid "none"
+msgstr ""
+
+msgid "error"
+msgstr ""
+
+msgid "info"
+msgstr ""
+
+msgid "debug"
+msgstr ""
+
+msgid "Ctrl-C"
+msgstr "Ctrl-C"
+
+msgid "Ctrl-V"
+msgstr "Ctrl-V"
+
+msgid "bitly.com service"
+msgstr ""
+
+msgid "cli.gs service"
+msgstr ""
+
+msgid "goo.gl service"
+msgstr ""
+
+msgid "is.gd service"
+msgstr ""
+
+msgid "ti.ny service"
+msgstr ""
+
+msgid "tiny.cc service"
+msgstr ""
+
+msgid "static backend"
+msgstr ""
+
+msgid "for any access"
+msgstr "pour tout type d'accès"
+
+msgid "for own usage"
+msgstr "pour usage personnel"
+
+msgid "with ownCloud users"
+msgstr "avec les utilisateurs ownCloud"
+
+msgid "available for everyone"
+msgstr "disponible pour tous"
+
+msgid "Access"
+msgstr "Accès"
+
+msgid "Add a new shorty"
+msgstr "Ajouter un nouveau shorty"
+
+msgid "Add as new"
+msgstr "Ajouter en tant que nouveau"
+
+msgid "Add page as 'Shorty' to ownCloud"
+msgstr "Ajouter cette page à 'Shorty' sur ownCloud"
+
+msgid "Administration"
+msgstr "Administration"
+
+msgid "Administrative, system wide settings of this app:"
+msgstr "Paramètres administratifs globaux de cette application:"
+
+msgid "after the SMS has been launched"
+msgstr "après que SMS ai été lancé"
+
+msgid "Alternatively the image can be downloaded for printout or storage"
+msgstr "Sinon l'image peut être téléchargée pour être imprimée ou archivée"
+
+msgid "alternatively the link can be copied for usage apart"
+msgstr ""
+
+msgid "Alternatively the link can be copied manually"
+msgstr ""
+
+msgid "Alternatively the link can be copied into a message manually"
+msgstr "Le lien peut être copier manuellement dans un message"
+
+msgid "Anything that appears helpful …"
+msgstr "Tout entrée significative ..."
+
+msgid "Backend"
+msgstr "Infrastructure"
+
+msgid "Base url"
+msgstr "URL de base"
+
+msgid "Choose a service…"
+msgstr ""
+
+msgid "Click for embedding details"
+msgstr "Cliquez pour afficher les détails d'intégration"
+
+msgid "Click it, for whatever site you want to create a Shorty."
+msgstr "Clickez-le pour le site auquel vous souhaitez associer un Shorty"
+
+msgid "Click registered"
+msgstr "Clic enregistré"
+
+msgid "Clicks"
+msgstr "Clics"
+
+msgid "Clicking 'Ok' below will try to launch an email composer"
+msgstr "Cliquez sur 'Ok' ci-dessous afin de lancer le client mail"
+
+msgid "Clicking 'Ok' below will try to launch an sms composer"
+msgstr "Cliquez sur 'OK' ci-dessous afin de lancer le client sms"
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "Configuration"
+msgstr "Configuration"
+
+msgid "The amount of feedback messages shown."
+msgstr "Le nombre de commentaires affichés."
+
+msgid "Copy to clipboard"
+msgstr "Copier dans le presse papiers"
+
+msgid "Counted entries and clicks"
+msgstr "Compteur des entrées et clics"
+
+msgid "Create a new 'Shorty' and share it"
+msgstr "Créer un nouveau 'Shorty' et partagez-le"
+
+msgid "Creation"
+msgstr "Création"
+
+msgid "Delete shorty"
+msgstr "Supprimer le lien-raccourci"
+
+msgid "Drag this to your browser bookmarks."
+msgstr "À glisser/déposer dans les favoris de votre navigateur web"
+
+msgid "Embed the QRCode as an image into some web page using this url"
+msgstr "Vous pouvez intégrer le QRCode sur une page web en tant qu'image en utilisant cette URL"
+
+msgid "Example"
+msgstr "Exemple"
+
+msgid "Exception"
+msgstr "Exception"
+
+msgid "Exception (%s)"
+msgstr "Exception (%s)"
+
+msgid "Expiration"
+msgstr "Expiration"
+
+msgid "Feedback"
+msgstr "Commentaires"
+
+msgid "It can be enabled by a single click in the administration:"
+msgstr "Peut être activé par un click simple dans l'interface d'administration:"
+
+msgid "Loading"
+msgstr "Chargement"
+
+msgid "Mail client"
+msgstr "Client mail"
+
+msgid "Modifications for shorty with id '%s' saved"
+msgstr "Les modifications pour le lien-raccourci d'id. '%s' ont été sauvegardées"
+
+msgid "Modify attributes"
+msgstr ""
+
+msgid "Modify shorty"
+msgstr "Modifier le shorty"
+
+msgid "New Shorty"
+msgstr "Nouveau lien-raccourci"
+
+msgid "Notes"
+msgstr "Notes"
+
+msgid "Nothing here yet"
+msgstr "Rien à afficher pour le moment"
+
+msgid "Number of entries"
+msgstr "Nombre d'entrées"
+
+msgid "Number of entries: %s"
+msgstr "Nombre d'entrées : %s"
+
+msgid "QRCode"
+msgstr "QRCode"
+
+msgid "Open source url"
+msgstr "url open source"
+
+msgid "Open relay url"
+msgstr "Ouvrir l'URL de relai"
+
+msgid "Open target"
+msgstr "Ouvrir la cible"
+
+msgid "Open target url"
+msgstr "Ouvrir l'URL cible"
+
+msgid "Optional configuration of a 'Static Backend'"
+msgstr "Configuration optionnelle d'un 'module dorsal statique'"
+
+msgid "or simpy print or download it for off-line usage"
+msgstr "ou imprimez-le ou téléchargez-le pour une utilisation non connectée"
+
+msgid "Paste to embed elsewhere"
+msgstr "Coller pour intégrer ailleurs"
+
+msgid "Preference retrieved"
+msgstr ""
+
+msgid "Preference saved"
+msgstr ""
+
+msgid "Preference '%s' retrieved"
+msgstr "Préférence '%s' récupérée"
+
+msgid "Preference '%s' saved"
+msgstr "Préférence '%s' enregistrée"
+
+msgid "Preferences"
+msgstr ""
+
+msgid "Prepare to send as SMS"
+msgstr "Prépare à envoyer comme un SMS"
+
+msgid "Relay service"
+msgstr "Service de relais"
+
+msgid "Relay url"
+msgstr "url de relais"
+
+msgid "Reload"
+msgstr ""
+
+msgid "Reload list"
+msgstr "Recharger la liste"
+
+msgid "Save"
+msgstr "Sauvegarder"
+
+msgid "Send by email"
+msgstr "Envoyer par email"
+
+msgid "Send link by email"
+msgstr "Envoyer le lien par email"
+
+msgid "Send by SMS"
+msgstr "Envoyer par SMS"
+
+msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
+msgstr "Définir vos préférences personnelles en utilisant le \"cog whell\" (%%S) en bas à gauche!"
+
+msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
+msgstr ""
+
+msgid "Setting retrieved"
+msgstr ""
+
+msgid "Setting saved"
+msgstr ""
+
+msgid "Setting '%s' retrieved"
+msgstr ""
+
+msgid "Setting '%s' saved"
+msgstr "Réglage '%s' enregistré"
+
+msgid "Settings"
+msgstr ""
+
+msgid "Share and use"
+msgstr "Partage and utiliser"
+
+msgid "Share shorty"
+msgstr "Partager le lien-raccourci"
+
+msgid "Shortlet"
+msgstr "Shortlet"
+
+msgid "Shorty as QRCode"
+msgstr "Lien raccourci sous forme de QRCode"
+
+msgid "Shorty with id '%s' deleted"
+msgstr "Le lien-raccourci avec l'id. '%s' a été effacé"
+
+msgid "Show as QRCode"
+msgstr "Afficher sous forme de QRCode"
+
+msgid "Show details"
+msgstr "Afficher les détails"
+
+msgid "Show usage"
+msgstr ""
+
+msgid "SMS"
+msgstr "SMS"
+
+msgid "SMS composer"
+msgstr "client SMS"
+
+msgid "Sort ascending"
+msgstr "Trier par ordre croissant"
+
+msgid "Sort descending"
+msgstr "Trier par ordre décroissant"
+
+msgid "Source url"
+msgstr "URL source"
+
+msgid "Specify a static base url…"
+msgstr "Veuillez spécifier une URL de base statique…"
+
+msgid "Static backend: base url verification"
+msgstr "Module dorsal statique: vérification de l'url de base"
+
+msgid "Status"
+msgstr "État"
+
+msgid "Status change for shorty with id '%s' saved"
+msgstr "Le changement de statut pour le lien-raccourci d'id. '%s' a été sauvegardé"
+
+msgid "Target"
+msgstr "Cible"
+
+msgid "Target url"
+msgstr "URL cible"
+
+msgid "Target url '%s' is valid"
+msgstr "L'URL cible '%s' est valide"
+
+msgid "That image can be used when writing documents or setting up web sites"
+msgstr "Cette image peut être utilisée pour la rédaction de documents ou dans des pages web"
+
+msgid "The backend service used to generate shortened URLs."
+msgstr ""
+
+msgid "The default status as suggested for new Shortys."
+msgstr ""
+
+msgid "The link below can be copied for usage apart"
+msgstr "Le lien ci-dessous peut être copié pour utilisation spéficique"
+
+msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
+msgstr "Le module enfichable additionnel '%%s' suit l'utilisation des Shortys existants!"
+
+msgid "therefore the content must be copied manually"
+msgstr "par conséquent le contenu doit être copié manuellement"
+
+msgid "then paste into message"
+msgstr "puis coller dans le message"
+
+msgid "This 2d barcode encodes the url pointing to this Shorty"
+msgstr "Ce code-barres 2D contient l'URL pointant vers ce lien-raccourci"
+
+msgid "This is a internal url that the shortened url relays to"
+msgstr "Ceci est l'URL interne vers laquelle pointe l'URL raccourcie"
+
+msgid "This is the shortened url registered at the backend"
+msgstr "C'est l'url reduit associé au module dorsal"
+
+msgid "This is the target url specified when generating this Shorty"
+msgstr "Ceci est l'URL cible spécifiée lors de la génération du lien-raccourci"
+
+msgid "This is the url referencing the QRCode shown before"
+msgstr "Ceci est l'URL permettant d'intégrer le QRCode affiché précédemment"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Toggle toolbar"
+msgstr "Afficher/Masquer la barre d'outils"
+
+msgid "Total of clicks"
+msgstr "Total des clics"
+
+msgid "Typically this only works on devices like smart phones"
+msgstr "En général, cela ne fonctionne que sur les périphériques de type smartphones"
+
+msgid "Unexpected type of exception caught: %s"
+msgstr ""
+
+msgid "Unfortunately the implementation of this scheme is limited"
+msgstr "Malheureusement l'implémentation de ce schéma est limitée"
+
+msgid "Unknown object of type caught: %s"
+msgstr ""
+
+msgid "Url shortened to: %s"
+msgstr "URL raccourcie en : %s"
+
+msgid "Use it in web pages by referencing or embedding"
+msgstr "Utilisez-le dans des pages web en y faisant référence ou en l'intégrant"
+
+msgid "Use the '%s' button above or the fine 'Shortlet'"
+msgstr "Utilisez le bouton '%s' ci-dessus ou le 'Shortlet' approprié"
+
+msgid "Verify by clicking…"
+msgstr "Vérifier par clic..."
+
+msgid "Verification failed"
+msgstr "La vérification a échoué"
+
+msgid ""
+"%s\n"
+"Message(code): %s (%s)\n"
+"File(line): %s (%s)\n"
+"Info: %%s"
+msgstr "%s⏎ Message(code): %s (%s)⏎ Fichier(ligne): %s (%s)⏎ Info: %%s"
+
+msgid "API access key"
+msgstr "Clé d'accés API"
+
+msgid "Account"
+msgstr ""
+
+msgid "API key"
+msgstr "Clé API"
+
+msgid "bit.ly user"
+msgstr "utilisateur bit.ly"
+
+msgid "bit.ly user name"
+msgstr "Nom d'utilisateur bit.ly"
+
+msgid "bit.ly key"
+msgstr "Clé pour bit.ly"
+
+msgid "bit.ly users key"
+msgstr "clé utilisateur bit.ly"
+
+msgid "Google API key"
+msgstr "Clé API Google"
+
+msgid "Google API account"
+msgstr "Compte Google API"
+
+msgid "tiny.cc user"
+msgstr "Utilisateur tiny.cc"
+
+msgid "tiny.cc user name"
+msgstr "Nom d'utilisateur tiny.cc"
+
+msgid "tiny.cc key"
+msgstr "clef tiny.cc"
+
+msgid "tiny.cc user key"
+msgstr "clef utilisateur tiny.cc"
+
+msgid ""
+"Force verification of encryption certificates during communication with the "
+"backend"
+msgstr "Force la vérification des certificats de chiffrement durant la communication avec le module dorsal"
+
+msgid ""
+"The external 'bitly.com' service is used to register a short url for each "
+"generated shorty."
+msgstr "Le service externe 'bitly.com' est utilisé afin d'enregistrer une URL courte pour chaque lien-raccourci généré."
+
+msgid "This means you have to register an '%s' at their site first."
+msgstr "Ce qui implique que vous devez enregistrer un '%s' sur leur site au préalable."
+
+msgid ""
+"The external 'turl' service is used to register a short url for each "
+"generated shorty."
+msgstr "Le service externe 'turl' est utilisé pour enregistrer un url réduit pour tous les shorty générés"
+
+msgid ""
+"The external 'ti.ny' service is used to register a short url for each "
+"generated shorty."
+msgstr "Le service externe 'ti.ny' est utilisé pour enregistrer un url réduit pour tous les shorty générés."
+
+msgid ""
+"The external 'cli.gs' service is used to register a short url for each "
+"generated shorty."
+msgstr "Le service externe 'cli.gs' est utilisé pour enregistrer un url réduit pour tous les shorty générés."
+
+msgid ""
+"The external 'is.gd' service is used to register a short url for each "
+"generated shorty."
+msgstr "Le service externe 'is.gd' est utilisé pour enregistrer un url réduit pour tous les shorty générés."
+
+msgid ""
+"The external 'tiny.cc' service is used to register a short url for each "
+"generated shorty."
+msgstr "Le service externe 'tiny.cc' est utilisé pour enregistrer un url réduit pour tous les shorty générés."
+
+msgid ""
+"No backend is used, direct links pointing to your ownCloud are generated."
+msgstr "Aucun module dorsal n'est utilisé, des liens directs pointant vers votre ownCloud seront générés."
+
+msgid ""
+"The service requires you to authenticate yourself by providing a valid "
+"bit.ly user name and an '%s'."
+msgstr "Le service requiert que vous vous authentifiez en fournissant un identifiant bit.ly valid et un ou une '%s'."
+
+msgid ""
+"Such links are most likely longer than those generated when using a backend."
+msgstr "De tels liens sont certainement plus longs que ceux générés en utilisant un module dorsal."
+
+msgid ""
+"However this option does not rely on any third party service and keeps your "
+"shortys under your control."
+msgstr "Cependant cette option ne dépend d'aucun autre service tiers et vous gardez le contrôle sur vos shortys."
+
+msgid ""
+"Since this setup depends on server based configuration rules the base url "
+"can only be specified in the 'Admin' section of the configuration."
+msgstr "L'url de base peut seulement être défini depuis la section 'Admin' de la vue configuration puisque l'installation dépend sur des règles de configuration au niveau serveur."
+
+msgid ""
+"Static, rule-based backend, generates shorty links relative to a given base "
+"url."
+msgstr "Module dorsal statique, basé sur des règles de gestion, générant des liens shortys relatifs à un url de base donné."
+
+msgid ""
+"You have to take care that any request to the url configured here is "
+"internally mapped to the 'shorty' module."
+msgstr "Vous devez vous assurer que chacune requête aux url configurés ici sont associées au module dorsal 'shorty'."
+
+msgid "The target of that mapping must be some URL like:"
+msgstr "La cible de cette association doit être un url valide comme:"
+
+msgid ""
+"Have a try with the example link provided, click it, it should result in a "
+"confirmation that your setup is working."
+msgstr "Essayez l'exemple fourni, clickez sur le lien pour obtenir confirmation du bon fonctionnement de votre installation."
+
+msgid ""
+"Leave empty if you can't provide a short base url that is mapped the "
+"described way."
+msgstr "Laissez vite si vous n'êtes pas en mesure de fournir un url de base réduit associé de cette façon."
+
+msgid ""
+"Only use this backend, if you can provide a short base url that is mapped "
+"the described way. Your shorties won't work otherwise."
+msgstr "Utilisez seulement ce module dorsal si vous pouvez fournir un url de base réduit associé de cette façon. Vos shorties ne fonctionneront pas sinon."
+
+msgid ""
+"Googles external 'goo.gl service' is used to register a short url for each "
+"generated shorty."
+msgstr "Le service externe de Google 'goo.gl' est utilisé pour enregistrer un url réduit pour tous les shorty générés"
+
+msgid "You must provide a valid '%%s' to use this service."
+msgstr "Vous devez fournir un '%%s' valide pour utiliser ce service."
+
+msgid "This means you require a 'Google API console account'."
+msgstr "Ce qui implique que vous disposiez d'un compte 'Google API console account'."
+
+msgid "Register a new '%%s' at their pages."
+msgstr "Enregistrer un nouvel '%%s' à leurs pages."
+
+msgid "Enabling the SMS option will offer sending a Shorty via SMS."
+msgstr "Activer l'option SMS vous permet d'émettre un Shorty via SMS."
+
+msgid ""
+"Unfortunately support for 'SMS url handling' is usually only found on mobile"
+" devices like smart phones."
+msgstr "Malheureusement la gestion des url SMS est en général uniquement prise en charge sur les téléphones intelligents."
+
+msgid ""
+"In addition, those implementations are minimalistic, buggy and differ from "
+"system to system."
+msgstr "De plus, ces implémentations sont minimalistes, sources d'erreurs et diffèrent d'un système à un autre."
+
+msgid "In short: this might not work for you, therefore you can disable it…"
+msgstr "En synthèse: peut ne pas fonctionner pour vous, donc vous pouvez le désactiver..."
+
+msgid "Great, your setup appears to be working fine!"
+msgstr "Bien ! Il semblerait que votre installation fonctionne correctement !"
+
+msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Requests to the configured base url are mapped to this ownClouds relay "
+"service."
+msgstr "Les requêtes adressées à l'URL spécifiée comme étant l'URL de base sont associées au service-relai de cette instance ownCloud."
+
+msgid ""
+"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
+"Service abgebildet."
+msgstr ""
+
+msgid ""
+"Usage of that static backend is fine and safe as long as this setup is not "
+"altered."
+msgstr "L'utilisation de cette infrastructure statique est sûre du moment que cette configuration n'est pas altérée."
+
+msgid ""
+"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
+"Konfiguration nicht geändert wird."
+msgstr ""
+
+msgid ""
+"This backend will now be offered as an additional backend alternative to all"
+" local users inside their personal preferences."
+msgstr "Ce module dorsal sera maintenant offert en tant qu'alternative à tous les utilisateurs via leurs préférences personnelles"
+
+msgid ""
+"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
+"zusätzliche Alternative zu den verfügbaren Backends angeboten."
+msgstr ""
+
+msgid "Sorry, but your setup appears not to be working correctly yet!"
+msgstr "Désolé, mais il semblerait que votre installation ne fonctionne pas — encore — correctement…"
+
+msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Please check your setup and make sure that the configured base url is indeed"
+" correct."
+msgstr "Merci de vérifier votre installation et de vous assurer que l'url de base est configurée correctement."
+
+msgid ""
+"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
+"konfigurierte Basis-Url wirklich korrekt ist."
+msgstr ""
+
+msgid ""
+"Make sure that all requests to it are somehow mapped to Shortys relay "
+"service."
+msgstr "Merci de vérifier que toutes les requêtes sont associées d'une façon ou d'une autre au service de relais Shortys"
+
+msgid ""
+"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
+" Relais-Service."
+msgstr ""

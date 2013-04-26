@@ -7,7 +7,7 @@
 "Click details" => "Details des Klick",
 "Clicks" => "Klicks",
 "Host" => "Host",
-"List clicks" => "Klicks auflisten",
+"List clicks" => "Zeige Klicks an",
 "List of tracked clicks" => "Liste der aufgezeichneten Klicks",
 "Result" => "Ergebnis",
 "Time" => "Zeit",

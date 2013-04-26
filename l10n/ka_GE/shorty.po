@@ -1,0 +1,720 @@
+# @package shorty an ownCloud url shortener plugin
+# @category internet
+# @author Christian Reiner
+# @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+# @license GNU Affero General Public license (AGPL)
+# @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
+# 
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+# License as published by the Free Software Foundation; either
+# version 3 of the license, or any later version.
+# 
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+# 
+# You should have received a copy of the GNU Affero General Public
+# License along with this library.
+# If not, see <http://www.gnu.org/licenses/>.
+# 
+# @file l10n/de.php
+# @brief Internationalization / localization file for language DE (german)
+# @author Christian Reiner
+# 
+# Translators:
+# drlinux64 <romeo@energo-pro.ge>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"POT-Creation-Date: 2013-04-26 15:00+0200\n"
+"PO-Revision-Date: 2013-04-26 16:05+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"Language-Team: Georgian (Georgia) (http://www.transifex.com/projects/p/owncloud/language/ka_GE/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka_GE\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "all"
+msgstr "ყველა"
+
+msgid "blocked"
+msgstr ""
+
+msgid "deleted"
+msgstr ""
+
+msgid "disabled"
+msgstr "გათიშულია"
+
+msgid "enabled"
+msgstr "ჩართულია"
+
+msgid "never"
+msgstr "არასდროს"
+
+msgid "private"
+msgstr ""
+
+msgid "public"
+msgstr ""
+
+msgid "shared"
+msgstr ""
+
+msgid "delete"
+msgstr "წაშლა"
+
+msgid "edit"
+msgstr "რედაქტირება"
+
+msgid "open"
+msgstr "გახსნა"
+
+msgid "share"
+msgstr "გაზიარება"
+
+msgid "show"
+msgstr "გამოაჩინე"
+
+msgid "none"
+msgstr ""
+
+msgid "error"
+msgstr ""
+
+msgid "info"
+msgstr ""
+
+msgid "debug"
+msgstr ""
+
+msgid "Ctrl-C"
+msgstr "Ctrl-C"
+
+msgid "Ctrl-V"
+msgstr "Ctrl-V"
+
+msgid "bitly.com service"
+msgstr ""
+
+msgid "cli.gs service"
+msgstr ""
+
+msgid "goo.gl service"
+msgstr ""
+
+msgid "is.gd service"
+msgstr ""
+
+msgid "ti.ny service"
+msgstr ""
+
+msgid "tiny.cc service"
+msgstr ""
+
+msgid "static backend"
+msgstr ""
+
+msgid "for any access"
+msgstr "ყველა დაშვებისთვის"
+
+msgid "for own usage"
+msgstr "მხოლოდ თქვენი გამოყენებისთვის"
+
+msgid "with ownCloud users"
+msgstr "ownCloud მომხმარებლებისთვის"
+
+msgid "available for everyone"
+msgstr "დაშვებადია ყველასთვის"
+
+msgid "Access"
+msgstr "დაშვება"
+
+msgid "Add a new shorty"
+msgstr "დაამატე ახალი შემოკლება"
+
+msgid "Add as new"
+msgstr "დაამატე როგორც ახალი"
+
+msgid "Add page as 'Shorty' to ownCloud"
+msgstr "დაამატე გვერდი როგორც შემოკლებული ownCloud–ზე"
+
+msgid "Administration"
+msgstr "ადმინისტრაცია"
+
+msgid "Administrative, system wide settings of this app:"
+msgstr "ამ აპლიკაციის ადმინისტრაციული, საერთო სისტემური პარამეტრები:"
+
+msgid "after the SMS has been launched"
+msgstr "როცა SMS უკვე გაგზავნილია"
+
+msgid "Alternatively the image can be downloaded for printout or storage"
+msgstr "ალტერნატივაში სურათის ჩამოტვირთვა შეიძლება ამოსაბეჭდად და შესანახად"
+
+msgid "alternatively the link can be copied for usage apart"
+msgstr ""
+
+msgid "Alternatively the link can be copied manually"
+msgstr ""
+
+msgid "Alternatively the link can be copied into a message manually"
+msgstr "ალტერნატივაში შესაძლებელია ლინკის კოპირება ხელით მესიჯის შიგნით"
+
+msgid "Anything that appears helpful …"
+msgstr "ყველაფერი რაც არის საჭირო ..."
+
+msgid "Backend"
+msgstr "ბექენდი"
+
+msgid "Base url"
+msgstr "საბაზო url–ი"
+
+msgid "Choose a service…"
+msgstr ""
+
+msgid "Click for embedding details"
+msgstr "embedding–ის დეტალური ინფორმაცია"
+
+msgid "Click it, for whatever site you want to create a Shorty."
+msgstr "დააჭირე მას, რა საიტზედაც გინდათ შემოკლების გაკეთება."
+
+msgid "Click registered"
+msgstr "დააჭირეთ დარეგისტრირებულებმა"
+
+msgid "Clicks"
+msgstr "ქლიქები"
+
+msgid "Clicking 'Ok' below will try to launch an email composer"
+msgstr " 'Ok'  ღილაკზე დაჭერით გაიხსნება იმეილ კომპოზიტორი"
+
+msgid "Clicking 'Ok' below will try to launch an sms composer"
+msgstr " 'Ok'  ღილაკზე დაჭერით გაიხსნება იმეილ კომპოზიტორი"
+
+msgid "Close"
+msgstr "დახურვა"
+
+msgid "Configuration"
+msgstr "კონფიგურაცია"
+
+msgid "The amount of feedback messages shown."
+msgstr "უკუკავშირის მესიჯების რაოდენობაა გამოჩენილი."
+
+msgid "Copy to clipboard"
+msgstr "კოპირებულია ქლიპბორდში "
+
+msgid "Counted entries and clicks"
+msgstr "დათვილილი ჩანაწერები და ქლიქები"
+
+msgid "Create a new 'Shorty' and share it"
+msgstr "შექმენი ახალი შემოკლება და გააზიარე ის"
+
+msgid "Creation"
+msgstr "შექმნა"
+
+msgid "Delete shorty"
+msgstr "შემოკლების წაშლა"
+
+msgid "Drag this to your browser bookmarks."
+msgstr "გადათრიე ეს თქვენი ბრაუზერის ბუქმარქებში."
+
+msgid "Embed the QRCode as an image into some web page using this url"
+msgstr "მიაწეპეთ QRCode სურათის სახით რომელიმე web გვერდძე ამ  url–ის გამოყენებით"
+
+msgid "Example"
+msgstr "მაგალითი"
+
+msgid "Exception"
+msgstr "გამონაკლისი"
+
+msgid "Exception (%s)"
+msgstr "გამონაკლისი (%s)"
+
+msgid "Expiration"
+msgstr "ვადის გასვლის დრო"
+
+msgid "Feedback"
+msgstr "უკუკავშირი"
+
+msgid "It can be enabled by a single click in the administration:"
+msgstr "ეს შეიძლება ჩავრთოთ ერთი დაჭერით ადმინისტრაციის განყოფილებაში:"
+
+msgid "Loading"
+msgstr "ჩატვირთვა"
+
+msgid "Mail client"
+msgstr "მეილ კლიენტი"
+
+msgid "Modifications for shorty with id '%s' saved"
+msgstr "შემოკლებული id  '%s'–ის მოდიფიკაცია შენახულ იქნა"
+
+msgid "Modify attributes"
+msgstr ""
+
+msgid "Modify shorty"
+msgstr "შემოკლების შეცვლა"
+
+msgid "New Shorty"
+msgstr "ახალი შემოკლება"
+
+msgid "Notes"
+msgstr "შენიშვნები"
+
+msgid "Nothing here yet"
+msgstr "აქ არაფერი არ არის."
+
+msgid "Number of entries"
+msgstr "ჩანაწერების რაოდენობა"
+
+msgid "Number of entries: %s"
+msgstr "ჩანაწერების რაოდენობა: %s"
+
+msgid "QRCode"
+msgstr "QRCode"
+
+msgid "Open source url"
+msgstr "გახსნილი წყაროს url"
+
+msgid "Open relay url"
+msgstr "გახსნილი რელეს url"
+
+msgid "Open target"
+msgstr "სამიზნის გახსნა"
+
+msgid "Open target url"
+msgstr "გახსენი სამიზნე url"
+
+msgid "Optional configuration of a 'Static Backend'"
+msgstr "'სტატიკური ბექენდის' ოფციონალური კონფიგურაცია"
+
+msgid "or simpy print or download it for off-line usage"
+msgstr "ან გადმოტვირთეთ და გამოიყენეთ მარტივად ოფლაინში"
+
+msgid "Paste to embed elsewhere"
+msgstr "ჩააკოპირეთ ყველგან მისაწეპებლად"
+
+msgid "Preference retrieved"
+msgstr ""
+
+msgid "Preference saved"
+msgstr ""
+
+msgid "Preference '%s' retrieved"
+msgstr "უპირატესობა '%s' გამოჩნდა"
+
+msgid "Preference '%s' saved"
+msgstr "უპირატესობა '%s' შენახულია"
+
+msgid "Preferences"
+msgstr ""
+
+msgid "Prepare to send as SMS"
+msgstr "მოამზადე SMS–ით გასაგზავნად"
+
+msgid "Relay service"
+msgstr "რელე სერვისი"
+
+msgid "Relay url"
+msgstr "url რელე"
+
+msgid "Reload"
+msgstr ""
+
+msgid "Reload list"
+msgstr "სიის გადატვირთვა"
+
+msgid "Save"
+msgstr "შენახვა"
+
+msgid "Send by email"
+msgstr "გააგზავნე იმეილით"
+
+msgid "Send link by email"
+msgstr "გააგზავნე ლინკი იმეილით"
+
+msgid "Send by SMS"
+msgstr "გააგზავნე SMS–ით"
+
+msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
+msgstr "დააყენეთ პერსონალური პარამეტრები კბილანას  (%%s) გამოყენებით მარცხენა ქვედა კუთხეში!"
+
+msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
+msgstr ""
+
+msgid "Setting retrieved"
+msgstr ""
+
+msgid "Setting saved"
+msgstr ""
+
+msgid "Setting '%s' retrieved"
+msgstr ""
+
+msgid "Setting '%s' saved"
+msgstr "სეთინგი '%s' შენახულია"
+
+msgid "Settings"
+msgstr ""
+
+msgid "Share and use"
+msgstr "გააზიარე და გამოიყენე"
+
+msgid "Share shorty"
+msgstr "შემოკლების გაზიარება"
+
+msgid "Shortlet"
+msgstr "შემამოკლებელი"
+
+msgid "Shorty as QRCode"
+msgstr "შემოკლებით QRCode–ით"
+
+msgid "Shorty with id '%s' deleted"
+msgstr "შემოკლებული id–ით '%s' წაშლილია"
+
+msgid "Show as QRCode"
+msgstr "გამოაჩინე როგორც QRCode"
+
+msgid "Show details"
+msgstr "დეტალების გამოჩენა"
+
+msgid "Show usage"
+msgstr ""
+
+msgid "SMS"
+msgstr "SMS"
+
+msgid "SMS composer"
+msgstr "SMS კომპოზიტორი"
+
+msgid "Sort ascending"
+msgstr "ალფავიტის მიხედვით სორტირება"
+
+msgid "Sort descending"
+msgstr "ალფავიტის მიხედვით პირუკუ სორტირება"
+
+msgid "Source url"
+msgstr "წყარო url"
+
+msgid "Specify a static base url…"
+msgstr "მიუთითეთ სტატიკური საბაზო url–ი..."
+
+msgid "Static backend: base url verification"
+msgstr "სტატიკური ბექენდი: საბაზო url–ის ვერიფიკაცია"
+
+msgid "Status"
+msgstr "სტატუსი"
+
+msgid "Status change for shorty with id '%s' saved"
+msgstr "შემოკლებული id '%s'–ის სტატუსის ცვლილება შენახულია"
+
+msgid "Target"
+msgstr "სამიზნე"
+
+msgid "Target url"
+msgstr "სამიზნე url"
+
+msgid "Target url '%s' is valid"
+msgstr "სამიზნე url  '%s' მართებულია"
+
+msgid "That image can be used when writing documents or setting up web sites"
+msgstr "სურათი შეიძლება გამოყენებულ იქნას დოკუმენტების შექმისას ან web გვერდებზე"
+
+msgid "The backend service used to generate shortened URLs."
+msgstr ""
+
+msgid "The default status as suggested for new Shortys."
+msgstr ""
+
+msgid "The link below can be copied for usage apart"
+msgstr "შესაძლებელია ლინკის დაკოპირება შემდგომი გამოყენებისათვის"
+
+msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
+msgstr "დამატებითი '%%s' ფლაგინი გვაჩვენებს მოცემული შემოკლებების გამოყენებას!"
+
+msgid "therefore the content must be copied manually"
+msgstr "ამასთანავე კონტენტი შეიძლება კოპირებულ იქნას ხელით"
+
+msgid "then paste into message"
+msgstr "შემდეგ ჩააკოპირეთ მესიჯის შიგნით"
+
+msgid "This 2d barcode encodes the url pointing to this Shorty"
+msgstr "ეს 2d ბარკოდი აკოდირებს მითითებულ შემოკლებულ url–ს"
+
+msgid "This is a internal url that the shortened url relays to"
+msgstr "ეს არის შიდა url რაც შემოკლდა url რელეს მეშვეობით"
+
+msgid "This is the shortened url registered at the backend"
+msgstr "ეს არის შემოკლებული url დარეგისტრირებული ბექენდზე"
+
+msgid "This is the target url specified when generating this Shorty"
+msgstr "ეს არის სამიზნის url შემოკლების გენერაციის დროს"
+
+msgid "This is the url referencing the QRCode shown before"
+msgstr "ამ url–ს გადავყავართ ადრე ნაჩვენებ QRCode–ზე"
+
+msgid "Title"
+msgstr "სახელი"
+
+msgid "Toggle toolbar"
+msgstr "ინსტრუმენტების პანელის გადამრთველი"
+
+msgid "Total of clicks"
+msgstr "ქლიკების საერთო რაოდენობა"
+
+msgid "Typically this only works on devices like smart phones"
+msgstr "ტიპიურად ეს მუშაობს სმარტფონ მოწყობილობებზე"
+
+msgid "Unexpected type of exception caught: %s"
+msgstr ""
+
+msgid "Unfortunately the implementation of this scheme is limited"
+msgstr "სამწუხაროდ ამ სქემის გამოყენება ლიმიტირებულია"
+
+msgid "Unknown object of type caught: %s"
+msgstr ""
+
+msgid "Url shortened to: %s"
+msgstr "Url შემოკლებულია მდე: %s"
+
+msgid "Use it in web pages by referencing or embedding"
+msgstr "გამოიყენეთ ეს web გვერდებზე ლინკად ან ეთეჩმენტად"
+
+msgid "Use the '%s' button above or the fine 'Shortlet'"
+msgstr "გამოიყენე  '%s'  ღილაკი კაროგი 'შემოკლებისთვის'"
+
+msgid "Verify by clicking…"
+msgstr "მოახდინეთ ვერიფიკაცია დაკლიკვით..."
+
+msgid "Verification failed"
+msgstr "ვერიფიკაცია ვერ მოხერხდა"
+
+msgid ""
+"%s\n"
+"Message(code): %s (%s)\n"
+"File(line): %s (%s)\n"
+"Info: %%s"
+msgstr "%s⏎\nმესიჯი(კოდი): %s (%s)⏎\nფაილი(სტრიქონი): %s (%s)⏎\nინფორმაცია: %%s"
+
+msgid "API access key"
+msgstr "API დაშვების გასაღები"
+
+msgid "Account"
+msgstr ""
+
+msgid "API key"
+msgstr "API გასაღები"
+
+msgid "bit.ly user"
+msgstr "bit.ly მომხმარებელი"
+
+msgid "bit.ly user name"
+msgstr "bit.ly მომხმარებლის სახელი"
+
+msgid "bit.ly key"
+msgstr "bit.ly გასაღები"
+
+msgid "bit.ly users key"
+msgstr "bit.ly მომხმარებლის გასაღები"
+
+msgid "Google API key"
+msgstr "Google API გასაღები"
+
+msgid "Google API account"
+msgstr "Google API ანგარიში"
+
+msgid "tiny.cc user"
+msgstr "tiny.cc მომხმარებელი"
+
+msgid "tiny.cc user name"
+msgstr "tiny.cc მომხმარებლის სახელი"
+
+msgid "tiny.cc key"
+msgstr "tiny.cc გასაღები"
+
+msgid "tiny.cc user key"
+msgstr "tiny.cc მომხმარებლის გასაღები"
+
+msgid ""
+"Force verification of encryption certificates during communication with the "
+"backend"
+msgstr "დაშიფვრის სერთიფიკატების ვერიფიკაციის გაშვება ბექენდ სერვერთან კომუნიკაციის დროს"
+
+msgid ""
+"The external 'bitly.com' service is used to register a short url for each "
+"generated shorty."
+msgstr "გარე 'bitly.com'  სერვისი გამოიყენება მოკლე url–ების დასარეგისტრირებლად ყველა გენერირებულ შემოკლებაზე."
+
+msgid "This means you have to register an '%s' at their site first."
+msgstr "ეს გულისხმობს რომ თქვენ უნდა დაარეგისტრიროთ '%s' საწყის ეტაპზე თქვენს საიტზე."
+
+msgid ""
+"The external 'turl' service is used to register a short url for each "
+"generated shorty."
+msgstr "გარე 'turl' სერვისი გამოიყენება მოკლე url–ების დასარეგისტრირებლად ყველა გენერირებულ შემოკლებაზე."
+
+msgid ""
+"The external 'ti.ny' service is used to register a short url for each "
+"generated shorty."
+msgstr "გარე 'ti.ny' სერვისი გამოიყენება მოკლე url–ების დასარეგისტრირებლად ყველა გენერირებულ შემოკლებაზე."
+
+msgid ""
+"The external 'cli.gs' service is used to register a short url for each "
+"generated shorty."
+msgstr "გარე 'cli.gs' სერვისი გამოიყენება მოკლე url–ების დასარეგისტრირებლად ყველა გენერირებულ შემოკლებაზე."
+
+msgid ""
+"The external 'is.gd' service is used to register a short url for each "
+"generated shorty."
+msgstr "გარე 'is.gd' სერვისი გამოიყენება მოკლე url–ების დასარეგისტრირებლად ყველა გენერირებულ შემოკლებაზე."
+
+msgid ""
+"The external 'tiny.cc' service is used to register a short url for each "
+"generated shorty."
+msgstr "გარე 'tiny.cc'  სერვისი გამოიყენება მოკლე url–ების დასარეგისტრირებლად ყველა გენერირებულ შემოკლებაზე."
+
+msgid ""
+"No backend is used, direct links pointing to your ownCloud are generated."
+msgstr "ბექენდი არ არის გამოყენებული, პირდაპირი ლინკი თქვენი ownCloud–ის გენერირებულია."
+
+msgid ""
+"The service requires you to authenticate yourself by providing a valid "
+"bit.ly user name and an '%s'."
+msgstr "სერვისს სჭირდება თქვენი აუთენთიკაცია სწორი bit.ly მომხმარებლით და '%s'–ით"
+
+msgid ""
+"Such links are most likely longer than those generated when using a backend."
+msgstr "ასეთი ლინკი უფრო მოსახერხებელია ვიდრე ისინი რომელიც გენერირდება ბექენდის გამოყენების დროს."
+
+msgid ""
+"However this option does not rely on any third party service and keeps your "
+"shortys under your control."
+msgstr "ამავე დროს ეს ოფცია არ გამოიყენება ყველა 3nd სერვისებზე და ტოვებს თქვენს შემოკლებებს თქვენი კონტროლის ქვეშ."
+
+msgid ""
+"Since this setup depends on server based configuration rules the base url "
+"can only be specified in the 'Admin' section of the configuration."
+msgstr "ეს კონფიგურაცია დამოკიდებულია სერვერის საბაზო კონფიგურაციის წესებზე. საბაზო url–ი შეიძლება მითითებულ იქნას კონფიგურაციის 'Admin' სექციაში ."
+
+msgid ""
+"Static, rule-based backend, generates shorty links relative to a given base "
+"url."
+msgstr "სტატიკური, სესებზე დამყარებული ბექენდი აგენერირებს შემოკლებულ ლინკებს მოცემული საბაზო  url–ისთვის."
+
+msgid ""
+"You have to take care that any request to the url configured here is "
+"internally mapped to the 'shorty' module."
+msgstr "თქვენ უნდა იზრუნოთ მაგაზე, რომ ყველა აქ დაყენებული URL მოთხოვნა, შიგნითვე გადაყვანილ იქნება \"შემოკლება\" მოდულთან."
+
+msgid "The target of that mapping must be some URL like:"
+msgstr "სამიზნე მეპინგი უნდა იყოს რაიმე მისამართი. მაგალითად ასეთი:"
+
+msgid ""
+"Have a try with the example link provided, click it, it should result in a "
+"confirmation that your setup is working."
+msgstr "თუ გინდათ სცადოთ მოცემული ლინკის მაგალითზე, დააჭირეთ მას,  ის ვალდებულია დაგეთანხმოს იმაზე, რომ თქვენი კონფიგურაცია მუშაობს."
+
+msgid ""
+"Leave empty if you can't provide a short base url that is mapped the "
+"described way."
+msgstr "დატოვეთ ცარიელი თუ თქვენ ვერ უთითებთ შემოკლებულ საბაზო url–ს ამ გზით ამ მეპინგისთვის."
+
+msgid ""
+"Only use this backend, if you can provide a short base url that is mapped "
+"the described way. Your shorties won't work otherwise."
+msgstr "მხოლოდ ამ ბექენდის გამოსაყენებლად, თუ თქვენ გაქვთ მოკლე საბაზო url რომელიც დამეპილია აღწერილი სახით. თქვენი შემოკლებები არ იმუშავებს სხვანაირად."
+
+msgid ""
+"Googles external 'goo.gl service' is used to register a short url for each "
+"generated shorty."
+msgstr "Google-ს გარე 'goo.gl'  სერვისი გამოიყენება მოკლე url–ების დასარეგისტრირებლად ყველა გენერირებულ შემოკლებაზე."
+
+msgid "You must provide a valid '%%s' to use this service."
+msgstr "თქვენ უნდა მიუთითოთ მართებული '%%s' რომ გამოიყენოთ ეს სერვისი."
+
+msgid "This means you require a 'Google API console account'."
+msgstr "ეს გულისხმობს რომ თქვენ გჭირდებათ 'Google API კონსოლის ანგარიში'."
+
+msgid "Register a new '%%s' at their pages."
+msgstr "დაარეგისტრირე ახალი '%%s' თქვენს გვერდზე."
+
+msgid "Enabling the SMS option will offer sending a Shorty via SMS."
+msgstr "SMS ფუნქციის ჩართვა შემოგთავაზებთ SMS–ის გაგზავნას შემოკლებით."
+
+msgid ""
+"Unfortunately support for 'SMS url handling' is usually only found on mobile"
+" devices like smart phones."
+msgstr "სამწუხაროდ 'SMS url ჰენდლინგის' მხარდაჭერა აქვს მოხოლოდ მობილურ მოწყობილობებს როგორებიცაა სმარტფონები."
+
+msgid ""
+"In addition, those implementations are minimalistic, buggy and differ from "
+"system to system."
+msgstr "ასევე, ეს რეალიზაციები არის მინიმალისტური, ბაგები და განსხვავდება სისტემიდან სისტემამდე."
+
+msgid "In short: this might not work for you, therefore you can disable it…"
+msgstr "მოკლედ: ეს არ იმუშავებს თქვენთვის, ამიტომ თქვენ შეგიძლიათ ჩათიშოთ ის..."
+
+msgid "Great, your setup appears to be working fine!"
+msgstr "კარგია, თქვენი კონფიგურაცია მუშაობს კარგად!"
+
+msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Requests to the configured base url are mapped to this ownClouds relay "
+"service."
+msgstr "კონფიგურირებულ საბაზო url–ზე მოთხოვნა დამეპილია ownCloud–ის რელე სერვისზე."
+
+msgid ""
+"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
+"Service abgebildet."
+msgstr ""
+
+msgid ""
+"Usage of that static backend is fine and safe as long as this setup is not "
+"altered."
+msgstr "ამ სტატიკური ბექენდის გამოყენება კარგია და უსაფრთხოა მანამ სანამ კონფიგურაცია არ შეიცვლება."
+
+msgid ""
+"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
+"Konfiguration nicht geändert wird."
+msgstr ""
+
+msgid ""
+"This backend will now be offered as an additional backend alternative to all"
+" local users inside their personal preferences."
+msgstr "ეს ბექენდი იქნება შეთავაზებული ახალ დამატებით ბექენდად ყველა ლოკალური მომხმარებლისთვის პერსონალური პარამეტრების შიგნით."
+
+msgid ""
+"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
+"zusätzliche Alternative zu den verfügbaren Backends angeboten."
+msgstr ""
+
+msgid "Sorry, but your setup appears not to be working correctly yet!"
+msgstr "ბოდიშით, მაგრამ თქვენი კონფიგურაცია არ მუშაობს კორექტულად!"
+
+msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Please check your setup and make sure that the configured base url is indeed"
+" correct."
+msgstr "გთხოვთ შეამოწმოთ თქვენი კონფიგურაცია და დარჭმუნდით იმაში რომ კონფიგურირებული საბაზო url–ი აუცილებლად მართებულია."
+
+msgid ""
+"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
+"konfigurierte Basis-Url wirklich korrekt ist."
+msgstr ""
+
+msgid ""
+"Make sure that all requests to it are somehow mapped to Shortys relay "
+"service."
+msgstr "დარწმუნდით იმაში რომ ყველა მოთხოვნა დამეპილია შემოკლებულად რელე სერვისზე."
+
+msgid ""
+"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
+" Relais-Service."
+msgstr ""

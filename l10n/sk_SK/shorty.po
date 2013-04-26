@@ -1,0 +1,721 @@
+# @package shorty an ownCloud url shortener plugin
+# @category internet
+# @author Christian Reiner
+# @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+# @license GNU Affero General Public license (AGPL)
+# @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
+# 
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+# License as published by the Free Software Foundation; either
+# version 3 of the license, or any later version.
+# 
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+# 
+# You should have received a copy of the GNU Affero General Public
+# License along with this library.
+# If not, see <http://www.gnu.org/licenses/>.
+# 
+# @file l10n/de.php
+# @brief Internationalization / localization file for language DE (german)
+# @author Christian Reiner
+# 
+# Translators:
+# mhh <marian.hvolka@stuba.sk>, 2013
+# martin <zatroch.martin@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"POT-Creation-Date: 2013-04-26 15:00+0200\n"
+"PO-Revision-Date: 2013-04-26 16:05+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/owncloud/language/sk_SK/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sk_SK\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "all"
+msgstr "všetko"
+
+msgid "blocked"
+msgstr ""
+
+msgid "deleted"
+msgstr ""
+
+msgid "disabled"
+msgstr "vypnuté"
+
+msgid "enabled"
+msgstr "zapnuté"
+
+msgid "never"
+msgstr "nikdy"
+
+msgid "private"
+msgstr ""
+
+msgid "public"
+msgstr ""
+
+msgid "shared"
+msgstr ""
+
+msgid "delete"
+msgstr "vymazať"
+
+msgid "edit"
+msgstr "upraviť"
+
+msgid "open"
+msgstr "otvoriť"
+
+msgid "share"
+msgstr "zdieľať"
+
+msgid "show"
+msgstr "zobraziť"
+
+msgid "none"
+msgstr ""
+
+msgid "error"
+msgstr ""
+
+msgid "info"
+msgstr ""
+
+msgid "debug"
+msgstr ""
+
+msgid "Ctrl-C"
+msgstr "Ctrl-C"
+
+msgid "Ctrl-V"
+msgstr "Ctrl-V"
+
+msgid "bitly.com service"
+msgstr ""
+
+msgid "cli.gs service"
+msgstr ""
+
+msgid "goo.gl service"
+msgstr ""
+
+msgid "is.gd service"
+msgstr ""
+
+msgid "ti.ny service"
+msgstr ""
+
+msgid "tiny.cc service"
+msgstr ""
+
+msgid "static backend"
+msgstr ""
+
+msgid "for any access"
+msgstr "pre akýkoľvek prístup"
+
+msgid "for own usage"
+msgstr "pre vlastné použitie"
+
+msgid "with ownCloud users"
+msgstr "s ownCloud používateľmi"
+
+msgid "available for everyone"
+msgstr "k dispozícii pre všetkých"
+
+msgid "Access"
+msgstr "Prístup"
+
+msgid "Add a new shorty"
+msgstr "Pridať nové skrátenie"
+
+msgid "Add as new"
+msgstr "Pridať ako nový"
+
+msgid "Add page as 'Shorty' to ownCloud"
+msgstr "Pridať stránku ako \"Skrátenie\" na ownCloud"
+
+msgid "Administration"
+msgstr "Administrácia"
+
+msgid "Administrative, system wide settings of this app:"
+msgstr "Administratívne nastavenia pre danú aplikáciu (vzťahujúce sa na celý systém):"
+
+msgid "after the SMS has been launched"
+msgstr "po spustení SMS"
+
+msgid "Alternatively the image can be downloaded for printout or storage"
+msgstr "Alternatívne môže byť obrázok stiahnutý pre výtlačok, prípadne uloženie"
+
+msgid "alternatively the link can be copied for usage apart"
+msgstr ""
+
+msgid "Alternatively the link can be copied manually"
+msgstr ""
+
+msgid "Alternatively the link can be copied into a message manually"
+msgstr "Alternatívny odkaz môže byť nakopírovaný do správy ručne"
+
+msgid "Anything that appears helpful …"
+msgstr "Hocičo, čo sa vyskytne ako užitočné ..."
+
+msgid "Backend"
+msgstr "Backend"
+
+msgid "Base url"
+msgstr "Základná URL"
+
+msgid "Choose a service…"
+msgstr ""
+
+msgid "Click for embedding details"
+msgstr "Kliknite pre vkladanie podrobností"
+
+msgid "Click it, for whatever site you want to create a Shorty."
+msgstr "Zaklikni, pre akúkoľvek stránku tvorenú zo 'Shorty'."
+
+msgid "Click registered"
+msgstr "Evidované kliknutia"
+
+msgid "Clicks"
+msgstr "Kliknutia"
+
+msgid "Clicking 'Ok' below will try to launch an email composer"
+msgstr "Kliknutím na 'OK' nižšie skúste spustiť vytváranie emailu"
+
+msgid "Clicking 'Ok' below will try to launch an sms composer"
+msgstr "Kliknutie na 'Ok' nižšie vyvolá spustenie SMS editora"
+
+msgid "Close"
+msgstr "Zavrieť"
+
+msgid "Configuration"
+msgstr "Nastavenia"
+
+msgid "The amount of feedback messages shown."
+msgstr "Množstvo zobrazených správ spätnej väzby."
+
+msgid "Copy to clipboard"
+msgstr "Skopírovať do schránky"
+
+msgid "Counted entries and clicks"
+msgstr "Počítanie záznamov a kliknutí"
+
+msgid "Create a new 'Shorty' and share it"
+msgstr "Vytvoriť nové 'Skrátenie' a zdieľať ho"
+
+msgid "Creation"
+msgstr "Vytváranie"
+
+msgid "Delete shorty"
+msgstr "Zmazať skrátenie"
+
+msgid "Drag this to your browser bookmarks."
+msgstr "Presuňte do Vášho prehliadača záložiek."
+
+msgid "Embed the QRCode as an image into some web page using this url"
+msgstr "Vnoriť QR-kód ako obrázok v rámci určitej web stránky pomocou daného url"
+
+msgid "Example"
+msgstr "Príklad"
+
+msgid "Exception"
+msgstr "Výnimka"
+
+msgid "Exception (%s)"
+msgstr "Výnimka (%s)"
+
+msgid "Expiration"
+msgstr "Uplynutie"
+
+msgid "Feedback"
+msgstr "Spätná väzba"
+
+msgid "It can be enabled by a single click in the administration:"
+msgstr "Môže byť zapnuté jedným kliknutím v administrácii:"
+
+msgid "Loading"
+msgstr "Nahrávam"
+
+msgid "Mail client"
+msgstr "Mailový klient"
+
+msgid "Modifications for shorty with id '%s' saved"
+msgstr "Úpravy skrátenia s id '%s' uložené"
+
+msgid "Modify attributes"
+msgstr ""
+
+msgid "Modify shorty"
+msgstr "Zmena skrátenia"
+
+msgid "New Shorty"
+msgstr "Nové skrátenie"
+
+msgid "Notes"
+msgstr "Poznámky"
+
+msgid "Nothing here yet"
+msgstr "Ešte tu nič nie je"
+
+msgid "Number of entries"
+msgstr "Počet záznamov"
+
+msgid "Number of entries: %s"
+msgstr "Počet záznamov: %s"
+
+msgid "QRCode"
+msgstr "QR kód"
+
+msgid "Open source url"
+msgstr "Otvoriť zdrojovú URL"
+
+msgid "Open relay url"
+msgstr "Otvoriť prenesenú URL"
+
+msgid "Open target"
+msgstr "Otvoriť cieľ"
+
+msgid "Open target url"
+msgstr "Otvoriť cieľovú URL"
+
+msgid "Optional configuration of a 'Static Backend'"
+msgstr "Dodatočná konfigurácia statického 'backendu'"
+
+msgid "or simpy print or download it for off-line usage"
+msgstr "alebo si ho vytlačte alebo stiahnite pre offline použitie"
+
+msgid "Paste to embed elsewhere"
+msgstr "Prilepiť pre vnorenie inam"
+
+msgid "Preference retrieved"
+msgstr ""
+
+msgid "Preference saved"
+msgstr ""
+
+msgid "Preference '%s' retrieved"
+msgstr "Priority '%s' obnovené"
+
+msgid "Preference '%s' saved"
+msgstr "Priority '%s' uložené"
+
+msgid "Preferences"
+msgstr ""
+
+msgid "Prepare to send as SMS"
+msgstr "Príprava na odoslanie ako SMS"
+
+msgid "Relay service"
+msgstr "Služba prenosu"
+
+msgid "Relay url"
+msgstr "Prenesená URL"
+
+msgid "Reload"
+msgstr ""
+
+msgid "Reload list"
+msgstr "Zoznam znovu načítaných"
+
+msgid "Save"
+msgstr "Uložiť"
+
+msgid "Send by email"
+msgstr "Poslať emailom"
+
+msgid "Send link by email"
+msgstr "Odoslať odkaz emailom"
+
+msgid "Send by SMS"
+msgstr "Poslať SMS-kou"
+
+msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
+msgstr "Nastav osobné preferencie, za použitia ikony 'ozubeného kolesa' (%%s) vľavo dolu!"
+
+msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
+msgstr ""
+
+msgid "Setting retrieved"
+msgstr ""
+
+msgid "Setting saved"
+msgstr ""
+
+msgid "Setting '%s' retrieved"
+msgstr ""
+
+msgid "Setting '%s' saved"
+msgstr "Nastavenia '%s' uložené"
+
+msgid "Settings"
+msgstr ""
+
+msgid "Share and use"
+msgstr "Zdieľanie a používanie"
+
+msgid "Share shorty"
+msgstr "Zdieľať skrátenie"
+
+msgid "Shortlet"
+msgstr "'Shortlet'"
+
+msgid "Shorty as QRCode"
+msgstr "Skrátenie s QR kódom"
+
+msgid "Shorty with id '%s' deleted"
+msgstr "Skrátenie s id '%s' zmazané"
+
+msgid "Show as QRCode"
+msgstr "Zobraziť ako QR kód"
+
+msgid "Show details"
+msgstr "Zobraziť podrobnosti"
+
+msgid "Show usage"
+msgstr ""
+
+msgid "SMS"
+msgstr "SMS"
+
+msgid "SMS composer"
+msgstr "Tvorba SMS"
+
+msgid "Sort ascending"
+msgstr "Zoradiť vzostupne"
+
+msgid "Sort descending"
+msgstr "Zoradiť zostupne"
+
+msgid "Source url"
+msgstr "Zdrojová URL"
+
+msgid "Specify a static base url…"
+msgstr "Zadajte statickú základnú URL ..."
+
+msgid "Static backend: base url verification"
+msgstr "Statický backend: verifikácia základnej url"
+
+msgid "Status"
+msgstr "Stav"
+
+msgid "Status change for shorty with id '%s' saved"
+msgstr "Zmena stavu pre skrátenie s id '%s' uložené"
+
+msgid "Target"
+msgstr "Cieľ"
+
+msgid "Target url"
+msgstr "Cieľová URL"
+
+msgid "Target url '%s' is valid"
+msgstr "Cieľová adresa URL '%s' je platná"
+
+msgid "That image can be used when writing documents or setting up web sites"
+msgstr "Daný obrázok smie byť použitý aj pri písaní dokumentov, prípadne vytváraní web stránok"
+
+msgid "The backend service used to generate shortened URLs."
+msgstr ""
+
+msgid "The default status as suggested for new Shortys."
+msgstr ""
+
+msgid "The link below can be copied for usage apart"
+msgstr "Odkaz môže byť skopírovaný pre samostatné použitie"
+
+msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
+msgstr "Prídavný zásuvný modul '%%s' sleduje využitie existujúcich 'Shortys'!"
+
+msgid "therefore the content must be copied manually"
+msgstr "a preto musí byť obsah skopírovaný manuálne"
+
+msgid "then paste into message"
+msgstr "vložte do správy"
+
+msgid "This 2d barcode encodes the url pointing to this Shorty"
+msgstr "Tento 2D čiarový kód smeruje na toto skrátenie"
+
+msgid "This is a internal url that the shortened url relays to"
+msgstr "Toto je interná url, na ktorú skrátená url odkazuje"
+
+msgid "This is the shortened url registered at the backend"
+msgstr "Toto je skrátená url registrovaná na 'backende'"
+
+msgid "This is the target url specified when generating this Shorty"
+msgstr "Toto je cieľová url špecifikovaná pri generovaní daného 'Shorty'"
+
+msgid "This is the url referencing the QRCode shown before"
+msgstr "Toto je URL odkazujúca na QR kód dolu"
+
+msgid "Title"
+msgstr "Nadpis"
+
+msgid "Toggle toolbar"
+msgstr "Prepnúť na panel nástrojov"
+
+msgid "Total of clicks"
+msgstr "Celkom kliknutí"
+
+msgid "Typically this only works on devices like smart phones"
+msgstr "Toto väčšinou funguje len na zariadeniach ako je napr. smartphone"
+
+msgid "Unexpected type of exception caught: %s"
+msgstr ""
+
+msgid "Unfortunately the implementation of this scheme is limited"
+msgstr "Ľutujeme, implementácia danej schémy je limitovaná"
+
+msgid "Unknown object of type caught: %s"
+msgstr ""
+
+msgid "Url shortened to: %s"
+msgstr "Url skrátená na: %s"
+
+msgid "Use it in web pages by referencing or embedding"
+msgstr "Použite ho na web stránkach odkazovaním alebo vložením"
+
+msgid "Use the '%s' button above or the fine 'Shortlet'"
+msgstr "Použi tlačidlo '%s' hore alebo vhodný 'Shortlet'"
+
+msgid "Verify by clicking…"
+msgstr "Overte kliknutím na ..."
+
+msgid "Verification failed"
+msgstr "Overenie zlyhalo"
+
+msgid ""
+"%s\n"
+"Message(code): %s (%s)\n"
+"File(line): %s (%s)\n"
+"Info: %%s"
+msgstr "%s\nSpráva(kód): %s (%s)\nSúbor(riadok): %s (%s)\nInformácia: %%s"
+
+msgid "API access key"
+msgstr "API prístupový kľúč"
+
+msgid "Account"
+msgstr ""
+
+msgid "API key"
+msgstr "API kľúč"
+
+msgid "bit.ly user"
+msgstr "bit.ly používateľ"
+
+msgid "bit.ly user name"
+msgstr "bit.ly používateľské meno"
+
+msgid "bit.ly key"
+msgstr "bit.ly kľúč"
+
+msgid "bit.ly users key"
+msgstr "bit.ly používateľský kľúč"
+
+msgid "Google API key"
+msgstr "Google API kľúč"
+
+msgid "Google API account"
+msgstr "Google API účet"
+
+msgid "tiny.cc user"
+msgstr "tiny.cc používateľ"
+
+msgid "tiny.cc user name"
+msgstr "tiny.cc používateľské meno"
+
+msgid "tiny.cc key"
+msgstr "tiny.cc kľúč"
+
+msgid "tiny.cc user key"
+msgstr "tiny.cc používateľský kľúč"
+
+msgid ""
+"Force verification of encryption certificates during communication with the "
+"backend"
+msgstr "Vynútiť verifikáciu šifrovacích certifikátov počas komunikácie s 'backendom'"
+
+msgid ""
+"The external 'bitly.com' service is used to register a short url for each "
+"generated shorty."
+msgstr "Externá služba 'bitly.com' je použitá pre registráciu skrátených url pre každžý generovaný 'shorty'."
+
+msgid "This means you have to register an '%s' at their site first."
+msgstr "To znamená, že musíš zaregistrovať '%s' najprv u nich. "
+
+msgid ""
+"The external 'turl' service is used to register a short url for each "
+"generated shorty."
+msgstr "Externá služba 'turl' je použitá pre registráciu skrátených url pre každžý generovaný 'shorty'."
+
+msgid ""
+"The external 'ti.ny' service is used to register a short url for each "
+"generated shorty."
+msgstr "Externá služba 'ti.ny' je použitá pre registráciu skrátených url pre každžý generovaný 'shorty'."
+
+msgid ""
+"The external 'cli.gs' service is used to register a short url for each "
+"generated shorty."
+msgstr "Externá služba 'cli.gs' je použitá pre registráciu skrátených url pre každžý generovaný 'shorty'."
+
+msgid ""
+"The external 'is.gd' service is used to register a short url for each "
+"generated shorty."
+msgstr "Externá služba 'is.gd' je použitá pre registráciu skrátených url pre každžý generovaný 'shorty'."
+
+msgid ""
+"The external 'tiny.cc' service is used to register a short url for each "
+"generated shorty."
+msgstr "Externá služba 'tiny.cc' je použitá pre registráciu skrátených url pre každžý generovaný 'shorty'."
+
+msgid ""
+"No backend is used, direct links pointing to your ownCloud are generated."
+msgstr "Žiadny 'backend' sa nevyužívá, priame odkazy smerujúce na tvoj ownCloud sú generované."
+
+msgid ""
+"The service requires you to authenticate yourself by providing a valid "
+"bit.ly user name and an '%s'."
+msgstr "Služba požaduje tvoju autentifikáciu poskytnutím validného 'bit.ly' používateľského mena a '%s'."
+
+msgid ""
+"Such links are most likely longer than those generated when using a backend."
+msgstr "Dané odkazy sú najskôr dlhšie než tie, ktoré boli generované za použitia 'backendu'."
+
+msgid ""
+"However this option does not rely on any third party service and keeps your "
+"shortys under your control."
+msgstr "Avšak táto možnosť sa nespolieha na žiadnu službu tretej strany a uchováva tvoje 'shortys' pod tvojou kontrolou."
+
+msgid ""
+"Since this setup depends on server based configuration rules the base url "
+"can only be specified in the 'Admin' section of the configuration."
+msgstr "Nakoľko táto konfigurácia závisí na serverom založených konfiguračných pravidlách, základná url môžeby byť špecifikovaná iba v konfiguračnej sekcii 'Administrátor'."
+
+msgid ""
+"Static, rule-based backend, generates shorty links relative to a given base "
+"url."
+msgstr "Statický, na pravidlách založený 'backend' generuje 'shorty' odkazy relatívne voči danej základnej url."
+
+msgid ""
+"You have to take care that any request to the url configured here is "
+"internally mapped to the 'shorty' module."
+msgstr "Musíš dávať pozor, nakoľko prípadné požiadavky voči tu nakonfigurovanej url sú interne namapované k 'shorty' modulu."
+
+msgid "The target of that mapping must be some URL like:"
+msgstr "Cieľ daného namapovania musí byť URL typu:"
+
+msgid ""
+"Have a try with the example link provided, click it, it should result in a "
+"confirmation that your setup is working."
+msgstr "Vyskúšaj to za použitia vzorového odkazu, klikni naň, výsledkom by malo byť potvrdenie o funkčnosti konfigurácie."
+
+msgid ""
+"Leave empty if you can't provide a short base url that is mapped the "
+"described way."
+msgstr "Nechaj prázdne, pokiaľ nemôžeš poskytnúť skrátenú základnú url, ktorá je namapovaná znázornenou cestou."
+
+msgid ""
+"Only use this backend, if you can provide a short base url that is mapped "
+"the described way. Your shorties won't work otherwise."
+msgstr "Použi daný 'backend', pokiaľ vieš poskytnúť krátku základnú url, ktorá je namapovaná znázornenou cestou. Inak tvoje 'shorties' nebudú fungovať."
+
+msgid ""
+"Googles external 'goo.gl service' is used to register a short url for each "
+"generated shorty."
+msgstr "Externá služba firmy Google 'goo.gl' je použitá pre registráciu skrátených url pre každžý generovaný 'shorty'."
+
+msgid "You must provide a valid '%%s' to use this service."
+msgstr "Musíš poskytnúť validné '%%s' pre použitie danej služby."
+
+msgid "This means you require a 'Google API console account'."
+msgstr "To znamená, že potrebuješ 'účet konzoly Google API'."
+
+msgid "Register a new '%%s' at their pages."
+msgstr "Registruj si nový '%%s' na ich stránkach."
+
+msgid "Enabling the SMS option will offer sending a Shorty via SMS."
+msgstr "Povolenie nastavenia pre SMS bude ponúkať zaslanie 'Shorty' cez SMS."
+
+msgid ""
+"Unfortunately support for 'SMS url handling' is usually only found on mobile"
+" devices like smart phones."
+msgstr "Ľutujeme, podpra pre 'spracúvavanie SMS url' sa zvyčajne nachádza iba na mobilných zariadeniach ako sú smartfóny."
+
+msgid ""
+"In addition, those implementations are minimalistic, buggy and differ from "
+"system to system."
+msgstr "Dané implementácie sú naviac minimalistické, chybové a odlišné od systému k systému."
+
+msgid "In short: this might not work for you, therefore you can disable it…"
+msgstr "V skratke: najskôr to pre teba nebude fungovať, a preto to môžeš zablokovať..."
+
+msgid "Great, your setup appears to be working fine!"
+msgstr "Skvelé, tvoja konfigurácia pracuje ako má!"
+
+msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Requests to the configured base url are mapped to this ownClouds relay "
+"service."
+msgstr "Požiadavky na nastavenú základnú url sú namapované voči danej ownCloud 'relay' službe."
+
+msgid ""
+"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
+"Service abgebildet."
+msgstr ""
+
+msgid ""
+"Usage of that static backend is fine and safe as long as this setup is not "
+"altered."
+msgstr "Použitie tohto statického 'backendu' je v poriadku a bezpečné, pokým daná konfigurácia nebude pozmenená."
+
+msgid ""
+"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
+"Konfiguration nicht geändert wird."
+msgstr ""
+
+msgid ""
+"This backend will now be offered as an additional backend alternative to all"
+" local users inside their personal preferences."
+msgstr "Tento 'backend' bude ponúkaný ako dodatočná 'backendová' alternatíva pre všetkých lokálnych používateľov v ich osobných nastaveniach."
+
+msgid ""
+"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
+"zusätzliche Alternative zu den verfügbaren Backends angeboten."
+msgstr ""
+
+msgid "Sorry, but your setup appears not to be working correctly yet!"
+msgstr "Prepáč, tvoja konfigurácia najskôr ešte nepracuje správne!"
+
+msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Please check your setup and make sure that the configured base url is indeed"
+" correct."
+msgstr "Prosím skontroluj svoju konfiguráciu a uisti sa, že základná url je nastavená správne."
+
+msgid ""
+"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
+"konfigurierte Basis-Url wirklich korrekt ist."
+msgstr ""
+
+msgid ""
+"Make sure that all requests to it are somehow mapped to Shortys relay "
+"service."
+msgstr "Uisti sa, že všetky požiadavky k tomu sú nejako namapované k 'Shortys' 'relay' službe."
+
+msgid ""
+"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
+" Relais-Service."
+msgstr ""

@@ -1,0 +1,22 @@
+<?php $TRANSLATIONS = array(
+"all" => "tots",
+"never" => "mai",
+"delete" => "elimina",
+"share" => "comparteix",
+"show" => "mostra",
+"Backend" => "Dorsal",
+"Clicks" => "Clics",
+"Close" => "Tanca",
+"Configuration" => "Configuració",
+"Expiration" => "Expiració",
+"Loading" => "Carregant",
+"Notes" => "Anotacions",
+"Nothing here yet" => "Aquí encara no hi ha res",
+"Number of entries" => "Nombre d'entrades",
+"Reload list" => "Carrega la llista de nou",
+"Save" => "Desa",
+"Show details" => "Mostra detalls",
+"Status" => "Estat",
+"Title" => "Títol",
+"Toggle toolbar" => "Mostra / amaga la barra d'eines"
+);

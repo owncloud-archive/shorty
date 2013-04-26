@@ -1,0 +1,720 @@
+# @package shorty an ownCloud url shortener plugin
+# @category internet
+# @author Christian Reiner
+# @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+# @license GNU Affero General Public license (AGPL)
+# @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
+# 
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+# License as published by the Free Software Foundation; either
+# version 3 of the license, or any later version.
+# 
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+# 
+# You should have received a copy of the GNU Affero General Public
+# License along with this library.
+# If not, see <http://www.gnu.org/licenses/>.
+# 
+# @file l10n/de.php
+# @brief Internationalization / localization file for language DE (german)
+# @author Christian Reiner
+# 
+# Translators:
+# ujuc Gang <potopro@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"POT-Creation-Date: 2013-04-26 15:00+0200\n"
+"PO-Revision-Date: 2013-04-26 16:05+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/owncloud/language/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "all"
+msgstr "모두"
+
+msgid "blocked"
+msgstr ""
+
+msgid "deleted"
+msgstr ""
+
+msgid "disabled"
+msgstr "불가능한"
+
+msgid "enabled"
+msgstr "가능한"
+
+msgid "never"
+msgstr "없음"
+
+msgid "private"
+msgstr ""
+
+msgid "public"
+msgstr ""
+
+msgid "shared"
+msgstr ""
+
+msgid "delete"
+msgstr "삭제"
+
+msgid "edit"
+msgstr "수정"
+
+msgid "open"
+msgstr "열기"
+
+msgid "share"
+msgstr "공유"
+
+msgid "show"
+msgstr "보이기"
+
+msgid "none"
+msgstr ""
+
+msgid "error"
+msgstr ""
+
+msgid "info"
+msgstr ""
+
+msgid "debug"
+msgstr ""
+
+msgid "Ctrl-C"
+msgstr "Ctrl-C"
+
+msgid "Ctrl-V"
+msgstr ""
+
+msgid "bitly.com service"
+msgstr ""
+
+msgid "cli.gs service"
+msgstr ""
+
+msgid "goo.gl service"
+msgstr ""
+
+msgid "is.gd service"
+msgstr ""
+
+msgid "ti.ny service"
+msgstr ""
+
+msgid "tiny.cc service"
+msgstr ""
+
+msgid "static backend"
+msgstr ""
+
+msgid "for any access"
+msgstr "누구나 접근가능"
+
+msgid "for own usage"
+msgstr "개인만 사용"
+
+msgid "with ownCloud users"
+msgstr "ownCloud 유저들과"
+
+msgid "available for everyone"
+msgstr "누구나 사용가능"
+
+msgid "Access"
+msgstr "접근"
+
+msgid "Add a new shorty"
+msgstr "새로운 짧은 주소 추가"
+
+msgid "Add as new"
+msgstr "새로이 추가"
+
+msgid "Add page as 'Shorty' to ownCloud"
+msgstr "ownCloud에서 'Shorty'를 추가 하십시오"
+
+msgid "Administration"
+msgstr "관리"
+
+msgid "Administrative, system wide settings of this app:"
+msgstr ""
+
+msgid "after the SMS has been launched"
+msgstr ""
+
+msgid "Alternatively the image can be downloaded for printout or storage"
+msgstr ""
+
+msgid "alternatively the link can be copied for usage apart"
+msgstr ""
+
+msgid "Alternatively the link can be copied manually"
+msgstr ""
+
+msgid "Alternatively the link can be copied into a message manually"
+msgstr ""
+
+msgid "Anything that appears helpful …"
+msgstr ""
+
+msgid "Backend"
+msgstr "백엔드"
+
+msgid "Base url"
+msgstr ""
+
+msgid "Choose a service…"
+msgstr ""
+
+msgid "Click for embedding details"
+msgstr ""
+
+msgid "Click it, for whatever site you want to create a Shorty."
+msgstr "여기를 클릭하십시오. 그러면 당신은 어떤 사이트든 원하는 곳에서 짧은 주소를 생성할 수 있습니다."
+
+msgid "Click registered"
+msgstr "클릭 기록"
+
+msgid "Clicks"
+msgstr "클릭"
+
+msgid "Clicking 'Ok' below will try to launch an email composer"
+msgstr ""
+
+msgid "Clicking 'Ok' below will try to launch an sms composer"
+msgstr ""
+
+msgid "Close"
+msgstr "닫기"
+
+msgid "Configuration"
+msgstr "설정"
+
+msgid "The amount of feedback messages shown."
+msgstr ""
+
+msgid "Copy to clipboard"
+msgstr "클립보드로 복사"
+
+msgid "Counted entries and clicks"
+msgstr "독자와 클릭 수 계산"
+
+msgid "Create a new 'Shorty' and share it"
+msgstr ""
+
+msgid "Creation"
+msgstr "생성"
+
+msgid "Delete shorty"
+msgstr "짧은 주소 삭제"
+
+msgid "Drag this to your browser bookmarks."
+msgstr "당신의 브라우져 북마크로 이것을 드래그 하십시오."
+
+msgid "Embed the QRCode as an image into some web page using this url"
+msgstr ""
+
+msgid "Example"
+msgstr "예제"
+
+msgid "Exception"
+msgstr "제외"
+
+msgid "Exception (%s)"
+msgstr "제외 (%s)"
+
+msgid "Expiration"
+msgstr "만료"
+
+msgid "Feedback"
+msgstr "피드백"
+
+msgid "It can be enabled by a single click in the administration:"
+msgstr ""
+
+msgid "Loading"
+msgstr "로딩~"
+
+msgid "Mail client"
+msgstr "메일 클라이언트"
+
+msgid "Modifications for shorty with id '%s' saved"
+msgstr "짧은 주소 id '%s'를 변경후 저장"
+
+msgid "Modify attributes"
+msgstr ""
+
+msgid "Modify shorty"
+msgstr "수정 짧은 주소"
+
+msgid "New Shorty"
+msgstr ""
+
+msgid "Notes"
+msgstr "메모"
+
+msgid "Nothing here yet"
+msgstr ""
+
+msgid "Number of entries"
+msgstr "읽은사람 수"
+
+msgid "Number of entries: %s"
+msgstr "독자 수 : %s"
+
+msgid "QRCode"
+msgstr ""
+
+msgid "Open source url"
+msgstr ""
+
+msgid "Open relay url"
+msgstr ""
+
+msgid "Open target"
+msgstr "타겟 열기"
+
+msgid "Open target url"
+msgstr "타겟 URL 열기"
+
+msgid "Optional configuration of a 'Static Backend'"
+msgstr ""
+
+msgid "or simpy print or download it for off-line usage"
+msgstr ""
+
+msgid "Paste to embed elsewhere"
+msgstr ""
+
+msgid "Preference retrieved"
+msgstr ""
+
+msgid "Preference saved"
+msgstr ""
+
+msgid "Preference '%s' retrieved"
+msgstr "선택한 '%s' 회수"
+
+msgid "Preference '%s' saved"
+msgstr "선택한 '%s' 저장"
+
+msgid "Preferences"
+msgstr ""
+
+msgid "Prepare to send as SMS"
+msgstr ""
+
+msgid "Relay service"
+msgstr ""
+
+msgid "Relay url"
+msgstr ""
+
+msgid "Reload"
+msgstr ""
+
+msgid "Reload list"
+msgstr "리스트 다시 부르기"
+
+msgid "Save"
+msgstr "저장"
+
+msgid "Send by email"
+msgstr "이메일 전송"
+
+msgid "Send link by email"
+msgstr "이메일로 링크 전송"
+
+msgid "Send by SMS"
+msgstr "SMS 전송"
+
+msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
+msgstr ""
+
+msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
+msgstr ""
+
+msgid "Setting retrieved"
+msgstr ""
+
+msgid "Setting saved"
+msgstr ""
+
+msgid "Setting '%s' retrieved"
+msgstr ""
+
+msgid "Setting '%s' saved"
+msgstr "설정한 '%s' 저장"
+
+msgid "Settings"
+msgstr ""
+
+msgid "Share and use"
+msgstr "공유하고 사용하기"
+
+msgid "Share shorty"
+msgstr "짧은 주소 공유"
+
+msgid "Shortlet"
+msgstr ""
+
+msgid "Shorty as QRCode"
+msgstr ""
+
+msgid "Shorty with id '%s' deleted"
+msgstr "짧은 주소 id '%s'를 삭제"
+
+msgid "Show as QRCode"
+msgstr "QRCode 보여주기"
+
+msgid "Show details"
+msgstr "세부사항 보여주기"
+
+msgid "Show usage"
+msgstr ""
+
+msgid "SMS"
+msgstr "SMS"
+
+msgid "SMS composer"
+msgstr "SMS 작성기"
+
+msgid "Sort ascending"
+msgstr "오름 차순 정렬"
+
+msgid "Sort descending"
+msgstr "내림 차순 정렬"
+
+msgid "Source url"
+msgstr "제공 url"
+
+msgid "Specify a static base url…"
+msgstr ""
+
+msgid "Static backend: base url verification"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Status change for shorty with id '%s' saved"
+msgstr ""
+
+msgid "Target"
+msgstr "타겟"
+
+msgid "Target url"
+msgstr "타겟 URL"
+
+msgid "Target url '%s' is valid"
+msgstr "타겟 URL '%s'가 유효합니다."
+
+msgid "That image can be used when writing documents or setting up web sites"
+msgstr ""
+
+msgid "The backend service used to generate shortened URLs."
+msgstr ""
+
+msgid "The default status as suggested for new Shortys."
+msgstr ""
+
+msgid "The link below can be copied for usage apart"
+msgstr ""
+
+msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
+msgstr ""
+
+msgid "therefore the content must be copied manually"
+msgstr ""
+
+msgid "then paste into message"
+msgstr ""
+
+msgid "This 2d barcode encodes the url pointing to this Shorty"
+msgstr ""
+
+msgid "This is a internal url that the shortened url relays to"
+msgstr ""
+
+msgid "This is the shortened url registered at the backend"
+msgstr ""
+
+msgid "This is the target url specified when generating this Shorty"
+msgstr ""
+
+msgid "This is the url referencing the QRCode shown before"
+msgstr ""
+
+msgid "Title"
+msgstr "제목"
+
+msgid "Toggle toolbar"
+msgstr "토글 툴바"
+
+msgid "Total of clicks"
+msgstr "클릭수 합계"
+
+msgid "Typically this only works on devices like smart phones"
+msgstr ""
+
+msgid "Unexpected type of exception caught: %s"
+msgstr ""
+
+msgid "Unfortunately the implementation of this scheme is limited"
+msgstr ""
+
+msgid "Unknown object of type caught: %s"
+msgstr ""
+
+msgid "Url shortened to: %s"
+msgstr ""
+
+msgid "Use it in web pages by referencing or embedding"
+msgstr ""
+
+msgid "Use the '%s' button above or the fine 'Shortlet'"
+msgstr ""
+
+msgid "Verify by clicking…"
+msgstr ""
+
+msgid "Verification failed"
+msgstr ""
+
+msgid ""
+"%s\n"
+"Message(code): %s (%s)\n"
+"File(line): %s (%s)\n"
+"Info: %%s"
+msgstr "%s\n메시지(code): %s (%s)\n파일(line): %s (%s)\n정보: %%s"
+
+msgid "API access key"
+msgstr "API 접근 키"
+
+msgid "Account"
+msgstr ""
+
+msgid "API key"
+msgstr " API 키"
+
+msgid "bit.ly user"
+msgstr "bit.ly 사용자"
+
+msgid "bit.ly user name"
+msgstr "bit.ly 사용자 이름"
+
+msgid "bit.ly key"
+msgstr "bit.ly 키"
+
+msgid "bit.ly users key"
+msgstr "bit.ly 사용자 키"
+
+msgid "Google API key"
+msgstr "구글 API 키"
+
+msgid "Google API account"
+msgstr "구글 API 계정"
+
+msgid "tiny.cc user"
+msgstr "tiny.cc 사용자"
+
+msgid "tiny.cc user name"
+msgstr "tiny.cc 사용자 이름"
+
+msgid "tiny.cc key"
+msgstr "tiny.cc 키"
+
+msgid "tiny.cc user key"
+msgstr "tiny.cc  사용자 키"
+
+msgid ""
+"Force verification of encryption certificates during communication with the "
+"backend"
+msgstr ""
+
+msgid ""
+"The external 'bitly.com' service is used to register a short url for each "
+"generated shorty."
+msgstr ""
+
+msgid "This means you have to register an '%s' at their site first."
+msgstr ""
+
+msgid ""
+"The external 'turl' service is used to register a short url for each "
+"generated shorty."
+msgstr ""
+
+msgid ""
+"The external 'ti.ny' service is used to register a short url for each "
+"generated shorty."
+msgstr ""
+
+msgid ""
+"The external 'cli.gs' service is used to register a short url for each "
+"generated shorty."
+msgstr ""
+
+msgid ""
+"The external 'is.gd' service is used to register a short url for each "
+"generated shorty."
+msgstr ""
+
+msgid ""
+"The external 'tiny.cc' service is used to register a short url for each "
+"generated shorty."
+msgstr ""
+
+msgid ""
+"No backend is used, direct links pointing to your ownCloud are generated."
+msgstr ""
+
+msgid ""
+"The service requires you to authenticate yourself by providing a valid "
+"bit.ly user name and an '%s'."
+msgstr ""
+
+msgid ""
+"Such links are most likely longer than those generated when using a backend."
+msgstr ""
+
+msgid ""
+"However this option does not rely on any third party service and keeps your "
+"shortys under your control."
+msgstr ""
+
+msgid ""
+"Since this setup depends on server based configuration rules the base url "
+"can only be specified in the 'Admin' section of the configuration."
+msgstr ""
+
+msgid ""
+"Static, rule-based backend, generates shorty links relative to a given base "
+"url."
+msgstr ""
+
+msgid ""
+"You have to take care that any request to the url configured here is "
+"internally mapped to the 'shorty' module."
+msgstr ""
+
+msgid "The target of that mapping must be some URL like:"
+msgstr ""
+
+msgid ""
+"Have a try with the example link provided, click it, it should result in a "
+"confirmation that your setup is working."
+msgstr ""
+
+msgid ""
+"Leave empty if you can't provide a short base url that is mapped the "
+"described way."
+msgstr ""
+
+msgid ""
+"Only use this backend, if you can provide a short base url that is mapped "
+"the described way. Your shorties won't work otherwise."
+msgstr ""
+
+msgid ""
+"Googles external 'goo.gl service' is used to register a short url for each "
+"generated shorty."
+msgstr ""
+
+msgid "You must provide a valid '%%s' to use this service."
+msgstr ""
+
+msgid "This means you require a 'Google API console account'."
+msgstr ""
+
+msgid "Register a new '%%s' at their pages."
+msgstr ""
+
+msgid "Enabling the SMS option will offer sending a Shorty via SMS."
+msgstr ""
+
+msgid ""
+"Unfortunately support for 'SMS url handling' is usually only found on mobile"
+" devices like smart phones."
+msgstr ""
+
+msgid ""
+"In addition, those implementations are minimalistic, buggy and differ from "
+"system to system."
+msgstr ""
+
+msgid "In short: this might not work for you, therefore you can disable it…"
+msgstr ""
+
+msgid "Great, your setup appears to be working fine!"
+msgstr ""
+
+msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Requests to the configured base url are mapped to this ownClouds relay "
+"service."
+msgstr ""
+
+msgid ""
+"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
+"Service abgebildet."
+msgstr ""
+
+msgid ""
+"Usage of that static backend is fine and safe as long as this setup is not "
+"altered."
+msgstr ""
+
+msgid ""
+"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
+"Konfiguration nicht geändert wird."
+msgstr ""
+
+msgid ""
+"This backend will now be offered as an additional backend alternative to all"
+" local users inside their personal preferences."
+msgstr ""
+
+msgid ""
+"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
+"zusätzliche Alternative zu den verfügbaren Backends angeboten."
+msgstr ""
+
+msgid "Sorry, but your setup appears not to be working correctly yet!"
+msgstr ""
+
+msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Please check your setup and make sure that the configured base url is indeed"
+" correct."
+msgstr ""
+
+msgid ""
+"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
+"konfigurierte Basis-Url wirklich korrekt ist."
+msgstr ""
+
+msgid ""
+"Make sure that all requests to it are somehow mapped to Shortys relay "
+"service."
+msgstr ""
+
+msgid ""
+"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
+" Relais-Service."
+msgstr ""

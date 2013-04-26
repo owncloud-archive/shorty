@@ -1,0 +1,723 @@
+# @package shorty an ownCloud url shortener plugin
+# @category internet
+# @author Christian Reiner
+# @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+# @license GNU Affero General Public license (AGPL)
+# @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
+# 
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
+# License as published by the Free Software Foundation; either
+# version 3 of the license, or any later version.
+# 
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU AFFERO GENERAL PUBLIC LICENSE for more details.
+# 
+# You should have received a copy of the GNU Affero General Public
+# License along with this library.
+# If not, see <http://www.gnu.org/licenses/>.
+# 
+# @file l10n/de.php
+# @brief Internationalization / localization file for language DE (german)
+# @author Christian Reiner
+# 
+# Translators:
+# Efstathios Iosifidis <iefstathios@gmail.com>, 2013
+# thanaxix <thanasis@giannoulis.net>, 2013
+# Wasilis <m.wasilis@yahoo.de>, 2013
+# KAT.RAT12 <spanish.katerina@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"POT-Creation-Date: 2013-04-26 15:00+0200\n"
+"PO-Revision-Date: 2013-04-26 16:05+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"Language-Team: Greek (http://www.transifex.com/projects/p/owncloud/language/el/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "all"
+msgstr "όλα"
+
+msgid "blocked"
+msgstr ""
+
+msgid "deleted"
+msgstr ""
+
+msgid "disabled"
+msgstr "απενεργοποιημένο"
+
+msgid "enabled"
+msgstr "ενεργοποιημένο"
+
+msgid "never"
+msgstr "ποτέ"
+
+msgid "private"
+msgstr ""
+
+msgid "public"
+msgstr ""
+
+msgid "shared"
+msgstr ""
+
+msgid "delete"
+msgstr "διαγραφή"
+
+msgid "edit"
+msgstr "επεξεργασία"
+
+msgid "open"
+msgstr "άνοιγμα"
+
+msgid "share"
+msgstr "διαμοιρασμός"
+
+msgid "show"
+msgstr "εμφάνιση"
+
+msgid "none"
+msgstr ""
+
+msgid "error"
+msgstr ""
+
+msgid "info"
+msgstr ""
+
+msgid "debug"
+msgstr ""
+
+msgid "Ctrl-C"
+msgstr "Ctrl-C"
+
+msgid "Ctrl-V"
+msgstr "Ctrl-V"
+
+msgid "bitly.com service"
+msgstr ""
+
+msgid "cli.gs service"
+msgstr ""
+
+msgid "goo.gl service"
+msgstr ""
+
+msgid "is.gd service"
+msgstr ""
+
+msgid "ti.ny service"
+msgstr ""
+
+msgid "tiny.cc service"
+msgstr ""
+
+msgid "static backend"
+msgstr ""
+
+msgid "for any access"
+msgstr "για καθε προσβαση"
+
+msgid "for own usage"
+msgstr "για προσωπικη χρηση"
+
+msgid "with ownCloud users"
+msgstr "με ownCloud χρηστες"
+
+msgid "available for everyone"
+msgstr "διαθεσιμο για τον καθενα"
+
+msgid "Access"
+msgstr "Πρόσβαση"
+
+msgid "Add a new shorty"
+msgstr "Προσθήκη μιας νέας συντόμευσης "
+
+msgid "Add as new"
+msgstr "Προσθεστε ως νέο "
+
+msgid "Add page as 'Shorty' to ownCloud"
+msgstr "Προσθηκη σελιδας ως 'Shorty' στο ownCloud"
+
+msgid "Administration"
+msgstr "Διαχείρηση "
+
+msgid "Administrative, system wide settings of this app:"
+msgstr "Ευρείες ρυθμίεσεις διαχείρησης του συστήματος αυτής της app. "
+
+msgid "after the SMS has been launched"
+msgstr "αφού εστάλη το μήνυμα SMS."
+
+msgid "Alternatively the image can be downloaded for printout or storage"
+msgstr "Εναλλακτικά, η εικόνα μπορεί να κατεβάσuει για εκτύπωση ή για αποθήκευση "
+
+msgid "alternatively the link can be copied for usage apart"
+msgstr ""
+
+msgid "Alternatively the link can be copied manually"
+msgstr ""
+
+msgid "Alternatively the link can be copied into a message manually"
+msgstr "Εναλλακτικά, η σύνδεση μπορεί να αντιγραφεί σε ένα μήνυμα χειρωνακτικά"
+
+msgid "Anything that appears helpful …"
+msgstr "Οτιδήποτε φαίνεται χρήσιμο "
+
+msgid "Backend"
+msgstr "Σύστημα υποστήριξης"
+
+msgid "Base url"
+msgstr "Επαλήθευση με κλικ."
+
+msgid "Choose a service…"
+msgstr ""
+
+msgid "Click for embedding details"
+msgstr "Κάντε κλικ για λεπτομέρειες ενσωμάτωσης"
+
+msgid "Click it, for whatever site you want to create a Shorty."
+msgstr "Κάντε κλικ σε αυτό, για όποια ιστοσελίδα που θέλετε να δημιουργήθει ένα Shorty."
+
+msgid "Click registered"
+msgstr "Το κλικ καταχωρήθηκε"
+
+msgid "Clicks"
+msgstr "Κλικς"
+
+msgid "Clicking 'Ok' below will try to launch an email composer"
+msgstr "Πατώντας 'Ok' παρακάτω θα εμφανιστεί ένα παράθυρο σύνθεσης μηνύματος αλληλογραφίας"
+
+msgid "Clicking 'Ok' below will try to launch an sms composer"
+msgstr "Κάνοντας κλικ στο ''Οκ'' πιο κάτω θα προσπαθήσει να ανοίξει την σύνθεση μηνυμάτων SMS."
+
+msgid "Close"
+msgstr "Κλείσιμο"
+
+msgid "Configuration"
+msgstr "Ρυθμίσεις"
+
+msgid "The amount of feedback messages shown."
+msgstr "Ο αριθμός των μηνυμάτων σχολιασμού."
+
+msgid "Copy to clipboard"
+msgstr "Αντιγραφή στο πρόχειρο"
+
+msgid "Counted entries and clicks"
+msgstr "Οι εισαγωγές και τα κλικς καταμετρήθηκαν"
+
+msgid "Create a new 'Shorty' and share it"
+msgstr "Δημιουργήστε ένα νέο «Shorty» και μοιραστείτε το"
+
+msgid "Creation"
+msgstr "Δημιορυργία "
+
+msgid "Delete shorty"
+msgstr "Διαγραφή"
+
+msgid "Drag this to your browser bookmarks."
+msgstr "Σύρετε αυτό στους σελιδοδείκτες του προγράμματος περιήγησης σας."
+
+msgid "Embed the QRCode as an image into some web page using this url"
+msgstr "Εγκαταστήστε τον ΚώδικαQR σαν εικόνα σε κάποια ιστοσελίδα χρησιμοποιώντας url"
+
+msgid "Example"
+msgstr "Παράδειγμα"
+
+msgid "Exception"
+msgstr "Εξαίρεση"
+
+msgid "Exception (%s)"
+msgstr "Εξαίρεση (%s)"
+
+msgid "Expiration"
+msgstr "Λήξη"
+
+msgid "Feedback"
+msgstr "Σχόλια "
+
+msgid "It can be enabled by a single click in the administration:"
+msgstr "Επιλογή Apps. "
+
+msgid "Loading"
+msgstr "Φόρτωση"
+
+msgid "Mail client"
+msgstr "Πελάτης αλληλογραφίας"
+
+msgid "Modifications for shorty with id '%s' saved"
+msgstr "Modificações salvadas com id %s\npronto"
+
+msgid "Modify attributes"
+msgstr ""
+
+msgid "Modify shorty"
+msgstr "Τροποποίηση της συντόμευσης "
+
+msgid "New Shorty"
+msgstr "Νεα συντομευση"
+
+msgid "Notes"
+msgstr "Σημειώσεις"
+
+msgid "Nothing here yet"
+msgstr " Δεν υπαρχει τίποτα εδώ μέχρι στιγμής"
+
+msgid "Number of entries"
+msgstr "Αριθμός εγγραφών"
+
+msgid "Number of entries: %s"
+msgstr "Αριθμός εισαγωγών: %s"
+
+msgid "QRCode"
+msgstr "QRCode"
+
+msgid "Open source url"
+msgstr "Ανοιγμα αρχικόυ url "
+
+msgid "Open relay url"
+msgstr "Ανοιγμα url συντομευσης"
+
+msgid "Open target"
+msgstr "Ανοιγμα ορισμου"
+
+msgid "Open target url"
+msgstr "Ανοιγμα ορισμου"
+
+msgid "Optional configuration of a 'Static Backend'"
+msgstr "Διαμόρφωση κατ'επιλογήν ενός στατικού backend. "
+
+msgid "or simpy print or download it for off-line usage"
+msgstr "ή απλά τυπώστε το ή αποθηκεύστε το για χρήση εκτός σύνδεσης"
+
+msgid "Paste to embed elsewhere"
+msgstr "Επικόλληση για εγκατάσταση σε άλλη θέση. "
+
+msgid "Preference retrieved"
+msgstr ""
+
+msgid "Preference saved"
+msgstr ""
+
+msgid "Preference '%s' retrieved"
+msgstr "Η ρύθμιση '%s' ανακαλέστηκε"
+
+msgid "Preference '%s' saved"
+msgstr "Η ρύθμιση '%s' αποθηκεύτηκε"
+
+msgid "Preferences"
+msgstr ""
+
+msgid "Prepare to send as SMS"
+msgstr "Ετοιμαστείτε να στείλετε SMS"
+
+msgid "Relay service"
+msgstr "Υπηρεσια συντομευσης"
+
+msgid "Relay url"
+msgstr "Αν μόλις αρχίσατε να χρησιμοποιείτε συντόμευση "
+
+msgid "Reload"
+msgstr ""
+
+msgid "Reload list"
+msgstr "Επαναφόρτωση λίστας"
+
+msgid "Save"
+msgstr "Αποθήκευση"
+
+msgid "Send by email"
+msgstr "Αποστολή με αλληλογραφία"
+
+msgid "Send link by email"
+msgstr "Αποστολή συνδέσμου με αλληλογραφία"
+
+msgid "Send by SMS"
+msgstr "Αποστολή με SMS"
+
+msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
+msgstr "Βάλτε προσωπικές προτιμήσεις με κυκλική φορά (%%s) κάτω αριστερά."
+
+msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
+msgstr ""
+
+msgid "Setting retrieved"
+msgstr ""
+
+msgid "Setting saved"
+msgstr ""
+
+msgid "Setting '%s' retrieved"
+msgstr ""
+
+msgid "Setting '%s' saved"
+msgstr "Η ρύθμιση '%s' αποθηκεύτηκε"
+
+msgid "Settings"
+msgstr ""
+
+msgid "Share and use"
+msgstr "Διαμοιρασμος και χρησιμοποιηση"
+
+msgid "Share shorty"
+msgstr "Διαμοιράστηκε από"
+
+msgid "Shortlet"
+msgstr "Shortlet"
+
+msgid "Shorty as QRCode"
+msgstr "Pronto o CodigoQR"
+
+msgid "Shorty with id '%s' deleted"
+msgstr "Απροσδόκητη απόρριψη αντικειμένου που έχει παγιδευτεί %s"
+
+msgid "Show as QRCode"
+msgstr "Εμφανιση ως QRCode"
+
+msgid "Show details"
+msgstr "Προβολή λεπτομερειών"
+
+msgid "Show usage"
+msgstr ""
+
+msgid "SMS"
+msgstr "SMS"
+
+msgid "SMS composer"
+msgstr "συνθέτης SMS \n "
+
+msgid "Sort ascending"
+msgstr "Αύξουσα ταξινομηση"
+
+msgid "Sort descending"
+msgstr "Φθίνουσα ταξινομηση"
+
+msgid "Source url"
+msgstr "Αρχικό url "
+
+msgid "Specify a static base url…"
+msgstr "Καθορίσετε μια στατική βάση url. "
+
+msgid "Static backend: base url verification"
+msgstr "Στατικο backend: βάση επαλήθευσης url"
+
+msgid "Status"
+msgstr "Κατάσταση"
+
+msgid "Status change for shorty with id '%s' saved"
+msgstr "Cambio de status para poco tempo com id% salvado."
+
+msgid "Target"
+msgstr "Ορισμός "
+
+msgid "Target url"
+msgstr "Ορισμός του url "
+
+msgid "Target url '%s' is valid"
+msgstr "Η στοχευμένη διεύθυνση '%s' είναι έγκυρη"
+
+msgid "That image can be used when writing documents or setting up web sites"
+msgstr "Αυτή η εικόνα μπορεί να χρησιμοποιηθεί κατά τη σύνταξη εγγράφων ή τη δημιουργία ιστοσελιδων"
+
+msgid "The backend service used to generate shortened URLs."
+msgstr ""
+
+msgid "The default status as suggested for new Shortys."
+msgstr ""
+
+msgid "The link below can be copied for usage apart"
+msgstr "Ο παρακάτω σύνδεσμος μπορεί να αντιγραφεί για χρήση εκτός"
+
+msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
+msgstr "Τα επιπλέον πρόσθετα % %s παρακολουθούν την χρήση  την χρήση των παρόντων Συντομεύσεων "
+
+msgid "therefore the content must be copied manually"
+msgstr "Συνεπώς, το περιεχόμενο πρέπει να αντιγραφεί με το χέρι"
+
+msgid "then paste into message"
+msgstr "και κάντε επικόλληση σε μήνυμα"
+
+msgid "This 2d barcode encodes the url pointing to this Shorty"
+msgstr "Αυτό το 2D barcode κωδικοποιεί το url που δείχνουν προς αυτή Shorty"
+
+msgid "This is a internal url that the shortened url relays to"
+msgstr "Αυτή είναι μια εσωτερική url ότι οι συντομευθεί ρελέ url για να "
+
+msgid "This is the shortened url registered at the backend"
+msgstr "Αυτή είναι η συντομευμένη διεύθυνση URL καταχωρημενει στο backend "
+
+msgid "This is the target url specified when generating this Shorty"
+msgstr "Αυτή είναι η διεύθυνση URL που καθορίζεται κατά τη δημιουργία αυτής της Shorty "
+
+msgid "This is the url referencing the QRCode shown before"
+msgstr "Esto e o url referendo o QRCodigo mostrado antes. "
+
+msgid "Title"
+msgstr "Τίτλος"
+
+msgid "Toggle toolbar"
+msgstr "Εναλλαγή μπάρας εγαλείων"
+
+msgid "Total of clicks"
+msgstr "Λίστα κλικς"
+
+msgid "Typically this only works on devices like smart phones"
+msgstr "Τυπικά αυτό λειτουργεί σε συσκευές όπως έξυπνα τηλέφωνα"
+
+msgid "Unexpected type of exception caught: %s"
+msgstr ""
+
+msgid "Unfortunately the implementation of this scheme is limited"
+msgstr "Δυστυχώς η εισαγωγή αυτού του σχήματος είναι περιορισμένη."
+
+msgid "Unknown object of type caught: %s"
+msgstr ""
+
+msgid "Url shortened to: %s"
+msgstr "Η διεύθυνση έχει μειωθεί κατά:  %s"
+
+msgid "Use it in web pages by referencing or embedding"
+msgstr "Χρησιμοποιήστε το σε ιστοσελίδες μέσω αναφοράς ή ενσωμάτωσης"
+
+msgid "Use the '%s' button above or the fine 'Shortlet'"
+msgstr "Χρησιμοποιήστε το κουμπί '% s' πάνω ή το πρόστιμο «Shortlet» "
+
+msgid "Verify by clicking…"
+msgstr "Επιβεβαιώστε κάνοντας κλικ..."
+
+msgid "Verification failed"
+msgstr "Η επαλήθευση απέτυχε "
+
+msgid ""
+"%s\n"
+"Message(code): %s (%s)\n"
+"File(line): %s (%s)\n"
+"Info: %%s"
+msgstr "%s\nΜήνυμα(κώδικας): %s (%s)\nΑρχείο(γραμμή): %s (%s)\nΠληροφορίες: %%s "
+
+msgid "API access key"
+msgstr "API πλήκτρο πρόσβασης "
+
+msgid "Account"
+msgstr ""
+
+msgid "API key"
+msgstr "Κλειδί Google API"
+
+msgid "bit.ly user"
+msgstr "χρήστης bit.ly"
+
+msgid "bit.ly user name"
+msgstr "bitly ;όνομα χρήστη "
+
+msgid "bit.ly key"
+msgstr "bitly πλήκτρο "
+
+msgid "bit.ly users key"
+msgstr "πλήκτρο χρηστών bitly."
+
+msgid "Google API key"
+msgstr "Κλειδί Google API"
+
+msgid "Google API account"
+msgstr "Google API λογαριασμος"
+
+msgid "tiny.cc user"
+msgstr "χρήστης tiny.cc"
+
+msgid "tiny.cc user name"
+msgstr "αρχικά cc ονόματος χρήστη "
+
+msgid "tiny.cc key"
+msgstr "tiny.cc κλειδι"
+
+msgid "tiny.cc user key"
+msgstr "αρχικά κωδικού χρήστη "
+
+msgid ""
+"Force verification of encryption certificates during communication with the "
+"backend"
+msgstr "Προσπαθήστε να επαληθεύεστε τα πιστοποιητικά απόκρυψης κατά την διάρκεια επικοινωνίας με το backend. "
+
+msgid ""
+"The external 'bitly.com' service is used to register a short url for each "
+"generated shorty."
+msgstr "Η εξωτερική υπηρεσία 'bitly.com' χρησιμοποιείται για την εγγραφή ενός σύντομου url για κάθε παραγόμενη συντόμευση."
+
+msgid "This means you have to register an '%s' at their site first."
+msgstr "Αυτό σημαίνει ότι πρέπει να εγγραφείτε ως % s στο site τους πρώτα. "
+
+msgid ""
+"The external 'turl' service is used to register a short url for each "
+"generated shorty."
+msgstr "Η εξωτερική υπηρεσία 'turl' χρησιμοποιείται για να καταχωρήσετε ένα σύντομο url για κάθε παραγόμενο Shorty."
+
+msgid ""
+"The external 'ti.ny' service is used to register a short url for each "
+"generated shorty."
+msgstr "Η εξωτερική υπηρεσία 'ti.ny' χρησιμοποιείται για την εγγραφή ενός σύντομου url για κάθε σύνδεσμο που παράγεται. "
+
+msgid ""
+"The external 'cli.gs' service is used to register a short url for each "
+"generated shorty."
+msgstr "Η εξωτερική υπηρεσία »cli.gs» χρησιμοποιείται για να καταχωρήσετε ένα σύντομο url για κάθε παραγόμενο Shorty."
+
+msgid ""
+"The external 'is.gd' service is used to register a short url for each "
+"generated shorty."
+msgstr "Η υπηρεσία εξωτερικό » is.gd » χρησιμοποιείται για να καταχωρήσετε ένα σύντομο url για κάθε δημιουργούνται Shorty. "
+
+msgid ""
+"The external 'tiny.cc' service is used to register a short url for each "
+"generated shorty."
+msgstr "Η εξωτερική υπηρεσία 'tiny.cc' χρησιμοποιείται για την εγγραφή ενός σύντομου url για κάθε παραγόμενη συντόμευση."
+
+msgid ""
+"No backend is used, direct links pointing to your ownCloud are generated."
+msgstr "Ωστόσο αυτή η επιλογή δεν βασίζεται στην υπηρεσία τρίτοων και διατηρεί τις συντομέυσεις σας υπό έλεγχο."
+
+msgid ""
+"The service requires you to authenticate yourself by providing a valid "
+"bit.ly user name and an '%s'."
+msgstr "Η υπηρεσία απαιτεί την επικύρωση της ταυτότητάς σας με την παροχή ενός έγκυρου ονόματος χρήστη και ένα %s. "
+
+msgid ""
+"Such links are most likely longer than those generated when using a backend."
+msgstr "Τέτοιοι σύνδεσμοι είναι το πιθανόν πιο μακριοί από αυτούς που παράγονται όταν χρησιμοποιείς backend. "
+
+msgid ""
+"However this option does not rely on any third party service and keeps your "
+"shortys under your control."
+msgstr "Ωστόσο, η επιλογή αυτή δεν στηρίζεται σε οποιαδήποτε υπηρεσία τρίτου μέρους και κρατά τα Shortys σας υπό τον έλεγχό σας."
+
+msgid ""
+"Since this setup depends on server based configuration rules the base url "
+"can only be specified in the 'Admin' section of the configuration."
+msgstr "Χρηιμοποιείστε αυτό το backend μόνο όταν θέλετε να παράσχετε ένα σύντομο url που προβάλλεται με τον τρόπο περιγραφής. Ειδάλλως  οι συντομεύσεις σας (τα shortys)δεν θα λειτουργήσεουν. "
+
+msgid ""
+"Static, rule-based backend, generates shorty links relative to a given base "
+"url."
+msgstr "Στατικο, στηριγμένο backend, δημιουργεί δεσμούς shorty σε σχέση με μια συγκεκριμένη διεύθυνση URL βάσης."
+
+msgid ""
+"You have to take care that any request to the url configured here is "
+"internally mapped to the 'shorty' module."
+msgstr "Πρέπει να μεριμνήσετε οιαδήποτε ζήτηση αυτού του url εδώ που διαμορφώθηκε προβάλλεται εσωτερικά στη μονάδα ''shorty''. "
+
+msgid "The target of that mapping must be some URL like:"
+msgstr "Ο στόχος αυτής της προβολής πρέπει να είναι κάποιο URL. "
+
+msgid ""
+"Have a try with the example link provided, click it, it should result in a "
+"confirmation that your setup is working."
+msgstr "Προσπαθήστε με το παράδειγμα του συνδέσμου που παρέχεται, κάνετε κλικ,πρέπει να καταλήξει στην βεβαίωση ότι η ρύθμιση λειτουργεί. "
+
+msgid ""
+"Leave empty if you can't provide a short base url that is mapped the "
+"described way."
+msgstr "Αφήστε κενό αν δεν μπορείτε να παράσχετε έναν σύνδεσμο συντόμευσης που προβάλλεται όπως περιγράφεται. "
+
+msgid ""
+"Only use this backend, if you can provide a short base url that is mapped "
+"the described way. Your shorties won't work otherwise."
+msgstr "Να χρησιμοποιείτε μόνο αυτό το backend , αν μπορεί να προσφέρει μια σύντομη url βάσης που έχει αντιστοιχει με τον τρόπο που περιγράφεται. Τα Shorties σας δεν θα μπορούσαν να λειτουργήσουν διαφορετικά."
+
+msgid ""
+"Googles external 'goo.gl service' is used to register a short url for each "
+"generated shorty."
+msgstr "« Goo.gl υπηρεσία» Googles εξωτερικό χρησιμοποιείται για να καταχωρήσετε ένα σύντομο url για κάθε παραγόμενο Shorty."
+
+msgid "You must provide a valid '%%s' to use this service."
+msgstr "Πρέπει να παράσχετε ένα έγκυρο '%%s' για να χρησιμοποιήσετε αυτήν την υπηρεσία."
+
+msgid "This means you require a 'Google API console account'."
+msgstr "Αυτό σημαίνει ότι χρειάζεσθε έναν λογαριασμό 'Google API console account'."
+
+msgid "Register a new '%%s' at their pages."
+msgstr "Εγγραφή ενός νέου % %s στις σελίδες τους."
+
+msgid "Enabling the SMS option will offer sending a Shorty via SMS."
+msgstr "Ενεργοποιήσετε την επιλογή SMS για να στείλετε ένα Shorty με SMS. "
+
+msgid ""
+"Unfortunately support for 'SMS url handling' is usually only found on mobile"
+" devices like smart phones."
+msgstr "Δυστυχώς η διαχείρηση της υποστήριξης 'SMS url' βρίσκεται συνήθως στα κινητά και στις έξυπνες συσκευές. "
+
+msgid ""
+"In addition, those implementations are minimalistic, buggy and differ from "
+"system to system."
+msgstr "Επιπλέον, αυτές οι καθιερώσεις είναι πολύ περιοριστικές, ελαττωματικές και διαφέρουν από σύστημα σε σύστημα. "
+
+msgid "In short: this might not work for you, therefore you can disable it…"
+msgstr "Με λίγα λόγγια αυτό μπορεί να μην λειτουργήσει καλά άρα μπορείτε να το απενεργοποιήσετε."
+
+msgid "Great, your setup appears to be working fine!"
+msgstr "Θαύμα, η εγκατάστασή σας φαίνεται ότι λειτουργεί σωστά!"
+
+msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Requests to the configured base url are mapped to this ownClouds relay "
+"service."
+msgstr "Αιτήσεις  στην διαμορφωμένη βάση ιστοσελίδας πρέπει να προβάλλονται στην υπηρεσία εγκατάστασης ownClouds "
+
+msgid ""
+"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
+"Service abgebildet."
+msgstr ""
+
+msgid ""
+"Usage of that static backend is fine and safe as long as this setup is not "
+"altered."
+msgstr "Η χρήση αυτής της στατικής backend είναι μια χαρά και ασφαλή για όσο διάστημα η εγκατάσταση αυτή δεν μεταβάλλεται."
+
+msgid ""
+"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
+"Konfiguration nicht geändert wird."
+msgstr ""
+
+msgid ""
+"This backend will now be offered as an additional backend alternative to all"
+" local users inside their personal preferences."
+msgstr "Αυτό το backend θα δοθεί τώρα ως επιπλέον backend εναλλαγής σε όλους τους τοπικούς χρήστες στα πλαίσια της προτίμησής τους. "
+
+msgid ""
+"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
+"zusätzliche Alternative zu den verfügbaren Backends angeboten."
+msgstr ""
+
+msgid "Sorry, but your setup appears not to be working correctly yet!"
+msgstr "Λυπούμαστε, αλλά η ρύθμιση σας φαίνεται να μην λειτουργεί σωστά ακόμα"
+
+msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
+msgstr ""
+
+msgid ""
+"Please check your setup and make sure that the configured base url is indeed"
+" correct."
+msgstr "Παρακαλώ ελέγξετε την ρύθμισή σας και βεβαιωθείτε ότι η διαμορφωμένη βάση url είναι πραγματικά σωστή. "
+
+msgid ""
+"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
+"konfigurierte Basis-Url wirklich korrekt ist."
+msgstr ""
+
+msgid ""
+"Make sure that all requests to it are somehow mapped to Shortys relay "
+"service."
+msgstr "Βεβαιωθείτε ότι όλες οι αιτήσεις προβάλλονται κάπως στην υπηρεσία μετάθεσης των Shortys. "
+
+msgid ""
+"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
+" Relais-Service."
+msgstr ""
