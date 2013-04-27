@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-26 16:22+0000\n"
+"PO-Revision-Date: 2013-04-27 22:09+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Georgian (Georgia) (http://www.transifex.com/projects/p/owncloud/language/ka_GE/)\n"
 "MIME-Version: 1.0\n"
@@ -39,6 +39,7 @@ msgstr ""
 "Language: ka_GE\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+# status names
 msgid "all"
 msgstr "ყველა"
 
@@ -66,6 +67,7 @@ msgstr ""
 msgid "shared"
 msgstr ""
 
+# actions ("to be done")
 msgid "delete"
 msgstr "წაშლა"
 
@@ -81,6 +83,7 @@ msgstr "გაზიარება"
 msgid "show"
 msgstr "გამოაჩინე"
 
+# log levels
 msgid "none"
 msgstr ""
 
@@ -93,12 +96,14 @@ msgstr ""
 msgid "debug"
 msgstr ""
 
+# keyboard shortcuts
 msgid "Ctrl-C"
 msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
+# the backend service names
 msgid "bitly.com service"
 msgstr ""
 
@@ -120,6 +125,7 @@ msgstr ""
 msgid "static backend"
 msgstr ""
 
+# status explanations
 msgid "for any access"
 msgstr "ყველა დაშვებისთვის"
 
@@ -132,6 +138,7 @@ msgstr "ownCloud მომხმარებლებისთვის"
 msgid "available for everyone"
 msgstr "დაშვებადია ყველასთვის"
 
+# short and general terms
 msgid "Access"
 msgstr "დაშვება"
 
@@ -492,6 +499,7 @@ msgstr "მოახდინეთ ვერიფიკაცია დაკ�
 msgid "Verification failed"
 msgstr "ვერიფიკაცია ვერ მოხერხდა"
 
+# exception description
 msgid ""
 "%s\n"
 "Message(code): %s (%s)\n"
@@ -499,6 +507,7 @@ msgid ""
 "Info: %%s"
 msgstr "%s⏎\nმესიჯი(კოდი): %s (%s)⏎\nფაილი(სტრიქონი): %s (%s)⏎\nინფორმაცია: %%s"
 
+# technical backend details
 msgid "API access key"
 msgstr "API დაშვების გასაღები"
 
@@ -538,6 +547,7 @@ msgstr "tiny.cc გასაღები"
 msgid "tiny.cc user key"
 msgstr "tiny.cc მომხმარებლის გასაღები"
 
+# longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
@@ -660,18 +670,10 @@ msgstr "მოკლედ: ეს არ იმუშავებს თქვ�
 msgid "Great, your setup appears to be working fine!"
 msgstr "კარგია, თქვენი კონფიგურაცია მუშაობს კარგად!"
 
-msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
-msgstr ""
-
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
 msgstr "კონფიგურირებულ საბაზო url–ზე მოთხოვნა დამეპილია ownCloud–ის რელე სერვისზე."
-
-msgid ""
-"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
-"Service abgebildet."
-msgstr ""
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
@@ -679,25 +681,12 @@ msgid ""
 msgstr "ამ სტატიკური ბექენდის გამოყენება კარგია და უსაფრთხოა მანამ სანამ კონფიგურაცია არ შეიცვლება."
 
 msgid ""
-"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
-"Konfiguration nicht geändert wird."
-msgstr ""
-
-msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
 msgstr "ეს ბექენდი იქნება შეთავაზებული ახალ დამატებით ბექენდად ყველა ლოკალური მომხმარებლისთვის პერსონალური პარამეტრების შიგნით."
 
-msgid ""
-"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
-"zusätzliche Alternative zu den verfügbaren Backends angeboten."
-msgstr ""
-
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "ბოდიშით, მაგრამ თქვენი კონფიგურაცია არ მუშაობს კორექტულად!"
-
-msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
-msgstr ""
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
@@ -705,16 +694,6 @@ msgid ""
 msgstr "გთხოვთ შეამოწმოთ თქვენი კონფიგურაცია და დარჭმუნდით იმაში რომ კონფიგურირებული საბაზო url–ი აუცილებლად მართებულია."
 
 msgid ""
-"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
-"konfigurierte Basis-Url wirklich korrekt ist."
-msgstr ""
-
-msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "დარწმუნდით იმაში რომ ყველა მოთხოვნა დამეპილია შემოკლებულად რელე სერვისზე."
-
-msgid ""
-"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
-" Relais-Service."
-msgstr ""

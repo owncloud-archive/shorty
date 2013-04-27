@@ -25,12 +25,13 @@
 # 
 # Translators:
 # pisike.sipelgas <pisike.sipelgas@gmail.com>, 2013
+# Rivo Zängov <eraser@eraser.ee>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-26 16:22+0000\n"
+"PO-Revision-Date: 2013-04-27 22:09+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Estonian (Estonia) (http://www.transifex.com/projects/p/owncloud/language/et_EE/)\n"
 "MIME-Version: 1.0\n"
@@ -39,6 +40,7 @@ msgstr ""
 "Language: et_EE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+# status names
 msgid "all"
 msgstr "kõik"
 
@@ -58,14 +60,15 @@ msgid "never"
 msgstr "mitte kunagi"
 
 msgid "private"
-msgstr ""
+msgstr "privaatne"
 
 msgid "public"
-msgstr ""
+msgstr "avalik"
 
 msgid "shared"
-msgstr ""
+msgstr "jagatud"
 
+# actions ("to be done")
 msgid "delete"
 msgstr "kustuta"
 
@@ -81,45 +84,49 @@ msgstr "jaga"
 msgid "show"
 msgstr "näita"
 
+# log levels
 msgid "none"
-msgstr ""
+msgstr "pole"
 
 msgid "error"
-msgstr ""
+msgstr "viga"
 
 msgid "info"
-msgstr ""
+msgstr "info"
 
 msgid "debug"
-msgstr ""
+msgstr "veatuvastus"
 
+# keyboard shortcuts
 msgid "Ctrl-C"
 msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
+# the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "bitly.com teenus"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "cli.gs teenus"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "goo.gl teenus"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "is.gd teenus"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "ti.ny teenus"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "tiny.cc teenus"
 
 msgid "static backend"
 msgstr ""
 
+# status explanations
 msgid "for any access"
 msgstr "juurdepääs kõigile"
 
@@ -132,6 +139,7 @@ msgstr "ownCloud kasutajatele"
 msgid "available for everyone"
 msgstr "kõigile saadaval"
 
+# short and general terms
 msgid "Access"
 msgstr "Ligipääs"
 
@@ -175,7 +183,7 @@ msgid "Base url"
 msgstr "Põhiaadress"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Vali teenus..."
 
 msgid "Click for embedding details"
 msgstr "Klõpsa täpsema integreerimise info saamiseks"
@@ -253,7 +261,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Shorty '%s' muudatused salvestatud"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Muuda omadusi"
 
 msgid "Modify shorty"
 msgstr "Muuda"
@@ -310,7 +318,7 @@ msgid "Preference '%s' saved"
 msgstr "Säte '%s' salvestatud"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Eelistus"
 
 msgid "Prepare to send as SMS"
 msgstr "Valmistu saatma SMSina"
@@ -349,7 +357,7 @@ msgid "Setting retrieved"
 msgstr ""
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Seaded on salvestatud"
 
 msgid "Setting '%s' retrieved"
 msgstr ""
@@ -492,6 +500,7 @@ msgstr "Kontrolli klikkides..."
 msgid "Verification failed"
 msgstr "Kontroll ebaõnnestus"
 
+# exception description
 msgid ""
 "%s\n"
 "Message(code): %s (%s)\n"
@@ -499,11 +508,12 @@ msgid ""
 "Info: %%s"
 msgstr "%s⏎\nTeade (kood): %s (%s)⏎\nFail (rida): %s (%s)⏎\nInfo: %%s"
 
+# technical backend details
 msgid "API access key"
 msgstr "API ligipääsu võti"
 
 msgid "Account"
-msgstr ""
+msgstr "Konto"
 
 msgid "API key"
 msgstr "API võti"
@@ -538,6 +548,7 @@ msgstr "tiny.cc võti"
 msgid "tiny.cc user key"
 msgstr "tiny.cc kasutaja võti"
 
+# longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
@@ -660,18 +671,10 @@ msgstr "Lühidalt: see ei pruugi sinu jaoks toimida, seega võid selle keelata..
 msgid "Great, your setup appears to be working fine!"
 msgstr "Hea! Seadistus tundub toimivat!"
 
-msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
-msgstr ""
-
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
 msgstr "Seadistatud põhiaadressile teostatud päringud on vastendatud antud ownCloud vahendusteenuses."
-
-msgid ""
-"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
-"Service abgebildet."
-msgstr ""
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
@@ -679,25 +682,12 @@ msgid ""
 msgstr "Staatilise tagarakendi kasutamine on mõistlik kuni seadistust ei muudeta"
 
 msgid ""
-"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
-"Konfiguration nicht geändert wird."
-msgstr ""
-
-msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
 msgstr "Seda tagarakendit pakutakse kõikidele kohalikele kasutajatele lisana nende endi personaalsele seadistustele."
 
-msgid ""
-"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
-"zusätzliche Alternative zu den verfügbaren Backends angeboten."
-msgstr ""
-
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Vabandust, kuid su seadistus ei tööta veel korrektselt!"
-
-msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
-msgstr ""
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
@@ -705,16 +695,6 @@ msgid ""
 msgstr "Palun kontrolli oma seadistust ning veendu, et määratud põhiaadress on kindlasti korrektne."
 
 msgid ""
-"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
-"konfigurierte Basis-Url wirklich korrekt ist."
-msgstr ""
-
-msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Veendu, et kõik päringud oleks mingil moel Shrooty vahendusteenuses vastendatud."
-
-msgid ""
-"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
-" Relais-Service."
-msgstr ""

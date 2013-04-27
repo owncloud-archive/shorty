@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-26 16:22+0000\n"
+"PO-Revision-Date: 2013-04-27 22:09+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/owncloud/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -40,6 +40,7 @@ msgstr ""
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+# status names
 msgid "all"
 msgstr "alle"
 
@@ -67,6 +68,7 @@ msgstr ""
 msgid "shared"
 msgstr ""
 
+# actions ("to be done")
 msgid "delete"
 msgstr "verwijderen"
 
@@ -82,6 +84,7 @@ msgstr "deel"
 msgid "show"
 msgstr "weergeven"
 
+# log levels
 msgid "none"
 msgstr ""
 
@@ -94,12 +97,14 @@ msgstr ""
 msgid "debug"
 msgstr ""
 
+# keyboard shortcuts
 msgid "Ctrl-C"
 msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
+# the backend service names
 msgid "bitly.com service"
 msgstr ""
 
@@ -121,6 +126,7 @@ msgstr ""
 msgid "static backend"
 msgstr ""
 
+# status explanations
 msgid "for any access"
 msgstr "voor elke toegang"
 
@@ -133,6 +139,7 @@ msgstr "met ownCloud gebruikers"
 msgid "available for everyone"
 msgstr "beschikbaar voor iedereen"
 
+# short and general terms
 msgid "Access"
 msgstr "Toegang"
 
@@ -493,6 +500,7 @@ msgstr "Verifiëren door klikken..."
 msgid "Verification failed"
 msgstr "Verificatie mislukt"
 
+# exception description
 msgid ""
 "%s\n"
 "Message(code): %s (%s)\n"
@@ -500,6 +508,7 @@ msgid ""
 "Info: %%s"
 msgstr "%s\nBericht(code): %s (%s)\nBestand(regel): %s (%s)\nInfo: %%s"
 
+# technical backend details
 msgid "API access key"
 msgstr "API access sleutel"
 
@@ -539,6 +548,7 @@ msgstr "tiny.cc sleutel"
 msgid "tiny.cc user key"
 msgstr "tiny.cc gebruikerssleutel"
 
+# longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
@@ -661,17 +671,9 @@ msgstr "Kortweg: als dit niet werkt voor u, kunt u de functie uitschakelen..."
 msgid "Great, your setup appears to be working fine!"
 msgstr "Mooi, uw instellingen lijken goed te werken!"
 
-msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
-msgstr ""
-
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr ""
-
-msgid ""
-"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
-"Service abgebildet."
 msgstr ""
 
 msgid ""
@@ -680,25 +682,12 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
-"Konfiguration nicht geändert wird."
-msgstr ""
-
-msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
 msgstr ""
 
-msgid ""
-"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
-"zusätzliche Alternative zu den verfügbaren Backends angeboten."
-msgstr ""
-
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Helaas, uw instellingen lijken nog niet goed te werken!"
-
-msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
-msgstr ""
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
@@ -706,16 +695,6 @@ msgid ""
 msgstr "Controleer uw instellingen en let erop dat de geconfigureerde basis url goed is."
 
 msgid ""
-"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
-"konfigurierte Basis-Url wirklich korrekt ist."
-msgstr ""
-
-msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
-
-msgid ""
-"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
-" Relais-Service."
 msgstr ""

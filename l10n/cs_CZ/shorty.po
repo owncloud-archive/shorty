@@ -33,7 +33,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-26 16:22+0000\n"
+"PO-Revision-Date: 2013-04-27 22:09+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/owncloud/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,7 @@ msgstr ""
 "Language: cs_CZ\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
+# status names
 msgid "all"
 msgstr "vše"
 
@@ -69,6 +70,7 @@ msgstr ""
 msgid "shared"
 msgstr ""
 
+# actions ("to be done")
 msgid "delete"
 msgstr "smazat"
 
@@ -84,6 +86,7 @@ msgstr "sdílet"
 msgid "show"
 msgstr "zobrazit"
 
+# log levels
 msgid "none"
 msgstr ""
 
@@ -96,12 +99,14 @@ msgstr ""
 msgid "debug"
 msgstr ""
 
+# keyboard shortcuts
 msgid "Ctrl-C"
 msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
+# the backend service names
 msgid "bitly.com service"
 msgstr ""
 
@@ -123,6 +128,7 @@ msgstr ""
 msgid "static backend"
 msgstr ""
 
+# status explanations
 msgid "for any access"
 msgstr "pro libovolný přístup"
 
@@ -135,6 +141,7 @@ msgstr "s uživateli ownCloud"
 msgid "available for everyone"
 msgstr "dostupné všem"
 
+# short and general terms
 msgid "Access"
 msgstr "Přístup"
 
@@ -495,6 +502,7 @@ msgstr "Ověřte kliknutím..."
 msgid "Verification failed"
 msgstr "Ověření selhalo"
 
+# exception description
 msgid ""
 "%s\n"
 "Message(code): %s (%s)\n"
@@ -502,6 +510,7 @@ msgid ""
 "Info: %%s"
 msgstr "%s⏎ Zpráva(kód): %s (%s)⏎ Soubor(řádek): %s (%s)⏎ Info: %%s"
 
+# technical backend details
 msgid "API access key"
 msgstr "Přístupový klíč API"
 
@@ -541,6 +550,7 @@ msgstr "klíč tiny.cc"
 msgid "tiny.cc user key"
 msgstr "uživatelský klíč tiny.cc"
 
+# longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
@@ -663,18 +673,10 @@ msgstr "Ve zkratce: nemusí to fungovat, můžete to vypnout..."
 msgid "Great, your setup appears to be working fine!"
 msgstr "Výborně, vaše nastavení se zdá být v pořádku."
 
-msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
-msgstr ""
-
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
 msgstr "Požadavky na nastavenou základní url jsou směřovány do této předávací služby ownCloud."
-
-msgid ""
-"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
-"Service abgebildet."
-msgstr ""
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
@@ -682,25 +684,12 @@ msgid ""
 msgstr "Používání statické podpůrné vrstvy je v pořádku a bezpečné pokud neplánujete toto nastavení měnit."
 
 msgid ""
-"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
-"Konfiguration nicht geändert wird."
-msgstr ""
-
-msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
 msgstr "Podpůrná vrstva bude nyní nabízena jako další varianta všem místním uživatelům v jejich osobních nastaveních."
 
-msgid ""
-"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
-"zusätzliche Alternative zu den verfügbaren Backends angeboten."
-msgstr ""
-
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Lituji, vaše nastavení zatím nevypadá funkčně."
-
-msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
-msgstr ""
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
@@ -708,16 +697,6 @@ msgid ""
 msgstr "Prosím zkontrolujte vaše nastavení a ujistěte se, že nastavená základní URL je opravdu správně."
 
 msgid ""
-"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
-"konfigurierte Basis-Url wirklich korrekt ist."
-msgstr ""
-
-msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Ujistěte se, že všechny požadavky jsou nějak mapovány na relay službu Shorty."
-
-msgid ""
-"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
-" Relais-Service."
-msgstr ""

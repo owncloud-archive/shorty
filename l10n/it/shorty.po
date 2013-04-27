@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-26 16:22+0000\n"
+"PO-Revision-Date: 2013-04-27 22:09+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -40,6 +40,7 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+# status names
 msgid "all"
 msgstr "tutto"
 
@@ -59,14 +60,15 @@ msgid "never"
 msgstr "mai"
 
 msgid "private"
-msgstr ""
+msgstr "privato"
 
 msgid "public"
-msgstr ""
+msgstr "pubblico"
 
 msgid "shared"
-msgstr ""
+msgstr "condiviso"
 
+# actions ("to be done")
 msgid "delete"
 msgstr "elimina"
 
@@ -82,45 +84,49 @@ msgstr "condividi"
 msgid "show"
 msgstr "mostra"
 
+# log levels
 msgid "none"
-msgstr ""
+msgstr "nessuno"
 
 msgid "error"
-msgstr ""
+msgstr "errore"
 
 msgid "info"
-msgstr ""
+msgstr "info"
 
 msgid "debug"
-msgstr ""
+msgstr "debug"
 
+# keyboard shortcuts
 msgid "Ctrl-C"
 msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
+# the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "servizio bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "servizio cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "servizio goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "servizio is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "servizio ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "servizio tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "motore statico"
 
+# status explanations
 msgid "for any access"
 msgstr "per qualsiasi accesso"
 
@@ -133,6 +139,7 @@ msgstr "con gli utenti di ownCloud"
 msgid "available for everyone"
 msgstr "disponibile a tutti"
 
+# short and general terms
 msgid "Access"
 msgstr "Accesso"
 
@@ -176,7 +183,7 @@ msgid "Base url"
 msgstr "URL base"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Scegli un servizio..."
 
 msgid "Click for embedding details"
 msgstr "Clicca per i dettagli sull'incorporamento"
@@ -254,7 +261,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Modifiche salvate per shorty con id '%s'"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Modifica attributi"
 
 msgid "Modify shorty"
 msgstr "Modifica shorty"
@@ -299,10 +306,10 @@ msgid "Paste to embed elsewhere"
 msgstr "Incolla per incorporare altrove"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Preferenza recuperata"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Preferenza salvata"
 
 msgid "Preference '%s' retrieved"
 msgstr "Preferenza '%s' recuperata"
@@ -311,7 +318,7 @@ msgid "Preference '%s' saved"
 msgstr "Preferenza '%s' salvata"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Preferenze"
 
 msgid "Prepare to send as SMS"
 msgstr "Prepara per inviare come SMS"
@@ -344,16 +351,16 @@ msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr "Imposta le preferenze personali utilizzando la ruota dentata (%%s) in basso a sinistra."
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Imposta le preferenze personali utilizzando la ruota dentata (%%s) in alto a destra!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Impostazione recuperata"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Impostazione salvata"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Impostazione '%s' recuperata"
 
 msgid "Setting '%s' saved"
 msgstr "Impostazione '%s' salvata"
@@ -383,7 +390,7 @@ msgid "Show details"
 msgstr "Mostra i dettagli"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Mostra utilizzo"
 
 msgid "SMS"
 msgstr "SMS"
@@ -425,7 +432,7 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Tale immagine può essere utilizzata quando si scrivono documenti o si configurano siti web"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "Il servizio del motore utilizzato per generare gli URL abbreviati."
 
 msgid "The default status as suggested for new Shortys."
 msgstr ""
@@ -493,6 +500,7 @@ msgstr "Verifica cliccando..."
 msgid "Verification failed"
 msgstr "Verifica non riuscita"
 
+# exception description
 msgid ""
 "%s\n"
 "Message(code): %s (%s)\n"
@@ -500,11 +508,12 @@ msgid ""
 "Info: %%s"
 msgstr "%s⏎ Messaggio(codice): %s (%s)⏎ File(riga): %s (%s)⏎ Informazioni: %%s"
 
+# technical backend details
 msgid "API access key"
 msgstr "Chiave d'accesso API"
 
 msgid "Account"
-msgstr ""
+msgstr "Account"
 
 msgid "API key"
 msgstr "Chiave API"
@@ -539,6 +548,7 @@ msgstr "Chiave tiny.cc"
 msgid "tiny.cc user key"
 msgstr "Chiave utente tiny.cc"
 
+# longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
@@ -661,18 +671,10 @@ msgstr "In breve: potrebbe non funzionare nel tuo caso, perciò puoi disabilitar
 msgid "Great, your setup appears to be working fine!"
 msgstr "Ottimo, la tua configurazione sembra essere corretta!"
 
-msgid "Prima, die Konfiguration scheint korrekt zu funktionieren!"
-msgstr ""
-
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
 msgstr "Le richieste al URL di base configurato sono associate al servizio di inoltro di ownCloud."
-
-msgid ""
-"Anfragen an die konfigurierte Basis-Url werden auf den ownCloud Relais-"
-"Service abgebildet."
-msgstr ""
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
@@ -680,25 +682,12 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Die Nutzung dieses statischen Backends ist gut and sicher, solange diese "
-"Konfiguration nicht geändert wird."
-msgstr ""
-
-msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
 msgstr ""
 
-msgid ""
-"Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als "
-"zusätzliche Alternative zu den verfügbaren Backends angeboten."
-msgstr ""
-
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Spiacenti, ma la tua configurazione sembra non essere ancora corretta!"
-
-msgid "Die Konfiguration scheint noch nicht korrekt zu funktionieren!"
-msgstr ""
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
@@ -706,16 +695,6 @@ msgid ""
 msgstr "Controlla la tua configurazione e assicurati che l'URL di base configurato sia corretto."
 
 msgid ""
-"Beim Prüfen der Konfiguration muss sicher gestellt werden, dass die "
-"konfigurierte Basis-Url wirklich korrekt ist."
-msgstr ""
-
-msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Assicurati che tutte le richieste siano in associate in qualche modo al servizio di inoltro di Shorty"
-
-msgid ""
-"Es ist darauf zu achten, dass alle Anfragen abgebildet werden auf den Shorty"
-" Relais-Service."
-msgstr ""
