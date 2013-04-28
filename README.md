@@ -16,7 +16,8 @@ Existing plugins:
 
 Possible future plugins: 
 * shorty_integration: integration of Shortys features into ownClouds share feature
-* shorty_protocols: allows to shorten urls with protocols besides web: email, (s)ftp(s), ...
+* shorty_protocols: allows to shorten urls with protocols besides web: email, (s)ftp(s)
+* shorty_yourls: support for yourls which serves as more than just a backend with its additonal features
 * . . .
 
 ### Folder layout: 
