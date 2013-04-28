@@ -31,8 +31,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-27 22:09+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-04-28 17:50+0000\n"
+"Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/projects/p/owncloud/language/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,13 +60,13 @@ msgid "never"
 msgstr "nunca"
 
 msgid "private"
-msgstr ""
+msgstr "privado"
 
 msgid "public"
-msgstr ""
+msgstr "público"
 
 msgid "shared"
-msgstr ""
+msgstr "compartido"
 
 # actions ("to be done")
 msgid "delete"
@@ -86,16 +86,16 @@ msgstr "amosar"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "ningún"
 
 msgid "error"
-msgstr ""
+msgstr "erro"
 
 msgid "info"
-msgstr ""
+msgstr "información"
 
 msgid "debug"
-msgstr ""
+msgstr "depuración"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -106,25 +106,25 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "Servizo bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "Servizo cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "Servizo  goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "Servizo is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "Servizo ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "Servizo tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "infraestrutura estática"
 
 # status explanations
 msgid "for any access"
@@ -165,10 +165,10 @@ msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "Como alternativa, a imaxe pode descargarse para a súa impresión ou almacenamento"
 
 msgid "alternatively the link can be copied for usage apart"
-msgstr ""
+msgstr "A ligazón tamén pode ser copiada para ser usada separadamente"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "A ligazón tamén pode ser copiada manualmente"
 
 msgid "Alternatively the link can be copied into a message manually"
 msgstr "Alternativamente, a ligazón pode copiala manualmente nunha mensaxe"
@@ -183,7 +183,7 @@ msgid "Base url"
 msgstr "URL base"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Escolla un servizo"
 
 msgid "Click for embedding details"
 msgstr "Prema para ver os detalles integrados"
@@ -261,7 +261,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Gardáronse as modificacións ao «Shorty» co ID «%s»"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Modificar os atributos"
 
 msgid "Modify shorty"
 msgstr "Modificar o «Shorty»"
@@ -306,10 +306,10 @@ msgid "Paste to embed elsewhere"
 msgstr "Pegar para inserir noutro lugar"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "As preferencias foron recuperadas"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "As preferencias foron gardadas"
 
 msgid "Preference '%s' retrieved"
 msgstr "Recuperouse a preferencia de «%s»"
@@ -318,7 +318,7 @@ msgid "Preference '%s' saved"
 msgstr "Gardouse a preferencia de «%s»"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Preferencias"
 
 msgid "Prepare to send as SMS"
 msgstr "Preparar para enviar como SMS"
@@ -351,16 +351,16 @@ msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr "Defina as súas preferencias persoais usando a roda dentada (%%s) na parte inferior esquerda!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Estabelecer as preferencias persoais usando a engrenaxe (%%s) na parte superior dereita!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "A configuración foi recuperada"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "A configuración foi gardada"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Recuperouse o axuste «%s»"
 
 msgid "Setting '%s' saved"
 msgstr "Gardouse a configuración de «%s»"
@@ -390,7 +390,7 @@ msgid "Show details"
 msgstr "Amosar os detalles"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Amosar o uso"
 
 msgid "SMS"
 msgstr "SMS"
@@ -432,10 +432,10 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Esta imaxe pódese utilizar para escribir documentos ou para estabelecer sitios web"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "A infraestrutura do servizo empregado para xerar URL acurtados."
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "O estado predeterminado para novos Shorty."
 
 msgid "The link below can be copied for usage apart"
 msgstr "Pode copiar a seguinte ligazón para usala aparte"
@@ -477,13 +477,13 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Normalmente isto só funciona en dispositivos como teléfonos intelixentes"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Capturouse un tipo de excepción non agardado: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Desafortunadamente, a implementación deste esquema é limitado"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Capturouse un obxecto de tipo non agardado: %s"
 
 msgid "Url shortened to: %s"
 msgstr "URL recortado a: %s"
@@ -513,7 +513,7 @@ msgid "API access key"
 msgstr "Chave de acceso a API"
 
 msgid "Account"
-msgstr ""
+msgstr "Conta"
 
 msgid "API key"
 msgstr "Chave da API"

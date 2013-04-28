@@ -89,6 +89,7 @@
 "Preference saved" => "Präferenz gespeichert",
 "Preference '%s' retrieved" => "Präferenz '%s' abgefragt",
 "Preference '%s' saved" => "Präferenz '%s' gespeichert",
+"Preferences" => "Einstellungen",
 "Prepare to send as SMS" => "Vorbereiten zum Senden per SMS",
 "Relay service" => "Relais-Service",
 "Relay url" => "Relais-Url",
