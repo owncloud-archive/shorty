@@ -26,13 +26,14 @@
 # Translators:
 # jekader <jekader@gmail.com>, 2013
 # eurekafag <eurekafag@eureka7.ru>, 2013
+# Vyacheslav Muranov <s@neola.ru>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-27 22:09+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-04-29 09:50+0000\n"
+"Last-Translator: Vyacheslav Muranov <s@neola.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/owncloud/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,13 +61,13 @@ msgid "never"
 msgstr "никогда"
 
 msgid "private"
-msgstr ""
+msgstr "Частное"
 
 msgid "public"
-msgstr ""
+msgstr "Общедоступно"
 
 msgid "shared"
-msgstr ""
+msgstr "Общие"
 
 # actions ("to be done")
 msgid "delete"
@@ -86,16 +87,16 @@ msgstr "показать"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "Ничего"
 
 msgid "error"
-msgstr ""
+msgstr "Ошибка"
 
 msgid "info"
-msgstr ""
+msgstr "подробнее"
 
 msgid "debug"
-msgstr ""
+msgstr "отладка"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -106,25 +107,25 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "bitly.com сервис"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "cli.gs сервис"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "goo.gl сервис"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "is.gd сервис"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "ti.ny сервис"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "tiny.cc сервис"
 
 msgid "static backend"
-msgstr ""
+msgstr "статический сервер"
 
 # status explanations
 msgid "for any access"
@@ -165,10 +166,10 @@ msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "Также, картинку можно скачать для распечатки или хранения"
 
 msgid "alternatively the link can be copied for usage apart"
-msgstr ""
+msgstr "Также, ссылка может быть скопирована в сообщение вручную"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "Также, ссылка может быть скопирована в сообщение вручную"
 
 msgid "Alternatively the link can be copied into a message manually"
 msgstr "Также, ссылка может быть скопирована в сообщение вручную"
@@ -183,7 +184,7 @@ msgid "Base url"
 msgstr "Базовый URL"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Выберите сервис..."
 
 msgid "Click for embedding details"
 msgstr "Кликните для подробностей внедрения"
@@ -261,7 +262,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Изменения для shorty с id '%s' сохранены"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Изменить атрибуты"
 
 msgid "Modify shorty"
 msgstr "Изменить shorty"
@@ -306,10 +307,10 @@ msgid "Paste to embed elsewhere"
 msgstr "Вставьте для встраивания куда-либо"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Настройки для редактирования"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Настройки сохранены"
 
 msgid "Preference '%s' retrieved"
 msgstr "Настройка '%s' загружена"
@@ -318,7 +319,7 @@ msgid "Preference '%s' saved"
 msgstr "Настройка '%s' сохранена"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Настройки"
 
 msgid "Prepare to send as SMS"
 msgstr "Подготовить для отправки как SMS"
@@ -351,16 +352,16 @@ msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr "Установите персональные настройки, используя колесо (%%s) внизу слева!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Установите персональные настройки, используя шестеренку (%%s) вверху справа!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Настройки для редактирования"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Настройки сохранены"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Настройка '%s' загружена"
 
 msgid "Setting '%s' saved"
 msgstr "Установка '%s' сохранена"
@@ -390,7 +391,7 @@ msgid "Show details"
 msgstr "Показать детали"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Показать всё"
 
 msgid "SMS"
 msgstr "SMS"
@@ -432,10 +433,10 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Эта картинка может быть использована в документах или веб-сайтах"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "Сервер для создания укороченных URL адресов."
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "Статус по умолчанию, рекомендуемый для новых коротких ссылок."
 
 msgid "The link below can be copied for usage apart"
 msgstr "Ссылка ниже может быть скопирована для самостоятельного использования"
@@ -477,13 +478,13 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Обычно это работает только на устройствах типа смартфонов"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Неожиданный тип исключения: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "К сожалению, реализация этой схемы ограничена"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Неизвестный объект: %s"
 
 msgid "Url shortened to: %s"
 msgstr "Url сокращён до: %s"
@@ -513,7 +514,7 @@ msgid "API access key"
 msgstr "Ключ доступа к API"
 
 msgid "Account"
-msgstr ""
+msgstr "Аккаунт"
 
 msgid "API key"
 msgstr "Ключ API"
