@@ -33,6 +33,13 @@
 	margin-right: 170px;
 }
 /* slightly different setup of the content part */
+#controls {
+	top: 0;
+	padding: 0 0.42em;
+}
+#controls .shorty-config:first-child {
+	margin-right: 10px;
+}
 .shorty-desktop {
-	top: 3.3em;
+	top: 0;
 }
