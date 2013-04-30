@@ -50,25 +50,25 @@ html input, html textarea {
 	width: 99%;
 	background: transparent;
 	text-align: left;
-	top: 3.5em;
 	margin: 0;
 	padding: 4px;
 	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
 }
-#content.shorty-panel-hidden .shorty-desktop {
-	top: 0.7em;
-}
 /* top bar, holding main control elements */
-.shorty-controls {
-	top: 3.5em;
+#controls {
+	position: relative;
+	padding: 0 2px;
 	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
 }
+#content.shorty-panel-hidden #controls, 
+#content.shorty-panel-hidden .shorty-desktop, 
 #content.shorty-panel-hidden .shorty-controls {
-	top: 0.7em;
+	top: -2.8em;
 }
 .shorty-controls-left {
 	display: inline-block;
 	float: left;
+	padding: 0.1em 0;
 }
 .shorty-controls-right {
 	display: inline-block;
