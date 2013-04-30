@@ -33,7 +33,7 @@
 define ( 'CL', 44 );
 // some basic regular expressions to build our catalog further down
 define ( '__rx_path',		'(\/($|.+)?)*' );
-define ( '__rx_domain_tld','([a-zA-Z]{2}|biz|cat|com|edu|gov|int|mil|net|org|pro|tel|xxx|arpa|asia|coop|info|jobs|mobi|name|post|museum|travel');
+define ( '__rx_domain_tld','([a-z]{2}|biz|cat|com|edu|gov|int|mil|net|org|pro|tel|xxx|arpa|asia|coop|info|jobs|mobi|name|post|museum|travel)');
 define ( '__rx_domain_ip',	'(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])' );
 define ( '__rx_domain_name',__rx_domain_ip.'|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.'.__rx_domain_tld );
 // define ( '__rx_domain_name',__rx_domain_ip.'|localhost|([^\s()<>]+\.)*[^\s()<>]+\.'.__rx_domain_tld );
@@ -224,7 +224,7 @@ class OC_Shorty_Type
 				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::URL:
-				$pattern = '/^'.self::$RX['URL_SCHEME'].'\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*'.self::$RX['DOMAIN_NAME'].'(\:'.self::$RX['NUMBER'].')*(\/($|.+)?)*$/';
+				$pattern = '/^'.self::$RX['URL_SCHEME'].'\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*'.self::$RX['DOMAIN_NAME'].'(\:'.self::$RX['NUMBER'].')*(\/($|.+)?)*$/i';
 				if ( parse_url($value) && preg_match ( $pattern, $value ) )
 					return $value;
 				elseif ( ! $strict)
