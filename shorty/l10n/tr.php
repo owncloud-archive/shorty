@@ -1,14 +1,22 @@
 <?php $TRANSLATIONS = array(
+"all" => "Tümü",
 "deleted" => "silindi",
 "never" => "asla",
 "delete" => "sil",
 "share" => "paylaş",
 "show" => "göster",
+"Ctrl-C" => "Ctrl-C",
+"Ctrl-V" => "Ctrl-V",
 "Backend" => "Yönetici",
 "Close" => "Kapat",
 "Configuration" => "Yapılandırma",
+"Example" => "Örnek",
+"Loading" => "Yükleniyor",
+"Mail client" => "E-posta istemcisi",
 "Notes" => "Notlar",
+"Nothing here yet" => "Henüz burada bir şey yok",
 "Save" => "Kaydet",
+"Send link by email" => "Bağlantıyı e-posta ile gönder",
 "Settings" => "Ayarlar",
 "Title" => "Başlık"
 );

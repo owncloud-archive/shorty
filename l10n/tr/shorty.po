@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# ismail yenigül <ismail.yenigul@surgate.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-27 22:09+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-05-01 16:40+0000\n"
+"Last-Translator: ismail yenigül <ismail.yenigul@surgate.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +41,7 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "Tümü"
 
 msgid "blocked"
 msgstr ""
@@ -97,10 +98,10 @@ msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
@@ -232,7 +233,7 @@ msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr ""
+msgstr "Örnek"
 
 msgid "Exception"
 msgstr ""
@@ -250,10 +251,10 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "Yükleniyor"
 
 msgid "Mail client"
-msgstr ""
+msgstr "E-posta istemcisi"
 
 msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
@@ -271,7 +272,7 @@ msgid "Notes"
 msgstr "Notlar"
 
 msgid "Nothing here yet"
-msgstr ""
+msgstr "Henüz burada bir şey yok"
 
 msgid "Number of entries"
 msgstr ""
@@ -340,7 +341,7 @@ msgid "Send by email"
 msgstr ""
 
 msgid "Send link by email"
-msgstr ""
+msgstr "Bağlantıyı e-posta ile gönder"
 
 msgid "Send by SMS"
 msgstr ""
