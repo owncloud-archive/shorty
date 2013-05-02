@@ -25,6 +25,7 @@
 # 
 # Translators:
 # arkascha <foss@christian-reiner.info>, 2013
+# I Robot <owncloud-bot@tmit.eu>, 2013
 # Marcel Kühlhorn <susefan93@gmx.de>, 2013
 # Mirodin <blobbyjj@ymail.com>, 2013
 # kabum <uu.kabum@gmail.com>, 2013
@@ -33,7 +34,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-27 22:09+0000\n"
+"PO-Revision-Date: 2013-05-02 22:07+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: German <translations@owncloud.org>\n"
 "MIME-Version: 1.0\n"
@@ -461,7 +462,7 @@ msgid "This is the shortened url registered at the backend"
 msgstr "Dies ist die gekürzte Url die am Backend registriert wird"
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr "Dies ist die Ziel-URL, die bei der Generierung des Shorty angegeben wurde"
+msgstr "Dies ist die URL wie bei der Generierung als Ziel angegeben"
 
 msgid "This is the url referencing the QRCode shown before"
 msgstr "Dies ist die URL die den zuvor gezeigten QRCode referenziert"

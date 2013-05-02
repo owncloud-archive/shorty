@@ -7,6 +7,7 @@
 "Close" => "סגירה",
 "Configuration" => "הגדרות",
 "Notes" => "הערות",
+"Nothing here yet" => "אין כאן כלום עדיין",
 "Save" => "שמירה",
 "Settings" => "הגדרות",
 "Title" => "כותרת"

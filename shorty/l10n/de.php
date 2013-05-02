@@ -136,7 +136,7 @@
 "This 2d barcode encodes the url pointing to this Shorty" => "Dieser 2D-Barcode kodiert die URL die diesen Shorty referenziert",
 "This is a internal url that the shortened url relays to" => "Dies ist eine interne Url auf die die gekürzte Url weiterleitet",
 "This is the shortened url registered at the backend" => "Dies ist die gekürzte Url die am Backend registriert wird",
-"This is the target url specified when generating this Shorty" => "Dies ist die Ziel-URL, die bei der Generierung des Shorty angegeben wurde",
+"This is the target url specified when generating this Shorty" => "Dies ist die URL wie bei der Generierung als Ziel angegeben",
 "This is the url referencing the QRCode shown before" => "Dies ist die URL die den zuvor gezeigten QRCode referenziert",
 "Title" => "Titel",
 "Toggle toolbar" => "Werkzeugleiste umschalten",
