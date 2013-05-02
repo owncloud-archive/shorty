@@ -95,10 +95,7 @@
 				</span>
 				<!-- backend -static- -->
 				<span id="backend-static" class="backend-supplement" style="display:none;">
-					<label for="backend-static-base" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Base url").':'); ?></label>
-					<input id="backend-static-base" type="text" name="backend-static-base"
-						readonly disabled value="<?php p($_['backend-static-base']); ?>"
-						placeholder="<?php p(OC_Shorty_L10n::t("Specify a static base url…")); ?>" style="width:25em;">
+					<input id="backend-static-base" type="hidden" name="backend-static-base" value="<?php p($_['backend-static-base']); ?>">
 					<br/>
 					<label for="backend-example" class="shorty-aspect"> </label>
 					<span id="backend-example">
