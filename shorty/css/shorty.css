@@ -710,9 +710,9 @@ html input, html textarea {
 .shorty-standalone .shorty-meta span#explanation {
 	border-radius: 0.5em;
 	border: 1px solid transparent;
-	display: inline-block;
+	display: inline-table;
 	overflow-x: hidden;
-	white-space: nowrap;
+/* 	white-space: nowrap; */
 	text-overflow: ellipsis;
 	width: inherit;
 }
