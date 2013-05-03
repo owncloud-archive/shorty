@@ -24,6 +24,7 @@
 Changelog: 
 
 Fixed the preferences dialogs layout when using the static backend.
+Suppress annoying and missleading autocomplete feature for url dialogs. 
 * Tue Apr 30 2013 Christian Reiner: version 0.3.25
 Addional personal preference to set the default status for new Shortys.
 Fixed a layout glitch for backend selection in the preference dialog. 
