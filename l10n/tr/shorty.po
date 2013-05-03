@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-05-01 16:40+0000\n"
+"PO-Revision-Date: 2013-05-03 14:20+0000\n"
 "Last-Translator: ismail yenigül <ismail.yenigul@surgate.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -44,16 +44,16 @@ msgid "all"
 msgstr "Tümü"
 
 msgid "blocked"
-msgstr ""
+msgstr "bloklandı"
 
 msgid "deleted"
 msgstr "silindi"
 
 msgid "disabled"
-msgstr ""
+msgstr "devre dışı"
 
 msgid "enabled"
-msgstr ""
+msgstr "etkin"
 
 msgid "never"
 msgstr "asla"
@@ -72,10 +72,10 @@ msgid "delete"
 msgstr "sil"
 
 msgid "edit"
-msgstr ""
+msgstr "Düzenleme"
 
 msgid "open"
-msgstr ""
+msgstr "Aç"
 
 msgid "share"
 msgstr "paylaş"
@@ -127,10 +127,10 @@ msgstr ""
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "Her erişim için"
 
 msgid "for own usage"
-msgstr ""
+msgstr "Kendi kullanımı için"
 
 msgid "with ownCloud users"
 msgstr ""
@@ -191,10 +191,10 @@ msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
 
 msgid "Click registered"
-msgstr ""
+msgstr "Tıklama kaydedildi"
 
 msgid "Clicks"
-msgstr ""
+msgstr "Tıklamalar"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -212,10 +212,10 @@ msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Panoya kopyala"
 
 msgid "Counted entries and clicks"
-msgstr ""
+msgstr "Sayılan kayıtlar ve tıklamalar"
 
 msgid "Create a new 'Shorty' and share it"
 msgstr ""
@@ -224,7 +224,7 @@ msgid "Creation"
 msgstr ""
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "shorty sil"
 
 msgid "Drag this to your browser bookmarks."
 msgstr ""
@@ -236,10 +236,10 @@ msgid "Example"
 msgstr "Örnek"
 
 msgid "Exception"
-msgstr ""
+msgstr "İstisna"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "İstisna (%s)"
 
 msgid "Expiration"
 msgstr ""
@@ -257,7 +257,7 @@ msgid "Mail client"
 msgstr "E-posta istemcisi"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "'%s'  numaralı shorty değişikliği kaydedildi"
 
 msgid "Modify attributes"
 msgstr ""
@@ -278,7 +278,7 @@ msgid "Number of entries"
 msgstr ""
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "Kayıt sayısı: %s"
 
 msgid "QRCode"
 msgstr ""
@@ -311,10 +311,10 @@ msgid "Preference saved"
 msgstr ""
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr " '%s' tercih çekildi"
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "'%s' tercihi kaydedildi."
 
 msgid "Preferences"
 msgstr ""
@@ -332,7 +332,7 @@ msgid "Reload"
 msgstr ""
 
 msgid "Reload list"
-msgstr ""
+msgstr "Listeyi yeniden yükle"
 
 msgid "Save"
 msgstr "Kaydet"
@@ -362,16 +362,16 @@ msgid "Setting '%s' retrieved"
 msgstr ""
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr " '%s' ayarı kaydedildi"
 
 msgid "Settings"
 msgstr "Ayarlar"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Paylaş ve kullan"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "shorty paylaş"
 
 msgid "Shortlet"
 msgstr ""
@@ -380,7 +380,7 @@ msgid "Shorty as QRCode"
 msgstr ""
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr " '%s' numaralı shorty silindi."
 
 msgid "Show as QRCode"
 msgstr ""
@@ -392,10 +392,10 @@ msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "SMS düzenleyicisi"
 
 msgid "Sort ascending"
 msgstr ""
@@ -416,16 +416,16 @@ msgid "Status"
 msgstr ""
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "'%s'  numaralı shorty durum değişikliği kaydedildi"
 
 msgid "Target"
-msgstr ""
+msgstr "Hedef"
 
 msgid "Target url"
 msgstr ""
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "Hedef url '%s' geçerli"
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
@@ -485,7 +485,7 @@ msgid "Unknown object of type caught: %s"
 msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "Url %s  olarak kısaltıldı"
 
 msgid "Use it in web pages by referencing or embedding"
 msgstr ""
@@ -509,43 +509,43 @@ msgstr ""
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "API erişim anahtarı"
 
 msgid "Account"
 msgstr ""
 
 msgid "API key"
-msgstr ""
+msgstr "API anahtarı"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "bit.ly kullanıcısı"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "bit.ly kullanıcı adı"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "bit.ly anahtarı"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "bit.ly kullanıcıların anahtarı"
 
 msgid "Google API key"
-msgstr ""
+msgstr "Google API anahtarı"
 
 msgid "Google API account"
 msgstr ""
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "tiny.cc kullanıcı"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "tiny.cc kullanıcı adı"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "tiny.cc anahtarı"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "tiny.cc kullanıcı anahtarı"
 
 # longer terms: typically explanations
 msgid ""

@@ -23,13 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# ismail yenigül <ismail.yenigul@surgate.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-26 16:05+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-05-03 12:50+0000\n"
+"Last-Translator: ismail yenigül <ismail.yenigul@surgate.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,40 +39,40 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "granted"
-msgstr ""
+msgstr "İmtiyaz verildi"
 
 msgid "denied"
-msgstr ""
+msgstr "engellendi"
 
 msgid "blocked"
-msgstr ""
+msgstr "bloklandı"
 
 msgid "load"
-msgstr ""
+msgstr "yükle"
 
 msgid "Address"
 msgstr "Adres"
 
 msgid "Click details"
-msgstr ""
+msgstr "Tıklama detayları"
 
 msgid "Clicks"
-msgstr ""
+msgstr "Tıklamalar"
 
 msgid "Host"
 msgstr "Sunucu"
 
 msgid "List clicks"
-msgstr ""
+msgstr "Tıklamaları listele"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "takip edilen tıklamalar listesi"
 
 msgid "Result"
 msgstr "Sonuç"
 
 msgid "Time"
-msgstr ""
+msgstr "Zaman"
 
 msgid "Title"
 msgstr "Başlık"
