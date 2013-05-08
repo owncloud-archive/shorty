@@ -31,7 +31,7 @@
  * @author Christian Reiner
  */
 
-// Session checks
+// session checks
 OCP\User::checkLoggedIn  ( );
 OCP\User::checkAdminUser ( );
 OCP\App::checkAppEnabled ( 'shorty' );
@@ -39,9 +39,7 @@ OCP\App::checkAppEnabled ( 'shorty' );
 $RUNTIME_NOSETUPFS = true;
 OC_App::loadApps();
 
-OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OCP\Util::addStyle  ( 'shorty',   'shorty' );
-OCP\Util::addStyle  ( 'shorty',   'settings' );
 // TODO: remove OC-4.0-compatibility:
 if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
 	OCP\Util::addStyle ( 'shorty', 'shorty-oc40' );

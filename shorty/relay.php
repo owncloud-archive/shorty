@@ -85,7 +85,7 @@ try
 		// we have to react to a jsonp request, so we have to reply valid jsonp manually:
 		// note that we use 'static' jsonp, so no callback parameter is provided, instead it is hard coded here
 		// this reduces the complexity of setting up the backend, since no additional parameter has to be handled
-		p(sprintf ( 'verifyStaticBackend(%s)', json_encode(array('status'=>'success')) ));
+		echo sprintf ( 'verifyStaticBackend(%s)', json_encode(array('status'=>'success')) );
 		exit();
 	}
 

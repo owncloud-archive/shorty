@@ -34,13 +34,15 @@
 ?>
 
 <!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
-<div id="dialog-verification" style="display:none;" title="<?php p(OC_Shorty_L10n::t("Static backend: base url verification")); ?>">
+<div id="dialog-verification" style="display:none;"
+	title="<?php p(OC_Shorty_L10n::t("Static backend: base url verification")); ?>">
+	<input id="verification-target" type="hidden" value="">
 	<!-- verification-in-progress -->
 	<div id="hourglass">
 		<img src="<?php p(OCP\Util::imagePath('shorty', 'loading-disk.gif')); ?>">
 	</div>
 	<!-- success -->
-	<div id="success" style="display:none;">
+	<div id="success">
 		<fieldset>
 			<legend>
 				<img class="shorty-status" src="<?php p(OCP\Util::imagePath('shorty','status/good.png')); ?>" alt="<?php OC_Shorty_L10n::t('Success') ?>" title="<?php OC_Shorty_L10n::t('Verification successful') ?>">
@@ -56,7 +58,7 @@
 		</fieldset>
 	</div>
 	<!-- failure -->
-	<div id="failure" style="display:none;">
+	<div id="failure">
 		<fieldset>
 			<legend>
 				<img class="shorty-status" src="<?php p(OCP\Util::imagePath('shorty','status/bad.png')); ?>" alt="<?php OC_Shorty_L10n::t('Success') ?>" title="<?php OC_Shorty_L10n::t('Verification successful') ?>">
@@ -66,8 +68,8 @@
 			<p><?php	p(OC_Shorty_L10n::t("Please check your setup and make sure that the configured base url is indeed correct."));
 						p(OC_Shorty_L10n::t("Make sure that all requests to it are somehow mapped to Shortys relay service.")); ?></p>
 			<p><?php	p(OC_Shorty_L10n::t("Relay service")); ?>:
-				<br>
-				<a><?php	p(OCP\Util::linkToAbsolute('','public.php?service=shorty_relay&id=')."&lt;shorty-key&gt;"); ?></a></p>
+			<br>
+			<a><?php	p(OCP\Util::linkToAbsolute('','public.php?service=shorty_relay&id=')."<shorty-key>"); ?></a></p>
 		</fieldset>
 	</div>
 </div>
