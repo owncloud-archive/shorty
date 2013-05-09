@@ -35,6 +35,6 @@
 
 $(document).ready(function(){
 	$('#hourglass').fadeIn('slow');
-// 	OC.Shorty.Action.Setting.check($('#dialog-verification'),$('#verification-target').val());
-	window.parent.OC.Shorty.Action.Setting.check($('#dialog-verification'),$('#verification-target').val());
+	OC.Shorty.Action.Setting.check($('#dialog-verification'),$('#verification-target').val());
+// 	window.parent.OC.Shorty.Action.Setting.check($('#dialog-verification'),$('#verification-target').val());
 })

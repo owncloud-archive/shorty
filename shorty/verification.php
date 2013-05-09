@@ -46,9 +46,10 @@ if (OC_Shorty_Tools::versionCompare('<','4.91')) // OC-4.5
 	OCP\Util::addStyle ( 'shorty', 'shorty-oc45' );
 OCP\Util::addStyle  ( 'shorty', 'verification' );
 
-// OCP\Util::addScript ( 'shorty', 'shorty' );
-// if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
-// 	OCP\Util::addScript ( 'shorty',  'debug' );
+OCP\Util::addScript ( 'shorty', 'shorty' );
+if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
+	OCP\Util::addScript ( 'shorty',  'debug' );
+OCP\Util::addScript ( 'shorty', 'util' );
 OCP\Util::addScript ( 'shorty', 'verification' );
 
 // we cannot ise OCs template engine here, since it would add unwanted headers...
@@ -72,7 +73,8 @@ $csp_policy = OC_Config::getValue('custom_csp_policy', FALSE); // load and get g
 if ( ! empty($csp_policy) )
 	// if so: manipulate it
 	OC_Config::setValue ( 'custom_csp_policy', 
-		preg_replace("/script-src (.*)'unsafe-eval'(.*)\\w?;/", 'script-src $1$2;', $csp_policy) );
+// 		preg_replace("/script-src (.*)'unsafe-eval'(.*)\\w?;/", 'script-src $1$2;', $csp_policy) );
+		preg_replace("/script-src [^;]*\\w?;/", 'script-src * ;', $csp_policy) );
 else
 	// else define it
 	OC_Config::setValue ( 'custom_csp_policy', 
