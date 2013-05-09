@@ -33,60 +33,8 @@
  * @author Christian Reiner
  */
 
-// $(document).ready(function(){
-// 	var target=$('#verification-target').val();
-// 	check(target);
-// }
-// 
-// $(window).load(function(){
-// 	var target=$('#verification-target').val();
-// 	check(target);
-// }
-
-// check:function(target){
-// alert(target);
-// 	var dfd = new $.Deferred();
-// 	// note: this is a jsonp request, cause the static backend provider might be a separate host
-// 	// to escape the cross domain protection by browsers we use the jsonp pattern
-// 	$.ajax({
-// 		// the '0000000000' below is a special id recognized for testing purposes
-// 		url:           target+'0000000000',
-// 		cache:         false,
-// 		crossDomain:   true, // required when using a "short named domain" and server side url rewriting
-// 		data:          { },
-// 		dataType:      'jsonp',
-// 		jsonp:         false,
-// 		jsonpCallback: 'verifyStaticBackend',
-// 		timeout:       6000 // timeout to catch silent failures, like a 404
-// 	}).pipe(
-// 		function(response){return OC.Shorty.Ajax.eval(response)},
-// 		function(response){return OC.Shorty.Ajax.fail(response)}
-// 	).done(function(response){
-// 		$.when(
-// 			$('#hourglass').fadeOut('fast')
-// 		).then(function(){
-// 			$('#success').fadeIn('fast');
-// 			dfd.resolve(response);
-// 		})
-// 	}).fail(function(response){
-// 		$.when(
-// 			$('#hourglass').fadeOut('fast')
-// 		).then(function(){
-// 			$('#failure').fadeIn('fast');
-// 			dfd.reject(response);
-// 		})
-// 	})
-// 	return dfd.promise();
-// } // OC.Shorty.Action.Setting.check
-
-// document.load(function(){
-// alert($('#verification-target').val());
-alert(parent.$('#verification-target', parent.$('#static-backend-verification').contentWindow.document).val());
-// alert($('#verification-target', $('#static-backend-verification').contentWindow.document).val());
-// alert($('#static-backend-verification')[0].contents().find('#verification-target').val());
-//alert($('#verification-target',window.parent.document.frames[0].document).val());
-// check($('#verification-target').val());
-// window.parent.OC.Shorty.Action.Setting.check($('#static-backend-verification'), $('#verification-target').val());
-window.parent.OC.Shorty.Action.Setting.check($('#static-backend-verification'), OC.Shorty.Action.Setting.Popup.find('#verification-target').val());
-// 	$('#static-backend-verification', window.parent.frames[0].document).remove();
-// });
+$(document).ready(function(){
+	$('#hourglass').fadeIn('slow');
+// 	OC.Shorty.Action.Setting.check($('#dialog-verification'),$('#verification-target').val());
+	window.parent.OC.Shorty.Action.Setting.check($('#dialog-verification'),$('#verification-target').val());
+})

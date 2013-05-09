@@ -1539,42 +1539,15 @@ OC.Shorty={
 					var popup=OC.Shorty.Action.Setting.Popup;
 					if (!popup.dialog){
 						var iframe=$('<iframe id="static-backend-verification" frameborder="0" marginwidth="0" marginheight="0"></iframe>');
-						iframe.attr({width:300,height:360,src:''});
-						// inject iframe into modal dialog
+						iframe.attr({width:300,height:360});
+						iframe.attr({src:OC.linkTo('shorty','verification.php?target=') + encodeURIComponent(target)});
 						popup=$("<div></div>").append(iframe).appendTo("body").dialog({
 							show:'fade',close:function(event,ui){$('#static-backend-verification').remove()},
 							autoOpen:false,modal:true,buttons:false,resizable:false,width:'auto',height:'auto'});
-						// add the required css and script resources
-						var styles=new Array(
-							'<link rel="stylesheet" href="'+OC.linkTo('shorty','css/shorty.css')+'" type="text/css" media="screen">',
-							'<link rel="stylesheet" href="'+OC.linkTo('shorty','css/verification.css')+'" type="text/css" media="screen">' 
-						);
-						$.each(styles,function(i,style){
-							iframe.contents().find('head').append(style);
-						});
-						// add the verification script in the iframes context
-						var scripts=new Array(
-							OC.linkTo('','remote.php/core.js'),
-							OC.linkTo('shorty','js/verification.js') 
-						);
-						$.each(scripts,function(i,script){
-							var context = document.getElementById('static-backend-verification');
-							var element = context.contentWindow.document.createElement('script');
-							element.type = 'text/javascript';
-							element.src = script;
-							context.contentWindow.document.body.appendChild(element);
-						});
-						// add the preloaded dialog as content
-						var content=$('#dialog-verification').clone(true);
-						content.css('display','block');
-						content.find('#hourglass').fadeIn('fast');
-						content.find('#verification-target').val(encodeURIComponent(target));
-						iframe.contents().find('body').append(content);
 					}
-					// visualize prepopulated dialog
+					// visualize dialog
 					popup.css('padding',0);
 					popup.dialog('open');
-// alert($('#verification-target',frames[0].document).val());
 					dfd.resolve();
 				}else{
 					// no targt given: show user where to fill in target

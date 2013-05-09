@@ -54,7 +54,6 @@ OCP\Util::addScript ( 'shorty',   'settings' );
 if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
 	OCP\Util::addScript ( 'shorty',  'debug' );
 
-
 // fetch template
 $tmpl = new OCP\Template ( 'shorty', 'tmpl_settings' );
 // inflate template
