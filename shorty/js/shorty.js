@@ -1542,11 +1542,12 @@ OC.Shorty={
 						iframe.attr({width:300,height:360});
 						iframe.attr({src:OC.linkTo('shorty','verification.php?target=') + encodeURIComponent(target)});
 						popup=$("<div></div>").append(iframe).appendTo("body").dialog({
-							show:'fade',close:function(event,ui){$('#static-backend-verification').remove()},
+// 							show:'fade',stack:true,close:function(event,ui){$('#static-backend-verification').remove();},
+							show:'fade',stack:true,close:function(event,ui){$(this).dialog('destroy');},
 							autoOpen:false,modal:true,buttons:false,resizable:false,width:'auto',height:'auto'});
 					}
 					// visualize dialog
-					popup.css('padding',0);
+					popup.css({padding:0,'z-index':'1000 !important'});
 					popup.dialog('open');
 					dfd.resolve();
 				}else{
