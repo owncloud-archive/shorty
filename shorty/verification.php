@@ -30,6 +30,31 @@
  * @author Christian Reiner
  */
 
+/**
+ * function createPayload
+ * @brief prepares and delivers the dialogs template
+ * @access public
+ * @author Christian Reiner
+ */
+function createPayload()
+{
+	try 
+	{
+		// set requested target as global variable for use in template further down
+		$target = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL, FALSE );
+		// fetch template
+		$tmpl = new OCP\Template ( 'shorty', 'tmpl_wdg_verify', '_' ); // the undefined view '_' suppresses the typical OC framework
+		// inflate template
+		$tmpl->assign ( 'verification-target', $target );
+		// render template
+		$tmpl->printPage();
+	} 
+	catch ( Exception $e ) 
+	{
+		p ( sprintf('Error %s: %s',$e->getCode(),$e->getMessage()) );
+	}
+}
+
 // session checks
 OCP\User::checkLoggedIn  ( );
 OCP\User::checkAdminUser ( );
@@ -52,45 +77,85 @@ if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
 OCP\Util::addScript ( 'shorty', 'util' );
 OCP\Util::addScript ( 'shorty', 'verification' );
 
-// we cannot ise OCs template engine here, since it would add unwanted headers...
-// so we have to 'simulate' using a template: 
-
-try 
-{
-	// set requested target as global variable for use in template further down
-	$target = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL, FALSE );
-} 
-catch ( Exception $e ) 
-{
-	p ( sprintf('Error %s: %s',$e->getCode(),$e->getMessage()) );
-}
-
 // manipulate the config entry setting the Content-Security-Policy header sent by the template engine
 // we modify that value to grant the ajax request required to verify the base url for the static backend
-$csp_policy = OC_Config::getValue('custom_csp_policy', FALSE); // load and get global OC config into cache
+// $csp_policy = OC_Config::getValue('custom_csp_policy', FALSE); // load and get global OC config into cache
 // does the configuration define a policy (does not return the default FALSE)?
 
-if ( ! empty($csp_policy) )
-	// if so: manipulate it
-	OC_Config::setValue ( 'custom_csp_policy', 
-// 		preg_replace("/script-src (.*)'unsafe-eval'(.*)\\w?;/", 'script-src $1$2;', $csp_policy) );
-		preg_replace("/script-src [^;]*\\w?;/", 'script-src * ;', $csp_policy) );
+// prepare and read OCs global config cache
+OC_config::getKeys();
+
+if ( ! class_exists('Reflection') )
+{
+	// use reflection api to make a temporary manipulation
+	// make cached config value accessible for this request so the csp value can be manpipulated
+	$reflection = new ReflectionClass('OC_Config');
+	$property = $reflection->getProperty('cache');
+	$property->setAccessible(true);
+	$config = $property->getValue();
+
+	if ( array_key_exists('custom_csp_policy',$config) )
+	{
+		// keep "old" config values safe
+		$change = $config;
+		// temporarily manipulate existing csp policy
+		$change['custom_csp_policy'] = preg_replace ( "/script-src [^;]*\\w?;/", 'script-src * ;', $config['custom_csp_policy'] );
+		// replace config with changed value
+		$property->setValue ( $change );
+		// do what has to be done
+		createPayload();
+		// reset config to old values
+		$property->setValue ( $config );
+	}
+	else
+	{
+		// keep "old" config values safe
+		$change = $config;
+		// temporarily inject custome csp policy
+		$change['custom_csp_policy'] = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:";
+		// replace config with changed value
+		$property->setValue ( $change );
+		// do what has to be done
+		createPayload();
+		// reset config to old values
+		$property->setValue ( $config );
+	}
+}
 else
-	// else define it
-	OC_Config::setValue ( 'custom_csp_policy', 
-		"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:" );
+{
+	// no reflection api installed, we have to make a "normal" change to the configuration ...
+	// ... since the config class automatically saves all changes we have to reset that change at the end
+	if ( in_array('custom_csp_policy',OC_config::getKeys()) )
+		$csp_policy = OC_config::getValue('custom_csp_policy');
+	else
+		$csp_policy = NULL;
 
-// fetch template
-$tmpl = new OCP\Template ( 'shorty', 'tmpl_wdg_verify', '_' ); // the undefined view '_' suppresses the typical OC framework
+	switch ( $csp_policy )
+	{
+		case NULL:
+			// set custom value
+			OC_Config::setValue ( 'custom_csp_policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:" );
+			// do what has to be done
+			createPayload();
+			// reset to missing value
+			OC_Config::deleteKey ( 'custom_csp_policy' );
+			break;
+		case '':
+			// set custom value
+			OC_Config::setValue ( 'custom_csp_policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:" );
+			// do what has to be done
+			createPayload();
+			// reset to empty value
+			OC_Config::setValue ( 'custom_csp_policy', '' );
+			break;
+		default:
+			// manipulate existing value
+			OC_Config::setValue ( 'custom_csp_policy', preg_replace("/script-src [^;]*\\w?;/", 'script-src * ;', $csp_policy) );
+			// do what has to be done
+			createPayload();
+			// reset to previous value
+			OC_Config::setValue ( 'custom_csp_policy', $csp_policy );
+	} // switch
+}
 
-// inflate template
-$tmpl->assign ( 'verification-target', $target );
-// render template
-$tmpl->printPage();
-
-// reset tp previous config value for the csp policy
-if ( ! empty($csp_policy) )
-	OC_Config::setValue ( 'custom_csp_policy', $csp_policy );
-else
-	OC_Config::deleteKey ( 'custom_csp_policy' );
 ?>
