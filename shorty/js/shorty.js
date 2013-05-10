@@ -310,7 +310,7 @@ OC.Shorty={
 					confirm.off('click');
 					confirm.on('click',function(event){
 						event.preventDefault();
-						dialog.find('#target').effect('highlight',{'color':'#CCCCCC'},500);
+						dialog.find('#target').effect('highlight',{'color':'#CCCCCC'},OC.Shorty.Status.versionCompare('>=','4.91')?2000:500);
 					});
 					confirm.removeClass('sharp');
 				}
@@ -747,13 +747,9 @@ OC.Shorty={
 						OC.Shorty.WUI.List.vacuum(),
 						body.fadeIn(duration)
 					).pipe(function(){
-						OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
-							// time to use for pulsation: changed in OC-5 due to different configurations
-							var timespan=result?2000:500;
-							rows.each(function(){
-								$(this).removeClass('shorty-fresh');
-								$(this).find('td').effect('pulsate', { times:3 }, timespan);
-							});
+						rows.each(function(){
+							$(this).removeClass('shorty-fresh');
+							$(this).find('td').effect('pulsate', { times:3 }, OC.Shorty.Status.versionCompare('>=','4.91')?2000:500);
 						});
 					}).done(dfd.resolve)
 				}else{
@@ -1535,22 +1531,27 @@ OC.Shorty={
 			 * @author Christian Reiner
 			 */
 			verify:function(){
-				if (!OC.Shorty.Action.Setting.Popup.dialog){
-					OC.Shorty.Action.Setting.Popup=$('#shorty-fieldset #dialog-verification');
-					OC.Shorty.Action.Setting.Popup.dialog({show:'fade',autoOpen:false,modal:true});
-					OC.Shorty.Action.Setting.Popup.dialog('option','minHeight',290 );
-					OC.Shorty.Action.Setting.Popup.dialog('option','minWidth',400 );
-				}
-				var dfd = new $.Deferred();
+				var dfd=new $.Deferred();
+				// prepare preloaded iframe to load the base url
 				var target=$('#shorty #backend-static #backend-static-base').val();
 				if (target){
-					// we have a target, make a request to it
-					$.when(
-						this.check(OC.Shorty.Action.Setting.Popup,target)
-					).done(dfd.resolve).fail(dfd.reject)
+					// load the prepared iframe into a dialog
+					var popup=OC.Shorty.Action.Setting.Popup;
+					if (!popup.dialog){
+						var iframe=$('<iframe id="static-backend-verification" frameborder="0" marginwidth="0" marginheight="0"></iframe>');
+						iframe.attr({width:300,height:360});
+						iframe.attr({src:OC.linkTo('shorty','verification.php?target=') + encodeURIComponent(target)});
+						popup=$("<div></div>").append(iframe).appendTo("body").dialog({
+							show:'fade',close:function(event,ui){$('#static-backend-verification').remove()},
+							autoOpen:false,modal:true,buttons:false,resizable:false,width:'auto',height:'auto'});
+					}
+					// visualize dialog
+					popup.css('padding',0);
+					popup.dialog('open');
+					dfd.resolve();
 				}else{
 					// no targt given: show user where to fill in target
-					$('#shorty #backend-static #backend-static-base').effect('pulsate');
+					$('#shorty #backend-static #backend-static-base').effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500);
 					dfd.reject();
 				}
 				return dfd.promise();
@@ -1561,11 +1562,6 @@ OC.Shorty={
 			 * @author Christian Reiner
 			 */
 			check:function(popup,target){
-				popup.find('#verification-target').text(target);
-				popup.dialog('open');
-				popup.find('#success').hide();
-				popup.find('#failure').hide();
-				popup.find('#hourglass').fadeIn('fast');
 				var dfd = new $.Deferred();
 				// note: this is a jsonp request, cause the static backend provider might be a separate host
 				// to escape the cross domain protection by browsers we use the jsonp pattern
@@ -1578,7 +1574,7 @@ OC.Shorty={
 					dataType:      'jsonp',
 					jsonp:         false,
 					jsonpCallback: 'verifyStaticBackend',
-					timeout:       6000 // to catch silent failures, like a 404
+					timeout:       6000 // timeout to catch silent failures, like a 404
 				}).pipe(
 					function(response){return OC.Shorty.Ajax.eval(response)},
 					function(response){return OC.Shorty.Ajax.fail(response)}
@@ -2266,9 +2262,10 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	*/
 	ToolbarCheckFilter: function(toolbar){
 		return (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
-				&&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]').effect('pulsate')) )
+				&&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]')
+					.effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) )
 				||(  (toolbar.find('th#status select :selected').val())
-				&&(toolbar.find('#status').effect('pulsate')) ) );
+				&&(toolbar.find('#status').effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) ) );
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	/**
 	* @class OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums
