@@ -1011,3 +1011,6 @@ div.jqimessage input::-webkit-selection{
 div.jqimessage fieldset div#qrcode-img img.usage-qrcode {
 	cursor: pointer;
 }
+.ui-front {
+	z-index: 1000 !important;
+}

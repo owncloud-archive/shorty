@@ -295,6 +295,4 @@
 		</span>
 	</p>
 <?php } ?>
-	<!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
-	<?php require_once('tmpl_dlg_verify.php'); ?>
 </fieldset>
