@@ -23,43 +23,43 @@
 */
 
 /**
- * @file css/settings.css
- * @brief Style definitions for the system settings dialog
+ * @file css/verification.css
+ * @brief Styles for the verification of the Static Backends base url
  * @author Christian Reiner
  */
 
-#shorty img {
-	vertical-align: baseline;
-	margin: 0;
-	padding: 0;
-}
-
 /* a dialog for verification of the static backend setup */
+#dialog-verification {
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+#dialog-verification div {
+	display:none;
+	position:absolute;
+	width:100%;
+	height:100%;
+	text-align:center;
+	background-color:white;
+}
+#dialog-verification #hourglass img {
+	display:inline;
+	margin:120px 0 0;
+	padding:0;
+	width:20%
+}
 #dialog-verification legend {
-	width: 100%;
-	text-align: center;
+	padding: 10px 0 0;
+}
+#dialog-verification legend {
+	width:100%;
+	text-align:center;
 }
 #dialog-verification p {
-	padding: 0.3em 0;
+	padding:0.3em 0;
 }
 #dialog-verification a {
-	font-family: Monospace;
-	font-size: 140%;
-	line-height: 100%;
-	background-color: #C0C0C0;
-}
-#dialog-verification #hourglass {
-	display: block;
-	text-align: center;
-	width: 100%;
-	height: 100%;
-	margin-top: 20px;
-}
-#dialog-verification #failure {
-	display: none;
-	position: absolute;
-}
-#dialog-verification #success {
-	display: none;
-	position: absolute;
+	font-family:Monospace;
+	line-height:100%;
+/* 	background-color:#C0C0C0; */
 }
