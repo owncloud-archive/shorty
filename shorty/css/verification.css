@@ -42,12 +42,6 @@
 	text-align:center;
 	background-color:white;
 }
-#dialog-verification #hourglass img {
-	display:inline;
-	margin:120px 0 0;
-	padding:0;
-	width:20%
-}
 #dialog-verification legend {
 	padding: 10px 0 0;
 }
@@ -56,10 +50,11 @@
 	text-align:center;
 }
 #dialog-verification p {
-	padding:0.3em 0;
+	padding:14px;
 }
 #dialog-verification a {
 	font-family:Monospace;
 	line-height:100%;
+	cursor: help;
 /* 	background-color:#C0C0C0; */
 }

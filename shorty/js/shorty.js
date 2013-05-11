@@ -1538,13 +1538,16 @@ OC.Shorty={
 					// load the prepared iframe into a dialog
 					var popup=OC.Shorty.Action.Setting.Popup;
 					if (!popup.dialog){
+						popup=$('<div />');
+						popup.append($('<div id="hourglass"><img src="'+OC.imagePath('shorty','loading-disk.gif')+'"></div>'));
 						var iframe=$('<iframe id="static-backend-verification" frameborder="0" marginwidth="0" marginheight="0"></iframe>');
 						iframe.attr({width:300,height:360});
 						iframe.attr({src:OC.linkTo('shorty','verification.php?target=') + encodeURIComponent(target)});
-						popup=$("<div></div>").append(iframe).appendTo("body").dialog({
-// 							show:'fade',stack:true,close:function(event,ui){$('#static-backend-verification').remove();},
-							show:'fade',stack:true,close:function(event,ui){$(this).dialog('destroy');},
-							autoOpen:false,modal:true,buttons:false,resizable:false,width:'auto',height:'auto'});
+						popup.append(iframe).appendTo("body").dialog({
+							show:'fade',stack:true,dialogClass:'shorty-verify',
+							close:function(event,ui){$(this).dialog('destroy');},
+							autoOpen:false,modal:true,buttons:false,resizable:false,
+							width:'auto',height:'auto'});
 					}
 					// visualize dialog
 					popup.css({padding:0,'z-index':'1000 !important'});
@@ -1581,14 +1584,16 @@ OC.Shorty={
 					function(response){return OC.Shorty.Ajax.fail(response)}
 				).done(function(response){
 					$.when(
-						popup.find('#hourglass').fadeOut('fast')
+// 						popup.find('#hourglass').fadeOut('fast')
+						$(window.parent.document.body).find('.shorty-verify #hourglass').fadeOut('fast')
 					).then(function(){
 						popup.find('#success').fadeIn('fast');
 						dfd.resolve(response);
 					})
 				}).fail(function(response){
 					$.when(
-						popup.find('#hourglass').fadeOut('fast')
+// 						popup.find('#hourglass').fadeOut('fast')
+						$(window.parent.document.body).find('.shorty-verify #hourglass').fadeOut('fast')
 					).then(function(){
 						popup.find('#failure').fadeIn('fast');
 						dfd.reject(response);

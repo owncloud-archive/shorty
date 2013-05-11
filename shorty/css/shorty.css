@@ -1011,6 +1011,21 @@ div.jqimessage input::-webkit-selection{
 div.jqimessage fieldset div#qrcode-img img.usage-qrcode {
 	cursor: pointer;
 }
-.ui-front {
+/* the verification dialog to test the base url for the 'Static Backend' */
+.shorty-verify {
 	z-index: 1000 !important;
+}
+.shorty-verify #hourglass {
+	display:block;
+	position:absolute;
+	width:100%;
+	height:100%;
+	text-align:center;
+	background-color:white;
+}
+.shorty-verify #hourglass img {
+	display:inline;
+	margin:120px 0 0;
+	padding:0;
+	width:20%
 }

@@ -37,10 +37,6 @@
 <div id="dialog-verification" title="<?php p(OC_Shorty_L10n::t("Static backend: base url verification")); ?>">
 	<input id="verification-target" type="hidden" 
 			value="<?php p($_['verification-target']);?>">
-	<!-- verification-in-progress -->
-	<div id="hourglass">
-		<img src="<?php p(OCP\Util::imagePath('shorty', 'loading-disk.gif')); ?>">
-	</div>
 	<!-- success -->
 	<div id="success">
 		<fieldset>
@@ -49,7 +45,7 @@
 				<span id="title" class="shorty-title"><strong><?php p(OC_Shorty_L10n::t("Verification successful")); ?>!</strong></span>
 			</legend>
 			<p><?php	p(OC_Shorty_L10n::t("Great, your setup appears to be working fine!")); ?></p>
-			<p><?php	p(OC_Shorty_L10n::t("Requests to the configured base url are mapped to this ownClouds relay service."));
+			<p><?php	p(OC_Shorty_L10n::t("Requests to the configured base url are mapped to this ownClouds relay service.").' ');
 						p(OC_Shorty_L10n::t("Usage of that static backend is fine and safe as long as this setup is not altered.")); ?></p>
 			<p><?php	p(OC_Shorty_L10n::t("This backend will now be offered as an additional backend alternative to all local users inside their personal preferences.")); ?></p>
 		</fieldset>
@@ -62,7 +58,7 @@
 				<span id="title" class="shorty-title"><strong><?php p(OC_Shorty_L10n::t("Verification failed")); ?>!</strong></span>
 			</legend>
 			<p><?php	p(OC_Shorty_L10n::t("Sorry, but your setup appears not to be working correctly yet!")); ?></p>
-			<p><?php	p(OC_Shorty_L10n::t("Please check your setup and make sure that the configured base url is indeed correct."));
+			<p><?php	p(OC_Shorty_L10n::t("Please check your setup and make sure that the configured base url is indeed correct.").' ');
 						p(OC_Shorty_L10n::t("Make sure that all requests to it are somehow mapped to Shortys relay service.")); ?></p>
 			<p><?php	p(OC_Shorty_L10n::t("Relay service")); ?>:
 			<br>
