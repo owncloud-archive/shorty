@@ -1533,20 +1533,18 @@ OC.Shorty={
 			verify:function(){
 				var dfd=new $.Deferred();
 				// prepare preloaded iframe to load the base url
-				var target=$('#shorty #backend-static #backend-static-base').val();
-				if (target){
+				if ($('#shorty #backend-static #backend-static-base').val()){
 					// load the prepared iframe into a dialog
 					var popup=OC.Shorty.Action.Setting.Popup;
-					if (!popup.dialog){
+					if ( ! popup.dialog){
 						popup=$('<div />');
 						popup.append($('<div id="hourglass"><img src="'+OC.imagePath('shorty','loading-disk.gif')+'"></div>'));
 						var iframe=$('<iframe id="static-backend-verification" frameborder="0" marginwidth="0" marginheight="0"></iframe>');
 						iframe.attr({width:300,height:360});
-						iframe.attr({src:OC.linkTo('shorty','verification.php?target=') + encodeURIComponent(target)});
+						iframe.attr({src:OC.linkTo('shorty','verification.php')});
 						popup.append(iframe).appendTo("body").dialog({
 							show:'fade',stack:true,dialogClass:'shorty-verify',
-// 							close:function(event,ui){$(this).dialog('destroy');},
-							close:function(event,ui){$(this).dialog.remove();},
+// 							close:function(event,ui){$(this).dialog.remove();},
 							autoOpen:false,modal:true,buttons:false,resizable:false,
 							width:'auto',height:'auto'});
 					}
@@ -1585,7 +1583,6 @@ OC.Shorty={
 					function(response){return OC.Shorty.Ajax.fail(response)}
 				).done(function(response){
 					$.when(
-// 						popup.find('#hourglass').fadeOut('fast')
 						$(window.parent.document.body).find('.shorty-verify #hourglass').fadeOut('fast')
 					).then(function(){
 						popup.find('#success').fadeIn('fast');
@@ -1593,7 +1590,6 @@ OC.Shorty={
 					})
 				}).fail(function(response){
 					$.when(
-// 						popup.find('#hourglass').fadeOut('fast')
 						$(window.parent.document.body).find('.shorty-verify #hourglass').fadeOut('fast')
 					).then(function(){
 						popup.find('#failure').fadeIn('fast');

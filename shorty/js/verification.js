@@ -34,6 +34,5 @@
  */
 
 $(document).ready(function(){
-	OC.Shorty.Action.Setting.check($('#dialog-verification'),$('#verification-target').val());
-// 	window.parent.OC.Shorty.Action.Setting.check($('#dialog-verification'),$('#verification-target').val());
+	OC.Shorty.Action.Setting.check($('#dialog-verification'),$('#shorty input#backend-static-base',$(window.parent.document.body)).val());
 })

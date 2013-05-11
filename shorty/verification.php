@@ -40,12 +40,8 @@ function createPayload()
 {
 	try 
 	{
-		// set requested target as global variable for use in template further down
-		$target = OC_Shorty_Type::req_argument ( 'target',  OC_Shorty_Type::URL, FALSE );
 		// fetch template
 		$tmpl = new OCP\Template ( 'shorty', 'tmpl_wdg_verify', '_' ); // the undefined view '_' suppresses the typical OC framework
-		// inflate template
-		$tmpl->assign ( 'verification-target', $target );
 		// render template
 		$tmpl->printPage();
 	} 
