@@ -53,7 +53,6 @@ function createPayload()
 
 // session checks
 OCP\User::checkLoggedIn  ( );
-OCP\User::checkAdminUser ( );
 OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
