@@ -35,8 +35,6 @@
 
 <!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
 <div id="dialog-verification" title="<?php p(OC_Shorty_L10n::t("Static backend: base url verification")); ?>">
-	<input id="verification-target" type="hidden" 
-			value="<?php p($_['verification-target']);?>">
 	<!-- success -->
 	<div id="success">
 		<fieldset>
