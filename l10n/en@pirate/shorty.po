@@ -463,7 +463,7 @@ msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 msgid "Toggle toolbar"
 msgstr ""

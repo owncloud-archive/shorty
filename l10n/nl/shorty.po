@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-05-01 20:20+0000\n"
+"PO-Revision-Date: 2013-05-09 08:30+0000\n"
 "Last-Translator: André Koot <meneer@tken.net>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/owncloud/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -492,7 +492,7 @@ msgid "Use it in web pages by referencing or embedding"
 msgstr "Gebruik dit in webpagina's of voeg ze in"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "Gebruik de '%s' knop bovenaan of de tekst 'Shortlet'"
 
 msgid "Verify by clicking…"
 msgstr "Verifiëren door klikken..."
@@ -552,7 +552,7 @@ msgstr "tiny.cc gebruikerssleutel"
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "Dwing verificatie van digitale certificaten voor versleuteling af, bij communicatie met de backend."
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
@@ -589,7 +589,7 @@ msgstr "De externe 'tiny.cc' dienst wordt gebruikt om een verkorte url te regist
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "Er wordt geen backend gebruikt. Er worden rechtstreekse links naar uw ownCloud gegenereerd."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
@@ -598,17 +598,17 @@ msgstr "De dienst eist dat u zichzelf authenticeert met een geldige bit.ly gebru
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "Zulke links zijn meestal langer dan links die worden gegenereerd door de backend."
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "Maar deze optie heeft geen derde partij diensten nodig en laat u uw shorty's zelf in beheer houden"
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "Doordat deze instelling afhangt van de configuratie van de server, kan de basis url alleen worden opgegeven in de beheermodule."
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
@@ -618,25 +618,25 @@ msgstr "Vast, regelgebaseerd  backend, genereert shorty links relatief tot een g
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr ""
+msgstr "Let erop dat elke aanroep van de hier geconfigureerde url intern wordt omgezet naar de 'shorty' module."
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "Het doel van de omzetting moet een URL zijn, zoals:"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "Probeer het voorbeeld eens. Dat zou moeten resulteren in een melding dat de instelling werkt,"
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "Niets invullen als u geen verkorte basis url hebt die zoals beschreven kan worden omgezet."
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "Alleen via deze backend als u een verkorte basis url opgeeft die kan worden omgezet zoals beschreven. Anders werken uw shorty's niet."
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
@@ -684,7 +684,7 @@ msgstr "Gebruik van de vaste backend is prima en veilig zolang deze configuratie
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "Deze backend wordt nu aan alle lokale gebruikers in hun persoonlijke voorkeuren aangeboden als een aanvullend backend alternatief."
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Helaas, uw instellingen lijken nog niet goed te werken!"
@@ -697,4 +697,4 @@ msgstr "Controleer uw instellingen en let erop dat de geconfigureerde basis url 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
+msgstr "Let erop dat alle aanroepen worden omgezet naar Shorty's relayservice."

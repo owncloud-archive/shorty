@@ -25,13 +25,14 @@
 # 
 # Translators:
 # Dianjin Wang <1132321739qq@gmail.com>, 2013
+# zhangmin <zm1990s@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-27 22:09+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-05-10 04:20+0000\n"
+"Last-Translator: zhangmin <zm1990s@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/owncloud/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,32 +51,32 @@ msgid "deleted"
 msgstr "已经删除"
 
 msgid "disabled"
-msgstr ""
+msgstr "已禁用"
 
 msgid "enabled"
-msgstr ""
+msgstr "已启用"
 
 msgid "never"
 msgstr "从不"
 
 msgid "private"
-msgstr ""
+msgstr "私有"
 
 msgid "public"
-msgstr ""
+msgstr "公开"
 
 msgid "shared"
-msgstr ""
+msgstr "分享"
 
 # actions ("to be done")
 msgid "delete"
 msgstr "删除"
 
 msgid "edit"
-msgstr ""
+msgstr "编辑"
 
 msgid "open"
-msgstr ""
+msgstr "打开"
 
 msgid "share"
 msgstr "共享"
@@ -85,16 +86,16 @@ msgstr "显示"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "无"
 
 msgid "error"
-msgstr ""
+msgstr "错误"
 
 msgid "info"
-msgstr ""
+msgstr "消息"
 
 msgid "debug"
-msgstr ""
+msgstr "调试"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -105,102 +106,102 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "bitly.com 服务"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "cli.gs 服务"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "goo.gl 服务"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "is.gd 服务"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "ti.ny 服务"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "tiny.cc 服务"
 
 msgid "static backend"
-msgstr ""
+msgstr "静态后端"
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "谁都可用"
 
 msgid "for own usage"
-msgstr ""
+msgstr "自己用"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "给ownCloud用户"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "对任何人可用"
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "最后访问"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "添加一个新短链"
 
 msgid "Add as new"
-msgstr ""
+msgstr "添加为新短链"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "将页面保存为ownCloud '短链'"
 
 msgid "Administration"
-msgstr ""
+msgstr "管理"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "管理设置，可修改此应用的全局设置："
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "在短信启动后"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "另外，此图片也可以下载打印或保存"
 
 msgid "alternatively the link can be copied for usage apart"
-msgstr ""
+msgstr "此外，也可以复制后独立使用此链接"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "此外，也可手动复制此链接"
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "或者可以手动将链接复制到信息中"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "任何可能有用的信息……"
 
 msgid "Backend"
 msgstr "后端"
 
 msgid "Base url"
-msgstr ""
+msgstr "基础网址"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "请选择一项服务"
 
 msgid "Click for embedding details"
-msgstr ""
+msgstr "点击查看嵌入详情"
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr ""
+msgstr "当想将某网页保存为短链时，点击它即可。"
 
 msgid "Click registered"
-msgstr ""
+msgstr "点击注册"
 
 msgid "Clicks"
 msgstr "点击次数"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "点击下方的'确定' 尝试加载邮件编辑器"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "点击下方的'确定' 尝试加载短信编辑器"
 
 msgid "Close"
 msgstr "关闭"
@@ -209,124 +210,124 @@ msgid "Configuration"
 msgstr "配置"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "反馈信息的数目"
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "复制到剪贴板 "
 
 msgid "Counted entries and clicks"
-msgstr ""
+msgstr "统计条目和点击数"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "新建 '短链' 并分享"
 
 msgid "Creation"
-msgstr ""
+msgstr "创建日期"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "删除锻炼"
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "将这个拖放到浏览器的书签栏"
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr ""
+msgstr "使用下面的网址将二维码图片插入到网页中"
 
 msgid "Example"
-msgstr ""
+msgstr "范例"
 
 msgid "Exception"
-msgstr ""
+msgstr "例外"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "例外(%s)"
 
 msgid "Expiration"
 msgstr "过期"
 
 msgid "Feedback"
-msgstr ""
+msgstr "反馈"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "可在管理中点击启用启用"
 
 msgid "Loading"
 msgstr "加载中"
 
 msgid "Mail client"
-msgstr ""
+msgstr "邮件客户端"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "对id为 '%s' 的短链的修改已保存"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "修改属性"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "修改短链"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "新建短链"
 
 msgid "Notes"
-msgstr "笔记"
+msgstr "说明"
 
 msgid "Nothing here yet"
-msgstr "这里还什么都没有"
+msgstr "这里是空的哦！"
 
 msgid "Number of entries"
 msgstr "条目的数量"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "条目的数量：%s"
 
 msgid "QRCode"
-msgstr ""
+msgstr "二维码"
 
 msgid "Open source url"
-msgstr ""
+msgstr "打开源地址"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "打开中继地址"
 
 msgid "Open target"
-msgstr ""
+msgstr "打开目标"
 
 msgid "Open target url"
-msgstr ""
+msgstr "打开目标地址"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "可选设置，关于'静态后端'的"
 
 msgid "or simpy print or download it for off-line usage"
-msgstr ""
+msgstr "或者，也可直接打印或下载离线使用"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "然后粘贴到别的地方 "
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "首选项已恢复"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "首选项已保存"
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "偏好设置 '%s' 已恢复"
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "偏好设置 '%s' 已保存"
 
 msgid "Preferences"
-msgstr ""
+msgstr "首选项"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "准备以短信的形式发送"
 
 msgid "Relay service"
-msgstr ""
+msgstr "中继服务"
 
 msgid "Relay url"
-msgstr ""
+msgstr "中继地址"
 
 msgid "Reload"
 msgstr "刷新"
@@ -338,7 +339,7 @@ msgid "Save"
 msgstr "保存"
 
 msgid "Send by email"
-msgstr ""
+msgstr "通过邮件发送"
 
 msgid "Send link by email"
 msgstr "通过邮件发送链接"
@@ -347,121 +348,121 @@ msgid "Send by SMS"
 msgstr "通过 SMS 发送"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "使用左面的齿轮 (%%s) 按钮修改个人设置"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "使用右上角的齿轮 (%%s) 按钮设置个人首选项"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "设置已重置"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "设置已保存"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "设置 '%s' 已恢复"
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "设置 '%s' 已保存"
 
 msgid "Settings"
 msgstr "设置"
 
 msgid "Share and use"
-msgstr ""
+msgstr "分享并使用"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "分享短链"
 
 msgid "Shortlet"
-msgstr ""
+msgstr "Shortlet"
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "将短链制作成二维码"
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr "id为'%s' 的短链已被删除"
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "显示为二维码"
 
 msgid "Show details"
 msgstr "显示详情"
 
 msgid "Show usage"
-msgstr ""
+msgstr "显示使用情况"
 
 msgid "SMS"
-msgstr ""
+msgstr "短信"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "短信编辑器"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "升序"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "降序"
 
 msgid "Source url"
-msgstr ""
+msgstr "源地址"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "指定一个静态基础网址……"
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "静态后台:基本网址验证"
 
 msgid "Status"
 msgstr "状态"
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "id为 '%s' 的短链状态已改变"
 
 msgid "Target"
-msgstr ""
+msgstr "目标"
 
 msgid "Target url"
-msgstr ""
+msgstr "目标地址"
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "目标地址 '%s' 可用"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "那个图片可用在写文档或建网站上"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "后端用来产生缩短的链接。"
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "新建短链的默认状态"
 
 msgid "The link below can be copied for usage apart"
-msgstr ""
+msgstr "下面的链接可复制后独立使用"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "附加的 '%%s' 插件跟踪短链的使用情况！"
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "因此必须手动复制内容"
 
 msgid "then paste into message"
-msgstr ""
+msgstr "然后粘贴到信息"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr ""
+msgstr "这个2d 条码代表此短链"
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr ""
+msgstr "这是短链中间指向的内部地址"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "这是在后端生成的短链"
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr ""
+msgstr "这是短链指向的目标地址"
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr ""
+msgstr "下面的网址指向前面出现的二维码"
 
 msgid "Title"
 msgstr "标题"
@@ -470,34 +471,34 @@ msgid "Toggle toolbar"
 msgstr "切换工具栏"
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "总点击数"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "通常这只适用于智能手机等设备"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "出现异常：%s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "很不幸这个计划还未完整实施"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "出现未知类型对象：%s"
 
 msgid "Url shortened to: %s"
 msgstr "Url 缩短为：%s"
 
 msgid "Use it in web pages by referencing or embedding"
-msgstr ""
+msgstr "通过引用或嵌入到网页中使用"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "使用上面的 '%s' 按钮或 'Shortlet' 书签"
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "通过点击验证"
 
 msgid "Verification failed"
-msgstr ""
+msgstr "认证失败"
 
 # exception description
 msgid ""
@@ -505,195 +506,195 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr ""
+msgstr "%s\n消息(code): %s (%s)\n文件(line): %s (%s)\n信息: %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "API 访问密匙"
 
 msgid "Account"
-msgstr ""
+msgstr "账户"
 
 msgid "API key"
-msgstr ""
+msgstr "API密匙"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "bit.ly 用户"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "bit.ly 用户名"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "bit.ly 密匙"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "bit.ly 用户密匙"
 
 msgid "Google API key"
-msgstr ""
+msgstr "Google API 密匙"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Google API 账户"
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "tiny.cc 用户"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "tiny.cc 用户名"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "tiny.cc 密匙"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "tiny.cc 用户密匙"
 
 # longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "与后端通信时强制验证加密证书"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "'bitly.com'服务用来注册每个短链（即让你的短链可在互联网访问）。"
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "这表示你必须现在他们的网站注册一个 '%s' "
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "附加的 'turl' 服务用来注册每个短链"
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "附加的 'ti.ny' 服务用来注册每个短链"
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "附加的 'cli.gs' 服务用来注册短链。"
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "附加的 'is.gd' 服务用来注册生成的短链。"
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "'tiny.cc '服务用来注册短链"
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "不使用后端，生成直接指向ownCloud的链接"
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "此服务需要你提供一个可用的 bit.ly 用户名和 '%s'"
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "这样的链接会比使用了后台的链接长一点"
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "但是，此选项无需依靠其他第三方服务，你可以随意控制你的短链"
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "因为此设置依赖于服务器的基础地址设置规则，所以只能在 '管理' 部分中设置"
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "静态，有规则的后端，生成一个与基地址关联的短链。"
 
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr ""
+msgstr "注意，这里的任何地址设置都会映射到 '短链' 模块。"
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "此映射的目标地址必须类似于："
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "请尝试下我们提供的实例链接，点击它，应该会提示你的设置在工作。"
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "如果你不能提供范例那样的基础地址，请留空。"
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "只有使用了此后端，按照范例设置了基础地址。否则你的短链将不能工作"
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Google 的 'goo.gl service' 服务用来注册生成的短链"
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "你必须提供一个可用的 '%%s' 才能使用此服务"
 
 msgid "This means you require a 'Google API console account'."
-msgstr ""
+msgstr "这表示你需要一个 'Google API 终端账号'"
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "在他们的网站注册一个新 '%%s' "
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr ""
+msgstr "启用短信选项将提供通过短信发短链的功能"
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr ""
+msgstr "很不幸，一般只有智能机支持此功能。"
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr ""
+msgstr "此外，这些功能都非常简单，因系统不同而有所差异。"
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "简单来说：这功能你可能用不了，所以你可以直接禁用了去……"
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "很好，您的设置工作正常"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr ""
+msgstr "将配置的基础地址都映射到这个ownCloud 中继服务"
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr ""
+msgstr "只要此项设置不变，则静态后台会保持正常工作和安全"
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "这个后端作为一个额外的后端，会替代所有本地用户的设置。"
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "抱歉，但是你的设置看起来不能正常工作！"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "请检查你的设置并确保之前配置的基础地址绝对正确"
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
+msgstr "请确保所有关于它的请求都映射到短链中继服务"

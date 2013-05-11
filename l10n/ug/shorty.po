@@ -29,9 +29,9 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-03-26 11:18+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Uighur (http://www.transifex.com/projects/p/owncloud/language/ug/)\n"
+"PO-Revision-Date: 2013-05-04 12:00+0000\n"
+"Last-Translator: Abduqadir Abliz <sahran.ug@gmail.com>\n"
+"Language-Team: Uighur <uqkun@outlook.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -40,118 +40,118 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "ھەممىسى"
 
 msgid "blocked"
-msgstr ""
+msgstr "توسۇلغان"
 
 msgid "deleted"
-msgstr ""
+msgstr "ئۆچۈرۈلگەن"
 
 msgid "disabled"
-msgstr ""
+msgstr "چەكلەنگەن"
 
 msgid "enabled"
-msgstr ""
+msgstr "قوزغىتىلغان"
 
 msgid "never"
-msgstr ""
+msgstr "ھەرگىز"
 
 msgid "private"
-msgstr ""
+msgstr "شەخسىي"
 
 msgid "public"
-msgstr ""
+msgstr "ئاممىۋى"
 
 msgid "shared"
-msgstr ""
+msgstr "ھەمبەھىرلەنگەن"
 
 # actions ("to be done")
 msgid "delete"
-msgstr ""
+msgstr "ئۆچۈر"
 
 msgid "edit"
-msgstr ""
+msgstr "تەھرىر"
 
 msgid "open"
-msgstr ""
+msgstr "ئاچ"
 
 msgid "share"
-msgstr ""
+msgstr "ھەمبەھىر"
 
 msgid "show"
-msgstr ""
+msgstr "كۆرسەت"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "يوق"
 
 msgid "error"
-msgstr ""
+msgstr "خاتالىق"
 
 msgid "info"
-msgstr ""
+msgstr "ئۇچۇر"
 
 msgid "debug"
-msgstr ""
+msgstr "سازلا"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "bitly.com مۇلازىمىتى"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "cli.gs مۇلازىمىتى"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "goo.gl مۇلازىمىتى"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "is.gd مۇلازىمىتى"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "ti.ny مۇلازىمىتى"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "tiny.cc مۇلازىمىتى"
 
 msgid "static backend"
-msgstr ""
+msgstr "مۇقىم ئارقا ئۇچى"
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "خالىغان زىيارەت ئۈچۈن"
 
 msgid "for own usage"
-msgstr ""
+msgstr "ئۆزى ئىشلىتىش ئۈچۈن"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "ownCloud ئىشلەتكۈچىلىرى بىلەن"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "ھەممەيلەن ئىشلىتەلەيدۇ"
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "زىيارەت"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "يېڭى بىر قىسقا ئادرېس قوش"
 
 msgid "Add as new"
-msgstr ""
+msgstr "يېڭى سۈپىتىدە قوش"
 
 msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
 msgid "Administration"
-msgstr ""
+msgstr "باشقۇر"
 
 msgid "Administrative, system wide settings of this app:"
 msgstr ""
@@ -175,7 +175,7 @@ msgid "Anything that appears helpful …"
 msgstr ""
 
 msgid "Backend"
-msgstr ""
+msgstr "Backend"
 
 msgid "Base url"
 msgstr ""
@@ -193,7 +193,7 @@ msgid "Click registered"
 msgstr ""
 
 msgid "Clicks"
-msgstr ""
+msgstr "چېكىشلەر"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -202,16 +202,16 @@ msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
 msgid "Close"
-msgstr ""
+msgstr "ياپ"
 
 msgid "Configuration"
-msgstr ""
+msgstr "سەپلىمە"
 
 msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "چاپلاش تاختىسىغا كۆچۈر"
 
 msgid "Counted entries and clicks"
 msgstr ""
@@ -244,13 +244,13 @@ msgid "Expiration"
 msgstr ""
 
 msgid "Feedback"
-msgstr ""
+msgstr "قايتۇرما ئىنكاس"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "يۈكلەۋاتىدۇ"
 
 msgid "Mail client"
 msgstr ""
@@ -259,40 +259,40 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "خاسلىق ئۆزگەر"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "قىسقا ئادرېس ئۆزگەرت"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "يېڭى قىسقا ئادرېس"
 
 msgid "Notes"
-msgstr ""
+msgstr "ئىزاھاتلار"
 
 msgid "Nothing here yet"
-msgstr ""
+msgstr "بۇ جايدا تېخى ھېچنېمە يوق"
 
 msgid "Number of entries"
-msgstr ""
+msgstr "تۈرنىڭ سانى"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "تۈرنىڭ سانى: %s"
 
 msgid "QRCode"
-msgstr ""
+msgstr "QRCode"
 
 msgid "Open source url"
-msgstr ""
+msgstr "ئوچۇق مەنبەلىك تور ئادرېسى"
 
 msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "ئوچۇق نىشان"
 
 msgid "Open target url"
-msgstr ""
+msgstr "نىشان تور ئادرېسىنى ئاچ"
 
 msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
@@ -316,7 +316,7 @@ msgid "Preference '%s' saved"
 msgstr ""
 
 msgid "Preferences"
-msgstr ""
+msgstr "مايىللىق"
 
 msgid "Prepare to send as SMS"
 msgstr ""
@@ -328,13 +328,13 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr ""
+msgstr "قايتا يۈكلە"
 
 msgid "Reload list"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "ساقلا"
 
 msgid "Send by email"
 msgstr ""
@@ -364,7 +364,7 @@ msgid "Setting '%s' saved"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "تەڭشەكلەر"
 
 msgid "Share and use"
 msgstr ""
@@ -385,13 +385,13 @@ msgid "Show as QRCode"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "تەپسىلاتىنى كۆرسەت"
 
 msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "قىسقا ئۇچۇر"
 
 msgid "SMS composer"
 msgstr ""
@@ -412,7 +412,7 @@ msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "ھالەت"
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr ""
@@ -463,7 +463,7 @@ msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
 msgid "Title"
-msgstr ""
+msgstr "ماۋزۇ"
 
 msgid "Toggle toolbar"
 msgstr ""
@@ -511,7 +511,7 @@ msgid "API access key"
 msgstr ""
 
 msgid "Account"
-msgstr ""
+msgstr "ھېسابات"
 
 msgid "API key"
 msgstr ""

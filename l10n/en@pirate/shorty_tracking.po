@@ -74,7 +74,7 @@ msgid "Time"
 msgstr ""
 
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 msgid "User"
 msgstr ""

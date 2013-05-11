@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-28 23:40+0000\n"
+"PO-Revision-Date: 2013-05-06 08:40+0000\n"
 "Last-Translator: Vincenzo Reale <vinx.reale@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -156,7 +156,7 @@ msgid "Administration"
 msgstr "Amministrazione"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "Amministrativo, impostazioni globali di questa applicazione:"
 
 msgid "after the SMS has been launched"
 msgstr "dopo l'invio dello SMS"
@@ -477,13 +477,13 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Normalmente funziona solo su smartphone"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Ricevuta un'eccezione di tipo inatteso: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Sfortunatamente l'implementazione di questo schema è limitata"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Ricevuto un oggetto di tipo sconosciuto: %s"
 
 msgid "Url shortened to: %s"
 msgstr "URL abbreviato a: %s"
@@ -560,7 +560,7 @@ msgid ""
 msgstr "Il servizio esterno 'bitly.com' è utilizzato per registrare un URL breve per ogni shorty generato."
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "Ciò significa che devi registrare prima un '%s' nel loro sito."
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
@@ -598,7 +598,7 @@ msgstr "Il servizio richiede la tua autenticazione tramite un nome utente e un '
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "Questi collegamenti sono generalmente più lunghi di quelli generati utilizzando un motore."
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
@@ -608,12 +608,12 @@ msgstr "In ogni caso, questa opzione non si basa su alcun servizio di terze part
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "Poiché questa configurazione dipende dalle regole di configurazione lato server, l'URL di base può essere specificato nella sezione 'Amministrazione' della configurazione."
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "Motore statico, basato su regole, genera collegamenti abbreviati relativi a un determinato URL base."
 
 msgid ""
 "You have to take care that any request to the url configured here is "
@@ -631,12 +631,12 @@ msgstr "Prova con il collegamento di esempio fornito, fai clic su di esso, il ri
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "Lascia vuoto se non puoi fornire un URL di base breve associato nel modo descritto."
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "Utilizza questo motore solo se puoi fornire un URL di base breve associato nel modo descritto. Altrimenti i tuoi shorty non funzioneranno."
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
@@ -650,7 +650,7 @@ msgid "This means you require a 'Google API console account'."
 msgstr "Ciò significa che è necessario un 'Google API console account'."
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "Registra un nuovo '%%s' nelle loro pagine."
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
 msgstr "L'abilitazione dell'opzione SMS offrirà l'invio di uno Shorty tramite SMS."
@@ -679,12 +679,12 @@ msgstr "Le richieste al URL di base configurato sono associate al servizio di in
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr ""
+msgstr "Il motore statico funziona bene ed è sicuro fino a quando non si altera questa configurazione."
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "Questo motore sarà offerto, da questo momento, come motore aggiuntivo alternativo a tutti gli utenti locali all'interno delle preferenze personali."
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Spiacenti, ma la tua configurazione sembra non essere ancora corretta!"
