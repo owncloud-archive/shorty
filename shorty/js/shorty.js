@@ -1545,7 +1545,8 @@ OC.Shorty={
 						iframe.attr({src:OC.linkTo('shorty','verification.php?target=') + encodeURIComponent(target)});
 						popup.append(iframe).appendTo("body").dialog({
 							show:'fade',stack:true,dialogClass:'shorty-verify',
-							close:function(event,ui){$(this).dialog('destroy');},
+// 							close:function(event,ui){$(this).dialog('destroy');},
+							close:function(event,ui){$(this).dialog.remove();},
 							autoOpen:false,modal:true,buttons:false,resizable:false,
 							width:'auto',height:'auto'});
 					}
