@@ -31,8 +31,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-27 22:09+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-05-13 08:30+0000\n"
+"Last-Translator: Daisuke Deguchi <ddeguchi@nagoya-u.jp>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,7 +66,7 @@ msgid "public"
 msgstr ""
 
 msgid "shared"
-msgstr ""
+msgstr "共有中"
 
 # actions ("to be done")
 msgid "delete"
@@ -86,16 +86,16 @@ msgstr "表示"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "無し"
 
 msgid "error"
-msgstr ""
+msgstr "エラー"
 
 msgid "info"
-msgstr ""
+msgstr "情報"
 
 msgid "debug"
-msgstr ""
+msgstr "デバッグ"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -106,25 +106,25 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "bitly.com サービス"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "cli.gs サービス"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "goo.gl サービス"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "is.gd サービス"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "ti.ny サービス"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "tiny.cc サービス"
 
 msgid "static backend"
-msgstr ""
+msgstr "静的なバックエンド"
 
 # status explanations
 msgid "for any access"
@@ -159,7 +159,7 @@ msgid "Administrative, system wide settings of this app:"
 msgstr ""
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "SMS を起動した後"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr ""
@@ -183,7 +183,7 @@ msgid "Base url"
 msgstr "ベースURL"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "サービスを選択..."
 
 msgid "Click for embedding details"
 msgstr ""
@@ -261,7 +261,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "id '%s' の短縮に関する変更は保存されました"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "属性を編集"
 
 msgid "Modify shorty"
 msgstr "短縮を編集"
@@ -306,10 +306,10 @@ msgid "Paste to embed elsewhere"
 msgstr ""
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "設定を取得しました"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "設定を保存しました"
 
 msgid "Preference '%s' retrieved"
 msgstr "設定 '%s' を取得しました"
@@ -318,16 +318,16 @@ msgid "Preference '%s' saved"
 msgstr "設定 '%s' を保存しました"
 
 msgid "Preferences"
-msgstr ""
+msgstr "設定"
 
 msgid "Prepare to send as SMS"
 msgstr "SMSでの送信の準備をする"
 
 msgid "Relay service"
-msgstr ""
+msgstr "中継サービス"
 
 msgid "Relay url"
-msgstr ""
+msgstr "中継URL"
 
 msgid "Reload"
 msgstr "再読み込み"
@@ -351,16 +351,16 @@ msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "右上の歯車アイコン (%%s) を利用して個人設定を編集してください！"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "設定を取得しました"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "設定を保存しました"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "設定 '%s' を取得しました"
 
 msgid "Setting '%s' saved"
 msgstr "設定 '%s' を保存しました"
@@ -390,7 +390,7 @@ msgid "Show details"
 msgstr "詳細を表示"
 
 msgid "Show usage"
-msgstr ""
+msgstr "利用状況を表示"
 
 msgid "SMS"
 msgstr "SMS"
@@ -513,7 +513,7 @@ msgid "API access key"
 msgstr "APIアクセスキー"
 
 msgid "Account"
-msgstr ""
+msgstr "アカウント"
 
 msgid "API key"
 msgstr "APIキー"
