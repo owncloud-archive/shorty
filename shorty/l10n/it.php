@@ -32,7 +32,7 @@
 "available for everyone" => "disponibile a tutti",
 "Access" => "Accesso",
 "Add a new shorty" => "Aggiungi un nuovo shorty",
-"Add as new" => "Aggiungi come nuovo",
+"Add as new" => "Aggiungi nuovo",
 "Add page as 'Shorty' to ownCloud" => "Aggiungi pagina come 'Shorty' a ownCloud",
 "Administration" => "Amministrazione",
 "Administrative, system wide settings of this app:" => "Amministrativo, impostazioni globali di questa applicazione:",
