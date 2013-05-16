@@ -5,7 +5,7 @@
 "share" => "del",
 "show" => "vis",
 "Close" => "Lukk",
-"Save" => "Lagre",
+"Save" => "Lagra",
 "Settings" => "Innstillingar",
 "Title" => "Tittel"
 );
