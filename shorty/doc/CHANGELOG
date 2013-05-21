@@ -23,7 +23,7 @@
 
 Changelog: 
 
-* Sat May 11 2013 Christian Reiner: version 0.3.26
+* ??? May ?? 2013 Christian Reiner: version 0.3.26
 Fixed verification of the base of required for the 'Static Backend' setup. 
 Fixed the preferences dialogs layout when using the static backend.
 Suppress annoying and missleading autocomplete feature for url dialogs. 
