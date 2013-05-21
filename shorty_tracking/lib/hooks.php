@@ -142,6 +142,30 @@ class OC_ShortyTracking_Hooks
 	} // function OC_ShortyTracking_Hooks::registerActions
 
 	/**
+	* @method OC_ShortyTracking_Hooks::registerDetails
+	* @brief Registers details describing this plugin as expected by the Shorty app
+	* @param paramters (array) parameters from emitted signal
+	* @return bool
+	*/
+	public static function registerDetails ( $parameters )
+	{
+		OCP\Util::writeLog ( 'shorty_tracking', 'Registering plugin description in main Shorty app', OCP\Util::DEBUG );
+		if ( ! is_array($parameters) )
+		{
+			return FALSE;
+		}
+		if ( array_key_exists('shorty',$parameters) && is_array($parameters['shorty']) )
+		{
+			$parameters['shorty'][] = array (
+				'id'       => 'shorty_tracking',
+				'name'     => "Shorty Tracking",
+				'abstract' => OC_ShortyTracking_L10n::t("Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history."),
+			);
+		}
+		return TRUE;
+	} // function registerQueries
+
+	/**
 	* @method OC_ShortyTracking_Hooks::registerQueries
 	* @brief Registers queries to be offered as expected by the Shorty app
 	* @param paramters (array) parameters from emitted signal

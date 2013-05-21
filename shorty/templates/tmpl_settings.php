@@ -46,14 +46,14 @@
 		<div id="backend-static" class="backend-supplement">
 			<span><?php p(OC_Shorty_L10n::t("Optional configuration of a 'Static Backend'").":"); ?></span>
 			<br/>
-			<label for="backend-static-base" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Base url").':'); ?></label>
+			<label for="backend-static-base" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Base url").":"); ?></label>
 			<input id="backend-static-base" type="text" name="backend-static-base"
 					value="<?php p($_['backend-static-base']); ?>"
 					maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t('Specify a static base url…')); ?>" style="width:25em;">
 			<br/>
 			<label for="backend-example" class="shorty-aspect"> </label>
 			<span id="backend-example">
-				<label for="example" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+				<label for="example" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").":"); ?></label>
 				<a id="example" class="shorty-example" title="<?php p(OC_Shorty_L10n::t("Verify by clicking…")); ?>">
 				<?php print_unescaped(sprintf(htmlspecialchars('http://%s/<service><shorty id>'),$_SERVER['SERVER_NAME'])); ?>
 				</a>
@@ -69,6 +69,19 @@
 			</span>
 		</div>
 	</form>
+<!-- list of installed plugins -->
+	<div class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Plugins").":"); ?></div>
+<?php 	foreach ( $_['shorty-plugins']['shorty'] as $plugin ) { ?>
+	<div>
+		<label for="shorty-plugin-<?php p(trim($plugin['id']));?>">
+			<?php p(trim($plugin['name']).":");?>
+		</label>
+		<span class="shorty-plugin-<?php p(trim($plugin['id']));?>" class="shorty-example">
+			<?php p(trim($plugin['abstract']));?>
+		</span>
+	</div>
+<?php } ?>
+<!-- list of suggested plugins -->
 <?php if ( ! OCP\App::isEnabled('shorty_tracking') ) { ?>
 	<p>
 		<span id="plugins" class="suggestion">
