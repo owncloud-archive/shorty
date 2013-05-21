@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-05-14 00:40+0000\n"
+"PO-Revision-Date: 2013-05-21 02:40+0000\n"
 "Last-Translator: Daisuke Deguchi <ddeguchi@nagoya-u.jp>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
@@ -39,6 +39,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+# plugin description
+msgid "Plugins"
+msgstr ""
 
 # status names
 msgid "all"
@@ -162,7 +166,7 @@ msgid "after the SMS has been launched"
 msgstr "SMS を起動した後"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "もう一つの方法として、画像をダウンロードして印刷や保存ができます。"
 
 msgid "alternatively the link can be copied for usage apart"
 msgstr ""
@@ -186,7 +190,7 @@ msgid "Choose a service…"
 msgstr "サービスを選択..."
 
 msgid "Click for embedding details"
-msgstr ""
+msgstr "埋め込まれている詳細情報をクリックで確認"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "短縮を作成したい任意のサイトに対してクリックしてください。"
@@ -201,7 +205,7 @@ msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr "以下の'Ok' をクリックするとメールコンポーザの起動を試みます"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "以下の'Ok' をクリックするとSMS送信画面を起動します。"
 
 msgid "Close"
 msgstr "閉じる"
@@ -300,7 +304,7 @@ msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
 
 msgid "or simpy print or download it for off-line usage"
-msgstr ""
+msgstr "または、オフラインで利用する為に単に印刷するか、ダウンロード"
 
 msgid "Paste to embed elsewhere"
 msgstr ""
@@ -375,7 +379,7 @@ msgid "Share shorty"
 msgstr "短縮を共有"
 
 msgid "Shortlet"
-msgstr ""
+msgstr "ショートレット"
 
 msgid "Shorty as QRCode"
 msgstr "QRコードで短縮"
@@ -429,13 +433,13 @@ msgid "Target url '%s' is valid"
 msgstr "ターゲットURL '%s' は有効です"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "ドキュメントを作成したり、Webサイトを構築するときに、その画像を利用します。"
 
 msgid "The backend service used to generate shortened URLs."
 msgstr ""
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "デフォルトの状態を新しい短縮として提案"
 
 msgid "The link below can be copied for usage apart"
 msgstr "以下のリンクは別で利用するためにコピー出来ます"
@@ -444,7 +448,7 @@ msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "従って、その内容は手動でコピーされなければなりません。"
 
 msgid "then paste into message"
 msgstr "そしてメッセージに貼り付けます"
@@ -474,16 +478,16 @@ msgid "Total of clicks"
 msgstr "クリックの総数"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "これちらは、通常、スマートフォンのような携帯端末上でしか動きません。"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "予期せぬ種類の例外を捕捉: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "申し訳ございませんが、この書式の埋め込みは制限されています。"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "未知の種類のオブジェクトを捕捉: %s"
 
 msgid "Url shortened to: %s"
 msgstr "短縮URL: %s"
@@ -565,31 +569,31 @@ msgstr ""
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部の 'turl' サービスは個々の生成された短縮の短いURLの登録に利用されます。"
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部の 'ti.ny' サービスは個々の生成された短縮の短いURLの登録に利用されます。"
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部の 'cli.gs' サービスは個々の生成された短縮の短いURLの登録に利用されます。"
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部の 'is.gd' サービスは個々の生成された短縮の短いURLの登録に利用されます。"
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部の 'tiny.cc' サービスは個々の生成された短縮の短いURLの登録に利用されます。"
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "何もバックエンドを利用しません、ownCloudへの直接リンクが生成されます。"
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
@@ -669,17 +673,17 @@ msgid "In short: this might not work for you, therefore you can disable it…"
 msgstr ""
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "いいですね！あなたの設定はちゃんと動いているようです。"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr ""
+msgstr "この設定されたベースURLへのリクエストは、このownCloudのリレーサービスに割り当てられます。"
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr ""
+msgstr "この設定を変更しない限り、その静的バックエンドの利用は問題なく、安全です。"
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
@@ -687,12 +691,12 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "申し訳ありませんが、あなたの設定はまだちゃんと動いていないようです。"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "設定をチェックして、設定されたベースURLが間違いなく正しいか、確認をお願いいたします。"
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
