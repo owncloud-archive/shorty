@@ -39,6 +39,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# plugin description
+msgid "Shorty Tracking"
+msgstr ""
+
+msgid "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history."
+msgstr ""
+
+# request results
 msgid "granted"
 msgstr ""
 
