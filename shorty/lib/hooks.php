@@ -114,8 +114,52 @@ class OC_Shorty_Hooks
 	} // function requestActions
 
 	/**
+	* @method OC_Shorty_Hooks::requestDetails
+	* @brief Hook that requests any plugin details (id and abstract) plugins may want to register
+	* @return array: Array of details of plugins
+	* @access public
+	* @author Christian Reiner
+	*/
+	public static function requestDetails ( )
+	{
+		OCP\Util::writeLog ( 'shorty', 'Requesting plugin details registered by other apps', OCP\Util::DEBUG );
+		$details = array ( 'list'=>array(), 'shorty'=>array() );
+		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
+		// ... for every action register a new element in the container
+		// ... ... such element must be an array holding the entries tested below
+		$container = array ( 'shorty'=>&$details['shorty'] );
+		OC_Hook::emit ( 'OC_Shorty', 'registerDetails', $container );
+		// validate and evaluate what was returned in the $container
+		if ( ! is_array($container))
+		{
+			OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerDetails hook, FIX THAT APP !', OCP\Util::WARN );
+			return array();
+		} // if
+		foreach ( $container as $aspect )
+		{
+			if ( ! is_array($aspect) )
+			{
+				OCP\Util::writeLog ( 'shorty', 'Invalid reply structure from an app that registered into the registerDetails hook, FIX THAT APP !', OCP\Util::WARN );
+				break;
+			}
+			foreach ( $aspect as $detail )
+			{
+				if (  ! is_array($detail)
+					|| ! array_key_exists('id',       $detail) || ! is_string($query['id'])
+					|| ! array_key_exists('name',     $detail) || ! is_string($query['name'])
+					|| ! array_key_exists('abstract', $detail) || ! is_string($query['abstract']) )
+				{
+					OCP\Util::writeLog ( 'shorty', 'Invalid reply from an app that registered into the registerDetails hook, FIX THAT APP !', OCP\Util::WARN );
+					break;
+				}
+			} // foreach query
+		} // foreach aspect
+		return $details;
+	} // function requestDetails
+
+	/**
 	* @method OC_Shorty_Hooks::requestIncludes
-	* @brief Hook that requests any actions plugins may want to register
+	* @brief Hook that requests any includes plugins may want to register
 	* @return array: Array of descriptions of actions
 	* @access public
 	* @author Christian Reiner
