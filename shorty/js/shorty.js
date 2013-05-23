@@ -1542,14 +1542,15 @@ OC.Shorty={
 						var iframe=$('<iframe id="static-backend-verification" frameborder="0" marginwidth="0" marginheight="0"></iframe>');
 						iframe.attr({width:300,height:360});
 						iframe.attr({src:OC.linkTo('shorty','verification.php')});
-						popup.append(iframe).appendTo("body").dialog({
+						popup.append(iframe).appendTo('body').dialog({
 							show:'fade',stack:true,dialogClass:'shorty-verify',
-// 							close:function(event,ui){$(this).dialog.remove();},
+// 							close:function(event,ui){$('#static-backend-verification').remove()},
+							close:function(event,ui){iframe.remove()},
 							autoOpen:false,modal:true,buttons:false,resizable:false,
 							width:'auto',height:'auto'});
 					}
 					// visualize dialog
-					popup.css({padding:0,'z-index':'1000 !important'});
+					popup.css({padding:0});
 					popup.dialog('open');
 					dfd.resolve();
 				}else{
@@ -1578,10 +1579,7 @@ OC.Shorty={
 					jsonp:         false,
 					jsonpCallback: 'verifyStaticBackend',
 					timeout:       6000 // timeout to catch silent failures, like a 404
-				}).pipe(
-					function(response){return OC.Shorty.Ajax.eval(response)},
-					function(response){return OC.Shorty.Ajax.fail(response)}
-				).done(function(response){
+				}).done(function(response){
 					$.when(
 						$(window.parent.document.body).find('.shorty-verify #hourglass').fadeOut('fast')
 					).then(function(){
