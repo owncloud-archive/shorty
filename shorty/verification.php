@@ -30,127 +30,45 @@
  * @author Christian Reiner
  */
 
-/**
- * function createPayload
- * @brief prepares and delivers the dialogs template
- * @access public
- * @author Christian Reiner
- */
-function createPayload()
-{
-	try 
-	{
-		// fetch template
-		$tmpl = new OCP\Template ( 'shorty', 'tmpl_wdg_verify', '_' ); // the undefined view '_' suppresses the typical OC framework
-		// render template
-		$tmpl->printPage();
-	} 
-	catch ( Exception $e ) 
-	{
-		p ( sprintf('Error %s: %s',$e->getCode(),$e->getMessage()) );
-	}
-}
-
 // session checks
 OCP\User::checkLoggedIn  ( );
+// OCP\User::checkAdminUser ( );
 OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
 
-OCP\Util::addStyle  ( 'shorty', 'shorty' );
-// TODO: remove OC-4.0-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
-	OCP\Util::addStyle ( 'shorty', 'shorty-oc40' );
-// TODO: remove OC-4.5-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.91')) // OC-4.5
-	OCP\Util::addStyle ( 'shorty', 'shorty-oc45' );
-OCP\Util::addStyle  ( 'shorty', 'verification' );
+// OCP\Util::addStyle  ( 'shorty', 'shorty' );
+// // TODO: remove OC-4.0-compatibility:
+// if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
+// 	OCP\Util::addStyle ( 'shorty', 'shorty-oc40' );
+// // TODO: remove OC-4.5-compatibility:
+// if (OC_Shorty_Tools::versionCompare('<','4.91')) // OC-4.5
+// 	OCP\Util::addStyle ( 'shorty', 'shorty-oc45' );
+// OCP\Util::addStyle  ( 'shorty', 'verification' );
+// 
+// OCP\Util::addScript ( 'shorty', 'shorty' );
+// if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
+// 	OCP\Util::addScript ( 'shorty',  'debug' );
+// OCP\Util::addScript ( 'shorty', 'util' );
+// OCP\Util::addScript ( 'shorty', 'verification' );
 
-OCP\Util::addScript ( 'shorty', 'shorty' );
-if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
-	OCP\Util::addScript ( 'shorty',  'debug' );
-OCP\Util::addScript ( 'shorty', 'util' );
-OCP\Util::addScript ( 'shorty', 'verification' );
-
-// manipulate the config entry setting the Content-Security-Policy header sent by the template engine
-// we modify that value to grant the ajax request required to verify the base url for the static backend
-// $csp_policy = OC_Config::getValue('custom_csp_policy', FALSE); // load and get global OC config into cache
-// does the configuration define a policy (does not return the default FALSE)?
-
-// prepare and read OCs global config cache
-OC_config::getKeys();
-
-if ( ! class_exists('Reflection') )
+// simulate the existance of OC5's 'p' functions defined in template.php
+if ( ! function_exists('p'))
 {
-	// use reflection api to make a temporary manipulation
-	// make cached config value accessible for this request so the csp value can be manpipulated
-	$reflection = new ReflectionClass('OC_Config');
-	$property = $reflection->getProperty('cache');
-	$property->setAccessible(true);
-	$config = $property->getValue();
-
-	if ( array_key_exists('custom_csp_policy',$config) )
-	{
-		// keep "old" config values safe
-		$change = $config;
-		// temporarily manipulate existing csp policy
-		$change['custom_csp_policy'] = preg_replace ( "/script-src [^;]*\\w?;/", 'script-src * ;', $config['custom_csp_policy'] );
-		// replace config with changed value
-		$property->setValue ( $change );
-		// do what has to be done
-		createPayload();
-		// reset config to old values
-		$property->setValue ( $config );
-	}
-	else
-	{
-		// keep "old" config values safe
-		$change = $config;
-		// temporarily inject custome csp policy
-		$change['custom_csp_policy'] = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:";
-		// replace config with changed value
-		$property->setValue ( $change );
-		// do what has to be done
-		createPayload();
-		// reset config to old values
-		$property->setValue ( $config );
+	function p($string) {
+		print(OC_Util::sanitizeHTML($string));
 	}
 }
-else
+if ( ! function_exists('print_unescaped'))
 {
-	// no reflection api installed, we have to make a "normal" change to the configuration ...
-	// ... since the config class automatically saves all changes we have to reset that change at the end
-	if ( in_array('custom_csp_policy',OC_config::getKeys()) )
-		$csp_policy = OC_config::getValue('custom_csp_policy');
-	else
-		$csp_policy = NULL;
-
-	switch ( $csp_policy )
-	{
-		case NULL:
-			// set custom value
-			OC_Config::setValue ( 'custom_csp_policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:" );
-			// do what has to be done
-			createPayload();
-			// reset to missing value
-			OC_Config::deleteKey ( 'custom_csp_policy' );
-			break;
-		case '':
-			// set custom value
-			OC_Config::setValue ( 'custom_csp_policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:" );
-			// do what has to be done
-			createPayload();
-			// reset to empty value
-			OC_Config::setValue ( 'custom_csp_policy', '' );
-			break;
-		default:
-			// manipulate existing value
-			OC_Config::setValue ( 'custom_csp_policy', preg_replace("/script-src [^;]*\\w?;/", 'script-src * ;', $csp_policy) );
-			// do what has to be done
-			createPayload();
-			// reset to previous value
-			OC_Config::setValue ( 'custom_csp_policy', $csp_policy );
-	} // switch
+	function print_unescaped($string) {
+		print($string);
+	}
 }
+
+// we just include the template, since using the template engine create a whole bunch of problems...
+// notably the OC wide csp policy sent as a header would prevent out js based verification to be blocked...
+header("Content-Security-Policy: default-src 'self'; script-src * ; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:");
+include 'templates/tmpl_wdg_verify.php';
 
 ?>
