@@ -24,7 +24,7 @@
 Changelog: 
 
 * Thu May 23 2013 Christian Reiner: version 0.1.15
-Registration of plugin abstract as required since Shorty version 0.3.26.
+Registration of plugin abstract as expected since Shorty version 0.3.26.
 * Tue Apr 30 2013 Christian Reiner: version 0.1.14
 Don't store a requests IP Adress in case name resolution fails. 
 Fixed column filter in list of clicks. 
