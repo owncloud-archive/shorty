@@ -26,21 +26,25 @@
 # Translators:
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2013
 # thanaxix <thanasis@giannoulis.net>, 2013
-# Wasilis <m.wasilis@yahoo.de>, 2013
+# Wasilis <inactive+Wasilis@transifex.com>, 2013
 # KAT.RAT12 <spanish.katerina@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-27 22:09+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-05-23 22:22+0000\n"
+"Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/owncloud/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# plugin description
+msgid "Plugins"
+msgstr "Πρόσθετα"
 
 # status names
 msgid "all"
@@ -62,10 +66,10 @@ msgid "never"
 msgstr "ποτέ"
 
 msgid "private"
-msgstr ""
+msgstr "ιδιωτικό"
 
 msgid "public"
-msgstr ""
+msgstr "δημόσιο "
 
 msgid "shared"
 msgstr "μοιρασμένο "
@@ -97,7 +101,7 @@ msgid "info"
 msgstr "πληροφορίες "
 
 msgid "debug"
-msgstr ""
+msgstr "αποσφαλμάτωση"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -111,7 +115,7 @@ msgid "bitly.com service"
 msgstr "'bitly.com service "
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "υπηρεσία cli.gs"
 
 msgid "goo.gl service"
 msgstr "goo.gl.service "
@@ -120,7 +124,7 @@ msgid "is.gd service"
 msgstr "υπηρεσία is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "υπηρεσία ti.ny"
 
 msgid "tiny.cc service"
 msgstr "υπηρεσία tiny.cc "
@@ -392,7 +396,7 @@ msgid "Show details"
 msgstr "Προβολή λεπτομερειών"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Προβολή χρήσης"
 
 msgid "SMS"
 msgstr "SMS"
@@ -515,7 +519,7 @@ msgid "API access key"
 msgstr "API πλήκτρο πρόσβασης "
 
 msgid "Account"
-msgstr ""
+msgstr "Λογαριασμός"
 
 msgid "API key"
 msgstr "Κλειδί Google API"
