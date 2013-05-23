@@ -33,6 +33,17 @@
  */
 ?>
 
+
+<html>
+	<head>
+		<link rel="stylesheet" href="<?php p(OCP\Util::linkTo('shorty','css/shorty.css'));?>" type="text/css" media="screen">
+		<link rel="stylesheet" href="<?php p(OCP\Util::linkTo('shorty','css/verification.css'));?>" type="text/css" media="screen">
+		<script type="text/javascript" src="<?php p(OCP\Util::linkToRemote('core.js'));?>"></script>
+		<script type="text/javascript" src="<?php p(OCP\Util::linkTo('core','js/config.js'));?>"></script>
+		<script type="text/javascript" src="<?php p(OCP\Util::linkTo('shorty','js/shorty.js'));?>"></script>
+		<script type="text/javascript" src="<?php p(OCP\Util::linkTo('shorty','js/verification.js'));?>"></script>
+	</head>
+	<body>
 <!-- a (usually hidden) dialog used for verification of the correct setup of the 'static' backend -->
 <div id="dialog-verification" title="<?php p(OC_Shorty_L10n::t("Static backend: base url verification")); ?>">
 	<!-- success -->
@@ -64,4 +75,6 @@
 		</fieldset>
 	</div>
 </div>
+	</body>
+</html>
 <!-- end of verification dialog -->
