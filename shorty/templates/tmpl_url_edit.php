@@ -53,7 +53,7 @@
 		<br />
 		<label for="target"><?php p(OC_Shorty_L10n::t('Target url').':'); ?></label>
 		<span class="clickable">
-			<input id="target" name="target" type="text" data="" class="" readonly />
+			<input id="target" name="target" type="text" data="" class="" />
 		</span>
 		<br />
 		<label for="meta">
