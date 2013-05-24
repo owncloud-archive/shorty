@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"Plugins" => "Lisad",
 "all" => "kõik",
 "blocked" => "blokeeritud",
 "deleted" => "kustutatud",

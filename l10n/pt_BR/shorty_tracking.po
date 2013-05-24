@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-04-27 12:51+0000\n"
+"PO-Revision-Date: 2013-05-24 13:28+0000\n"
 "Last-Translator: Flávio Veras <flaviove@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/owncloud/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -38,6 +38,16 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+# plugin description
+msgid "Shorty Tracking"
+msgstr "Rastreamento Shorty"
+
+msgid ""
+"Detailed tracking of all requests to existing Shortys along with an "
+"integrated visualization of the access history."
+msgstr "Acompanhamento detalhado de todas as solicitações para Shortys existentes, juntamente com uma visualização integrada da história de acesso."
+
+# request results
 msgid "granted"
 msgstr "concedido"
 

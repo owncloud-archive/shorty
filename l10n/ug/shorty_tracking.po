@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-05-04 12:00+0000\n"
+"PO-Revision-Date: 2013-05-24 13:28+0000\n"
 "Last-Translator: Abduqadir Abliz <sahran.ug@gmail.com>\n"
 "Language-Team: Uighur <uqkun@outlook.com>\n"
 "MIME-Version: 1.0\n"
@@ -37,6 +37,16 @@ msgstr ""
 "Language: ug\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+# plugin description
+msgid "Shorty Tracking"
+msgstr ""
+
+msgid ""
+"Detailed tracking of all requests to existing Shortys along with an "
+"integrated visualization of the access history."
+msgstr ""
+
+# request results
 msgid "granted"
 msgstr ""
 

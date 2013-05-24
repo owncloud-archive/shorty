@@ -31,8 +31,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-05-23 21:52+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-05-24 13:28+0000\n"
+"Last-Translator: Cyryl Sochacki <cyrylsochacki@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Pluginy"
 
 # status names
 msgid "all"
@@ -64,13 +64,13 @@ msgid "never"
 msgstr "nigdy"
 
 msgid "private"
-msgstr ""
+msgstr "prywatny"
 
 msgid "public"
-msgstr ""
+msgstr "Publiczny"
 
 msgid "shared"
-msgstr ""
+msgstr "współdzielone"
 
 # actions ("to be done")
 msgid "delete"
@@ -90,13 +90,13 @@ msgstr "Wyświetlanie"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "brak"
 
 msgid "error"
-msgstr ""
+msgstr "błąd"
 
 msgid "info"
-msgstr ""
+msgstr "info"
 
 msgid "debug"
 msgstr ""
@@ -110,45 +110,45 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "usługa bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "usługa cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "usługa goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "usługa is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "usługa ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "usługa tiny.cc"
 
 msgid "static backend"
 msgstr ""
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "dla publicznego użytku"
 
 msgid "for own usage"
-msgstr ""
+msgstr "dla własnego użytku"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "z użytkownikami ownCloud"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "dostępne dla wszystkich"
 
 # short and general terms
 msgid "Access"
 msgstr "Dostęp"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "Dodaj nowy skrót"
 
 msgid "Add as new"
 msgstr "Dodaj jako nowe"
@@ -187,7 +187,7 @@ msgid "Base url"
 msgstr "Bazowy adres"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Wybierz usługę..."
 
 msgid "Click for embedding details"
 msgstr ""
@@ -229,7 +229,7 @@ msgid "Creation"
 msgstr ""
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Usuń skrót"
 
 msgid "Drag this to your browser bookmarks."
 msgstr ""
@@ -265,13 +265,13 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Zmień atrybuty"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Zmień skrót"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "Nowy skrót"
 
 msgid "Notes"
 msgstr "Notatki"
@@ -283,19 +283,19 @@ msgid "Number of entries"
 msgstr "Liczba wejść"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "Liczba wejść: %s"
 
 msgid "QRCode"
 msgstr "Kod QR"
 
 msgid "Open source url"
-msgstr ""
+msgstr "Otwórz źródło linku"
 
 msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "Otwórz cel"
 
 msgid "Open target url"
 msgstr ""
@@ -319,13 +319,13 @@ msgid "Preference '%s' retrieved"
 msgstr ""
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "Ustawienia '%s' zapisane"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Ustawienia"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "Przygotowanie do wysłania jako SMS"
 
 msgid "Relay service"
 msgstr ""
@@ -349,7 +349,7 @@ msgid "Send link by email"
 msgstr "Wyślij link mailem"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "Wyślij przez SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
@@ -361,31 +361,31 @@ msgid "Setting retrieved"
 msgstr ""
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Ustawienia zapisane"
 
 msgid "Setting '%s' retrieved"
 msgstr ""
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "Ustawienia '%s' zapisane"
 
 msgid "Settings"
 msgstr "Ustawienia"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Udostępnij i użyj"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "Udostępnij skrót"
 
 msgid "Shortlet"
 msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "Skrót jako QRCode"
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr "Skrót z id '%s' usunięty"
 
 msgid "Show as QRCode"
 msgstr ""
@@ -394,13 +394,13 @@ msgid "Show details"
 msgstr "Pokaż szczegóły"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Pokaż używane"
 
 msgid "SMS"
 msgstr "SMS"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "Kompozytor SMS"
 
 msgid "Sort ascending"
 msgstr ""
@@ -424,13 +424,13 @@ msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgid "Target url"
 msgstr ""
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "Docelowy adres '%s' jest niepoprawny"
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
@@ -490,7 +490,7 @@ msgid "Unknown object of type caught: %s"
 msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "Skrót linkuje do: %s"
 
 msgid "Use it in web pages by referencing or embedding"
 msgstr ""
@@ -514,25 +514,25 @@ msgstr ""
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "Klucz dostępu API"
 
 msgid "Account"
-msgstr ""
+msgstr "Konto"
 
 msgid "API key"
 msgstr "Klucz API"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "Użytkownik bit.ly"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "Nazwa użytkownika bit.ly"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "Klucz bit.ly"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "Klucz użytkownika bit.ly"
 
 msgid "Google API key"
 msgstr "Klucz Google API"
@@ -541,16 +541,16 @@ msgid "Google API account"
 msgstr ""
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "Użytkownik tiny.cc"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "Nazwa użytkownika tiny.cc"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "Klucz tiny.cc"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "Klucz użytkownika tiny.cc"
 
 # longer terms: typically explanations
 msgid ""

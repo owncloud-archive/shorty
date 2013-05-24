@@ -38,6 +38,10 @@ msgstr ""
 "Language: en@pirate\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+# plugin description
+msgid "Plugins"
+msgstr ""
+
 # status names
 msgid "all"
 msgstr ""
