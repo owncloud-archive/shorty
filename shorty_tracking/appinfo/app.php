@@ -40,29 +40,33 @@ OC::$CLASSPATH['OC_ShortyTracking_Query'] = 'shorty_tracking/lib/query.php';
 
 try
 {
-	// only plug into the mother app 'Shorty' if that one is installed AND has the minimum required version:
 	// minimim requirement currently is as specified below:
 	$SHORTY_VERSION_MIN = '0.3.26';
-	if ( OCP\App::isEnabled('shorty') )
+	// only plug into the mother app 'Shorty' if that one is installed, activated and has the minimum required version:
+	if ( OC_Installer::isInstalled('shorty') )
 	{
-		// check Shorty version: installed version required
-		$insV = explode ( '.', OCP\App::getAppVersion('shorty') );
-		$reqV = explode ( '.', $SHORTY_VERSION_MIN );
-		if (  (sizeof($reqV)==sizeof($insV))
-			&&(		  ($reqV[0]<$insV[0])
-				||	( ($reqV[0]==$insV[0])&&($reqV[1]<$insV[1]) )
-				||	( ($reqV[0]==$insV[0])&&($reqV[1]==$insV[1])&&($reqV[2]<=$insV[2]) ) ) )
+		if ( OCP\App::isEnabled('shorty') )
 		{
-			OCP\Util::connectHook ( 'OC_Shorty', 'post_deleteShorty', 'OC_ShortyTracking_Hooks', 'deleteShortyClicks');
-			OCP\Util::connectHook ( 'OC_Shorty', 'registerClick',     'OC_ShortyTracking_Hooks', 'registerClick');
-			OCP\Util::connectHook ( 'OC_Shorty', 'registerDetails',   'OC_ShortyTracking_Hooks', 'registerDetails');
-			OCP\Util::connectHook ( 'OC_Shorty', 'registerActions',   'OC_ShortyTracking_Hooks', 'registerActions');
-			OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
-			OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries',   'OC_ShortyTracking_Hooks', 'registerQueries');
+			// check Shorty version: installed version required
+			$insV = explode ( '.', OCP\App::getAppVersion('shorty') );
+			$reqV = explode ( '.', $SHORTY_VERSION_MIN );
+			if (  (sizeof($reqV)==sizeof($insV))
+				&&(		  ($reqV[0]<$insV[0])
+					||	( ($reqV[0]==$insV[0])&&($reqV[1]<$insV[1]) )
+					||	( ($reqV[0]==$insV[0])&&($reqV[1]==$insV[1])&&($reqV[2]<=$insV[2]) ) ) )
+			{
+				OCP\Util::connectHook ( 'OC_Shorty', 'post_deleteShorty', 'OC_ShortyTracking_Hooks', 'deleteShortyClicks');
+				OCP\Util::connectHook ( 'OC_Shorty', 'registerClick',     'OC_ShortyTracking_Hooks', 'registerClick');
+				OCP\Util::connectHook ( 'OC_Shorty', 'registerDetails',   'OC_ShortyTracking_Hooks', 'registerDetails');
+				OCP\Util::connectHook ( 'OC_Shorty', 'registerActions',   'OC_ShortyTracking_Hooks', 'registerActions');
+				OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
+				OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries',   'OC_ShortyTracking_Hooks', 'registerQueries');
+			}
+			else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires app 'Shorty' in version >= %s.%s.%s !", $reqV );
 		}
-		else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires app 'Shorty' in version >= %s.%s.%s !", $reqV );
+		else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires base app 'Shorty' to be activated !" );
 	}
-	else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires app 'Shorty' to be installed !" );
+	else throw new Exception ( "App 'Shorty Tracking' requires base app 'Shorty' to be installed !" );
 }
 catch ( Exception $e )
 {
