@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"Plugins" => "Plugins",
 "all" => "alle",
 "blocked" => "gesperrt",
 "deleted" => "gelöscht",
