@@ -31,8 +31,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-05-25 00:02+0000\n"
-"Last-Translator: Daisuke Deguchi <ddeguchi@nagoya-u.jp>\n"
+"PO-Revision-Date: 2013-05-26 11:00+0000\n"
+"Last-Translator: tt yn <tetuyano+transi@gmail.com>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "プラグイン"
 
 # status names
 msgid "all"
@@ -160,7 +160,7 @@ msgid "Administration"
 msgstr "管理"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "管理者用システム全体設定:"
 
 msgid "after the SMS has been launched"
 msgstr "SMS を起動した後"
@@ -169,16 +169,16 @@ msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "もう一つの方法として、画像をダウンロードして印刷や保存ができます。"
 
 msgid "alternatively the link can be copied for usage apart"
-msgstr ""
+msgstr "もしくは、別のところで利用するためにリンクをコピー出来ます。"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "もしくは、手動でリンクをコピーすることもできます。"
 
 msgid "Alternatively the link can be copied into a message manually"
 msgstr "代替手段として、手動でリンクをメッセージにコピー出来ます"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "役立つ補足事項..."
 
 msgid "Backend"
 msgstr "バックエンド"
@@ -214,7 +214,7 @@ msgid "Configuration"
 msgstr "設定"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "フィードバックメッセージを全て表示"
 
 msgid "Copy to clipboard"
 msgstr "クリップボードにコピー"
@@ -223,7 +223,7 @@ msgid "Counted entries and clicks"
 msgstr "カウントされたエントリとクリック"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "新しい'Shorty(短縮URL)'を生成して、共有する"
 
 msgid "Creation"
 msgstr "作成"
@@ -253,7 +253,7 @@ msgid "Feedback"
 msgstr "フィードバック"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "管理画面で1回クリックするだけで有効にできます。"
 
 msgid "Loading"
 msgstr "読込中"
@@ -301,13 +301,13 @@ msgid "Open target url"
 msgstr "ターゲットURLを開く"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "'静的バックエンド' の追加設定"
 
 msgid "or simpy print or download it for off-line usage"
 msgstr "または、オフラインで利用する為に単に印刷するか、ダウンロード"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "別の場所へ埋め込むために貼り付け"
 
 msgid "Preference retrieved"
 msgstr "設定を取得しました"
@@ -352,7 +352,7 @@ msgid "Send by SMS"
 msgstr "SMSで送信"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "左下の歯車アイコン (%%s) を利用して個人設定を編集してください！"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr "右上の歯車アイコン (%%s) を利用して個人設定を編集してください！"
@@ -415,7 +415,7 @@ msgid "Specify a static base url…"
 msgstr "静的なベースURLを指定..."
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "静的バックエンド: ベースURLの確認"
 
 msgid "Status"
 msgstr "状態"
@@ -436,7 +436,7 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "ドキュメントを作成したり、Webサイトを構築するときに、その画像を利用します。"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "短縮URLを生成する為に利用する外部サービス"
 
 msgid "The default status as suggested for new Shortys."
 msgstr "デフォルトの状態を新しい短縮として提案"
@@ -445,7 +445,7 @@ msgid "The link below can be copied for usage apart"
 msgstr "以下のリンクは別で利用するためにコピー出来ます"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "追加プラグイン '%%s' は、現在のShorty(短縮URL)の利用状況を追跡できます。"
 
 msgid "therefore the content must be copied manually"
 msgstr "従って、その内容は手動でコピーされなければなりません。"
@@ -457,7 +457,7 @@ msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "この2次元バーコードは、この短縮を指すURLをエンコードしています"
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr ""
+msgstr "これは、短縮化されたURLからリダイレクトされる内部URLです。"
 
 msgid "This is the shortened url registered at the backend"
 msgstr "これはバックエンドに登録された短縮URLです"
@@ -496,7 +496,7 @@ msgid "Use it in web pages by referencing or embedding"
 msgstr "参照もしくは埋め込むことによりウェブページで利用する"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "'%s' 上のボタンを利用するか、便利な 'Shortlet' をご利用ください。 "
 
 msgid "Verify by clicking…"
 msgstr "クリックして検証..."
@@ -556,7 +556,7 @@ msgstr "tiny.cc ユーザキー"
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "バックエンドとの通信時に暗号化証明書の確認を強制"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
@@ -564,7 +564,7 @@ msgid ""
 msgstr "外部の 'bitly.com' サービスは、生成された個々の短縮の短いURLを登録するために利用されます。"
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "これは、自分のサイトで '%s' を初めに登録しなければならないということです。"
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
@@ -598,79 +598,79 @@ msgstr "何もバックエンドを利用しません、ownCloudへの直接リ�
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "このサービスは、有効なあなたの bit.ly のユーザー名と '%s' を提供いただき、認証する必要があります。"
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "そのリンクは、バックエンドを使用して生成されたものよりも大抵長いものでしょう。"
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "しかし、このオプションはどんなサードパーティのサービスにも接続せず、あなたの短縮URLをあなたの管理下に保てます。"
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "なぜなら、この設定はサーバー側の設定ルールに依存し、ベースURLはその設定の管理者セクションでしか指定できないからです。"
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "静的ルールベースのバックエンドは、与えられたベースURLにリンクする短縮URLを生成する"
 
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr ""
+msgstr "ここで設定されたURLへのどんなリクエストも 'shorty' モジュールへ内部的に接続される事に注意しなければなりません。"
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "紐付けられるターゲットは、次のようである必要があります:"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "提示されたサンプルリンクをテストしてみてください。クリックするとあなたの設定が動いているかどうか結果が確認できます。"
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "説明した方法でマッピングされる短いベースURLを提供できない場合は空のままにしておきます。"
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "説明した方法でマッピングされている短いベースURLを提供できる場合にのみ、このバックエンドを使用します。shortiesは、そうでなければ動作しません。"
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部のGoogleの 'goo.gl' サービスは、個々のshortyで生成された短縮URLの登録に利用されます。"
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "このサービスを使うには、 '%%s' を正しく指定してください。"
 
 msgid "This means you require a 'Google API console account'."
-msgstr ""
+msgstr "これは、あなたが \"GoogleのAPIコンソールアカウントを'必要とすることを意味します。"
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "自分のページに新しい '%%s' を登録"
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr ""
+msgstr "SMSで短縮URLを送信するオプションを有効にする。"
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr ""
+msgstr "残念なことに 'SMS URL処理' のサポートは通常はスマートフォンなどのモバイルデバイスにのみ搭載されています。"
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr ""
+msgstr "加えて、この実装は最小限なもので、バグがある可能性があり、システム毎に違うものです"
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "要するに: これは正しく動作していない可能性があります。したがって、無効にすることもできます。"
 
 msgid "Great, your setup appears to be working fine!"
 msgstr "いいですね！あなたの設定はちゃんと動いているようです。"
@@ -688,7 +688,7 @@ msgstr "この設定を変更しない限り、その静的バックエンドの
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "このバックエンドは、全てのユーザーに個人設定での追加のバックエンドとして提供されるものです。"
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "申し訳ありませんが、あなたの設定はまだちゃんと動いていないようです。"
@@ -701,4 +701,4 @@ msgstr "設定をチェックして、設定されたベースURLが間違いな
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
+msgstr "それに対する全てのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。"
