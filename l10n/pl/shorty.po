@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-05-28 00:02+0000\n"
+"PO-Revision-Date: 2013-05-29 13:10+0000\n"
 "Last-Translator: Cyryl Sochacki <cyrylsochacki@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -313,7 +313,7 @@ msgid "Preference retrieved"
 msgstr ""
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Ustawienia zapisane"
 
 msgid "Preference '%s' retrieved"
 msgstr ""
@@ -331,7 +331,7 @@ msgid "Relay service"
 msgstr ""
 
 msgid "Relay url"
-msgstr ""
+msgstr "Adres przekierowania"
 
 msgid "Reload"
 msgstr "Przeładuj"
@@ -343,7 +343,7 @@ msgid "Save"
 msgstr "Zapisz"
 
 msgid "Send by email"
-msgstr ""
+msgstr "Wyślij przez email"
 
 msgid "Send link by email"
 msgstr "Wyślij link mailem"
@@ -403,13 +403,13 @@ msgid "SMS composer"
 msgstr "Kompozytor SMS"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Sortuj rosnąco"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Sortuj malejąco"
 
 msgid "Source url"
-msgstr ""
+msgstr "Adres źródłowy"
 
 msgid "Specify a static base url…"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Target"
 msgstr "Cel"
 
 msgid "Target url"
-msgstr ""
+msgstr "Adres docelowy"
 
 msgid "Target url '%s' is valid"
 msgstr "Docelowy adres '%s' jest niepoprawny"
@@ -538,7 +538,7 @@ msgid "Google API key"
 msgstr "Klucz Google API"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Konto Google API"
 
 msgid "tiny.cc user"
 msgstr "Użytkownik tiny.cc"
