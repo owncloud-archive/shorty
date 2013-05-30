@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-05-29 00:02+0000\n"
+"PO-Revision-Date: 2013-05-30 11:00+0000\n"
 "Last-Translator: unhammer <unhammer+dill@mm.st>\n"
 "Language-Team: Norwegian Nynorsk (Norway) (http://www.transifex.com/projects/p/owncloud/language/nn_NO/)\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "alle"
 
 msgid "blocked"
 msgstr ""
@@ -102,10 +102,10 @@ msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
@@ -195,7 +195,7 @@ msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
 
 msgid "Click registered"
-msgstr ""
+msgstr "Klikk registrert"
 
 msgid "Clicks"
 msgstr ""
@@ -210,16 +210,16 @@ msgid "Close"
 msgstr "Lukk"
 
 msgid "Configuration"
-msgstr ""
+msgstr "Innstillingar"
 
 msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopier til utklippstavle"
 
 msgid "Counted entries and clicks"
-msgstr ""
+msgstr "Talde oppføringar og klikk"
 
 msgid "Create a new 'Shorty' and share it"
 msgstr ""
@@ -240,10 +240,10 @@ msgid "Example"
 msgstr ""
 
 msgid "Exception"
-msgstr ""
+msgstr "Unntak"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "Unntak (%s)"
 
 msgid "Expiration"
 msgstr ""
@@ -255,13 +255,13 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "Lastar"
 
 msgid "Mail client"
-msgstr ""
+msgstr "E-postklient"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "Lagra endringar for shorty med id «%s»"
 
 msgid "Modify attributes"
 msgstr ""
@@ -282,10 +282,10 @@ msgid "Number of entries"
 msgstr ""
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "Tal på innlegg: %s"
 
 msgid "QRCode"
-msgstr ""
+msgstr "QR-kode"
 
 msgid "Open source url"
 msgstr ""
@@ -315,10 +315,10 @@ msgid "Preference saved"
 msgstr ""
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "Henta innstillinga «%s»"
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "Lagra innstillinga «%s»"
 
 msgid "Preferences"
 msgstr ""
@@ -345,7 +345,7 @@ msgid "Send by email"
 msgstr ""
 
 msgid "Send link by email"
-msgstr ""
+msgstr "Send lenkje med e-post"
 
 msgid "Send by SMS"
 msgstr ""
@@ -366,7 +366,7 @@ msgid "Setting '%s' retrieved"
 msgstr ""
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "Lagra innstillinga «%s»"
 
 msgid "Settings"
 msgstr "Innstillingar"
@@ -381,10 +381,10 @@ msgid "Shortlet"
 msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "Shorty som QR-kode"
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr "Sletta shorty med id-en «%s»"
 
 msgid "Show as QRCode"
 msgstr ""
@@ -399,7 +399,7 @@ msgid "SMS"
 msgstr ""
 
 msgid "SMS composer"
-msgstr ""
+msgstr "SMS-skriveverktøy"
 
 msgid "Sort ascending"
 msgstr ""
@@ -420,7 +420,7 @@ msgid "Status"
 msgstr ""
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "Lagra statusendring for shorty med id-en «%s»"
 
 msgid "Target"
 msgstr ""
@@ -429,7 +429,7 @@ msgid "Target url"
 msgstr ""
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "Måladressa «%s» er ugyldig"
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
@@ -450,7 +450,7 @@ msgid "therefore the content must be copied manually"
 msgstr ""
 
 msgid "then paste into message"
-msgstr ""
+msgstr "og lim inn i meldinga"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr ""
@@ -489,7 +489,7 @@ msgid "Unknown object of type caught: %s"
 msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "Nettadresse forkorta til: %s"
 
 msgid "Use it in web pages by referencing or embedding"
 msgstr ""
