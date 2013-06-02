@@ -24,14 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
+# kyyberi <jarkko.moilanen@want3d.fi>, 2013
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-06-01 00:02+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-06-02 10:09+0000\n"
+"Last-Translator: kyyberi <jarkko.moilanen@want3d.fi>\n"
 "Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/owncloud/language/fi_FI/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,10 +55,10 @@ msgid "deleted"
 msgstr "poistettu"
 
 msgid "disabled"
-msgstr ""
+msgstr "Poissa käytöstä"
 
 msgid "enabled"
-msgstr ""
+msgstr "Käytössä"
 
 msgid "never"
 msgstr "Ei koskaan"
@@ -144,19 +145,19 @@ msgstr ""
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "Pääsy"
 
 msgid "Add a new shorty"
 msgstr ""
 
 msgid "Add as new"
-msgstr ""
+msgstr "Lisää uutena"
 
 msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
 msgid "Administration"
-msgstr ""
+msgstr "Hallinta"
 
 msgid "Administrative, system wide settings of this app:"
 msgstr ""
@@ -225,7 +226,7 @@ msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
 msgid "Creation"
-msgstr ""
+msgstr "Luonti"
 
 msgid "Delete shorty"
 msgstr ""
@@ -246,10 +247,10 @@ msgid "Exception (%s)"
 msgstr "Poikkeus (%s)"
 
 msgid "Expiration"
-msgstr ""
+msgstr "Erääntyminen"
 
 msgid "Feedback"
-msgstr ""
+msgstr "Palaute"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
@@ -258,7 +259,7 @@ msgid "Loading"
 msgstr "Ladataan"
 
 msgid "Mail client"
-msgstr ""
+msgstr "Sähköpostiohjelma"
 
 msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
@@ -285,7 +286,7 @@ msgid "Number of entries: %s"
 msgstr ""
 
 msgid "QRCode"
-msgstr ""
+msgstr "QR koodi"
 
 msgid "Open source url"
 msgstr ""
@@ -327,10 +328,10 @@ msgid "Prepare to send as SMS"
 msgstr ""
 
 msgid "Relay service"
-msgstr ""
+msgstr "Välityspalvelu"
 
 msgid "Relay url"
-msgstr ""
+msgstr "Välitys URL"
 
 msgid "Reload"
 msgstr "Päivitä"
@@ -396,7 +397,7 @@ msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "Tekstiviesti"
 
 msgid "SMS composer"
 msgstr ""
@@ -408,7 +409,7 @@ msgid "Sort descending"
 msgstr ""
 
 msgid "Source url"
-msgstr ""
+msgstr "Lähde URL"
 
 msgid "Specify a static base url…"
 msgstr ""
@@ -426,7 +427,7 @@ msgid "Target"
 msgstr ""
 
 msgid "Target url"
-msgstr ""
+msgstr "Kohde URL"
 
 msgid "Target url '%s' is valid"
 msgstr ""
@@ -519,37 +520,37 @@ msgid "Account"
 msgstr ""
 
 msgid "API key"
-msgstr ""
+msgstr "API avain"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "bit.ly käyttäjä"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "bit.ly käyttäjätunnus"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "bit.ly avain"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "bit.ly käyttäjän avain"
 
 msgid "Google API key"
-msgstr ""
+msgstr "Google API avain"
 
 msgid "Google API account"
 msgstr ""
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "tiny.cc käyttäjä"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "tiny.cc käyttäjätunnus"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "tiny.cc avain"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "tiny.cc käyttäjän avain"
 
 # longer terms: typically explanations
 msgid ""
@@ -647,7 +648,7 @@ msgid ""
 msgstr ""
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "Sinun pitää antaa kelvollinen '%%s' käyttääksesi tätä palvelua."
 
 msgid "This means you require a 'Google API console account'."
 msgstr ""
