@@ -1,4 +1,6 @@
 <?php $TRANSLATIONS = array(
+"Shorty Tracking" => "Shorty Tracking",
+"Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Detailiertes tracking aller anfragen von existierenden Shortys mit grafischer Darstellungen aller zugriffe.",
 "granted" => "gewährt",
 "denied" => "Verweigert",
 "blocked" => "gesperrt",
