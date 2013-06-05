@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"Plugins" => "插件",
 "all" => "全部",
 "blocked" => "已屏蔽",
 "deleted" => "已经删除",

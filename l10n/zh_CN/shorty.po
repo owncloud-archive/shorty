@@ -25,14 +25,15 @@
 # 
 # Translators:
 # Dianjin Wang <1132321739qq@gmail.com>, 2013
+# modokwang <modokwang@gmail.com>, 2013
 # zhangmin <zm1990s@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-06-03 00:32+0000\n"
-"Last-Translator: zhangmin <zm1990s@gmail.com>\n"
+"PO-Revision-Date: 2013-06-05 13:03+0000\n"
+"Last-Translator: modokwang <modokwang@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/owncloud/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +43,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "插件"
 
 # status names
 msgid "all"
