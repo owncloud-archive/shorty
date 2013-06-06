@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-06-02 23:16+0000\n"
+"PO-Revision-Date: 2013-06-06 18:50+0000\n"
 "Last-Translator: ismail yenigül <ismail.yenigul@surgate.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -40,12 +40,12 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Shorty izleme"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Erişim geçmişinin entegre bir görselleştirme ile birlikte mevcut Shortys için tüm istekleri ayrıntılı izleme."
 
 # request results
 msgid "granted"
