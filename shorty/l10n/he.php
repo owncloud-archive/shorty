@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "נמחק",
 "never" => "לעולם לא",
 "delete" => "מחיקה",
 "share" => "שיתוף",

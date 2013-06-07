@@ -33,8 +33,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-06-03 00:32+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-06-07 14:00+0000\n"
+"Last-Translator: Michal Hrušecký <Michal@hrusecky.net>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/owncloud/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +44,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Moduly"
 
 # status names
 msgid "all"
@@ -66,13 +66,13 @@ msgid "never"
 msgstr "nikdy"
 
 msgid "private"
-msgstr ""
+msgstr "soukromé"
 
 msgid "public"
-msgstr ""
+msgstr "veřejné"
 
 msgid "shared"
-msgstr ""
+msgstr "sdílené"
 
 # actions ("to be done")
 msgid "delete"
@@ -92,16 +92,16 @@ msgstr "zobrazit"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "žádné"
 
 msgid "error"
-msgstr ""
+msgstr "chyba"
 
 msgid "info"
-msgstr ""
+msgstr "informace"
 
 msgid "debug"
-msgstr ""
+msgstr "ladění"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -112,25 +112,25 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "služba bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "služba cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "služba goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "služba is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "služba ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "služba tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "statická podpůrná vrstva"
 
 # status explanations
 msgid "for any access"
@@ -171,10 +171,10 @@ msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "Obrázek také může být stažen pro uložení, či vytisknutí"
 
 msgid "alternatively the link can be copied for usage apart"
-msgstr ""
+msgstr "odkaz může být také zkopírován pro samostatné použití"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "Odkaz může také být zkopírován ručně"
 
 msgid "Alternatively the link can be copied into a message manually"
 msgstr "Odkaz může také být zkopírován ručně"
@@ -189,7 +189,7 @@ msgid "Base url"
 msgstr "Základní URL"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Vybrat službu..."
 
 msgid "Click for embedding details"
 msgstr "Klikněte pro podrobnosti vložení"
@@ -267,7 +267,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Změny pro shorty s id '%s' byly uloženy"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Upravit atributy"
 
 msgid "Modify shorty"
 msgstr "Změnit shorty"
@@ -312,10 +312,10 @@ msgid "Paste to embed elsewhere"
 msgstr "Vložit pro umístění na jiném místě"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Předvolba nahrána"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Předvolba uložena"
 
 msgid "Preference '%s' retrieved"
 msgstr "Volba '%s' byla získána"
@@ -324,7 +324,7 @@ msgid "Preference '%s' saved"
 msgstr "Volba '%s' uložena"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Předvolby"
 
 msgid "Prepare to send as SMS"
 msgstr "Připravit k odeslání jako SMS"
@@ -357,16 +357,16 @@ msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr "Osobní předvolby nastavte použitím ozubeného kolečka (%%s) na konci strany vlevo."
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Osobní předvolby nastavte použitím ozubeného kolečka (%%s) vpravo nahoře."
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Nastavení nahráno"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Nastavení uloženo"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Nastavení '%s' nahráno"
 
 msgid "Setting '%s' saved"
 msgstr "Nastavení '%s' bylo uloženo"
@@ -396,7 +396,7 @@ msgid "Show details"
 msgstr "Zobrazit podrobnosti"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Zobrazit použití"
 
 msgid "SMS"
 msgstr "SMS"
@@ -438,10 +438,10 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Obrázek může být také použit při psaní dokumentů, nebo nastavovaní webových stránek"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "Podpůrná vrstva používaná na vytváření zkrácených URL."
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "Navrhovaný výchozí stav pro nové Shorty."
 
 msgid "The link below can be copied for usage apart"
 msgstr "Odkaz může být zkopírován pro samostatné použití"
@@ -483,13 +483,13 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Většinou funguje jen na zařízeních jako je smartphone"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Zachycen neočekávaný typ vyjímky:%s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Bohužel implementace tohoto postupu je omezená"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Objekt neznámého typu zachycen: %s"
 
 msgid "Url shortened to: %s"
 msgstr "URL zkráceno na: %s"
@@ -519,7 +519,7 @@ msgid "API access key"
 msgstr "Přístupový klíč API"
 
 msgid "Account"
-msgstr ""
+msgstr "Účet"
 
 msgid "API key"
 msgstr "Klíč API"

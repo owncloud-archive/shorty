@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"Plugins" => "Greffons",
 "all" => "tous",
 "blocked" => "bloqué",
 "deleted" => "supprimé",
