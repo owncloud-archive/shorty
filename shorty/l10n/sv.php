@@ -117,6 +117,7 @@
 "Total of clicks" => "Totalt antal klick",
 "Typically this only works on devices like smart phones" => "Vanligtvis fungerar detta endast med enheter såsom smartphones",
 "Unfortunately the implementation of this scheme is limited" => "Tyvärr är implementeringen av detta schema begränsade",
+"Unknown object of type caught: %s" => "Okänt objekt av typen %s har fångats",
 "Url shortened to: %s" => "Url förkortades till: %s",
 "Use it in web pages by referencing or embedding" => "Använd den på webbsidor genom att referera till den eller bädda in den",
 "Verify by clicking…" => "Verifiera genom att klicka...",
