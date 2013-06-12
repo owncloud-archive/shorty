@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# jmontane <joan@montane.cat>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-06-11 00:02+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-06-12 09:21+0000\n"
+"Last-Translator: jmontane <joan@montane.cat>\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/owncloud/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,10 +102,10 @@ msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
@@ -236,13 +237,13 @@ msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr ""
+msgstr "Exemple"
 
 msgid "Exception"
-msgstr ""
+msgstr "Excepció"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "Excepció (%s)"
 
 msgid "Expiration"
 msgstr "Expiració"
@@ -257,7 +258,7 @@ msgid "Loading"
 msgstr "Carregant"
 
 msgid "Mail client"
-msgstr ""
+msgstr "Client de correu"
 
 msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
@@ -281,7 +282,7 @@ msgid "Number of entries"
 msgstr "Nombre d'entrades"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "Nombre d'entrades: %s"
 
 msgid "QRCode"
 msgstr ""
@@ -395,7 +396,7 @@ msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
 msgstr ""

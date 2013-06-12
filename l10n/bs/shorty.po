@@ -24,485 +24,483 @@
 # @author Christian Reiner
 # 
 # Translators:
-# pisike.sipelgas <pisike.sipelgas@gmail.com>, 2013
-# Rivo Zängov <eraser@eraser.ee>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-06-12 01:02+0000\n"
-"Last-Translator: pisike.sipelgas <pisike.sipelgas@gmail.com>\n"
-"Language-Team: Estonian (Estonia) (http://www.transifex.com/projects/p/owncloud/language/et_EE/)\n"
+"PO-Revision-Date: 2013-06-12 21:41+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"Language-Team: Bosnian (http://www.transifex.com/projects/p/owncloud/language/bs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: et_EE\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: bs\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 # plugin description
 msgid "Plugins"
-msgstr "Lisad"
+msgstr ""
 
 # status names
 msgid "all"
-msgstr "kõik"
+msgstr ""
 
 msgid "blocked"
-msgstr "blokeeritud"
+msgstr ""
 
 msgid "deleted"
-msgstr "kustutatud"
+msgstr ""
 
 msgid "disabled"
-msgstr "välja lülitatud"
+msgstr ""
 
 msgid "enabled"
-msgstr "sisse lülitatud"
+msgstr ""
 
 msgid "never"
-msgstr "mitte kunagi"
+msgstr ""
 
 msgid "private"
-msgstr "privaatne"
+msgstr ""
 
 msgid "public"
-msgstr "avalik"
+msgstr ""
 
 msgid "shared"
-msgstr "jagatud"
+msgstr ""
 
 # actions ("to be done")
 msgid "delete"
-msgstr "kustuta"
+msgstr ""
 
 msgid "edit"
-msgstr "muuda"
+msgstr ""
 
 msgid "open"
-msgstr "ava"
+msgstr ""
 
 msgid "share"
-msgstr "jaga"
+msgstr ""
 
 msgid "show"
-msgstr "näita"
+msgstr ""
 
 # log levels
 msgid "none"
-msgstr "pole"
+msgstr ""
 
 msgid "error"
-msgstr "viga"
+msgstr ""
 
 msgid "info"
-msgstr "info"
+msgstr ""
 
 msgid "debug"
-msgstr "veatuvastus"
+msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr "Ctrl-C"
+msgstr ""
 
 msgid "Ctrl-V"
-msgstr "Ctrl-V"
+msgstr ""
 
 # the backend service names
 msgid "bitly.com service"
-msgstr "bitly.com teenus"
+msgstr ""
 
 msgid "cli.gs service"
-msgstr "cli.gs teenus"
+msgstr ""
 
 msgid "goo.gl service"
-msgstr "goo.gl teenus"
+msgstr ""
 
 msgid "is.gd service"
-msgstr "is.gd teenus"
+msgstr ""
 
 msgid "ti.ny service"
-msgstr "ti.ny teenus"
+msgstr ""
 
 msgid "tiny.cc service"
-msgstr "tiny.cc teenus"
+msgstr ""
 
 msgid "static backend"
-msgstr "Staatiline tagarakend"
+msgstr ""
 
 # status explanations
 msgid "for any access"
-msgstr "juurdepääs kõigile"
+msgstr ""
 
 msgid "for own usage"
-msgstr "enda tarbeks"
+msgstr ""
 
 msgid "with ownCloud users"
-msgstr "ownCloud kasutajatele"
+msgstr ""
 
 msgid "available for everyone"
-msgstr "kõigile saadaval"
+msgstr ""
 
 # short and general terms
 msgid "Access"
-msgstr "Ligipääs"
+msgstr ""
 
 msgid "Add a new shorty"
-msgstr "Lisa uus shorty"
+msgstr ""
 
 msgid "Add as new"
-msgstr "Lisa uuena"
+msgstr ""
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr "Lisa veebileht ownCloudi kui 'Shorty' "
+msgstr ""
 
 msgid "Administration"
-msgstr "Administreerimine"
+msgstr ""
 
 msgid "Administrative, system wide settings of this app:"
-msgstr "Administratiivsed, kõigile rakenduvad seadistused:"
+msgstr ""
 
 msgid "after the SMS has been launched"
-msgstr "peale SMS saatmist"
+msgstr ""
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr "Alternatiivina võib pilti alla laadida printimiseks või säilitamiseks"
+msgstr ""
 
 msgid "alternatively the link can be copied for usage apart"
-msgstr "alternatiivina võib lingi kopeerida eraldi kasutamiseks"
+msgstr ""
 
 msgid "Alternatively the link can be copied manually"
-msgstr "Alternatiivina võib lingi kopeerida käsitsi."
+msgstr ""
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr "Alternatiivina võib lingi sõnumisse kopeerida käsitsi"
+msgstr ""
 
 msgid "Anything that appears helpful …"
-msgstr "Kõik, mis võiks olla seotud ..."
+msgstr ""
 
 msgid "Backend"
-msgstr "Tagarakend"
+msgstr ""
 
 msgid "Base url"
-msgstr "Põhiaadress"
+msgstr ""
 
 msgid "Choose a service…"
-msgstr "Vali teenus..."
+msgstr ""
 
 msgid "Click for embedding details"
-msgstr "Klõpsa täpsema integreerimise info saamiseks"
+msgstr ""
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr "Klõpsa sellel, ükskõik millisest saidist soovit tekitada Shorty"
+msgstr ""
 
 msgid "Click registered"
-msgstr "Klikk registreeritud"
+msgstr ""
 
 msgid "Clicks"
-msgstr "Klikke"
+msgstr ""
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr "Klõpsates allpool 'Ok' alustatakse e-kirja koostamist"
+msgstr ""
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr "Klõpsates allpool 'Ok' alustatakse SMS koostamist"
+msgstr ""
 
 msgid "Close"
-msgstr "Sulge"
+msgstr ""
 
 msgid "Configuration"
-msgstr "Seadistamine"
+msgstr ""
 
 msgid "The amount of feedback messages shown."
-msgstr "Kuvatava tagasiside hulk."
+msgstr ""
 
 msgid "Copy to clipboard"
-msgstr "Kopeeri lõikepuhvrisse"
+msgstr ""
 
 msgid "Counted entries and clicks"
-msgstr "Loentatud kirjeid ja klikke"
+msgstr ""
 
 msgid "Create a new 'Shorty' and share it"
-msgstr "Tekita uus 'Shorty' ning jaga seda"
+msgstr ""
 
 msgid "Creation"
-msgstr "Loodud"
+msgstr ""
 
 msgid "Delete shorty"
-msgstr "Kustuta"
+msgstr ""
 
 msgid "Drag this to your browser bookmarks."
-msgstr "Lohista see oma brauseri järjehoidjatesse."
+msgstr ""
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr "Integreeritud QR kood pildina mõnel veebilehel kasutades seda aadressi"
+msgstr ""
 
 msgid "Example"
-msgstr "Näide"
+msgstr ""
 
 msgid "Exception"
-msgstr "Erand"
+msgstr ""
 
 msgid "Exception (%s)"
-msgstr "Erand (%s)"
+msgstr ""
 
 msgid "Expiration"
-msgstr "Aegumine"
+msgstr ""
 
 msgid "Feedback"
-msgstr "Tagasiside"
+msgstr ""
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr "Seda saab lubada ühe klikiga haldusliideses:"
+msgstr ""
 
 msgid "Loading"
-msgstr "Laadimine"
+msgstr ""
 
 msgid "Mail client"
-msgstr "Meiliklient"
+msgstr ""
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr "Shorty '%s' muudatused salvestatud"
+msgstr ""
 
 msgid "Modify attributes"
-msgstr "Muuda omadusi"
+msgstr ""
 
 msgid "Modify shorty"
-msgstr "Muuda"
+msgstr ""
 
 msgid "New Shorty"
-msgstr "Uus Shorty"
+msgstr ""
 
 msgid "Notes"
-msgstr "Märkmed"
+msgstr ""
 
 msgid "Nothing here yet"
-msgstr "Siin pole veel midagi"
+msgstr ""
 
 msgid "Number of entries"
-msgstr "Kirjete arv"
+msgstr ""
 
 msgid "Number of entries: %s"
-msgstr "Kirjete arv: %s"
+msgstr ""
 
 msgid "QRCode"
-msgstr "QR kood"
+msgstr ""
 
 msgid "Open source url"
-msgstr "Ava lähteaadress"
+msgstr ""
 
 msgid "Open relay url"
-msgstr "Ava vahendusaadress"
+msgstr ""
 
 msgid "Open target"
-msgstr "Ava sihtmärk"
+msgstr ""
 
 msgid "Open target url"
-msgstr "Ava sihtaadress"
+msgstr ""
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr "Valikuline 'Staatilise tagarakendi' seadistus"
+msgstr ""
 
 msgid "or simpy print or download it for off-line usage"
-msgstr "või lihtsalt trüki või lae see alla võrguta kasutamiseks"
+msgstr ""
 
 msgid "Paste to embed elsewhere"
-msgstr "Integreerimiseks mujal aseta"
+msgstr ""
 
 msgid "Preference retrieved"
-msgstr "Säte päritud"
+msgstr ""
 
 msgid "Preference saved"
-msgstr "Säte salvestatud"
+msgstr ""
 
 msgid "Preference '%s' retrieved"
-msgstr "Päritud eelistus '%s'"
+msgstr ""
 
 msgid "Preference '%s' saved"
-msgstr "Säte '%s' salvestatud"
+msgstr ""
 
 msgid "Preferences"
-msgstr "Eelistus"
+msgstr ""
 
 msgid "Prepare to send as SMS"
-msgstr "Valmistu saatma SMS-ina"
+msgstr ""
 
 msgid "Relay service"
-msgstr "Vahendusteenus"
+msgstr ""
 
 msgid "Relay url"
-msgstr "Vahendusaadress"
+msgstr ""
 
 msgid "Reload"
-msgstr "Lae uuesti"
+msgstr ""
 
 msgid "Reload list"
-msgstr "Lae nimekiri uuesti"
+msgstr ""
 
 msgid "Save"
-msgstr "Salvesta"
+msgstr ""
 
 msgid "Send by email"
-msgstr "Saada e-mail"
+msgstr ""
 
 msgid "Send link by email"
-msgstr "Saada link e-postiga"
+msgstr ""
 
 msgid "Send by SMS"
-msgstr "Saada SMS"
+msgstr ""
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr "Määra isiklikud eelistused kasutades paremal ülal asuvat hammasratta ikooni (%%s)! "
+msgstr ""
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr "Määra isiklikud eelistused kasutades paremal ülal asuvat hammasratta ikooni (%%s)! "
+msgstr ""
 
 msgid "Setting retrieved"
-msgstr "Päritud seadistus"
+msgstr ""
 
 msgid "Setting saved"
-msgstr "Seaded on salvestatud"
+msgstr ""
 
 msgid "Setting '%s' retrieved"
-msgstr "Päritud seadistus '%s'"
+msgstr ""
 
 msgid "Setting '%s' saved"
-msgstr "Säte '%s' salvestatud"
+msgstr ""
 
 msgid "Settings"
-msgstr "Seaded"
+msgstr ""
 
 msgid "Share and use"
-msgstr "Jaga ja kasuta"
+msgstr ""
 
 msgid "Share shorty"
-msgstr "Jaga"
+msgstr ""
 
 msgid "Shortlet"
-msgstr "Shortlet"
+msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr "Shorty QR koodina"
+msgstr ""
 
 msgid "Shorty with id '%s' deleted"
-msgstr "Shorty id '%s' kustutatud"
+msgstr ""
 
 msgid "Show as QRCode"
-msgstr "Näita QR koodina"
+msgstr ""
 
 msgid "Show details"
-msgstr "Näita detaile"
+msgstr ""
 
 msgid "Show usage"
-msgstr "Näita kasutust"
+msgstr ""
 
 msgid "SMS"
-msgstr "SMS"
+msgstr ""
 
 msgid "SMS composer"
-msgstr "SMS-i koostaja"
+msgstr ""
 
 msgid "Sort ascending"
-msgstr "Sorteeri tõusvalt"
+msgstr ""
 
 msgid "Sort descending"
-msgstr "Sorgeeri kahanevalt"
+msgstr ""
 
 msgid "Source url"
-msgstr "Lähteaadress"
+msgstr ""
 
 msgid "Specify a static base url…"
-msgstr "Määra staatiline põhiaadress..."
+msgstr ""
 
 msgid "Static backend: base url verification"
-msgstr "Staatiline tagarakend: põhiaadressi kontroll"
+msgstr ""
 
 msgid "Status"
-msgstr "Staatus"
+msgstr ""
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr "Shorty ID '%s' staatuse muudatus salvestatud"
+msgstr ""
 
 msgid "Target"
-msgstr "sihtmärk"
+msgstr ""
 
 msgid "Target url"
-msgstr "Sihtaadress"
+msgstr ""
 
 msgid "Target url '%s' is valid"
-msgstr "Sihtaadress '%s' on korrektne"
+msgstr ""
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr "Seda pilti saab kasutada dokumentide või veebilehtede tegemisel"
+msgstr ""
 
 msgid "The backend service used to generate shortened URLs."
-msgstr "Kasutatav tagarakend genereerimaks lühendatud aadresse."
+msgstr ""
 
 msgid "The default status as suggested for new Shortys."
-msgstr "Soovitatud vaikimisi staatus uutele Shorty-dele"
+msgstr ""
 
 msgid "The link below can be copied for usage apart"
-msgstr "Allpool olevat linki võib kopeerida eraldi kasutamiseks"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr "Lisavidin '%%s' jälgib olemasolevate Shorty-de kasutust!"
+msgstr ""
 
 msgid "therefore the content must be copied manually"
-msgstr "seetõttu tuleb sisu kopeerida käsitsi"
+msgstr ""
 
 msgid "then paste into message"
-msgstr "seejärel aseta sõnumisse"
+msgstr ""
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr "See 2D ribakood sisaldab kodeerituna aadressi, mis viitab sellele Shorty-le"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr "See on sisemine aadress, millel põhineb lühendatud aaressi vahendus"
+msgstr ""
 
 msgid "This is the shortened url registered at the backend"
-msgstr "Lühendatud aadress on registreeritud tagarakendis"
+msgstr ""
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr "See on Shorty genereerimisel kasutatud sihtaadress"
+msgstr ""
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr "See on aadress, millele viitab eespool näidatud QR kood"
+msgstr ""
 
 msgid "Title"
-msgstr "Pealkiri"
+msgstr ""
 
 msgid "Toggle toolbar"
-msgstr "Lülita tööriba"
+msgstr ""
 
 msgid "Total of clicks"
-msgstr "Klikke kokku"
+msgstr ""
 
 msgid "Typically this only works on devices like smart phones"
-msgstr "Tavaliselt toimib see ainult nutitelefoni taolistes seadmetes"
+msgstr ""
 
 msgid "Unexpected type of exception caught: %s"
-msgstr "Tuvastamatut tüüpi erindi teke: %s"
+msgstr ""
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr "Kahjuks on selle skeemi teostus piiratud."
+msgstr ""
 
 msgid "Unknown object of type caught: %s"
-msgstr "Tundmatu objekt tüübiga: %s"
+msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr "URL lühendatud: %s"
+msgstr ""
 
 msgid "Use it in web pages by referencing or embedding"
-msgstr "Kasuta seda veebilehtedel viitamiseks või veebilehele manustamiseks"
+msgstr ""
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr "Kasuta '%s' nuppu ülal või praktilist 'Shortlet'i'"
+msgstr ""
 
 msgid "Verify by clicking…"
-msgstr "Kontrolli klikkides..."
+msgstr ""
 
 msgid "Verification failed"
-msgstr "Kontroll ebaõnnestus"
+msgstr ""
 
 # exception description
 msgid ""
@@ -510,195 +508,195 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr "%s⏎\nTeade (kood): %s (%s)⏎\nFail (rida): %s (%s)⏎\nInfo: %%s"
+msgstr ""
 
 # technical backend details
 msgid "API access key"
-msgstr "API ligipääsu võti"
+msgstr ""
 
 msgid "Account"
-msgstr "Konto"
+msgstr ""
 
 msgid "API key"
-msgstr "API võti"
+msgstr ""
 
 msgid "bit.ly user"
-msgstr "bit.ly kasutaja"
+msgstr ""
 
 msgid "bit.ly user name"
-msgstr "bit.ly kasutajatunnus"
+msgstr ""
 
 msgid "bit.ly key"
-msgstr "bit.ly võti"
+msgstr ""
 
 msgid "bit.ly users key"
-msgstr "bit.ly kasutaja võti"
+msgstr ""
 
 msgid "Google API key"
-msgstr "Google API võti"
+msgstr ""
 
 msgid "Google API account"
-msgstr "Google API konto"
+msgstr ""
 
 msgid "tiny.cc user"
-msgstr "tiny.cc kasutaja"
+msgstr ""
 
 msgid "tiny.cc user name"
-msgstr "tiny.cc kasutajatunnus"
+msgstr ""
 
 msgid "tiny.cc key"
-msgstr "tiny.cc võti"
+msgstr ""
 
 msgid "tiny.cc user key"
-msgstr "tiny.cc kasutaja võti"
+msgstr ""
 
 # longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr "Turvatud ühenduse korral kontrolli tagarakendi sertifikaate"
+msgstr ""
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr "Kasutatakse välist 'bitly.com' teenust registreerimaks iga tekitatud shorty lühendatud aadressi."
+msgstr ""
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr "Pead esmalt registreeruma '%s' nende lehel."
+msgstr ""
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr "Kasutatakse välist 'turl' teenust registreerimaks iga tekitatud shorty lühendatud aadressi."
+msgstr ""
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr "Kasutatakse välist 'ti.ny' teenust registreerimaks iga tekitatud shorty lühendatud aadressi."
+msgstr ""
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr "Kasutatakse välist 'cli.gs' teenust registreerimaks iga tekitatud shorty lühendatud aadressi."
+msgstr ""
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr "Kasutatakse välist 'is.gd' teenust registreerimaks iga tekitatud shorty lühendatud aadressi."
+msgstr ""
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr "Kasutatakse välist 'tiny.cc' teenust registreerimaks iga tekitatud shorty lühendatud aadressi."
+msgstr ""
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr "Kui tagarakendit ei kasutata, luuakse lingid, mis viitavad sinu ownCloud-ile."
+msgstr ""
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr "Teenuse kasutamine eeldab enda tuvastamist korrektse bit.ly kasutajatunnuse ja '%s'."
+msgstr ""
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr "Taolised lingid on enamasti pikemad kui need, mis on loodud tagarakendit kasutades."
+msgstr ""
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr "Siiski see valik ei sõltu kolmanda osapoole teenustest ning Su shortyd on Sinu kontrolli all."
+msgstr ""
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr "Kuna antud seadistus sõltub serveri üldseadistusest, siis põhiaadressi saab määrata ainult 'Admin' haldusliidesest."
+msgstr ""
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr "Staatiline, reeglipõhine tagarakend, tekitab shorty linke lähtuvalt antud põhiaadressist."
+msgstr ""
 
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr "Pead jälgima, et iga siin seadistatud aadressi päringule 'shorty' moodulis oleks olemas sisemine vastendus."
+msgstr ""
 
 msgid "The target of that mapping must be some URL like:"
-msgstr "Selle vastenduse sihtmärk peab olema URL nagu:"
+msgstr ""
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr "Proovi testimiseks pakutud linki, kliki sellel ja peaksid nägema kinnitust, et seadistus toimib."
+msgstr ""
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr "Jäta tühjaks kui puudub lühike põhiaadress, mis oleks vastendatud kirjeldatud moel."
+msgstr ""
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr "Kasuta seda tagarakendit juhul, kui seadistad lühikese põhiaadressi "
+msgstr ""
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr "Kasutatakse välist 'goo.gl' teenust registreerimaks iga tekitatud shorty lühendatud aadressi."
+msgstr ""
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr "Teenuse kasutamiseks pead sisestama korrektse '%%s'."
+msgstr ""
 
 msgid "This means you require a 'Google API console account'."
-msgstr "Vajalik on 'Google API konsooli konto' omamine."
+msgstr ""
 
 msgid "Register a new '%%s' at their pages."
-msgstr "Registreeri uus '%%s' nende lehel."
+msgstr ""
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr "SMS lubamine võimaldab saata Shorty-t SMS vahendusel."
+msgstr ""
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr "Paraku suudavad SMS-is aadresse käidelda ainult nutitelefonide taolised seadmed."
+msgstr ""
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr "Kuid ka nendes võib teostus olla minimalistlik, vigane ja erineb tootjate vahel."
+msgstr ""
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr "Lühidalt: see ei pruugi sinu jaoks toimida, seega võid selle välja lülitada..."
+msgstr ""
 
 msgid "Great, your setup appears to be working fine!"
-msgstr "Suurepärane! Seadistus tundub toimivat!"
+msgstr ""
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr "Seadistatud põhiaadressile teostatud päringud on vastendatud antud ownCloud vahendusteenuses."
+msgstr ""
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr "Staatilise tagarakendi kasutamine on mõistlik kuni seadistust ei muudeta"
+msgstr ""
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr "Seda tagarakendit pakutakse kõikidele kohalikele kasutajatele lisana nende endi personaalsele seadistustele."
+msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr "Vabandust, kuid su seadistus ei tööta veel korrektselt!"
+msgstr ""
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr "Palun kontrolli oma seadistust ning veendu, et määratud põhiaadress on kindlasti korrektne."
+msgstr ""
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr "Veendu, et kõik päringud oleks mingil moel Shorty vahendusteenuses vastendatud."
+msgstr ""
