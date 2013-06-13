@@ -23,6 +23,8 @@
 
 Changelog: 
 
+* Thu Jun 13 2013 Christian Reiner: version 0.3.27
+Fixed a bug in the internal plugin interface that produced annoying log entries.
 * Thu May 23 2013 Christian Reiner: version 0.3.26
 Fixed verification of the base url required for the 'Static Backend' setup. 
 Fixed the preferences dialogs layout when using the static backend.
