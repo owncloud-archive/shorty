@@ -145,14 +145,14 @@ class OC_Shorty_Hooks
 			foreach ( $aspect as $detail )
 			{
 				if (  ! is_array($detail)
-					|| ! array_key_exists('id',       $detail) || ! is_string($query['id'])
-					|| ! array_key_exists('name',     $detail) || ! is_string($query['name'])
-					|| ! array_key_exists('abstract', $detail) || ! is_string($query['abstract']) )
+					|| ! array_key_exists('id',       $detail) || ! is_string($detail['id'])
+					|| ! array_key_exists('name',     $detail) || ! is_string($detail['name'])
+					|| ! array_key_exists('abstract', $detail) || ! is_string($detail['abstract']) )
 				{
 					OCP\Util::writeLog ( 'shorty', 'Invalid reply from an app that registered into the registerDetails hook, FIX THAT APP !', OCP\Util::WARN );
 					break;
 				}
-			} // foreach query
+			} // foreach aspect
 		} // foreach aspect
 		return $details;
 	} // function requestDetails
