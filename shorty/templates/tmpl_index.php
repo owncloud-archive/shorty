@@ -46,7 +46,7 @@
 </div>
 
 <!-- top control bar -->
-<div id="controls" class="shorty-controls shorty-panel-visible" data-referrer="<?php if (array_key_exists('shorty-referrer',$_)) p($_['shorty-referrer']); ?>">
+<div id="controls" class="shorty-controls" data-referrer="<?php if (array_key_exists('shorty-referrer',$_)) p($_['shorty-referrer']); ?>">
 	<!-- controls: left area, buttons -->
 	<span class="shorty-controls-left">
 		<!-- button to add a new entry to list -->

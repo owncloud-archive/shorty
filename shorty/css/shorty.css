@@ -47,6 +47,7 @@ html input, html textarea {
 /* the shorty desktop, a canvas, contains all elements except of those pushed into the header */
 .shorty-desktop {
 	position: relative;
+	top: 0;
 	width: 99%;
 	background: transparent;
 	text-align: left;
@@ -56,6 +57,7 @@ html input, html textarea {
 }
 /* top bar, holding main control elements */
 #controls {
+	top: 0;
 	position: relative;
 	padding: 0 2px;
 	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
