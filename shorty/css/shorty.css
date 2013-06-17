@@ -666,6 +666,8 @@ html input, html textarea {
 	border: 1px solid #D3D3D3;
 }
 .shorty-dialog:not(#dialog-show) span.clickable:not(.clicked):after {
+	display: inline-block;
+	width: 16px;
 	content: url("../../../core/img/actions/rename.svg");
 	position: relative;
 	top: 3px;
