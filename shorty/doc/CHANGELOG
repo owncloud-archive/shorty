@@ -23,6 +23,8 @@
 
 Changelog: 
 
+* Tue Jun 18 2013 Christian Reiner: version 0.3.29
+Fixed a bug that prevented a Shortys target to become editable when being clicked. 
 * Tue Jun 18 2013 Christian Reiner: version 0.3.28
 A number of style fixes to improve the apps appearance in MS IE browsers.
 Graphics file format optimization to reduce file sizes.

@@ -59,7 +59,7 @@
 				<br>
 				<?php p(OC_Shorty_L10n::t("Embed the QRCode as an image into some web page using this url")); ?>.
 			</div>
-			<input class="payload" readonly>
+			<input class="payload" readonly="true">
 			<div class="usage-instruction">
 				<?php p(OC_Shorty_L10n::t("Copy to clipboard")); ?>:<span class="usage-token"><?php p(OC_Shorty_L10n::t("Ctrl-C")); ?></span>
 				<br>

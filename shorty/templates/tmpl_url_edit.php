@@ -44,12 +44,12 @@
 			</a>
 		<span class="heading"><?php p(OC_Shorty_L10n::t('Modify shorty').':'); ?></span>
 		</legend>
-		<input id="id" name="id" type="hidden" data="" class="" readonly disabled />
+		<input id="id" name="id" type="hidden" data="" class="" readonly="true" disabled />
 		<label for="source"><?php p(OC_Shorty_L10n::t('Source url').':'); ?></label>
-		<input id="source" name="source" type="text" data="" class="" readonly disabled />
+		<input id="source" name="source" type="text" data="" class="" readonly="true" disabled />
 		<br />
 		<label for="relay"><?php p(OC_Shorty_L10n::t('Relay url').':'); ?></label>
-		<input id="relay" name="relay" type="text" data="" class="" readonly disabled />
+		<input id="relay" name="relay" type="text" data="" class="" readonly="true" disabled />
 		<br />
 		<label for="target"><?php p(OC_Shorty_L10n::t('Target url').':'); ?></label>
 		<span class="clickable">
@@ -101,11 +101,11 @@
 		<br />
 		<span class="label-line">
 			<label for="clicks"><?php p(OC_Shorty_L10n::t('Clicks').':'); ?></label>
-			<input id="clicks" name="clicks" data="" type="textarea" class="" style="width:3em;" readonly disabled />
+			<input id="clicks" name="clicks" data="" type="textarea" class="" style="width:3em;" readonly="true" disabled />
 			<label for="created"><?php p(OC_Shorty_L10n::t('Creation').':'); ?></label>
-			<input id="created" name="created" type="text" data="" class="" style="width:7em;" readonly disabled />
+			<input id="created" name="created" type="text" data="" class="" style="width:7em;" readonly="true" disabled />
 			<label for="accessed"><?php p(OC_Shorty_L10n::t('Access').':'); ?></label>
-			<input id="accessed" name="accessed" type="text" data="" class="" style="width:10em;" readonly disabled />
+			<input id="accessed" name="accessed" type="text" data="" class="" style="width:10em;" readonly="true" disabled />
 		</span>
 		<br />
 		<label for="confirm"></label>

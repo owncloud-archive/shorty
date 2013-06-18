@@ -44,7 +44,7 @@
 			</a>
 			<span class="heading"><?php p(OC_Shorty_L10n::t("Share and use").':'); ?></span>
 		</legend>
-		<input id="id" name="id" type="hidden" data="" class="" readonly disabled />
+		<input id="id" name="id" type="hidden" data="" class="" readonly="true" disabled />
 		<label for="title"><?php p(OC_Shorty_L10n::t("Title").':'); ?></label>
 		<span id="title" class="ellipsis"></span>
 		<br />
