@@ -1883,7 +1883,7 @@ OC.Shorty={
 							p_buttons[t('shorty','Close')]=true;
 						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt(p_message,{
-							loaded:function(){$('.payload').val(clipboardBody).focus();},
+							loaded:function(){$('.payload').val(clipboardBody).focus().select();},
 							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
