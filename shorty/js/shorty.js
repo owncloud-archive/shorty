@@ -1828,7 +1828,7 @@ OC.Shorty={
 							p_buttons[t('shorty','Cancel')]=false;
 						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt(p_message,{
-							loaded:function(){$('.payload').val(mailBody).focus();},
+							loaded:function(){$('.payload').val(mailBody).focus().select();},
 							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
@@ -1857,7 +1857,7 @@ OC.Shorty={
 							p_buttons[t('shorty','Cancel')]=false;
 						// use the jquery.impromptu plugin for a popup
 						var proceed=$.prompt(p_message,{
-							loaded:function(){$('.payload').val(smsBody).focus();},
+							loaded:function(){$('.payload').val(smsBody).focus().select();},
 							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
