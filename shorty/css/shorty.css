@@ -772,7 +772,7 @@ input.shorty-config {
 }
 .shorty-embedded a.shorty-clickable:before {
 	display: inline-block;
-	width: 20px;
+	width: 12px;
 	content: url("../img/actions/external.svg");
 	margin-right: 0.3em;
 	margin-left: 7.0em;
@@ -788,7 +788,7 @@ input.shorty-config {
 }
 .shorty-embedded fieldset.shorty-collapsible span:before {
 	display: inline-block;
-	width: 20px;
+	width: 16px;
 	content: url("../img/actions/shade.svg");
 	margin-right: 0.3em;
 	padding: 0;
