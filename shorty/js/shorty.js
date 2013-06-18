@@ -365,16 +365,16 @@ OC.Shorty={
 								dialog.find('#target').attr('readonly','true');
 								dialog.find('span.clickable.clicked').removeClass('clicked');
 								// clicking the target removes the 'readonly' property
-								dialog.find('span.clickable:not(.clicked),span.clickable:not(.clicked)>*')
-								      .on('click', {dialog: dialog}, function(){
+								dialog.find('span.clickable:not(.clicked)')
+												.on('click', {dialog: dialog}, function(){
 									// deactivate click reaction
-									dialog.find('span.clickable:not(.clicked),span.clickable:not(.clicked)>*').off('click');
+									$(this).off('click');
 									// prevent dialog submission
 									OC.Shorty.WUI.Dialog.sharpen(dialog,false);
 									// suppress further clicking sensivity
-									dialog.find('span.clickable').addClass('clicked');
+									$(this).addClass('clicked');
 									// make element writeable
-									$(this).removeAttr('readonly').focus();
+									$(this).find('input').removeAttr('readonly').focus();
 									// prevent submission when element has been altered
 									$(this).on('keypress', {dialog: dialog}, function(){
 										OC.Shorty.WUI.Dialog.sharpen(dialog,false);
