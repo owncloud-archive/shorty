@@ -45,13 +45,13 @@
 			<span class="heading"><?php p(OC_Shorty_L10n::t('Show details').':'); ?></span>
 		</legend>
 		<label for="source"><?php p(OC_Shorty_L10n::t('Source url').':'); ?></label>
-		<input id="source" name="source" type="text" data="" class="" readonly disabled />
+		<input id="source" name="source" type="text" data="" class="" readonly="true" disabled />
 		<br />
 		<label for="relay"><?php p(OC_Shorty_L10n::t('Relay url').':'); ?></label>
-		<input id="relay" name="relay" type="text" data="" class="" readonly disabled />
+		<input id="relay" name="relay" type="text" data="" class="" readonly="true" disabled />
 		<br />
 		<label for="target"><?php p(OC_Shorty_L10n::t('Target url').':'); ?></label>
-		<input id="target" name="target" type="text" data="" class="" readonly disabled />
+		<input id="target" name="target" type="text" data="" class="" readonly="true" disabled />
 		<br />
 		<label for="meta"><img id="busy" height="12px" src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></label>
 		<span id="meta" class="shorty-meta">
@@ -69,25 +69,25 @@
 		</span>
 		<br />
 		<label for="title"><?php p(OC_Shorty_L10n::t('Title').':'); ?></label>
-		<input id="title" name="title" type="text" data="" class="" readonly disabled />
+		<input id="title" name="title" type="text" data="" class="" readonly="true" disabled />
 		<br />
 		<span class="label-line">
 			<label for="status"><?php p(OC_Shorty_L10n::t('Status').':'); ?></label>
-			<input id="status" name="status" type="text" data="" class="" style="width:8em;" readonly disabled />
+			<input id="status" name="status" type="text" data="" class="" style="width:8em;" readonly="true" disabled />
 			<label for="until"><?php p(OC_Shorty_L10n::t('Expiration').':'); ?></label>
-			<input id="until" name="until" type="text" data="" class="" style="width:12em;" readonly disabled />
+			<input id="until" name="until" type="text" data="" class="" style="width:12em;" readonly="true" disabled />
 		</span>
 		<br />
 		<label for="notes"><?php p(OC_Shorty_L10n::t('Notes').':'); ?></label>
-		<input id="notes" name="notes" data="" class="" readonly disabled />
+		<input id="notes" name="notes" data="" class="" readonly="true" disabled />
 		<br />
 		<span class="label-line">
 			<label for="clicks"><?php p(OC_Shorty_L10n::t('Clicks').':'); ?></label>
-			<input id="clicks" name="clicks" data="" type="textarea" class="" style="width:3em;" readonly disabled />
+			<input id="clicks" name="clicks" data="" type="textarea" class="" style="width:3em;" readonly="true" disabled />
 			<label for="created"><?php p(OC_Shorty_L10n::t('Creation').':'); ?></label>
-			<input id="created" name="created" type="text" data="" class="" style="width:7em;" readonly disabled />
+			<input id="created" name="created" type="text" data="" class="" style="width:7em;" readonly="true" disabled />
 			<label for="accessed"><?php p(OC_Shorty_L10n::t('Access').':'); ?></label>
-			<input id="accessed" name="accessed" type="text" data="" class="" style="width:10em;" readonly disabled />
+			<input id="accessed" name="accessed" type="text" data="" class="" style="width:10em;" readonly="true" disabled />
 		</span>
   </fieldset>
 </form>
