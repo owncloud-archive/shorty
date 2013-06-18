@@ -47,6 +47,7 @@ html input, html textarea {
 /* the shorty desktop, a canvas, contains all elements except of those pushed into the header */
 .shorty-desktop {
 	position: relative;
+	top: 0;
 	width: 99%;
 	background: transparent;
 	text-align: left;
@@ -56,6 +57,7 @@ html input, html textarea {
 }
 /* top bar, holding main control elements */
 #controls {
+	top: 0;
 	position: relative;
 	padding: 0 2px;
 	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
@@ -65,28 +67,26 @@ html input, html textarea {
 #content.shorty-panel-hidden .shorty-controls {
 	top: -2.8em;
 }
+.shorty-controls {
+	display: block;
+}
 .shorty-controls-left {
-	display: inline-block;
 	float: left;
-	padding: 0.1em 0;
 }
 .shorty-controls-right {
-	display: inline-block;
 	float: right;
 }
 .shorty-controls-center {
-	display: block;
 	width: 100%;
 	height: inherit;
 	line-height: 300%;
 	text-align: center;
-	vertical-align: bottom;
 	white-space: nowrap;
 }
 .shorty-controls-center span {
-	display: inline-block;
+	display: inline;
 	height: inherit;
-	vertical-align: bottom;
+	vertical-align: top;
 }
 .shorty-controls-center span.shorty-value {
 	width: 2em;
@@ -158,12 +158,16 @@ html input, html textarea {
 }
 .shorty-config {
 	float: right;
-	margin: 0.3em 0.2em;
+	margin: 0.25em 0.2em;
 	vertical-align: middle;
+	line-height: 1.2em;
 	height: 28px;
 }
 .shorty-config img {
 	cursor: inherit;
+}
+input.shorty-config {
+	padding: 0 0.4em;
 }
 .shorty-title {
 	margin-bottom: 0.6em;
@@ -622,7 +626,6 @@ html input, html textarea {
 .shorty-dialog textarea[readonly],
 .shorty-dialog button[readonly] {
 	border: 0 none;
-/*	box-shadow: 0 0 0; */
 	box-shadow: 0 0 0 #FFFFFF;
 	outline: none;
 	background: none;
@@ -646,8 +649,7 @@ html input, html textarea {
 /* highlight readonly input #target as clickable */
 .shorty-dialog span.clickable {
 	display: inline-block;
-	width: 82%;
-	white-space: nowrap;
+	width: 81.5%;
 	border-radius: 0.5em;
 	border: 1px solid transparent;
 	margin: 0;
@@ -665,12 +667,15 @@ html input, html textarea {
 }
 .shorty-dialog:not(#dialog-show) span.clickable:not(.clicked):after {
 	content: url("../../../core/img/actions/rename.svg");
+	display: inline-block;
 	position: relative;
+	float: right;
+	width: 20px;
 	top: 3px;
 }
 .shorty-dialog span.clickable:not(.clicked) * {
 	cursor: pointer;
-	width: 92%;
+	width: 92a%;
 	margin: 0.1em 0.2em;
 }
 .shorty-dialog span.clickable.clicked * {
@@ -688,7 +693,7 @@ html input, html textarea {
 }
 
 .shorty-standalone .shorty-meta {
-	width: 62%;
+	width: 66%;
 	margin: 0;
 }
 .shorty-standalone .shorty-meta img {
@@ -712,22 +717,23 @@ html input, html textarea {
 	border: 1px solid transparent;
 	display: inline-table;
 	overflow-x: hidden;
-/* 	white-space: nowrap; */
 	text-overflow: ellipsis;
 	width: inherit;
 }
+/* a trailing arrow pointing down: "take over this content to below" */
+.shorty-standalone:not(#dialog-show) .shorty-meta span#explanation.filled:after {
+	content: url("../img/actions/takeover.svg");
+	display: inline-block;
+	position: relative;
+	float: right;
+	width: 16px;
+	top: 3px;
+}
+/* frame explanation when hovering to express what the "take ober action" above applies to */
 .shorty-standalone:not(#dialog-show) .shorty-meta span#explanation.filled:hover {
 	position: relative;
 	cursor: pointer;
 	border: 1px solid #D3D3D3;
-	padding-right: 30px;
-}
-.shorty-standalone:not(#dialog-show) .shorty-meta span#explanation.filled:hover:after {
-	content: url("../img/actions/takeover.svg");
-	position: absolute;
-	float: right;
-	top: 6px;
-	right: 10px;
 }
 
 /* dialogs related to elements ('embedded in the content') */
@@ -759,13 +765,20 @@ html input, html textarea {
 	vertical-align: middle;
 }
 .external:after {
+	display: inline-block;
+	width: 20px;
 	content:url("../img/actions/external.svg");
 	margin-left: 0.3em;
 }
 .shorty-embedded a.shorty-clickable:before {
+	display: inline-block;
+	width: 12px;
 	content: url("../img/actions/external.svg");
 	margin-right: 0.3em;
 	margin-left: 7.0em;
+}
+.shorty-embedded fieldset.shorty-collapsible span {
+	margin: 0;
 }
 .shorty-embedded fieldset.shorty-collapsible span {
 	cursor: n-resize;
@@ -774,6 +787,8 @@ html input, html textarea {
 	cursor: s-resize;
 }
 .shorty-embedded fieldset.shorty-collapsible span:before {
+	display: inline-block;
+	width: 16px;
 	content: url("../img/actions/shade.svg");
 	margin-right: 0.3em;
 	padding: 0;
@@ -782,12 +797,6 @@ html input, html textarea {
 }
 .shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
 	content: url("../img/actions/unshade.svg");
-	margin-right: 0.3em;
-	vertical-align: baseline;
-	opacity: 0.7;
-}
-.shorty-embedded fieldset.shorty-collapsible span {
-	margin: 0;
 }
 .shorty-embedded fieldset.shorty-collapsible {
 	border-radius: 0.5em;
@@ -832,8 +841,8 @@ html input, html textarea {
 	clear: none;
 	width: 5.7em;
 	text-align: left;
-	vertical-align: baseline;
-	padding: 0.2em 0.5em 0.1em 0.2em;
+	vertical-align: top;
+	padding: 0.4em;
 	cursor: default;
 }
 .shorty-dialog span.label-line label:not(:first-child) {

@@ -23,6 +23,10 @@
 
 Changelog: 
 
+* Tue Jun 18 2013 Christian Reiner: version 0.3.28
+A number of style fixes to improve the apps appearance in MS IE browsers.
+Graphics file format optimization to reduce file sizes.
+Fixed automatic text selection in usage popup offered in the embedded share dialogs. 
 * Thu Jun 13 2013 Christian Reiner: version 0.3.27
 Fixed a bug in the internal plugin interface that produced annoying log entries.
 * Thu May 23 2013 Christian Reiner: version 0.3.26
