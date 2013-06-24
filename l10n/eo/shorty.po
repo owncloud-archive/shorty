@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Mariano <mstreet@kde.org.ar>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-06-23 11:42+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-06-24 20:20+0000\n"
+"Last-Translator: Mariano <mstreet@kde.org.ar>\n"
 "Language-Team: Esperanto (http://www.transifex.com/projects/p/owncloud/language/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,41 +45,41 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "ĉio"
 
 msgid "blocked"
-msgstr ""
+msgstr "blokita"
 
 msgid "deleted"
 msgstr "forigita"
 
 msgid "disabled"
-msgstr ""
+msgstr "malkapabligita"
 
 msgid "enabled"
-msgstr ""
+msgstr "kapabligita"
 
 msgid "never"
 msgstr "neniam"
 
 msgid "private"
-msgstr ""
+msgstr "malpublika"
 
 msgid "public"
-msgstr ""
+msgstr "publika"
 
 msgid "shared"
-msgstr ""
+msgstr "kunhavigita"
 
 # actions ("to be done")
 msgid "delete"
 msgstr "forigi"
 
 msgid "edit"
-msgstr ""
+msgstr "redakti"
 
 msgid "open"
-msgstr ""
+msgstr "malfermi"
 
 msgid "share"
 msgstr "kunhavigi"
@@ -88,77 +89,77 @@ msgstr "montri"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "nenio"
 
 msgid "error"
-msgstr ""
+msgstr "eraro"
 
 msgid "info"
-msgstr ""
+msgstr "informo"
 
 msgid "debug"
 msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Stir-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Stir-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "Servo bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "Servo cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "Servo goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "Servo is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "Servo ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "Servo tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "statika motoro"
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "por ĉia aliro"
 
 msgid "for own usage"
-msgstr ""
+msgstr "por propra uzo"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "per ownCloud-uzantoj"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "havebla por ĉiuj"
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "Aliro"
 
 msgid "Add a new shorty"
 msgstr ""
 
 msgid "Add as new"
-msgstr ""
+msgstr "Aldoni kiel nova"
 
 msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
 msgid "Administration"
-msgstr ""
+msgstr "Administro"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "Administra kaj tutsistema agordo de ĉi tiu aplikaĵo:"
 
 msgid "after the SMS has been launched"
 msgstr ""
@@ -176,16 +177,16 @@ msgid "Alternatively the link can be copied into a message manually"
 msgstr ""
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "Io ajn, kio ŝajnas helpa"
 
 msgid "Backend"
 msgstr "Motoro"
 
 msgid "Base url"
-msgstr ""
+msgstr "Baza URL"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Elektu servon..."
 
 msgid "Click for embedding details"
 msgstr ""
@@ -194,10 +195,10 @@ msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
 
 msgid "Click registered"
-msgstr ""
+msgstr "Klako registriĝis"
 
 msgid "Clicks"
-msgstr ""
+msgstr "Klakoj"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -215,7 +216,7 @@ msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopii al tondejo"
 
 msgid "Counted entries and clicks"
 msgstr ""
@@ -224,7 +225,7 @@ msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
 msgid "Creation"
-msgstr ""
+msgstr "Kreo"
 
 msgid "Delete shorty"
 msgstr ""
@@ -236,13 +237,13 @@ msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr ""
+msgstr "Ekzemplo"
 
 msgid "Exception"
-msgstr ""
+msgstr "Escepto"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "Escepto (%s)"
 
 msgid "Expiration"
 msgstr ""
@@ -251,19 +252,19 @@ msgid "Feedback"
 msgstr ""
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "Ĝi povas kapabliĝi per unuopa klako en la administrejo:"
 
 msgid "Loading"
-msgstr ""
+msgstr "Ŝargante"
 
 msgid "Mail client"
-msgstr ""
+msgstr "Retpoŝtilo"
 
 msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Modifi atribuojn"
 
 msgid "Modify shorty"
 msgstr ""
@@ -275,7 +276,7 @@ msgid "Notes"
 msgstr "Notoj"
 
 msgid "Nothing here yet"
-msgstr ""
+msgstr "Nenio estas ĉi tie ankoraŭ"
 
 msgid "Number of entries"
 msgstr ""
@@ -284,22 +285,22 @@ msgid "Number of entries: %s"
 msgstr ""
 
 msgid "QRCode"
-msgstr ""
+msgstr "QR-kodo"
 
 msgid "Open source url"
-msgstr ""
+msgstr "Malfermi fontan URL-on"
 
 msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "Malfermi celon"
 
 msgid "Open target url"
-msgstr ""
+msgstr "Malfermi celan URL-on"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "Malnepra agordo de “statika motoro”"
 
 msgid "or simpy print or download it for off-line usage"
 msgstr ""
@@ -311,19 +312,19 @@ msgid "Preference retrieved"
 msgstr ""
 
 msgid "Preference saved"
-msgstr ""
+msgstr "La prefero konserviĝis"
 
 msgid "Preference '%s' retrieved"
 msgstr ""
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "La prefero “%s” konserviĝis"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Preferoj"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "Pretigi por sendi kiel SMS"
 
 msgid "Relay service"
 msgstr ""
@@ -332,22 +333,22 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr ""
+msgstr "Reŝargi"
 
 msgid "Reload list"
-msgstr ""
+msgstr "Reŝargi liston"
 
 msgid "Save"
 msgstr "Konservi"
 
 msgid "Send by email"
-msgstr ""
+msgstr "Sendi per retpoŝto"
 
 msgid "Send link by email"
-msgstr ""
+msgstr "Sendi la ligilon per retpoŝto"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "Sendi per SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
@@ -359,19 +360,19 @@ msgid "Setting retrieved"
 msgstr ""
 
 msgid "Setting saved"
-msgstr ""
+msgstr "La agordero konserviĝis"
 
 msgid "Setting '%s' retrieved"
 msgstr ""
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "La agordero “%s” konserviĝis"
 
 msgid "Settings"
 msgstr "Agordo"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Kunhavigi kaj uzi"
 
 msgid "Share shorty"
 msgstr ""
@@ -389,25 +390,25 @@ msgid "Show as QRCode"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Montri detalojn"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Montri uzon"
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "SMS-skribilo"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Ordigi kreske"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Ordigi malkreske"
 
 msgid "Source url"
-msgstr ""
+msgstr "Fonta URL"
 
 msgid "Specify a static base url…"
 msgstr ""
@@ -416,19 +417,19 @@ msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "Stato"
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "Celo"
 
 msgid "Target url"
-msgstr ""
+msgstr "Cela URL"
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "La cela URL “%s” validas"
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
@@ -440,7 +441,7 @@ msgid "The default status as suggested for new Shortys."
 msgstr ""
 
 msgid "The link below can be copied for usage apart"
-msgstr ""
+msgstr "La jena ligilo povas kopiiĝi por aparta uzo"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
@@ -473,7 +474,7 @@ msgid "Toggle toolbar"
 msgstr ""
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "Totalo de klakoj"
 
 msgid "Typically this only works on devices like smart phones"
 msgstr ""
@@ -488,7 +489,7 @@ msgid "Unknown object of type caught: %s"
 msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "URL mallongigita kiel: %s"
 
 msgid "Use it in web pages by referencing or embedding"
 msgstr ""
@@ -497,10 +498,10 @@ msgid "Use the '%s' button above or the fine 'Shortlet'"
 msgstr ""
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "Kontroli per klako..."
 
 msgid "Verification failed"
-msgstr ""
+msgstr "La kontrolo malsukcesis"
 
 # exception description
 msgid ""
@@ -508,47 +509,47 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr ""
+msgstr "%s\nMesaĝo (kodo): %s (%s)\nDosiero (linio): %s (%s)\nInformo: %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "Klavo de aliro al API"
 
 msgid "Account"
-msgstr ""
+msgstr "Konto"
 
 msgid "API key"
-msgstr ""
+msgstr "API-klavo"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "Uzanto de bit.ly"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "Uzantonomo de bit.ly"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "Klavo de bit.ly"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "Uzantoklavo de bit.ly"
 
 msgid "Google API key"
-msgstr ""
+msgstr "Klavo de Google API"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Konto de Google API"
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "Uzanto de tiny.cc"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "Uzantonomo de tiny.cc"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "Klavo de tiny.cc"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "Uzantoklavo de tiny.cc"
 
 # longer terms: typically explanations
 msgid ""
@@ -652,7 +653,7 @@ msgid "This means you require a 'Google API console account'."
 msgstr ""
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "Registri novan “%%s” en iliaj paĝoj."
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
 msgstr ""
