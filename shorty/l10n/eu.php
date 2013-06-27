@@ -16,6 +16,7 @@
 "Loading" => "Kargatzen",
 "Mail client" => "Posta bezeroa",
 "Notes" => "Oharrak",
+"Nothing here yet" => "Ezer hemen oraindik",
 "QRCode" => "QRkodea",
 "Preference '%s' saved" => "'%s' hobespena gordea",
 "Save" => "Gorde",
