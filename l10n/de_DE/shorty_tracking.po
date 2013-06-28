@@ -25,14 +25,15 @@
 # Translators:
 # a.tangemann <a.tangemann@web.de>, 2013
 # Marcel Kühlhorn <susefan93@gmx.de>, 2013
+# JamFX <niko@nik-o-mat.de>, 2013
 # quick_wango <quick_wango@code-infection.de>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-06-26 23:14+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-06-28 09:05+0000\n"
+"Last-Translator: JamFX <niko@nik-o-mat.de>\n"
 "Language-Team: German (Germany) <translations@owncloud.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,12 +43,12 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Shorty Analyse"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Eine detalierte Analyse aller Anfragen zu existierenden Shortys mit einer integrierten grafischen Darstellung der Zugriffsstatistik."
 
 # request results
 msgid "granted"
