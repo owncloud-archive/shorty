@@ -24,14 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
+# barbarak <barbarak@arnes.si>, 2013
 # mateju <>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-02 14:04+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-07-03 20:30+0000\n"
+"Last-Translator: barbarak <barbarak@arnes.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/owncloud/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +42,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Vtičniki"
 
 # status names
 msgid "all"
@@ -63,13 +64,13 @@ msgid "never"
 msgstr "nikoli"
 
 msgid "private"
-msgstr ""
+msgstr "zasebno"
 
 msgid "public"
-msgstr ""
+msgstr "javno"
 
 msgid "shared"
-msgstr ""
+msgstr "v souporabi"
 
 # actions ("to be done")
 msgid "delete"
@@ -92,13 +93,13 @@ msgid "none"
 msgstr ""
 
 msgid "error"
-msgstr ""
+msgstr "napaka"
 
 msgid "info"
-msgstr ""
+msgstr "informacije"
 
 msgid "debug"
-msgstr ""
+msgstr "razhroščevanje"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -109,22 +110,22 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "storitev bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "storitev cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "storitev goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "storitev is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "storitev ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "storitev tiny.cc"
 
 msgid "static backend"
 msgstr ""
@@ -186,7 +187,7 @@ msgid "Base url"
 msgstr "Osnovni naslov URL"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Izberite storitev..."
 
 msgid "Click for embedding details"
 msgstr "Kliknite za vstavljanje podrobnosti"
@@ -264,7 +265,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Spremembe skrajšanega naslova z ID '%s' so shranjene"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Spremeni nastavitve"
 
 msgid "Modify shorty"
 msgstr "Spremeni skrajšan naslov"
@@ -309,10 +310,10 @@ msgid "Paste to embed elsewhere"
 msgstr "Kopiraj in prilepi drugam"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Nastavitve so bile sprejete"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Nastavitve so bile shranjene"
 
 msgid "Preference '%s' retrieved"
 msgstr "Lastnost '%s' je pridobljena"
@@ -321,7 +322,7 @@ msgid "Preference '%s' saved"
 msgstr "Lastnost '%s' je shranjena"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Prednostne nastavitve"
 
 msgid "Prepare to send as SMS"
 msgstr "Pripravi za pošiljanje kot SMS"
@@ -357,10 +358,10 @@ msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Nastavitev je bila sprejeta"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Nastavitve so bile shranjene"
 
 msgid "Setting '%s' retrieved"
 msgstr ""
@@ -393,7 +394,7 @@ msgid "Show details"
 msgstr "Pokaži podrobnosti"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Prikaži porabo"
 
 msgid "SMS"
 msgstr "SMS"
@@ -414,7 +415,7 @@ msgid "Specify a static base url…"
 msgstr "Določite statični osnovni naslov URL ..."
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "Statičen zaledni del sistema: preverjanje internetnega naslova"
 
 msgid "Status"
 msgstr "Stanje"
@@ -516,7 +517,7 @@ msgid "API access key"
 msgstr ""
 
 msgid "Account"
-msgstr ""
+msgstr "Račun"
 
 msgid "API key"
 msgstr "Ključ API"
@@ -677,12 +678,12 @@ msgstr "Namestitev deluje odlično!"
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr ""
+msgstr "Zahteve za nastavljen internetni naslov so preslikane v posredovalno storitev ownClouda."
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr ""
+msgstr "Uporaba statičnega zalednega sistema je učinovita in varna, dokler nastavitev ne spreminjate."
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
@@ -690,7 +691,7 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "Vaše nastavitve še ne delujejo pravilno!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
