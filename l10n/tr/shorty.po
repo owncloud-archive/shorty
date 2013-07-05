@@ -25,13 +25,14 @@
 # 
 # Translators:
 # ismail yenigül <ismail.yenigul@surgate.com>, 2013
+# KTOG <kirsaldatipokuyangay@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-04 07:55+0000\n"
-"Last-Translator: ismail yenigül <ismail.yenigul@surgate.com>\n"
+"PO-Revision-Date: 2013-07-05 16:20+0000\n"
+"Last-Translator: KTOG <kirsaldatipokuyangay@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -201,7 +202,7 @@ msgid "Clicks"
 msgstr "Tıklamalar"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "Aşağıdaki \"Tamam\" butonu tıklandığı zaman bir e-posta derleyicisi çalıştırmayı deneyecek."
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
@@ -441,7 +442,7 @@ msgid "The default status as suggested for new Shortys."
 msgstr ""
 
 msgid "The link below can be copied for usage apart"
-msgstr ""
+msgstr "Aşağıdaki link ayrıca kullanılmak üzere kopyalanabilir."
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
