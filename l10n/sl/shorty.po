@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-07 00:02+0000\n"
+"PO-Revision-Date: 2013-07-08 20:40+0000\n"
 "Last-Translator: barbarak <barbarak@arnes.si>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/owncloud/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -128,7 +128,7 @@ msgid "tiny.cc service"
 msgstr "storitev tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "statičen zaledni sistem"
 
 # status explanations
 msgid "for any access"
@@ -292,7 +292,7 @@ msgid "Open source url"
 msgstr "Odpri naslov URL vira"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "Odpri posredovalni naslov"
 
 msgid "Open target"
 msgstr "Odpri cilj"
@@ -301,7 +301,7 @@ msgid "Open target url"
 msgstr "Odpri naslov URL cilja"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "Izbirne nastavitve za \"Statičen zaledni sistem\""
 
 msgid "or simpy print or download it for off-line usage"
 msgstr "lahko pa vsebino natisnete ali prejmete za delo brez povezave."
@@ -328,7 +328,7 @@ msgid "Prepare to send as SMS"
 msgstr "Pripravi za pošiljanje kot SMS"
 
 msgid "Relay service"
-msgstr ""
+msgstr "Posredovalna storitev"
 
 msgid "Relay url"
 msgstr ""
@@ -460,7 +460,7 @@ msgid "This is a internal url that the shortened url relays to"
 msgstr ""
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "To je skrajšan internetni naslov, registriran v zalednem sistemu"
 
 msgid "This is the target url specified when generating this Shorty"
 msgstr ""
@@ -514,7 +514,7 @@ msgstr "%s\nSporočilo (koda): %s (%s)\nDatoteka (vrstica): %s (%s)\nPodrobnosti
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "Dostopni ključ API"
 
 msgid "Account"
 msgstr "Račun"
@@ -593,16 +593,16 @@ msgstr ""
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "Uporabljen ni noben zaledni sistem, zato bodo do ownClouda ustvarjene direktne povezave."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "Storitev zahteva prijavo, vpišite veljavno uporabniško ime bit.ly in '%s'."
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "Take povezave so ponavadi daljše od tistih, ki so ustvarjene ob uporabi zalednega sistema."
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
@@ -625,17 +625,17 @@ msgid ""
 msgstr ""
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "Cilj preslikave mora biti internetni naslov, kot na primer:"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "Poskusite s klikom na primer povezave, ki je naveden. Rezultat bi morala biti potrditev, da vaša nastavitev deluje."
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "Pustite prazno, če ne morete navesti kratek osnovni naslov URL, ki bo preslikan na opisan način."
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
@@ -648,13 +648,13 @@ msgid ""
 msgstr ""
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "Za uporabo te storitve vnesite '%%s'"
 
 msgid "This means you require a 'Google API console account'."
 msgstr ""
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "Registriraj nov '%%s' na njihovi spletni strani"
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
 msgstr ""
@@ -688,7 +688,7 @@ msgstr "Uporaba statičnega zalednega sistema je učinovita in varna, dokler nas
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "Ta zaledni sistem bo odslej na izbiro kot dodaten zaledni sistem znotraj osebnih nastavitev za vse lokalne uporabnike."
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Vaše nastavitve še ne delujejo pravilno!"
@@ -696,9 +696,9 @@ msgstr "Vaše nastavitve še ne delujejo pravilno!"
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "Preverite svoje nastavitve in se prepričajte, da je nastavljen internetni naslov pravilen."
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
+msgstr "Preverite, da so vse zahteve preslikane v posredovalno storitev Shortys."

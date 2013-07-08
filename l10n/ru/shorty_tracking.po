@@ -25,13 +25,14 @@
 # Translators:
 # eurekafag <eurekafag@eureka7.ru>, 2013
 # adol <sharov3@gmail.com>, 2013
+# Victor Bravo <>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-06 23:14+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-07-08 10:50+0000\n"
+"Last-Translator: Victor Bravo <>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/owncloud/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,12 +42,12 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Краткий мониторинг"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Детальное отслеживание всех запросов к существующим мелким наряду с интегрированной визуализацией истории доступа."
 
 # request results
 msgid "granted"
