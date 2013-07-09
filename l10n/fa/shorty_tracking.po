@@ -23,13 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# miki_mika1362 <miki_mika1362@yahoo.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-07 23:14+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-07-09 10:00+0000\n"
+"Last-Translator: miki_mika1362 <miki_mika1362@yahoo.com>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/owncloud/language/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +40,7 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "ردیابی کوتاه"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
@@ -51,22 +52,22 @@ msgid "granted"
 msgstr ""
 
 msgid "denied"
-msgstr ""
+msgstr "منع شد"
 
 msgid "blocked"
-msgstr ""
+msgstr "مسدود شده"
 
 msgid "load"
-msgstr ""
+msgstr "بارگذاری"
 
 msgid "Address"
 msgstr "آدرس"
 
 msgid "Click details"
-msgstr ""
+msgstr "کلیک بر روی جزئیات"
 
 msgid "Clicks"
-msgstr ""
+msgstr "کلیک ها"
 
 msgid "Host"
 msgstr "میزبانی"
@@ -75,16 +76,16 @@ msgid "List clicks"
 msgstr ""
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "لیست کلیک های ردیابی شده"
 
 msgid "Result"
 msgstr "نتیجه"
 
 msgid "Time"
-msgstr ""
+msgstr "زمان"
 
 msgid "Title"
 msgstr "عنوان"
 
 msgid "User"
-msgstr ""
+msgstr "کاربر"
