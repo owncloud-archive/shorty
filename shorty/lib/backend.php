@@ -62,7 +62,8 @@ class OC_Shorty_Backend
 			// construct the $relay, the url to be called to reach THIS service (ownclouds shorty plugin)
 			$relay = OC_Shorty_Tools::relayUrl ( $id );
 			// call backend specific work horse
-			switch ( $type=OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type','none') )
+			switch ( $type=OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type',
+			                                        OCP\Config::getAppValue('shorty','backend-default','none')) )
 			{
 				default:
 					return OC_Shorty_Backend::registerUrl_default ( $id, $relay );

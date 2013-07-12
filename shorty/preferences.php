@@ -68,13 +68,14 @@ if (   empty($backend_static_base)
 	unset($backend_types['static']);
 // feed template engine
 $tmpl->assign ( 'backend-types',       $backend_types );
+$tmpl->assign ( 'backend-type',        OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type',
+                                                                OCP\Config::getAppValue('shorty','backend-default','none')) );
 $tmpl->assign ( 'backend-static-base', $backend_static_base );
 $tmpl->assign ( 'backend-bitly-user',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-user','') );
 $tmpl->assign ( 'backend-bitly-key',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-key','') );
 $tmpl->assign ( 'backend-google-key',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-google-key','') );
 $tmpl->assign ( 'backend-tinycc-user', OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-tinycc-user','') );
 $tmpl->assign ( 'backend-tinycc-key',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-tinycc-key','') );
-$tmpl->assign ( 'backend-type',        OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type','') );
 $tmpl->assign ( 'backend-ssl-verify',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify','0') );
 $tmpl->assign ( 'default-status',      OCP\Config::getUserValue(OCP\User::getUser(),'shorty','default-status','private') );
 $tmpl->assign ( 'sms-control',         OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );

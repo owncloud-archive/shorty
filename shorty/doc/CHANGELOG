@@ -23,6 +23,8 @@
 
 Changelog: 
 
+* Fri Jul 12 2013 Christian Reiner: version 0.3.30
+New setting of a default backend suggested inside the users preferences.
 * Tue Jun 18 2013 Christian Reiner: version 0.3.29
 Fixed a bug that prevented a Shortys target to become editable when being clicked. 
 * Tue Jun 18 2013 Christian Reiner: version 0.3.28
