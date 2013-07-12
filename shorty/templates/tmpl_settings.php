@@ -43,6 +43,17 @@
 		</span>
 	</legend>
 	<form id="shorty">
+		<div id="backend-sonfiguration" class="backend-supplement">
+			<span><?php p(OC_Shorty_L10n::t("Default backend suggested inside users preferences").":"); ?></span>
+			<br/>
+			<label for="backend-default" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Backend").":"); ?></label>
+			<select id="backend-default" name="backend-default" value="<?php p($_['backend-default']); ?>">
+<?php foreach ( OC_Shorty_Type::$BACKENDS as $backend_key=>$backend_name ) { ?>
+			<option value="<?php p($backend_key);?>" <?php p(($backend_key==$_['backend-default'])?'selected':'');?>>
+			<?php p(OC_Shorty_L10n::t($backend_name));?></option>
+<?php } ?>
+			</select>
+		</div>
 		<div id="backend-static" class="backend-supplement">
 			<span><?php p(OC_Shorty_L10n::t("Optional configuration of a 'Static Backend'").":"); ?></span>
 			<br/>
