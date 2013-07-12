@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-11 00:12+0000\n"
+"PO-Revision-Date: 2013-07-12 22:08+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Georgian (Georgia) (http://www.transifex.com/projects/p/owncloud/language/ka_GE/)\n"
 "MIME-Version: 1.0\n"
@@ -178,6 +178,9 @@ msgstr "ალტერნატივაში შესაძლებელ�
 
 msgid "Anything that appears helpful …"
 msgstr "ყველაფერი რაც არის საჭირო ..."
+
+msgid "Default backend suggested inside users preferences"
+msgstr ""
 
 msgid "Backend"
 msgstr "ბექენდი"
