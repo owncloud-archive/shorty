@@ -179,6 +179,9 @@ msgstr ""
 msgid "Anything that appears helpful …"
 msgstr ""
 
+msgid "Default backend suggested inside users preferences"
+msgstr ""
+
 msgid "Backend"
 msgstr ""
 
