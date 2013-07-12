@@ -57,7 +57,8 @@ if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
 // fetch template
 $tmpl = new OCP\Template ( 'shorty', 'tmpl_settings' );
 // inflate template
-$tmpl->assign ( 'shorty-plugins', OC_Shorty_Hooks::requestDetails() );
+$tmpl->assign ( 'shorty-plugins',      OC_Shorty_Hooks::requestDetails() );
+$tmpl->assign ( 'backend-default',     OCP\Config::getAppValue('shorty','backend-default','none') );
 $tmpl->assign ( 'backend-static-base', OCP\Config::getAppValue('shorty','backend-static-base','') );
 // render template
 return $tmpl->fetchPage ( );

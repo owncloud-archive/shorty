@@ -76,6 +76,7 @@ class OC_Shorty_Type
 	static $PREFERENCE = array (
 		'default-status'         => OC_Shorty_Type::STRING,
 		'backend-type'           => OC_Shorty_Type::STRING,
+		'backend-default'        => OC_Shorty_Type::STRING,
 		'backend-static-base'    => OC_Shorty_Type::URL,
 		'backend-bitly-user'     => OC_Shorty_Type::STRING,
 		'backend-bitly-key'      => OC_Shorty_Type::STRING,
@@ -115,6 +116,7 @@ class OC_Shorty_Type
 	);
 	// a list of all valid system settings
 	static $SETTING = array (
+		'backend-default'     => OC_Shorty_Type::STRING,
 		'backend-static-base' => OC_Shorty_Type::URL,
 	);
 	static $HTTPCODE = array (

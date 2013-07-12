@@ -41,6 +41,16 @@ $(document).ready(function(){
 	$('#shorty #backend-static-base').bind('input',function(){
 		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
 	});
+	// store backend selection upon change
+	$('#shorty #backend-default').bind('change',function(e){
+		// save setting
+		$.when(
+			OC.Shorty.Action.Setting.set($(e.currentTarget).serialize())
+		).fail(function(response){
+			OC.Notification.show(response.message);
+		})
+		return false;
+	});
 	// backend 'static': offer a clickable example link to verify the correct setup
 	$('#shorty #backend-static #example').bind('click',function(event){
 		event.preventDefault();
