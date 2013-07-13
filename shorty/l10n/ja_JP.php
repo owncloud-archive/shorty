@@ -43,6 +43,7 @@
 "Alternatively the link can be copied manually" => "もしくは、手動でリンクをコピーすることもできます。",
 "Alternatively the link can be copied into a message manually" => "代替手段として、手動でリンクをメッセージにコピー出来ます",
 "Anything that appears helpful …" => "役立つ補足事項...",
+"Default backend suggested inside users preferences" => "デフォルトのバックエンドはユーザーの初期設定内で示されました",
 "Backend" => "バックエンド",
 "Base url" => "ベースURL",
 "Choose a service…" => "サービスを選択...",

@@ -25,14 +25,15 @@
 # 
 # Translators:
 # Daisuke Deguchi <ddeguchi@nagoya-u.jp>, 2013
+# plazmism <gomidori@live.jp>, 2013
 # tt yn <tetuyano+transi@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-12 22:08+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-07-13 04:00+0000\n"
+"Last-Translator: plazmism <gomidori@live.jp>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -181,7 +182,7 @@ msgid "Anything that appears helpful …"
 msgstr "役立つ補足事項..."
 
 msgid "Default backend suggested inside users preferences"
-msgstr ""
+msgstr "デフォルトのバックエンドはユーザーの初期設定内で示されました"
 
 msgid "Backend"
 msgstr "バックエンド"
