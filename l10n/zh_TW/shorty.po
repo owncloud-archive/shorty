@@ -24,6 +24,7 @@
 # @author Christian Reiner
 # 
 # Translators:
+# chenanyeh <chnjsn1221@gmail.com>, 2013
 # orinx <orinx@orinx.com>, 2013
 # pellaeon <nfsmwlin@gmail.com>, 2013
 msgid ""
@@ -31,8 +32,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-14 00:02+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-07-16 03:10+0000\n"
+"Last-Translator: chenanyeh <chnjsn1221@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +43,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "外掛程式"
 
 # status names
 msgid "all"
@@ -364,7 +365,7 @@ msgid "Setting retrieved"
 msgstr ""
 
 msgid "Setting saved"
-msgstr ""
+msgstr "設定已儲存"
 
 msgid "Setting '%s' retrieved"
 msgstr ""
@@ -520,7 +521,7 @@ msgid "API access key"
 msgstr ""
 
 msgid "Account"
-msgstr ""
+msgstr "帳號"
 
 msgid "API key"
 msgstr ""

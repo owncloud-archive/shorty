@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"Plugins" => "外掛程式",
 "all" => "所有",
 "deleted" => "已刪除",
 "never" => "絕不",
@@ -29,6 +30,7 @@
 "Preference '%s' saved" => "偏好設定 '%s' 已儲存",
 "Save" => "儲存",
 "Send link by email" => "使用電子郵件傳送連結",
+"Setting saved" => "設定已儲存",
 "Setting '%s' saved" => "設定 '%s' 已儲存",
 "Settings" => "設定",
 "Shorty as QRCode" => "短網址的 QR Code",
@@ -42,5 +44,6 @@
 "Title" => "標題",
 "Total of clicks" => "總點擊數",
 "Url shortened to: %s" => "URL 已經縮址為： %s",
-"%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s" => "%s\n訊息： %s (%s)\n檔案行數： %s (%s)\n資訊： %%s"
+"%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s" => "%s\n訊息： %s (%s)\n檔案行數： %s (%s)\n資訊： %%s",
+"Account" => "帳號"
 );
