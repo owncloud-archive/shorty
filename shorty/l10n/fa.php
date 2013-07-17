@@ -9,6 +9,7 @@
 "Close" => "بستن",
 "Configuration" => "پیکربندی",
 "Notes" => "یادداشت ها",
+"Nothing here yet" => "اینجا هنوز چیزی نیست.",
 "Save" => "ذخیره",
 "Settings" => "تنظیمات",
 "Title" => "عنوان"

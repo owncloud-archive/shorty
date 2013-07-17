@@ -43,6 +43,7 @@
 "Alternatively the link can be copied manually" => "Alternatiivina võib lingi kopeerida käsitsi.",
 "Alternatively the link can be copied into a message manually" => "Alternatiivina võib lingi sõnumisse kopeerida käsitsi",
 "Anything that appears helpful …" => "Kõik, mis võiks olla seotud ...",
+"Default backend suggested inside users preferences" => "Kasutaja eelistustes soovitatakse vaikimisi tagarakendit",
 "Backend" => "Tagarakend",
 "Base url" => "Põhiaadress",
 "Choose a service…" => "Vali teenus...",
