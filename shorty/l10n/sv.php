@@ -43,6 +43,7 @@
 "Alternatively the link can be copied manually" => "Alternativt kan länken kopieras manuellt",
 "Alternatively the link can be copied into a message manually" => "Alternativt kan länken kopieras in i ett meddelande manuellt",
 "Anything that appears helpful …" => "Vad som helst som verkar till någon hjälp ...",
+"Default backend suggested inside users preferences" => "Default backend föreslagen under användarinställningarna",
 "Backend" => "Källa",
 "Base url" => "Bas url",
 "Choose a service…" => "Välj en tjänst...",

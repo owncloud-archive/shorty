@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# miki_mika1362 <miki_mika1362@yahoo.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-16 11:01+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-07-17 07:30+0000\n"
+"Last-Translator: miki_mika1362 <miki_mika1362@yahoo.com>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/owncloud/language/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,11 +41,11 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "افزونه ها"
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "همه"
 
 msgid "blocked"
 msgstr "مسدود شده"
@@ -53,32 +54,32 @@ msgid "deleted"
 msgstr "حذف شده"
 
 msgid "disabled"
-msgstr ""
+msgstr "غیر فعال شده"
 
 msgid "enabled"
-msgstr ""
+msgstr "فعال شده"
 
 msgid "never"
 msgstr "هرگز"
 
 msgid "private"
-msgstr ""
+msgstr "خصوصی"
 
 msgid "public"
-msgstr ""
+msgstr "عمومی"
 
 msgid "shared"
-msgstr ""
+msgstr "اشتراک گذاشته شده"
 
 # actions ("to be done")
 msgid "delete"
 msgstr "پاک کردن"
 
 msgid "edit"
-msgstr ""
+msgstr "ویرایش"
 
 msgid "open"
-msgstr ""
+msgstr "باز کردن"
 
 msgid "share"
 msgstr "به اشتراک گذاشتن"
@@ -88,110 +89,110 @@ msgstr "نمایش"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "هیچ کدام"
 
 msgid "error"
-msgstr ""
+msgstr "خطا"
 
 msgid "info"
-msgstr ""
+msgstr "اطلاعات"
 
 msgid "debug"
-msgstr ""
+msgstr "اشکال زدایی کردن"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "سرویس bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "سرویس cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "سرویس goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "سرویس is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "سرویس ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "سرویس tiny.cc "
 
 msgid "static backend"
 msgstr ""
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "برای هر دسترسی"
 
 msgid "for own usage"
-msgstr ""
+msgstr "برای استفاده شخصی"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "با کاربران ownCloud "
 
 msgid "available for everyone"
-msgstr ""
+msgstr "در دسترس برای همه"
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "دسترسی"
 
 msgid "Add a new shorty"
 msgstr ""
 
 msgid "Add as new"
-msgstr ""
+msgstr "اضافه کردن به عنوان جدید"
 
 msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
 msgid "Administration"
-msgstr ""
+msgstr "حکومت"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "اداری، تنظیمات سیستم گسترده ای از این برنامه:"
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "سپس SMS راه اندازی شده است."
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "متناوبا تصویر برای چاپ یا ذخیره می تواند دریافت شود."
 
 msgid "alternatively the link can be copied for usage apart"
 msgstr ""
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "متناوبا لینک به صورت دستی می تواند کپی شود."
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "متناوبا لینک را به صورت دستی به یک پیغام  میتوان کپی کرد."
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "هر چیزی که مفید به نظر می رسد ..."
 
 msgid "Default backend suggested inside users preferences"
 msgstr ""
 
 msgid "Backend"
-msgstr ""
+msgstr "بخش مدیریت"
 
 msgid "Base url"
-msgstr ""
+msgstr "آدرس پایه"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "انتخاب یک سرویس..."
 
 msgid "Click for embedding details"
-msgstr ""
+msgstr "کلیک برای قرار دادن جزئیات"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
@@ -203,10 +204,10 @@ msgid "Clicks"
 msgstr "کلیک ها"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "در زیر کلیک کردن بر روی  'Ok' سعی خواهد کرد که یک سازنده ایمیل را راه اندازی کند."
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "درپائین کلیک کردن بر روی 'Ok' سعی خواهد کرد که یک سازنده sms را راه اندازی کند."
 
 msgid "Close"
 msgstr "بستن"
@@ -215,58 +216,58 @@ msgid "Configuration"
 msgstr "پیکربندی"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "تعدادی از پیام های بازخورد نشان داده شده است."
 
 msgid "Copy to clipboard"
 msgstr ""
 
 msgid "Counted entries and clicks"
-msgstr ""
+msgstr "نوشته ها و کلیک های شمارش شده"
 
 msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
 msgid "Creation"
-msgstr ""
+msgstr "ایجاد"
 
 msgid "Delete shorty"
 msgstr ""
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "این را به مرورگر خود بکشید."
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr ""
+msgstr "قرار دادن کد QR به عنوان یک تصویر در بعضی ازصفحات وب با استفاده از این آدرس"
 
 msgid "Example"
-msgstr ""
+msgstr "نمونه"
 
 msgid "Exception"
-msgstr ""
+msgstr "اعتراض"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "اعتراض (%s)"
 
 msgid "Expiration"
-msgstr ""
+msgstr "تاریخ انقضا"
 
 msgid "Feedback"
-msgstr ""
+msgstr "باز خورد"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "بارگذاری"
 
 msgid "Mail client"
-msgstr ""
+msgstr "نرم افزار ایمیل"
 
 msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "تغییر ویژگی ها"
 
 msgid "Modify shorty"
 msgstr ""
@@ -281,25 +282,25 @@ msgid "Nothing here yet"
 msgstr "اینجا هنوز چیزی نیست."
 
 msgid "Number of entries"
-msgstr ""
+msgstr "تعداد نوشته ها"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "تعداد نوشته ها:  %s"
 
 msgid "QRCode"
-msgstr ""
+msgstr "کدQR"
 
 msgid "Open source url"
-msgstr ""
+msgstr "باز کردن آدرس منبع"
 
 msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "باز کردن هدف"
 
 msgid "Open target url"
-msgstr ""
+msgstr "باز کردن آدرس هدف"
 
 msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
@@ -308,25 +309,25 @@ msgid "or simpy print or download it for off-line usage"
 msgstr ""
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "چسباندن برای قرار دادن در جای دیگر"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "الویت بازیابی شده"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "اولویت ذخیره شده"
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "اولویت  '%s' بازیابی شده است."
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "اولویت '%s' ذخیره شده است."
 
 msgid "Preferences"
-msgstr ""
+msgstr "الویت ها"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "آماده برای ارسال به عنوان SMS"
 
 msgid "Relay service"
 msgstr ""
@@ -335,22 +336,22 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr ""
+msgstr "بازنگری"
 
 msgid "Reload list"
-msgstr ""
+msgstr "بازنگری"
 
 msgid "Save"
 msgstr "ذخیره"
 
 msgid "Send by email"
-msgstr ""
+msgstr "فرستادن توسط ایمیل"
 
 msgid "Send link by email"
-msgstr ""
+msgstr "لینک را توسط ایمیل بفرست."
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "فرستادن توسط SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
@@ -359,22 +360,22 @@ msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "تنظیمات بازنگری شده است"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "تنظبمات ذخیره شده است"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "تنظیمات  '%s' بازیابی شده است."
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "تنظیمات  '%s' ذخیره شده است."
 
 msgid "Settings"
 msgstr "تنظیمات"
 
 msgid "Share and use"
-msgstr ""
+msgstr "اشتراک گذاری و استفاده"
 
 msgid "Share shorty"
 msgstr ""
@@ -389,52 +390,52 @@ msgid "Shorty with id '%s' deleted"
 msgstr ""
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "نمایش به عنوان کد QR"
 
 msgid "Show details"
-msgstr ""
+msgstr "نمایش جزئیات"
 
 msgid "Show usage"
-msgstr ""
+msgstr "نمایش میزان استفاده"
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "سازنده پیامک"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "مرتب کردن به صورت صعودی"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "مرتب کردن به صورت نزولی"
 
 msgid "Source url"
-msgstr ""
+msgstr "آدرس منبع"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "مشخص کردن یک آدرس پایه ایستا"
 
 msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "وضعیت"
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "هدف"
 
 msgid "Target url"
-msgstr ""
+msgstr "آدرس هدف"
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "آدرس هدف  '%s' معتبر است."
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "تصویر میتواند در زمان نوشتن مستندات یا راه اندازی کردن سایت ها مورد استفاده قرار بگیرد ."
 
 msgid "The backend service used to generate shortened URLs."
 msgstr ""
@@ -443,16 +444,16 @@ msgid "The default status as suggested for new Shortys."
 msgstr ""
 
 msgid "The link below can be copied for usage apart"
-msgstr ""
+msgstr "لینک زیر را می توان برای استفاده جدا از هم کپی کرد."
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "بنابراین محتوا باید به صورت دستی کپی شود."
 
 msgid "then paste into message"
-msgstr ""
+msgstr "سپس چسباندن به پیغام"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr ""
@@ -467,7 +468,7 @@ msgid "This is the target url specified when generating this Shorty"
 msgstr ""
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr ""
+msgstr "این آدرس ارجاع کد QR از قبل نشان داده شده است"
 
 msgid "Title"
 msgstr "عنوان"
@@ -476,34 +477,34 @@ msgid "Toggle toolbar"
 msgstr ""
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "تمام کلیک ها"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "به طور معمول این فقط بر روی دستگاه هایی مانند گوشی های هوشمند کار می کند."
 
 msgid "Unexpected type of exception caught: %s"
 msgstr ""
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "متاسفانه اجرای این طرح محدود است"
 
 msgid "Unknown object of type caught: %s"
 msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "آدرس کوتاه شده است به:  %s"
 
 msgid "Use it in web pages by referencing or embedding"
-msgstr ""
+msgstr "استفاده از آن در صفحات وب توسط ارجاع یا قرار دادن"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
 msgstr ""
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "تائید با کلیک کردن..."
 
 msgid "Verification failed"
-msgstr ""
+msgstr "تائید انجام نشد."
 
 # exception description
 msgid ""
@@ -511,17 +512,17 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr ""
+msgstr "%s⏎\nپیغام(کد): %s (%s)⏎\nفایل(خط): %s (%s)⏎\nاطلاعات: %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "کلید دسترسی API "
 
 msgid "Account"
-msgstr ""
+msgstr "حساب کاربری"
 
 msgid "API key"
-msgstr ""
+msgstr "کلید API "
 
 msgid "bit.ly user"
 msgstr ""
@@ -536,22 +537,22 @@ msgid "bit.ly users key"
 msgstr ""
 
 msgid "Google API key"
-msgstr ""
+msgstr "کلید API گوگل"
 
 msgid "Google API account"
-msgstr ""
+msgstr "حساب کاربری API  گوگل"
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "کاربر tiny.cc"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "نام کاربری tiny.cc"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "کلید tiny.cc"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "کلید کاربر tiny.cc"
 
 # longer terms: typically explanations
 msgid ""
@@ -613,7 +614,7 @@ msgstr ""
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "از آنجا که این تنظیمات بستگی به قوانین مبتنی بر پیکربندی سروردارد، آدرس پایه تنها می تواند در بخش \"مدیریت\" از پیکربندی مشخص شود."
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
@@ -674,7 +675,7 @@ msgid "In short: this might not work for you, therefore you can disable it…"
 msgstr ""
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "عالیه، راه اندازی شما به خوبی کار می کند!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
@@ -692,12 +693,12 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "متاسفم، اما راه اندازی شما هنوز به صورت  صحیح کار نمی کند!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "لطفا راه اندازی خود را تنظیم نمایید و مطمئن شوید آدرس پایه که  پیکربندی شده است درست است."
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
