@@ -43,6 +43,7 @@
 "Alternatively the link can be copied manually" => "Alternativ kann der Link manuell kopiert werden",
 "Alternatively the link can be copied into a message manually" => "Alternativ kann der Link manuell in eine Nachricht kopiert werden",
 "Anything that appears helpful …" => "Alles, was hilfreich erscheint …",
+"Default backend suggested inside users preferences" => "Vorgeschlagenes Standard-Backend in den Benutzer-Einstellungen",
 "Backend" => "Backend",
 "Base url" => "Basis-Url",
 "Choose a service…" => "Wähle einen Dienst…",

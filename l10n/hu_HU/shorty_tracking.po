@@ -23,13 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# ebela <bela@dandre.hu>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-18 05:14+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-07-19 23:20+0000\n"
+"Last-Translator: ebela <bela@dandre.hu>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/owncloud/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,49 +40,49 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Shorty Tracking"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Részletes nyomkövetése az összes kérésnek ami a Shortys-szal müködik együtt és beépitett megjelenítővel a hozzáférésekről."
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "megadott"
 
 msgid "denied"
-msgstr ""
+msgstr "tiltott"
 
 msgid "blocked"
-msgstr ""
+msgstr "blokkolt"
 
 msgid "load"
-msgstr ""
+msgstr "betöltés"
 
 msgid "Address"
 msgstr "Cím"
 
 msgid "Click details"
-msgstr ""
+msgstr "Kattintás részletei"
 
 msgid "Clicks"
-msgstr ""
+msgstr "Kattintások"
 
 msgid "Host"
 msgstr "Kiszolgáló"
 
 msgid "List clicks"
-msgstr ""
+msgstr "Kattintások listája"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "Nyomonkövetett klikkelések listája"
 
 msgid "Result"
 msgstr "Eredmény"
 
 msgid "Time"
-msgstr ""
+msgstr "Idő"
 
 msgid "Title"
 msgstr "Cím"
