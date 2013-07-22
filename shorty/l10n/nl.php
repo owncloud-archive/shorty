@@ -43,6 +43,7 @@
 "Alternatively the link can be copied manually" => "Alternatief kan de link handmatig worden gekopieerd ",
 "Alternatively the link can be copied into a message manually" => "De link kan ook worden gekopieerd en handmatig",
 "Anything that appears helpful …" => "Alles wat maar lijkt te helpen ...",
+"Default backend suggested inside users preferences" => "Standaard, in gebruikersinstellingen opgegeven backend",
 "Backend" => "Backend",
 "Base url" => "Basis url",
 "Choose a service…" => "Kies een service...",
