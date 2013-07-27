@@ -1,4 +1,6 @@
 <?php $TRANSLATIONS = array(
+"granted" => "Tilladt ",
+"denied" => "Afvist",
 "Address" => "Adresse",
 "Host" => "Host",
 "Result" => "Resultat",
