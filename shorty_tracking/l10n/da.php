@@ -7,6 +7,7 @@
 "Click details" => "Klik detaljer",
 "Clicks" => "Klik",
 "Host" => "Host",
+"List clicks" => "Vis klik",
 "Result" => "Resultat",
 "Time" => "Tid",
 "Title" => "Titel",
