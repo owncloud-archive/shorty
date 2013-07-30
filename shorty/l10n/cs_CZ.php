@@ -43,6 +43,7 @@
 "Alternatively the link can be copied manually" => "Odkaz může také být zkopírován ručně",
 "Alternatively the link can be copied into a message manually" => "Odkaz může také být zkopírován ručně",
 "Anything that appears helpful …" => "Cokoliv, co může pomoci...",
+"Default backend suggested inside users preferences" => "Výchozí podpůrná vrstva v uživatelském nastavení",
 "Backend" => "Podpůrná vrstva",
 "Base url" => "Základní URL",
 "Choose a service…" => "Vybrat službu...",
