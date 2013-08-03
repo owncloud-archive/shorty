@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-30 12:13+0000\n"
+"PO-Revision-Date: 2013-08-02 12:00+0000\n"
 "Last-Translator: chenanyeh <chnjsn1221@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -167,7 +167,7 @@ msgid "after the SMS has been launched"
 msgstr ""
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "此外，圖像可以被下載後列印出來或者儲存起來"
 
 msgid "alternatively the link can be copied for usage apart"
 msgstr ""
@@ -482,7 +482,7 @@ msgid "Total of clicks"
 msgstr "總點擊數"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "典型的情況下，這只會作用在像是智慧型手機這樣的裝置上"
 
 msgid "Unexpected type of exception caught: %s"
 msgstr ""
@@ -506,7 +506,7 @@ msgid "Verify by clicking…"
 msgstr ""
 
 msgid "Verification failed"
-msgstr ""
+msgstr "認證失敗"
 
 # exception description
 msgid ""
@@ -695,12 +695,12 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "抱歉，但是您的設定看起來還無法正確的運作!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "請檢查您的設定並確認配置好的base url是正確無誤的。"
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "

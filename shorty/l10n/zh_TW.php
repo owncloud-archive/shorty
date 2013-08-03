@@ -8,6 +8,7 @@
 "show" => "顯示",
 "Ctrl-C" => "Ctrl+C",
 "Ctrl-V" => "Ctrl+V",
+"Alternatively the image can be downloaded for printout or storage" => "此外，圖像可以被下載後列印出來或者儲存起來",
 "Alternatively the link can be copied into a message manually" => "連結也可以手動複製到訊息當中",
 "Backend" => "後端",
 "Click registered" => "點擊已記錄",
@@ -43,7 +44,11 @@
 "This 2d barcode encodes the url pointing to this Shorty" => "這個二維條碼包含了這個短網址的 URL",
 "Title" => "標題",
 "Total of clicks" => "總點擊數",
+"Typically this only works on devices like smart phones" => "典型的情況下，這只會作用在像是智慧型手機這樣的裝置上",
 "Url shortened to: %s" => "URL 已經縮址為： %s",
+"Verification failed" => "認證失敗",
 "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s" => "%s\n訊息： %s (%s)\n檔案行數： %s (%s)\n資訊： %%s",
-"Account" => "帳號"
+"Account" => "帳號",
+"Sorry, but your setup appears not to be working correctly yet!" => "抱歉，但是您的設定看起來還無法正確的運作!",
+"Please check your setup and make sure that the configured base url is indeed correct." => "請檢查您的設定並確認配置好的base url是正確無誤的。"
 );
