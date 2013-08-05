@@ -23,6 +23,8 @@
 
 Changelog: 
 
+* Mon Aug 05 2013 Christian Reiner: version 0.1.16
+Fix automatic deactivation of app if the main app is deactivated.
 * Thu May 23 2013 Christian Reiner: version 0.1.15
 Registration of plugin abstract as expected since Shorty version 0.3.26.
 * Tue Apr 30 2013 Christian Reiner: version 0.1.14
