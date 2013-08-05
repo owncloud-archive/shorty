@@ -64,7 +64,7 @@ try
 			}
 			else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires app 'Shorty' in version >= %s.%s.%s !", $reqV );
 		}
-		else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires base app 'Shorty' to be activated !" );
+		else throw new Exception ( "App 'Shorty Tracking' requires base app 'Shorty' to be activated !" );
 	}
 	else throw new Exception ( "App 'Shorty Tracking' requires base app 'Shorty' to be installed !" );
 }
@@ -72,6 +72,7 @@ catch ( Exception $e )
 {
 	OC_App::disable    ( 'shorty_tracking' );
 	OCP\Util::writeLog ( 'shorty_tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), OCP\Util::WARN );
+	return;
 }
 
 // backwards compatibility for OC5's global p() functions
