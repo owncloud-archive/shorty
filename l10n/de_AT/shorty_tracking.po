@@ -23,70 +23,68 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Magnus Höglund <magnus@linux.com>, 2013
-# medialabs, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-08-06 13:40+0000\n"
-"Last-Translator: medialabs\n"
-"Language-Team: Swedish (http://www.transifex.com/projects/p/owncloud/language/sv/)\n"
+"PO-Revision-Date: 2013-08-07 09:02+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"Language-Team: German (Austria) (http://www.transifex.com/projects/p/owncloud/language/de_AT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
+"Language: de_AT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr "Shorty Tracking"
+msgstr ""
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr "Detaljerad spårning av alla förfrågningar till existerande Shortys tillsammans med en integrerad visualisering av åtkomsthistorik"
+msgstr ""
 
 # request results
 msgid "granted"
-msgstr "beviljad"
+msgstr ""
 
 msgid "denied"
-msgstr "nekad"
+msgstr ""
 
 msgid "blocked"
-msgstr "blockerad"
+msgstr ""
 
 msgid "load"
-msgstr "ladda"
+msgstr ""
 
 msgid "Address"
-msgstr "Adress"
+msgstr ""
 
 msgid "Click details"
-msgstr "Klickdetaljer"
+msgstr ""
 
 msgid "Clicks"
-msgstr "Klickar"
+msgstr ""
 
 msgid "Host"
-msgstr "Server"
+msgstr ""
 
 msgid "List clicks"
-msgstr "Lista klickar"
+msgstr ""
 
 msgid "List of tracked clicks"
-msgstr "Lista med spårade klickar"
+msgstr ""
 
 msgid "Result"
-msgstr "Resultat"
+msgstr ""
 
 msgid "Time"
-msgstr "Tid"
+msgstr ""
 
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
 msgid "User"
-msgstr "Användare"
+msgstr ""

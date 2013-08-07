@@ -43,6 +43,7 @@
 "Target url" => "Kohde URL",
 "Title" => "Otsikko",
 "Toggle toolbar" => "Työkalupalkki päälle/pois",
+"Account" => "Tili",
 "API key" => "API avain",
 "bit.ly user" => "bit.ly käyttäjä",
 "bit.ly user name" => "bit.ly käyttäjätunnus",

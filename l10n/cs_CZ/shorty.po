@@ -28,14 +28,15 @@
 # Honza K. <honza889@gmail.com>, 2013
 # Martin <fireball@atlas.cz>, 2013
 # Michal Hrušecký <Michal@hrusecky.net>, 2013
+# pstast <petr@stastny.eu>, 2013
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-07-30 12:12+0000\n"
-"Last-Translator: Honza K. <honza889@gmail.com>\n"
+"PO-Revision-Date: 2013-08-06 19:40+0000\n"
+"Last-Translator: pstast <petr@stastny.eu>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/owncloud/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -166,10 +167,10 @@ msgid "Administrative, system wide settings of this app:"
 msgstr "Administrativní nastavení, platné pro celou aplikaci:"
 
 msgid "after the SMS has been launched"
-msgstr "poté co byla SMS odslána"
+msgstr "poté co byla SMS odeslána"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr "Obrázek také může být stažen pro uložení, či vytisknutí"
+msgstr "Obrázek také může být stažen pro uložení či vytisknutí"
 
 msgid "alternatively the link can be copied for usage apart"
 msgstr "odkaz může být také zkopírován pro samostatné použití"
@@ -241,7 +242,7 @@ msgid "Drag this to your browser bookmarks."
 msgstr "Přetáhněte do svých záložek v prohlížeči."
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr "Vloží kód QR jako obrázek do webové stránky pomocí této URL"
+msgstr "Vloží QR kód jako obrázek do webové stránky pomocí této URL"
 
 msgid "Example"
 msgstr "Příklad"
@@ -292,7 +293,7 @@ msgid "Number of entries: %s"
 msgstr "Počet záznamů: %s"
 
 msgid "QRCode"
-msgstr "Kód QR"
+msgstr "QR kód"
 
 msgid "Open source url"
 msgstr "Otevřít zdrojovou URL"
@@ -421,7 +422,7 @@ msgid "Specify a static base url…"
 msgstr "Zadejte statickou základní URL..."
 
 msgid "Static backend: base url verification"
-msgstr "Statická podpůrná vrstva: ověření základní url"
+msgstr "Statická podpůrná vrstva: ověření základní URL"
 
 msgid "Status"
 msgstr "Stav"
@@ -436,10 +437,10 @@ msgid "Target url"
 msgstr "Cílová URL"
 
 msgid "Target url '%s' is valid"
-msgstr "Cílová url '%s' je v pořádku"
+msgstr "Cílová URL '%s' je v pořádku"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr "Obrázek může být také použit při psaní dokumentů, nebo nastavovaní webových stránek"
+msgstr "Obrázek může být také použit při psaní dokumentů nebo vytváření webových stránek"
 
 msgid "The backend service used to generate shortened URLs."
 msgstr "Podpůrná vrstva používaná na vytváření zkrácených URL."
@@ -460,7 +461,7 @@ msgid "then paste into message"
 msgstr "a potom vložen do zprávy"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr "2d čárový kód, který směřuje na tuto Shroty"
+msgstr "Tento 2D čárový kód obsahuje URL, která směřuje na tuto Shorty"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Vnitřní URL na níž je předána zkrácená URL"
@@ -472,7 +473,7 @@ msgid "This is the target url specified when generating this Shorty"
 msgstr "Cílová URL, která je specifikována při vytváření Shorty"
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr "URL směřující na dříve zobrazený kód QR"
+msgstr "URL směřující na dříve zobrazený QR kód"
 
 msgid "Title"
 msgstr "Název"
@@ -516,7 +517,7 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr "%s⏎ Zpráva(kód): %s (%s)⏎ Soubor(řádek): %s (%s)⏎ Info: %%s"
+msgstr "%s\nZpráva(kód): %s (%s)\nSoubor(řádek): %s (%s)\nInfo: %%s"
 
 # technical backend details
 msgid "API access key"
@@ -562,12 +563,12 @@ msgstr "uživatelský klíč tiny.cc"
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr "Vynutit ověření šifrování během komunikace s podpůrnou vrstvou"
+msgstr "Vynutit ověření šifrovacích certifikátů během komunikace s podpůrnou vrstvou"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr "Externí služba 'bitly.com' se použije k registraci zkrácené URL pro každý generovaný 'shorty'."
+msgstr "Externí služba 'bitly.com' se použije k registraci zkrácené URL pro každý generovaný shorty."
 
 msgid "This means you have to register an '%s' at their site first."
 msgstr "Musíte si nejdříve zaregistrovat '%s' na jejich stránkách."
@@ -575,31 +576,31 @@ msgstr "Musíte si nejdříve zaregistrovat '%s' na jejich stránkách."
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr "Externí služba 'turl' se použije k registraci zkrácené URL pro každý generovaný 'shorty'."
+msgstr "Externí služba 'turl' se použije k registraci zkrácené URL pro každý generovaný shorty."
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr "Externí služba 'ti.ny' se použije k registraci zkrácené URL pro každý generovaný 'shorty'."
+msgstr "Externí služba 'ti.ny' se použije k registraci zkrácené URL pro každý generovaný shorty."
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr "Externí služba 'cli.gs' se použije k registraci zkrácené URL pro každý generovaný 'shorty'."
+msgstr "Externí služba 'cli.gs' se použije k registraci zkrácené URL pro každý generovaný shorty."
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr "Externí služba 'is.gd' se použije k registraci zkrácené URL pro každý generovaný 'shorty'."
+msgstr "Externí služba 'is.gd' se použije k registraci zkrácené URL pro každý generovaný shorty."
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr "Externí služba 'tiny.cc' se použije k registraci zkrácené URL pro každý generovaný 'shorty'."
+msgstr "Externí služba 'tiny.cc' se použije k registraci zkrácené URL pro každý generovaný shorty."
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr "Žádná podpůrná vrstva není používána, používají se přímé linky do vašeho ownCloudu."
+msgstr "Žádná podpůrná vrstva není používána, používají se přímé odkazy do vašeho ownCloudu."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
@@ -608,7 +609,7 @@ msgstr "Služba vyžaduje ověření pomocí platného uživatelského jména 'b
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr "Takové linky jsou pravděpodobně delší než ty generované pomocí podpůrné vrstvy."
+msgstr "Takové odkazy jsou pravděpodobně delší než ty generované pomocí podpůrné vrstvy."
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
@@ -618,12 +619,12 @@ msgstr "Avšak tato možnost se nespoléhá na žádné služby třetích strany
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr "Jelikož toto nastavení závisí na nastavení serveru, základní URL je možné nastavit v 'Admin' sekci nastavení."
+msgstr "Jelikož toto nastavení závisí na nastavení serveru, základní URL je možné nastavit pouze v 'Admin' sekci nastavení."
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr "Statická podpůrná vrstva založená na pravidlech generuje krátké linky relativní k zadané základní URL."
+msgstr "Statická podpůrná vrstva založená na pravidlech generuje krátké odkazy relativní k zadané základní URL."
 
 msgid ""
 "You have to take care that any request to the url configured here is "
@@ -636,7 +637,7 @@ msgstr "Cílem v mapování musí být URL:"
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr "Vyzkoušejte nastavení pomocí linku, klikněte na něj, mělo by se objevit potvrzení že vaše nastavení funguje."
+msgstr "Vyzkoušejte nastavení pomocí zkušebního odkazu, klikněte na něj, mělo by se objevit potvrzení, že vaše nastavení funguje."
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
@@ -646,24 +647,24 @@ msgstr "Ponechte prázdné, pokud nemáte krátké základní URL mapované pops
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr "Nepoužívejte tuto podpůrnou vrstvu pokud nemáte krátké základní URL které je mapované popsaným způsobem. Vaše shorty by nefungovaly."
+msgstr "Používejte tuto podpůrnou vrstvu pouze pokud máte krátké základní URL, které je mapované popsaným způsobem. Vaše shorty nebudou jinak fungovat."
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr "Externí služba 'goo.gl' se použije k registraci zkrácené URL pro každý generovaný 'shorty'."
+msgstr "Externí služba 'goo.gl' se použije k registraci zkrácené URL pro každý generovaný shorty."
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr "Musíte zadat platné '%%s' abyste mohli využívat této služby."
+msgstr "Musíte zadat platné '%%s', abyste mohli využívat této služby."
 
 msgid "This means you require a 'Google API console account'."
-msgstr "Potřebujete tedy  'Google API console account'."
+msgstr "Potřebujete tedy 'Google API console account'."
 
 msgid "Register a new '%%s' at their pages."
 msgstr "Zaregistrujte si nový '%%s' na jejich stránkách."
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr "Zapnutí SMS volby nabídne posílání Shorty pomocí SMS"
+msgstr "Zapnutí SMS volby nabídne posílání Shorty pomocí SMS."
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
@@ -679,12 +680,12 @@ msgid "In short: this might not work for you, therefore you can disable it…"
 msgstr "Ve zkratce: nemusí to fungovat, můžete to vypnout..."
 
 msgid "Great, your setup appears to be working fine!"
-msgstr "Výborně, vaše nastavení se zdá být v pořádku."
+msgstr "Výborně, vaše nastavení se zdá být v pořádku!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr "Požadavky na nastavenou základní url jsou směřovány do této předávací služby ownCloud."
+msgstr "Požadavky na nastavenou základní URL jsou směřovány do této předávací služby ownCloud."
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
@@ -707,4 +708,4 @@ msgstr "Prosím zkontrolujte vaše nastavení a ujistěte se, že nastavená zá
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr "Ujistěte se, že všechny požadavky jsou nějak mapovány na relay službu Shorty."
+msgstr "Ujistěte se, že všechny požadavky jsou nějak mapovány na předávací službu Shorty."
