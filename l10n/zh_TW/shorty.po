@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-08-07 08:00+0000\n"
+"PO-Revision-Date: 2013-08-09 08:03+0000\n"
 "Last-Translator: chenanyeh <chnjsn1221@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -56,10 +56,10 @@ msgid "deleted"
 msgstr "已刪除"
 
 msgid "disabled"
-msgstr ""
+msgstr "無效的"
 
 msgid "enabled"
-msgstr ""
+msgstr "啟動的"
 
 msgid "never"
 msgstr "絕不"
@@ -275,7 +275,7 @@ msgid "Modify shorty"
 msgstr ""
 
 msgid "New Shorty"
-msgstr ""
+msgstr "開啟新的Shorty"
 
 msgid "Notes"
 msgstr "筆記"
@@ -284,7 +284,7 @@ msgid "Nothing here yet"
 msgstr "這裡尚未有任何東西"
 
 msgid "Number of entries"
-msgstr ""
+msgstr "登錄數量"
 
 msgid "Number of entries: %s"
 msgstr "短網址數量： %s"
@@ -401,7 +401,7 @@ msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
 msgstr "SMS 編輯器"
@@ -416,7 +416,7 @@ msgid "Source url"
 msgstr ""
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "特定一個靜態的base url..."
 
 msgid "Static backend: base url verification"
 msgstr "靜態後端:base url認證"
@@ -503,7 +503,7 @@ msgid "Use the '%s' button above or the fine 'Shortlet'"
 msgstr ""
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "以點擊來認證..."
 
 msgid "Verification failed"
 msgstr "認證失敗"
@@ -518,110 +518,110 @@ msgstr "%s\n訊息： %s (%s)\n檔案行數： %s (%s)\n資訊： %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "API連線金鑰"
 
 msgid "Account"
 msgstr "帳號"
 
 msgid "API key"
-msgstr ""
+msgstr "API金鑰"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "bit.ly使用者"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "bit.ly使用者名稱"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "bit.ly金要"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "bit.ly使用者金鑰"
 
 msgid "Google API key"
-msgstr ""
+msgstr "Google API金鑰"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Google API帳號"
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "tiny.cc使用者"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "tiny.cc使用者名稱"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "tiny.cc金鑰"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "tiny.cc使用者金鑰"
 
 # longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "強制檢查與後端聯繫時的加密認證"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部服務'bit.ly.com'被用來登錄短網址到任何產生出來的shorty中。"
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "這代表您必須先在該站台登錄一個'%s'。"
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部服務'turl'被用來登錄短網址到任何產生出來的shorty中。"
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部服務'ti.ny'被用來登錄短網址到任何產生出來的shorty中。"
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部服務'cli.gs'被用來登錄短網址到任何產生出來的shorty中。"
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部服務'is.gd'被用來登錄短網址到任何產生出來的shorty中。"
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "外部服務'tiny.cc'被用來登錄短網址到任何產生出來的shorty中。"
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "沒有使用後端，已產生指向您的ownCloud的直接連結。"
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "本服務要求您必須提供有效的bit.ly使用者名稱和'%s'來鑑定您的身分。"
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "該連結通常比使用後端產生的連結來的更長。"
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "然而此選項不倚賴任何第三方的服務，且可以讓您的shorty保持在您的掌控之中。"
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "因為此設定依存於基於伺服器的設定規則，base url只能在設定中的'Admin'區塊裡面特定。"
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "靜態、有章可循的後端，可產生與給定的base url相連的shorty連結。"
 
 msgid ""
 "You have to take care that any request to the url configured here is "
@@ -634,7 +634,7 @@ msgstr ""
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "試試看我們提供的範例連結，點擊它，應該會出現一個確認視窗告訴你設定正在運作中。"
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
@@ -644,37 +644,37 @@ msgstr ""
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "只有在可以提供以前述的方法來映射的短base url的情況下，才會使用此後端。若非如此您的shorties將不會運作。"
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Google的外部服務'goo.gl'被用來登錄短網址到任何產生出來的shorty中。"
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "您必須提供一個有效的'%%s'才能使用本服務。"
 
 msgid "This means you require a 'Google API console account'."
-msgstr ""
+msgstr "這表示您需要一個'Google API主控台帳號'。"
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "登錄一個新的'%%s'到該頁面。"
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr ""
+msgstr "啟動此SMS選項將可經由SMS傳送shorty。"
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr ""
+msgstr "很不幸的，'SMS超連結管理'功能通常只搭載在如智慧型手機之類的行動裝置上。"
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr ""
+msgstr "此外，本實裝機能是最小限度的，有bug，且每個系統之間都有若干差異。"
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "簡單來說，這可能沒辦法用，所以你可以把它關掉..."
 
 msgid "Great, your setup appears to be working fine!"
 msgstr "很好，看起來你的設定正常運作中"
@@ -692,7 +692,7 @@ msgstr "只要此設定沒有被修改過，使用該靜態後端是安全無虞
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "此後端將會作為所有本機使用者，在個人偏好設定中可選擇的額外後端。"
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "抱歉，但是您的設定看起來還無法正確的運作!"
@@ -705,4 +705,4 @@ msgstr "請檢查您的設定並確認配置好的base url是正確無誤的。"
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
+msgstr "確認所有請求都已映射到Shorty中繼服務"

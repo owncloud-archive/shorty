@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-08-06 19:40+0000\n"
+"PO-Revision-Date: 2013-08-08 17:50+0000\n"
 "Last-Translator: pstast <petr@stastny.eu>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/owncloud/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
@@ -254,7 +254,7 @@ msgid "Exception (%s)"
 msgstr "Výjimka (%s)"
 
 msgid "Expiration"
-msgstr "Čas vypršení"
+msgstr "Konec platnosti"
 
 msgid "Feedback"
 msgstr "Odezva"
@@ -308,7 +308,7 @@ msgid "Open target url"
 msgstr "Otevřít cílovou URL"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr "Nepovinná nastavení 'statické' podpůrné vrstvy"
+msgstr "Volitelná nastavení 'statické' podpůrné vrstvy"
 
 msgid "or simpy print or download it for off-line usage"
 msgstr ", nebo jej vytiskněte či stáhněte pro offline použití"
@@ -464,7 +464,7 @@ msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Tento 2D čárový kód obsahuje URL, která směřuje na tuto Shorty"
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr "Vnitřní URL na níž je předána zkrácená URL"
+msgstr "Vnitřní URL, na níž je předána zkrácená URL"
 
 msgid "This is the shortened url registered at the backend"
 msgstr "Zkrácené URL zaregistrované v podpůrné vrstvě"
@@ -503,7 +503,7 @@ msgid "Use it in web pages by referencing or embedding"
 msgstr "Použijte jej na webových stránkách odkazováním či vložením"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr "Použijte tlačítko  '%s' nahoře, nebo skvělý 'Shortlet'"
+msgstr "Použijte tlačítko '%s' nahoře nebo skvělý 'Shortlet'"
 
 msgid "Verify by clicking…"
 msgstr "Ověřte kliknutím..."
@@ -629,7 +629,7 @@ msgstr "Statická podpůrná vrstva založená na pravidlech generuje krátké o
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr "Musíte zajistit, že všechny požadavky  na nastavené URL jsou vnitřně mapovány na modul 'shorty'."
+msgstr "Musíte zajistit, že všechny požadavky na nastavené URL jsou vnitřně mapovány na modul 'shorty'."
 
 msgid "The target of that mapping must be some URL like:"
 msgstr "Cílem v mapování musí být URL:"

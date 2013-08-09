@@ -40,6 +40,7 @@
 "Loading" => "A carregar tarefas...",
 "Mail client" => "Cliente de email",
 "Modifications for shorty with id '%s' saved" => "Alteração feitas ao shorty com o id '%s' guardadas",
+"New Shorty" => "Novo Shorty",
 "Notes" => "Notas",
 "Nothing here yet" => "Vazio",
 "Number of entries" => "Número de Registos",
@@ -103,6 +104,7 @@
 "This means you have to register an '%s' at their site first." => "Isto significa que tem de register um '%s' no site deles.",
 "Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration." => "Uma vez que esta configuração depende das regras do servidor de base o url apenas pode ser especificado na secção 'Admin'",
 "Have a try with the example link provided, click it, it should result in a confirmation that your setup is working." => "Experimente com o link de exemplo fornecido, clique nele, o resultado deverá ser uma confirmação do funcionamento da sua configuração.",
+"This means you require a 'Google API console account'." => "Isto significa que precisa de uma 'Conta de consola API Google'.",
 "Great, your setup appears to be working fine!" => "Fenomenal, a sua configuração parece estar a funcionar correctamente!",
 "Sorry, but your setup appears not to be working correctly yet!" => "Desculpe, mas a sua configuração ainda não parece estar a funcionar!",
 "Please check your setup and make sure that the configured base url is indeed correct." => "Por favor verifique a sua configuração e assegure que o url de base está mesmo correcto."

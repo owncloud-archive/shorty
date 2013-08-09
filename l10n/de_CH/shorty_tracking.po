@@ -23,13 +23,21 @@
 # @author Christian Reiner
 # 
 # Translators:
+# arkascha <foss@christian-reiner.info>, 2013
+# a.tangemann <a.tangemann@web.de>, 2013
+# FlorianScholz <work@bgstyle.de>, 2013
+# JamFX <niko@nik-o-mat.de>, 2013
+# Marcel Kühlhorn <susefan93@gmx.de>, 2013
+# Mario Siegmann <mario_siegmann@web.de>, 2013
+# quick_wango <quick_wango@code-infection.de>, 2013
+# traductor <transifex-2.7.mensaje@spamgourmet.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-08-07 09:02+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-08-07 14:10+0000\n"
+"Last-Translator: FlorianScholz <work@bgstyle.de>\n"
 "Language-Team: German (Switzerland) (http://www.transifex.com/projects/p/owncloud/language/de_CH/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,52 +47,52 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Shorty Analyse"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Eine detalierte Analyse aller Anfragen zu existierenden Shortys mit einer integrierten grafischen Darstellung der Zugriffsstatistik."
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "gewährt"
 
 msgid "denied"
-msgstr ""
+msgstr "Verweigert"
 
 msgid "blocked"
-msgstr ""
+msgstr "gesperrt"
 
 msgid "load"
-msgstr ""
+msgstr "laden"
 
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 msgid "Click details"
-msgstr ""
+msgstr "Details des Klick"
 
 msgid "Clicks"
-msgstr ""
+msgstr "Klicks"
 
 msgid "Host"
-msgstr ""
+msgstr "Host"
 
 msgid "List clicks"
-msgstr ""
+msgstr "Zeige Klicks an"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "Liste der aufgezeichneten Klicks"
 
 msgid "Result"
-msgstr ""
+msgstr "Ergebnis"
 
 msgid "Time"
-msgstr ""
+msgstr "Zeit"
 
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 msgid "User"
-msgstr ""
+msgstr "Benutzer"

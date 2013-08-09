@@ -43,6 +43,7 @@
 "Alternatively the link can be copied manually" => "Alternatívne odkaz možno skopírovať ručne",
 "Alternatively the link can be copied into a message manually" => "Alternatívny odkaz môže byť nakopírovaný do správy ručne",
 "Anything that appears helpful …" => "Hocičo, čo sa vyskytne ako užitočné ...",
+"Default backend suggested inside users preferences" => "Predvolený backend v používateľskom nastavení",
 "Backend" => "Backend",
 "Base url" => "Základná URL",
 "Choose a service…" => "Vyberte si službu...",
