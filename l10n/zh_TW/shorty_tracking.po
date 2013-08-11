@@ -23,13 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# chenanyeh <chnjsn1221@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-08-04 05:01+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-08-09 09:37+0000\n"
+"Last-Translator: chenanyeh <chnjsn1221@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,49 +40,49 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "追蹤Shorty"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "詳細追蹤所以向現存shortys的請求，結果會以連線紀錄的綜合視覺化情報的方式呈現。"
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "許可"
 
 msgid "denied"
-msgstr ""
+msgstr "拒絕"
 
 msgid "blocked"
-msgstr ""
+msgstr "已封鎖"
 
 msgid "load"
-msgstr ""
+msgstr "載入"
 
 msgid "Address"
 msgstr "網址"
 
 msgid "Click details"
-msgstr ""
+msgstr "點擊詳細資料"
 
 msgid "Clicks"
-msgstr ""
+msgstr "點擊數"
 
 msgid "Host"
 msgstr "主機"
 
 msgid "List clicks"
-msgstr ""
+msgstr "點擊清單"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "已追蹤的點擊清單"
 
 msgid "Result"
 msgstr "結果"
 
 msgid "Time"
-msgstr ""
+msgstr "時間"
 
 msgid "Title"
 msgstr "標題"
