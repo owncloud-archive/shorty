@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-08-08 17:50+0000\n"
+"PO-Revision-Date: 2013-08-15 18:50+0000\n"
 "Last-Translator: pstast <petr@stastny.eu>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/owncloud/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
@@ -158,7 +158,7 @@ msgid "Add as new"
 msgstr "Přidat jako nový"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr "Přidat stranu jako 'Shorty' do ownCloud"
+msgstr "Přidat stránku jako 'Shorty' do ownCloud"
 
 msgid "Administration"
 msgstr "Správa"
@@ -317,7 +317,7 @@ msgid "Paste to embed elsewhere"
 msgstr "Vložit pro umístění na jiném místě"
 
 msgid "Preference retrieved"
-msgstr "Předvolba nahrána"
+msgstr "Předvolba načtena"
 
 msgid "Preference saved"
 msgstr "Předvolba uložena"
@@ -365,13 +365,13 @@ msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr "Osobní předvolby nastavte použitím ozubeného kolečka (%%s) vpravo nahoře."
 
 msgid "Setting retrieved"
-msgstr "Nastavení nahráno"
+msgstr "Nastavení načteno"
 
 msgid "Setting saved"
 msgstr "Nastavení uloženo"
 
 msgid "Setting '%s' retrieved"
-msgstr "Nastavení '%s' nahráno"
+msgstr "Nastavení '%s' načteno"
 
 msgid "Setting '%s' saved"
 msgstr "Nastavení '%s' bylo uloženo"
@@ -395,7 +395,7 @@ msgid "Shorty with id '%s' deleted"
 msgstr "Shorty s id '%s' odstraněn"
 
 msgid "Show as QRCode"
-msgstr "Zobrazit jako kód QR"
+msgstr "Zobrazit jako QR kód"
 
 msgid "Show details"
 msgstr "Zobrazit podrobnosti"
@@ -443,7 +443,7 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Obrázek může být také použit při psaní dokumentů nebo vytváření webových stránek"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr "Podpůrná vrstva používaná na vytváření zkrácených URL."
+msgstr "Podpůrná vrstva používaná k vytváření zkrácených URL."
 
 msgid "The default status as suggested for new Shortys."
 msgstr "Navrhovaný výchozí stav pro nové Shorty."
@@ -488,7 +488,7 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Většinou funguje jen na zařízeních jako je smartphone"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr "Zachycen neočekávaný typ vyjímky:%s"
+msgstr "Zachycen neočekávaný typ výjimky: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Bohužel implementace tohoto postupu je omezená"

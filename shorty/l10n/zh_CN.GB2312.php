@@ -39,6 +39,7 @@
 "Modify shorty" => "修改短链",
 "New Shorty" => "新短链",
 "Notes" => "备注",
+"Nothing here yet" => "这里还没有任何东西",
 "QRCode" => "二维码",
 "Open source url" => "打开源地址",
 "Open target" => "打开目标",

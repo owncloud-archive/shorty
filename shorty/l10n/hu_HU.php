@@ -13,5 +13,6 @@
 "Nothing here yet" => "Még semmi nincs itt",
 "Save" => "Mentés",
 "Settings" => "Beállítások",
-"Title" => "Cím"
+"Title" => "Cím",
+"Account" => "Fiók"
 );
