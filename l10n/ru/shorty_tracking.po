@@ -23,7 +23,7 @@
 # @author Christian Reiner
 # 
 # Translators:
-# eurekafag <eurekafag@eureka7.ru>, 2013
+# eurekafag <rkfg@rkfg.me>, 2013
 # adol <sharov3@gmail.com>, 2013
 # Victor Bravo <>, 2013
 msgid ""
@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-08-04 05:01+0000\n"
+"PO-Revision-Date: 2013-08-15 21:10+0000\n"
 "Last-Translator: Victor Bravo <>\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/owncloud/language/ru/)\n"
 "MIME-Version: 1.0\n"

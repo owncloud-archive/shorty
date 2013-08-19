@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-08-07 12:22+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-08-17 14:20+0000\n"
+"Last-Translator: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +45,7 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "Alle"
 
 msgid "blocked"
 msgstr "Blokeret"
@@ -101,10 +102,10 @@ msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
@@ -173,7 +174,7 @@ msgid "Alternatively the link can be copied manually"
 msgstr ""
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "Linket kan også kopieres ind i en besked manuelt "
 
 msgid "Anything that appears helpful …"
 msgstr ""
@@ -191,19 +192,19 @@ msgid "Choose a service…"
 msgstr ""
 
 msgid "Click for embedding details"
-msgstr ""
+msgstr "Klik for indlejringsdetaljer"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
 
 msgid "Click registered"
-msgstr ""
+msgstr "Registreret klik"
 
 msgid "Clicks"
 msgstr "Klik"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "Trykkes 'Ok' nedenfor vil der blive startet en email"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
@@ -218,10 +219,10 @@ msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopier til udklipsholder"
 
 msgid "Counted entries and clicks"
-msgstr ""
+msgstr "Optalte poster og klik"
 
 msgid "Create a new 'Shorty' and share it"
 msgstr ""
@@ -242,10 +243,10 @@ msgid "Example"
 msgstr ""
 
 msgid "Exception"
-msgstr ""
+msgstr "Undtagelse"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "Undtagelse (%s)"
 
 msgid "Expiration"
 msgstr ""
@@ -263,7 +264,7 @@ msgid "Mail client"
 msgstr ""
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "Ændringer af shorty med ID '%s' gemt"
 
 msgid "Modify attributes"
 msgstr ""
@@ -284,10 +285,10 @@ msgid "Number of entries"
 msgstr ""
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "Antal poster: %s"
 
 msgid "QRCode"
-msgstr ""
+msgstr "QRCode"
 
 msgid "Open source url"
 msgstr ""
@@ -347,7 +348,7 @@ msgid "Send by email"
 msgstr ""
 
 msgid "Send link by email"
-msgstr ""
+msgstr "Send link med email"
 
 msgid "Send by SMS"
 msgstr ""
@@ -383,10 +384,10 @@ msgid "Shortlet"
 msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "Shorty som QRCode"
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr "Shorty med ID '%s' slettet"
 
 msgid "Show as QRCode"
 msgstr ""
@@ -452,7 +453,7 @@ msgid "therefore the content must be copied manually"
 msgstr ""
 
 msgid "then paste into message"
-msgstr ""
+msgstr "indsæt derefter i meddelelse"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr ""
@@ -467,7 +468,7 @@ msgid "This is the target url specified when generating this Shorty"
 msgstr ""
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr ""
+msgstr "Dette er den URL, der henviser til den QRCode, der blev vist"
 
 msgid "Title"
 msgstr "Titel"
@@ -491,7 +492,7 @@ msgid "Unknown object of type caught: %s"
 msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "URL forkortet til %s"
 
 msgid "Use it in web pages by referencing or embedding"
 msgstr ""

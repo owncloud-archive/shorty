@@ -43,6 +43,7 @@
 "Alternatively the link can be copied manually" => "Также, ссылка может быть скопирована в сообщение вручную",
 "Alternatively the link can be copied into a message manually" => "Также, ссылка может быть скопирована в сообщение вручную",
 "Anything that appears helpful …" => "Всё, что выглядит полезным...",
+"Default backend suggested inside users preferences" => "В параметрах пользователя предлагается бэкенд по умолчанию",
 "Backend" => "Подсистема",
 "Base url" => "Базовый URL",
 "Choose a service…" => "Выберите сервис...",
