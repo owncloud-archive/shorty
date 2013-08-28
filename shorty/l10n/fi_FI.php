@@ -14,6 +14,7 @@
 "Add as new" => "Lisää uutena",
 "Administration" => "Hallinta",
 "Backend" => "Taustaosa",
+"Clicks" => "Klikkaus",
 "Close" => "Sulje",
 "Configuration" => "Asetukset",
 "Copy to clipboard" => "Kopioi leikepöydälle",
