@@ -34,5 +34,6 @@
 "then paste into message" => "indsæt derefter i meddelelse",
 "This is the url referencing the QRCode shown before" => "Dette er den URL, der henviser til den QRCode, der blev vist",
 "Title" => "Titel",
-"Url shortened to: %s" => "URL forkortet til %s"
+"Url shortened to: %s" => "URL forkortet til %s",
+"Account" => "Konto"
 );
