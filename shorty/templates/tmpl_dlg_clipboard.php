@@ -27,7 +27,7 @@
 <?php
 /**
  * @file templates/tmpl_dlg_clipboard.php
- * Dialog popup to copy url for usage apart
+ * Dialog popup to copy url for further usage
  * @access public
  * @author Christian Reiner
  */
@@ -38,7 +38,7 @@
 	<fieldset class="">
 		<legend><?php p(OC_Shorty_L10n::t("Copy to clipboard")); ?>:</legend>
 		<div class="usage-explanation">
-			<?php p(OC_Shorty_L10n::t("The link below can be copied for usage apart")); ?>:
+			<?php p(OC_Shorty_L10n::t("The link below can be copied for further usage")); ?>:
 		</div>
 		<input class="payload" readonly="true">
 		<div class="usage-instruction">
