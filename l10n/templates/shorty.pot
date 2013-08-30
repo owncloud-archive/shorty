@@ -167,7 +167,7 @@ msgstr ""
 msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr ""
 
-msgid "alternatively the link can be copied for usage apart"
+msgid "alternatively the link can be copied for further usage"
 msgstr ""
 
 msgid "Alternatively the link can be copied manually"
