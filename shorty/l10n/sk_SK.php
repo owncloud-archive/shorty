@@ -39,7 +39,6 @@
 "Administrative, system wide settings of this app:" => "Administratívne nastavenia pre danú aplikáciu (vzťahujúce sa na celý systém):",
 "after the SMS has been launched" => "po spustení SMS",
 "Alternatively the image can be downloaded for printout or storage" => "Alternatívne môže byť obrázok stiahnutý pre výtlačok, prípadne uloženie",
-"alternatively the link can be copied for usage apart" => "alebo odkaz môže byť skopírovaný pre iné použitie",
 "Alternatively the link can be copied manually" => "Alternatívne odkaz možno skopírovať ručne",
 "Alternatively the link can be copied into a message manually" => "Alternatívny odkaz môže byť nakopírovaný do správy ručne",
 "Anything that appears helpful …" => "Hocičo, čo sa vyskytne ako užitočné ...",

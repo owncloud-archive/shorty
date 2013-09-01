@@ -39,7 +39,6 @@
 "Administrative, system wide settings of this app:" => "管理者用システム全体設定:",
 "after the SMS has been launched" => "SMS を起動した後",
 "Alternatively the image can be downloaded for printout or storage" => "もう一つの方法として、画像をダウンロードして印刷や保存ができます。",
-"alternatively the link can be copied for usage apart" => "もしくは、別のところで利用するためにリンクをコピー出来ます。",
 "Alternatively the link can be copied manually" => "もしくは、手動でリンクをコピーすることもできます。",
 "Alternatively the link can be copied into a message manually" => "代替手段として、手動でリンクをメッセージにコピー出来ます",
 "Anything that appears helpful …" => "役立つ補足事項...",

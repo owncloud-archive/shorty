@@ -39,7 +39,6 @@
 "Administrative, system wide settings of this app:" => "此app管理員用的整體系統設定:",
 "after the SMS has been launched" => "在啟動SMS之後",
 "Alternatively the image can be downloaded for printout or storage" => "此外，圖像可以被下載後列印出來或者儲存起來",
-"alternatively the link can be copied for usage apart" => "連結可以複製到別處使用",
 "Alternatively the link can be copied manually" => "連解渴已手動複製",
 "Alternatively the link can be copied into a message manually" => "連結也可以手動複製到訊息當中",
 "Anything that appears helpful …" => "任何可能有用的補充事項...",

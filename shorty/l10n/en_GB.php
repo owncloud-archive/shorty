@@ -39,7 +39,6 @@
 "Administrative, system wide settings of this app:" => "Administrative, system wide settings of this app:",
 "after the SMS has been launched" => "after the SMS has been launched",
 "Alternatively the image can be downloaded for printout or storage" => "Alternatively the image can be downloaded for printout or storage",
-"alternatively the link can be copied for usage apart" => "alternatively the link can be copied for usage apart",
 "Alternatively the link can be copied manually" => "Alternatively the link can be copied manually",
 "Alternatively the link can be copied into a message manually" => "Alternatively the link can be copied into a message manually",
 "Anything that appears helpful …" => "Anything that appears helpful …",

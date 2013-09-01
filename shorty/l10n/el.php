@@ -38,7 +38,6 @@
 "Administrative, system wide settings of this app:" => "Ευρείες ρυθμίεσεις διαχείρησης του συστήματος αυτής της app. ",
 "after the SMS has been launched" => "αφού εστάλη το μήνυμα SMS.",
 "Alternatively the image can be downloaded for printout or storage" => "Εναλλακτικά, η εικόνα μπορεί να κατεβάσuει για εκτύπωση ή για αποθήκευση ",
-"alternatively the link can be copied for usage apart" => "εναλλακτικά ο σύνδεσμος μπορεί να αντιγραφεί για χρήση κατά μέρος ",
 "Alternatively the link can be copied manually" => "Εναλλακτικά ο σύνδεσμος μπορεί να αντιγραφεί ",
 "Alternatively the link can be copied into a message manually" => "Εναλλακτικά, η σύνδεση μπορεί να αντιγραφεί σε ένα μήνυμα χειρωνακτικά",
 "Anything that appears helpful …" => "Οτιδήποτε φαίνεται χρήσιμο ",

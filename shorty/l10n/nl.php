@@ -39,7 +39,6 @@
 "Administrative, system wide settings of this app:" => "Beheermatige, systeembrede instellingen van deze app:",
 "after the SMS has been launched" => "nadat de SMS opsteller is gestart",
 "Alternatively the image can be downloaded for printout or storage" => "De afbeelding kan om te bewaren ook worden gedownload of afgedrukt",
-"alternatively the link can be copied for usage apart" => "alternatief kan de link apart worden gekopieerd ",
 "Alternatively the link can be copied manually" => "Alternatief kan de link handmatig worden gekopieerd ",
 "Alternatively the link can be copied into a message manually" => "De link kan ook worden gekopieerd en handmatig",
 "Anything that appears helpful …" => "Alles wat maar lijkt te helpen ...",
