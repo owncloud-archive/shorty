@@ -39,6 +39,7 @@
 "Administrative, system wide settings of this app:" => "Administrativní nastavení, platné pro celou aplikaci:",
 "after the SMS has been launched" => "poté co byla SMS odeslána",
 "Alternatively the image can be downloaded for printout or storage" => "Obrázek také může být stažen pro uložení či vytisknutí",
+"alternatively the link can be copied for further usage" => "odkaz může být také zkopírován pro další použití",
 "Alternatively the link can be copied manually" => "Odkaz může také být zkopírován ručně",
 "Alternatively the link can be copied into a message manually" => "Odkaz může také být zkopírován ručně",
 "Anything that appears helpful …" => "Cokoliv, co může pomoci...",
