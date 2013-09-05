@@ -39,6 +39,7 @@
 "Administrative, system wide settings of this app:" => "Administratiivsed, kõigile rakenduvad seadistused:",
 "after the SMS has been launched" => "peale SMS saatmist",
 "Alternatively the image can be downloaded for printout or storage" => "Alternatiivina võib pilti alla laadida printimiseks või säilitamiseks",
+"alternatively the link can be copied for further usage" => "alternatiivina võib lingi kopeerida edasiseks kasutamiseks",
 "Alternatively the link can be copied manually" => "Alternatiivina võib lingi kopeerida käsitsi.",
 "Alternatively the link can be copied into a message manually" => "Alternatiivina võib lingi sõnumisse kopeerida käsitsi",
 "Anything that appears helpful …" => "Kõik, mis võiks olla seotud ...",
