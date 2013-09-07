@@ -39,6 +39,7 @@
 "Administrative, system wide settings of this app:" => "Administración, configuración del sistema para este app:",
 "after the SMS has been launched" => "después que el SMS haya sido abierto",
 "Alternatively the image can be downloaded for printout or storage" => "Como alternativa, la imagen se puede descargar para su impresión o almacenamiento",
+"alternatively the link can be copied for further usage" => "si no, el enlace puede ser copiado para su uso posterior",
 "Alternatively the link can be copied manually" => "Alternativamente, se puede copiar manuelmente el enlace",
 "Alternatively the link can be copied into a message manually" => "Si no, el enlace puede ser copiado en un mensaje de forma manual",
 "Anything that appears helpful …" => "Cualquier cosa que te parezca útil...",
