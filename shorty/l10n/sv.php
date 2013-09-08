@@ -39,6 +39,7 @@
 "Administrative, system wide settings of this app:" => "Administrativa, systemövergripande inställningar för denna app:",
 "after the SMS has been launched" => "efter det att SMS har startats",
 "Alternatively the image can be downloaded for printout or storage" => "Alternativit kan bilden laddas ner för utskrift eller för lagring",
+"alternatively the link can be copied for further usage" => "alternativt kan länken kopieras för vidare användning",
 "Alternatively the link can be copied manually" => "Alternativt kan länken kopieras manuellt",
 "Alternatively the link can be copied into a message manually" => "Alternativt kan länken kopieras in i ett meddelande manuellt",
 "Anything that appears helpful …" => "Vad som helst som verkar till någon hjälp ...",

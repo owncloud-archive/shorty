@@ -26,14 +26,15 @@
 # Translators:
 # Jan Busk, 2013
 # medialabs, 2013
+# Magnus Höglund <magnus@linux.com>, 2013
 # medialabs, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-09-01 14:45+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-09-07 11:10+0000\n"
+"Last-Translator: Magnus Höglund <magnus@linux.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/owncloud/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -170,7 +171,7 @@ msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "Alternativit kan bilden laddas ner för utskrift eller för lagring"
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "alternativt kan länken kopieras för vidare användning"
 
 msgid "Alternatively the link can be copied manually"
 msgstr "Alternativt kan länken kopieras manuellt"
