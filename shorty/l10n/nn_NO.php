@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "all" => "alle",
+"blocked" => "blokkert",
 "deleted" => "sletta",
 "never" => "aldri",
 "delete" => "slett",
@@ -8,6 +9,7 @@
 "Ctrl-C" => "Ctrl-C",
 "Ctrl-V" => "Ctrl-V",
 "Click registered" => "Klikk registrert",
+"Clicks" => "Klikk",
 "Close" => "Lukk",
 "Configuration" => "Innstillingar",
 "Copy to clipboard" => "Kopier til utklippstavle",
@@ -18,6 +20,7 @@
 "Mail client" => "E-postklient",
 "Modifications for shorty with id '%s' saved" => "Lagra endringar for shorty med id «%s»",
 "Notes" => "Notat",
+"Nothing here yet" => "Ingenting her enno",
 "Number of entries: %s" => "Tal på innlegg: %s",
 "QRCode" => "QR-kode",
 "Preference '%s' retrieved" => "Henta innstillinga «%s»",
