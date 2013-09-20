@@ -185,7 +185,7 @@
 "Have a try with the example link provided, click it, it should result in a confirmation that your setup is working." => "Have a try with the example link provided, click it, it should result in a confirmation that your setup is working.",
 "Leave empty if you can't provide a short base url that is mapped the described way." => "Leave empty if you can't provide a short base URL that is mapped the described way.",
 "Only use this backend, if you can provide a short base url that is mapped the described way. Your shorties won't work otherwise." => "Only use this backend, if you can provide a short base URL that is mapped the described way. Your shorties won't work otherwise.",
-"Googles external 'goo.gl service' is used to register a short url for each generated shorty." => "Googles external 'goo.gl service' is used to register a short url for each generated shorty.",
+"Googles external 'goo.gl service' is used to register a short url for each generated shorty." => "Google's external 'goo.gl service' is used to register a short url for each generated shorty.",
 "You must provide a valid '%%s' to use this service." => "You must provide a valid '%%s' to use this service.",
 "This means you require a 'Google API console account'." => "This means you require a 'Google API console account'.",
 "Register a new '%%s' at their pages." => "Register a new '%%s' at their pages.",
@@ -197,7 +197,7 @@
 "Requests to the configured base url are mapped to this ownClouds relay service." => "Requests to the configured base URL are mapped to this ownCloud's relay service.",
 "Usage of that static backend is fine and safe as long as this setup is not altered." => "Usage of that static backend is fine and safe as long as this setup is not altered.",
 "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." => "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences.",
-"Sorry, but your setup appears not to be working correctly yet!" => "Sorry, but your setup appears not to be working correctly yet!",
+"Sorry, but your setup appears not to be working correctly yet!" => "Sorry, but it appears that your setup is not working correctly yet!",
 "Please check your setup and make sure that the configured base url is indeed correct." => "Please check your setup and make sure that the configured base URL is indeed correct.",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "Make sure that all requests to it are somehow mapped to Shorty's relay service."
 );
