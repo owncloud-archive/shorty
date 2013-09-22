@@ -21,44 +21,45 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *****
 
-Changelog: 
+Changelog:
 
+Added clear icons in list toolbar to remove column filters with a single click.
 * Fri Jul 12 2013 Christian Reiner: version 0.3.30
 New setting of a default backend suggested inside the users preferences.
 * Tue Jun 18 2013 Christian Reiner: version 0.3.29
-Fixed a bug that prevented a Shortys target to become editable when being clicked. 
+Fixed a bug that prevented a Shortys target to become editable when being clicked.
 * Tue Jun 18 2013 Christian Reiner: version 0.3.28
 A number of style fixes to improve the apps appearance in MS IE browsers.
 Graphics file format optimization to reduce file sizes.
-Fixed automatic text selection in usage popup offered in the embedded share dialogs. 
+Fixed automatic text selection in usage popup offered in the embedded share dialogs.
 * Thu Jun 13 2013 Christian Reiner: version 0.3.27
 Fixed a bug in the internal plugin interface that produced annoying log entries.
 * Thu May 23 2013 Christian Reiner: version 0.3.26
-Fixed verification of the base url required for the 'Static Backend' setup. 
+Fixed verification of the base url required for the 'Static Backend' setup.
 Fixed the preferences dialogs layout when using the static backend.
-Suppress annoying and missleading autocomplete feature for url dialogs. 
+Suppress annoying and missleading autocomplete feature for url dialogs.
 * Tue Apr 30 2013 Christian Reiner: version 0.3.25
 Addional personal preference to set the default status for new Shortys.
-Fixed a layout glitch for backend selection in the preference dialog. 
+Fixed a layout glitch for backend selection in the preference dialog.
 Fixed controls panel positioning to comply with the FluXX Compensator (Y).
 * Sun Mar 24 2013 Christian Reiner: version 0.3.24
 Fixed shortlet not to result in an error when being used.
 * Wed Mar 20 2013 Christian Reiner: version 0.3.23
-Allow direct activation in ownCloud5 based installations. 
+Allow direct activation in ownCloud5 based installations.
 * Fri Mar 01 2013 Christian Reiner: version 0.3.22
 Some general security fix to the apps framework.
 * Wed Feb 20 2013 Christian Reiner: version 0.3.21
 Fixed visibility of list header which was accidentially hidden below the control panel.
-Fixed display of feedback on actions by reimplementing the messenger area. 
+Fixed display of feedback on actions by reimplementing the messenger area.
 Added a new preference to control the level of verbosity of feedback on actions.
 Optimized preference retrieval (caching strategy).
 * Tue Feb 15 2013 Christian Reiner: version 0.3.20
-Fixed decoding of titles when scraping meta data from target pages. 
+Fixed decoding of titles when scraping meta data from target pages.
 * Tue Feb 12 2013 Christian Reiner: version 0.3.19
-Support for ownCloud version 5. 
-Fixed handling of favicons when adding multiple Shortys. 
-Update the favicon when a Shortys target url is changed. 
-Enhancement to the list layout and apeparance to improve readability. 
+Support for ownCloud version 5.
+Fixed handling of favicons when adding multiple Shortys.
+Update the favicon when a Shortys target url is changed.
+Enhancement to the list layout and apeparance to improve readability.
 * Mon Jan 14 2013 Christian Reiner: version 0.3.18
 Fixed the 'recycle' icon for rows marked as deleted, to not scrumble row layout.
 Switched more (dynamically controlled) icons to svg format.
@@ -84,21 +85,21 @@ Better support for cross domain verification for the static backend configuratio
 * Sat Dec 15 2012 Christian Reiner: version 0.3.14
 Fixed big oops display of access times that gave the wrong month and day!
 * Wed Dec 11 2012 Christian Reiner: version 0.3.13
-Fixed layout of share dialog getting distorted under certain circumstances. 
+Fixed layout of share dialog getting distorted under certain circumstances.
 * Thu Nov 29 2012 Christian Reiner: version 0.3.12
-Fixed a small glitch in settings handling. 
+Fixed a small glitch in settings handling.
 Some minor performance and logging enhancements.
 * Fri Nov 16 2012 Christian Reiner: version 0.3.11
 Fixed visualization of last access time inside Shorty dialogs.
 Enabled forwarding to more http based protocol schemes: shttp, ipp, webdav, webdavs
 * Tue Nov 01 2012 Christian Reiner: version 0.3.10
-Some fixed to the actions inside dialogs when used inside OC-4.0.x installations. 
+Some fixed to the actions inside dialogs when used inside OC-4.0.x installations.
 An additional service 'shorty_stats' allows to remotely retrieve data.
 * Fri Oct 26 2012 Christian Reiner: version 0.3.9
 Targets of existing Shortys can be modified as an explicit action now.
 Enhanced notification and exception visualization and handling.
 A few bugfixes and enhancements for title handling inside Shortys.
-Some further layout and style fixes, cleanups. 
+Some further layout and style fixes, cleanups.
 * Tue Oct 09 2012 Christian Reiner: version 0.3.8
 Switched layout of list of shortys to a liquid style (using the whole screens width).
 Fixed display size for some exotic favicons inside dialogs.
@@ -115,17 +116,17 @@ Preparations to rely on the OC core to refresh the request token if implemented.
 Fixed a crash that was introduced by changes in the OC core in recent beta versions.
 Some preparations for future referencing of files stored inside OC as opposed to URLs.
 Some internal code changes to reflect advances in the underlying jquery library.
-A few logical fixes to detection of special runtime exceptions. 
-Some more small optical layout fixes. 
+A few logical fixes to detection of special runtime exceptions.
+Some more small optical layout fixes.
 Fixed missleading debug statement in ajax hooks for settings and preferences control
 Fixed settings and preferences control not to ignore empty values
 * Sat Sep 09 2012 Christian Reiner: version 0.3.6
 General appearance enhancements for some dialog details.
-Clearified explanations and hints for preferences and settings. 
+Clearified explanations and hints for preferences and settings.
 Some internal changes required by the changes in the upcoming OC5 release:
 - most visible change: the personal preferences moved to a popup dialog inside the Shorty app.
 - convenient reference to the system settings from within the personal preferences of admin users.
-- additional 'home page' button referencing the apps page in the OC app store. 
+- additional 'home page' button referencing the apps page in the OC app store.
 * Sun Aug 12 2012 Christian Reiner: version 0.3.5
 Fixed standalone dialogs not being visible in rare circumstances.
 Some cleanups in the style rule selectors.
@@ -138,21 +139,21 @@ Visible click count in Shorty and sums are live updated now when the source url 
 Fixed the internal verification of the configuration of the static backend.
 * Tue Jul 24 2012 Christian Reiner: version 0.3.3
 Use OCs CSRF protection framework for ajax requests.
-Fixed a few compatibility issues with OC5-pre versions. 
+Fixed a few compatibility issues with OC5-pre versions.
 * Thu Jul 19 2012 Christian Reiner: version 0.3.2
 Fixed a few problems with updating a currently listed Shorty after a modification.
 Fixed storage of empty expiration dates when used with a MySQL database system.
 * Mon Jul 18 2012 Christian Reiner: version 0.3.1
-Fixed sanity checks in registration of actions inside the plugin interface. 
-Fixed highlighting of freshly added entries in lists (flashing). 
-Some internal recoding to remove depreciated library methods. 
+Fixed sanity checks in registration of actions inside the plugin interface.
+Fixed highlighting of freshly added entries in lists (flashing).
+Some internal recoding to remove depreciated library methods.
 Fixed updating of Shortys in the list right after changing them.
 Further enhancements in support of plugins
 Rewritten and enhanced handling of clicks on Shortys.
 * Sun Jul 15 2012 Christian Reiner: version 0.3.0
 Implementation of a plugin interface including a partly redesign:
-this enables plugins to register actions and thus enhance Shortys features. 
-Some internal code and comment cleanups. 
+this enables plugins to register actions and thus enhance Shortys features.
+Some internal code and comment cleanups.
 * Fri Jul 13 2012 Christian Reiner: version 0.2.8
 Some optical corrections to the share dialog.
 Updated static backend configuration in doc files.
@@ -173,7 +174,7 @@ A few minor linguistic corrections
 Fix of a false positive whilst verification of the static backend base.
 Offering the 'Shortlet' now when showing an empty list.
 Minor improvements to background logging.
-Minor gui improvements. 
+Minor gui improvements.
 * Sat Jun 09 2012 Christian Reiner: version 0.2.3
 Bugfix for the routines generating shorty ids.
 Fixes for usage under MS Windows platforms using php-5.4.
@@ -191,12 +192,12 @@ Additional QRCodes to publish Shorty source urls on the web (or elsewhere).
 Data migration support as introduced by OC4.
 Cleanup of Shortys upon user account deletion.
 * Sun May 28 2012 Christian Reiner: version 0.1.6
-Activation of Shorty sharing via SMS. 
-Enhanced backend descriptions. 
+Activation of Shorty sharing via SMS.
+Enhanced backend descriptions.
 * Sat Apr 28 2012 Christian Reiner: version 0.1.5
 Target url verification is less strict now, this way also more 'exotic' urls notations are accepted.
 A few changes to the initilization scripts to prevent race conditions at startup.
-Changed url specification in the Shortlet to prevent conflicts with a serverside suhosin protection. 
+Changed url specification in the Shortlet to prevent conflicts with a serverside suhosin protection.
 * Fri Apr 27 2012 Christian Reiner: version 0.1.4
 Visualization of busy state in dialogs whilst fetch meta data from targets.
 * Fri Apr 27 2012 Christian Reiner: version 0.1.3
@@ -204,9 +205,9 @@ Prevented untimely submission of dialogs before having validated their contents.
 * Fri Apr 27 2012 Christian Reiner: version 0.1.2
 Fixed race conditions during initialization.
 * Thu Apr 26 2012 Christian Reiner: version 0.1.1
-Minor appearance corrections. 
+Minor appearance corrections.
 * Wed Apr 25 2012 Christian Reiner: version 0.1.0
-First official release. 
+First official release.
 * Tue Apr 24 2012 Christian Reiner: version 0.0.9
 Initial release.
-Buggy, but some parts actually working. 
+Buggy, but some parts actually working.

@@ -87,6 +87,19 @@ msgstr ""
 msgid "show"
 msgstr ""
 
+# toolbar icons
+msgid "reload"
+msgstr ""
+
+msgid "up"
+msgstr ""
+
+msgid "down"
+msgstr ""
+
+msgid "clear"
+msgstr ""
+
 # log levels
 msgid "none"
 msgstr ""
@@ -408,6 +421,9 @@ msgid "Sort ascending"
 msgstr ""
 
 msgid "Sort descending"
+msgstr ""
+
+msgid "Clear filter"
 msgstr ""
 
 msgid "Source url"

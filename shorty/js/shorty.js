@@ -727,15 +727,15 @@ OC.Shorty={
 				})
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.build
-			/**
-			* @method OC.Shorty.WUI.List.dim
-			* @brief Dims the content of a list so that manipulations can be done without having to close it
-			* @param list jQueryObject Representing the list to be handled
-			* @param show bool Flag indicating of the list should be dimmed of re-shown
-			* @author Christian Reiner
-			*/
-			dim: function(list,show){
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("dim list to "+(show?"true":"false"));
+				/**
+				 * @method OC.Shorty.WUI.List.dim
+				 * @brief Dims the content of a list so that manipulations can be done without having to close it
+				 * @param list jQueryObject Representing the list to be handled
+				 * @param show bool Flag indicating of the list should be dimmed of re-shown
+				 * @author Christian Reiner
+				 */
+				dim: function(list,show){
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("dim list to "+(show?"true":"false"));
 				var duration='slow';
 				var dfd =new $.Deferred();
 				var body=list.find('tbody');
@@ -1720,7 +1720,7 @@ OC.Shorty={
 			}, // ===== OC.Shorty.Action.Url.edit =====
 			/**
 			 * @method OC.Shorty.Action.Url.del
-			 * @brief Marks an existing Shorty as deleted. 
+			 * @brief Marks an existing Shorty as deleted.
 			 * @author Christian Reiner
 			 */
 			del: function(){
@@ -1762,7 +1762,7 @@ OC.Shorty={
 			}, // OC.Shorty.Action.Url.forward
 			/**
 			 * @method OC.Shorty.Action.Url.send
-			 * @brief RUns the specific action defined for a chosen sharing usage. 
+			 * @brief RUns the specific action defined for a chosen sharing usage.
 			 * @author Christian Reiner
 			 */
 			send: function(element,entry){
@@ -1899,7 +1899,7 @@ OC.Shorty={
 				}
 			}, // OC.Shorty.Action.Url.send
 			/** OC.Shorty.Action.Url.show
-			 * @brief Visualizes all attributes of an existing Shorty. 
+			 * @brief Visualizes all attributes of an existing Shorty.
 			 * @author Christian Reiner
 			 */
 			show: function(){
@@ -1925,7 +1925,7 @@ OC.Shorty={
 			}, // ===== OC.Shorty.Action.Url.show =====
 			/**
 			 * @method OC.Shorty.Action.Url.status
-			 * @brief Changes the status of an existing Shorty as specified. 
+			 * @brief Changes the status of an existing Shorty as specified.
 			 * @author Christian Reiner
 			 */
 			status: function(id,status){
@@ -2067,7 +2067,7 @@ OC.Shorty={
 	/**
 	* @class OC.Shorty.Status
 	* @brief Cache structure holding information details like versions, installation and situation
-	* @description 
+	* @description
 	* This is currently a temporary workaround for the fact that currently an ajax request is required for such basic information
 	* Hopefully in later versions the ajax request can be replaced by an access to some predefined values already available
 	* @author Christian Reiner
@@ -2075,12 +2075,12 @@ OC.Shorty={
 	Status:{
 		/**
 		* @object OC.Shorty.Server
-		* @brief 
+		* @brief
 		* @author Christian Reiner
 		 */
 		Valid:new $.Deferred(),
 		Server:{},
-		
+
 		/**
 		* @method OC.Shorty.Status.fetch
 		* @brief Retrieve information from server and feed it into the cache

@@ -5,7 +5,7 @@
 * @author Christian Reiner
 * @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -97,6 +97,8 @@
 						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
 					<input id='filter' type="text" value="">
+					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
+						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
 			<th id="target">
@@ -108,6 +110,8 @@
 						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
 					<input id='filter' type="text" value="">
+					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
+						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
 			<th id="clicks">
@@ -140,6 +144,8 @@
 						?>
 						</select>
 					</span>
+					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
+						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
 		</tr>
