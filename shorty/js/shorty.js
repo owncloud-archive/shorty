@@ -1067,7 +1067,7 @@ OC.Shorty={
 						// toolbar NOT visible: open toolbar
 						$.when(
 							// each <th>'s content MUST be encapsulate in a 'div', otherwise the animation does not work
-							toolbar.find('div').slideDown('slow')
+							toolbar.find('div').slideDown('fast')
 						).pipe(function(){
 							titlebar.addClass('shorty-clicked');
 							button.attr('src',OC.imagePath('shorty',button.attr('data-shade')));
@@ -1079,7 +1079,7 @@ OC.Shorty={
 						}else{
 							// close toolbar
 							$.when(
-								toolbar.find('div').slideUp('slow')
+								toolbar.find('div').slideUp('fast')
 							).done(function(){
 								titlebar.removeClass('shorty-clicked');
 								button.attr('src',OC.imagePath('shorty',button.attr('data-unshade')));
@@ -2244,11 +2244,11 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		// filter list
 		var toolbar=list.find('thead tr#toolbar');
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'target',toolbar.find('th#target #filter').val()]);
+			[list,'target',toolbar.find('th#target .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'title', toolbar.find('th#title #filter').val()]);
+			[list,'title', toolbar.find('th#title .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'status',toolbar.find('th#status select :selected').val()]);
+			[list,'status',toolbar.find('th#status .shorty-filter :selected').val()]);
 		// sort list
 		$.when(
 			OC.Shorty.Action.Preference.get('list-sort-code')
@@ -2262,8 +2262,8 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	* @author Christian Reiner
 	*/
 	ToolbarCheckFilter: function(toolbar){
-		return (  (  (toolbar.find('th#title,#target').find('div input#filter:[value!=""]').length)
-				&&(toolbar.find('th#title,#target').find('div input#filter:[value!=""]')
+		return (  (  (toolbar.find('th#title,#target').find('div input.shorty-filter:[value!=""]').length)
+				&&(toolbar.find('th#title,#target').find('div input.shorty-filter:[value!=""]')
 					.effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) )
 				||(  (toolbar.find('th#status select :selected').val())
 				&&(toolbar.find('#status').effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) ) );
