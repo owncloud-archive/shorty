@@ -97,27 +97,37 @@
 										print_unescaped(sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label));
 									?>
 								</select>
+								<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
+									class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 							</span>
 						</div>
 					</th>
 					<th id="address">
 						<div style="display:none;">
 							<input id='filter' type="text" value="">
+							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
+								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
 					<th id="host">
 						<div style="display:none;">
 							<input id='filter' type="text" value="">
+							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
+								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
 					<th id="user">
 						<div style="display:none;">
 							<input id='filter' type="text" value="">
+							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
+								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
 					<th id="time">
 						<div style="display:none;">
 							<input id='filter' type="text" value="">
+							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
+								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
 				</tr>

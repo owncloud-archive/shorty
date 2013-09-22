@@ -29,7 +29,7 @@
  * @author Christian Reiner
  */
 
-// we use the late event $(window).load() instead of $(document).ready(), 
+// we use the late event $(window).load() instead of $(document).ready(),
 // since otherwise the binding of the ajax request token (CSRF protection)
 // has not yet finished before we try to use it...
 // TODO: OC-4 compatibility: use document.ready instead of window.load when dropping OC-4 compatibility
@@ -116,7 +116,11 @@ $(window).load(function(){
 				]
 			);
 		});
-	dfd.resolve();
+		// button to clear list filters
+		$(document).on('click','#list-of-clicks #toolbar .shorty-clear',[],function(){
+			$(this).parents().find('#filter').val('').trigger('keyup').trigger('change');
+		});
+		dfd.resolve();
 	}).fail(dfd.reject);
 	return dfd.promise();
 }); // document.ready

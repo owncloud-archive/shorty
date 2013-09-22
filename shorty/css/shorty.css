@@ -4,7 +4,7 @@
 * @author Christian Reiner
 * @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -62,8 +62,8 @@ html input, html textarea {
 	padding: 0 2px;
 	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
 }
-#content.shorty-panel-hidden #controls, 
-#content.shorty-panel-hidden .shorty-desktop, 
+#content.shorty-panel-hidden #controls,
+#content.shorty-panel-hidden .shorty-desktop,
 #content.shorty-panel-hidden .shorty-controls {
 	top: -2.8em;
 }
@@ -303,7 +303,7 @@ input.shorty-config {
 	cursor: pointer;
 	vertical-align: middle;
 }
-.shorty-list thead tr#toolbar a#reload, 
+.shorty-list thead tr#toolbar a#reload,
 .shorty-list thead tr#toolbar a#reload img {
 	cursor: pointer;
 	width: 16px;
@@ -315,6 +315,13 @@ input.shorty-config {
 }
 .shorty-list thead tr#toolbar img#sort-down {
 	cursor: s-resize;
+}
+.shorty-list thead tr#toolbar img.shorty-clear {
+	cursor: pointer;
+	opacity: 0.6;
+}
+.shorty-list thead tr#toolbar th#status img.shorty-clear {
+	margin-left: 3px;
 }
 .shorty-list thead tr#toolbar img.shorty-sorter {
 	opacity: 0.6;
@@ -355,7 +362,7 @@ input.shorty-config {
 .shorty-desktop .shorty-list td#favicon {
 	width: 26px;
 }
-.shorty-desktop .shorty-list th#title, 
+.shorty-desktop .shorty-list th#title,
 .shorty-desktop .shorty-list th#target {
 	min-width: 3em;
 }

@@ -27,7 +27,7 @@
  * @brief Client side initialization of desktop actions
  * @description
  * This file takes care of initializing all activities required by the app to
- * work as expected, namely reactions to events like mouse cicks, keyboard 
+ * work as expected, namely reactions to events like mouse cicks, keyboard
  * presses and the like.
  * @author Christian Reiner
  */
@@ -96,8 +96,12 @@ $(document).ready(function(){
 	});
 	// button to reload the list
 	$(document).on('click','#list-of-shortys #toolbar #reload',[],OC.Shorty.WUI.List.build);
+	// button to clear list filters
+	$(document).on('click','#list-of-shortys #toolbar .shorty-clear',[],function(){
+		$(this).parents().find('#filter').val('').trigger('keyup').trigger('change');
+	});
 	// sort buttons
-	$(document).on('click','#list-of-shortys #toolbar shorty-sorter',[],function(){
+	$(document).on('click','#list-of-shortys #toolbar .shorty-sorter',[],function(){
 		OC.Shorty.WUI.List.sort.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]);
