@@ -96,7 +96,7 @@
 					<img id="sort-down" data-sort-code="td" data-sort-type="string" data-sort-direction='desc'
 						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
-					<input id='filter' type="text" value="">
+					<input id="filter-title" class="shorty-filter" type="text" value="">
 					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
@@ -109,7 +109,7 @@
 					<img id="sort-down" data-sort-code="ud" data-sort-type="string" data-sort-direction='desc'
 						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
-					<input id='filter' type="text" value="">
+					<input id="filter-target" class="shorty-filter" type="text" value="">
 					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
@@ -138,7 +138,7 @@
 			<th id="status">
 				<div style="display:none;">
 					<span class="shorty-select">
-						<select id='filter' value="" data-placeholder=" ">
+						<select id="filter-status" class="shorty-filter" value="" data-placeholder=" ">
 						<?php foreach($_['shorty-status'] as $option=>$label)
 							print_unescaped(sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label));
 						?>

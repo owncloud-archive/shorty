@@ -98,7 +98,7 @@ $(document).ready(function(){
 	$(document).on('click','#list-of-shortys #toolbar #reload',[],OC.Shorty.WUI.List.build);
 	// button to clear list filters
 	$(document).on('click','#list-of-shortys #toolbar .shorty-clear',[],function(){
-		$(this).parents().find('#filter').val('').trigger('keyup').trigger('change');
+		$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
 	});
 	// sort buttons
 	$(document).on('click','#list-of-shortys #toolbar .shorty-sorter',[],function(){
@@ -139,8 +139,8 @@ $(document).ready(function(){
 	// filter actions
 	var list=$('#list-of-shortys');
 	// title & target filter reaction
-	$(document).on('keyup','#list-of-shortys thead tr#toolbar th#target,th#title #filter',[],function(){
-		OC.Shorty.WUI.List.filter.apply(
+	$(document).on('keyup','#list-of-shortys thead tr#toolbar th .shorty-filter',[],function(){
+			OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[list,$($(this).context.parentElement.parentElement).attr('id'),$(this).val()]);
 	});
