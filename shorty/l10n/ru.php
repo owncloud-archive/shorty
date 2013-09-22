@@ -39,6 +39,7 @@
 "Administrative, system wide settings of this app:" => "Административные, глобальные настройки этого приложения:",
 "after the SMS has been launched" => "после запуска SMS",
 "Alternatively the image can be downloaded for printout or storage" => "Также, картинку можно скачать для распечатки или хранения",
+"alternatively the link can be copied for further usage" => "Также, ссылка может быть скопирована для дальнейшего использования",
 "Alternatively the link can be copied manually" => "Также, ссылка может быть скопирована в сообщение вручную",
 "Alternatively the link can be copied into a message manually" => "Также, ссылка может быть скопирована в сообщение вручную",
 "Anything that appears helpful …" => "Всё, что выглядит полезным...",
