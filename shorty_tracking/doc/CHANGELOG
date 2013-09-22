@@ -21,23 +21,24 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *****
 
-Changelog: 
+Changelog:
 
+Added clear icons in list toolbar to remove column filters with a single click.
 * Mon Aug 05 2013 Christian Reiner: version 0.1.16
 Fix automatic deactivation of app if the main app is deactivated.
 * Thu May 23 2013 Christian Reiner: version 0.1.15
 Registration of plugin abstract as expected since Shorty version 0.3.26.
 * Tue Apr 30 2013 Christian Reiner: version 0.1.14
-Don't store a requests IP Adress in case name resolution fails. 
-Fixed column filter in list of clicks. 
+Don't store a requests IP Adress in case name resolution fails.
+Fixed column filter in list of clicks.
 * Wed Mar 20 2013 Christian Reiner: version 0.1.13
 Allow direct activation in ownCloud5 based installations.
 * Mon Feb 11 2013 Christian Reiner: version 0.1.12
-Widened maximum width of click list to prevent a broken layout. 
-Use a minimum height for the click list to have room for the details dialog. 
+Widened maximum width of click list to prevent a broken layout.
+Use a minimum height for the click list to have room for the details dialog.
 * Mon Jan 07 2013 Christian Reiner: version 0.1.11
 Use svg version of icons where applicable.
-Some style fixes expecially to better support MS IE browsers. 
+Some style fixes expecially to better support MS IE browsers.
 * Mon Dec 31 2012 Christian Reiner: version 0.1.10
 Changed supported OC version to 4.9 (OC-4.5).
 Support for the postgresql database engine.
@@ -65,7 +66,7 @@ Fixed reset of counters in sparklines when switching between lists.
 Fixed close button on lists of clicks.
 Internal code and namespace changes to match the OC Code of Conduct.
 * Thu Jul 26 2012 Christian Reiner: version 0.1.3
-A sparkline giving an impression of a Shortys usage. 
+A sparkline giving an impression of a Shortys usage.
 * Tue Jul 24 2012 Christian Reiner: version 0.1.2
 Use OCs CSRF protection framework for ajax requests.
 Fixed a few compatibility issues with OC5-pre versions.
