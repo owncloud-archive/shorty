@@ -92,7 +92,7 @@ $(window).load(function(){
 	});
 	// column filter reaction
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
-		.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('#filter')
+		.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('.shorty-filter')
 		.on('keyup',function(){
 			OC.Shorty.WUI.List.filter.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
@@ -118,7 +118,7 @@ $(window).load(function(){
 		});
 		// button to clear list filters
 		$(document).on('click','#list-of-clicks #toolbar .shorty-clear',[],function(){
-			$(this).parents().find('#filter').val('').trigger('keyup').trigger('change');
+			$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
 		});
 		dfd.resolve();
 	}).fail(dfd.reject);
@@ -630,15 +630,15 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 		// filter list
 		var toolbar=list.find('thead tr#toolbar');
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'time',   toolbar.find('th#time    #filter').val()]);
+			[list,'time',   toolbar.find('th#time    .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'address',toolbar.find('th#address #filter').val()]);
+			[list,'address',toolbar.find('th#address .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'host',   toolbar.find('th#host    #filter').val()]);
+			[list,'host',   toolbar.find('th#host    .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'user',   toolbar.find('th#user    #filter').val()]);
+			[list,'user',   toolbar.find('th#user    .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'result', toolbar.find('th#result  select :selected').val()]);
+			[list,'result', toolbar.find('th#result  .shorty- :selected').val()]);
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
 	/**
 	* @method OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
@@ -653,9 +653,9 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 	* the list of tracked clicks.
 	*/
 	ToolbarCheckFilter:function(toolbar){
-		return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').length)
-					&&(toolbar.find('th#time,#address,#host,#user').find('div input#filter:[value!=""]').effect('pulsate')) )
-				||(  (toolbar.find('th#result select :selected').val())
-					&&(toolbar.find('#result').effect('pulsate')) ) );
+		return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input.shorty-filter:[value!=""]').length)
+						&&(toolbar.find('th#time,#address,#host,#user').find('div input.shorty-filter:[value!=""]').effect('pulsate')) )
+				 ||(  (toolbar.find('th#result select :selected').val())
+						&&(toolbar.find('#result').effect('pulsate')) ) );
 		} // OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
 } // OC.Shorty.Runtime.Context.ListOfClicks
