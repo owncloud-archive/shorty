@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-09-01 14:45+0000\n"
+"PO-Revision-Date: 2013-09-24 13:51+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/owncloud/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -88,6 +88,19 @@ msgstr "共享"
 
 msgid "show"
 msgstr "显示"
+
+# toolbar icons
+msgid "reload"
+msgstr ""
+
+msgid "up"
+msgstr ""
+
+msgid "down"
+msgstr ""
+
+msgid "clear"
+msgstr ""
 
 # log levels
 msgid "none"
@@ -411,6 +424,9 @@ msgstr "升序"
 
 msgid "Sort descending"
 msgstr "降序"
+
+msgid "Clear filter"
+msgstr ""
 
 msgid "Source url"
 msgstr "源地址"

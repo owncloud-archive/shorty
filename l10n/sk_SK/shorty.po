@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-09-01 14:45+0000\n"
+"PO-Revision-Date: 2013-09-24 13:51+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/owncloud/language/sk_SK/)\n"
 "MIME-Version: 1.0\n"
@@ -87,6 +87,19 @@ msgstr "zdieľať"
 
 msgid "show"
 msgstr "zobraziť"
+
+# toolbar icons
+msgid "reload"
+msgstr ""
+
+msgid "up"
+msgstr ""
+
+msgid "down"
+msgstr ""
+
+msgid "clear"
+msgstr ""
 
 # log levels
 msgid "none"
@@ -410,6 +423,9 @@ msgstr "Zoradiť vzostupne"
 
 msgid "Sort descending"
 msgstr "Zoradiť zostupne"
+
+msgid "Clear filter"
+msgstr ""
 
 msgid "Source url"
 msgstr "Zdrojová URL"

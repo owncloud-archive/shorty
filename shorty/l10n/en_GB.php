@@ -40,7 +40,7 @@
 "after the SMS has been launched" => "after the SMS has been launched",
 "Alternatively the image can be downloaded for printout or storage" => "Alternatively the image can be downloaded for printout or storage",
 "alternatively the link can be copied for further usage" => "alternatively, the link can be copied for further usage",
-"Alternatively the link can be copied manually" => "Alternatively the link can be copied manually",
+"Alternatively the link can be copied manually" => "Alternatively, the link can be copied manually",
 "Alternatively the link can be copied into a message manually" => "Alternatively the link can be copied into a message manually",
 "Anything that appears helpful …" => "Anything that appears helpful …",
 "Default backend suggested inside users preferences" => "Default backend suggested inside users preferences",
