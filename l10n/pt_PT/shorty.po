@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-09-24 13:51+0000\n"
+"PO-Revision-Date: 2013-09-24 14:10+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -91,13 +91,13 @@ msgstr "mostrar"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "Recarregar"
 
 msgid "up"
-msgstr ""
+msgstr "cima"
 
 msgid "down"
-msgstr ""
+msgstr "baixo"
 
 msgid "clear"
 msgstr ""
