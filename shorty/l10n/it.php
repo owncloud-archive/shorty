@@ -15,7 +15,7 @@
 "share" => "condividi",
 "show" => "mostra",
 "reload" => "ricarica",
-"up" => "sù",
+"up" => "su",
 "down" => "giù",
 "clear" => "svuota",
 "none" => "nessuno",
