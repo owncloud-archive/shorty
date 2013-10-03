@@ -9,5 +9,6 @@
 "Nothing here yet" => "لا شيئ هنا إلى الآن.",
 "Save" => "حفظ",
 "Settings" => "إعدادات",
-"Title" => "عنوان"
+"Title" => "عنوان",
+"Account" => "حساب"
 );
