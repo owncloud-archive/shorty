@@ -1,5 +1,5 @@
 <?php $TRANSLATIONS = array(
-"Shorty Tracking" => "Shorty Jälgimine",
+"Shorty Tracking" => "Shorty jälgimine",
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Kõikide päringute detailne jälgimine olemasolevate Shortydega koos integreeritud päringute ajaloo visualiseeringuga.",
 "granted" => "tagatud",
 "denied" => "keelatud",

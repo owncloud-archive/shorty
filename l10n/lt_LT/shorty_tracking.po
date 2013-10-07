@@ -23,13 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-09-13 07:40+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-10-05 19:20+0000\n"
+"Last-Translator: Liudas Ališauskas <liudas.alisauskas@gmail.com>\n"
 "Language-Team: Lithuanian (Lithuania) (http://www.transifex.com/projects/p/owncloud/language/lt_LT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,31 +40,31 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Shorty registras"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Išsamus registras visų užklausų į egzistuojančius trumpinius kartu su integruota prieigos istorijos vizualizacija."
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "suteikta"
 
 msgid "denied"
-msgstr ""
+msgstr "uždrausta"
 
 msgid "blocked"
 msgstr "užblokuotas"
 
 msgid "load"
-msgstr ""
+msgstr "įkelti"
 
 msgid "Address"
 msgstr "Adresas"
 
 msgid "Click details"
-msgstr ""
+msgstr "Paspaudimo informacija"
 
 msgid "Clicks"
 msgstr "Paspaudimai"
@@ -72,10 +73,10 @@ msgid "Host"
 msgstr "Mazgas"
 
 msgid "List clicks"
-msgstr ""
+msgstr "Rikiuoti paspaudimus"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "Registruotų paspaudimų sąrašas"
 
 msgid "Result"
 msgstr "Rezultatas"
@@ -87,4 +88,4 @@ msgid "Title"
 msgstr "Pavadinimas"
 
 msgid "User"
-msgstr ""
+msgstr "Naudotojas"
