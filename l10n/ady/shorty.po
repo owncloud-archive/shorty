@@ -29,14 +29,14 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-10-07 20:40+0000\n"
+"PO-Revision-Date: 2013-10-07 15:03+0000\n"
 "Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
-"Language-Team: Macedonian (http://www.transifex.com/projects/p/owncloud/language/mk/)\n"
+"Language-Team: Adyghe (http://www.transifex.com/projects/p/owncloud/language/ady/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: mk\n"
-"Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
+"Language: ady\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 # plugin description
 msgid "Plugins"
@@ -50,7 +50,7 @@ msgid "blocked"
 msgstr ""
 
 msgid "deleted"
-msgstr "избришан"
+msgstr ""
 
 msgid "disabled"
 msgstr ""
@@ -59,7 +59,7 @@ msgid "enabled"
 msgstr ""
 
 msgid "never"
-msgstr "никогаш"
+msgstr ""
 
 msgid "private"
 msgstr ""
@@ -72,7 +72,7 @@ msgstr ""
 
 # actions ("to be done")
 msgid "delete"
-msgstr "избриши"
+msgstr ""
 
 msgid "edit"
 msgstr ""
@@ -81,10 +81,10 @@ msgid "open"
 msgstr ""
 
 msgid "share"
-msgstr "сподели"
+msgstr ""
 
 msgid "show"
-msgstr "прикажи"
+msgstr ""
 
 # toolbar icons
 msgid "reload"
@@ -195,7 +195,7 @@ msgid "Default backend suggested inside users preferences"
 msgstr ""
 
 msgid "Backend"
-msgstr "Админ"
+msgstr ""
 
 msgid "Base url"
 msgstr ""
@@ -222,10 +222,10 @@ msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
 msgid "Close"
-msgstr "Затвори"
+msgstr ""
 
 msgid "Configuration"
-msgstr "Конфигурација"
+msgstr ""
 
 msgid "The amount of feedback messages shown."
 msgstr ""
@@ -288,7 +288,7 @@ msgid "New Shorty"
 msgstr ""
 
 msgid "Notes"
-msgstr "Белешки"
+msgstr ""
 
 msgid "Nothing here yet"
 msgstr ""
@@ -354,7 +354,7 @@ msgid "Reload list"
 msgstr ""
 
 msgid "Save"
-msgstr "Сними"
+msgstr ""
 
 msgid "Send by email"
 msgstr ""
@@ -384,7 +384,7 @@ msgid "Setting '%s' saved"
 msgstr ""
 
 msgid "Settings"
-msgstr "Подесувања"
+msgstr ""
 
 msgid "Share and use"
 msgstr ""
@@ -486,7 +486,7 @@ msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
 msgid "Title"
-msgstr "Наслов"
+msgstr ""
 
 msgid "Toggle toolbar"
 msgstr ""
