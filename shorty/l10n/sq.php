@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"deleted" => "fshirë",
 "never" => "kurrë",
 "delete" => "elimino",
 "share" => "nda",

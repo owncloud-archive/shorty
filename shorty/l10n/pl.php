@@ -49,6 +49,7 @@
 "Exception" => "Wyjątek",
 "Exception (%s)" => "Wyjątek (%s)",
 "Expiration" => "Wygaśnięcie",
+"Feedback" => "Wsparcie",
 "Loading" => "Ładuję",
 "Mail client" => "Klient mailowy",
 "Modify attributes" => "Zmień atrybuty",

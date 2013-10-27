@@ -30,7 +30,7 @@
 # jorge_toriz <yo@jorgetoriz.com>, 2013
 # msoko <sokolovitch@yahoo.com>, 2013
 # Raul Fernandez Garcia <raulfg3@gmail.com>, 2013
-# Korrosivo <yo@rubendelcampo.es>, 2013
+# Rubén del Campo <yo@rubendelcampo.es>, 2013
 # scambra <sergio@programatica.es>, 2013
 # xhiena <xhiena@gmail.com>, 2013
 msgid ""
@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-10-01 18:37+0000\n"
+"PO-Revision-Date: 2013-10-24 09:50+0000\n"
 "Last-Translator: javierrami <ramirez.javier@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/owncloud/language/es/)\n"
 "MIME-Version: 1.0\n"

@@ -93,6 +93,7 @@
 "Verification failed" => "Falhou a verificação",
 "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s" => "%s\nMensagem(código): %s (%s)\nFicheiro(linha): %s (%s)\nInfo: %%s",
 "API access key" => "Chave API",
+"Account" => "Conta",
 "API key" => "Chave API",
 "bit.ly user" => "utilizador bit.ly",
 "bit.ly user name" => "utilizador da conta bit.ly",
