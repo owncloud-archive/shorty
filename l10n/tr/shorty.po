@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-10-24 17:00+0000\n"
+"PO-Revision-Date: 2013-10-28 10:44+0000\n"
 "Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -177,7 +177,7 @@ msgid "Administrative, system wide settings of this app:"
 msgstr ""
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "bu nedenle içerik el ile kopyalanmalı"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr ""
@@ -324,7 +324,7 @@ msgid "or simpy print or download it for off-line usage"
 msgstr "veya basitçe yazdırın veya çevrimdışı kullanım için indirin"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "Başka bir yere gömmek için yapıştırın"
 
 msgid "Preference retrieved"
 msgstr ""
@@ -453,7 +453,7 @@ msgid "Target url '%s' is valid"
 msgstr "Hedef url '%s' geçerli"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "Bu resim belgelen yazılırken veya web siteleri ayarlanırken kullanılabilir"
 
 msgid "The backend service used to generate shortened URLs."
 msgstr ""
@@ -468,7 +468,7 @@ msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "SMS gönderildikten sonra"
 
 msgid "then paste into message"
 msgstr "ardından iletiye yapıştırın"
@@ -504,7 +504,7 @@ msgid "Unexpected type of exception caught: %s"
 msgstr ""
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "Ne yazık ki bu şemanın geliştirme durumu sınırlıdır"
 
 msgid "Unknown object of type caught: %s"
 msgstr ""
@@ -522,7 +522,7 @@ msgid "Verify by clicking…"
 msgstr ""
 
 msgid "Verification failed"
-msgstr ""
+msgstr "Doğrulama başarısız"
 
 # exception description
 msgid ""
@@ -693,7 +693,7 @@ msgid "In short: this might not work for you, therefore you can disable it…"
 msgstr ""
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "Mükemmel, kurulumunuz güzel görünüyor!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
@@ -711,7 +711,7 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "Üzgünüz, fakat kurulumunuz henüz doğru gibi görünmüyor!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
