@@ -30,9 +30,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
-"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-10-28 10:44+0000\n"
+"PO-Revision-Date: 2013-10-30 12:40+0000\n"
 "Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -495,7 +495,7 @@ msgid "Toggle toolbar"
 msgstr ""
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "Toplam tıklama"
 
 msgid "Typically this only works on devices like smart phones"
 msgstr "Bu genellikle sadece akıllı telefon benzeri cihazlarda çalışır"
@@ -519,7 +519,7 @@ msgid "Use the '%s' button above or the fine 'Shortlet'"
 msgstr ""
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "Tıklayarak doğrula.."
 
 msgid "Verification failed"
 msgstr "Doğrulama başarısız"
@@ -558,7 +558,7 @@ msgid "Google API key"
 msgstr "Google API anahtarı"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Google API hesabı"
 
 msgid "tiny.cc user"
 msgstr "tiny.cc kullanıcı"

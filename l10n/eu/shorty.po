@@ -26,14 +26,15 @@
 # Translators:
 # asaez <asaez@asaez.eu>, 2013
 # asieriko <asieriko@gmail.com>, 2013
+# electro, 2013
 # Piarres Beobide <pi@beobide.net>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
-"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-10-28 10:44+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-10-29 08:20+0000\n"
+"Last-Translator: electro\n"
 "Language-Team: Basque (http://www.transifex.com/projects/p/owncloud/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,7 +66,7 @@ msgid "never"
 msgstr "inoiz"
 
 msgid "private"
-msgstr ""
+msgstr "pribatua"
 
 msgid "public"
 msgstr ""
@@ -78,10 +79,10 @@ msgid "delete"
 msgstr "ezabatu"
 
 msgid "edit"
-msgstr ""
+msgstr "editatu"
 
 msgid "open"
-msgstr ""
+msgstr "ireki"
 
 msgid "share"
 msgstr "elkarbanatu"
@@ -149,7 +150,7 @@ msgid "for any access"
 msgstr ""
 
 msgid "for own usage"
-msgstr ""
+msgstr "erabilera pertsonalerako"
 
 msgid "with ownCloud users"
 msgstr ""
@@ -171,7 +172,7 @@ msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
 msgid "Administration"
-msgstr ""
+msgstr "Administrazioa"
 
 msgid "Administrative, system wide settings of this app:"
 msgstr ""
@@ -243,7 +244,7 @@ msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
 msgid "Creation"
-msgstr ""
+msgstr "Sormen"
 
 msgid "Delete shorty"
 msgstr ""
@@ -360,13 +361,13 @@ msgid "Save"
 msgstr "Gorde"
 
 msgid "Send by email"
-msgstr ""
+msgstr "Email-ez bidali "
 
 msgid "Send link by email"
 msgstr "Bidali lotura posta bidez"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "SMSz bidali"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
@@ -390,7 +391,7 @@ msgid "Settings"
 msgstr "Ezarpenak"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Partekatu eta erabili"
 
 msgid "Share shorty"
 msgstr ""
@@ -414,7 +415,7 @@ msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
 msgstr "SMS sortzailea"
@@ -462,7 +463,7 @@ msgid "The default status as suggested for new Shortys."
 msgstr ""
 
 msgid "The link below can be copied for usage apart"
-msgstr ""
+msgstr "Hurrengo link-a kopiatu daiteke aparte erabiltzeko."
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
@@ -558,13 +559,13 @@ msgid "Google API key"
 msgstr ""
 
 msgid "Google API account"
-msgstr ""
+msgstr "Google API kontua"
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "tiny.cc erabiltzailea"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "tiny.cc erabiltzaile izena"
 
 msgid "tiny.cc key"
 msgstr ""
