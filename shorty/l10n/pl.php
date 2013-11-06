@@ -21,6 +21,7 @@
 "none" => "brak",
 "error" => "błąd",
 "info" => "info",
+"debug" => "debug",
 "Ctrl-C" => "Ctrl-C",
 "Ctrl-V" => "Ctrl-V",
 "bitly.com service" => "usługa bitly.com",

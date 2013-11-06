@@ -25,14 +25,15 @@
 # 
 # Translators:
 # Sappe, 2013
+# kaffeldt <kasper.affeldt@gmail.com>, 2013
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
-"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-10-28 10:44+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2013-11-03 19:20+0000\n"
+"Last-Translator: kaffeldt <kasper.affeldt@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -332,10 +333,10 @@ msgid "Preference saved"
 msgstr ""
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "Præference '%s' modtaget"
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "Præference '%s' gemt"
 
 msgid "Preferences"
 msgstr ""
@@ -383,7 +384,7 @@ msgid "Setting '%s' retrieved"
 msgstr ""
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "Indstilling '%s' gemt"
 
 msgid "Settings"
 msgstr "Indstillinger"
@@ -416,7 +417,7 @@ msgid "SMS"
 msgstr ""
 
 msgid "SMS composer"
-msgstr ""
+msgstr "SMS Composer"
 
 msgid "Sort ascending"
 msgstr ""
@@ -440,7 +441,7 @@ msgid "Status"
 msgstr ""
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "Statusændring for shorty med id '%s' gemt"
 
 msgid "Target"
 msgstr ""
@@ -449,7 +450,7 @@ msgid "Target url"
 msgstr ""
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "Destinations url '%s' er gyldigt"
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
@@ -461,7 +462,7 @@ msgid "The default status as suggested for new Shortys."
 msgstr ""
 
 msgid "The link below can be copied for usage apart"
-msgstr ""
+msgstr "Nedenstående link kan kopieres til anvendelse fra hinanden"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
@@ -529,7 +530,7 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr ""
+msgstr "%s ⏎\nBesked (kode):%s (%s) ⏎\nFil (linje):%s (%s) ⏎\nInfo:%%s"
 
 # technical backend details
 msgid "API access key"

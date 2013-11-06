@@ -24,13 +24,14 @@
 # 
 # Translators:
 # ismail yenigül <ismail.yenigul@surgate.com>, 2013
+# volkangezer <volkangezer@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
-"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-10-11 02:31+0000\n"
-"Last-Translator: ismail yenigül <ismail.yenigul@surgate.com>\n"
+"PO-Revision-Date: 2013-11-05 00:20+0000\n"
+"Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,22 +41,22 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr "Shorty izleme"
+msgstr "Kısaltma İzleme"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr "Erişim geçmişinin entegre bir görselleştirme ile birlikte mevcut Shortys için tüm istekleri ayrıntılı izleme."
+msgstr "Erişim geçmişinin bütünleşik bir görselleştirme ile birlikte mevcut Kısaltmalar için tüm isteklerin ayrıntılı izlenmesi."
 
 # request results
 msgid "granted"
-msgstr "İmtiyaz verildi"
+msgstr "imtiyaz verildi"
 
 msgid "denied"
-msgstr "engellendi"
+msgstr "reddedildi"
 
 msgid "blocked"
-msgstr "bloklandı"
+msgstr "engellendi"
 
 msgid "load"
 msgstr "yükle"
@@ -76,7 +77,7 @@ msgid "List clicks"
 msgstr "Tıklamaları listele"
 
 msgid "List of tracked clicks"
-msgstr "takip edilen tıklamalar listesi"
+msgstr "Takip edilen tıklamalar listesi"
 
 msgid "Result"
 msgstr "Sonuç"
