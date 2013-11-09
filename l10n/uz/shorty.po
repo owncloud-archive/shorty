@@ -24,20 +24,19 @@
 # @author Christian Reiner
 # 
 # Translators:
-# miroj <jmiroslav@softhome.net>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-11-08 20:10+0000\n"
-"Last-Translator: miroj <jmiroslav@softhome.net>\n"
-"Language-Team: Macedonian (http://www.transifex.com/projects/p/owncloud/language/mk/)\n"
+"PO-Revision-Date: 2013-11-07 08:41+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"Language-Team: Uzbek (http://www.transifex.com/projects/p/owncloud/language/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: mk\n"
-"Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
+"Language: uz\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 # plugin description
 msgid "Plugins"
@@ -45,80 +44,80 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr "сите"
+msgstr ""
 
 msgid "blocked"
-msgstr "блокиран"
+msgstr ""
 
 msgid "deleted"
-msgstr "избришан"
+msgstr ""
 
 msgid "disabled"
-msgstr "оневозможен"
+msgstr ""
 
 msgid "enabled"
-msgstr "овозможен"
+msgstr ""
 
 msgid "never"
-msgstr "никогаш"
+msgstr ""
 
 msgid "private"
-msgstr "приватен"
+msgstr ""
 
 msgid "public"
-msgstr "јавен"
+msgstr ""
 
 msgid "shared"
-msgstr "споделен"
+msgstr ""
 
 # actions ("to be done")
 msgid "delete"
-msgstr "избриши"
+msgstr ""
 
 msgid "edit"
-msgstr "уреди"
+msgstr ""
 
 msgid "open"
 msgstr ""
 
 msgid "share"
-msgstr "сподели"
+msgstr ""
 
 msgid "show"
-msgstr "прикажи"
+msgstr ""
 
 # toolbar icons
 msgid "reload"
 msgstr ""
 
 msgid "up"
-msgstr "горе"
+msgstr ""
 
 msgid "down"
-msgstr "долу"
+msgstr ""
 
 msgid "clear"
-msgstr "исчисти"
+msgstr ""
 
 # log levels
 msgid "none"
-msgstr "ништо"
+msgstr ""
 
 msgid "error"
-msgstr "грешка"
+msgstr ""
 
 msgid "info"
-msgstr "информација"
+msgstr ""
 
 msgid "debug"
 msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr "Ctrl-C"
+msgstr ""
 
 msgid "Ctrl-V"
-msgstr "Ctrl-V"
+msgstr ""
 
 # the backend service names
 msgid "bitly.com service"
@@ -157,19 +156,19 @@ msgstr ""
 
 # short and general terms
 msgid "Access"
-msgstr "Пристап"
+msgstr ""
 
 msgid "Add a new shorty"
 msgstr ""
 
 msgid "Add as new"
-msgstr "Додади како нов"
+msgstr ""
 
 msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
 msgid "Administration"
-msgstr "Администрација"
+msgstr ""
 
 msgid "Administrative, system wide settings of this app:"
 msgstr ""
@@ -196,7 +195,7 @@ msgid "Default backend suggested inside users preferences"
 msgstr ""
 
 msgid "Backend"
-msgstr "Админ"
+msgstr ""
 
 msgid "Base url"
 msgstr ""
@@ -223,16 +222,16 @@ msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
 msgid "Close"
-msgstr "Затвори"
+msgstr ""
 
 msgid "Configuration"
-msgstr "Конфигурација"
+msgstr ""
 
 msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr "Копирај во clipboard"
+msgstr ""
 
 msgid "Counted entries and clicks"
 msgstr ""
@@ -253,19 +252,19 @@ msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr "Пример"
+msgstr ""
 
 msgid "Exception"
-msgstr "Исклучок"
+msgstr ""
 
 msgid "Exception (%s)"
-msgstr "Исклучок (%s)"
+msgstr ""
 
 msgid "Expiration"
-msgstr "Истекување"
+msgstr ""
 
 msgid "Feedback"
-msgstr "Повратен одговор"
+msgstr ""
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
@@ -274,7 +273,7 @@ msgid "Loading"
 msgstr ""
 
 msgid "Mail client"
-msgstr "Клиент за електронска пошта"
+msgstr ""
 
 msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
@@ -289,10 +288,10 @@ msgid "New Shorty"
 msgstr ""
 
 msgid "Notes"
-msgstr "Белешки"
+msgstr ""
 
 msgid "Nothing here yet"
-msgstr "Тука сеуште нема ништо"
+msgstr ""
 
 msgid "Number of entries"
 msgstr ""
@@ -301,7 +300,7 @@ msgid "Number of entries: %s"
 msgstr ""
 
 msgid "QRCode"
-msgstr "QRCode"
+msgstr ""
 
 msgid "Open source url"
 msgstr ""
@@ -355,7 +354,7 @@ msgid "Reload list"
 msgstr ""
 
 msgid "Save"
-msgstr "Сними"
+msgstr ""
 
 msgid "Send by email"
 msgstr ""
@@ -385,7 +384,7 @@ msgid "Setting '%s' saved"
 msgstr ""
 
 msgid "Settings"
-msgstr "Подесувања"
+msgstr ""
 
 msgid "Share and use"
 msgstr ""
@@ -406,22 +405,22 @@ msgid "Show as QRCode"
 msgstr ""
 
 msgid "Show details"
-msgstr "Прикажи ги деталите"
+msgstr ""
 
 msgid "Show usage"
-msgstr "Прикажи користење"
+msgstr ""
 
 msgid "SMS"
-msgstr "SMS"
+msgstr ""
 
 msgid "SMS composer"
-msgstr "Напиши SMS"
+msgstr ""
 
 msgid "Sort ascending"
-msgstr "Сортирај по растечки редослед"
+msgstr ""
 
 msgid "Sort descending"
-msgstr "Сортирај по опаѓачки редослед"
+msgstr ""
 
 msgid "Clear filter"
 msgstr ""
@@ -436,13 +435,13 @@ msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr "Статус"
+msgstr ""
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr "Цел"
+msgstr ""
 
 msgid "Target url"
 msgstr ""
@@ -487,13 +486,13 @@ msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
 msgid "Title"
-msgstr "Наслов"
+msgstr ""
 
 msgid "Toggle toolbar"
 msgstr ""
 
 msgid "Total of clicks"
-msgstr "Вкупно кликови"
+msgstr ""
 
 msgid "Typically this only works on devices like smart phones"
 msgstr ""
@@ -532,13 +531,13 @@ msgstr ""
 
 # technical backend details
 msgid "API access key"
-msgstr "API access key"
+msgstr ""
 
 msgid "Account"
-msgstr "Сметка"
+msgstr ""
 
 msgid "API key"
-msgstr "API key"
+msgstr ""
 
 msgid "bit.ly user"
 msgstr ""
@@ -553,10 +552,10 @@ msgid "bit.ly users key"
 msgstr ""
 
 msgid "Google API key"
-msgstr "Google API key"
+msgstr ""
 
 msgid "Google API account"
-msgstr "Google API account"
+msgstr ""
 
 msgid "tiny.cc user"
 msgstr ""
