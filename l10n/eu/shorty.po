@@ -26,15 +26,15 @@
 # Translators:
 # asaez <asaez@asaez.eu>, 2013
 # asieriko <asieriko@gmail.com>, 2013
-# electro, 2013
+# Debatik mundura!, 2013
 # Piarres Beobide <pi@beobide.net>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-10-29 08:20+0000\n"
-"Last-Translator: electro\n"
+"PO-Revision-Date: 2013-11-09 07:01+0000\n"
+"Last-Translator: Debatik mundura!\n"
 "Language-Team: Basque (http://www.transifex.com/projects/p/owncloud/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
