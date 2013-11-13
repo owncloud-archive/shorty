@@ -6,7 +6,7 @@
 "blocked" => "blokované",
 "load" => "načítať",
 "Address" => "Adresa",
-"Click details" => "Podrobnosti kliknutí",
+"Click details" => "Podrobnosti klikania",
 "Clicks" => "Kliky",
 "Host" => "Hostiteľ",
 "List clicks" => "Zoznam klikov",
