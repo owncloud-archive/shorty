@@ -9,6 +9,7 @@
 "Clicks" => "Kattintások",
 "Close" => "Bezárás",
 "Configuration" => "Beállítások",
+"Feedback" => "Visszajelzés",
 "Notes" => "Jegyzetek",
 "Nothing here yet" => "Még semmi nincs itt",
 "Save" => "Mentés",
