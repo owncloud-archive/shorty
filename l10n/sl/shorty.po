@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-11-21 13:20+0000\n"
+"PO-Revision-Date: 2013-11-27 18:30+0000\n"
 "Last-Translator: mateju <>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/owncloud/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr "Vtičniki"
+msgstr "Vstavki"
 
 # status names
 msgid "all"
@@ -109,7 +109,7 @@ msgid "error"
 msgstr "napaka"
 
 msgid "info"
-msgstr "informacije"
+msgstr "podrobnosti"
 
 msgid "debug"
 msgstr "razhroščevanje"
@@ -203,7 +203,7 @@ msgid "Base url"
 msgstr "Osnovni naslov URL"
 
 msgid "Choose a service…"
-msgstr "Izberite storitev..."
+msgstr "Izbor storitve ..."
 
 msgid "Click for embedding details"
 msgstr "Kliknite za vstavljanje podrobnosti"
@@ -281,7 +281,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Spremembe skrajšanega naslova z ID '%s' so shranjene"
 
 msgid "Modify attributes"
-msgstr "Spremeni nastavitve"
+msgstr "Spremeni atribute"
 
 msgid "Modify shorty"
 msgstr "Spremeni skrajšan naslov"
@@ -326,10 +326,10 @@ msgid "Paste to embed elsewhere"
 msgstr "Kopiraj in prilepi drugam"
 
 msgid "Preference retrieved"
-msgstr "Nastavitve so bile sprejete"
+msgstr "Možnost je pridobljena"
 
 msgid "Preference saved"
-msgstr "Nastavitve so bile shranjene"
+msgstr "Možnost je shranjena"
 
 msgid "Preference '%s' retrieved"
 msgstr "Lastnost '%s' je pridobljena"
@@ -338,7 +338,7 @@ msgid "Preference '%s' saved"
 msgstr "Lastnost '%s' je shranjena"
 
 msgid "Preferences"
-msgstr "Prednostne nastavitve"
+msgstr "Možnosti"
 
 msgid "Prepare to send as SMS"
 msgstr "Pripravi za pošiljanje kot SMS"
@@ -374,10 +374,10 @@ msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
 
 msgid "Setting retrieved"
-msgstr "Nastavitev je bila sprejeta"
+msgstr "Nastavitev je pridobljena"
 
 msgid "Setting saved"
-msgstr "Nastavitve so bile shranjene"
+msgstr "Nastavitve je shranjena"
 
 msgid "Setting '%s' retrieved"
 msgstr ""
@@ -410,7 +410,7 @@ msgid "Show details"
 msgstr "Pokaži podrobnosti"
 
 msgid "Show usage"
-msgstr "Prikaži porabo"
+msgstr "Prikaži zasedenost"
 
 msgid "SMS"
 msgstr "SMS"
@@ -434,7 +434,7 @@ msgid "Specify a static base url…"
 msgstr "Določite statični osnovni naslov URL ..."
 
 msgid "Static backend: base url verification"
-msgstr "Statičen zaledni del sistema: preverjanje internetnega naslova"
+msgstr "Statični zaledni sistem: preverjanje osnovnega naslova URL"
 
 msgid "Status"
 msgstr "Stanje"
@@ -673,7 +673,7 @@ msgid "This means you require a 'Google API console account'."
 msgstr ""
 
 msgid "Register a new '%%s' at their pages."
-msgstr "Registriraj nov '%%s' na njihovi spletni strani"
+msgstr "Vpiši nov '%%s' na njihovi spletni strani"
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
 msgstr ""

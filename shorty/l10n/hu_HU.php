@@ -10,6 +10,7 @@
 "Close" => "Bezárás",
 "Configuration" => "Beállítások",
 "Feedback" => "Visszajelzés",
+"Loading" => "Betöltés",
 "Notes" => "Jegyzetek",
 "Nothing here yet" => "Még semmi nincs itt",
 "Save" => "Mentés",
