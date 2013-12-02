@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-11-21 13:20+0000\n"
+"PO-Revision-Date: 2013-11-30 01:50+0000\n"
 "Last-Translator: volkangezer <volkangezer@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Eklentiler"
 
 # status names
 msgid "all"
-msgstr "Tümü"
+msgstr "tümü"
 
 msgid "blocked"
 msgstr "engellendi"
@@ -104,7 +104,7 @@ msgstr "temizle"
 
 # log levels
 msgid "none"
-msgstr "Hiçbiri"
+msgstr "hiçbiri"
 
 msgid "error"
 msgstr "hata"
@@ -152,7 +152,7 @@ msgid "for own usage"
 msgstr "kendi kullanımı için"
 
 msgid "with ownCloud users"
-msgstr "OwnCloud kullanıcıları ile"
+msgstr "ownCloud kullanıcıları ile"
 
 msgid "available for everyone"
 msgstr "herkesin erişimine açık"
@@ -231,7 +231,7 @@ msgid "Configuration"
 msgstr "Yapılandırma"
 
 msgid "The amount of feedback messages shown."
-msgstr "Gösterilen geribildirim mesajları miktarı."
+msgstr "Gösterilen geribildirim mesaj miktarı."
 
 msgid "Copy to clipboard"
 msgstr "Panoya kopyala"
@@ -336,7 +336,7 @@ msgid "Preference '%s' retrieved"
 msgstr "'%s' tercihi getirildi"
 
 msgid "Preference '%s' saved"
-msgstr "'%s' tercihi kaydedildi."
+msgstr "'%s' tercihi kaydedildi"
 
 msgid "Preferences"
 msgstr "Tercihler"
@@ -584,7 +584,7 @@ msgid ""
 msgstr "Harici 'bitly.com' servisi, her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır."
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr "Bunun anlamı '%s' i kendi öncelikle sitesinden kaydetmeniz gerekiyor."
+msgstr "Bunun anlamı ilk olarak kendi sitelerinde bir '%s' için kaydolmanız gerektiğidir."
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "

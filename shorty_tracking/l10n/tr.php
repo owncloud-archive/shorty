@@ -6,7 +6,7 @@
 "blocked" => "engellendi",
 "load" => "yükle",
 "Address" => "Adres",
-"Click details" => "Tıklama detayları",
+"Click details" => "Tıklama ayrıntıları",
 "Clicks" => "Tıklamalar",
 "Host" => "Sunucu",
 "List clicks" => "Tıklamaları listele",
