@@ -24,20 +24,19 @@
 # @author Christian Reiner
 # 
 # Translators:
-# ebela <bela@dandre.hu>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-12-08 22:40+0000\n"
-"Last-Translator: ebela <bela@dandre.hu>\n"
-"Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/owncloud/language/hu_HU/)\n"
+"PO-Revision-Date: 2013-12-09 11:10+0000\n"
+"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"Language-Team: Azerbaijani (http://www.transifex.com/projects/p/owncloud/language/az/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu_HU\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: az\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 # plugin description
 msgid "Plugins"
@@ -45,131 +44,131 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr "Összes"
+msgstr ""
 
 msgid "blocked"
-msgstr "blokkolt"
+msgstr ""
 
 msgid "deleted"
-msgstr "törölve"
+msgstr ""
 
 msgid "disabled"
-msgstr "Kikapcsolva"
+msgstr ""
 
 msgid "enabled"
-msgstr "Bekapcsolva"
+msgstr ""
 
 msgid "never"
-msgstr "soha"
+msgstr ""
 
 msgid "private"
-msgstr "Privát"
+msgstr ""
 
 msgid "public"
-msgstr "Nyilvános"
+msgstr ""
 
 msgid "shared"
-msgstr "Megosztott"
+msgstr ""
 
 # actions ("to be done")
 msgid "delete"
-msgstr "töröl"
+msgstr ""
 
 msgid "edit"
-msgstr "Szerkesztés"
+msgstr ""
 
 msgid "open"
-msgstr "Megnyitás"
+msgstr ""
 
 msgid "share"
-msgstr "megoszt"
+msgstr ""
 
 msgid "show"
-msgstr "lássam"
+msgstr ""
 
 # toolbar icons
 msgid "reload"
-msgstr "újratöltés"
+msgstr ""
 
 msgid "up"
-msgstr "fel"
+msgstr ""
 
 msgid "down"
-msgstr "le"
+msgstr ""
 
 msgid "clear"
-msgstr "törlés"
+msgstr ""
 
 # log levels
 msgid "none"
-msgstr "nincs"
+msgstr ""
 
 msgid "error"
-msgstr "hiba"
+msgstr ""
 
 msgid "info"
-msgstr "info"
+msgstr ""
 
 msgid "debug"
-msgstr "debug"
+msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr "Ctrl-C"
+msgstr ""
 
 msgid "Ctrl-V"
-msgstr "Ctrl-V"
+msgstr ""
 
 # the backend service names
 msgid "bitly.com service"
-msgstr "bitly.com service"
+msgstr ""
 
 msgid "cli.gs service"
-msgstr "cli.gs service"
+msgstr ""
 
 msgid "goo.gl service"
-msgstr "goo.gl service"
+msgstr ""
 
 msgid "is.gd service"
-msgstr "is.gd service"
+msgstr ""
 
 msgid "ti.ny service"
-msgstr "ti.ny service"
+msgstr ""
 
 msgid "tiny.cc service"
-msgstr "tiny.cc service"
+msgstr ""
 
 msgid "static backend"
-msgstr "statikus backend"
+msgstr ""
 
 # status explanations
 msgid "for any access"
-msgstr "bármilyen hozzáféréshez"
+msgstr ""
 
 msgid "for own usage"
-msgstr "saját használatra"
+msgstr ""
 
 msgid "with ownCloud users"
-msgstr "az ownCloud felhasználokkal"
+msgstr ""
 
 msgid "available for everyone"
-msgstr "mindenkinek elérhető"
+msgstr ""
 
 # short and general terms
 msgid "Access"
-msgstr "Hozzáférés"
+msgstr ""
 
 msgid "Add a new shorty"
-msgstr "Új Shortly hozzáadása"
+msgstr ""
 
 msgid "Add as new"
-msgstr "Újként add hozzá"
+msgstr ""
 
 msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
 msgid "Administration"
-msgstr "Adminisztrálás"
+msgstr ""
 
 msgid "Administrative, system wide settings of this app:"
 msgstr ""
@@ -187,7 +186,7 @@ msgid "Alternatively the link can be copied manually"
 msgstr ""
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr "Alternetivaként a link-et bemásolhatod az üzenetbe manuálisan"
+msgstr ""
 
 msgid "Anything that appears helpful …"
 msgstr ""
@@ -196,55 +195,55 @@ msgid "Default backend suggested inside users preferences"
 msgstr ""
 
 msgid "Backend"
-msgstr "Külső tárolórendszer"
+msgstr ""
 
 msgid "Base url"
-msgstr "Alap url"
+msgstr ""
 
 msgid "Choose a service…"
-msgstr "Válassz szolgáltatást..."
+msgstr ""
 
 msgid "Click for embedding details"
-msgstr "Kattints a beágyazás részleteiért"
+msgstr ""
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
 
 msgid "Click registered"
-msgstr "Regisztráltak ide kattintsanak"
+msgstr ""
 
 msgid "Clicks"
-msgstr "Kattintások"
+msgstr ""
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr "Klikkelj az 'Ok'-ra, hogy elinditsd az email szerkesződet"
+msgstr ""
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
 msgid "Close"
-msgstr "Bezárás"
+msgstr ""
 
 msgid "Configuration"
-msgstr "Beállítások"
+msgstr ""
 
 msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr "Másold a vágólapra"
+msgstr ""
 
 msgid "Counted entries and clicks"
-msgstr "Megszámolt bejegyzések és kattintások"
+msgstr ""
 
 msgid "Create a new 'Shorty' and share it"
-msgstr "Új 'Shortly' létrhozása és megosztása"
+msgstr ""
 
 msgid "Creation"
-msgstr "Létrehozva"
+msgstr ""
 
 msgid "Delete shorty"
-msgstr "Shortly törlése"
+msgstr ""
 
 msgid "Drag this to your browser bookmarks."
 msgstr ""
@@ -253,64 +252,64 @@ msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr "Például"
+msgstr ""
 
 msgid "Exception"
-msgstr "Kivétel"
+msgstr ""
 
 msgid "Exception (%s)"
-msgstr "Kivétel (%s)"
+msgstr ""
 
 msgid "Expiration"
-msgstr "Lejárat"
+msgstr ""
 
 msgid "Feedback"
-msgstr "Visszajelzés"
+msgstr ""
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
 msgid "Loading"
-msgstr "Betöltés"
+msgstr ""
 
 msgid "Mail client"
-msgstr "Levelező kliens"
+msgstr ""
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr "A modosítások a röviditéshez/shorty/ ezzel az id-vel '%s' elmentve"
+msgstr ""
 
 msgid "Modify attributes"
-msgstr "Tulajdonságok módosítása"
+msgstr ""
 
 msgid "Modify shorty"
-msgstr "Shorty módosítása"
+msgstr ""
 
 msgid "New Shorty"
-msgstr "Új Shortly"
+msgstr ""
 
 msgid "Notes"
-msgstr "Jegyzetek"
+msgstr ""
 
 msgid "Nothing here yet"
-msgstr "Még semmi nincs itt"
+msgstr ""
 
 msgid "Number of entries"
-msgstr "Bejegyzések száma."
+msgstr ""
 
 msgid "Number of entries: %s"
-msgstr "Bejegyzések száma: %s"
+msgstr ""
 
 msgid "QRCode"
-msgstr "QRCode"
+msgstr ""
 
 msgid "Open source url"
-msgstr "Forrás url megnyitása"
+msgstr ""
 
 msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr "Cél megnyítása"
+msgstr ""
 
 msgid "Open target url"
 msgstr ""
@@ -322,25 +321,25 @@ msgid "or simpy print or download it for off-line usage"
 msgstr ""
 
 msgid "Paste to embed elsewhere"
-msgstr "Illeszd be, hogy beágyazd máshova"
+msgstr ""
 
 msgid "Preference retrieved"
-msgstr "Preferencia lekérve"
+msgstr ""
 
 msgid "Preference saved"
-msgstr "Preferencia mentve"
+msgstr ""
 
 msgid "Preference '%s' retrieved"
-msgstr "Preferencia '%s' lekérve"
+msgstr ""
 
 msgid "Preference '%s' saved"
-msgstr "Preferencia '%s' mentve"
+msgstr ""
 
 msgid "Preferences"
-msgstr "Preferences"
+msgstr ""
 
 msgid "Prepare to send as SMS"
-msgstr "Felkészülés az SMS küldésére"
+msgstr ""
 
 msgid "Relay service"
 msgstr ""
@@ -349,22 +348,22 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr "Újratöltés"
+msgstr ""
 
 msgid "Reload list"
-msgstr "Lista újratöltés"
+msgstr ""
 
 msgid "Save"
-msgstr "Mentés"
+msgstr ""
 
 msgid "Send by email"
-msgstr "Email-ben küldve"
+msgstr ""
 
 msgid "Send link by email"
-msgstr "Link küldése e-mail-ben"
+msgstr ""
 
 msgid "Send by SMS"
-msgstr "SMS-ben küldve"
+msgstr ""
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
@@ -376,58 +375,58 @@ msgid "Setting retrieved"
 msgstr ""
 
 msgid "Setting saved"
-msgstr "Beállítás mentve"
+msgstr ""
 
 msgid "Setting '%s' retrieved"
-msgstr "Beállítás '%s' lekérve"
+msgstr ""
 
 msgid "Setting '%s' saved"
-msgstr "Beállítás '%s' mentve"
+msgstr ""
 
 msgid "Settings"
-msgstr "Beállítások"
+msgstr ""
 
 msgid "Share and use"
-msgstr "Oszd meg és használd"
+msgstr ""
 
 msgid "Share shorty"
-msgstr "Shortly megosztása"
+msgstr ""
 
 msgid "Shortlet"
-msgstr "Shortlet"
+msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr "Shorty mint QRCode"
+msgstr ""
 
 msgid "Shorty with id '%s' deleted"
-msgstr "Shorty ezzel az id-vel '%s' törölve"
+msgstr ""
 
 msgid "Show as QRCode"
-msgstr "Megjelenítve mint QRCode"
+msgstr ""
 
 msgid "Show details"
-msgstr "Részletek megjelenítése"
+msgstr ""
 
 msgid "Show usage"
-msgstr "Használat megjelenítése"
+msgstr ""
 
 msgid "SMS"
-msgstr "SMS"
+msgstr ""
 
 msgid "SMS composer"
-msgstr "SMS szerkesztő"
+msgstr ""
 
 msgid "Sort ascending"
-msgstr "Növekvő sorrend"
+msgstr ""
 
 msgid "Sort descending"
-msgstr "Csökkenő sorrend"
+msgstr ""
 
 msgid "Clear filter"
-msgstr "szűrő törlés"
+msgstr ""
 
 msgid "Source url"
-msgstr "Forrás url"
+msgstr ""
 
 msgid "Specify a static base url…"
 msgstr ""
@@ -436,19 +435,19 @@ msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr "Állapot"
+msgstr ""
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr "Állapot változás a shorty-hoz ezzel az id-vel '%s' mentve"
+msgstr ""
 
 msgid "Target"
-msgstr "Cél"
+msgstr ""
 
 msgid "Target url"
-msgstr "Cél url"
+msgstr ""
 
 msgid "Target url '%s' is valid"
-msgstr "A cél url '%s' hibás"
+msgstr ""
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
@@ -460,7 +459,7 @@ msgid "The default status as suggested for new Shortys."
 msgstr ""
 
 msgid "The link below can be copied for usage apart"
-msgstr "A linket lentebb tudod másolni, hogy használd külön"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
@@ -469,7 +468,7 @@ msgid "therefore the content must be copied manually"
 msgstr ""
 
 msgid "then paste into message"
-msgstr "aztán beilleszted az üzenetbe"
+msgstr ""
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr ""
@@ -487,19 +486,19 @@ msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
 msgid "Title"
-msgstr "Cím"
+msgstr ""
 
 msgid "Toggle toolbar"
-msgstr "Eszköztár ki/be kapcsolása"
+msgstr ""
 
 msgid "Total of clicks"
-msgstr "Összesítése a kattintásoknak"
+msgstr ""
 
 msgid "Typically this only works on devices like smart phones"
-msgstr "Tipikusan ez csak bizonyos eszközökönű/mint például okost telefon/ müködik"
+msgstr ""
 
 msgid "Unexpected type of exception caught: %s"
-msgstr "Unexpected type of exception caught: %s"
+msgstr ""
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr ""
@@ -508,7 +507,7 @@ msgid "Unknown object of type caught: %s"
 msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr "Url röviditve erre: %s"
+msgstr ""
 
 msgid "Use it in web pages by referencing or embedding"
 msgstr ""
@@ -520,7 +519,7 @@ msgid "Verify by clicking…"
 msgstr ""
 
 msgid "Verification failed"
-msgstr "Az ellenörzés sikertelen"
+msgstr ""
 
 # exception description
 msgid ""
@@ -528,38 +527,38 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s"
+msgstr ""
 
 # technical backend details
 msgid "API access key"
-msgstr "API hozzáférési kulcs"
+msgstr ""
 
 msgid "Account"
-msgstr "Fiók"
+msgstr ""
 
 msgid "API key"
-msgstr "API kulcs"
+msgstr ""
 
 msgid "bit.ly user"
-msgstr "bit.ly felhasználó"
+msgstr ""
 
 msgid "bit.ly user name"
-msgstr "bit.ly felhasználó név"
+msgstr ""
 
 msgid "bit.ly key"
-msgstr "bit.ly kulcs"
+msgstr ""
 
 msgid "bit.ly users key"
-msgstr "bit.ly felhasználó kulcs"
+msgstr ""
 
 msgid "Google API key"
-msgstr "Google API kulcs"
+msgstr ""
 
 msgid "Google API account"
-msgstr "Google API fiók"
+msgstr ""
 
 msgid "tiny.cc user"
-msgstr "tiny.cc felhasználó"
+msgstr ""
 
 msgid "tiny.cc user name"
 msgstr ""
@@ -579,7 +578,7 @@ msgstr ""
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr "A külső 'bitly.com' szolgáltatás van használva az összes url röviditéshez."
+msgstr ""
 
 msgid "This means you have to register an '%s' at their site first."
 msgstr ""
@@ -669,7 +668,7 @@ msgid "You must provide a valid '%%s' to use this service."
 msgstr ""
 
 msgid "This means you require a 'Google API console account'."
-msgstr "Ez azt jelenti, hogy rendelkezned kell 'Google API console account'-tal"
+msgstr ""
 
 msgid "Register a new '%%s' at their pages."
 msgstr ""
@@ -691,7 +690,7 @@ msgid "In short: this might not work for you, therefore you can disable it…"
 msgstr ""
 
 msgid "Great, your setup appears to be working fine!"
-msgstr "Óriási, a telepítésedben úgy néz ki minden jól müködik!"
+msgstr ""
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
@@ -709,7 +708,7 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr "Sajnos úgy tünik, hogy a telepítésed nem működik még megfelelően!"
+msgstr ""
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
