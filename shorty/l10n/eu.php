@@ -26,6 +26,7 @@
 "Example" => "Adibidea",
 "Exception" => "Salbuespena",
 "Exception (%s)" => "Salbuespena (%s)",
+"Feedback" => "Oharrak",
 "Loading" => "Kargatzen",
 "Mail client" => "Posta bezeroa",
 "New Shorty" => "Shorty Berria",
