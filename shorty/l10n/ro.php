@@ -19,5 +19,6 @@
 "Show details" => "Arată detali",
 "Status" => "Stare",
 "Title" => "Titlu",
-"Toggle toolbar" => "Comutați bara de instrumente"
+"Toggle toolbar" => "Comutați bara de instrumente",
+"Account" => "Cont"
 );

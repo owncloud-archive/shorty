@@ -172,5 +172,6 @@
 "Force verification of encryption certificates during communication with the backend" => "Verificació forzada dels certificats d'encriptació durant la comunicació amb elservidor",
 "The external 'bitly.com' service is used to register a short url for each generated shorty." => "El servei extern 'bitly.com' es fa servir per enregistrar una URL curta per cadadrecera enregistrada",
 "This means you have to register an '%s' at their site first." => "Aixó significa que us heu d'enregistrar un '%s' al seu lloc primerament",
-"You must provide a valid '%%s' to use this service." => "Heu de proporcionar un '%%s' vàlid per fer servir aquest servei."
+"You must provide a valid '%%s' to use this service." => "Heu de proporcionar un '%%s' vàlid per fer servir aquest servei.",
+"Great, your setup appears to be working fine!" => "Fantàstic, sembla que la vostra configuració funciona bé!"
 );
