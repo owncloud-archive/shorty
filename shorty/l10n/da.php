@@ -21,6 +21,7 @@
 "Exception" => "Undtagelse",
 "Exception (%s)" => "Undtagelse (%s)",
 "Feedback" => "Feedback",
+"Loading" => "Indlæser",
 "Mail client" => "Mail klient",
 "Modifications for shorty with id '%s' saved" => "Ændringer af shorty med ID '%s' gemt",
 "Notes" => "Noter",
