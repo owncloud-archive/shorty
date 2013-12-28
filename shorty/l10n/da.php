@@ -18,6 +18,7 @@
 "Configuration" => "Opsætning",
 "Copy to clipboard" => "Kopier til udklipsholder",
 "Counted entries and clicks" => "Optalte poster og klik",
+"Example" => "Eksempel",
 "Exception" => "Undtagelse",
 "Exception (%s)" => "Undtagelse (%s)",
 "Feedback" => "Feedback",
