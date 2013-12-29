@@ -24,6 +24,9 @@
 # @author Christian Reiner
 # 
 # Translators:
+# 책읽는달팽 <bjh13579@gmail.com>, 2013
+# Park Shinjo <peremen@gmail.com>, 2013
+# ujuc Gang <potopro@gmail.com>, 2013
 # ujuc Gang <potopro@gmail.com>, 2013
 # ujuc Gang <potopro@gmail.com>, 2013
 # 책읽는달팽 <bjh13579@gmail.com>, 2013
@@ -32,8 +35,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-12-20 06:22+0000\n"
-"Last-Translator: 책읽는달팽 <bjh13579@gmail.com>\n"
+"PO-Revision-Date: 2013-12-28 13:54+0000\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/owncloud/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,28 +53,28 @@ msgid "all"
 msgstr "모두"
 
 msgid "blocked"
-msgstr ""
+msgstr "차단됨"
 
 msgid "deleted"
-msgstr "삭제"
+msgstr "삭제됨"
 
 msgid "disabled"
-msgstr "불가능한"
+msgstr "비활성화됨"
 
 msgid "enabled"
-msgstr "가능한"
+msgstr "활성화됨"
 
 msgid "never"
 msgstr "없음"
 
 msgid "private"
-msgstr ""
+msgstr "개인"
 
 msgid "public"
-msgstr ""
+msgstr "공개"
 
 msgid "shared"
-msgstr ""
+msgstr "공유됨"
 
 # actions ("to be done")
 msgid "delete"
@@ -91,26 +94,26 @@ msgstr "보이기"
 
 # toolbar icons
 msgid "reload"
-msgstr "다시 부르기"
+msgstr "새로 고침"
 
 msgid "up"
-msgstr "올리다"
+msgstr "위로"
 
 msgid "down"
-msgstr "내리다"
+msgstr "아래로"
 
 msgid "clear"
-msgstr ""
+msgstr "지우기"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "없음"
 
 msgid "error"
 msgstr "오류"
 
 msgid "info"
-msgstr ""
+msgstr "정보"
 
 msgid "debug"
 msgstr "디버그"
@@ -142,60 +145,60 @@ msgid "tiny.cc service"
 msgstr "tiny.cc 서비스"
 
 msgid "static backend"
-msgstr ""
+msgstr "정적 백엔드"
 
 # status explanations
 msgid "for any access"
-msgstr "누구나 접근가능"
+msgstr "전체 공개됨"
 
 msgid "for own usage"
 msgstr "개인만 사용"
 
 msgid "with ownCloud users"
-msgstr "ownCloud 유저들과"
+msgstr "ownCloud 사용자들과"
 
 msgid "available for everyone"
-msgstr "누구나 사용가능"
+msgstr "전체 공개됨"
 
 # short and general terms
 msgid "Access"
 msgstr "접근"
 
 msgid "Add a new shorty"
-msgstr "새로운 짧은 주소 추가"
+msgstr "새로운 단축 주소 추가"
 
 msgid "Add as new"
-msgstr "새로이 추가"
+msgstr "새 항목으로 추가"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr "ownCloud에서 'Shorty'를 추가 하십시오"
+msgstr "ownCloud에 페이지를 단축 주소로 추가"
 
 msgid "Administration"
 msgstr "관리"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "이 앱의 시스템 전역 설정:"
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "SMS가 실행된 이후"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "그림을 인쇄 및 저장용으로 다운로드할 수 있음"
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "그림의 링크를 추후 사용하기 위해 복사할 수 있음"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "링크를 수동으로 복사할 수 있음"
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "링크를 수동으로 메시지에 복사할 수 있음"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "도움이 되는 모든 것..."
 
 msgid "Default backend suggested inside users preferences"
-msgstr ""
+msgstr "사용자 선호도를 기반으로 제안된 기본 백엔드"
 
 msgid "Backend"
 msgstr "백엔드"
@@ -207,22 +210,22 @@ msgid "Choose a service…"
 msgstr "서비스 선택..."
 
 msgid "Click for embedding details"
-msgstr ""
+msgstr "임베딩 정보를 보려면 누르십시오"
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr "여기를 클릭하십시오. 그러면 당신은 어떤 사이트든 원하는 곳에서 짧은 주소를 생성할 수 있습니다."
+msgstr "여기를 누르면 어디서든 단축 주소를 생성할 수 있습니다."
 
 msgid "Click registered"
-msgstr "클릭 기록"
+msgstr "클릭 등록됨"
 
 msgid "Clicks"
 msgstr "클릭"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "아래 '확인'을 누르면 이메일 작성기를 실행합니다"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "아래 '확인'을 누르면 SMS 작성기를 실행합니다"
 
 msgid "Close"
 msgstr "닫기"
@@ -231,37 +234,37 @@ msgid "Configuration"
 msgstr "설정"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "보이는 피드백 메시지 개수입니다."
 
 msgid "Copy to clipboard"
 msgstr "클립보드로 복사"
 
 msgid "Counted entries and clicks"
-msgstr "독자와 클릭 수 계산"
+msgstr "계산된 접근 및 클릭 수"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "새 단축 주소를 만들고 공유하기"
 
 msgid "Creation"
 msgstr "생성"
 
 msgid "Delete shorty"
-msgstr "짧은 주소 삭제"
+msgstr "단축 주소 삭제"
 
 msgid "Drag this to your browser bookmarks."
-msgstr "당신의 브라우져 북마크로 이것을 드래그 하십시오."
+msgstr "웹 브라우저 책갈피로 드래그하십시오."
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr ""
+msgstr "이 URL을 사용하여 다른 웹 페이지에 QR 코드로 삽입"
 
 msgid "Example"
 msgstr "예제"
 
 msgid "Exception"
-msgstr "제외"
+msgstr "예외"
 
 msgid "Exception (%s)"
-msgstr "제외 (%s)"
+msgstr "예외 (%s)"
 
 msgid "Expiration"
 msgstr "만료"
@@ -270,25 +273,25 @@ msgid "Feedback"
 msgstr "피드백"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "관리 메뉴에서 한 번의 클릭으로 활성화할 수 있습니다."
 
 msgid "Loading"
-msgstr "로딩~"
+msgstr "불러오는 중"
 
 msgid "Mail client"
 msgstr "메일 클라이언트"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr "짧은 주소 id '%s'를 변경후 저장"
+msgstr "ID가 '%s'인 단축 주소의 변경 사항이 저장됨"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "속성 수정"
 
 msgid "Modify shorty"
-msgstr "수정 짧은 주소"
+msgstr "단축 주소 수정"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "새 단축 주소"
 
 msgid "Notes"
 msgstr "메모"
@@ -297,94 +300,94 @@ msgid "Nothing here yet"
 msgstr "아무것도 없습니다"
 
 msgid "Number of entries"
-msgstr "읽은사람 수"
+msgstr "접근 횟수"
 
 msgid "Number of entries: %s"
-msgstr "독자 수 : %s"
+msgstr "접근 횟수: %s"
 
 msgid "QRCode"
-msgstr "QRCode"
+msgstr "QR 코드"
 
 msgid "Open source url"
 msgstr "원본 URL 열기"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "중계 URL 열기"
 
 msgid "Open target"
-msgstr "타겟 열기"
+msgstr "대상 열기"
 
 msgid "Open target url"
-msgstr "타겟 URL 열기"
+msgstr "대상 URL 열기"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "정적 백엔드의 추가 설정"
 
 msgid "or simpy print or download it for off-line usage"
-msgstr ""
+msgstr "또는 오프라인 사용을 위해서 인쇄 및 다운로드"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "다른 곳에 임베드하기 위해서 붙여넣기"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "환경 설정 가져옴"
 
 msgid "Preference saved"
-msgstr "선호도 저장됨"
+msgstr "환경 설정 저장됨"
 
 msgid "Preference '%s' retrieved"
-msgstr "선택한 '%s' 회수"
+msgstr "환경 설정 '%s' 가져옴"
 
 msgid "Preference '%s' saved"
-msgstr "선택한 '%s' 저장"
+msgstr "환경 설정 '%s' 저장됨"
 
 msgid "Preferences"
-msgstr "선호도"
+msgstr "환경 설정"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "SMS로 보낼 준비"
 
 msgid "Relay service"
-msgstr ""
+msgstr "중계 서비스"
 
 msgid "Relay url"
-msgstr ""
+msgstr "중계 URL"
 
 msgid "Reload"
-msgstr "다시 불러오기"
+msgstr "새로 고침"
 
 msgid "Reload list"
-msgstr "리스트 다시 부르기"
+msgstr "목록 새로 고침"
 
 msgid "Save"
 msgstr "저장"
 
 msgid "Send by email"
-msgstr "이메일 전송"
+msgstr "이메일로 보내기"
 
 msgid "Send link by email"
-msgstr "이메일로 링크 전송"
+msgstr "이메일로 링크 보내기"
 
 msgid "Send by SMS"
-msgstr "SMS 전송"
+msgstr "SMS로 보내기"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "왼쪽 아래에 있는 휠을 사용하여 (%%s) 개인 설정을 할 수 있습니다!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "오른쪽 위에 있는 휠을 사용하여 (%%s) 개인 설정을 할 수 있습니다!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "설정 가져옴"
 
 msgid "Setting saved"
 msgstr "설정 저장됨"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "설정 '%s' 가져옴"
 
 msgid "Setting '%s' saved"
-msgstr "설정한 '%s' 저장"
+msgstr "설정 '%s' 저장됨"
 
 msgid "Settings"
 msgstr "설정"
@@ -393,25 +396,25 @@ msgid "Share and use"
 msgstr "공유하고 사용하기"
 
 msgid "Share shorty"
-msgstr "짧은 주소 공유"
+msgstr "단축 주소 공유"
 
 msgid "Shortlet"
-msgstr ""
+msgstr "단축 주소 만들기"
 
 msgid "Shorty as QRCode"
 msgstr "QR 코드로 줄이기"
 
 msgid "Shorty with id '%s' deleted"
-msgstr "짧은 주소 id '%s'를 삭제"
+msgstr "ID가 '%s'인 단축 주소 삭제됨"
 
 msgid "Show as QRCode"
-msgstr "QRCode 보여주기"
+msgstr "QR 코드로 보기"
 
 msgid "Show details"
-msgstr "세부사항 보여주기"
+msgstr "자세한 정보 보기"
 
 msgid "Show usage"
-msgstr ""
+msgstr "사용량 보기"
 
 msgid "SMS"
 msgstr "SMS"
@@ -420,109 +423,109 @@ msgid "SMS composer"
 msgstr "SMS 작성기"
 
 msgid "Sort ascending"
-msgstr "오름 차순 정렬"
+msgstr "오름차순 정렬"
 
 msgid "Sort descending"
-msgstr "내림 차순 정렬"
+msgstr "내림차순 정렬"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "필터 지우기"
 
 msgid "Source url"
-msgstr "제공 url"
+msgstr "원본 URL"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "정적 기본 URL 지정..."
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "정적 백엔드: 기본 URL 검사"
 
 msgid "Status"
-msgstr ""
+msgstr "상태"
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "ID가 '%s'인 단축 주소의 상태가 변경됨"
 
 msgid "Target"
-msgstr "타겟"
+msgstr "대상"
 
 msgid "Target url"
-msgstr "타겟 URL"
+msgstr "대상 URL"
 
 msgid "Target url '%s' is valid"
-msgstr "타겟 URL '%s'가 유효합니다."
+msgstr "대상 URL '%s'이(가) 유효합니다"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "대상 이미지는 문서 작성이나 웹 사이트 작성에 사용할 수 있습니다 "
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "단축 URL을 생성하는 백엔드 서비스입니다."
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "새 단축 주소에 사용할 기본 상태입니다."
 
 msgid "The link below can be copied for usage apart"
-msgstr ""
+msgstr "아래 링크를 복사할 수 있습니다"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "추가 플러그인 '%%s'에서는 단축 주소의 상태를 추적할 수 있습니다!"
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "내용을 직접 복사해야 합니다"
 
 msgid "then paste into message"
-msgstr ""
+msgstr "그 다음 메시지로 붙여 넣으십시오"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr ""
+msgstr "단축 주소를 가리키는 2차원 바코드입니다"
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr ""
+msgstr "단축 URL이 가리키는 내부 URL입니다"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "백엔드에 등록된 단축 URL입니다"
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr ""
+msgstr "이 단축 주소를 생성할 때 지정한 대상 URL입니다"
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr ""
+msgstr "이전에 나타낸 QR 코드가 참조하는 URL입니다"
 
 msgid "Title"
 msgstr "제목"
 
 msgid "Toggle toolbar"
-msgstr "토글 툴바"
+msgstr "도구 모음 보이기/숨기기"
 
 msgid "Total of clicks"
-msgstr "클릭수 합계"
+msgstr "총 클릭 수"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "대개 스마트폰과 같은 장치에서만 동작합니다"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "알 수 없는 예외 발생: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "이 방식의 구현은 제한되어 있습니다"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "알 수 없는 객체 종류: %s"
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "URL 단축됨: %s"
 
 msgid "Use it in web pages by referencing or embedding"
-msgstr ""
+msgstr "웹 페이지에서 참조나 임베딩으로 사용 가능합니다"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "위에 있는 '%s' 단추나 단축 주소 생성기를 사용하십시오"
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "클릭하여 검사 중..."
 
 msgid "Verification failed"
-msgstr "인증 실패함"
+msgstr "검사 실패"
 
 # exception description
 msgid ""
@@ -540,7 +543,7 @@ msgid "Account"
 msgstr "계정"
 
 msgid "API key"
-msgstr " API 키"
+msgstr "API 키"
 
 msgid "bit.ly user"
 msgstr "bit.ly 사용자"
@@ -570,155 +573,155 @@ msgid "tiny.cc key"
 msgstr "tiny.cc 키"
 
 msgid "tiny.cc user key"
-msgstr "tiny.cc  사용자 키"
+msgstr "tiny.cc 사용자 키"
 
 # longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "백엔드와 통신하는 중 암호화 인증서를 강제로 검사합니다"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "단축 주소를 생성할 때 'bitly.com' 서비스를 사용합니다."
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "해당 사이트에서 '%s'을(를) 등록해야 합니다."
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "단축 주소를 생성할 때 'turl' 서비스를 사용합니다."
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "단축 주소를 생성할 때 'ti.ny' 서비스를 사용합니다."
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "단축 주소를 생성할 때 'cli.gs' 서비스를 사용합니다."
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "단축 주소를 생성할 때 'is.gd' 서비스를 사용합니다."
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "단축 주소를 생성할 때 'tiny.cc' 서비스를 사용합니다."
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "백엔드를 사용하지 않고 ownCloud를 직접 가리키는 주소를 생성합니다."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "올바른 bit.ly 사용자 이름 및 '%s'(으)로 인증해야 합니다."
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "백엔드를 사용할 때에 비해서 더 오랫동안 링크를 사용할 수 있습니다."
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "이 옵션은 제 3자 서비스를 사용하지 않고 직접 단축 주소를 생성합니다."
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "이 설정은 서버 설정에 의존하므로 기본 URL은 설정의 '관리' 부분에서 변경해야 합니다."
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "정적, 규칙 기반 백엔드, 주어진 기본 URL에 대한 단축 주소를 생성합니다."
 
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr ""
+msgstr "여기에서 설정한 URL은 내부적으로 'shorty' 모듈로 매핑됩니다."
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "매핑 대상은 다음과 같은 URL이어야 합니다:"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "설정 상태를 확인하려면 예제 링크로 시도해 보십시오."
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "설정한 방식으로 매핑된 짧은 기본 URL을 생성할 수 없으면 비워 두십시오."
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "설정한 방식으로 매핑된 짧은 기본 URL을 생성할 수 있으면 이 백엔드를 사용하십시오. 그렇지 않으면 단축 주소가 작동하지 않습니다."
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "단축 주소를 생성할 때 'goo.gl' 서비스를 사용합니다."
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "이 서비스를 사용하려면 올바른 '%%s'을(를) 입력해야 합니다."
 
 msgid "This means you require a 'Google API console account'."
-msgstr ""
+msgstr "구글 API 콘솔 계정이 필요합니다."
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "웹 페이지에서 '%%s'을(를) 등록하십시오."
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr ""
+msgstr "SMS 옵션을 사용하면 단축 주소를 SMS로 전송할 수 있습니다."
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr ""
+msgstr "'SMS URL 처리' 옵션은 스마트폰과 같은 모바일 장치에서만 사용 가능합니다."
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr ""
+msgstr "추가적으로, 이러한 구현은 시스템에 따라서 기능이나 버그의 차이가 있을 수도 있습니다."
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "요약: 작동하지 않는 경우 비활성화시킬 수 있습니다..."
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "좋습니다, 설정이 잘 작동하는 것 같습니다!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr ""
+msgstr "설정된 기본 URL에 대한 요청은 ownCloud의 중계 서비스로 매핑됩니다."
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr ""
+msgstr "구성을 바꾸지 않는 한 정적 백엔드는 완벽하게 유지됩니다."
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "이 백엔드는 모든 로컬 사용자의 개인 설정에 추가적인 백엔드로 제공됩니다."
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "죄송합니다, 설정이 잘 작동하지 않는 것 같습니다!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "설정 상태를 확인하고 설정한 기본 URL이 올바른지 확인하십시오."
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
+msgstr "모든 요청이 Shorty의 중계 서비스로 매핑되는지 확인하십시오."

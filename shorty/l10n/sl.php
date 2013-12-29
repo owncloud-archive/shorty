@@ -185,6 +185,7 @@
 "However this option does not rely on any third party service and keeps your shortys under your control." => "Možnost se ne naslanja na zunanje storitve in ohranja skrajšane naslove pod vašim nadzorom.",
 "Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration." => "Ker je nastavitev odvisna od strežniških pravil, je lahko osnovni naslov določen le v skrbniškem delu nastavitev.",
 "Static, rule-based backend, generates shorty links relative to a given base url." => "Statični ozadnji program ustvarja povezave do podanega osnovnega naslova URL na osnovi nastavljenih pravil.",
+"You have to take care that any request to the url configured here is internally mapped to the 'shorty' module." => "Zahteve za dostop do naslova URL morajo biti nastavljene na tem mestu, določena pa mora biti tudi ustrezna preslikavi do skrajšanega naslova.",
 "The target of that mapping must be some URL like:" => "Ciljni naslov preslikave mora biti naslov URL, kot je na primer:",
 "Have a try with the example link provided, click it, it should result in a confirmation that your setup is working." => "Kliknite na preizkusno povezavo. Če sistem deluje, bo po kliku prikazana potrditev.",
 "Leave empty if you can't provide a short base url that is mapped the described way." => "Če ni mogoče navesti kratkega naslova, ki bo preslikan na opisan način, je priporočljivo pustiti polje prazno.",
