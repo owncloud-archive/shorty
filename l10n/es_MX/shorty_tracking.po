@@ -26,10 +26,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
-"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-09-07 07:27+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2014-01-02 01:00+0000\n"
+"Last-Translator: byoship\n"
 "Language-Team: Spanish (Mexico) (http://www.transifex.com/projects/p/owncloud/language/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,52 +39,52 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Seguimiento de Shorty"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Seguimiento detallado de todas las solicitudes a Shortys existentes junto con una visualización integrada del histórico de accesos."
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "concedido"
 
 msgid "denied"
-msgstr ""
+msgstr "denegado"
 
 msgid "blocked"
-msgstr ""
+msgstr "bloqueado"
 
 msgid "load"
-msgstr ""
+msgstr "cargar"
 
 msgid "Address"
-msgstr ""
+msgstr "Dirección"
 
 msgid "Click details"
-msgstr ""
+msgstr "detalles"
 
 msgid "Clicks"
-msgstr ""
+msgstr "Clicks"
 
 msgid "Host"
-msgstr ""
+msgstr "Servidor"
 
 msgid "List clicks"
-msgstr ""
+msgstr "Listar Clicks"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "Lista de clicks grabados"
 
 msgid "Result"
-msgstr ""
+msgstr "Resultado"
 
 msgid "Time"
-msgstr ""
+msgstr "Hora"
 
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 msgid "User"
-msgstr ""
+msgstr "Usuario"
