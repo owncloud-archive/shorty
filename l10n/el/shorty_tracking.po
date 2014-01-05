@@ -25,14 +25,15 @@
 # Translators:
 # Marios Bekatoros <>, 2013
 # Petros Kyladitis <petros.kyladitis@gmail.com>, 2013
+# vkehayas <vkehayas@gmail.com>, 2014
 # KAT.RAT12 <spanish.katerina@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-01-02 18:11+0000\n"
-"Last-Translator: Marios Bekatoros <>\n"
+"PO-Revision-Date: 2014-01-04 12:10+0000\n"
+"Last-Translator: vkehayas <vkehayas@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/owncloud/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,7 +67,7 @@ msgid "Address"
 msgstr "Διεύθυνση"
 
 msgid "Click details"
-msgstr "Κάνετε κλικ στα στοχεία "
+msgstr "Λεπτομέρειες κλικ"
 
 msgid "Clicks"
 msgstr "Κλικς"
@@ -78,7 +79,7 @@ msgid "List clicks"
 msgstr "Λίστα κλικς"
 
 msgid "List of tracked clicks"
-msgstr "Λίστα εγγεγραμμένων κλικ "
+msgstr "Λίστα καταγεγραμμένων κλικς"
 
 msgid "Result"
 msgstr "Αποτέλεσμα"
