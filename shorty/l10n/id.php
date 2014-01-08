@@ -26,6 +26,7 @@
 "Exception" => "Eksepsi",
 "Exception (%s)" => "Eksepsi (%s)",
 "Expiration" => "Kedaluwarsa",
+"Feedback" => "Umpan balik",
 "Loading" => "Memuat",
 "Mail client" => "Mail client",
 "Modifications for shorty with id '%s' saved" => "Modifikasi untuk shorty dengan id '%s' telah disimpan",
