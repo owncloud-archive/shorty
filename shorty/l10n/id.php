@@ -71,6 +71,7 @@
 "Use it in web pages by referencing or embedding" => "Gunakan di halaman web dengan mereferensikannya atau menempelkannya",
 "Verification failed" => "Verifikasi gagal",
 "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s" => "%s\nPesan(kode): %s (%s)\nBerkas(baris): %s (%s)\nInfo: %%s",
+"Account" => "Akun",
 "Great, your setup appears to be working fine!" => "Selamat, konfigurasi anda bekerja dengan baik!",
 "Requests to the configured base url are mapped to this ownClouds relay service." => "Permintaan ke basis url yang telah dikonfigurasi dipetakan ke layanan relay ownCloud ini",
 "Usage of that static backend is fine and safe as long as this setup is not altered." => "Penggunaan backend statis adalah baik dan aman selama konfigurasi ini tidak diubah.",
