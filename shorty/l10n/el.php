@@ -47,6 +47,7 @@
 "Alternatively the link can be copied manually" => "Εναλλακτικά ο σύνδεσμος μπορεί να αντιγραφεί ",
 "Alternatively the link can be copied into a message manually" => "Εναλλακτικά, η σύνδεση μπορεί να αντιγραφεί σε ένα μήνυμα χειρωνακτικά",
 "Anything that appears helpful …" => "Οτιδήποτε φαίνεται χρήσιμο ",
+"Default backend suggested inside users preferences" => "Πρόταση προεπιλεγμένου συστήματος μέσα στις προτιμήσεις χρήστη",
 "Backend" => "Σύστημα υποστήριξης",
 "Base url" => "Επαλήθευση με κλικ.",
 "Choose a service…" => "Επιλογή υπηρεσίας ",
