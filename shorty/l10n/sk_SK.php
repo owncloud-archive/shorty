@@ -145,7 +145,7 @@
 "This is the shortened url registered at the backend" => "Toto je skrátená url registrovaná na 'backende'",
 "This is the target url specified when generating this Shorty" => "Toto je cieľová url špecifikovaná pri generovaní daného 'Shorty'",
 "This is the url referencing the QRCode shown before" => "Toto je URL odkazujúca na QR kód dolu",
-"Title" => "Nadpis",
+"Title" => "Názov",
 "Toggle toolbar" => "Prepnúť na panel nástrojov",
 "Total of clicks" => "Celkom kliknutí",
 "Typically this only works on devices like smart phones" => "Toto väčšinou funguje len na zariadeniach ako je napr. smartphone",
