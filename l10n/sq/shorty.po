@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# ard1t <ardit.dani@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-12-20 06:22+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2014-01-17 14:10+0000\n"
+"Last-Translator: ard1t <ardit.dani@gmail.com>\n"
 "Language-Team: Albanian (http://www.transifex.com/projects/p/owncloud/language/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,80 +45,80 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "t'gjithë"
 
 msgid "blocked"
-msgstr ""
+msgstr "Bllokuar"
 
 msgid "deleted"
 msgstr "fshirë"
 
 msgid "disabled"
-msgstr ""
+msgstr "Çaktivizo"
 
 msgid "enabled"
-msgstr ""
+msgstr "Aktivizo"
 
 msgid "never"
 msgstr "kurrë"
 
 msgid "private"
-msgstr ""
+msgstr "Private"
 
 msgid "public"
-msgstr ""
+msgstr "Publike"
 
 msgid "shared"
-msgstr ""
+msgstr "Ndarë"
 
 # actions ("to be done")
 msgid "delete"
 msgstr "elimino"
 
 msgid "edit"
-msgstr ""
+msgstr "modifiko"
 
 msgid "open"
-msgstr ""
+msgstr "Hap"
 
 msgid "share"
 msgstr "nda"
 
 msgid "show"
-msgstr ""
+msgstr "Shfaq"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "ngarko"
 
 msgid "up"
-msgstr ""
+msgstr "lart"
 
 msgid "down"
-msgstr ""
+msgstr "poshtë"
 
 msgid "clear"
-msgstr ""
+msgstr "pastro"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "asnjë"
 
 msgid "error"
-msgstr ""
+msgstr "Gabim"
 
 msgid "info"
-msgstr ""
+msgstr "info"
 
 msgid "debug"
 msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
@@ -156,13 +157,13 @@ msgstr ""
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "Hyrje"
 
 msgid "Add a new shorty"
 msgstr ""
 
 msgid "Add as new"
-msgstr ""
+msgstr "Shto te ri"
 
 msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
@@ -213,7 +214,7 @@ msgid "Click registered"
 msgstr ""
 
 msgid "Clicks"
-msgstr ""
+msgstr "Klikime"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -222,7 +223,7 @@ msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
 msgid "Close"
-msgstr ""
+msgstr "Mbyll"
 
 msgid "Configuration"
 msgstr ""
@@ -240,7 +241,7 @@ msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
 msgid "Creation"
-msgstr ""
+msgstr "Krijim"
 
 msgid "Delete shorty"
 msgstr ""
@@ -252,16 +253,16 @@ msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr ""
+msgstr "Shëmbull"
 
 msgid "Exception"
-msgstr ""
+msgstr "Përjashtim"
 
 msgid "Exception (%s)"
 msgstr ""
 
 msgid "Expiration"
-msgstr ""
+msgstr "Data e skadimit"
 
 msgid "Feedback"
 msgstr ""
@@ -270,10 +271,10 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "Ngarkim"
 
 msgid "Mail client"
-msgstr ""
+msgstr "Klienti mail-it"
 
 msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
@@ -288,10 +289,10 @@ msgid "New Shorty"
 msgstr ""
 
 msgid "Notes"
-msgstr ""
+msgstr "Shënime"
 
 msgid "Nothing here yet"
-msgstr ""
+msgstr "Asgjë këtu ende"
 
 msgid "Number of entries"
 msgstr ""
@@ -309,7 +310,7 @@ msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "Hap objektivin"
 
 msgid "Open target url"
 msgstr ""
@@ -348,7 +349,7 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr ""
+msgstr "Ngarko"
 
 msgid "Reload list"
 msgstr ""
@@ -405,13 +406,13 @@ msgid "Show as QRCode"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "Shfaq detajet"
 
 msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
 msgstr ""
@@ -426,7 +427,7 @@ msgid "Clear filter"
 msgstr ""
 
 msgid "Source url"
-msgstr ""
+msgstr "Burimi url"
 
 msgid "Specify a static base url…"
 msgstr ""
@@ -441,7 +442,7 @@ msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "Objektiv"
 
 msgid "Target url"
 msgstr ""
