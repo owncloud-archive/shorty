@@ -114,6 +114,7 @@
 "Settings" => "Configuració",
 "Share and use" => "Comparteix i fes servir",
 "Share shorty" => "Compartir drecera",
+"Shortlet" => "Shortlet",
 "Shorty as QRCode" => "Drecera com codi QR",
 "Shorty with id '%s' deleted" => "Drecera amd id '%s' esborrat",
 "Show as QRCode" => "Mostra com a codi QR",
@@ -156,6 +157,7 @@
 "Use the '%s' button above or the fine 'Shortlet'" => "Fagi servir el butó '%s' a continuació o la drecera fina",
 "Verify by clicking…" => "Verifica fent clic...",
 "Verification failed" => "La verificació ha fallat",
+"%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s" => "%s\nMissatge(codi): %s (%s)\nArxiu(línia): %s (%s)\nInfo: %%s",
 "API access key" => "Codi d'access API",
 "Account" => "Compte",
 "API key" => "codi API",
@@ -173,5 +175,7 @@
 "The external 'bitly.com' service is used to register a short url for each generated shorty." => "El servei extern 'bitly.com' es fa servir per enregistrar una URL curta per cadadrecera enregistrada",
 "This means you have to register an '%s' at their site first." => "Aixó significa que us heu d'enregistrar un '%s' al seu lloc primerament",
 "You must provide a valid '%%s' to use this service." => "Heu de proporcionar un '%%s' vàlid per fer servir aquest servei.",
-"Great, your setup appears to be working fine!" => "Fantàstic, sembla que la vostra configuració funciona bé!"
+"Great, your setup appears to be working fine!" => "Fantàstic, sembla que la vostra configuració funciona bé!",
+"Requests to the configured base url are mapped to this ownClouds relay service." => "Les sol·licituds a la url base configurada s'assignen al servei de retransmissió d'ownCloud.",
+"Usage of that static backend is fine and safe as long as this setup is not altered." => "L'ús d'aquest backend estàtic està bé i segur sempre que aquesta configuració no s'alteri."
 );
