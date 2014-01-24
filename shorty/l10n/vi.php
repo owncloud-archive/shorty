@@ -8,6 +8,7 @@
 "Close" => "Đóng",
 "Configuration" => "Cấu hình",
 "Feedback" => "Phản hồi",
+"Loading" => "Đang tải",
 "Notes" => "Ghi chép",
 "Reload" => "Tải ",
 "Save" => "Lưu",
