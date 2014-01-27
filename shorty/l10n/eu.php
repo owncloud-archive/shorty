@@ -37,6 +37,7 @@
 "QRCode" => "QRkodea",
 "Preference '%s' saved" => "'%s' hobespena gordea",
 "Prepare to send as SMS" => "Prestatu SMS gisa bidaltzeko",
+"Reload" => "Birkargatu",
 "Save" => "Gorde",
 "Send by email" => "Email-ez bidali ",
 "Send link by email" => "Bidali lotura posta bidez",
@@ -51,6 +52,7 @@
 "then paste into message" => "gero mezuan itsasi",
 "Title" => "Izenburua",
 "Url shortened to: %s" => "Url-a honetara laburtu da: %s",
+"Account" => "Kontua",
 "Google API account" => "Google API kontua",
 "tiny.cc user" => "tiny.cc erabiltzailea",
 "tiny.cc user name" => "tiny.cc erabiltzaile izena"
