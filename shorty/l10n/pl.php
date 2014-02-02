@@ -41,6 +41,8 @@
 "Backend" => "Zaplecze",
 "Base url" => "Bazowy adres",
 "Choose a service…" => "Wybierz usługę...",
+"Click for embedding details" => "Kliknij po więcej informacji",
+"Click registered" => "Kliknij rejestrację",
 "Clicks" => "Kliknięcia",
 "Close" => "Zamknij",
 "Configuration" => "Konfiguracja",
