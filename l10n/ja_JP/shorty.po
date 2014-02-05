@@ -33,7 +33,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-02-03 17:40+0000\n"
+"PO-Revision-Date: 2014-02-04 16:20+0000\n"
 "Last-Translator: kuromabo <md81bird@hitaki.net>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
@@ -322,7 +322,7 @@ msgid "Optional configuration of a 'Static Backend'"
 msgstr "'静的バックエンド' の追加設定"
 
 msgid "or simpy print or download it for off-line usage"
-msgstr "または、オフラインで利用する為に単に印刷するか、ダウンロード"
+msgstr "または、オフラインで利用するために単に印刷するか、ダウンロード"
 
 msgid "Paste to embed elsewhere"
 msgstr "別の場所へ埋め込むために貼り付け"
@@ -457,7 +457,7 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "ドキュメントを作成したり、Webサイトを構築するときに、その画像を利用します。"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr "短縮URLを生成する為に利用する外部サービス"
+msgstr "短縮URLを生成する際に利用する外部サービス"
 
 msgid "The default status as suggested for new Shortys."
 msgstr "デフォルトの状態を新しい短縮として提案"
@@ -628,7 +628,7 @@ msgstr "そのリンクは、バックエンドを使用して生成されたも
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr "しかし、このオプションはどんなサードパーティのサービスにも接続せず、あなたの短縮URLをあなたの管理下に保てます。"
+msgstr "しかし、このオプションはどんなサードパーティのサービスにも接続せず、短縮URLをあなたの管理下に保てます。"
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
@@ -651,7 +651,7 @@ msgstr "紐付けられるターゲットは、次のようである必要があ
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr "提示されたサンプルリンクをテストしてみてください。クリックするとあなたの設定が動いているかどうか結果が確認できます。"
+msgstr "提示されたサンプルリンクをテストしてみてください。クリックすると設定が動いているかどうか結果が確認できます。"
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
@@ -694,7 +694,7 @@ msgid "In short: this might not work for you, therefore you can disable it…"
 msgstr "要するに: これは正しく動作していない可能性があります。したがって、無効にすることもできます。"
 
 msgid "Great, your setup appears to be working fine!"
-msgstr "いいですね！あなたの設定はちゃんと動いているようです。"
+msgstr "いいですね！設定はちゃんと動いているようです。"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
@@ -712,7 +712,7 @@ msgid ""
 msgstr "このバックエンドは、全てのユーザーに個人設定での追加のバックエンドとして提供されるものです。"
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr "申し訳ありませんが、あなたの設定はまだちゃんと動いていないようです。"
+msgstr "申し訳ありませんが、設定がまだ正常に動いていないようです。"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
