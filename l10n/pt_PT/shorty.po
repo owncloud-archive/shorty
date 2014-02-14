@@ -25,15 +25,15 @@
 # 
 # Translators:
 # Mouxy <daniel@mouxy.net>, 2013
-# Helder Meneses <helder.meneses@gmail.com>, 2013
+# Helder Meneses <helder.meneses@gmail.com>, 2013-2014
 # victorix, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-12-20 06:22+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2014-02-13 13:50+0000\n"
+"Last-Translator: Helder Meneses <helder.meneses@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -152,7 +152,7 @@ msgid "for own usage"
 msgstr ""
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "com utilizadores ownCloud"
 
 msgid "available for everyone"
 msgstr "disponível para todos"
@@ -312,10 +312,10 @@ msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "Abrir destino"
 
 msgid "Open target url"
-msgstr ""
+msgstr "Abrir endereço de destino"
 
 msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
@@ -390,7 +390,7 @@ msgid "Settings"
 msgstr "Configurações"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Partilhar e usar"
 
 msgid "Share shorty"
 msgstr ""
@@ -668,7 +668,7 @@ msgid ""
 msgstr ""
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "Deve providenciar um '%%s' valido para usar este serviço."
 
 msgid "This means you require a 'Google API console account'."
 msgstr "Isto significa que precisa de uma 'Conta de consola API Google'."
