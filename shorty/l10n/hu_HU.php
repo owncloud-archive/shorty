@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"Plugins" => "Kiegészítők",
 "all" => "Összes",
 "blocked" => "blokkolt",
 "deleted" => "törölve",
@@ -46,6 +47,7 @@
 "Click registered" => "Regisztráltak ide kattintsanak",
 "Clicks" => "Kattintások",
 "Clicking 'Ok' below will try to launch an email composer" => "Klikkelj az 'Ok'-ra, hogy elinditsd az email szerkesződet",
+"Clicking 'Ok' below will try to launch an sms composer" => "Az 'OK' gomb megnyomásával az SMS szerkesztő indítható",
 "Close" => "Bezárás",
 "Configuration" => "Beállítások",
 "Copy to clipboard" => "Másold a vágólapra",
@@ -78,6 +80,7 @@
 "Preference '%s' saved" => "Preferencia '%s' mentve",
 "Preferences" => "Preferences",
 "Prepare to send as SMS" => "Felkészülés az SMS küldésére",
+"Relay service" => "Továbbító ügynök",
 "Reload" => "Újratöltés",
 "Reload list" => "Lista újratöltés",
 "Save" => "Mentés",

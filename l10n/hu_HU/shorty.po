@@ -25,13 +25,14 @@
 # 
 # Translators:
 # ebela <bela@dandre.hu>, 2013
+# pty <peti@szladovics.hu>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-12-20 06:22+0000\n"
-"Last-Translator: ebela <bela@dandre.hu>\n"
+"PO-Revision-Date: 2014-02-17 09:20+0000\n"
+"Last-Translator: pty <peti@szladovics.hu>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/owncloud/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +42,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Kiegészítők"
 
 # status names
 msgid "all"
@@ -220,7 +221,7 @@ msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr "Klikkelj az 'Ok'-ra, hogy elinditsd az email szerkesződet"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "Az 'OK' gomb megnyomásával az SMS szerkesztő indítható"
 
 msgid "Close"
 msgstr "Bezárás"
@@ -343,7 +344,7 @@ msgid "Prepare to send as SMS"
 msgstr "Felkészülés az SMS küldésére"
 
 msgid "Relay service"
-msgstr ""
+msgstr "Továbbító ügynök"
 
 msgid "Relay url"
 msgstr ""
