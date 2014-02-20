@@ -24,15 +24,18 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Arif Budiman <arif@kangarif.com>, 2014
 # rodin <romihardiyanto@gmail.com>, 2013
+# rodin <romihardiyanto@gmail.com>, 2013
+# w41l <walecha99@gmail.com>, 2013
 # w41l <walecha99@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-01-10 14:31+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-02-19 16:11+0000\n"
+"Last-Translator: arifpedia <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/owncloud/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +45,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Plugin"
 
 # status names
 msgid "all"
@@ -55,32 +58,32 @@ msgid "deleted"
 msgstr "dihapus"
 
 msgid "disabled"
-msgstr ""
+msgstr "dinonaktifkan"
 
 msgid "enabled"
-msgstr ""
+msgstr "diaktifkan"
 
 msgid "never"
 msgstr "tidak pernah"
 
 msgid "private"
-msgstr ""
+msgstr "pribadi"
 
 msgid "public"
-msgstr ""
+msgstr "publik"
 
 msgid "shared"
-msgstr ""
+msgstr "dibagikan"
 
 # actions ("to be done")
 msgid "delete"
 msgstr "hapus"
 
 msgid "edit"
-msgstr ""
+msgstr "sunting"
 
 msgid "open"
-msgstr ""
+msgstr "buka"
 
 msgid "share"
 msgstr "bagikan"
@@ -90,29 +93,29 @@ msgstr "perlihatkan"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "muat ulang"
 
 msgid "up"
-msgstr ""
+msgstr "naik"
 
 msgid "down"
-msgstr ""
+msgstr "turun"
 
 msgid "clear"
-msgstr ""
+msgstr "bersihkan"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "tidak ada"
 
 msgid "error"
-msgstr ""
+msgstr "kesalahan"
 
 msgid "info"
-msgstr ""
+msgstr "info"
 
 msgid "debug"
-msgstr ""
+msgstr "debug"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -123,57 +126,57 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "layanan bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "layanan cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "layanan goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "layanan is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "layanan ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "layanan tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "backend statis"
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "untuk setiap akses"
 
 msgid "for own usage"
-msgstr ""
+msgstr "untuk penggunaan sendiri"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "dengan pengguna ownCloud"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "tersedia untuk semuanya"
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "Akses"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "Tambah shorty baru"
 
 msgid "Add as new"
-msgstr ""
+msgstr "Tambah sebagai baru"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "Tambah laman sebagai 'Shorty' untuk ownCloud"
 
 msgid "Administration"
-msgstr ""
+msgstr "Administrasi"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "Administrasi, pengaturan sistem menyeluruh dari apl ini:"
 
 msgid "after the SMS has been launched"
 msgstr "setelah penulis SMS diluncurkan"
@@ -182,34 +185,34 @@ msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "Alternatif lainnya gambar ini dapat diunduh untuk dicetak atau disimpan"
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "tautan alternatif dapat disalin untuk penggunaan lebih lanjut"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "Tautan alternatif dapat disalin secara manual."
 
 msgid "Alternatively the link can be copied into a message manually"
 msgstr "Alternatif lainnya tautan dapat disalin ke dalam pesan secara manual"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "Apapun yang muncul akan diperlukan ..."
 
 msgid "Default backend suggested inside users preferences"
-msgstr ""
+msgstr "Standar backend yang disarankan dalam preferensi pengguna"
 
 msgid "Backend"
 msgstr "Backend"
 
 msgid "Base url"
-msgstr ""
+msgstr "Url dasar"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Pilih layanan..."
 
 msgid "Click for embedding details"
 msgstr "Klik untuk detil penempelan"
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr ""
+msgstr "Klik situs mana yang anda inginkan untuk membuat Shorty."
 
 msgid "Click registered"
 msgstr "Daftarkan klik"
@@ -230,7 +233,7 @@ msgid "Configuration"
 msgstr "Konfigurasi"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "Jumlah pesan umpan balik yang ditampilkan"
 
 msgid "Copy to clipboard"
 msgstr "Salin ke klipbor"
@@ -239,16 +242,16 @@ msgid "Counted entries and clicks"
 msgstr "Hitung masukan dan klik"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "Buat 'Shorty' baru dan bagikan"
 
 msgid "Creation"
-msgstr ""
+msgstr "Pembuatan"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Hapus shorty"
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "Seret ini ke pananda peramban anda."
 
 msgid "Embed the QRCode as an image into some web page using this url"
 msgstr "Tempelkan QRCode sebagai gambar ke dalam halaman web menggunakan url ini"
@@ -269,7 +272,7 @@ msgid "Feedback"
 msgstr "Umpan balik"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "Ini dapat diaktifkan dengan sekali klik pada administrasi:"
 
 msgid "Loading"
 msgstr "Memuat"
@@ -281,10 +284,10 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Modifikasi untuk shorty dengan id '%s' telah disimpan"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Ubah atribut"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Ubah shorty"
 
 msgid "New Shorty"
 msgstr "Shorty Baru"
@@ -305,19 +308,19 @@ msgid "QRCode"
 msgstr "QRCode"
 
 msgid "Open source url"
-msgstr ""
+msgstr "Buka url sumber"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "Buka url relai"
 
 msgid "Open target"
-msgstr ""
+msgstr "Buka target"
 
 msgid "Open target url"
-msgstr ""
+msgstr "Buka url target"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "Konfigurasi tambahan dari 'Backend Statis'"
 
 msgid "or simpy print or download it for off-line usage"
 msgstr "atau cetak atau unduh untuk penggunaan offline"
@@ -326,10 +329,10 @@ msgid "Paste to embed elsewhere"
 msgstr "Tempelkan ke tempat lainnya"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Preferensi yang diambil"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Preferensi yang disimpan"
 
 msgid "Preference '%s' retrieved"
 msgstr "Preferensi '%s' telah diterima"
@@ -338,7 +341,7 @@ msgid "Preference '%s' saved"
 msgstr "Preferensi '%s' telah disimpan"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Preferensi"
 
 msgid "Prepare to send as SMS"
 msgstr "Siapkan untuk SMS"
@@ -347,7 +350,7 @@ msgid "Relay service"
 msgstr "Layanan relai"
 
 msgid "Relay url"
-msgstr ""
+msgstr "Url relai"
 
 msgid "Reload"
 msgstr "Muat ulang"
@@ -359,28 +362,28 @@ msgid "Save"
 msgstr "simpan"
 
 msgid "Send by email"
-msgstr ""
+msgstr "Kirim dengan email"
 
 msgid "Send link by email"
 msgstr "Kirim tautan dengan surel"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "Kirim dengan SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "Atur preferensi pribadi menggunakan roda gerigi (%%s) pada kiri bawah!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Atur preferensi pribadi menggunakan roda gerigi (%%s) pada kanan atas!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Pengaturan yang diambil"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Pengaturan yang disimpan"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Pengaturan '%s' diambil"
 
 msgid "Setting '%s' saved"
 msgstr "Pengaturan '%s' telah disimpan"
@@ -389,10 +392,10 @@ msgid "Settings"
 msgstr "Setelan"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Bagikan dan gunakan"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "Bagikan shorty"
 
 msgid "Shortlet"
 msgstr ""
@@ -404,34 +407,34 @@ msgid "Shorty with id '%s' deleted"
 msgstr "Shorty dengan id '%s' telah dihapus"
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "Tampilkan sebagai QRCode"
 
 msgid "Show details"
 msgstr "Tampilkan detail"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Tampilkan penggunaan"
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
 msgstr "Penulis SMS"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Urutkan menaik"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Urutkan menurun"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "Bersihkan penyaring"
 
 msgid "Source url"
-msgstr ""
+msgstr "Url sumber"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "Tentukan url dasar statis..."
 
 msgid "Static backend: base url verification"
 msgstr "Backend statis: verifikasi basis url"
@@ -443,10 +446,10 @@ msgid "Status change for shorty with id '%s' saved"
 msgstr "Perubahan status untuk shorty dengan id '%s' telah disimpan"
 
 msgid "Target"
-msgstr ""
+msgstr "Target"
 
 msgid "Target url"
-msgstr ""
+msgstr "Url target"
 
 msgid "Target url '%s' is valid"
 msgstr "Target tautan '%s' benar"
@@ -455,10 +458,10 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Gambar tersebut dapat digunakan ketika menulis dokumen atau membuat situs web"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "Layanan backend yang digunakan untuk menghasilkan URL singkat."
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "Status baku seperti yang disarankan untuk Shorty baru."
 
 msgid "The link below can be copied for usage apart"
 msgstr "Tautan berikut dapat disalin untuk penggunaan terpisah"
@@ -482,7 +485,7 @@ msgid "This is the shortened url registered at the backend"
 msgstr ""
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr ""
+msgstr "Ini adalah url target yang ditentukan saat membuat Shorty ini"
 
 msgid "This is the url referencing the QRCode shown before"
 msgstr "Ini adalah url referensi dari QRCode yang tadi"
@@ -515,10 +518,10 @@ msgid "Use it in web pages by referencing or embedding"
 msgstr "Gunakan di halaman web dengan mereferensikannya atau menempelkannya"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "Gunakan tombol '%s' diatas atau gunakan 'Shortlet\""
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "Verifikasi dengan mengeklik..."
 
 msgid "Verification failed"
 msgstr "Verifikasi gagal"
@@ -533,91 +536,91 @@ msgstr "%s\nPesan(kode): %s (%s)\nBerkas(baris): %s (%s)\nInfo: %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "Kunci akses API"
 
 msgid "Account"
 msgstr "Akun"
 
 msgid "API key"
-msgstr ""
+msgstr "Kunci API"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "Pengguna bit,ly"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "Nama pengguna bit.ly"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "Kunci bit.ly"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "Kunci pengguna bit.ly"
 
 msgid "Google API key"
-msgstr ""
+msgstr "Kunci API Google"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Akun API Google"
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "Pengguna tiny.cc"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "Nama pengguna tiny.cc"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "Kunci tiny.cc"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "Kunci pengguna tiny.cc"
 
 # longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "Paksa memverifikasi sertifikat enkripsi selama komunikasi dengan backend"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Layanan eksternal 'bitly.com' digunakan untuk mendaftarkan url pendek setiap shorty yang dihasilkan."
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "Ini berarti anda harus mendaftar '%s' dulu pada situs mereka."
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Layanan eksternal 'turl' digunakan untuk mendaftarkan url pendek setiap shorty yang dihasilkan."
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Layanan eksternal 'ti.ny' digunakan untuk mendaftarkan url pendek setiap shorty yang dihasilkan."
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Layanan eksternal 'cli.gs' digunakan untuk mendaftarkan url pendek setiap shorty yang dihasilkan."
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Layanan eksternal 'is.gd' digunakan untuk mendaftarkan url pendek setiap shorty yang dihasilkan."
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Layanan eksternal 'tiny.cc' digunakan untuk mendaftarkan url pendek setiap shorty yang dihasilkan."
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "Tidak ada backend digunakan, tautan langsung menunjuk ke ownCloud Anda telah dihasilkan."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "Layanan ini mengharuskan anda untuk mengotentikasi diri Anda dengan memberikan nama pengguna bit.ly yang valid dan '%s'."
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
