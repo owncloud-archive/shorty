@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-02-13 13:50+0000\n"
+"PO-Revision-Date: 2014-02-21 13:51+0000\n"
 "Last-Translator: Helder Meneses <helder.meneses@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Plugins"
 
 # status names
 msgid "all"
@@ -65,13 +65,13 @@ msgid "never"
 msgstr "nunca"
 
 msgid "private"
-msgstr ""
+msgstr "privado"
 
 msgid "public"
-msgstr ""
+msgstr "publico"
 
 msgid "shared"
-msgstr ""
+msgstr "partilhado"
 
 # actions ("to be done")
 msgid "delete"
@@ -100,17 +100,17 @@ msgid "down"
 msgstr "baixo"
 
 msgid "clear"
-msgstr ""
+msgstr "limpar"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "nenhum"
 
 msgid "error"
-msgstr ""
+msgstr "erro"
 
 msgid "info"
-msgstr ""
+msgstr "info"
 
 msgid "debug"
 msgstr ""
@@ -124,22 +124,22 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "serviço bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "serviço cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "serviço goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "serviço is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "serviço ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "serviço tiny.cc"
 
 msgid "static backend"
 msgstr ""
@@ -204,7 +204,7 @@ msgid "Base url"
 msgstr "Endereço electrónico base"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Seleccione um serviço..."
 
 msgid "Click for embedding details"
 msgstr "Click para os detalhes da incoporação"
@@ -282,7 +282,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Alteração feitas ao shorty com o id '%s' guardadas"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Modificar atributos"
 
 msgid "Modify shorty"
 msgstr ""
@@ -330,7 +330,7 @@ msgid "Preference retrieved"
 msgstr ""
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Preferência guardada"
 
 msgid "Preference '%s' retrieved"
 msgstr "Preferência '%s' restaurada"
@@ -339,7 +339,7 @@ msgid "Preference '%s' saved"
 msgstr "Preferência '%s' guardada"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Preferências"
 
 msgid "Prepare to send as SMS"
 msgstr "A preparar para enviar as mensagens por SMS"
@@ -378,10 +378,10 @@ msgid "Setting retrieved"
 msgstr ""
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Definições guardadas"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Definições '%s' recebidas"
 
 msgid "Setting '%s' saved"
 msgstr "Configuração '%s' guardada"
@@ -411,7 +411,7 @@ msgid "Show details"
 msgstr "Mostrar detalhes"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Mostrar utilização"
 
 msgid "SMS"
 msgstr "SMS"
@@ -426,7 +426,7 @@ msgid "Sort descending"
 msgstr "Ordenação descendente"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "Limpar filtro"
 
 msgid "Source url"
 msgstr ""
@@ -507,7 +507,7 @@ msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Infelizmente a implementação deste esquema está limitado"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Encontrado o objecto de tipo desconhecido: %s"
 
 msgid "Url shortened to: %s"
 msgstr "Url alterado para: %s"
