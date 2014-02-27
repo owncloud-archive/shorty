@@ -23,13 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# សុវិចិត្រ Sovichet ទេព Tep <sovichet.tep@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-02-24 11:47+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-02-26 12:10+0000\n"
+"Last-Translator: សុវិចិត្រ Sovichet ទេព Tep <sovichet.tep@gmail.com>\n"
 "Language-Team: Khmer (http://www.transifex.com/projects/p/owncloud/language/km/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,7 +40,7 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "ការ​ឃ្លាំ​មើល​ខ្លីៗ"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
@@ -48,43 +49,43 @@ msgstr ""
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "ទទួល​បាន"
 
 msgid "denied"
-msgstr ""
+msgstr "បាន​បដិសេធ"
 
 msgid "blocked"
-msgstr ""
+msgstr "បាន​ទប់​ស្កាត់"
 
 msgid "load"
-msgstr ""
+msgstr "ផ្ទុក"
 
 msgid "Address"
 msgstr "អាសយដ្ឋាន"
 
 msgid "Click details"
-msgstr ""
+msgstr "លម្អិត​នៃ​ការ​ចុច"
 
 msgid "Clicks"
-msgstr ""
+msgstr "ការ​ចុច"
 
 msgid "Host"
-msgstr ""
+msgstr "ម៉ាស៊ីន​ផ្ទុក"
 
 msgid "List clicks"
 msgstr ""
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "បញ្ជី​ការ​ចុច​ដែល​បាន​តាមដាន"
 
 msgid "Result"
-msgstr ""
+msgstr "លទ្ធផល"
 
 msgid "Time"
-msgstr ""
+msgstr "ម៉ោង"
 
 msgid "Title"
 msgstr "ចំណងជើង"
 
 msgid "User"
-msgstr ""
+msgstr "អ្នកប្រើ"
