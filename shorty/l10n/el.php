@@ -65,7 +65,7 @@
 "Create a new 'Shorty' and share it" => "Δημιουργήστε ένα νέο «Shorty» και μοιραστείτε το",
 "Creation" => "Δημιορυργία ",
 "Delete shorty" => "Διαγραφή",
-"Drag this to your browser bookmarks." => "Σύρετε αυτό στους σελιδοδείκτες του προγράμματος περιήγησης σας.",
+"Drag this to your browser bookmarks." => "Σύρετε αυτό στους σελιδοδείκτες του προγράμματος περιήγησής σας.",
 "Embed the QRCode as an image into some web page using this url" => "Εγκαταστήστε τον ΚώδικαQR σαν εικόνα σε κάποια ιστοσελίδα χρησιμοποιώντας url",
 "Example" => "Παράδειγμα",
 "Exception" => "Εξαίρεση",

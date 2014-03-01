@@ -30,13 +30,14 @@
 # vkehayas <vkehayas@gmail.com>, 2014
 # Wasilis <inactive+Wasilis@transifex.com>, 2013
 # KAT.RAT12 <spanish.katerina@gmail.com>, 2013
+# Γιάννης Ανθυμίδης <yannanth@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-01-11 12:30+0000\n"
-"Last-Translator: vkehayas <vkehayas@gmail.com>\n"
+"PO-Revision-Date: 2014-02-28 16:33+0000\n"
+"Last-Translator: Γιάννης Ανθυμίδης <yannanth@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/owncloud/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -252,7 +253,7 @@ msgid "Delete shorty"
 msgstr "Διαγραφή"
 
 msgid "Drag this to your browser bookmarks."
-msgstr "Σύρετε αυτό στους σελιδοδείκτες του προγράμματος περιήγησης σας."
+msgstr "Σύρετε αυτό στους σελιδοδείκτες του προγράμματος περιήγησής σας."
 
 msgid "Embed the QRCode as an image into some web page using this url"
 msgstr "Εγκαταστήστε τον ΚώδικαQR σαν εικόνα σε κάποια ιστοσελίδα χρησιμοποιώντας url"
