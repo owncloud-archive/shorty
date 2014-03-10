@@ -42,6 +42,7 @@
 "Target url '%s' is valid" => "Destinations url '%s' er gyldigt",
 "The link below can be copied for usage apart" => "Nedenstående link kan kopieres til anvendelse fra hinanden",
 "then paste into message" => "indsæt derefter i meddelelse",
+"This 2d barcode encodes the url pointing to this Shorty" => "Denne 2d barcode gemmer url'en som peger til denne Shorty",
 "This is the url referencing the QRCode shown before" => "Dette er den URL, der henviser til den QRCode, der blev vist",
 "Title" => "Titel",
 "Url shortened to: %s" => "URL forkortet til %s",
