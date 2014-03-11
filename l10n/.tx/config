@@ -1,5 +1,5 @@
 [main]
-host = https://www.transifex.net
+host = https://www.transifex.com
 
 [owncloud.shorty]
 file_filter = <lang>/shorty.po
