@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# andreiacob <andrei.iacob@y7mail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-12-20 06:22+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2014-03-13 07:50+0000\n"
+"Last-Translator: andreiacob <andrei.iacob@y7mail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/owncloud/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,16 +89,16 @@ msgstr "afișează"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "reincarca"
 
 msgid "up"
-msgstr ""
+msgstr "sus"
 
 msgid "down"
-msgstr ""
+msgstr "jos"
 
 msgid "clear"
-msgstr ""
+msgstr "sterge"
 
 # log levels
 msgid "none"
@@ -114,29 +115,29 @@ msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
 msgstr ""
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "serviciu bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "serviciu cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "serviciu goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "serviciu is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "serviciu ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "serviciu tiny.cc"
 
 msgid "static backend"
 msgstr ""
@@ -186,7 +187,7 @@ msgid "Alternatively the link can be copied manually"
 msgstr ""
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "Ca alternativa, linkul poate fi copiat manual intr-un mesaj"
 
 msgid "Anything that appears helpful …"
 msgstr ""
@@ -198,10 +199,10 @@ msgid "Backend"
 msgstr "Backend"
 
 msgid "Base url"
-msgstr ""
+msgstr "Url de baza"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Alege un serviciu..."
 
 msgid "Click for embedding details"
 msgstr ""
@@ -231,7 +232,7 @@ msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Copiaza in clipboard"
 
 msgid "Counted entries and clicks"
 msgstr ""
@@ -252,13 +253,13 @@ msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr ""
+msgstr "Exemplu"
 
 msgid "Exception"
-msgstr ""
+msgstr "Exceptie"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "Exceptie (%s)"
 
 msgid "Expiration"
 msgstr "Expira"
@@ -273,13 +274,13 @@ msgid "Loading"
 msgstr "încărcare"
 
 msgid "Mail client"
-msgstr ""
+msgstr "Client de mail"
 
 msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Modifica atribute"
 
 msgid "Modify shorty"
 msgstr ""
@@ -324,10 +325,10 @@ msgid "Paste to embed elsewhere"
 msgstr ""
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Preferinta recuperata"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Preferinta salvata"
 
 msgid "Preference '%s' retrieved"
 msgstr ""
@@ -336,7 +337,7 @@ msgid "Preference '%s' saved"
 msgstr ""
 
 msgid "Preferences"
-msgstr ""
+msgstr "Preferinte"
 
 msgid "Prepare to send as SMS"
 msgstr ""
@@ -357,13 +358,13 @@ msgid "Save"
 msgstr "Salvează"
 
 msgid "Send by email"
-msgstr ""
+msgstr "Trimite prin email"
 
 msgid "Send link by email"
-msgstr ""
+msgstr "Trimite link pe email"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "Trimite prin SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
@@ -372,10 +373,10 @@ msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Setare recuperata"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Setare salvata"
 
 msgid "Setting '%s' retrieved"
 msgstr ""
@@ -402,7 +403,7 @@ msgid "Shorty with id '%s' deleted"
 msgstr ""
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "Arata sub forma de QRCode"
 
 msgid "Show details"
 msgstr "Arată detali"
@@ -423,13 +424,13 @@ msgid "Sort descending"
 msgstr ""
 
 msgid "Clear filter"
-msgstr ""
+msgstr "Sterge filtru"
 
 msgid "Source url"
 msgstr ""
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "Specificati un url static de baza..."
 
 msgid "Static backend: base url verification"
 msgstr ""
@@ -468,7 +469,7 @@ msgid "therefore the content must be copied manually"
 msgstr ""
 
 msgid "then paste into message"
-msgstr ""
+msgstr "apoi lipiti in mesaj"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr ""
@@ -492,7 +493,7 @@ msgid "Toggle toolbar"
 msgstr "Comutați bara de instrumente"
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "Numar total de clickuri"
 
 msgid "Typically this only works on devices like smart phones"
 msgstr ""
@@ -531,13 +532,13 @@ msgstr ""
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "Cheie de acces API"
 
 msgid "Account"
 msgstr "Cont"
 
 msgid "API key"
-msgstr ""
+msgstr "Cheie API"
 
 msgid "bit.ly user"
 msgstr ""
@@ -552,7 +553,7 @@ msgid "bit.ly users key"
 msgstr ""
 
 msgid "Google API key"
-msgstr ""
+msgstr "Cheie Google API"
 
 msgid "Google API account"
 msgstr ""
