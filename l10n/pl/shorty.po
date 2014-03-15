@@ -27,14 +27,15 @@
 # Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013-2014
 # hoek <hoek@hoek.pl>, 2014
 # paszczak000 <paszczak000@gmail.com>, 2013
+# maxxx <maxxxrally@gmail.com>, 2014
 # Michal Plichta <mplichta@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-02-18 11:40+0000\n"
-"Last-Translator: hoek <hoek@hoek.pl>\n"
+"PO-Revision-Date: 2014-03-14 11:41+0000\n"
+"Last-Translator: maxxx <maxxxrally@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -178,7 +179,7 @@ msgid "Administrative, system wide settings of this app:"
 msgstr ""
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "po uruchomieniu SMS"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "Alternatywnie można pobrać obraz do wydruku lub przechowywania"
@@ -190,7 +191,7 @@ msgid "Alternatively the link can be copied manually"
 msgstr ""
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "Alternatywnie link może być skopiowany do wiadomości ręcznie"
 
 msgid "Anything that appears helpful …"
 msgstr ""
@@ -220,10 +221,10 @@ msgid "Clicks"
 msgstr "Kliknięcia"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "Wybranie 'Ok' poniżej uruchomi próbę tworzenia wiadomości email"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "Kliknięcie 'Ok' poniżej uruchomi próbę tworzenia wiadomości sms"
 
 msgid "Close"
 msgstr "Zamknij"
@@ -253,7 +254,7 @@ msgid "Drag this to your browser bookmarks."
 msgstr ""
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr ""
+msgstr "Osadź kod QR jako obrazek na stronach używając tego adresu url"
 
 msgid "Example"
 msgstr "Przykład"
@@ -280,7 +281,7 @@ msgid "Mail client"
 msgstr "Klient mailowy"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "Zmiany dla skrótu o id '%s' zapisane"
 
 msgid "Modify attributes"
 msgstr "Zmień atrybuty"
@@ -325,7 +326,7 @@ msgid "or simpy print or download it for off-line usage"
 msgstr "lub po prostu drukuj lub pobierz go do wykorzystania w trybie offline"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "Wklej, aby osadzić gdziekolwiek"
 
 msgid "Preference retrieved"
 msgstr "Preferencje przywrócone"
@@ -334,7 +335,7 @@ msgid "Preference saved"
 msgstr "Ustawienia zapisane"
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "Ustawienie '%s' przywrócone"
 
 msgid "Preference '%s' saved"
 msgstr "Ustawienia '%s' zapisane"
@@ -436,13 +437,13 @@ msgid "Specify a static base url…"
 msgstr ""
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "Funkcja statyczna: podstawowa weryfikacja adresu url"
 
 msgid "Status"
 msgstr "Status"
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "Zmiana statusu dla skrótu o id '%s' zachowana"
 
 msgid "Target"
 msgstr "Cel"
@@ -454,7 +455,7 @@ msgid "Target url '%s' is valid"
 msgstr "Docelowy adres '%s' jest niepoprawny"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "Ten obrazek może być użyty podczas tworzenia dokumentów lub ustawiania stron internetowych"
 
 msgid "The backend service used to generate shortened URLs."
 msgstr ""
@@ -469,13 +470,13 @@ msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "dlatego zawartość musi być skopiowana ręcznie"
 
 msgid "then paste into message"
 msgstr "potem wklej do wiadomości"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr ""
+msgstr "Ten kod 2d koduje adres url wskazujący na ten skrót"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr ""
@@ -487,7 +488,7 @@ msgid "This is the target url specified when generating this Shorty"
 msgstr ""
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr ""
+msgstr "Ten adres url odnosi się do kodu QR pokazanego wcześniej"
 
 msgid "Title"
 msgstr "Tytuł"
@@ -499,13 +500,13 @@ msgid "Total of clicks"
 msgstr "Suma kliknięć"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "Zwykle opcja działa tylko na urządzeniach typu smartfon"
 
 msgid "Unexpected type of exception caught: %s"
 msgstr ""
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "Niestety stosowanie tego schematu jest ograniczone"
 
 msgid "Unknown object of type caught: %s"
 msgstr ""
@@ -531,7 +532,7 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr ""
+msgstr "%s\nWiadomość(kod): %s (%s)\nPlik(linia): %s (%s)\nInfo: %%s"
 
 # technical backend details
 msgid "API access key"
@@ -694,17 +695,17 @@ msgid "In short: this might not work for you, therefore you can disable it…"
 msgstr ""
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "Super, wygląda na to, że Twoje ustawienia działają poprawnie!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr ""
+msgstr "Wymagania dotyczące konfigurowanego adresu url są mapowane do tego serwisu ownCloud"
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr ""
+msgstr "Użycie funkcjonalności statycznej jest dobre i bezpieczne dopóki to ustawienie nie zostanie zmienione."
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
