@@ -174,8 +174,14 @@
 "Force verification of encryption certificates during communication with the backend" => "Verificació forzada dels certificats d'encriptació durant la comunicació amb elservidor",
 "The external 'bitly.com' service is used to register a short url for each generated shorty." => "El servei extern 'bitly.com' es fa servir per enregistrar una URL curta per cadadrecera enregistrada",
 "This means you have to register an '%s' at their site first." => "Aixó significa que us heu d'enregistrar un '%s' al seu lloc primerament",
+"No backend is used, direct links pointing to your ownCloud are generated." => "No hi ha cap rerafons en ús, es generen punts d'enllaç directes al vostre ownCloud.",
+"Such links are most likely longer than those generated when using a backend." => "Aquests enllaços segurament són més llargs que els generats usant un rerefons.",
 "You must provide a valid '%%s' to use this service." => "Heu de proporcionar un '%%s' vàlid per fer servir aquest servei.",
 "Great, your setup appears to be working fine!" => "Fantàstic, sembla que la vostra configuració funciona bé!",
 "Requests to the configured base url are mapped to this ownClouds relay service." => "Les sol·licituds a la url base configurada s'assignen al servei de retransmissió d'ownCloud.",
-"Usage of that static backend is fine and safe as long as this setup is not altered." => "L'ús d'aquest backend estàtic està bé i segur sempre que aquesta configuració no s'alteri."
+"Usage of that static backend is fine and safe as long as this setup is not altered." => "L'ús d'aquest backend estàtic està bé i segur sempre que aquesta configuració no s'alteri.",
+"This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." => "Aquest rerefons s'oferirà com una alternativa de segon pla d'execució a tots els usuaris locals dins les seves preferències personals.",
+"Sorry, but your setup appears not to be working correctly yet!" => "La configuració sembla no ser correcta, encara!",
+"Please check your setup and make sure that the configured base url is indeed correct." => "Comproveu la configuració i assegureu-vos que la url de base configurada és correcta.",
+"Make sure that all requests to it are somehow mapped to Shortys relay service." => "Assegureu-vos que totes les peticions estan mapades al servei de repetidor Shorty."
 );
