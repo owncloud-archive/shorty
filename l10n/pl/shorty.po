@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-03-18 15:22+0000\n"
+"PO-Revision-Date: 2014-03-19 09:53+0000\n"
 "Last-Translator: bobie <maciej.przybecki@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -145,7 +145,7 @@ msgid "tiny.cc service"
 msgstr "usługa tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "statyczne zaplecze"
 
 # status explanations
 msgid "for any access"
@@ -171,7 +171,7 @@ msgid "Add as new"
 msgstr "Dodaj jako nowe"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "Dodaj stronę jako 'Shorty' do ownCloud"
 
 msgid "Administration"
 msgstr "Administracja"
@@ -189,13 +189,13 @@ msgid "alternatively the link can be copied for further usage"
 msgstr ""
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "Alternatywnie link może zostać skopiowany ręcznie"
 
 msgid "Alternatively the link can be copied into a message manually"
 msgstr "Alternatywnie link może być skopiowany do wiadomości ręcznie"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "Wszystko co wydaje się pomocne..."
 
 msgid "Default backend suggested inside users preferences"
 msgstr ""
@@ -243,16 +243,16 @@ msgid "Counted entries and clicks"
 msgstr "Zliczone wpisy i kliknięcia"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "Stwórz nowe 'Shorty' i podziel się nim"
 
 msgid "Creation"
-msgstr ""
+msgstr "Tworzenie"
 
 msgid "Delete shorty"
 msgstr "Usuń skrót"
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "Przeciągnij to do zakładek przeglądarki"
 
 msgid "Embed the QRCode as an image into some web page using this url"
 msgstr "Osadź kod QR jako obrazek na stronach używając tego adresu url"
@@ -312,7 +312,7 @@ msgid "Open source url"
 msgstr "Otwórz źródło linku"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "URL otwartego przekierowania"
 
 msgid "Open target"
 msgstr "Otwórz cel"
@@ -372,7 +372,7 @@ msgid "Send by SMS"
 msgstr "Wyślij przez SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "Ustaw osobiste preferencje używając znaku trybika (%%s) po lewej na dole!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
@@ -384,7 +384,7 @@ msgid "Setting saved"
 msgstr "Ustawienia zapisane"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Ustawienie '%s' zostało przywrócone"
 
 msgid "Setting '%s' saved"
 msgstr "Ustawienia '%s' zapisane"
@@ -399,7 +399,7 @@ msgid "Share shorty"
 msgstr "Udostępnij skrót"
 
 msgid "Shortlet"
-msgstr ""
+msgstr "Shortlet"
 
 msgid "Shorty as QRCode"
 msgstr "Skrót jako QRCode"
@@ -435,7 +435,7 @@ msgid "Source url"
 msgstr "Adres źródłowy"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "Podaj statyczny URL bazowy..."
 
 msgid "Static backend: base url verification"
 msgstr "Funkcja statyczna: podstawowa weryfikacja adresu url"
@@ -480,13 +480,13 @@ msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Ten kod 2d koduje adres url wskazujący na ten skrót"
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr ""
+msgstr "To jest wewnętrzny URL, do którego prowadzi skrócony URL"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "To jest skrócony URL zarejestrowany w zapleczu."
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr ""
+msgstr "To jest URL docelowy podany podczas generowania tego Shorty"
 
 msgid "This is the url referencing the QRCode shown before"
 msgstr "Ten adres url odnosi się do kodu QR pokazanego wcześniej"
@@ -519,7 +519,7 @@ msgid "Use it in web pages by referencing or embedding"
 msgstr "Użyj go na stronach internetowych przez odwołanie lub zamieszczanie"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "Użyj przycisku '%s' powyżej lub zdefiniuj 'Shortlet'"
 
 msgid "Verify by clicking…"
 msgstr "Sprawdź klikając..."
@@ -584,7 +584,7 @@ msgstr ""
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Dla każdego wygenerowanego skrótu, w celu rejestracji krótkiego adresu URL,  jest używany zewnętrzny serwis 'bitly.com'."
 
 msgid "This means you have to register an '%s' at their site first."
 msgstr ""
@@ -616,7 +616,7 @@ msgstr ""
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "Żadne zaplecze nie jest w użyciu, generowane są bezpośrednie linki kierujące do Twojego ownCloud."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
@@ -625,22 +625,22 @@ msgstr ""
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "Takie linki są zazwyczaj dłuższe, niż te generowane przy użyciu zaplecza"
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "Jednakże ta opcja nie opiera się na usługach zewnętrznych i zapewnia pełną kontrolę nad Twoimi skrótami"
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "Ponieważ ta instalacja zależy od reguł konfiguracji ustawionych na serwerze, URL bazowy może być podany wyłącznie w sekcji 'Admin' w ustawieniach"
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "Statyczne, oparte na regułach zaplecze, generuje skrócone linki powiązane z danym URL-em bazowym"
 
 msgid ""
 "You have to take care that any request to the url configured here is "
@@ -653,7 +653,7 @@ msgstr ""
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "Spróbuj podanego przykładowego linku, kliknij, w rezultacie powinieneś otrzymać potwierdzenie, że Twoje ustawienie działa."
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
@@ -663,7 +663,7 @@ msgstr ""
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "Używaj tego zaplecza tylko w przypadku gdy możesz zapewnić URL bazowy, który jest zmapowany w opisany sposób. W przeciwnym razie Twoje skróty nie będą działać."
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
@@ -711,7 +711,7 @@ msgstr "Użycie funkcjonalności statycznej jest dobre i bezpieczne dopóki to u
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "To zaplecze będzie teraz oferowane jako dodatkowa alternatywa do wszystkich użytkowników lokalnych w ich osobistych preferencjach"
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Przykro nam, ale Twoje ustawienia jeszcze nie działają prawidłowo!"
@@ -719,9 +719,9 @@ msgstr "Przykro nam, ale Twoje ustawienia jeszcze nie działają prawidłowo!"
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "Proszę sprawdź swoje ustawienia i upewnij się, że skonfigurowany URL bazowy jest rzeczywiście poprawny"
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
+msgstr "Upewnij się, że wszystkie żądania są w jakiś sposób zmapowane do usługi przekazywania Shorty"
