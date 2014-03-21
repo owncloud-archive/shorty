@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-03-19 09:53+0000\n"
+"PO-Revision-Date: 2014-03-20 05:40+0000\n"
 "Last-Translator: bobie <maciej.przybecki@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -186,7 +186,7 @@ msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "Alternatywnie można pobrać obraz do wydruku lub przechowywania"
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "alternatywnie, można skopiować ten link na potrzeby późniejszego użycia"
 
 msgid "Alternatively the link can be copied manually"
 msgstr "Alternatywnie link może zostać skopiowany ręcznie"
@@ -198,7 +198,7 @@ msgid "Anything that appears helpful …"
 msgstr "Wszystko co wydaje się pomocne..."
 
 msgid "Default backend suggested inside users preferences"
-msgstr ""
+msgstr "Domyślne zaplecze sugerowane w ustawieniach użytkownika"
 
 msgid "Backend"
 msgstr "Zaplecze"
@@ -459,10 +459,10 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Ten obrazek może być użyty podczas tworzenia dokumentów lub ustawiania stron internetowych"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "Serwis zaplecza używany do generowania skróconych adresów URL."
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "Domyślny status sugerowany dla nowych Shorty."
 
 msgid "The link below can be copied for usage apart"
 msgstr "Poniższy link może być kopiowany do użytku poza"
@@ -504,13 +504,13 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Zwykle opcja działa tylko na urządzeniach typu smartfon"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Przechwycono nieznany typ wyjątku: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Niestety stosowanie tego schematu jest ograniczone"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Przechwycono nieznany typ obiektu: %s"
 
 msgid "Url shortened to: %s"
 msgstr "Skrót linkuje do: %s"
@@ -671,10 +671,10 @@ msgid ""
 msgstr ""
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "Musisz zapewnić właściwy '%%s' aby używać tej usługi."
 
 msgid "This means you require a 'Google API console account'."
-msgstr ""
+msgstr "To oznacza, że potrzebujesz 'Konsolę konta Google API'."
 
 msgid "Register a new '%%s' at their pages."
 msgstr "Zarejestruj nowe '%%s' na ich stronach."
