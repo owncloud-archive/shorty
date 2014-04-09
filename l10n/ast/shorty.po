@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-04-07 19:30+0000\n"
+"PO-Revision-Date: 2014-04-08 22:40+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/owncloud/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -72,7 +72,7 @@ msgstr ""
 
 # actions ("to be done")
 msgid "delete"
-msgstr ""
+msgstr "desaniciar"
 
 msgid "edit"
 msgstr ""
@@ -81,7 +81,7 @@ msgid "open"
 msgstr ""
 
 msgid "share"
-msgstr ""
+msgstr "compartir"
 
 msgid "show"
 msgstr ""
@@ -222,7 +222,7 @@ msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
 msgid "Close"
-msgstr ""
+msgstr "Zarrar"
 
 msgid "Configuration"
 msgstr ""
@@ -270,7 +270,7 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "Cargando"
 
 msgid "Mail client"
 msgstr ""
@@ -291,7 +291,7 @@ msgid "Notes"
 msgstr "Notes"
 
 msgid "Nothing here yet"
-msgstr ""
+msgstr "Entá nun hai nada equí"
 
 msgid "Number of entries"
 msgstr ""
@@ -354,7 +354,7 @@ msgid "Reload list"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 msgid "Send by email"
 msgstr ""
@@ -384,7 +384,7 @@ msgid "Setting '%s' saved"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "Axustes"
 
 msgid "Share and use"
 msgstr ""
