@@ -8,6 +8,7 @@
 "delete" => "poista",
 "share" => "jaa",
 "show" => "näytä",
+"error" => "virhe",
 "Ctrl-C" => "Ctrl-C",
 "Ctrl-V" => "Ctrl-V",
 "Access" => "Pääsy",
