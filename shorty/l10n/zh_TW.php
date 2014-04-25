@@ -124,6 +124,7 @@
 "SMS composer" => "SMS 編輯器",
 "Sort ascending" => "遞增排序",
 "Sort descending" => "遞減排序",
+"Clear filter" => "清除過濾器",
 "Source url" => "來源超連結",
 "Specify a static base url…" => "特定一個靜態的base url...",
 "Static backend: base url verification" => "靜態後端:base url認證",
