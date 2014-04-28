@@ -49,7 +49,7 @@
 			<name>status</name>
 			<type>text</type>
 			<length>10</length>
-			<default>'shared'</default>
+			<default>shared</default>
 			<notnull>true</notnull>
 		</field>
 		<field>
