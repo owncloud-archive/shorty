@@ -21,6 +21,7 @@
 "none" => "nenhum",
 "error" => "erro",
 "info" => "info",
+"debug" => "depurar",
 "Ctrl-C" => "Ctrl-C",
 "Ctrl-V" => "Ctrl-V",
 "bitly.com service" => "serviço bitly.com",
