@@ -1,4 +1,7 @@
 <?php $TRANSLATIONS = array(
+"granted" => "permis",
+"denied" => "Refuzat",
+"blocked" => "blocat",
 "load" => "incarca",
 "Address" => "Adresă",
 "Click details" => "Detali click",

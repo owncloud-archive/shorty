@@ -25,13 +25,14 @@
 # 
 # Translators:
 # andreiacob <andrei.iacob@y7mail.com>, 2014
+# lauraberindei <lauraagavriloae@yahoo.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-03-26 06:01+0000\n"
-"Last-Translator: andreiacob <andrei.iacob@y7mail.com>\n"
+"PO-Revision-Date: 2014-05-03 18:12+0000\n"
+"Last-Translator: lauraberindei <lauraagavriloae@yahoo.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/owncloud/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,28 +46,28 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "toate"
 
 msgid "blocked"
-msgstr ""
+msgstr "blocat"
 
 msgid "deleted"
 msgstr "șters"
 
 msgid "disabled"
-msgstr ""
+msgstr "dezactivat"
 
 msgid "enabled"
-msgstr ""
+msgstr "activat"
 
 msgid "never"
 msgstr "niciodată"
 
 msgid "private"
-msgstr ""
+msgstr "privat"
 
 msgid "public"
-msgstr ""
+msgstr "public"
 
 msgid "shared"
 msgstr ""
@@ -76,10 +77,10 @@ msgid "delete"
 msgstr "ștergere"
 
 msgid "edit"
-msgstr ""
+msgstr "editează "
 
 msgid "open"
-msgstr ""
+msgstr "deschide"
 
 msgid "share"
 msgstr "partajare"
@@ -89,7 +90,7 @@ msgstr "afișează"
 
 # toolbar icons
 msgid "reload"
-msgstr "reincarca"
+msgstr "reîncarcă"
 
 msgid "up"
 msgstr "sus"
@@ -98,17 +99,17 @@ msgid "down"
 msgstr "jos"
 
 msgid "clear"
-msgstr "sterge"
+msgstr "şterge"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "Niciuna"
 
 msgid "error"
-msgstr ""
+msgstr "Eroare"
 
 msgid "info"
-msgstr ""
+msgstr "informaţii "
 
 msgid "debug"
 msgstr ""
@@ -118,7 +119,7 @@ msgid "Ctrl-C"
 msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
@@ -147,23 +148,23 @@ msgid "for any access"
 msgstr ""
 
 msgid "for own usage"
-msgstr ""
+msgstr "pentru uz propriu "
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "pentru utilizatorii ownCloud"
 
 msgid "available for everyone"
 msgstr ""
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "Acces"
 
 msgid "Add a new shorty"
 msgstr ""
 
 msgid "Add as new"
-msgstr ""
+msgstr "Adaugaţi ca nou "
 
 msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
@@ -232,7 +233,7 @@ msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr "Copiaza in clipboard"
+msgstr "Copiază în clipboard"
 
 msgid "Counted entries and clicks"
 msgstr ""
@@ -241,7 +242,7 @@ msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
 msgid "Creation"
-msgstr ""
+msgstr "Creare"
 
 msgid "Delete shorty"
 msgstr ""
@@ -256,10 +257,10 @@ msgid "Example"
 msgstr "Exemplu"
 
 msgid "Exception"
-msgstr "Exceptie"
+msgstr "Excepţie"
 
 msgid "Exception (%s)"
-msgstr "Exceptie (%s)"
+msgstr "Excepţie (%s)"
 
 msgid "Expiration"
 msgstr "Expira"
@@ -325,10 +326,10 @@ msgid "Paste to embed elsewhere"
 msgstr ""
 
 msgid "Preference retrieved"
-msgstr "Preferinta recuperata"
+msgstr "Preferinţă recuperata"
 
 msgid "Preference saved"
-msgstr "Preferinta salvata"
+msgstr "Preferinţă salvata"
 
 msgid "Preference '%s' retrieved"
 msgstr ""
@@ -337,7 +338,7 @@ msgid "Preference '%s' saved"
 msgstr ""
 
 msgid "Preferences"
-msgstr "Preferinte"
+msgstr "Preferinţe"
 
 msgid "Prepare to send as SMS"
 msgstr ""
@@ -349,7 +350,7 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr "Reîncarca"
+msgstr "Reîncarcă"
 
 msgid "Reload list"
 msgstr "Reîncarca listă"
@@ -412,7 +413,7 @@ msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
 msgstr ""
@@ -424,7 +425,7 @@ msgid "Sort descending"
 msgstr ""
 
 msgid "Clear filter"
-msgstr "Sterge filtru"
+msgstr "Şterge filtru"
 
 msgid "Source url"
 msgstr ""
@@ -442,7 +443,7 @@ msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "Ţinta "
 
 msgid "Target url"
 msgstr ""
@@ -466,7 +467,7 @@ msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "de aceea conţinutul trebuie copiat manual"
 
 msgid "then paste into message"
 msgstr "apoi lipiti in mesaj"
@@ -502,7 +503,7 @@ msgid "Unexpected type of exception caught: %s"
 msgstr ""
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "Din păcate implementarea acestei scheme este limitata "
 
 msgid "Unknown object of type caught: %s"
 msgstr ""
@@ -709,7 +710,7 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "Ne pare rău , dar setările dumneavoastră par sa nu funcţioneze corect , încă !"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
