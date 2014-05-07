@@ -4,6 +4,7 @@
 "delete" => "حذف",
 "share" => "مشاركة",
 "show" => "أظهر",
+"Ctrl-V" => "Ctrl-V",
 "Close" => "إغلاق",
 "Feedback" => "ملاحظات",
 "Loading" => "تحميل",
