@@ -23,12 +23,13 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Iñigo Varela <ivarela@softastur.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-04-27 10:52+0000\n"
+"PO-Revision-Date: 2014-05-10 14:20+0000\n"
 "Last-Translator: Iñigo Varela <ivarela@softastur.org>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/owncloud/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -48,10 +49,10 @@ msgstr ""
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "concedíu"
 
 msgid "denied"
-msgstr ""
+msgstr "refugáu"
 
 msgid "blocked"
 msgstr "bloquiáu"
@@ -63,7 +64,7 @@ msgid "Address"
 msgstr "Direición"
 
 msgid "Click details"
-msgstr ""
+msgstr "detalles"
 
 msgid "Clicks"
 msgstr "Clics"
@@ -72,13 +73,13 @@ msgid "Host"
 msgstr "Equipu"
 
 msgid "List clicks"
-msgstr ""
+msgstr "Llistar clicks"
 
 msgid "List of tracked clicks"
 msgstr ""
 
 msgid "Result"
-msgstr ""
+msgstr "Resultáu"
 
 msgid "Time"
 msgstr ""
