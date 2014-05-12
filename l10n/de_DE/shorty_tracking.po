@@ -24,15 +24,15 @@
 # 
 # Translators:
 # a.tangemann <a.tangemann@web.de>, 2013
-# Marcel Kühlhorn <susefan93@gmx.de>, 2013
+# Marcel Kühlhorn <tux93@opensuse.org>, 2013
 # JamFX <niko@nik-o-mat.de>, 2013
-# quick_wango <quick_wango@code-infection.de>, 2013
+# Phillip Schichtel, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
-"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-10-11 02:31+0000\n"
+"PO-Revision-Date: 2014-05-11 05:01+0000\n"
 "Last-Translator: JamFX <niko@nik-o-mat.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/owncloud/language/de_DE/)\n"
 "MIME-Version: 1.0\n"

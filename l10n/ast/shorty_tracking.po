@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-05-10 14:20+0000\n"
+"PO-Revision-Date: 2014-05-11 16:10+0000\n"
 "Last-Translator: Iñigo Varela <ivarela@softastur.org>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/owncloud/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -40,12 +40,12 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Siguimientu de Shorty"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Siguimientu detalláu de toles solicitúes a Shortys esistentes xunto con una visualización integrada del históricu d'accesos."
 
 # request results
 msgid "granted"
@@ -58,7 +58,7 @@ msgid "blocked"
 msgstr "bloquiáu"
 
 msgid "load"
-msgstr ""
+msgstr "cargar"
 
 msgid "Address"
 msgstr "Direición"
@@ -76,16 +76,16 @@ msgid "List clicks"
 msgstr "Llistar clicks"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "Llista de clicks grabaos "
 
 msgid "Result"
 msgstr "Resultáu"
 
 msgid "Time"
-msgstr ""
+msgstr "Hora"
 
 msgid "Title"
 msgstr "Títulu"
 
 msgid "User"
-msgstr ""
+msgstr "Usuariu"
