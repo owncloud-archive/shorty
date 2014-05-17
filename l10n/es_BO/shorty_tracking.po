@@ -23,69 +23,68 @@
 # @author Christian Reiner
 # 
 # Translators:
-# mhh <marian.hvolka@stuba.sk>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-05-16 06:13+0000\n"
-"Last-Translator: mhh <marian.hvolka@stuba.sk>\n"
-"Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/owncloud/language/sk_SK/)\n"
+"PO-Revision-Date: 2013-03-26 11:18+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish (Bolivia) (http://www.transifex.com/projects/p/owncloud/language/es_BO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sk_SK\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Language: es_BO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr "Sledovanie shorty"
+msgstr ""
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr "Podrobné sledovanie všetkých požiadaviek na existujúcu Shorty s integrovanou vizualizáciou histórie prístupov."
+msgstr ""
 
 # request results
 msgid "granted"
-msgstr "poskytnuté"
+msgstr ""
 
 msgid "denied"
-msgstr "odmietnuté"
+msgstr ""
 
 msgid "blocked"
-msgstr "blokované"
+msgstr ""
 
 msgid "load"
-msgstr "načítať"
+msgstr ""
 
 msgid "Address"
-msgstr "Adresa"
+msgstr ""
 
 msgid "Click details"
-msgstr "Podrobnosti klikania"
+msgstr ""
 
 msgid "Clicks"
-msgstr "Kliky"
+msgstr ""
 
 msgid "Host"
-msgstr "Hostiteľ"
+msgstr ""
 
 msgid "List clicks"
-msgstr "Zoznam klikov"
+msgstr ""
 
 msgid "List of tracked clicks"
-msgstr "Zoznam sledovaných kliknutí"
+msgstr ""
 
 msgid "Result"
-msgstr "Výsledok"
+msgstr ""
 
 msgid "Time"
-msgstr "Čas"
+msgstr ""
 
 msgid "Title"
-msgstr "Nadpis"
+msgstr ""
 
 msgid "User"
-msgstr "Používateľ"
+msgstr ""
