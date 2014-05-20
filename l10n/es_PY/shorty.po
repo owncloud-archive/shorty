@@ -24,505 +24,502 @@
 # @author Christian Reiner
 # 
 # Translators:
-# ismail yenigül <ismail.yenigul@surgate.com>, 2013
-# KTOG <kirsaldatipokuyangay@gmail.com>, 2013
-# volkangezer <volkangezer@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-05-19 14:02+0000\n"
-"Last-Translator: volkangezer <volkangezer@gmail.com>\n"
-"Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
+"PO-Revision-Date: 2013-03-26 11:18+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish (Paraguay) (http://www.transifex.com/projects/p/owncloud/language/es_PY/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: es_PY\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 # plugin description
 msgid "Plugins"
-msgstr "Eklentiler"
+msgstr ""
 
 # status names
 msgid "all"
-msgstr "tümü"
+msgstr ""
 
 msgid "blocked"
-msgstr "engellendi"
+msgstr ""
 
 msgid "deleted"
-msgstr "silindi"
+msgstr ""
 
 msgid "disabled"
-msgstr "devre dışı"
+msgstr ""
 
 msgid "enabled"
-msgstr "etkin"
+msgstr ""
 
 msgid "never"
-msgstr "asla"
+msgstr ""
 
 msgid "private"
-msgstr "özel"
+msgstr ""
 
 msgid "public"
-msgstr "herkese açı"
+msgstr ""
 
 msgid "shared"
-msgstr "paylaşılan"
+msgstr ""
 
 # actions ("to be done")
 msgid "delete"
-msgstr "sil"
+msgstr ""
 
 msgid "edit"
-msgstr "düzenle"
+msgstr ""
 
 msgid "open"
-msgstr "aç"
+msgstr ""
 
 msgid "share"
-msgstr "paylaş"
+msgstr ""
 
 msgid "show"
-msgstr "göster"
+msgstr ""
 
 # toolbar icons
 msgid "reload"
-msgstr "yeniden yükle"
+msgstr ""
 
 msgid "up"
-msgstr "yukarı"
+msgstr ""
 
 msgid "down"
-msgstr "aşağı"
+msgstr ""
 
 msgid "clear"
-msgstr "temizle"
+msgstr ""
 
 # log levels
 msgid "none"
-msgstr "hiçbiri"
+msgstr ""
 
 msgid "error"
-msgstr "hata"
+msgstr ""
 
 msgid "info"
-msgstr "bilgi"
+msgstr ""
 
 msgid "debug"
-msgstr "hata ayıklama"
+msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr "Ctrl-C"
+msgstr ""
 
 msgid "Ctrl-V"
-msgstr "Ctrl-V"
+msgstr ""
 
 # the backend service names
 msgid "bitly.com service"
-msgstr "bitly.com servisi"
+msgstr ""
 
 msgid "cli.gs service"
-msgstr "cli.gs servisi"
+msgstr ""
 
 msgid "goo.gl service"
-msgstr "goo.gl servisi"
+msgstr ""
 
 msgid "is.gd service"
-msgstr "is.gd servisi"
+msgstr ""
 
 msgid "ti.ny service"
-msgstr "ti.ny servisi"
+msgstr ""
 
 msgid "tiny.cc service"
-msgstr "tiny.cc servisi"
+msgstr ""
 
 msgid "static backend"
-msgstr "durağan arka uç"
+msgstr ""
 
 # status explanations
 msgid "for any access"
-msgstr "tüm erişimler için"
+msgstr ""
 
 msgid "for own usage"
-msgstr "kendi kullanımı için"
+msgstr ""
 
 msgid "with ownCloud users"
-msgstr "ownCloud kullanıcıları ile"
+msgstr ""
 
 msgid "available for everyone"
-msgstr "herkesin erişimine açık"
+msgstr ""
 
 # short and general terms
 msgid "Access"
-msgstr "Erişim"
+msgstr ""
 
 msgid "Add a new shorty"
-msgstr "Yeni kısaltma ekle"
+msgstr ""
 
 msgid "Add as new"
-msgstr "Yeni olarak ekle"
+msgstr ""
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr "Sayfayı ownCloud'a kısaltma olarak ekle"
+msgstr ""
 
 msgid "Administration"
-msgstr "Yönetim"
+msgstr ""
 
 msgid "Administrative, system wide settings of this app:"
-msgstr "Yönetimsel, bu uygulamanın sistem genelindeki ayarı:"
+msgstr ""
 
 msgid "after the SMS has been launched"
-msgstr "bu nedenle içerik el ile kopyalanmalı"
+msgstr ""
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr "Alternatif olarak görüntü, çıktı almak veya saklamak için indirilebilir"
+msgstr ""
 
 msgid "alternatively the link can be copied for further usage"
-msgstr "Alternatif olarak bağlantı daha sonraki kullanımlar için kopyalanabilir"
+msgstr ""
 
 msgid "Alternatively the link can be copied manually"
-msgstr "Alternatif olarak bağlantı elle kopyalanabilir"
+msgstr ""
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr "Ek olarak, bağlantı bir iletiye el ile de kopyalanabilir"
+msgstr ""
 
 msgid "Anything that appears helpful …"
-msgstr "Yararlı görünen her şey..."
+msgstr ""
 
 msgid "Default backend suggested inside users preferences"
-msgstr "Kullanıcı ayarlarında tavsiye edilen ön tanımlı uç"
+msgstr ""
 
 msgid "Backend"
-msgstr "Arka Uç"
+msgstr ""
 
 msgid "Base url"
-msgstr "Temel adres"
+msgstr ""
 
 msgid "Choose a service…"
-msgstr "Bir hizmet seçin..."
+msgstr ""
 
 msgid "Click for embedding details"
-msgstr "Gömme ayrıntıları için tıklayın"
+msgstr ""
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr "Bir kısaltma oluşturmak istediğiniz site ne olursa olsun, tıklayın."
+msgstr ""
 
 msgid "Click registered"
-msgstr "Tıklama kaydedildi"
+msgstr ""
 
 msgid "Clicks"
-msgstr "Tıklamalar"
+msgstr ""
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr "Aşağıdaki 'Tamam' bağlantısı tıklandığı zaman bir e-posta derleyicisi çalıştırmayı deneyecek."
+msgstr ""
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr "Aşağıdaki 'Tamam' tıklandığında, bir SMS yazıcı başlatılmaya çalışılacak"
+msgstr ""
 
 msgid "Close"
-msgstr "Kapat"
+msgstr ""
 
 msgid "Configuration"
-msgstr "Yapılandırma"
+msgstr ""
 
 msgid "The amount of feedback messages shown."
-msgstr "Gösterilen geribildirim mesaj miktarı."
+msgstr ""
 
 msgid "Copy to clipboard"
-msgstr "Panoya kopyala"
+msgstr ""
 
 msgid "Counted entries and clicks"
-msgstr "Sayılan kayıtlar ve tıklamalar"
+msgstr ""
 
 msgid "Create a new 'Shorty' and share it"
-msgstr "Yeni bir \"Kısaltma\" oluştur ve paylaş"
+msgstr ""
 
 msgid "Creation"
-msgstr "Oluşturulma"
+msgstr ""
 
 msgid "Delete shorty"
-msgstr "Kısaltmayı sil"
+msgstr ""
 
 msgid "Drag this to your browser bookmarks."
-msgstr "Tarayıcınızın yer imlerine sürükleyin."
+msgstr ""
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr "Bu adresi kullanarak, bazı web sayfalarında resim olarak kullanmak için Karekodu göm"
+msgstr ""
 
 msgid "Example"
-msgstr "Örnek"
+msgstr ""
 
 msgid "Exception"
-msgstr "İstisna"
+msgstr ""
 
 msgid "Exception (%s)"
-msgstr "İstisna (%s)"
+msgstr ""
 
 msgid "Expiration"
-msgstr "Bitiş"
+msgstr ""
 
 msgid "Feedback"
-msgstr "Geribildirim"
+msgstr ""
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr "Bu yönetimde tek bir tıklama ile etkinleştirilebilir:"
+msgstr ""
 
 msgid "Loading"
-msgstr "Yükleniyor"
+msgstr ""
 
 msgid "Mail client"
-msgstr "E-posta istemcisi"
+msgstr ""
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr "'%s' numaralı kısaltma değişikliği kaydedildi"
+msgstr ""
 
 msgid "Modify attributes"
-msgstr "Öznitelikleri düzenle"
+msgstr ""
 
 msgid "Modify shorty"
-msgstr "Kısaltmayı düzenle"
+msgstr ""
 
 msgid "New Shorty"
-msgstr "Yeni Kısaltma"
+msgstr ""
 
 msgid "Notes"
-msgstr "Notlar"
+msgstr ""
 
 msgid "Nothing here yet"
-msgstr "Henüz burada bir şey yok"
+msgstr ""
 
 msgid "Number of entries"
-msgstr "Kayıt sayısı"
+msgstr ""
 
 msgid "Number of entries: %s"
-msgstr "Kayıt sayısı: %s"
+msgstr ""
 
 msgid "QRCode"
-msgstr "Karekod"
+msgstr ""
 
 msgid "Open source url"
-msgstr "Kaynak adresi aç"
+msgstr ""
 
 msgid "Open relay url"
-msgstr "Aktarım adresini aç"
+msgstr ""
 
 msgid "Open target"
-msgstr "Hedefi aç"
+msgstr ""
 
 msgid "Open target url"
-msgstr "Hedef adresi aç"
+msgstr ""
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr "Bir 'Durağan Arka Ucun' isteğe bağlı yapılandırması"
+msgstr ""
 
 msgid "or simpy print or download it for off-line usage"
-msgstr "veya basitçe yazdırın veya çevrimdışı kullanım için indirin"
+msgstr ""
 
 msgid "Paste to embed elsewhere"
-msgstr "Başka bir yere gömmek için yapıştırın"
+msgstr ""
 
 msgid "Preference retrieved"
-msgstr "Tercih getirildi"
+msgstr ""
 
 msgid "Preference saved"
-msgstr "Tercih kaydedildi"
+msgstr ""
 
 msgid "Preference '%s' retrieved"
-msgstr "'%s' tercihi getirildi"
+msgstr ""
 
 msgid "Preference '%s' saved"
-msgstr "'%s' tercihi kaydedildi"
+msgstr ""
 
 msgid "Preferences"
-msgstr "Tercihler"
+msgstr ""
 
 msgid "Prepare to send as SMS"
-msgstr "Bir SMS olarak göndermek için hazırla"
+msgstr ""
 
 msgid "Relay service"
-msgstr "Aktarım servisi"
+msgstr ""
 
 msgid "Relay url"
-msgstr "Aktarım adresi"
+msgstr ""
 
 msgid "Reload"
-msgstr "Yeniden yükle"
+msgstr ""
 
 msgid "Reload list"
-msgstr "Listeyi yeniden yükle"
+msgstr ""
 
 msgid "Save"
-msgstr "Kaydet"
+msgstr ""
 
 msgid "Send by email"
-msgstr "E-posta ile gönder"
+msgstr ""
 
 msgid "Send link by email"
-msgstr "Bağlantıyı e-posta ile gönder"
+msgstr ""
 
 msgid "Send by SMS"
-msgstr "SMS ile gönder"
+msgstr ""
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr "Sol alttaki dişli çarkı (%%s) kullanarak kişisel tercihlerinizi ayarlayın!"
+msgstr ""
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr "Sağ üstteki dişli çarkı (%%s) kullanarak kişisel tercihlerini ayarlayın!"
+msgstr ""
 
 msgid "Setting retrieved"
-msgstr "Ayarlar alındı"
+msgstr ""
 
 msgid "Setting saved"
-msgstr "Ayarlar kaydedildi"
+msgstr ""
 
 msgid "Setting '%s' retrieved"
-msgstr "'%s' ayarı getirildi"
+msgstr ""
 
 msgid "Setting '%s' saved"
-msgstr "'%s' ayarı kaydedildi"
+msgstr ""
 
 msgid "Settings"
-msgstr "Ayarlar"
+msgstr ""
 
 msgid "Share and use"
-msgstr "Paylaş ve kullan"
+msgstr ""
 
 msgid "Share shorty"
-msgstr "Kısa adres paylaş"
+msgstr ""
 
 msgid "Shortlet"
-msgstr "Shortlet"
+msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr "Karekod olarak Kısaltma"
+msgstr ""
 
 msgid "Shorty with id '%s' deleted"
-msgstr " '%s' numaralı kısaltma silindi."
+msgstr ""
 
 msgid "Show as QRCode"
-msgstr "Karekod olarak göster"
+msgstr ""
 
 msgid "Show details"
-msgstr "Detayları göster"
+msgstr ""
 
 msgid "Show usage"
-msgstr "Kullanımı göster"
+msgstr ""
 
 msgid "SMS"
-msgstr "SMS"
+msgstr ""
 
 msgid "SMS composer"
-msgstr "SMS düzenleyicisi"
+msgstr ""
 
 msgid "Sort ascending"
-msgstr "Artan sıralama"
+msgstr ""
 
 msgid "Sort descending"
-msgstr "Azalan sıralama"
+msgstr ""
 
 msgid "Clear filter"
-msgstr "Filtreyi temizle"
+msgstr ""
 
 msgid "Source url"
-msgstr "Kaynak adres"
+msgstr ""
 
 msgid "Specify a static base url…"
-msgstr "Temel bir adres belirt..."
+msgstr ""
 
 msgid "Static backend: base url verification"
-msgstr "Durağan arka uç: Temel adres doğrulama"
+msgstr ""
 
 msgid "Status"
-msgstr "Durum"
+msgstr ""
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr "'%s' kimlikli kısaltma durum değişikliği kaydedildi"
+msgstr ""
 
 msgid "Target"
-msgstr "Hedef"
+msgstr ""
 
 msgid "Target url"
-msgstr "Hedef adres"
+msgstr ""
 
 msgid "Target url '%s' is valid"
-msgstr "Hedef adres '%s' geçerli"
+msgstr ""
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr "Bu resim belgeler yazılırken veya web siteleri ayarlanırken kullanılabilir"
+msgstr ""
 
 msgid "The backend service used to generate shortened URLs."
-msgstr "Kısaltılmış adresler oluşturmak için kullanılan arka uç servisi."
+msgstr ""
 
 msgid "The default status as suggested for new Shortys."
-msgstr "Yeni kısaltmalar için tavsiye edilen ön tanımlı durum."
+msgstr ""
 
 msgid "The link below can be copied for usage apart"
-msgstr "Aşağıdaki bağlantı ayrıca kullanılmak üzere kopyalanabilir"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr "'%%s' ilave eklentisi mevcut kısaltmaların kullanımını takip edebilir!"
+msgstr ""
 
 msgid "therefore the content must be copied manually"
-msgstr "SMS gönderildikten sonra"
+msgstr ""
 
 msgid "then paste into message"
-msgstr "ardından iletiye yapıştırın"
+msgstr ""
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr "Bu 2b barkod, bu Shorty'e işaret eden adresi kodlar"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr "Bu kısaltılmış adresin aktarıldığı dahili bir adrestir."
+msgstr ""
 
 msgid "This is the shortened url registered at the backend"
-msgstr "Bu, arka uçta kayıtlı kısaltılmış adrestir"
+msgstr ""
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr "Bu, adres bir kısaltma oluşturuluyorken belirtilen hedef adresidir"
+msgstr ""
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr "Bu, daha önceden gösterilen Karekoda referans veren adrestir"
+msgstr ""
 
 msgid "Title"
-msgstr "Başlık"
+msgstr ""
 
 msgid "Toggle toolbar"
-msgstr "Araç çubuğunu aç/kapat"
+msgstr ""
 
 msgid "Total of clicks"
-msgstr "Toplam tıklama"
+msgstr ""
 
 msgid "Typically this only works on devices like smart phones"
-msgstr "Bu genellikle sadece akıllı telefon benzeri cihazlarda çalışır"
+msgstr ""
 
 msgid "Unexpected type of exception caught: %s"
-msgstr "Beklenmedik bir istisna türü yakalandı: %s"
+msgstr ""
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr "Ne yazık ki bu şemanın geliştirme durumu sınırlıdır"
+msgstr ""
 
 msgid "Unknown object of type caught: %s"
-msgstr "Bilinmeyen bir nesne türü yakalandı: %s"
+msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr "Adresin kısaltılmış hali: %s"
+msgstr ""
 
 msgid "Use it in web pages by referencing or embedding"
-msgstr "Referans veya gömülü olarak web sayfalarında kullanın"
+msgstr ""
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr "Yukarıdaki '%s' düğmesini veya 'Shortlet' kullanın"
+msgstr ""
 
 msgid "Verify by clicking…"
-msgstr "Tıklayarak doğrula..."
+msgstr ""
 
 msgid "Verification failed"
-msgstr "Doğrulama başarısız"
+msgstr ""
 
 # exception description
 msgid ""
@@ -530,195 +527,195 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr "%s\nİleti (kodu): %s (%s)\nDosya (satır): %s (%s)\nBilgi: %%s"
+msgstr ""
 
 # technical backend details
 msgid "API access key"
-msgstr "API erişim anahtarı"
+msgstr ""
 
 msgid "Account"
-msgstr "Hesap"
+msgstr ""
 
 msgid "API key"
-msgstr "API anahtarı"
+msgstr ""
 
 msgid "bit.ly user"
-msgstr "bit.ly kullanıcısı"
+msgstr ""
 
 msgid "bit.ly user name"
-msgstr "bit.ly kullanıcı adı"
+msgstr ""
 
 msgid "bit.ly key"
-msgstr "bit.ly anahtarı"
+msgstr ""
 
 msgid "bit.ly users key"
-msgstr "bit.ly kullanıcıların anahtarı"
+msgstr ""
 
 msgid "Google API key"
-msgstr "Google API anahtarı"
+msgstr ""
 
 msgid "Google API account"
-msgstr "Google API hesabı"
+msgstr ""
 
 msgid "tiny.cc user"
-msgstr "tiny.cc kullanıcısı"
+msgstr ""
 
 msgid "tiny.cc user name"
-msgstr "tiny.cc kullanıcı adı"
+msgstr ""
 
 msgid "tiny.cc key"
-msgstr "tiny.cc anahtarı"
+msgstr ""
 
 msgid "tiny.cc user key"
-msgstr "tiny.cc kullanıcı anahtarı"
+msgstr ""
 
 # longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr "Arka uç ile iletişim sırasında şifreleme sertifikalarının doğrulanmasını zorla"
+msgstr ""
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr "Harici 'bitly.com' servisi, her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır."
+msgstr ""
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr "Bunun anlamı ilk olarak kendi sitelerinde bir '%s' için kaydolmanız gerektiğidir."
+msgstr ""
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr "Harici 'turl' servisi her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır."
+msgstr ""
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr "Harici 'ti.ny' servisi her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır."
+msgstr ""
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr "Harici 'cli.gs' servisi her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır."
+msgstr ""
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr "Harici 'is.gd' servisi her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır."
+msgstr ""
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr "Harici 'tiny.cc' servisi her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır."
+msgstr ""
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr "Hiçbir arka uç kullanılmadı, bağlantılar doğrudan sizin ownCloud'un ürettiği bağlantıları işaret etmektedir."
+msgstr ""
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr "Bu servis bit.ly kullanıcı adı ve '%s' sağlanarak kendinizi doğrulamanızı gerektirmektedir."
+msgstr ""
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr "Bu tür bağlantılar büyük olasılıkla bir arka uç kullanıldığı duruma göre daha uzun üretilmektedir."
+msgstr ""
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr "Ancak bu seçenek herhangi bir üçüncü şahıs servisine güvenmiyor ve kısaltmaları sizin kontrolünüz altında tutar."
+msgstr ""
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr "Bu kurulum sunucu tabanlı yapılandırma kurallara bağlı olduğundan temel adres sadece yapılandırma 'Yönetici' bölümünde belirtilebilir."
+msgstr ""
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr "Durağan, kural tabanlı arka uç, belirtilen temel adrese göre bağlantılar oluşturur."
+msgstr ""
 
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr "Dikkatli olmalısınız. Burada yapılandırılmış adrese gelen herhangi bir istek dahili olarak 'kısaltma' modülüne eşleştirilir."
+msgstr ""
 
 msgid "The target of that mapping must be some URL like:"
-msgstr "Bu eşleştirmenin hedefi aşağıdakine benzer bir adres olmalı:"
+msgstr ""
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr "Sağlanan örnek bağlantı ile bir deneyin, tıklayın, bu kurulumun çalıştığını belirten bir onay ile neticelenecektir."
+msgstr ""
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr "Eğer belirtilen şekilde eşleştirilen bir kısa yol temel adresi belirtemiyorsanız boş bırakın."
+msgstr ""
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr "Burada tanımlanan şekilde eşleştirilen bir kısaltma servis adresi tanımlayabiliyorsanız bu arka ucu kullanın. Aksi takdirde kısaltmalarınız çalışmaz."
+msgstr ""
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr "Google'un harici 'goo.gl' servisi her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır."
+msgstr ""
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr "Bu servisi kullanmanız için geçerli bir  '%%s' sağlamanız gerekli."
+msgstr ""
 
 msgid "This means you require a 'Google API console account'."
-msgstr "Bu bir 'Google API konsol kullanıcısı' gerektiği anlamına geliyor."
+msgstr ""
 
 msgid "Register a new '%%s' at their pages."
-msgstr "Kendi sayfasında yeni bir '%%s' kaydet."
+msgstr ""
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr "SMS seçeneğini etkinleştirme SMS ile bir kısaltma gönderme sunacak."
+msgstr ""
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr "Ne yazık ki 'SMS adres işleme' için destek genellikle sadece akıllı telefonlar gibi mobil cihazlarda bulunur."
+msgstr ""
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr "Buna ek olarak, bu uygulamalar minimalist, hatalı ve sistemden sisteme farklılık gösterir."
+msgstr ""
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr "Kısacası: Bu ​​sizin için işe yaramayabilir, bu nedenle devre dışı bırakabilirsiniz..."
+msgstr ""
 
 msgid "Great, your setup appears to be working fine!"
-msgstr "Mükemmel, yapılandırmanız çalışıyor gibi görünüyor!"
+msgstr ""
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr "Tanımlı temel adresine yapılan istekler ownCloud aktarım servisine eşleştirildi."
+msgstr ""
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr "Bu ayarlar değiştirilmediği sürece durağan arka uç kullanımı iyi ve güvenlidir."
+msgstr ""
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr "Bu arka uç tüm yerel kullanıcıların kişisel ayarlarında alternatif ilave arka uç olarak önerilecektir."
+msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr "Üzgünüz, fakat kurulumunuz henüz doğru gibi görünmüyor!"
+msgstr ""
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr "Lütfen tanımlı temel adres değerinin doğru olduğundan emin olmak için ayarları kontrol edin."
+msgstr ""
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr "Tüm isteklerin bir şekilde Kısaltmalar aktarım hizmetine eşleştirilmiş olduğundan emin olun."
+msgstr ""

@@ -198,7 +198,7 @@
 "Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones." => "Ne yazık ki 'SMS adres işleme' için destek genellikle sadece akıllı telefonlar gibi mobil cihazlarda bulunur.",
 "In addition, those implementations are minimalistic, buggy and differ from system to system." => "Buna ek olarak, bu uygulamalar minimalist, hatalı ve sistemden sisteme farklılık gösterir.",
 "In short: this might not work for you, therefore you can disable it…" => "Kısacası: Bu ​​sizin için işe yaramayabilir, bu nedenle devre dışı bırakabilirsiniz...",
-"Great, your setup appears to be working fine!" => "Mükemmel, kurulumunuz güzel görünüyor!",
+"Great, your setup appears to be working fine!" => "Mükemmel, yapılandırmanız çalışıyor gibi görünüyor!",
 "Requests to the configured base url are mapped to this ownClouds relay service." => "Tanımlı temel adresine yapılan istekler ownCloud aktarım servisine eşleştirildi.",
 "Usage of that static backend is fine and safe as long as this setup is not altered." => "Bu ayarlar değiştirilmediği sürece durağan arka uç kullanımı iyi ve güvenlidir.",
 "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." => "Bu arka uç tüm yerel kullanıcıların kişisel ayarlarında alternatif ilave arka uç olarak önerilecektir.",
