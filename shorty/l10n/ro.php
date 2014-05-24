@@ -74,6 +74,7 @@
 "Toggle toolbar" => "Comutați bara de instrumente",
 "Total of clicks" => "Numar total de clickuri",
 "Unfortunately the implementation of this scheme is limited" => "Din păcate implementarea acestei scheme este limitata ",
+"Url shortened to: %s" => "URL scurtat la: %",
 "API access key" => "Cheie de acces API",
 "Account" => "Cont",
 "API key" => "Cheie API",
