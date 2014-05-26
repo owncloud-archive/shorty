@@ -66,7 +66,7 @@
 "Creation" => "Oluşturulma",
 "Delete shorty" => "Kısaltmayı sil",
 "Drag this to your browser bookmarks." => "Tarayıcınızın yer imlerine sürükleyin.",
-"Embed the QRCode as an image into some web page using this url" => "Bu adresi kullanarak, bazı web sayfalarında resim olarak kullanmak için Karekodu göm",
+"Embed the QRCode as an image into some web page using this url" => "Bu adresi kullanarak, bazı web sayfalarında kullanmak için Karekodu bir resim olarak göm",
 "Example" => "Örnek",
 "Exception" => "İstisna",
 "Exception (%s)" => "İstisna (%s)",
