@@ -179,7 +179,7 @@
 "The external 'cli.gs' service is used to register a short url for each generated shorty." => "Harici 'cli.gs' servisi her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır.",
 "The external 'is.gd' service is used to register a short url for each generated shorty." => "Harici 'is.gd' servisi her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır.",
 "The external 'tiny.cc' service is used to register a short url for each generated shorty." => "Harici 'tiny.cc' servisi her oluşturulan kısaltma için bir kısa adres kaydı için kullanılır.",
-"No backend is used, direct links pointing to your ownCloud are generated." => "Hiçbir arka uç kullanılmadı, bağlantılar doğrudan sizin ownCloud'un ürettiği bağlantıları işaret etmektedir.",
+"No backend is used, direct links pointing to your ownCloud are generated." => "Hiçbir arka uç kullanılmadı, doğrudan bağlantılar sizin ownCloud'un ürettiği bağlantıları işaret etmektedir.",
 "The service requires you to authenticate yourself by providing a valid bit.ly user name and an '%s'." => "Bu servis bit.ly kullanıcı adı ve '%s' sağlanarak kendinizi doğrulamanızı gerektirmektedir.",
 "Such links are most likely longer than those generated when using a backend." => "Bu tür bağlantılar büyük olasılıkla bir arka uç kullanıldığı duruma göre daha uzun üretilmektedir.",
 "However this option does not rely on any third party service and keeps your shortys under your control." => "Ancak bu seçenek herhangi bir üçüncü şahıs servisine güvenmiyor ve kısaltmaları sizin kontrolünüz altında tutar.",
