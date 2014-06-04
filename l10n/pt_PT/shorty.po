@@ -26,14 +26,15 @@
 # Translators:
 # Mouxy <daniel@mouxy.net>, 2013
 # Helder Meneses <helder.meneses@gmail.com>, 2013-2014
+# Drew Melim <nokostya.translation@gmail.com>, 2014
 # victorix, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-05-02 16:40+0000\n"
-"Last-Translator: Helder Meneses <helder.meneses@gmail.com>\n"
+"PO-Revision-Date: 2014-06-03 13:51+0000\n"
+"Last-Translator: Drew Melim <nokostya.translation@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -146,10 +147,10 @@ msgstr ""
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "para qualquer acesso"
 
 msgid "for own usage"
-msgstr ""
+msgstr "para uso proprio "
 
 msgid "with ownCloud users"
 msgstr "com utilizadores ownCloud"
@@ -162,13 +163,13 @@ msgid "Access"
 msgstr "Acesso"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "Adicionar um Shorty novo"
 
 msgid "Add as new"
 msgstr "Adicionar novo"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "Adicionar pagina como  'Shorty' ao ownCloud"
 
 msgid "Administration"
 msgstr "Administração"
@@ -231,7 +232,7 @@ msgid "Configuration"
 msgstr "Configuração"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "Mostra a quantidade de mensagens de comentários"
 
 msgid "Copy to clipboard"
 msgstr "Copiar para a área de trânsferencia"
@@ -240,13 +241,13 @@ msgid "Counted entries and clicks"
 msgstr "Clicks e entradas contadas"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "Criar um 'Shorty' novo e partilhar-lo "
 
 msgid "Creation"
 msgstr "Criação"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Apagar shorty"
 
 msgid "Drag this to your browser bookmarks."
 msgstr ""
@@ -285,7 +286,7 @@ msgid "Modify attributes"
 msgstr "Modificar atributos"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Modificar shorty"
 
 msgid "New Shorty"
 msgstr "Novo Shorty"
@@ -327,7 +328,7 @@ msgid "Paste to embed elsewhere"
 msgstr "Colar para inserir algures"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Preferência restaurada"
 
 msgid "Preference saved"
 msgstr "Preferência guardada"
@@ -375,7 +376,7 @@ msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Definições recebidas"
 
 msgid "Setting saved"
 msgstr "Definições guardadas"
@@ -405,7 +406,7 @@ msgid "Shorty with id '%s' deleted"
 msgstr "O shorty com o id '%s' foi apagado"
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "Visualizar como QRCode"
 
 msgid "Show details"
 msgstr "Mostrar detalhes"
@@ -501,7 +502,7 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Usualmente apenas funciona em dispositivos tipo smart phone"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Tipo de excepção imprevisto foi apanhado: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Infelizmente a implementação deste esquema está limitado"
