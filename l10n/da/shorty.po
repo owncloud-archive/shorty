@@ -24,9 +24,9 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Sappe, 2013
-# kaffeldt <kasper.affeldt@gmail.com>, 2013
-# lodahl <leiflodahl@gmail.com>, 2014
+# Anders J. Sørensen, 2013
+# Kasper Affeldt <kasper.affeldt@gmail.com>, 2013
+# Leif Lodahl <leiflodahl@gmail.com>, 2014
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013
 # osos <osos@openeyes.dk>, 2013
 msgid ""
@@ -34,8 +34,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-03-26 06:01+0000\n"
-"Last-Translator: lodahl <leiflodahl@gmail.com>\n"
+"PO-Revision-Date: 2014-06-04 06:12+0000\n"
+"Last-Translator: Leif Lodahl <leiflodahl@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

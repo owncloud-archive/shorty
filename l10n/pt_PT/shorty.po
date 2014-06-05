@@ -24,17 +24,17 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Mouxy <daniel@mouxy.net>, 2013
+# Daniel Pinto <daniel@mouxy.net>, 2013
 # Helder Meneses <helder.meneses@gmail.com>, 2013-2014
-# Drew Melim <nokostya.translation@gmail.com>, 2014
-# victorix, 2013
+# Andrew_Melim <nokostya.translation@gmail.com>, 2014
+# Vitor, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-06-03 13:51+0000\n"
-"Last-Translator: Drew Melim <nokostya.translation@gmail.com>\n"
+"PO-Revision-Date: 2014-06-04 06:12+0000\n"
+"Last-Translator: Andrew_Melim <nokostya.translation@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

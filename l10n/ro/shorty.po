@@ -25,14 +25,14 @@
 # 
 # Translators:
 # andreiacob <andrei.iacob@y7mail.com>, 2014
-# lauraberindei <lauraagavriloae@yahoo.com>, 2014
+# laura berindei <lauraagavriloae@yahoo.com>, 2014
 # LiliIonita <lily.ionita@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-05-23 00:34+0000\n"
+"PO-Revision-Date: 2014-06-04 06:12+0000\n"
 "Last-Translator: LiliIonita <lily.ionita@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/owncloud/language/ro/)\n"
 "MIME-Version: 1.0\n"

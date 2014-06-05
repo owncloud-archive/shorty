@@ -24,15 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
-# namphongbody <tunglam062000@gmail.com>, 2014
+# Nguyễn Tiến Trình <tunglam062000@gmail.com>, 2014
 # Sơn Nguyễn <sonnghit@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-03-26 06:01+0000\n"
-"Last-Translator: namphongbody <tunglam062000@gmail.com>\n"
+"PO-Revision-Date: 2014-06-04 06:12+0000\n"
+"Last-Translator: Nguyễn Tiến Trình <tunglam062000@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/owncloud/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

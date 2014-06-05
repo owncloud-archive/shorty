@@ -24,15 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
-# cjtess <claudio.tessone@gmail.com>, 2013
+# CJTess <claudio.tessone@gmail.com>, 2013
 # cnngimenez, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-04-16 05:40+0000\n"
-"Last-Translator: cjtess <claudio.tessone@gmail.com>\n"
+"PO-Revision-Date: 2014-06-04 06:12+0000\n"
+"Last-Translator: CJTess <claudio.tessone@gmail.com>\n"
 "Language-Team: Spanish (Argentina) (http://www.transifex.com/projects/p/owncloud/language/es_AR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

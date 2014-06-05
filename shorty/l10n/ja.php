@@ -59,7 +59,7 @@
 "Clicking 'Ok' below will try to launch an sms composer" => "以下の'Ok' をクリックするとSMS送信画面を起動します。",
 "Close" => "閉じる",
 "Configuration" => "設定",
-"The amount of feedback messages shown." => "フィードバックメッセージを全て表示",
+"The amount of feedback messages shown." => "フィードバックメッセージをすべて表示",
 "Copy to clipboard" => "クリップボードにコピー",
 "Counted entries and clicks" => "カウントされたエントリとクリック",
 "Create a new 'Shorty' and share it" => "新しい'Shorty(短縮URL)'を生成して、共有する",
@@ -201,7 +201,7 @@
 "Great, your setup appears to be working fine!" => "いいですね！設定はちゃんと動いているようです。",
 "Requests to the configured base url are mapped to this ownClouds relay service." => "この設定されたベースURLへのリクエストは、このownCloudのリレーサービスに割り当てられます。",
 "Usage of that static backend is fine and safe as long as this setup is not altered." => "この設定を変更しない限り、その静的バックエンドの利用は問題なく、安全です。",
-"This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." => "このバックエンドは、全てのユーザーに個人設定での追加のバックエンドとして提供されるものです。",
+"This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." => "このバックエンドは、すべてのユーザーに個人設定での追加のバックエンドとして提供されるものです。",
 "Sorry, but your setup appears not to be working correctly yet!" => "申し訳ありませんが、設定がまだ正常に動いていないようです。",
 "Please check your setup and make sure that the configured base url is indeed correct." => "設定をチェックして、設定されたベースURLが間違いなく正しいか、確認をお願いいたします。",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "それに対する全てのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。"

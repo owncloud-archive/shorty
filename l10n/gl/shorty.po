@@ -24,15 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
-# mbouzada <mbouzada@gmail.com>, 2013
-# mbouzada <mbouzada@gmail.com>, 2013
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2013
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-06-03 10:01+0000\n"
-"Last-Translator: mbouzada <mbouzada@gmail.com>\n"
+"PO-Revision-Date: 2014-06-04 08:21+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/projects/p/owncloud/language/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -449,7 +449,7 @@ msgid "Target url"
 msgstr "URL de destino"
 
 msgid "Target url '%s' is valid"
-msgstr "O URL de destino«%s» é incorrecto"
+msgstr "O URL de destino «%s» é incorrecto"
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Esta imaxe pódese utilizar para escribir documentos ou para estabelecer sitios web"
@@ -580,7 +580,7 @@ msgstr "Forza a comprobación dos certificados de cifrado durante a comunicació
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr "O servizo externo «bitly.com» utilizase para rexistrar un URL corto para cada «Shorty» xerado."
+msgstr "O servizo externo «bitly.com» utilizase para rexistrar un URL curto para cada «Shorty» xerado."
 
 msgid "This means you have to register an '%s' at their site first."
 msgstr "Isto quere dicir que primeiro ten que rexistrar un «%s» no seu sitio"
@@ -588,17 +588,17 @@ msgstr "Isto quere dicir que primeiro ten que rexistrar un «%s» no seu sitio"
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr "O servizo externo «turl» utilizase para rexistrar un URL corto para cada «Shorty» xerado."
+msgstr "O servizo externo «turl» utilizase para rexistrar un URL curto para cada «Shorty» xerado."
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr "O servizo externo «ti.ny» utilizase para rexistrar un URL corto para cada «Shorty» xerado."
+msgstr "O servizo externo «ti.ny» utilizase para rexistrar un URL curto para cada «Shorty» xerado."
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr "O servizo externo «cli.gs» utilizase para rexistrar un URL corto para cada «Shorty» xerado."
+msgstr "O servizo externo «cli.gs» utilizase para rexistrar un URL curto para cada «Shorty» xerado."
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
@@ -608,7 +608,7 @@ msgstr "O servizo externo «is.gd» utilizase para rexistrar un URL corto para c
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr "O servizo externo «tiny.cc» utilizase para rexistrar un URL corto para cada «Shorty» xerado."
+msgstr "O servizo externo «tiny.cc» utilizase para rexistrar un URL curto para cada «Shorty» xerado."
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
@@ -664,7 +664,7 @@ msgstr "Utilice só esta infraestrutura se vostede pode fornecer un fornecer un 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr "O servizo externo de Google «goo.gl» utilizase para rexistrar un URL corto para cada «Shorty» xerado."
+msgstr "O servizo externo de Google «goo.gl» utilizase para rexistrar un URL curto para cada «Shorty» xerado."
 
 msgid "You must provide a valid '%%s' to use this service."
 msgstr "Debe fornecer un «%%s» correcto para usar este servizo"

@@ -25,15 +25,15 @@
 # 
 # Translators:
 # Daisuke Deguchi <ddeguchi@nagoya-u.jp>, 2013
-# plazmism <gomidori@live.jp>, 2013
+# タカハシ <gomidori@live.jp>, 2013
 # kuromabo <md81bird@hitaki.net>, 2014
-# tt yn <tetuyano+transi@gmail.com>, 2013
+# YANO Tetsu <tetuyano+transi@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-04-16 05:40+0000\n"
+"PO-Revision-Date: 2014-06-04 17:11+0000\n"
 "Last-Translator: kuromabo <md81bird@hitaki.net>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
@@ -232,7 +232,7 @@ msgid "Configuration"
 msgstr "設定"
 
 msgid "The amount of feedback messages shown."
-msgstr "フィードバックメッセージを全て表示"
+msgstr "フィードバックメッセージをすべて表示"
 
 msgid "Copy to clipboard"
 msgstr "クリップボードにコピー"
@@ -709,7 +709,7 @@ msgstr "この設定を変更しない限り、その静的バックエンドの
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr "このバックエンドは、全てのユーザーに個人設定での追加のバックエンドとして提供されるものです。"
+msgstr "このバックエンドは、すべてのユーザーに個人設定での追加のバックエンドとして提供されるものです。"
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "申し訳ありませんが、設定がまだ正常に動いていないようです。"

@@ -24,8 +24,8 @@
 # @author Christian Reiner
 # 
 # Translators:
-# a.tangemann <a.tangemann@web.de>, 2013
-# arkascha <foss@christian-reiner.info>, 2013
+# Andreas Tangemann <a.tangemann@web.de>, 2013
+# Christian Reiner <foss@christian-reiner.info>, 2013
 # Marcel Kühlhorn <tux93@opensuse.org>, 2013
 # Mario Siegmann <mario_siegmann@web.de>, 2013
 # traductor, 2013
@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-04-16 05:40+0000\n"
+"PO-Revision-Date: 2014-06-04 06:12+0000\n"
 "Last-Translator: Mario Siegmann <mario_siegmann@web.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/owncloud/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
