@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-06-04 06:12+0000\n"
+"PO-Revision-Date: 2014-06-06 03:30+0000\n"
 "Last-Translator: Sovichet Tep\n"
 "Language-Team: Khmer (http://www.transifex.com/projects/p/owncloud/language/km/)\n"
 "MIME-Version: 1.0\n"
@@ -115,10 +115,10 @@ msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
@@ -232,7 +232,7 @@ msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "ចម្លង​ទៅ​ឃ្លីបបត"
 
 msgid "Counted entries and clicks"
 msgstr ""
@@ -361,7 +361,7 @@ msgid "Send by email"
 msgstr ""
 
 msgid "Send link by email"
-msgstr ""
+msgstr "ផ្ញើ​តំណ​តាម​អ៊ីមែល"
 
 msgid "Send by SMS"
 msgstr ""
@@ -415,7 +415,7 @@ msgid "SMS"
 msgstr ""
 
 msgid "SMS composer"
-msgstr ""
+msgstr "កម្មវិធី​សរសេរ SMS"
 
 msgid "Sort ascending"
 msgstr ""
@@ -469,7 +469,7 @@ msgid "therefore the content must be copied manually"
 msgstr ""
 
 msgid "then paste into message"
-msgstr ""
+msgstr "ហើយ​បិទ​ភ្ជាប់​ទៅ​ក្នុង​សារ"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr ""
