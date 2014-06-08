@@ -6,6 +6,7 @@
 "delete" => "slet",
 "share" => "del",
 "show" => "vis",
+"error" => "fejl",
 "Ctrl-C" => "Ctrl-C",
 "Ctrl-V" => "Ctrl-V",
 "Alternatively the link can be copied into a message manually" => "Linket kan også kopieres ind i en besked manuelt ",
