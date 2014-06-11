@@ -25,14 +25,14 @@
 # 
 # Translators:
 # kyyberi <jarkko.moilanen@want3d.fi>, 2013
-# Jiri Grönroos <jiri.gronroos@iki.fi>, 2013
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-06-05 06:12+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-06-10 07:20+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/owncloud/language/fi_FI/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Liitännäiset"
 
 # status names
 msgid "all"
@@ -64,13 +64,13 @@ msgid "never"
 msgstr "Ei koskaan"
 
 msgid "private"
-msgstr ""
+msgstr "yksityinen"
 
 msgid "public"
-msgstr ""
+msgstr "julkinen"
 
 msgid "shared"
-msgstr ""
+msgstr "jaettu"
 
 # actions ("to be done")
 msgid "delete"
@@ -123,22 +123,22 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "bitly.com-palvelu"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "cli.gs-palvelu"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "goo.gl-palvelu"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "is.gd-palvelu"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "ti.ny-palvelu"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "tiny.cc-palvelu"
 
 msgid "static backend"
 msgstr ""
@@ -203,7 +203,7 @@ msgid "Base url"
 msgstr ""
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Valitse palvelu…"
 
 msgid "Click for embedding details"
 msgstr ""
@@ -212,7 +212,7 @@ msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
 
 msgid "Click registered"
-msgstr ""
+msgstr "Napsautus rekisteröity"
 
 msgid "Clicks"
 msgstr "Klikkaus"
@@ -248,7 +248,7 @@ msgid "Delete shorty"
 msgstr ""
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "Vedä tämä selaimesi kirjanmerkkeihin."
 
 msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
@@ -314,7 +314,7 @@ msgid "Open target"
 msgstr ""
 
 msgid "Open target url"
-msgstr ""
+msgstr "Avaa kohdeosoite"
 
 msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
@@ -377,7 +377,7 @@ msgid "Setting retrieved"
 msgstr ""
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Asetus tallennettu"
 
 msgid "Setting '%s' retrieved"
 msgstr ""
@@ -404,13 +404,13 @@ msgid "Shorty with id '%s' deleted"
 msgstr ""
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "Näytä QR-koodina"
 
 msgid "Show details"
 msgstr "Näytä tiedot"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Näytä käyttö"
 
 msgid "SMS"
 msgstr "Tekstiviesti"
@@ -494,7 +494,7 @@ msgid "Toggle toolbar"
 msgstr "Työkalupalkki päälle/pois"
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "Napsautuksia yhteensä"
 
 msgid "Typically this only works on devices like smart phones"
 msgstr ""
@@ -509,7 +509,7 @@ msgid "Unknown object of type caught: %s"
 msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "Osoite lyhennetty muotoon: %s"
 
 msgid "Use it in web pages by referencing or embedding"
 msgstr ""
@@ -518,7 +518,7 @@ msgid "Use the '%s' button above or the fine 'Shortlet'"
 msgstr ""
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "Vahvista napsauttamalla…"
 
 msgid "Verification failed"
 msgstr ""
