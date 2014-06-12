@@ -24,7 +24,7 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Anders J. Sørensen, 2013
+# Anders J. Sørensen, 2013-2014
 # Kasper Affeldt <kasper.affeldt@gmail.com>, 2013
 # Leif Lodahl <leiflodahl@gmail.com>, 2014
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013
@@ -34,8 +34,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-06-07 12:20+0000\n"
-"Last-Translator: Leif Lodahl <leiflodahl@gmail.com>\n"
+"PO-Revision-Date: 2014-06-11 18:14+0000\n"
+"Last-Translator: Anders J. Sørensen\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Plugins"
 
 # status names
 msgid "all"
@@ -58,32 +58,32 @@ msgid "deleted"
 msgstr "Slettet"
 
 msgid "disabled"
-msgstr ""
+msgstr "deaktiveret"
 
 msgid "enabled"
-msgstr ""
+msgstr "aktiveret"
 
 msgid "never"
 msgstr "aldrig"
 
 msgid "private"
-msgstr ""
+msgstr "privat"
 
 msgid "public"
-msgstr ""
+msgstr "offentlig"
 
 msgid "shared"
-msgstr ""
+msgstr "delt"
 
 # actions ("to be done")
 msgid "delete"
 msgstr "slet"
 
 msgid "edit"
-msgstr ""
+msgstr "Rediger"
 
 msgid "open"
-msgstr ""
+msgstr "åben"
 
 msgid "share"
 msgstr "del"
@@ -93,29 +93,29 @@ msgstr "vis"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "genindlæs"
 
 msgid "up"
-msgstr ""
+msgstr "op"
 
 msgid "down"
-msgstr ""
+msgstr "ned"
 
 msgid "clear"
-msgstr ""
+msgstr "ryd"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "ingen"
 
 msgid "error"
 msgstr "fejl"
 
 msgid "info"
-msgstr ""
+msgstr "info"
 
 msgid "debug"
-msgstr ""
+msgstr "debug"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -126,22 +126,22 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "bitly.com service"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "cli.gs service"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "goo.gl service"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "is.gd service"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "ti.ny service"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "tiny.cc service"
 
 msgid "static backend"
 msgstr ""
@@ -154,7 +154,7 @@ msgid "for own usage"
 msgstr ""
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "med ownCloud-brugere"
 
 msgid "available for everyone"
 msgstr ""
@@ -164,16 +164,16 @@ msgid "Access"
 msgstr ""
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "Tilføj shorty"
 
 msgid "Add as new"
-msgstr ""
+msgstr "Tilføj som ny"
 
 msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
 msgid "Administration"
-msgstr ""
+msgstr "Administration"
 
 msgid "Administrative, system wide settings of this app:"
 msgstr ""
@@ -206,7 +206,7 @@ msgid "Base url"
 msgstr ""
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Vælg en service"
 
 msgid "Click for embedding details"
 msgstr "Klik for indlejringsdetaljer"
@@ -248,7 +248,7 @@ msgid "Creation"
 msgstr ""
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Slet shorty"
 
 msgid "Drag this to your browser bookmarks."
 msgstr ""
@@ -266,7 +266,7 @@ msgid "Exception (%s)"
 msgstr "Undtagelse (%s)"
 
 msgid "Expiration"
-msgstr ""
+msgstr "Udløb"
 
 msgid "Feedback"
 msgstr "Feedback"
@@ -287,10 +287,10 @@ msgid "Modify attributes"
 msgstr ""
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Tilpas shorty"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "Ny Shorty"
 
 msgid "Notes"
 msgstr "Noter"
@@ -329,10 +329,10 @@ msgid "Paste to embed elsewhere"
 msgstr ""
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Præferencer hentet"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Præferencer gemt"
 
 msgid "Preference '%s' retrieved"
 msgstr "Præference '%s' modtaget"
@@ -341,7 +341,7 @@ msgid "Preference '%s' saved"
 msgstr "Præference '%s' gemt"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Præferencer"
 
 msgid "Prepare to send as SMS"
 msgstr ""
@@ -353,22 +353,22 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr ""
+msgstr "Genindlæs"
 
 msgid "Reload list"
-msgstr ""
+msgstr "Genindlæs liste"
 
 msgid "Save"
 msgstr "Gem"
 
 msgid "Send by email"
-msgstr ""
+msgstr "Send som e-mail"
 
 msgid "Send link by email"
 msgstr "Send link med email"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "Send som SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
@@ -377,13 +377,13 @@ msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Indstillinger hentet"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Indstillinger gemt"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Indstilling '%s' hentet"
 
 msgid "Setting '%s' saved"
 msgstr "Indstilling '%s' gemt"
@@ -392,10 +392,10 @@ msgid "Settings"
 msgstr "Indstillinger"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Del og brug"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "Del shorty"
 
 msgid "Shortlet"
 msgstr ""
@@ -407,16 +407,16 @@ msgid "Shorty with id '%s' deleted"
 msgstr "Shorty med ID '%s' slettet"
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "Vis som QRCode"
 
 msgid "Show details"
-msgstr ""
+msgstr "Vis detaljer"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Vis brug"
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
 msgstr "SMS Composer"
@@ -428,7 +428,7 @@ msgid "Sort descending"
 msgstr ""
 
 msgid "Clear filter"
-msgstr ""
+msgstr "Ryd filter"
 
 msgid "Source url"
 msgstr ""
@@ -440,7 +440,7 @@ msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr "Statusændring for shorty med id '%s' gemt"
@@ -536,13 +536,13 @@ msgstr "%s ⏎\nBesked (kode):%s (%s) ⏎\nFil (linje):%s (%s) ⏎\nInfo:%%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "API adgangsnøgle"
 
 msgid "Account"
 msgstr "Konto"
 
 msgid "API key"
-msgstr ""
+msgstr "API nøgle"
 
 msgid "bit.ly user"
 msgstr ""
@@ -557,22 +557,22 @@ msgid "bit.ly users key"
 msgstr ""
 
 msgid "Google API key"
-msgstr ""
+msgstr "Google API nøgle"
 
 msgid "Google API account"
 msgstr ""
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "tiny.cc bruger"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "tiny.cc brugernavn"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "tiny.cc nøgle"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "tiny.cc brugernøgle"
 
 # longer terms: typically explanations
 msgid ""
@@ -713,7 +713,7 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "Beklager, men dit system ser ikke ud til at fungere korrekt!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"

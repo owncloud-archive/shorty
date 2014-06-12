@@ -43,6 +43,7 @@
 "Administrative, system wide settings of this app:" => "管理设置，可修改此应用的全局设置：",
 "after the SMS has been launched" => "在短信启动后",
 "Alternatively the image can be downloaded for printout or storage" => "另外，此图片也可以下载打印或保存",
+"alternatively the link can be copied for further usage" => "此外，也可以复制链接，供其它用途",
 "Alternatively the link can be copied manually" => "此外，也可手动复制此链接",
 "Alternatively the link can be copied into a message manually" => "或者可以手动将链接复制到信息中",
 "Anything that appears helpful …" => "任何可能有用的信息……",
