@@ -23,14 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
-# mhh <marian.hvolka@stuba.sk>, 2013
+# Marián Hvolka <marian.hvolka@stuba.sk>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-05-16 06:13+0000\n"
-"Last-Translator: mhh <marian.hvolka@stuba.sk>\n"
+"PO-Revision-Date: 2014-06-16 19:51+0000\n"
+"Last-Translator: Marián Hvolka <marian.hvolka@stuba.sk>\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/owncloud/language/sk_SK/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
