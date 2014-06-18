@@ -65,7 +65,7 @@
 "Create a new 'Shorty' and share it" => "Lag en ny 'Shorty' og del den",
 "Creation" => "Oppretting",
 "Delete shorty" => "Slett shorty",
-"Drag this to your browser bookmarks." => "Dra denne til nettleserens bokmerker",
+"Drag this to your browser bookmarks." => "Dra denne til bokmerkene i nettleseren.",
 "Embed the QRCode as an image into some web page using this url" => "Bygg inn QRCoden som et bilde i en web-side vha. denne url-en",
 "Example" => "Eksempel",
 "Exception" => "Unntak",
