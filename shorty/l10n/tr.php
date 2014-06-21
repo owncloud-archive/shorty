@@ -72,7 +72,7 @@
 "Exception (%s)" => "İstisna (%s)",
 "Expiration" => "Bitiş",
 "Feedback" => "Geribildirim",
-"It can be enabled by a single click in the administration:" => "Bu yönetimde tek bir tıklama ile etkinleştirilebilir:",
+"It can be enabled by a single click in the administration:" => "Bu, yönetimde tek bir tıklama ile etkinleştirilebilir:",
 "Loading" => "Yükleniyor",
 "Mail client" => "E-posta istemcisi",
 "Modifications for shorty with id '%s' saved" => "'%s' numaralı kısaltma değişikliği kaydedildi",
