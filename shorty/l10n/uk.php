@@ -81,6 +81,7 @@
 "Verification failed" => "Перевірка пройшла неуспішно",
 "%s\nMessage(code): %s (%s)\nFile(line): %s (%s)\nInfo: %%s" => "%s\nПовідомлення(код): %s (%s)\nФайл(строчка): %s (%s)\nІнфо: %%s",
 "API access key" => "ключ доступу API",
+"Account" => "Обліковий запис",
 "API key" => "ключ API",
 "bit.ly user" => "bit.ly користувач",
 "bit.ly user name" => "bit.ly ім'я користувача",
