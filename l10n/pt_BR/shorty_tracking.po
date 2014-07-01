@@ -23,13 +23,13 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Flávio Veras <flaviove@gmail.com>, 2013
+# Flávio Veras <flaviove@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-06-27 11:41+0000\n"
+"PO-Revision-Date: 2014-06-30 12:23+0000\n"
 "Last-Translator: Flávio Veras <flaviove@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/owncloud/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgid "Clicks"
 msgstr "Clicks"
 
 msgid "Host"
-msgstr "Servidor"
+msgstr "Host"
 
 msgid "List clicks"
 msgstr "Listar clicks"

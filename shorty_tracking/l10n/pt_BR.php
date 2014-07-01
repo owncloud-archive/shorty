@@ -8,7 +8,7 @@
 "Address" => "Endereço",
 "Click details" => "Detalhes dos clicks",
 "Clicks" => "Clicks",
-"Host" => "Servidor",
+"Host" => "Host",
 "List clicks" => "Listar clicks",
 "List of tracked clicks" => "Lista de clicks rastreados",
 "Result" => "Resultado",
