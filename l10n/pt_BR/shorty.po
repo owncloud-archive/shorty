@@ -24,14 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Flávio Veras <flaviove@gmail.com>, 2013
+# Flávio Veras <flaviove@gmail.com>, 2013-2014
 # Rodrigo Tavares <rodrigost23@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-06-30 10:52+0000\n"
+"PO-Revision-Date: 2014-07-01 11:00+0000\n"
 "Last-Translator: Flávio Veras <flaviove@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/owncloud/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -188,13 +188,13 @@ msgid "Alternatively the link can be copied manually"
 msgstr "Alternativamente o linck pode ser copiado manualmente"
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr "Alternativamente, olinck pode ser copiado em uma mensagem manualmente"
+msgstr "Alternativamente, o linck pode ser copiado em uma mensagem manualmente"
 
 msgid "Anything that appears helpful …"
 msgstr "Qualquer coisa que parece útil..."
 
 msgid "Default backend suggested inside users preferences"
-msgstr "Backend padrão sugerido dentro preferências dos utilizadores"
+msgstr "Backend padrão sugerido dentro de preferências dos usuários"
 
 msgid "Backend"
 msgstr "Backend"
@@ -221,7 +221,7 @@ msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr "Clicar em 'Ok' abaixo tentará abrir um cliente de e-mail"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr "Clicando em 'Ok' abaixo vai tentar iniciar um compositor sms"
+msgstr "Clicando em 'Ok' abaixo vai tentar iniciar um editor sms"
 
 msgid "Close"
 msgstr "Fechar"
@@ -356,7 +356,7 @@ msgid "Reload list"
 msgstr "Recarregar lista"
 
 msgid "Save"
-msgstr "Guardar"
+msgstr "Salvar"
 
 msgid "Send by email"
 msgstr "Enviar por email"
@@ -386,7 +386,7 @@ msgid "Setting '%s' saved"
 msgstr "Configuração '%s' salva"
 
 msgid "Settings"
-msgstr "Ajustes"
+msgstr "Configurações"
 
 msgid "Share and use"
 msgstr "Compartilhar e usar"
@@ -398,7 +398,7 @@ msgid "Shortlet"
 msgstr "Atalho"
 
 msgid "Shorty as QRCode"
-msgstr "Curto como QRCode"
+msgstr "Shorty como QRCode"
 
 msgid "Shorty with id '%s' deleted"
 msgstr "Shorty com id '%s' excluído"
@@ -416,7 +416,7 @@ msgid "SMS"
 msgstr "SMS"
 
 msgid "SMS composer"
-msgstr "Compositor SMS"
+msgstr "Editor SMS"
 
 msgid "Sort ascending"
 msgstr "Ordem Ascendente"
@@ -473,7 +473,7 @@ msgid "then paste into message"
 msgstr "em seguida, cole na mensagem"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr "Este código de barras 2D codifica a url apontando para este Pequeno"
+msgstr "Este código de barras 2d codifica a url apontando para este Shorty"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Esta é uma url interna que retransmite para uma URL atalho"
@@ -503,10 +503,10 @@ msgid "Unexpected type of exception caught: %s"
 msgstr "Tipo inesperado de exceção capturada: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr "Infelizmente, a implementação deste sistema é limitado"
+msgstr "Infelizmente, a implementação deste esquema é limitado"
 
 msgid "Unknown object of type caught: %s"
-msgstr "Objeto desconhecido do tipo pego: %s"
+msgstr "Objeto desconhecido do tipo capiturado: %s"
 
 msgid "Url shortened to: %s"
 msgstr "Url encurtada para: %s"
@@ -554,7 +554,7 @@ msgid "bit.ly users key"
 msgstr "bit.ly chave de usuário"
 
 msgid "Google API key"
-msgstr "Cave Google API"
+msgstr "Chave Google API"
 
 msgid "Google API account"
 msgstr "Conta Google API"
@@ -580,7 +580,7 @@ msgstr "Forçar verificação de certificado de criptografia durante a comunica�
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr "O serviço \"bitly.com 'externo é usado para registrar um atalho url para cada atalho gerado."
+msgstr "O serviço \"bitly.com' externo é usado para registrar um atalho url para cada atalho gerado."
 
 msgid "This means you have to register an '%s' at their site first."
 msgstr "Isto significa que você tem que registrar um '%s' no seu site primeiro."
@@ -702,7 +702,7 @@ msgstr "Os pedidos para a url base configurada são mapeados para este serviço 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr "Uso de que backend estática é bom e seguro, desde que esta configuração não for alterada."
+msgstr "Uso de backend estática é bom e seguro, desde que esta configuração não seja alterada."
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
