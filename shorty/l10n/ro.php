@@ -44,6 +44,7 @@
 "Exception" => "Excepţie",
 "Exception (%s)" => "Excepţie (%s)",
 "Expiration" => "Expira",
+"Feedback" => "Feedback",
 "Loading" => "încărcare",
 "Mail client" => "Client de mail",
 "Modify attributes" => "Modifica atribute",
