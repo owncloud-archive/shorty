@@ -27,6 +27,7 @@
 # Anders J. Sørensen, 2013-2014
 # Kasper Affeldt <kasper.affeldt@gmail.com>, 2013
 # Leif Lodahl <leiflodahl@gmail.com>, 2014
+# Mikkel Bjerg Larsen <mikkelbjerglarsen@gmail.com>, 2014
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2013
 # Johannes Hessellund <osos@openeyes.dk>, 2013
 msgid ""
@@ -34,8 +35,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-07-04 15:12+0000\n"
-"Last-Translator: Anders J. Sørensen\n"
+"PO-Revision-Date: 2014-07-12 10:10+0000\n"
+"Last-Translator: Mikkel Bjerg Larsen <mikkelbjerglarsen@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -157,7 +158,7 @@ msgid "with ownCloud users"
 msgstr "med ownCloud-brugere"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "tilgængelig for alle"
 
 # short and general terms
 msgid "Access"
@@ -179,7 +180,7 @@ msgid "Administrative, system wide settings of this app:"
 msgstr ""
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "efter SMS'en er blevet sendt"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr ""
@@ -314,7 +315,7 @@ msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "Open mål"
 
 msgid "Open target url"
 msgstr ""
@@ -422,16 +423,16 @@ msgid "SMS composer"
 msgstr "SMS Composer"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Sortere stigende"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Sorter faldende"
 
 msgid "Clear filter"
 msgstr "Ryd filter"
 
 msgid "Source url"
-msgstr ""
+msgstr "Kilde URL"
 
 msgid "Specify a static base url…"
 msgstr ""
@@ -446,7 +447,7 @@ msgid "Status change for shorty with id '%s' saved"
 msgstr "Statusændring for shorty med id '%s' gemt"
 
 msgid "Target"
-msgstr ""
+msgstr "Mål"
 
 msgid "Target url"
 msgstr ""
@@ -524,7 +525,7 @@ msgid "Verify by clicking…"
 msgstr ""
 
 msgid "Verification failed"
-msgstr ""
+msgstr "verifikation fejlede"
 
 # exception description
 msgid ""
@@ -545,22 +546,22 @@ msgid "API key"
 msgstr "API nøgle"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "bit.ly bruger"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "bit.ly brugernavn"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "bit.ly nøgle"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "bit.ly brugernøgle"
 
 msgid "Google API key"
 msgstr "Google API nøgle"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Google API bruger"
 
 msgid "tiny.cc user"
 msgstr "tiny.cc bruger"
@@ -692,10 +693,10 @@ msgid ""
 msgstr ""
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "Kort sagt: Dette virker måske ikke for dig, derfor kan du deaktivere det..."
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "Fedt, dit setup virker tilsyneladende."
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
