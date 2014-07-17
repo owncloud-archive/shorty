@@ -60,7 +60,7 @@ msgid "load"
 msgstr ""
 
 msgid "Address"
-msgstr ""
+msgstr "ঠিকানা"
 
 msgid "Click details"
 msgstr ""

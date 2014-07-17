@@ -222,7 +222,7 @@ msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
 msgid "Close"
-msgstr ""
+msgstr "বন্ধ"
 
 msgid "Configuration"
 msgstr ""
@@ -354,7 +354,7 @@ msgid "Reload list"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "সেভ"
 
 msgid "Send by email"
 msgstr ""
@@ -384,7 +384,7 @@ msgid "Setting '%s' saved"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "সেটিংস"
 
 msgid "Share and use"
 msgstr ""
