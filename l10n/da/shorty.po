@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-07-12 10:10+0000\n"
+"PO-Revision-Date: 2014-07-17 08:21+0000\n"
 "Last-Translator: Mikkel Bjerg Larsen <mikkelbjerglarsen@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -225,7 +225,7 @@ msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr "Trykkes 'Ok' nedenfor vil der blive startet en email"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "Clicke \"OK\" nedenfor vil forsøge at starte en SMS"
 
 msgid "Close"
 msgstr "Luk"
@@ -345,7 +345,7 @@ msgid "Preferences"
 msgstr "Præferencer"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "Klargør til at sende som SMS"
 
 msgid "Relay service"
 msgstr ""
@@ -471,7 +471,7 @@ msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "derfor skal indholdet kopieres manuelt"
 
 msgid "then paste into message"
 msgstr "indsæt derefter i meddelelse"
@@ -501,13 +501,13 @@ msgid "Total of clicks"
 msgstr ""
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "Typisk virker dette kun på smartphones eller lignende enheder"
 
 msgid "Unexpected type of exception caught: %s"
 msgstr ""
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "Desværre er implementering af denne ordning begrænset"
 
 msgid "Unknown object of type caught: %s"
 msgstr ""
