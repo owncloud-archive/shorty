@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "Address" => "Адрес",
 "Host" => "Сървър",
-"Title" => "Заглавие"
+"Title" => "Заглавие",
+"User" => "Потребител"
 );
