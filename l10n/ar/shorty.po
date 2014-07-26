@@ -25,13 +25,14 @@
 # 
 # Translators:
 # eng1fares <fares_ss202@hotmail.com>, 2014
+# Hassen Houssein <hassen.houssein@smce.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-07-04 15:12+0000\n"
-"Last-Translator: eng1fares <fares_ss202@hotmail.com>\n"
+"PO-Revision-Date: 2014-07-26 02:30+0000\n"
+"Last-Translator: Hassen Houssein <hassen.houssein@smce.org>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/owncloud/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,29 +58,29 @@ msgid "disabled"
 msgstr ""
 
 msgid "enabled"
-msgstr ""
+msgstr "متاح"
 
 msgid "never"
 msgstr "بتاتا"
 
 msgid "private"
-msgstr ""
+msgstr "خاص"
 
 msgid "public"
-msgstr ""
+msgstr "عام"
 
 msgid "shared"
-msgstr ""
+msgstr "مُشارك"
 
 # actions ("to be done")
 msgid "delete"
 msgstr "حذف"
 
 msgid "edit"
-msgstr ""
+msgstr "تحرير"
 
 msgid "open"
-msgstr ""
+msgstr "فتح"
 
 msgid "share"
 msgstr "مشاركة"
@@ -89,13 +90,13 @@ msgstr "أظهر"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "إعادة تحميل"
 
 msgid "up"
-msgstr ""
+msgstr "للأعلى"
 
 msgid "down"
-msgstr ""
+msgstr "للاسفل"
 
 msgid "clear"
 msgstr ""
@@ -105,7 +106,7 @@ msgid "none"
 msgstr ""
 
 msgid "error"
-msgstr ""
+msgstr "خطأ"
 
 msgid "info"
 msgstr ""
@@ -115,23 +116,23 @@ msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "خدمات bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "خدمات cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "خدمات goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "خدمات is.gd"
 
 msgid "ti.ny service"
 msgstr ""
@@ -147,13 +148,13 @@ msgid "for any access"
 msgstr ""
 
 msgid "for own usage"
-msgstr ""
+msgstr "للإستخدام الشخصي"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "مع مستخدمي ownCloud"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "متوفر للجميع"
 
 # short and general terms
 msgid "Access"
@@ -226,13 +227,13 @@ msgid "Close"
 msgstr "إغلاق"
 
 msgid "Configuration"
-msgstr ""
+msgstr "إعداد"
 
 msgid "The amount of feedback messages shown."
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "نسخ إلى المفكرة"
 
 msgid "Counted entries and clicks"
 msgstr ""
@@ -253,7 +254,7 @@ msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr ""
+msgstr "مثال"
 
 msgid "Exception"
 msgstr ""
@@ -295,10 +296,10 @@ msgid "Nothing here yet"
 msgstr "لا شيئ هنا إلى الآن."
 
 msgid "Number of entries"
-msgstr ""
+msgstr "عدد المدخلات"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "عدد المدخلات: %s"
 
 msgid "QRCode"
 msgstr ""
@@ -358,10 +359,10 @@ msgid "Save"
 msgstr "حفظ"
 
 msgid "Send by email"
-msgstr ""
+msgstr "إرسال بواسطة البريد الإلكتروني"
 
 msgid "Send link by email"
-msgstr ""
+msgstr "إرسال الوصلة بواسطة البريد الإلكتروني"
 
 msgid "Send by SMS"
 msgstr ""
