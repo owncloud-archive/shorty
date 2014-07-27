@@ -384,7 +384,7 @@ msgid "Setting '%s' saved"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "அமைப்புகள்"
 
 msgid "Share and use"
 msgstr ""
