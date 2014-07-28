@@ -23,13 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# ishita mukherjee <ishitamukh91@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-03-26 11:18+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-07-27 15:51+0000\n"
+"Last-Translator: ishita mukherjee <ishitamukh91@gmail.com>\n"
 "Language-Team: Bengali (India) (http://www.transifex.com/projects/p/owncloud/language/bn_IN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,52 +40,52 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "সরটি ট্র্যাকিং"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "প্রবেশাধিকার ইতিহাসের একটি সমন্বিত কল্পনার সঙ্গে বরাবর বিদ্যমান Shortys এর সব অনুরোধ বিশদ ট্র্যাকিং. করা হয়।"
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "মঞ্জুর"
 
 msgid "denied"
-msgstr ""
+msgstr "অস্বীকার"
 
 msgid "blocked"
-msgstr ""
+msgstr "অবরুদ্ধ"
 
 msgid "load"
-msgstr ""
+msgstr "লোড করা"
 
 msgid "Address"
 msgstr "ঠিকানা"
 
 msgid "Click details"
-msgstr ""
+msgstr "বিস্তারিত দেখার জন্য ক্লিক করুন"
 
 msgid "Clicks"
-msgstr ""
+msgstr "ক্লিকস"
 
 msgid "Host"
-msgstr ""
+msgstr "হোস্ট"
 
 msgid "List clicks"
-msgstr ""
+msgstr "ক্লিকের তালিকা"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "ট্র্যাক করা ক্লিকের তালিকা"
 
 msgid "Result"
-msgstr ""
+msgstr "ফলাফল"
 
 msgid "Time"
-msgstr ""
+msgstr "সময়"
 
 msgid "Title"
-msgstr ""
+msgstr "পদবি"
 
 msgid "User"
-msgstr ""
+msgstr "ব্যবহারকারী"

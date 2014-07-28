@@ -24,15 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
-# ebela <bela@dandre.hu>, 2013
+# ebela <bela@dandre.hu>, 2013-2014
 # Szládovics Péter <peti@szladovics.hu>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-07-04 15:12+0000\n"
-"Last-Translator: Szládovics Péter <peti@szladovics.hu>\n"
+"PO-Revision-Date: 2014-07-27 17:30+0000\n"
+"Last-Translator: ebela <bela@dandre.hu>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/owncloud/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -167,7 +167,7 @@ msgid "Add as new"
 msgstr "Újként add hozzá"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "Hozzáadni az oldalt mint 'Shorty' ownCloud-hoz"
 
 msgid "Administration"
 msgstr "Adminisztrálás"

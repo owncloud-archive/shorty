@@ -24,6 +24,7 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Alexander Gabilondo <alexgabi@openmailbox.org>, 2014
 # asaez <asaez@asaez.eu>, 2013
 # asieriko <asieriko@gmail.com>, 2013
 # @atzerritik, 2013
@@ -33,8 +34,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-07-04 15:12+0000\n"
-"Last-Translator: @atzerritik\n"
+"PO-Revision-Date: 2014-07-27 15:00+0000\n"
+"Last-Translator: Alexander Gabilondo <alexgabi@openmailbox.org>\n"
 "Language-Team: Basque (http://www.transifex.com/projects/p/owncloud/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +45,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Pluginak"
 
 # status names
 msgid "all"
@@ -57,10 +58,10 @@ msgid "deleted"
 msgstr "ezabatuta"
 
 msgid "disabled"
-msgstr ""
+msgstr "desgaituta"
 
 msgid "enabled"
-msgstr ""
+msgstr "gaituta"
 
 msgid "never"
 msgstr "inoiz"
@@ -69,10 +70,10 @@ msgid "private"
 msgstr "pribatua"
 
 msgid "public"
-msgstr ""
+msgstr "publikoa"
 
 msgid "shared"
-msgstr ""
+msgstr "konpartitua"
 
 # actions ("to be done")
 msgid "delete"
@@ -92,29 +93,29 @@ msgstr "erakutsi"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "birkargatu"
 
 msgid "up"
-msgstr ""
+msgstr "gora"
 
 msgid "down"
-msgstr ""
+msgstr "behera"
 
 msgid "clear"
-msgstr ""
+msgstr "garbitu"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "bat ere ez"
 
 msgid "error"
-msgstr ""
+msgstr "errorea"
 
 msgid "info"
-msgstr ""
+msgstr "informazioa"
 
 msgid "debug"
-msgstr ""
+msgstr "araztu"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -125,42 +126,42 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "bitly.com zerbitzua"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "cli.gs zerbitzua"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "goo.gl zerbitzua"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "is.gd zerbitzua"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "ti.ny zerbitzua"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "tiny.cc zerbitzua"
 
 msgid "static backend"
-msgstr ""
+msgstr "backend estatikoa"
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "edozein sarbiderako"
 
 msgid "for own usage"
 msgstr "erabilera pertsonalerako"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "ownCloud erabiltzaileekin"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "gaitu edozeinentzat"
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "Sarrera"
 
 msgid "Add a new shorty"
 msgstr ""
@@ -178,22 +179,22 @@ msgid "Administrative, system wide settings of this app:"
 msgstr ""
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "SMS abian jarri ondoren"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr ""
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "bestela esteka kopiatu daiteke erabilera gehiagorako"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "Bestela esteka eskuz kopia daiteke"
 
 msgid "Alternatively the link can be copied into a message manually"
 msgstr "Baita ere lotura mezu batean eskuz kopia daiteke"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "Lagungarria izan daiteken ezer..."
 
 msgid "Default backend suggested inside users preferences"
 msgstr ""
@@ -205,7 +206,7 @@ msgid "Base url"
 msgstr "Oinarri url-a"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Aukeratu zerbitzu bat..."
 
 msgid "Click for embedding details"
 msgstr ""
@@ -250,10 +251,10 @@ msgid "Delete shorty"
 msgstr ""
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "Arrastatu zure nabigatzailearen laster-marketara"
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr ""
+msgstr "Kapsulatu QRkodea irudi baten moduan web orri batean helbide honen bidez"
 
 msgid "Example"
 msgstr "Adibidea"
@@ -265,13 +266,13 @@ msgid "Exception (%s)"
 msgstr "Salbuespena (%s)"
 
 msgid "Expiration"
-msgstr ""
+msgstr "Iraungitzea"
 
 msgid "Feedback"
 msgstr "Oharrak"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "Gaitu daiteke klik eginez administrazioan:"
 
 msgid "Loading"
 msgstr "Kargatzen"
@@ -283,10 +284,10 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Aldatu atributuak"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Aldatu shorty"
 
 msgid "New Shorty"
 msgstr "Shorty Berria"
@@ -313,34 +314,34 @@ msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "Ireki helburua"
 
 msgid "Open target url"
-msgstr ""
+msgstr "Ireki helburu helbidea"
 
 msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
 
 msgid "or simpy print or download it for off-line usage"
-msgstr ""
+msgstr "inprimatu edo deskargatu lineaz kanpo erabiltzeko"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "Itsatsi nonbait txertatzeko"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Hobespena berreskuratuta"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Lehenespena gordeta"
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "'%s' hobespena berreskuratuta"
 
 msgid "Preference '%s' saved"
 msgstr "'%s' hobespena gordea"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Hobespenak"
 
 msgid "Prepare to send as SMS"
 msgstr "Prestatu SMS gisa bidaltzeko"
@@ -355,7 +356,7 @@ msgid "Reload"
 msgstr "Birkargatu"
 
 msgid "Reload list"
-msgstr ""
+msgstr "Birkargatu zerrenda"
 
 msgid "Save"
 msgstr "Gorde"
@@ -376,16 +377,16 @@ msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Ezarpena berreskuratuta"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Ezarpena gordeta"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "'%s' ezarpena berreskuratuta"
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "'%s' ezarpena gordeta"
 
 msgid "Settings"
 msgstr "Ezarpenak"
@@ -406,13 +407,13 @@ msgid "Shorty with id '%s' deleted"
 msgstr "'%s' id-a duen Shorty-a ezabatuta"
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "Erakutsi QRkodea bezala"
 
 msgid "Show details"
-msgstr ""
+msgstr "Erakutsi xehetasunak"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Erakutsi erabilpena"
 
 msgid "SMS"
 msgstr "SMS"
@@ -421,13 +422,13 @@ msgid "SMS composer"
 msgstr "SMS sortzailea"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Ordenatu gorantz"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Ordenatu beherantz"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "Sortu iragazkia"
 
 msgid "Source url"
 msgstr ""
@@ -439,19 +440,19 @@ msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "Egoera"
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "Helburua"
 
 msgid "Target url"
-msgstr ""
+msgstr "Helburu helbidea"
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "'%s' helburu helbidea baliozkoa da"
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
@@ -535,28 +536,28 @@ msgstr ""
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "APIaren sarbide gakoa"
 
 msgid "Account"
 msgstr "Kontua"
 
 msgid "API key"
-msgstr ""
+msgstr "APIaren gakoa"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "bit.ly erabiltzailea"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "bit.ly erabiltzaile izena"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "bit.ly gakoa"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "bit.ly erabiltzaileen gakoa"
 
 msgid "Google API key"
-msgstr ""
+msgstr "Google API gakoa"
 
 msgid "Google API account"
 msgstr "Google API kontua"
@@ -568,10 +569,10 @@ msgid "tiny.cc user name"
 msgstr "tiny.cc erabiltzaile izena"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "tiny.cc gakoa"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "tini.cc erabiltzailearen gakoa"
 
 # longer terms: typically explanations
 msgid ""

@@ -47,7 +47,7 @@ msgid "all"
 msgstr ""
 
 msgid "blocked"
-msgstr ""
+msgstr "অবরুদ্ধ"
 
 msgid "deleted"
 msgstr ""
@@ -213,7 +213,7 @@ msgid "Click registered"
 msgstr ""
 
 msgid "Clicks"
-msgstr ""
+msgstr "ক্লিকস"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -486,7 +486,7 @@ msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
 msgid "Title"
-msgstr ""
+msgstr "পদবি"
 
 msgid "Toggle toolbar"
 msgstr ""

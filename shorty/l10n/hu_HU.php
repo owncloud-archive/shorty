@@ -38,6 +38,7 @@
 "Access" => "Hozzáférés",
 "Add a new shorty" => "Új Shortly hozzáadása",
 "Add as new" => "Újként add hozzá",
+"Add page as 'Shorty' to ownCloud" => "Hozzáadni az oldalt mint 'Shorty' ownCloud-hoz",
 "Administration" => "Adminisztrálás",
 "Alternatively the link can be copied into a message manually" => "Alternetivaként a link-et bemásolhatod az üzenetbe manuálisan",
 "Backend" => "Külső tárolórendszer",
