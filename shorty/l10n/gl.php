@@ -40,7 +40,7 @@
 "Add as new" => "Engadir como novo",
 "Add page as 'Shorty' to ownCloud" => "Engadir a páxina como «Shorty» a ownCloud",
 "Administration" => "Administración",
-"Administrative, system wide settings of this app:" => "Administrativo, configuración de todo o sistema deste aplicativo:",
+"Administrative, system wide settings of this app:" => "Administrativo, configuración de todo o sistema para esta aplicación:",
 "after the SMS has been launched" => "despois de que o SMS sexa iniciado",
 "Alternatively the image can be downloaded for printout or storage" => "Como alternativa, a imaxe pode descargarse para a súa impresión ou almacenamento",
 "alternatively the link can be copied for further usage" => "A ligazón tamén pode ser copiada para un uso posterior",
