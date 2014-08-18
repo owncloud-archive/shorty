@@ -288,10 +288,10 @@ msgid "New Shorty"
 msgstr ""
 
 msgid "Notes"
-msgstr ""
+msgstr "নোট"
 
 msgid "Nothing here yet"
-msgstr ""
+msgstr "কিছুই এখানে নেই এখনো"
 
 msgid "Number of entries"
 msgstr ""
