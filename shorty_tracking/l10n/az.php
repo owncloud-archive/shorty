@@ -4,5 +4,8 @@
 "granted" => "yetkiləndi",
 "denied" => "qadağan edilib",
 "blocked" => "bloklanıb",
-"load" => "yüklə"
+"load" => "yüklə",
+"Clicks" => "Düymə sixilmaları",
+"Host" => "Şəbəkədə ünvan",
+"List clicks" => "Düymə sıxılma siyahısı "
 );
