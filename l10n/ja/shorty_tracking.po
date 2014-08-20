@@ -25,13 +25,13 @@
 # Translators:
 # Daisuke Deguchi <ddeguchi@nagoya-u.jp>, 2013
 # kuromabo <md81bird@hitaki.net>, 2014
-# tt yn <tetuyano+transi@gmail.com>, 2013
+# YANO Tetsu <tetuyano+transi@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-05-16 06:13+0000\n"
+"PO-Revision-Date: 2014-08-19 14:21+0000\n"
 "Last-Translator: kuromabo <md81bird@hitaki.net>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
@@ -42,12 +42,12 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr "ショーティトラッキング"
+msgstr "Shortyトラッキング"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr "アクセス履歴を統合的に可視化して、ショーティからリダイレクトされる全てのリクエストを詳細に追跡トラッキング"
+msgstr "アクセス履歴を統合的に可視化し、Shortyからリダイレクトされるすべてのリクエストの詳細なトラッキングです。"
 
 # request results
 msgid "granted"

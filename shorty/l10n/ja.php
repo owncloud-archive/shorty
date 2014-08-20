@@ -204,5 +204,5 @@
 "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." => "このバックエンドは、すべてのユーザーに個人設定での追加のバックエンドとして提供されるものです。",
 "Sorry, but your setup appears not to be working correctly yet!" => "申し訳ありませんが、設定がまだ正常に動いていないようです。",
 "Please check your setup and make sure that the configured base url is indeed correct." => "設定をチェックして、設定されたベースURLが間違いなく正しいか、確認をお願いいたします。",
-"Make sure that all requests to it are somehow mapped to Shortys relay service." => "それに対する全てのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。"
+"Make sure that all requests to it are somehow mapped to Shortys relay service." => "それに対するすべてのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。"
 );
