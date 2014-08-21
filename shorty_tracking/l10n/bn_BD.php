@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "Address" => "ঠিকানা",
 "Host" => "হোস্ট",
-"Title" => "শিরোনাম"
+"Title" => "শিরোনাম",
+"User" => "ব্যবহারকারি"
 );

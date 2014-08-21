@@ -6,6 +6,7 @@
 "Backend" => "পশ্চাদপট",
 "Close" => "বন্ধ",
 "Configuration" => "কনফিগারেসন",
+"Feedback" => "মতামত",
 "Reload" => "পূনরায় লোড কর",
 "Save" => "সংরক্ষণ",
 "Settings" => "নিয়ামকসমূহ",
