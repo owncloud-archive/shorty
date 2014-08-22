@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-08-20 05:23+0000\n"
+"PO-Revision-Date: 2014-08-21 14:31+0000\n"
 "Last-Translator: unixidzero <unixidzero@gmail.com>\n"
 "Language-Team: Azerbaijani (http://www.transifex.com/projects/p/owncloud/language/az/)\n"
 "MIME-Version: 1.0\n"
@@ -89,7 +89,7 @@ msgstr ""
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "yeniden yüklə"
 
 msgid "up"
 msgstr ""
@@ -98,7 +98,7 @@ msgid "down"
 msgstr ""
 
 msgid "clear"
-msgstr ""
+msgstr "sil"
 
 # log levels
 msgid "none"
@@ -349,7 +349,7 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr ""
+msgstr "Yenidən yüklə"
 
 msgid "Reload list"
 msgstr ""

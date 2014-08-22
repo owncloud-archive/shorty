@@ -7,10 +7,13 @@
 "enabled" => "işə salınıb",
 "shared" => "yayımlanmış",
 "delete" => "sil",
+"reload" => "yeniden yüklə",
+"clear" => "sil",
 "Clicks" => "Düymə sixilmaları",
 "Close" => "Bağla",
 "Notes" => "Qeydlər",
 "Nothing here yet" => "Hələki burda heçnə yoxdur",
+"Reload" => "Yenidən yüklə",
 "Save" => "Saxlamaq",
 "Settings" => "Quraşdırmalar"
 );

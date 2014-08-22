@@ -7,5 +7,6 @@
 "load" => "yüklə",
 "Clicks" => "Düymə sixilmaları",
 "Host" => "Şəbəkədə ünvan",
-"List clicks" => "Düymə sıxılma siyahısı "
+"List clicks" => "Düymə sıxılma siyahısı ",
+"User" => "İstifadəçi"
 );
