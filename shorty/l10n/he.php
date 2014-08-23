@@ -11,6 +11,7 @@
 "Configuration" => "הגדרות",
 "Copy to clipboard" => "העתקה ללוח הגזירים",
 "Counted entries and clicks" => "כניסות ולחיצות שנרשמו",
+"Loading" => "טעינה",
 "Mail client" => "לקוח דוא״ל",
 "Notes" => "הערות",
 "Nothing here yet" => "אין כאן כלום עדיין",
