@@ -5,8 +5,13 @@
 "denied" => "qadağan edilib",
 "blocked" => "bloklanıb",
 "load" => "yüklə",
+"Address" => "Ünvan",
 "Clicks" => "Düymə sixilmaları",
 "Host" => "Şəbəkədə ünvan",
 "List clicks" => "Düymə sıxılma siyahısı ",
+"List of tracked clicks" => "İzlənilən kliklərin siyahısı",
+"Result" => "Nəticə",
+"Time" => "Vaxt",
+"Title" => "Başlıq",
 "User" => "İstifadəçi"
 );

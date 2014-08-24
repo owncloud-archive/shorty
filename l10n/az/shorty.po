@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-08-22 05:25+0000\n"
+"PO-Revision-Date: 2014-08-23 10:21+0000\n"
 "Last-Translator: unixidzero <unixidzero@gmail.com>\n"
 "Language-Team: Azerbaijani (http://www.transifex.com/projects/p/owncloud/language/az/)\n"
 "MIME-Version: 1.0\n"
@@ -76,16 +76,16 @@ msgid "delete"
 msgstr "sil"
 
 msgid "edit"
-msgstr ""
+msgstr "Dəyiş"
 
 msgid "open"
-msgstr ""
+msgstr "aç"
 
 msgid "share"
-msgstr ""
+msgstr "yayimla"
 
 msgid "show"
-msgstr ""
+msgstr "göstər"
 
 # toolbar icons
 msgid "reload"
@@ -487,7 +487,7 @@ msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
 msgid "Title"
-msgstr ""
+msgstr "Başlıq"
 
 msgid "Toggle toolbar"
 msgstr ""

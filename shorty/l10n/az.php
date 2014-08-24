@@ -7,6 +7,10 @@
 "enabled" => "işə salınıb",
 "shared" => "yayımlanmış",
 "delete" => "sil",
+"edit" => "Dəyiş",
+"open" => "aç",
+"share" => "yayimla",
+"show" => "göstər",
 "reload" => "yeniden yüklə",
 "clear" => "sil",
 "Clicks" => "Düymə sixilmaları",
@@ -15,5 +19,6 @@
 "Nothing here yet" => "Hələki burda heçnə yoxdur",
 "Reload" => "Yenidən yüklə",
 "Save" => "Saxlamaq",
-"Settings" => "Quraşdırmalar"
+"Settings" => "Quraşdırmalar",
+"Title" => "Başlıq"
 );
