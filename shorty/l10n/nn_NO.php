@@ -16,6 +16,7 @@
 "Counted entries and clicks" => "Talde oppføringar og klikk",
 "Exception" => "Unntak",
 "Exception (%s)" => "Unntak (%s)",
+"Feedback" => "Tilbakemelding",
 "Loading" => "Lastar",
 "Mail client" => "E-postklient",
 "Modifications for shorty with id '%s' saved" => "Lagra endringar for shorty med id «%s»",

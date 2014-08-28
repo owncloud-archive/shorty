@@ -11,6 +11,7 @@
 "Configuration" => "הגדרות",
 "Copy to clipboard" => "העתקה ללוח הגזירים",
 "Counted entries and clicks" => "כניסות ולחיצות שנרשמו",
+"Feedback" => "משוב",
 "Loading" => "טעינה",
 "Mail client" => "לקוח דוא״ל",
 "Notes" => "הערות",
