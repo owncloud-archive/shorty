@@ -7,6 +7,7 @@
 "Close" => "বন্ধ",
 "Configuration" => "কনফিগারেসন",
 "Feedback" => "মতামত",
+"Nothing here yet" => "এখনো এখানে কিছু নেই",
 "Reload" => "পূনরায় লোড কর",
 "Save" => "সংরক্ষণ",
 "Settings" => "নিয়ামকসমূহ",
