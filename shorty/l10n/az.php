@@ -5,6 +5,7 @@
 "deleted" => "silinib",
 "disabled" => "söndürülüb",
 "enabled" => "işə salınıb",
+"never" => "heç vaxt",
 "shared" => "yayımlanmış",
 "delete" => "sil",
 "edit" => "Dəyiş",

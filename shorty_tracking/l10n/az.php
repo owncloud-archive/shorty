@@ -6,6 +6,7 @@
 "blocked" => "bloklanıb",
 "load" => "yüklə",
 "Address" => "Ünvan",
+"Click details" => "Detallar üçün sıx",
 "Clicks" => "Düymə sixilmaları",
 "Host" => "Şəbəkədə ünvan",
 "List clicks" => "Düymə sıxılma siyahısı ",
