@@ -16,6 +16,7 @@
 "clear" => "sil",
 "Clicks" => "Düymə sixilmaları",
 "Close" => "Bağla",
+"Feedback" => "Geriyə cavab",
 "Notes" => "Qeydlər",
 "Nothing here yet" => "Hələki burda heçnə yoxdur",
 "Reload" => "Yenidən yüklə",

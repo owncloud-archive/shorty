@@ -1,4 +1,6 @@
 <?php $TRANSLATIONS = array(
+"Plugins" => "প্লাগইন",
+"all" => "সবাই",
 "never" => "কখনোই নয়",
 "delete" => "মুছে ফেল",
 "share" => "ভাগাভাগি কর",
@@ -7,6 +9,7 @@
 "Close" => "বন্ধ",
 "Configuration" => "কনফিগারেসন",
 "Feedback" => "মতামত",
+"Notes" => "নোট",
 "Nothing here yet" => "এখনো এখানে কিছু নেই",
 "Reload" => "পূনরায় লোড কর",
 "Save" => "সংরক্ষণ",

@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# azizul <aziz.murad3@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-08-30 05:23+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-09-01 18:50+0000\n"
+"Last-Translator: azizul <aziz.murad3@gmail.com>\n"
 "Language-Team: Bengali (Bangladesh) (http://www.transifex.com/projects/p/owncloud/language/bn_BD/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,11 +41,11 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "প্লাগইন"
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "সবাই"
 
 msgid "blocked"
 msgstr ""
@@ -288,7 +289,7 @@ msgid "New Shorty"
 msgstr ""
 
 msgid "Notes"
-msgstr ""
+msgstr "নোট"
 
 msgid "Nothing here yet"
 msgstr "এখনো এখানে কিছু নেই"
