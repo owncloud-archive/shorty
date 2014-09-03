@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-09-01 18:50+0000\n"
+"PO-Revision-Date: 2014-09-02 18:28+0000\n"
 "Last-Translator: azizul <aziz.murad3@gmail.com>\n"
 "Language-Team: Bengali (Bangladesh) (http://www.transifex.com/projects/p/owncloud/language/bn_BD/)\n"
 "MIME-Version: 1.0\n"
@@ -48,96 +48,96 @@ msgid "all"
 msgstr "সবাই"
 
 msgid "blocked"
-msgstr ""
+msgstr "আটকে দেয়া"
 
 msgid "deleted"
-msgstr ""
+msgstr "মুছে ফেলা"
 
 msgid "disabled"
-msgstr ""
+msgstr "নিষ্ক্রিয় করা"
 
 msgid "enabled"
-msgstr ""
+msgstr "সক্রিয় করা"
 
 msgid "never"
 msgstr "কখনোই নয়"
 
 msgid "private"
-msgstr ""
+msgstr "ব্যক্তিগত"
 
 msgid "public"
-msgstr ""
+msgstr "সামষ্টিক"
 
 msgid "shared"
-msgstr ""
+msgstr "ভাগাভাগিকৃত"
 
 # actions ("to be done")
 msgid "delete"
 msgstr "মুছে ফেল"
 
 msgid "edit"
-msgstr ""
+msgstr "সম্পাদনা"
 
 msgid "open"
-msgstr ""
+msgstr "খোল"
 
 msgid "share"
 msgstr "ভাগাভাগি কর"
 
 msgid "show"
-msgstr "প্রদর্শন"
+msgstr "প্রদর্শন কর"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "পূনরায় লোড কর"
 
 msgid "up"
-msgstr ""
+msgstr "উপরে"
 
 msgid "down"
-msgstr ""
+msgstr "নীচে"
 
 msgid "clear"
-msgstr ""
+msgstr "মুছে ফেল"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "কেউ নয়"
 
 msgid "error"
-msgstr ""
+msgstr "সমস্যা"
 
 msgid "info"
-msgstr ""
+msgstr "তথ্য"
 
 msgid "debug"
-msgstr ""
+msgstr "ভ্রান্তি সংশোধন"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "bitly.com service"
-msgstr ""
+msgstr "bitly.com সেবা"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "cli.gs সেবা"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "goo.gl সেবা"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "is.gd সেবা"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "ti.ny সেবা"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "tiny.cc সেবা"
 
 msgid "static backend"
 msgstr ""
@@ -157,7 +157,7 @@ msgstr ""
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "প্রবেশাধিকার"
 
 msgid "Add a new shorty"
 msgstr ""
@@ -169,7 +169,7 @@ msgid "Add page as 'Shorty' to ownCloud"
 msgstr ""
 
 msgid "Administration"
-msgstr ""
+msgstr "প্রশাসন"
 
 msgid "Administrative, system wide settings of this app:"
 msgstr ""
@@ -214,7 +214,7 @@ msgid "Click registered"
 msgstr ""
 
 msgid "Clicks"
-msgstr ""
+msgstr "ক্লিকসমূহ"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -253,13 +253,13 @@ msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr ""
+msgstr "ঊদাহরণ"
 
 msgid "Exception"
-msgstr ""
+msgstr "ব্যতিক্রম"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "ব্যতিক্রম (%s)"
 
 msgid "Expiration"
 msgstr ""
@@ -436,13 +436,13 @@ msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "অবস্থা"
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "লক্ষ্য"
 
 msgid "Target url"
 msgstr ""
@@ -493,7 +493,7 @@ msgid "Toggle toolbar"
 msgstr ""
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "মোট ক্লিক"
 
 msgid "Typically this only works on devices like smart phones"
 msgstr ""
