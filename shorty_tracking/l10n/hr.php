@@ -2,5 +2,6 @@
 "Address" => "Adresa",
 "Host" => "Poslužitelj",
 "Result" => "Rezultat",
-"Title" => "Naslov"
+"Title" => "Naslov",
+"User" => "Korisnik"
 );
