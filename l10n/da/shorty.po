@@ -25,6 +25,7 @@
 # 
 # Translators:
 # Anders J. Sørensen, 2013-2014
+# Aputsiaĸ Niels Janussen <aj@isit.gl>, 2014
 # Kasper Affeldt <kasper.affeldt@gmail.com>, 2013
 # Leif Lodahl <leiflodahl@gmail.com>, 2014
 # Mikkel Bjerg Larsen <mikkelbjerglarsen@gmail.com>, 2014
@@ -35,8 +36,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-09-02 05:23+0000\n"
-"Last-Translator: Mikkel Bjerg Larsen <mikkelbjerglarsen@gmail.com>\n"
+"PO-Revision-Date: 2014-09-14 13:49+0000\n"
+"Last-Translator: Aputsiaĸ Niels Janussen <aj@isit.gl>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -145,14 +146,14 @@ msgid "tiny.cc service"
 msgstr "tiny.cc service"
 
 msgid "static backend"
-msgstr ""
+msgstr "statisk backend"
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "for enhver form for adgang"
 
 msgid "for own usage"
-msgstr ""
+msgstr "til eget brug"
 
 msgid "with ownCloud users"
 msgstr "med ownCloud-brugere"
@@ -162,7 +163,7 @@ msgstr "tilgængelig for alle"
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "Adgang"
 
 msgid "Add a new shorty"
 msgstr "Tilføj shorty"
@@ -171,31 +172,31 @@ msgid "Add as new"
 msgstr "Tilføj som ny"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "Tilføj side som \"Shorty\" til ownCloud"
 
 msgid "Administration"
 msgstr "Administration"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "Administrative indstillinger på tværs af sytemet for denne app:"
 
 msgid "after the SMS has been launched"
 msgstr "efter SMS'en er blevet sendt"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "Billedet kan også hentes til udskrift eller lagring"
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "linket kan også kopieres til videre brug"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "Linket kan også kopieres manuelt"
 
 msgid "Alternatively the link can be copied into a message manually"
 msgstr "Linket kan også kopieres ind i en besked manuelt "
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "Alt som ser nyttigt ud..."
 
 msgid "Default backend suggested inside users preferences"
 msgstr ""
@@ -204,7 +205,7 @@ msgid "Backend"
 msgstr "Backend"
 
 msgid "Base url"
-msgstr ""
+msgstr "Base-URL"
 
 msgid "Choose a service…"
 msgstr "Vælg en service"
@@ -243,19 +244,19 @@ msgid "Counted entries and clicks"
 msgstr "Optalte poster og klik"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "Opret en ny \"Shorty\" og del den"
 
 msgid "Creation"
-msgstr ""
+msgstr "Oprettelse"
 
 msgid "Delete shorty"
 msgstr "Slet shorty"
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "Træk denne til din browsers bogmærker."
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr ""
+msgstr "Indlejr den QR-kode som et billede i en webside ved brug af denne URL"
 
 msgid "Example"
 msgstr "Eksempel"
@@ -273,7 +274,7 @@ msgid "Feedback"
 msgstr "Feedback"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "Den kan slås til med et enkelt klik i administrationen:"
 
 msgid "Loading"
 msgstr "Indlæser"
@@ -285,7 +286,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Ændringer af shorty med ID '%s' gemt"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Tilpas attributter"
 
 msgid "Modify shorty"
 msgstr "Tilpas shorty"
@@ -300,7 +301,7 @@ msgid "Nothing here yet"
 msgstr "Her er intet, endnu."
 
 msgid "Number of entries"
-msgstr ""
+msgstr "Antal poster"
 
 msgid "Number of entries: %s"
 msgstr "Antal poster: %s"
@@ -309,25 +310,25 @@ msgid "QRCode"
 msgstr "QRCode"
 
 msgid "Open source url"
-msgstr ""
+msgstr "Åbn URL for kilde"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "Åbn URL for relæ"
 
 msgid "Open target"
 msgstr "Open mål"
 
 msgid "Open target url"
-msgstr ""
+msgstr "Åbn URL for destination"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "Valgfri konfiguration for en \"Statisk backend\""
 
 msgid "or simpy print or download it for off-line usage"
-msgstr ""
+msgstr "eller udskriv eller hent den blot til brug offline"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "Indsæt for at indlejre andetsteds"
 
 msgid "Preference retrieved"
 msgstr "Præferencer hentet"
@@ -348,10 +349,10 @@ msgid "Prepare to send as SMS"
 msgstr "Klargør til at sende som SMS"
 
 msgid "Relay service"
-msgstr ""
+msgstr "Relæ-tjeneste"
 
 msgid "Relay url"
-msgstr ""
+msgstr "Relæ-URL"
 
 msgid "Reload"
 msgstr "Genindlæs"
@@ -372,10 +373,10 @@ msgid "Send by SMS"
 msgstr "Send som SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "Angiv personlige præferencer med brug af tandhjulet (%%s) i bunden til venstre!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Angiv personlige præferencer med brug af tandhjulet (%%s) øverst til højre!"
 
 msgid "Setting retrieved"
 msgstr "Indstillinger hentet"
@@ -399,7 +400,7 @@ msgid "Share shorty"
 msgstr "Del shorty"
 
 msgid "Shortlet"
-msgstr ""
+msgstr "Shortlet"
 
 msgid "Shorty as QRCode"
 msgstr "Shorty som QRCode"
@@ -435,10 +436,10 @@ msgid "Source url"
 msgstr "Kilde URL"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "Angiv en statisk base-URL..."
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "Statisk backend: verifikation af base-URL"
 
 msgid "Status"
 msgstr "Status"
@@ -450,25 +451,25 @@ msgid "Target"
 msgstr "Mål"
 
 msgid "Target url"
-msgstr ""
+msgstr "URL for destination"
 
 msgid "Target url '%s' is valid"
 msgstr "Destinations url '%s' er gyldigt"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "Billedet kan benyttes når der udformes dokumenter eller opsættes websteder"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "Backend-tjenesten bruges til at oprette forkortede adresser."
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "Den forvalgte status som foreslået til nye Shorty'er."
 
 msgid "The link below can be copied for usage apart"
 msgstr "Nedenstående link kan kopieres til anvendelse fra hinanden"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "Det tilføjede plugin \"%%s\" overvåger brugen af eksisterende  Shorty'er!"
 
 msgid "therefore the content must be copied manually"
 msgstr "derfor skal indholdet kopieres manuelt"
@@ -480,10 +481,10 @@ msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Denne 2d barcode gemmer url'en som peger til denne Shorty"
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr ""
+msgstr "Dette er en intern URL som den forkortede URL viderestiller til"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "Dette er den forkortede URL som er registreret i backen'en"
 
 msgid "This is the target url specified when generating this Shorty"
 msgstr ""
@@ -495,22 +496,22 @@ msgid "Title"
 msgstr "Titel"
 
 msgid "Toggle toolbar"
-msgstr ""
+msgstr "Vis/skjul værktøjslinje"
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "Klik i alt"
 
 msgid "Typically this only works on devices like smart phones"
 msgstr "Typisk virker dette kun på smartphones eller lignende enheder"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Fangede en uventet undtagelsestype: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Desværre er implementering af denne ordning begrænset"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Fangede en ukendt objekttype: %s"
 
 msgid "Url shortened to: %s"
 msgstr "URL forkortet til %s"
@@ -519,10 +520,10 @@ msgid "Use it in web pages by referencing or embedding"
 msgstr ""
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "Brug \"%s\"-knappen ovenfor eller den fine \"Shortlet\""
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "Verificér ved at klikke..."
 
 msgid "Verification failed"
 msgstr "verifikation fejlede"
@@ -579,44 +580,44 @@ msgstr "tiny.cc brugernøgle"
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "Gennem verifikation af krypteringscertifikater når der kommunikeres med backend'en"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Den eksterne \"bitly.com\"-tjeneste bruges til at registrere en kort URL for hver oprettet shorty."
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "Dette betyder at du skal registrere en \"%s\" på deres websted først."
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Den eksterne \"turl\"-tjeneste bruges til at registrere en kort URL for hver oprettet shorty."
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Den eksterne \"ti.ny\"-tjeneste bruges til at registrere en kort URL for hver oprettet shorty."
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Den eksterne \"cli.gs\"-tjeneste bruges til at registrere en kort URL for hver oprettet shorty."
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Den eksterne \"is.gd\"-tjeneste bruges til at registrere en kort URL for hver oprettet shorty."
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Den eksterne \"tiny.cc\"-tjeneste bruges til at registrere en kort URL for hver oprettet shorty."
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "Der anvendes ikke en backend - der oprettes direkte links som peger til din ownCloud."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
@@ -671,7 +672,7 @@ msgid ""
 msgstr ""
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "Du skal angive en gyldig \"%%s\" for at bruge denne tjeneste."
 
 msgid "This means you require a 'Google API console account'."
 msgstr ""
