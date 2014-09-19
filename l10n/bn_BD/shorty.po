@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-09-03 08:40+0000\n"
+"PO-Revision-Date: 2014-09-18 14:30+0000\n"
 "Last-Translator: azizul <aziz.murad3@gmail.com>\n"
 "Language-Team: Bengali (Bangladesh) (http://www.transifex.com/projects/p/owncloud/language/bn_BD/)\n"
 "MIME-Version: 1.0\n"
@@ -144,16 +144,16 @@ msgstr ""
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "যেকোন অধিগমনের জন্য"
 
 msgid "for own usage"
-msgstr ""
+msgstr "নিজ ব্যবহারের জন্য"
 
 msgid "with ownCloud users"
 msgstr ""
 
 msgid "available for everyone"
-msgstr ""
+msgstr "সকলের প্রাপ্তব্য"
 
 # short and general terms
 msgid "Access"
