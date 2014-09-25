@@ -55,5 +55,6 @@
 "Target" => "লক্ষ্য",
 "The link below can be copied for usage apart" => "নীচের লিংকটি এককভাবে ব্যবহারের জন্য কপি করা যাবেনা",
 "Title" => "শিরোনাম",
-"Total of clicks" => "মোট ক্লিক"
+"Total of clicks" => "মোট ক্লিক",
+"Account" => "একাউন্ট"
 );
