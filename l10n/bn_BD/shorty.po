@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-09-24 20:42+0000\n"
+"PO-Revision-Date: 2014-09-25 18:20+0000\n"
 "Last-Translator: azizul <aziz.murad3@gmail.com>\n"
 "Language-Team: Bengali (Bangladesh) (http://www.transifex.com/projects/p/owncloud/language/bn_BD/)\n"
 "MIME-Version: 1.0\n"
@@ -370,13 +370,13 @@ msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "উপরে ডানপার্শ্বে অবস্থিত cog wheel (%%s) ব্রবহার করে ব্যক্তিগত অগ্রধিকার নির্ধারণ করুন!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "নিয়ামকসমূহ পূণরূদ্ধার হয়েছে"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "নিয়ামক সংরক্ষণ করা হয়েছে"
 
 msgid "Setting '%s' retrieved"
 msgstr ""
@@ -406,22 +406,22 @@ msgid "Show as QRCode"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "বিস্তারিত প্রদর্শন কর"
 
 msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "ক্ষুদেবার্তা"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "ক্ষুদেবার্তা লেখক"
 
 msgid "Sort ascending"
 msgstr ""
 
 msgid "Sort descending"
-msgstr ""
+msgstr "উপর থেকে নীচে সাজাও"
 
 msgid "Clear filter"
 msgstr ""
