@@ -49,21 +49,21 @@
 			<name>status</name>
 			<type>text</type>
 			<length>10</length>
-			<default>'shared'</default>
+			<default>shared</default>
 			<notnull>true</notnull>
 		</field>
 		<field>
 			<name>title</name>
 			<type>text</type>
 			<length>1024</length>
-			<default>''</default>
+			<default></default>
 			<notnull>true</notnull>
 		</field>
 		<field>
 			<name>favicon</name>
 			<type>text</type>
 			<length>1024</length>
-			<default>''</default>
+			<default></default>
 			<notnull>false</notnull>
 		</field>
 		<field>
@@ -117,7 +117,7 @@
 			<name>notes</name>
 			<type>text</type>
 			<length>4096</length>
-			<default>''</default>
+			<default></default>
 			<notnull>true</notnull>
 		</field>
 
