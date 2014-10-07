@@ -2087,7 +2087,7 @@ OC.Shorty={
 		* @author Christian Reiner
 		*/
 		fetch:function(){
-			if (OC.Shorty.Status.Valid.isResolved()){
+			if ('resolved'===OC.Shorty.Status.Valid.state()){
 				// status already present due to a past request, just return that requests deferred object
 				return OC.Shorty.Status.Valid.promise();
 			}else{
