@@ -2262,8 +2262,8 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	* @author Christian Reiner
 	*/
 	ToolbarCheckFilter: function(toolbar){
-		return (  (  (toolbar.find('th#title,#target').find('div input.shorty-filter:[value!=""]').length)
-				&&(toolbar.find('th#title,#target').find('div input.shorty-filter:[value!=""]')
+		return (  (  (toolbar.find('th#title,#target').find('div input.shorty-filter[value!=""]').length)
+				&&(toolbar.find('th#title,#target').find('div input.shorty-filter[value!=""]')
 					.effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) )
 				||(  (toolbar.find('th#status select :selected').val())
 				&&(toolbar.find('#status').effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) ) );
