@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -31,7 +31,7 @@ to offer that option directly where file sharing is done, in that very dialog.
 However I currently do not see any means to achieve that on ownCloud. There is
 no feature offered to hook additional functionality into exsiting apps.
 This means either the existing file sharing app has to be modified or such a
-modifying core feature has to be implemented into the ownCLoud core. 
+modifying core feature has to be implemented into the ownCLoud core.
 Or maybe someone has got another idea ?
 
 * Integrated proxy function as an alternative to forwarding:
@@ -39,7 +39,7 @@ Currently all browser requests are forwarded to the final target url, provided
 that the referenced shorty is still valid and accessible. This is a simple but
 effective strategy. Offering a transparent proxy service as an alternative
 would greatly enhance the privacy protection, since the final target url of a
-referenced web ressource would never be handed out. 
+referenced web ressource would never be handed out.
 
 * Better, more fine grained access control:
 Currently the only means of access control, apart from defining or removing a
@@ -49,7 +49,7 @@ or it can make an existing shorty freely accessible to the public. Other
 ownCloud plugins allow to define individual access to content on per-user or
 per-group rules.
 
-* Support of further backends: 
+* Support of further backends:
 Currently the usage of six url shortener services is implemented, besides the
 two private or local ones. Unfortunately three of these had to be disabled due
 to stability issues. Besides correcting the implementation for the disabled it
@@ -60,7 +60,7 @@ online services.
 Main development language is english (us), a german translation exists. I do
 not feel fit enough in other languages to create a translation myself. So I
 certainly welcome any assistance in that aspect. The effort consists of editing
-one single file, take a look at the german example in file l10n/de.php. 
+one single file, take a look at the german example in file l10n/de.php.
 
 * Localization for the date picker fields
 Currently date inputs (expiration date) are not validated explicitly.
@@ -69,7 +69,7 @@ of the input format to the users language.
 
 * Integrated help button
 One thing I miss throughout the ownCloud application is a context sensitive
-help, or a help button at all ! Originally I planned to integrate on into this 
+help, or a help button at all ! Originally I planned to integrate on into this
 plugin. However I think that is more something that should be implemented as a
 core feature of ownCloud. Maybe as a separate plugin (app). SOmehing like a
 help framework with a documented api where other plugins (and core apps) can
