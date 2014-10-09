@@ -5,7 +5,7 @@
 * @author Christian Reiner
 * @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -40,35 +40,13 @@ OC::$CLASSPATH['OC_Shorty_Tools']         = 'shorty/lib/tools.php';
 OC::$CLASSPATH['OC_Shorty_Type']          = 'shorty/lib/type.php';
 
 OCP\App::registerAdmin      ( 'shorty', 'settings' );
-// TODO: remove OC-4.0-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
-	OCP\App::registerPersonal   ( 'shorty', 'preferences' );
 OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
 										'order' => 71,
 										'href' => OCP\Util::linkTo   ( 'shorty', 'index.php' ),
-										'icon' => (OC_Shorty_Tools::versionCompare('>=','4.91')) // OC-5pre
-													? OCP\Util::imagePath( 'shorty', 'shorty-light.svg' )
-													: OCP\Util::imagePath( 'shorty', 'shorty-dusky.svg' ),
+										'icon' => OCP\Util::imagePath( 'shorty', 'shorty-light.svg' ),
 										'name' => 'Shorty' ) );
 
 OCP\Util::connectHook ( 'OC_User',   'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
 OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries', 'OC_Shorty_Hooks', 'registerQueries');
-
-// backwards compatibility for OC5's global p() functions
-if (OC_Shorty_Tools::versionCompare('<','4.93')) // OC-5
-{
-	if ( ! function_exists('p'))
-	{
-		function p($string) {
-			print(OC_Util::sanitizeHTML($string));
-		}
-	}
-	if ( ! function_exists('print_unescaped'))
-	{
-		function print_unescaped($string) {
-			print($string);
-		}
-	}
-}
 
 ?>

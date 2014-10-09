@@ -40,12 +40,6 @@ $RUNTIME_NOSETUPFS = true;
 OC_App::loadApps();
 
 OCP\Util::addStyle  ( 'shorty',   'shorty' );
-// TODO: remove OC-4.0-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
-	OCP\Util::addStyle ( 'shorty', 'shorty-oc40' );
-// TODO: remove OC-4.5-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.91')) // OC-4.5
-	OCP\Util::addStyle ( 'shorty', 'shorty-oc45' );
 
 OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 OCP\Util::addScript ( 'shorty',   'shorty' );
