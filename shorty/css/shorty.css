@@ -960,6 +960,9 @@ input.shorty-config {
 	text-overflow: ellipsis;
 	width: inherit;
 }
+.ellipsis::-webkit-scrollbar {
+    display: none;
+}
 
 /* customization of styles for the 3rdparty jquery.impromtu prompts */
 div.jqi {
