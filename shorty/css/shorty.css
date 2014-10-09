@@ -59,8 +59,10 @@ html input, html textarea {
 #controls {
 	top: 0;
 	position: relative;
+	margin: 0 0 4px;
 	padding: 0 2px;
 	background-color: #F6F6F6;
+	box-shadow: 0 2px 3px #ddd;
 	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
 }
 #content.shorty-panel-hidden #controls,
