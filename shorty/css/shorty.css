@@ -60,12 +60,13 @@ html input, html textarea {
 	top: 0;
 	position: relative;
 	padding: 0 2px;
+	background-color: #F6F6F6;
 	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
 }
 #content.shorty-panel-hidden #controls,
 #content.shorty-panel-hidden .shorty-desktop,
 #content.shorty-panel-hidden .shorty-controls {
-	top: -2.8em;
+	top: -44px;
 }
 .shorty-controls {
 	display: block;
@@ -81,6 +82,9 @@ html input, html textarea {
 	height: inherit;
 	line-height: 300%;
 	text-align: center;
+	font-size: 110%;
+	font-weight: inherit;
+	margin: 0 1em;
 	white-space: nowrap;
 }
 .shorty-controls-center span {
@@ -89,7 +93,11 @@ html input, html textarea {
 	vertical-align: top;
 }
 .shorty-controls-center span.shorty-value {
-	width: 2em;
+	display: inline-block;
+	min-width: 32px;
+}
+.shorty-controls-center span img {
+	width: 16px;
 }
 /* the handle of the controls panel */
 .shorty-controls .shorty-handle img {
@@ -111,8 +119,8 @@ html input, html textarea {
 .shorty-controls .shorty-handle-top {
 	width: 26px;
 	height: 22px;
-	top: 35px;
-	right: -45px;
+	top: 44px;
+	right: -78px;
 	border-top: 0;
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;
@@ -158,7 +166,7 @@ html input, html textarea {
 }
 .shorty-config {
 	float: right;
-	margin: 0.25em 0.2em;
+	margin: 0.2em;
 	vertical-align: middle;
 	line-height: 1.2em;
 	height: 28px;

@@ -5,7 +5,7 @@
 * @author Christian Reiner
 * @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -27,7 +27,7 @@
 <?php
 /**
  * @file templates/tmpl_index.php
- * The general html environment where specific templates are embedded into. 
+ * The general html environment where specific templates are embedded into.
  * @access public
  * @author Christian Reiner
  */
@@ -50,17 +50,10 @@
 	<!-- controls: left area, buttons -->
 	<span class="shorty-controls-left">
 		<!-- button to add a new entry to list -->
-		<input type="button" id="add" class="shorty-config settings" value="<?php p(OC_Shorty_L10n::t('New Shorty')); ?>"/>
+		<button id="add" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('New Shorty')); ?>"><?php p(OC_Shorty_L10n::t('New Shorty')); ?></button>
 	</span>
 	<!-- controls: right area, buttons -->
 	<span class="shorty-controls-right">
-		<!-- the 'home' button currently links to the entry in the OC app store -->
-		<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
-			<button id="controls-home" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Home')); ?>">
-				<img class="svg" src="<?php p(OCP\Util::imagePath('core', 'places/home.svg')); ?>"
-					alt="<?php p(OC_Shorty_L10n::t('Home')); ?>" />
-			</button>
-		</a>
 <?php if (OC_Shorty_Tools::versionCompare('>','4.80')) { ?>
 		<!-- the internal settings button -->
 		<button id="controls-preferences" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Configuration')); ?>">
@@ -70,6 +63,13 @@
 		<!-- a container that will hold the preferences dialog -->
 		<div id="appsettings" class="popup topright hidden"></div>
 <?php } ?>
+		<!-- the 'home' button currently links to the entry in the OC app store -->
+		<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
+			<button id="controls-home" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Home')); ?>">
+				<img class="svg" src="<?php p(OCP\Util::imagePath('core', 'places/home.svg')); ?>"
+					alt="<?php p(OC_Shorty_L10n::t('Home')); ?>" />
+			</button>
+		</a>
 		<!-- handle to hide/show the panel -->
 		<span id="controls-handle" class="shorty-handle shorty-handle-top">
 			<img class="shorty-icon svg" src="<?php p(OCP\Util::imagePath('shorty','actions/shade.svg')); ?>" >
