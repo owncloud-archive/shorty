@@ -650,7 +650,8 @@ input.shorty-config {
 	padding: 4px;
 }
 .shorty-dialog button#confirm {
-	width: 12em; height: 2em;
+	width: 12em;
+	height: 36px;
 	border: 1px solid #D3D3D3;
 	background-color: #EEEEEE;
 }
@@ -688,7 +689,7 @@ input.shorty-config {
 	position: relative;
 	float: right;
 	width: 20px;
-	top: 3px;
+	top: 12px;
 }
 .shorty-dialog span.clickable:not(.clicked) * {
 	cursor: pointer;
@@ -858,15 +859,15 @@ input.shorty-config {
 	clear: none;
 	width: 5.7em;
 	text-align: left;
-	vertical-align: top;
-	padding: 0.4em;
+	vertical-align: baseline;
+	padding: 10px 5px 5px;
 	cursor: default;
+}
+.shorty-dialog label[for=notes] {
+	vertical-align: top;
 }
 .shorty-dialog span.label-line label:not(:first-child) {
 	text-align: right;
-}
-.shorty-dialog span {
-	padding: 0.6em 0.5em 0.1em 0.3em;
 }
 .shorty-dialog span.label-line {
 	display: inline;
