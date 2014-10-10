@@ -34,7 +34,7 @@
 ?>
 
 <!-- the 'hourglass', a general busy indicator -->
-<div id="hourglass" class="shorty-hourglass" style="left:10em;top:10em;"><img src="<?php p(OCP\Util::imagePath('shorty', 'loading-disk.gif')); ?>"></div>
+<div id="hourglass" class="shorty-hourglass" style="left:5em;top:6em;"><img src="<?php p(OCP\Util::imagePath('shorty', 'loading-disk.gif')); ?>"></div>
 
 <!-- the list of urls, empty variant -->
 <div id="vacuum" class="shorty-vacuum personalblock">
