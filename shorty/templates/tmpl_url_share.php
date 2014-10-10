@@ -48,18 +48,20 @@
 		<label for="title"><?php p(OC_Shorty_L10n::t("Title").':'); ?></label>
 		<span id="title" class="ellipsis"></span>
 		<br />
-		<label for="status"><?php p(OC_Shorty_L10n::t("Status").':'); ?></label>
-		<select id="status" name="status" data="" class="" value="">
-			<?php
-				foreach ( OC_Shorty_Type::$STATUS as $status )
-					if ( 'deleted'!=$status )
-						print_unescaped(sprintf("<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status)));
-			?>
-		</select>
-		<span id="blocked" class="status-hint" style="display:none;"><?php p(OC_Shorty_L10n::t("for any access")."."); ?></span>
-		<span id="private" class="status-hint" style="display:none;"><?php p(OC_Shorty_L10n::t("for own usage")."."); ?></span>
-		<span id="shared"  class="status-hint" style="display:none;"><?php p(OC_Shorty_L10n::t("with ownCloud users")."."); ?></span>
-		<span id="public"  class="status-hint" style="display:none;"><?php p(OC_Shorty_L10n::t("available for everyone")."."); ?></span>
+		<span class="label-line">
+			<label for="status"><?php p(OC_Shorty_L10n::t("Status").':'); ?></label>
+			<select id="status" name="status" data="" class="" value="">
+				<?php
+					foreach ( OC_Shorty_Type::$STATUS as $status )
+						if ( 'deleted'!=$status )
+							print_unescaped(sprintf("<option value=\"%s\">%s</option>\n", $status, OC_Shorty_L10n::t($status)));
+				?>
+			</select>
+			<span id="blocked" class="status-hint" style="display:none;"><?php p(OC_Shorty_L10n::t("for any access")."."); ?></span>
+			<span id="private" class="status-hint" style="display:none;"><?php p(OC_Shorty_L10n::t("for own usage")."."); ?></span>
+			<span id="shared"  class="status-hint" style="display:none;"><?php p(OC_Shorty_L10n::t("with ownCloud users")."."); ?></span>
+			<span id="public"  class="status-hint" style="display:none;"><?php p(OC_Shorty_L10n::t("available for everyone")."."); ?></span>
+		</span>
 		<div class="shorty-usages">
 			<fieldset class="shorty-collapsible collapsed">
 				<label for="source-text"><?php p(OC_Shorty_L10n::t("Source url").':'); ?></label>

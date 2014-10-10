@@ -709,7 +709,9 @@ input.shorty-config {
 	display: none;
 	float: right;
 }
-
+.shorty-standalone label {
+	padding: 10px 5px 5px;
+}
 .shorty-standalone .shorty-meta {
 	width: 66%;
 	margin: 0;
@@ -810,7 +812,7 @@ input.shorty-config {
 	content: url("../img/actions/shade.svg");
 	margin-right: 0.3em;
 	padding: 0;
-	vertical-align: baseline;
+	vertical-align: middle;
 	opacity: 0.7;
 }
 .shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
@@ -820,15 +822,17 @@ input.shorty-config {
 	border-radius: 0.5em;
 	border: 1px solid #EEEEEE;
 	margin: 2px 1px;
-	padding: 0 0 2px;
+	padding: 2px 0 0;
 }
 .shorty-embedded fieldset.shorty-collapsible:not(.collapsed) {
 	border: 1px solid #808080;
 }
 .shorty-embedded select {
 	padding: 0.2em 0.4em 0.2em 0.2em;
-	border: 0 none;
 	background-color: #F4F4F4;
+}
+.shorty-embedded label {
+	padding: 2px;
 }
 .shorty-embedded td img.shorty-usage {
 	opacity: 0.6;
@@ -851,7 +855,6 @@ input.shorty-config {
 	background-color: transparent;
 }
 .shorty-embedded .shorty-grid td {
-	padding: 0.2em;
 	text-align: center;
 }
 .shorty-dialog label {
