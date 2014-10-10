@@ -81,17 +81,14 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide controls panel");
 				var dfd = new $.Deferred();
 				if ( ! $('#content').hasClass('shorty-panel-hidden')){
-					OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
-						var selector=result?'#content':'#content,#controls';
-						$.when(
-							$('#content').addClass('shorty-panel-hidden')
-						).done(function(){
-							OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
-							OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-														.attr('src',OC.imagePath('shorty','actions/unshade'));
-							dfd.resolve();
-						}).fail(dfd.reject)
-					})
+					$.when(
+						$('#content').addClass('shorty-panel-hidden')
+					).done(function(){
+						OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
+						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
+													.attr('src',OC.imagePath('shorty','actions/unshade'));
+						dfd.resolve();
+					}).fail(dfd.reject)
 				}
 				else dfd.resolve();
 				return dfd.promise();
@@ -105,17 +102,14 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show controls panel");
 				var dfd = new $.Deferred();
 				if ($('#content').hasClass('shorty-panel-hidden')){
-					OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
-						var selector=result?'#content':'#content,#controls';
-						$.when(
-							$('#content').removeClass('shorty-panel-hidden')
-						).done(function(){
-							OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
-							OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-														.attr('src',OC.imagePath('shorty','actions/shade'));
-							dfd.resolve();
-						}).fail(dfd.reject)
-					})
+					$.when(
+						$('#content').removeClass('shorty-panel-hidden')
+					).done(function(){
+						OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
+						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
+													.attr('src',OC.imagePath('shorty','actions/shade'));
+						dfd.resolve();
+					}).fail(dfd.reject)
 				}
 				else dfd.resolve();
 				return dfd.promise();
@@ -749,7 +743,7 @@ OC.Shorty={
 					).pipe(function(){
 						rows.each(function(){
 							$(this).removeClass('shorty-fresh');
-							$(this).find('td').effect('pulsate', { times:3 }, OC.Shorty.Status.versionCompare('>=','4.91')?2000:500);
+							$(this).find('td').effect('pulsate', { times:3 }, 2000);
 						});
 					}).done(dfd.resolve)
 				}else{
@@ -1555,7 +1549,7 @@ OC.Shorty={
 					dfd.resolve();
 				}else{
 					// no targt given: show user where to fill in target
-					$('#shorty #backend-static #backend-static-base').effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500);
+					$('#shorty #backend-static #backend-static-base').effect('pulsate', 2000);
 					dfd.reject();
 				}
 				return dfd.promise();
@@ -1919,7 +1913,7 @@ OC.Shorty={
 						if ($('.shorty-add').css('display') == 'none')
 							$('.shorty-add').slideToggle();
 					},
-					$('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 500)
+					$('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 2000)
 				).done(dfd.resolve)
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.show =====
@@ -2264,9 +2258,9 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	ToolbarCheckFilter: function(toolbar){
 		return (  (  (toolbar.find('th#title,#target').find('div input.shorty-filter[value!=""]').length)
 				&&(toolbar.find('th#title,#target').find('div input.shorty-filter[value!=""]')
-					.effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) )
+					.effect('pulsate', 2000)) )
 				||(  (toolbar.find('th#status select :selected').val())
-				&&(toolbar.find('#status').effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) ) );
+				&&(toolbar.find('#status').effect('pulsate', 2000)) ) );
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	/**
 	* @class OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums
