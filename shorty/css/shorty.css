@@ -1062,3 +1062,8 @@ div.jqimessage fieldset div#qrcode-img img.usage-qrcode {
 	padding:0;
 	width:20%
 }
+/* the embedded user preferences dialog */
+#shorty-fieldset button {
+	height: 36px;
+	margin: 3px;
+}
