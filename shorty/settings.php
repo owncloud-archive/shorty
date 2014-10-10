@@ -39,7 +39,7 @@ OCP\App::checkAppEnabled ( 'shorty' );
 $RUNTIME_NOSETUPFS = true;
 OC_App::loadApps();
 
-OCP\Util::addStyle  ( 'shorty',   'shorty' );
+OCP\Util::addStyle  ( 'shorty',   'settings' );
 
 OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 OCP\Util::addScript ( 'shorty',   'shorty' );
