@@ -310,7 +310,7 @@ OC.Shorty={
 					confirm.off('click');
 					confirm.on('click',function(event){
 						event.preventDefault();
-						dialog.find('#target').effect('highlight',{'color':'#CCCCCC'},OC.Shorty.Status.versionCompare('>=','4.91')?2000:500);
+						dialog.find('#target').effect('highlight',{'color':'#CCCCCC'},2000);
 					});
 					confirm.removeClass('sharp');
 				}

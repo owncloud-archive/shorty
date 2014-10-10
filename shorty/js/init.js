@@ -35,20 +35,6 @@
 $(document).ready(function(){
 	// initialize status dictionary since that _might_ require an ajax request
 	OC.Shorty.Status.fetch();
-	// TODO: OC4 compatibility: remove following setInterval command when dropping OC4 compatibility
-	// refresh the ajax request token in regular intervals
-	// required to make use of long lasting sessions whilst using CSRF protection with a small tokens lifetime
-	// handle this inside the app only, if the feature is NOT present in OC core
- 	if (typeof OC.Request==undefined){
-		if (OC.Shorty.Debug)
-			OC.Shorty.Debug.log("Info","relying on app internal implementation to refresh the request token");
-		setInterval(OC.Shorty.Request.Refresh, 1000*60*56.87); // ~57 minutes, close to the timeout of 1 hour
-		// again: note that this is not required from OC 4.5 on upwards
-		// Shortys token refresh strategy has been accepted into the core
-	}else{
-		if (OC.Shorty.Debug)
-			OC.Shorty.Debug.log("Info","relying on core implementation to refresh the request token");
-	}
 	// close any open dialog when the canvas is clicked
 	$(document).on('click','#content>*',[],function(e){e.stopPropagation();});
 	$(document).on('click','#content',[],function(){
@@ -156,14 +142,7 @@ $(document).ready(function(){
 	});
 	// open preferences popup when button is clicked
 	$(document).on('click keydown','#controls-preferences.settings',[],function() {
-		$.when(
-			OC.Shorty.Status.versionCompare('>=','4.80')
-		).pipe(function(result){
-			if (result)
-				OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
-			else
-				window.location.href=OC.linkTo('settings','personal.php');
-		});
+		OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
 	});
 	// prevent vertical scroll bar in content area triggered by the additional controls bar handle
 	$('#content').height(($('#content').height()-$('#controls #controls-handle').height())+'px');

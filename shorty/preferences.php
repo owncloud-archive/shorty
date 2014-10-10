@@ -75,12 +75,6 @@ $tmpl->assign ( 'default-status',      OCP\Config::getUserValue(OCP\User::getUse
 $tmpl->assign ( 'sms-control',         OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
 $tmpl->assign ( 'verbosity-control',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-control','info') );
 // render template
-// TODO: remove OC4-compatibility
-if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
-	// OC-4.0
-	return $tmpl->fetchPage ( );
-else
-	// OC-4.5 & OC-5.0
-	$tmpl->printPage ( );
+$tmpl->printPage ( );
 
 ?>

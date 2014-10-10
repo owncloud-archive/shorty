@@ -54,7 +54,6 @@
 	</span>
 	<!-- controls: right area, buttons -->
 	<span class="shorty-controls-right">
-<?php if (OC_Shorty_Tools::versionCompare('>','4.80')) { ?>
 		<!-- the internal settings button -->
 		<button id="controls-preferences" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Configuration')); ?>">
 			<img class="svg" src="<?php p(OCP\Util::imagePath('core', 'actions/settings.svg')); ?>"
@@ -62,7 +61,6 @@
 		</button>
 		<!-- a container that will hold the preferences dialog -->
 		<div id="appsettings" class="popup topright hidden"></div>
-<?php } ?>
 		<!-- the 'home' button currently links to the entry in the OC app store -->
 		<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
 			<button id="controls-home" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Home')); ?>">
