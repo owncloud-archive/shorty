@@ -309,6 +309,9 @@ input.shorty-config {
 	padding: 0;
 	opacity: 0.7;
 }
+.shorty-list thead tr#toolbar select {
+	height: inherit;
+}
 .shorty-list thead tr#toolbar img {
 	cursor: pointer;
 	vertical-align: middle;
@@ -401,9 +404,10 @@ input.shorty-config {
 .shorty-list thead tr#toolbar th .chzn-container,
 .shorty-list tbody tr#toolbar td .chzn-container {
 	width: 6em;
+	height: inherit;
 	font-size: 11px;
 	margin: 0;
-	padding: 0.4em 0.3em 0.2em;
+	padding: 0.3em;
 	vertical-align: baseline;
 	background-color: #FFFFFF;
 }
