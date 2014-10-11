@@ -2256,11 +2256,11 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	* @author Christian Reiner
 	*/
 	ToolbarCheckFilter: function(toolbar){
-		return (  (  (toolbar.find('th#title,#target').find('div input.shorty-filter[value!=""]').length)
-				&&(toolbar.find('th#title,#target').find('div input.shorty-filter[value!=""]')
-					.effect('pulsate', 2000)) )
-				||(  (toolbar.find('th#status select :selected').val())
-				&&(toolbar.find('#status').effect('pulsate', 2000)) ) );
+		return (
+				(  (toolbar.find('th#title,th#target').find('div input.shorty-filter[value!=""]').length)
+				 &&(toolbar.find('th#title,th#target').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
+			||(  (toolbar.find('th#status select :selected').val())
+				 &&(toolbar.find('th#status').effect('pulsate', 2000)) ) );
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	/**
 	* @class OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums

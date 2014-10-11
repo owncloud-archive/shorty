@@ -126,9 +126,11 @@ $(document).ready(function(){
 	var list=$('#list-of-shortys');
 	// title & target filter reaction
 	$(document).on('keyup','#list-of-shortys thead tr#toolbar th .shorty-filter',[],function(){
-			OC.Shorty.WUI.List.filter.apply(
+		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[list,$($(this).context.parentElement.parentElement).attr('id'),$(this).val()]);
+		// change the value attribute inside the DOM, some jquery/browser combination seem to block this...
+		$(this).attr('value',$(this).val());
 	});
 	// status filter reaction
 	$(document).on('change','#list-of-shortys thead tr#toolbar th#status select',[],function(){
