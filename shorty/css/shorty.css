@@ -625,7 +625,7 @@ input.shorty-config {
 	opacity: 1;
 }
 .shorty-dialog input {
-	width: 80%;
+	width: 82%;
 /* these are required by the datepicker plugin to compute the correct z-index */
 	position: relative;
 	z-index: 100;
@@ -649,6 +649,7 @@ input.shorty-config {
 	border: 0 none;
 	box-shadow: 0 0 0 #FFFFFF;
 	outline: none;
+	color: black;
 	background: none;
 	background-color: #F7F7F7;
 	padding: 4px;
@@ -701,7 +702,7 @@ input.shorty-config {
 	margin: 0.1em 0.2em;
 }
 .shorty-dialog span.clickable.clicked * {
-	width: 98%;
+	width: 100%;
 }
 
 /* absolut dialogs ('standalone') */
@@ -712,20 +713,20 @@ input.shorty-config {
 .shorty-standalone #busy {
 	display: none;
 	float: right;
+	padding-top: 6px;
 }
 .shorty-standalone label {
 	padding: 10px 5px 5px;
 }
 .shorty-standalone .shorty-meta {
-	width: 66%;
+	width: 67%;
 	margin: 0;
 }
 .shorty-standalone .shorty-meta img {
 	position: relative;
-	top: 5px;
 	max-height: 16px;
 	max-width: 16px;
-	vertical-align: top;
+	vertical-align: middle;
 	margin: 0;
 	padding: 0;
 }
@@ -733,8 +734,8 @@ input.shorty-config {
 	height: 22px;
 	overflow-y: hidden;
 	white-space: normal;
-	margin: 0;
-	padding: 3px 4px;
+	margin: 1px;
+	padding: 7px 4px;
 }
 .shorty-standalone .shorty-meta span#explanation {
 	border-radius: 0.5em;
