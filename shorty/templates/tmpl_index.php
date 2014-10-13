@@ -68,6 +68,13 @@
 					alt="<?php p(OC_Shorty_L10n::t('Home')); ?>" />
 			</button>
 		</a>
+		<!-- the 'refresh' button -->
+		<a>
+			<button id="controls-refresh" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Refresh')); ?>">
+				<img class="svg" src="<?php p(OCP\Util::imagePath('shorty','refresh.svg')); ?>"
+					alt="<?php p(OC_Shorty_L10n::t('Refresh')); ?>" />
+			</button>
+		</a>
 		<!-- handle to hide/show the panel -->
 		<span id="controls-handle" class="shorty-handle shorty-handle-top">
 			<img class="shorty-icon svg" src="<?php p(OCP\Util::imagePath('shorty','actions/shade.svg')); ?>" >

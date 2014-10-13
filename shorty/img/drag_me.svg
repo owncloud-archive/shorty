@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="841.89pt" width="595.28pt" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+     xmlns="http://www.w3.org/2000/svg" height="841.89pt" width="595.28pt" version="1.1" 
+     xmlns:cc="http://creativecommons.org/ns#" 
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
  <title>drag me</title>
  <g stroke-linecap="square" stroke-miterlimit="2" stroke-width="3.4583" fill="none">
   <ellipse rx="20.111pt" ry="8.6185pt" stroke="#989898" transform="translate(162.26 571.54)" cy="8.6185pt" cx="20.111pt"/>
@@ -7,8 +10,8 @@
   <path d="m254.82 38.556c0-21.294-57.05-38.556-127.41-38.556-70.368-1.3039e-15 -127.41 17.262-127.41 38.556-8.6173e-15 21.295 57.042 38.557 127.41 38.557 70.36 0 127.41-17.262 127.41-38.557" transform="translate(238.82 495.56)" stroke="#535353"/>
  </g>
  <svg baseProfile="tiny" version="1.2">
-  <title>Qt Svg Document</title>
-  <desc>Generated with Qt</desc>
+  <title>drag me</title>
+  <desc>drag me icon</desc>
   <g stroke-linejoin="bevel" fill-rule="evenodd" stroke="#000" stroke-linecap="square" fill="none">
    <g stroke-linejoin="bevel" font-size="32" font-family="Vahika" font-weight="700" transform="matrix(1.2512 0 0 1.2512 288 508.19)" stroke="none" stroke-linecap="square" fill="#333333">
     <text xml:space="preserve" y="33" x="0">Drag</text>

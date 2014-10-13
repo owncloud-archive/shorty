@@ -80,8 +80,9 @@ $(document).ready(function(){
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]);
 	});
-	// button to reload the list
+	// buttons to reload the list
 	$(document).on('click','#list-of-shortys #toolbar #reload',[],OC.Shorty.WUI.List.build);
+	$(document).on('click','#controls-refresh',[],OC.Shorty.WUI.List.build);
 	// button to clear list filters
 	$(document).on('click','#list-of-shortys #toolbar .shorty-clear',[],function(){
 		$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');

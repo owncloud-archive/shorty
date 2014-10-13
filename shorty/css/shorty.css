@@ -101,6 +101,9 @@ html input, html textarea {
 .shorty-controls-center span img {
 	width: 16px;
 }
+.shorty-controls-right button img {
+	width: 20px;
+}
 /* the handle of the controls panel */
 .shorty-controls .shorty-handle img {
 	opacity: 0.6;
