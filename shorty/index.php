@@ -164,7 +164,7 @@ switch ($act)
 			// is sending sms enabled in the personal preferences ?
 			$tmpl->assign ( 'sms-control', OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
 			// clean up session var so that a browser reload does not trigger the same action again
-			unset ( $_SESSION['shorty-referrer'] );
+			\OC::$session->remove('shorty-referrer');
 			$tmpl->printPage();
 		} catch ( OC_Shorty_Exception $e ) { OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'level'=>'error', 'data'=>$result ) ); }
 } // switch

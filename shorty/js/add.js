@@ -4,7 +4,7 @@
 * @author Christian Reiner
 * @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -32,7 +32,7 @@
  * not ahve to manually open his ownCloud, navigate the the Shorty app and open
  * the 'New Shorty' dialog. This script is added in case such a request is
  * detected, it takes case that the dialog is opened and filled with the url
- * to be shortened. 
+ * to be shortened.
  * @author Christian Reiner
  */
 
