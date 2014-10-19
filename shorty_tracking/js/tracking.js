@@ -101,6 +101,8 @@ $(window).load(function(){
 					$(this).val()
 				]
 			);
+			// change the value attribute inside the DOM, some jquery/browser combination seem to block this...
+			$(this).attr('value',$(this).val());
 		});
 	// detect if the list has been scrolled to the bottom,
 	// retrieve next chunk of clicks if so
@@ -653,9 +655,10 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 	* the list of tracked clicks.
 	*/
 	ToolbarCheckFilter:function(toolbar){
-		return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input.shorty-filter:[value!=""]').length)
-						&&(toolbar.find('th#time,#address,#host,#user').find('div input.shorty-filter:[value!=""]').effect('pulsate')) )
-				 ||(  (toolbar.find('th#result select :selected').val())
-						&&(toolbar.find('#result').effect('pulsate')) ) );
+		return (
+				(  (toolbar.find('th#time,th#address,th#host,th#user').find('div input.shorty-filter[value!=""]').length)
+				 &&(toolbar.find('th#time,th#address,th#host,th#user').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
+			||(  (toolbar.find('th#result select :selected').val())
+				 &&(toolbar.find('th#result').effect('pulsate', 2000)) ) );
 		} // OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
 } // OC.Shorty.Runtime.Context.ListOfClicks
