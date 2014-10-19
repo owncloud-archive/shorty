@@ -23,8 +23,11 @@
 
 Changelog:
 
-Added clear icons in list toolbar to remove column filters with a single click.
+* Sun Oct 19 2014 Christian Reiner: version 0.2.0
+Ported app to owncloud version 7
+Removed all backwards compatibility hacks
 * Mon Aug 05 2013 Christian Reiner: version 0.1.16
+Added clear icons in list toolbar to remove column filters with a single click.
 Fix automatic deactivation of app if the main app is deactivated.
 * Thu May 23 2013 Christian Reiner: version 0.1.15
 Registration of plugin abstract as expected since Shorty version 0.3.26.
