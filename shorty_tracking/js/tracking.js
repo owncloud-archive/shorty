@@ -214,6 +214,11 @@ OC.Shorty.Tracking=
 			offset=OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody tr').last().attr('id');
 		}else{
 			if (OC.Shorty.Debug) OC.Shorty.Debug.log("dropping existing entries in list");
+			// load first content into the list
+			OC.Shorty.Tracking.Stats.granted=[];
+			OC.Shorty.Tracking.Stats.denied =[];
+			OC.Shorty.Tracking.Stats.blocked=[];
+			// empty DOM list
 			OC.Shorty.WUI.List.empty(OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first());
 			OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled');
 			OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().removeClass('scrollingTable');
@@ -304,10 +309,6 @@ OC.Shorty.Tracking=
 		}).fail(function(){
 			dfd.reject();
 		})
-		// load first content into the list
-		OC.Shorty.Tracking.Stats.granted=[];
-		OC.Shorty.Tracking.Stats.denied =[];
-		OC.Shorty.Tracking.Stats.blocked=[];
 		OC.Shorty.Tracking.build();
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.control
