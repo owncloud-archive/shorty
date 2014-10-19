@@ -355,11 +355,11 @@ input.shorty-config {
 	cursor: pointer;
 }
 .shorty-list thead tr#titlebar th:not(#actions),
-.shorty-list thead tr#titlebar th:not(#actions) span {
+.shorty-list thead tr#titlebar th:not(#actions) div {
 	cursor: s-resize;
 }
 .shorty-list thead tr#titlebar.shorty-clicked th:not(#actions),
-.shorty-list thead tr#titlebar.shorty-clicked th:not(#actions) span {
+.shorty-list thead tr#titlebar.shorty-clicked th:not(#actions) div {
 	cursor: n-resize;
 }
 /* scrolling lists have a scrollbar INSIDE the tbody */
