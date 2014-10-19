@@ -167,6 +167,7 @@ OC.Shorty.Tracking=
 	Stats:{
 		blocked:[],
 		denied: [],
+		failed: [],
 		granted:[]
 	},
 	/**
@@ -217,6 +218,7 @@ OC.Shorty.Tracking=
 			// load first content into the list
 			OC.Shorty.Tracking.Stats.granted=[];
 			OC.Shorty.Tracking.Stats.denied =[];
+			OC.Shorty.Tracking.Stats.failed =[];
 			OC.Shorty.Tracking.Stats.blocked=[];
 			// empty DOM list
 			OC.Shorty.WUI.List.empty(OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first());
@@ -467,17 +469,20 @@ OC.Shorty.Tracking=
 		// []
 		var granted=new Array();
 		var denied =new Array();
+		var failed =new Array();
 		var blocked=new Array();
 		var column, steps = 80;
 		// initialize all columns as zero value
 		for (column=0;column<=steps;column=column+1){
 			granted[column]	= 0;
 			denied[column]	= 0;
+			failed[column]	= 0;
 			blocked[column]	= 0;
 		}
 		// increment matching range column for each click
 		$.each(OC.Shorty.Tracking.Stats.granted,function(i,time){granted[Math.round((time-rangeMin)/(range/steps))]++;});
 		$.each(OC.Shorty.Tracking.Stats.denied, function(i,time){ denied[Math.round((time-rangeMin)/(range/steps))]++;});
+		$.each(OC.Shorty.Tracking.Stats.failed, function(i,time){ failed[Math.round((time-rangeMin)/(range/steps))]++;});
 		$.each(OC.Shorty.Tracking.Stats.blocked,function(i,time){blocked[Math.round((time-rangeMin)/(range/steps))]++;});
 		// initialize stats sparkline
 		var sparklineOpts={
@@ -497,6 +502,18 @@ OC.Shorty.Tracking=
 					tooltipSuffix:' '+t('shorty_tracking','granted'),
 					lineColor:'green',
 					fillColor:'limegreen',
+				}
+			)
+		);
+		$(sparkline).sparkline(
+			failed,
+			$.extend(
+				{},
+				sparklineOpts,
+				{ composite:true,
+					tooltipSuffix:' '+t('shorty_tracking','failed'),
+					lineColor:'goldenrod',
+					fillColor:false,
 				}
 			)
 		);
@@ -581,6 +598,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 				switch (set['result']){
 				case 'blocked': icon='bad';     break;
 				case 'denied':  icon='neutral'; break;
+				case 'failed':  icon='blank'; break;
 				case 'granted': icon='good';    break;
 				default:        icon='blank';
 				} // switch
@@ -596,6 +614,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 				switch (set['result']){
 					case 'blocked': OC.Shorty.Tracking.Stats.blocked.push(set[aspect]); break;
 					case 'denied':  OC.Shorty.Tracking.Stats.denied.push (set[aspect]); break;
+					case 'failed':  OC.Shorty.Tracking.Stats.failed.push (set[aspect]); break;
 					case 'granted': OC.Shorty.Tracking.Stats.granted.push(set[aspect]); break;
 				} // switch
 				break;
