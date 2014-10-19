@@ -23,8 +23,12 @@
 
 Changelog:
 
-Added clear icons in list toolbar to remove column filters with a single click.
+* Sun Oct 19 2014 Christian Reiner: version 0.4.0
+Better authorization strategy for external access to Shortys.
+Ported app to owncloud version 7
+Removed all backwards compatibility hacks
 * Fri Jul 12 2013 Christian Reiner: version 0.3.30
+Added clear icons in list toolbar to remove column filters with a single click.
 New setting of a default backend suggested inside the users preferences.
 * Tue Jun 18 2013 Christian Reiner: version 0.3.29
 Fixed a bug that prevented a Shortys target to become editable when being clicked.
