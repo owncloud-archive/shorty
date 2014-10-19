@@ -304,12 +304,15 @@ OC.Shorty.Tracking=
 			OC.Shorty.WUI.List.empty(OC.Shorty.Tracking.Dialog.List),
 			OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled')
 		).done(function(){
-			OC.Shorty.WUI.Dialog.show(OC.Shorty.Tracking.Dialog.List)
-			dfd.resolve();
-		}).fail(function(){
-			dfd.reject();
+			$.when(
+				OC.Shorty.WUI.Dialog.show(OC.Shorty.Tracking.Dialog.List)
+			).done(function(){
+				OC.Shorty.Tracking.build();
+				dfd.resolve();
+			}).fail(function(){
+				dfd.reject();
+			})
 		})
-		OC.Shorty.Tracking.build();
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.control
 	/**
@@ -482,40 +485,39 @@ OC.Shorty.Tracking=
 			height:'1.6em',
 			tooltipSkipNull:true,
 			tooltipContainer:OC.Shorty.Tracking.Dialog.List,
-			tooltipSuffix:' '+t('shorty_tracking','granted'),
 			type:'line',
 			numberDigitGroupSep:' '
-		}
-		$(stats).sparkline(
+		};
+		$(sparkline).sparkline(
 			granted,
 			$.extend(
 				{},
-				sparklineOpts,{
-					composite:false,
+				sparklineOpts,
+				{ composite:false,
 					tooltipSuffix:' '+t('shorty_tracking','granted'),
 					lineColor:'green',
 					fillColor:'limegreen',
 				}
 			)
 		);
-		$(stats).sparkline(
+		$(sparkline).sparkline(
 			denied,
 			$.extend(
 				{},
-				sparklineOpts,{
-					composite:true,
+				sparklineOpts,
+				{ composite:true,
 					tooltipSuffix:' '+t('shorty_tracking','denied'),
 					lineColor:'darkorange',
 					fillColor:false,
 				}
 			)
 		);
-		$(stats).sparkline(
+		$(sparkline).sparkline(
 			blocked,
 			$.extend(
 				{},
-				sparklineOpts,{
-					composite:true,
+				sparklineOpts,
+				{ composite:true,
 					tooltipSuffix:' '+t('shorty_tracking','blocked'),
 					lineColor:'red',
 					fillColor:false
