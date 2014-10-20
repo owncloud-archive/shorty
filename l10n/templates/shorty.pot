@@ -267,6 +267,9 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
+msgid "Home"
+msgstr ""
+
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
@@ -340,6 +343,9 @@ msgid "Preferences"
 msgstr ""
 
 msgid "Prepare to send as SMS"
+msgstr ""
+
+msgid "Refresh"
 msgstr ""
 
 msgid "Relay service"
