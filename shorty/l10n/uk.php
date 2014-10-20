@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"Plugins" => "Плагіни",
 "all" => "всі",
 "blocked" => "заблоковано",
 "deleted" => "видалені",
