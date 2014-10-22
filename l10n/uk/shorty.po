@@ -32,8 +32,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-20 10:11+0000\n"
-"Last-Translator: Roman <scorpion@email.kh.ua>\n"
+"PO-Revision-Date: 2014-10-21 15:10+0000\n"
+"Last-Translator: Sergiy\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/owncloud/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -195,7 +195,7 @@ msgid "Anything that appears helpful …"
 msgstr "Все, що з'являється корисними ..."
 
 msgid "Default backend suggested inside users preferences"
-msgstr ""
+msgstr "У параметрах користувача пропонується бекенд за замовчуванням"
 
 msgid "Backend"
 msgstr "Backend"
@@ -204,13 +204,13 @@ msgid "Base url"
 msgstr "Основний URL"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Оберіть сервіс..."
 
 msgid "Click for embedding details"
 msgstr "Клацніть для вкладення подробиць"
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr ""
+msgstr "Клацніть, щоб створити Shorty для будь якого сайту."
 
 msgid "Click registered"
 msgstr "Клац зареєстрований"
@@ -231,7 +231,7 @@ msgid "Configuration"
 msgstr "Налаштування"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "Кількість повідомлень про зворотній зв'язок що відображається "
 
 msgid "Copy to clipboard"
 msgstr "Копіювати в буфер обміну"
@@ -240,16 +240,16 @@ msgid "Counted entries and clicks"
 msgstr "Записи і клаци пораховано"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "Створіть новий Shorty та поділіться їм"
 
 msgid "Creation"
-msgstr ""
+msgstr "Створення"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Видалити shorty"
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "Перетягніть це в закладки браузера."
 
 msgid "Embed the QRCode as an image into some web page using this url"
 msgstr "Вставте QRCode як на малюнку в потрібні веб-сторінки, використовуючи цей URL"
@@ -270,7 +270,7 @@ msgid "Feedback"
 msgstr "Зворотній зв'язок"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "Це можна легко ввімкнути на панелі адміністратора:"
 
 msgid "Loading"
 msgstr "Завантаження"
@@ -282,10 +282,10 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr "Модифікації для скорочення з id '%s' збережені"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Змінити атрибути"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Змінити shorty"
 
 msgid "New Shorty"
 msgstr "Нове скорочення"
@@ -306,19 +306,19 @@ msgid "QRCode"
 msgstr "QRCode"
 
 msgid "Open source url"
-msgstr ""
+msgstr "Відкрити вихідний url"
 
 msgid "Open relay url"
 msgstr "Відкрити перетворений URL"
 
 msgid "Open target"
-msgstr ""
+msgstr "Відкрити ціль"
 
 msgid "Open target url"
-msgstr ""
+msgstr "Відкрити цільовий url"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "Додаткова конфігурація \"Статичного бекенда\""
 
 msgid "or simpy print or download it for off-line usage"
 msgstr "або просто роздрукуйте чи завантажте це для автономного використання"
@@ -327,10 +327,10 @@ msgid "Paste to embed elsewhere"
 msgstr "Вставте для того щоб вкласти будь-куди"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Налаштування вилучаються"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Налаштування збережено"
 
 msgid "Preference '%s' retrieved"
 msgstr "Налаштування '%s' отримане"
@@ -339,7 +339,7 @@ msgid "Preference '%s' saved"
 msgstr "Налаштування '%s' збережене"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Налаштування"
 
 msgid "Prepare to send as SMS"
 msgstr "Приготуйтеся до того, щоб відправити як SMS"
@@ -360,28 +360,28 @@ msgid "Save"
 msgstr "Зберегти"
 
 msgid "Send by email"
-msgstr ""
+msgstr "Надіслати поштою"
 
 msgid "Send link by email"
 msgstr "Надіслати посилання по електронній пошті"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "Надіслати СМС"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "Встановіть власні налаштування, користуючись колесом (%%s) зліва знизу!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Встановіть власні налаштування, користуючись колесом (%%s) справа зверху!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Параметри вилучаються"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Параметри збережені"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Параметри вилучаються"
 
 msgid "Setting '%s' saved"
 msgstr "Налаштування '%s' збережено"
@@ -390,13 +390,13 @@ msgid "Settings"
 msgstr "Налаштування"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Опублікувати та використати"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "Опублікувати shorty"
 
 msgid "Shortlet"
-msgstr ""
+msgstr "Shortlet"
 
 msgid "Shorty as QRCode"
 msgstr "Скорочено як QRCode"
@@ -405,13 +405,13 @@ msgid "Shorty with id '%s' deleted"
 msgstr "Скорочення з id '%s' видалено"
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "Показати як QRCode"
 
 msgid "Show details"
 msgstr "Показати подробиці"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Показати все"
 
 msgid "SMS"
 msgstr "SMS"
@@ -420,16 +420,16 @@ msgid "SMS composer"
 msgstr "Створювач SMS"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Сортувати по зростанню"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Сортувати за спаданням"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "Очистити фільтр"
 
 msgid "Source url"
-msgstr ""
+msgstr "Вихідний url"
 
 msgid "Specify a static base url…"
 msgstr "Вкажіть статичний основний URL ..."
@@ -444,10 +444,10 @@ msgid "Status change for shorty with id '%s' saved"
 msgstr "Статус змін для скорочення з id '%s' збережено"
 
 msgid "Target"
-msgstr ""
+msgstr "Ціль"
 
 msgid "Target url"
-msgstr ""
+msgstr "Цільовий url"
 
 msgid "Target url '%s' is valid"
 msgstr "Цільовий URL '%s' є дійсним"
@@ -456,16 +456,16 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Це зображення може бути використано при написанні документів або створенні Web-сайтів"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "Сервер для створення скорочених URL-адрес."
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "Статус за замовчанням, рекомендований для нових скорочених посилань."
 
 msgid "The link below can be copied for usage apart"
 msgstr "Нижченаведене посилання можна скопіювати для окремого використання"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "Додатковий плагін '%%s' слідкує за використанням існуючих Shortys!"
 
 msgid "therefore the content must be copied manually"
 msgstr "тому зміст має бути скопійований вручну"
@@ -480,10 +480,10 @@ msgid "This is a internal url that the shortened url relays to"
 msgstr "Це внутрішній URL для якого скорочений URL перетворюється на"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "Це скорочений url, зареєстрований в системі"
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr ""
+msgstr "Цільовий url, вказаний при створені цього Shorty"
 
 msgid "This is the url referencing the QRCode shown before"
 msgstr "Цей URL посилається на QRCode показаний раніше"
@@ -501,13 +501,13 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Зазвичай, це працює лише на таких пристроях, як смартфони"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Натрапили на несподіваний тип винятку:%s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "На жаль впровадження цієї схеми обмежене"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Невідомий об'єкт: %s"
 
 msgid "Url shortened to: %s"
 msgstr "URL скорочено до: %s"
@@ -516,7 +516,7 @@ msgid "Use it in web pages by referencing or embedding"
 msgstr "Використовуйте це на Web-сторінці за допомогою посилання або вбудовування"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "Користуйтесь кнопкою '%s' нагорі або 'Shortlet'"
 
 msgid "Verify by clicking…"
 msgstr "Перевірте клацнувши ..."
@@ -576,7 +576,7 @@ msgstr "ключ користувача tiny.cc"
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "Примусово перевірити сертифікати шифрування в процесі зв'язку з сервером"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
@@ -584,32 +584,32 @@ msgid ""
 msgstr "Зовнішній 'bitly.com' сервіс використовується для реєстрації короткого URL для кожного сгенерованого скорочення."
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "Мається на увазі, що спочатку ви маєте зареєструвати '%s' на їхньому сайті."
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Зовнішній 'turl' сервіс використовується для реєстрації короткого URL для кожного згенерованого скорочення."
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Зовнішній 'ti.ny' сервіс використовується для реєстрації короткого URL для кожного згенерованого скорочення."
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Зовнішній 'cli.gs' сервіс використовується для реєстрації короткого URL для кожного згенерованого скорочення."
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Зовнішній 'is.gd' сервіс використовується для реєстрації короткого URL для кожного згенерованого скорочення."
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Зовнішній 'tiny.cc' сервіс використовується для реєстрації короткого URL для кожного згенерованого скорочення."
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
@@ -618,7 +618,7 @@ msgstr "Бекенд не використовується, згенерован
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "Сервіс вимагає аутентифікацію шляхом надання ім'я користувача bit.ly та '%s'."
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
@@ -642,10 +642,10 @@ msgstr "Статичний, заснований на правилах беке�
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr ""
+msgstr "Ви повинні подбати, щоб будь-який запит до URL налаштованого тут, відображався в \"shorty\"."
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "Ціллю перенаправлення має бути URL схожий на:"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
@@ -655,7 +655,7 @@ msgstr "Спробуйте клацнути на приклад посиланн
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "Залиште вільним, якщо ви не можете надати короткий базовий URL, який перенаправляє описаним шляхом."
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
@@ -665,32 +665,32 @@ msgstr "Використовуйте цей бекенд лише якщо у в
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Зовнішній сервіс Googles 'goo.gl service' використовується для реєстрації короткого URL для кожного згенерованого скорочення."
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "Ви маєте надати дійсний '%%s', щоб користуватися цим сервісом."
 
 msgid "This means you require a 'Google API console account'."
-msgstr ""
+msgstr "Мається на увазі, що ви вимагаєте \"консольний аккаунт Google API\""
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "Зареєструвати новий '%%s' на їх сторінках."
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr ""
+msgstr "Підключення СМС дозволить надсилати Shorty через СМС."
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr ""
+msgstr "На жаль, посилання в СМС підтримують лише смартфони та планшети."
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr ""
+msgstr "Крім того, ці реалізації мінімалістичні, глючні та відрізняються від системи до системи."
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "Коротше: у вас це може не працювати, отже ви можете його відключити..."
 
 msgid "Great, your setup appears to be working fine!"
 msgstr "Чудово, ваші налаштування, схоже, працюють добре !"
