@@ -392,7 +392,7 @@ input.shorty-config {
 }
 .shorty-desktop .shorty-list th#until,
 .shorty-desktop .shorty-list td#until {
-	width: 6em;
+	width: 7em;
 }
 .shorty-desktop .shorty-list th#status,
 .shorty-desktop .shorty-list td#status {
@@ -748,6 +748,15 @@ input.shorty-config {
 	text-overflow: ellipsis;
 	width: inherit;
 }
+.shorty-standalone label[for=meta]{
+	height: 22px;
+	padding: 0 0 7px 0;
+	margin: 0 0 2px 0;
+	vertical-align: bottom;
+}
+.shorty-standalone label[for=meta] img{
+	vertical-align: middle;
+}
 /* a trailing arrow pointing down: "take over this content to below" */
 .shorty-standalone:not(#dialog-show) .shorty-meta span#explanation.filled:after {
 	content: url("../img/actions/takeover.svg");
@@ -969,7 +978,7 @@ input.shorty-config {
 /* keep long entries like urls from disrupting the compact appearance of the list */
 .ellipsis {
 	display: inline-block;
-	overflow-x: hidden;
+	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	width: inherit;
