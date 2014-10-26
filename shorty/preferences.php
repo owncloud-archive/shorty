@@ -74,6 +74,7 @@ $tmpl->assign ( 'backend-ssl-verify',  OCP\Config::getUserValue(OCP\User::getUse
 $tmpl->assign ( 'default-status',      OCP\Config::getUserValue(OCP\User::getUser(),'shorty','default-status','private') );
 $tmpl->assign ( 'sms-control',         OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
 $tmpl->assign ( 'verbosity-control',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-control','info') );
+$tmpl->assign ( 'verbosity-timeout',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-timeout','0') );
 // render template
 $tmpl->printPage ( );
 

@@ -113,6 +113,23 @@ msgstr ""
 msgid "debug"
 msgstr ""
 
+# log message timeout
+
+msgid "(never)"
+msgstr ""
+
+msgid "2 seconds"
+msgstr ""
+
+msgid "5 seconds"
+msgstr ""
+
+msgid "12 seconds"
+msgstr ""
+
+msgid "1 minute"
+msgstr ""
+
 # keyboard shortcuts
 msgid "Ctrl-C"
 msgstr ""
@@ -229,6 +246,9 @@ msgid "Configuration"
 msgstr ""
 
 msgid "The amount of feedback messages shown."
+msgstr ""
+
+msgid "The time span after which messages are hidden again automatically"
 msgstr ""
 
 msgid "Copy to clipboard"

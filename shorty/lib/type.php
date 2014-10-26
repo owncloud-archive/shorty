@@ -86,6 +86,7 @@ class OC_Shorty_Type
 		'backend-ssl-verify'     => OC_Shorty_Type::INTEGER,
 		'sms-control'            => OC_Shorty_Type::STRING,
 		'verbosity-control'      => OC_Shorty_Type::STRING,
+		'verbosity-timeout'      => OC_Shorty_Type::INTEGER,
 		'list-sort-code'         => OC_Shorty_Type::SORTKEY,
 		'controls-panel-visible' => OC_Shorty_Type::BOOLEAN,
 	);

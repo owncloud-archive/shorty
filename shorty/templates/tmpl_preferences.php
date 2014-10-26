@@ -34,7 +34,7 @@
 ?>
 
 <fieldset id="shorty-fieldset" class="personalblock">
-	<form id="shorty">
+	<form id="shorty-preferences">
 <?php require_once('tmpl_wdg_shortlet.php'); ?>
 			<p>
 				<!-- default-status -->
@@ -268,6 +268,19 @@
 						?>
 					</select>
 					<em><?php p(OC_Shorty_L10n::t("The amount of feedback messages shown.")); ?></em>
+				</span>
+				<br />
+				<label for="timeout" class="shorty-aspect"></label>
+				<span id="timeout" style="margin-right:1em;">
+					<select id="verbosity-timeout" name="verbosity-timeout" style="width:11em;">
+						<?php foreach (array('(never)'=>0, '2 seconds'=>2000, '5 seconds'=>5000, '12 seconds'=>120000, '1 minute'=>60000) as $key=>$timeout)
+								print_unescaped(sprintf('<option value="%1$s" %2$s>%3$s</option>'."\n",
+											$timeout,
+											($timeout==$_['verbosity-timeout']?'selected':''),
+											OC_Shorty_L10n::t($key)));
+						?>
+					</select>
+					<em><?php p(OC_Shorty_L10n::t("The time span after which messages are hidden again automatically.")); ?></em>
 				</span>
 			</p>
 		</div>

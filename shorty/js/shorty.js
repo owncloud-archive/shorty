@@ -1094,6 +1094,7 @@ OC.Shorty={
 			/**
 			* @method OC.Shorty.WUI.Messenger.hide
 			* @brief Hides the messenger area and clears the content
+			* @param object A specific messenger clone object to be hidden or undefined
 			* @author Christian Reiner
 			*/
 			hide: function(object){
@@ -1123,6 +1124,8 @@ OC.Shorty={
 			/**
 			* @method OC.Shorty.WUI.Messenger.show
 			* @brief Populates the messenger area with the specified text and shows it
+			* @param message (string) A human readable message
+			* @param level (string) A severity level to be compared to the configured verbosity threshold
 			* @author Christian Reiner
 			*/
 			show: function(message,level){
@@ -1132,9 +1135,11 @@ OC.Shorty={
 				var duration = 'slow';
 				var messenger = $('body #shorty-messenger');
 				$.when(
-					OC.Shorty.Action.Preference.get('verbosity-control')
-				).done(function(result){
-					var verbosity = result['verbosity-control'];
+					OC.Shorty.Action.Preference.get('verbosity-control'),
+					OC.Shorty.Action.Preference.get('verbosity-timeout')
+				).done(function(resultControl, resultTimeout){
+					var verbosity = resultControl['verbosity-control'];
+					var timeout   = resultTimeout['verbosity-timeout'];
 					if (message && message.length){
 						// log to browser console when debugging is enabled in system config file
 						if ( OC.Shorty.Debug ){
@@ -1152,7 +1157,10 @@ OC.Shorty={
 									object.find('#title').text('Debug');
 									$.when(
 										object.slideDown(duration)
-									).done(dfd.resolve)
+									).done(function(){
+										if (timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
+										dfd.resolve;
+									})
 								}
 								else
 									dfd.resolve();
@@ -1165,7 +1173,10 @@ OC.Shorty={
 									object.find('#title').text('Info');
 									$.when(
 										object.slideDown(duration)
-									).done(dfd.resolve)
+									).done(function(){
+										if (timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
+										dfd.resolve;
+									})
 								}
 								else
 									dfd.resolve();
@@ -1180,7 +1191,10 @@ OC.Shorty={
 									object.attr('id','');
 									$.when(
 										object.slideDown(duration)
-									).done(dfd.resolve)
+									).done(function(){
+										if (timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
+										dfd.resolve;
+									})
 								}
 								else
 									dfd.resolve();
@@ -1190,7 +1204,7 @@ OC.Shorty={
 					} // if message
 				})
 				return dfd.promise();
-			}, // OC.Shorty.WUI.Messenger.show
+			} // OC.Shorty.WUI.Messenger.show
 		}, // OC.Shorty.WUI.Messenger
 		/**
 		* @class OC.Shorty.WUI.Meta
