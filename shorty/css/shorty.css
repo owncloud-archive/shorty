@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -59,13 +59,16 @@ html input, html textarea {
 #controls {
 	top: 0;
 	position: relative;
+	margin: 0 0 4px;
 	padding: 0 2px;
+	background-color: #F6F6F6;
+	box-shadow: 0 2px 3px #ddd;
 	transition:top 400ms;-o-transition:top 400ms;-ms-transition:top 400ms;-moz-transition:top 400ms;-khtml-transition:top 400ms;-webkit-transition:top 400ms;
 }
 #content.shorty-panel-hidden #controls,
 #content.shorty-panel-hidden .shorty-desktop,
 #content.shorty-panel-hidden .shorty-controls {
-	top: -2.8em;
+	top: -44px;
 }
 .shorty-controls {
 	display: block;
@@ -81,6 +84,9 @@ html input, html textarea {
 	height: inherit;
 	line-height: 300%;
 	text-align: center;
+	font-size: 110%;
+	font-weight: inherit;
+	margin: 0 1em;
 	white-space: nowrap;
 }
 .shorty-controls-center span {
@@ -89,7 +95,14 @@ html input, html textarea {
 	vertical-align: top;
 }
 .shorty-controls-center span.shorty-value {
-	width: 2em;
+	display: inline-block;
+	min-width: 32px;
+}
+.shorty-controls-center span img {
+	width: 16px;
+}
+.shorty-controls-right button img {
+	width: 20px;
 }
 /* the handle of the controls panel */
 .shorty-controls .shorty-handle img {
@@ -111,8 +124,8 @@ html input, html textarea {
 .shorty-controls .shorty-handle-top {
 	width: 26px;
 	height: 22px;
-	top: 35px;
-	right: -45px;
+	top: 44px;
+	right: -78px;
 	border-top: 0;
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;
@@ -158,7 +171,7 @@ html input, html textarea {
 }
 .shorty-config {
 	float: right;
-	margin: 0.25em 0.2em;
+	margin: 0.2em;
 	vertical-align: middle;
 	line-height: 1.2em;
 	height: 28px;
@@ -299,6 +312,9 @@ input.shorty-config {
 	padding: 0;
 	opacity: 0.7;
 }
+.shorty-list thead tr#toolbar select {
+	height: inherit;
+}
 .shorty-list thead tr#toolbar img {
 	cursor: pointer;
 	vertical-align: middle;
@@ -339,11 +355,11 @@ input.shorty-config {
 	cursor: pointer;
 }
 .shorty-list thead tr#titlebar th:not(#actions),
-.shorty-list thead tr#titlebar th:not(#actions) span {
+.shorty-list thead tr#titlebar th:not(#actions) div {
 	cursor: s-resize;
 }
 .shorty-list thead tr#titlebar.shorty-clicked th:not(#actions),
-.shorty-list thead tr#titlebar.shorty-clicked th:not(#actions) span {
+.shorty-list thead tr#titlebar.shorty-clicked th:not(#actions) div {
 	cursor: n-resize;
 }
 /* scrolling lists have a scrollbar INSIDE the tbody */
@@ -376,7 +392,7 @@ input.shorty-config {
 }
 .shorty-desktop .shorty-list th#until,
 .shorty-desktop .shorty-list td#until {
-	width: 6em;
+	width: 7em;
 }
 .shorty-desktop .shorty-list th#status,
 .shorty-desktop .shorty-list td#status {
@@ -391,9 +407,10 @@ input.shorty-config {
 .shorty-list thead tr#toolbar th .chzn-container,
 .shorty-list tbody tr#toolbar td .chzn-container {
 	width: 6em;
+	height: inherit;
 	font-size: 11px;
 	margin: 0;
-	padding: 0.4em 0.3em 0.2em;
+	padding: 0.3em;
 	vertical-align: baseline;
 	background-color: #FFFFFF;
 }
@@ -611,7 +628,7 @@ input.shorty-config {
 	opacity: 1;
 }
 .shorty-dialog input {
-	width: 80%;
+	width: 82%;
 /* these are required by the datepicker plugin to compute the correct z-index */
 	position: relative;
 	z-index: 100;
@@ -635,12 +652,14 @@ input.shorty-config {
 	border: 0 none;
 	box-shadow: 0 0 0 #FFFFFF;
 	outline: none;
+	color: black;
 	background: none;
 	background-color: #F7F7F7;
 	padding: 4px;
 }
 .shorty-dialog button#confirm {
-	width: 12em; height: 2em;
+	width: 12em;
+	height: 36px;
 	border: 1px solid #D3D3D3;
 	background-color: #EEEEEE;
 }
@@ -678,7 +697,7 @@ input.shorty-config {
 	position: relative;
 	float: right;
 	width: 20px;
-	top: 3px;
+	top: 12px;
 }
 .shorty-dialog span.clickable:not(.clicked) * {
 	cursor: pointer;
@@ -686,7 +705,7 @@ input.shorty-config {
 	margin: 0.1em 0.2em;
 }
 .shorty-dialog span.clickable.clicked * {
-	width: 98%;
+	width: 100%;
 }
 
 /* absolut dialogs ('standalone') */
@@ -697,18 +716,20 @@ input.shorty-config {
 .shorty-standalone #busy {
 	display: none;
 	float: right;
+	padding-top: 6px;
 }
-
+.shorty-standalone label {
+	padding: 10px 5px 5px;
+}
 .shorty-standalone .shorty-meta {
-	width: 66%;
+	width: 67%;
 	margin: 0;
 }
 .shorty-standalone .shorty-meta img {
 	position: relative;
-	top: 5px;
 	max-height: 16px;
 	max-width: 16px;
-	vertical-align: top;
+	vertical-align: middle;
 	margin: 0;
 	padding: 0;
 }
@@ -716,8 +737,8 @@ input.shorty-config {
 	height: 22px;
 	overflow-y: hidden;
 	white-space: normal;
-	margin: 0;
-	padding: 3px 4px;
+	margin: 1px;
+	padding: 7px 4px;
 }
 .shorty-standalone .shorty-meta span#explanation {
 	border-radius: 0.5em;
@@ -726,6 +747,15 @@ input.shorty-config {
 	overflow-x: hidden;
 	text-overflow: ellipsis;
 	width: inherit;
+}
+.shorty-standalone label[for=meta]{
+	height: 22px;
+	padding: 0 0 7px 0;
+	margin: 0 0 2px 0;
+	vertical-align: bottom;
+}
+.shorty-standalone label[for=meta] img{
+	vertical-align: middle;
 }
 /* a trailing arrow pointing down: "take over this content to below" */
 .shorty-standalone:not(#dialog-show) .shorty-meta span#explanation.filled:after {
@@ -799,7 +829,7 @@ input.shorty-config {
 	content: url("../img/actions/shade.svg");
 	margin-right: 0.3em;
 	padding: 0;
-	vertical-align: baseline;
+	vertical-align: middle;
 	opacity: 0.7;
 }
 .shorty-embedded fieldset.shorty-collapsible.collapsed span:before {
@@ -809,15 +839,17 @@ input.shorty-config {
 	border-radius: 0.5em;
 	border: 1px solid #EEEEEE;
 	margin: 2px 1px;
-	padding: 0 0 2px;
+	padding: 2px 0 0;
 }
 .shorty-embedded fieldset.shorty-collapsible:not(.collapsed) {
 	border: 1px solid #808080;
 }
 .shorty-embedded select {
 	padding: 0.2em 0.4em 0.2em 0.2em;
-	border: 0 none;
 	background-color: #F4F4F4;
+}
+.shorty-embedded label {
+	padding: 2px;
 }
 .shorty-embedded td img.shorty-usage {
 	opacity: 0.6;
@@ -840,7 +872,6 @@ input.shorty-config {
 	background-color: transparent;
 }
 .shorty-embedded .shorty-grid td {
-	padding: 0.2em;
 	text-align: center;
 }
 .shorty-dialog label {
@@ -848,15 +879,15 @@ input.shorty-config {
 	clear: none;
 	width: 5.7em;
 	text-align: left;
-	vertical-align: top;
-	padding: 0.4em;
+	vertical-align: baseline;
+	padding: 10px 5px 5px;
 	cursor: default;
+}
+.shorty-dialog label[for=notes] {
+	vertical-align: top;
 }
 .shorty-dialog span.label-line label:not(:first-child) {
 	text-align: right;
-}
-.shorty-dialog span {
-	padding: 0.6em 0.5em 0.1em 0.3em;
 }
 .shorty-dialog span.label-line {
 	display: inline;
@@ -947,10 +978,13 @@ input.shorty-config {
 /* keep long entries like urls from disrupting the compact appearance of the list */
 .ellipsis {
 	display: inline-block;
-	overflow-x: hidden;
+	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	width: inherit;
+}
+.ellipsis::-webkit-scrollbar {
+    display: none;
 }
 
 /* customization of styles for the 3rdparty jquery.impromtu prompts */
@@ -1044,4 +1078,9 @@ div.jqimessage fieldset div#qrcode-img img.usage-qrcode {
 	margin:120px 0 0;
 	padding:0;
 	width:20%
+}
+/* the embedded user preferences dialog */
+#shorty-fieldset button {
+	height: 36px;
+	margin: 3px;
 }

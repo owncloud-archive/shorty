@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -30,7 +30,7 @@ See file INSTALLATION.
 === Requirements ===
 ownCloud version 2 or newer on the server side.
 A css3 capable and reasonably standards conform web browser.
-A scripting capable bookmarks feature for the optional Shortlet thing. 
+A scripting capable bookmarks feature for the optional Shortlet thing.
 
 === Usage ===
 This is only a very basic description. The plugin should be fairly intuitive to
@@ -44,13 +44,13 @@ the 'share' action and grabbing the visualized "source url".
 By clicking on the header row of the list of shorties you can open (and close)
 a "toolbox" offering options to sort, filter and reload the list. The sorting
 you chose is stored in a persistant manner, not so any filters defined. You
-cannot accidentially close the toolbox when there are still filters active. 
+cannot accidentially close the toolbox when there are still filters active.
 You can remove (delete) existing shorties, but those shorties will only be
 marked as deleted. This way you can 'undelete' them if required. Permanent
 removal is done next time you access the shorty plugin. If you really want to
 make sure the removal is done NOW then simply reload the list. This is done in
 the "toolbox" of the list (click on the header row) by chosing the "reload"
-icon on the left (or by a simple browser reload). 
+icon on the left (or by a simple browser reload).
 
 === PRIVACY ===
 Shorty allows you to stay more in control over links you post or send. It is up
@@ -60,4 +60,4 @@ never replace any serious form of access control over the content published via
 a published link. Shorty works as a short url resolver, meaning it forwards any
 requesting web browser to the real address of the published content. This might
 change when if future an integrated proxy function gets implemented, as opposed
-to the current forwarding mechanism. 
+to the current forwarding mechanism.

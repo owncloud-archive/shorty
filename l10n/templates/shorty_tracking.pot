@@ -53,6 +53,9 @@ msgstr ""
 msgid "denied"
 msgstr ""
 
+msgid "failed"
+msgstr ""
+
 msgid "blocked"
 msgstr ""
 

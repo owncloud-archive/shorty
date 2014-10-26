@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -40,12 +40,6 @@ OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 
 OCP\Util::addStyle  ( 'shorty/3rdparty', 'jquery-impromptu' );
 OCP\Util::addStyle  ( 'shorty',          'shorty' );
-// TODO: remove OC-4.0-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
-	OCP\Util::addStyle ( 'shorty', 'shorty-oc40' );
-// TODO: remove OC-4.5-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.91')) // OC-4.5
-	OCP\Util::addStyle ( 'shorty', 'shorty-oc45' );
 
 OCP\Util::addscript ( '3rdparty',        'chosen/chosen.jquery.min');
 OCP\Util::addScript ( 'shorty/3rdparty', 'jquery-tinysort.min' );
@@ -170,7 +164,7 @@ switch ($act)
 			// is sending sms enabled in the personal preferences ?
 			$tmpl->assign ( 'sms-control', OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
 			// clean up session var so that a browser reload does not trigger the same action again
-			unset ( $_SESSION['shorty-referrer'] );
+			\OC::$session->remove('shorty-referrer');
 			$tmpl->printPage();
 		} catch ( OC_Shorty_Exception $e ) { OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'level'=>'error', 'data'=>$result ) ); }
 } // switch

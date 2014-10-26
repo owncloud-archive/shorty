@@ -3,9 +3,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -32,6 +32,8 @@
  * @param string backend-bitly-key: Personal authentication key to use when the bit.li backend is active
  * @param string backend-bitly-user: Personal authentication user to use when the bit.li backend is active
  * @param string sms-control: Controls wether a 'send as sms' action should be offered is the sharing dialog
+ * @param string verbosity-control: A severity threshold controlling what messages will be displayed to the user
+ * @param string verbosity-timeout: An oiptional time span after which shown messages will be hidden again automatically
  * @param string list-sort-code: Two character sorting key controlling the active sorting of shorty lists
  * @return json: success/error state indicator
  * @return json: Associative array holding the stored values by their key

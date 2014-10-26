@@ -3,9 +3,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -105,7 +105,7 @@
 			<label for="created"><?php p(OC_Shorty_L10n::t('Creation').':'); ?></label>
 			<input id="created" name="created" type="text" data="" class="" style="width:7em;" readonly="true" disabled />
 			<label for="accessed"><?php p(OC_Shorty_L10n::t('Access').':'); ?></label>
-			<input id="accessed" name="accessed" type="text" data="" class="" style="width:10em;" readonly="true" disabled />
+			<input id="accessed" name="accessed" type="text" data="" class="" style="width:11em;" readonly="true" disabled />
 		</span>
 		<br />
 		<label for="confirm"></label>

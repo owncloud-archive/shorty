@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -41,7 +41,7 @@ centralized or based on decentralized per-directory rules (".htaccess files").
 The rules must be configured such that all requests to urls of the scheme
 <base url><shorty key> are mapped directly onto the relay service web url of
 the Shorty app:
-http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty key>. 
+http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty key>.
 If in doubt refer to the url shown as "relay url" inside the sharing dialog for
 each Shorty. That scheme is the one you want to rewrite your requests to, you
 just have to make sure the individual <shorty key> survives the redirect.
@@ -60,7 +60,7 @@ There is no need that the base url must be served by the same http server that
 serves the owncoud system. A static rewrite setup may well forward short source
 urls to the Shorty app inside a remote ownCloud installation. However, it is
 a known issue that the internal validation of the setup won't work with such
-scenario. 
+scenario.
 
 2.) Selection of a backend per user (optional)
 To generate the a source url that is part of every Shorty the app uses a
@@ -96,7 +96,7 @@ bookmark toolbar or area by a simple drag&drop. The Shortlet should work with
 most modern browsers, though probably not all. Just have a try with it:
 you click it for any page you want to create a Shorty for. You are forwarded to
 your ownClouds Shorty app, the dialog for a new Shorty opens and is prefilled
-with the url of the page you came from. Very convenient... 
+with the url of the page you came from. Very convenient...
 
 4.) Access control inside each single "Shorty" (implicit)
 There are a few attributres you can configure freely inside each Shorty:
@@ -105,14 +105,14 @@ There are a few attributres you can configure freely inside each Shorty:
 - a status option that controls access permissions to the Shorty.
 
 5.) Sending of Shortys as SMS
-Besides sending of Shortys as email message and copying a Shortys source url 
-to the clipboard a third action can be enabled inside the sharing dialog: 
-To send a Shortys source url as SMS. 
-However, the approach is extremely minimalistic, it relies on the client system 
-to correctly handle a 'sms url'. This is typically only given on a mobile 
+Besides sending of Shortys as email message and copying a Shortys source url
+to the clipboard a third action can be enabled inside the sharing dialog:
+To send a Shortys source url as SMS.
+However, the approach is extremely minimalistic, it relies on the client system
+to correctly handle a 'sms url'. This is typically only given on a mobile
 device, a smart phone. In addition, such url does not allow to specify a message
-body, so the Shortys source url has to be copied and pasted manually. 
-The option is disabled by default. 
+body, so the Shortys source url has to be copied and pasted manually.
+The option is disabled by default.
 
 6.) Installation of the optional tracking plugin
 There is a separate app available: "Shorty Tracking". The app acts as a plugin
@@ -123,4 +123,4 @@ This helps maintaining a collection of Shortys and offers a more detailed
 insight into how those Shortys are used. Keep in mind however that tracking
 users raises legal issues. You probably have to inform users about the fact
 that their clicks are tracked if your site does not serve a private purpose
-only. 
+only.

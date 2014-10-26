@@ -2,9 +2,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -35,51 +35,50 @@
 
 $(document).ready(function(){
 	// backend preferences, activate hints for currently selected backend
-	var type=$('form#shorty #backend-type').val()||'';
+	var type=$('#shorty-preferences #backend-type').val()||'';
 	if (type.length){
-		$('form#shorty #backend-'+type).show();
+		$('#shorty-preferences #backend-'+type).show();
 	}
 	// backend 'static': initialize example that depends on backend-base system setting
-	if ($('form#shorty #backend-static #backend-static-base').val().length)
-		$('form#shorty #backend-static #example').text($('#shorty #backend-static #backend-static-base').val()+'<shorty id>');
+	if ($('#shorty-preferences #backend-static #backend-static-base').val().length)
+		$('#shorty-preferences #backend-static #example').text($('#shorty-preferences #backend-static #backend-static-base').val()+'<shorty id>');
 	// backend 'static': offer a clickable example link to verify the correct setup
-	$('form#shorty #backend-static #example').bind('click',function(event){
+	$('#shorty-preferences #backend-static #example').bind('click',function(event){
 		event.preventDefault();
 		OC.Shorty.Action.Setting.verify();
 	});
 	// react with a matching explanation and example url when backend type is chosen
 	$('.chosen').chosen();
-	$('form#shorty #backend-type').change(
+	$('#shorty-preferences #backend-type').change(
 		function(){
-			var type=$('#shorty #backend-type').val();
-			$('#shorty .backend-supplement').hide();
+			var type=$('#shorty-preferences #backend-type').val();
+			$('#shorty-preferences .backend-supplement').hide();
 			if (type.length){
-				$('#shorty .backend-supplement').filter('#backend-'+type).fadeIn('slow');
+				$('#shorty-preferences .backend-supplement').filter('#backend-'+type).fadeIn('slow');
 				// save preference
-				OC.Shorty.Action.Preference.set($('#shorty #backend-type').serialize());
+				OC.Shorty.Action.Preference.set($('#shorty-preferences #backend-type').serialize());
 				return false;
 			}
 		}
 	);
 	// safe backend supplement preferences
-	$('form#shorty .backend-supplement').focusout(function(){
+	$('#shorty-preferences .backend-supplement').focusout(function(){
 		// save preference
 		OC.Shorty.Action.Preference.set($(this).find('input').serialize());
 	});
 	// safe ssl-verification preference
-	var ssl=$('#shorty #backend-ssl-verify')
+	var ssl=$('#shorty-preferences #backend-ssl-verify')
 	ssl.change(function(){
 		if (ssl.is(':checked'))
 			OC.Shorty.Action.Preference.set('backend-ssl-verify=1');
 		else OC.Shorty.Action.Preference.set('backend-ssl-verify=0');
 	});
-	// save scalar preferences: default-status, sms-control, verbosity-control
-	$('form#shorty #sms-control,#shorty #verbosity-control').change(function(){
+	// save scalar preferences: default-status, sms-control, verbosity-control, verbosity-timeout
+	$('#shorty-preferences #sms-control,#shorty-preferences #verbosity-control,#shorty-preferences #verbosity-timeout').change(function(){
 		OC.Shorty.Action.Preference.set($(this).serialize());
 	});
-	$('form#shorty #default-status').change(function(){
+	$('#shorty-preferences #default-status').change(function(){
 		OC.Shorty.Action.Preference.set($(this).serialize());
-		console.log($(this).attr('value'));
 		$('#controls #dialog-add select#status').attr('data',$(this).attr('value'));
 	});
 });

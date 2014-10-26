@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -138,37 +138,79 @@ try
 				throw new OC_Shorty_HttpException ( 403 );
 
 			case 'private':
-				// check if user owns the Shorty, deny access if not
-				if ( $result[0]['user']!=OCP\User::getUser() )
+				// check if we are already logged in
+				if (  ( ! OCP\User::isLoggedIn() )
+						||( $result[0]['user']!=OCP\User::getUser()) )
 				{
-					// refuse forwarding => 403: Forbidden
-					OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
-					throw new OC_Shorty_HttpException ( 403 );
+					if (   ! isset($_SERVER['PHP_AUTH_USER'])) {
+						header('WWW-Authenticate: Basic realm="OwnCloud relay authorization"');
+						header('HTTP/1.0 401 Unauthorized');
+						// important: flush, so that auth headers are not swallowed by OC
+						flush(); ob_flush();
+						// refuse forwarding => 403: Forbidden
+						OC_Shorty_Hooks::registerClick ( $result[0], $request, 'failed' );
+						throw new OC_Shorty_HttpException ( 403 );
+					}
+					elseif ( ! OCP\User::checkPassword($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) )
+					{
+						header('WWW-Authenticate: Basic realm="Retry OwnCloud relay authorization"');
+						header('HTTP/1.0 401 Unauthorized');
+						// important: flush, so that auth headers are not swallowed by OC
+						flush(); ob_flush();
+						// refuse forwarding => 403: Forbidden
+						OC_Shorty_Hooks::registerClick ( $result[0], $request, 'failed' );
+						throw new OC_Shorty_HttpException ( 403 );
+					}
+					elseif ( $result[0]['user']!=$_SERVER['PHP_AUTH_USER'] )
+					{
+						// refuse forwarding => 403: Forbidden
+						OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
+						throw new OC_Shorty_HttpException ( 403 );
+					}
 				}
+				break;
 
-				// NO break; but fall through to the action in 'case public:'
-			case 'shared':
-				// check if we are a user, deny access if not
+				case 'shared':
+				// check if we are already logged in
 				if ( ! OCP\User::isLoggedIn() )
 				{
-					// refuse forwarding => 403: Forbidden
-					OC_Shorty_Hooks::registerClick ( $result[0], $request, 'denied' );
-					throw new OC_Shorty_HttpException ( 403 );
+					if (   ! isset($_SERVER['PHP_AUTH_USER'])) {
+						// first, non-authenticated attempt, request authentication
+						header('WWW-Authenticate: Basic realm="OwnCloud relay authorization"');
+						header('HTTP/1.0 401 Unauthorized');
+						// important: flush, so that auth headers are not swallowed by OC
+						flush(); ob_flush();
+						// fallback: refuse forwarding => 403: Forbidden
+						OC_Shorty_Hooks::registerClick ( $result[0], $request, 'failed' );
+						throw new OC_Shorty_HttpException ( 403 );
+					}
+					elseif ( ! OCP\User::checkPassword($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) )
+					{
+						// second, authenticated attempt, request repeated authentication
+						header('WWW-Authenticate: Basic realm="Retry OwnCloud relay authorization"');
+						header('HTTP/1.0 401 Unauthorized');
+						// important: flush, so that auth headers are not swallowed by OC
+						flush(); ob_flush();
+						// log denied access attempt
+						OC_Shorty_Hooks::registerClick ( $result[0], $request, 'failed' );
+						// fallback: refuse forwarding => 403: Forbidden
+						throw new OC_Shorty_HttpException ( 403 );
+					}
 				}
+				break;
 
-				// NO break; but fall through to the action in 'case public:'
-			case 'public':
-				// finish this script to record the click, even if the client detaches right after the redirect
-				ignore_user_abort ( TRUE );
-				// forward to target, regardless of who sends the request
-				header("HTTP/1.0 301 Moved Permanently");
-				// http forwarding header
-				header ( sprintf('Location: %s', $target) );
-				// register click
-				OC_Shorty_Hooks::registerClick ( $result[0], $request, 'granted' );
+				case 'public':
+				// no access restriction, so all fine!
 		} // switch status
 
-		exit();
+		// finish this script to record the click, even if the client detaches right after the redirect
+		ignore_user_abort ( TRUE );
+		// register click
+		OC_Shorty_Hooks::registerClick ( $result[0], $request, 'granted' );
+		// forward to target, regardless of who sends the request
+		header("HTTP/1.0 301 Moved Permanently");
+		// http forwarding header
+		header ( sprintf('Location: %s', $target) );
 	} // if id
 } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
 ?>

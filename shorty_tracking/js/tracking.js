@@ -2,7 +2,7 @@
 * @package shorty-tracking an ownCloud url shortener plugin addition
 * @category internet
 * @author Christian Reiner
-* @copyright 2012-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2012-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty+Tracking?content=152473
 *
@@ -101,6 +101,8 @@ $(window).load(function(){
 					$(this).val()
 				]
 			);
+			// change the value attribute inside the DOM, some jquery/browser combination seem to block this...
+			$(this).attr('value',$(this).val());
 		});
 	// detect if the list has been scrolled to the bottom,
 	// retrieve next chunk of clicks if so
@@ -165,6 +167,7 @@ OC.Shorty.Tracking=
 	Stats:{
 		blocked:[],
 		denied: [],
+		failed: [],
 		granted:[]
 	},
 	/**
@@ -212,6 +215,12 @@ OC.Shorty.Tracking=
 			offset=OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody tr').last().attr('id');
 		}else{
 			if (OC.Shorty.Debug) OC.Shorty.Debug.log("dropping existing entries in list");
+			// load first content into the list
+			OC.Shorty.Tracking.Stats.granted=[];
+			OC.Shorty.Tracking.Stats.denied =[];
+			OC.Shorty.Tracking.Stats.failed =[];
+			OC.Shorty.Tracking.Stats.blocked=[];
+			// empty DOM list
 			OC.Shorty.WUI.List.empty(OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first());
 			OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled');
 			OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().removeClass('scrollingTable');
@@ -297,16 +306,15 @@ OC.Shorty.Tracking=
 			OC.Shorty.WUI.List.empty(OC.Shorty.Tracking.Dialog.List),
 			OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').removeClass('disabled')
 		).done(function(){
-			OC.Shorty.WUI.Dialog.show(OC.Shorty.Tracking.Dialog.List)
-			dfd.resolve();
-		}).fail(function(){
-			dfd.reject();
+			$.when(
+				OC.Shorty.WUI.Dialog.show(OC.Shorty.Tracking.Dialog.List)
+			).done(function(){
+				OC.Shorty.Tracking.build();
+				dfd.resolve();
+			}).fail(function(){
+				dfd.reject();
+			})
 		})
-		// load first content into the list
-		OC.Shorty.Tracking.Stats.granted=[];
-		OC.Shorty.Tracking.Stats.denied =[];
-		OC.Shorty.Tracking.Stats.blocked=[];
-		OC.Shorty.Tracking.build();
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.control
 	/**
@@ -461,17 +469,20 @@ OC.Shorty.Tracking=
 		// []
 		var granted=new Array();
 		var denied =new Array();
+		var failed =new Array();
 		var blocked=new Array();
 		var column, steps = 80;
 		// initialize all columns as zero value
 		for (column=0;column<=steps;column=column+1){
 			granted[column]	= 0;
 			denied[column]	= 0;
+			failed[column]	= 0;
 			blocked[column]	= 0;
 		}
 		// increment matching range column for each click
 		$.each(OC.Shorty.Tracking.Stats.granted,function(i,time){granted[Math.round((time-rangeMin)/(range/steps))]++;});
 		$.each(OC.Shorty.Tracking.Stats.denied, function(i,time){ denied[Math.round((time-rangeMin)/(range/steps))]++;});
+		$.each(OC.Shorty.Tracking.Stats.failed, function(i,time){ failed[Math.round((time-rangeMin)/(range/steps))]++;});
 		$.each(OC.Shorty.Tracking.Stats.blocked,function(i,time){blocked[Math.round((time-rangeMin)/(range/steps))]++;});
 		// initialize stats sparkline
 		var sparklineOpts={
@@ -479,40 +490,51 @@ OC.Shorty.Tracking=
 			height:'1.6em',
 			tooltipSkipNull:true,
 			tooltipContainer:OC.Shorty.Tracking.Dialog.List,
-			tooltipSuffix:' '+t('shorty_tracking','granted'),
 			type:'line',
 			numberDigitGroupSep:' '
-		}
-		$(stats).sparkline(
+		};
+		$(sparkline).sparkline(
 			granted,
 			$.extend(
 				{},
-				sparklineOpts,{
-					composite:false,
+				sparklineOpts,
+				{ composite:false,
 					tooltipSuffix:' '+t('shorty_tracking','granted'),
 					lineColor:'green',
 					fillColor:'limegreen',
 				}
 			)
 		);
-		$(stats).sparkline(
+		$(sparkline).sparkline(
+			failed,
+			$.extend(
+				{},
+				sparklineOpts,
+				{ composite:true,
+					tooltipSuffix:' '+t('shorty_tracking','failed'),
+					lineColor:'goldenrod',
+					fillColor:false,
+				}
+			)
+		);
+		$(sparkline).sparkline(
 			denied,
 			$.extend(
 				{},
-				sparklineOpts,{
-					composite:true,
+				sparklineOpts,
+				{ composite:true,
 					tooltipSuffix:' '+t('shorty_tracking','denied'),
 					lineColor:'darkorange',
 					fillColor:false,
 				}
 			)
 		);
-		$(stats).sparkline(
+		$(sparkline).sparkline(
 			blocked,
 			$.extend(
 				{},
-				sparklineOpts,{
-					composite:true,
+				sparklineOpts,
+				{ composite:true,
 					tooltipSuffix:' '+t('shorty_tracking','blocked'),
 					lineColor:'red',
 					fillColor:false
@@ -576,6 +598,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 				switch (set['result']){
 				case 'blocked': icon='bad';     break;
 				case 'denied':  icon='neutral'; break;
+				case 'failed':  icon='blank'; break;
 				case 'granted': icon='good';    break;
 				default:        icon='blank';
 				} // switch
@@ -591,6 +614,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 				switch (set['result']){
 					case 'blocked': OC.Shorty.Tracking.Stats.blocked.push(set[aspect]); break;
 					case 'denied':  OC.Shorty.Tracking.Stats.denied.push (set[aspect]); break;
+					case 'failed':  OC.Shorty.Tracking.Stats.failed.push (set[aspect]); break;
 					case 'granted': OC.Shorty.Tracking.Stats.granted.push(set[aspect]); break;
 				} // switch
 				break;
@@ -653,9 +677,10 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 	* the list of tracked clicks.
 	*/
 	ToolbarCheckFilter:function(toolbar){
-		return (  (  (toolbar.find('th#time,#address,#host,#user').find('div input.shorty-filter:[value!=""]').length)
-						&&(toolbar.find('th#time,#address,#host,#user').find('div input.shorty-filter:[value!=""]').effect('pulsate')) )
-				 ||(  (toolbar.find('th#result select :selected').val())
-						&&(toolbar.find('#result').effect('pulsate')) ) );
+		return (
+				(  (toolbar.find('th#time,th#address,th#host,th#user').find('div input.shorty-filter[value!=""]').length)
+				 &&(toolbar.find('th#time,th#address,th#host,th#user').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
+			||(  (toolbar.find('th#result select :selected').val())
+				 &&(toolbar.find('th#result').effect('pulsate', 2000)) ) );
 		} // OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
 } // OC.Shorty.Runtime.Context.ListOfClicks

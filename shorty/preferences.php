@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -41,12 +41,6 @@ OC_App::loadApps();
 OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OCP\Util::addStyle  ( 'shorty',   'shorty' );
 OCP\Util::addStyle  ( 'shorty',   'preferences' );
-// TODO: remove OC-4.0-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
-	OCP\Util::addStyle ( 'shorty', 'shorty-oc40' );
-// TODO: remove OC-4.5-compatibility:
-if (OC_Shorty_Tools::versionCompare('<','4.91')) // OC-4.5
-	OCP\Util::addStyle ( 'shorty', 'shorty-oc45' );
 
 OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 OCP\Util::addScript ( 'shorty',   'shorty' );
@@ -80,13 +74,8 @@ $tmpl->assign ( 'backend-ssl-verify',  OCP\Config::getUserValue(OCP\User::getUse
 $tmpl->assign ( 'default-status',      OCP\Config::getUserValue(OCP\User::getUser(),'shorty','default-status','private') );
 $tmpl->assign ( 'sms-control',         OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
 $tmpl->assign ( 'verbosity-control',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-control','info') );
+$tmpl->assign ( 'verbosity-timeout',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-timeout','0') );
 // render template
-// TODO: remove OC4-compatibility
-if (OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
-	// OC-4.0
-	return $tmpl->fetchPage ( );
-else
-	// OC-4.5 & OC-5.0
-	$tmpl->printPage ( );
+$tmpl->printPage ( );
 
 ?>

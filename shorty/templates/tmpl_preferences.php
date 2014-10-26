@@ -3,9 +3,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -34,15 +34,7 @@
 ?>
 
 <fieldset id="shorty-fieldset" class="personalblock">
-<?php if (OC_Shorty_Tools::versionCompare('<','4.80')) { ?>
-	<div id="title" class="shorty-title">
-		<img class="svg" style="vertical-align: bottom;"
-			src="<?php p(OCP\Util::imagePath("shorty","shorty-dusky.svg")); ?> ">
-		<strong>Shorty</strong>
-	</div>
-	<div id="settings">
-<?php } ?>
-	<form id="shorty">
+	<form id="shorty-preferences">
 <?php require_once('tmpl_wdg_shortlet.php'); ?>
 			<p>
 				<!-- default-status -->
@@ -52,7 +44,7 @@
 <?php
 						foreach ( OC_Shorty_Type::$STATUS as $status )
 							if ( 'deleted'!=$status )
-								print_unescaped(sprintf("<option value=\"%s\" %s>%s</option>\n", 
+								print_unescaped(sprintf("<option value=\"%s\" %s>%s</option>\n",
 														$status, ($_['default-status']==$status)?'selected':'', OC_Shorty_L10n::t($status)));
 ?>
 					</select>
@@ -189,7 +181,7 @@
 							sprintf(OC_Shorty_L10n::t("You must provide a valid '%%s' to use this service."),
 								sprintf('<a class="external shorty-clickable" href="https://code.google.com/apis/console/" target="_blank">%s</a>',OC_Shorty_L10n::t("Google API key")) ),
 							OC_Shorty_L10n::t("This means you require a 'Google API console account'."),
-							sprintf(OC_Shorty_L10n::t("Register a new '%%s' at their pages."), 
+							sprintf(OC_Shorty_L10n::t("Register a new '%%s' at their pages."),
 								sprintf('<a class="external shorty-clickable" href="https://code.google.com/apis/console/" target="_blank">%s</a>',OC_Shorty_L10n::t("Google API account")) )));?>
 					</span>
 				</span>
@@ -272,10 +264,23 @@
 								print_unescaped(sprintf('<option value="%1$s" %2$s>%3$s</option>'."\n",
 											$verbosity,
 											($verbosity==$_['verbosity-control']?'selected':''),
-											OC_Shorty_L10n::t($verbosity))); 
+											OC_Shorty_L10n::t($verbosity)));
 						?>
 					</select>
 					<em><?php p(OC_Shorty_L10n::t("The amount of feedback messages shown.")); ?></em>
+				</span>
+				<br />
+				<label for="timeout" class="shorty-aspect"></label>
+				<span id="timeout" style="margin-right:1em;">
+					<select id="verbosity-timeout" name="verbosity-timeout" style="width:11em;">
+						<?php foreach (array('(never)'=>0, '2 seconds'=>2000, '5 seconds'=>5000, '12 seconds'=>120000, '1 minute'=>60000) as $key=>$timeout)
+								print_unescaped(sprintf('<option value="%1$s" %2$s>%3$s</option>'."\n",
+											$timeout,
+											($timeout==$_['verbosity-timeout']?'selected':''),
+											OC_Shorty_L10n::t($key)));
+						?>
+					</select>
+					<em><?php p(OC_Shorty_L10n::t("The time span after which messages are hidden again automatically.")); ?></em>
 				</span>
 			</p>
 		</div>
@@ -285,11 +290,7 @@
 	<p>
 		<span id="admin" class="shorty-explain">
 			<?php print_unescaped(sprintf(OC_Shorty_L10n::t("Administrative, system wide settings of this app:")." %s",
-								sprintf('<a href="%s" class="clickable">',
-										(OC_Shorty_Tools::versionCompare('>=','4.91'))
-										?OCP\Util::linkToAbsolute("index.php", "settings/admin#shorty")
-										:OCP\Util::linkToAbsolute("settings", "admin.php#shorty")
-								).
+								sprintf('<a href="%s" class="clickable">', OCP\Util::linkToAbsolute("index.php", "settings/admin#shorty")).
 								'<button>'.OC_Shorty_L10n::t("Administration").'</button>'.
 								'</a>' )); ?>
 		</span>

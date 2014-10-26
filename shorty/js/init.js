@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -35,20 +35,6 @@
 $(document).ready(function(){
 	// initialize status dictionary since that _might_ require an ajax request
 	OC.Shorty.Status.fetch();
-	// TODO: OC4 compatibility: remove following setInterval command when dropping OC4 compatibility
-	// refresh the ajax request token in regular intervals
-	// required to make use of long lasting sessions whilst using CSRF protection with a small tokens lifetime
-	// handle this inside the app only, if the feature is NOT present in OC core
- 	if (typeof OC.Request==undefined){
-		if (OC.Shorty.Debug)
-			OC.Shorty.Debug.log("Info","relying on app internal implementation to refresh the request token");
-		setInterval(OC.Shorty.Request.Refresh, 1000*60*56.87); // ~57 minutes, close to the timeout of 1 hour
-		// again: note that this is not required from OC 4.5 on upwards
-		// Shortys token refresh strategy has been accepted into the core
-	}else{
-		if (OC.Shorty.Debug)
-			OC.Shorty.Debug.log("Info","relying on core implementation to refresh the request token");
-	}
 	// close any open dialog when the canvas is clicked
 	$(document).on('click','#content>*',[],function(e){e.stopPropagation();});
 	$(document).on('click','#content',[],function(){
@@ -70,7 +56,8 @@ $(document).ready(function(){
 	});
 	// status selection in embedded share dialog
 	$(document).on('change','.shorty-embedded#dialog-share #status',[],function(){
-		OC.Shorty.Action.Url.status($(this).siblings('#id').val(),$(this).val());
+		// find hidden 'id' inside own fieldset
+		OC.Shorty.Action.Url.status($(this).closest('fieldset').find('#id').val(),$(this).val());
 	});
 	// refresh click count when clicking source or relay in embedded share dialog
 	$(document).on('click','.shorty-embedded#dialog-share .shorty-usages a#source',[],function(){
@@ -94,8 +81,9 @@ $(document).ready(function(){
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]);
 	});
-	// button to reload the list
+	// buttons to reload the list
 	$(document).on('click','#list-of-shortys #toolbar #reload',[],OC.Shorty.WUI.List.build);
+	$(document).on('click','#controls-refresh',[],OC.Shorty.WUI.List.build);
 	// button to clear list filters
 	$(document).on('click','#list-of-shortys #toolbar .shorty-clear',[],function(){
 		$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
@@ -140,9 +128,11 @@ $(document).ready(function(){
 	var list=$('#list-of-shortys');
 	// title & target filter reaction
 	$(document).on('keyup','#list-of-shortys thead tr#toolbar th .shorty-filter',[],function(){
-			OC.Shorty.WUI.List.filter.apply(
+		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[list,$($(this).context.parentElement.parentElement).attr('id'),$(this).val()]);
+		// change the value attribute inside the DOM, some jquery/browser combination seem to block this...
+		$(this).attr('value',$(this).val());
 	});
 	// status filter reaction
 	$(document).on('change','#list-of-shortys thead tr#toolbar th#status select',[],function(){
@@ -156,14 +146,7 @@ $(document).ready(function(){
 	});
 	// open preferences popup when button is clicked
 	$(document).on('click keydown','#controls-preferences.settings',[],function() {
-		$.when(
-			OC.Shorty.Status.versionCompare('>=','4.80')
-		).pipe(function(result){
-			if (result)
-				OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
-			else
-				window.location.href=OC.linkTo('settings','personal.php');
-		});
+		OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
 	});
 	// prevent vertical scroll bar in content area triggered by the additional controls bar handle
 	$('#content').height(($('#content').height()-$('#controls #controls-handle').height())+'px');

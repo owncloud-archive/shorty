@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/OC.Shorty?content=150401
 *
@@ -81,17 +81,14 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide controls panel");
 				var dfd = new $.Deferred();
 				if ( ! $('#content').hasClass('shorty-panel-hidden')){
-					OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
-						var selector=result?'#content':'#content,#controls';
-						$.when(
-							$('#content').addClass('shorty-panel-hidden')
-						).done(function(){
-							OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
-							OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-														.attr('src',OC.imagePath('shorty','actions/unshade'));
-							dfd.resolve();
-						}).fail(dfd.reject)
-					})
+					$.when(
+						$('#content').addClass('shorty-panel-hidden')
+					).done(function(){
+						OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
+						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
+													.attr('src',OC.imagePath('shorty','actions/unshade'));
+						dfd.resolve();
+					}).fail(dfd.reject)
 				}
 				else dfd.resolve();
 				return dfd.promise();
@@ -105,17 +102,14 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show controls panel");
 				var dfd = new $.Deferred();
 				if ($('#content').hasClass('shorty-panel-hidden')){
-					OC.Shorty.Status.versionCompare('>=','4.91').done(function(result){
-						var selector=result?'#content':'#content,#controls';
-						$.when(
-							$('#content').removeClass('shorty-panel-hidden')
-						).done(function(){
-							OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
-							OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
-														.attr('src',OC.imagePath('shorty','actions/shade'));
-							dfd.resolve();
-						}).fail(dfd.reject)
-					})
+					$.when(
+						$('#content').removeClass('shorty-panel-hidden')
+					).done(function(){
+						OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
+						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
+													.attr('src',OC.imagePath('shorty','actions/shade'));
+						dfd.resolve();
+					}).fail(dfd.reject)
 				}
 				else dfd.resolve();
 				return dfd.promise();
@@ -310,7 +304,7 @@ OC.Shorty={
 					confirm.off('click');
 					confirm.on('click',function(event){
 						event.preventDefault();
-						dialog.find('#target').effect('highlight',{'color':'#CCCCCC'},OC.Shorty.Status.versionCompare('>=','4.91')?2000:500);
+						dialog.find('#target').effect('highlight',{'color':'#CCCCCC'},2000);
 					});
 					confirm.removeClass('sharp');
 				}
@@ -749,7 +743,7 @@ OC.Shorty={
 					).pipe(function(){
 						rows.each(function(){
 							$(this).removeClass('shorty-fresh');
-							$(this).find('td').effect('pulsate', { times:3 }, OC.Shorty.Status.versionCompare('>=','4.91')?2000:500);
+							$(this).find('td').effect('pulsate', { times:3 }, 2000);
 						});
 					}).done(dfd.resolve)
 				}else{
@@ -1100,6 +1094,7 @@ OC.Shorty={
 			/**
 			* @method OC.Shorty.WUI.Messenger.hide
 			* @brief Hides the messenger area and clears the content
+			* @param object A specific messenger clone object to be hidden or undefined
 			* @author Christian Reiner
 			*/
 			hide: function(object){
@@ -1129,6 +1124,8 @@ OC.Shorty={
 			/**
 			* @method OC.Shorty.WUI.Messenger.show
 			* @brief Populates the messenger area with the specified text and shows it
+			* @param message (string) A human readable message
+			* @param level (string) A severity level to be compared to the configured verbosity threshold
 			* @author Christian Reiner
 			*/
 			show: function(message,level){
@@ -1138,9 +1135,11 @@ OC.Shorty={
 				var duration = 'slow';
 				var messenger = $('body #shorty-messenger');
 				$.when(
-					OC.Shorty.Action.Preference.get('verbosity-control')
-				).done(function(result){
-					var verbosity = result['verbosity-control'];
+					OC.Shorty.Action.Preference.get('verbosity-control'),
+					OC.Shorty.Action.Preference.get('verbosity-timeout')
+				).done(function(resultControl, resultTimeout){
+					var verbosity = resultControl['verbosity-control'];
+					var timeout   = resultTimeout['verbosity-timeout'];
 					if (message && message.length){
 						// log to browser console when debugging is enabled in system config file
 						if ( OC.Shorty.Debug ){
@@ -1158,7 +1157,10 @@ OC.Shorty={
 									object.find('#title').text('Debug');
 									$.when(
 										object.slideDown(duration)
-									).done(dfd.resolve)
+									).done(function(){
+										if (timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
+										dfd.resolve;
+									})
 								}
 								else
 									dfd.resolve();
@@ -1171,7 +1173,10 @@ OC.Shorty={
 									object.find('#title').text('Info');
 									$.when(
 										object.slideDown(duration)
-									).done(dfd.resolve)
+									).done(function(){
+										if (timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
+										dfd.resolve;
+									})
 								}
 								else
 									dfd.resolve();
@@ -1186,7 +1191,10 @@ OC.Shorty={
 									object.attr('id','');
 									$.when(
 										object.slideDown(duration)
-									).done(dfd.resolve)
+									).done(function(){
+										if (timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
+										dfd.resolve;
+									})
 								}
 								else
 									dfd.resolve();
@@ -1196,7 +1204,7 @@ OC.Shorty={
 					} // if message
 				})
 				return dfd.promise();
-			}, // OC.Shorty.WUI.Messenger.show
+			} // OC.Shorty.WUI.Messenger.show
 		}, // OC.Shorty.WUI.Messenger
 		/**
 		* @class OC.Shorty.WUI.Meta
@@ -1555,7 +1563,7 @@ OC.Shorty={
 					dfd.resolve();
 				}else{
 					// no targt given: show user where to fill in target
-					$('#shorty #backend-static #backend-static-base').effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500);
+					$('#shorty #backend-static #backend-static-base').effect('pulsate', 2000);
 					dfd.reject();
 				}
 				return dfd.promise();
@@ -1919,7 +1927,7 @@ OC.Shorty={
 						if ($('.shorty-add').css('display') == 'none')
 							$('.shorty-add').slideToggle();
 					},
-					$('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 500)
+					$('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 2000)
 				).done(dfd.resolve)
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.show =====
@@ -2087,7 +2095,7 @@ OC.Shorty={
 		* @author Christian Reiner
 		*/
 		fetch:function(){
-			if (OC.Shorty.Status.Valid.isResolved()){
+			if ('resolved'===OC.Shorty.Status.Valid.state()){
 				// status already present due to a past request, just return that requests deferred object
 				return OC.Shorty.Status.Valid.promise();
 			}else{
@@ -2262,11 +2270,11 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	* @author Christian Reiner
 	*/
 	ToolbarCheckFilter: function(toolbar){
-		return (  (  (toolbar.find('th#title,#target').find('div input.shorty-filter:[value!=""]').length)
-				&&(toolbar.find('th#title,#target').find('div input.shorty-filter:[value!=""]')
-					.effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) )
-				||(  (toolbar.find('th#status select :selected').val())
-				&&(toolbar.find('#status').effect('pulsate', OC.Shorty.Status.versionCompare('>=','4.91')?2000:500)) ) );
+		return (
+				(  (toolbar.find('th#title,th#target').find('div input.shorty-filter[value!=""]').length)
+				 &&(toolbar.find('th#title,th#target').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
+			||(  (toolbar.find('th#status select :selected').val())
+				 &&(toolbar.find('th#status').effect('pulsate', 2000)) ) );
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	/**
 	* @class OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums

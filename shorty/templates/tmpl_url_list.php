@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2013 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -34,7 +34,7 @@
 ?>
 
 <!-- the 'hourglass', a general busy indicator -->
-<div id="hourglass" class="shorty-hourglass" style="left:10em;top:10em;"><img src="<?php p(OCP\Util::imagePath('shorty', 'loading-disk.gif')); ?>"></div>
+<div id="hourglass" class="shorty-hourglass" style="left:5em;top:6em;"><img src="<?php p(OCP\Util::imagePath('shorty', 'loading-disk.gif')); ?>"></div>
 
 <!-- the list of urls, empty variant -->
 <div id="vacuum" class="shorty-vacuum personalblock">
@@ -43,11 +43,7 @@
 	<p>
 		<div class="suggestion"><?php p(OC_Shorty_L10n::t("If you just started using Shorty").":"); ?></div>
 		<div class="explanation">
-			<?php print_unescaped(sprintf(OC_Shorty_L10n::t(
-				// TODO: remove OC-4 compatibility
-				(OC_Shorty_Tools::versionCompare('<','4.80')) // OC-4.0
-				? "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-				: "Set personal preferences using the cog wheel (%%s) on the upper right!" ),
+			<?php print_unescaped(sprintf(OC_Shorty_L10n::t("Set personal preferences using the cog wheel (%%s) on the upper right!" ),
 				sprintf('<img id="controls-preferences" class="svg settings" style="vertical-align:bottom;cursor:pointer;" src="%s" />',
 						OCP\Util::imagePath('core', 'actions/settings.svg'))
 				)); ?>
