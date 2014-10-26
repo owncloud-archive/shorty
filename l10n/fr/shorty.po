@@ -24,8 +24,9 @@
 # @author Christian Reiner
 # 
 # Translators:
+# theduc <admin@cedric-duchesne.be>, 2014
 # Christophe Lherieau <skimpax@gmail.com>, 2013
-# Froozeify <froozeify@mail.com>, 2013
+# Froozeify, 2013
 # guiguidu31300 <guiguidu31300@gmail.com>, 2013
 # Nadley-Nahir Mohamed <nahirmoha@gmail.com>, 2013
 # Ogre Sympathique, 2013
@@ -37,8 +38,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-09-02 05:23+0000\n"
-"Last-Translator: Ogre Sympathique\n"
+"PO-Revision-Date: 2014-10-25 17:21+0000\n"
+"Last-Translator: theduc <admin@cedric-duchesne.be>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/owncloud/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +49,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr "Greffons"
+msgstr "Extensions"
 
 # status names
 msgid "all"
