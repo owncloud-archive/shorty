@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-09-02 05:23+0000\n"
+"PO-Revision-Date: 2014-10-27 04:08+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/owncloud/language/fa/)\n"
 "MIME-Version: 1.0\n"
@@ -112,6 +112,22 @@ msgstr "اطلاعات"
 
 msgid "debug"
 msgstr "اشکال زدایی کردن"
+
+# log message timeout
+msgid "(never)"
+msgstr ""
+
+msgid "2 seconds"
+msgstr ""
+
+msgid "5 seconds"
+msgstr ""
+
+msgid "12 seconds"
+msgstr ""
+
+msgid "1 minute"
+msgstr ""
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -231,6 +247,9 @@ msgstr "پیکربندی"
 msgid "The amount of feedback messages shown."
 msgstr "تعدادی از پیام های بازخورد نشان داده شده است."
 
+msgid "The time span after which messages are hidden again automatically"
+msgstr ""
+
 msgid "Copy to clipboard"
 msgstr ""
 
@@ -266,6 +285,9 @@ msgstr "تاریخ انقضا"
 
 msgid "Feedback"
 msgstr "باز خورد"
+
+msgid "Home"
+msgstr ""
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
@@ -341,6 +363,9 @@ msgstr "الویت ها"
 
 msgid "Prepare to send as SMS"
 msgstr "آماده برای ارسال به عنوان SMS"
+
+msgid "Refresh"
+msgstr ""
 
 msgid "Relay service"
 msgstr ""

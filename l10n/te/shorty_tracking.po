@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-05-11 05:01+0000\n"
+"PO-Revision-Date: 2014-10-27 04:08+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Telugu (http://www.transifex.com/projects/p/owncloud/language/te/)\n"
 "MIME-Version: 1.0\n"
@@ -51,6 +51,9 @@ msgid "granted"
 msgstr ""
 
 msgid "denied"
+msgstr ""
+
+msgid "failed"
 msgstr ""
 
 msgid "blocked"
