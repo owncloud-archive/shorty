@@ -47,7 +47,7 @@ OCP\Util::addScript ( 'shorty/3rdparty', 'jquery-impromptu' );
 OCP\Util::addScript ( 'shorty',          'shorty' );
 OCP\Util::addScript ( 'shorty',          'util' );
 OCP\Util::addScript ( 'shorty',          'init' );
-if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
+if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
 	OCP\Util::addScript ( 'shorty',  'debug' );
 // any additional stuff to incude as registered into the hook ?
 OC_Shorty_Hooks::requestIncludes();
@@ -125,7 +125,7 @@ switch ($act)
 	case 'acquire': // add url as new shorty
 		// keep the url specified as referer, that is the one we want to store
 		$_SESSION['shorty-referrer'] = $arg;
-		OCP\Util::writeLog( 'shorty', sprintf("Detected an incoming Shortlet request for url '%s...'",substr($arg,0,80)), OC_Log::DEBUG );
+		OCP\Util::writeLog( 'shorty', sprintf("Detected an incoming Shortlet request for url '%s...'",substr($arg,0,80)), OCP\Util::DEBUG );
 		header ( sprintf('Location: %s', OCP\Util::linkTo('shorty','index.php')) );
 		exit();
 

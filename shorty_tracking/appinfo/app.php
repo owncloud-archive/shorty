@@ -70,7 +70,6 @@ try
 }
 catch ( Exception $e )
 {
-	OC_App::disable    ( 'shorty_tracking' );
 	OCP\Util::writeLog ( 'shorty_tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), OCP\Util::WARN );
 	return;
 }
@@ -81,7 +80,7 @@ if (OC_Shorty_Tools::versionCompare('<','4.93')) // OC-5
 	if ( ! function_exists('p'))
 	{
 		function p($string) {
-			print(OC_Util::sanitizeHTML($string));
+			print(OCP\Util::sanitizeHTML($string));
 		}
 	}
 	if ( ! function_exists('print_unescaped'))

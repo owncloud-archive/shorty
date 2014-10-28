@@ -61,7 +61,7 @@ class OC_Shorty_Hooks
 		if ( FALSE===$query->execute($param) )
 			$result = FALSE;
 		// allow further cleanups via registered hooks
-		OC_Hook::emit( "OC_Shorty", "post_deleteUser", array("user"=>$param['user']) );
+		OCP\Util::emitHook( "OC_Shorty", "post_deleteUser", array("user"=>$param['user']) );
 		// report completion success
 		return $result;
 	}
@@ -81,7 +81,7 @@ class OC_Shorty_Hooks
 		// ... for every action register a new element in the container
 		// ... ... such element must be an array holding the entries tested below
 		$container = array ( 'list'=>&$actions['list'], 'shorty'=>&$actions['shorty'] );
-		OC_Hook::emit ( 'OC_Shorty', 'registerActions', $container );
+		OCP\Util::emitHook ( 'OC_Shorty', 'registerActions', $container );
 		// validate and evaluate what was returned in the $container
 		if ( ! is_array($container))
 		{
@@ -128,7 +128,7 @@ class OC_Shorty_Hooks
 		// ... for every action register a new element in the container
 		// ... ... such element must be an array holding the entries tested below
 		$container = array ( 'shorty'=>&$details['shorty'] );
-		OC_Hook::emit ( 'OC_Shorty', 'registerDetails', $container );
+		OCP\Util::emitHook ( 'OC_Shorty', 'registerDetails', $container );
 		// validate and evaluate what was returned in the $container
 		if ( ! is_array($container))
 		{
@@ -167,7 +167,7 @@ class OC_Shorty_Hooks
 	public static function requestIncludes ( )
 	{
 		OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', OCP\Util::DEBUG );
-		OC_Hook::emit ( 'OC_Shorty', 'registerIncludes', array() );
+		OCP\Util::emitHook ( 'OC_Shorty', 'registerIncludes', array() );
 	} // function requestIncludes
 
 	/**
@@ -185,7 +185,7 @@ class OC_Shorty_Hooks
 		// ... for every action register a new element in the container
 		// ... ... such element must be an array holding the entries tested below
 		$container = array ( 'list'=>&$queries['list'], 'shorty'=>&$queries['shorty'] );
-		OC_Hook::emit ( 'OC_Shorty', 'registerQueries', $container );
+		OCP\Util::emitHook ( 'OC_Shorty', 'registerQueries', $container );
 		// validate and evaluate what was returned in the $container
 		if ( ! is_array($container))
 		{
@@ -234,7 +234,7 @@ class OC_Shorty_Hooks
 		$query->execute ( $param );
 
 		// allow further processing IF hooks are registered
-		OC_Hook::emit( 'OC_Shorty', 'registerClick', array('shorty'=>$shorty,'request'=>$request) );
+		OCP\Util::emitHook( 'OC_Shorty', 'registerClick', array('shorty'=>$shorty,'request'=>$request) );
 	} // function registerClick
 
 	/**

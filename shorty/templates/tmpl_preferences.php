@@ -285,7 +285,7 @@
 			</p>
 		</div>
 	</form>
-<?php if ( OC_Group::inGroup(OC_User::getUser(),'admin') ) { ?>
+<?php if ( OCP\User::checkAdminUser() ) { ?>
 	<!-- for admin users only: a reference to the system settings -->
 	<p>
 		<span id="admin" class="shorty-explain">

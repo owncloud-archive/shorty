@@ -37,7 +37,6 @@ OCP\User::checkAdminUser ( );
 OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
-OC_App::loadApps();
 
 OCP\Util::addStyle  ( 'shorty',   'settings' );
 
@@ -45,7 +44,7 @@ OCP\Util::addScript ( '3rdparty', 'chosen/chosen.jquery.min' );
 OCP\Util::addScript ( 'shorty',   'shorty' );
 OCP\Util::addScript ( 'shorty',   'util' );
 OCP\Util::addScript ( 'shorty',   'settings' );
-if ( OC_Log::DEBUG==OC_Config::getValue( "loglevel", OC_Log::WARN ) )
+if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
 	OCP\Util::addScript ( 'shorty',  'debug' );
 
 // fetch template

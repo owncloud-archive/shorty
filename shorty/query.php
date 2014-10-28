@@ -37,7 +37,6 @@ OC_Shorty_Tools::ob_control ( TRUE );
 OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
-OC_App::loadApps();
 
 try
 {
@@ -110,7 +109,7 @@ try
 
 	} // switch format
 	
-	OCP\Util::writeLog( 'shorty', sprintf("Delivered response to remote call of query '%s'",$p_query), OC_Log::DEBUG );
+	OCP\Util::writeLog( 'shorty', sprintf("Delivered response to remote call of query '%s'",$p_query), OCP\Util::DEBUG );
 
 } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
 ?>
