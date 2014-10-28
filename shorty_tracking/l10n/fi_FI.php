@@ -2,6 +2,7 @@
 "Shorty Tracking" => "Lyhyt seuranta",
 "granted" => "myönnetty",
 "denied" => "kielletty",
+"failed" => "epäonnistui",
 "blocked" => "estetty",
 "load" => "ladata",
 "Address" => "Osoite",

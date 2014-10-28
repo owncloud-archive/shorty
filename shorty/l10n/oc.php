@@ -4,6 +4,7 @@
 "delete" => "escafa",
 "share" => "parteja",
 "show" => "mòstra",
+"Refresh" => "Refresca",
 "Save" => "Enregistra",
 "Settings" => "Configuracion",
 "Title" => "Títol"

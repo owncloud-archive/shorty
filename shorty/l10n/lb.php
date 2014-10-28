@@ -6,6 +6,7 @@
 "show" => "weisen",
 "Close" => "Zoumaachen",
 "Feedback" => "Feedback",
+"Home" => "Doheem",
 "Notes" => "Notizen",
 "Save" => "Späicheren",
 "Settings" => "Astellungen",

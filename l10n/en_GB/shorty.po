@@ -24,14 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Darren Richardson <transifex@mnestis.net>, 2013
+# Darren Richardson <transifex@mnestis.net>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:08+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-10-27 09:46+0000\n"
+"Last-Translator: Darren Richardson <transifex@mnestis.net>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/owncloud/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -115,19 +115,19 @@ msgstr "debug"
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(never)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 seconds"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 seconds"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 seconds"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minute"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -248,7 +248,7 @@ msgid "The amount of feedback messages shown."
 msgstr "The amount of feedback messages shown."
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "The time span after which messages are hidden again automatically"
 
 msgid "Copy to clipboard"
 msgstr "Copy to clipboard"
@@ -287,7 +287,7 @@ msgid "Feedback"
 msgstr "Feedback"
 
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr "It can be enabled by a single click in the administration:"
@@ -365,7 +365,7 @@ msgid "Prepare to send as SMS"
 msgstr "Prepare to send as SMS"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Refresh"
 
 msgid "Relay service"
 msgstr "Relay service"

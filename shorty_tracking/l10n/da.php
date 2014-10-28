@@ -3,6 +3,7 @@
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Detaljeret sporing af alle forespørgelser til eksistende Shortys samt en integreret visualisering over tilgangshistorien. ",
 "granted" => "Tilladt ",
 "denied" => "Afvist",
+"failed" => "mislykkedes",
 "blocked" => "Blokeret",
 "load" => "Indlæs",
 "Address" => "Adresse",

@@ -27,14 +27,14 @@
 # Lorenzo Beltrami <lorenzo.beba@gmail.com>, 2013
 # idetao <marcxosm@gmail.com>, 2013
 # Matt <staffhabbfoca@live.it>, 2013
-# Vincenzo Reale <vinx.reale@gmail.com>, 2013
+# Vincenzo Reale <vinx.reale@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:08+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-10-27 19:50+0000\n"
+"Last-Translator: Vincenzo Reale <vinx.reale@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -118,19 +118,19 @@ msgstr "debug"
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(mai)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 secondi"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 secondi"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 secondi"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minuto"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -290,7 +290,7 @@ msgid "Feedback"
 msgstr "Segnalazioni"
 
 msgid "Home"
-msgstr ""
+msgstr "Casa"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr "Può essere abilitato con un singolo clic nell'amministrazione:"
@@ -368,7 +368,7 @@ msgid "Prepare to send as SMS"
 msgstr "Prepara per inviare come SMS"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Aggiorna"
 
 msgid "Relay service"
 msgstr "Servizio di inoltro"

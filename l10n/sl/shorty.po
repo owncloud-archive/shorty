@@ -25,14 +25,14 @@
 # 
 # Translators:
 # barbarak <barbarak@arnes.si>, 2013
-# Matej Urbančič <>, 2013
+# Matej Urbančič <>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:08+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-10-27 21:11+0000\n"
+"Last-Translator: Matej Urbančič <>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/owncloud/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,19 +116,19 @@ msgstr "razhroščevanje"
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(nikoli)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 sekundi"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 sekund"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 sekund"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minuta"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -249,7 +249,7 @@ msgid "The amount of feedback messages shown."
 msgstr "Število sporočil odziva, ki bodo prikazani."
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "Časovni zamik, po katerem se sporočila samodejno skrijejo"
 
 msgid "Copy to clipboard"
 msgstr "Kopiraj v odložišče"
@@ -288,7 +288,7 @@ msgid "Feedback"
 msgstr "Odziv"
 
 msgid "Home"
-msgstr ""
+msgstr "Domači naslov"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr "Možnost se omogoči z enojnim klikom med nastavitvami:"
@@ -366,7 +366,7 @@ msgid "Prepare to send as SMS"
 msgstr "Pripravi za pošiljanje kot SMS"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Osveži"
 
 msgid "Relay service"
 msgstr "Storitev posredovanja"

@@ -27,15 +27,15 @@
 # Andreas Tangemann <a.tangemann@web.de>, 2013
 # Christian Reiner <foss@christian-reiner.info>, 2013
 # Marcel Kühlhorn <tux93@opensuse.org>, 2013
-# Mario Siegmann <mario_siegmann@web.de>, 2013
+# Mario Siegmann <mario_siegmann@web.de>, 2013-2014
 # traductor, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:08+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-10-27 06:40+0000\n"
+"Last-Translator: Mario Siegmann <mario_siegmann@web.de>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/owncloud/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,19 +119,19 @@ msgstr "Debug"
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(niemals)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 Sekunden"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 Sekunden"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 Sekunden"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 Minute"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -252,7 +252,7 @@ msgid "The amount of feedback messages shown."
 msgstr "Die Menge von Rückmeldungen die gezeigt wird."
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "Die Zeitspanne nachder Nachrichten wieder automatisch ausgeblendet werden"
 
 msgid "Copy to clipboard"
 msgstr "In Zwischenablage kopieren"
@@ -291,7 +291,7 @@ msgid "Feedback"
 msgstr "Rückmeldungen"
 
 msgid "Home"
-msgstr ""
+msgstr "Zuhause"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr "Es kann mit einem einzigen Klick in der Administration aktivieren werden:"
@@ -369,7 +369,7 @@ msgid "Prepare to send as SMS"
 msgstr "Vorbereiten zum Senden per SMS"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Aktualisieren"
 
 msgid "Relay service"
 msgstr "Relais-Service"

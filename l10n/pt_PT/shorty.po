@@ -27,6 +27,7 @@
 # Alexandre Fidalgo <alexandremagnos15@gmail.com>, 2014
 # Daniel Pinto <daniel@mouxy.net>, 2013
 # Helder Meneses <helder.meneses@gmail.com>, 2013-2014
+# Hugo Bettencourt, 2014
 # Luis Jorge Simões das Neves <luisjneves@gmail.com>, 2014
 # Nelson Rosado <nelsontrosado@gmail.com>, 2014
 # Andrew_Melim <nokostya.translation@gmail.com>, 2014
@@ -36,8 +37,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:08+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-10-28 01:20+0000\n"
+"Last-Translator: Hugo Bettencourt\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -121,19 +122,19 @@ msgstr "depurar"
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(nunca)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 segundos"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 segundos"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 segundos"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minuto"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -254,7 +255,7 @@ msgid "The amount of feedback messages shown."
 msgstr "Mostra a quantidade de mensagens de comentários"
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "O espaço de tempo após o qual mensagens serão escondidas automaticamente"
 
 msgid "Copy to clipboard"
 msgstr "Copiar para a área de trânsferencia"
@@ -293,7 +294,7 @@ msgid "Feedback"
 msgstr "Resposta"
 
 msgid "Home"
-msgstr ""
+msgstr "Casa"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr "Pode ser activado por um simples clique na administração:"
@@ -371,7 +372,7 @@ msgid "Prepare to send as SMS"
 msgstr "A preparar para enviar as mensagens por SMS"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Actualizar"
 
 msgid "Relay service"
 msgstr "Serviço de Relay"

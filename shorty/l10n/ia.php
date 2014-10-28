@@ -4,6 +4,7 @@
 "share" => "compartir",
 "show" => "monstrar",
 "Close" => "Clauder",
+"Home" => "Domo",
 "Loading" => "Cargante",
 "Notes" => "Notas",
 "Save" => "Salveguardar",

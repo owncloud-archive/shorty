@@ -3,6 +3,7 @@
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Suivi détaillé de toutes les requêtes à des Shortys existants avec une visualisation intégrée de l'historique d'accès.",
 "granted" => "autorisé",
 "denied" => "refusé",
+"failed" => "échoué",
 "blocked" => "bloqué",
 "load" => "charger",
 "Address" => "Adresse",

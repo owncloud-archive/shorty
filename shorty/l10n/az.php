@@ -19,6 +19,7 @@
 "Feedback" => "Geriyə cavab",
 "Notes" => "Qeydlər",
 "Nothing here yet" => "Hələki burda heçnə yoxdur",
+"Refresh" => "Yenilə",
 "Reload" => "Yenidən yüklə",
 "Save" => "Saxlamaq",
 "Settings" => "Quraşdırmalar",

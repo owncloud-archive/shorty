@@ -30,6 +30,7 @@
 "Example" => "Shëmbull",
 "Exception" => "Përjashtim",
 "Expiration" => "Data e skadimit",
+"Home" => "Shtëpi",
 "Loading" => "Ngarkim",
 "Mail client" => "Klienti mail-it",
 "Notes" => "Shënime",

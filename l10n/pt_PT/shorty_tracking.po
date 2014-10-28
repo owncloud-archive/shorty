@@ -26,13 +26,14 @@
 # Bruno Matias <bmgmatias@gmail.com>, 2013
 # Daniel Pinto <daniel@mouxy.net>, 2013
 # Helder Meneses <helder.meneses@gmail.com>, 2013
+# Hugo Bettencourt, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:08+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-10-28 01:20+0000\n"
+"Last-Translator: Hugo Bettencourt\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +58,7 @@ msgid "denied"
 msgstr "Acesso negado"
 
 msgid "failed"
-msgstr ""
+msgstr "falhou"
 
 msgid "blocked"
 msgstr "Bloqueado"

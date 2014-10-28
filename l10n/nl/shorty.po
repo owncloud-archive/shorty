@@ -24,15 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
-# André Koot <meneer@tken.net>, 2013
+# André Koot <meneer@tken.net>, 2013-2014
 # Bram De Vuyst <bramdevuyst@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:08+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-10-27 06:00+0000\n"
+"Last-Translator: André Koot <meneer@tken.net>\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/owncloud/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,19 +116,19 @@ msgstr "debug"
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(nooit)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 seconden"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 seconden"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 seconden"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minuut"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -249,7 +249,7 @@ msgid "The amount of feedback messages shown."
 msgstr "Aantal getoonde feedback berichten."
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "De periode waarna berichten automatisch weer worden verborgen"
 
 msgid "Copy to clipboard"
 msgstr "Kopiëren naar klembord"
@@ -288,7 +288,7 @@ msgid "Feedback"
 msgstr "Feedback"
 
 msgid "Home"
-msgstr ""
+msgstr "Thuis"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr "Het kan ingeschakeld worden met één klik in de administratie:"
@@ -366,7 +366,7 @@ msgid "Prepare to send as SMS"
 msgstr "Klaarmaken om als SMS te versturen"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Vernieuwen"
 
 msgid "Relay service"
 msgstr "Relay service"

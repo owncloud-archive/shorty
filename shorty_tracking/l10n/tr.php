@@ -3,6 +3,7 @@
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Erişim geçmişinin bütünleşik bir görselleştirme ile birlikte, mevcut Kısaltmalar için tüm isteklerin ayrıntılı izlenmesi.",
 "granted" => "izin verildi",
 "denied" => "reddedildi",
+"failed" => "başarısız",
 "blocked" => "engellendi",
 "load" => "yükle",
 "Address" => "Adres",
