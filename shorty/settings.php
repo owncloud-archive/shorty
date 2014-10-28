@@ -37,7 +37,6 @@ OCP\User::checkAdminUser ( );
 OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
-OC_App::loadApps();
 
 OCP\Util::addStyle  ( 'shorty',   'settings' );
 
