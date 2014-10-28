@@ -36,7 +36,6 @@ OCP\User::checkLoggedIn  ( );
 OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
-OC_App::loadApps();
 
 OCP\Util::addStyle  ( '3rdparty', 'chosen/chosen' );
 OCP\Util::addStyle  ( 'shorty',   'shorty' );

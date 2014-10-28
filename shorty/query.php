@@ -37,7 +37,6 @@ OC_Shorty_Tools::ob_control ( TRUE );
 OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
-OC_App::loadApps();
 
 try
 {
