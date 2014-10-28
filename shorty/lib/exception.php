@@ -55,7 +55,7 @@ class OC_Shorty_Exception extends Exception
 		else $this->param = array($param);
 		$this->phrase  = $phrase;
 		$message = vsprintf ( $phrase, $this->param );
-		OCP\Util::writeLog( 'shorty', $message, OC_Log::ERROR );
+		OCP\Util::writeLog( 'shorty', $message, OCP\Util::ERROR );
 		Exception::__construct ( $message, 1 );
 	}
 
@@ -110,7 +110,7 @@ class OC_Shorty_Exception extends Exception
 			$message = "! Swallowing accidential output from ajax routines ! \n"
 						."Please fix this ! Here is the first line: \n"
 						.substr ( $output, 0, strpos($output,"\n") );
-			OCP\Util::writeLog( 'shorty', $message, OC_Log::WARN );
+			OCP\Util::writeLog( 'shorty', $message, OCP\Util::WARN );
 		} // output
 		// return a clean JSON error
 		return OCP\JSON::error ( array ('title'   => $title,

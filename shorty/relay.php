@@ -38,7 +38,6 @@ OC_Shorty_Tools::ob_control ( TRUE );
 OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
-OC_App::loadApps();
 OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 
 $arg = NULL;
@@ -81,7 +80,7 @@ try
 	{
 		// this is a pseudo id, used to test the setup, so just return a positive message.
 		// this is used to test the setup of the static backend, shorty calls itself from there
-		OCP\Util::writeLog( 'shorty', "Positiv validation of static backend base url.", OC_Log::DEBUG );
+		OCP\Util::writeLog( 'shorty', "Positiv validation of static backend base url.", OCP\Util::DEBUG );
 		// we have to react to a jsonp request, so we have to reply valid jsonp manually:
 		// note that we use 'static' jsonp, so no callback parameter is provided, instead it is hard coded here
 		// this reduces the complexity of setting up the backend, since no additional parameter has to be handled

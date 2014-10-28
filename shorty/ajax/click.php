@@ -77,10 +77,10 @@ try
 			'user'    => OCP\User::getUser(),
 		);
 		// and off we go (IF any hooks were registered
-		OC_Hook::emit( "OC_Shorty", "post_clickShorty", $details );
+		OCP\Util::emitHook( "OC_Shorty", "post_clickShorty", $details );
 
 		// report result
-		OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.",$p_id), OC_Log::DEBUG );
+		OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.",$p_id), OCP\Util::DEBUG );
 		OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
 									'level'   => 'info',
 									'message' => OC_Shorty_L10n::t("Click registered") ) );
