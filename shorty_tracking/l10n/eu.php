@@ -3,6 +3,7 @@
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Dauden Shortyen eskaeren jarraipenen zehaztapena eta sarrera historiaren bisualizazio integratua.",
 "granted" => "baimenduta",
 "denied" => "Ukatuta",
+"failed" => "huts egin du",
 "blocked" => "Bloketatua",
 "load" => "kargatu",
 "Address" => "Helbidea",
