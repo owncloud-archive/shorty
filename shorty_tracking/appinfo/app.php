@@ -74,21 +74,4 @@ catch ( Exception $e )
 	return;
 }
 
-// backwards compatibility for OC5's global p() functions
-if (OC_Shorty_Tools::versionCompare('<','4.93')) // OC-5
-{
-	if ( ! function_exists('p'))
-	{
-		function p($string) {
-			print(OCP\Util::sanitizeHTML($string));
-		}
-	}
-	if ( ! function_exists('print_unescaped'))
-	{
-		function print_unescaped($string) {
-			print($string);
-		}
-	}
-}
-
 ?>
