@@ -92,7 +92,7 @@
 		</field>
 
 		<index>
-			<name>index_id</name>
+			<name>index_shorty_tracking_id</name>
 			<unique>true</unique>
 			<field>
 				<name>id</name>
@@ -100,7 +100,7 @@
 			</field>
 		</index>
 		<index>
-			<name>index_shorty</name>
+			<name>index_shorty_tracking_shorty</name>
 			<unique>false</unique>
 			<field>
 				<name>shorty</name>
