@@ -96,13 +96,13 @@
 		</span>
 	</span>
 	<!-- the dialogs, hidden by default -->
-	<?php require_once('tmpl_url_add.php'); ?>
-	<?php require_once('tmpl_url_edit.php'); ?>
-	<?php require_once('tmpl_url_show.php'); ?>
-	<?php require_once('tmpl_url_share.php'); ?>
+	<?php echo $this->inc('tmpl_url_add'); ?>
+	<?php echo $this->inc('tmpl_url_edit'); ?>
+	<?php echo $this->inc('tmpl_url_show'); ?>
+	<?php echo $this->inc('tmpl_url_share'); ?>
 </div>
 
 <!-- the "desktop where the action takes place -->
 <div id="desktop" class="right-content shorty-desktop">
-	<?php require_once('tmpl_url_list.php'); ?>
+	<?php echo $this->inc('tmpl_url_list'); ?>
 </div>
