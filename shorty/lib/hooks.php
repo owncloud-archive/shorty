@@ -245,7 +245,7 @@ class OC_Shorty_Hooks
 	*/
 	public static function registerQueries ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional queries to be offered', OCP\Util::DEBUG );
+		OCP\Util::writeLog ( 'shorty', 'Registering additional queries to be offered', OCP\Util::DEBUG );
 		if ( ! is_array($parameters) )
 		{
 			return FALSE;
