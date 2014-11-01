@@ -69,7 +69,7 @@
 		<field>
 			<name>source</name>
 			<type>text</type>
-			<length>4096</length>
+			<length>500</length>
 			<notnull>true</notnull>
 		</field>
 		<field>
