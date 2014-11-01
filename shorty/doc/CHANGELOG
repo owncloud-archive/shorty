@@ -23,6 +23,9 @@
 
 Changelog:
 
+* Sat Nov 01 2014 Christian Reiner: version 0.4.2
+Fix database index generation for MS-Windows/MySQL combinations.
+Some minor cleanups of the code base.
 * Tue Oct 28 2014 Christian Reiner: version 0.4.1
 Fix installation via the owncloud app store.
 * Sun Oct 19 2014 Christian Reiner: version 0.4.0

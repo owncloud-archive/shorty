@@ -63,21 +63,15 @@ class OC_Migration_Provider_ShortyTracking extends OC_Migration_Provider
 					while( $row = $result->fetchRow() )
 					{
 						$param = array (
-							'id'       => $row['id'],
-							'status'   => $row['status'],
-							'title'    => $row['title'],
-							'favicon'  => $row['favicon'],
-							'source'   => $row['source'],
-							'target'   => $row['target'],
+							'shorty'   => $row['shorty'],
+							'time '    => $row['time'],
+							'address'  => $row['address'],
+							'host'     => $row['host'],
 							'user'     => $row['user'],
-							'until'    => $row['until'],
-							'created'  => $row['created'],
-							'accessed' => $row['accessed'],
-							'clicks'   => $row['clicks'],
-							'notes'    => $row['notes'],
+							'result'   => $row['result'],
 						);
-						// import each shorty one by one, no special treatment required, since no autoincrement id is used
-						$query = OCP\DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty(%s) VALUES (%s)",
+						// import each shorty one by one
+						$query = OCP\DB::prepare( sprintf ( "INSERT INTO *PREFIX*shorty_tracking (%s) VALUES (%s)",
 															implode(',',array_keys($param)),
 															implode(',',array_fill(0,count($param),'?')) ) );
 						$query->execute( $param );
