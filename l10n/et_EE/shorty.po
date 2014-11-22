@@ -26,13 +26,14 @@
 # Translators:
 # Pisike Sipelgas <pisike.sipelgas@gmail.com>, 2013
 # Rivo Zängov <eraser@eraser.ee>, 2013
+# Sven <sven.ollino@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:21+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-10-30 10:50+0000\n"
+"Last-Translator: Sven <sven.ollino@gmail.com>\n"
 "Language-Team: Estonian (Estonia) (http://www.transifex.com/projects/p/owncloud/language/et_EE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,19 +117,19 @@ msgstr "veatuvastus"
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(mitte kunagi)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 sekundit"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 sekundit"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 sekundit"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minut"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -249,7 +250,7 @@ msgid "The amount of feedback messages shown."
 msgstr "Kuvatava tagasiside hulk."
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "Ajavahemik, mille järgi sõnumid peidetakse taas automaatselt"
 
 msgid "Copy to clipboard"
 msgstr "Kopeeri lõikepuhvrisse"

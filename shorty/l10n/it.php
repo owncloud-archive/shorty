@@ -65,6 +65,7 @@
 "Close" => "Chiudi",
 "Configuration" => "Configurazione",
 "The amount of feedback messages shown." => "Il numero di messaggi di segnalazione mostrati.",
+"The time span after which messages are hidden again automatically" => "Il periodo dopo il quale i messaggi sono nuovamente nascosti in modo automatico ",
 "Copy to clipboard" => "Copia negli appunti",
 "Counted entries and clicks" => "Voci e clic contati",
 "Create a new 'Shorty' and share it" => "Crea un nuovo 'shorty' e condividilo",

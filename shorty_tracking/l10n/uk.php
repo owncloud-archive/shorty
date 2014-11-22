@@ -3,6 +3,7 @@
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Докладне відстежування всіх запитів до існуючих Скорочень поряд з інтегрованим показом історії доступу.",
 "granted" => "надано",
 "denied" => "відмовлено",
+"failed" => "не вдалося",
 "blocked" => "заблоковано",
 "load" => "завантажити",
 "Address" => "Адреса",

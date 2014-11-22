@@ -25,7 +25,7 @@
 # 
 # Translators:
 # theduc <admin@cedric-duchesne.be>, 2014
-# Christophe Lherieau <skimpax@gmail.com>, 2013
+# Christophe Lherieau <skimpax@gmail.com>, 2013-2014
 # Froozeify, 2013
 # guiguidu31300 <guiguidu31300@gmail.com>, 2013
 # MrAttila76 <mrattila76@gmail.com>, 2014
@@ -40,7 +40,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 22:42+0000\n"
+"PO-Revision-Date: 2014-11-13 09:23+0000\n"
 "Last-Translator: Thomas Imbreckx <zinks@member.fsf.org>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/owncloud/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -198,7 +198,7 @@ msgid "Administration"
 msgstr "Administration"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr "Paramètres administratifs globaux de cette application:"
+msgstr "Paramètres administratifs globaux de cette application :"
 
 msgid "after the SMS has been launched"
 msgstr "après que le SMS ai été envoyé"
@@ -300,7 +300,7 @@ msgid "Home"
 msgstr "Domicile"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr "Peut être activé par un click simple dans l'interface d'administration:"
+msgstr "Peut être activé par un clic simple dans l'interface d'administration :"
 
 msgid "Loading"
 msgstr "Chargement"
@@ -468,7 +468,7 @@ msgid "Specify a static base url…"
 msgstr "Veuillez spécifier une URL de base statique…"
 
 msgid "Static backend: base url verification"
-msgstr "Module dorsal statique: vérification de l'url de base"
+msgstr "Module dorsal statique : vérification de l'url de base"
 
 msgid "Status"
 msgstr "État"
@@ -678,7 +678,7 @@ msgid ""
 msgstr "Vous devez vous assurer que chacune requête aux url configurés ici sont associées au module dorsal 'shorty'."
 
 msgid "The target of that mapping must be some URL like:"
-msgstr "La cible de cette association doit être un url valide comme:"
+msgstr "La cible de cette association doit être une url valide comme :"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
@@ -715,7 +715,7 @@ msgstr "Activer l'option SMS vous permet d'émettre un Shorty via SMS."
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr "Malheureusement la gestion des url SMS est en général uniquement prise en charge sur les téléphones intelligents."
+msgstr "Malheureusement la prise en charge des url SMS n'est généralement possible que sur les téléphones intelligents."
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
@@ -723,7 +723,7 @@ msgid ""
 msgstr "De plus, ces implémentations sont minimalistes, sources d'erreurs et diffèrent d'un système à un autre."
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr "En synthèse: peut ne pas fonctionner pour vous, donc vous pouvez le désactiver..."
+msgstr "En résumé : cela peut ne pas fonctionner pour vous, donc vous pouvez le désactiver..."
 
 msgid "Great, your setup appears to be working fine!"
 msgstr "Bien ! Il semblerait que votre installation fonctionne correctement !"
