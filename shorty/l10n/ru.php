@@ -65,6 +65,7 @@
 "Close" => "Закрыть",
 "Configuration" => "Конфигурация",
 "The amount of feedback messages shown." => "Количество отображаемых сообщений обратной связи.",
+"The time span after which messages are hidden again automatically" => "Период времени, после которого сообщения будут снова скрыты автоматически",
 "Copy to clipboard" => "Скопировать в буфер обмена",
 "Counted entries and clicks" => "Сосчитанные записи и клики",
 "Create a new 'Shorty' and share it" => "Создайте новый 'Shorty' и поделитесь им",
