@@ -293,6 +293,9 @@ msgstr ""
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
+msgid "If you just started using Shorty"
+msgstr ""
+
 msgid "Loading"
 msgstr ""
 

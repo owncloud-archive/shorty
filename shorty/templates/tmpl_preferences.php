@@ -285,15 +285,4 @@
 			</p>
 		</div>
 	</form>
-<?php if ( OCP\User::checkAdminUser() ) { ?>
-	<!-- for admin users only: a reference to the system settings -->
-	<p>
-		<span id="admin" class="shorty-explain">
-			<?php print_unescaped(sprintf(OC_Shorty_L10n::t("Administrative, system wide settings of this app:")." %s",
-								sprintf('<a href="%s" class="clickable">', OCP\Util::linkToAbsolute("index.php", "settings/admin#shorty")).
-								'<button>'.OC_Shorty_L10n::t("Administration").'</button>'.
-								'</a>' )); ?>
-		</span>
-	</p>
-<?php } ?>
 </fieldset>
