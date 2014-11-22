@@ -23,6 +23,8 @@
 
 Changelog:
 
+* Sat Nov 22 2014 Christian Reiner: version 0.4.3
+Fix usage of preference dialog for non privileged users.
 * Sat Nov 01 2014 Christian Reiner: version 0.4.2
 Fix database index generation for MS-Windows/MySQL combinations.
 Some minor cleanups of the code base.
