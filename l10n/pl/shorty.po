@@ -26,7 +26,7 @@
 # Translators:
 # Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013-2014
 # Dawid <hoek@hoek.pl>, 2014
-# Kamil Porembiński <paszczak000@gmail.com>, 2013
+# Kamil Porembiński, 2013
 # Krzysztof Łojowski <maxxxrally@gmail.com>, 2014
 # Maciej Przybecki <maciej.przybecki@gmail.com>, 2014
 # Michał Plichta <mplichta@gmail.com>, 2013
@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 21:11+0000\n"
-"Last-Translator: Cyryl Sochacki <cyrylsochacki@gmail.com>\n"
+"PO-Revision-Date: 2014-11-23 05:08+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -296,6 +296,9 @@ msgstr "Dom"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr "To może zostać włączone pojedynczym kliknięciem w administracji:"
+
+msgid "If you just started using Shorty"
+msgstr ""
 
 msgid "Loading"
 msgstr "Ładuję"
