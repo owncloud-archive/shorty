@@ -23,8 +23,10 @@
 
 Changelog:
 
+* Sat Nov 23 2014 Christian Reiner: version 0.2.2
+Fixed loading of app in Shorty relay requests to fix logging of Shorty clicks.
 * Tue Oct 28 2014 Christian Reiner: version 0.2.1
-Fix installation via the owncloud app store.
+Fixed installation via the owncloud app store.
 * Sun Oct 19 2014 Christian Reiner: version 0.2.0
 Ported app to owncloud version 7
 Removed all backwards compatibility hacks
