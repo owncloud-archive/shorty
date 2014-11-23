@@ -65,7 +65,7 @@
 		<field>
 			<name>address</name>
 			<type>text</type>
-			<length>23</length>
+			<length>46</length>
 			<notnull>true</notnull>
 			<default></default>
 		</field>

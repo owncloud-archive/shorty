@@ -23,6 +23,7 @@
 
 Changelog:
 
+Fixed database table layout for correct storage of IPV6 addresses.
 * Sat Nov 23 2014 Christian Reiner: version 0.2.2
 Fixed loading of app in Shorty relay requests to fix logging of Shorty clicks.
 * Tue Oct 28 2014 Christian Reiner: version 0.2.1
