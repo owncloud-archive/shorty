@@ -80,6 +80,7 @@
 "Feedback" => "Feedback",
 "Home" => "Home",
 "It can be enabled by a single click in the administration:" => "Ele pode ser ativado por um único clique na administração:",
+"If you just started using Shorty" => "Se você só começou a utilizar o Shorty",
 "Loading" => "Carregando",
 "Mail client" => "Cliente de e-mail",
 "Modifications for shorty with id '%s' saved" => "Modificações no shorty com id '%s' salvas",

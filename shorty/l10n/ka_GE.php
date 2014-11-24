@@ -54,6 +54,7 @@
 "Feedback" => "უკუკავშირი",
 "Home" => "სახლი",
 "It can be enabled by a single click in the administration:" => "ეს შეიძლება ჩავრთოთ ერთი დაჭერით ადმინისტრაციის განყოფილებაში:",
+"If you just started using Shorty" => "თუ თქვენ ეხლა დაიწყეთ შემოკლებების გამოყენება",
 "Loading" => "ჩატვირთვა",
 "Mail client" => "მეილ კლიენტი",
 "Modifications for shorty with id '%s' saved" => "შემოკლებული id  '%s'–ის მოდიფიკაცია შენახულ იქნა",

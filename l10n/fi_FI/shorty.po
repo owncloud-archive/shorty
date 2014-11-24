@@ -32,8 +32,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-11-23 05:08+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2014-11-23 16:51+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/owncloud/language/fi_FI/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,10 +78,10 @@ msgid "delete"
 msgstr "poista"
 
 msgid "edit"
-msgstr ""
+msgstr "muokkaa"
 
 msgid "open"
-msgstr ""
+msgstr "avaa"
 
 msgid "share"
 msgstr "jaa"
@@ -91,7 +91,7 @@ msgstr "näytä"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "lataa uudelleen"
 
 msgid "up"
 msgstr ""
@@ -171,20 +171,20 @@ msgid "with ownCloud users"
 msgstr ""
 
 msgid "available for everyone"
-msgstr ""
+msgstr "saatavilla kaikille"
 
 # short and general terms
 msgid "Access"
 msgstr "Pääsy"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "Lisää uusi lyhytosoite"
 
 msgid "Add as new"
 msgstr "Lisää uutena"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "Lisää sivu lyhytosoitteena ownCloudiin"
 
 msgid "Administration"
 msgstr "Hallinta"
@@ -217,7 +217,7 @@ msgid "Backend"
 msgstr "Taustaosa"
 
 msgid "Base url"
-msgstr ""
+msgstr "Pohjaosoite"
 
 msgid "Choose a service…"
 msgstr "Valitse palvelu…"
@@ -232,7 +232,7 @@ msgid "Click registered"
 msgstr "Napsautus rekisteröity"
 
 msgid "Clicks"
-msgstr "Klikkaus"
+msgstr "Napsautukset"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -259,19 +259,19 @@ msgid "Counted entries and clicks"
 msgstr ""
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "Luo uusi lyhytosoite ja jaa se"
 
 msgid "Creation"
 msgstr "Luonti"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Poista lyhytosoite"
 
 msgid "Drag this to your browser bookmarks."
 msgstr "Vedä tämä selaimesi kirjanmerkkeihin."
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr ""
+msgstr "Upota QR-koodi kuvana verkkosivulle käyttämällä tätä osoitetta"
 
 msgid "Example"
 msgstr "Esimerkki"
@@ -310,10 +310,10 @@ msgid "Modify attributes"
 msgstr ""
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Muokkaa lyhytosoitetta"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "Uusi lyhytosoite"
 
 msgid "Notes"
 msgstr "Muistiot"
@@ -322,22 +322,22 @@ msgid "Nothing here yet"
 msgstr "Täällä ei ole vielä mitään"
 
 msgid "Number of entries"
-msgstr ""
+msgstr "Kohteiden lukumäärä"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "Kohteiden lukumäärä: %s"
 
 msgid "QRCode"
-msgstr "QR koodi"
+msgstr "QR-koodi"
 
 msgid "Open source url"
-msgstr ""
+msgstr "Avaa lähdeosoite"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "Avaa välitysosoite"
 
 msgid "Open target"
-msgstr ""
+msgstr "Avaa kohde"
 
 msgid "Open target url"
 msgstr "Avaa kohdeosoite"
@@ -367,7 +367,7 @@ msgid "Preferences"
 msgstr ""
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "Valmistele tekstiviestinä lähetettäväksi"
 
 msgid "Refresh"
 msgstr "Päivitä"
@@ -376,13 +376,13 @@ msgid "Relay service"
 msgstr "Välityspalvelu"
 
 msgid "Relay url"
-msgstr "Välitys URL"
+msgstr "Välitysosoite"
 
 msgid "Reload"
 msgstr "Päivitä"
 
 msgid "Reload list"
-msgstr ""
+msgstr "Lataa luettelo uudelleen"
 
 msgid "Save"
 msgstr "Tallenna"
@@ -418,16 +418,16 @@ msgid "Settings"
 msgstr "Asetukset"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Jaa ja käytä"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "Jaa lyhytosoite"
 
 msgid "Shortlet"
 msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "Lyhytosoite QR-koodina"
 
 msgid "Shorty with id '%s' deleted"
 msgstr ""
@@ -448,22 +448,22 @@ msgid "SMS composer"
 msgstr "SMS:n kirjoitus"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Järjestä nousevasti"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Järjestä laskevasti"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "Tyhjennä suodatin"
 
 msgid "Source url"
 msgstr "Lähde URL"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "Määritä pysyvä pohjaosoite…"
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "Pysyvä taustaosa: pohjaosoitteen vahvistaminen"
 
 msgid "Status"
 msgstr "Tila"
@@ -472,13 +472,13 @@ msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "Kohde"
 
 msgid "Target url"
-msgstr "Kohde URL"
+msgstr "Kohdeosoite"
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "Kohdeosoite '%s' on kelvollinen"
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
@@ -526,7 +526,7 @@ msgid "Total of clicks"
 msgstr "Napsautuksia yhteensä"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "Tyypillisesti tämä toimii vain älypuhelimien kaltaisilla laitteilla"
 
 msgid "Unexpected type of exception caught: %s"
 msgstr ""
@@ -550,7 +550,7 @@ msgid "Verify by clicking…"
 msgstr "Vahvista napsauttamalla…"
 
 msgid "Verification failed"
-msgstr ""
+msgstr "Vahvistaminen epäonnistui"
 
 # exception description
 msgid ""
@@ -562,43 +562,43 @@ msgstr "%s\nViesti(koodi): %s (%s)\nTiedosto(rivi): %s (%s)\nInfo: %s%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "API-käyttöavain"
 
 msgid "Account"
 msgstr "Tili"
 
 msgid "API key"
-msgstr "API avain"
+msgstr "API-avain"
 
 msgid "bit.ly user"
-msgstr "bit.ly käyttäjä"
+msgstr "bit.ly-käyttäjä"
 
 msgid "bit.ly user name"
-msgstr "bit.ly käyttäjätunnus"
+msgstr "bit.ly-käyttäjätunnus"
 
 msgid "bit.ly key"
-msgstr "bit.ly avain"
+msgstr "bit.ly-avain"
 
 msgid "bit.ly users key"
-msgstr "bit.ly käyttäjän avain"
+msgstr "bit.ly-käyttäjän avain"
 
 msgid "Google API key"
-msgstr "Google API avain"
+msgstr "Googlen API-avain"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Googlen API-tili"
 
 msgid "tiny.cc user"
-msgstr "tiny.cc käyttäjä"
+msgstr "tiny.cc-käyttäjä"
 
 msgid "tiny.cc user name"
-msgstr "tiny.cc käyttäjätunnus"
+msgstr "tiny.cc-käyttäjätunnus"
 
 msgid "tiny.cc key"
-msgstr "tiny.cc avain"
+msgstr "tiny.cc-avain"
 
 msgid "tiny.cc user key"
-msgstr "tiny.cc käyttäjän avain"
+msgstr "tiny.cc-käyttäjän avain"
 
 # longer terms: typically explanations
 msgid ""
@@ -721,7 +721,7 @@ msgid "In short: this might not work for you, therefore you can disable it…"
 msgstr ""
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "Hienoa, tekemäsi asetukset vaikuttavat toimivan!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
@@ -739,7 +739,7 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "Valitettavasti tekemäsi asetukset eivät vaikuta vielä toimivan!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"

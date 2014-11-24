@@ -80,6 +80,7 @@
 "Feedback" => "Обратная связь",
 "Home" => "Домашний",
 "It can be enabled by a single click in the administration:" => "Это может быть разрешено одним кликом в администрации:",
+"If you just started using Shorty" => "Если вы только начали использовать Shorty",
 "Loading" => "Загрузка",
 "Mail client" => "Почтовый клиент",
 "Modifications for shorty with id '%s' saved" => "Изменения для shorty с id '%s' сохранены",
