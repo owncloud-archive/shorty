@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-11-23 20:41+0000\n"
+"PO-Revision-Date: 2014-11-26 18:50+0000\n"
 "Last-Translator: Aleš Sršeň <ales59124@gmail.com>\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/owncloud/language/sk_SK/)\n"
 "MIME-Version: 1.0\n"
@@ -123,13 +123,13 @@ msgid "2 seconds"
 msgstr "2 sekundy"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 sekúnd"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 sekúnd"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minúta"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
