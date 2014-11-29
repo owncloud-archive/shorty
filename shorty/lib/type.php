@@ -229,7 +229,7 @@ class OC_Shorty_Type
 
 			case self::URL:
 				$pattern = '/^'.self::$RX['URL_SCHEME'].'\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*'.self::$RX['DOMAIN_NAME'].'(\:'.self::$RX['NUMBER'].')*(\/($|.+)?)*$/i';
-				if ( parse_url($value) && preg_match ( $pattern, $value ) )
+				if ( parse_url($value) && preg_match ( $pattern, OC_Shorty_Tools::idnToASCII($value) ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
