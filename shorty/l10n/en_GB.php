@@ -80,6 +80,7 @@
 "Feedback" => "Feedback",
 "Home" => "Home",
 "It can be enabled by a single click in the administration:" => "It can be enabled by a single click in the administration:",
+"If you just started using Shorty" => "If you just started using Shorty",
 "Loading" => "Loading",
 "Mail client" => "Mail client",
 "Modifications for shorty with id '%s' saved" => "Modifications for shorty with id '%s' saved",
