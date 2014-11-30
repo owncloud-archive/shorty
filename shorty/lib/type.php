@@ -72,7 +72,9 @@ class OC_Shorty_Type
 		'ka'=>'id',       'kd'=>'id DESC',
 		'sa'=>'status',   'sd'=>'status DESC',
 		'ta'=>'title',    'td'=>'title DESC',
-		'ua'=>'target',   'ud'=>'target DESC' );
+		'ua'=>'target',   'ud'=>'target DESC',
+		'va'=>'source',   'vd'=>'source DESC'
+	);
 	// a list of all valid user preferences
 	static $PREFERENCE = array (
 		'default-status'         => OC_Shorty_Type::STRING,

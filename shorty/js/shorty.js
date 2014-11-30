@@ -1083,7 +1083,7 @@ OC.Shorty={
 					$.when(
 						OC.Shorty.Action.Preference.get('list-columns-collapsed')
 					).done(function(result){
-						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || ['created','until'];
+						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || ['until','created','accessed'];
 						if ( -1 < $.inArray(column, collapsedColumns) ) {
 							// column IS collapsed: un-collapse
 							collapsedColumns.splice( $.inArray(column, collapsedColumns), 1 );
@@ -1110,7 +1110,7 @@ OC.Shorty={
 					$.when(
 						OC.Shorty.Action.Preference.get('list-columns-collapsed')
 					).done(function(result){
-						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || ['created','until'];
+						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || ['until','created','accessed'];
 						$(collapsedColumns).each(function(key, column) {
 							if ( list.find('thead #titlebar th#'+column).not('#favicon,#actions').length ) {
 								OC.Shorty.WUI.List.Column.collapse(list, column);
@@ -2264,7 +2264,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		if (hidden) row.addClass('shorty-fresh'); // might lead to a pulsate effect later
 		// add aspects as content to the rows cells
 		$.each(
-			['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
+			['id','status','title','relay','target','clicks','created','accessed','until','notes','favicon'],
 			function(j,aspect){
 				// we wrap the cells content into a span tag
 				var span=$('<span />');
@@ -2289,6 +2289,13 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 							if (dateExpired(set[aspect]))
 							row.addClass('shorty-expired');
 						}
+						break;
+
+					case 'accessed':
+						if ('0'==set[aspect])
+							span.text("-"+t('shorty',"never")+"-");
+						else
+							span.text(dateTimeToHuman(set[aspect]));
 						break;
 
 					case 'title':

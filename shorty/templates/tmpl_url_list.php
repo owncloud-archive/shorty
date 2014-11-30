@@ -67,12 +67,14 @@
 					class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
 					data-unshade="actions/unshade"
 					data-shade="actions/shade"></div></th>
-			<th id="title"  ><div><?php p(OC_Shorty_L10n::t('Title'));      ?></div></th>
-			<th id="target" ><div><?php p(OC_Shorty_L10n::t('Target'));     ?></div></th>
-			<th id="clicks" ><div><?php p(OC_Shorty_L10n::t('Clicks'));     ?></div></th>
-			<th id="until"  ><div><?php p(OC_Shorty_L10n::t('Expiration')); ?></div></th>
-			<th id="status" ><div><?php p(OC_Shorty_L10n::t('Status'));     ?></div></th>
-			<th id="actions"><div>&nbsp;</div></th>
+			<th id="title"   ><div><?php p(OC_Shorty_L10n::t('Title'));     ?></div></th>
+			<th id="target"  ><div><?php p(OC_Shorty_L10n::t('Target'));    ?></div></th>
+			<th id="clicks"  ><div><?php p(OC_Shorty_L10n::t('Clicks'));    ?></div></th>
+			<th id="until"   ><div><?php p(OC_Shorty_L10n::t('Expiration'));?></div></th>
+			<th id="created" ><div><?php p(OC_Shorty_L10n::t('Creation'));  ?></div></th>
+			<th id="accessed"><div><?php p(OC_Shorty_L10n::t('Last'));      ?></div></th>
+			<th id="status"  ><div><?php p(OC_Shorty_L10n::t('Status'));    ?></div></th>
+			<th id="actions" ><div>&nbsp;</div></th>
 		</tr>
 		<!-- toolbar opened/closed by the button above -->
 		<tr id="toolbar">
@@ -130,6 +132,26 @@
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
 				</div>
 			</th>
+			<th id="created">
+				<div style="display:none;">
+					<img id="sort-up"  data-sort-code="ca" data-sort-type="date" data-sort-direction='asc'
+						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
+						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
+					<img id="sort-down" data-sort-code="cd" data-sort-type="date" data-sort-direction='desc'
+						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
+						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+				</div>
+			</th>
+			<th id="accessed">
+				<div style="display:none;">
+					<img id="sort-up"  data-sort-code="aa" data-sort-type="date" data-sort-direction='asc'
+						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
+						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
+					<img id="sort-down" data-sort-code="ad" data-sort-type="date" data-sort-direction='desc'
+						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
+						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+				</div>
+			</th>
 			<!-- status filter -->
 			<th id="status">
 				<div style="display:none;">
@@ -158,14 +180,18 @@
 			data-until=""
 			data-created=""
 			data-accessed=""
+			data-created=""
+			data-accessed=""
 			data-notes="">
-			<td id="favicon"></td>
-			<td id="title"  ></td>
-			<td id="target" ></td>
-			<td id="clicks" ></td>
-			<td id="until"  ></td>
-			<td id="status" ></td>
-			<td id="actions">
+			<td id="favicon" ></td>
+			<td id="title"   ></td>
+			<td id="target"  ></td>
+			<td id="clicks"  ></td>
+			<td id="until"   ></td>
+			<td id="created" ></td>
+			<td id="accessed"></td>
+			<td id="status"  ></td>
+			<td id="actions" >
 				<span class="shorty-actions">
 <!-- IF any additional actions are registered via hooks, additional icons will appear here -->
 <?php foreach ( $_['shorty-actions']['list'] as $action ) { ?>
