@@ -354,13 +354,12 @@ input.shorty-config {
 .shorty-list thead tr#titlebar th img {
 	cursor: pointer;
 }
-.shorty-list thead tr#titlebar th:not(#actions),
-.shorty-list thead tr#titlebar th:not(#actions) div {
-	cursor: s-resize;
+.shorty-list thead tr#titlebar th#favicon * {
+	cursor: row-resize;
 }
-.shorty-list thead tr#titlebar.shorty-clicked th:not(#actions),
-.shorty-list thead tr#titlebar.shorty-clicked th:not(#actions) div {
-	cursor: n-resize;
+.shorty-list thead #titlebar th:not(#favicon):not(#actions) div,
+.shorty-list tbody td.collapsed span {
+	cursor: col-resize;
 }
 /* scrolling lists have a scrollbar INSIDE the tbody */
 .shorty-list.scrollingTable {
@@ -372,6 +371,17 @@ input.shorty-config {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	position: relative;
+}
+
+.shorty-desktop .shorty-list th:not(#favicon),
+.shorty-desktop .shorty-list td:not(#favicon) {
+	overflow-x: hidden;
+	transition: width 200ms;
+	-o-transition: width 200ms;
+	-ms-transition: width 200ms;
+	-moz-transition: width 200ms;
+	-khtml-transition: width 200ms;
+	-webkit-transition: width 200ms;
 }
 
 .shorty-desktop .shorty-list th#favicon,
@@ -402,6 +412,17 @@ input.shorty-config {
 .shorty-desktop .shorty-list td#actions {
 	width: 130px;
 }
+.shorty-desktop .shorty-list th.collapsed,
+.shorty-desktop .shorty-list td.collapsed {
+	background-color: GhostWhite;
+	border-left: 1px solid Darkgray;
+	border-right: 1px solid Darkgray;
+	width: 1em !important;
+}
+.shorty-desktop .shorty-list #toolbar th.collapsed div {
+	visibility: hidden;
+}
+
 .shorty-list thead tr#toolbar th input,
 .shorty-list tbody tr#toolbar td input,
 .shorty-list thead tr#toolbar th .chzn-container,
@@ -464,7 +485,7 @@ input.shorty-config {
 }
 /* highlight hovered rows in the list */
 .shorty-list tbody tr:hover td {
-	background-color: #F4F4F4;
+	background-color: #F4F4F4 !important;
 	transition: background-color 600ms;
 	-o-transition: background-color 600ms;
 	-ms-transition: background-color 600ms;
@@ -482,7 +503,7 @@ input.shorty-config {
 }
 /* highlight a specific, 'clicked' row in the list */
 .shorty-list tbody tr.clicked td {
-	background-color: #EEE;
+	background-color: #EEE !important;
 	border-top: 1px solid #AAA;
 	border-bottom: 1px solid #AAA;
 }

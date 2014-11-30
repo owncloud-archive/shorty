@@ -709,6 +709,7 @@ OC.Shorty={
 						OC.Shorty.WUI.List.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[$('#list-of-shortys').first(),response.data]);
 					}).done(function(){
 						$.when(
+							OC.Shorty.WUI.List.Column.initAll($('#list-of-shortys')),
 							OC.Shorty.WUI.List.show(),
 							OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
 						).always(function(){
@@ -1039,6 +1040,88 @@ OC.Shorty={
 					$('#vacuum').fadeIn('slow');
 				}
 			}, // OC.Shorty.WUI.List.vacuum
+			/**
+			* @class OC.Shorty.WUI.List.Column
+			* @brief Collection of methods to control a lists column
+			* author Christian Reiner
+			*/
+			Column:{
+				/**
+				* @method OC.Shorty.WUI.List.Column.collapse
+				* @brief Collapses an expanded lists column
+				* @param object list The list whos column is to be collapsed
+				* @param object column The column that is to be collapsed
+				* @author Christian Reiner
+				*/
+				collapse: function(list, column){
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("collapse list column '"+column+"'");
+					list.find('thead th#'+column).addClass('collapsed');
+					list.find('tbody td#'+column).addClass('collapsed');
+				}, // OC.Shorty.WUI.List.Column.collapse
+				/**
+				* @method OC.Shorty.WUI.List.Column.expand
+				* @brief Expands a collapsed lists column
+				* @param object list The list whos column is to be expanded
+				* @param object column The column that is to be expanded
+				* @author Christian Reiner
+				*/
+				expand: function(list, column){
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("expand list column '"+column+"'");
+					list.find('thead th#'+column).removeClass('collapsed')
+					list.find('tbody td#'+column).removeClass('collapsed')
+				}, // OC.Shorty.WUI.List.Column.expand
+				/**
+				* @method OC.Shorty.WUI.List.Column.toggle
+				* @brief Toggles the compactness of a lists column
+				* @param object list The list whos column is to be toggled
+				* @param object column The list column that is to be toggled
+				* @author Christian Reiner
+				*/
+				toggle: function(list, column){
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list column '"+column+"'");
+					var dfd = new $.Deferred();
+					$.when(
+						OC.Shorty.Action.Preference.get('list-columns-collapsed')
+					).done(function(result){
+						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || ['created','until'];
+						if ( -1 < $.inArray(column, collapsedColumns) ) {
+							// column IS collapsed: un-collapse
+							collapsedColumns.splice( $.inArray(column, collapsedColumns), 1 );
+							OC.Shorty.WUI.List.Column.expand( list, column );
+							dfd.resolve();
+						} else {
+							// column is NOT collapsed: collapse
+							collapsedColumns.push( column );
+							OC.Shorty.WUI.List.Column.collapse( list, column );
+							dfd.resolve();
+						}
+						OC.Shorty.Action.Preference.set({'list-columns-collapsed': JSON.stringify(collapsedColumns)});
+					});
+					return dfd.promise();
+				}, // OC.Shorty.WUI.List.Column.toggle
+				/**
+				* @method OC.Shorty.WUI.List.Column.initAll
+				* @brief initializes the lists columns to be collapsed or expanded
+				* @param object list The list whos column is to be expanded
+				* @author Christian Reiner
+				*/
+				initAll: function(list){
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("initializing all list columns as collapsed or expanded");
+					$.when(
+						OC.Shorty.Action.Preference.get('list-columns-collapsed')
+					).done(function(result){
+						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || ['created','until'];
+						$(collapsedColumns).each(function(key, column) {
+							if ( list.find('thead #titlebar th#'+column).not('#favicon,#actions').length ) {
+								OC.Shorty.WUI.List.Column.collapse(list, column);
+							} else {
+								collapsedColumns.splice( $.inArray(column, collapsedColumns), 1 );
+							}
+						});
+						OC.Shorty.Action.Preference.set({'list-columns-collapsed': JSON.stringify(collapsedColumns)});
+					});
+				} // OC.Shorty.WUI.List.Column.initAll
+			}, //OC.Shorty.WUI.List.Column
 			/**
 			* @class OC.Shorty.WUI.List.Toolbar
 			* @brief Collection of methods to control a lists toolbar
@@ -1414,6 +1497,7 @@ OC.Shorty={
 			 * @author Christian Reiner
 			 */
 			get:function(data){
+				if (OC.Shorty.Debug){OC.Shorty.Debug.log("get preference(s):");OC.Shorty.Debug.log(data);}
 				if (-1<$.inArray(data,Object.keys(OC.Shorty.Action.Preference.Cache))){
 					return OC.Shorty.Action.Preference.Cache[data].promise();
 				}else{
@@ -1456,7 +1540,11 @@ OC.Shorty={
 					function(response){return OC.Shorty.Ajax.eval(response)},
 					function(response){return OC.Shorty.Ajax.fail(response)}
 				).always(function(response){
-					if (OC.Shorty.Debug){OC.Shorty.Debug.log("got preference(s):");OC.Shorty.Debug.log(response.data);}
+					if (OC.Shorty.Debug) {
+						OC.Shorty.Debug.log("got preference(s):");
+						OC.Shorty.Debug.log(response.message);
+						OC.Shorty.Debug.log(response.data);
+					}
 				}).done(function(response){
 					// update value in local cache, it is outdated
 					$.each(response.data,function(key,val){

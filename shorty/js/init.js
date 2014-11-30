@@ -75,11 +75,16 @@ $(document).ready(function(){
 	$(document).on('click','#controls .shorty-dialog #meta #explanation.filled',[], function(e){
 		$(e.currentTarget).closest('.shorty-dialog').find('input#title').val($(e.currentTarget).html());
 	});
-	// button (row click) to open the toolbar row in the list
-	$(document).on('click','#list-of-shortys #titlebar',[],function(){
+	// button to open the toolbar row in the list
+	$(document).on('click','#list-of-shortys #titlebar #favicon',[],function(){
 		OC.Shorty.WUI.List.Toolbar.toggle.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
-			[$('#list-of-shortys')]);
+			[$('#list-of-shortys')]
+		);
+	});
+	// headers click in the list to toggle column expansion
+	$(document).on('click','#list-of-shortys thead th div,#list-of-shortys tbody td.collapsed span',[],function(e){
+		OC.Shorty.WUI.List.Column.toggle( $('#list-of-shortys'), $(e.target).parent('th,td').attr('id') );
 	});
 	// buttons to reload the list
 	$(document).on('click','#list-of-shortys #toolbar #reload',[],OC.Shorty.WUI.List.build);
