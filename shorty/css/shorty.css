@@ -358,6 +358,8 @@ input.shorty-config {
 	cursor: row-resize;
 }
 .shorty-list thead #titlebar th:not(#favicon):not(#actions) div,
+.shorty-list thead #toolbar th:not(#favicon):not(#actions).collapsed,
+.shorty-list tbody td.collapsed,
 .shorty-list tbody td.collapsed span {
 	cursor: col-resize;
 }
@@ -374,23 +376,16 @@ input.shorty-config {
 }
 
 .shorty-desktop .shorty-list th:not(#favicon),
-.shorty-desktop .shorty-list td:not(#favicon) {
-	overflow-x: hidden;
-	transition: width 200ms;
-	-o-transition: width 200ms;
-	-ms-transition: width 200ms;
-	-moz-transition: width 200ms;
-	-khtml-transition: width 200ms;
-	-webkit-transition: width 200ms;
-}
-.shorty-desktop .shorty-list #title,
-.shorty-desktop .shorty-list #target {
-	transition: width 600ms;
-	-o-transition: width 600ms;
-	-ms-transition: width 600ms;
-	-moz-transition: width 600ms;
-	-khtml-transition: width 600ms;
-	-webkit-transition: width 600ms;
+.shorty-desktop .shorty-list td:not(#favicon),
+.shorty-desktop .shorty-list th:not(#favicon) *,
+.shorty-desktop .shorty-list td:not(#favicon) * {
+	overflow: hidden;
+	transition: width 250ms;
+	-o-transition: width 250ms;
+	-ms-transition: width 250ms;
+	-moz-transition: width 250ms;
+	-khtml-transition: width 250ms;
+	-webkit-transition: width 250ms;
 }
 
 .shorty-desktop .shorty-list th#favicon,
@@ -398,12 +393,16 @@ input.shorty-config {
 	width: 30px;
 }
 .shorty-desktop .shorty-list th#title,
-.shorty-desktop .shorty-list th#target {
-	min-width: 3em;
+.shorty-desktop .shorty-list td#title {
+/* 	min-width: 10em; */
+	width: auto;
+/*	width: 100%; */
 }
-.shorty-desktop .shorty-list td#title,
+.shorty-desktop .shorty-list th#target,
 .shorty-desktop .shorty-list td#target {
-	width: 100%;
+/* 	min-width: 10em; */
+	width: auto;
+/* 	width: 100%; */
 }
 .shorty-desktop .shorty-list th#clicks,
 .shorty-desktop .shorty-list td#clicks {
@@ -431,7 +430,6 @@ input.shorty-config {
 }
 .shorty-desktop .shorty-list th.collapsed,
 .shorty-desktop .shorty-list td.collapsed {
-	min-width: 0;
 	background-color: GhostWhite;
 	border-left: 1px solid Darkgray;
 	border-right: 1px solid Darkgray;

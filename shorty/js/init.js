@@ -83,7 +83,7 @@ $(document).ready(function(){
 		);
 	});
 	// headers click in the list to toggle column expansion
-	$(document).on('click','#list-of-shortys thead th div,#list-of-shortys tbody td.collapsed span',[],function(e){
+	$(document).on('click','#list-of-shortys thead th *,#list-of-shortys tbody td.collapsed *',[],function(e){
 		OC.Shorty.WUI.List.Column.toggle( $('#list-of-shortys'), $(e.target).parent('th,td').attr('id') );
 	});
 	// buttons to reload the list
