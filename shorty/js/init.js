@@ -83,8 +83,8 @@ $(document).ready(function(){
 		);
 	});
 	// headers click in the list to toggle column expansion
-	$(document).on('click','#list-of-shortys thead th *,#list-of-shortys tbody td.collapsed *',[],function(e){
-		OC.Shorty.WUI.List.Column.toggle( $('#list-of-shortys'), $(e.target).parent('th,td').attr('id') );
+	$(document).on('click','.shorty-list.shorty-collapsible thead th.collapsible *,#list-of-shortys tbody td.collapsed *',[],function(e){
+		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table').attr('id'), $(e.target).parent('th,td').attr('id') );
 	});
 	// buttons to reload the list
 	$(document).on('click','#list-of-shortys #toolbar #reload',[],OC.Shorty.WUI.List.build);

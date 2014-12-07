@@ -48,11 +48,6 @@ $(document).ready(function(){
 				OC.Shorty.WUI.Controls.hide();
 		});
 		// build and show list of Shortys
-		$.when(
-			OC.Shorty.WUI.List.build(),
-			OC.Shorty.Action.Preference.get('list-columns-collapsed')
-		).done(function() {
-			OC.Shorty.WUI.List.Column.initAll($('#list-of-shortys'));
-		});
+		OC.Shorty.WUI.List.build();
 	});
 }); // document.ready

@@ -308,8 +308,7 @@ input.shorty-config {
 /* the collapsible toolbar below the lists column title row */
 .shorty-list thead tr#titlebar div,
 .shorty-list thead tr#toolbar div {
-	overflow-y:visible;
-	padding: 0;
+	padding: 1px 0;
 	opacity: 0.7;
 }
 .shorty-list thead tr#toolbar select {
@@ -357,10 +356,10 @@ input.shorty-config {
 .shorty-list thead tr#titlebar th#favicon * {
 	cursor: row-resize;
 }
-.shorty-list thead #titlebar th:not(#favicon):not(#actions) div,
-.shorty-list thead #toolbar th:not(#favicon):not(#actions).collapsed,
-.shorty-list tbody td.collapsed,
-.shorty-list tbody td.collapsed span {
+.shorty-list.shorty-collapsible thead #titlebar th.collapsible div,
+.shorty-list.shorty-collapsible thead #toolbar th.collapsed,
+.shorty-list.shorty-collapsible tbody td.collapsed,
+.shorty-list.shorty-collapsible tbody td.collapsed span {
 	cursor: col-resize;
 }
 /* scrolling lists have a scrollbar INSIDE the tbody */
@@ -375,10 +374,51 @@ input.shorty-config {
 	position: relative;
 }
 
-.shorty-desktop .shorty-list th:not(#favicon),
-.shorty-desktop .shorty-list td:not(#favicon),
-.shorty-desktop .shorty-list th:not(#favicon) *,
-.shorty-desktop .shorty-list td:not(#favicon) * {
+#list-of-shortys th#favicon,
+#list-of-shortys td#favicon {
+	width: 30px;
+}
+#list-of-shortys th#title,
+#list-of-shortys td#title {
+/* 	min-width: 10em; */
+	width: auto;
+/*	width: 100%; */
+}
+#list-of-shortys th#target,
+#list-of-shortys td#target {
+/* 	min-width: 10em; */
+	width: auto;
+/* 	width: 100%; */
+}
+#list-of-shortys th#clicks,
+#list-of-shortys td#clicks {
+	width: 3em;
+}
+#list-of-shortys th#until,
+#list-of-shortys td#until {
+	width: 7em;
+}
+#list-of-shortys th#created,
+#list-of-shortys td#created {
+	width: 7em;
+}
+#list-of-shortys th#accessed,
+#list-of-shortys td#accessed {
+	width: 10em;
+}
+#list-of-shortys th#status,
+#list-of-shortys td#status {
+	width: 5.5em;
+}
+#list-of-shortys th#actions,
+#list-of-shortys td#actions {
+	width: 130px;
+}
+
+.shorty-list.shorty-collapsible th.collapsible,
+.shorty-list.shorty-collapsible td.collapsible,
+.shorty-list.shorty-collapsible th.collapsible *,
+.shorty-list.shorty-collapsible td.collapsible * {
 	overflow: hidden;
 	transition: width 250ms;
 	-o-transition: width 250ms;
@@ -387,49 +427,8 @@ input.shorty-config {
 	-khtml-transition: width 250ms;
 	-webkit-transition: width 250ms;
 }
-
-.shorty-desktop .shorty-list th#favicon,
-.shorty-desktop .shorty-list td#favicon {
-	width: 30px;
-}
-.shorty-desktop .shorty-list th#title,
-.shorty-desktop .shorty-list td#title {
-/* 	min-width: 10em; */
-	width: auto;
-/*	width: 100%; */
-}
-.shorty-desktop .shorty-list th#target,
-.shorty-desktop .shorty-list td#target {
-/* 	min-width: 10em; */
-	width: auto;
-/* 	width: 100%; */
-}
-.shorty-desktop .shorty-list th#clicks,
-.shorty-desktop .shorty-list td#clicks {
-	width: 3em;
-}
-.shorty-desktop .shorty-list th#until,
-.shorty-desktop .shorty-list td#until {
-	width: 7em;
-}
-.shorty-desktop .shorty-list th#created,
-.shorty-desktop .shorty-list td#created {
-	width: 7em;
-}
-.shorty-desktop .shorty-list th#accessed,
-.shorty-desktop .shorty-list td#accessed {
-	width: 10em;
-}
-.shorty-desktop .shorty-list th#status,
-.shorty-desktop .shorty-list td#status {
-	width: 5.5em;
-}
-.shorty-desktop .shorty-list th#actions,
-.shorty-desktop .shorty-list td#actions {
-	width: 130px;
-}
-.shorty-desktop .shorty-list th.collapsed,
-.shorty-desktop .shorty-list td.collapsed {
+.shorty-list.shorty-collapsible th.collapsible.collapsed,
+.shorty-list.shorty-collapsible td.collapsible.collapsed {
 	background-color: GhostWhite;
 	border-left: 1px solid Darkgray;
 	border-right: 1px solid Darkgray;
@@ -437,7 +436,7 @@ input.shorty-config {
 	padding-left: 4px;
 	padding-right: 4px;
 }
-.shorty-desktop .shorty-list #toolbar th.collapsed div {
+.shorty-list #toolbar th.collapsed div {
 	visibility: hidden;
 }
 

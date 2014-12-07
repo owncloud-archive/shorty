@@ -709,11 +709,11 @@ OC.Shorty={
 						OC.Shorty.WUI.List.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[$('#list-of-shortys').first(),response.data]);
 					}).done(function(){
 						$.when(
-							OC.Shorty.WUI.List.Column.initAll($('#list-of-shortys')),
+							OC.Shorty.WUI.List.Column.initAll('list-of-shortys'),
 							OC.Shorty.WUI.List.show(),
 							OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
 						).always(function(){
-							OC.Shorty.WUI.Hourglass.toggle(false)
+							OC.Shorty.WUI.Hourglass.toggle(false);
 							dfd.resolve();
 						})
 					}).fail(function(){
@@ -1054,9 +1054,9 @@ OC.Shorty={
 				* @author Christian Reiner
 				*/
 				collapse: function(list, column){
-					if (OC.Shorty.Debug) OC.Shorty.Debug.log("collapse list column '"+column+"'");
-					list.find('thead th#'+column).addClass('collapsed');
-					list.find('tbody td#'+column).addClass('collapsed');
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("collapse column '"+column+"' in list '"+list+"'");
+					$('#'+list).find('thead th#'+column).addClass('collapsed');
+					$('#'+list).find('tbody td#'+column).addClass('collapsed');
 				}, // OC.Shorty.WUI.List.Column.collapse
 				/**
 				* @method OC.Shorty.WUI.List.Column.expand
@@ -1066,10 +1066,47 @@ OC.Shorty={
 				* @author Christian Reiner
 				*/
 				expand: function(list, column){
-					if (OC.Shorty.Debug) OC.Shorty.Debug.log("expand list column '"+column+"'");
-					list.find('thead th#'+column).removeClass('collapsed')
-					list.find('tbody td#'+column).removeClass('collapsed')
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("expand column '"+column+"' in list '"+list+"'");
+					$('#'+list).find('thead th#'+column).removeClass('collapsed')
+					$('#'+list).find('tbody td#'+column).removeClass('collapsed')
 				}, // OC.Shorty.WUI.List.Column.expand
+				/**
+				* @method OC.Shorty.WUI.List.Column.getCollapsedColumns
+				* @brief Gets and validates the preference storing the lists of collapsed columns
+				* @param string list The lists id
+				* @author Christian Reiner
+				*/
+				getCollapsedColumns: function(list) {
+					var dfd = new $.Deferred();
+					$.when(
+						OC.Shorty.Action.Preference.get('list-columns-collapsed')
+					).done(function(result){
+						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || {list:['until','created','accessed']};
+						if ( ! typeof collapsedColumns === 'object') {
+							collapsedColumns = {};
+						} else if ( ! collapsedColumns.hasOwnProperty(list)) {
+							collapsedColumns[list] = [];
+						}
+						dfd.resolve(collapsedColumns[list]);
+					});
+					return dfd;
+				}, // OC.Shorty.WUI.List.Column.getCollapsedColumns
+				/**
+				* @method OC.Shorty.WUI.List.Column.setCollapsedColumns
+				* @brief Sets the preference storing the lists of collapsed columns
+				* @param string list The lists id
+				* @param array columns The list collapsed columns
+				* @author Christian Reiner
+				*/
+				setCollapsedColumns: function(list, columns){
+					$.when(
+						OC.Shorty.WUI.List.Column.getCollapsedColumns(list)
+					).done(function(result){
+						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || {"list-of-shortys":["until","created","accessed"]};
+						collapsedColumns[list] = columns;
+						OC.Shorty.Action.Preference.set({'list-columns-collapsed': JSON.stringify(collapsedColumns)});
+					});
+				}, // OC.Shorty.WUI.List.Column.setCollapsedColumns
 				/**
 				* @method OC.Shorty.WUI.List.Column.toggle
 				* @brief Toggles the compactness of a lists column
@@ -1078,24 +1115,23 @@ OC.Shorty={
 				* @author Christian Reiner
 				*/
 				toggle: function(list, column){
-					if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list column '"+column+"'");
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle column '"+column+"' in list '"+list+"'");
 					var dfd = new $.Deferred();
 					$.when(
-						OC.Shorty.Action.Preference.get('list-columns-collapsed')
-					).done(function(result){
-						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || ['until','created','accessed'];
-						if ( -1 < $.inArray(column, collapsedColumns) ) {
+						OC.Shorty.WUI.List.Column.getCollapsedColumns(list)
+					).done(function(columns){
+						if ( -1 < $.inArray(column, columns) ) {
 							// column IS collapsed: un-collapse
-							collapsedColumns.splice( $.inArray(column, collapsedColumns), 1 );
 							OC.Shorty.WUI.List.Column.expand( list, column );
+							columns.splice( $.inArray(column, columns), 1 );
 							dfd.resolve();
 						} else {
 							// column is NOT collapsed: collapse
-							collapsedColumns.push( column );
 							OC.Shorty.WUI.List.Column.collapse( list, column );
+							columns.push( column );
 							dfd.resolve();
 						}
-						OC.Shorty.Action.Preference.set({'list-columns-collapsed': JSON.stringify(collapsedColumns)});
+						OC.Shorty.WUI.List.Column.setCollapsedColumns(list, columns);
 					});
 					return dfd.promise();
 				}, // OC.Shorty.WUI.List.Column.toggle
@@ -1106,19 +1142,17 @@ OC.Shorty={
 				* @author Christian Reiner
 				*/
 				initAll: function(list){
-					if (OC.Shorty.Debug) OC.Shorty.Debug.log("initializing all list columns as collapsed or expanded");
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("initializing all list in list '"+list+"' columns as collapsed or expanded");
 					$.when(
-						OC.Shorty.Action.Preference.get('list-columns-collapsed')
-					).done(function(result){
-						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || ['until','created','accessed'];
-						$(collapsedColumns).each(function(key, column) {
-							if ( list.find('thead #titlebar th#'+column).not('#favicon,#actions').length ) {
+						OC.Shorty.WUI.List.Column.getCollapsedColumns(list)
+					).done(function(columns){
+						$(columns).each(function(key, column) {
+							if ( $('#'+list).find('thead #titlebar th#'+column+'.collapsible').length ) {
 								OC.Shorty.WUI.List.Column.collapse(list, column);
 							} else {
-								collapsedColumns.splice( $.inArray(column, collapsedColumns), 1 );
+								columns.splice( $.inArray(column, columns), 1 );
 							}
 						});
-						OC.Shorty.Action.Preference.set({'list-columns-collapsed': JSON.stringify(collapsedColumns)});
 					});
 				} // OC.Shorty.WUI.List.Column.initAll
 			}, //OC.Shorty.WUI.List.Column
