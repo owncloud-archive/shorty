@@ -64,53 +64,53 @@
 
 
 /* the collapsible toolbar below the lists column title row */
-.shorty-list thead tr#titlebar div,
-.shorty-list thead tr#toolbar div {
+.shorty-list thead tr.shorty-titlebar div,
+.shorty-list thead tr.shorty-toolbar div {
 	padding: 1px 0;
 	opacity: 0.7;
 }
-.shorty-list thead tr#toolbar select {
+.shorty-list thead tr.shorty-toolbar select {
 	height: inherit;
 }
-.shorty-list thead tr#toolbar img {
+.shorty-list thead tr.shorty-toolbar img {
 	cursor: pointer;
 	vertical-align: middle;
 }
-.shorty-list thead tr#toolbar a#reload,
-.shorty-list thead tr#toolbar a#reload img {
+.shorty-list thead tr.shorty-toolbar a#reload,
+.shorty-list thead tr.shorty-toolbar a#reload img {
 	cursor: pointer;
 	width: 16px;
 	height: 16px;
 	opacity: 0.8;
 }
-.shorty-list thead tr#toolbar img#sort-up {
+.shorty-list thead tr.shorty-toolbar img#sort-up {
 	cursor: n-resize;
 }
-.shorty-list thead tr#toolbar img#sort-down {
+.shorty-list thead tr.shorty-toolbar img#sort-down {
 	cursor: s-resize;
 }
-.shorty-list thead tr#toolbar img.shorty-clear {
+.shorty-list thead tr.shorty-toolbar img.shorty-clear {
 	cursor: pointer;
 	opacity: 0.6;
 }
-.shorty-list thead tr#toolbar th#status img.shorty-clear {
+.shorty-list thead tr.shorty-toolbar th#status img.shorty-clear {
 	margin-left: 3px;
 }
-.shorty-list thead tr#toolbar img.shorty-sorter {
+.shorty-list thead tr.shorty-toolbar img.shorty-sorter {
 	opacity: 0.6;
 }
 /* last column in the list, content usually invisible, except when hovered */
-.shorty-list thead tr#toolbar img.shorty-active {
+.shorty-list thead tr.shorty-toolbar img.shorty-active {
 	border: 1px solid #888888;
 	border-radius: 0.3em;
 }
-.shorty-list #toolbar th.collapsed div {
+.shorty-list tr.shorty-toolbar th.collapsed div {
 	visibility: hidden;
 }
-.shorty-list thead tr#toolbar th input,
-.shorty-list tbody tr#toolbar td input,
-.shorty-list thead tr#toolbar th .chzn-container,
-.shorty-list tbody tr#toolbar td .chzn-container {
+.shorty-list thead tr.shorty-toolbar th input,
+.shorty-list tbody tr.shorty-toolbar td input,
+.shorty-list thead tr.shorty-toolbar th .chzn-container,
+.shorty-list tbody tr.shorty-toolbar td .chzn-container {
 	width: 6em;
 	height: inherit;
 	font-size: 11px;
@@ -125,7 +125,7 @@
 .shorty-list thead tr:nth-child(2) > th {
 	padding-bottom: 0.5em;
 }
-.shorty-list thead tr#titlebar th img {
+.shorty-list thead tr.shorty-titlebar th img {
 	cursor: pointer;
 }
 
@@ -269,8 +269,8 @@
 
 /* collapsible list columns */
 
-.shorty-list.shorty-collapsible thead #titlebar th.collapsible div,
-.shorty-list.shorty-collapsible thead #toolbar th.collapsed,
+.shorty-list.shorty-collapsible thead tr.shorty-titlebar th.collapsible div,
+.shorty-list.shorty-collapsible thead tr.shorty-toolbar th.collapsed,
 .shorty-list.shorty-collapsible tbody td.collapsed,
 .shorty-list.shorty-collapsible tbody td.collapsed span {
 	cursor: col-resize;
@@ -303,7 +303,7 @@
 
 /* list of shortys */
 
-#list-of-shortys thead tr#titlebar th#favicon * {
+#list-of-shortys thead tr.shorty-titlebar th#favicon * {
 	cursor: row-resize;
 }
 

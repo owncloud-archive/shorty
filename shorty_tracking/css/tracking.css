@@ -68,6 +68,9 @@
 #list-of-clicks tbody td#actions {
 	width: 28px;
 }
+#list-of-clicks thead tr.shorty-titlebar th#status * {
+	cursor: row-resize;
+}
 #list-of-clicks tbody td span:not(.heading) {
 	margin: 0;
 	padding: 0 0.1em;

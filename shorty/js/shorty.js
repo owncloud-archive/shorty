@@ -990,7 +990,7 @@ OC.Shorty={
 			*/
 			sort: function(list,sortCode){
 				sortCore = sortCode || 'cd';
-				var icon=list.find('thead tr#toolbar th div img[data-sort-code="'+sortCode+'"]');
+				var icon=list.find('thead tr.shorty-toolbar th div img[data-sort-code="'+sortCode+'"]');
 				var sortCol=icon.parents('th').attr('id');
 				var sortDir=icon.attr('data-sort-direction');
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
@@ -1004,7 +1004,7 @@ OC.Shorty={
 						list.find('tbody>tr').tsort({attr:'data-'+sortCol,order:sortDir});
 				} // switch
 				// mark currently active sort icon
-				var icons=list.find('thead tr#toolbar img.shorty-sorter');
+				var icons=list.find('thead tr.shorty-toolbar img.shorty-sorter');
 				icons.removeClass('shorty-active');
 				icons.filter('[data-sort-code="'+sortCode+'"]').addClass('shorty-active');
 				// store the sorting code as preference, for returning list retrievals
@@ -1147,7 +1147,7 @@ OC.Shorty={
 						OC.Shorty.WUI.List.Column.getCollapsedColumns(list)
 					).done(function(columns){
 						$(columns).each(function(key, column) {
-							if ( $('#'+list).find('thead #titlebar th#'+column+'.collapsible').length ) {
+							if ( $('#'+list).find('thead tr.shorty-titlebar th#'+column+'.collapsible').length ) {
 								OC.Shorty.WUI.List.Column.collapse(list, column);
 							} else {
 								columns.splice( $.inArray(column, columns), 1 );
@@ -1171,8 +1171,8 @@ OC.Shorty={
 				toggle: function(list){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list toolbar");
 					var button  =list.find('img#tools');
-					var titlebar=list.find('tr#titlebar');
-					var toolbar =list.find('tr#toolbar');
+					var titlebar=list.find('tr.shorty-titlebar');
+					var toolbar =list.find('tr.shorty-toolbar');
 					var dfd = new $.Deferred();
 					if (!toolbar.find('div').is(':visible')){
 						// toolbar NOT visible: open toolbar
@@ -2379,7 +2379,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		});
 		OC.Shorty.WUI.Sums.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[data]);
 		// filter list
-		var toolbar=list.find('thead tr#toolbar');
+		var toolbar=list.find('thead tr.shorty-toolbar');
 		OC.Shorty.WUI.List.filter.apply(this,
 			[list,'target',toolbar.find('th#target .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,

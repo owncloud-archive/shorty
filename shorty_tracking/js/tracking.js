@@ -43,13 +43,13 @@ $(window).load(function(){
 	OC.Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
 		OC.Shorty.WUI.Dialog.hide(OC.Shorty.Tracking.Dialog.List);
 	});
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr#titlebar').on('click',function(){
+	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-titlebar #status').on('click',function(){
 			OC.Shorty.WUI.List.Toolbar.toggle.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
 				[OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()]
 			);
 	});
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks #toolbar #reload')
+	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-toolbar #reload')
 		.on('click',function(){OC.Shorty.Tracking.build(false);});
 	OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load')
 		.on('click',function(){OC.Shorty.Tracking.build(true);});
@@ -67,7 +67,7 @@ $(window).load(function(){
 		$(this).parents('tbody').find('tr td#'+$(this).parent().attr('id')+' span').removeClass("associated").removeClass("desociated");});
 	// when clicking inside cells: set column filter
 	$(document).on('click','#list-of-clicks tbody tr td.associative span',[],function(){
-		var input=$(this).parents('table').find('thead tr#toolbar th#'+$(this).parent().attr('id')).find('input,select');
+		var input=$(this).parents('table').find('thead tr.shorty-toolbar th#'+$(this).parent().attr('id')).find('input,select');
 		var value;
 		// open toolbar if still hidden
 		if (input.parent().is(':hidden'))
@@ -92,7 +92,7 @@ $(window).load(function(){
 	});
 	// column filter reaction
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
-		.find('thead tr#toolbar').find('th#time,th#address,th#host,th#user').find('.shorty-filter')
+		.find('thead tr.shorty-toolbar').find('th#time,th#address,th#host,th#user').find('.shorty-filter')
 		.on('keyup',function(){
 			OC.Shorty.WUI.List.filter.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
@@ -108,7 +108,7 @@ $(window).load(function(){
 	// retrieve next chunk of clicks if so
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').on('scroll',OC.Shorty.Tracking.bottom);
 	// status filter reaction
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('thead tr#toolbar th#result select')
+	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('thead tr.shorty-toolbar th#result select')
 		.on('change',function(){
 			OC.Shorty.WUI.List.filter.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
@@ -119,7 +119,7 @@ $(window).load(function(){
 			);
 		});
 		// button to clear list filters
-		$(document).on('click','#list-of-clicks #toolbar .shorty-clear',[],function(){
+		$(document).on('click','#list-of-clicks tr.shorty-toolbar .shorty-clear',[],function(){
 			$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
 		});
 		dfd.resolve();
@@ -253,8 +253,8 @@ OC.Shorty.Tracking=
 				var bodyHeight	= OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tbody').outerHeight(true);
 				var restHeight	= OC.Shorty.Tracking.Dialog.List.find('fieldset legend').outerHeight(true)
 								+ OC.Shorty.Tracking.Dialog.List.find('#shorty-header').outerHeight(true)
-								+ OC.Shorty.Tracking.Dialog.List.find('#titlebar').outerHeight(true)
-								+ 40 // room for potentially visible #toolbar
+								+ OC.Shorty.Tracking.Dialog.List.find('.shorty-titlebar').outerHeight(true)
+								+ 40 // room for potentially visible tr.shorty-toolbar
 								+ OC.Shorty.Tracking.Dialog.List.find('#shorty-footer').outerHeight(true)
 								+ 80;// safety margin
 				var roomHeight=$('#content').outerHeight();
@@ -268,7 +268,7 @@ OC.Shorty.Tracking=
 					// this is a workaround to preserve column width inside the header when we modify the body
 					$.each(OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks thead th'),function(){
 						var column=$(this).attr('id');
-						$(this).css('width',$(this).parents('table').find('thead tr#toolbar td#'+column).css('width'));
+						$(this).css('width',$(this).parents('table').find('thead tr.shorty-toolbar td#'+column).css('width'));
 						$(this).css('width',$(this).parents('table').find('tbody tr:first td#'+column).css('width'));
 					});
 				}
@@ -652,7 +652,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 	ListFillFilter:function(list){
 		if (OC.Shorty.Debug) OC.Shorty.Debug.log("using 'tracking' method to filter filled list");
 		// filter list
-		var toolbar=list.find('thead tr#toolbar');
+		var toolbar=list.find('thead tr.shorty-toolbar');
 		OC.Shorty.WUI.List.filter.apply(this,
 			[list,'time',   toolbar.find('th#time    .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,

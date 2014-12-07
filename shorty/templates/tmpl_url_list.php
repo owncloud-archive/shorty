@@ -60,7 +60,7 @@
 <!-- the list of urls, non-empty variant -->
 <table id="list-of-shortys" class="shorty-list shorty-collapsible" style="display:none;">
 	<thead>
-		<tr id="titlebar">
+		<tr id="titlebar" class="shorty-titlebar">
 			<!-- a button to open/close the toolbar below -->
 			<th id="favicon"><div>
 				<img id="tools" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
@@ -77,7 +77,7 @@
 			<th id="actions" ><div>&nbsp;</div></th>
 		</tr>
 		<!-- toolbar opened/closed by the button above -->
-		<tr id="toolbar">
+		<tr id="toolbar" class="shorty-toolbar">
 			<th id="favicon">
 				<div style="display:none;">
 					<a id="reload">
@@ -167,7 +167,7 @@
 			</th>
 		</tr>
 		<!-- the 'dummy' row, a blueprint -->
-		<tr id=""
+		<tr id="" class="shorty-dummy"
 			data-id=""
 			data-status=""
 			data-source=""

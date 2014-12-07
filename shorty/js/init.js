@@ -76,7 +76,7 @@ $(document).ready(function(){
 		$(e.currentTarget).closest('.shorty-dialog').find('input#title').val($(e.currentTarget).html());
 	});
 	// button to open the toolbar row in the list
-	$(document).on('click','#list-of-shortys #titlebar #favicon',[],function(){
+	$(document).on('click','#list-of-shortys tr.shorty-titlebar #favicon',[],function(){
 		OC.Shorty.WUI.List.Toolbar.toggle.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]
@@ -87,14 +87,14 @@ $(document).ready(function(){
 		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table').attr('id'), $(e.target).parent('th,td').attr('id') );
 	});
 	// buttons to reload the list
-	$(document).on('click','#list-of-shortys #toolbar #reload',[],OC.Shorty.WUI.List.build);
+	$(document).on('click','#list-of-shortys tr.shorty-toolbar #reload',[],OC.Shorty.WUI.List.build);
 	$(document).on('click','#controls-refresh',[],OC.Shorty.WUI.List.build);
 	// button to clear list filters
-	$(document).on('click','#list-of-shortys #toolbar .shorty-clear',[],function(){
+	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-clear',[],function(){
 		$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
 	});
 	// sort buttons
-	$(document).on('click','#list-of-shortys #toolbar .shorty-sorter',[],function(){
+	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-sorter',[],function(){
 		OC.Shorty.WUI.List.sort.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]);
@@ -132,7 +132,7 @@ $(document).ready(function(){
 	// filter actions
 	var list=$('#list-of-shortys');
 	// title & target filter reaction
-	$(document).on('keyup','#list-of-shortys thead tr#toolbar th .shorty-filter',[],function(){
+	$(document).on('keyup','#list-of-shortys thead tr.shorty-toolbar th .shorty-filter',[],function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[list,$($(this).context.parentElement.parentElement).attr('id'),$(this).val()]);
@@ -140,13 +140,13 @@ $(document).ready(function(){
 		$(this).attr('value',$(this).val());
 	});
 	// status filter reaction
-	$(document).on('change','#list-of-shortys thead tr#toolbar th#status select',[],function(){
+	$(document).on('change','#list-of-shortys thead tr.shorty-toolbar th#status select',[],function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[list,$(this).parents('th').attr('id'),$(this).find(':selected').val()]);
 	});
 	// column sorting reaction
-	$(document).on('click','#list-of-shortys thead tr#toolbar div img.shorty-sorter',[],function(){
+	$(document).on('click','#list-of-shortys thead tr.shorty-toolbar div img.shorty-sorter',[],function(){
 		OC.Shorty.WUI.List.sort(list,$(this).attr('data-sort-code'));
 	});
 	// open preferences popup when button is clicked
