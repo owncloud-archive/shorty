@@ -1263,9 +1263,9 @@ OC.Shorty={
 				$.when(
 					OC.Shorty.Action.Preference.get('verbosity-control'),
 					OC.Shorty.Action.Preference.get('verbosity-timeout')
-				).done(function(resultControl, resultTimeout){
-					var verbosity = resultControl['verbosity-control'];
-					var timeout   = resultTimeout['verbosity-timeout'];
+				).always(function(resultControl, resultTimeout){
+					var verbosity = resultControl['verbosity-control'] || 'info';
+					var timeout   = resultTimeout['verbosity-timeout'] || 0;
 					if (message && message.length){
 						// log to browser console when debugging is enabled in system config file
 						if ( OC.Shorty.Debug ){
@@ -2117,14 +2117,14 @@ OC.Shorty={
 			if (response.status){
 				// this is a valid response
 				if ('success'==response.status){
-					OC.Shorty.WUI.Messenger.show(response.message,response.level);
+					OC.Shorty.WUI.Messenger.show(response.message, response.level);
 					return new $.Deferred().resolve(response);
 				}else{
 			//           // is this an expired request token (CSRF protection mechanism) ?
 			//           if (response.message.indexOf("Token expired")>=0)
 			//             // reload apps base page
 			//             window.location.href=OC.filePath('shorty','','');
-					OC.Shorty.WUI.Messenger.show(response.message,'error');
+					OC.Shorty.WUI.Messenger.show(response.message, 'error');
 					return new $.Deferred().reject(response);
 				}
 			}
