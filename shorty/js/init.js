@@ -76,18 +76,18 @@ $(document).ready(function(){
 		$(e.currentTarget).closest('.shorty-dialog').find('input#title').val($(e.currentTarget).html());
 	});
 	// button to open the toolbar row in the list
-	$(document).on('click','#list-of-shortys tr.shorty-titlebar #favicon',[],function(){
+	$(document).on('click','#list-of-shortys tr.shorty-titlebar #list-of-shortys-favicon',[],function(){
 		OC.Shorty.WUI.List.Toolbar.toggle.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]
 		);
 	});
 	// headers click in the list to toggle column expansion
-	$(document).on('click','.shorty-list.shorty-collapsible thead th.collapsible *,#list-of-shortys tbody td.collapsed *',[],function(e){
-		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table').attr('id'), $(e.target).parent('th,td').attr('id') );
+	$(document).on('click','.shorty-list.shorty-collapsible thead tr.shorty-titlebar th.collapsible *,.shorty-list.shorty-collapsible tbody td.collapsed *',[],function(e){
+		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table').attr('id'), $(e.target).parent('th,td').attr('data-id') );
 	});
 	// buttons to reload the list
-	$(document).on('click','#list-of-shortys tr.shorty-toolbar #reload',[],OC.Shorty.WUI.List.build);
+	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-reload',[],OC.Shorty.WUI.List.build);
 	$(document).on('click','#controls-refresh',[],OC.Shorty.WUI.List.build);
 	// button to clear list filters
 	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-clear',[],function(){
@@ -118,13 +118,13 @@ $(document).ready(function(){
 		e.stopPropagation();
 		OC.Shorty.WUI.Entry.send(e,$(this));
 	});
-	$(document).on('click','.shorty-list tbody tr td:not(#actions)',[],function(e){
+	$(document).on('click','.shorty-list tbody tr td:not([data-id="actions"])',[],function(e){
 		// hide any open embedded dialog
 		OC.Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
 		// highlight clicked entry
 		OC.Shorty.WUI.List.highlight($(this).parents('table'),$(this).parent('tr'));
 	});
-	$(document).on('click','.shorty-list tbody tr td#actions span.shorty-actions a',[],function(e){
+	$(document).on('click','.shorty-list tbody tr td[data-id="actions"] span.shorty-actions a',[],function(e){
 		OC.Shorty.WUI.Entry.click(e,$(this));
 	});
 	// pretty select boxes where applicable (class controlled)
@@ -135,15 +135,15 @@ $(document).ready(function(){
 	$(document).on('keyup','#list-of-shortys thead tr.shorty-toolbar th .shorty-filter',[],function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
-			[list,$($(this).context.parentElement.parentElement).attr('id'),$(this).val()]);
+			[list,$($(this).context.parentElement.parentElement).attr('data-id'),$(this).val()]);
 		// change the value attribute inside the DOM, some jquery/browser combination seem to block this...
 		$(this).attr('value',$(this).val());
 	});
 	// status filter reaction
-	$(document).on('change','#list-of-shortys thead tr.shorty-toolbar th#status select',[],function(){
+	$(document).on('change','#list-of-shortys thead tr.shorty-toolbar th#list-of-shortys-status select',[],function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
-			[list,$(this).parents('th').attr('id'),$(this).find(':selected').val()]);
+			[list,$(this).parents('th').attr('data-id'),$(this).find(':selected').val()]);
 	});
 	// column sorting reaction
 	$(document).on('click','#list-of-shortys thead tr.shorty-toolbar div img.shorty-sorter',[],function(){

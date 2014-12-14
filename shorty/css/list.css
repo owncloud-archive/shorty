@@ -76,8 +76,8 @@
 	cursor: pointer;
 	vertical-align: middle;
 }
-.shorty-list thead tr.shorty-toolbar a#reload,
-.shorty-list thead tr.shorty-toolbar a#reload img {
+.shorty-list thead tr.shorty-toolbar a.shorty-reload,
+.shorty-list thead tr.shorty-toolbar a.shorty-reload img {
 	cursor: pointer;
 	width: 16px;
 	height: 16px;
@@ -92,9 +92,6 @@
 .shorty-list thead tr.shorty-toolbar img.shorty-clear {
 	cursor: pointer;
 	opacity: 0.6;
-}
-.shorty-list thead tr.shorty-toolbar th#status img.shorty-clear {
-	margin-left: 3px;
 }
 .shorty-list thead tr.shorty-toolbar img.shorty-sorter {
 	opacity: 0.6;
@@ -112,7 +109,7 @@
 .shorty-list thead tr.shorty-toolbar th .chzn-container,
 .shorty-list tbody tr.shorty-toolbar td .chzn-container {
 	width: 6em;
-	height: inherit;
+	height: 1em !important;
 	font-size: 11px;
 	margin: 0;
 	padding: 0.3em;
@@ -254,17 +251,6 @@
 	padding: 2px 4px 0px 2px;
 	line-height: 1.2em;
 }
-.shorty-list thead th#favicon,
-.shorty-list tbody td#favicon {
-	text-align: center;
-}
-.shorty-list tbody td#until {
-	text-align: center;
-}
-.shorty-list tbody td#clicks {
-	text-align: right;
-	margin-right: 0.4em;
-}
 
 
 /* collapsible list columns */
@@ -276,11 +262,16 @@
 	cursor: col-resize;
 }
 
+.shorty-list.shorty-collapsible tr.shorty-titlebar th.collapsible,
+.shorty-list.shorty-collapsible tr.shorty-titlebar td.collapsible,
+.shorty-list.shorty-collapsible tr.shorty-titlebar th.collapsible *,
+.shorty-list.shorty-collapsible tr.shorty-titlebar td.collapsible * {
+	overflow: hidden;
+}
 .shorty-list.shorty-collapsible th.collapsible,
 .shorty-list.shorty-collapsible td.collapsible,
 .shorty-list.shorty-collapsible th.collapsible *,
 .shorty-list.shorty-collapsible td.collapsible * {
-	overflow: hidden;
 	transition: width 250ms;
 	-o-transition: width 250ms;
 	-ms-transition: width 250ms;
@@ -291,6 +282,7 @@
 
 .shorty-list.shorty-collapsible th.collapsible.collapsed,
 .shorty-list.shorty-collapsible td.collapsible.collapsed {
+	overflow: hidden;
 	background-color: GhostWhite;
 	border-left: 1px solid Darkgray;
 	border-right: 1px solid Darkgray;
@@ -303,54 +295,66 @@
 
 /* list of shortys */
 
-#list-of-shortys thead tr.shorty-titlebar th#favicon * {
+#list-of-shortys thead tr.shorty-titlebar th#list-of-shortys-favicon * {
 	cursor: row-resize;
 }
 
-#list-of-shortys thead th#clicks,
-#list-of-shortys thead th#until,
-#list-of-shortys thead th#actions {
+#list-of-shortys thead th#list-of-shortys-favicon,
+#list-of-shortys tbody td#list-of-shortys-favicon,
+#list-of-shortys thead th#list-of-shortys-until,
+#list-of-shortys tbody td#list-of-shortys-until,
+#list-of-shortys thead th#list-of-shortys-created,
+#list-of-shortys tbody td#list-of-shortys-created,
+#list-of-shortys thead th#list-of-shortys-accessed,
+#list-of-shortys tbody td#list-of-shortys-accessed,
+#list-of-shortys thead th#list-of-shortys-actions,
+#list-of-shortys tbody td#list-of-shortys-actions,
+#list-of-shortys thead th#list-of-shortys-clicks {
 	text-align: center;
 }
+#list-of-shortys tbody td#list-of-shortys-clicks {
+	text-align: right;
+	margin-right: 0.4em;
+}
 
-#list-of-shortys th#favicon,
-#list-of-shortys td#favicon {
+#list-of-shortys th#list-of-shortys-favicon,
+#list-of-shortys td#list-of-shortys-favicon {
 	width: 30px;
 }
-#list-of-shortys th#title,
-#list-of-shortys td#title {
+#list-of-shortys th#list-of-shortys-title,
+#list-of-shortys td#list-of-shortys-title {
 /* 	min-width: 10em; */
 	width: auto;
 /*	width: 100%; */
 }
-#list-of-shortys th#target,
-#list-of-shortys td#target {
+#list-of-shortys th#list-of-shortys-target,
+#list-of-shortys td#list-of-shortys-target {
 /* 	min-width: 10em; */
 	width: auto;
 /* 	width: 100%; */
 }
-#list-of-shortys th#clicks,
-#list-of-shortys td#clicks {
+#list-of-shortys th#list-of-shortys-clicks,
+#list-of-shortys td#list-of-shortys-clicks {
 	width: 3em;
 }
-#list-of-shortys th#until,
-#list-of-shortys td#until {
+#list-of-shortys th#list-of-shortys-until,
+#list-of-shortys td#list-of-shortys-until {
 	width: 7em;
 }
-#list-of-shortys th#created,
-#list-of-shortys td#created {
+#list-of-shortys th#list-of-shortys-created,
+#list-of-shortys td#list-of-shortys-created {
 	width: 7em;
 }
-#list-of-shortys th#accessed,
-#list-of-shortys td#accessed {
+#list-of-shortys th#list-of-shortys-accessed,
+#list-of-shortys td#list-of-shortys-accessed {
 	width: 10em;
 }
-#list-of-shortys th#status,
-#list-of-shortys td#status {
+#list-of-shortys th#list-of-shortys-status,
+#list-of-shortys td#list-of-shortys-status {
 	width: 5.5em;
 }
-#list-of-shortys th#actions,
-#list-of-shortys td#actions {
+#list-of-shortys th#list-of-shortys-actions,
+#list-of-shortys td#list-of-shortys-actions {
 	width: 130px;
 }
 

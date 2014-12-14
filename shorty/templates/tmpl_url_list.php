@@ -60,33 +60,35 @@
 <!-- the list of urls, non-empty variant -->
 <table id="list-of-shortys" class="shorty-list shorty-collapsible" style="display:none;">
 	<thead>
-		<tr id="titlebar" class="shorty-titlebar">
+		<tr id="list-of-shortys-titlebar" class="shorty-titlebar">
 			<!-- a button to open/close the toolbar below -->
-			<th id="favicon"><div>
-				<img id="tools" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
-					class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
-					data-unshade="actions/unshade"
-					data-shade="actions/shade"></div></th>
-			<th id="title"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Title'));     ?></div></th>
-			<th id="target"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Target'));    ?></div></th>
-			<th id="clicks"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Clicks'));    ?></div></th>
-			<th id="until"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Expiration'));?></div></th>
-			<th id="created"  class="collapsible"><div><?php p(OC_Shorty_L10n::t('Creation'));  ?></div></th>
-			<th id="accessed" class="collapsible"><div><?php p(OC_Shorty_L10n::t('Last'));      ?></div></th>
-			<th id="status"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Status'));    ?></div></th>
-			<th id="actions" ><div>&nbsp;</div></th>
+			<th id="list-of-shortys-favicon" data-id="favicon">
+				<div>
+					<img id="list-of-shortys-tools" class="shorty-tools" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
+							 class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
+							 data-unshade="actions/unshade" data-shade="actions/shade">
+				</div>
+			</th>
+			<th id="list-of-shortys-title"    data-id="title"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Title'));     ?></div></th>
+			<th id="list-of-shortys-target"   data-id="target"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Target'));    ?></div></th>
+			<th id="list-of-shortys-clicks"   data-id="clicks"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Clicks'));    ?></div></th>
+			<th id="list-of-shortys-until"    data-id="until"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Expiration'));?></div></th>
+			<th id="list-of-shortys-created"  data-id="created"  class="collapsible"><div><?php p(OC_Shorty_L10n::t('Creation'));  ?></div></th>
+			<th id="list-of-shortys-accessed" data-id="accessed" class="collapsible"><div><?php p(OC_Shorty_L10n::t('Last'));      ?></div></th>
+			<th id="list-of-shortys-status"   data-id="status"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Status'));    ?></div></th>
+			<th id="list-of-shortys-actions"  data-id="actions"><div>&nbsp;</div></th>
 		</tr>
 		<!-- toolbar opened/closed by the button above -->
-		<tr id="toolbar" class="shorty-toolbar">
-			<th id="favicon">
+		<tr id="list-of-shortys-toolbar" data-id="favicon" class="shorty-toolbar">
+			<th id="list-of-shortys-favicon">
 				<div style="display:none;">
-					<a id="reload">
+					<a id="list-of-shortys-reload" class="shorty-reload">
 						<img alt="<?php p(OC_Shorty_L10n::t('reload')); ?>" title="<?php p(OC_Shorty_L10n::t('Reload list')); ?>"
 							class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/reload.svg')); ?>">
 					</a>
 				</div>
 			</th>
-			<th id="title" class="collapsible">
+			<th id="list-of-shortys-title" data-id="title" class="collapsible">
 				<div style="display:none;">
 					<img id="sort-up" data-sort-code="ta" data-sort-type="string" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
@@ -99,7 +101,7 @@
 						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
-			<th id="target" class="collapsible">
+			<th id="list-of-shortys-target" data-id="target" class="collapsible">
 				<div style="display:none;">
 					<img id="sort-up" data-sort-code="ua" data-sort-type="string" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
@@ -112,7 +114,7 @@
 						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
-			<th id="clicks" class="collapsible">
+			<th id="list-of-shortys-clicks" data-id="clicks" class="collapsible">
 				<div style="display:none;">
 					<img id="sort-up" data-sort-code="ha" data-sort-type="int" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
@@ -122,7 +124,7 @@
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
 				</div>
 			</th>
-			<th id="until" class="collapsible">
+			<th id="list-of-shortys-until" data-id="until" class="collapsible">
 				<div style="display:none;">
 					<img id="sort-up"  data-sort-code="da" data-sort-type="date" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
@@ -132,7 +134,7 @@
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
 				</div>
 			</th>
-			<th id="created" class="collapsible">
+			<th id="list-of-shortys-created" data-id="created" class="collapsible">
 				<div style="display:none;">
 					<img id="sort-up"  data-sort-code="ca" data-sort-type="date" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
@@ -142,7 +144,7 @@
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
 				</div>
 			</th>
-			<th id="accessed" class="collapsible">
+			<th id="list-of-shortys-accessed" data-id="accessed" class="collapsible">
 				<div style="display:none;">
 					<img id="sort-up"  data-sort-code="aa" data-sort-type="date" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
@@ -152,7 +154,7 @@
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
 				</div>
 			</th>
-			<th id="status" class="collapsible">
+			<th id="list-of-shortys-status" data-id="status" class="collapsible">
 				<div style="display:none;">
 					<span class="shorty-select">
 						<select id="filter-status" class="shorty-filter" value="" data-placeholder=" ">
@@ -167,7 +169,7 @@
 			</th>
 		</tr>
 		<!-- the 'dummy' row, a blueprint -->
-		<tr id="" class="shorty-dummy"
+		<tr class="shorty-dummy"
 			data-id=""
 			data-status=""
 			data-source=""
@@ -182,15 +184,15 @@
 			data-created=""
 			data-accessed=""
 			data-notes="">
-			<td id="favicon"></td>
-			<td id="title"    class="collapsible"></td>
-			<td id="target"   class="collapsible"></td>
-			<td id="clicks"   class="collapsible"></td>
-			<td id="until"    class="collapsible"></td>
-			<td id="created"  class="collapsible"></td>
-			<td id="accessed" class="collapsible"></td>
-			<td id="status"   class="collapsible"></td>
-			<td id="actions">
+			<td id="list-of-shortys-favicon"  data-id="favicon"></td>
+			<td id="list-of-shortys-title"    data-id="title"    class="collapsible"></td>
+			<td id="list-of-shortys-target"   data-id="target"   class="collapsible"></td>
+			<td id="list-of-shortys-clicks"   data-id="clicks"   class="collapsible"></td>
+			<td id="list-of-shortys-until"    data-id="until"    class="collapsible"></td>
+			<td id="list-of-shortys-created"  data-id="created"  class="collapsible"></td>
+			<td id="list-of-shortys-accessed" data-id="accessed" class="collapsible"></td>
+			<td id="list-of-shortys-status"   data-id="status"   class="collapsible"></td>
+			<td id="list-of-shortys-actions"  data-id="actions">
 				<span class="shorty-actions">
 <!-- IF any additional actions are registered via hooks, additional icons will appear here -->
 <?php foreach ( $_['shorty-actions']['list'] as $action ) { ?>

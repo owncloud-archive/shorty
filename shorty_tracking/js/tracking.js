@@ -43,13 +43,13 @@ $(window).load(function(){
 	OC.Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
 		OC.Shorty.WUI.Dialog.hide(OC.Shorty.Tracking.Dialog.List);
 	});
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-titlebar #status').on('click',function(){
+	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-titlebar #list-of-clicks-status').on('click',function(){
 			OC.Shorty.WUI.List.Toolbar.toggle.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
 				[OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()]
 			);
 	});
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-toolbar #reload')
+	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-toolbar .shorty-reload')
 		.on('click',function(){OC.Shorty.Tracking.build(false);});
 	OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load')
 		.on('click',function(){OC.Shorty.Tracking.build(true);});
@@ -66,7 +66,7 @@ $(window).load(function(){
 	$(document).on('mouseleave','#list-of-clicks tbody tr td.associative span.associated',[],function(){
 		$(this).parents('tbody').find('tr td#'+$(this).parent().attr('id')+' span').removeClass("associated").removeClass("desociated");});
 	// when clicking inside cells: set column filter
-	$(document).on('click','#list-of-clicks tbody tr td.associative span',[],function(){
+	$(document).on('click','#list-of-clicks tbody tr td.associative:not(.collapsed) span',[],function(){
 		var input=$(this).parents('table').find('thead tr.shorty-toolbar th#'+$(this).parent().attr('id')).find('input,select');
 		var value;
 		// open toolbar if still hidden
@@ -244,6 +244,7 @@ OC.Shorty.Tracking=
 		}).pipe(function(){
 			$.when(
 				// visualize table
+				OC.Shorty.WUI.List.Column.initAll('list-of-clicks'),
 				OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().removeClass('scrollingTable'),
 				OC.Shorty.WUI.List.dim(OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),true)
 			).done(function(){
@@ -361,7 +362,7 @@ OC.Shorty.Tracking=
 		} // switch
 	})
 	// move 'share' dialog towards entry
-	dialog.appendTo(element.find('td#actions'));
+	dialog.appendTo(element.find('td#list-of-clicks-actions'));
 	// open dialog
 	$.when(
 		OC.Shorty.WUI.Dialog.show(dialog)
@@ -585,7 +586,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 		// add aspects as content to the rows cells
 		$.each(['status','time','address','host','user','result'],function(j,aspect){
 			// we wrap the cells content into a span tag
-			var span=$('<span>');
+			var span=$('<span>').addClass('ellipsis');
 			// enhance row with real set values
 			if (typeof set[aspect]=='undefined')
 				 row.attr('data-'+this,'');
@@ -608,7 +609,6 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 			case 'time':
 				if (null==set[aspect])
 					 span.text('-?-');
-// 				else span.text(formatDate(1000*set[aspect]));
 				else span.text(dateTimeToHuman(set[aspect],'- / -'));
 				// add value to the sparkline value set in the header
 				switch (set['result']){
@@ -621,14 +621,16 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 
 			case 'result':
 				span.text(t('shorty_tracking',set[aspect]));
-				span.addClass('ellipsis');
+				break;
+
+			case 'user':
+				span.text(set[aspect].length ? set[aspect] : '-/-');
 				break;
 
 			default:
 				span.text(set[aspect]);
-				span.addClass('ellipsis');
 			} // switch
-			row.find('td#'+aspect).empty().append(span);
+			row.find('td[data-id="'+aspect+'"]').empty().append(span);
 		}) // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
 	/**
@@ -654,15 +656,15 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 		// filter list
 		var toolbar=list.find('thead tr.shorty-toolbar');
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'time',   toolbar.find('th#time    .shorty-filter').val()]);
+			[list,'time',   toolbar.find('th#list-of-clicks-time    .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'address',toolbar.find('th#address .shorty-filter').val()]);
+			[list,'address',toolbar.find('th#list-of-clicks-address .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'host',   toolbar.find('th#host    .shorty-filter').val()]);
+			[list,'host',   toolbar.find('th#list-of-clicks-host    .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'user',   toolbar.find('th#user    .shorty-filter').val()]);
+			[list,'user',   toolbar.find('th#list-of-clicks-user    .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'result', toolbar.find('th#result  .shorty- :selected').val()]);
+			[list,'result', toolbar.find('th#list-of-clicks-result  .shorty- :selected').val()]);
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
 	/**
 	* @method OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
@@ -678,9 +680,9 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 	*/
 	ToolbarCheckFilter:function(toolbar){
 		return (
-				(  (toolbar.find('th#time,th#address,th#host,th#user').find('div input.shorty-filter[value!=""]').length)
-				 &&(toolbar.find('th#time,th#address,th#host,th#user').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
-			||(  (toolbar.find('th#result select :selected').val())
-				 &&(toolbar.find('th#result').effect('pulsate', 2000)) ) );
+				(  (toolbar.find('th#list-of-clicks-time,th#list-of-clicks-address,th#list-of-clicks-host,th#list-of-clicks-user').find('div input.shorty-filter[value!=""]').length)
+				 &&(toolbar.find('th#list-of-clicks-time,th#list-of-clicks-address,th#list-of-clicks-host,th#list-of-clicks-user').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
+			||(  (toolbar.find('th#list-of-clicks-result select :selected').val())
+				 &&(toolbar.find('th#list-of-clicks-result').effect('pulsate', 2000)) ) );
 		} // OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
 } // OC.Shorty.Runtime.Context.ListOfClicks

@@ -28,6 +28,11 @@
  * @author Christian Reiner
  */
 
+#list-of-clicks th.collapsible.collapsed,
+#list-of-clicks td.collapsible.collapsed {
+	background-color: #F0F0F0;
+}
+
 #list-of-clicks {
 	margin-right: 5em;
 	width: 96%;
@@ -40,36 +45,39 @@
 	margin: 0;
 	padding: 1px 2px;
 }
-#list-of-clicks thead th#status,
-#list-of-clicks tbody td#status {
+#list-of-clicks thead th#list-of-clicks-status,
+#list-of-clicks tbody td#list-of-clicks-status {
 	width:20px;
 }
-#list-of-clicks thead th#result,
-#list-of-clicks tbody td#result {
+#list-of-clicks thead th#list-of-clicks-result,
+#list-of-clicks tbody td#list-of-clicks-result {
 	width:9.0em;
 }
-#list-of-clicks thead th#address,
-#list-of-clicks tbody td#address {
+#list-of-clicks thead th#list-of-clicks-address,
+#list-of-clicks tbody td#list-of-clicks-address {
 	width:7.2em;
 }
-#list-of-clicks thead th#host,
-#list-of-clicks tbody td#host {
+#list-of-clicks thead th#list-of-clicks-host,
+#list-of-clicks tbody td#list-of-clicks-host {
 	width:100%;
 }
-#list-of-clicks thead th#user,
-#list-of-clicks tbody td#user {
+#list-of-clicks thead th#list-of-clicks-user,
+#list-of-clicks tbody td#list-of-clicks-user {
 	width:6em;
 }
-#list-of-clicks thead th#time,
-#list-of-clicks tbody td#time {
+#list-of-clicks thead th#list-of-clicks-time,
+#list-of-clicks tbody td#list-of-clicks-time {
 	width:10.2em;
 }
-#list-of-clicks thead th#actions,
-#list-of-clicks tbody td#actions {
+#list-of-clicks thead th#list-of-clicks-actions,
+#list-of-clicks tbody td#list-of-clicks-actions {
 	width: 28px;
 }
-#list-of-clicks thead tr.shorty-titlebar th#status * {
+#list-of-clicks thead tr.shorty-titlebar th#list-of-clicks-status * {
 	cursor: row-resize;
+}
+#list-of-clicks thead tr.shorty-toolbar th#list-of-clicks-status img.shorty-clear {
+	margin-left: 3px;
 }
 #list-of-clicks tbody td span:not(.heading) {
 	margin: 0;
@@ -96,7 +104,7 @@
 	-khtml-transition: opacity 500ms;
 	-webkit-transition: opacity 500ms;
 }
-#list-of-clicks tbody tr td.associative span {
+#list-of-clicks tbody tr td.associative:not(.collapsed) span {
 	cursor: url('../../shorty/img/actions/filter.svg'),pointer;
 }
 
