@@ -5,7 +5,7 @@
 * @author Christian Reiner
 * @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -290,6 +290,36 @@ class OC_Shorty_Tools
 					return FALSE;
 		} // switch
 	} // function toBoolean
+
+	/**
+	* @method OC_Shorty_Tools::idnToASCII
+	* @brief Converts an idn url to its ascii notation
+	* @param $url string An idn url
+	* @return string The ascii notation of the url
+	* @access public
+	* @author Christian Reiner
+	*/
+	static function idnToASCII ( $url )
+	{
+		if ( function_exists('idn_to_ascii') )
+			return idn_to_ascii($url);
+		else return $url;
+	} // funtion idnToASCII
+
+	/**
+	* @method OC_Shorty_Tools::idnToUTF8
+	* @brief Converts an idn url to its unicode notation
+	* @param $url string An idn url
+	* @return string The unicode notation of the url
+	* @access public
+	* @author Christian Reiner
+	*/
+	static function idnToUTF8 ( $url )
+	{
+		if ( function_exists('idn_to_utf8') )
+			return idn_to_utf8($url);
+		else return $url;
+	} // funtion idnToUTF8
 
 } // class OC_Shorty_Tools
 ?>

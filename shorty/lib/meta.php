@@ -5,7 +5,7 @@
 * @author Christian Reiner
 * @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -34,10 +34,10 @@
  * @brief Static 'namespace' class for url meta information retrieval
  * @description
  * ownCloud propagates to use static classes as namespaces instead of OOP.
- * This 'namespace' defines routines for the retrieval of meta information about remote urls. 
+ * This 'namespace' defines routines for the retrieval of meta information about remote urls.
  * @access public
  * @author Christian Reiner
- */ 
+ */
 class OC_Shorty_Meta
 {
 
@@ -91,7 +91,7 @@ class OC_Shorty_Meta
 			$meta['status']      = OC_Shorty_L10n::t ( self::selectCode('status',$meta['code']) );
 			$meta['explanation'] = OC_Shorty_L10n::t ( self::selectCode('explanation',$meta['code']) );
 	} // function enrichMetaDataFile
-	
+
 	static function enrichMetaDataCurl ( $url, &$meta )
 	{
 		// to fetch meta data we rely on curl being installed
@@ -99,7 +99,7 @@ class OC_Shorty_Meta
 			return;
 		// try to retrieve the meta data
 		$handle = curl_init ( );
-		curl_setopt ( $handle, CURLOPT_URL, $url );
+		curl_setopt ( $handle, CURLOPT_URL, OC_Shorty_Tools::idnToASCII($url) );
 		curl_setopt ( $handle, CURLOPT_RETURNTRANSFER, 1 );
 		curl_setopt ( $handle, CURLOPT_FOLLOWLOCATION, TRUE );
 		curl_setopt ( $handle, CURLOPT_MAXREDIRS, 10 );

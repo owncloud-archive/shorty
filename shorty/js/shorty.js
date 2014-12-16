@@ -709,10 +709,11 @@ OC.Shorty={
 						OC.Shorty.WUI.List.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[$('#list-of-shortys').first(),response.data]);
 					}).done(function(){
 						$.when(
+							OC.Shorty.WUI.List.Column.initAll('list-of-shortys'),
 							OC.Shorty.WUI.List.show(),
 							OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
 						).always(function(){
-							OC.Shorty.WUI.Hourglass.toggle(false)
+							OC.Shorty.WUI.Hourglass.toggle(false);
 							dfd.resolve();
 						})
 					}).fail(function(){
@@ -812,11 +813,11 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("filter list by column '"+column+"' and pattern '"+pattern+"'");
 				var dfd = new $.Deferred();
 				$.when(
-					list.find('tbody tr td#'+column).filter(function(){
+					list.find('tbody tr td[data-id="'+column+'"]').filter(function(){
 						// compare equality of value and pattern using the reference callback as value
 						return (-1==reference.call(this).toLowerCase().indexOf(pattern.toLowerCase()));
 					}).addClass('shorty-filtered'),
-					list.find('tbody tr td#'+column).filter(function(){
+					list.find('tbody tr td[data-id="'+column+'"]').filter(function(){
 						// compare NON-equality of value and pattern using the reference callback as value
 						return (-1!=reference.call(this).toLowerCase().indexOf(pattern.toLowerCase()));
 					}).removeClass('shorty-filtered'),
@@ -908,7 +909,12 @@ OC.Shorty={
 					// select row from list by id
 					row=$('#list-of-shortys tbody tr#'+set.id);
 					// modify attributes in row, as data and value
-					$.each(['status','title','favicon','target','until','notes'],function(j,aspect){
+					$.each(['list-of-shortys-status',
+									'list-of-shortys-title',
+									'list-of-shortys-favicon',
+									'list-of-shortys-target',
+									'list-of-shortys-until',
+									'list-of-shortys-notes'],function(j,aspect){
 						if (typeof set[aspect]==undefined) set[aspect]='';
 						// enhance row with actual set values
 						row.attr('data-'+this,set[aspect]);
@@ -916,7 +922,7 @@ OC.Shorty={
 						// fill data into corresponsing column
 						var content, classes=[];
 						switch(aspect){
-							case 'until':
+							case 'list-of-shortys-until':
 								if (!set[aspect]){
 									content="-"+t('shorty',"never")+"-";
 									row.removeClass('shorty-expired');
@@ -928,17 +934,17 @@ OC.Shorty={
 								}
 								break;
 
-							case 'title':
-							case 'target':
+							case 'list-of-shortys-title':
+							case 'list-of-shortys-target':
 								classes.push('ellipsis');
 								content=set[aspect];
 								break;
 
-							case 'favicon':
+							case 'list-of-shortys-favicon':
 								content='<img class="shorty-icon" width="16px" src="'+set[aspect]+'">';
 								break;
 
-							case 'status':
+							case 'list-of-shortys-status':
 								if ('deleted'==set[aspect])
 								row.addClass('deleted');
 								content=t('shorty',set[aspect]);
@@ -989,7 +995,7 @@ OC.Shorty={
 			*/
 			sort: function(list,sortCode){
 				sortCore = sortCode || 'cd';
-				var icon=list.find('thead tr#toolbar th div img[data-sort-code="'+sortCode+'"]');
+				var icon=list.find('thead tr.shorty-toolbar th div img[data-sort-code="'+sortCode+'"]');
 				var sortCol=icon.parents('th').attr('id');
 				var sortDir=icon.attr('data-sort-direction');
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
@@ -1003,7 +1009,7 @@ OC.Shorty={
 						list.find('tbody>tr').tsort({attr:'data-'+sortCol,order:sortDir});
 				} // switch
 				// mark currently active sort icon
-				var icons=list.find('thead tr#toolbar img.shorty-sorter');
+				var icons=list.find('thead tr.shorty-toolbar img.shorty-sorter');
 				icons.removeClass('shorty-active');
 				icons.filter('[data-sort-code="'+sortCode+'"]').addClass('shorty-active');
 				// store the sorting code as preference, for returning list retrievals
@@ -1040,6 +1046,126 @@ OC.Shorty={
 				}
 			}, // OC.Shorty.WUI.List.vacuum
 			/**
+			* @class OC.Shorty.WUI.List.Column
+			* @brief Collection of methods to control a lists column
+			* author Christian Reiner
+			*/
+			Column:{
+				/**
+				* @method OC.Shorty.WUI.List.Column.collapse
+				* @brief Collapses an expanded lists column
+				* @param object list The list whos column is to be collapsed
+				* @param object column The column that is to be collapsed
+				* @author Christian Reiner
+				*/
+				collapse: function(list, column){
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("collapse column '"+column+"' in list '"+list+"'");
+					$('#'+list).find('thead th[data-id="'+column+'"]').addClass('collapsed');
+					$('#'+list).find('tbody td[data-id="'+column+'"]').addClass('collapsed');
+				}, // OC.Shorty.WUI.List.Column.collapse
+				/**
+				* @method OC.Shorty.WUI.List.Column.expand
+				* @brief Expands a collapsed lists column
+				* @param object list The list whos column is to be expanded
+				* @param object column The column that is to be expanded
+				* @author Christian Reiner
+				*/
+				expand: function(list, column){
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("expand column '"+column+"' in list '"+list+"'");
+					$('#'+list).find('thead th[data-id="'+column+'"]').removeClass('collapsed')
+					$('#'+list).find('tbody td[data-id="'+column+'"]').removeClass('collapsed')
+				}, // OC.Shorty.WUI.List.Column.expand
+				/**
+				* @method OC.Shorty.WUI.List.Column.getCollapsedColumns
+				* @brief Gets and validates the preference storing the lists of collapsed columns
+				* @param string list The lists id
+				* @author Christian Reiner
+				*/
+				getCollapsedColumns: function(list) {
+					var dfd = new $.Deferred();
+					$.when(
+						OC.Shorty.Action.Preference.get('list-columns-collapsed')
+					).done(function(result){
+						var collapsedColumns = $.parseJSON(result['list-columns-collapsed'])
+																	|| {"list-of-shortys":["created","accessed"]};
+						if (   ( ! collapsedColumns.hasOwnProperty(list))
+								|| ( ! collapsedColumns[list] instanceof Array) ) {
+							collapsedColumns[list] = [];
+						}
+						dfd.resolve(collapsedColumns);
+					}).fail(dfd.reject);
+					return dfd.promise();
+				}, // OC.Shorty.WUI.List.Column.getCollapsedColumns
+				/**
+				* @method OC.Shorty.WUI.List.Column.setCollapsedColumns
+				* @brief Sets the preference storing the lists of collapsed columns
+				* @param string list The lists id
+				* @param array columns The list collapsed columns
+				* @author Christian Reiner
+				*/
+				setCollapsedColumns: function(list, columns){
+					var dfd = new $.Deferred();
+					$.when(
+						OC.Shorty.WUI.List.Column.getCollapsedColumns(list)
+					).done(function(collapsedColumns){
+						collapsedColumns[list] = columns;
+						OC.Shorty.Action.Preference.set({'list-columns-collapsed': JSON.stringify(collapsedColumns)});
+						dfd.resolve();
+					}).fail(dfd.reject);
+					return dfd.promise();
+				}, // OC.Shorty.WUI.List.Column.setCollapsedColumns
+				/**
+				* @method OC.Shorty.WUI.List.Column.toggle
+				* @brief Toggles the compactness of a lists column
+				* @param object list The list whos column is to be toggled
+				* @param object column The list column that is to be toggled
+				* @author Christian Reiner
+				*/
+				toggle: function(list, column){
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle column '"+column+"' in list '"+list+"'");
+					var dfd = new $.Deferred();
+					$.when(
+						OC.Shorty.WUI.List.Column.getCollapsedColumns(list)
+					).done(function(collapsedColumns){
+						var columns = collapsedColumns[list];
+						if ( -1 < $.inArray(column, columns) ) {
+							// column IS collapsed: un-collapse
+							OC.Shorty.WUI.List.Column.expand( list, column );
+							columns.splice( $.inArray(column, columns), 1 );
+							dfd.resolve();
+						} else {
+							// column is NOT collapsed: collapse
+							OC.Shorty.WUI.List.Column.collapse( list, column );
+							columns.push( column );
+							dfd.resolve();
+						}
+						OC.Shorty.WUI.List.Column.setCollapsedColumns(list, columns);
+					});
+					return dfd.promise();
+				}, // OC.Shorty.WUI.List.Column.toggle
+				/**
+				* @method OC.Shorty.WUI.List.Column.initAll
+				* @brief initializes the lists columns to be collapsed or expanded
+				* @param object list The list whos column is to be expanded
+				* @author Christian Reiner
+				*/
+				initAll: function(list){
+					if (OC.Shorty.Debug) OC.Shorty.Debug.log("initializing all list in list '"+list+"' columns as collapsed or expanded");
+					$.when(
+						OC.Shorty.WUI.List.Column.getCollapsedColumns(list)
+					).done(function(collapsedColumns){
+						var columns = collapsedColumns[list];
+						$(columns).each(function(key, column) {
+							if ( $('#'+list).find('thead tr.shorty-titlebar th[data-id="'+column+'"].collapsible').length ) {
+								OC.Shorty.WUI.List.Column.collapse(list, column);
+							} else {
+								columns.splice( $.inArray(column, columns), 1 );
+							}
+						});
+					});
+				} // OC.Shorty.WUI.List.Column.initAll
+			}, //OC.Shorty.WUI.List.Column
+			/**
 			* @class OC.Shorty.WUI.List.Toolbar
 			* @brief Collection of methods to control a lists toolbar
 			* author Christian Reiner
@@ -1053,9 +1179,9 @@ OC.Shorty={
 				*/
 				toggle: function(list){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list toolbar");
-					var button  =list.find('img#tools');
-					var titlebar=list.find('tr#titlebar');
-					var toolbar =list.find('tr#toolbar');
+					var button  =list.find('img.shorty-tools');
+					var titlebar=list.find('tr.shorty-titlebar');
+					var toolbar =list.find('tr.shorty-toolbar');
 					var dfd = new $.Deferred();
 					if (!toolbar.find('div').is(':visible')){
 						// toolbar NOT visible: open toolbar
@@ -1068,7 +1194,7 @@ OC.Shorty={
 						}).done(dfd.resolve)
 					}else{ // toolbar IS visible
 						// any filters active? prevent closing of toolbar !
-						if (this.ToolbarCheckFilter.apply(this,[toolbar])) {
+						if (this.ToolbarCheckFilter.apply(this,[list,toolbar])) {
 							if (OC.Shorty.Debug) OC.Shorty.Debug.log('active filter prevents closing of toolbar');
 						}else{
 							// close toolbar
@@ -1137,9 +1263,9 @@ OC.Shorty={
 				$.when(
 					OC.Shorty.Action.Preference.get('verbosity-control'),
 					OC.Shorty.Action.Preference.get('verbosity-timeout')
-				).done(function(resultControl, resultTimeout){
-					var verbosity = resultControl['verbosity-control'];
-					var timeout   = resultTimeout['verbosity-timeout'];
+				).always(function(resultControl, resultTimeout){
+					var verbosity = resultControl['verbosity-control'] || 'info';
+					var timeout   = resultTimeout['verbosity-timeout'] || 0;
 					if (message && message.length){
 						// log to browser console when debugging is enabled in system config file
 						if ( OC.Shorty.Debug ){
@@ -1414,6 +1540,7 @@ OC.Shorty={
 			 * @author Christian Reiner
 			 */
 			get:function(data){
+				if (OC.Shorty.Debug){OC.Shorty.Debug.log("get preference(s):");OC.Shorty.Debug.log(data);}
 				if (-1<$.inArray(data,Object.keys(OC.Shorty.Action.Preference.Cache))){
 					return OC.Shorty.Action.Preference.Cache[data].promise();
 				}else{
@@ -1456,7 +1583,11 @@ OC.Shorty={
 					function(response){return OC.Shorty.Ajax.eval(response)},
 					function(response){return OC.Shorty.Ajax.fail(response)}
 				).always(function(response){
-					if (OC.Shorty.Debug){OC.Shorty.Debug.log("got preference(s):");OC.Shorty.Debug.log(response.data);}
+					if (OC.Shorty.Debug) {
+						OC.Shorty.Debug.log("got preference(s):");
+						OC.Shorty.Debug.log(response.message);
+						OC.Shorty.Debug.log(response.data);
+					}
 				}).done(function(response){
 					// update value in local cache, it is outdated
 					$.each(response.data,function(key,val){
@@ -1986,14 +2117,14 @@ OC.Shorty={
 			if (response.status){
 				// this is a valid response
 				if ('success'==response.status){
-					OC.Shorty.WUI.Messenger.show(response.message,response.level);
+					OC.Shorty.WUI.Messenger.show(response.message, response.level);
 					return new $.Deferred().resolve(response);
 				}else{
 			//           // is this an expired request token (CSRF protection mechanism) ?
 			//           if (response.message.indexOf("Token expired")>=0)
 			//             // reload apps base page
 			//             window.location.href=OC.filePath('shorty','','');
-					OC.Shorty.WUI.Messenger.show(response.message,'error');
+					OC.Shorty.WUI.Messenger.show(response.message, 'error');
 					return new $.Deferred().reject(response);
 				}
 			}
@@ -2176,7 +2307,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		if (hidden) row.addClass('shorty-fresh'); // might lead to a pulsate effect later
 		// add aspects as content to the rows cells
 		$.each(
-			['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
+			['id','status','title','relay','target','clicks','created','accessed','until','notes','favicon'],
 			function(j,aspect){
 				// we wrap the cells content into a span tag
 				var span=$('<span />');
@@ -2203,6 +2334,13 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 						}
 						break;
 
+					case 'accessed':
+						if ('0'==set[aspect])
+							span.text("-"+t('shorty',"never")+"-");
+						else
+							span.text(dateTimeToHuman(set[aspect]));
+						break;
+
 					case 'title':
 					case 'target':
 						span.text(set[aspect]);
@@ -2218,7 +2356,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 					default:
 						span.text(set[aspect]);
 				} // switch
-				row.find('td#'+aspect).empty().append(span);
+				row.find('td[data-id="'+aspect+'"]').empty().append(span);
 			}
 		) // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
@@ -2250,13 +2388,13 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		});
 		OC.Shorty.WUI.Sums.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[data]);
 		// filter list
-		var toolbar=list.find('thead tr#toolbar');
+		var toolbar=list.find('thead tr.shorty-toolbar');
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'target',toolbar.find('th#target .shorty-filter').val()]);
+			[list,'target',toolbar.find('th#list-of-shortys-target .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'title', toolbar.find('th#title .shorty-filter').val()]);
+			[list,'title', toolbar.find('th#list-of-shortys-title .shorty-filter').val()]);
 		OC.Shorty.WUI.List.filter.apply(this,
-			[list,'status',toolbar.find('th#status .shorty-filter :selected').val()]);
+			[list,'status',toolbar.find('th#list-of-shortys-status .shorty-filter :selected').val()]);
 		// sort list
 		$.when(
 			OC.Shorty.Action.Preference.get('list-sort-code')
@@ -2269,12 +2407,41 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	* @brief Checks and signals visually if any active filters prevent closing the list toolbar
 	* @author Christian Reiner
 	*/
-	ToolbarCheckFilter: function(toolbar){
-		return (
-				(  (toolbar.find('th#title,th#target').find('div input.shorty-filter[value!=""]').length)
-				 &&(toolbar.find('th#title,th#target').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
-			||(  (toolbar.find('th#status select :selected').val())
-				 &&(toolbar.find('th#status').effect('pulsate', 2000)) ) );
+	ToolbarCheckFilter: function(list,toolbar){
+		var filtered = false;
+		list.find('tr.shorty-toolbar th#list-of-shortys-title').each(function(){
+			if ($(this).find('div input.shorty-filter[value!=""]').length) {
+				filtered = true;
+				$(this).find('div input.shorty-filter').effect('pulsate', 2000);
+				if (list.find('tr.shorty-titlebar th#list-of-shortys-title.collapsed').length) {
+					OC.Shorty.WUI.List.Column.toggle(list.attr('id'),'list-of-shortys-title');
+				}
+			}
+		})
+		list.find('tr.shorty-toolbar th#list-of-shortys-target').each(function(){
+			if ($(this).find('div input.shorty-filter[value!=""]').length) {
+				filtered = true;
+				$(this).find('div input.shorty-filter').effect('pulsate', 2000);
+				if (list.find('tr.shorty-titlebar th#list-of-shortys-target.collapsed').length) {
+					OC.Shorty.WUI.List.Column.toggle(list.attr('id'),'list-of-shortys-target');
+				}
+			}
+		})
+		list.find('tr.shorty-toolbar th#list-of-shortys-status select').each(function(){
+			if ($(this).find('option :selected[value!=""]').length) {
+				filtered = true;
+				$(this).find('div select').effect('pulsate', 2000);
+				if (list.find('tr.shorty-titlebar th#list-of-shortys-status.collapsed').length) {
+					OC.Shorty.WUI.List.Column.toggle(list.attr('id'),'list-of-shortys-status');
+				}
+			}
+		})
+		return filtered;
+// 		return (
+// 				(  (toolbar.find('th#list-of-shortys-title,th#list-of-shortys-target').find('div input.shorty-filter[value!=""]').length)
+// 				 &&(toolbar.find('th#list-of-shortys-title,th#list-of-shortys-target').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
+// 			||(  (toolbar.find('th#list-of-shortys-status select :selected').val())
+// 				 &&(toolbar.find('th#list-of-shortys-status').effect('pulsate', 2000)) ) );
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	/**
 	* @class OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums

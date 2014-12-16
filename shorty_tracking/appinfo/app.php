@@ -41,7 +41,7 @@ OC::$CLASSPATH['OC_ShortyTracking_Query'] = 'shorty_tracking/lib/query.php';
 try
 {
 	// minimim requirement currently is as specified below:
-	$SHORTY_VERSION_MIN = '0.4.0';
+	$SHORTY_VERSION_MIN = '0.4.5';
 	// only plug into the mother app 'Shorty' if that one is installed, activated and has the minimum required version:
 	if ( OC_Installer::isInstalled('shorty') )
 	{
