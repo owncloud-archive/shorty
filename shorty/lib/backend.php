@@ -5,7 +5,7 @@
 * @author Christian Reiner
 * @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -152,11 +152,12 @@ class OC_Shorty_Backend
 		curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
 		curl_setopt ( $curl, CURLOPT_POST, TRUE );
 		curl_setopt ( $curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json') );
-		curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array(	'version'=>'2.0.1',
-																	'longUrl'=>$relay,
-																	'format'=>'json',
-																	'login'=>$bitly_api_user,
-																	'apiKey'=>$bitly_api_key) ) );
+		curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode(array(
+			'version'=>'2.0.1',
+			'longUrl'=>$relay,
+			'format'=>'json',
+			'login'=>$bitly_api_user,
+			'apiKey'=>$bitly_api_key) ) );
 		curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
 		if (  (FALSE===($reply=curl_exec($curl)))
 			||(NULL===($payload=json_decode($reply)))
@@ -164,7 +165,7 @@ class OC_Shorty_Backend
 			||(!property_exists($payload,'id')) )
 		{
 			throw new OC_Shorty_Exception ( "Failed to register url at backend 'bit.ly'. \nError %s: %s",
-											array(curl_errno($curl),curl_error($curl))  );
+				array(curl_errno($curl),curl_error($curl)) );
 		}
 		curl_close ( $curl );
 		return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
@@ -188,7 +189,7 @@ class OC_Shorty_Backend
 			||( ! preg_match( '/^(.+)$/', $reply, $match )) )
 		{
 			throw new OC_Shorty_Exception ( "Failed to register url at backend 'cli.gs'. \nError %s: %s",
-											array(curl_errno($curl),curl_error($curl))  );
+				array(curl_errno($curl),curl_error($curl))  );
 		}
 		curl_close ( $curl );
 		return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
@@ -212,7 +213,7 @@ class OC_Shorty_Backend
 			||( ! preg_match( '/^(.+)$/', $reply, $match )) )
 		{
 			throw new OC_Shorty_Exception ( "Failed to register url at backend 'is.gd'. \nError %s: %s",
-											array(curl_errno($curl),curl_error($curl))  );
+				array(curl_errno($curl),curl_error($curl))  );
 		}
 		curl_close ( $curl );
 		return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
@@ -274,11 +275,12 @@ class OC_Shorty_Backend
 		curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, (OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify')) );
 		curl_setopt ( $curl, CURLOPT_POST, TRUE );
 		curl_setopt ( $curl, CURLOPT_HEADER, TRUE );
-		curl_setopt ( $curl, CURLOPT_POSTFIELDS, array(	'longUrl'=>$relay,
-														'version'=>'2.0.3',
-														'format'=>'json',
-														'login'=>$api_user,
-														'apiKey'=>$api_key) );
+		curl_setopt ( $curl, CURLOPT_POSTFIELDS, array(
+			'longUrl'=>$relay,
+			'version'=>'2.0.3',
+			'format'=>'json',
+			'login'=>$api_user,
+			'apiKey'=>$api_key) );
 		curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
 		if (  (FALSE===($reply=curl_exec($curl)))
 			||(NULL===($payload=json_decode($reply)))
@@ -286,7 +288,7 @@ class OC_Shorty_Backend
 			||(!property_exists($payload,'id')) )
 		{
 			throw new OC_Shorty_Exception ( "Failed to register url at backend 'tiny.cc'. \nError %s: %s",
-											array(curl_errno($curl),curl_error($curl))  );
+				array(curl_errno($curl),curl_error($curl))  );
 		}
 		curl_close ( $curl );
 		return OC_Shorty_Type::validate ( $payload->id, OC_Shorty_Type::URL );
@@ -310,7 +312,7 @@ class OC_Shorty_Backend
 			||( ! preg_match( '/^(.+)$/', $reply, $match )) )
 		{
 			throw new OC_Shorty_Exception ( "Failed to register url at backend 'tinyUrl'. \nError %s: %s",
-											array(curl_errno($curl),curl_error($curl))  );
+				array(curl_errno($curl),curl_error($curl))  );
 		}
 		curl_close ( $curl );
 		return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );

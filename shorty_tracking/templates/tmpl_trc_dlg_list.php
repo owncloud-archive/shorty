@@ -61,35 +61,35 @@
 		</div>
 		<!-- end: the dialogs header -->
 		<!-- begin: the dialogs list: contains a list header and a list body -->
-		<table id="list-of-clicks" class="shorty-list">
+		<table id="list-of-clicks" class="shorty-list shorty-collapsible">
 			<!-- table header -->
 			<thead>
-				<tr id="titlebar">
-					<th id="status" >
-						<div><img id="tools" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
+				<tr id="list-of-clicks-titlebar" class="shorty-titlebar">
+					<th id="list-of-clicks-status"  data-id="status">
+						<div><img id="list-of-clicks-tools" class="shorty-tools" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
 								class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
 								data-unshade="actions/unshade"
 								data-shade="actions/shade">
 						</div>
 					</th>
-					<th id="result" ><div><?php p(OC_ShortyTracking_L10n::t("Result"));  ?></div></th>
-					<th id="address"><div><?php p(OC_ShortyTracking_L10n::t("Address")); ?></div></th>
-					<th id="host"   ><div><?php p(OC_ShortyTracking_L10n::t("Host"));    ?></div></th>
-					<th id="user"   ><div><?php p(OC_ShortyTracking_L10n::t("User"));    ?></div></th>
-					<th id="time"   ><div><?php p(OC_ShortyTracking_L10n::t("Time"));    ?></div></th>
-					<th id="actions"><div>&nbsp;</div></th>
+					<th id="list-of-clicks-result"  data-id="result"  class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("Result"));  ?></div></th>
+					<th id="list-of-clicks-address" data-id="address" class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("Address")); ?></div></th>
+					<th id="list-of-clicks-host"    data-id="host"    class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("Host"));    ?></div></th>
+					<th id="list-of-clicks-user"    data-id="user"    class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("User"));    ?></div></th>
+					<th id="list-of-clicks-time"    data-id="time"    class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("Time"));    ?></div></th>
+					<th id="list-of-clicks-actions"><div>&nbsp;</div></th>
 				</tr>
 				<!-- table toolbar -->
-				<tr id="toolbar">
-					<th id="status">
+				<tr id="list-of-clicks-toolbar" class="shorty-toolbar">
+					<th id="list-of-clicks-status" data-id="status">
 						<div style="display:none;">
-							<a id="reload">
+							<a id="list-of-clicks-reload" class="shorty-reload">
 								<img alt="<?php p(OC_Shorty_L10n::t("Reload")); ?>" title="<?php p(OC_Shorty_L10n::t("Reload list")); ?>"
 									class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/reload.svg')); ?>">
 							</a>
 						</div>
 					</th>
-					<th id="result">
+					<th id="list-of-clicks-result" data-id="result" class="collapsible">
 						<div style="display:none;">
 							<span class="shorty-select">
 								<select id="filter-result" class="shorty-filter" value="" data-placeholder=" ">
@@ -102,28 +102,28 @@
 							</span>
 						</div>
 					</th>
-					<th id="address">
+					<th id="list-of-clicks-address" data-id="address" class="collapsible">
 						<div style="display:none;">
 							<input id="filter-address" class="shorty-filter" type="text" value="">
 							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
-					<th id="host">
+					<th id="list-of-clicks-host" data-id="host" class="collapsible">
 						<div style="display:none;">
 							<input id="filter-host" class="shorty-filter" type="text" value="">
 							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
-					<th id="user">
+					<th id="list-of-clicks-user" data-id="user" class="collapsible">
 						<div style="display:none;">
 							<input id="filter-user" class="shorty-filter" type="text" value="">
 							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
-					<th id="time">
+					<th id="list-of-clicks-time" data-id="time" class="collapsible">
 						<div style="display:none;">
 							<input id="filter-time" class="shorty-filter" type="text" value="">
 							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
@@ -132,14 +132,14 @@
 					</th>
 				</tr>
 				<!-- the 'dummy' row, a blueprint -->
-				<tr id="">
-					<td id="status"></td>
-					<td id="result" class="associative"></td>
-					<td id="address" class="associative"></td>
-					<td id="host" class="associative"></td>
-					<td id="user" class="associative"></td>
-					<td id="time"></td>
-					<td id="actions">
+				<tr class="shorty-dummy">
+					<td id="list-of-clicks-status"  data-id="status"></td>
+					<td id="list-of-clicks-result"  data-id="result"  class="collapsible associative"></td>
+					<td id="list-of-clicks-address" data-id="address" class="collapsible associative"></td>
+					<td id="list-of-clicks-host"    data-id="host"    class="collapsible associative"></td>
+					<td id="list-of-clicks-user"    data-id="user"    class="collapsible associative"></td>
+					<td id="list-of-clicks-time"    data-id="time"    class="collapsible"></td>
+					<td id="list-of-clicks-actions" data-id="actions">
 						<span class="shorty-actions">
 							<a id="shorty-tracking-action-details" title="<?php p(OC_Shorty_L10n::t("details")); ?>" data_method="OC.Shorty.Tracking.details">
 								<img class="shorty-icon" alt="<?php p(OC_Shorty_L10n::t("details")); ?>"

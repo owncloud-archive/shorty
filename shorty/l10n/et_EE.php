@@ -80,6 +80,7 @@
 "Feedback" => "Tagasiside",
 "Home" => "Kodu",
 "It can be enabled by a single click in the administration:" => "Seda saab lubada ühe klikiga haldusliideses:",
+"If you just started using Shorty" => "Kui Sa just alustasid Shorty kasutamist",
 "Loading" => "Laadimine",
 "Mail client" => "Meiliklient",
 "Modifications for shorty with id '%s' saved" => "Shorty '%s' muudatused salvestatud",

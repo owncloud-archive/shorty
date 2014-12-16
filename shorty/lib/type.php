@@ -53,6 +53,7 @@ class OC_Shorty_Type
 	const STATUS      = 'status';
 	const SORTKEY     = 'sortkey';
 	const SORTVAL     = 'sortval';
+	const JSON        = 'json';
 	const STRING      = 'string';
 	const URL         = 'url';
 	const PATH        = 'path';
@@ -71,7 +72,9 @@ class OC_Shorty_Type
 		'ka'=>'id',       'kd'=>'id DESC',
 		'sa'=>'status',   'sd'=>'status DESC',
 		'ta'=>'title',    'td'=>'title DESC',
-		'ua'=>'target',   'ud'=>'target DESC' );
+		'ua'=>'target',   'ud'=>'target DESC',
+		'va'=>'source',   'vd'=>'source DESC'
+	);
 	// a list of all valid user preferences
 	static $PREFERENCE = array (
 		'default-status'         => OC_Shorty_Type::STRING,
@@ -88,6 +91,7 @@ class OC_Shorty_Type
 		'verbosity-control'      => OC_Shorty_Type::STRING,
 		'verbosity-timeout'      => OC_Shorty_Type::INTEGER,
 		'list-sort-code'         => OC_Shorty_Type::SORTKEY,
+		'list-columns-collapsed' => OC_Shorty_Type::JSON,
 		'controls-panel-visible' => OC_Shorty_Type::BOOLEAN,
 	);
 	// valid status for entries
@@ -220,6 +224,15 @@ class OC_Shorty_Type
 					return NULL;
 				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
+			case self::JSON:
+				if ( NULL !== json_decode($value) )
+					return $value;
+				elseif ( '' === $value )
+					return '{}';
+				elseif ( ! $strict)
+					return NULL;
+				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+
 			case self::STRING:
 				if ( preg_match ( '/^.*$/x', str_replace("\n","\\n",$value) ) )
 					return str_replace("\n","\\n",$value);
@@ -229,7 +242,7 @@ class OC_Shorty_Type
 
 			case self::URL:
 				$pattern = '/^'.self::$RX['URL_SCHEME'].'\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*'.self::$RX['DOMAIN_NAME'].'(\:'.self::$RX['NUMBER'].')*(\/($|.+)?)*$/i';
-				if ( parse_url($value) && preg_match ( $pattern, $value ) )
+				if ( parse_url($value) && preg_match ( $pattern, OC_Shorty_Tools::idnToASCII($value) ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
@@ -314,6 +327,9 @@ class OC_Shorty_Type
 				return trim ( $value );
 
 			case self::SORTVAL:
+				return trim ( $value );
+
+			case self::JSON:
 				return trim ( $value );
 
 			case self::STRING:

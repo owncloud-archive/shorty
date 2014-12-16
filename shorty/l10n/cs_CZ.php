@@ -80,6 +80,7 @@
 "Feedback" => "Odezva",
 "Home" => "Domů",
 "It can be enabled by a single click in the administration:" => "Může být povoleno jedním kliknutím v administraci:",
+"If you just started using Shorty" => "Pokud jste právě začali používat Shorty",
 "Loading" => "Načítám",
 "Mail client" => "E-mailový klient",
 "Modifications for shorty with id '%s' saved" => "Změny pro shorty s id '%s' byly uloženy",

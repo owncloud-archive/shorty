@@ -74,6 +74,7 @@
 "Feedback" => "Comentarios",
 "Home" => "Inicio",
 "It can be enabled by a single click in the administration:" => "Pode activalo simplemente premendo na administración:",
+"If you just started using Shorty" => "Se vostede ven de comezar a usar «Shorty»",
 "Loading" => "Cargando",
 "Mail client" => "Cliente de correo",
 "Modifications for shorty with id '%s' saved" => "Gardáronse as modificacións ao «Shorty» co ID «%s»",

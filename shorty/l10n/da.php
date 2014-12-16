@@ -80,6 +80,7 @@
 "Feedback" => "Feedback",
 "Home" => "Hjemme",
 "It can be enabled by a single click in the administration:" => "Den kan slås til med et enkelt klik i administrationen:",
+"If you just started using Shorty" => "Hvis du lige er startet med at bruge Shorty",
 "Loading" => "Indlæser",
 "Mail client" => "Mail klient",
 "Modifications for shorty with id '%s' saved" => "Ændringer af shorty med ID '%s' gemt",

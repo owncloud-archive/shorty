@@ -78,6 +78,7 @@
 "Feedback" => "Σχόλια ",
 "Home" => "Σπίτι",
 "It can be enabled by a single click in the administration:" => "Επιλογή Apps. ",
+"If you just started using Shorty" => "Αν έχετε μόλις ξεκίνησει χρησιμοποιείστε Shorty ",
 "Loading" => "Φόρτωση",
 "Mail client" => "Πελάτης αλληλογραφίας",
 "Modifications for shorty with id '%s' saved" => "Modificações salvadas com id %s\npronto",

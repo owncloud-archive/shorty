@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:21+0000\n"
+"PO-Revision-Date: 2014-11-23 05:20+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Galician (http://www.transifex.com/projects/p/owncloud/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -292,6 +292,9 @@ msgstr "Inicio"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr "Pode activalo simplemente premendo na administración:"
+
+msgid "If you just started using Shorty"
+msgstr "Se vostede ven de comezar a usar «Shorty»"
 
 msgid "Loading"
 msgstr "Cargando"

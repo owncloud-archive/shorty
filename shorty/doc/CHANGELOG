@@ -23,6 +23,11 @@
 
 Changelog:
 
+* Sun Dec 14 2014 Christian Reiner: version 0.4.5
+Columns of the Shorty list are collapsible now.
+Two additional columns in the list of Shortys: create and access date.
+* Sat Nov 29 2014 Christian Reiner: version 0.4.4
+Fixed handling of idn urls.
 * Sat Nov 22 2014 Christian Reiner: version 0.4.3
 Fix usage of preference dialog for non privileged users.
 * Sat Nov 01 2014 Christian Reiner: version 0.4.2

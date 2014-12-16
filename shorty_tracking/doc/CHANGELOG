@@ -23,8 +23,11 @@
 
 Changelog:
 
-Fixed database table layout for correct storage of IPV6 addresses.
-* Sat Nov 23 2014 Christian Reiner: version 0.2.2
+* Sun Dec 14 2014 Christian Reiner: version 0.2.4
+Use new collapsible columns feature as implemented in the main Shorty app.
+* Sat Nov 29 2014 Christian Reiner: version 0.2.3
+Fixed database table layout for correct handling of IPV6 addresses.
+* Sat Nov 22 2014 Christian Reiner: version 0.2.2
 Fixed loading of app in Shorty relay requests to fix logging of Shorty clicks.
 * Tue Oct 28 2014 Christian Reiner: version 0.2.1
 Fixed installation via the owncloud app store.

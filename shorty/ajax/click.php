@@ -5,7 +5,7 @@
 * @author Christian Reiner
 * @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -81,9 +81,10 @@ try
 
 		// report result
 		OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.",$p_id), OCP\Util::DEBUG );
-		OCP\JSON::success ( array ( 'data'    => array('id'=>$p_id),
-									'level'   => 'info',
-									'message' => OC_Shorty_L10n::t("Click registered") ) );
+		OCP\JSON::success ( array (
+			'data'    => array('id'=>$p_id),
+			'level'   => 'info',
+			'message' => OC_Shorty_L10n::t("Click registered") ) );
 	}
 	else
 		throw new OC_Shorty_Exception ( "request failed: missing mandatory argument 'id'" );
