@@ -27,10 +27,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
-"Report-Msgid-Bugs-To: http://bugs.owncloud.org/\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2013-06-03 00:32+0000\n"
-"Last-Translator: I Robot <owncloud-bot@tmit.eu>\n"
+"PO-Revision-Date: 2014-12-16 11:04+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/owncloud/language/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,6 +86,19 @@ msgstr ""
 msgid "show"
 msgstr ""
 
+# toolbar icons
+msgid "reload"
+msgstr ""
+
+msgid "up"
+msgstr ""
+
+msgid "down"
+msgstr ""
+
+msgid "clear"
+msgstr ""
+
 # log levels
 msgid "none"
 msgstr ""
@@ -97,6 +110,22 @@ msgid "info"
 msgstr ""
 
 msgid "debug"
+msgstr ""
+
+# log message timeout
+msgid "(never)"
+msgstr ""
+
+msgid "2 seconds"
+msgstr ""
+
+msgid "5 seconds"
+msgstr ""
+
+msgid "12 seconds"
+msgstr ""
+
+msgid "1 minute"
 msgstr ""
 
 # keyboard shortcuts
@@ -166,7 +195,7 @@ msgstr ""
 msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr ""
 
-msgid "alternatively the link can be copied for usage apart"
+msgid "alternatively the link can be copied for further usage"
 msgstr ""
 
 msgid "Alternatively the link can be copied manually"
@@ -176,6 +205,9 @@ msgid "Alternatively the link can be copied into a message manually"
 msgstr ""
 
 msgid "Anything that appears helpful …"
+msgstr ""
+
+msgid "Default backend suggested inside users preferences"
 msgstr ""
 
 msgid "Backend"
@@ -214,6 +246,9 @@ msgstr ""
 msgid "The amount of feedback messages shown."
 msgstr ""
 
+msgid "The time span after which messages are hidden again automatically"
+msgstr ""
+
 msgid "Copy to clipboard"
 msgstr ""
 
@@ -250,7 +285,13 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
+msgid "Home"
+msgstr ""
+
 msgid "It can be enabled by a single click in the administration:"
+msgstr ""
+
+msgid "If you just started using Shorty"
 msgstr ""
 
 msgid "Loading"
@@ -325,6 +366,9 @@ msgstr ""
 msgid "Prepare to send as SMS"
 msgstr ""
 
+msgid "Refresh"
+msgstr ""
+
 msgid "Relay service"
 msgstr ""
 
@@ -338,7 +382,7 @@ msgid "Reload list"
 msgstr ""
 
 msgid "Save"
-msgstr "tallentaa"
+msgstr "Tallenna"
 
 msgid "Send by email"
 msgstr ""
@@ -368,7 +412,7 @@ msgid "Setting '%s' saved"
 msgstr ""
 
 msgid "Settings"
-msgstr "asetukset"
+msgstr "Asetukset"
 
 msgid "Share and use"
 msgstr ""
@@ -404,6 +448,9 @@ msgid "Sort ascending"
 msgstr ""
 
 msgid "Sort descending"
+msgstr ""
+
+msgid "Clear filter"
 msgstr ""
 
 msgid "Source url"
@@ -515,7 +562,7 @@ msgid "API access key"
 msgstr ""
 
 msgid "Account"
-msgstr ""
+msgstr "Tili"
 
 msgid "API key"
 msgstr ""

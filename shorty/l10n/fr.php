@@ -3,7 +3,7 @@
 "all" => "tous",
 "blocked" => "bloqué",
 "deleted" => "supprimé",
-"disabled" => "désactiver",
+"disabled" => "désactivé",
 "enabled" => "activer",
 "never" => "jamais",
 "private" => "privé(e)",
