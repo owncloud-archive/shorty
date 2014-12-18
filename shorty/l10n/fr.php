@@ -85,7 +85,7 @@
 "Mail client" => "Client mail",
 "Modifications for shorty with id '%s' saved" => "Les modifications pour le lien-raccourci d'id. '%s' ont été sauvegardées",
 "Modify attributes" => "Modifier les attributs",
-"Modify shorty" => "Modifier le shorty",
+"Modify shorty" => "Modifier le lien-raccourci",
 "New Shorty" => "Nouveau lien-raccourci",
 "Notes" => "Notes",
 "Nothing here yet" => "Rien à afficher pour le moment",
