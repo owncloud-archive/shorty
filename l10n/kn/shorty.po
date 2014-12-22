@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-11-23 05:08+0000\n"
+"PO-Revision-Date: 2014-12-21 20:41+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Kannada (http://www.transifex.com/projects/p/owncloud/language/kn/)\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgid "enabled"
 msgstr ""
 
 msgid "never"
-msgstr ""
+msgstr "﻿ಎಂದಿಗೂ"
 
 msgid "private"
 msgstr ""
@@ -72,7 +72,7 @@ msgstr ""
 
 # actions ("to be done")
 msgid "delete"
-msgstr ""
+msgstr "﻿ಅಳಿಸಿ"
 
 msgid "edit"
 msgstr ""
@@ -382,7 +382,7 @@ msgid "Reload list"
 msgstr ""
 
 msgid "Save"
-msgstr ""
+msgstr "﻿ಉಳಿಸಿ"
 
 msgid "Send by email"
 msgstr ""
@@ -412,7 +412,7 @@ msgid "Setting '%s' saved"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "ಆಯ್ಕೆ"
 
 msgid "Share and use"
 msgstr ""
