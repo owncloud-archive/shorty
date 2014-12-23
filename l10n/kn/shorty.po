@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-12-21 20:41+0000\n"
+"PO-Revision-Date: 2014-12-22 19:31+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Kannada (http://www.transifex.com/projects/p/owncloud/language/kn/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgid "all"
 msgstr ""
 
 msgid "blocked"
-msgstr ""
+msgstr "ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ"
 
 msgid "deleted"
 msgstr ""
@@ -229,7 +229,7 @@ msgid "Click registered"
 msgstr ""
 
 msgid "Clicks"
-msgstr ""
+msgstr "ಆಯ್ಕೆ"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -238,7 +238,7 @@ msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
 msgid "Close"
-msgstr ""
+msgstr "ಮುಚ್ಚು"
 
 msgid "Configuration"
 msgstr ""
@@ -280,7 +280,7 @@ msgid "Exception (%s)"
 msgstr ""
 
 msgid "Expiration"
-msgstr ""
+msgstr "﻿ಮುಕ್ತಾಯ"
 
 msgid "Feedback"
 msgstr ""
@@ -295,7 +295,7 @@ msgid "If you just started using Shorty"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "ಹೊಂದಿಸಲಾಗುತ್ತಿದೆ"
 
 msgid "Mail client"
 msgstr ""
@@ -316,7 +316,7 @@ msgid "Notes"
 msgstr ""
 
 msgid "Nothing here yet"
-msgstr ""
+msgstr "ಇಲ್ಲಿ ಏನೂ ಇಲ್ಲ"
 
 msgid "Number of entries"
 msgstr ""
@@ -514,7 +514,7 @@ msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
 msgid "Title"
-msgstr ""
+msgstr "ಶೀರ್ಷಿಕೆ"
 
 msgid "Toggle toolbar"
 msgstr ""
