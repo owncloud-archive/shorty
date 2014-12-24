@@ -117,7 +117,7 @@ function dateExpired(date){
  * @author Christian Reiner
  */
 function dateTimeToHuman(timestamp,placeholder){
-	if (undefined==timestamp)
+	if (undefined===timestamp || '0'===timestamp || 0===timestamp)
 		return placeholder||'';
 	var d=new Date(1000*timestamp);
 	return 	d.getFullYear()
