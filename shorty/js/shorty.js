@@ -580,7 +580,7 @@ OC.Shorty={
 				dialog.find('#target').attr('href',       entry.attr('data-target')).text(entry.attr('data-target'));
 				dialog.find('#status').attr('data-status',entry.attr('data-status')).val (entry.attr('data-status'));
 				// move 'share' dialog towards entry
-				dialog.appendTo(entry.find('td#actions')),
+				dialog.appendTo(entry.find('td#list-of-shortys-actions')),
 				// open dialog
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
