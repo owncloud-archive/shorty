@@ -28,7 +28,7 @@
  * @description
  * This script implements a few always-handy routines (currently) not provided
  * by the main owncloud framework. Since they really don't fit into any of the
- * internal apps logic categories they are collected in this helper script. 
+ * internal apps logic categories they are collected in this helper script.
  * @author Christian Reiner
  */
 

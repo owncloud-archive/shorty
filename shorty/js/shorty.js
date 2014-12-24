@@ -535,8 +535,8 @@ OC.Shorty={
 				dialog.find('#clicks').val(entry.attr('data-clicks')||'');
 				dialog.find('#created').val(entry.attr('data-created')||'');
 				dialog.find('#accessed').val(dateTimeToHuman(entry.attr('data-accessed'),'- / -'));
-				dialog.find('#notes').val(entry.attr('data-notes')||'');
 				dialog.find('#until').val(entry.attr('data-until')||'');
+				dialog.find('#notes').val(entry.attr('data-notes')||'');
 				// open edit dialog
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
@@ -913,6 +913,8 @@ OC.Shorty={
 									'list-of-shortys-title',
 									'list-of-shortys-favicon',
 									'list-of-shortys-target',
+									'list-of-shortys-created',
+									'list-of-shortys-accessed',
 									'list-of-shortys-until',
 									'list-of-shortys-notes'],function(j,aspect){
 						if (typeof set[aspect]==undefined) set[aspect]='';
@@ -922,6 +924,8 @@ OC.Shorty={
 						// fill data into corresponsing column
 						var content, classes=[];
 						switch(aspect){
+							case 'list-of-shortys-created':
+							case 'list-of-shortys-accessed':
 							case 'list-of-shortys-until':
 								if (!set[aspect]){
 									content="-"+t('shorty',"never")+"-";
@@ -1001,8 +1005,10 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
 				// use the 'tinysort' jquery plugin for sorting
 				switch (sortCol){
+					case 'created':
+					case 'accessed':
 					case 'until':
-						list.find('tbody>tr').tsort('td#until',{order:sortDir});
+						list.find('tbody>tr').tsort('td#'+sortCol,{order:sortDir});
 						break;
 
 					default:
@@ -1750,12 +1756,14 @@ OC.Shorty={
 			add:function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action add url");
 				var dfd=new $.Deferred();
-				var dialog=$('#dialog-add');
-				var status=dialog.find('#status').val()||'public';
-				var target=dialog.find('#target').val()||'';
-				var title =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
-				var notes =dialog.find('#notes').val()||'';
-				var until =dialog.find('#until').val()||'';
+				var dialog   =$('#dialog-add');
+				var status   =dialog.find('#status').val()||'public';
+				var target   =dialog.find('#target').val()||'';
+				var title    =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
+				var notes    =dialog.find('#notes').val()||'';
+				var created  =dialog.find('#created').val()||'';
+				var accessed =dialog.find('#accessed').val()||'';
+				var until    =dialog.find('#until').val()||'';
 				// store favicon from meta data, except it is the internal default blank
 				var favicon = dialog.find('#meta #favicon').attr('src');
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
@@ -1772,6 +1780,8 @@ OC.Shorty={
 						target:  target,
 						title:   title,
 						notes:   notes,
+						created: created,
+						accessed:accessed,
 						until:   until,
 						favicon: favicon
 					};
@@ -1802,19 +1812,21 @@ OC.Shorty={
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.add =====
 			/** OC.Shorty.Action.Url.edit
-			 * @brief Modifies an existign Shorty by storing the specified attributes.
+			 * @brief Modifies an existing Shorty by storing the specified attributes.
 			 * @author Christian Reiner
 			 */
 			edit: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action modify url");
 				var dfd=new $.Deferred();
 				var dialog=$('#dialog-edit');
-				var id    =dialog.find('#id').val();
-				var status=dialog.find('#status').val()||'blocked';
-				var title =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
-				var target=dialog.find('#target').val()||'';
-				var notes =dialog.find('#notes').val()||'';
-				var until =dialog.find('#until').val()||'';
+				var id       =dialog.find('#id').val();
+				var status   =dialog.find('#status').val()||'blocked';
+				var title    =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
+				var target   =dialog.find('#target').val()||'';
+				var notes    =dialog.find('#notes').val()||'';
+				var created  =dialog.find('#created').val()||'';
+				var accessed =dialog.find('#accessed').val()||'';
+				var until    =dialog.find('#until').val()||'';
 				// store favicon from meta data, except it is the internal default blank
 				var favicon = dialog.find('#meta #favicon').attr('src');
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
@@ -1832,6 +1844,8 @@ OC.Shorty={
 						title:   title,
 						target:  target,
 						notes:   notes,
+						created: created,
+						accesed: accessed,
 						until:   until,
 						favicon: favicon};
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log(data);
@@ -1912,7 +1926,6 @@ OC.Shorty={
 					case 'usage-qrcode':
 						// reference to the service offering the qrcode image
 						var qrcodeRef = $('#dialog-qrcode #qrcode-ref').val()+encodeURIComponent(entry.attr('data-id'));
-// 						var qrcodeRef = $('#dialog-qrcode #qrcode-ref').val()+encodeURIComponent(entry.attr('data-source'));
 						// take layout from hidden dialog template
 						var p_message=$('#dialog-qrcode').html();
 						// the dialog buttons
@@ -2037,31 +2050,6 @@ OC.Shorty={
 						if (OC.Shorty.Debug) OC.Shorty.Debug.log("usage action '"+action+"' is disabled, refusing to comply");
 				}
 			}, // OC.Shorty.Action.Url.send
-			/** OC.Shorty.Action.Url.show
-			 * @brief Visualizes all attributes of an existing Shorty.
-			 * @author Christian Reiner
-			 */
-			show: function(){
-				var dfd = new $.Deferred();
-				var dialog = $('#dialog-show');
-				var id     = dialog.find('#id').val();
-				var record = $(this).parent().parent();
-				$('#shorty-add-id').val(record.attr('data-id'));
-				$('#shorty-add-id').val(record.attr('data-status'));
-				$('#shorty-add-source').val(record.children('.shorty-source:first').text());
-				$('#shorty-add-relay').val(record.children('.shorty-relay:first').text());
-				$('#shorty-add-target').val(record.children('.shorty-target:first').text());
-				$('#shorty-add-notes').val(record.children('.shorty-notes:first').text());
-				$('#shorty-add-until').val(record.children('.shorty-until:first').text());
-				$.when(
-					function(){
-						if ($('.shorty-add').css('display') == 'none')
-							$('.shorty-add').slideToggle();
-					},
-					$('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 2000)
-				).done(dfd.resolve)
-				return dfd.promise();
-			}, // ===== OC.Shorty.Action.Url.show =====
 			/**
 			 * @method OC.Shorty.Action.Url.status
 			 * @brief Changes the status of an existing Shorty as specified.
