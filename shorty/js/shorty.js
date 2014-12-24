@@ -813,11 +813,11 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("filter list by column '"+column+"' and pattern '"+pattern+"'");
 				var dfd = new $.Deferred();
 				$.when(
-					list.find('tbody tr td[data-id="'+column+'"]').filter(function(){
+					list.find('tbody tr td[data-aspect="'+column+'"]').filter(function(){
 						// compare equality of value and pattern using the reference callback as value
 						return (-1==reference.call(this).toLowerCase().indexOf(pattern.toLowerCase()));
 					}).addClass('shorty-filtered'),
-					list.find('tbody tr td[data-id="'+column+'"]').filter(function(){
+					list.find('tbody tr td[data-aspect="'+column+'"]').filter(function(){
 						// compare NON-equality of value and pattern using the reference callback as value
 						return (-1!=reference.call(this).toLowerCase().indexOf(pattern.toLowerCase()));
 					}).removeClass('shorty-filtered'),
@@ -1066,8 +1066,8 @@ OC.Shorty={
 				*/
 				collapse: function(list, column){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("collapse column '"+column+"' in list '"+list+"'");
-					$('#'+list).find('thead th[data-id="'+column+'"]').addClass('collapsed');
-					$('#'+list).find('tbody td[data-id="'+column+'"]').addClass('collapsed');
+					$('#'+list).find('thead th[data-aspect="'+column+'"]').addClass('collapsed');
+					$('#'+list).find('tbody td[data-aspect="'+column+'"]').addClass('collapsed');
 				}, // OC.Shorty.WUI.List.Column.collapse
 				/**
 				* @method OC.Shorty.WUI.List.Column.expand
@@ -1078,8 +1078,8 @@ OC.Shorty={
 				*/
 				expand: function(list, column){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("expand column '"+column+"' in list '"+list+"'");
-					$('#'+list).find('thead th[data-id="'+column+'"]').removeClass('collapsed')
-					$('#'+list).find('tbody td[data-id="'+column+'"]').removeClass('collapsed')
+					$('#'+list).find('thead th[data-aspect="'+column+'"]').removeClass('collapsed')
+					$('#'+list).find('tbody td[data-aspect="'+column+'"]').removeClass('collapsed')
 				}, // OC.Shorty.WUI.List.Column.expand
 				/**
 				* @method OC.Shorty.WUI.List.Column.getCollapsedColumns
@@ -1162,7 +1162,7 @@ OC.Shorty={
 					).done(function(collapsedColumns){
 						var columns = collapsedColumns[list];
 						$(columns).each(function(key, column) {
-							if ( $('#'+list).find('thead tr.shorty-titlebar th[data-id="'+column+'"].collapsible').length ) {
+							if ( $('#'+list).find('thead tr.shorty-titlebar th[data-aspect="'+column+'"].collapsible').length ) {
 								OC.Shorty.WUI.List.Column.collapse(list, column);
 							} else {
 								columns.splice( $.inArray(column, columns), 1 );
@@ -2344,7 +2344,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 					default:
 						span.text(set[aspect]);
 				} // switch
-				row.find('td[data-id="'+aspect+'"]').empty().append(span);
+				row.find('td[data-aspect="'+aspect+'"]').empty().append(span);
 			}
 		) // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich

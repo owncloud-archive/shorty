@@ -84,7 +84,7 @@ $(document).ready(function(){
 	});
 	// headers click in the list to toggle column expansion
 	$(document).on('click','.shorty-list.shorty-collapsible thead tr.shorty-titlebar th.collapsible *,.shorty-list.shorty-collapsible tbody td.collapsed *',[],function(e){
-		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table').attr('id'), $(e.target).parent('th,td').attr('data-id') );
+		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table').attr('id'), $(e.target).parent('th,td').attr('data-aspect') );
 	});
 	// buttons to reload the list
 	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-reload',[],OC.Shorty.WUI.List.build);
@@ -118,13 +118,13 @@ $(document).ready(function(){
 		e.stopPropagation();
 		OC.Shorty.WUI.Entry.send(e,$(this));
 	});
-	$(document).on('click','.shorty-list tbody tr td:not([data-id="actions"])',[],function(e){
+	$(document).on('click','.shorty-list tbody tr td:not([data-aspect="actions"])',[],function(e){
 		// hide any open embedded dialog
 		OC.Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
 		// highlight clicked entry
 		OC.Shorty.WUI.List.highlight($(this).parents('table'),$(this).parent('tr'));
 	});
-	$(document).on('click','.shorty-list tbody tr td[data-id="actions"] span.shorty-actions a',[],function(e){
+	$(document).on('click','.shorty-list tbody tr td[data-aspect="actions"] span.shorty-actions a',[],function(e){
 		OC.Shorty.WUI.Entry.click(e,$(this));
 	});
 	// pretty select boxes where applicable (class controlled)
