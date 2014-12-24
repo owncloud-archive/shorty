@@ -255,6 +255,10 @@
 
 /* collapsible list columns */
 
+.shorty-list.shorty-collapsible tbody td span {
+	max-width: 100%;
+}
+
 .shorty-list.shorty-collapsible thead tr.shorty-titlebar th.collapsible div,
 .shorty-list.shorty-collapsible thead tr.shorty-toolbar th.collapsed,
 .shorty-list.shorty-collapsible tbody td.collapsed,
