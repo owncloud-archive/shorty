@@ -320,6 +320,7 @@ input.shorty-config {
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;
 	box-shadow: 0 2px 1px #777777;
+	text-align: left;
 	vertical-align: middle;
 	z-index: 4;
 	width: 50em;
