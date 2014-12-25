@@ -679,6 +679,8 @@ OC.Shorty={
 				$(elements).each(function(i,set){
 					// clone dummy row from list header: dummy is the last row
 					row = list.find('thead tr:last-child').first().clone();
+					// remove css dummy class from clone
+					row.removeClass('shorty-dummy');
 					// add attributes to row, as data and value
 					context.ListAddEnrich.apply(context,[row,set,hidden]);
 					// insert new row in table
