@@ -2297,7 +2297,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		if (hidden) row.addClass('shorty-fresh'); // might lead to a pulsate effect later
 		// add aspects as content to the rows cells
 		$.each(
-			['id','status','title','relay','target','clicks','created','accessed','until','notes','favicon'],
+			['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
 			function(j,aspect){
 				// we wrap the cells content into a span tag
 				var span=$('<span />');
