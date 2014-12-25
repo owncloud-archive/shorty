@@ -35,13 +35,35 @@
 $(document).ready(function(){
 	// initialize status dictionary since that _might_ require an ajax request
 	OC.Shorty.Status.fetch();
+	$(document).keyup(function(e) {
+		switch (e.keyCode) {
+			case 13: // RETURN
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (RETURN) pressed");
+				$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.edit($(entry)); });
+				break;
+			case 27: // ESC
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (ESC) pressed");
+				OC.Shorty.WUI.Dialog.hideAll();
+				break;
+			case 32: // " "
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\" \") pressed");
+				OC.Shorty.WUI.Dialog.hideAll();
+				break;
+			case 187: // "+"
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\"+\") pressed");
+				OC.Shorty.WUI.Dialog.show($('#dialog-add'));
+				break;
+			case 189: // "-"
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\"-\") pressed");
+				$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.del($(entry)); });
+				break;
+			default:
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("ignoring key #"+e.keyCode+", no action defined");
+		}
+	});
 	// close any open dialog when the canvas is clicked
 	$(document).on('click','#content>*',[],function(e){e.stopPropagation();});
-	$(document).on('click','#content',[],function(){
-		$.each($('.shorty-dialog:visible'),function(){
-			OC.Shorty.WUI.Dialog.hide($(this));
-		});
-	});
+	$(document).on('click','#content',[],function(){OC.Shorty.WUI.Dialog.hideAll();});
 	// make messengers closeable
 	$(document).on('click','#content .shorty-messenger',[],function(){
 		OC.Shorty.WUI.Messenger.hide($(this));

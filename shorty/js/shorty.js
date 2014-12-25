@@ -241,6 +241,24 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.hide
 			/**
+			* @method OC.Shorty.WUI.Dialog.hideAll
+			* @brief Hides all dialogs
+			* @desrciption
+			* Also moves the dialog code back to its 'parking place' in case of embedded dialogs.
+			* This method is save for already hidden dialogs.
+			* @author Christian Reiner
+			*/
+			hideAll: function(){
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide all dialogs");
+				var dfd = new $.Deferred();
+				$.when(
+					$.each($('.shorty-dialog:visible'),function(){
+						OC.Shorty.WUI.Dialog.hide($(this));
+					})
+				).done(dfd.resolve)
+				return dfd.promise();
+			}, // OC.Shorty.WUI.Dialog.hideAll
+			/**
 			* @method OC.Shorty.WUI.Dialog.reset
 			* @brief Resets a dialog to its default values
 			* @param dialog jQueryObject Represents the dialog to be handled
