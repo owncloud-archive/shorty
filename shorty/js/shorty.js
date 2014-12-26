@@ -2445,11 +2445,6 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 			}
 		})
 		return filtered;
-// 		return (
-// 				(  (toolbar.find('th#list-of-shortys-title,th#list-of-shortys-target').find('div input.shorty-filter[value!=""]').length)
-// 				 &&(toolbar.find('th#list-of-shortys-title,th#list-of-shortys-target').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
-// 			||(  (toolbar.find('th#list-of-shortys-status select :selected').val())
-// 				 &&(toolbar.find('th#list-of-shortys-status').effect('pulsate', 2000)) ) );
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	/**
 	* @class OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums
