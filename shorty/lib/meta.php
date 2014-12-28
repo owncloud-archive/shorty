@@ -78,6 +78,7 @@ class OC_Shorty_Meta
 			case 'webdas':
 				self::enrichMetaDataCurl ( $url, $meta );
 		}
+		$meta['title'] = base64_encode($meta['title']);
 		return $meta;
 	} // function fetchMetaData
 
@@ -108,7 +109,7 @@ class OC_Shorty_Meta
 			// try to extract title from page
 			$match = array();
 			preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
-			$meta['title']    = isset($match[1]) ?  base64_encode(trim($match[1])) : '';
+			$meta['title']    = isset($match[1]) ?  trim($match[1]) : '';
 			$meta['staticon'] = self::selectIcon ( 'state', TRUE );
 			// final url after a possible redirection
 			$meta['final']    = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
