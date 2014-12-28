@@ -929,24 +929,24 @@ OC.Shorty={
 					// select row from list by id
 					row=$('#list-of-shortys tbody tr#'+set.id);
 					// modify attributes in row, as data and value
-					$.each(['list-of-shortys-status',
-									'list-of-shortys-title',
-									'list-of-shortys-favicon',
-									'list-of-shortys-target',
-									'list-of-shortys-created',
-									'list-of-shortys-accessed',
-									'list-of-shortys-until',
-									'list-of-shortys-notes'],function(j,aspect){
-						if (typeof set[aspect]==undefined) set[aspect]='';
+					$.each(['status',
+									'title',
+									'favicon',
+									'target',
+									'created',
+									'accessed',
+									'until',
+									'notes'],function(j,aspect){
+						if (typeof set[aspect]===undefined) set[aspect]='';
 						// enhance row with actual set values
 						row.attr('data-'+this,set[aspect]);
 						if (hidden) row.addClass('shorty-fresh');
 						// fill data into corresponsing column
 						var content, classes=[];
 						switch(aspect){
-							case 'list-of-shortys-created':
-							case 'list-of-shortys-accessed':
-							case 'list-of-shortys-until':
+							case 'created':
+							case 'accessed':
+							case 'until':
 								if (!set[aspect]){
 									content="-"+t('shorty',"never")+"-";
 									row.removeClass('shorty-expired');
@@ -958,17 +958,17 @@ OC.Shorty={
 								}
 								break;
 
-							case 'list-of-shortys-title':
-							case 'list-of-shortys-target':
+							case 'title':
+							case 'target':
 								classes.push('ellipsis');
 								content=set[aspect];
 								break;
 
-							case 'list-of-shortys-favicon':
+							case 'favicon':
 								content='<img class="shorty-icon" width="16px" src="'+set[aspect]+'">';
 								break;
 
-							case 'list-of-shortys-status':
+							case 'status':
 								if ('deleted'==set[aspect])
 								row.addClass('deleted');
 								content=t('shorty',set[aspect]);
@@ -1860,13 +1860,11 @@ OC.Shorty={
 				OC.Shorty.WUI.List.show()
 				).done(function(){
 					var data={
-						id: id,
+						id:      id,
 						status:  status,
 						title:   title,
 						target:  target,
 						notes:   notes,
-						created: created,
-						accesed: accessed,
 						until:   until,
 						favicon: favicon};
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log(data);
