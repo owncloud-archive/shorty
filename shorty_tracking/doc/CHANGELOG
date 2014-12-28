@@ -23,7 +23,7 @@
 
 Changelog:
 
-*                 Christian Reiner: version 0.3.0
+* Sun Dec 28 2014 Christian Reiner: version 0.3.0
 Use new collapsible columns feature as implemented in the main Shorty app.
 * Sat Nov 29 2014 Christian Reiner: version 0.2.3
 Fixed database table layout for correct handling of IPV6 addresses.
