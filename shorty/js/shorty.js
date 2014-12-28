@@ -1395,8 +1395,8 @@ OC.Shorty={
 					OC.Shorty.WUI.Meta.get(target)
 				).done(function(response){
 					var meta=response.data;
-					if (meta.final)
-						dialog.find('#target').val(meta.final);
+// 					if (meta.final)
+// 						dialog.find('#target').val(meta.final);
 					$.when(
 						OC.Shorty.WUI.Meta.reset(dialog)
 					).done(function(){
