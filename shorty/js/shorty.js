@@ -2344,7 +2344,9 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 						break;
 
 					case 'accessed':
-						if ('0'==set[aspect])
+						if (  (!set[aspect])
+								||('0'===set[aspect])
+								||( 0 ===set[aspect]) )
 							span.text("-"+t('shorty',"never")+"-");
 						else
 							span.text(dateTimeToHuman(set[aspect]));
@@ -2357,7 +2359,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 						break;
 
 					case 'status':
-						if ('deleted'==set[aspect])
+						if ('deleted'===set[aspect])
 							row.addClass('deleted');
 						span.text(t('shorty',set[aspect]));
 						break;
