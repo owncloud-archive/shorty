@@ -28,7 +28,7 @@
  * @description
  * This script implements a few always-handy routines (currently) not provided
  * by the main owncloud framework. Since they really don't fit into any of the
- * internal apps logic categories they are collected in this helper script. 
+ * internal apps logic categories they are collected in this helper script.
  * @author Christian Reiner
  */
 
@@ -117,7 +117,7 @@ function dateExpired(date){
  * @author Christian Reiner
  */
 function dateTimeToHuman(timestamp,placeholder){
-	if (undefined==timestamp)
+	if (undefined===timestamp || '0'===timestamp || 0===timestamp)
 		return placeholder||'';
 	var d=new Date(1000*timestamp);
 	return 	d.getFullYear()

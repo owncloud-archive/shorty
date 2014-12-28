@@ -35,13 +35,41 @@
 $(document).ready(function(){
 	// initialize status dictionary since that _might_ require an ajax request
 	OC.Shorty.Status.fetch();
+	$(document).keyup(function(e) {
+		switch (e.keyCode) {
+			case 13: // RETURN
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (RETURN) pressed");
+				if (0===$('.shorty-dialog:visible').length) {
+					$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.edit($(entry)); });
+				}
+				break;
+			case 27: // ESC
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (ESC) pressed");
+				OC.Shorty.WUI.Dialog.hideAll();
+				break;
+			case 32: // " "
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\" \") pressed");
+				OC.Shorty.WUI.Dialog.hideAll();
+				break;
+			case 187: // "+"
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\"+\") pressed");
+				if (0===$('.shorty-dialog:visible').length) {
+					OC.Shorty.WUI.Dialog.show($('#dialog-add'));
+				}
+				break;
+			case 189: // "-"
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\"-\") pressed");
+				if (0===$('.shorty-dialog:visible').length) {
+					$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.del($(entry)); });
+				}
+				break;
+			default:
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("ignoring key #"+e.keyCode+", no action defined");
+		}
+	});
 	// close any open dialog when the canvas is clicked
 	$(document).on('click','#content>*',[],function(e){e.stopPropagation();});
-	$(document).on('click','#content',[],function(){
-		$.each($('.shorty-dialog:visible'),function(){
-			OC.Shorty.WUI.Dialog.hide($(this));
-		});
-	});
+	$(document).on('click','#content',[],function(){OC.Shorty.WUI.Dialog.hideAll();});
 	// make messengers closeable
 	$(document).on('click','#content .shorty-messenger',[],function(){
 		OC.Shorty.WUI.Messenger.hide($(this));
@@ -84,7 +112,7 @@ $(document).ready(function(){
 	});
 	// headers click in the list to toggle column expansion
 	$(document).on('click','.shorty-list.shorty-collapsible thead tr.shorty-titlebar th.collapsible *,.shorty-list.shorty-collapsible tbody td.collapsed *',[],function(e){
-		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table').attr('id'), $(e.target).parent('th,td').attr('data-id') );
+		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table').attr('id'), $(e.target).parent('th,td').attr('data-aspect') );
 	});
 	// buttons to reload the list
 	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-reload',[],OC.Shorty.WUI.List.build);
@@ -118,13 +146,13 @@ $(document).ready(function(){
 		e.stopPropagation();
 		OC.Shorty.WUI.Entry.send(e,$(this));
 	});
-	$(document).on('click','.shorty-list tbody tr td:not([data-id="actions"])',[],function(e){
+	$(document).on('click','.shorty-list tbody tr td:not([data-aspect="actions"])',[],function(e){
 		// hide any open embedded dialog
 		OC.Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
 		// highlight clicked entry
 		OC.Shorty.WUI.List.highlight($(this).parents('table'),$(this).parent('tr'));
 	});
-	$(document).on('click','.shorty-list tbody tr td[data-id="actions"] span.shorty-actions a',[],function(e){
+	$(document).on('click','.shorty-list tbody tr td[data-aspect="actions"] span.shorty-actions a',[],function(e){
 		OC.Shorty.WUI.Entry.click(e,$(this));
 	});
 	// pretty select boxes where applicable (class controlled)

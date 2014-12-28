@@ -80,6 +80,7 @@
 "Feedback" => "Geribildirim",
 "Home" => "Ev",
 "It can be enabled by a single click in the administration:" => "Bu, yönetimde tek bir tıklama ile etkinleştirilebilir:",
+"If you just started using Shorty" => "Shorty kullanmaya yeni başladıysanız",
 "Loading" => "Yükleniyor",
 "Mail client" => "E-posta istemcisi",
 "Modifications for shorty with id '%s' saved" => "'%s' numaralı kısaltma değişikliği kaydedildi",

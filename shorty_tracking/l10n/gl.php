@@ -3,6 +3,7 @@
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Seguimento detallado de todas as solicitudes de  ligazóns acurtadas (Shortys) existentes xunto cunha vista integral do historial de acceso.",
 "granted" => "outorgado",
 "denied" => "denegado",
+"failed" => "fallou.",
 "blocked" => "bloqueado",
 "load" => "cargar",
 "Address" => "Enderezo",

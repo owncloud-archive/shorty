@@ -80,6 +80,7 @@
 "Feedback" => "Odziv",
 "Home" => "Domači naslov",
 "It can be enabled by a single click in the administration:" => "Možnost se omogoči z enojnim klikom med nastavitvami:",
+"If you just started using Shorty" => "Če ste šele začeli uporabljati storitev Shotry ...",
 "Loading" => "Nalaganje",
 "Mail client" => "Poštni odjemalec",
 "Modifications for shorty with id '%s' saved" => "Spremembe skrajšanega naslova z ID '%s' so shranjene",

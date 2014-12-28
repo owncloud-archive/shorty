@@ -241,6 +241,24 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.hide
 			/**
+			* @method OC.Shorty.WUI.Dialog.hideAll
+			* @brief Hides all dialogs
+			* @desrciption
+			* Also moves the dialog code back to its 'parking place' in case of embedded dialogs.
+			* This method is save for already hidden dialogs.
+			* @author Christian Reiner
+			*/
+			hideAll: function(){
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide all dialogs");
+				var dfd = new $.Deferred();
+				$.when(
+					$.each($('.shorty-dialog:visible'),function(){
+						OC.Shorty.WUI.Dialog.hide($(this));
+					})
+				).done(dfd.resolve)
+				return dfd.promise();
+			}, // OC.Shorty.WUI.Dialog.hideAll
+			/**
 			* @method OC.Shorty.WUI.Dialog.reset
 			* @brief Resets a dialog to its default values
 			* @param dialog jQueryObject Represents the dialog to be handled
@@ -535,8 +553,8 @@ OC.Shorty={
 				dialog.find('#clicks').val(entry.attr('data-clicks')||'');
 				dialog.find('#created').val(entry.attr('data-created')||'');
 				dialog.find('#accessed').val(dateTimeToHuman(entry.attr('data-accessed'),'- / -'));
-				dialog.find('#notes').val(entry.attr('data-notes')||'');
 				dialog.find('#until').val(entry.attr('data-until')||'');
+				dialog.find('#notes').val(entry.attr('data-notes')||'');
 				// open edit dialog
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
@@ -580,7 +598,7 @@ OC.Shorty={
 				dialog.find('#target').attr('href',       entry.attr('data-target')).text(entry.attr('data-target'));
 				dialog.find('#status').attr('data-status',entry.attr('data-status')).val (entry.attr('data-status'));
 				// move 'share' dialog towards entry
-				dialog.appendTo(entry.find('td#actions')),
+				dialog.appendTo(entry.find('td#list-of-shortys-actions')),
 				// open dialog
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
@@ -679,6 +697,8 @@ OC.Shorty={
 				$(elements).each(function(i,set){
 					// clone dummy row from list header: dummy is the last row
 					row = list.find('thead tr:last-child').first().clone();
+					// remove css dummy class from clone
+					row.removeClass('shorty-dummy');
 					// add attributes to row, as data and value
 					context.ListAddEnrich.apply(context,[row,set,hidden]);
 					// insert new row in table
@@ -813,11 +833,11 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("filter list by column '"+column+"' and pattern '"+pattern+"'");
 				var dfd = new $.Deferred();
 				$.when(
-					list.find('tbody tr td[data-id="'+column+'"]').filter(function(){
+					list.find('tbody tr td[data-aspect="'+column+'"]').filter(function(){
 						// compare equality of value and pattern using the reference callback as value
 						return (-1==reference.call(this).toLowerCase().indexOf(pattern.toLowerCase()));
 					}).addClass('shorty-filtered'),
-					list.find('tbody tr td[data-id="'+column+'"]').filter(function(){
+					list.find('tbody tr td[data-aspect="'+column+'"]').filter(function(){
 						// compare NON-equality of value and pattern using the reference callback as value
 						return (-1!=reference.call(this).toLowerCase().indexOf(pattern.toLowerCase()));
 					}).removeClass('shorty-filtered'),
@@ -913,6 +933,8 @@ OC.Shorty={
 									'list-of-shortys-title',
 									'list-of-shortys-favicon',
 									'list-of-shortys-target',
+									'list-of-shortys-created',
+									'list-of-shortys-accessed',
 									'list-of-shortys-until',
 									'list-of-shortys-notes'],function(j,aspect){
 						if (typeof set[aspect]==undefined) set[aspect]='';
@@ -922,6 +944,8 @@ OC.Shorty={
 						// fill data into corresponsing column
 						var content, classes=[];
 						switch(aspect){
+							case 'list-of-shortys-created':
+							case 'list-of-shortys-accessed':
 							case 'list-of-shortys-until':
 								if (!set[aspect]){
 									content="-"+t('shorty',"never")+"-";
@@ -1001,8 +1025,10 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
 				// use the 'tinysort' jquery plugin for sorting
 				switch (sortCol){
+					case 'created':
+					case 'accessed':
 					case 'until':
-						list.find('tbody>tr').tsort('td#until',{order:sortDir});
+						list.find('tbody>tr').tsort('td#'+sortCol,{order:sortDir});
 						break;
 
 					default:
@@ -1060,8 +1086,9 @@ OC.Shorty={
 				*/
 				collapse: function(list, column){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("collapse column '"+column+"' in list '"+list+"'");
-					$('#'+list).find('thead th[data-id="'+column+'"]').addClass('collapsed');
-					$('#'+list).find('tbody td[data-id="'+column+'"]').addClass('collapsed');
+					$('#'+list).find('thead th[data-aspect="'+column+'"]').addClass('collapsed');
+					$('#'+list).find('thead td[data-aspect="'+column+'"]').addClass('collapsed');
+					$('#'+list).find('tbody td[data-aspect="'+column+'"]').addClass('collapsed');
 				}, // OC.Shorty.WUI.List.Column.collapse
 				/**
 				* @method OC.Shorty.WUI.List.Column.expand
@@ -1072,8 +1099,8 @@ OC.Shorty={
 				*/
 				expand: function(list, column){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("expand column '"+column+"' in list '"+list+"'");
-					$('#'+list).find('thead th[data-id="'+column+'"]').removeClass('collapsed')
-					$('#'+list).find('tbody td[data-id="'+column+'"]').removeClass('collapsed')
+					$('#'+list).find('thead th[data-aspect="'+column+'"]').removeClass('collapsed')
+					$('#'+list).find('tbody td[data-aspect="'+column+'"]').removeClass('collapsed')
 				}, // OC.Shorty.WUI.List.Column.expand
 				/**
 				* @method OC.Shorty.WUI.List.Column.getCollapsedColumns
@@ -1156,7 +1183,7 @@ OC.Shorty={
 					).done(function(collapsedColumns){
 						var columns = collapsedColumns[list];
 						$(columns).each(function(key, column) {
-							if ( $('#'+list).find('thead tr.shorty-titlebar th[data-id="'+column+'"].collapsible').length ) {
+							if ( $('#'+list).find('thead tr.shorty-titlebar th[data-aspect="'+column+'"].collapsible').length ) {
 								OC.Shorty.WUI.List.Column.collapse(list, column);
 							} else {
 								columns.splice( $.inArray(column, columns), 1 );
@@ -1373,14 +1400,14 @@ OC.Shorty={
 					$.when(
 						OC.Shorty.WUI.Meta.reset(dialog)
 					).done(function(){
-						dialog.find('#title').attr('placeholder',meta.title);
+						dialog.find('#title').attr('placeholder',window.atob(meta.title));
 						// specify the icons and information to be shown as meta data
 						dialog.find('#staticon').attr('src',meta.staticon);
 						dialog.find('#schemicon').attr('src',meta.schemicon);
 						dialog.find('#favicon').attr('src',meta.favicon);
 						dialog.find('#mimicon').attr('src',meta.mimicon);
 						if (meta.title)
-							dialog.find('#explanation').html(meta.title).addClass('filled');
+							dialog.find('#explanation').html(window.atob(meta.title)).addClass('filled');
 						else
 							dialog.find('#explanation').html('[ '+meta.explanation+' ]');
 						dialog.find('#meta').fadeTo('fast',1);
@@ -1750,12 +1777,14 @@ OC.Shorty={
 			add:function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action add url");
 				var dfd=new $.Deferred();
-				var dialog=$('#dialog-add');
-				var status=dialog.find('#status').val()||'public';
-				var target=dialog.find('#target').val()||'';
-				var title =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
-				var notes =dialog.find('#notes').val()||'';
-				var until =dialog.find('#until').val()||'';
+				var dialog   =$('#dialog-add');
+				var status   =dialog.find('#status').val()||'public';
+				var target   =dialog.find('#target').val()||'';
+				var title    =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
+				var notes    =dialog.find('#notes').val()||'';
+				var created  =dialog.find('#created').val()||'';
+				var accessed =dialog.find('#accessed').val()||'';
+				var until    =dialog.find('#until').val()||'';
 				// store favicon from meta data, except it is the internal default blank
 				var favicon = dialog.find('#meta #favicon').attr('src');
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
@@ -1772,6 +1801,8 @@ OC.Shorty={
 						target:  target,
 						title:   title,
 						notes:   notes,
+						created: created,
+						accessed:accessed,
 						until:   until,
 						favicon: favicon
 					};
@@ -1802,19 +1833,21 @@ OC.Shorty={
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.add =====
 			/** OC.Shorty.Action.Url.edit
-			 * @brief Modifies an existign Shorty by storing the specified attributes.
+			 * @brief Modifies an existing Shorty by storing the specified attributes.
 			 * @author Christian Reiner
 			 */
 			edit: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action modify url");
 				var dfd=new $.Deferred();
 				var dialog=$('#dialog-edit');
-				var id    =dialog.find('#id').val();
-				var status=dialog.find('#status').val()||'blocked';
-				var title =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
-				var target=dialog.find('#target').val()||'';
-				var notes =dialog.find('#notes').val()||'';
-				var until =dialog.find('#until').val()||'';
+				var id       =dialog.find('#id').val();
+				var status   =dialog.find('#status').val()||'blocked';
+				var title    =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
+				var target   =dialog.find('#target').val()||'';
+				var notes    =dialog.find('#notes').val()||'';
+				var created  =dialog.find('#created').val()||'';
+				var accessed =dialog.find('#accessed').val()||'';
+				var until    =dialog.find('#until').val()||'';
 				// store favicon from meta data, except it is the internal default blank
 				var favicon = dialog.find('#meta #favicon').attr('src');
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
@@ -1832,6 +1865,8 @@ OC.Shorty={
 						title:   title,
 						target:  target,
 						notes:   notes,
+						created: created,
+						accesed: accessed,
 						until:   until,
 						favicon: favicon};
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log(data);
@@ -1912,7 +1947,6 @@ OC.Shorty={
 					case 'usage-qrcode':
 						// reference to the service offering the qrcode image
 						var qrcodeRef = $('#dialog-qrcode #qrcode-ref').val()+encodeURIComponent(entry.attr('data-id'));
-// 						var qrcodeRef = $('#dialog-qrcode #qrcode-ref').val()+encodeURIComponent(entry.attr('data-source'));
 						// take layout from hidden dialog template
 						var p_message=$('#dialog-qrcode').html();
 						// the dialog buttons
@@ -2037,31 +2071,6 @@ OC.Shorty={
 						if (OC.Shorty.Debug) OC.Shorty.Debug.log("usage action '"+action+"' is disabled, refusing to comply");
 				}
 			}, // OC.Shorty.Action.Url.send
-			/** OC.Shorty.Action.Url.show
-			 * @brief Visualizes all attributes of an existing Shorty.
-			 * @author Christian Reiner
-			 */
-			show: function(){
-				var dfd = new $.Deferred();
-				var dialog = $('#dialog-show');
-				var id     = dialog.find('#id').val();
-				var record = $(this).parent().parent();
-				$('#shorty-add-id').val(record.attr('data-id'));
-				$('#shorty-add-id').val(record.attr('data-status'));
-				$('#shorty-add-source').val(record.children('.shorty-source:first').text());
-				$('#shorty-add-relay').val(record.children('.shorty-relay:first').text());
-				$('#shorty-add-target').val(record.children('.shorty-target:first').text());
-				$('#shorty-add-notes').val(record.children('.shorty-notes:first').text());
-				$('#shorty-add-until').val(record.children('.shorty-until:first').text());
-				$.when(
-					function(){
-						if ($('.shorty-add').css('display') == 'none')
-							$('.shorty-add').slideToggle();
-					},
-					$('html, body').animate({ scrollTop: $('.shorty-menu').offset().top }, 2000)
-				).done(dfd.resolve)
-				return dfd.promise();
-			}, // ===== OC.Shorty.Action.Url.show =====
 			/**
 			 * @method OC.Shorty.Action.Url.status
 			 * @brief Changes the status of an existing Shorty as specified.
@@ -2307,7 +2316,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		if (hidden) row.addClass('shorty-fresh'); // might lead to a pulsate effect later
 		// add aspects as content to the rows cells
 		$.each(
-			['id','status','title','relay','target','clicks','created','accessed','until','notes','favicon'],
+			['id','status','title','source','relay','target','clicks','created','accessed','until','notes','favicon'],
 			function(j,aspect){
 				// we wrap the cells content into a span tag
 				var span=$('<span />');
@@ -2356,7 +2365,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 					default:
 						span.text(set[aspect]);
 				} // switch
-				row.find('td[data-id="'+aspect+'"]').empty().append(span);
+				row.find('td[data-aspect="'+aspect+'"]').empty().append(span);
 			}
 		) // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
@@ -2437,11 +2446,6 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 			}
 		})
 		return filtered;
-// 		return (
-// 				(  (toolbar.find('th#list-of-shortys-title,th#list-of-shortys-target').find('div input.shorty-filter[value!=""]').length)
-// 				 &&(toolbar.find('th#list-of-shortys-title,th#list-of-shortys-target').find('div input.shorty-filter[value!=""]').effect('pulsate', 2000)) )
-// 			||(  (toolbar.find('th#list-of-shortys-status select :selected').val())
-// 				 &&(toolbar.find('th#list-of-shortys-status').effect('pulsate', 2000)) ) );
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	/**
 	* @class OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums

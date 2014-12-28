@@ -194,52 +194,6 @@
 	border-bottom-right-radius: 0.5em;
 	border-right: 1px solid #AAA;
 }
-/* strike through visible content of rows (entries) marked as deleted */
-.shorty-list tbody tr.deleted>td#title,
-.shorty-list tbody tr.deleted>td#target,
-.shorty-list tbody tr.deleted>td#clicks,
-.shorty-list tbody tr.deleted>td#until,
-.shorty-list tbody tr.deleted>td#created,
-.shorty-list tbody tr.deleted>td#accessed {
-	text-decoration: line-through;
-	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
-}
-/* strike through visible content of rows (entries) marked as deleted */
-.shorty-list tbody tr.deleted:hover>td#title,
-.shorty-list tbody tr.deleted:hover>td#target,
-.shorty-list tbody tr.deleted:hover>td#clicks,
-.shorty-list tbody tr.deleted:hover>td#until,
-.shorty-list tbody tr.deleted:hover>td#created,
-.shorty-list tbody tr.deleted:hover>td#accessed {
-	text-decoration: line-through;
-	background: #F4F4F4 url('../img/status/strike.png') 0 50% repeat-x;
-}
-.shorty-list tbody tr.deleted.clicked>td#title,
-.shorty-list tbody tr.deleted.clicked>td#target,
-.shorty-list tbody tr.deleted.clicked>td#clicks,
-.shorty-list tbody tr.deleted.clicked>td#until,
-.shorty-list tbody tr.deleted.clicked>td#created,
-.shorty-list tbody tr.deleted.clicked>td#accessed {
-	text-decoration: line-through;
-	background: #EEE url('../img/status/strike.png') 0 50% repeat-x;
-}
-/* replace the 'delete' action icon by an 'undelete' icon */
-.shorty-list tbody tr.deleted>td#actions #shorty-action-del:after {
-	content: url("../img/actions/recycle.svg");
-	position: relative;
-	top: -1px;
-	margin-left: -19.5px;
-	padding: 0;
-	opacity: 0;
-}
-.shorty-list tbody tr.deleted.clicked>td#actions #shorty-action-del>img,
-.shorty-list tbody tr.deleted:hover>td#actions #shorty-action-del>img {
-	opacity: 0;
-}
-.shorty-list tbody tr.deleted.clicked>td#actions #shorty-action-del:after,
-.shorty-list tbody tr.deleted:hover>td#actions #shorty-action-del:after {
-	opacity: 1;
-}
 /* elements (rows) currently filtered out (toolbars column filter options) */
 .shorty-list tr.shorty-filtered {
 	display: none;
@@ -254,6 +208,10 @@
 
 
 /* collapsible list columns */
+
+.shorty-list.shorty-collapsible tbody td span {
+	max-width: 100%;
+}
 
 .shorty-list.shorty-collapsible thead tr.shorty-titlebar th.collapsible div,
 .shorty-list.shorty-collapsible thead tr.shorty-toolbar th.collapsed,

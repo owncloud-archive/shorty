@@ -320,6 +320,7 @@ input.shorty-config {
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;
 	box-shadow: 0 2px 1px #777777;
+	text-align: left;
 	vertical-align: middle;
 	z-index: 4;
 	width: 50em;
@@ -821,4 +822,51 @@ div.jqimessage fieldset div#qrcode-img img.usage-qrcode {
 #shorty-fieldset button {
 	height: 36px;
 	margin: 3px;
+}
+
+/* strike through visible content of rows (entries) marked as deleted */
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-title,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-target,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-clicks,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-until,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-created,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-accessed {
+	text-decoration: line-through;
+	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
+}
+/* strike through visible content of rows (entries) marked as deleted */
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-title,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-target,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-clicks,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-until,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-created,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-accessed {
+	text-decoration: line-through;
+	background: #F4F4F4 url('../img/status/strike.png') 0 50% repeat-x;
+}
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-title,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-target,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-clicks,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-until,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-created,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-accessed {
+	text-decoration: line-through;
+	background: #EEE url('../img/status/strike.png') 0 50% repeat-x;
+}
+/* replace the 'delete' action icon by an 'undelete' icon */
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-actions #shorty-action-del:after {
+	content: url("../img/actions/recycle.svg");
+	position: relative;
+	top: -1px;
+	margin-left: -19.5px;
+	padding: 0;
+	opacity: 0;
+}
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-actions #shorty-action-del>img,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-actions #shorty-action-del>img {
+	opacity: 0;
+}
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-actions #shorty-action-del:after,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-actions #shorty-action-del:after {
+	opacity: 1;
 }

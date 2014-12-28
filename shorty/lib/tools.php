@@ -293,18 +293,38 @@ class OC_Shorty_Tools
 
 	/**
 	* @method OC_Shorty_Tools::idnToASCII
-	* @brief Converts an idn url to its ascii notation
-	* @param $url string An idn url
-	* @return string The ascii notation of the url
+	* @brief Converts an idn url to its ascii idn notation
+	* @param $url string Some arbitrary url
+	* @return string The ascii idn notation of the url
 	* @access public
 	* @author Christian Reiner
 	*/
 	static function idnToASCII ( $url )
 	{
+		$url = parse_url($url);
+
+		$scheme   = &$url['scheme'];
+		$host     = &$url['host'];
+		$port     = &$url['port'];
+		$user     = &$url['user'];
+		$pass     = &$url['pass'];
+		$path     = &$url['path'];
+		$query    = &$url['query'];
+		$fragment = &$url['fragment'];
+
 		if ( function_exists('idn_to_ascii') )
-			return idn_to_ascii($url);
-		else return $url;
-	} // funtion idnToASCII
+			$host = idn_to_ascii($host);
+// TODO: add local implemented conversion function in case php module is missing
+
+		return sprintf('%s://%s%s%s%s%s%s',
+			$scheme,
+			empty($user)&&empty($pass) ? '' : $user.':'.'@',
+			$host,
+			empty($port) ? '' : ':'.$port,
+			$path,
+			empty($query) ? '' : '?'.$query,
+			empty($fragment) ? '' : '#'.$fragment);
+	} // function idnToASCII
 
 	/**
 	* @method OC_Shorty_Tools::idnToUTF8

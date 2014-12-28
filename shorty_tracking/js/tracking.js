@@ -630,7 +630,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 			default:
 				span.text(set[aspect]);
 			} // switch
-			row.find('td[data-id="'+aspect+'"]').empty().append(span);
+			row.find('td[data-aspect="'+aspect+'"]').empty().append(span);
 		}) // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
 	/**

@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
-"Save" => "tallentaa",
-"Settings" => "asetukset"
+"Save" => "Tallenna",
+"Settings" => "Asetukset",
+"Account" => "Tili"
 );
