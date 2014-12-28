@@ -106,12 +106,12 @@ class OC_Shorty_Meta
 		if ( FALSE!==($page=curl_exec($handle)) )
 		{
 			// try to extract title from page
+			$match = array();
 			preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
-// 			$meta['title']    = isset($match[1]) ? htmlspecialchars_decode ( trim($match[1]) ) : '';
-			$meta['title']    = isset($match[1]) ? base64_encode ( trim($match[1]),  ENT_COMPAT, 'UTF-8' ) : '';
+			$meta['title']    = isset($match[1]) ?  base64_encode(trim($match[1])) : '';
 			$meta['staticon'] = self::selectIcon ( 'state', TRUE );
 			// final url after a possible redirection
-			$meta['final']       = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
+			$meta['final']    = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
 			// try to extract favicon from page
 			preg_match ( '/<[^>]*link[^>]*(rel=["\']icon["\']|rel=["\']shortcut icon["\']) .*href=["\']([^>]*)["\'].*>/iU', $page, $match );
 			if (1<sizeof($match))
