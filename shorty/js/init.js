@@ -39,7 +39,9 @@ $(document).ready(function(){
 		switch (e.keyCode) {
 			case 13: // RETURN
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (RETURN) pressed");
-				$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.edit($(entry)); });
+				if (0===$('.shorty-dialog:visible').length) {
+					$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.edit($(entry)); });
+				}
 				break;
 			case 27: // ESC
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (ESC) pressed");
@@ -51,11 +53,15 @@ $(document).ready(function(){
 				break;
 			case 187: // "+"
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\"+\") pressed");
-				OC.Shorty.WUI.Dialog.show($('#dialog-add'));
+				if (0===$('.shorty-dialog:visible').length) {
+					OC.Shorty.WUI.Dialog.show($('#dialog-add'));
+				}
 				break;
 			case 189: // "-"
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\"-\") pressed");
-				$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.del($(entry)); });
+				if (0===$('.shorty-dialog:visible').length) {
+					$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.del($(entry)); });
+				}
 				break;
 			default:
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("ignoring key #"+e.keyCode+", no action defined");
