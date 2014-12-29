@@ -74,7 +74,7 @@
 		</span>
 		<br />
 		<label for="title"><?php p(OC_Shorty_L10n::t('Title').':'); ?></label>
-		<input id="title" name="title" type="text" maxlength="80" data="" class="" />
+		<input id="title" name="title" type="text" maxlength="1024" data="" class="" />
 		<br />
 		<span class="label-line">
 			<label for="status"><?php p(OC_Shorty_L10n::t('Status').':'); ?></label>
