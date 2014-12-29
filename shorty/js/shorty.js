@@ -2437,9 +2437,9 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 			}
 		})
 		list.find('tr.shorty-toolbar th#list-of-shortys-status select').each(function(){
-			if ($(this).find('option :selected[value!=""]').length) {
+			if ($(this).find('option:selected[value!=""]').length) {
 				filtered = true;
-				$(this).find('div select').effect('pulsate', 2000);
+				$(this).effect('pulsate', 2000);
 				if (list.find('tr.shorty-titlebar th#list-of-shortys-status.collapsed').length) {
 					OC.Shorty.WUI.List.Column.toggle(list.attr('id'),'list-of-shortys-status');
 				}
