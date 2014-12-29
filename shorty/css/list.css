@@ -104,15 +104,18 @@
 .shorty-list tr.shorty-toolbar th.collapsed div {
 	visibility: hidden;
 }
+.shorty-list thead tr.shorty-toolbar th select,
+.shorty-list tbody tr.shorty-toolbar td select,
 .shorty-list thead tr.shorty-toolbar th input,
 .shorty-list tbody tr.shorty-toolbar td input,
 .shorty-list thead tr.shorty-toolbar th .chzn-container,
 .shorty-list tbody tr.shorty-toolbar td .chzn-container {
+	box-sizing: content-box !important;
 	width: 6em;
-	height: 1em !important;
+	height: 1.2em !important;
 	font-size: 11px;
 	margin: 0;
-	padding: 0.3em;
+	padding: 0.3em !important;
 	vertical-align: baseline;
 	background-color: #FFFFFF;
 }
