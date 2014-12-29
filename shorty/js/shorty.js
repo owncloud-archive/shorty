@@ -1020,7 +1020,7 @@ OC.Shorty={
 			sort: function(list,sortCode){
 				sortCore = sortCode || 'cd';
 				var icon=list.find('thead tr.shorty-toolbar th div img[data-sort-code="'+sortCode+'"]');
-				var sortCol=icon.parents('th').attr('id');
+				var sortCol=icon.parents('th').attr('data-aspect');
 				var sortDir=icon.attr('data-sort-direction');
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
 				// use the 'tinysort' jquery plugin for sorting
@@ -1028,7 +1028,7 @@ OC.Shorty={
 					case 'created':
 					case 'accessed':
 					case 'until':
-						list.find('tbody>tr').tsort('td#'+sortCol,{order:sortDir});
+						list.find('tbody>tr').tsort('td[data-aspect="'+sortCol+'"]',{order:sortDir});
 						break;
 
 					default:
