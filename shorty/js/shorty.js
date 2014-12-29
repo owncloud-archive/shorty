@@ -978,7 +978,7 @@ OC.Shorty={
 								content=set[aspect];
 						} // switch
 						// show modified column immediately or keep it for a later pulsation effect ?
-						row.find('td').filter('#'+aspect).html('<span class="'+classes.join(' ')+'">'+content+'</span>');
+						row.find('td').filter('[data-aspect="'+aspect+'"]').html('<span class="'+classes.join(' ')+'">'+content+'</span>');
 					}) // each aspect
 				}) // each entry
 				return dfd.resolve().promise();
@@ -1853,11 +1853,11 @@ OC.Shorty={
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
 				// perform modification of existing shorty
 				$.when(
-				OC.Shorty.WUI.Messenger.hide(),
-				// close and neutralize dialog
-				OC.Shorty.WUI.Dialog.hide(dialog),
-				OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
-				OC.Shorty.WUI.List.show()
+					OC.Shorty.WUI.Messenger.hide(),
+					// close and neutralize dialog
+					OC.Shorty.WUI.Dialog.hide(dialog),
+					OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
+					OC.Shorty.WUI.List.show()
 				).done(function(){
 					var data={
 						id:      id,
