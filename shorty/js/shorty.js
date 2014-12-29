@@ -1400,14 +1400,14 @@ OC.Shorty={
 					$.when(
 						OC.Shorty.WUI.Meta.reset(dialog)
 					).done(function(){
-						dialog.find('#title').attr('placeholder',window.atob(meta.title));
+						dialog.find('#title').attr('placeholder',meta.title);
 						// specify the icons and information to be shown as meta data
 						dialog.find('#staticon').attr('src',meta.staticon);
 						dialog.find('#schemicon').attr('src',meta.schemicon);
 						dialog.find('#favicon').attr('src',meta.favicon);
 						dialog.find('#mimicon').attr('src',meta.mimicon);
 						if (meta.title)
-							dialog.find('#explanation').html(window.atob(meta.title)).addClass('filled');
+							dialog.find('#explanation').html(meta.title).addClass('filled');
 						else
 							dialog.find('#explanation').html('[ '+meta.explanation+' ]');
 						dialog.find('#meta').fadeTo('fast',1);

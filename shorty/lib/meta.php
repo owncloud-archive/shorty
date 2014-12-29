@@ -78,7 +78,6 @@ class OC_Shorty_Meta
 			case 'webdas':
 				self::enrichMetaDataCurl ( $url, $meta );
 		}
-		$meta['title'] = base64_encode($meta['title']);
 		return $meta;
 	} // function fetchMetaData
 
