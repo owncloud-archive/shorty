@@ -47,10 +47,6 @@ $(document).ready(function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (ESC) pressed");
 				OC.Shorty.WUI.Dialog.hideAll();
 				break;
-			case 32: // " "
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\" \") pressed");
-				OC.Shorty.WUI.Dialog.hideAll();
-				break;
 			case 187: // "+"
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("key "+e.keyCode+" (\"+\") pressed");
 				if (0===$('.shorty-dialog:visible').length) {

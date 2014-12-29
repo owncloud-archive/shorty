@@ -106,9 +106,11 @@ class OC_Shorty_Meta
 		if ( FALSE!==($page=curl_exec($handle)) )
 		{
 			// try to extract title from page
-			$match = array();
 			preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
-			$meta['title']    = isset($match[1]) ?  base64_encode(trim($match[1])) : '';
+			if (   isset($match[1])
+					&& iconv('UTF-8', 'UTF-8//IGNORE', $match[1]))
+				$meta['title'] = trim($match[1]);
+			// a friendly state icon (valid/invalid)
 			$meta['staticon'] = self::selectIcon ( 'state', TRUE );
 			// final url after a possible redirection
 			$meta['final']    = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
