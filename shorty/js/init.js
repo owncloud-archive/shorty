@@ -159,7 +159,7 @@ $(document).ready(function(){
 	$(document).on('keyup','#list-of-shortys thead tr.shorty-toolbar th .shorty-filter',[],function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
-			[list,$($(this).context.parentElement.parentElement).attr('data-id'),$(this).val()]);
+			[list,$($(this).context.parentElement.parentElement).attr('data-aspect'),$(this).val()]);
 		// change the value attribute inside the DOM, some jquery/browser combination seem to block this...
 		$(this).attr('value',$(this).val());
 	});
@@ -167,7 +167,7 @@ $(document).ready(function(){
 	$(document).on('change','#list-of-shortys thead tr.shorty-toolbar th#list-of-shortys-status select',[],function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
-			[list,$(this).parents('th').attr('data-id'),$(this).find(':selected').val()]);
+			[list,$(this).parents('th').attr('data-aspect'),$(this).find(':selected').val()]);
 	});
 	// column sorting reaction
 	$(document).on('click','#list-of-shortys thead tr.shorty-toolbar div img.shorty-sorter',[],function(){
