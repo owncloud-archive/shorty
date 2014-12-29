@@ -90,7 +90,7 @@
 			</th>
 			<th id="list-of-shortys-title" data-aspect="title" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up" data-sort-code="ta" data-sort-type="string" data-sort-direction='asc'
+					<img data-sort-code="ta" data-sort-type="string" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
 					<img id="sort-down" data-sort-code="td" data-sort-type="string" data-sort-direction='desc'
@@ -103,7 +103,7 @@
 			</th>
 			<th id="list-of-shortys-target" data-aspect="target" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up" data-sort-code="ua" data-sort-type="string" data-sort-direction='asc'
+					<img data-sort-code="ua" data-sort-type="string" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
 					<img id="sort-down" data-sort-code="ud" data-sort-type="string" data-sort-direction='desc'
@@ -116,7 +116,7 @@
 			</th>
 			<th id="list-of-shortys-clicks" data-aspect="clicks" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up" data-sort-code="ha" data-sort-type="int" data-sort-direction='asc'
+					<img data-sort-code="ha" data-sort-type="int" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
 					<img id="sort-down" data-sort-code="hd" data-sort-type="int" data-sort-direction='desc'
@@ -126,7 +126,7 @@
 			</th>
 			<th id="list-of-shortys-until" data-aspect="until" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up"  data-sort-code="da" data-sort-type="date" data-sort-direction='asc'
+					<img data-sort-code="da" data-sort-type="date" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
 					<img id="sort-down" data-sort-code="dd" data-sort-type="date" data-sort-direction='desc'
@@ -136,7 +136,7 @@
 			</th>
 			<th id="list-of-shortys-created" data-aspect="created" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up"  data-sort-code="ca" data-sort-type="date" data-sort-direction='asc'
+					<img data-sort-code="ca" data-sort-type="date" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
 					<img id="sort-down" data-sort-code="cd" data-sort-type="date" data-sort-direction='desc'
@@ -146,7 +146,7 @@
 			</th>
 			<th id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up"  data-sort-code="aa" data-sort-type="date" data-sort-direction='asc'
+					<img data-sort-code="aa" data-sort-type="date" data-sort-direction='asc'
 						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
 						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
 					<img id="sort-down" data-sort-code="ad" data-sort-type="date" data-sort-direction='desc'
