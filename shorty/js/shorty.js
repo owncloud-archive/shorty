@@ -978,7 +978,7 @@ OC.Shorty={
 								content=set[aspect];
 						} // switch
 						// show modified column immediately or keep it for a later pulsation effect ?
-						row.find('td').filter('#'+aspect).html('<span class="'+classes.join(' ')+'">'+content+'</span>');
+						row.find('td').filter('[data-aspect="'+aspect+'"]').html('<span class="'+classes.join(' ')+'">'+content+'</span>');
 					}) // each aspect
 				}) // each entry
 				return dfd.resolve().promise();
@@ -1020,7 +1020,7 @@ OC.Shorty={
 			sort: function(list,sortCode){
 				sortCore = sortCode || 'cd';
 				var icon=list.find('thead tr.shorty-toolbar th div img[data-sort-code="'+sortCode+'"]');
-				var sortCol=icon.parents('th').attr('id');
+				var sortCol=icon.parents('th').attr('data-aspect');
 				var sortDir=icon.attr('data-sort-direction');
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
 				// use the 'tinysort' jquery plugin for sorting
@@ -1028,7 +1028,7 @@ OC.Shorty={
 					case 'created':
 					case 'accessed':
 					case 'until':
-						list.find('tbody>tr').tsort('td#'+sortCol,{order:sortDir});
+						list.find('tbody>tr').tsort('td[data-aspect="'+sortCol+'"]',{order:sortDir});
 						break;
 
 					default:
@@ -1853,11 +1853,11 @@ OC.Shorty={
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
 				// perform modification of existing shorty
 				$.when(
-				OC.Shorty.WUI.Messenger.hide(),
-				// close and neutralize dialog
-				OC.Shorty.WUI.Dialog.hide(dialog),
-				OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
-				OC.Shorty.WUI.List.show()
+					OC.Shorty.WUI.Messenger.hide(),
+					// close and neutralize dialog
+					OC.Shorty.WUI.Dialog.hide(dialog),
+					OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
+					OC.Shorty.WUI.List.show()
 				).done(function(){
 					var data={
 						id:      id,
@@ -2437,9 +2437,9 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 			}
 		})
 		list.find('tr.shorty-toolbar th#list-of-shortys-status select').each(function(){
-			if ($(this).find('option :selected[value!=""]').length) {
+			if ($(this).find('option:selected[value!=""]').length) {
 				filtered = true;
-				$(this).find('div select').effect('pulsate', 2000);
+				$(this).effect('pulsate', 2000);
 				if (list.find('tr.shorty-titlebar th#list-of-shortys-status.collapsed').length) {
 					OC.Shorty.WUI.List.Column.toggle(list.attr('id'),'list-of-shortys-status');
 				}
