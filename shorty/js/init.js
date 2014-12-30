@@ -118,7 +118,7 @@ $(document).ready(function(){
 		$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
 	});
 	// sort buttons
-	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-sorter',[],function(){
+	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-sort',[],function(){
 		OC.Shorty.WUI.List.sort.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]);
@@ -170,7 +170,7 @@ $(document).ready(function(){
 			[list,$(this).parents('th').attr('data-aspect'),$(this).find(':selected').val()]);
 	});
 	// column sorting reaction
-	$(document).on('click','#list-of-shortys thead tr.shorty-toolbar div img.shorty-sorter',[],function(){
+	$(document).on('click','#list-of-shortys thead tr.shorty-toolbar div img.shorty-sort',[],function(){
 		OC.Shorty.WUI.List.sort(list,$(this).attr('data-sort-code'));
 	});
 	// open preferences popup when button is clicked

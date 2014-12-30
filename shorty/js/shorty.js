@@ -1035,7 +1035,7 @@ OC.Shorty={
 						list.find('tbody>tr').tsort({attr:'data-'+sortCol,order:sortDir});
 				} // switch
 				// mark currently active sort icon
-				var icons=list.find('thead tr.shorty-toolbar img.shorty-sorter');
+				var icons=list.find('thead tr.shorty-toolbar img.shorty-sort');
 				icons.removeClass('shorty-active');
 				icons.filter('[data-sort-code="'+sortCode+'"]').addClass('shorty-active');
 				// store the sorting code as preference, for returning list retrievals
