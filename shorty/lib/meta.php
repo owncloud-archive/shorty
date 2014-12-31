@@ -108,8 +108,11 @@ class OC_Shorty_Meta
 			// try to extract title from page
 			preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
 			if (   isset($match[1])
-					&& iconv('UTF-8', 'UTF-8//IGNORE', $match[1]))
-				$meta['title'] = trim($match[1]);
+					&& iconv('UTF-8', 'UTF-8//IGNORE', $match[1])) {
+				// the title is cut off after 2048 chars to prevent security issues like overflows
+				// 2048 is half of 4096 which is the size of the db column (UTF!)
+				$meta['title'] = substr(trim($match[1]),0,2048);
+			}
 			// a friendly state icon (valid/invalid)
 			$meta['staticon'] = self::selectIcon ( 'state', TRUE );
 			// final url after a possible redirection
