@@ -1,4 +1,6 @@
 <?php $TRANSLATIONS = array(
+"Plugins" => "插件",
+"all" => "全部",
 "delete" => "刪除",
 "share" => "分享",
 "error" => "錯誤",

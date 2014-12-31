@@ -80,6 +80,7 @@
 "Feedback" => "フィードバック",
 "Home" => "住居",
 "It can be enabled by a single click in the administration:" => "管理画面で1回クリックするだけで有効にできます。",
+"If you just started using Shorty" => "Shorty をすぐにでも使い始めたいなら、",
 "Loading" => "読込中",
 "Mail client" => "メールクライアント",
 "Modifications for shorty with id '%s' saved" => "id '%s' の短縮に関する変更は保存されました",
