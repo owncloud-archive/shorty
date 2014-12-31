@@ -944,17 +944,25 @@ OC.Shorty={
 						// fill data into corresponsing column
 						var content, classes=[];
 						switch(aspect){
-							case 'created':
-							case 'accessed':
 							case 'until':
-								if (!set[aspect]){
-									content="-"+t('shorty',"never")+"-";
+								if (!set[aspect]) {
+									content="- / -";
 									row.removeClass('shorty-expired');
-								}else{
+								} else {
 									content=set[aspect];
 									if (dateExpired(set[aspect]))
 										row.addClass('shorty-expired');
 									else row.removeClass('shorty-expired');
+								}
+								break;
+
+							case 'accessed':
+								if (  (!set[aspect])
+										||('0'===set[aspect])
+										||( 0 ===set[aspect]) ) {
+									content = "- / -";
+								} else {
+									content = dateTimeToHuman(set[aspect]);
 								}
 								break;
 
@@ -2329,9 +2337,9 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 						break;
 
 					case 'until':
-						if (!set[aspect])
+						if (!set[aspect]) {
 							span.text("-"+t('shorty',"never")+"-");
-						else{
+						} else {
 							span.text(set[aspect]);
 							if (dateExpired(set[aspect]))
 							row.addClass('shorty-expired');
@@ -2341,10 +2349,11 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 					case 'accessed':
 						if (  (!set[aspect])
 								||('0'===set[aspect])
-								||( 0 ===set[aspect]) )
-							span.text("-"+t('shorty',"never")+"-");
-						else
+								||( 0 ===set[aspect]) ) {
+							span.text("- / -");
+						} else {
 							span.text(dateTimeToHuman(set[aspect]));
+						}
 						break;
 
 					case 'title':
