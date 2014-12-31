@@ -1,4 +1,11 @@
 <?php $TRANSLATIONS = array(
+"never" => "Nikad",
+"delete" => "izbriši",
 "Close" => "Zatvori",
-"Save" => "Spasi"
+"Expiration" => "Istek",
+"Home" => "Kućni",
+"Loading" => "Učitavanje",
+"Save" => "Spasi",
+"Settings" => "Postavke",
+"Title" => "Naslov"
 );

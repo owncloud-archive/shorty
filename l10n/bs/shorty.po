@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-12-16 11:04+0000\n"
+"PO-Revision-Date: 2014-12-30 14:11+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Bosnian (http://www.transifex.com/projects/p/owncloud/language/bs/)\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgid "enabled"
 msgstr ""
 
 msgid "never"
-msgstr ""
+msgstr "Nikad"
 
 msgid "private"
 msgstr ""
@@ -72,7 +72,7 @@ msgstr ""
 
 # actions ("to be done")
 msgid "delete"
-msgstr ""
+msgstr "izbriši"
 
 msgid "edit"
 msgstr ""
@@ -280,13 +280,13 @@ msgid "Exception (%s)"
 msgstr ""
 
 msgid "Expiration"
-msgstr ""
+msgstr "Istek"
 
 msgid "Feedback"
 msgstr ""
 
 msgid "Home"
-msgstr ""
+msgstr "Kućni"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
@@ -295,7 +295,7 @@ msgid "If you just started using Shorty"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "Učitavanje"
 
 msgid "Mail client"
 msgstr ""
@@ -412,7 +412,7 @@ msgid "Setting '%s' saved"
 msgstr ""
 
 msgid "Settings"
-msgstr ""
+msgstr "Postavke"
 
 msgid "Share and use"
 msgstr ""
@@ -514,7 +514,7 @@ msgid "This is the url referencing the QRCode shown before"
 msgstr ""
 
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 msgid "Toggle toolbar"
 msgstr ""
