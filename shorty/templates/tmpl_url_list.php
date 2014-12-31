@@ -90,12 +90,8 @@
 			</th>
 			<th id="list-of-shortys-title" data-aspect="title" class="collapsible">
 				<div style="display:none;">
-					<img data-sort-code="ta" data-sort-type="string" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-tool shorty-sort shorty-sort-up svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img data-sort-code="td" data-sort-type="string" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-tool shorty-sort shorty-sort-down svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 't'))); ?>
 					<input id="filter-title" class="shorty-filter" type="text" value="">
 					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
@@ -103,12 +99,8 @@
 			</th>
 			<th id="list-of-shortys-target" data-aspect="target" class="collapsible">
 				<div style="display:none;">
-					<img data-sort-code="ua" data-sort-type="string" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-tool shorty-sort shorty-sort-up svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img data-sort-code="ud" data-sort-type="string" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-tool shorty-sort shorty-sort-down svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'u'))); ?>
 					<input id="filter-target" class="shorty-filter" type="text" value="">
 					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
@@ -116,46 +108,31 @@
 			</th>
 			<th id="list-of-shortys-clicks" data-aspect="clicks" class="collapsible">
 				<div style="display:none;">
-					<img data-sort-code="ha" data-sort-type="int" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-tool shorty-sort shorty-sort-up svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img data-sort-code="hd" data-sort-type="int" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-tool shorty-sort shorty-sort-down svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'h'))); ?>
 				</div>
 			</th>
 			<th id="list-of-shortys-until" data-aspect="until" class="collapsible">
 				<div style="display:none;">
-					<img data-sort-code="da" data-sort-type="date" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-tool shorty-sort shorty-sort-up svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img data-sort-code="dd" data-sort-type="date" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-tool shorty-sort shorty-sort-down svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'd'))); ?>
 				</div>
 			</th>
 			<th id="list-of-shortys-created" data-aspect="created" class="collapsible">
 				<div style="display:none;">
-					<img data-sort-code="ca" data-sort-type="date" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-tool shorty-sort shorty-sort-up svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img data-sort-code="cd" data-sort-type="date" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-tool shorty-sort shorty-sort-down svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'c'))); ?>
 				</div>
 			</th>
 			<th id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible">
 				<div style="display:none;">
-					<img data-sort-code="aa" data-sort-type="date" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-tool shorty-sort shorty-sort-up svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img data-sort-code="ad" data-sort-type="date" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-tool shorty-sort shorty-sort-down svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'a'))); ?>
 				</div>
 			</th>
 			<th id="list-of-shortys-status" data-aspect="status" class="collapsible">
 				<div style="display:none;">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
 					<span class="shorty-select">
 						<select id="filter-status" class="shorty-filter" value="" data-placeholder=" ">
 						<?php foreach($_['shorty-status'] as $option=>$label)

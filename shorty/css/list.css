@@ -83,17 +83,30 @@
 	height: 16px;
 	opacity: 0.8;
 }
+.shorty-list thead tr.shorty-toolbar img.shorty-clear {
+	cursor: pointer;
+	opacity: 0.6;
+}
+/* only show one collapsible tool icon at once */
+.shorty-list thead tr.shorty-toolbar img.shorty-tool.shorty-tool-collapsible {
+	cursor: col-resize;
+	opacity: 0.6;
+	height: 16px;
+	margin: 0 2px 0 0;
+}
+.shorty-list thead tr.shorty-toolbar th.collapsed img.shorty-tool.shorty-tool-collapsible[data-collapsible-code="collapse"],
+.shorty-list thead tr.shorty-toolbar th:not(.collapsed) img.shorty-tool.shorty-tool-collapsible[data-collapsible-code="expand"] {
+	display: none;
+}
+/* custom cursors for sorting tool icons */
 .shorty-list thead tr.shorty-toolbar img.shorty-sort-up  {
 	cursor: n-resize;
 }
 .shorty-list thead tr.shorty-toolbar img.shorty-sort-down  {
 	cursor: s-resize;
 }
-.shorty-list thead tr.shorty-toolbar img.shorty-clear {
-	cursor: pointer;
-	opacity: 0.6;
-}
-.shorty-list thead tr.shorty-toolbar img.shorty-tool {
+/* fade between sorting tool icons */
+.shorty-list thead tr.shorty-toolbar img.shorty-sort {
 	opacity: 0.6;
 	width: 16px;
 	margin: 2px -4px;
@@ -104,13 +117,14 @@
 	-khtml-transition: width 250ms, margin 250ms;
 	-webkit-transition: width 250ms, margin 250ms;
 }
-.shorty-list thead tr.shorty-toolbar img.shorty-tool.shorty-active {
+/* emphasize active sorting tool icon */
+.shorty-list thead tr.shorty-toolbar img.shorty-sort.shorty-active {
 	opacity: 1;
 	width: 20px;
 	margin: 0 -6px;
 }
-/* last column in the list, content usually invisible, except when hovered */
-.shorty-list tr.shorty-toolbar th.collapsed div {
+/* hide content of toolbar in collapsed columns, except for the 'expand' tool */
+.shorty-list tr.shorty-toolbar th.collapsed div *:not([data-collapsible-code="expand"]) {
 	visibility: hidden;
 }
 .shorty-list thead tr.shorty-toolbar th select,
@@ -220,16 +234,8 @@
 
 
 /* collapsible list columns */
-
 .shorty-list.shorty-collapsible tbody td span {
 	max-width: 100%;
-}
-
-.shorty-list.shorty-collapsible thead tr.shorty-titlebar th.collapsible div,
-.shorty-list.shorty-collapsible thead tr.shorty-toolbar th.collapsed,
-.shorty-list.shorty-collapsible tbody td.collapsed,
-.shorty-list.shorty-collapsible tbody td.collapsed span {
-	cursor: col-resize;
 }
 
 .shorty-list.shorty-collapsible tr.shorty-titlebar th.collapsible,
@@ -265,7 +271,8 @@
 
 /* list of shortys */
 
-#list-of-shortys thead tr.shorty-titlebar th#list-of-shortys-favicon * {
+#list-of-shortys thead tr.shorty-titlebar th,
+#list-of-shortys thead tr.shorty-titlebar th * {
 	cursor: row-resize;
 }
 
