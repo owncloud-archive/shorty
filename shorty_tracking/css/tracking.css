@@ -55,7 +55,7 @@
 }
 #list-of-clicks thead th#list-of-clicks-address,
 #list-of-clicks tbody td#list-of-clicks-address {
-	width:7.2em;
+	width:8.4em;
 }
 #list-of-clicks thead th#list-of-clicks-host,
 #list-of-clicks tbody td#list-of-clicks-host {
@@ -63,7 +63,7 @@
 }
 #list-of-clicks thead th#list-of-clicks-user,
 #list-of-clicks tbody td#list-of-clicks-user {
-	width:7.8em;
+	width:8.8em;
 }
 #list-of-clicks thead th#list-of-clicks-time,
 #list-of-clicks tbody td#list-of-clicks-time {
@@ -73,7 +73,8 @@
 #list-of-clicks tbody td#list-of-clicks-actions {
 	width: 28px;
 }
-#list-of-clicks thead tr.shorty-titlebar th#list-of-clicks-status * {
+#list-of-clicks thead tr.shorty-titlebar th,
+#list-of-clicks thead tr.shorty-titlebar th * {
 	cursor: row-resize;
 }
 #list-of-clicks thead tr.shorty-toolbar th#list-of-clicks-status img.shorty-clear {

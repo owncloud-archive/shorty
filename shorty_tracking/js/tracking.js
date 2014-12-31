@@ -43,12 +43,6 @@ $(window).load(function(){
 	OC.Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
 		OC.Shorty.WUI.Dialog.hide(OC.Shorty.Tracking.Dialog.List);
 	});
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-titlebar #list-of-clicks-status').on('click',function(){
-			OC.Shorty.WUI.List.Toolbar.toggle.apply(
-				OC.Shorty.Runtime.Context.ListOfClicks,
-				[OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()]
-			);
-	});
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-toolbar .shorty-reload')
 		.on('click',function(){OC.Shorty.Tracking.build(false);});
 	OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load')

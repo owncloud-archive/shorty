@@ -91,6 +91,7 @@
 					</th>
 					<th id="list-of-clicks-result" data-aspect="result" class="collapsible">
 						<div style="display:none;">
+							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<span class="shorty-select">
 								<select id="filter-result" class="shorty-filter" value="" data-placeholder=" ">
 									<?php foreach($_['shorty-result'] as $option=>$label)
@@ -104,6 +105,7 @@
 					</th>
 					<th id="list-of-clicks-address" data-aspect="address" class="collapsible">
 						<div style="display:none;">
+							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<input id="filter-address" class="shorty-filter" type="text" value="">
 							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
@@ -111,6 +113,7 @@
 					</th>
 					<th id="list-of-clicks-host" data-aspect="host" class="collapsible">
 						<div style="display:none;">
+							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<input id="filter-host" class="shorty-filter" type="text" value="">
 							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
@@ -118,6 +121,7 @@
 					</th>
 					<th id="list-of-clicks-user" data-aspect="user" class="collapsible">
 						<div style="display:none;">
+							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<input id="filter-user" class="shorty-filter" type="text" value="">
 							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
@@ -125,6 +129,7 @@
 					</th>
 					<th id="list-of-clicks-time" data-aspect="time" class="collapsible">
 						<div style="display:none;">
+							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<input id="filter-time" class="shorty-filter" type="text" value="">
 							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">

@@ -1035,7 +1035,7 @@ OC.Shorty={
 						list.find('tbody>tr').tsort({attr:'data-'+sortCol,order:sortDir});
 				} // switch
 				// mark currently active sort icon
-				var icons=list.find('thead tr.shorty-toolbar img.shorty-sorter');
+				var icons=list.find('thead tr.shorty-toolbar img.shorty-sort');
 				icons.removeClass('shorty-active');
 				icons.filter('[data-sort-code="'+sortCode+'"]').addClass('shorty-active');
 				// store the sorting code as preference, for returning list retrievals
@@ -1086,9 +1086,7 @@ OC.Shorty={
 				*/
 				collapse: function(list, column){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("collapse column '"+column+"' in list '"+list+"'");
-					$('#'+list).find('thead th[data-aspect="'+column+'"]').addClass('collapsed');
-					$('#'+list).find('thead td[data-aspect="'+column+'"]').addClass('collapsed');
-					$('#'+list).find('tbody td[data-aspect="'+column+'"]').addClass('collapsed');
+					$('#'+list).find('thead th,thead td,tbody td').filter('[data-aspect="'+column+'"]').addClass('collapsed');
 				}, // OC.Shorty.WUI.List.Column.collapse
 				/**
 				* @method OC.Shorty.WUI.List.Column.expand
@@ -1099,8 +1097,7 @@ OC.Shorty={
 				*/
 				expand: function(list, column){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("expand column '"+column+"' in list '"+list+"'");
-					$('#'+list).find('thead th[data-aspect="'+column+'"]').removeClass('collapsed')
-					$('#'+list).find('tbody td[data-aspect="'+column+'"]').removeClass('collapsed')
+					$('#'+list).find('thead th,thead td,tbody td').filter('[data-aspect="'+column+'"]').removeClass('collapsed')
 				}, // OC.Shorty.WUI.List.Column.expand
 				/**
 				* @method OC.Shorty.WUI.List.Column.getCollapsedColumns

@@ -99,16 +99,16 @@ $(document).ready(function(){
 	$(document).on('click','#controls .shorty-dialog #meta #explanation.filled',[], function(e){
 		$(e.currentTarget).closest('.shorty-dialog').find('input#title').val($(e.currentTarget).html());
 	});
-	// button to open the toolbar row in the list
-	$(document).on('click','#list-of-shortys tr.shorty-titlebar #list-of-shortys-favicon',[],function(){
+	// list header clicks open the toolbar row in the list
+	$(document).on('click','.shorty-list tr.shorty-titlebar',[],function(){
 		OC.Shorty.WUI.List.Toolbar.toggle.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
-			[$('#list-of-shortys')]
+			[$(this).parents('table.shorty-list')]
 		);
 	});
-	// headers click in the list to toggle column expansion
-	$(document).on('click','.shorty-list.shorty-collapsible thead tr.shorty-titlebar th.collapsible *,.shorty-list.shorty-collapsible tbody td.collapsed *',[],function(e){
-		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table').attr('id'), $(e.target).parent('th,td').attr('data-aspect') );
+	// collapse tool icons click in the toolbar to toggle column expansion
+	$(document).on('click','.shorty-list.shorty-collapsible thead tr.shorty-toolbar th.collapsible img.shorty-tool-collapsible',[],function(e){
+		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table.shorty-list').attr('id'), $(e.target).parents('th,td').attr('data-aspect') );
 	});
 	// buttons to reload the list
 	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-reload',[],OC.Shorty.WUI.List.build);
@@ -118,7 +118,7 @@ $(document).ready(function(){
 		$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
 	});
 	// sort buttons
-	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-sorter',[],function(){
+	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-sort',[],function(){
 		OC.Shorty.WUI.List.sort.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,
 			[$('#list-of-shortys')]);
@@ -170,7 +170,7 @@ $(document).ready(function(){
 			[list,$(this).parents('th').attr('data-aspect'),$(this).find(':selected').val()]);
 	});
 	// column sorting reaction
-	$(document).on('click','#list-of-shortys thead tr.shorty-toolbar div img.shorty-sorter',[],function(){
+	$(document).on('click','#list-of-shortys thead tr.shorty-toolbar div img.shorty-sort',[],function(){
 		OC.Shorty.WUI.List.sort(list,$(this).attr('data-sort-code'));
 	});
 	// open preferences popup when button is clicked
