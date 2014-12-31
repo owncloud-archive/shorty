@@ -2333,12 +2333,17 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 				switch(aspect)
 				{
 					case 'favicon':
-						span.html('<img class="shorty-icon" width="16px" src="'+set[aspect]+'">');
+						if (  (!set[aspect])
+								||(''===set[aspect]) ) {
+							span.html('<img class="shorty-icon" width="16px" src="'+OC.imagePath('shorty','blank')+'">');
+						} else {
+							span.html('<img class="shorty-icon" width="16px" src="'+set[aspect]+'">');
+						}
 						break;
 
 					case 'until':
 						if (!set[aspect]) {
-							span.text("-"+t('shorty',"never")+"-");
+							span.text("- / -");
 						} else {
 							span.text(set[aspect]);
 							if (dateExpired(set[aspect]))
