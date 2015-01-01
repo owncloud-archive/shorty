@@ -35,7 +35,7 @@
 /**
  * @function max
  * @brief Returns the max value of all elements in an array
- * author Christian Reiner
+ * @author Christian Reiner
  */
 Array.prototype.max = function() {
 	var max = this[0];
