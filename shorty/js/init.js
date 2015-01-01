@@ -59,8 +59,8 @@ $(document).ready(function(){
 					$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.del($(entry)); });
 				}
 				break;
-			default:
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("ignoring key #"+e.keyCode+", no action defined");
+// 			default:
+// 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("ignoring key #"+e.keyCode+", no action defined");
 		}
 	});
 	// close any open dialog when the canvas is clicked
