@@ -46,7 +46,7 @@
 "Add page as 'Shorty' to ownCloud" => "Añadir la página como 'Shorty' a ownCloud",
 "Administration" => "Administración",
 "Administrative, system wide settings of this app:" => "Administración, la configuración global para el sistema de esta aplicación:",
-"after the SMS has been launched" => "después que el SMS haya sido abierto",
+"after the SMS has been launched" => "después de que el SMS haya sido abierto",
 "Alternatively the image can be downloaded for printout or storage" => "Como alternativa, la imagen puede descargarse para su impresión o almacenamiento",
 "alternatively the link can be copied for further usage" => "alternativamente, el enlace puede ser copiado para un uso posterior",
 "Alternatively the link can be copied manually" => "Alternativamente, el enlace puede ser copiado manualmente",
