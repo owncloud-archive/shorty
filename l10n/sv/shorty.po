@@ -27,6 +27,7 @@
 # Daniel Sandman <revoltism@gmail.com>, 2013
 # Jan Busk, 2013
 # Juho Ojala, 2013
+# kenthage <khagebrand@gmail.com>, 2015
 # Magnus Höglund <magnus@linux.com>, 2013
 # Juho Ojala, 2013
 msgid ""
@@ -34,8 +35,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-12-31 09:12+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-01-04 09:10+0000\n"
+"Last-Translator: kenthage <khagebrand@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/owncloud/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,19 +120,19 @@ msgstr "felsök"
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(aldrig)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 sekunder"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 sekunder"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 sekunder"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minut"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -252,7 +253,7 @@ msgid "The amount of feedback messages shown."
 msgstr "Mängden återkopplingsmeddelanden visas."
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "Tidsrymden efter vilken meddelanden göms automatiskt igen"
 
 msgid "Copy to clipboard"
 msgstr "Kopiera till urklippshanteraren"
@@ -297,7 +298,7 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr "Den kan aktiveras genom en enkel knapptryckning under administrering:"
 
 msgid "If you just started using Shorty"
-msgstr ""
+msgstr "Om du just börjat använda Shorty"
 
 msgid "Loading"
 msgstr "Laddar"
