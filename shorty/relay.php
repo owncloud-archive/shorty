@@ -101,27 +101,20 @@ try
 		'time'    => $_SERVER['REQUEST_TIME'],
 		'user'    => OCP\User::getUser(),
 		);
-		if ( FALSE===$result )
+		if ( FALSE===$result ) {
 			throw new OC_Shorty_HttpException ( 500 );
-		elseif ( ! is_array($result) )
+		} elseif ( ! is_array($result) ) {
 			throw new OC_Shorty_HttpException ( 500 );
-		elseif ( 0==sizeof($result) )
-		{
+		} elseif ( 0==sizeof($result) ) {
 			// no entry found => 404: Not Found
 			throw new OC_Shorty_HttpException ( 404 );
-		}
-		elseif ( 1<sizeof($result) )
-		{
+		} elseif ( 1<sizeof($result) ) {
 			// multiple matches => 409: Conflict
 			throw new OC_Shorty_HttpException ( 409 );
-		}
-		elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('target',$result[0])) )
-		{
+		} elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('target',$result[0])) ) {
 			// invalid entry => 500: Internal Server Error
 			throw new OC_Shorty_HttpException ( 500 );
-		}
-		elseif ( (!array_key_exists('target',$result[0])) || ('1'==$result[0]['expired']) )
-		{
+		} elseif ( (!array_key_exists('target',$result[0])) || ('1'==$result[0]['expired']) ) {
 			// entry expired => 410: Gone
 			throw new OC_Shorty_HttpException ( 410 );
 		}
@@ -146,9 +139,9 @@ try
 						header('HTTP/1.0 401 Unauthorized');
 						// important: flush, so that auth headers are not swallowed by OC
 						flush(); ob_flush();
-						// refuse forwarding => 403: Forbidden
+						// request authentication => 401: Unauthorized
 						OC_Shorty_Hooks::registerClick ( $result[0], $request, 'failed' );
-						throw new OC_Shorty_HttpException ( 403 );
+						throw new OC_Shorty_HttpException ( 401 );
 					}
 					elseif ( ! OCP\User::checkPassword($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) )
 					{
@@ -156,9 +149,9 @@ try
 						header('HTTP/1.0 401 Unauthorized');
 						// important: flush, so that auth headers are not swallowed by OC
 						flush(); ob_flush();
-						// refuse forwarding => 403: Forbidden
+						// request authentication => 401: Unauthorized
 						OC_Shorty_Hooks::registerClick ( $result[0], $request, 'failed' );
-						throw new OC_Shorty_HttpException ( 403 );
+						throw new OC_Shorty_HttpException ( 401 );
 					}
 					elseif ( $result[0]['user']!=$_SERVER['PHP_AUTH_USER'] )
 					{
@@ -179,9 +172,9 @@ try
 						header('HTTP/1.0 401 Unauthorized');
 						// important: flush, so that auth headers are not swallowed by OC
 						flush(); ob_flush();
-						// fallback: refuse forwarding => 403: Forbidden
+						// request authentication => 401: Unauthorized
 						OC_Shorty_Hooks::registerClick ( $result[0], $request, 'failed' );
-						throw new OC_Shorty_HttpException ( 403 );
+						throw new OC_Shorty_HttpException ( 401 );
 					}
 					elseif ( ! OCP\User::checkPassword($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']) )
 					{
@@ -192,8 +185,8 @@ try
 						flush(); ob_flush();
 						// log denied access attempt
 						OC_Shorty_Hooks::registerClick ( $result[0], $request, 'failed' );
-						// fallback: refuse forwarding => 403: Forbidden
-						throw new OC_Shorty_HttpException ( 403 );
+						// request authentication => 401: Unauthorized
+						throw new OC_Shorty_HttpException ( 401 );
 					}
 				}
 				break;
