@@ -1,4 +1,5 @@
 <?php $TRANSLATIONS = array(
+"never" => "nikad",
 "delete" => "brisanje",
 "share" => "deljenje",
 "show" => "prikaži",
