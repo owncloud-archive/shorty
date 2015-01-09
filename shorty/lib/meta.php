@@ -44,7 +44,7 @@ class OC_Shorty_Meta
 	/**
 	* @method OC_Shorty_Meta::fetchMetaData
 	* @brief Retrieves the meta information to a given remote url
-	* @param url $url: Decoded target url for which meta information if requested
+	* @param string $url: Decoded target url for which meta information if requested
 	* @return array: Associative array holding the requested meta data
 	* @access public
 	* @author Christian Reiner
@@ -77,6 +77,10 @@ class OC_Shorty_Meta
 			case 'webdav':
 			case 'webdas':
 				self::enrichMetaDataCurl ( $url, $meta );
+		}
+		// rewrite favicon reference to proxy service
+		if ($meta['favicon']) {
+			$meta['favicon'] = OC_Shorty_Tools::proxifyReference($meta['favicon'], true);
 		}
 		return $meta;
 	} // function fetchMetaData

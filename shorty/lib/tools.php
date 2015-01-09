@@ -214,6 +214,43 @@ class OC_Shorty_Tools
 	}
 
 	/**
+	 * @method OC_Shorty_Tools::hashSubject
+	 * @brief Hashes a given string using the installation specific alphabet as salt
+	 * @param $subject
+	 * @return string The hashed subject
+	 * @throws OC_Shorty_Exception
+	 */
+	static public function hashSubject ( $subject )
+	{
+		$alphabet = OCP\Config::getAppValue('shorty', 'id-alphabet');
+		$salt = substr($alphabet, 0, CRYPT_SALT_LENGTH);
+		$hash = crypt($subject, $salt);
+		if( !$alphabet || !$hash ) {
+			throw new OC_Shorty_Exception ( "failed to create a usable hash, check your system setup!" );
+		}
+		return $hash;
+	} // function hashSubject
+
+	/**
+	 * @method OC_Shorty_Tools::proxifyReference
+	 * @brief Creates a reference to the internal proxy feature
+	 * @param string $subject: The subject to be handed over as reference query 'id'
+	 * @param bool $hash: Whether to create an additional hash inside the created reference
+	 * @return string
+	 * @throws OC_Shorty_Exception
+	 * @access public
+	 * @author Christian Reiner
+	 */
+	static public function proxifyReference ( $subject, $hash=false )
+	{
+		if ($hash)  {
+			return sprintf('%s?mode=favicon&subject=%s&hash=%s', OCP\Util::linkToAbsolute('shorty', 'proxy.php'), urlencode($subject), self::hashSubject($subject));
+		} else {
+			return sprintf('%s?mode=favicon&subject=%s', OCP\Util::linkToAbsolute('shorty', 'proxy.php'), urlencode($subject));
+		}
+	} // function proxifyReference
+
+	/**
 	* @method OC_Shorty_Tools::relayUrl
 	* @brief Generates a relay url for a given id acting as a href target for all backends
 	* @param string id: Shorty id as shorty identification
