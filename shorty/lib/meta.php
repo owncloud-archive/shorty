@@ -44,12 +44,12 @@ class OC_Shorty_Meta
 	/**
 	* @method OC_Shorty_Meta::fetchMetaData
 	* @brief Retrieves the meta information to a given remote url
-	* @param url url: Decoded target url for which meta information if requested
+	* @param url $url: Decoded target url for which meta information if requested
 	* @return array: Associative array holding the requested meta data
 	* @access public
 	* @author Christian Reiner
 	*/
-	static function fetchMetaData ( $url )
+	static public function fetchMetaData ( $url )
 	{
 		$url_token = parse_url ( $url );
 		// some sane fallback values, in case we cannot get the meta data
@@ -81,7 +81,16 @@ class OC_Shorty_Meta
 		return $meta;
 	} // function fetchMetaData
 
-	static function enrichMetaDataFile ( $url, &$meta )
+	/**
+	 * @method OC_Shorty_Meta::enrichMetaDataFile
+	 * @brief Enriches the existing meta data structure my additional details
+	 * @param $url string The url pointing to the file to extract data from
+	 * @param $meta array An existing structure of meta data
+	 * @throws OC_Shorty_Exception
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function enrichMetaDataFile ( $url, &$meta )
 	{
 		OCP\Share::getItemsShared('file');
 		// consult the sharing API for more details
@@ -92,7 +101,16 @@ class OC_Shorty_Meta
 			$meta['explanation'] = OC_Shorty_L10n::t ( self::selectCode('explanation',$meta['code']) );
 	} // function enrichMetaDataFile
 
-	static function enrichMetaDataCurl ( $url, &$meta )
+	/**
+	 * @method OC_Shorty_Meta::enrichMetaDataCurl
+	 * @brief Enriches the existing meta data structure my additional details
+	 * @param $url string The url pointing to the file to extract data from
+	 * @param $meta array An existing structure of meta data
+	 * @throws OC_Shorty_Exception
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function enrichMetaDataCurl ( $url, &$meta )
 	{
 		// to fetch meta data we rely on curl being installed
 		if ( ! function_exists('curl_init') )
@@ -201,10 +219,10 @@ class OC_Shorty_Meta
 	* @param string identifier: String indicating a specific code to be resolved
 	* @return string: Human readable string resolving the specified numeric status code
 	* @throws OC_Shorty_Exception in case of an undefined code to be resolved
-	* @access public
+	* @access protected
 	* @author Christian Reiner
 	*/
-	static function selectCode ( $aspect, $identifier )
+	static protected function selectCode ( $aspect, $identifier )
 	{
 		// map of official http status codes
 		$_code_map = array
@@ -247,10 +265,10 @@ class OC_Shorty_Meta
 	* @param string aspect: String indicating a section/pool an icon is to be chosen from
 	* @param string identifier: String indicating a specific icon to be referenced
 	* @return string: Hyper reference to an icon in form of a string
-	* @access public
+	* @access protected
 	* @author Christian Reiner
 	*/
-	static function selectIcon ( $aspect, $identifier )
+	static protected function selectIcon ( $aspect, $identifier )
 	{
 		switch ( $aspect )
 		{
