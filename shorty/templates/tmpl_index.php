@@ -48,12 +48,12 @@
 <!-- top control bar -->
 <div id="controls" class="shorty-controls" data-referrer="<?php if (array_key_exists('shorty-referrer',$_)) p($_['shorty-referrer']); ?>">
 	<!-- controls: left area, buttons -->
-	<span class="shorty-controls-left">
+	<div class="shorty-controls-left">
 		<!-- button to add a new entry to list -->
 		<button id="add" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('New Shorty')); ?>"><?php p(OC_Shorty_L10n::t('New Shorty')); ?></button>
-	</span>
+	</div>
 	<!-- controls: right area, buttons -->
-	<span class="shorty-controls-right">
+	<div class="shorty-controls-right">
 		<!-- the internal settings button -->
 		<button id="controls-preferences" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Configuration')); ?>">
 			<img class="svg" src="<?php p(OCP\Util::imagePath('core', 'actions/settings.svg')); ?>"
@@ -79,22 +79,22 @@
 		<span id="controls-handle" class="shorty-handle shorty-handle-top">
 			<img class="shorty-icon svg" src="<?php p(OCP\Util::imagePath('shorty','actions/shade.svg')); ?>" >
 		</span>
-	</span>
+	</div>
 	<!-- controls: center area, some  passive information -->
-	<span class="shorty-controls-center">
+	<div class="shorty-controls-center">
 		<!-- display label: number of entries in list -->
 		<span class="shorty-prompt"><?php p(OC_Shorty_L10n::t('Number of entries')); ?>:</span>
 		<span id="sum_shortys" class="shorty-value">
 			<img src="<?php p(OCP\Util::imagePath('core', 'loading.gif')); ?>"
-				alt="<?php p(OC_Shorty_L10n::t('Loading')); ?>…"/>
+				class="shorty-icon" alt="<?php p(OC_Shorty_L10n::t('Loading')); ?>…"/>
 		</span>
 		<!-- display label: total of clicks in list -->
 		<span class="shorty-prompt"><?php p(OC_Shorty_L10n::t('Total of clicks')); ?>:</span>
 		<span id="sum_clicks" class="shorty-value">
 			<img src="<?php p(OCP\Util::imagePath('core', 'loading.gif')); ?>"
-				alt="<?php p(OC_Shorty_L10n::t('Loading')); ?>…" />
+				class="shorty-icon" alt="<?php p(OC_Shorty_L10n::t('Loading')); ?>…" />
 		</span>
-	</span>
+	</div>
 	<!-- the dialogs, hidden by default -->
 	<?php echo $this->inc('tmpl_url_add'); ?>
 	<?php echo $this->inc('tmpl_url_edit'); ?>
