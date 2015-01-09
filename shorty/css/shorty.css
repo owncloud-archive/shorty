@@ -72,6 +72,7 @@ html input, html textarea {
 }
 .shorty-controls {
 	display: block;
+	line-height: 100%;
 }
 .shorty-controls-left {
 	float: left;
@@ -81,21 +82,15 @@ html input, html textarea {
 }
 .shorty-controls-center {
 	width: 100%;
-	height: inherit;
-	line-height: 300%;
-	text-align: center;
+	line-height: 250%;
 	font-size: 110%;
 	font-weight: inherit;
 	margin: 0 1em;
 	white-space: nowrap;
 }
 .shorty-controls-center span {
-	display: inline;
-	height: inherit;
-	vertical-align: top;
 }
 .shorty-controls-center span.shorty-value {
-	display: inline-block;
 	min-width: 32px;
 }
 .shorty-controls-center span img {
