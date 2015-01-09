@@ -339,6 +339,6 @@ class OC_Shorty_Tools
 		if ( function_exists('idn_to_utf8') )
 			return idn_to_utf8($url);
 		else return $url;
-	} // funtion idnToUTF8
+	} // function idnToUTF8
 
 } // class OC_Shorty_Tools
