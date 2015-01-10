@@ -1704,7 +1704,7 @@ OC.Shorty={
 			verify:function(){
 				var dfd=new $.Deferred();
 				// prepare preloaded iframe to load the base url
-				if ($('#shorty #backend-static #backend-static-base').val()){
+				if ($('#shorty #shorty-backend-static #shorty-backend-static-base').val()){
 					// load the prepared iframe into a dialog
 					var popup=OC.Shorty.Action.Setting.Popup;
 					if ( ! popup.dialog){
@@ -1726,7 +1726,7 @@ OC.Shorty={
 					dfd.resolve();
 				}else{
 					// no targt given: show user where to fill in target
-					$('#shorty #backend-static #backend-static-base').effect('pulsate', 2000);
+					$('#shorty #shorty-backend-static #shorty-backend-static-base').effect('pulsate', 2000);
 					dfd.reject();
 				}
 				return dfd.promise();
