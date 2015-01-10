@@ -1296,8 +1296,8 @@ OC.Shorty={
 					OC.Shorty.Action.Preference.get('verbosity-control'),
 					OC.Shorty.Action.Preference.get('verbosity-timeout')
 				).always(function(resultControl, resultTimeout){
-					var verbosity = resultControl['verbosity-control'] || 'info';
-					var timeout   = resultTimeout['verbosity-timeout'] || 0;
+					var verbosity = resultControl['verbosity-control'] || 'error';
+					var timeout   = resultTimeout['verbosity-timeout'] || 5;
 					if (message && message.length){
 						// log to browser console when debugging is enabled in system config file
 						if ( OC.Shorty.Debug ){
