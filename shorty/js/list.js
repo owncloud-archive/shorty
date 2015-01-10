@@ -42,7 +42,8 @@ $(document).ready(function(){
 		$.when(
 			OC.Shorty.Action.Preference.get('controls-panel-visible')
 		).done(function(pref){
-			if (pref['controls-panel-visible'])
+			if (  (pref['controls-panel-visible']===null)
+					||(pref['controls-panel-visible']) )
 				OC.Shorty.WUI.Controls.show();
 			else
 				OC.Shorty.WUI.Controls.hide();
