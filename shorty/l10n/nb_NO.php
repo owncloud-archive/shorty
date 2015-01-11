@@ -180,7 +180,7 @@
 "tiny.cc user name" => "tiny.cc brukernavn",
 "tiny.cc key" => "tiny.cc-nøkkel",
 "tiny.cc user key" => "tiny.cc brukernøkkel",
-"Force verification of encryption certificates during communication with the backend" => "Tving verifisering av krypteringssertifikater ved kommunikasjon med serverdelen",
+"Force verification of encryption certificates during communication with the backend" => "Krev verifisering av krypteringssertifikater ved kommunikasjon med serverdelen",
 "The external 'bitly.com' service is used to register a short url for each generated shorty." => "Den eksterne tjenesten 'bitly.com' brukes til å registrere en kort url for hver shorty som genereres.",
 "This means you have to register an '%s' at their site first." => "Dette betyr at du må registrere en '%s' på nettsiden deres først.",
 "The external 'turl' service is used to register a short url for each generated shorty." => "Den eksterne tjenesten 'turl' brukes til å registrere en kort url for hver shorty som genereres.",
