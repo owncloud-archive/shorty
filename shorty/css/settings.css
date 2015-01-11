@@ -29,27 +29,54 @@
  */
 
 /* the settings partial */
-body#body-settings #shorty.section h2 img {
+#shorty.section h2 img {
 	width: 22px;
 	vertical-align: bottom;
 }
-body#body-settings #shorty.section fieldset {
+#shorty.section fieldset {
 	margin-bottom: 1em;
 	padding-left: 1em;
 }
-body#body-settings #shorty.section fieldset legend {
+#shorty.section fieldset legend {
 	margin-left: -1em;
 	font-size: 110%;
 }
-body#body-settings #shorty.section label {
+#shorty.section label {
+	display: inline-block;
+	width: 7.6em;
 	font-size: inherit;
 	font-weight: inherit;
 	margin: 0;
 }
-body#body-settings #shorty.section a {
+#shorty.section .shorty-explain {
+	font-style: italic;
+	opacity: 0.7;
+}
+#shorty.section .shorty-example {
+	font-family: Monospace;
+	font-style: normal;
+	font-size: medium;
+	margin: 0.3em;
 	text-decoration: underline;
 }
-body#body-settings #shorty.section .shorty-explain {
-	font-style: italic;
-	opacity: 0.6;
+#shorty-backend-static {
+	display: inline-block;
 }
+#shorty-backend-static-verification {
+	display: inline-block;
+	vertical-align: bottom;
+	height: 2em;
+	margin: 0 1em;
+}
+#shorty-backend-static-verification img.shorty-activity,
+#shorty-backend-static-verification iframe#shorty-backend-static-verifier {
+	display: none;
+	position: absolute;
+}
+#shorty-backend-static-base.valid {
+	border-color: limegreen;
+}
+#shorty-backend-static-base.invalid {
+	border-color: red;
+}
+

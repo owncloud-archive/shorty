@@ -41,20 +41,19 @@ $(document).ready(function(){
 	}
 	// backend 'static': initialize example that depends on backend-base system setting
 	if ($('#shorty-preferences #shorty-backend-static #shorty-backend-static-base').val().length)
-		$('#shorty-preferences #shorty-backend-static #shorty-example').text($('#shorty-preferences #shorty-backend-static #shorty-backend-static-base').val()+'<shorty id>');
+		$('#shorty-preferences #shorty-backend-static #shorty-backend-example').text($('#shorty-preferences #shorty-backend-static #shorty-backend-static-base').val()+'<shorty id>');
 	// backend 'static': offer a clickable example link to verify the correct setup
-	$('#shorty-preferences #shorty-backend-static #shorty-example').bind('click',function(event){
+	$('#shorty-preferences #shorty-backend-static #shorty-backend-example').bind('click',function(event){
 		event.preventDefault();
-		OC.Shorty.Action.Setting.verify();
+		OC.Shorty.Action.Verification.verify();
 	});
 	// react with a matching explanation and example url when backend type is chosen
 	$('.chosen').chosen();
-	$('#shorty-preferences #shorty-backend-type').change(
-		function(){
+	$('#shorty-preferences #shorty-backend-type').change(function(){
 			var type=$('#shorty-preferences #shorty-backend-type').val();
 			$('#shorty-preferences .shorty-backend-supplement').hide();
 			if (type.length){
-				$('#shorty-preferences .shorty-backend-supplement').filter('#shorty-backend-'+type).fadeIn('slow');
+				$('#shorty-preferences #shorty-backend-'+type+'.shorty-backend-supplement').fadeIn('slow');
 				// save preference
 				OC.Shorty.Action.Preference.set($('#shorty-preferences #shorty-backend-type').serialize());
 				return false;
