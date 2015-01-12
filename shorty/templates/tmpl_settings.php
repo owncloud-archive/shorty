@@ -65,7 +65,7 @@
 		<br/>
 		<label for="shorty-backend-example" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").":"); ?></label>
 		<span id="shorty-backend-example" class="shorty-example">
-			<?php p('http://<domain>/<service><shorty id>'); ?>
+			<?php p('http://<domain>/<service><shorty-id>'); ?>
 		</span>
 		<br/>
 		<span class="shorty-explain">
@@ -75,7 +75,7 @@
 				OC_Shorty_L10n::t("The target of that mapping must be some URL like:"),
 				OC_Shorty_L10n::t("Such rewriting rules should be configured inside the http server configuration."),
 				OC_Shorty_L10n::t("If no access to that configuration exists, then using '.htaccess' style files might be an option."),
-				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty id>'))); ?>
+				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty-id>'))); ?>
 		</span>
 	</fieldset>
 <!-- list of installed plugins -->

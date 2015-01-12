@@ -73,7 +73,7 @@
 				<div id="shorty-backend-none" class="shorty-backend-supplement">
 					<label for="shorty-backend-example-none" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-none" class="shorty-example">
-						<?php print_unescaped(sprintf('http://%s%s<em>&lt;shorty id&gt;</em>',$_SERVER['SERVER_NAME'],OCP\Util::linkTo('shorty','',false))); ?>
+						<?php p(sprintf('http://%s%s<shorty-id>', $_SERVER['SERVER_NAME'], OCP\Util::linkTo('shorty','',false))); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
@@ -89,7 +89,7 @@
 					<br/>
 					<label for="shorty-backend-example-static" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-static" class="shorty-example">
-						<?php print_unescaped(sprintf(htmlspecialchars('%s<shorty id>'),$_['backend-static-base'])); ?>
+						<?php p(sprintf('%s<shorty-id>',$_['backend-static-base'])); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
@@ -111,7 +111,7 @@
 					<br/>
 					<label for="shorty-backend-example-bitly" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-bitly" class="shorty-example">
-						<?php print_unescaped(sprintf('http://bitly.com/<em>&lt;shorty id&gt;</em>')); ?>
+						<?php p('http://bitly.com/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
@@ -127,7 +127,7 @@
 				<div id="shorty-backend-cligs" class="shorty-backend-supplement">
 					<label for="shorty-backend-example-cligs" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-cligs" class="shorty-example">
-						<?php print_unescaped(sprintf('http://cli.gs/<em>&lt;shorty id&gt;</em>')); ?>
+						<?php p('http://cli.gs/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
@@ -138,7 +138,7 @@
 				<div id="shorty-backend-isgd" class="shorty-backend-supplement">
 					<label for="shorty-backend-example-isgd" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-isgd" class="shorty-example">
-						<?php print_unescaped(sprintf('http://is.gd/<em>&lt;shorty id&gt;</em>')); ?>
+						<?php p('http://is.gd/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
@@ -153,7 +153,7 @@
 					<br/>
 					<label for="shorty-backend-example-google" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-google" class="shorty-example">
-						<?php print_unescaped(sprintf('http://goo.gl/<em>&lt;shorty id&gt;</em>')); ?>
+						<?php p('http://goo.gl/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<label for="shorty-backend-ssl-verify" class="shorty-aspect"></label>
@@ -184,7 +184,7 @@
 					<br/>
 					<label for="shorty-backend-example-tinycc" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-tinycc" class="shorty-example">
-						<?php print_unescaped(sprintf('http://tiny.cc/<em>&lt;shorty id&gt;</em>')); ?>
+						<?php p(sprintf('http://tiny.cc/&lt;shorty-id&gt;')); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
@@ -199,7 +199,7 @@
 				<div id="shorty-backend-tinyurl" class="shorty-backend-supplement">
 					<label for="shorty-backend-example-tinyurl" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-tinyurl" class="shorty-example">
-						<?php print_unescaped(sprintf('http://ti.ny/<em>&lt;shorty id&gt;</em>')); ?>
+						<?php p('http://ti.ny/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
@@ -210,7 +210,7 @@
 				<div id="shorty-backend-turl" class="shorty-backend-supplement">
 					<label for="shorty-backend-example-turl" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-turl" class="shorty-example">
-						<?php print_unescaped(sprintf('http://turl.ca/<em>&lt;shorty id&gt;</em>')); ?>
+						<?php p('http://turl.ca/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
