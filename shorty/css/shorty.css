@@ -458,6 +458,7 @@ input.shorty-config {
 .shorty-standalone .shorty-meta {
 	width: 67%;
 	margin: 0;
+	line-height: 20px;
 }
 .shorty-standalone .shorty-meta img {
 	position: relative;
