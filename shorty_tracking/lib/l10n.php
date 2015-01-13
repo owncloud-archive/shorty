@@ -71,4 +71,3 @@ class OC_ShortyTracking_L10n extends OC_Shorty_L10n
 	static protected function instantiate ( ) { return new OC_ShortyTracking_L10n; }
 
 } // class OC_ShortyTracking_L10n
-?>

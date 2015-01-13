@@ -205,4 +205,3 @@ class OC_ShortyTracking_Hooks
 	} // function registerQueries
 
 } // class OC_ShortyTracking_Hooks
-?>

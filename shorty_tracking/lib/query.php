@@ -74,4 +74,3 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 		} // class OC_ShortyTracking_Query
 
 } // switch
-?>
