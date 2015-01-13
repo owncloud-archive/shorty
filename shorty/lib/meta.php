@@ -106,15 +106,9 @@ class OC_Shorty_Meta
 		if ( FALSE!==($page=curl_exec($handle)) )
 		{
 			// try to extract title from page
-			preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
-			if (   isset($match[1])
-					&& iconv('UTF-8', 'UTF-8//IGNORE', $match[1])) {
-				// the title is cut off after 2048 chars to prevent security issues like overflows
-				// 2048 is half of 4096 which is the size of the db column (UTF!)
-				$meta['title'] = substr(trim($match[1]),0,2048);
-			}
+			$meta['title']       = self::extractTitle($page);
 			// a friendly state icon (valid/invalid)
-			$meta['staticon'] = self::selectIcon ( 'state', TRUE );
+			$meta['staticon']    = self::selectIcon ( 'state', TRUE );
 			// final url after a possible redirection
 			$meta['final']    = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
 			// try to extract favicon from page
@@ -146,6 +140,59 @@ class OC_Shorty_Meta
 		curl_close ( $handle );
 		// that's it !
 	} // function enrichMetaDataCurl
+
+	/**
+	 * @method OC_Shorty_Meta::extractFavicon
+	 * @brief Some helper method to extract a usable reference to a pages favicon
+	 * @param $page string The page markup (html) where to extract the favicons reference from
+	 * @param $url string The final url to examine (after resolution of redirections)
+	 * @return string The reference (url) to the favicon
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function extractFavicon($page, $url)
+	{
+		preg_match ( '/<[^>]*link[^>]*(rel=["\']icon["\']|rel=["\']shortcut icon["\']) .*href=["\']([^>]*)["\'].*>/iU', $page, $match );
+		if (1<sizeof($match))
+		{
+			// the specified uri might be an url, an absolute or a relative path
+			// we have to turn it into an url to be able to display it out of context
+			$reference = htmlspecialchars_decode ( $match[2] );
+			if (parse_url($reference, PHP_URL_SCHEME)) {
+				// the ref is an url
+				$favicon = $reference;
+			} elseif ( 0===strpos(parse_url($reference,PHP_URL_PATH),'/') ) {
+				// it is an absolute path
+				$url_token = parse_url($url);
+				$favicon = sprintf( '%s://%s/%s', $url_token['scheme'], $url_token['host'], $reference );
+			} else {
+				// so it appears to be a relative path
+				$url_token = parse_url($url);
+				$favicon = sprintf( '%s://%s%s/%s', $url_token['scheme'], $url_token['host'], dirname($url_token['path']), $reference );
+			}
+		}
+		return $favicon;
+	}
+
+	/**
+	 * @method OC_Shorty_Meta::extractTitle
+	 * @brief Some helper method to extract a title from the page header
+	 * @param $page string The page markup (html) where to extract the title from
+	 * @return string The extracted title
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function extractTitle($page)
+	{
+		preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
+		if (   isset($match[1])
+				&& iconv('UTF-8', 'UTF-8//IGNORE', $match[1])) {
+			// the title is cut off after 2048 chars to prevent security issues like overflows
+			// 2048 is half of 4096 which is the size of the db column (UTF!)
+			return substr(trim($match[1]),0,2048);
+		}
+		return null;
+	}
 
 	/**
 	* @method OC_Shorty_Meta::selectCode
