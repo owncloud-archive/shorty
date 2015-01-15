@@ -50,7 +50,7 @@ try
 			// unknown / undefined proxy mode
 			throw new OC_Shorty_HttpException ( 403 );
 		case 'favicon':
-			$hash = OC_Shorty_Type::req_argument ( 'hash',    OC_Shorty_Type::STRING, FALSE );
+			$hash = OC_Shorty_Type::req_argument ( 'hash', OC_Shorty_Type::STRING, FALSE );
 			if ($hash) {
 				// a hash is specified: this is not referring to an existing Shorty, so validate the hash
 				// this validation should prevent miss usage of the proxy feature
@@ -74,7 +74,6 @@ try
 			header_remove ('Cache-Control');
 			header_remove ('Content-Type');
 			header_remove ('Expires');
-// 					header_remove ('Content-Security-Policy');
 			OC_Shorty_Tools::ob_control ( FALSE );
 
 			// use curl to directly retrieve and relay the payload from the remote server

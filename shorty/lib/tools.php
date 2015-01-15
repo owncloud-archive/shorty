@@ -51,9 +51,10 @@ class OC_Shorty_Tools
 	*/
 	static function ob_control ( $on=TRUE )
 	{
-		$output = NULL;				@ob_implicit_flush ( FALSE );
-				@ob_start ( );
-				self::$ob_active = TRUE;
+		$output = NULL;
+		@ob_implicit_flush ( FALSE );
+		@ob_start ( );
+		self::$ob_active = TRUE;
 
 		if ( self::$ob_usage )
 		{

@@ -155,8 +155,7 @@ class OC_Shorty_Meta
 	 */
 	static protected function extractFavicon($page, $url)
 	{
-		preg_match ( '/<[^>]*link[^>]*(rel=["\']icon["\']|rel=["\']shortcut icon["\']) .*href=["\']([^>]*)["\'].*>/iU', $page, $match );
-		if (1<sizeof($match))
+		if (preg_match ( '/<[^>]*link[^>]*(rel=["\']icon["\']|rel=["\']shortcut icon["\']).*href=["\']([^>]*)["\'].*>/isU', $page, $match ))
 		{
 			// the specified uri might be an url, an absolute or a relative path
 			// we have to turn it into an url to be able to display it out of context
