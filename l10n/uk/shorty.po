@@ -26,14 +26,15 @@
 # Translators:
 # Roman <scorpion@email.kh.ua>, 2014
 # Sergiy, 2014
+# vmural <doyujij@alivance.com>, 2015
 # пан Володимир <volodya327@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-01-12 12:44+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-01-14 19:02+0000\n"
+"Last-Translator: vmural <doyujij@alivance.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/owncloud/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -250,7 +251,7 @@ msgid "The amount of feedback messages shown."
 msgstr "Кількість повідомлень про зворотній зв'язок що відображається "
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "Проміжок часу, після якого повідомлення будуть приховані автоматично"
 
 msgid "Copy to clipboard"
 msgstr "Копіювати в буфер обміну"
@@ -295,7 +296,7 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr "Це можна легко ввімкнути на панелі адміністратора:"
 
 msgid "If you just started using Shorty"
-msgstr ""
+msgstr "Якщо ви тільки почали за допомогою Shorty"
 
 msgid "Loading"
 msgstr "Завантаження"
