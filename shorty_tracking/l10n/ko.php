@@ -3,6 +3,7 @@
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "기존 단축 주소로 향한 모든 요청을 자세히 추적하고 접근 기록 정보를 제공합니다.",
 "granted" => "허가됨",
 "denied" => "거부됨",
+"failed" => "실패함",
 "blocked" => "차단됨",
 "load" => "불러오기",
 "Address" => "주소",
