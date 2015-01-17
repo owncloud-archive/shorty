@@ -267,8 +267,10 @@
 	padding-left: 4px;
 	padding-right: 4px;
 }
-
-
+.shorty-list.shorty-collapsible td.collapsible.collapsed,
+.shorty-list.shorty-collapsible td.collapsible.collapsed * {
+	cursor: col-resize;
+}
 
 /* list of shortys */
 

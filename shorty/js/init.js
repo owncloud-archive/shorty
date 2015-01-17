@@ -108,7 +108,14 @@ $(document).ready(function(){
 	});
 	// collapse tool icons click in the toolbar to toggle column expansion
 	$(document).on('click','.shorty-list.shorty-collapsible thead tr.shorty-toolbar th.collapsible img.shorty-tool-collapsible',[],function(e){
-		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table.shorty-list').attr('id'), $(e.target).parents('th,td').attr('data-aspect') );
+		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table.shorty-list').attr('id'), $(e.target).parents('th').attr('data-aspect') );
+	});
+	// fast un-collapse collapsed columns by clicking into the column
+	$(document).on('click','.shorty-list.shorty-collapsible tbody tr td.collapsible.collapsed *',[],function(e){
+		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table.shorty-list').attr('id'), $(e.target).parents('td').attr('data-aspect') );
+	});
+	$(document).on('click','.shorty-list.shorty-collapsible tbody tr td.collapsible.collapsed',[],function(e){
+		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table.shorty-list').attr('id'), $(e.target).attr('data-aspect') );
 	});
 	// buttons to reload the list
 	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-reload',[],OC.Shorty.WUI.List.build);
