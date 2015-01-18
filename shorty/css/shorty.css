@@ -403,9 +403,11 @@ input.shorty-config {
 	width: 12em;
 	height: 36px;
 	border: 1px solid #D3D3D3;
+	color: #BBB;
 	background-color: #EEEEEE;
 }
 .shorty-dialog button#confirm.sharp {
+	color: #666;
 	background-color: #FFFFFF;
 }
 .shorty-dialog button#confirm.sharp:hover {
