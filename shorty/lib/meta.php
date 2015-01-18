@@ -42,13 +42,13 @@ class OC_Shorty_Meta
 {
 
 	/**
-	* @method OC_Shorty_Meta::fetchMetaData
-	* @brief Retrieves the meta information to a given remote url
-	* @param string $url: Decoded target url for which meta information if requested
-	* @return array: Associative array holding the requested meta data
-	* @access public
-	* @author Christian Reiner
-	*/
+	 * @method OC_Shorty_Meta::fetchMetaData
+	 * @brief Retrieves the meta information to a given remote url
+	 * @param string $url: Decoded target url for which meta information if requested
+	 * @return array: Associative array holding the requested meta data
+	 * @access public
+	 * @author Christian Reiner
+	 */
 	static public function fetchMetaData ( $url )
 	{
 		$url_token = parse_url ( $url );
@@ -197,15 +197,15 @@ class OC_Shorty_Meta
 	}
 
 	/**
-	* @method OC_Shorty_Meta::selectCode
-	* @brief Some helper utility used to resolve numeric http status codes into human readable strings
-	* @param string aspect: String indicating a section/pool a code is to be resolved in
-	* @param string identifier: String indicating a specific code to be resolved
-	* @return string: Human readable string resolving the specified numeric status code
-	* @throws OC_Shorty_Exception in case of an undefined code to be resolved
-	* @access protected
-	* @author Christian Reiner
-	*/
+	 * @method OC_Shorty_Meta::selectCode
+	 * @brief Some helper utility used to resolve numeric http status codes into human readable strings
+	 * @param string aspect: String indicating a section/pool a code is to be resolved in
+	 * @param string identifier: String indicating a specific code to be resolved
+	 * @return string: Human readable string resolving the specified numeric status code
+	 * @throws OC_Shorty_Exception in case of an undefined code to be resolved
+	 * @access protected
+	 * @author Christian Reiner
+	 */
 	static protected function selectCode ( $aspect, $identifier )
 	{
 		// map of official http status codes
@@ -244,14 +244,14 @@ class OC_Shorty_Meta
 	} // function selectCode
 
 	/**
-	* @method OC_Shorty_Meta::selectIcon
-	* @brief Some helper utility for the easy integrate of icon references into templates and alike
-	* @param string aspect: String indicating a section/pool an icon is to be chosen from
-	* @param string identifier: String indicating a specific icon to be referenced
-	* @return string: Hyper reference to an icon in form of a string
-	* @access protected
-	* @author Christian Reiner
-	*/
+	 * @method OC_Shorty_Meta::selectIcon
+	 * @brief Some helper utility for the easy integrate of icon references into templates and alike
+	 * @param string aspect: String indicating a section/pool an icon is to be chosen from
+	 * @param string identifier: String indicating a specific icon to be referenced
+	 * @return string: Hyper reference to an icon in form of a string
+	 * @access protected
+	 * @author Christian Reiner
+	 */
 	static protected function selectIcon ( $aspect, $identifier )
 	{
 		switch ( $aspect )
