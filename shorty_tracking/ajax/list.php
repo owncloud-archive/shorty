@@ -89,4 +89,3 @@ try
 								'stats'   => $stats,
 								'message' => sprintf('%s: %s',OC_ShortyTracking_L10n::t("Number of entries"), count($chunk)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
-?>

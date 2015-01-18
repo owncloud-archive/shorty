@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -37,10 +37,10 @@
 class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 {
 	/**
-	* @method export
-	* @brief Collects all data relevant for this app
-	* @author Christian Reiner
-	*/
+	 * @method export
+	 * @brief Collects all data relevant for this app
+	 * @author Christian Reiner
+	 */
 	function export ( )
 	{
 		OCP\Util::writeLog ( 'shorty','Starting data migration export for Shorty', OCP\Util::INFO );
@@ -60,10 +60,10 @@ class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 	} // function export
 
 	/**
-	* @method import
-	* @brief Imports all data from a given resource into this apps storage areas
-	* @author Christian Reiner
-	*/
+	 * @method import
+	 * @brief Imports all data from a given resource into this apps storage areas
+	 * @author Christian Reiner
+	 */
 	function import ( )
 	{
 		OCP\Util::writeLog ( 'shorty','Starting data migration import for Shorty', OCP\Util::INFO );
@@ -111,5 +111,3 @@ class OC_Migration_Provider_Shorty extends OC_Migration_Provider
 
 // Load the provider
 new OC_Migration_Provider_Shorty ( 'shortys' );
-
-?>

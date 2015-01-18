@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -42,14 +42,14 @@ class OC_Shorty_Meta
 {
 
 	/**
-	* @method OC_Shorty_Meta::fetchMetaData
-	* @brief Retrieves the meta information to a given remote url
-	* @param url url: Decoded target url for which meta information if requested
-	* @return array: Associative array holding the requested meta data
-	* @access public
-	* @author Christian Reiner
-	*/
-	static function fetchMetaData ( $url )
+	 * @method OC_Shorty_Meta::fetchMetaData
+	 * @brief Retrieves the meta information to a given remote url
+	 * @param string $url: Decoded target url for which meta information if requested
+	 * @return array: Associative array holding the requested meta data
+	 * @access public
+	 * @author Christian Reiner
+	 */
+	static public function fetchMetaData ( $url )
 	{
 		$url_token = parse_url ( $url );
 		// some sane fallback values, in case we cannot get the meta data
@@ -78,10 +78,23 @@ class OC_Shorty_Meta
 			case 'webdas':
 				self::enrichMetaDataCurl ( $url, $meta );
 		}
+		// rewrite favicon reference to proxy service
+		if ($meta['favicon']) {
+			$meta['favicon'] = OC_Shorty_Tools::proxifyReference($meta['favicon'], true);
+		}
 		return $meta;
 	} // function fetchMetaData
 
-	static function enrichMetaDataFile ( $url, &$meta )
+	/**
+	 * @method OC_Shorty_Meta::enrichMetaDataFile
+	 * @brief Enriches the existing meta data structure my additional details
+	 * @param $url string The url pointing to the file to extract data from
+	 * @param $meta array An existing structure of meta data
+	 * @throws OC_Shorty_Exception
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function enrichMetaDataFile ( $url, &$meta )
 	{
 		OCP\Share::getItemsShared('file');
 		// consult the sharing API for more details
@@ -92,7 +105,16 @@ class OC_Shorty_Meta
 			$meta['explanation'] = OC_Shorty_L10n::t ( self::selectCode('explanation',$meta['code']) );
 	} // function enrichMetaDataFile
 
-	static function enrichMetaDataCurl ( $url, &$meta )
+	/**
+	 * @method OC_Shorty_Meta::enrichMetaDataCurl
+	 * @brief Enriches the existing meta data structure my additional details
+	 * @param $url string The url pointing to the file to extract data from
+	 * @param $meta array An existing structure of meta data
+	 * @throws OC_Shorty_Exception
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function enrichMetaDataCurl ( $url, &$meta )
 	{
 		// to fetch meta data we rely on curl being installed
 		if ( ! function_exists('curl_init') )
@@ -106,37 +128,12 @@ class OC_Shorty_Meta
 		if ( FALSE!==($page=curl_exec($handle)) )
 		{
 			// try to extract title from page
-			preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
-			if (   isset($match[1])
-					&& iconv('UTF-8', 'UTF-8//IGNORE', $match[1])) {
-				// the title is cut off after 2048 chars to prevent security issues like overflows
-				// 2048 is half of 4096 which is the size of the db column (UTF!)
-				$meta['title'] = substr(trim($match[1]),0,2048);
-			}
+			$meta['title']       = self::extractTitle($page);
 			// a friendly state icon (valid/invalid)
-			$meta['staticon'] = self::selectIcon ( 'state', TRUE );
+			$meta['staticon']    = self::selectIcon ( 'state', TRUE );
 			// final url after a possible redirection
-			$meta['final']    = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
-			// try to extract favicon from page
-			preg_match ( '/<[^>]*link[^>]*(rel=["\']icon["\']|rel=["\']shortcut icon["\']) .*href=["\']([^>]*)["\'].*>/iU', $page, $match );
-			if (1<sizeof($match))
-			{
-				// the specified uri might be an url, an absolute or a relative path
-				// we have to turn it into an url to be able to display it out of context
-				$favicon = htmlspecialchars_decode ( $match[2] );
-				if (parse_url($favicon,PHP_URL_SCHEME)) {
-					// the ref is an url
-					$meta['favicon'] = $favicon;
-				} elseif ( 0===strpos(parse_url($favicon,PHP_URL_PATH),'/') ) {
-					// it is an absolute path
-					$url_token = parse_url($meta['final']);
-					$meta['favicon'] = sprintf( '%s://%s/%s', $url_token['scheme'], $url_token['host'], $favicon );
-				} else {
-					// so it appears to be a relative path
-					$url_token = parse_url($meta['final']);
-					$meta['favicon'] = sprintf( '%s://%s%s/%s', $url_token['scheme'], $url_token['host'], dirname($url_token['path']), $favicon );
-				}
-			}
+			$meta['final']       = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
+			$meta['favicon']     = self::extractFavicon($page, $meta['final']);
 			$meta['mimetype']    = preg_replace ( '/^([^;]+);.*/i', '$1', curl_getinfo($handle,CURLINFO_CONTENT_TYPE) );
 			$meta['mimicon']     = self::selectIcon ( 'mimetype', $meta['mimetype'] );
 			$meta['code']        = curl_getinfo ( $handle, CURLINFO_HTTP_CODE );
@@ -148,16 +145,68 @@ class OC_Shorty_Meta
 	} // function enrichMetaDataCurl
 
 	/**
-	* @method OC_Shorty_Meta::selectCode
-	* @brief Some helper utility used to resolve numeric http status codes into human readable strings
-	* @param string aspect: String indicating a section/pool a code is to be resolved in
-	* @param string identifier: String indicating a specific code to be resolved
-	* @return string: Human readable string resolving the specified numeric status code
-	* @throws OC_Shorty_Exception in case of an undefined code to be resolved
-	* @access public
-	* @author Christian Reiner
-	*/
-	static function selectCode ( $aspect, $identifier )
+	 * @method OC_Shorty_Meta::extractFavicon
+	 * @brief Some helper method to extract a usable reference to a pages favicon
+	 * @param $page string The page markup (html) where to extract the favicons reference from
+	 * @param $url string The final url to examine (after resolution of redirections)
+	 * @return string The reference (url) to the favicon
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function extractFavicon($page, $url)
+	{
+		if (preg_match ( '/<[^>]*link[^>]*(rel=["\']icon["\']|rel=["\']shortcut icon["\']).*href=["\']([^>]*)["\'].*>/isU', $page, $match ))
+		{
+			// the specified uri might be an url, an absolute or a relative path
+			// we have to turn it into an url to be able to display it out of context
+			$reference = htmlspecialchars_decode ( $match[2] );
+			if (parse_url($reference, PHP_URL_SCHEME)) {
+				// the ref is an url
+				$favicon = $reference;
+			} elseif ( 0===strpos(parse_url($reference,PHP_URL_PATH),'/') ) {
+				// it is an absolute path
+				$url_token = parse_url($url);
+				$favicon = sprintf( '%s://%s/%s', $url_token['scheme'], $url_token['host'], $reference );
+			} else {
+				// so it appears to be a relative path
+				$url_token = parse_url($url);
+				$favicon = sprintf( '%s://%s%s/%s', $url_token['scheme'], $url_token['host'], dirname($url_token['path']), $reference );
+			}
+		}
+		return $favicon;
+	}
+
+	/**
+	 * @method OC_Shorty_Meta::extractTitle
+	 * @brief Some helper method to extract a title from the page header
+	 * @param $page string The page markup (html) where to extract the title from
+	 * @return string The extracted title
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function extractTitle($page)
+	{
+		preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
+		if (   isset($match[1])
+				&& iconv('UTF-8', 'UTF-8//IGNORE', $match[1])) {
+			// the title is cut off after 2048 chars to prevent security issues like overflows
+			// 2048 is half of 4096 which is the size of the db column (UTF!)
+			return substr(trim($match[1]),0,2048);
+		}
+		return null;
+	}
+
+	/**
+	 * @method OC_Shorty_Meta::selectCode
+	 * @brief Some helper utility used to resolve numeric http status codes into human readable strings
+	 * @param string aspect: String indicating a section/pool a code is to be resolved in
+	 * @param string identifier: String indicating a specific code to be resolved
+	 * @return string: Human readable string resolving the specified numeric status code
+	 * @throws OC_Shorty_Exception in case of an undefined code to be resolved
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function selectCode ( $aspect, $identifier )
 	{
 		// map of official http status codes
 		$_code_map = array
@@ -195,15 +244,15 @@ class OC_Shorty_Meta
 	} // function selectCode
 
 	/**
-	* @method OC_Shorty_Meta::selectIcon
-	* @brief Some helper utility for the easy integrate of icon references into templates and alike
-	* @param string aspect: String indicating a section/pool an icon is to be chosen from
-	* @param string identifier: String indicating a specific icon to be referenced
-	* @return string: Hyper reference to an icon in form of a string
-	* @access public
-	* @author Christian Reiner
-	*/
-	static function selectIcon ( $aspect, $identifier )
+	 * @method OC_Shorty_Meta::selectIcon
+	 * @brief Some helper utility for the easy integrate of icon references into templates and alike
+	 * @param string aspect: String indicating a section/pool an icon is to be chosen from
+	 * @param string identifier: String indicating a specific icon to be referenced
+	 * @return string: Hyper reference to an icon in form of a string
+	 * @access protected
+	 * @author Christian Reiner
+	 */
+	static protected function selectIcon ( $aspect, $identifier )
 	{
 		switch ( $aspect )
 		{
@@ -279,4 +328,3 @@ class OC_Shorty_Meta
 	} // function selectIcon
 
 } // class OC_Shorty_Meta
-?>

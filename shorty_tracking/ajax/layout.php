@@ -76,4 +76,3 @@ try
 	OCP\Util::writeLog( 'shorty_tracking', sprintf("Generated dialog layout '%s'",$p_dialog), OCP\Util::INFO );
 	OCP\JSON::success ( array ( 'layout'  => $tmpl->fetchPage(), ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
-?>

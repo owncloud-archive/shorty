@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -68,8 +68,11 @@ try
 			// enhance all entries with the relay url
 			$reply[$key]['relay']=OC_Shorty_Tools::relayUrl ( $reply[$key]['id'] );
 			// make sure there is _any_ favicon contained, otherwise layout in MS-IE browser is broken...
-			if (empty($reply[$key]['favicon']))
+			if (empty($reply[$key]['favicon'])) {
 				$reply[$key]['favicon'] = OCP\Util::imagePath('shorty', 'blank.png');
+			} else {
+				$reply[$key]['favicon'] = OC_Shorty_Tools::proxifyReference($reply[$key]['id'], false);
+			}
 		}
 	} // foreach
 
@@ -82,4 +85,3 @@ try
 		'count'   => sizeof($reply),
 		'message' => OC_Shorty_L10n::t("Number of entries: %s", count($reply)) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
-?>
