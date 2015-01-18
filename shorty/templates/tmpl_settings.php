@@ -52,19 +52,20 @@
 <?php } ?>
 		</select>
 	</fieldset>
-	<fieldset id="shorty-backend-static" class="shorty-backend-supplement">
+	<fieldset class="shorty-backend-supplement">
 		<legend><?php p(OC_Shorty_L10n::t("Optional configuration of a 'Static Backend'").":"); ?></legend>
-		<label for="shorty-backend-static-base" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Base url").":"); ?></label>
-		<input id="shorty-backend-static-base" type="text" name="backend-static-base"
-				value="<?php p($_['backend-static-base']); ?>"
-				maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t('Specify a static base url…')); ?>" style="width:25em;">
+		<div id="shorty-backend-static">
+			<label for="shorty-backend-static-base" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Base url").":"); ?></label>
+			<input id="shorty-backend-static-base" type="text" name="backend-static-base"
+					value="<?php p($_['backend-static-base']); ?>"
+					maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t('Specify a static base url…')); ?>" style="width:25em;">
+			<!-- an general busy/activity indicator -->
+			<div id="shorty-backend-static-verification"><img class="shorty-activity" src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></div>
+		</div>
 		<br/>
-		<label for="shorty-backend-example" class="shorty-aspect"> </label>
-		<span id="shorty-backend-example">
-			<label for="shorty-example" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").":"); ?></label>
-			<a id="shorty-example" class="shorty-example" title="<?php p(OC_Shorty_L10n::t("Verify by clicking…")); ?>">
-			<?php print_unescaped(sprintf(htmlspecialchars('http://%s/<service><shorty id>'),$_SERVER['SERVER_NAME'])); ?>
-			</a>
+		<label for="shorty-backend-example" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").":"); ?></label>
+		<span id="shorty-backend-example" class="shorty-example">
+			<?php p('http://<domain>/<service><shorty-id>'); ?>
 		</span>
 		<br/>
 		<span class="shorty-explain">
@@ -72,9 +73,9 @@
 				OC_Shorty_L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
 				OC_Shorty_L10n::t("You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."),
 				OC_Shorty_L10n::t("The target of that mapping must be some URL like:"),
-				OC_Shorty_L10n::t("Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."),
-				OC_Shorty_L10n::t("Leave empty if you can't provide a short base url that is mapped the described way."),
-				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty id>'))); ?>
+				OC_Shorty_L10n::t("Such rewriting rules should be configured inside the http server configuration."),
+				OC_Shorty_L10n::t("If no access to that configuration exists, then using '.htaccess' style files might be an option."),
+				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty-id>'))); ?>
 		</span>
 	</fieldset>
 <!-- list of installed plugins -->
