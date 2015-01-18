@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -36,15 +36,15 @@
 <!-- settings of app 'shorty' -->
 <div class="section" id="shorty">
 	<h2>
-		<span class="shorty-title">
+		<span id="title" class="title">
 			<img class="svg" src="<?php p(OCP\Util::imagePath("shorty","shorty-dusky.svg")); ?>">
 			Shorty
 		</span>
 	</h2>
-	<fieldset id="shorty-backend-configuration" class="shorty-backend-supplement">
+	<fieldset id="backend-configuration" class="backend-supplement">
 		<legend><?php p(OC_Shorty_L10n::t("Default backend suggested inside users preferences").":"); ?></legend>
-		<label for="shorty-backend-default" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Backend").":"); ?></label>
-		<select id="shorty-backend-default" name="backend-default" value="<?php p($_['backend-default']); ?>">
+		<label for="backend-default" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Backend").":"); ?></label>
+		<select id="backend-default" name="backend-default" value="<?php p($_['backend-default']); ?>">
 <?php foreach ( OC_Shorty_Type::$BACKENDS as $backend_key=>$backend_name ) { ?>
 			<option value="<?php p($backend_key);?>" <?php p(($backend_key==$_['backend-default'])?'selected':'');?>>
 				<?php p(OC_Shorty_L10n::t($backend_name));?>
@@ -52,22 +52,22 @@
 <?php } ?>
 		</select>
 	</fieldset>
-	<fieldset id="shorty-backend-static" class="shorty-backend-supplement">
+	<fieldset id="backend-static" class="backend-supplement">
 		<legend><?php p(OC_Shorty_L10n::t("Optional configuration of a 'Static Backend'").":"); ?></legend>
-		<label for="shorty-backend-static-base" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Base url").":"); ?></label>
-		<input id="shorty-backend-static-base" type="text" name="backend-static-base"
+		<label for="backend-static-base" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Base url").":"); ?></label>
+		<input id="backend-static-base" type="text" name="backend-static-base"
 				value="<?php p($_['backend-static-base']); ?>"
 				maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t('Specify a static base url…')); ?>" style="width:25em;">
 		<br/>
-		<label for="shorty-backend-example" class="shorty-aspect"> </label>
-		<span id="shorty-backend-example">
-			<label for="shorty-example" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").":"); ?></label>
-			<a id="shorty-example" class="shorty-example" title="<?php p(OC_Shorty_L10n::t("Verify by clicking…")); ?>">
+		<label for="backend-example" class="shorty-aspect"> </label>
+		<span id="backend-example">
+			<label for="example" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").":"); ?></label>
+			<a id="example" class="shorty-example" title="<?php p(OC_Shorty_L10n::t("Verify by clicking…")); ?>">
 			<?php print_unescaped(sprintf(htmlspecialchars('http://%s/<service><shorty id>'),$_SERVER['SERVER_NAME'])); ?>
 			</a>
 		</span>
 		<br/>
-		<span class="shorty-explain">
+		<span id="explain" class="shorty-explain">
 			<?php print_unescaped(sprintf("%1\$s<br />\n%2\$s<br />\n%3\$s <span class=\"shorty-example\">%6\$s</span><br />\n%4\$s<br />\n%5\$s",
 				OC_Shorty_L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
 				OC_Shorty_L10n::t("You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."),
@@ -78,9 +78,9 @@
 		</span>
 	</fieldset>
 <!-- list of installed plugins -->
-	<fieldset class="shorty-backend-supplement">
+	<fieldset id="backend-plugins" class="backend-supplement">
 		<legend><?php p(OC_Shorty_L10n::t("Plugins").":"); ?></legend>
-<?php foreach ( $_['shorty-plugins']['shorty'] as $plugin ) { ?>
+<?php 	foreach ( $_['shorty-plugins']['shorty'] as $plugin ) { ?>
 		<div>
 			<label for="shorty-plugin-<?php p(trim($plugin['id']));?>">
 				<?php p(trim($plugin['name']).":");?>
@@ -93,7 +93,7 @@
 <!-- list of suggested plugins -->
 <?php if ( ! OCP\App::isEnabled('shorty_tracking') ) { ?>
 		<div>
-			<span id="shorty-plugins" class="suggestion">
+			<span id="plugins" class="suggestion">
 				<?php print_unescaped(
 								sprintf(OC_Shorty_L10n::t("The additional plugin '%%s' can track the usage of existing Shortys!"),
 									'<strong>Shorty Tracking</strong>')); ?>

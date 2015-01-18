@@ -29,6 +29,16 @@
  * @author Christian Reiner
  */
 
+/**
+ * @class OC_ShortyTracking_Query
+ * @brief Static catalog of sql queries
+ * These query templates are referenced by a OC_Shorty_Query::URL_...
+ * They have to be prapared by adding an array of parameters
+ * @access public
+ * @author Christian Reiner
+ */
+
+// sql officially requires some reserved words to be quoted when used as identifiers (here the column name 'user')
 // we define a different set of queries depending on the database engine used
 switch ( OCP\Config::getSystemValue('dbtype') )
 {
@@ -64,3 +74,4 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 		} // class OC_ShortyTracking_Query
 
 } // switch
+?>

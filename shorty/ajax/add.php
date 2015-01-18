@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU AFFERO GENERAL PUBLIC LICENSE (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -100,3 +100,4 @@ try
 		'level'   => 'info',
 		'message' => OC_Shorty_L10n::t("Url shortened to: %s",$p_source) ) );
 } catch ( Exception $e ) { OC_Shorty_Exception::JSONerror($e); }
+?>

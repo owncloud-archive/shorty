@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -42,8 +42,7 @@ $(document).ready(function(){
 		$.when(
 			OC.Shorty.Action.Preference.get('controls-panel-visible')
 		).done(function(pref){
-			if (  (pref['controls-panel-visible']===null)
-					||(pref['controls-panel-visible']) )
+			if (pref['controls-panel-visible'])
 				OC.Shorty.WUI.Controls.show();
 			else
 				OC.Shorty.WUI.Controls.hide();

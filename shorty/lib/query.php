@@ -3,9 +3,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -58,7 +58,6 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 			const URL_VERIFY	           = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE \"user\"=:user AND id=:id LIMIT 1";
 			const URL_LIST		           = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE \"user\"=:user ORDER BY :sort";
 			const URL_COUNT		           = "SELECT count(*) AS sum_shortys,IFNULL(sum(clicks),0) AS sum_clicks FROM *PREFIX*shorty WHERE \"user\"=:user";
-			const FAVICON_BY_ID	         = "SELECT id,favicon FROM *PREFIX*shorty WHERE id=:id";
 			const WIPE_SHORTYS	           = "DELETE FROM *PREFIX*shorty WHERE \"user\"=:user";
 			const WIPE_PREFERENCES	       = "DELETE FROM *PREFIX*preferences WHERE \"user\"=:user";
 			const QUERY_SHORTY_LIST        = "SELECT * FROM oc_shorty ORDER BY :sort";
@@ -81,7 +80,6 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 			const URL_VERIFY	           = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND id=:id LIMIT 1";
 			const URL_LIST		           = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user ORDER BY :sort";
 			const URL_COUNT		           = "SELECT count(*) AS sum_shortys,IFNULL(sum(clicks),0) AS sum_clicks FROM *PREFIX*shorty WHERE user=:user";
-			const FAVICON_BY_ID	         = "SELECT id,favicon FROM *PREFIX*shorty WHERE id=:id";
 			const WIPE_SHORTYS	           = "DELETE FROM *PREFIX*shorty WHERE user=:user";
 			const WIPE_PREFERENCES	       = "DELETE FROM *PREFIX*preferences WHERE user=:user";
 			const QUERY_SHORTY_LIST        = "SELECT * FROM oc_shorty ORDER BY :sort";
@@ -89,3 +87,4 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 		} // class OC_Shorty_Query
 
 } // switch
+?>

@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -41,3 +41,5 @@ $RUNTIME_NOSETUPFS = true;
 // notably the OC wide csp policy sent as a header would prevent out js based verification to be blocked...
 header("Content-Security-Policy: default-src 'self'; script-src * ; style-src 'self' 'unsafe-inline'; frame-src *; img-src *; font-src 'self' data:");
 include 'templates/tmpl_wdg_verify.php';
+
+?>

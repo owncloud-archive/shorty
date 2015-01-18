@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -59,8 +59,8 @@ $(document).ready(function(){
 					$('#list-of-shortys tbody tr.clicked').each(function(i,entry){ OC.Shorty.WUI.Entry.del($(entry)); });
 				}
 				break;
-// 			default:
-// 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("ignoring key #"+e.keyCode+", no action defined");
+			default:
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("ignoring key #"+e.keyCode+", no action defined");
 		}
 	});
 	// close any open dialog when the canvas is clicked
@@ -108,14 +108,7 @@ $(document).ready(function(){
 	});
 	// collapse tool icons click in the toolbar to toggle column expansion
 	$(document).on('click','.shorty-list.shorty-collapsible thead tr.shorty-toolbar th.collapsible img.shorty-tool-collapsible',[],function(e){
-		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table.shorty-list').attr('id'), $(e.target).parents('th').attr('data-aspect') );
-	});
-	// fast un-collapse collapsed columns by clicking into the column
-	$(document).on('click','.shorty-list.shorty-collapsible tbody tr td.collapsible.collapsed *',[],function(e){
-		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table.shorty-list').attr('id'), $(e.target).parents('td').attr('data-aspect') );
-	});
-	$(document).on('click','.shorty-list.shorty-collapsible tbody tr td.collapsible.collapsed',[],function(e){
-		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table.shorty-list').attr('id'), $(e.target).attr('data-aspect') );
+		OC.Shorty.WUI.List.Column.toggle( $(e.target).parents('table.shorty-list').attr('id'), $(e.target).parents('th,td').attr('data-aspect') );
 	});
 	// buttons to reload the list
 	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-reload',[],OC.Shorty.WUI.List.build);

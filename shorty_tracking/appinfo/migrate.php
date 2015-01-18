@@ -92,3 +92,4 @@ class OC_Migration_Provider_ShortyTracking extends OC_Migration_Provider
 
 // Load the provider
 new OC_Migration_Provider_ShortyTracking ( 'shortys' );
+?>

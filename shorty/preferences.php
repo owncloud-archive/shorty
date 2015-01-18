@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -72,7 +72,9 @@ $tmpl->assign ( 'backend-tinycc-key',  OCP\Config::getUserValue(OCP\User::getUse
 $tmpl->assign ( 'backend-ssl-verify',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify','0') );
 $tmpl->assign ( 'default-status',      OCP\Config::getUserValue(OCP\User::getUser(),'shorty','default-status','private') );
 $tmpl->assign ( 'sms-control',         OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
-$tmpl->assign ( 'verbosity-control',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-control','error') );
-$tmpl->assign ( 'verbosity-timeout',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-timeout','5') );
+$tmpl->assign ( 'verbosity-control',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-control','info') );
+$tmpl->assign ( 'verbosity-timeout',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-timeout','0') );
 // render template
 $tmpl->printPage ( );
+
+?>

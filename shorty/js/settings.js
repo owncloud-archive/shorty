@@ -2,9 +2,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -35,14 +35,14 @@
 
 $(document).ready(function(){
 	// initialize example that depends on backend-base
-	if ($('#shorty #shorty-backend-static-base').val().length)
-		$('#shorty #shorty-backend-static #example').text($('#shorty #shorty-backend-static-base').val()+'<shorty id>');
+	if ($('#shorty #backend-static-base').val().length)
+		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
 	// modify example upon input of a base
-	$('#shorty #shorty-backend-static-base').bind('input',function(){
-		$('#shorty #shorty-backend-static #example').text($('#shorty #shorty-backend-static-base').val()+'<shorty id>');
+	$('#shorty #backend-static-base').bind('input',function(){
+		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
 	});
 	// store backend selection upon change
-	$('#shorty #shorty-backend-default').bind('change',function(e){
+	$('#shorty #backend-default').bind('change',function(e){
 		// save setting
 		$.when(
 			OC.Shorty.Action.Setting.set($(e.currentTarget).serialize())
@@ -52,17 +52,17 @@ $(document).ready(function(){
 		return false;
 	});
 	// backend 'static': offer a clickable example link to verify the correct setup
-	$('#shorty #shorty-backend-static #example').bind('click',function(event){
+	$('#shorty #backend-static #example').bind('click',function(event){
 		event.preventDefault();
 		OC.Shorty.Action.Setting.verify();
 	});
 	// store setting
-	$('#shorty #shorty-backend-static-base').focusout(function(){
+	$('#shorty #backend-static-base').focusout(function(){
 		// modify example
-		$('#shorty #shorty-backend-static #example').text($('#shorty #shorty-backend-static-base').val()+'<shorty id>');
+		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
 		// save setting
 		$.when(
-			OC.Shorty.Action.Setting.set($('#shorty #shorty-backend-static-base').serialize())
+			OC.Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize())
 		).fail(function(response){
 			OC.Notification.show(response.message);
 		})

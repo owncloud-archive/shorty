@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -180,18 +180,18 @@ class OC_Shorty_Type
 	);
 
 	/**
-	 * @method OC_Shorty_Type::validate
-	 * @brief Validates a given value against a type specific regular expression
-	 * Validates a given value according to the claimed type of the value.
-	 * Validation is done by matching the value against a type specific regular expression.
-	 * @param mixed value: Value to be verified according to the specified type
-	 * @param OC_Shorty_Type::type type: Type the value is said to belong to, important for verification
-	 * @param bool strict: Flag indicating if the verification should be done strict, that is if an exception should be thrown in case of a failure
-	 * @return mixed|NULL The value itself in case of a positive validation, NULL or an exception in case of a failure, depending on the flag indication strict mode
-	 * @throws OC_Shorty_Exception Indicating a failed validation in case of strict mode
-	 * @access public
-	 * @author Christian Reiner
-	 */
+	* @method OC_Shorty_Type::validate
+	* @brief Validates a given value against a type specific re  gular expression
+	* Validates a given value according to the claimed type of   the value.
+	* Validation is done by matching the value against a type s  pecific regular expression.
+	* @param mixed value: Value to be verified according to the   specified type
+	* @param OC_Shorty_Type::type type: Type the value is said   to belong to, important for verification
+	* @param bool strict: Flag indicating if the verification s  hould be done strict, that is if an exception should be thrown in case of a failure
+	* @return mixed|NULL The value itself in case of a positive   validation, NULL or an exception in case of a failure, depending on the flag indication strict mode
+	* @throws error Indicating a failed validation in case of s  trict mode
+	* @access public
+	* @author Christian Reiner
+	*/
 	static function validate ( $value, $type, $strict=FALSE )
 	{
 		switch ( $type )
@@ -294,18 +294,18 @@ class OC_Shorty_Type
 	} // function validate
 
 	/**
-	 * @method OC_Shorty_Type::normalize
-	 * @brief Cleanup and formal normalization of a given value   according to its type
-	 * Normalizes a given value according to its claimed type.
-	 * This typically means trimming of string values, but somet  imes also more specific actions.
-	 * @param mixed value: Value to be normalized
-	 * @param OC_Shorty_Type::type type: Supposed type of the va  lue
-	 * @param bool strict: Flag indicating if the normalization   should be done in a strict way
-	 * @return mixed: The normalized value
-	 * @throws OC_Shorty_Exception Indicating a parameter violation
-	 * @access public
-	 * @author Christian Reiner
-	 */
+	* @method OC_Shorty_Type::normalize
+	* @brief Cleanup and formal normalization of a given value   according to its type
+	* Normalizes a given value according to its claimed type.
+	* This typically means trimming of string values, but somet  imes also more specific actions.
+	* @param mixed value: Value to be normalized
+	* @param OC_Shorty_Type::type type: Supposed type of the va  lue
+	* @param bool strict: Flag indicating if the normalization   should be done in a strict way
+	* @return mixed: The normalized value
+	* @throws error Indicating a parameter violation
+	* @access public
+	* @author Christian Reiner
+	*/
 	static function normalize ( $value, $type, $strict=FALSE )
 	{
 		if (NULL===(self::validate($value,$type,$strict)))
@@ -361,15 +361,15 @@ class OC_Shorty_Type
 	} // function normalize
 
 	/**
-	 * @method OC_Shorty_Type::req_argument
-	 * @brief Returns checked request argument or throws an erro  r
-	 * @param string arg: Name of the request argument to get_ar  gument
-	 * @param bool strict: Controls if an exception will be thrown upon a missing argument
-	 * @return string: Checked and prepared value of request arg  ument
-	 * @throws OC_Shorty_Exception Indicating a parameter violation
-	 * @access public
-	 * @author Christian Reiner
-	 */
+	* @method OC_Shorty_Type::req_argument
+	* @brief Returns checked request argument or throws an erro  r
+	* @param string arg: Name of the request argument to get_ar  gument
+	* @param bool strict: Controls if an exception will be thrown upon a missing argument
+	* @return string: Checked and prepared value of request arg  ument
+	* @throws error Indicating a parameter violation
+	* @access public
+	* @author Christian Reiner
+	*/
 	static function req_argument ( $arg, $type, $strict=FALSE )
 	{
 		switch ( $_SERVER['REQUEST_METHOD'] )
@@ -394,3 +394,4 @@ class OC_Shorty_Type
   } // function req_argument
 
 } // class OC_Shorty_Query
+?>

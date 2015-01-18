@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -40,13 +40,13 @@
 class OC_Shorty_Hooks
 {
 	/**
-	 * @method OC_Shorty_Hooks::deleteUser
-	 * @brief Deletes all Shortys and preferences of a certain user
-	 * @param array paramters: Array of parameters from postDeleteUser-Hook
-	 * @return bool
-	 * @access public
-	 * @author Christian Reiner
-	 */
+	* @method OC_Shorty_Hooks::deleteUser
+	* @brief Deletes all Shortys and preferences of a certain user
+	* @param array paramters: Array of parameters from postDeleteUser-Hook
+	* @return bool
+	* @access public
+	* @author Christian Reiner
+	*/
 	public static function deleteUser ( $parameters )
 	{
 		OCP\Util::writeLog ( 'shorty',sprintf("Wiping all Shortys belonging to user '%s'",$parameters['uid']), OCP\Util::INFO );
@@ -67,12 +67,12 @@ class OC_Shorty_Hooks
 	}
 
 	/**
-	 * @method OC_Shorty_Hooks::requestActions
-	 * @brief Hook that requests any actions plugins may want to register
-	 * @return array: Array of descriptions of actions
-	 * @access public
-	 * @author Christian Reiner
-	 */
+	* @method OC_Shorty_Hooks::requestActions
+	* @brief Hook that requests any actions plugins may want to register
+	* @return array: Array of descriptions of actions
+	* @access public
+	* @author Christian Reiner
+	*/
 	public static function requestActions ( )
 	{
 		OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', OCP\Util::DEBUG );
@@ -114,12 +114,12 @@ class OC_Shorty_Hooks
 	} // function requestActions
 
 	/**
-	 * @method OC_Shorty_Hooks::requestDetails
-	 * @brief Hook that requests any plugin details (id and abstract) plugins may want to register
-	 * @return array: Array of details of plugins
-	 * @access public
-	 * @author Christian Reiner
-	 */
+	* @method OC_Shorty_Hooks::requestDetails
+	* @brief Hook that requests any plugin details (id and abstract) plugins may want to register
+	* @return array: Array of details of plugins
+	* @access public
+	* @author Christian Reiner
+	*/
 	public static function requestDetails ( )
 	{
 		OCP\Util::writeLog ( 'shorty', 'Requesting plugin details registered by other apps', OCP\Util::DEBUG );
@@ -158,12 +158,12 @@ class OC_Shorty_Hooks
 	} // function requestDetails
 
 	/**
-	 * @method OC_Shorty_Hooks::requestIncludes
-	 * @brief Hook that requests any includes plugins may want to register
-	 * @return array: Array of descriptions of actions
-	 * @access public
-	 * @author Christian Reiner
-	 */
+	* @method OC_Shorty_Hooks::requestIncludes
+	* @brief Hook that requests any includes plugins may want to register
+	* @return array: Array of descriptions of actions
+	* @access public
+	* @author Christian Reiner
+	*/
 	public static function requestIncludes ( )
 	{
 		OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', OCP\Util::DEBUG );
@@ -171,12 +171,12 @@ class OC_Shorty_Hooks
 	} // function requestIncludes
 
 	/**
-	 * @method OC_Shorty_Hooks::requestQueries
-	 * @brief Hook that requests any queries plugins may want to offer
-	 * @return array: Array of descriptions of queries
-	 * @access public
-	 * @author Christian Reiner
-	 */
+	* @method OC_Shorty_Hooks::requestQueries
+	* @brief Hook that requests any queries plugins may want to offer
+	* @return array: Array of descriptions of queries
+	* @access public
+	* @author Christian Reiner
+	*/
 	public static function requestQueries ( )
 	{
 		OCP\Util::writeLog ( 'shorty', 'Requesting queries to be offered from other apps', OCP\Util::DEBUG );
@@ -215,11 +215,11 @@ class OC_Shorty_Hooks
 	} // function requestQueries
 
 	/**
-	 * @method OC_Shorty_Hooks::registerClicks
-	 * @brief Hook offering informations about each click relayed by this app
-	 * @access public
-	 * @author Christian Reiner
-	 */
+	* @method OC_Shorty_Hooks::registerClicks
+	* @brief Hook offering informations about each click relayed by this app
+	* @access public
+	* @author Christian Reiner
+	*/
 	public static function registerClick ( $shorty, $request, $result )
 	{
 		OCP\Util::writeLog ( 'shorty', sprintf("Registering click to shorty '%s'",$shorty['id']), OCP\Util::DEBUG );
@@ -238,11 +238,11 @@ class OC_Shorty_Hooks
 	} // function registerClick
 
 	/**
-	 * @method OC_Shorty_Hooks::registerQueries
-	 * @brief Registers queries to be offered as expected by the Shorty app
-	 * @param paramters (array) parameters from emitted signal
-	 * @return bool
-	 */
+	* @method OC_Shorty_Hooks::registerQueries
+	* @brief Registers queries to be offered as expected by the Shorty app
+	* @param paramters (array) parameters from emitted signal
+	* @return bool
+	*/
 	public static function registerQueries ( $parameters )
 	{
 		OCP\Util::writeLog ( 'shorty', 'Registering additional queries to be offered', OCP\Util::DEBUG );
@@ -267,3 +267,4 @@ class OC_Shorty_Hooks
 	} // function registerQueries
 
 } // class OC_Shorty_Hooks
+?>

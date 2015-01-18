@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/OC.Shorty?content=150401
 *
@@ -40,31 +40,31 @@
  */
 OC.Shorty={
 	/**
-	 * @class OC.Shorty.WUI
-	 * @brief Collection of all methods implementing the UI of this app
-	 * @description "WUI" stands for "Web User Interface" :-)
-	 * @author Christian Reiner
-	 */
+	* @class OC.Shorty.WUI
+	* @brief Collection of all methods implementing the UI of this app
+	* @description "WUI" stands for "Web User Interface" :-)
+	* @author Christian Reiner
+	*/
 	WUI:{
 		/**
-		 * @class OC.Shorty.WUI.Controls
-		 * @brief Collection of methods implementing the top control bar
-		 * @author Christian Reiner
-		 */
+		* @class OC.Shorty.WUI.Controls
+		* @brief Collection of methods implementing the top control bar
+		* @author Christian Reiner
+		*/
 		Controls:{
 			/**
-			 * @object OC.Shorty.WUI.Controls.Panel
-			 * @brief Persistent reference to the top controls panel inside the apps content area
-			 * @author Christian Reiner
-			 */
+			* @object OC.Shorty.WUI.Controls.Panel
+			* @brief Persistent reference to the top controls panel inside the apps content area
+			* @author Christian Reiner
+			*/
 			Content: {},
 			Panel: {},
 			Handle: {},
 			/**
-			 * @method OC.Shorty.WUI.Controls.init
-			 * @brief Initializes the control bar after it loaded
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Controls.init
+			* @brief Initializes the control bar after it loaded
+			* @author Christian Reiner
+			*/
 			init: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("init controls panel");
 				// set presistent reference to the controls panel
@@ -73,10 +73,10 @@ OC.Shorty={
 				OC.Shorty.WUI.Controls.Panel.on('click','.shorty-handle',OC.Shorty.WUI.Controls.toggle);
 			}, // OC.Shorty.WUI.Controls.init
 			/**
-			 * @method OC.Shorty.WUI.Controls.hide
-			 * @brief Hide the controls panel if visible
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Controls.hide
+			* @brief Hide the controls panel if visible
+			* @author Christian Reiner
+			*/
 			hide: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide controls panel");
 				var dfd = new $.Deferred();
@@ -94,10 +94,10 @@ OC.Shorty={
 				return dfd.promise();
 			},
 			/**
-			 * @method OC.Shorty.WUI.Controls.show
-			 * @brief Show the controls panel if not visible
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Controls.show
+			* @brief Show the controls panel if not visible
+			* @author Christian Reiner
+			*/
 			show: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show controls panel");
 				var dfd = new $.Deferred();
@@ -115,10 +115,10 @@ OC.Shorty={
 				return dfd.promise();
 			},
 			/**
-			 * @method OC.Shorty.WUI.Controls.toggle
-			 * @brief Toggles the visibility of the controls panel
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Controls.toggle
+			* @brief Toggles the visibility of the controls panel
+			* @author Christian Reiner
+			*/
 			toggle: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle controls panel");
 				OC.Shorty.WUI.Messenger.hide();
@@ -136,15 +136,15 @@ OC.Shorty={
 			} // OC.Shorty.WUI.Controls.toggle
 		}, // OC.Shorty.WUI.Controls
 		/**
-		 * @brief Collection of methods implementing the central 'Desktop' where all real action takes place
-		 * @author Christian Reiner
-		 */
+		* @brief Collection of methods implementing the central 'Desktop' where all real action takes place
+		* @author Christian Reiner
+		*/
 		Desktop:{
 			/**
-			 * @class OC.Shorty.WUI.Desktop
-			 * @brief Shows the central desktop
-			 * @author Christian Reiner
-			 */
+			* @class OC.Shorty.WUI.Desktop
+			* @brief Shows the central desktop
+			* @author Christian Reiner
+			*/
 			show: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show desktop");
 				duration = duration || 'slow';
@@ -153,10 +153,10 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Desktop.show
 			/**
-			 * @class OC.Shorty.WUI.Desktop.hide
-			 * @brief Hides the central desktop
-			 * @author Christian Reiner
-			 */
+			* @class OC.Shorty.WUI.Desktop.hide
+			* @brief Hides the central desktop
+			* @author Christian Reiner
+			*/
 			hide: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide desktop");
 				duration = duration || 'slow';
@@ -166,17 +166,17 @@ OC.Shorty={
 			}, // OC.Shorty.WUI.Desktop.hide
 		}, // OC.Shorty.WUI.Desktop
 		/**
-		 * @class OC.Shorty.WUI.Dialog
-		 * @brief A collection of methods used for handling dialogs
-		 * @author Christian Reiner
-		 */
+		* @class OC.Shorty.WUI.Dialog
+		* @brief A collection of methods used for handling dialogs
+		* @author Christian Reiner
+		*/
 		Dialog:{
 			/**
-			 * @method OC.Shorty.WUI.Dialog.execute
-			 * @brief Execute a dialog, including preparing the desktop beforehand
-			 * @param dialog jQueryObject Representation of the existing dialog
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Dialog.execute
+			* @brief Execute a dialog, including preparing the desktop beforehand
+			* @param dialog jQueryObject Representation of the existing dialog
+			* @author Christian Reiner
+			*/
 			execute: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("execute dialog "+dialog.attr('id'));
 				var dfd = new $.Deferred();
@@ -208,14 +208,14 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.execute
 			/**
-			 * @method OC.Shorty.WUI.Dialog.hide
-			 * @brief Hides a dialog
-			 * @param dialog jQueryObject Represents the dialog to be handled
-			 * @desrciption
-			 * Also moves the dialog code back to its 'parking place' in case of embedded dialogs.
-			 * This method is save for already hidden dialogs.
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Dialog.hide
+			* @brief Hides a dialog
+			* @param dialog jQueryObject Represents the dialog to be handled
+			* @desrciption
+			* Also moves the dialog code back to its 'parking place' in case of embedded dialogs.
+			* This method is save for already hidden dialogs.
+			* @author Christian Reiner
+			*/
 			hide: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide dialog "+dialog.attr('id'));
 				var duration = 'slow';
@@ -241,13 +241,13 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.hide
 			/**
-			 * @method OC.Shorty.WUI.Dialog.hideAll
-			 * @brief Hides all dialogs
-			 * @desrciption
-			 * Also moves the dialog code back to its 'parking place' in case of embedded dialogs.
-			 * This method is save for already hidden dialogs.
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Dialog.hideAll
+			* @brief Hides all dialogs
+			* @desrciption
+			* Also moves the dialog code back to its 'parking place' in case of embedded dialogs.
+			* This method is save for already hidden dialogs.
+			* @author Christian Reiner
+			*/
 			hideAll: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide all dialogs");
 				var dfd = new $.Deferred();
@@ -259,12 +259,12 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.hideAll
 			/**
-			 * @method OC.Shorty.WUI.Dialog.reset
-			 * @brief Resets a dialog to its default values
-			 * @param dialog jQueryObject Represents the dialog to be handled
-			 * @description The default values are read from the 'data-...' attributes stored in the specifically handled item.
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Dialog.reset
+			* @brief Resets a dialog to its default values
+			* @param dialog jQueryObject Represents the dialog to be handled
+			* @description The default values are read from the 'data-...' attributes stored in the specifically handled item.
+			* @author Christian Reiner
+			*/
 			reset: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("reset dialog "+dialog.attr('id'));
 				var dfd = new $.Deferred();
@@ -299,15 +299,15 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.reset
 			/**
-			 * @method OC.Shorty.WUI.Dialog.sharpen
-			 * @brief Activates the button that triggers an action
-			 * @param dialog jQueryObject Represents the dialog to be handled
-			 * @param sharpness bool Flag indicating if the dialog should be sharpened or unsharpened
-			 * @description
-			 * Before dialogs are 'sharpened' clicking the finalizing action button is suppressed.
-			 * This is done to allow some in-dialog validation routines to complete (like fetching url meta data)
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Dialog.sharpen
+			* @brief Activates the button that triggers an action
+			* @param dialog jQueryObject Represents the dialog to be handled
+			* @param sharpness bool Flag indicating if the dialog should be sharpened or unsharpened
+			* @description
+			* Before dialogs are 'sharpened' clicking the finalizing action button is suppressed.
+			* This is done to allow some in-dialog validation routines to complete (like fetching url meta data)
+			* @author Christian Reiner
+			*/
 			sharpen: function(dialog,sharpness){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle sharpness of dialog '"+dialog.attr('id')+"' to "+sharpness);
 				var confirm=dialog.find('#confirm');
@@ -328,11 +328,11 @@ OC.Shorty={
 				}
 			}, // OC.Shorty.WUI.Dialog.sharpen
 			/**
-			 * @method OC.Shorty.WUI.Dialog.show
-			 * @brief Makes an existing dialog visible
-			 * @param dialog jQueryObject Represents the dialog to be handled
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Dialog.show
+			* @brief Makes an existing dialog visible
+			* @param dialog jQueryObject Represents the dialog to be handled
+			* @author Christian Reiner
+			*/
 			show: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show dialog "+dialog.attr('id'));
 				var duration = 'slow';
@@ -411,11 +411,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.show
 			/**
-			 * @method OC.Shorty.WUI.Dialog.toggle
-			 * @brief Toggles the visibility of an existing dialog
-			 * @param dialog jQueryObject Represents the dialog to be handled
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Dialog.toggle
+			* @brief Toggles the visibility of an existing dialog
+			* @param dialog jQueryObject Represents the dialog to be handled
+			* @author Christian Reiner
+			*/
 			toggle: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle dialog "+dialog.attr('id'));
 				var dfd = new $.Deferred();
@@ -427,11 +427,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.toggle
 			/**
-			 * @method OC.Shorty.WUI.Dialog.validate
-			 * @brief Validates the specified target
-			 * @param dialog jQueryObject Represents the dialog to be handled
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Dialog.validate
+			* @brief Validates the specified target
+			* @param dialog jQueryObject Represents the dialog to be handled
+			* @author Christian Reiner
+			*/
 			validate: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("validate target in dialog "+dialog.attr('id'));
 				var dfd = new $.Deferred();
@@ -449,17 +449,17 @@ OC.Shorty={
 			} // OC.Shorty.WUI.Dialog.validate
 		}, // OC.Shorty.WUI.Dialog
 		/**
-		 * @class OC.Shorty.WUI.Entry
-		 * @brief Collection of methods handling entries (represented objects like OC.Shortys)
-		 * @author Christian Reiner
-		 */
+		* @class OC.Shorty.WUI.Entry
+		* @brief Collection of methods handling entries (represented objects like OC.Shortys)
+		* @author Christian Reiner
+		*/
 		Entry:{
 			/**
-			 * @method OC.Shorty.WUI.Entry.click
-			 * @brief Triggers the action specific for each action button offered for a list item
-			 * @param entry jQueryObject Representation of a lists item to be handled
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Entry.click
+			* @brief Triggers the action specific for each action button offered for a list item
+			* @param entry jQueryObject Representation of a lists item to be handled
+			* @author Christian Reiner
+			*/
 			click: function(event,element){
 				var dfd = new $.Deferred();
 				var entry=element.parents('tr').first();
@@ -511,11 +511,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.click
 			/**
-			 * @method OC.Shorty.WUI.Entry.del
-			 * @brief Marks a list item as 'deleted' by changing its 'status'
-			 * @param entry jQueryObject Representation of a lists item to be handled
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Entry.del
+			* @brief Marks a list item as 'deleted' by changing its 'status'
+			* @param entry jQueryObject Representation of a lists item to be handled
+			* @author Christian Reiner
+			*/
 			del: function(entry){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("delete entry "+entry.attr('id'));
 				if (entry.hasClass('deleted')){
@@ -531,11 +531,11 @@ OC.Shorty={
 				}
 			}, // OC.Shorty.WUI.Entry.del
 			/**
-			 * @method OC.Shorty.WUI.Entry.edit
-			 * @brief prepares the 'edit' action/dialog
-			 * @param entry jQueryObject Representation of a lists item to be handled
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Entry.edit
+			* @brief prepares the 'edit' action/dialog
+			* @param entry jQueryObject Representation of a lists item to be handled
+			* @author Christian Reiner
+			*/
 			edit: function(entry){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("modify entry "+entry.attr('id'));
 				var dfd = new $.Deferred();
@@ -564,11 +564,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.edit
 			/**
-			 * @method OC.Shorty.WUI.Entry.send
-			 * @brief prepares the 'send' action
-			 * @param entry jQueryObject Representation of a lists item to be handled
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Entry.send
+			* @brief prepares the 'send' action
+			* @param entry jQueryObject Representation of a lists item to be handled
+			* @author Christian Reiner
+			*/
 			send: function(event,element){
 				var dfd = new $.Deferred();
 				var entry=element.parents('table').parents('tr');
@@ -580,11 +580,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.send
 			/**
-			 * @method OC.Shorty.WUI.Entry.share
-			 * @brief prepares the 'share' action/dialog
-			 * @param entry jQueryObject Representation of a lists item to be handled
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Entry.share
+			* @brief prepares the 'share' action/dialog
+			* @param entry jQueryObject Representation of a lists item to be handled
+			* @author Christian Reiner
+			*/
 			share: function(entry){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("share entry "+entry.attr('id'));
 				var dfd = new $.Deferred();
@@ -606,11 +606,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.share
 			/**
-			 * @method OC.Shorty.WUI.Entry.show
-			 * @brief prepares the 'show' action/dialog
-			 * @param entry jQueryObject Representation of a lists item to be handled
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Entry.show
+			* @brief prepares the 'show' action/dialog
+			* @param entry jQueryObject Representation of a lists item to be handled
+			* @author Christian Reiner
+			*/
 			show: function(entry){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show entry "+entry.attr('id'));
 				var dfd = new $.Deferred();
@@ -640,17 +640,17 @@ OC.Shorty={
 			} // OC.Shorty.WUI.Entry.show
 		}, // OC.Shorty.WUI.Entry
 		/**
-		 * @class OC.Shorty.WUI.Hourglass
-		 * @brief Handling of the desktops 'hourglass' activity indicator
-		 * @author Christian Reiner
-		 */
+		* @class OC.Shorty.WUI.Hourglass
+		* @brief Handling of the desktops 'hourglass' activity indicator
+		* @author Christian Reiner
+		*/
 		Hourglass:{
 			/**
-			 * @method OC.Shorty.WUI.Hourglass.toggle
-			 * @brief Toggles the visibility of the desktop hourglass
-			 * @param show bool Flag indicating of the list should be shown or hidden
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Hourglass.toggle
+			* @brief Toggles the visibility of the desktop hourglass
+			* @param show bool Flag indicating of the list should be shown or hidden
+			* @author Christian Reiner
+			*/
 			toggle: function(show){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle hourglass to "+show?"true":"false");
 				var dfd = new $.Deferred();
@@ -674,10 +674,10 @@ OC.Shorty={
 			}, // OC.Shorty.WUI.Hourglass.toggle
 		}, // OC.Shorty.WUI.Hourglass
 		/*
-		 * @class OC.Shorty.WUI.List
-		 * @brief Collection of methods handling lists
-		 * @author Christian Reiner
-		 */
+		* @class OC.Shorty.WUI.List
+		* @brief Collection of methods handling lists
+		* @author Christian Reiner
+		*/
 		List:{
 			/**
 			* @method OC.Shorty.WUI.List.add
@@ -708,10 +708,10 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.add
 			/**
-			 * @method OC.Shorty.WUI.List.build
-			 * @brief Builds the content of a list by retrieving and adding entries
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.build
+			* @brief Builds the content of a list by retrieving and adding entries
+			* @author Christian Reiner
+			*/
 			build: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("build list");
 				OC.Shorty.WUI.Messenger.hide();
@@ -780,12 +780,12 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.dim
 			/**
-			 * @method OC.Shorty.WUI.List.empty
-			 * @brief Clears a list by removing all its rows
-			 * @param list jQueryObject Represents the list to be handled
-			 * @description Will only clear the list body, header entries like titlebar and toolbar will be left untouched
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.empty
+			* @brief Clears a list by removing all its rows
+			* @param list jQueryObject Represents the list to be handled
+			* @description Will only clear the list body, header entries like titlebar and toolbar will be left untouched
+			* @author Christian Reiner
+			*/
 			empty: function(list){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("empty list");
 				var dfd = new $.Deferred();
@@ -800,12 +800,12 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.empty
 			/**
-			 * @method OC.Shorty.WUI.List.fill
-			 * @brief (Re-)Fills a list with al elements from the given set
-			 * @param list jQueryObject Represents the list to be handled
-			 * @param elements array list of elements to be filled in the lists
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.fill
+			* @brief (Re-)Fills a list with al elements from the given set
+			* @param list jQueryObject Represents the list to be handled
+			* @param elements array list of elements to be filled in the lists
+			* @author Christian Reiner
+			*/
 			fill: function(list,elements){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("fill list");
 				var dfd = new $.Deferred();
@@ -817,14 +817,14 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.fill
 			/**
-			 * @method OC.Shorty.WUI.List.filter
-			 * @brief Filters a given list by comparing column values to a given value pattern
-			 * @param object list: jQuery object representing the list to filter (html table)
-			 * @param string column: Name (id) of the column to consider
-			 * @param string pattern: Pattern to compare the cells content against
-			 * @return object Deferred object
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.filter
+			* @brief Filters a given list by comparing column values to a given value pattern
+			* @param object list: jQuery object representing the list to filter (html table)
+			* @param string column: Name (id) of the column to consider
+			* @param string pattern: Pattern to compare the cells content against
+			* @return object Deferred object
+			* @author Christian Reiner
+			*/
 			filter: function(list,column,pattern){
 				pattern = pattern || ''
 				// we define a default reference callback function referencing the 'data-...' attributes in the rows
@@ -847,11 +847,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.filter
 			/**
-			 * @method OC.Shorty.WUI.List.get
-			 * @brief Retrieves the list of OC.Shortys from the server
-			 * @return object Deferred object
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.get
+			* @brief Retrieves the list of OC.Shortys from the server
+			* @return object Deferred object
+			* @author Christian Reiner
+			*/
 			get: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("get list");
 				var dfd = new $.Deferred();
@@ -873,12 +873,12 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.get
 			/**
-			 * @method OC.Shorty.WUI.List.hide
-			 * @brief Hides the list of OC.Shortys
-			 * @param string duration: The duration the hiding animation should take (optional)
-			 * @return object Deferred object
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.hide
+			* @brief Hides the list of OC.Shortys
+			* @param string duration: The duration the hiding animation should take (optional)
+			* @return object Deferred object
+			* @author Christian Reiner
+			*/
 			hide: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide list");
 				duration = 'slow';
@@ -890,12 +890,12 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.hide
 			/**
-			 * @method OC.Shorty.WUI.List.highlight
-			 * @brief highlights a given entry in the list of OC.Shortys
-			 * @param object entry: jQuery object representing the entry to highlight
-			 * @return object Deferred object
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.highlight
+			* @brief highlights a given entry in the list of OC.Shortys
+			* @param object entry: jQuery object representing the entry to highlight
+			* @return object Deferred object
+			* @author Christian Reiner
+			*/
 			highlight: function(list,entry){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("highlighting list entry "+entry.attr('id'));
 				var dfd = new $.Deferred();
@@ -913,13 +913,13 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.highlight
 			/**
-			 * @method OC.Shorty.WUI.List.modify
-			 * @brief Modifies existing entries in the list to match updated data
-			 * @param object list: jQuery object representing the list
-			 * @param bool hidden: Flag indicating if modified rows should be kept hidden for later highlighting
-			 * @return object Deferred object
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.modify
+			* @brief Modifies existing entries in the list to match updated data
+			* @param object list: jQuery object representing the list
+			* @param bool hidden: Flag indicating if modified rows should be kept hidden for later highlighting
+			* @return object Deferred object
+			* @author Christian Reiner
+			*/
 			modify: function(list,hidden){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("modify entry in list holding "+list.length+" entries");
 				var dfd = new $.Deferred();
@@ -992,12 +992,12 @@ OC.Shorty={
 				return dfd.resolve().promise();
 			}, // OC.Shorty.WUI.List.modify
 			/**
-			 * @method OC.Shorty.WUI.List.show
-			 * @brief Shows the list if it was hidden
-			 * @param string duration Duration the animation should take (optional)
-			 * @return object Deferred object
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.show
+			* @brief Shows the list if it was hidden
+			* @param string duration Duration the animation should take (optional)
+			* @return object Deferred object
+			* @author Christian Reiner
+			*/
 			show: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show list");
 				duration = duration | 'slow';
@@ -1019,12 +1019,12 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.show
 			/**
-			 * @method OC.Shorty.WUI.List.sort
-			 * @brief Sorts a list by the values of a specified column
-			 * @param object list The list object in the DOM
-			 * @param string A two letter code as defined in lib/type.php
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.sort
+			* @brief Sorts a list by the values of a specified column
+			* @param object list The list object in the DOM
+			* @param string A two letter code as defined in lib/type.php
+			* @author Christian Reiner
+			*/
 			sort: function(list,sortCode){
 				sortCore = sortCode || 'cd';
 				var icon=list.find('thead tr.shorty-toolbar th div img[data-sort-code="'+sortCode+'"]');
@@ -1050,11 +1050,11 @@ OC.Shorty={
 				OC.Shorty.Action.Preference.set({'list-sort-code':sortCode});
 			}, // OC.Shorty.WUI.List.sort
 			/**
-			 * @method OC.Shorty.WUI.List.toggle
-			 * @brief: Toggles the visibility of the list
-			 * @param string duration Duration the animation should take
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.toggle
+			* @brief: Toggles the visibility of the list
+			* @param string duration Duration the animation should take
+			* @author Christian Reiner
+			*/
 			toggle: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list");
 				duration = 'slow';
@@ -1064,10 +1064,10 @@ OC.Shorty={
 				else return OC.Shorty.WUI.List.show();
 			}, // OC.Shorty.WUI.List.toggle
 			/**
-			 * @method OC.Shorty.WUI.List.vacuum
-			 * @brief Controls the visibility of the vacuum version of the list
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.List.vacuum
+			* @brief Controls the visibility of the vacuum version of the list
+			* @author Christian Reiner
+			*/
 			vacuum: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("vacuum list");
 				// list is empty if no row exists
@@ -1080,39 +1080,39 @@ OC.Shorty={
 				}
 			}, // OC.Shorty.WUI.List.vacuum
 			/**
-			 * @class OC.Shorty.WUI.List.Column
-			 * @brief Collection of methods to control a lists column
-			 * author Christian Reiner
-			 */
+			* @class OC.Shorty.WUI.List.Column
+			* @brief Collection of methods to control a lists column
+			* author Christian Reiner
+			*/
 			Column:{
 				/**
-				 * @method OC.Shorty.WUI.List.Column.collapse
-				 * @brief Collapses an expanded lists column
-				 * @param object list The list whos column is to be collapsed
-				 * @param object column The column that is to be collapsed
-				 * @author Christian Reiner
-				 */
+				* @method OC.Shorty.WUI.List.Column.collapse
+				* @brief Collapses an expanded lists column
+				* @param object list The list whos column is to be collapsed
+				* @param object column The column that is to be collapsed
+				* @author Christian Reiner
+				*/
 				collapse: function(list, column){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("collapse column '"+column+"' in list '"+list+"'");
 					$('#'+list).find('thead th,thead td,tbody td').filter('[data-aspect="'+column+'"]').addClass('collapsed');
 				}, // OC.Shorty.WUI.List.Column.collapse
 				/**
-				 * @method OC.Shorty.WUI.List.Column.expand
-				 * @brief Expands a collapsed lists column
-				 * @param object list The list whos column is to be expanded
-				 * @param object column The column that is to be expanded
-				 * @author Christian Reiner
-				 */
+				* @method OC.Shorty.WUI.List.Column.expand
+				* @brief Expands a collapsed lists column
+				* @param object list The list whos column is to be expanded
+				* @param object column The column that is to be expanded
+				* @author Christian Reiner
+				*/
 				expand: function(list, column){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("expand column '"+column+"' in list '"+list+"'");
 					$('#'+list).find('thead th,thead td,tbody td').filter('[data-aspect="'+column+'"]').removeClass('collapsed')
 				}, // OC.Shorty.WUI.List.Column.expand
 				/**
-				 * @method OC.Shorty.WUI.List.Column.getCollapsedColumns
-				 * @brief Gets and validates the preference storing the lists of collapsed columns
-				 * @param string list The lists id
-				 * @author Christian Reiner
-				 */
+				* @method OC.Shorty.WUI.List.Column.getCollapsedColumns
+				* @brief Gets and validates the preference storing the lists of collapsed columns
+				* @param string list The lists id
+				* @author Christian Reiner
+				*/
 				getCollapsedColumns: function(list) {
 					var dfd = new $.Deferred();
 					$.when(
@@ -1129,12 +1129,12 @@ OC.Shorty={
 					return dfd.promise();
 				}, // OC.Shorty.WUI.List.Column.getCollapsedColumns
 				/**
-				 * @method OC.Shorty.WUI.List.Column.setCollapsedColumns
-				 * @brief Sets the preference storing the lists of collapsed columns
-				 * @param string list The lists id
-				 * @param array columns The list collapsed columns
-				 * @author Christian Reiner
-				 */
+				* @method OC.Shorty.WUI.List.Column.setCollapsedColumns
+				* @brief Sets the preference storing the lists of collapsed columns
+				* @param string list The lists id
+				* @param array columns The list collapsed columns
+				* @author Christian Reiner
+				*/
 				setCollapsedColumns: function(list, columns){
 					var dfd = new $.Deferred();
 					$.when(
@@ -1147,12 +1147,12 @@ OC.Shorty={
 					return dfd.promise();
 				}, // OC.Shorty.WUI.List.Column.setCollapsedColumns
 				/**
-				 * @method OC.Shorty.WUI.List.Column.toggle
-				 * @brief Toggles the compactness of a lists column
-				 * @param object list The list whos column is to be toggled
-				 * @param object column The list column that is to be toggled
-				 * @author Christian Reiner
-				 */
+				* @method OC.Shorty.WUI.List.Column.toggle
+				* @brief Toggles the compactness of a lists column
+				* @param object list The list whos column is to be toggled
+				* @param object column The list column that is to be toggled
+				* @author Christian Reiner
+				*/
 				toggle: function(list, column){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle column '"+column+"' in list '"+list+"'");
 					var dfd = new $.Deferred();
@@ -1176,11 +1176,11 @@ OC.Shorty={
 					return dfd.promise();
 				}, // OC.Shorty.WUI.List.Column.toggle
 				/**
-				 * @method OC.Shorty.WUI.List.Column.initAll
-				 * @brief initializes the lists columns to be collapsed or expanded
-				 * @param object list The list whos column is to be expanded
-				 * @author Christian Reiner
-				 */
+				* @method OC.Shorty.WUI.List.Column.initAll
+				* @brief initializes the lists columns to be collapsed or expanded
+				* @param object list The list whos column is to be expanded
+				* @author Christian Reiner
+				*/
 				initAll: function(list){
 					if (OC.Shorty.Debug) OC.Shorty.Debug.log("initializing all list in list '"+list+"' columns as collapsed or expanded");
 					$.when(
@@ -1198,10 +1198,10 @@ OC.Shorty={
 				} // OC.Shorty.WUI.List.Column.initAll
 			}, //OC.Shorty.WUI.List.Column
 			/**
-			 * @class OC.Shorty.WUI.List.Toolbar
-			 * @brief Collection of methods to control a lists toolbar
-			 * author Christian Reiner
-			 */
+			* @class OC.Shorty.WUI.List.Toolbar
+			* @brief Collection of methods to control a lists toolbar
+			* author Christian Reiner
+			*/
 			Toolbar:{
 				/**
 				* @method OC.Shorty.WUI.List.Toolbar.toggle
@@ -1240,8 +1240,8 @@ OC.Shorty={
 						}
 					}
 					return dfd.promise();
-				} // OC.Shorty.WUI.List.Toolbar.toggle
-			} // OC.Shorty.WUI.List.Toolbar
+				}, // OC.Shorty.WUI.List.Toolbar.toggle
+			}, // OC.Shorty.WUI.List.Toolbar
 		}, // OC.Shorty.WUI.List
 		/**
 		 * @class OC.Shorty.WUI.Messenger
@@ -1250,11 +1250,11 @@ OC.Shorty={
 		 */
 		Messenger:{
 			/**
-			 * @method OC.Shorty.WUI.Messenger.hide
-			 * @brief Hides the messenger area and clears the content
-			 * @param object A specific messenger clone object to be hidden or undefined
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Messenger.hide
+			* @brief Hides the messenger area and clears the content
+			* @param object A specific messenger clone object to be hidden or undefined
+			* @author Christian Reiner
+			*/
 			hide: function(object){
 				var dfd = new $.Deferred();
 				if (object){
@@ -1280,12 +1280,12 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Messenger.hide
 			/**
-			 * @method OC.Shorty.WUI.Messenger.show
-			 * @brief Populates the messenger area with the specified text and shows it
-			 * @param message (string) A human readable message
-			 * @param level (string) A severity level to be compared to the configured verbosity threshold
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Messenger.show
+			* @brief Populates the messenger area with the specified text and shows it
+			* @param message (string) A human readable message
+			* @param level (string) A severity level to be compared to the configured verbosity threshold
+			* @author Christian Reiner
+			*/
 			show: function(message,level){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show messenger with level "+level);
 				level = level || 'info';
@@ -1296,8 +1296,8 @@ OC.Shorty={
 					OC.Shorty.Action.Preference.get('verbosity-control'),
 					OC.Shorty.Action.Preference.get('verbosity-timeout')
 				).always(function(resultControl, resultTimeout){
-					var verbosity = resultControl['verbosity-control'] || 'error';
-					var timeout   = resultTimeout['verbosity-timeout'] || 5;
+					var verbosity = resultControl['verbosity-control'] || 'info';
+					var timeout   = resultTimeout['verbosity-timeout'] || 0;
 					if (message && message.length){
 						// log to browser console when debugging is enabled in system config file
 						if ( OC.Shorty.Debug ){
@@ -1365,10 +1365,10 @@ OC.Shorty={
 			} // OC.Shorty.WUI.Messenger.show
 		}, // OC.Shorty.WUI.Messenger
 		/**
-		 * @class OC.Shorty.WUI.Meta
-		 * @brief Collection of methods to handle url meta data
-		 * @author Christian Reiner
-		 */
+		* @class OC.Shorty.WUI.Meta
+		* @brief Collection of methods to handle url meta data
+		* @author Christian Reiner
+		*/
 		Meta:{
 			/**
 			* @method OC.Shorty.WUI.Meta.collect
@@ -1433,11 +1433,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Meta.collect
 			/**
-			 * @method OC.Shorty.WUI.Meta.get
-			 * @brief Fetches the meta data of a given target url
-			 * @param string target The target url to fetch meta data about
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Meta.get
+			* @brief Fetches the meta data of a given target url
+			* @param string target The target url to fetch meta data about
+			* @author Christian Reiner
+			*/
 			get: function(target){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("get meta data for target url '"+target+"'");
 				var dfd = new $.Deferred();
@@ -1458,11 +1458,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Meta.get
 			/**
-			 * @class OC.Shorty.WUI.Meta.reset
-			 * @brief Resets meta data that is currently contained in the specified dialog
-			 * @param object dialog The dialog the be altered
-			 * @author Christian Reiner
-			 */
+			* @class OC.Shorty.WUI.Meta.reset
+			* @brief Resets meta data that is currently contained in the specified dialog
+			* @param object dialog The dialog the be altered
+			* @author Christian Reiner
+			*/
 			reset: function(dialog){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("reset meta data");
 				var dfd = new $.Deferred();
@@ -1481,17 +1481,17 @@ OC.Shorty={
 			} // OC.Shorty.WUI.Meta.reset
 		}, // OC.Shorty.WUI.Meta
 		/**
-		 * @class OC.Shorty.WUI.Sums
-		 * @brief Collection of methods to handle and visualize statistical sums
-		 * @author Christian Reiner
-		 */
+		* @class OC.Shorty.WUI.Sums
+		* @brief Collection of methods to handle and visualize statistical sums
+		* @author Christian Reiner
+		*/
 		Sums:{
 			/**
-			 * @method OC.Shorty.WUI.Sums.fill
-			 * @brief Fills the sums as specified in the provided data into the desktop
-			 * @param array data The data as specified during a server request
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Sums.fill
+			* @brief Fills the sums as specified in the provided data into the desktop
+			* @param array data The data as specified during a server request
+			* @author Christian Reiner
+			*/
 			fill: function(data){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("fill sums");
 				var dfd = new $.Deferred();
@@ -1502,10 +1502,10 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Sums.fill
 			/**
-			 * @method OC.Shorty.WUI.Sums.get
-			 * @brief Retrieves the statistical sums from the server
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Sums.get
+			* @brief Retrieves the statistical sums from the server
+			* @author Christian Reiner
+			*/
 			get: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("get sums");
 				var dfd = new $.Deferred();
@@ -1529,11 +1529,11 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Sums.get
 			/**
-			 * @method OC.Shorty.WUI.Sums.increment
-			 * @brief Increments the click counter for a single entry in the visible list
-			 * @param entry object Jquery object representing the clicked entry (row)
-			 * @author Christian Reiner
-			 */
+			* @method OC.Shorty.WUI.Sums.increment
+			* @brief Increments the click counter for a single entry in the visible list
+			* @param entry object Jquery object representing the clicked entry (row)
+			* @author Christian Reiner
+			*/
 			increment: function(entry){
 				var clicks=parseInt(entry.attr('data-clicks'),10)+1;
 				entry.attr('data-accessed',Math.round((new Date()).getTime()/1000));
@@ -1704,7 +1704,7 @@ OC.Shorty={
 			verify:function(){
 				var dfd=new $.Deferred();
 				// prepare preloaded iframe to load the base url
-				if ($('#shorty #shorty-backend-static #shorty-backend-static-base').val()){
+				if ($('#shorty #backend-static #backend-static-base').val()){
 					// load the prepared iframe into a dialog
 					var popup=OC.Shorty.Action.Setting.Popup;
 					if ( ! popup.dialog){
@@ -1726,7 +1726,7 @@ OC.Shorty={
 					dfd.resolve();
 				}else{
 					// no targt given: show user where to fill in target
-					$('#shorty #shorty-backend-static #shorty-backend-static-base').effect('pulsate', 2000);
+					$('#shorty #backend-static #backend-static-base').effect('pulsate', 2000);
 					dfd.reject();
 				}
 				return dfd.promise();
@@ -2107,22 +2107,22 @@ OC.Shorty={
 	}, // OC.Shorty.Action
 
 	/**
-	 * @class OC.Shorty.Ajax
-	 * @brief Tool collection handling ajax requests
-	 * @author Christian Reiner
-	 */
+	* @class OC.Shorty.Ajax
+	* @brief Tool collection handling ajax requests
+	* @author Christian Reiner
+	*/
 	Ajax:{
 		/**
-		 * @method OC.Shorty.Ajax.eval
-		 * @brief Filters and converts ajax responses into internal format
-		 * @description
-		 * The ajax replies we get contain an error or a success structure.
-		 * In case of an error the data is converted into a normal ajax failure.
-		 * This makes dealing with failures easier, since all failures have the same format.
-		 * @param object Ajax response
-		 * @return object Deferred object, rejected or resolved
-		 * @author Christian Reiner
-		 */
+		* @method OC.Shorty.Ajax.eval
+		* @brief Filters and converts ajax responses into internal format
+		* @description
+		* The ajax replies we get contain an error or a success structure.
+		* In case of an error the data is converted into a normal ajax failure.
+		* This makes dealing with failures easier, since all failures have the same format.
+		* @param object Ajax response
+		* @return object Deferred object, rejected or resolved
+		* @author Christian Reiner
+		*/
 		eval:function(response){
 			if (OC.Shorty.Debug) OC.Shorty.Debug.log("eval ajax response of status "+response.status);
 			// Check to see if the response is truely successful.
@@ -2142,12 +2142,12 @@ OC.Shorty={
 			}
 		}, // OC.Shorty.Ajax.eval
 		/**
-		 * @method OC.Shorty.Ajax.fail
-		 * @brief Filters and converts ajax failures into internal format
-		 * @param object Ajax response
-		 * @return object Rejected deferred object
-		 * @author Christian Reiner
-		 */
+		* @method OC.Shorty.Ajax.fail
+		* @brief Filters and converts ajax failures into internal format
+		* @param object Ajax response
+		* @return object Rejected deferred object
+		* @author Christian Reiner
+		*/
 		fail:function(response){
 			if (OC.Shorty.Debug) OC.Shorty.Debug.log("handle ajax failure");
 			return new $.Deferred().reject({
@@ -2200,43 +2200,43 @@ OC.Shorty={
 	// ===========
 
 	/**
-	 * @class OC.Shorty.Runtime
-	 * @brief Catalog of references to runtime callback methods
-	 * @author Christian Reiner
-	 */
+	* @class OC.Shorty.Runtime
+	* @brief Catalog of references to runtime callback methods
+	* @author Christian Reiner
+	*/
 	Runtime:{
 		/**
-		 * @class OC.Shorty.Runtime.Context
-		 * @brief Definition of contexts callbacks can be associated to
-		 * @author Christian Reiner
-		 */
+		* @class OC.Shorty.Runtime.Context
+		* @brief Definition of contexts callbacks can be associated to
+		* @author Christian Reiner
+		*/
 		Context:{}
 	}, // OC.Shorty.Runtime
 
 	// ===========
 
 	/**
-	 * @class OC.Shorty.Status
-	 * @brief Cache structure holding information details like versions, installation and situation
-	 * @description
-	 * This is currently a temporary workaround for the fact that currently an ajax request is required for such basic information
-	 * Hopefully in later versions the ajax request can be replaced by an access to some predefined values already available
-	 * @author Christian Reiner
-	 */
+	* @class OC.Shorty.Status
+	* @brief Cache structure holding information details like versions, installation and situation
+	* @description
+	* This is currently a temporary workaround for the fact that currently an ajax request is required for such basic information
+	* Hopefully in later versions the ajax request can be replaced by an access to some predefined values already available
+	* @author Christian Reiner
+	*/
 	Status:{
 		/**
-		 * @object OC.Shorty.Server
-		 * @brief
-		 * @author Christian Reiner
+		* @object OC.Shorty.Server
+		* @brief
+		* @author Christian Reiner
 		 */
 		Valid:new $.Deferred(),
 		Server:{},
 
 		/**
-		 * @method OC.Shorty.Status.fetch
-		 * @brief Retrieve information from server and feed it into the cache
-		 * @author Christian Reiner
-		 */
+		* @method OC.Shorty.Status.fetch
+		* @brief Retrieve information from server and feed it into the cache
+		* @author Christian Reiner
+		*/
 		fetch:function(){
 			if ('resolved'===OC.Shorty.Status.Valid.state()){
 				// status already present due to a past request, just return that requests deferred object
@@ -2263,18 +2263,18 @@ OC.Shorty={
 			}
 		}, // OC.Shorty.Status.OCVersion
 		/**
-		 * @method OC.Shorty.Status.getValues
-		 * @brief Return the status values
-		 * @author Christian Reiner
-		 */
+		* @method OC.Shorty.Status.getValues
+		* @brief Return the status values
+		* @author Christian Reiner
+		*/
 		getValues:function(category,aspect){
 			return OC.Shorty.Status.Valid.promise();
 		}, // OC.Shorty.Status.getValues
 		/**
-		 * @method OC.Shorty.Status.versionCompare
-		 * @brief Compare the OC version with a given one using the specifed operand
-		 * @author Christian Reiner
-		 */
+		* @method OC.Shorty.Status.versionCompare
+		* @brief Compare the OC version with a given one using the specifed operand
+		* @author Christian Reiner
+		*/
 		versionCompare:function(operator,version){
 			var dfd=new $.Deferred();
 			// prepare given version to be compared, case into an array, if required
@@ -2305,13 +2305,13 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	ColumnValueReference:{
 	},
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
-	 * @brief Enriches a raw list entry with usage specific values taken from a sepcified set of attributes
-	 * @param row jQueryObject Represents the raw row, freshly cloned
-	 * @param set array A set of attributes (values) defining an element to be represented by the row
-	 * @param hidden bool Flag that controls if added entries should be kept hidden for a later visualization (highlighting)
-	 * @author Christian Reiner
-	 */
+	* @method OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
+	* @brief Enriches a raw list entry with usage specific values taken from a sepcified set of attributes
+	* @param row jQueryObject Represents the raw row, freshly cloned
+	* @param set array A set of attributes (values) defining an element to be represented by the row
+	* @param hidden bool Flag that controls if added entries should be kept hidden for a later visualization (highlighting)
+	* @author Christian Reiner
+	*/
 	ListAddEnrich:function(row,set,hidden){
 		// set row id to entry id
 		row.attr('id',set.id);
@@ -2381,22 +2381,22 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		) // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfShortys.ListAddInsert
-	 * @brief Inserts a cloned and enriched row into the table at a usage specific place
-	 * @description
-	 * OC.Shortys always get inserted at the BEGIN of the table, regardless of its sorting
-	 * This is important to always have the new entry flashing at the top of the list
-	 * @author Christian Reiner
-	 */
+	* @method OC.Shorty.Runtime.Context.ListOfShortys.ListAddInsert
+	* @brief Inserts a cloned and enriched row into the table at a usage specific place
+	* @description
+	* OC.Shortys always get inserted at the BEGIN of the table, regardless of its sorting
+	* This is important to always have the new entry flashing at the top of the list
+	* @author Christian Reiner
+	*/
 	ListAddInsert: function(list,row){
 		// add row in list of Shortys (NOT in any embedded tables body: dialog-share)
 		list.find('>tbody').prepend(row);
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddInsert
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfShortys.ListFillFilter
-	 * @param list jQueryObject Represents the list to be handled
-	 * @author Christian Reiner
-	 */
+	* @method OC.Shorty.Runtime.Context.ListOfShortys.ListFillFilter
+	* @param list jQueryObject Represents the list to be handled
+	* @author Christian Reiner
+	*/
 	ListFillFilter: function(list){
 		if (OC.Shorty.Debug) OC.Shorty.Debug.log("using 'default' method to filter filled list");
 		// only makes sense for default OC.Shorty list
@@ -2423,10 +2423,10 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		})
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListFillFilter
 	/**
-	 * @class OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
-	 * @brief Checks and signals visually if any active filters prevent closing the list toolbar
-	 * @author Christian Reiner
-	 */
+	* @class OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
+	* @brief Checks and signals visually if any active filters prevent closing the list toolbar
+	* @author Christian Reiner
+	*/
 	ToolbarCheckFilter: function(list,toolbar){
 		var filtered = false;
 		list.find('tr.shorty-toolbar th#list-of-shortys-title').each(function(){
@@ -2459,10 +2459,10 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		return filtered;
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	/**
-	 * @class OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums
-	 * @brief Fills sums (statistical values) into a lists environment
-	 * @author Christian Reiner
-	 */
+	* @class OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums
+	* @brief Fills sums (statistical values) into a lists environment
+	* @author Christian Reiner
+	*/
 	MetaFillSums:function(data){
 		$('#controls #sum_shortys').text(data.sum_shortys);
 		$('#controls #sum_clicks').text(data.sum_clicks);
