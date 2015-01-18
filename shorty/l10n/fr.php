@@ -21,7 +21,7 @@
 "none" => "aucun",
 "error" => "erreur",
 "info" => "information",
-"debug" => "déverminage",
+"debug" => "débogage",
 "(never)" => "(jamais)",
 "2 seconds" => "2 secondes",
 "5 seconds" => "5 secondes",
