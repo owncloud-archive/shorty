@@ -44,42 +44,36 @@ class OC_Shorty_Tools
 
 	/**
 	* @method OC_Shorty_Tools::ob_control
-	* @param bool on: Wether to activate or deactivate the buffer
+	* @param bool $switch Whether to activate or deactivate the buffer
 	* @return NULL|string: NULL when starting buffering, buffered content when stopping buffering
 	* @access public
 	* @author Christian Reiner
 	*/
-	static function ob_control ( $on=TRUE )
+	static function ob_control ( $switch=TRUE )
 	{
 		$output = NULL;
 		@ob_implicit_flush ( FALSE );
 		@ob_start ( );
 		self::$ob_active = TRUE;
 
-		if ( self::$ob_usage )
-		{
+		if ( self::$ob_usage )  {
 			// attempt to use outpout buffering
-			if ( $on )
-			{
+			if ( TRUE===$switch )  {
 				// start buffering if possible and not yet started before
 				if (   function_exists('ob_start')       // output buffers installed at all ?
-					&& ! self::$ob_active  )  // don't stack buffers (create buffer only, if not yet started)
-				{
+					&& ! self::$ob_active ) { // don't stack buffers (create buffer only, if not yet started)
 					@ob_implicit_flush ( FALSE );
 					@ob_start ( );
 					self::$ob_active = TRUE;
 				}
-			} // if $on==TRUE
-			else
-			{
+			} else {
 				// end buffering _if_ it has been started before
-				if ( self::$ob_active )
-				{
-					$output = @ob_get_contents ( );
-					@ob_end_clean ( );
+				if (self::$ob_active) {
+					$output = @ob_get_contents();
+					@ob_end_clean();
 					self::$ob_active = FALSE;
 				}
-			} // if $on==FALSE
+			}
 		} // if ob_usage
 		return $output;
 	} // function ob_control
