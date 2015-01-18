@@ -38,36 +38,29 @@
 class OC_ShortyTracking_L10n extends OC_Shorty_L10n
 {
 	/**
-	* @var OC_ShortyTracking_L10n::dictionary
-	* @brief An internal dictionary file filled from the translation files provided.
-	* @access private
-	* @author Christian Reiner
-	*/
-
-	/**
-	* @method OC_ShortyTracking_L10n::__construct
-	* @brief
-	* @access protected
-	* @author Christian Reiner
-	*/
+	 * @method OC_ShortyTracking_L10n::__construct
+	 * @brief
+	 * @access protected
+	 * @author Christian Reiner
+	 */
 	protected function __construct ( $app='shorty_tracking' ) { parent::__construct($app); }
 
 	/**
-	* @method OC_ShortyTracking_L10n::identity
-	* @brief Used for late state binding to identify the class
-	* @description This method must be reimplemented without change in all derived classes
-	* @access protected
-	* @author Christian Reiner
-	*/
+	 * @method OC_ShortyTracking_L10n::identity
+	 * @brief Used for late state binding to identify the class
+	 * @description This method must be reimplemented without change in all derived classes
+	 * @access protected
+	 * @author Christian Reiner
+	 */
 	static protected function identity ( ) { return __CLASS__; }
 
 	/**
-	* @method OC_ShortyTracking_L10n::instantiate
-	* @brief Used during late state binding to instantiates an object of the own class
-	* @description This method must be reimplemented without change in all derived classes
-	* @access protected
-	* @author Christian Reiner
-	*/
+	 * @method OC_ShortyTracking_L10n::instantiate
+	 * @brief Used during late state binding to instantiates an object of the own class
+	 * @description This method must be reimplemented without change in all derived classes
+	 * @access protected
+	 * @author Christian Reiner
+	 */
 	static protected function instantiate ( ) { return new OC_ShortyTracking_L10n; }
 
 } // class OC_ShortyTracking_L10n

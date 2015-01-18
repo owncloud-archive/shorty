@@ -74,6 +74,10 @@ html input, html textarea {
 	display: block;
 	line-height: 100%;
 }
+.shorty-controls button {
+	font-size: 18px;
+	color: #666;
+}
 .shorty-controls-left {
 	float: left;
 }
@@ -81,21 +85,25 @@ html input, html textarea {
 	float: right;
 }
 .shorty-controls-center {
-	width: 100%;
-	line-height: 250%;
-	font-size: 110%;
-	font-weight: inherit;
+	display: inline-block;
+	height: 100%;
 	margin: 0 1em;
 	white-space: nowrap;
 }
 .shorty-controls-center span {
+	display: inline-block;
+	position: relative;
+	top: 30%;
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: inherit;
+	color: #555;
 }
 .shorty-controls-center span.shorty-value {
-	min-width: 32px;
+	min-width: 36px;
+	text-align: right;
 }
-.shorty-controls-center span img {
-	width: 16px;
-}
+
 .shorty-controls-right button img {
 	width: 20px;
 }

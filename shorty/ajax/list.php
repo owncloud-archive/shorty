@@ -68,8 +68,11 @@ try
 			// enhance all entries with the relay url
 			$reply[$key]['relay']=OC_Shorty_Tools::relayUrl ( $reply[$key]['id'] );
 			// make sure there is _any_ favicon contained, otherwise layout in MS-IE browser is broken...
-			if (empty($reply[$key]['favicon']))
+			if (empty($reply[$key]['favicon'])) {
 				$reply[$key]['favicon'] = OCP\Util::imagePath('shorty', 'blank.png');
+			} else {
+				$reply[$key]['favicon'] = OC_Shorty_Tools::proxifyReference($reply[$key]['id'], false);
+			}
 		}
 	} // foreach
 

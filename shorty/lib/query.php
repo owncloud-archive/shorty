@@ -58,6 +58,7 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 			const URL_VERIFY	           = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE \"user\"=:user AND id=:id LIMIT 1";
 			const URL_LIST		           = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE \"user\"=:user ORDER BY :sort";
 			const URL_COUNT		           = "SELECT count(*) AS sum_shortys,IFNULL(sum(clicks),0) AS sum_clicks FROM *PREFIX*shorty WHERE \"user\"=:user";
+			const FAVICON_BY_ID	         = "SELECT id,favicon FROM *PREFIX*shorty WHERE id=:id";
 			const WIPE_SHORTYS	           = "DELETE FROM *PREFIX*shorty WHERE \"user\"=:user";
 			const WIPE_PREFERENCES	       = "DELETE FROM *PREFIX*preferences WHERE \"user\"=:user";
 			const QUERY_SHORTY_LIST        = "SELECT * FROM oc_shorty ORDER BY :sort";
@@ -80,6 +81,7 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 			const URL_VERIFY	           = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user AND id=:id LIMIT 1";
 			const URL_LIST		           = "SELECT id,status,favicon,title,source,target,clicks,created,accessed,until,notes FROM *PREFIX*shorty WHERE user=:user ORDER BY :sort";
 			const URL_COUNT		           = "SELECT count(*) AS sum_shortys,IFNULL(sum(clicks),0) AS sum_clicks FROM *PREFIX*shorty WHERE user=:user";
+			const FAVICON_BY_ID	         = "SELECT id,favicon FROM *PREFIX*shorty WHERE id=:id";
 			const WIPE_SHORTYS	           = "DELETE FROM *PREFIX*shorty WHERE user=:user";
 			const WIPE_PREFERENCES	       = "DELETE FROM *PREFIX*preferences WHERE user=:user";
 			const QUERY_SHORTY_LIST        = "SELECT * FROM oc_shorty ORDER BY :sort";
