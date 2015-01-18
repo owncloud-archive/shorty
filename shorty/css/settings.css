@@ -53,7 +53,7 @@
 	opacity: 0.7;
 }
 #shorty.section .shorty-example {
-	font-family: Monospace;
+	font-family: monospace;
 	font-style: normal;
 	font-size: medium;
 	margin: 0.3em;

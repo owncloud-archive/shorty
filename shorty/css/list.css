@@ -228,7 +228,7 @@
 .shorty-list thead th,
 .shorty-list tbody td {
 	margin: 0;
-	padding: 2px 4px 0px 2px;
+	padding: 2px 4px 0 2px;
 	line-height: 1.2em;
 }
 
