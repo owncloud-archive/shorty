@@ -34,15 +34,8 @@
  */
 
 $(document).ready(function(){
-	// initialize example that depends on backend-base
-	if ($('#shorty #shorty-backend-static-base').val().length)
-		$('#shorty #shorty-backend-static #example').text($('#shorty #shorty-backend-static-base').val()+'<shorty id>');
-	// modify example upon input of a base
-	$('#shorty #shorty-backend-static-base').bind('input',function(){
-		$('#shorty #shorty-backend-static #example').text($('#shorty #shorty-backend-static-base').val()+'<shorty id>');
-	});
 	// store backend selection upon change
-	$('#shorty #shorty-backend-default').bind('change',function(e){
+	$('#shorty-backend-default').bind('change',function(e){
 		// save setting
 		$.when(
 			OC.Shorty.Action.Setting.set($(e.currentTarget).serialize())
@@ -51,21 +44,26 @@ $(document).ready(function(){
 		})
 		return false;
 	});
-	// backend 'static': offer a clickable example link to verify the correct setup
-	$('#shorty #shorty-backend-static #example').bind('click',function(event){
+	// initialize by triggering an initial verification and update of the example url
+	if ($('#shorty-backend-static-base').val().length) {
+		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
+		OC.Shorty.Action.Verification.verify();
+	}
+	// backend 'static': verify configuration when changed
+	$('#shorty-backend-static-base').bind('keyup input',function(event){
 		event.preventDefault();
-		OC.Shorty.Action.Setting.verify();
+		// modify example
+		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
+		// verify setting
+		OC.Shorty.Action.Verification.verify();
 	});
 	// store setting
-	$('#shorty #shorty-backend-static-base').focusout(function(){
-		// modify example
-		$('#shorty #shorty-backend-static #example').text($('#shorty #shorty-backend-static-base').val()+'<shorty id>');
-		// save setting
-		$.when(
-			OC.Shorty.Action.Setting.set($('#shorty #shorty-backend-static-base').serialize())
-		).fail(function(response){
-			OC.Notification.show(response.message);
-		})
-		return false;
+	$('#shorty-backend-static-base').focusout(function(){
+		if (	($('#shorty-backend-static-base').val().length)
+				&&($('#shorty-backend-static-base').hasClass('valid')) ){
+			OC.Shorty.Action.Setting.set($('#shorty-backend-static-base').serialize())
+		} else {
+			OC.Shorty.Action.Setting.set('backend-static-base=');
+		}
 	});
 });

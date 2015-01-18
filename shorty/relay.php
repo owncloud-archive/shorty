@@ -76,7 +76,7 @@ try
 		throw new OC_Shorty_HttpException ( 400 );
 	}
 	// an id was specified, ordinary or special meaning ?
-	if ( '0000000000'==$arg )
+	if ( '0000000000'===$arg )
 	{
 		// this is a pseudo id, used to test the setup, so just return a positive message.
 		// this is used to test the setup of the static backend, shorty calls itself from there
@@ -84,8 +84,9 @@ try
 		// we have to react to a jsonp request, so we have to reply valid jsonp manually:
 		// note that we use 'static' jsonp, so no callback parameter is provided, instead it is hard coded here
 		// this reduces the complexity of setting up the backend, since no additional parameter has to be handled
-		echo sprintf ( 'verifyStaticBackend(%s)', json_encode(array('status'=>'success')) );
-		exit();
+// 		header('Content-Type: application/javascript; charset=utf8');
+		header('Content-Type: application/javascript');
+		exit( sprintf( 'verifyStaticBackend(%s)', json_encode(array('status'=>'success'))) );
 	}
 
 	// detect requested shorty id from request
