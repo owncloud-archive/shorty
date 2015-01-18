@@ -107,11 +107,16 @@ class OC_Shorty_Meta
 		{
 			// try to extract title from page
 			preg_match ( "/<head[^>]*>.*<title>(.*)<\/title>.*<\/head>/si", $page, $match );
-// 			$meta['title']    = isset($match[1]) ? htmlspecialchars_decode ( trim($match[1]) ) : '';
-			$meta['title']    = isset($match[1]) ? html_entity_decode ( trim($match[1]),  ENT_COMPAT, 'UTF-8' ) : '';
+			if (   isset($match[1])
+					&& iconv('UTF-8', 'UTF-8//IGNORE', $match[1])) {
+				// the title is cut off after 2048 chars to prevent security issues like overflows
+				// 2048 is half of 4096 which is the size of the db column (UTF!)
+				$meta['title'] = substr(trim($match[1]),0,2048);
+			}
+			// a friendly state icon (valid/invalid)
 			$meta['staticon'] = self::selectIcon ( 'state', TRUE );
 			// final url after a possible redirection
-			$meta['final']       = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
+			$meta['final']    = curl_getinfo ( $handle, CURLINFO_EFFECTIVE_URL );
 			// try to extract favicon from page
 			preg_match ( '/<[^>]*link[^>]*(rel=["\']icon["\']|rel=["\']shortcut icon["\']) .*href=["\']([^>]*)["\'].*>/iU', $page, $match );
 			if (1<sizeof($match))
@@ -119,22 +124,17 @@ class OC_Shorty_Meta
 				// the specified uri might be an url, an absolute or a relative path
 				// we have to turn it into an url to be able to display it out of context
 				$favicon = htmlspecialchars_decode ( $match[2] );
-				// test for an url
-				if (parse_url($favicon,PHP_URL_SCHEME))
-				{
+				if (parse_url($favicon,PHP_URL_SCHEME)) {
+					// the ref is an url
 					$meta['favicon'] = $favicon;
-				}
-				// test for an absolute path
-				elseif ( 0===strpos(parse_url($favicon,PHP_URL_PATH),'/') )
-				{
+				} elseif ( 0===strpos(parse_url($favicon,PHP_URL_PATH),'/') ) {
+					// it is an absolute path
 					$url_token = parse_url($meta['final']);
 					$meta['favicon'] = sprintf( '%s://%s/%s', $url_token['scheme'], $url_token['host'], $favicon );
-				}
-				// so it appears to be a relative path
-				else
-				{
+				} else {
+					// so it appears to be a relative path
 					$url_token = parse_url($meta['final']);
-					$meta['favicon'] = sprintf( '%s://%s%s%s', $url_token['scheme'], $url_token['host'], dirname($url_token['path']), $favicon );
+					$meta['favicon'] = sprintf( '%s://%s%s/%s', $url_token['scheme'], $url_token['host'], dirname($url_token['path']), $favicon );
 				}
 			}
 			$meta['mimetype']    = preg_replace ( '/^([^;]+);.*/i', '$1', curl_getinfo($handle,CURLINFO_CONTENT_TYPE) );

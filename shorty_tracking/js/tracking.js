@@ -43,12 +43,6 @@ $(window).load(function(){
 	OC.Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
 		OC.Shorty.WUI.Dialog.hide(OC.Shorty.Tracking.Dialog.List);
 	});
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-titlebar #list-of-clicks-status').on('click',function(){
-			OC.Shorty.WUI.List.Toolbar.toggle.apply(
-				OC.Shorty.Runtime.Context.ListOfClicks,
-				[OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()]
-			);
-	});
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-toolbar .shorty-reload')
 		.on('click',function(){OC.Shorty.Tracking.build(false);});
 	OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load')
@@ -67,7 +61,7 @@ $(window).load(function(){
 		$(this).parents('tbody').find('tr td#'+$(this).parent().attr('id')+' span').removeClass("associated").removeClass("desociated");});
 	// when clicking inside cells: set column filter
 	$(document).on('click','#list-of-clicks tbody tr td.associative:not(.collapsed) span',[],function(){
-		var input=$(this).parents('table').find('thead tr.shorty-toolbar th#'+$(this).parent().attr('id')).find('input,select');
+		var input=$(this).parents('table').find('thead tr.shorty-toolbar th[data-aspect="'+$(this).parent().attr('data-aspect')+'"]').find('input,select');
 		var value;
 		// open toolbar if still hidden
 		if (input.parent().is(':hidden'))
@@ -86,18 +80,18 @@ $(window).load(function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfClicks,
 			[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-				$(this).parent().attr('id'),
+				$(this).parent().attr('data-aspect'),
 				input.val()
 			]);
 	});
 	// column filter reaction
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
-		.find('thead tr.shorty-toolbar').find('th#time,th#address,th#host,th#user').find('.shorty-filter')
+		.find('thead tr.shorty-toolbar').find('th[data-aspect="time"],th[data-aspect="address"],th[data-aspect="host"],th[data-aspect="user"]').find('.shorty-filter')
 		.on('keyup',function(){
 			OC.Shorty.WUI.List.filter.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
 				[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-					$($(this).context.parentElement.parentElement).attr('id'),
+					$($(this).context.parentElement.parentElement).attr('data-aspect'),
 					$(this).val()
 				]
 			);
@@ -113,7 +107,7 @@ $(window).load(function(){
 			OC.Shorty.WUI.List.filter.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
 				[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-					$(this).parents('th').attr('id'),
+					$(this).parents('th').attr('data-aspect'),
 					$(this).find(':selected').val()
 				]
 			);
@@ -630,7 +624,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 			default:
 				span.text(set[aspect]);
 			} // switch
-			row.find('td[data-id="'+aspect+'"]').empty().append(span);
+			row.find('td[data-aspect="'+aspect+'"]').empty().append(span);
 		}) // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
 	/**

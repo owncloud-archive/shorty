@@ -65,7 +65,7 @@
 				<img id="mimicon"   class="shorty-icon svg" width="16px" data="blank"
 					src="<?php p(OCP\Util::imagePath('shorty', 'blank.png')); ?>">
 			</span>
-			<span id="explanation" maxlength="80" class="shorty-value" data=""></span>
+			<span id="explanation" class="shorty-value" data=""></span>
 		</span>
 		<br />
 		<label for="title"><?php p(OC_Shorty_L10n::t('Title').':'); ?></label>

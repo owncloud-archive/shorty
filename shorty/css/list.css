@@ -83,36 +83,62 @@
 	height: 16px;
 	opacity: 0.8;
 }
-.shorty-list thead tr.shorty-toolbar img#sort-up {
-	cursor: n-resize;
-}
-.shorty-list thead tr.shorty-toolbar img#sort-down {
-	cursor: s-resize;
-}
 .shorty-list thead tr.shorty-toolbar img.shorty-clear {
 	cursor: pointer;
 	opacity: 0.6;
 }
-.shorty-list thead tr.shorty-toolbar img.shorty-sorter {
+/* only show one collapsible tool icon at once */
+.shorty-list thead tr.shorty-toolbar img.shorty-tool.shorty-tool-collapsible {
+	cursor: col-resize;
 	opacity: 0.6;
+	height: 16px;
+	margin: 0 2px 0 0;
 }
-/* last column in the list, content usually invisible, except when hovered */
-.shorty-list thead tr.shorty-toolbar img.shorty-active {
-	border: 1px solid #888888;
-	border-radius: 0.3em;
+.shorty-list thead tr.shorty-toolbar th.collapsed img.shorty-tool.shorty-tool-collapsible[data-collapsible-code="collapse"],
+.shorty-list thead tr.shorty-toolbar th:not(.collapsed) img.shorty-tool.shorty-tool-collapsible[data-collapsible-code="expand"] {
+	display: none;
 }
-.shorty-list tr.shorty-toolbar th.collapsed div {
+/* custom cursors for sorting tool icons */
+.shorty-list thead tr.shorty-toolbar img.shorty-sort-up  {
+	cursor: n-resize;
+}
+.shorty-list thead tr.shorty-toolbar img.shorty-sort-down  {
+	cursor: s-resize;
+}
+/* fade between sorting tool icons */
+.shorty-list thead tr.shorty-toolbar img.shorty-sort {
+	opacity: 0.6;
+	width: 16px;
+	margin: 2px -4px;
+	transition: width 250ms, margin 250ms;
+	-o-transition: width 250ms, margin 250ms;
+	-ms-transition: width 250ms, margin 250ms;
+	-moz-transition: width 250ms, margin 250ms;
+	-khtml-transition: width 250ms, margin 250ms;
+	-webkit-transition: width 250ms, margin 250ms;
+}
+/* emphasize active sorting tool icon */
+.shorty-list thead tr.shorty-toolbar img.shorty-sort.shorty-active {
+	opacity: 1;
+	width: 20px;
+	margin: 0 -6px;
+}
+/* hide content of toolbar in collapsed columns, except for the 'expand' tool */
+.shorty-list tr.shorty-toolbar th.collapsed div *:not([data-collapsible-code="expand"]) {
 	visibility: hidden;
 }
+.shorty-list thead tr.shorty-toolbar th select,
+.shorty-list tbody tr.shorty-toolbar td select,
 .shorty-list thead tr.shorty-toolbar th input,
 .shorty-list tbody tr.shorty-toolbar td input,
 .shorty-list thead tr.shorty-toolbar th .chzn-container,
 .shorty-list tbody tr.shorty-toolbar td .chzn-container {
+	box-sizing: content-box !important;
 	width: 6em;
-	height: 1em !important;
+	height: 1.2em !important;
 	font-size: 11px;
 	margin: 0;
-	padding: 0.3em;
+	padding: 0.3em !important;
 	vertical-align: baseline;
 	background-color: #FFFFFF;
 }
@@ -194,52 +220,6 @@
 	border-bottom-right-radius: 0.5em;
 	border-right: 1px solid #AAA;
 }
-/* strike through visible content of rows (entries) marked as deleted */
-.shorty-list tbody tr.deleted>td#title,
-.shorty-list tbody tr.deleted>td#target,
-.shorty-list tbody tr.deleted>td#clicks,
-.shorty-list tbody tr.deleted>td#until,
-.shorty-list tbody tr.deleted>td#created,
-.shorty-list tbody tr.deleted>td#accessed {
-	text-decoration: line-through;
-	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
-}
-/* strike through visible content of rows (entries) marked as deleted */
-.shorty-list tbody tr.deleted:hover>td#title,
-.shorty-list tbody tr.deleted:hover>td#target,
-.shorty-list tbody tr.deleted:hover>td#clicks,
-.shorty-list tbody tr.deleted:hover>td#until,
-.shorty-list tbody tr.deleted:hover>td#created,
-.shorty-list tbody tr.deleted:hover>td#accessed {
-	text-decoration: line-through;
-	background: #F4F4F4 url('../img/status/strike.png') 0 50% repeat-x;
-}
-.shorty-list tbody tr.deleted.clicked>td#title,
-.shorty-list tbody tr.deleted.clicked>td#target,
-.shorty-list tbody tr.deleted.clicked>td#clicks,
-.shorty-list tbody tr.deleted.clicked>td#until,
-.shorty-list tbody tr.deleted.clicked>td#created,
-.shorty-list tbody tr.deleted.clicked>td#accessed {
-	text-decoration: line-through;
-	background: #EEE url('../img/status/strike.png') 0 50% repeat-x;
-}
-/* replace the 'delete' action icon by an 'undelete' icon */
-.shorty-list tbody tr.deleted>td#actions #shorty-action-del:after {
-	content: url("../img/actions/recycle.svg");
-	position: relative;
-	top: -1px;
-	margin-left: -19.5px;
-	padding: 0;
-	opacity: 0;
-}
-.shorty-list tbody tr.deleted.clicked>td#actions #shorty-action-del>img,
-.shorty-list tbody tr.deleted:hover>td#actions #shorty-action-del>img {
-	opacity: 0;
-}
-.shorty-list tbody tr.deleted.clicked>td#actions #shorty-action-del:after,
-.shorty-list tbody tr.deleted:hover>td#actions #shorty-action-del:after {
-	opacity: 1;
-}
 /* elements (rows) currently filtered out (toolbars column filter options) */
 .shorty-list tr.shorty-filtered {
 	display: none;
@@ -254,12 +234,8 @@
 
 
 /* collapsible list columns */
-
-.shorty-list.shorty-collapsible thead tr.shorty-titlebar th.collapsible div,
-.shorty-list.shorty-collapsible thead tr.shorty-toolbar th.collapsed,
-.shorty-list.shorty-collapsible tbody td.collapsed,
-.shorty-list.shorty-collapsible tbody td.collapsed span {
-	cursor: col-resize;
+.shorty-list.shorty-collapsible tbody td span {
+	max-width: 100%;
 }
 
 .shorty-list.shorty-collapsible tr.shorty-titlebar th.collapsible,
@@ -295,7 +271,8 @@
 
 /* list of shortys */
 
-#list-of-shortys thead tr.shorty-titlebar th#list-of-shortys-favicon * {
+#list-of-shortys thead tr.shorty-titlebar th,
+#list-of-shortys thead tr.shorty-titlebar th * {
 	cursor: row-resize;
 }
 
