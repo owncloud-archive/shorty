@@ -69,13 +69,13 @@
 		</span>
 		<br/>
 		<span class="shorty-explain">
-			<?php print_unescaped(sprintf("%1\$s<br />\n%2\$s<br />\n%3\$s <span class=\"shorty-example\">%6\$s</span><br />\n%4\$s<br />\n%5\$s",
+			<?php print_unescaped(nl2br(sprintf("%1\$s\n%2\$s\n%3\$s\n<span class=\"shorty-example\">%6\$s</span>\n%4\$s\n%5\$s",
 				OC_Shorty_L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
 				OC_Shorty_L10n::t("You have to take care that any request to the url configured here is internally mapped to the 'shorty' module."),
-				OC_Shorty_L10n::t("The target of that mapping must be some URL like:"),
-				OC_Shorty_L10n::t("Such rewriting rules should be configured inside the http server configuration."),
+				OC_Shorty_L10n::t("The target of that mapping, typically by means of a rewriting rule, must be some URL like:"),
+				OC_Shorty_L10n::t("Such rewriting rules should be configured inside the main http server configuration."),
 				OC_Shorty_L10n::t("If no access to that configuration exists, then using '.htaccess' style files might be an option."),
-				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty-id>'))); ?>
+				htmlspecialchars('http://<domain>/<owncloud>/public.php?service=shorty_relay&id=<shorty-id>')))); ?>
 		</span>
 	</fieldset>
 <!-- list of installed plugins -->
