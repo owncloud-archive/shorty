@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -28,14 +28,14 @@
  * @description
  * This script implements a few always-handy routines (currently) not provided
  * by the main owncloud framework. Since they really don't fit into any of the
- * internal apps logic categories they are collected in this helper script. 
+ * internal apps logic categories they are collected in this helper script.
  * @author Christian Reiner
  */
 
 /**
  * @function max
  * @brief Returns the max value of all elements in an array
- * author Christian Reiner
+ * @author Christian Reiner
  */
 Array.prototype.max = function() {
 	var max = this[0];
@@ -117,7 +117,7 @@ function dateExpired(date){
  * @author Christian Reiner
  */
 function dateTimeToHuman(timestamp,placeholder){
-	if (undefined==timestamp)
+	if (undefined===timestamp || '0'===timestamp || 0===timestamp)
 		return placeholder||'';
 	var d=new Date(1000*timestamp);
 	return 	d.getFullYear()

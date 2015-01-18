@@ -43,12 +43,6 @@ $(window).load(function(){
 	OC.Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
 		OC.Shorty.WUI.Dialog.hide(OC.Shorty.Tracking.Dialog.List);
 	});
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-titlebar #list-of-clicks-status').on('click',function(){
-			OC.Shorty.WUI.List.Toolbar.toggle.apply(
-				OC.Shorty.Runtime.Context.ListOfClicks,
-				[OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()]
-			);
-	});
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-toolbar .shorty-reload')
 		.on('click',function(){OC.Shorty.Tracking.build(false);});
 	OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load')
@@ -67,7 +61,7 @@ $(window).load(function(){
 		$(this).parents('tbody').find('tr td#'+$(this).parent().attr('id')+' span').removeClass("associated").removeClass("desociated");});
 	// when clicking inside cells: set column filter
 	$(document).on('click','#list-of-clicks tbody tr td.associative:not(.collapsed) span',[],function(){
-		var input=$(this).parents('table').find('thead tr.shorty-toolbar th#'+$(this).parent().attr('id')).find('input,select');
+		var input=$(this).parents('table').find('thead tr.shorty-toolbar th[data-aspect="'+$(this).parent().attr('data-aspect')+'"]').find('input,select');
 		var value;
 		// open toolbar if still hidden
 		if (input.parent().is(':hidden'))
@@ -86,18 +80,18 @@ $(window).load(function(){
 		OC.Shorty.WUI.List.filter.apply(
 			OC.Shorty.Runtime.Context.ListOfClicks,
 			[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-				$(this).parent().attr('id'),
+				$(this).parent().attr('data-aspect'),
 				input.val()
 			]);
 	});
 	// column filter reaction
 	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
-		.find('thead tr.shorty-toolbar').find('th#time,th#address,th#host,th#user').find('.shorty-filter')
+		.find('thead tr.shorty-toolbar').find('th[data-aspect="time"],th[data-aspect="address"],th[data-aspect="host"],th[data-aspect="user"]').find('.shorty-filter')
 		.on('keyup',function(){
 			OC.Shorty.WUI.List.filter.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
 				[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-					$($(this).context.parentElement.parentElement).attr('id'),
+					$($(this).context.parentElement.parentElement).attr('data-aspect'),
 					$(this).val()
 				]
 			);
@@ -113,7 +107,7 @@ $(window).load(function(){
 			OC.Shorty.WUI.List.filter.apply(
 				OC.Shorty.Runtime.Context.ListOfClicks,
 				[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-					$(this).parents('th').attr('id'),
+					$(this).parents('th').attr('data-aspect'),
 					$(this).find(':selected').val()
 				]
 			);
@@ -135,35 +129,35 @@ $(window).load(function(){
 OC.Shorty.Tracking=
 {
 	/**
-	* @brief Collection of dialog selectors used as a shortcut during the scripts
-	* @access private
-	* @author Christian Reiner
-	*/
+	 * @brief Collection of dialog selectors used as a shortcut during the scripts
+	 * @access private
+	 * @author Christian Reiner
+	 */
 	Dialog:{
 		/**
-		* @brief Persistent jQuery object holding the list dialog implemented by this plugin
-		* @access private
-		* @author Christian Reiner
-		*/
+		 * @brief Persistent jQuery object holding the list dialog implemented by this plugin
+		 * @access private
+		 * @author Christian Reiner
+		 */
 		List:{},
 		/**
-		* @brief Persistent jQuery object holding the click dialog implemented by this plugin
-		* @access private
-		* @author Christian Reiner
-		*/
+		 * @brief Persistent jQuery object holding the click dialog implemented by this plugin
+		 * @access private
+		 * @author Christian Reiner
+		 */
 		Click:{}
 	},
 	/**
-	* @brief Persistent referencing the Shorty this plugin currently deals with
-	* @access private
-	* @author Christian Reiner
-	*/
+	 * @brief Persistent referencing the Shorty this plugin currently deals with
+	 * @access private
+	 * @author Christian Reiner
+	 */
 	Entry:{},
 	/**
-	* @brief Persistent jQuery object describing the list in this plugins dialog
-	* @access private
-	* @author Christian Reiner
-	*/
+	 * @brief Persistent jQuery object describing the list in this plugins dialog
+	 * @access private
+	 * @author Christian Reiner
+	 */
 	Stats:{
 		blocked:[],
 		denied: [],
@@ -171,14 +165,14 @@ OC.Shorty.Tracking=
 		granted:[]
 	},
 	/**
-	* @method OC.Shorty.Tracking.bottom
-	* @brief Decides if a scrolling event has reached the bottom of the list
-	* @access private
-	* @author Christian Reiner
-	* @description
-	* If the list has been scrolled to its bottom the retrieval of the next chunk of
-	* clicks will be triggered.
-	*/
+	 * @method OC.Shorty.Tracking.bottom
+	 * @brief Decides if a scrolling event has reached the bottom of the list
+	 * @access private
+	 * @author Christian Reiner
+	 * @description
+	 * If the list has been scrolled to its bottom the retrieval of the next chunk of
+	 * clicks will be triggered.
+	 */
 	bottom: function(){
 		// prevent additional events, whilst processing this one
 		OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').off('scroll');
@@ -196,12 +190,12 @@ OC.Shorty.Tracking=
 			.on('scroll',OC.Shorty.Tracking.bottom);
 	}, // OC.Shorty.Tracking.bottom
 	/**
-	* @method OC.Shorty.Tracking.build
-	* @brief Builds the content of the list of tracked clicks
-	* @return deferred.promise
-	* @access private
-	* @author Christian Reiner
-	*/
+	 * @method OC.Shorty.Tracking.build
+	 * @brief Builds the content of the list of tracked clicks
+	 * @return deferred.promise
+	 * @access private
+	 * @author Christian Reiner
+	 */
 	build: function(keep)
 	{
 		keep=keep||false;
@@ -281,14 +275,14 @@ OC.Shorty.Tracking=
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.build
 	/**
-	* @method OC.Shorty.Tracking.control
-	* @brief Central control method, called by the app to hand over control
-	* @param entry jQuery object holding the clicked entry, in this case a row in the list of Shortys
-	* @return deferred.promise
-	* @access public
-	* @author Christian Reiner
-	* @description This is the method specified as control in slot "registerActions".
-	*/
+	 * @method OC.Shorty.Tracking.control
+	 * @brief Central control method, called by the app to hand over control
+	 * @param entry jQuery object holding the clicked entry, in this case a row in the list of Shortys
+	 * @return deferred.promise
+	 * @access public
+	 * @author Christian Reiner
+	 * @description This is the method specified as control in slot "registerActions".
+	 */
 	control:function(entry){
 		if (OC.Shorty.Debug) OC.Shorty.Debug.log("tracking list controller");
 		var dfd=new $.Deferred();
@@ -319,11 +313,11 @@ OC.Shorty.Tracking=
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.control
 	/**
-	* @method OC.Shorty.Tracking.details
-	* @brief Visualizes clicks details inside a popup
-	* @access private
-	* @author Christian Reiner
-	*/
+	 * @method OC.Shorty.Tracking.details
+	 * @brief Visualizes clicks details inside a popup
+	 * @access private
+	 * @author Christian Reiner
+	 */
 	details:function(element){
 	if (OC.Shorty.Debug) OC.Shorty.Debug.log("visualizing details on click '"+element.attr('id')+"' in tracking list");
 	var dfd = new $.Deferred();
@@ -370,14 +364,14 @@ OC.Shorty.Tracking=
 	return dfd.promise();
 	}, // OC.Shorty.Tracking.details
 	/**
-	* @method OC.Shorty.Tracking.get
-	* @brief Fetches a list of all registered clicks matching a specified Shorty
-	* @param shorty string Id of the Shorty the click list is requested for
-	* @param offset Numeric id of the last click that is already present in the list (ids being in chronological order!)
-	* @return deferred.promise
-	* @access private
-	* @author Christian Reiner
-	*/
+	 * @method OC.Shorty.Tracking.get
+	 * @brief Fetches a list of all registered clicks matching a specified Shorty
+	 * @param shorty string Id of the Shorty the click list is requested for
+	 * @param offset Numeric id of the last click that is already present in the list (ids being in chronological order!)
+	 * @return deferred.promise
+	 * @access private
+	 * @author Christian Reiner
+	 */
 	get:function(shorty,offset){
 		if (OC.Shorty.Debug) OC.Shorty.Debug.log("loading clicks into tracking list");
 		// no offset specified ? then start at the beginning
@@ -402,13 +396,13 @@ OC.Shorty.Tracking=
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.get
 	/**
-	* method OC.Shorty.Tracking.init
-	* @brief Initializes the dialog this aplugin adds to the Shorty app
-	* @return deferred.promise
-	* @access public
-	* @author Christian Reiner
-	* @description The html content of the dialog is fetched via ajax
-	*/
+	 * method OC.Shorty.Tracking.init
+	 * @brief Initializes the dialog this aplugin adds to the Shorty app
+	 * @return deferred.promise
+	 * @access public
+	 * @author Christian Reiner
+	 * @description The html content of the dialog is fetched via ajax
+	 */
 	init:function(){
 		if (OC.Shorty.Debug) OC.Shorty.Debug.log("initializing tracking list");
 		// check if dialogs already exist
@@ -454,10 +448,10 @@ OC.Shorty.Tracking=
 		} // else
 	},
 	/**
-	* @method OC.Shorty.Tracking.sparkle
-	* @brief Creates a 'click sparkline' at the top right of the dialog
-	* @author Christian Reiner
-	*/
+	 * @method OC.Shorty.Tracking.sparkle
+	 * @brief Creates a 'click sparkline' at the top right of the dialog
+	 * @author Christian Reiner
+	 */
 	sparkle:function(){
 		var sparkline=OC.Shorty.Tracking.Dialog.List.find('#stats').first();
 		// reset previous sparkline
@@ -569,15 +563,15 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 		time:function(){return $(this).find('span').text();}
 	},
 	/**
-	* @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
-	* @brief Callback function replacing the default used in OC.Shorty.WUI.List.add()
-	* @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
-	* @param set object This is the set of attributes describing a single registered click
-	* @param hidden bool Indicats if new entries in lists should be held back for later highlighting (flashing) optically or not
-	* @access public
-	* @author Christian Reiner
-	* @description This replacement uses the plugin specific column names.
-	*/
+	 * @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
+	 * @brief Callback function replacing the default used in OC.Shorty.WUI.List.add()
+	 * @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
+	 * @param set object This is the set of attributes describing a single registered click
+	 * @param hidden bool Indicats if new entries in lists should be held back for later highlighting (flashing) optically or not
+	 * @access public
+	 * @author Christian Reiner
+	 * @description This replacement uses the plugin specific column names.
+	 */
 	ListAddEnrich:function(row,set,hidden){
 		// set row id to entry id
 		row.attr('id',set.id);
@@ -630,27 +624,27 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 			default:
 				span.text(set[aspect]);
 			} // switch
-			row.find('td[data-id="'+aspect+'"]').empty().append(span);
+			row.find('td[data-aspect="'+aspect+'"]').empty().append(span);
 		}) // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
 	/**
-	* @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddInsert
-	* @brief Inserts a cloned and enriched row into the table at a usage specific place
-	* @access public
-	* @author Christian Reiner
-	* @description
-	* New entries always get appended to the list of already existing entries,
-	* since those are always sorted in a chronological order.
-	*/
+	 * @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddInsert
+	 * @brief Inserts a cloned and enriched row into the table at a usage specific place
+	 * @access public
+	 * @author Christian Reiner
+	 * @description
+	 * New entries always get appended to the list of already existing entries,
+	 * since those are always sorted in a chronological order.
+	 */
 	ListAddInsert:function(list,row){
 		list.find('tbody').append(row);
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddInsert
 	/**
-	* @method OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
-	* @brief Column filter rules specific to this plugins list
-	* @access public
-	* @author Christian Reiner
-	*/
+	 * @method OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
+	 * @brief Column filter rules specific to this plugins list
+	 * @access public
+	 * @author Christian Reiner
+	 */
 	ListFillFilter:function(list){
 		if (OC.Shorty.Debug) OC.Shorty.Debug.log("using 'tracking' method to filter filled list");
 		// filter list
@@ -667,17 +661,17 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 			[list,'result', toolbar.find('th#list-of-clicks-result  .shorty- :selected').val()]);
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
 	/**
-	* @method OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
-	* @brief Callback used to check if any filters prevent closing a lists toolbar
-	* @param toolbar jQueryObject The lists toolbar filters should be checked in
-	* @return bool Indicates if an existing filter prevents the closing or not
-	* @access public
-	* @author Christian Reiner
-	* @description
-	* Used as replacement for the default used in OC.Shorty.WUI.List.Toolbar.toggle()
-	* This version is private to this plugin and uses the filter names specific to
-	* the list of tracked clicks.
-	*/
+	 * @method OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
+	 * @brief Callback used to check if any filters prevent closing a lists toolbar
+	 * @param toolbar jQueryObject The lists toolbar filters should be checked in
+	 * @return bool Indicates if an existing filter prevents the closing or not
+	 * @access public
+	 * @author Christian Reiner
+	 * @description
+	 * Used as replacement for the default used in OC.Shorty.WUI.List.Toolbar.toggle()
+	 * This version is private to this plugin and uses the filter names specific to
+	 * the list of tracked clicks.
+	 */
 	ToolbarCheckFilter:function(toolbar){
 		return (
 				(  (toolbar.find('th#list-of-clicks-time,th#list-of-clicks-address,th#list-of-clicks-host,th#list-of-clicks-user').find('div input.shorty-filter[value!=""]').length)

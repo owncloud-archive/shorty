@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -65,7 +65,7 @@
 				<img id="mimicon"   class="shorty-icon svg" width="16px" data="blank"
 					src="<?php p(OCP\Util::imagePath('shorty', 'blank.png')); ?>">
 			</span>
-			<span id="explanation" maxlength="80" class="shorty-value" data=""></span>
+			<span id="explanation" class="shorty-value" data=""></span>
 		</span>
 		<br />
 		<label for="title"><?php p(OC_Shorty_L10n::t('Title').':'); ?></label>

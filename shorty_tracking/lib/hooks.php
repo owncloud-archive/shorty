@@ -40,19 +40,19 @@
 class OC_ShortyTracking_Hooks
 {
 	/**
-	* @method OC_ShortyTracking_Hooks::deleteShortyClicks
-	* @brief Deletes all alien clicks, clicks that have no corresponding Shorty any more (deleted)
-	* @param paramters (array) parameters from emitted signal
-	* @return bool
-	* @description
-	* This is a cleanup routine. It removes all previously recorded clicks from the database table that
-	* do not (any more) reference an existing Shorty. Such 'stale entries' typically arise when Shortys
-	* get deleted, for example because of the deletion of a user account.
-	* Instead of directly targeting recorded clicks to a specific Shorty identified by its ID instead
-	* this routine takes a more general approach to simply wipe all stale entries. IN addition to being
-	* less complex (no ID required) this also is more stable, since also leftovers from prior operations
-	* are cleaned up.
-	*/
+	 * @method OC_ShortyTracking_Hooks::deleteShortyClicks
+	 * @brief Deletes all alien clicks, clicks that have no corresponding Shorty any more (deleted)
+	 * @param paramters (array) parameters from emitted signal
+	 * @return bool
+	 * @description
+	 * This is a cleanup routine. It removes all previously recorded clicks from the database table that
+	 * do not (any more) reference an existing Shorty. Such 'stale entries' typically arise when Shortys
+	 * get deleted, for example because of the deletion of a user account.
+	 * Instead of directly targeting recorded clicks to a specific Shorty identified by its ID instead
+	 * this routine takes a more general approach to simply wipe all stale entries. IN addition to being
+	 * less complex (no ID required) this also is more stable, since also leftovers from prior operations
+	 * are cleaned up.
+	 */
 	public static function deleteShortyClicks ( $parameters )
 	{
 		OCP\Util::writeLog ( 'shorty_tracking', 'Wiping all clicks without corresponding Shorty', OCP\Util::INFO );
@@ -66,19 +66,19 @@ class OC_ShortyTracking_Hooks
 	} // function OC_ShortyTracking_Hooks::deleteShortyClicks
 
 	/**
-	* @method OC_ShortyTracking_Hooks::registerClick
-	* @brief Records details of request clicks targeting existing Shortys
-	* @param paramters (array) parameters from emitted signal
-	* @return bool
-	* @description
-	* This routine accepts an associative array of attributes that describe a
-	* request click to a single shorty. The speicificartion of those details
-	* MUST follow a strict syntactical layout that describes as this:
-	* two parameters must be present, called 'shorty' and 'request', both are again
-	* associative arrays holding these string memebers:
-	* shorty: id, ...
-	* request: time, address, requester, result, ...
-	*/
+	 * @method OC_ShortyTracking_Hooks::registerClick
+	 * @brief Records details of request clicks targeting existing Shortys
+	 * @param paramters (array) parameters from emitted signal
+	 * @return bool
+	 * @description
+	 * This routine accepts an associative array of attributes that describe a
+	 * request click to a single shorty. The speicificartion of those details
+	 * MUST follow a strict syntactical layout that describes as this:
+	 * two parameters must be present, called 'shorty' and 'request', both are again
+	 * associative arrays holding these string memebers:
+	 * shorty: id, ...
+	 * request: time, address, requester, result, ...
+	 */
 	public static function registerClick ( $parameters )
 	{
 		OCP\Util::writeLog ( 'shorty_tracking', sprintf("Recording single click to Shorty '%s' with result '%s'",
@@ -99,11 +99,11 @@ class OC_ShortyTracking_Hooks
 	} // function OC_ShortyTracking_Hooks::registerClick
 
 	/**
-	* @method OC_ShortyTracking_Hooks::registerIncludes
-	* @brief Registers additional includes required by this plugin
-	* @param paramters (array) parameters from emitted signal
-	* @return bool
-	*/
+	 * @method OC_ShortyTracking_Hooks::registerIncludes
+	 * @brief Registers additional includes required by this plugin
+	 * @param paramters (array) parameters from emitted signal
+	 * @return bool
+	 */
 	public static function registerIncludes ( $parameters )
 	{
 		OCP\Util::writeLog  ( 'shorty_tracking', 'Registering additional include files', OCP\Util::DEBUG );
@@ -114,11 +114,11 @@ class OC_ShortyTracking_Hooks
 	} // function OC_ShortyTracking_Hooks::registerIncludes
 
 	/**
-	* @method OC_ShortyTracking_Hooks::registerActions
-	* @brief Registers additional actions as expected by the Shorty app
-	* @param paramters (array) parameters from emitted signal
-	* @return bool
-	*/
+	 * @method OC_ShortyTracking_Hooks::registerActions
+	 * @brief Registers additional actions as expected by the Shorty app
+	 * @param paramters (array) parameters from emitted signal
+	 * @return bool
+	 */
 	public static function registerActions ( $parameters )
 	{
 		OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional Shorty actions', OCP\Util::DEBUG );
@@ -142,11 +142,11 @@ class OC_ShortyTracking_Hooks
 	} // function OC_ShortyTracking_Hooks::registerActions
 
 	/**
-	* @method OC_ShortyTracking_Hooks::registerDetails
-	* @brief Registers details describing this plugin as expected by the Shorty app
-	* @param paramters (array) parameters from emitted signal
-	* @return bool
-	*/
+	 * @method OC_ShortyTracking_Hooks::registerDetails
+	 * @brief Registers details describing this plugin as expected by the Shorty app
+	 * @param paramters (array) parameters from emitted signal
+	 * @return bool
+	 */
 	public static function registerDetails ( $parameters )
 	{
 		OCP\Util::writeLog ( 'shorty_tracking', 'Registering plugin description in main Shorty app', OCP\Util::DEBUG );
@@ -166,11 +166,11 @@ class OC_ShortyTracking_Hooks
 	} // function registerQueries
 
 	/**
-	* @method OC_ShortyTracking_Hooks::registerQueries
-	* @brief Registers queries to be offered as expected by the Shorty app
-	* @param paramters (array) parameters from emitted signal
-	* @return bool
-	*/
+	 * @method OC_ShortyTracking_Hooks::registerQueries
+	 * @brief Registers queries to be offered as expected by the Shorty app
+	 * @param paramters (array) parameters from emitted signal
+	 * @return bool
+	 */
 	public static function registerQueries ( $parameters )
 	{
 		OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional queries to be offered', OCP\Util::DEBUG );
@@ -205,4 +205,3 @@ class OC_ShortyTracking_Hooks
 	} // function registerQueries
 
 } // class OC_ShortyTracking_Hooks
-?>

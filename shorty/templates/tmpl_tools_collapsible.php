@@ -1,10 +1,11 @@
+<?php
 /**
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -21,40 +22,20 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
+?>
 
+<?php
 /**
- * @file css/verification.css
- * @brief Styles for the verification of the Static Backends base url
+ * @file templates/tmpl_url_list_tools_collapsible.php
+ * A list of tool icons to be used in list templates
+ * @access public
  * @author Christian Reiner
  */
+?>
 
-/* a dialog for verification of the static backend setup */
-#dialog-verification {
-	position:absolute;
-	width:100%;
-	height:100%;
-}
-#dialog-verification div {
-	display:none;
-	position:absolute;
-	width:100%;
-	height:100%;
-	text-align:center;
-	background-color:white;
-}
-#dialog-verification legend {
-	padding: 10px 0 0;
-}
-#dialog-verification legend {
-	width:100%;
-	text-align:center;
-}
-#dialog-verification p {
-	padding:4px;
-}
-#dialog-verification a {
-	font-family:Monospace;
-	line-height:100%;
-	cursor: help;
-/* 	background-color:#C0C0C0; */
-}
+					<img data-collapsible-code="collapse"
+						alt="<?php p(OC_Shorty_L10n::t('collapse'));?>" title="<?php p(OC_Shorty_L10n::t('collapse'));  ?>"
+						class="shorty-tool shorty-tool-collapsible svg" src="<?php p(OCP\Util::imagePath('shorty','actions/collapse.svg'));?>">
+					<img data-collapsible-code="expand"
+						alt="<?php p(OC_Shorty_L10n::t('expand'));  ?>" title="<?php p(OC_Shorty_L10n::t('expand'));  ?>"
+						class="shorty-tool shorty-tool-collapsible svg" src="<?php p(OCP\Util::imagePath('shorty','actions/expand.svg'));?>">

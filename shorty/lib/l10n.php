@@ -3,9 +3,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -38,53 +38,53 @@
 class OC_Shorty_L10n
 {
 	/**
-	* @var OC_Shorty_L10n::dictionary
-	* @brief An internal dictionary file filled from the translation files provided.
-	* @access private
-	* @author Christian Reiner
-	*/
+	 * @var OC_Shorty_L10n::dictionary
+	 * @brief An internal dictionary file filled from the translation files provided.
+	 * @access private
+	 * @author Christian Reiner
+	 */
 	private $dictionary;
 
-		/**
-	* @var OC_Shorty_L10n::instance
-	* @brief Internal array of singleton objects
-	* @access private
-	* @author Christian Reiner
-	*/
+	/**
+	 * @var OC_Shorty_L10n::instance
+	 * @brief Internal array of singleton objects
+	 * @access private
+	 * @author Christian Reiner
+	 */
 	static private $instance = array();
 
 	/**
-	* @method OC_Shorty_L10n::__construct
-	* @brief
-	* @access protected
-	* @author Christian Reiner
-	*/
+	 * @method OC_Shorty_L10n::__construct
+	 * @brief
+	 * @access protected
+	 * @author Christian Reiner
+	 */
 	protected function __construct ( $app='shorty' ) { $this->dictionary = new OC_L10n($app); }
 
 	/**
-	* @method OC_Shorty_L10n::identity
-	* @brief Used for late state binding to identify the class
-	* @description This method must be reimplemented without change in all derived classes
-	* @access protected
-	* @author Christian Reiner
-	*/
+	 * @method OC_Shorty_L10n::identity
+	 * @brief Used for late state binding to identify the class
+	 * @description This method must be reimplemented without change in all derived classes
+	 * @access protected
+	 * @author Christian Reiner
+	 */
 	static protected function identity ( ) { return __CLASS__; }
 
 	/**
-	* @method OC_Shorty_L10n::instantiate
-	* @brief Used during late state binding to instantiates an object of the own class
-	* @description This method must be reimplemented without change in all derived classes
-	* @access protected
-	* @author Christian Reiner
-	*/
+	 * @method OC_Shorty_L10n::instantiate
+	 * @brief Used during late state binding to instantiates an object of the own class
+	 * @description This method must be reimplemented without change in all derived classes
+	 * @access protected
+	 * @author Christian Reiner
+	 */
 	static protected function instantiate ( ) { return new OC_Shorty_L10n; }
 
 	/**
 	* @method OC_Shorty_L10n::t
 	* @brief Translates a given string into the users session language and fills any placeolders
-	* @param string phrase: Phrase to be translated
+	* @param $phrase string: Phrase to be translated
 	* @param … Further arguments used as filling tokens in the tradition of printf strategies
-	* @return string: Translated phrase or the original phrase incase no translation could be found
+	* @return string: Translated phrase or the original phrase in case no translation could be found
 	* @access public
 	* @author Christian Reiner
 	*/
@@ -112,4 +112,3 @@ class OC_Shorty_L10n
 		}
   }
 } // class OC_Shorty_L10n
-?>

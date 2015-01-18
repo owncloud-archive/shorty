@@ -2,7 +2,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -72,6 +72,11 @@ html input, html textarea {
 }
 .shorty-controls {
 	display: block;
+	line-height: 100%;
+}
+.shorty-controls button {
+	font-size: 18px;
+	color: #666;
 }
 .shorty-controls-left {
 	float: left;
@@ -80,27 +85,25 @@ html input, html textarea {
 	float: right;
 }
 .shorty-controls-center {
-	width: 100%;
-	height: inherit;
-	line-height: 300%;
-	text-align: center;
-	font-size: 110%;
-	font-weight: inherit;
+	display: inline-block;
+	height: 100%;
 	margin: 0 1em;
 	white-space: nowrap;
 }
 .shorty-controls-center span {
-	display: inline;
-	height: inherit;
-	vertical-align: top;
+	display: inline-block;
+	position: relative;
+	top: 30%;
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: inherit;
+	color: #555;
 }
 .shorty-controls-center span.shorty-value {
-	display: inline-block;
-	min-width: 32px;
+	min-width: 36px;
+	text-align: right;
 }
-.shorty-controls-center span img {
-	width: 16px;
-}
+
 .shorty-controls-right button img {
 	width: 20px;
 }
@@ -201,9 +204,9 @@ input.shorty-config {
 
 .shorty-example {
 	font-family: Monospace;
+	font-style: normal;
+	font-size: medium;
 	margin: 0.3em;
-	text-decoration: underline;
-	color: #0000FF;
 }
 
 
@@ -320,6 +323,7 @@ input.shorty-config {
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;
 	box-shadow: 0 2px 1px #777777;
+	text-align: left;
 	vertical-align: middle;
 	z-index: 4;
 	width: 50em;
@@ -399,9 +403,11 @@ input.shorty-config {
 	width: 12em;
 	height: 36px;
 	border: 1px solid #D3D3D3;
+	color: #BBB;
 	background-color: #EEEEEE;
 }
 .shorty-dialog button#confirm.sharp {
+	color: #666;
 	background-color: #FFFFFF;
 }
 .shorty-dialog button#confirm.sharp:hover {
@@ -462,6 +468,7 @@ input.shorty-config {
 .shorty-standalone .shorty-meta {
 	width: 67%;
 	margin: 0;
+	line-height: 20px;
 }
 .shorty-standalone .shorty-meta img {
 	position: relative;
@@ -799,26 +806,63 @@ div.jqimessage input::-webkit-selection{
 div.jqimessage fieldset div#qrcode-img img.usage-qrcode {
 	cursor: pointer;
 }
-/* the verification dialog to test the base url for the 'Static Backend' */
-.shorty-verify {
-	z-index: 1000 !important;
+/* the verification container to test the base url for the 'Static Backend' */
+#shorty-backend-static-verification img.shortyhourglass {
+	padding: 2px;
 }
-.shorty-verify #hourglass {
-	display:block;
-	position:absolute;
-	width:100%;
-	height:100%;
-	text-align:center;
-	background-color:white;
-}
-.shorty-verify #hourglass img {
-	display:inline;
-	margin:120px 0 0;
-	padding:0;
-	width:20%
-}
+
 /* the embedded user preferences dialog */
-#shorty-fieldset button {
+#shorty-preferences button {
 	height: 36px;
 	margin: 3px;
+}
+#shorty-preferences .shorty-backend-supplement {
+	display: none;
+}
+
+/* strike through visible content of rows (entries) marked as deleted */
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-title,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-target,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-clicks,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-until,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-created,
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-accessed {
+	text-decoration: line-through;
+	background: transparent url('../img/status/strike.png') 0 50% repeat-x;
+}
+/* strike through visible content of rows (entries) marked as deleted */
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-title,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-target,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-clicks,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-until,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-created,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-accessed {
+	text-decoration: line-through;
+	background: #F4F4F4 url('../img/status/strike.png') 0 50% repeat-x;
+}
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-title,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-target,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-clicks,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-until,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-created,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-accessed {
+	text-decoration: line-through;
+	background: #EEE url('../img/status/strike.png') 0 50% repeat-x;
+}
+/* replace the 'delete' action icon by an 'undelete' icon */
+#list-of-shortys tbody tr.deleted>td#list-of-shortys-actions #shorty-action-del:after {
+	content: url("../img/actions/recycle.svg");
+	position: relative;
+	top: -1px;
+	margin-left: -19.5px;
+	padding: 0;
+	opacity: 0;
+}
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-actions #shorty-action-del>img,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-actions #shorty-action-del>img {
+	opacity: 0;
+}
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-actions #shorty-action-del:after,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-actions #shorty-action-del:after {
+	opacity: 1;
 }

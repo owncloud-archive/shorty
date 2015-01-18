@@ -2,9 +2,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -34,15 +34,8 @@
  */
 
 $(document).ready(function(){
-	// initialize example that depends on backend-base
-	if ($('#shorty #backend-static-base').val().length)
-		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
-	// modify example upon input of a base
-	$('#shorty #backend-static-base').bind('input',function(){
-		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
-	});
 	// store backend selection upon change
-	$('#shorty #backend-default').bind('change',function(e){
+	$('#shorty-backend-default').bind('change',function(e){
 		// save setting
 		$.when(
 			OC.Shorty.Action.Setting.set($(e.currentTarget).serialize())
@@ -51,21 +44,26 @@ $(document).ready(function(){
 		})
 		return false;
 	});
-	// backend 'static': offer a clickable example link to verify the correct setup
-	$('#shorty #backend-static #example').bind('click',function(event){
+	// initialize by triggering an initial verification and update of the example url
+	if ($('#shorty-backend-static-base').val().length) {
+		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
+		OC.Shorty.Action.Verification.verify();
+	}
+	// backend 'static': verify configuration when changed
+	$('#shorty-backend-static-base').bind('keyup input',function(event){
 		event.preventDefault();
-		OC.Shorty.Action.Setting.verify();
+		// modify example
+		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
+		// verify setting
+		OC.Shorty.Action.Verification.verify();
 	});
 	// store setting
-	$('#shorty #backend-static-base').focusout(function(){
-		// modify example
-		$('#shorty #backend-static #example').text($('#shorty #backend-static-base').val()+'<shorty id>');
-		// save setting
-		$.when(
-			OC.Shorty.Action.Setting.set($('#shorty #backend-static-base').serialize())
-		).fail(function(response){
-			OC.Notification.show(response.message);
-		})
-		return false;
+	$('#shorty-backend-static-base').focusout(function(){
+		if (	($('#shorty-backend-static-base').val().length)
+				&&($('#shorty-backend-static-base').hasClass('valid')) ){
+			OC.Shorty.Action.Setting.set($('#shorty-backend-static-base').serialize())
+		} else {
+			OC.Shorty.Action.Setting.set('backend-static-base=');
+		}
 	});
 });

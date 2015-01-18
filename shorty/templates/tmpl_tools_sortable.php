@@ -1,4 +1,5 @@
-*****
+<?php
+/**
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
@@ -19,8 +20,22 @@
 * You should have received a copy of the GNU Affero General Public
 * License along with this library.
 * If not, see <http://www.gnu.org/licenses/>.
-*****
+*
+*/
+?>
 
-Contributions:
-I'd be more than happy to welcome all contributions to this little experiment.
-Drop me a note, an idea, a bottle of wine, a job independant of location!
+<?php
+/**
+ * @file templates/tmpl_url_list_tools_sortable.php
+ * A list of tool icons to be used in list templates
+ * @access public
+ * @author Christian Reiner
+ */
+?>
+
+					<img data-sort-code="<?php p($_['sortcol']);?>a" data-sort-type="string" data-sort-direction='asc'
+						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
+						class="shorty-tool shorty-sort shorty-sort-up svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
+					<img data-sort-code="<?php p($_['sortcol']);?>d" data-sort-type="string" data-sort-direction='desc'
+						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
+						class="shorty-tool shorty-sort shorty-sort-down svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">

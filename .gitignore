@@ -1,0 +1,27 @@
+### KDevelop4
+*.kdev4
+.kdev4/
+
+### IntelliJ IDEA
+.idea
+
+### SVN
+.svn/
+
+### CVS
+/CVS/*
+*/CVS/*
+.cvsignore
+*/.cvsignore
+
+### Vagrant
+.vagrant/
+
+### Kate
+# Swap Files #
+.*.kate-swp
+.swp.*
+
+### Generic
+*~
+

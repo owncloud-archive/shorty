@@ -3,7 +3,7 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
 * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
@@ -62,100 +62,77 @@
 	<thead>
 		<tr id="list-of-shortys-titlebar" class="shorty-titlebar">
 			<!-- a button to open/close the toolbar below -->
-			<th id="list-of-shortys-favicon" data-id="favicon">
+			<th id="list-of-shortys-favicon" data-aspect="favicon">
 				<div>
 					<img id="list-of-shortys-tools" class="shorty-tools" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
 							 class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
 							 data-unshade="actions/unshade" data-shade="actions/shade">
 				</div>
 			</th>
-			<th id="list-of-shortys-title"    data-id="title"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Title'));     ?></div></th>
-			<th id="list-of-shortys-target"   data-id="target"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Target'));    ?></div></th>
-			<th id="list-of-shortys-clicks"   data-id="clicks"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Clicks'));    ?></div></th>
-			<th id="list-of-shortys-until"    data-id="until"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Expiration'));?></div></th>
-			<th id="list-of-shortys-created"  data-id="created"  class="collapsible"><div><?php p(OC_Shorty_L10n::t('Creation'));  ?></div></th>
-			<th id="list-of-shortys-accessed" data-id="accessed" class="collapsible"><div><?php p(OC_Shorty_L10n::t('Last'));      ?></div></th>
-			<th id="list-of-shortys-status"   data-id="status"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Status'));    ?></div></th>
-			<th id="list-of-shortys-actions"  data-id="actions"><div>&nbsp;</div></th>
+			<th id="list-of-shortys-title"    data-aspect="title"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Title'));     ?></div></th>
+			<th id="list-of-shortys-target"   data-aspect="target"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Target'));    ?></div></th>
+			<th id="list-of-shortys-clicks"   data-aspect="clicks"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Clicks'));    ?></div></th>
+			<th id="list-of-shortys-until"    data-aspect="until"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Expiration'));?></div></th>
+			<th id="list-of-shortys-created"  data-aspect="created"  class="collapsible"><div><?php p(OC_Shorty_L10n::t('Creation'));  ?></div></th>
+			<th id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible"><div><?php p(OC_Shorty_L10n::t('Last'));      ?></div></th>
+			<th id="list-of-shortys-status"   data-aspect="status"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Status'));    ?></div></th>
+			<th id="list-of-shortys-actions"  data-aspect="actions"><div>&nbsp;</div></th>
 		</tr>
 		<!-- toolbar opened/closed by the button above -->
-		<tr id="list-of-shortys-toolbar" data-id="favicon" class="shorty-toolbar">
-			<th id="list-of-shortys-favicon">
+		<tr id="list-of-shortys-toolbar" class="shorty-toolbar">
+			<th id="list-of-shortys-favicon" data-aspect="favicon">
 				<div style="display:none;">
 					<a id="list-of-shortys-reload" class="shorty-reload">
 						<img alt="<?php p(OC_Shorty_L10n::t('reload')); ?>" title="<?php p(OC_Shorty_L10n::t('Reload list')); ?>"
-							class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/reload.svg')); ?>">
+							class="shorty-tool shorty-reload svg" src="<?php p(OCP\Util::imagePath('shorty','actions/reload.svg')); ?>">
 					</a>
 				</div>
 			</th>
-			<th id="list-of-shortys-title" data-id="title" class="collapsible">
+			<th id="list-of-shortys-title" data-aspect="title" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up" data-sort-code="ta" data-sort-type="string" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img id="sort-down" data-sort-code="td" data-sort-type="string" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 't'))); ?>
 					<input id="filter-title" class="shorty-filter" type="text" value="">
 					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
-			<th id="list-of-shortys-target" data-id="target" class="collapsible">
+			<th id="list-of-shortys-target" data-aspect="target" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up" data-sort-code="ua" data-sort-type="string" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img id="sort-down" data-sort-code="ud" data-sort-type="string" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'u'))); ?>
 					<input id="filter-target" class="shorty-filter" type="text" value="">
 					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
 						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
-			<th id="list-of-shortys-clicks" data-id="clicks" class="collapsible">
+			<th id="list-of-shortys-clicks" data-aspect="clicks" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up" data-sort-code="ha" data-sort-type="int" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img id="sort-down" data-sort-code="hd" data-sort-type="int" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'h'))); ?>
 				</div>
 			</th>
-			<th id="list-of-shortys-until" data-id="until" class="collapsible">
+			<th id="list-of-shortys-until" data-aspect="until" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up"  data-sort-code="da" data-sort-type="date" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img id="sort-down" data-sort-code="dd" data-sort-type="date" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'd'))); ?>
 				</div>
 			</th>
-			<th id="list-of-shortys-created" data-id="created" class="collapsible">
+			<th id="list-of-shortys-created" data-aspect="created" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up"  data-sort-code="ca" data-sort-type="date" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img id="sort-down" data-sort-code="cd" data-sort-type="date" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'c'))); ?>
 				</div>
 			</th>
-			<th id="list-of-shortys-accessed" data-id="accessed" class="collapsible">
+			<th id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible">
 				<div style="display:none;">
-					<img id="sort-up"  data-sort-code="aa" data-sort-type="date" data-sort-direction='asc'
-						alt="<?php p(OC_Shorty_L10n::t('up'));   ?>" title="<?php p(OC_Shorty_L10n::t('Sort ascending'));  ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img id="sort-down" data-sort-code="ad" data-sort-type="date" data-sort-direction='desc'
-						alt="<?php p(OC_Shorty_L10n::t('down')); ?>" title="<?php p(OC_Shorty_L10n::t('Sort descending')); ?>"
-						class="shorty-sorter svg" src="<?php p(OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'a'))); ?>
 				</div>
 			</th>
-			<th id="list-of-shortys-status" data-id="status" class="collapsible">
+			<th id="list-of-shortys-status" data-aspect="status" class="collapsible">
 				<div style="display:none;">
+					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
 					<span class="shorty-select">
 						<select id="filter-status" class="shorty-filter" value="" data-placeholder=" ">
 						<?php foreach($_['shorty-status'] as $option=>$label)
@@ -164,7 +141,7 @@
 						</select>
 					</span>
 					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
-						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
+						class="shorty-tool shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
 		</tr>
@@ -184,15 +161,15 @@
 			data-created=""
 			data-accessed=""
 			data-notes="">
-			<td id="list-of-shortys-favicon"  data-id="favicon"></td>
-			<td id="list-of-shortys-title"    data-id="title"    class="collapsible"></td>
-			<td id="list-of-shortys-target"   data-id="target"   class="collapsible"></td>
-			<td id="list-of-shortys-clicks"   data-id="clicks"   class="collapsible"></td>
-			<td id="list-of-shortys-until"    data-id="until"    class="collapsible"></td>
-			<td id="list-of-shortys-created"  data-id="created"  class="collapsible"></td>
-			<td id="list-of-shortys-accessed" data-id="accessed" class="collapsible"></td>
-			<td id="list-of-shortys-status"   data-id="status"   class="collapsible"></td>
-			<td id="list-of-shortys-actions"  data-id="actions">
+			<td id="list-of-shortys-favicon"  data-aspect="favicon"></td>
+			<td id="list-of-shortys-title"    data-aspect="title"    class="collapsible"></td>
+			<td id="list-of-shortys-target"   data-aspect="target"   class="collapsible"></td>
+			<td id="list-of-shortys-clicks"   data-aspect="clicks"   class="collapsible"></td>
+			<td id="list-of-shortys-until"    data-aspect="until"    class="collapsible"></td>
+			<td id="list-of-shortys-created"  data-aspect="created"  class="collapsible"></td>
+			<td id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible"></td>
+			<td id="list-of-shortys-status"   data-aspect="status"   class="collapsible"></td>
+			<td id="list-of-shortys-actions"  data-aspect="actions">
 				<span class="shorty-actions">
 <!-- IF any additional actions are registered via hooks, additional icons will appear here -->
 <?php foreach ( $_['shorty-actions']['list'] as $action ) { ?>

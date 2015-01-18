@@ -3,9 +3,9 @@
 * @package shorty an ownCloud url shortener plugin
 * @category internet
 * @author Christian Reiner
-* @copyright 2011-2014 Christian Reiner <foss@christian-reiner.info>
+* @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
 * @license GNU Affero General Public license (AGPL)
-* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401 
+* @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -63,7 +63,7 @@
 		</span>
 		<br />
 		<label for="title"><?php p(OC_Shorty_L10n::t('Title').':'); ?></label>
-		<input id="title" name="title" type="text" maxlength="80" data="" class="" placeholder=""/>
+		<input id="title" name="title" type="text" maxlength="1024" data="" class="" placeholder=""/>
 		<br />
 		<span class="label-line">
 			<label for="status"><?php p(OC_Shorty_L10n::t('Status').':'); ?></label>
@@ -72,7 +72,7 @@
 <?php
 				foreach ( OC_Shorty_Type::$STATUS as $status )
 					if ( 'deleted'!=$status )
-						print_unescaped(sprintf("<option value=\"%s\" %s>%s</option>\n", 
+						print_unescaped(sprintf("<option value=\"%s\" %s>%s</option>\n",
 												$status, ($status==$_['default-status'])?'selected':'', OC_Shorty_L10n::t($status)));
 ?>
 			</select>
