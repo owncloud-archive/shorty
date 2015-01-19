@@ -1407,10 +1407,10 @@ OC.Shorty={
 					).done(function(){
 						dialog.find('#title').attr('placeholder',meta.title);
 						// specify the icons and information to be shown as meta data
-						dialog.find('#staticon').attr('src',meta.staticon);
-						dialog.find('#schemicon').attr('src',meta.schemicon);
-						dialog.find('#favicon').attr('src',meta.favicon);
-						dialog.find('#mimicon').attr('src',meta.mimicon);
+						dialog.find('#staticon').attr('src', (meta.staticon ? meta.staticon : OC.imagePath('shorty','blank')));
+						dialog.find('#schemicon').attr('src', (meta.schemicon ? meta.schemicon : OC.imagePath('shorty','blank')));
+						dialog.find('#favicon').attr('src', (meta.favicon ? meta.favicon : OC.imagePath('shorty','blank')));
+						dialog.find('#mimicon').attr('src', (meta.mimicon ? meta.mimicon : OC.imagePath('shorty','blank')));
 						if (meta.title)
 							dialog.find('#explanation').html(meta.title).addClass('filled');
 						else
