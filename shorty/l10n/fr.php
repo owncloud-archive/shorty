@@ -104,7 +104,7 @@
 "Preference '%s' retrieved" => "Préférence '%s' récupérée",
 "Preference '%s' saved" => "Préférence '%s' enregistrée",
 "Preferences" => "Préférences",
-"Prepare to send as SMS" => "Prépare à envoyer comme un SMS",
+"Prepare to send as SMS" => "Préparer à envoyer par SMS",
 "Refresh" => "Rafraîchir",
 "Relay service" => "Service de relais",
 "Relay url" => "URL de relais",
