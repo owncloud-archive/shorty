@@ -65,6 +65,7 @@
 "Close" => "Zavrieť",
 "Configuration" => "Nastavenia",
 "The amount of feedback messages shown." => "Množstvo zobrazených správ spätnej väzby.",
+"The time span after which messages are hidden again automatically" => "Časové rozpätie, po ktorom sú správy automaticky skryté",
 "Copy to clipboard" => "Skopírovať do schránky",
 "Counted entries and clicks" => "Počítanie záznamov a kliknutí",
 "Create a new 'Shorty' and share it" => "Vytvoriť nové 'Skrátenie' a zdieľať ho",
