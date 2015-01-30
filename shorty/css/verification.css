@@ -23,54 +23,39 @@
 */
 
 /**
- * @file css/settings.css
- * @brief Style definitions of the plugins own view
+ * @file css/verification.css
+ * @brief Style definitions of the backend verification agent
  * @author Christian Reiner
  */
 
-/* the settings partial */
-#shorty.section h2 img {
-	width: 22px;
-	vertical-align: bottom;
+body {
+    height: 100%;
+    vertical-align: baseline;
+    overflow: hidden;
 }
-#shorty.section fieldset {
-	margin-bottom: 1em;
-	padding-left: 1em;
+.shorty-activity,
+.shorty-result {
+    position: absolute;
+    height: 100%;
+    vertical-align: baseline;
+    line-height: 3em;
+    opacity: 0;
+    transition:opacity 400ms;-o-transition:opacity 400ms;-ms-transition:opacity 400ms;-moz-transition:opacity 400ms;-khtml-transition:opacity 400ms;-webkit-transition:opacity 400ms;
 }
-#shorty.section fieldset legend {
-	margin-left: -1em;
-	font-size: 110%;
+.shorty-activity img {
+    position: relative;
+    top: 40%;
 }
-#shorty.section label {
-	display: inline-block;
-	width: 7.6em;
-	font-size: inherit;
-	font-weight: inherit;
-	margin: 0;
+.shorty-result img {
+    margin-right: 8px;
 }
-#shorty.section .shorty-explain {
-	font-style: italic;
-	opacity: 0.7;
+
+html[data-verification-state="active"] .shorty-activity {
+    opacity: 1;
 }
-#shorty.section .shorty-example {
-	font-family: monospace;
-	font-style: normal;
-	font-size: medium;
-	margin: 0.3em;
+html[data-verification-state="invalid"] .shorty-result.invalid {
+    opacity: 1;
 }
-#shorty-backend-static {
-	display: inline-block;
-}
-#shorty-backend-static-base.valid {
-	border-color: limegreen;
-}
-#shorty-backend-static-base.invalid {
-	border-color: red;
-}
-#shorty-backend-static-verification-agent {
-	position: relative;
-	display: inline-block;
-	height: 3em;
-	margin: 0 1em;
-	vertical-align: bottom;
+html[data-verification-state="valid"] .shorty-result.valid {
+    opacity: 1;
 }

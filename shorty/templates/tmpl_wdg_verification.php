@@ -33,20 +33,14 @@
  */
 ?>
 
-<html>
+<html data-verification-target="" data-verification-state="" data-verification-instance="<?php p($_['instance'])?>">
 	<head>
-		<style media="screen" type="text/css" nonce="<?php echo $_['nonce']?>">
-			span { display: none; }
-			body[data-success="valid"]   span.valid   { display: inline; }
-			body[data-success="invalid"] span.invalid { display: inline; }
-			img { margin-right: 8px; }
-		</style>
-		<script type="text/javascript" nonce="<?php echo $_['nonce']?>">
-			parent.OC.Shorty.Action.Verification.check(<?php echo $_['target']?"'".$_['target']."'":'false'; ?>);
-		</script>
+		<link rel="stylesheet" href="<?= $_['style']?>" media="screen" type="text/css" />
+		<script type="text/javascript" src="<?= $_['script']?>"></script>
 	</head>
-	<body id="shorty-backend-static-verification-message" data-success="">
-		<span class="valid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/good.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup valid and usable"); ?></span>
-		<span class="invalid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/bad.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup invalid and not usable"); ?></span>
+	<body>
+		<span class="shorty-activity"><img src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></span>
+		<span class="shorty-result valid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/good.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup valid and usable"); ?></span>
+		<span class="shorty-result invalid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/bad.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup invalid and not usable"); ?></span>
 	</body>
 </html>
