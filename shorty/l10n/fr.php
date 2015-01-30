@@ -146,7 +146,7 @@
 "The backend service used to generate shortened URLs." => "Le module utilisé pour générer les URLs courtes.",
 "The default status as suggested for new Shortys." => "Le statut par défaut tel que suggéré pour les nouveaux Shortys.",
 "The link below can be copied for usage apart" => "Le lien ci-dessous peut être copié pour utilisation spéficique",
-"The additional plugin '%%s' tracks the usage of existing Shortys!" => "Le module enfichable additionnel '%%s' suit l'utilisation des Shortys existants!",
+"The additional plugin '%%s' tracks the usage of existing Shortys!" => "Le module additionnel '%%s' suit l'utilisation des Shortys existants !",
 "therefore the content must be copied manually" => "par conséquent le contenu doit être copié manuellement",
 "then paste into message" => "puis coller dans le message",
 "This 2d barcode encodes the url pointing to this Shorty" => "Ce code-barres 2D contient l'URL pointant vers ce lien court",
