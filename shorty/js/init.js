@@ -96,6 +96,7 @@ $(document).ready(function(){
 			 container.removeClass('collapsed').find('.shorty-collapsible-tail').slideDown('fast');
 		else container.addClass('collapsed').find('.shorty-collapsible-tail').slideUp('fast');
 	});
+	// accept suggest title into title input field
 	$(document).on('click','#controls .shorty-dialog #meta #explanation.filled',[], function(e){
 		$(e.currentTarget).closest('.shorty-dialog').find('input#title').val($(e.currentTarget).html());
 	});

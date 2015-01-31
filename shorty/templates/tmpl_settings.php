@@ -59,8 +59,8 @@
 			<input id="shorty-backend-static-base" type="text" name="backend-static-base"
 					value="<?php p($_['backend-static-base']); ?>"
 					maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t('Specify a static base url…')); ?>" style="width:25em;">
-			<!-- an general busy/activity indicator -->
-			<div id="shorty-backend-static-verification"><img class="shorty-activity" src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></div>
+			<!-- an embedded iframe able to make a cross domain verification request -->
+			<iframe id="shorty-backend-static-verification-agent" src="<?php p($_['backend-verifier']); ?>" frameborder="0" marginwidth="0" marginheight="0" height="100%"></iframe>
 		</div>
 		<br/>
 		<label for="shorty-backend-example" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").":"); ?></label>

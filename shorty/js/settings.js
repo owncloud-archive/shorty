@@ -34,6 +34,9 @@
  */
 
 $(document).ready(function(){
+	// initialize the Agent
+	OC.Shorty.Action.Verification.Agent = $('#shorty-backend-static-verification-agent')[0].contentWindow;
+
 	// store backend selection upon change
 	$('#shorty-backend-default').bind('change',function(e){
 		// save setting
@@ -44,25 +47,33 @@ $(document).ready(function(){
 		})
 		return false;
 	});
-	// initialize by triggering an initial verification and update of the example url
-	if ($('#shorty-backend-static-base').val().length) {
-		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
-		OC.Shorty.Action.Verification.verify();
-	}
+
+	// react on the result of a verification task (inside the agent/iframe)
+	window.addEventListener('message', function(event) {
+		if(event.origin !== window.location.origin) return;
+		if(event.data !== 'data-verification-state-changed') return;
+		var result = $(OC.Shorty.Action.Verification.Agent.document).find('html').attr('data-verification-state');
+		OC.Shorty.Action.Verification.verified(result);
+	}, false);
+
 	// backend 'static': verify configuration when changed
 	$('#shorty-backend-static-base').bind('keyup input',function(event){
 		event.preventDefault();
+		var target = $('#shorty-backend-static-base').val();
 		// modify example
-		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
-		// verify setting
-		OC.Shorty.Action.Verification.verify();
+		$('#shorty-backend-example').text(target+'<shorty id>');
+		// trigger verification of setting
+		OC.Shorty.Action.Verification.verify(target);
 	});
+
 	// store setting
 	$('#shorty-backend-static-base').focusout(function(){
 		if (	($('#shorty-backend-static-base').val().length)
 				&&($('#shorty-backend-static-base').hasClass('valid')) ){
+			// store current value
 			OC.Shorty.Action.Setting.set($('#shorty-backend-static-base').serialize())
 		} else {
+			// skip value, store empty value, so *remove* a prior value
 			OC.Shorty.Action.Setting.set('backend-static-base=');
 		}
 	});

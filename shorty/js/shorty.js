@@ -2045,20 +2045,22 @@ OC.Shorty={
 			 */
 			Timer:{},
 			/**
+			 * @object OC.Shorty.Action.Verification.Agent
+			 * @brief A shortcut pointing to the iframe object
+			 * @author Christian Reiner
+			 */
+			Agent:{},
+			/**
 			 * @method OC.Shorty.Action.Verification.stop
 			 * @brief Stops a running verification action
 			 * @author Christian Reiner
 			 */
 			stop:function(active){
-				// control action indicator
-				if (active) {
-					$('#shorty-backend-static-verification img.shorty-activity').fadeIn();
-				} else {
-					$('#shorty-backend-static-verification img.shorty-activity').fadeOut();
-				}
-				// remove any potantial previously created verifier
-				$('#shorty-backend-static-verification').find('#shorty-backend-static-verifier').remove();
-				// reset visualization to neutral
+				// activity indicator
+				$('#shorty-backend-static-verification-agent img.shorty-activity').removeClass('active');
+				// result messages
+				$('#shorty-backend-static-verification-agent html').attr('data-verification-success', '');
+				// reset state visualization
 				$('#shorty-backend-static-base').removeClass('invalid').removeClass('valid');
 			}, // OC.Shorty.Action.Verification.stop
 			/**
@@ -2066,7 +2068,7 @@ OC.Shorty={
 			 * @brief Controls the verification of the current setting of the static backends base url.
 			 * @author Christian Reiner
 			 */
-			verify:function(){
+			verify:function(target){
 				// clear any previously set timer when grace period has not yet expired
 				if (OC.Shorty.Action.Verification.Timer) {
 					clearTimeout(OC.Shorty.Action.Verification.Timer);
@@ -2075,70 +2077,31 @@ OC.Shorty={
 				// create a new timer to fire after a grace period
 				OC.Shorty.Action.Verification.Timer = setTimeout(function(){
 					OC.Shorty.Action.Verification.stop(true);
-					// prepare preloaded iframe to load the base url
-					if ($('#shorty-backend-static-base').val().length){
-						var iframe =
-							$('<iframe frameborder="0" marginwidth="0" marginheight="0" height="100%"></iframe>')
-							.attr('id', 'shorty-backend-static-verifier')
-							.attr('src', OC.linkTo('shorty','verification.php')+'?target='+encodeURIComponent($('#shorty-backend-static-base').val()))
-							.attr('style', 'display: none')
-							.appendTo('#shorty-backend-static-verification');
+					// trigger the verification in the context of the agent (iframe)
+					if (target.length){
+						// store value inside iframe
+						$(OC.Shorty.Action.Verification.Agent.document).find('html').attr('data-verification-target', target);
+						// signal agent to start verification
+						OC.Shorty.Action.Verification.Agent.postMessage('data-verification-target-changed', window.location);
 					}else{
-						// no target given: show user where to fill in target
+						// no target given, set mode to neutral
 						OC.Shorty.Action.Verification.stop(false);
+						// remove previously stored value
 					}
 				}, 1000);
 			}, // OC.Shorty.Action.Verification.verify
 			/**
-			 * @method OC.Shorty.Action.Verification.check
-			 * @brief Verifies if the current setting of the static backends base url is usable.
+			 * @method OC.Shorty.Action.Verification.verified
+			 * @brief Reacts on a verification attempt (its result)
 			 * @author Christian Reiner
 			 */
-			check:function(target){
-				var dfd = new $.Deferred();
-				var iframe = $('#shorty-backend-static-verifier').contents();
-				// target MIGHT be false, if the target url is not a url at all.
-				// do NOT check in that case, just indicate an invalid result
-				if (target) {
-					// note: this is a jsonp request, cause the static backend provider might be a separate host
-					// to escape the cross domain protection by browsers we use the jsonp pattern
-					$.ajax({
-						// the '0000000000' below is a special id recognized for testing purposes
-						url:           target+'0000000000',
-						cache:         false,
-						crossDomain:   true, // required when using a "short named domain" and server side url rewriting
-						data:          { },
-						dataType:      'jsonp',
-						jsonp:         false,
-						jsonpCallback: 'verifyStaticBackend',
-						timeout:       5000 // timeout to catch silent failures, like a 404
-					}).always(function(){
-						// hide activity indicator
-						$('#shorty-backend-static-verification img.shorty-activity').fadeOut('fast')
-						// show verifier / message
-						$('#shorty-backend-static-verifier').fadeIn('slow');
-					}).done(function(response){
-						$('#shorty-backend-static-base').removeClass('invalid').addClass('valid');
-						// set verification mode to 'valid'
-						iframe.find('body').attr('data-success', 'valid');
-						dfd.resolve(response);
-					}).fail(function(response){
-						$('#shorty-backend-static-base').removeClass('valid').addClass('invalid');
-						// set verification mode to 'invalid'
-						iframe.find('body').attr('data-success', 'invalid');
-						dfd.reject(response);
-					});
+			verified:function(result){
+				if ('valid'===result) {
+					$('#shorty-backend-static-base').removeClass('invalid').addClass('valid');
 				} else {
-					// this is NOT worth a try, the setup CANNOT work, according to the server
-// 					OC.Shorty.Action.Verification.stop();
-					// reset visualization to neutral
 					$('#shorty-backend-static-base').removeClass('valid').addClass('invalid');
-					// hide activity indicator
-					$('#shorty-backend-static-verification img.shorty-activity').fadeOut('fast')
-					dfd.reject();
 				}
-				return dfd.promise();
-			} // OC.Shorty.Action.Verification.check
+			} // OC.Shorty.Action.Verification.verified
 		} // OC.Shorty.Action.Verification
 	}, // OC.Shorty.Action
 

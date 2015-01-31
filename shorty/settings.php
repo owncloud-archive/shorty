@@ -53,5 +53,7 @@ $tmpl = new OCP\Template ( 'shorty', 'tmpl_settings' );
 $tmpl->assign ( 'shorty-plugins',      OC_Shorty_Hooks::requestDetails() );
 $tmpl->assign ( 'backend-default',     OCP\Config::getAppValue('shorty','backend-default','none') );
 $tmpl->assign ( 'backend-static-base', OCP\Config::getAppValue('shorty','backend-static-base','') );
+$tmpl->assign ( 'backend-verifier',    OCP\Util::linkToAbsolute('shorty','verification.php') );
+
 // render template
 return $tmpl->fetchPage ( );
