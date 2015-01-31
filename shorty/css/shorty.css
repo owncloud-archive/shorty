@@ -33,7 +33,8 @@ html, html *:not(input), html *:not(textarea) {
 	user-select: none;
 	-o-user-select: none;
 	-ms-user-select: none;
-	-moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
 	-webkit-user-select: none;
 }
 html input, html textarea {
@@ -41,6 +42,7 @@ html input, html textarea {
 	-o-user-select: text;
 	-ms-user-select: text;
 	-moz-user-select: text;
+	-khtml-user-select: text;
 	-webkit-user-select: text;
 }
 
@@ -203,7 +205,7 @@ input.shorty-config {
 }
 
 .shorty-example {
-	font-family: Monospace;
+	font-family: monospace;
 	font-style: normal;
 	font-size: medium;
 	margin: 0.3em;
@@ -251,7 +253,6 @@ input.shorty-config {
 	margin: 1em 0 2em;
 	font-size: 110%;
 	font-weight: normal;
-	font-style: normal;
 	font-style: italic;
 }
 .shorty-vacuum p {
@@ -267,7 +268,7 @@ input.shorty-config {
 .usage-token {
 	font-size: 10px;
 	font-style: normal;
-	font-family: fixed;
+	font-family: monospace;
 	margin: 0;
 	padding:1px 2px;
 	border: 1px solid #808080;
@@ -282,7 +283,6 @@ input.shorty-config {
 #shortlet {
 	outline: medium none;
 	padding: 0.5em 0.8em;
-	background-image: -moz-linear-gradient(center bottom, Lavender 0%, white 50%);
 	border: 1px solid #DDDDDD;
 	border-radius: 0.5em 0.5em 0.5em 0.5em;
 	box-shadow: 0 1px 0 #BBBBBB inset;
@@ -341,7 +341,7 @@ input.shorty-config {
 .shorty-dialog legend {
 	white-space: nowrap;
 	font-weight: bold;
-	margin: 5px 0px 5px 10px;
+	margin: 5px 0 5px 10px;
 	padding: 0 0.5em 0 0.2em;
 }
 .shorty-dialog legend a,
@@ -395,8 +395,7 @@ input.shorty-config {
 	box-shadow: 0 0 0 #FFFFFF;
 	outline: none;
 	color: black;
-	background: none;
-	background-color: #F7F7F7;
+	background: #F7F7F7;
 	padding: 4px;
 }
 .shorty-dialog button#confirm {
@@ -430,7 +429,7 @@ input.shorty-config {
 	margin: 2px 0;
 }
 .shorty-dialog span.clickable.clicked {
-	cursor: normal;
+	cursor: default;
 }
 .shorty-dialog span.clickable:not(.clicked):hover {
 	border: 1px solid #D3D3D3;
@@ -445,7 +444,7 @@ input.shorty-config {
 }
 .shorty-dialog span.clickable:not(.clicked) * {
 	cursor: pointer;
-	width: 92a%;
+	width: 92%;
 	margin: 0.1em 0.2em;
 }
 .shorty-dialog span.clickable.clicked * {
@@ -466,7 +465,7 @@ input.shorty-config {
 	padding: 10px 5px 5px;
 }
 .shorty-standalone .shorty-meta {
-	width: 67%;
+	width: 68%;
 	margin: 0;
 	line-height: 20px;
 }
@@ -527,7 +526,7 @@ input.shorty-config {
 	background: none repeat scroll 0 0 #EEEEEE;
 	position: absolute;
 	border: 1px solid #AAAAAA;
-	border-top: 1px solid transparent;
+	border-top: transparent;
 }
 .shorty-embedded span {
 	width: 29em;
@@ -748,7 +747,7 @@ div.jqi .jqiclose {
 }
 div.jqi .jqibuttons {
 	background-color: #FFFFFF;
-	border: 0px;
+	border: 0;
 	margin: 0;
 	padding: 2px 0;
 	text-align: right;
@@ -799,7 +798,7 @@ div.jqimessage input::selection,
 div.jqimessage input::-o-selection,
 div.jqimessage input::-ms-selection,
 div.jqimessage input::-moz-selection,
-div.jqimessage input::-moz-selection,
+div.jqimessage input::-khtml-selection,
 div.jqimessage input::-webkit-selection{
 	background: green;
 }
