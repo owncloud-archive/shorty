@@ -25,13 +25,14 @@
 # Translators:
 # Anders J. Sørensen, 2013
 # Aputsiaĸ Niels Janussen <aj@isit.gl>, 2014
+# Teddy Møller <teddy@mollerit.dk>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-01-24 07:53+0000\n"
-"Last-Translator: Aputsiaĸ Niels Janussen <aj@isit.gl>\n"
+"PO-Revision-Date: 2015-02-01 01:30+0000\n"
+"Last-Translator: Teddy Møller <teddy@mollerit.dk>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +47,7 @@ msgstr "Shorty Tracking"
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr "Detaljeret sporing af alle forespørgelser til eksistende Shortys samt en integreret visualisering over tilgangshistorien. "
+msgstr "Detaljeret sporing af alle forespørgelser til eksistende Shortys samt en integreret visualisering over adgangshistorikken. "
 
 # request results
 msgid "granted"
@@ -74,7 +75,7 @@ msgid "Clicks"
 msgstr "Klik"
 
 msgid "Host"
-msgstr "Host"
+msgstr "Vært"
 
 msgid "List clicks"
 msgstr "Vis klik"

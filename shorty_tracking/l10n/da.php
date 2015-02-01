@@ -1,6 +1,6 @@
 <?php $TRANSLATIONS = array(
 "Shorty Tracking" => "Shorty Tracking",
-"Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Detaljeret sporing af alle forespørgelser til eksistende Shortys samt en integreret visualisering over tilgangshistorien. ",
+"Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Detaljeret sporing af alle forespørgelser til eksistende Shortys samt en integreret visualisering over adgangshistorikken. ",
 "granted" => "Tilladt ",
 "denied" => "Afvist",
 "failed" => "mislykkedes",
@@ -9,7 +9,7 @@
 "Address" => "Adresse",
 "Click details" => "Klik detaljer",
 "Clicks" => "Klik",
-"Host" => "Host",
+"Host" => "Vært",
 "List clicks" => "Vis klik",
 "List of tracked clicks" => "Liste over sporede klik",
 "Result" => "Resultat",
