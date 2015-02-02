@@ -84,9 +84,11 @@ try
 		// we have to react to a jsonp request, so we have to reply valid jsonp manually:
 		// note that we use 'static' jsonp, so no callback parameter is provided, instead it is hard coded here
 		// this reduces the complexity of setting up the backend, since no additional parameter has to be handled
-// 		header('Content-Type: application/javascript; charset=utf8');
-		header('Content-Type: application/javascript');
-		exit( sprintf( 'verifyStaticBackend(%s)', json_encode(array('status'=>'success'))) );
+//		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Origin: ' . OCP\Util::getServerHost());
+		header('Content-Type: application/json');
+		OCP\JSON::success ( array('id'=>$arg,'instance'=>OCP\Config::getSystemValue('instanceid')) );
+		exit();
 	}
 
 	// detect requested shorty id from request
