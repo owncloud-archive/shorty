@@ -24,15 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Espen Bye <espenbye@me.com>, 2013
-# vidaren <news@vidartysse.net>, 2014
+# Espen Bye, 2013
+# vidaren <news@vidartysse.net>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-12-27 06:30+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-01-12 12:44+0000\n"
+"Last-Translator: vidaren <news@vidartysse.net>\n"
 "Language-Team: Norwegian Bokmål (Norway) (http://www.transifex.com/projects/p/owncloud/language/nb_NO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,19 +116,19 @@ msgstr "debug"
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(aldri)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 sekunder"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 sekunder"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 sekunder"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minutt"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -249,7 +249,7 @@ msgid "The amount of feedback messages shown."
 msgstr "Antall tilbakemeldinger vist."
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "Hvor lang tid det tar før meldinger skjules igjen automatisk"
 
 msgid "Copy to clipboard"
 msgstr "Kopier til utklippstavlen"
@@ -294,7 +294,7 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr "Det kan aktiveres med ett enkelt klikk i administreringen:"
 
 msgid "If you just started using Shorty"
-msgstr ""
+msgstr "Hvis du akkurat har begynt å bruke Shorty"
 
 msgid "Loading"
 msgstr "Laster"
@@ -603,7 +603,7 @@ msgstr "tiny.cc brukernøkkel"
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr "Tving verifisering av krypteringssertifikater ved kommunikasjon med serverdelen"
+msgstr "Krev verifisering av krypteringssertifikater ved kommunikasjon med serverdelen"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "

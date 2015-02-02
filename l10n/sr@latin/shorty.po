@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-12-18 07:12+0000\n"
+"PO-Revision-Date: 2015-01-15 20:36+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Serbian (Latin) (http://www.transifex.com/projects/p/owncloud/language/sr@latin/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgid "all"
 msgstr ""
 
 msgid "blocked"
-msgstr ""
+msgstr "blokirano"
 
 msgid "deleted"
 msgstr ""
@@ -59,7 +59,7 @@ msgid "enabled"
 msgstr ""
 
 msgid "never"
-msgstr ""
+msgstr "nikad"
 
 msgid "private"
 msgstr ""
@@ -229,7 +229,7 @@ msgid "Click registered"
 msgstr ""
 
 msgid "Clicks"
-msgstr ""
+msgstr "Klikovi"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -241,7 +241,7 @@ msgid "Close"
 msgstr "Zatvori"
 
 msgid "Configuration"
-msgstr ""
+msgstr "Podešavanje"
 
 msgid "The amount of feedback messages shown."
 msgstr ""
@@ -280,7 +280,7 @@ msgid "Exception (%s)"
 msgstr ""
 
 msgid "Expiration"
-msgstr ""
+msgstr "Isticanje"
 
 msgid "Feedback"
 msgstr ""
@@ -295,7 +295,7 @@ msgid "If you just started using Shorty"
 msgstr ""
 
 msgid "Loading"
-msgstr ""
+msgstr "Učitavanje"
 
 msgid "Mail client"
 msgstr ""

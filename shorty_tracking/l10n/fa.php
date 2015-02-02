@@ -3,6 +3,7 @@
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "ترکینگ با جزئیات کامل تمام درخواست ها به موارد  کوتاه شده موجود به همراه نمایه سازی پیشینه دسترسی ",
 "granted" => "صادر شده است",
 "denied" => "منع شد",
+"failed" => "ناموفق",
 "blocked" => "مسدود شده",
 "load" => "بارگذاری",
 "Address" => "آدرس",
