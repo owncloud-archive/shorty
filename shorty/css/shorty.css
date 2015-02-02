@@ -728,7 +728,7 @@ input.shorty-config {
 	width: inherit;
 }
 .ellipsis::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 /* customization of styles for the 3rdparty jquery.impromtu prompts */

@@ -160,8 +160,8 @@ function jsFunctionName(func){
  * @author Christian Reiner
  */
 function nl2br (str, is_xhtml) {
-    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
-    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+	var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+	return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
 } // nl2br
 
 /**
@@ -187,16 +187,16 @@ var applyVersionOperator = {
  * @author Christian Reiner
  */
 function compareVersionNumbers(a,b) {
-    var ax, bx;
-    for (var i=0; i<Math.max(a.length,b.length); ++i) {
-        ax=a[i]||0;
-        bx=b[i]||0;
-        if (bx>ax)
-            return 1;
-        else if (ax>bx)
-            return -1;
-    }
-    return 0;
+	var ax, bx;
+	for (var i=0; i<Math.max(a.length,b.length); ++i) {
+		ax=a[i]||0;
+		bx=b[i]||0;
+		if (bx>ax)
+			return 1;
+		else if (ax>bx)
+			return -1;
+	}
+	return 0;
 } // compareVersionNumbers
 
 /**
@@ -205,6 +205,6 @@ function compareVersionNumbers(a,b) {
  * @author Christian Reiner
  */
 function parseVersionString (str) {
-    if (typeof(str) != 'string') { return false; }
-    return str.split('.');
+	if (typeof(str) != 'string') { return false; }
+	return str.split('.');
 } // parseVersionString
