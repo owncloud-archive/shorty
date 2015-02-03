@@ -1,5 +1,6 @@
 <?php $TRANSLATIONS = array(
 "denied" => "مرفوض",
+"blocked" => "محجوب",
 "load" => "حمل",
 "Address" => "عنوان",
 "Host" => "المضيف",

@@ -26,13 +26,14 @@
 # Translators:
 # eng1fares <fares_ss202@hotmail.com>, 2014
 # Hassen Houssein <hassen.houssein@smce.org>, 2014
+# attaryz <markosberg123@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-01-12 12:44+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-02-02 08:21+0000\n"
+"Last-Translator: attaryz <markosberg123@gmail.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/owncloud/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,22 +47,22 @@ msgstr ""
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "الكل"
 
 msgid "blocked"
-msgstr ""
+msgstr "محجوب"
 
 msgid "deleted"
 msgstr "تم الحذف"
 
 msgid "disabled"
-msgstr ""
+msgstr "غير متاح"
 
 msgid "enabled"
 msgstr "متاح"
 
 msgid "never"
-msgstr "بتاتا"
+msgstr "بتاتاً"
 
 msgid "private"
 msgstr "خاص"
@@ -99,36 +100,36 @@ msgid "down"
 msgstr "للاسفل"
 
 msgid "clear"
-msgstr ""
+msgstr "حذف"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "لا شيء"
 
 msgid "error"
 msgstr "خطأ"
 
 msgid "info"
-msgstr ""
+msgstr "المعلومات"
 
 msgid "debug"
 msgstr ""
 
 # log message timeout
 msgid "(never)"
-msgstr ""
+msgstr "(بتاتاً)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "ثانيتان"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 ثواني"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 ثانية"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 دقيقة "
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -219,7 +220,7 @@ msgid "Base url"
 msgstr ""
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "اختر خادماً"
 
 msgid "Click for embedding details"
 msgstr ""
@@ -252,7 +253,7 @@ msgid "The time span after which messages are hidden again automatically"
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr "نسخ إلى المفكرة"
+msgstr "نسخ إلى الحافظة"
 
 msgid "Counted entries and clicks"
 msgstr ""
@@ -261,7 +262,7 @@ msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
 msgid "Creation"
-msgstr ""
+msgstr "إعداد"
 
 msgid "Delete shorty"
 msgstr ""
@@ -276,13 +277,13 @@ msgid "Example"
 msgstr "مثال"
 
 msgid "Exception"
-msgstr ""
+msgstr "إستثناء"
 
 msgid "Exception (%s)"
 msgstr ""
 
 msgid "Expiration"
-msgstr ""
+msgstr "إنتهاء"
 
 msgid "Feedback"
 msgstr "ملاحظات"
@@ -336,10 +337,10 @@ msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "افتح العنوان"
 
 msgid "Open target url"
-msgstr ""
+msgstr "افتح عنوان url"
 
 msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
@@ -351,10 +352,10 @@ msgid "Paste to embed elsewhere"
 msgstr ""
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "تم إسترجاع الإعدادات "
 
 msgid "Preference saved"
-msgstr ""
+msgstr "تم حفظ الإعدادات"
 
 msgid "Preference '%s' retrieved"
 msgstr ""
@@ -363,10 +364,10 @@ msgid "Preference '%s' saved"
 msgstr ""
 
 msgid "Preferences"
-msgstr ""
+msgstr "الإعدادات"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "يتم التحضير لإرسال رسالة نصية"
 
 msgid "Refresh"
 msgstr "تحديث"
@@ -393,7 +394,7 @@ msgid "Send link by email"
 msgstr "إرسال الوصلة بواسطة البريد الإلكتروني"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "الإرسال برسالة نصية"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
@@ -438,10 +439,10 @@ msgid "Show details"
 msgstr ""
 
 msgid "Show usage"
-msgstr ""
+msgstr "اظهر الإستخدام"
 
 msgid "SMS"
-msgstr ""
+msgstr "رسالة نصية"
 
 msgid "SMS composer"
 msgstr ""
@@ -465,7 +466,7 @@ msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "الحالة"
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr ""
