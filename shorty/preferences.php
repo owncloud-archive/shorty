@@ -52,17 +52,31 @@ if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
 // fetch template
 $tmpl = new OCP\Template ( 'shorty', 'tmpl_preferences' );
 // inflate template
+
+// backends selection available to the user
 $backend_types = OC_Shorty_Type::$BACKENDS;
+$backend_selection = OCP\Config::getAppValue('shorty','backend-selection');
+if ($backend_selection) {
+	$backend_types = array_intersect_key($backend_types, array_flip(explode(',', $backend_selection)));
+}
+
 // kick out static option again if no global backend base has been specified in the system settings
 $backend_static_base = OCP\Config::getAppValue('shorty','backend-static-base','');
 if (   empty($backend_static_base)
 	|| !parse_url($backend_static_base,PHP_URL_SCHEME)
 	|| !parse_url($backend_static_base,PHP_URL_HOST) )
 	unset($backend_types['static']);
+
+// user preference
+$backend_type = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type');
+if (   ! $backend_type
+	|| ! isset($backend_type, $backend_types) ) {
+	OCP\Config::getAppValue('shorty','backend-default','none');
+}
+
 // feed template engine
 $tmpl->assign ( 'backend-types',       $backend_types );
-$tmpl->assign ( 'backend-type',        OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-type',
-                                                                OCP\Config::getAppValue('shorty','backend-default','none')) );
+$tmpl->assign ( 'backend-type',        $backend_type );
 $tmpl->assign ( 'backend-static-base', $backend_static_base );
 $tmpl->assign ( 'backend-bitly-user',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-user','') );
 $tmpl->assign ( 'backend-bitly-key',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-key','') );
