@@ -59,11 +59,11 @@
 					<select id="shorty-backend-type" name="backend-type" style="width:13em;"
 							placeholder="<?php p(OC_Shorty_L10n::t("Choose service…")); ?>" >
 						<?php
-							foreach ( $_['backend-types'] as $value=>$display )
+							foreach ( $_['backend-types'] as $key=>$label )
 								print_unescaped(sprintf ( "        <option value=\"%s\" %s>%s</option>\n",
-												$value,
-												($value==$_['backend-type']?'selected':''),
-												OC_Shorty_L10n::t($display)));
+												$key,
+												($key==$_['backend-type'])?'selected':'',
+												OC_Shorty_L10n::t($label)));
 						?>
 					</select>
 					<em><?php p(OC_Shorty_L10n::t("The backend service used to generate shortened URLs.")); ?></em>
