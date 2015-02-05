@@ -1118,8 +1118,7 @@ OC.Shorty={
 					$.when(
 						OC.Shorty.Action.Preference.get('list-columns-collapsed')
 					).done(function(result){
-						var collapsedColumns = $.parseJSON(result['list-columns-collapsed'])
-																	|| {"list-of-shortys":["created","accessed"]};
+						var collapsedColumns = $.parseJSON(result['list-columns-collapsed']) || {"list-of-shortys":["created","accessed"]};
 						if (   ( ! collapsedColumns.hasOwnProperty(list))
 								|| ( ! collapsedColumns[list] instanceof Array) ) {
 							collapsedColumns[list] = [];
@@ -2158,8 +2157,113 @@ OC.Shorty={
 	}, // OC.Shorty.Ajax
 
 	// ===========
+    /**
+     * @class OC.Shorty.Backend
+     * @brief Collection of methods implementing client side backend configuration
+     * @author Christian Reiner
+     */
+    Backend:{
+        /**
+         * @method OC.Shorty.Backend.getUserBackend
+         * @brief Defines the users active backend preference
+         * @author Christian Reiner
+         */
+        getUserBackend:function(){
+            var dfd = new $.Deferred();
+            $.when(
+                OC.Shorty.Action.Preference.get('backend-default'),
+                OC.Shorty.Backend.getSystemSelection()
+            ).done(function(result){
+console.log('user backend get > raw result:');
+console.log(result);
+                var userBackend;
+                if ( -1 < $.inArray(result.default, result.selection) ) {
+                    userBackend = result.default;
+                } else {
+                    userBackend = result.selection[0];
+                }
+console.log('user backend: '+userBackend)
+                dfd.resolve(userBackend);
+            }).fail(dfd.reject);
+            return dfd.promise();
+        }, // OC.Shorty.Backend.getUserBackend
+        /**
+         * @method OC.Shorty.Backend.getSystemSelection
+         * @brief Gets the selection (list) of backends available to the user
+         * @author Christian Reiner
+         */
+        getSystemSelection:function(){
+            var dfd = new $.Deferred();
+            $.when(
+                OC.Shorty.Action.Setting.get('backend-selection')
+            ).done(function(result){
+console.log('backend selection get > raw result:');
+console.log(result);
+                var backendSelection = $.parseJson(result['backend-selection']) || [];
+console.log(backendSelection);
+                dfd.resolve(backendSelection);
+            }).fail(dfd.reject);
+            return dfd.promise();
+        }, // OC.Shorty.Backend.getSystemSelection
+		/**
+		 * @method OC.Shorty.Backend.setSystemSelection
+		 * @brief Saves the selection (list) of backends available to the user
+		 * @author Christian Reiner
+		 */
+		setSystemSelection: function(list) {
+			var data = { 'backend-selection': list.join(",") };
+			$.when(
+				OC.Shorty.Action.Setting.set(data)
+			).done(function(){
+				// prevent an empty selection
+				if(list.length===0) {
+					var firstEntry = $('#shorty-backend-selection input[type="checkbox"][name="backend-selection"]')[0];
+					$(firstEntry).prop('checked', true);
+					list.push(firstEntry.val());
+				}
+				// reflect change in default backend options
+				$('#shorty-backend-default option').each(function(){
+					$(this).prop('disabled', (-1=== $.inArray($(this).val(),list)));
+				})
+				// check if default backend is still in list
+					var defaultBackend = $('#shorty-backend-default');
+				if (-1===$.inArray(defaultBackend.val(),list)) {
+					defaultBackend.val(list[0]).effect('pulsate', {times:1}, 500).focus().trigger('change');
+				}
+			}).fail(function(response){
+				OC.Notification.show(response.message);
+			});
+			return false;
+		},
+        /**
+         * @method OC.Shorty.Backend.getSystemDefault
+         * @brief Gets the default backend suggested to the user
+         * @author Christian Reiner
+         */
+        getSystemDefault:function(){
+            var dfd = new $.Deferred();
+            $.when(
+                OC.Shorty.Action.Setting.get('backend-default'),
+                OC.Shorty.Backend.getSystemSelection()
+            ).done(function(result){
+console.log('default backend get > raw result:');
+console.log(result);
+                var defaultBackend;
+                if ( -1 < $.inArray(result.default, result.selection) ) {
+                    defaultBackend = result.default;
+                } else {
+                    defaultBackend = result.selection[0];
+                }
+console.log('default backend: '+defaultBackend)
+                dfd.resolve(defaultBackend);
+            }).fail(dfd.reject);
+            return dfd.promise();
+        } // OC.Shorty.Backend.getSystemDefault
+    }, // OC.Shorty.Backend
 
-	/**
+	// ===========
+
+    /**
 	 * @class OC.Shorty.Request
 	 * @brief Collection of methods handling OCs CSRF protection token
 	 * @author Christian Reiner
