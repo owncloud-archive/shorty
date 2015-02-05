@@ -38,7 +38,7 @@ $(document).ready(function(){
 	// initialize the Agent
 	OC.Shorty.Action.Verification.Agent = $('#shorty-backend-static-verification-agent')[0].contentWindow;
 
-	// store backend selection upon change
+	// store backend default upon change
 	$('#shorty-backend-default').bind('change',function(e){
 		// save setting
 		$.when(
@@ -49,6 +49,20 @@ $(document).ready(function(){
 		return false;
 	});
 
+    // store backend selection upon change
+    $('#shorty-backend-selection input[type="checkbox"]').bind('change',function(e){
+		var name = $(e.target).attr('name');
+		var list = $(e.target).parent().find('input[type="checkbox"][name="'+name+'"]').map( function() {
+			return this.checked?this.value:null;
+		}).get();
+		OC.Shorty.Backend.setSystemSelection(list);
+    });
+
+	// raise change event to initially correct the default backend
+	$('#shorty-backend-selection input[type="checkbox"]').trigger('change');
+
+	// static backend base
+
 	// react on the result of a verification task (inside the agent/iframe)
 	window.addEventListener('message', function(event) {
 		if(event.origin !== window.location.origin) return;
@@ -56,6 +70,21 @@ $(document).ready(function(){
 		var result = $(OC.Shorty.Action.Verification.Agent.document).find('html').attr('data-verification-state');
 		OC.Shorty.Action.Verification.verified(result);
 	}, false);
+
+	// initialize by triggering an initial verification and update of the example url
+	if ($('#shorty-backend-static-base').val().length) {
+		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
+		OC.Shorty.Action.Verification.verify();
+	}
+
+	// backend 'static': verify configuration when changed
+	$('#shorty-backend-static-base').bind('keyup input',function(event){
+		event.preventDefault();
+		// modify example
+		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
+		// verify setting
+		OC.Shorty.Action.Verification.verify();
+	});
 
 	// store setting
 	$('#shorty-backend-static-base').focusout(function(){

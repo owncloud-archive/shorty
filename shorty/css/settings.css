@@ -58,6 +58,14 @@
 	font-size: medium;
 	margin: 0.3em;
 }
+#shorty-backend-default {
+	min-width: 200px;
+	margin-right: 3em;
+}
+#shorty-backend-selection {
+	display: inline-block;
+	margin-top: -2em;
+}
 #shorty-backend-static {
 	display: inline-block;
 }
