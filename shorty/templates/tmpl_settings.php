@@ -56,7 +56,7 @@
 		<label for="shorty-backend-selection" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Selection").":"); ?></label>
 		<div id="shorty-backend-selection">
 			<?php foreach ( OC_Shorty_Type::$BACKENDS as $backend_key=>$backend_name ) { ?>
-				<input type="checkbox" name="backend-selection" value="<?php p($backend_key);?>" <?= in_array($backend_key,$_['backend-selection'])?'checked':''?>>
+				<input type="checkbox" name="backend-selection" value="<?php p($backend_key);?>" <?= isset($_['backend-selection'][$backend_key])?'checked':''?>>
 				<span><?php p(OC_Shorty_L10n::t($backend_name));?></span>
 				<br>
 			<?php } ?>

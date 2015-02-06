@@ -2157,54 +2157,48 @@ OC.Shorty={
 	}, // OC.Shorty.Ajax
 
 	// ===========
-    /**
-     * @class OC.Shorty.Backend
-     * @brief Collection of methods implementing client side backend configuration
-     * @author Christian Reiner
-     */
-    Backend:{
-        /**
-         * @method OC.Shorty.Backend.getUserBackend
-         * @brief Defines the users active backend preference
-         * @author Christian Reiner
-         */
-        getUserBackend:function(){
-            var dfd = new $.Deferred();
-            $.when(
-                OC.Shorty.Action.Preference.get('backend-default'),
-                OC.Shorty.Backend.getSystemSelection()
-            ).done(function(result){
-console.log('user backend get > raw result:');
-console.log(result);
-                var userBackend;
-                if ( -1 < $.inArray(result.default, result.selection) ) {
-                    userBackend = result.default;
-                } else {
-                    userBackend = result.selection[0];
-                }
-console.log('user backend: '+userBackend)
-                dfd.resolve(userBackend);
-            }).fail(dfd.reject);
-            return dfd.promise();
-        }, // OC.Shorty.Backend.getUserBackend
-        /**
-         * @method OC.Shorty.Backend.getSystemSelection
-         * @brief Gets the selection (list) of backends available to the user
-         * @author Christian Reiner
-         */
-        getSystemSelection:function(){
-            var dfd = new $.Deferred();
-            $.when(
-                OC.Shorty.Action.Setting.get('backend-selection')
-            ).done(function(result){
-console.log('backend selection get > raw result:');
-console.log(result);
-                var backendSelection = $.parseJson(result['backend-selection']) || [];
-console.log(backendSelection);
-                dfd.resolve(backendSelection);
-            }).fail(dfd.reject);
-            return dfd.promise();
-        }, // OC.Shorty.Backend.getSystemSelection
+	/**
+	 * @class OC.Shorty.Backend
+	 * @brief Collection of methods implementing client side backend configuration
+	 * @author Christian Reiner
+	 */
+	Backend:{
+		/**
+		 * @method OC.Shorty.Backend.getUserBackend
+		 * @brief Defines the users active backend preference
+		 * @author Christian Reiner
+		 */
+		getUserBackend:function(){
+			var dfd = new $.Deferred();
+			$.when(
+				OC.Shorty.Action.Preference.get('backend-default'),
+				OC.Shorty.Backend.getSystemSelection()
+			).done(function(result){
+				var userBackend;
+				if ( -1 < $.inArray(result.default, result.selection) ) {
+					userBackend = result.default;
+				} else {
+					userBackend = result.selection[0];
+				}
+				dfd.resolve(userBackend);
+			}).fail(dfd.reject);
+			return dfd.promise();
+		}, // OC.Shorty.Backend.getUserBackend
+		/**
+		 * @method OC.Shorty.Backend.getSystemSelection
+		 * @brief Gets the selection (list) of backends available to the user
+		 * @author Christian Reiner
+		 */
+		getSystemSelection:function(){
+			var dfd = new $.Deferred();
+			$.when(
+				OC.Shorty.Action.Setting.get('backend-selection')
+			).done(function(result){
+				var backendSelection = $.parseJson(result['backend-selection']) || [];
+				dfd.resolve(backendSelection);
+			}).fail(dfd.reject);
+			return dfd.promise();
+		}, // OC.Shorty.Backend.getSystemSelection
 		/**
 		 * @method OC.Shorty.Backend.setSystemSelection
 		 * @brief Saves the selection (list) of backends available to the user
@@ -2235,31 +2229,28 @@ console.log(backendSelection);
 			});
 			return false;
 		},
-        /**
-         * @method OC.Shorty.Backend.getSystemDefault
-         * @brief Gets the default backend suggested to the user
-         * @author Christian Reiner
-         */
-        getSystemDefault:function(){
-            var dfd = new $.Deferred();
-            $.when(
-                OC.Shorty.Action.Setting.get('backend-default'),
-                OC.Shorty.Backend.getSystemSelection()
-            ).done(function(result){
-console.log('default backend get > raw result:');
-console.log(result);
-                var defaultBackend;
-                if ( -1 < $.inArray(result.default, result.selection) ) {
-                    defaultBackend = result.default;
-                } else {
-                    defaultBackend = result.selection[0];
-                }
-console.log('default backend: '+defaultBackend)
-                dfd.resolve(defaultBackend);
-            }).fail(dfd.reject);
-            return dfd.promise();
-        } // OC.Shorty.Backend.getSystemDefault
-    }, // OC.Shorty.Backend
+		/**
+		* @method OC.Shorty.Backend.getSystemDefault
+		* @brief Gets the default backend suggested to the user
+		* @author Christian Reiner
+		*/
+		etSystemDefault:function(){
+			var dfd = new $.Deferred();
+			$.when(
+				OC.Shorty.Action.Setting.get('backend-default'),
+				OC.Shorty.Backend.getSystemSelection()
+			).done(function(result){
+				var defaultBackend;
+				if ( -1 < $.inArray(result.default, result.selection) ) {
+					defaultBackend = result.default;
+				} else {
+					defaultBackend = result.selection[0];
+				}
+				dfd.resolve(defaultBackend);
+			}).fail(dfd.reject);
+		   return dfd.promise();
+		 // OC.Shorty.Backend.getSystemDefault
+	}, // OC.Shorty.Backend
 
 	// ===========
 
