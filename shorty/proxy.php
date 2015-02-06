@@ -57,7 +57,7 @@ try
 				// this validation should prevent miss usage of the proxy feature
 				$url = OC_Shorty_Type::req_argument ( 'subject', OC_Shorty_Type::URL, TRUE );
 				// re-hash the url and compare the result with the specified hash
-				if ( OC_Shorty_Tools::hashSubject($url) !== $hash ) {
+				if ( ! OC_Shorty_Tools::checkSubjectHash ($url, $hash) ) {
 					// invalid hash specified
 					throw new OC_Shorty_HttpException ( 403 );
 				}
@@ -96,14 +96,12 @@ try
 			// buffer the payload so that we can react on problems like missing resources
 			ob_start();
 			header ( 'Cache-Control: public, max-age=99936000' );
-			curl_exec($curl);
+			curl_exec ( $curl );
 			if (   curl_errno($curl)
 				|| 'image/'!=substr(curl_getinfo($curl, CURLINFO_CONTENT_TYPE), 0, 6)) {
 				// something is wrong, dump payload and send a blank instead
 				ob_end_clean();
-//				header ( 'Location: '.OCP\Util::imagePath('shorty','blank.png') );
-//				readfile ( OCP\Util::imagePath('shorty','blank.png') );
-				readfile ( OCP\Util::imagePath('shorty','shorty-light.png') );
+				readfile ( OCP\Util::imagePath('shorty','blank.png') );
 			} else {
 				// all fine, flush payload to client
 				header ( sprintf('Content-Type: %s', curl_getinfo($curl, CURLINFO_CONTENT_TYPE) ) );
