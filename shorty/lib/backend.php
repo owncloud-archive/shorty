@@ -79,7 +79,8 @@ class OC_Shorty_Backend
 		if (   ! $backend_type
 			|| ! isset($backend_type, $backend_types) ) {
 			// chose the first valid option
-			$backend_type = reset(array_keys($backend_types)) || 'none';
+			$backend_keys = array_keys($backend_types);
+			$backend_type = array_shift($backend_keys) || 'none';
 		}
 		return $backend_type;
 	} // OC_Shorty_Backend::getBackendType
