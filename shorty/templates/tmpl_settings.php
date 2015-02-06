@@ -41,17 +41,28 @@
 			Shorty
 		</span>
 	</h2>
-	<fieldset id="shorty-backend-configuration" class="shorty-backend-supplement">
-		<legend><?php p(OC_Shorty_L10n::t("Default backend suggested inside users preferences").":"); ?></legend>
-		<label for="shorty-backend-default" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Backend").":"); ?></label>
+
+	<fieldset class="shorty-backend-supplement">
+		<legend><?php p(OC_Shorty_L10n::t("Backends available inside users preferences").":"); ?></legend>
+
+		<label for="shorty-backend-default" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Default").":"); ?></label>
 		<select id="shorty-backend-default" name="backend-default" value="<?php p($_['backend-default']); ?>">
-<?php foreach ( OC_Shorty_Type::$BACKENDS as $backend_key=>$backend_name ) { ?>
-			<option value="<?php p($backend_key);?>" <?php p(($backend_key==$_['backend-default'])?'selected':'');?>>
-				<?php p(OC_Shorty_L10n::t($backend_name));?>
-			</option>
-<?php } ?>
+			<?php foreach ( OC_Shorty_Type::$BACKENDS as $backend_key=>$backend_name ) { ?>
+				<option value="<?php p($backend_key);?>" <?php p(in_array($backend_key,$_['backend-selection'])?'':'disabled')?> <?php p(($backend_key==$_['backend-default'])?'selected':'');?>>
+					<?php p(OC_Shorty_L10n::t($backend_name));?>
+				</option>
+			<?php } ?>
 		</select>
+		<label for="shorty-backend-selection" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Selection").":"); ?></label>
+		<div id="shorty-backend-selection">
+			<?php foreach ( OC_Shorty_Type::$BACKENDS as $backend_key=>$backend_name ) { ?>
+				<input type="checkbox" name="backend-selection" value="<?php p($backend_key);?>" <?= isset($_['backend-selection'][$backend_key]).exit?'checked':''?>>
+				<span><?php p(OC_Shorty_L10n::t($backend_name));?></span>
+				<br>
+			<?php } ?>
+		</div>
 	</fieldset>
+
 	<fieldset class="shorty-backend-supplement">
 		<legend><?php p(OC_Shorty_L10n::t("Optional configuration of a 'Static Backend'").":"); ?></legend>
 		<div id="shorty-backend-static">
