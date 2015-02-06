@@ -25,7 +25,7 @@
 # 
 # Translators:
 # Arif Budiman <arif@kangarif.com>, 2014
-# Arif Budiman <arifpedia@gmail.com>, 2014
+# Arif Budiman <arifpedia@gmail.com>, 2014-2015
 # rodin <romihardiyanto@gmail.com>, 2013
 # rodin <romihardiyanto@gmail.com>, 2013
 # Widya Walesa <walecha99@gmail.com>, 2013
@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-04 08:17+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-02-05 22:21+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/owncloud/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -298,7 +298,7 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr "Ini dapat diaktifkan dengan sekali klik pada administrasi:"
 
 msgid "If you just started using Shorty"
-msgstr ""
+msgstr "Jika Anda baru menggunakan Shorty"
 
 msgid "Loading"
 msgstr "Memuat"
@@ -427,7 +427,7 @@ msgid "Share shorty"
 msgstr "Bagikan shorty"
 
 msgid "Shortlet"
-msgstr ""
+msgstr "Shortlet"
 
 msgid "Shorty as QRCode"
 msgstr "Shorty sebagai QRCode"
