@@ -95,7 +95,9 @@ try
 			curl_setopt ( $curl, CURLOPT_USERAGENT, 'ownCloud Shorty');
 			// buffer the payload so that we can react on problems like missing resources
 			ob_start();
-			header ( 'Cache-Control: public, max-age=99936000' );
+			header ( 'Cache-Control: public, max-age=10800, pre-check=10800' );
+			header ( 'Expires: ' . date(DATE_RFC822,strtotime(' 2 day')) );
+			header ( 'Pragma: cache' );
 			curl_exec ( $curl );
 			if (   curl_errno($curl)
 				|| 'image/'!=substr(curl_getinfo($curl, CURLINFO_CONTENT_TYPE), 0, 6)) {
