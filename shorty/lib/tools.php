@@ -206,16 +206,16 @@ class OC_Shorty_Tools
 		} // while
 		if ($number === FALSE) $number = $alphabet{1};
 			return $number;
-	}
+	} // function convertToAlphabet
 
 	/**
-	 * @method OC_Shorty_Tools::hashSubject
+	 * @method OC_Shorty_Tools::getSubjectHash
 	 * @brief Hashes a given string using the installation specific alphabet as salt
 	 * @param $subject
 	 * @return string The hashed subject
 	 * @throws OC_Shorty_Exception
 	 */
-	static public function hashSubject ( $subject )
+	static public function getSubjectHash ( $subject )
 	{
 		$alphabet = OCP\Config::getAppValue('shorty', 'id-alphabet');
 		$salt = substr($alphabet, 0, CRYPT_SALT_LENGTH);
@@ -224,7 +224,19 @@ class OC_Shorty_Tools
 			throw new OC_Shorty_Exception ( "failed to create a usable hash, check your system setup!" );
 		}
 		return $hash;
-	} // function hashSubject
+	} // function getSubjectHash
+
+		/**
+		 * @method OC_Shorty_Tools::checkSubjectHash
+		 * @brief Checks if a given hashes matches a given subject
+		 * @param $subject
+		 * @return string The hashed subject
+		 * @throws OC_Shorty_Exception
+		 */
+		static public function checkSubjectHash ( $subject, $hash )
+	{
+		return ( OC_Shorty_Tools::getSubjectHash($subject) === $hash );
+	} // function checkSubjectHash
 
 	/**
 	 * @method OC_Shorty_Tools::proxifyReference
@@ -236,14 +248,42 @@ class OC_Shorty_Tools
 	 * @access public
 	 * @author Christian Reiner
 	 */
-	static public function proxifyReference ( $subject, $hash=false )
+	static public function proxifyReference ( $mode, $subject, $hash=false )
 	{
+		if ( ! in_array($mode, array('favicon')))
+			return false;
 		if ($hash)  {
-			return sprintf('%s?mode=favicon&subject=%s&hash=%s', OCP\Util::linkToAbsolute('shorty', 'proxy.php'), urlencode($subject), self::hashSubject($subject));
+			return sprintf('%s?mode=%s&subject=%s&hash=%s', OCP\Util::linkToAbsolute('shorty', 'proxy.php'), $mode, urlencode($subject), self::getSubjectHash($subject));
 		} else {
-			return sprintf('%s?mode=favicon&subject=%s', OCP\Util::linkToAbsolute('shorty', 'proxy.php'), urlencode($subject));
+			return sprintf('%s?mode=%s&subject=%s', OCP\Util::linkToAbsolute('shorty', 'proxy.php'), $mode, urlencode($subject));
 		}
 	} // function proxifyReference
+
+	/**
+	 * @method OC_Shorty_Tools::deproxifyReference
+	 * @brief Extracts the target url from a reference to the internal proxy feature
+	 * @param string $reference: The reference to the internal proxy feature
+	 * @return string The extracted target url or false
+	 * @access public
+	 * @author Christian Reiner
+	 */
+	static public function deproxifyReference ( $reference )
+	{;
+		$pattern = sprintf( '/^%s%s(.+)%s(.+)$/',
+			preg_quote(OCP\Util::linkToAbsolute('shorty', 'proxy.php'), '/'),
+			preg_quote('?mode=favicon&subject=', '/'),
+			preg_quote('&hash=', '/')
+		);
+		if ( ! preg_match($pattern, $reference, $token)) {
+			return false;
+		}
+		$subject = &$token[1];
+		$hash    = &$token[2];
+		if ( ! self::checkSubjectHash($subject, $hash) ) {
+			return false;
+		}
+		return $subject;
+	} // function deproxifyReference
 
 	/**
 	 * @method OC_Shorty_Tools::relayUrl

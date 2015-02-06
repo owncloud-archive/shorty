@@ -71,7 +71,7 @@ try
 			if (empty($reply[$key]['favicon'])) {
 				$reply[$key]['favicon'] = OCP\Util::imagePath('shorty', 'blank.png');
 			} else {
-				$reply[$key]['favicon'] = OC_Shorty_Tools::proxifyReference($reply[$key]['id'], false);
+				$reply[$key]['favicon'] = OC_Shorty_Tools::proxifyReference('favicon', $reply[$key]['id'], false);
 			}
 		}
 	} // foreach

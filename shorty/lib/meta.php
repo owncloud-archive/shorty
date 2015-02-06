@@ -80,7 +80,7 @@ class OC_Shorty_Meta
 		}
 		// rewrite favicon reference to proxy service
 		if ($meta['favicon']) {
-			$meta['favicon'] = OC_Shorty_Tools::proxifyReference($meta['favicon'], true);
+			$meta['favicon'] = OC_Shorty_Tools::proxifyReference('favicon', $meta['favicon'], true);
 		}
 		return $meta;
 	} // function fetchMetaData
@@ -155,6 +155,7 @@ class OC_Shorty_Meta
 	 */
 	static protected function extractFavicon($page, $url)
 	{
+		$favicon = null;
 		if (preg_match ( '/<[^>]*link[^>]*(rel=["\']icon["\']|rel=["\']shortcut icon["\']).*href=["\']([^>]*)["\'].*>/isU', $page, $match ))
 		{
 			// the specified uri might be an url, an absolute or a relative path
