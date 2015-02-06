@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-01-30 17:51+0000\n"
+"PO-Revision-Date: 2015-02-05 19:20+0000\n"
 "Last-Translator: Christian Hoffmann <github@christianhoffmann.com>\n"
 "Language-Team: German (Germany) (http://www.transifex.com/projects/p/owncloud/language/de_DE/)\n"
 "MIME-Version: 1.0\n"
@@ -171,7 +171,7 @@ msgid "for own usage"
 msgstr "für eigenen Zugriff"
 
 msgid "with ownCloud users"
-msgstr "mit ownCloud-Nutzern"
+msgstr "mit ownCloud-Benutzern"
 
 msgid "available for everyone"
 msgstr "verfügbar für jeden"
@@ -568,40 +568,40 @@ msgid "API access key"
 msgstr "API-Zugriffsschlüssel"
 
 msgid "Account"
-msgstr "Nutzerkonto"
+msgstr "Benutzerkonto"
 
 msgid "API key"
 msgstr "API-Schlüssel"
 
 msgid "bit.ly user"
-msgstr "bit.ly-Nutzer"
+msgstr "bit.ly-Benutzer"
 
 msgid "bit.ly user name"
-msgstr "bit.ly-Nutzername"
+msgstr "bit.ly-Benutzername"
 
 msgid "bit.ly key"
 msgstr "bit.ly-Schlüssel"
 
 msgid "bit.ly users key"
-msgstr "bit.ly-Nutzerschlüssel"
+msgstr "bit.ly-Benutzerschlüssel"
 
 msgid "Google API key"
 msgstr "Google API-Schlüssel"
 
 msgid "Google API account"
-msgstr "Google API-Nutzerkonto"
+msgstr "Google API-Benutzerkonto"
 
 msgid "tiny.cc user"
-msgstr "tiny.cc-Nutzer"
+msgstr "tiny.cc-Benutzer"
 
 msgid "tiny.cc user name"
-msgstr "tiny.cc-Nutzername"
+msgstr "tiny.cc-Benutzername"
 
 msgid "tiny.cc key"
 msgstr "tiny.cc-Schlüssel"
 
 msgid "tiny.cc user key"
-msgstr "tiny.cc-Nutzerschlüssel"
+msgstr "tiny.cc-Benutzerschlüssel"
 
 # longer terms: typically explanations
 msgid ""
@@ -649,7 +649,7 @@ msgstr "Kein Backend wird genutzt, es werden Links generiert, die direkt auf Ihr
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr "Dieser Dienst erfordert die Authentifizierung durch eine gültige bit.ly-Nutzerkennung und einen '%s'"
+msgstr "Dieser Dienst erfordert die Authentifizierung durch eine gültige bit.ly-Benutzerkennung und einen '%s'"
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
@@ -739,7 +739,7 @@ msgstr "Die Nutzung dieses statischen Backends ist gut und sicher, solange diese
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr "Dieses Backend wird nun in den persönlichen Präferenzen aller Nutzer als zusätzliche Alternative zu den verfügbaren Backends angeboten."
+msgstr "Dieses Backend wird nun in den persönlichen Einstellungen aller lokalen Benutzer als zusätzliche Alternative zu den verfügbaren Backends angeboten."
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Ihre Konfiguration scheint noch nicht korrekt zu funktionieren!"

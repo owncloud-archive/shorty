@@ -80,6 +80,7 @@
 "Feedback" => "Обратна Връзка",
 "Home" => "Домашен",
 "It can be enabled by a single click in the administration:" => "Може да бъде включена с едно единствено кликане в администраторската секция:",
+"If you just started using Shorty" => "Ако само започнеш да използваш Shorty",
 "Loading" => "Зареждане",
 "Mail client" => "Имейл програма",
 "Modifications for shorty with id '%s' saved" => "Промяната на shorty с идентификатор '%s' е запазена.",
