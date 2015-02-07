@@ -47,12 +47,25 @@ http://apps.owncloud.com/content/show.php/Shorty-Tracking
 	<version>0.3.0</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
-	<require>5.0</require>
+	<requiremin>7.0</requiremin>
+	<category>other</category>
 	<types>
-		<internet/>
-		<bookmark/>
-		<logging/>
+		<type>internet</type>
+		<type>bookmark</type>
+		<type>logging</type>
 	</types>
+	<website>https://github.com/owncloud/shorty</website>
+	<bugs>https://github.com/owncloud/shorty/issues</bugs>
+	<repository type="git">https://github.com/owncloud/shorty.git</repository>
+	<documentation>
+		<user>https://raw.githubusercontent.com/owncloud/shorty/master/shorty_tracking/doc/USAGE</user>
+		<admin>https://raw.githubusercontent.com/owncloud/shorty/master/shorty_tracking/doc/CONFIGURATION</admin>
+	</documentation>
+	<dependencies>
+		<owncloud min-version="7.0.0" max-version="8"/>
+        <lib>curl</lib>
+        <php min-version="5.3"/>
+	</dependencies>
 	<public>
 		<shorty_tracking>tracking.php</shorty_tracking>
 		<shorty_stats>statistics.php</shorty_stats>
