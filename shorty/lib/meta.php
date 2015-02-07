@@ -173,6 +173,10 @@ class OC_Shorty_Meta
 				$url_token = parse_url($url);
 				$favicon = sprintf( '%s://%s%s/%s', $url_token['scheme'], $url_token['host'], dirname($url_token['path']), $reference );
 			}
+		} else {
+			// this is "wild guessing", but some sites actually do NOT specify a favicon but rely on clients to guess...
+			$url_token = parse_url($url);
+			$favicon = sprintf( '%s://%s/favicon.ico', $url_token['scheme'], $url_token['host'] );
 		}
 		return $favicon;
 	}
