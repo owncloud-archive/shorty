@@ -43,7 +43,7 @@ OCP\Util::addStyle  ( 'shorty',          'shorty' );
 OCP\Util::addStyle  ( 'shorty',          'list' );
 
 OCP\Util::addscript ( '3rdparty',        'chosen/chosen.jquery.min');
-OCP\Util::addScript ( 'shorty/3rdparty', 'jquery-tinysort.min' );
+OCP\Util::addScript ( 'shorty/3rdparty', 'tinysort.jquery.min' );
 OCP\Util::addScript ( 'shorty/3rdparty', 'jquery-impromptu' );
 OCP\Util::addScript ( 'shorty',          'shorty' );
 OCP\Util::addScript ( 'shorty',          'util' );

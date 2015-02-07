@@ -1036,11 +1036,11 @@ OC.Shorty={
 					case 'created':
 					case 'accessed':
 					case 'until':
-						list.find('tbody>tr').tsort('td[data-aspect="'+sortCol+'"]',{order:sortDir});
+						tinysort(list.find('tbody>tr td[data-aspect="'+sortCol+'"]'),{order:sortDir});
 						break;
 
 					default:
-						list.find('tbody>tr').tsort({attr:'data-'+sortCol,order:sortDir});
+						tinysort(list.find('tbody>tr'), {attr:'data-'+sortCol,order:sortDir});
 				} // switch
 				// mark currently active sort icon
 				var icons=list.find('thead tr.shorty-toolbar img.shorty-sort');
