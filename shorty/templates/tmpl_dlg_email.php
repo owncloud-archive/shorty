@@ -34,9 +34,8 @@
 ?>
 
 <!-- begin of email dialog -->
-<div id="dialog-email" style="display:none;">
-	<fieldset class="">
-		<legend><?php p(OC_Shorty_L10n::t("Send link by email")); ?>:</legend>
+<div id="dialog-email" class="shorty-popup" data-title="<?php p(OC_Shorty_L10n::t("Send link by email")) ?>">
+	<fieldset>
 		<div class="usage-explanation">
 			<span class="explanation">
 				<?php p(OC_Shorty_L10n::t("Clicking 'Ok' below will try to launch an email composer")); ?>.
@@ -44,7 +43,7 @@
 				<?php p(OC_Shorty_L10n::t("Alternatively the link can be copied into a message manually")); ?>:
 			</span>
 		</div>
-		<textarea class="payload" readonly="true"></textarea>
+		<textarea class="payload"></textarea>
 		<div class="usage-instruction">
 			<?php p(OC_Shorty_L10n::t("Copy to clipboard")); ?>:
 			<span class="usage-token">

@@ -1873,46 +1873,81 @@ OC.Shorty={
 				var action=element.attr('id');
 				var position=element.position();
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action 'send via "+action+"' with entry '"+entry.attr('id')+"'");
+				// render prompt popup
 				switch (action){
 					case 'usage-qrcode':
 						// reference to the service offering the qrcode image
-						var qrcodeRef = $('#dialog-qrcode #qrcode-ref').val()+encodeURIComponent(entry.attr('data-id'));
-						// take layout from hidden dialog template
-						var p_message=$('#dialog-qrcode').html();
-						// the dialog buttons
-						var p_buttons={}
-							p_buttons[t('shorty','Close')]=true;
-						// use the jquery.impromptu plugin for a popup
-						var p_proceed=$.prompt(p_message,{
-							loaded:function(){
-								// show graphical qrcode first
-								$('.qrcode-ref').hide();
-								$('.qrcode-img').show();
-								// add qrcode image
-								$('.qrcode-img img').attr('src',qrcodeRef);
-								// add qrcode reference
-								$('.qrcode-ref .payload').val(qrcodeRef);
-								// switch to details when image is clicked
-								$('.qrcode-img img').on('click',function(){
-									$('.qrcode-img').hide();
-									$('.qrcode-ref').show();
-									$('.qrcode-ref .payload').focus();
-								});
-								// download image when download button is clicked
-								$('.qrcode-ref #download').on('click',function(){
-// 									window.location.href=qrcodeRef+"&download=1";
-									window.location.href=qrcodeRef;
-								});
+						var qrcodeRef = OC.linkTo('','public.php?service=shorty_qrcode&id=') + encodeURIComponent(entry.attr('data-id'));
+						// use the impromptu jqueryq plugin for a popup
+						var p_prompt = $('#dialog-qrcode');
+						var p_title = p_prompt.attr('data-title');
+						// specific dialog button(s)
+						var p_buttons = {stateIMG:{}, stateREF:{}};
+							p_buttons.stateIMG[t('shorty','Download QRCode')] = 'download';
+							p_buttons.stateIMG[t('shorty','Show qrcode reference')] = 'referer';
+							p_buttons.stateIMG[t('shorty','Close')] = false;
+							p_buttons.stateREF[t('shorty','Download QRCode')] = 'download';
+							p_buttons.stateREF[t('shorty','Show qrcode image')] = 'image';
+							p_buttons.stateREF[t('shorty','Close')] = false;
+						// this popup has two states:
+						var p_states = {
+							stateIMG: {
+								title: p_title,
+								html: p_prompt.find('.qrcode-img').html(),
+								buttons: p_buttons.stateIMG,
+								focus: 1,
+								position:{
+									container:'#dialog-share',
+									width:'auto',
+									arrow:'bl',
+									x:position.left+19,
+									y:position.top-315
+								},
+								submit:function(e,v,m,f){
+									switch(v) {
+										case 'download':
+											window.location=qrcodeRef;
+											return e.preventDefault();
+										case 'referer':
+											$.prompt.goToState('stateREF');
+											setTimeout(function(){$('input.usage-qrcode').focus().select()}, 200);
+											return e.preventDefault();
+										default:
+											return true;
+									}
+								}
 							},
-							buttons:p_buttons,
-							position:{
-								container:'#dialog-share',
-								width:'auto',
-								arrow:'bl',
-								x:position.left+19,
-								y:position.top-317
-							},
-							close:function(){$('.qrcode-img img').off('click');}
+							stateREF: {
+								title: p_title,
+								html: p_prompt.find('.qrcode-ref').html(),
+								buttons: p_buttons.stateREF,
+								focus: 2,
+								position:{
+									container:'#dialog-share',
+									width:'auto',
+									arrow:'bl',
+									x:position.left+19,
+									y:position.top-315
+								},
+								submit:function(e,v,m,f){
+									switch(v) {
+										case 'download':
+											window.location=qrcodeRef;
+											return e.preventDefault();
+										case 'image':
+											$.prompt.goToState('stateIMG');
+											return e.preventDefault();
+										default:
+											return true;
+									}
+								}
+							}
+						};
+						var p_proceed = $.prompt(p_states, {
+							loaded: function (e) {
+								var image = $(e.target).find('img.usage-qrcode').attr('src', qrcodeRef);
+								var input = $(e.target).find('input.usage-qrcode').val(qrcodeRef).focus().select();
+							}
 						});
 						break;
 
@@ -1923,26 +1958,35 @@ OC.Shorty={
 						var mailLink='mailto:?'
 									+'subject='+encodeURIComponent(mailSubject)
 									+'&body='+encodeURIComponent(mailBody);
-						// take layout from hidden dialog template
-						var p_message=$('#dialog-email').html();
-						// the dialog buttons
-						var p_buttons={};
-							p_buttons[t('shorty','Mail client')]=true;
-							p_buttons[t('shorty','Cancel')]=false;
-						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt(p_message,{
-							loaded:function(){$('.payload').val(mailBody).focus().select();},
+						// the popup object
+						var p_prompt = $('#dialog-email');
+						// specific dialog button(s)
+						var p_buttons = {};
+							p_buttons[t('shorty','Mail client')]='compose';
+							p_buttons[t('shorty','Close')]=false;
+						// use the impromptu jquery plugin for a popup
+						var proceed=$.prompt(p_prompt.html(),{
+							title:p_prompt.attr('data-title'),
 							buttons:p_buttons,
 							position:{
 								container:'#dialog-share',
 								width:'auto',
 								arrow:'bc',
-								x:position.left-206,
-								y:position.top-239
+								x:position.left-166,
+								y:position.top-307
+							},
+							loaded:function(){
+								var payload = $('.payload').text(mailBody);
+								setTimeout(function(){payload.focus().select();},300);
 							},
 							submit:function(e,v,m,f){
-								if(v) window.location=mailLink;
-								else  $.prompt.close();
+								switch(v) {
+									case 'compose':
+										window.location = mailLink;
+										return e.preventDefault();
+									default:
+										return true;
+								}
 							}
 						});
 						break;
@@ -1951,49 +1995,62 @@ OC.Shorty={
 						// since most client systems won't understand the sms:// protocol this action is often disabled
 						// in addition, the protocol implementations do NTO allow to specify any content in the link
 						// therefore we ask the user to copy&paste a prepared body to their clipboard...
-						var smsBody=entry.attr('data-title')+"\n"+entry.attr('data-notes')+"\n"+entry.attr('data-source');
-						// take layout from hidden dialog template
-						var p_message=$('#dialog-sms').html();
-						// the dialog buttons
-						var p_buttons={};
-							p_buttons[t('shorty','SMS composer')]=true;
-							p_buttons[t('shorty','Cancel')]=false;
-						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt(p_message,{
-							loaded:function(){$('.payload').val(smsBody).focus().select();},
-							buttons:p_buttons,
-							position:{
+						var smsBody = entry.attr('data-title')+"\n"+entry.attr('data-notes')+"\n"+entry.attr('data-source');
+						// the popup object
+						var p_prompt = $('#dialog-sms');
+						// specific dialog button(s)
+						var p_buttons = {};
+							p_buttons[t('shorty','SMS composer')]='compose';
+							p_buttons[t('shorty','Close')]=false;
+						// use the impromptu jquery plugin for a popup
+						var proceed = $.prompt(p_prompt.html(),{
+							title: p_prompt.attr('data-title'),
+							buttons: p_buttons,
+							position: {
 								container:'#dialog-share',
 								width:'auto',
 								arrow:'bc',
-								x:position.left-204,
-								y:position.top-299
+								x:position.left-170,
+								y:position.top-367
 							},
-							submit:function(e,v,m,f){
-								if(v) window.location='sms:';
-								else  $.prompt.close();
+							loaded: function(){
+								var payload = $('.payload').text(smsBody);
+								setTimeout(function(){payload.focus().select();},300);
+							},
+							submit: function(e,v,m,f){
+								switch(v) {
+									case 'compose':
+										window.location = 'sms:';
+										return e.preventDefault();
+									default:
+										return true;
+								}
 							}
 						});
 						break;
 
 					case 'usage-clipboard':
 						// take layout from hidden dialog template
-						var clipboardBody=entry.attr('data-source');
-						// take layout from hidden dialog template
-						var p_message=$('#dialog-clipboard').html();
-						// the dialog buttons
-						var p_buttons={}
-							p_buttons[t('shorty','Close')]=true;
-						// use the jquery.impromptu plugin for a popup
-						var proceed=$.prompt(p_message,{
-							loaded:function(){$('.payload').val(clipboardBody).focus().select();},
-							buttons:p_buttons,
-							position:{
+						var clipboardBody = entry.attr('data-source');
+						// the popup object
+						var p_prompt = $('#dialog-clipboard');
+						// specific dialog button(s)
+						var p_buttons = {};
+							p_buttons[t('shorty','Close')]=false;
+						// use the impromptu jquery plugin for a popup
+						var proceed = $.prompt(p_prompt.html(),{
+							title: p_prompt.attr('data-title'),
+							buttons: p_buttons,
+							position: {
 								container:'#dialog-share',
 								width:'auto',
 								arrow:'br',
-								x:position.left-428,
-								y:position.top-138
+								x:position.left-355,
+								y:position.top-160
+							},
+							loaded: function(){
+								var payload = $('.payload').val(clipboardBody);
+								setTimeout(function(){payload.focus().select();},300);
 							}
 						});
 						break;
@@ -2234,27 +2291,27 @@ OC.Shorty={
 		* @brief Gets the default backend suggested to the user
 		* @author Christian Reiner
 		*/
-		etSystemDefault:function(){
+		getSystemDefault:function() {
 			var dfd = new $.Deferred();
 			$.when(
 				OC.Shorty.Action.Setting.get('backend-default'),
 				OC.Shorty.Backend.getSystemSelection()
-			).done(function(result){
-				var defaultBackend;
-				if ( -1 < $.inArray(result.default, result.selection) ) {
-					defaultBackend = result.default;
-				} else {
-					defaultBackend = result.selection[0];
-				}
-				dfd.resolve(defaultBackend);
-			}).fail(dfd.reject);
-		   return dfd.promise();
-		 // OC.Shorty.Backend.getSystemDefault
+			).done(function (result) {
+					var defaultBackend;
+					if (-1 < $.inArray(result.default, result.selection)) {
+						defaultBackend = result.default;
+					} else {
+						defaultBackend = result.selection[0];
+					}
+					dfd.resolve(defaultBackend);
+				}).fail(dfd.reject);
+			return dfd.promise();
+		} // OC.Shorty.Backend.getSystemDefault
 	}, // OC.Shorty.Backend
 
 	// ===========
 
-    /**
+	/**
 	 * @class OC.Shorty.Request
 	 * @brief Collection of methods handling OCs CSRF protection token
 	 * @author Christian Reiner

@@ -731,79 +731,60 @@ input.shorty-config {
 	display: none;
 }
 
-/* customization of styles for the 3rdparty jquery.impromtu prompts */
-div.jqi {
-	width: 480px;
-	padding: 4px;
+/* customization of styles for the 3rdparty impromtu jquery plugin */
+.shorty-popup {
+	display: none;
 }
-.jqiwarning .jqi .jqibuttons{
-	background-color: #C0C0C0;
+div.jqibox .jqi .jqiclose {
+	display: none;
 }
-div.jqi .jqimessage {
-	padding: 4px;
+div.jqibox .jqititle {
+	padding: 0 10px 5px;
 }
-div.jqi .jqiclose {
-	color: #FFFFFF;
+div.jqibox .jqiarrow {
+	border-top-color: whitesmoke;
 }
-div.jqi .jqibuttons {
-	background-color: #FFFFFF;
-	border: 0;
-	margin: 0;
-	padding: 2px 0;
-	text-align: right;
+div.jqibox.jqiwarning div.jqi .jqibuttons {
+	background-color: whitesmoke;
 }
-div.jqi button {
-	background-color: #D3D3D3;
-	padding: 2px 6px;
+div.jqibox .jqi button {
+	padding: 10px;
+	color: darkgray !important;
 }
-div.jqi button:hover {
-	background-color: #A9A9A9;
+div.jqibox .jqi button:hover {
+	color: gray !important;
 }
-div.jqi button.jqidefaultbutton {
-	background-color: #808080;
-}
-div.jqi button.jqidefaultbutton:hover {
-	background-color: #696969;
-}
-div.jqimessage {
+div.jqibox .jqimessage {
+	padding: 5px 10px;
 	font-size: 12px;
 	font-style: italic;
 	font-weight: normal;
 	color: #2F4F4F;
 	background-color: #FFFFFF;
 }
-div.jqimessage fieldset {
-	position: relative;
-	border-radius: 0.5em;
-	border: 1px solid #808080;
-	padding: 2px 10px 4px;
-}
-div.jqimessage fieldset legend {
-	font-weight: bold;
-	margin: 0 0 0 5px;
-	padding: 0 0.5em 0 0.4em;
-}
-div.jqimessage input,
-div.jqimessage textarea {
+div.jqibox .jqimessage input,
+div.jqibox .jqimessage textarea {
 	width: 96%;
 	margin: 0.5em 0 0;
 	padding: 0.4em 0.3em 0.2em;
 	cursor: text;
 }
-div.jqimessage textarea {
+div.jqibox .jqimessage textarea {
 	height: 6em;
-	cursor: text;
 }
-div.jqimessage input::selection,
-div.jqimessage input::-o-selection,
-div.jqimessage input::-ms-selection,
-div.jqimessage input::-moz-selection,
-div.jqimessage input::-khtml-selection,
-div.jqimessage input::-webkit-selection{
+div.jqibox .jqimessage input::selection,
+div.jqibox .jqimessage input::-o-selection,
+div.jqibox .jqimessage input::-ms-selection,
+div.jqibox .jqimessage input::-moz-selection,
+div.jqibox .jqimessage input::-khtml-selection,
+div.jqibox .jqimessage input::-webkit-selection{
 	background: green;
 }
-div.jqimessage fieldset div#qrcode-img img.usage-qrcode {
-	cursor: pointer;
+div.jqibox .jqimessage img.usage-qrcode {
+	width: 136px;
+	paddin: 2px;
+	margin: 2px;
+	border: 1px solid gray;
 }
 /* the verification container to test the base url for the 'Static Backend' */
 #shorty-backend-static-verification img.shortyhourglass {

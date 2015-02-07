@@ -38,13 +38,13 @@ OCP\App::checkAppEnabled ( 'shorty' );
 
 OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 
-OCP\Util::addStyle  ( 'shorty/3rdparty', 'jquery-impromptu' );
+OCP\Util::addStyle  ( 'shorty/3rdparty', 'impromptu.jquery.min' );
 OCP\Util::addStyle  ( 'shorty',          'shorty' );
 OCP\Util::addStyle  ( 'shorty',          'list' );
 
 OCP\Util::addscript ( '3rdparty',        'chosen/chosen.jquery.min');
 OCP\Util::addScript ( 'shorty/3rdparty', 'tinysort.jquery.min' );
-OCP\Util::addScript ( 'shorty/3rdparty', 'jquery-impromptu' );
+OCP\Util::addScript ( 'shorty/3rdparty', 'impromptu.jquery.min' );
 OCP\Util::addScript ( 'shorty',          'shorty' );
 OCP\Util::addScript ( 'shorty',          'util' );
 OCP\Util::addScript ( 'shorty',          'init' );
@@ -151,8 +151,6 @@ switch ($act)
 			$tmpl = new OCP\Template( 'shorty', 'tmpl_index', 'user' );
 			// any additional actions registered via hooks that should be offered ?
 			$tmpl->assign ( 'shorty-actions', OC_Shorty_Hooks::requestActions() );
-			// the (remote) base url of the qrcode generator
-			$tmpl->assign ( 'qrcode-ref', sprintf('%s?service=%s&id=',  OCP\Util::linkToAbsolute('', 'public.php'), 'shorty_qrcode') );
 			// available status options (required for select filter in toolbox)
 			$shorty_status['']=sprintf('- %s -',OC_Shorty_L10n::t('all'));
 			foreach ( OC_Shorty_Type::$STATUS as $status )

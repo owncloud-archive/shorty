@@ -34,9 +34,8 @@
 ?>
 
 <!-- begin of sms dialog -->
-<div id="dialog-sms" style="display:none;">
-	<fieldset class="">
-		<legend><?php p(OC_Shorty_L10n::t("Prepare to send as SMS")); ?>:</legend>
+<div id="dialog-sms" class="shorty-popup" data-title="<?php p(OC_Shorty_L10n::t("Prepare to send as SMS")) ?>">
+	<fieldset>
 		<div class="usage-explanation">
 			<?php p(OC_Shorty_L10n::t("Clicking 'Ok' below will try to launch an sms composer")); ?>.
 			<br>
@@ -45,7 +44,7 @@
 			<?php p(OC_Shorty_L10n::t("Unfortunately the implementation of this scheme is limited")); ?>,
 			<?php p(OC_Shorty_L10n::t("therefore the content must be copied manually")); ?>:
 		</div>
-		<textarea class="payload" readonly="true"></textarea>
+		<textarea class="payload"></textarea>
 		<div class="usage-instruction">
 			<?php p(OC_Shorty_L10n::t("Copy to clipboard")); ?>:<span class="usage-token"><?php p(OC_Shorty_L10n::t("Ctrl-C")); ?></span>
 			<br>

@@ -34,19 +34,15 @@
 ?>
 
 <!-- begin of qrcode dialog -->
-<div id="dialog-qrcode" style="display:none;">
-	<fieldset class="">
-		<legend><?php p(OC_Shorty_L10n::t("Shorty as QRCode")); ?>:</legend>
-		<input id="qrcode-ref" type="hidden" value="<?php p($_['qrcode-ref']); ?>">
+<div id="dialog-qrcode" class="shorty-popup" data-title="<?php p(OC_Shorty_L10n::t("Shorty as QRCode")) ?>">
+	<fieldset>
 		<div class='qrcode-img'>
 			<div class="usage-explanation">
 				<?php p(OC_Shorty_L10n::t("This 2d barcode encodes the url pointing to this Shorty")); ?>.
-				<br>
-				<?php p(OC_Shorty_L10n::t("Use it in web pages by referencing or embedding")); ?>,
-				<?php p(OC_Shorty_L10n::t("or simpy print or download it for off-line usage")); ?>!
+				<?php p(OC_Shorty_L10n::t("Use it in web pages by referencing or embedding or simpy print or download it for off-line usage")); ?>!
 			</div>
 			<div style="text-align:center;">
-				<img style="width:154px;" class="usage-qrcode" alt="<?php p(OC_Shorty_L10n::t("QRCode")); ?>"
+				<img class="usage-qrcode" alt="<?php p(OC_Shorty_L10n::t("QRCode")); ?>"
 					src="<?php p(OCP\Util::imagePath('shorty','loading-disk.gif')); ?>" >
 				<div class="usage-instruction">
 					<?php p(OC_Shorty_L10n::t("Click for embedding details")); ?>…
@@ -56,10 +52,9 @@
 		<div class='qrcode-ref' style="display:none;">
 			<div class="usage-explanation">
 				<?php p(OC_Shorty_L10n::t("This is the url referencing the QRCode shown before")); ?>.
-				<br>
 				<?php p(OC_Shorty_L10n::t("Embed the QRCode as an image into some web page using this url")); ?>.
 			</div>
-			<input class="payload" readonly="true">
+			<input class="usage-qrcode" readonly="true">
 			<div class="usage-instruction">
 				<?php p(OC_Shorty_L10n::t("Copy to clipboard")); ?>:<span class="usage-token"><?php p(OC_Shorty_L10n::t("Ctrl-C")); ?></span>
 				<br>
@@ -69,10 +64,6 @@
 			<div class="usage-explanation">
 				<?php p(OC_Shorty_L10n::t("Alternatively the image can be downloaded for printout or storage")); ?>.
 				<?php p(OC_Shorty_L10n::t("That image can be used when writing documents or setting up web sites")); ?>:
-				<br>
-				<div style="text-align:center;">
-				<button id="download" style="margin:1.2em;" class="shorty-button">Download QRCode</button>
-				</div>
 			</div>
 		</div>
 	</fieldset>
