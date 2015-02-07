@@ -57,8 +57,8 @@ try
 
 	// extract and verify favicon url from favicon query argument
 	if ( FALSE===($p_favicon = OC_Shorty_Tools::deproxifyReference($p_favicon)) ) {
-		// invalid hash specified
-		throw new OC_Shorty_HttpException ( 403 );
+		// invalid hash specified or no favicon specified
+		$p_favicon = null;
 	}
 
 	$param = array
@@ -85,7 +85,9 @@ try
 	$entries = $query->execute($param)->FetchAll();
 	$entry = &$entries[0];
 	if (  (1==count($entries)) && (isset($entries[0]['id'])) && ($p_id==$entries[0]['id']) ) {
-		$entry['favicon'] = OC_Shorty_Tools::proxifyReference('favicon', $entry['id'], false);
+		$entry['favicon'] = empty($entry['favicon'])
+			? $entry['favicon'] = OCP\Util::imagePath('shorty', 'blank.png')
+			: OC_Shorty_Tools::proxifyReference('favicon', $entry['id'], false);
 		$entries[0]['relay'] = OC_Shorty_Tools::relayUrl($entries[0]['id']);
 	} else {
 		throw new OC_Shorty_Exception ( "failed to verify stored shorty with id '%1s'", array($p_id) );

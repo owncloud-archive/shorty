@@ -30,6 +30,8 @@
  * Exceptions: system settings, user preferences and relaying
  * @access public
  * @author Christian Reiner
+ *
+ * @UseSession
  */
 
 // Session checks
