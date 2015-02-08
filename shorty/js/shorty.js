@@ -2214,6 +2214,7 @@ OC.Shorty={
 	}, // OC.Shorty.Ajax
 
 	// ===========
+
 	/**
 	 * @class OC.Shorty.Backend
 	 * @brief Collection of methods implementing client side backend configuration
@@ -2297,21 +2298,21 @@ OC.Shorty={
 				OC.Shorty.Action.Setting.get('backend-default'),
 				OC.Shorty.Backend.getSystemSelection()
 			).done(function (result) {
-					var defaultBackend;
-					if (-1 < $.inArray(result.default, result.selection)) {
-						defaultBackend = result.default;
-					} else {
-						defaultBackend = result.selection[0];
-					}
-					dfd.resolve(defaultBackend);
-				}).fail(dfd.reject);
+				var defaultBackend;
+				if (-1 < $.inArray(result.default, result.selection)) {
+					defaultBackend = result.default;
+				} else {
+					defaultBackend = result.selection[0];
+				}
+				dfd.resolve(defaultBackend);
+			}).fail(dfd.reject);
 			return dfd.promise();
 		} // OC.Shorty.Backend.getSystemDefault
 	}, // OC.Shorty.Backend
 
 	// ===========
 
-	/**
+    /**
 	 * @class OC.Shorty.Request
 	 * @brief Collection of methods handling OCs CSRF protection token
 	 * @author Christian Reiner
