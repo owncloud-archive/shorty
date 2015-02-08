@@ -1,8 +1,8 @@
 <?php $TRANSLATIONS = array(
-"Shorty Tracking" => "Краткий мониторинг",
-"Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Детальное отслеживание всех запросов к существующим мелким наряду с интегрированной визуализацией истории доступа.",
-"granted" => "Доступ разрешен",
-"denied" => "Запрещено",
+"Shorty Tracking" => "Shorty Tracking",
+"Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Детальное отслеживание всех запросов к существующим Shorty наряду с интегрированной визуализацией истории доступа.",
+"granted" => "разрешен",
+"denied" => "запрещен",
 "failed" => "не удалось",
 "blocked" => "заблокировано",
 "load" => "загрузка",

@@ -133,7 +133,7 @@
 "SMS composer" => "SMS composer",
 "Sort ascending" => "昇順にソート",
 "Sort descending" => "降順にソート",
-"Clear filter" => "フィルタをクリア",
+"Clear filter" => "フィルターをクリア",
 "Source url" => "ソースURL",
 "Specify a static base url…" => "静的なベースURLを指定...",
 "Static backend: base url verification" => "静的バックエンド: ベースURLの確認",
@@ -159,7 +159,7 @@
 "Total of clicks" => "クリックの総数",
 "Typically this only works on devices like smart phones" => "これちらは、通常、スマートフォンのような携帯端末上でしか動きません。",
 "Unexpected type of exception caught: %s" => "予期せぬ種類の例外を捕捉: %s",
-"Unfortunately the implementation of this scheme is limited" => "申し訳ございませんが、この書式の埋め込みは制限されています。",
+"Unfortunately the implementation of this scheme is limited" => "すみませんが、この書式の埋め込みは制限されています。",
 "Unknown object of type caught: %s" => "未知の種類のオブジェクトを捕捉: %s",
 "Url shortened to: %s" => "短縮URL: %s",
 "Use it in web pages by referencing or embedding" => "参照もしくは埋め込むことによりウェブページで利用する",
@@ -211,7 +211,7 @@
 "Requests to the configured base url are mapped to this ownClouds relay service." => "この設定されたベースURLへのリクエストは、このownCloudのリレーサービスに割り当てられます。",
 "Usage of that static backend is fine and safe as long as this setup is not altered." => "この設定を変更しない限り、その静的バックエンドの利用は問題なく、安全です。",
 "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." => "このバックエンドは、すべてのユーザーに個人設定での追加のバックエンドとして提供されるものです。",
-"Sorry, but your setup appears not to be working correctly yet!" => "申し訳ありませんが、設定がまだ正常に動いていないようです。",
+"Sorry, but your setup appears not to be working correctly yet!" => "すみませんが、設定がまだ正常になっていないようです。",
 "Please check your setup and make sure that the configured base url is indeed correct." => "設定をチェックして、設定されたベースURLが間違いなく正しいか、確認をお願いいたします。",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "それに対するすべてのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。"
 );
