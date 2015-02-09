@@ -40,12 +40,12 @@ $RUNTIME_NOSETUPFS = true;
 
 OCP\Util::addStyle  ( 'shorty', 'settings' );
 
-OCP\Util::addScript ( 'shorty/3rdparty', 'chosen.jquery.min' );
-OCP\Util::addScript ( 'shorty',          'shorty' );
-OCP\Util::addScript ( 'shorty',          'util' );
-OCP\Util::addScript ( 'shorty',          'settings' );
+OCP\Util::addScript ( 'shorty', '../3rdparty/js/chosen.jquery.min' );
+OCP\Util::addScript ( 'shorty', 'shorty' );
+OCP\Util::addScript ( 'shorty', 'util' );
+OCP\Util::addScript ( 'shorty', 'settings' );
 if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
-	OCP\Util::addScript ( 'shorty',  'debug' );
+	OCP\Util::addScript ( 'shorty', 'debug' );
 
 // fetch template
 $tmpl = new OCP\Template ( 'shorty', 'tmpl_settings' );

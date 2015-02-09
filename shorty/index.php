@@ -40,17 +40,17 @@ OCP\App::checkAppEnabled ( 'shorty' );
 
 OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 
-OCP\Util::addStyle  ( 'shorty/3rdparty', 'impromptu.jquery.min' );
-OCP\Util::addStyle  ( 'shorty/3rdparty', 'chosen.jquery.min' );
-OCP\Util::addStyle  ( 'shorty',          'shorty' );
-OCP\Util::addStyle  ( 'shorty',          'list' );
+OCP\Util::addStyle ( 'shorty', '../3rdparty/css/impromptu.jquery.min' );
+OCP\Util::addStyle ( 'shorty', '../3rdparty/css/chosen.jquery.min' );
+OCP\Util::addStyle ( 'shorty', 'shorty' );
+OCP\Util::addStyle ( 'shorty', 'list' );
 
-OCP\Util::addScript ( 'shorty/3rdparty', 'chosen.jquery.min');
-OCP\Util::addScript ( 'shorty/3rdparty', 'tinysort.jquery.min' );
-OCP\Util::addScript ( 'shorty/3rdparty', 'impromptu.jquery.min' );
-OCP\Util::addScript ( 'shorty',          'shorty' );
-OCP\Util::addScript ( 'shorty',          'util' );
-OCP\Util::addScript ( 'shorty',          'init' );
+OCP\Util::addScript ( 'shorty', '../3rdparty/js/chosen.jquery.min');
+OCP\Util::addScript ( 'shorty', '../3rdparty/js/tinysort.jquery.min' );
+OCP\Util::addScript ( 'shorty', '../3rdparty/js/impromptu.jquery.min' );
+OCP\Util::addScript ( 'shorty', 'shorty' );
+OCP\Util::addScript ( 'shorty', 'util' );
+OCP\Util::addScript ( 'shorty', 'init' );
 if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
 	OCP\Util::addScript ( 'shorty',  'debug' );
 // any additional stuff to incude as registered into the hook ?
