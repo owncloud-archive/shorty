@@ -63,7 +63,7 @@ http://apps.owncloud.com/content/show.php/Shorty?content=150401
         <admin>https://raw.githubusercontent.com/owncloud/shorty/master/shorty/doc/CONFIGURATION</admin>
     </documentation>
     <dependencies>
-        <owncloud min-version="7.0.0" max-version="8"/>
+        <owncloud min-version="7" max-version="9"/>
         <php min-version="5.3"/>
     </dependencies>
 	<public>

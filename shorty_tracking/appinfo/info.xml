@@ -62,9 +62,9 @@ http://apps.owncloud.com/content/show.php/Shorty-Tracking
 		<admin>https://raw.githubusercontent.com/owncloud/shorty/master/shorty_tracking/doc/CONFIGURATION</admin>
 	</documentation>
 	<dependencies>
-		<owncloud min-version="7.0.0" max-version="8"/>
-        <lib>curl</lib>
-        <php min-version="5.3"/>
+		<owncloud min-version="7" max-version="9"/>
+		<lib>curl</lib>
+		<php min-version="5.3"/>
 	</dependencies>
 	<public>
 		<shorty_tracking>tracking.php</shorty_tracking>
