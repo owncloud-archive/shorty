@@ -38,7 +38,7 @@ OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
 
-OCP\Util::addStyle  ( 'shorty',   'settings' );
+OCP\Util::addStyle  ( 'shorty', 'settings' );
 
 OCP\Util::addScript ( 'shorty/3rdparty', 'chosen.jquery.min' );
 OCP\Util::addScript ( 'shorty',          'shorty' );

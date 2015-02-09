@@ -45,7 +45,7 @@ OCP\Util::addStyle  ( 'shorty/3rdparty', 'chosen.jquery.min' );
 OCP\Util::addStyle  ( 'shorty',          'shorty' );
 OCP\Util::addStyle  ( 'shorty',          'list' );
 
-OCP\Util::addscript ( 'shorty/3rdparty', 'chosen.jquery.min');
+OCP\Util::addScript ( 'shorty/3rdparty', 'chosen.jquery.min');
 OCP\Util::addScript ( 'shorty/3rdparty', 'tinysort.jquery.min' );
 OCP\Util::addScript ( 'shorty/3rdparty', 'impromptu.jquery.min' );
 OCP\Util::addScript ( 'shorty',          'shorty' );
@@ -166,7 +166,7 @@ switch ($act)
 			// is sending sms enabled in the personal preferences ?
 			$tmpl->assign ( 'sms-control', OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
 			// clean up session var so that a browser reload does not trigger the same action again
-			\OC::$session->remove('shorty-referrer');
+			\OC::$server->getSession()->remove('shorty-referrer');
 			$tmpl->printPage();
 		} catch ( OC_Shorty_Exception $e ) { OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'level'=>'error', 'data'=>$result ) ); }
 } // switch

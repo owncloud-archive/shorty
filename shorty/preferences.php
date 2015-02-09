@@ -37,7 +37,7 @@ OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
 
-OCP\Util::addStyle  ( 'chorty/3rdparty', 'chosen.min' );
+OCP\Util::addStyle  ( 'shorty/3rdparty', 'chosen.min' );
 OCP\Util::addStyle  ( 'shorty',          'shorty' );
 OCP\Util::addStyle  ( 'shorty',          'preferences' );
 
@@ -46,7 +46,7 @@ OCP\Util::addScript ( 'shorty',          'shorty' );
 OCP\Util::addScript ( 'shorty',          'util' );
 OCP\Util::addScript ( 'shorty',          'preferences' );
 if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
-	OCP\Util::addScript ( 'shorty',  'debug' );
+	OCP\Util::addScript ( 'shorty', 'debug' );
 
 // fetch template
 $tmpl = new OCP\Template ( 'shorty', 'tmpl_preferences' );

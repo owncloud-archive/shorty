@@ -114,4 +114,3 @@ try
 	}
 
 } catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
-?>
