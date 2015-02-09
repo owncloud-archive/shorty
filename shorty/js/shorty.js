@@ -1296,7 +1296,7 @@ OC.Shorty={
 					OC.Shorty.Action.Preference.get('verbosity-timeout')
 				).always(function(resultControl, resultTimeout){
 					var verbosity = resultControl['verbosity-control'] || 'error';
-					var timeout   = resultTimeout['verbosity-timeout'] || 5;
+					var timeout   = resultTimeout['verbosity-timeout'] || 5000;
 					if (message && message.length){
 						// log to browser console when debugging is enabled in system config file
 						if ( OC.Shorty.Debug ){
@@ -1315,7 +1315,7 @@ OC.Shorty={
 									$.when(
 										object.slideDown(duration)
 									).done(function(){
-										if (timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
+										if (0!=timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
 										dfd.resolve;
 									})
 								}
@@ -1331,7 +1331,7 @@ OC.Shorty={
 									$.when(
 										object.slideDown(duration)
 									).done(function(){
-										if (timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
+										if (0!=timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
 										dfd.resolve;
 									})
 								}
@@ -1349,7 +1349,7 @@ OC.Shorty={
 									$.when(
 										object.slideDown(duration)
 									).done(function(){
-										if (timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
+										if (0!=timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
 										dfd.resolve;
 									})
 								}
