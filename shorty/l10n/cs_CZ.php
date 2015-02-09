@@ -212,6 +212,6 @@
 "Usage of that static backend is fine and safe as long as this setup is not altered." => "Používání statické podpůrné vrstvy je v pořádku a bezpečné pokud neplánujete toto nastavení měnit.",
 "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." => "Podpůrná vrstva bude nyní nabízena jako další varianta všem místním uživatelům v jejich osobních nastaveních.",
 "Sorry, but your setup appears not to be working correctly yet!" => "Lituji, vaše nastavení zatím nevypadá funkčně.",
-"Please check your setup and make sure that the configured base url is indeed correct." => "Prosím zkontrolujte vaše nastavení a ujistěte se, že nastavená základní URL je opravdu správně.",
+"Please check your setup and make sure that the configured base url is indeed correct." => "Prosím zkontrolujte své nastavení a ujistěte se, že nastavená základní URL je opravdu správně.",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "Ujistěte se, že všechny požadavky jsou nějak mapovány na předávací službu Shorty."
 );
