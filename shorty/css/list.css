@@ -256,8 +256,8 @@
 	-webkit-transition: width 250ms;
 }
 
-.shorty-list.shorty-collapsible th.collapsible.collapsed,
-.shorty-list.shorty-collapsible td.collapsible.collapsed {
+.shorty-list.shorty-collapsible tr:not(.clicked) th.collapsible.collapsed,
+.shorty-list.shorty-collapsible tr:not(.clicked) td.collapsible.collapsed {
 	overflow: hidden;
 	background-color: #FAFAFA;
 	border: 1px solid #F4F4F4;
@@ -267,16 +267,16 @@
 	padding-left: 4px;
 	padding-right: 4px;
 }
-.shorty-list.shorty-collapsible thead tr:first-of-type th.collapsible.collapsed,
-.shorty-list.shorty-collapsible tbody tr:first-of-type td.collapsible.collapsed {
+.shorty-list.shorty-collapsible thead tr:not(.clicked):first-of-type th.collapsible.collapsed,
+.shorty-list.shorty-collapsible tbody tr:not(.clicked):first-of-type td.collapsible.collapsed {
 	border-top: 1px solid #F4F4F4;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
-.shorty-list.shorty-collapsible thead tr:last-of-type th.collapsible.collapsed,
-.shorty-list.shorty-collapsible thead tr:nth-last-of-type(1) th.collapsible.collapsed,
-.shorty-list.shorty-collapsible thead tr:nth-last-of-type(2) th.collapsible.collapsed,
-.shorty-list.shorty-collapsible tbody tr:last-of-type td.collapsible.collapsed {
+.shorty-list.shorty-collapsible thead tr:not(.clicked):last-of-type th.collapsible.collapsed,
+.shorty-list.shorty-collapsible thead tr:not(.clicked):nth-last-of-type(1) th.collapsible.collapsed,
+.shorty-list.shorty-collapsible thead tr:not(.clicked):nth-last-of-type(2) th.collapsible.collapsed,
+.shorty-list.shorty-collapsible tbody tr:not(.clicked):last-of-type td.collapsible.collapsed {
 	border-bottom: 1px solid #F4F4F4;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
