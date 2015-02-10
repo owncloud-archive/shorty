@@ -816,7 +816,8 @@ div.jqibox .jqimessage img.usage-qrcode {
 #list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-clicks,
 #list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-until,
 #list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-created,
-#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-accessed {
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-accessed,
+#list-of-shortys tbody tr.deleted:hover>td#list-of-shortys-status {
 	text-decoration: line-through;
 	background: #F4F4F4 url('../img/status/strike.png') 0 50% repeat-x;
 }
@@ -825,7 +826,8 @@ div.jqibox .jqimessage img.usage-qrcode {
 #list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-clicks,
 #list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-until,
 #list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-created,
-#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-accessed {
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-accessed,
+#list-of-shortys tbody tr.deleted.clicked>td#list-of-shortys-status {
 	text-decoration: line-through;
 	background: #EEE url('../img/status/strike.png') 0 50% repeat-x;
 }
