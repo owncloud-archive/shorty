@@ -51,6 +51,7 @@ if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
 $tmpl = new OCP\Template ( 'shorty', 'tmpl_settings' );
 
 // inflate template
+$tmpl->assign ( 'backend-verifier',    OCP\Util::linkTo('shorty', 'verification.php') );
 $tmpl->assign ( 'backend-selection',   OC_Shorty_Backend::getBackendTypes() );
 $tmpl->assign ( 'backend-default',     OC_Shorty_Backend::getBackendType() );
 $tmpl->assign ( 'backend-static-base', OCP\Config::getAppValue('shorty', 'backend-static-base','') );

@@ -2153,9 +2153,15 @@ OC.Shorty={
 			 */
 			verified:function(result){
 				if ('valid'===result) {
+					// mark input as valid
 					$('#shorty-backend-static-base').removeClass('invalid').addClass('valid');
+					// store current value
+					OC.Shorty.Action.Setting.set($('#shorty-backend-static-base').serialize())
 				} else {
+					// mark input as invalid
 					$('#shorty-backend-static-base').removeClass('valid').addClass('invalid');
+					// skip value, store empty value, so *remove* a prior value
+					OC.Shorty.Action.Setting.set('backend-static-base=');
 				}
 			} // OC.Shorty.Action.Verification.verified
 		} // OC.Shorty.Action.Verification

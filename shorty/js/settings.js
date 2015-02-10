@@ -71,33 +71,6 @@ $(document).ready(function(){
 		OC.Shorty.Action.Verification.verified(result);
 	}, false);
 
-	// initialize by triggering an initial verification and update of the example url
-	if ($('#shorty-backend-static-base').val().length) {
-		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
-		OC.Shorty.Action.Verification.verify();
-	}
-
-	// backend 'static': verify configuration when changed
-	$('#shorty-backend-static-base').bind('keyup input',function(event){
-		event.preventDefault();
-		// modify example
-		$('#shorty-backend-example').text($('#shorty-backend-static-base').val()+'<shorty id>');
-		// verify setting
-		OC.Shorty.Action.Verification.verify();
-	});
-
-	// store setting
-	$('#shorty-backend-static-base').focusout(function(){
-		if (	($('#shorty-backend-static-base').val().length)
-				&&($('#shorty-backend-static-base').hasClass('valid')) ) {
-			// store current value
-			OC.Shorty.Action.Setting.set($('#shorty-backend-static-base').serialize())
-		} else {
-			// skip value, store empty value, so *remove* a prior value
-			OC.Shorty.Action.Setting.set('backend-static-base=');
-		}
-	});
-
 	// verify configuration when changed by using the verification agent
 	$('#shorty-backend-static-base').bind('keyup input',function(event) {
 		event.preventDefault();
