@@ -37,6 +37,8 @@
  */
 class OC_Shorty_Tools
 {
+	// length of a quasi random alphabet to be created
+	const RANDOM_ALPHABET_LENGTH = 62;
 	// internal flag indicating if output buffering should be used to prevent accidentially output during ajax requests
 	static $ob_usage  = TRUE;
 	// internal flag indicating if there is currently an output buffer active
@@ -144,29 +146,26 @@ class OC_Shorty_Tools
 	 */
 	static function shorty_id ( )
 	{
-		// each shorty installation uses a (once self generated) 62 char alphabet
-		$alphabet=OCP\Config::getAppValue('shorty','id-alphabet');
-		if ( empty($alphabet) )
-		{
-			$alphabet = self::randomAlphabet(62);
-			OCP\Config::setAppValue ( 'shorty', 'id-alphabet', $alphabet );
-		}
-		// use alphabet to generate a id being unique over time
-		return self::convertToAlphabet ( str_replace(array(' ','.'),'',microtime()), $alphabet );
+		// use pseudo random alphabet to generate a id being unique over time
+		return self::convertToAlphabet ( str_replace(array(' ','.'),'',microtime()), self::randomAlphabet() );
 	} // function shorty_id
 
 	/**
 	 * @method randomAlphabet
-	 * @brief Creates a random alphabet, unique but static for an installation
+	 * @brief returns a quasi random alphabet, unique but static for an installation
 	 * @access public
 	 * @author Christian Reiner
 	 */
-	static function randomAlphabet ($length)
+	static function randomAlphabet ()
 	{
-		if ( ! is_integer($length) )
-			return FALSE;
-		$c = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxwz0123456789";
-		return substr ( str_shuffle($c), 0, $length );
+		$alphabet = OCP\Config::getAppValue ( 'shorty', 'id-alphabet' );
+		if ( empty($alphabet) )
+		{
+			$c = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxwz0123456789";
+			$alphabet = substr ( str_shuffle($c), 0, self::RANDOM_ALPHABET_LENGTH );
+			OCP\Config::setAppValue ( 'shorty', 'id-alphabet', $alphabet ) ;
+		}
+		return $alphabet;
 	} // function randomAlphabet
 
 	/**
@@ -217,7 +216,7 @@ class OC_Shorty_Tools
 	 */
 	static public function getSubjectHash ( $subject )
 	{
-		$alphabet = OCP\Config::getAppValue('shorty', 'id-alphabet');
+		$alphabet = self::randomAlphabet();
 		$salt = substr($alphabet, 0, CRYPT_SALT_LENGTH);
 		$hash = crypt($subject, $salt);
 		if( !$alphabet || !$hash ) {

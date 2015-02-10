@@ -4,6 +4,7 @@
 
 ### IntelliJ IDEA
 .idea
+.iml
 
 ### SVN
 .svn/
