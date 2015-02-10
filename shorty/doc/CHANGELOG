@@ -23,11 +23,17 @@
 
 Changelog:
 
-* Sun Dec 28 2014 Christian Reiner: version 0.5.0
-Fixed handling of IDN domain names.
-Fixed handling of target page titles.
+* Wed Feb 11 2015 Christian Reiner: version 0.5.0
 Columns of the Shorty list are collapsible now.
 Two additional columns in the list of Shortys: create and access date.
+Fixed handling of IDN domain names.
+Fixed handling of target page titles.
+Fixed retrieval of favicons in certain cases.
+Changed favicon handle to be routed via owncloud to prevent cross domain issues.
+Enhanced visualization of the verification of the static backend setup.
+Fixed the verification of the static backend setup for cross domain usage.
+Additional setting to limit the set of backends offered to users.
+OwnCloud version 8 compatibility.
 * Sat Nov 29 2014 Christian Reiner: version 0.4.4
 Fixed handling of idn urls.
 * Sat Nov 22 2014 Christian Reiner: version 0.4.3
