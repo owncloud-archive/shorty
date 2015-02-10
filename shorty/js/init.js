@@ -81,7 +81,11 @@ $(document).ready(function(){
 	// status selection in embedded share dialog
 	$(document).on('change','.shorty-embedded#dialog-share #status',[],function(){
 		// find hidden 'id' inside own fieldset
-		OC.Shorty.Action.Url.status($(this).closest('fieldset').find('#id').val(),$(this).val());
+		var value = $(this).val();
+		var label = $(this).find('option[value="'+$(this).val()+'"]').text();
+		OC.Shorty.Action.Url.status($(this).closest('fieldset').find('#id').val(), value);
+		// update corresponding list entry too
+		$(this).parents('tr').find('td[data-aspect="status"] span').text(label);
 	});
 	// refresh click count when clicking source or relay in embedded share dialog
 	$(document).on('click','.shorty-embedded#dialog-share .shorty-usages a#source',[],function(){
