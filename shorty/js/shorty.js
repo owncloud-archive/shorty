@@ -1037,15 +1037,15 @@ OC.Shorty={
 				var icon=list.find('thead tr.shorty-toolbar th div img[data-sort-code="'+sortCode+'"]');
 				var sortCol=icon.parents('th').attr('data-aspect');
 				var sortDir=icon.attr('data-sort-direction');
-				if (OC.Shorty.Debug) OC.Shorty.Debug.log("sorting list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
+				if (OC.Shorty.Debug) OC.Shorty.Debug.log("sorting by list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
 				// use the 'tinysort' jquery plugin for sorting
 				switch (sortCol){
 					case 'created':
 					case 'accessed':
 					case 'until':
-						tinysort(list.find('tbody>tr td[data-aspect="'+sortCol+'"]'),{order:sortDir});
+						//tinysort(list.find('tbody>tr td[data-aspect="'+sortCol+'"]'),{order:sortDir});
+						tinysort(list.find('tbody>tr'), {selector:'td[data-aspect="'+sortCol+'"] span', order:sortDir});
 						break;
-
 					default:
 						tinysort(list.find('tbody>tr'), {attr:'data-'+sortCol,order:sortDir});
 				} // switch
@@ -2462,8 +2462,9 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 							span.text("- / -");
 						} else {
 							span.text(set[aspect]);
-							if (dateExpired(set[aspect]))
-							row.addClass('shorty-expired');
+							if (dateExpired(set[aspect])) {
+								row.addClass('shorty-expired');
+							}
 						}
 						break;
 

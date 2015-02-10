@@ -129,12 +129,6 @@ $(document).ready(function(){
 	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-clear',[],function(){
 		$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
 	});
-	// sort buttons
-	$(document).on('click','#list-of-shortys tr.shorty-toolbar .shorty-sort',[],function(){
-		OC.Shorty.WUI.List.sort.apply(
-			OC.Shorty.Runtime.Context.ListOfShortys,
-			[$('#list-of-shortys')]);
-	});
 	// add date picker options
 	$.datepicker.setDefaults({
 		dateFormat :'yy-mm-dd',
