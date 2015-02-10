@@ -155,7 +155,7 @@
 "This is the target url specified when generating this Shorty" => "この短縮の生成時に指定されたターゲットURLです",
 "This is the url referencing the QRCode shown before" => "これは以前表示したQRコードを参照しているURLです",
 "Title" => "タイトル",
-"Toggle toolbar" => "ツールバーをトグル",
+"Toggle toolbar" => "ツールバーの切り替え",
 "Total of clicks" => "クリックの総数",
 "Typically this only works on devices like smart phones" => "これちらは、通常、スマートフォンのような携帯端末上でしか動きません。",
 "Unexpected type of exception caught: %s" => "予期せぬ種類の例外を捕捉: %s",
