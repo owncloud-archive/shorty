@@ -103,9 +103,10 @@ try
 				|| ('image/'!=substr(curl_getinfo($curl, CURLINFO_CONTENT_TYPE), 0, 6)) ) {
 				// something is wrong, dump payload and send a blank instead
 				ob_end_clean();
-				header ( 'Content-Disposition: inline; filename="blank.png"' );
-				header ( 'Content-Type: image/png' );
-				readfile ( OCP\Util::imagePath('shorty','blank.png') );
+//				header ( 'Content-Disposition: inline; filename="blank.png"' );
+//				header ( 'Content-Type: image/png' );
+//				readfile ( OCP\Util::imagePath('shorty','blank.png') );
+				header ( 'Location: '.OCP\Util::imagePath('shorty','blank.png') );
 			} else {
 				// all fine, flush payload to client
 				header ( sprintf('Content-Type: %s', curl_getinfo($curl, CURLINFO_CONTENT_TYPE) ) );
