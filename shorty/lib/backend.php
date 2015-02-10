@@ -61,6 +61,8 @@ class OC_Shorty_Backend
 		if ($backend_selection) {
 			$backend_types = array_intersect_key($backend_types, array_flip(explode(',', $backend_selection)));
 		}
+		if ( empty($backend_types) )
+			$backend_types = array ( 'none' => OC_Shorty_Type::$BACKENDS['none'] );
 		return $backend_types;
 	} //OC_Shorty_Backend::getBackendTypes
 
@@ -76,11 +78,11 @@ class OC_Shorty_Backend
 	{
 		$backend_types = self::getBackendTypes();
 		$backend_type = OCP\Config::getAppValue('shorty', 'backend-default');
-		if (   ! $backend_type
-			|| ! isset($backend_type, $backend_types) ) {
+		if (   empty($backend_type)
+			|| ! in_array($backend_type, $backend_types) ) {
 			// chose the first valid option
 			$backend_keys = array_keys($backend_types);
-			$backend_type = array_shift($backend_keys) || 'none';
+			$backend_type = reset($backend_keys);
 		}
 		return $backend_type;
 	} // OC_Shorty_Backend::getBackendType
