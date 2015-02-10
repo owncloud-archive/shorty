@@ -800,6 +800,11 @@ div.jqibox .jqimessage img.usage-qrcode {
 	display: none;
 }
 
+/* strike through expiration date in case it is expired */
+#list-of-shortys tbody tr.shorty-expired>td#list-of-shortys-until span {
+	text-decoration: line-through;
+}
+
 /* strike through visible content of rows (entries) marked as deleted */
 #list-of-shortys tbody tr.deleted>td#list-of-shortys-title,
 #list-of-shortys tbody tr.deleted>td#list-of-shortys-target,
