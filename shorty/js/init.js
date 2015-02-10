@@ -94,7 +94,7 @@ $(document).ready(function(){
 			[$(this).parents('tr')]);
 	});
 	// collapsible items in embedded dialogs
-	$(document).on('click','.shorty-embedded .shorty-collapsible span',[],function(e){
+	$(document).on('click','.shorty-embedded .shorty-collapsible span',[],function(){
 		var container=$(this).parent();
 		if (container.hasClass('collapsed'))
 			 container.removeClass('collapsed').find('.shorty-collapsible-tail').slideDown('fast');
@@ -154,7 +154,7 @@ $(document).ready(function(){
 		e.stopPropagation();
 		OC.Shorty.WUI.Entry.send(e,$(this));
 	});
-	$(document).on('click','.shorty-list tbody tr td:not([data-aspect="actions"])',[],function(e){
+	$(document).on('click','.shorty-list tbody tr td:not([data-aspect="actions"])',[],function(){
 		// hide any open embedded dialog
 		OC.Shorty.WUI.Dialog.hide($('.shorty-embedded').first());
 		// highlight clicked entry
@@ -190,6 +190,7 @@ $(document).ready(function(){
 		OC.appSettings({appid:'shorty',loadJS:'preferences.js',scriptName:'preferences.php'});
 	});
 	// prevent vertical scroll bar in content area triggered by the additional controls bar handle
-	$('#content').height(($('#content').height()-$('#controls #controls-handle').height())+'px');
+	var content = $('#content');
+	content.height((content.height()-$('#controls #controls-handle').height())+'px');
 }); // document.ready
 

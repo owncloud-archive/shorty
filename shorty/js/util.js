@@ -43,7 +43,7 @@ Array.prototype.max = function() {
 	for (var i = 1; i < len; i++)
 		if (this[i] > max) max = this[i];
 	return max;
-}
+};
 /**
  * @function min
  * @brief Returns the min value of all elements in an array
@@ -55,7 +55,7 @@ Array.prototype.min = function() {
 	for (var i = 1; i < len; i++)
 		if (this[i] < min) min = this[i];
   return min;
-}
+};
 
 /**
  * @function max
@@ -68,7 +68,7 @@ $.fn.max = function(selector) {
 	return Math.max.apply(null, this.map(function(index, el) {
 		return selector.apply(el);
 	}).get() );
-}
+};
 /**
  * @function min
  * @brief min()-selector
@@ -80,7 +80,7 @@ $.fn.min = function(selector) {
 	return Math.min.apply(null, this.map(function(index, el) {
 		return selector.apply(el);
 	}).get() );
-}
+};
 
 /**
  * @function executeFunctionByName
@@ -106,13 +106,14 @@ function executeFunctionByName(functionName, context /*, args */) {
  * @author Christian Reiner
  */
 function dateExpired(date){
-	return (Date.parse(date)<=Date.parse(Date()));
+	return (Date.parse(date)<=Date.parse(new Date()));
 } // dateExpired
 
 /**
  * @function dateTimeToHuman
  * @brief Formats a given dateTime into international standard format (YYYY-MM-DD hh:mm:ss)
- * @param date integer timestamp
+ * @param timestamp
+ * @param placeholder
  * @return string formatted dateTime
  * @author Christian Reiner
  */
@@ -132,6 +133,7 @@ function dateTimeToHuman(timestamp,placeholder){
  * @function padLeadingZeros
  * @brief Pads a given number with leading zeros up to the specified total length
  * @param number Integer number
+ * @param length
  * @return string padded number
  * @author Christian Reiner
  */

@@ -177,9 +177,7 @@ OC.Shorty.Tracking=
 		// prevent additional events, whilst processing this one
 		OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').off('scroll');
 		// attempt to retrieve next chunk of clicks only if it makes sense
-		if (	( ! OC.Shorty.Tracking.Dialog.List
-						.find('#shorty-footer #scrollingTurn')
-						.hasClass('disabled') )
+		if (( ! OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #scrollingTurn').hasClass('disabled') )
 			&&	($(this).scrollTop()+$(this).innerHeight()>=$(this)[0].scrollHeight) )
 		{
 			if (OC.Shorty.Debug) OC.Shorty.Debug.log("list scrolled towards its bottom");
@@ -289,6 +287,7 @@ OC.Shorty.Tracking=
 		// this is the shortys id
 		OC.Shorty.Tracking.Entry=entry;
 		// update lists reference bar content to improve intuitivity
+console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.Dialog.List);
 		OC.Shorty.Tracking.Dialog.List.find('#shorty-title').html(entry.attr('data-title'));
 		OC.Shorty.Tracking.Dialog.List.find('#shorty-status').html(t('shorty',entry.attr('data-status')));
 		OC.Shorty.Tracking.Dialog.List.find('#shorty-until').html(

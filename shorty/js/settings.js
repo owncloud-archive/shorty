@@ -45,7 +45,7 @@ $(document).ready(function(){
 			OC.Shorty.Action.Setting.set($(e.currentTarget).serialize())
 		).fail(function(response){
 			OC.Notification.show(response.message);
-		})
+		});
 		return false;
 	});
 

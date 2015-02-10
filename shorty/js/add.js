@@ -48,8 +48,9 @@ $(window).load(function(){
 			OC.Shorty.WUI.Dialog.toggle(dialog)
 		).done(function(){
 			// any referrer handed over from php (explicitly in markup) ?
-			var target=$('#controls').attr('data-referrer');
-			$('#controls').removeAttr('data-referrer');
+			var controls =  $('#controls');
+			var target=controls.attr('data-referrer');
+			controls.removeAttr('data-referrer');
 			dialog.find('#target').val(target);
 			dialog.find('#title').focus();
 			OC.Shorty.WUI.Meta.collect(dialog);

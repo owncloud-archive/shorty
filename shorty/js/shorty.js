@@ -80,9 +80,10 @@ OC.Shorty={
 			hide: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide controls panel");
 				var dfd = new $.Deferred();
-				if ( ! $('#content').hasClass('shorty-panel-hidden')){
+				var content = $('#content');
+				if ( ! content.hasClass('shorty-panel-hidden')){
 					$.when(
-						$('#content').addClass('shorty-panel-hidden')
+						content.addClass('shorty-panel-hidden')
 					).done(function(){
 						OC.Shorty.Action.Preference.set({'controls-panel-visible':false});
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
@@ -101,9 +102,10 @@ OC.Shorty={
 			show: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show controls panel");
 				var dfd = new $.Deferred();
-				if ($('#content').hasClass('shorty-panel-hidden')){
+				var content = $('#content');
+				if (content.hasClass('shorty-panel-hidden')){
 					$.when(
-						$('#content').removeClass('shorty-panel-hidden')
+						content.removeClass('shorty-panel-hidden')
 					).done(function(){
 						OC.Shorty.Action.Preference.set({'controls-panel-visible':true});
 						OC.Shorty.WUI.Controls.Panel.find('.shorty-handle .shorty-icon')
@@ -149,7 +151,7 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show desktop");
 				duration = duration || 'slow';
 				var dfd = new $.Deferred();
-				$.when($('#desktop').fadeTo(duration,1.0)).done(dfd.resolve)
+				$.when($('#desktop').fadeTo(duration,1.0)).done(dfd.resolve);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Desktop.show
 			/**
@@ -161,9 +163,9 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide desktop");
 				duration = duration || 'slow';
 				var dfd = new $.Deferred();
-				$.when($('#desktop').fadeTo(duration,0.3)).done(dfd.resolve)
+				$.when($('#desktop').fadeTo(duration,0.3)).done(dfd.resolve);
 				return dfd.promise();
-			}, // OC.Shorty.WUI.Desktop.hide
+			} // OC.Shorty.WUI.Desktop.hide
 		}, // OC.Shorty.WUI.Desktop
 		/**
 		 * @class OC.Shorty.WUI.Dialog
@@ -185,21 +187,21 @@ OC.Shorty={
 						$.when(
 							OC.Shorty.WUI.Messenger.hide(),
 							OC.Shorty.Action.Url.add()
-						).done(dfd.resolve)
+						).done(dfd.resolve);
 						break;
 
 					case 'dialog-edit':
 						$.when(
 							OC.Shorty.WUI.Messenger.hide(),
 							OC.Shorty.Action.Url.edit()
-						).done(dfd.resolve)
+						).done(dfd.resolve);
 						break;
 
 					case 'dialog-del':
 						$.when(
 							OC.Shorty.WUI.Messenger.hide(),
 							OC.Shorty.Action.Url.del()
-						).done(dfd.resolve)
+						).done(dfd.resolve);
 						break;
 
 					default:
@@ -255,7 +257,7 @@ OC.Shorty={
 					$.each($('.shorty-dialog:visible'),function(){
 						OC.Shorty.WUI.Dialog.hide($(this));
 					})
-				).done(dfd.resolve)
+				).done(dfd.resolve);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.hideAll
 			/**
@@ -345,13 +347,13 @@ OC.Shorty={
 						OC.Shorty.WUI.Dialog.hide($(this));
 					});
 					// hide 'old' messengers
-					OC.Shorty.WUI.Messenger.hide(),
+					OC.Shorty.WUI.Messenger.hide();
 					// some preparations
 					$.when(
 						function(){
 							var dfd = new $.Deferred();
 							if (dialog.hasClass('shorty-standalone'))
-								$.when(OC.Shorty.WUI.Desktop.hide()).done(dfd.resolve)
+								$.when(OC.Shorty.WUI.Desktop.hide()).done(dfd.resolve);
 							else dfd.resolve();
 							return dfd.promise();
 						}()
@@ -401,7 +403,7 @@ OC.Shorty={
 							case 'dialog-share':
 								var status=dialog.find('#status');
 								dialog.find('.status-hint').hide().filter('#'+status.val()).show();
-								status.on('change', {dialog: dialog}, function(event){
+								status.on('change', {dialog: dialog}, function(){
 									dialog.find('.status-hint').hide().filter('#'+status.val()).fadeIn('fast');
 								});
 								break;
@@ -422,8 +424,8 @@ OC.Shorty={
 				OC.Shorty.WUI.Messenger.hide();
 				// show or hide dialog
 				if ( ! dialog.is(':visible'))
-					 $.when(OC.Shorty.WUI.Dialog.show(dialog)).done(dfd.resolve)
-				else $.when(OC.Shorty.WUI.Dialog.hide(dialog)).done(dfd.resolve)
+					 $.when(OC.Shorty.WUI.Dialog.show(dialog)).done(dfd.resolve);
+				else $.when(OC.Shorty.WUI.Dialog.hide(dialog)).done(dfd.resolve);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.toggle
 			/**
@@ -444,7 +446,7 @@ OC.Shorty={
 					dfd.resolve();
 				}).fail(function(){
 					dfd.reject();
-				})
+				});
 				return dfd.promise();
 			} // OC.Shorty.WUI.Dialog.validate
 		}, // OC.Shorty.WUI.Dialog
@@ -457,7 +459,8 @@ OC.Shorty={
 			/**
 			 * @method OC.Shorty.WUI.Entry.click
 			 * @brief Triggers the action specific for each action button offered for a list item
-			 * @param entry jQueryObject Representation of a lists item to be handled
+			 * @param event jQueryObject Representation of a lists item to be handled
+			 * @param element
 			 * @author Christian Reiner
 			 */
 			click: function(event,element){
@@ -465,8 +468,9 @@ OC.Shorty={
 				var entry=element.parents('tr').first();
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log(event.type+" on action "+element.attr('id')+" for entry "+entry.attr('id'));
 				// close any visible dialogs first (exception: dialogs containing the clicked element)
-				if ($('.shorty-standalone').is(':visible')){
-					$('.shorty-standalone').not(element.parents('.shorty-dialog')).each(function(){
+				var standalone = $('.shorty-standalone');
+				if (standalone.is(':visible')){
+					standalone.not(element.parents('.shorty-dialog')).each(function(){
 						OC.Shorty.WUI.Dialog.hide($(this));
 					});
 				}
@@ -501,13 +505,13 @@ OC.Shorty={
 
 							default: // probably an action registered by another plugin...
 								// execute the function specified inside the clicked element:
-								if (typeof $(element).attr('data_method')!=undefined){
+								if (typeof $(element).attr('data-method')!=undefined){
 									if (OC.Shorty.Debug) OC.Shorty.Debug.log("handing control over entry '"+entry.attr('id')+"' to registered action");
-									executeFunctionByName($(element).attr('data_method'),window,entry);
+									executeFunctionByName($(element).attr('data-method'),$(window),entry);
 								}
 						} // switch
 					} // if click
-				}).done(dfd.resolve)
+				}).done(dfd.resolve);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.click
 			/**
@@ -566,7 +570,8 @@ OC.Shorty={
 			/**
 			 * @method OC.Shorty.WUI.Entry.send
 			 * @brief prepares the 'send' action
-			 * @param entry jQueryObject Representation of a lists item to be handled
+			 * @param event jQueryObject Representation of a lists item to be handled
+			 * @param element
 			 * @author Christian Reiner
 			 */
 			send: function(event,element){
@@ -576,7 +581,7 @@ OC.Shorty={
 				// take action
 				$.when(
 					OC.Shorty.Action.Url.send(element,entry)
-				).done(dfd.resolve)
+				).done(dfd.resolve);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.send
 			/**
@@ -598,11 +603,11 @@ OC.Shorty={
 				dialog.find('#target').attr('href',       entry.attr('data-target')).text(entry.attr('data-target'));
 				dialog.find('#status').attr('data-status',entry.attr('data-status')).val (entry.attr('data-status'));
 				// move 'share' dialog towards entry
-				dialog.appendTo(entry.find('td#list-of-shortys-actions')),
+				dialog.appendTo(entry.find('td#list-of-shortys-actions'));
 				// open dialog
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
-				).done(dfd.resolve)
+				).done(dfd.resolve);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.share
 			/**
@@ -671,7 +676,7 @@ OC.Shorty={
 						).done(dfd.resolve)
 				}
 				return dfd.promise();
-			}, // OC.Shorty.WUI.Hourglass.toggle
+			} // OC.Shorty.WUI.Hourglass.toggle
 		}, // OC.Shorty.WUI.Hourglass
 		/*
 		 * @class OC.Shorty.WUI.List
@@ -693,7 +698,7 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("add "+elements.length+" entries to list");
 				var dfd = new $.Deferred();
 				// insert list elements (sets) one by one
-				var row,set;
+				var row;
 				$(elements).each(function(i,set){
 					// clone dummy row from list header: dummy is the last row
 					row = list.find('thead tr:last-child').first().clone();
@@ -704,7 +709,7 @@ OC.Shorty={
 					// insert new row in table
 					context.ListAddInsert.apply(context,[list,row]);
 					dfd.resolve();
-				}) // each
+				}); // each
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.add
 			/**
@@ -725,8 +730,9 @@ OC.Shorty={
 					$.when(
 						OC.Shorty.WUI.List.get()
 					).pipe(function(response){
-						OC.Shorty.WUI.List.empty($('#list-of-shortys').first());
-						OC.Shorty.WUI.List.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[$('#list-of-shortys').first(),response.data]);
+						var list = $('#list-of-shortys');
+						OC.Shorty.WUI.List.empty(list.first());
+						OC.Shorty.WUI.List.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[list.first(),response.data]);
 					}).done(function(){
 						$.when(
 							OC.Shorty.WUI.List.Column.initAll('list-of-shortys'),
@@ -739,7 +745,7 @@ OC.Shorty={
 					}).fail(function(){
 						dfd.reject();
 					})
-				})
+				});
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.build
 				/**
@@ -796,7 +802,7 @@ OC.Shorty={
 					list.find('tbody tr').each(function(){
 						$(this).remove();
 				})
-				).done(dfd.resolve)
+				).done(dfd.resolve);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.empty
 			/**
@@ -813,20 +819,20 @@ OC.Shorty={
 					OC.Shorty.WUI.List.add.apply(this,[list,elements,false])
 				).pipe(
 					this.ListFillFilter.apply(this,[list])
-				).done(dfd.resolve).fail(dfd.reject)
+				).done(dfd.resolve).fail(dfd.reject);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.fill
 			/**
 			 * @method OC.Shorty.WUI.List.filter
 			 * @brief Filters a given list by comparing column values to a given value pattern
-			 * @param object list: jQuery object representing the list to filter (html table)
-			 * @param string column: Name (id) of the column to consider
-			 * @param string pattern: Pattern to compare the cells content against
+			 * @param list object: jQuery object representing the list to filter (html table)
+			 * @param column string: Name (id) of the column to consider
+			 * @param pattern string: Pattern to compare the cells content against
 			 * @return object Deferred object
 			 * @author Christian Reiner
 			 */
 			filter: function(list,column,pattern){
-				pattern = pattern || ''
+				pattern = pattern || '';
 				// we define a default reference callback function referencing the 'data-...' attributes in the rows
 				var reference=  this.ColumnValueReference[column]
 				              ||function(){return $(this).parent().attr('data-'+column);};
@@ -843,7 +849,7 @@ OC.Shorty={
 					}).removeClass('shorty-filtered'),
 					list.find('tbody tr').filter(':has(td.shorty-filtered)').addClass('shorty-filtered'),
 					list.find('tbody tr').not(':has(td.shorty-filtered)').removeClass('shorty-filtered')
-				).done(dfd.resolve).fail(dfd.reject)
+				).done(dfd.resolve).fail(dfd.reject);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.filter
 			/**
@@ -869,13 +875,13 @@ OC.Shorty={
 					dfd.resolve(response);
 				}).fail(function(response){
 					dfd.reject(response);
-				})
+				});
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.get
 			/**
 			 * @method OC.Shorty.WUI.List.hide
 			 * @brief Hides the list of OC.Shortys
-			 * @param string duration: The duration the hiding animation should take (optional)
+			 * @param duration string: The duration the hiding animation should take (optional)
 			 * @return object Deferred object
 			 * @author Christian Reiner
 			 */
@@ -886,13 +892,14 @@ OC.Shorty={
 				var list = $('#list-of-shortys');
 				if ( ! list.is(':visible'))
 					dfd.resolve();
-				else $.when(list.fadeOut(duration)).done(dfd.resolve)
+				else $.when(list.fadeOut(duration)).done(dfd.resolve);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.hide
 			/**
 			 * @method OC.Shorty.WUI.List.highlight
 			 * @brief highlights a given entry in the list of OC.Shortys
-			 * @param object entry: jQuery object representing the entry to highlight
+			 * @param list
+			 * @param entry object: jQuery object representing the entry to highlight
 			 * @return object Deferred object
 			 * @author Christian Reiner
 			 */
@@ -915,8 +922,8 @@ OC.Shorty={
 			/**
 			 * @method OC.Shorty.WUI.List.modify
 			 * @brief Modifies existing entries in the list to match updated data
-			 * @param object list: jQuery object representing the list
-			 * @param bool hidden: Flag indicating if modified rows should be kept hidden for later highlighting
+			 * @param list object: jQuery object representing the list
+			 * @param hidden boolean: Flag indicating if modified rows should be kept hidden for later highlighting
 			 * @return object Deferred object
 			 * @author Christian Reiner
 			 */
@@ -924,7 +931,7 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("modify entry in list holding "+list.length+" entries");
 				var dfd = new $.Deferred();
 				// modify list elements (sets) one by one
-				var row,set;
+				var row;
 				$.each(list,function(i,set){
 					// select row from list by id
 					row=$('#list-of-shortys tbody tr#'+set.id);
@@ -987,14 +994,14 @@ OC.Shorty={
 						} // switch
 						// show modified column immediately or keep it for a later pulsation effect ?
 						row.find('td').filter('[data-aspect="'+aspect+'"]').html('<span class="'+classes.join(' ')+'">'+content+'</span>');
-					}) // each aspect
-				}) // each entry
+					}); // each aspect
+				}); // each entry
 				return dfd.resolve().promise();
 			}, // OC.Shorty.WUI.List.modify
 			/**
 			 * @method OC.Shorty.WUI.List.show
 			 * @brief Shows the list if it was hidden
-			 * @param string duration Duration the animation should take (optional)
+			 * @param duration string Duration the animation should take (optional)
 			 * @return object Deferred object
 			 * @author Christian Reiner
 			 */
@@ -1021,12 +1028,12 @@ OC.Shorty={
 			/**
 			 * @method OC.Shorty.WUI.List.sort
 			 * @brief Sorts a list by the values of a specified column
-			 * @param object list The list object in the DOM
-			 * @param string A two letter code as defined in lib/type.php
+			 * @param list object The list object in the DOM
+			 * @param sortCode string A two letter code as defined in lib/type.php
 			 * @author Christian Reiner
 			 */
 			sort: function(list,sortCode){
-				sortCore = sortCode || 'cd';
+				sortCode = sortCode || 'cd';
 				var icon=list.find('thead tr.shorty-toolbar th div img[data-sort-code="'+sortCode+'"]');
 				var sortCol=icon.parents('th').attr('data-aspect');
 				var sortDir=icon.attr('data-sort-direction');
@@ -1052,13 +1059,11 @@ OC.Shorty={
 			/**
 			 * @method OC.Shorty.WUI.List.toggle
 			 * @brief: Toggles the visibility of the list
-			 * @param string duration Duration the animation should take
+			 * @param duration string Duration the animation should take
 			 * @author Christian Reiner
 			 */
 			toggle: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list");
-				duration = 'slow';
-				var dfd = new $.Deferred();
 				if (list.is(':visible'))
 					 return OC.Shorty.WUI.List.hide();
 				else return OC.Shorty.WUI.List.show();
@@ -1088,8 +1093,8 @@ OC.Shorty={
 				/**
 				 * @method OC.Shorty.WUI.List.Column.collapse
 				 * @brief Collapses an expanded lists column
-				 * @param object list The list whos column is to be collapsed
-				 * @param object column The column that is to be collapsed
+				 * @param list object The list whos column is to be collapsed
+				 * @param column object The column that is to be collapsed
 				 * @author Christian Reiner
 				 */
 				collapse: function(list, column){
@@ -1099,8 +1104,8 @@ OC.Shorty={
 				/**
 				 * @method OC.Shorty.WUI.List.Column.expand
 				 * @brief Expands a collapsed lists column
-				 * @param object list The list whos column is to be expanded
-				 * @param object column The column that is to be expanded
+				 * @param list object The list whos column is to be expanded
+				 * @param column object The column that is to be expanded
 				 * @author Christian Reiner
 				 */
 				expand: function(list, column){
@@ -1110,7 +1115,7 @@ OC.Shorty={
 				/**
 				 * @method OC.Shorty.WUI.List.Column.getCollapsedColumns
 				 * @brief Gets and validates the preference storing the lists of collapsed columns
-				 * @param string list The lists id
+				 * @param list string The lists id
 				 * @author Christian Reiner
 				 */
 				getCollapsedColumns: function(list) {
@@ -1130,8 +1135,8 @@ OC.Shorty={
 				/**
 				 * @method OC.Shorty.WUI.List.Column.setCollapsedColumns
 				 * @brief Sets the preference storing the lists of collapsed columns
-				 * @param string list The lists id
-				 * @param array columns The list collapsed columns
+				 * @param list string The lists id
+				 * @param columns array The list collapsed columns
 				 * @author Christian Reiner
 				 */
 				setCollapsedColumns: function(list, columns){
@@ -1148,8 +1153,8 @@ OC.Shorty={
 				/**
 				 * @method OC.Shorty.WUI.List.Column.toggle
 				 * @brief Toggles the compactness of a lists column
-				 * @param object list The list whos column is to be toggled
-				 * @param object column The list column that is to be toggled
+				 * @param list object The list whos column is to be toggled
+				 * @param column object The list column that is to be toggled
 				 * @author Christian Reiner
 				 */
 				toggle: function(list, column){
@@ -1177,7 +1182,7 @@ OC.Shorty={
 				/**
 				 * @method OC.Shorty.WUI.List.Column.initAll
 				 * @brief initializes the lists columns to be collapsed or expanded
-				 * @param object list The list whos column is to be expanded
+				 * @param list object The list whos column is to be expanded
 				 * @author Christian Reiner
 				 */
 				initAll: function(list){
@@ -1205,7 +1210,7 @@ OC.Shorty={
 				/**
 				* @method OC.Shorty.WUI.List.Toolbar.toggle
 				* @brief Toggles the visibility of a lists toolbar
-				* @param object list The list whos toolbars is to be toggled
+				* @param list object The list whos toolbars is to be toggled
 				* @author Christian Reiner
 				*/
 				toggle: function(list){
@@ -1316,7 +1321,7 @@ OC.Shorty={
 										object.slideDown(duration)
 									).done(function(){
 										if (0!=timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
-										dfd.resolve;
+										dfd.resolve();
 									})
 								}
 								else
@@ -1332,7 +1337,7 @@ OC.Shorty={
 										object.slideDown(duration)
 									).done(function(){
 										if (0!=timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
-										dfd.resolve;
+										dfd.resolve();
 									})
 								}
 								else
@@ -1350,7 +1355,7 @@ OC.Shorty={
 										object.slideDown(duration)
 									).done(function(){
 										if (0!=timeout) setTimeout(function(){OC.Shorty.WUI.Messenger.hide(object)}, timeout);
-										dfd.resolve;
+										dfd.resolve();
 									})
 								}
 								else
@@ -1359,7 +1364,7 @@ OC.Shorty={
 
 						} // switch
 					} // if message
-				})
+				});
 				return dfd.promise();
 			} // OC.Shorty.WUI.Messenger.show
 		}, // OC.Shorty.WUI.Messenger
@@ -1372,7 +1377,7 @@ OC.Shorty={
 			/**
 			* @method OC.Shorty.WUI.Meta.collect
 			* @brief Collects meta data about an url specified in the dialog
-			* @param object dialog The dialog that takes the meta data tokens
+			* @param dialog object The dialog that takes the meta data tokens
 			* @author Christian Reiner
 			*/
 			collect: function(dialog){
@@ -1424,9 +1429,9 @@ OC.Shorty={
 						dialog.find('#title').attr('placeholder','');
 						dialog.find('#explanation').html('- '+t('shorty','Sorry, that target is invalid!')+' -');
 						dialog.find('#meta').fadeTo('fast',1);
-					})
+					});
 					dfd.reject(response);
-				})
+				});
 				// stop expressing activity
 				dialog.find('#busy').fadeOut('slow');
 				return dfd.promise();
@@ -1434,7 +1439,7 @@ OC.Shorty={
 			/**
 			 * @method OC.Shorty.WUI.Meta.get
 			 * @brief Fetches the meta data of a given target url
-			 * @param string target The target url to fetch meta data about
+			 * @param target string The target url to fetch meta data about
 			 * @author Christian Reiner
 			 */
 			get: function(target){
@@ -1453,13 +1458,13 @@ OC.Shorty={
 					dfd.resolve(response);
 				}).fail(function(response){
 					dfd.reject(response);
-				})
+				});
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Meta.get
 			/**
 			 * @class OC.Shorty.WUI.Meta.reset
 			 * @brief Resets meta data that is currently contained in the specified dialog
-			 * @param object dialog The dialog the be altered
+			 * @param dialog object The dialog the be altered
 			 * @author Christian Reiner
 			 */
 			reset: function(dialog){
@@ -1488,7 +1493,7 @@ OC.Shorty={
 			/**
 			 * @method OC.Shorty.WUI.Sums.fill
 			 * @brief Fills the sums as specified in the provided data into the desktop
-			 * @param array data The data as specified during a server request
+			 * @param data array The data as specified during a server request
 			 * @author Christian Reiner
 			 */
 			fill: function(data){
@@ -1497,7 +1502,7 @@ OC.Shorty={
 				$.when(
 					// update (set) sum values in the control bar
 					this.MetaFillSums.apply(this,[data])
-				).done(dfd.resolve)
+				).done(dfd.resolve);
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Sums.fill
 			/**
@@ -1524,7 +1529,7 @@ OC.Shorty={
 					dfd.resolve(response);
 				}).fail(function(response){
 					dfd.reject(response);
-				})
+				});
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Sums.get
 			/**
@@ -1538,7 +1543,8 @@ OC.Shorty={
 				entry.attr('data-accessed',Math.round((new Date()).getTime()/1000));
 				entry.attr('data-clicks',clicks);
 				entry.find('td#clicks span').text(clicks);
-				$('#controls #sum_clicks').text(parseInt($('#controls #sum_clicks').text(),10)+1);
+				var sum = $('#controls #sum_clicks');
+				sum.text(parseInt(sum.text(),10)+1);
 			} // OC.Shorty.WUI.Sums.increment
 		} // OC.Shorty.WUI.Sums
 	}, // OC.Shorty.WUI
@@ -1590,9 +1596,9 @@ OC.Shorty={
 						if (OC.Shorty.Debug){OC.Shorty.Debug.log("got preference(s):");OC.Shorty.Debug.log(response.data);}
 					}).done(function(response){
 						dfd.resolve(response.data);
-					}).fail(function(response){
+					}).fail(function(){
 						dfd.reject({});
-					})
+					});
 					return dfd.promise();
 				}
 			}, // OC.Shorty.Action.Preference.get
@@ -1628,9 +1634,9 @@ OC.Shorty={
 					dfd.resolve(response.data);
 				}).fail(function(response){
 					dfd.reject({});
-				})
+				});
 				return dfd.promise();
-			}, // OC.Shorty.Action.Preference.set
+			} // OC.Shorty.Action.Preference.set
 		}, // OC.Shorty.Action.Preference
 		/**
 		 * @class OC.Shorty.Action.Setting
@@ -1661,7 +1667,7 @@ OC.Shorty={
 					dfd.resolve(response.data);
 				}).fail(function(response){
 					dfd.reject({});
-				})
+				});
 				return dfd.promise();
 			}, // OC.Shorty.Action.Setting.get
 			/**
@@ -1691,9 +1697,9 @@ OC.Shorty={
 					dfd.resolve(response.data);
 				}).fail(function(response){
 					dfd.reject(response);
-				})
+				});
 				return dfd.promise();
-			}, // OC.Shorty.Action.Setting.set
+			} // OC.Shorty.Action.Setting.set
 		}, // OC.Shorty.Action.Setting
 		/**
 		 * @class OC.Shorty.Action.Url
@@ -1748,20 +1754,20 @@ OC.Shorty={
 					}).pipe(
 						function(response){return OC.Shorty.Ajax.eval(response)},
 						function(response){return OC.Shorty.Ajax.fail(response)}
-					).done(function(response){
+					).done(function(){
 						// wipe entries in dialog
 						OC.Shorty.WUI.Dialog.reset(dialog)
 					}).done(function(response){
 						// add shorty to existing list
-						OC.Shorty.WUI.List.add.apply(OC.Shorty.Runtime.Context.ListOfShortys,
-												[$('#list-of-shortys').first(),[response.data],true]);
-						OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
+							var list = $('#list-of-shortys');
+						OC.Shorty.WUI.List.add.apply(OC.Shorty.Runtime.Context.ListOfShortys,[list.first(),[response.data],true]);
+						OC.Shorty.WUI.List.dim(list.first(),true);
 						dfd.resolve(response);
 					}).fail(function(response){
-						OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
+						OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true);
 						dfd.reject(response);
 					})
-				})
+				});
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.add =====
 			/** OC.Shorty.Action.Url.edit
@@ -1814,12 +1820,12 @@ OC.Shorty={
 						OC.Shorty.WUI.Dialog.reset(dialog);
 						// modify existing entry in list
 						OC.Shorty.WUI.List.modify([response.data],true);
-						OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
+						OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true);
 						dfd.resolve(response);
 					}).fail(function(response){
 						dfd.reject(response);
 					})
-				})
+				});
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.edit =====
 			/**
@@ -1851,7 +1857,7 @@ OC.Shorty={
 					dfd.resolve(response.data);
 				}).fail(function(response){
 					dfd.reject(response.data);
-				})
+				});
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.del =====
 			/** OC.Shorty.Action.Url.forward
@@ -1870,6 +1876,7 @@ OC.Shorty={
 			 * @author Christian Reiner
 			 */
 			send: function(element,entry){
+				var p_prompt, p_buttons, p_title, p_proceed;
 				var action=element.attr('id');
 				var position=element.position();
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action 'send via "+action+"' with entry '"+entry.attr('id')+"'");
@@ -1879,16 +1886,16 @@ OC.Shorty={
 						// reference to the service offering the qrcode image
 						var qrcodeRef = OC.linkTo('','public.php?service=shorty_qrcode&id=') + encodeURIComponent(entry.attr('data-id'));
 						// use the impromptu jqueryq plugin for a popup
-						var p_prompt = $('#dialog-qrcode');
-						var p_title = p_prompt.attr('data-title');
+						p_prompt = $('#dialog-qrcode');
+						p_title = p_prompt.attr('data-title');
 						// specific dialog button(s)
-						var p_buttons = {stateIMG:{}, stateREF:{}};
-							p_buttons.stateIMG[t('shorty','Download QRCode')] = 'download';
-							p_buttons.stateIMG[t('shorty','Show qrcode reference')] = 'referer';
-							p_buttons.stateIMG[t('shorty','Close')] = false;
-							p_buttons.stateREF[t('shorty','Download QRCode')] = 'download';
-							p_buttons.stateREF[t('shorty','Show qrcode image')] = 'image';
-							p_buttons.stateREF[t('shorty','Close')] = false;
+						p_buttons = {stateIMG:{}, stateREF:{}};
+						p_buttons.stateIMG[t('shorty','Download QRCode')] = 'download';
+						p_buttons.stateIMG[t('shorty','Show qrcode reference')] = 'referer';
+						p_buttons.stateIMG[t('shorty','Close')] = false;
+						p_buttons.stateREF[t('shorty','Download QRCode')] = 'download';
+						p_buttons.stateREF[t('shorty','Show qrcode image')] = 'image';
+						p_buttons.stateREF[t('shorty','Close')] = false;
 						// this popup has two states:
 						var p_states = {
 							stateIMG: {
@@ -1943,7 +1950,7 @@ OC.Shorty={
 								}
 							}
 						};
-						var p_proceed = $.prompt(p_states, {
+						p_proceed = $.prompt(p_states, {
 							loaded: function (e) {
 								var image = $(e.target).find('img.usage-qrcode').attr('src', qrcodeRef);
 								var input = $(e.target).find('input.usage-qrcode').val(qrcodeRef).focus().select();
@@ -1959,13 +1966,13 @@ OC.Shorty={
 									+'subject='+encodeURIComponent(mailSubject)
 									+'&body='+encodeURIComponent(mailBody);
 						// the popup object
-						var p_prompt = $('#dialog-email');
+						p_prompt = $('#dialog-email');
 						// specific dialog button(s)
-						var p_buttons = {};
-							p_buttons[t('shorty','Mail client')]='compose';
-							p_buttons[t('shorty','Close')]=false;
+						p_buttons = {};
+						p_buttons[t('shorty','Mail client')]='compose';
+						p_buttons[t('shorty','Close')]=false;
 						// use the impromptu jquery plugin for a popup
-						var proceed=$.prompt(p_prompt.html(),{
+						p_proceed=$.prompt(p_prompt.html(),{
 							title:p_prompt.attr('data-title'),
 							buttons:p_buttons,
 							position:{
@@ -1997,13 +2004,13 @@ OC.Shorty={
 						// therefore we ask the user to copy&paste a prepared body to their clipboard...
 						var smsBody = entry.attr('data-title')+"\n"+entry.attr('data-notes')+"\n"+entry.attr('data-source');
 						// the popup object
-						var p_prompt = $('#dialog-sms');
+						p_prompt = $('#dialog-sms');
 						// specific dialog button(s)
-						var p_buttons = {};
-							p_buttons[t('shorty','SMS composer')]='compose';
-							p_buttons[t('shorty','Close')]=false;
+						p_buttons = {};
+						p_buttons[t('shorty','SMS composer')]='compose';
+						p_buttons[t('shorty','Close')]=false;
 						// use the impromptu jquery plugin for a popup
-						var proceed = $.prompt(p_prompt.html(),{
+						p_proceed = $.prompt(p_prompt.html(),{
 							title: p_prompt.attr('data-title'),
 							buttons: p_buttons,
 							position: {
@@ -2033,12 +2040,12 @@ OC.Shorty={
 						// take layout from hidden dialog template
 						var clipboardBody = entry.attr('data-source');
 						// the popup object
-						var p_prompt = $('#dialog-clipboard');
+						p_prompt = $('#dialog-clipboard');
 						// specific dialog button(s)
-						var p_buttons = {};
-							p_buttons[t('shorty','Close')]=false;
+						p_buttons = {};
+						p_buttons[t('shorty','Close')]=false;
 						// use the impromptu jquery plugin for a popup
-						var proceed = $.prompt(p_prompt.html(),{
+						p_proceed = $.prompt(p_prompt.html(),{
 							title: p_prompt.attr('data-title'),
 							buttons: p_buttons,
 							position: {
@@ -2084,7 +2091,7 @@ OC.Shorty={
 					row.attr('data-status',status);
 					row.find('td#status span').text(t('shorty',status));
 					dfd.resolve();
-				}).fail(dfd.reject)
+				}).fail(dfd.reject);
 				return dfd.promise();
 			} // OC.Shorty.Action.Url.status
 		}, // OC.Shorty.Action.Url
@@ -2136,20 +2143,22 @@ OC.Shorty={
 			 * @author Christian Reiner
 			 */
 			verified:function(result){
+				var backendInput = $('#shorty-backend-selection input[name="backend-selection"][value="static"]');
+				var staticBase = $('#shorty-backend-static-base');
 				if ('valid'===result) {
 					// mark input as valid
-					$('#shorty-backend-static-base').removeClass('invalid').addClass('valid');
+					staticBase.removeClass('invalid').addClass('valid');
 					// store current value
-					OC.Shorty.Action.Setting.set($('#shorty-backend-static-base').serialize())
+					OC.Shorty.Action.Setting.set(staticBase.serialize());
 					// enable static backend in selection
-					$('#shorty-backend-selection input[name="backend-selection"][value="static"]').prop('checked', true).trigger('change').effect('pulsate', {times:1}, 2000);
+					backendInput.prop('checked', true).trigger('change').effect('pulsate', {times:1}, 2000);
 				} else {
 					// mark input as invalid
-					$('#shorty-backend-static-base').removeClass('valid').addClass('invalid');
+					staticBase.removeClass('valid').addClass('invalid');
 					// skip value, store empty value, so *remove* a prior value
 					OC.Shorty.Action.Setting.set('backend-static-base=');
 					// disable static backend in selection
-					$('#shorty-backend-selection input[name="backend-selection"][value="static"]').prop('checked', false).trigger('change').effect('pulsate', {times:1}, 2000);
+					backendInput.prop('checked', false).trigger('change').effect('pulsate', {times:1}, 2000);
 				}
 			} // OC.Shorty.Action.Verification.verified
 		} // OC.Shorty.Action.Verification
@@ -2168,7 +2177,7 @@ OC.Shorty={
 		 * The ajax replies we get contain an error or a success structure.
 		 * In case of an error the data is converted into a normal ajax failure.
 		 * This makes dealing with failures easier, since all failures have the same format.
-		 * @param object Ajax response
+		 * @param response object Ajax response
 		 * @return object Deferred object, rejected or resolved
 		 * @author Christian Reiner
 		 */
@@ -2193,7 +2202,7 @@ OC.Shorty={
 		/**
 		 * @method OC.Shorty.Ajax.fail
 		 * @brief Filters and converts ajax failures into internal format
-		 * @param object Ajax response
+		 * @param response object Ajax response
 		 * @return object Rejected deferred object
 		 * @author Christian Reiner
 		 */
@@ -2270,7 +2279,7 @@ OC.Shorty={
 				// reflect change in default backend options
 				$('#shorty-backend-default option').each(function(){
 					$(this).prop('disabled', (-1=== $.inArray($(this).val(),list)));
-				})
+				});
 				// check if default backend is still in list
 					var defaultBackend = $('#shorty-backend-default');
 				if (-1===$.inArray(defaultBackend.val(),list)) {
@@ -2303,45 +2312,6 @@ OC.Shorty={
 			return dfd.promise();
 		} // OC.Shorty.Backend.getSystemDefault
 	}, // OC.Shorty.Backend
-
-	// ===========
-
-    /**
-	 * @class OC.Shorty.Request
-	 * @brief Collection of methods handling OCs CSRF protection token
-	 * @author Christian Reiner
-	 */
-	// TODO: OC4 compatibility: remove whole class when dropping OC4 compatibility
-	Request:{
-		/**
-		 * @method OC.Shorty.Request.Refresh
-		 * @brief Retrieves a fresh token and registers it for future use
-		 * @author Christian Reiner
-		 */
-		Refresh:function(){
-			if (OC.Shorty.Debug) OC.Shorty.Debug.log("refreshing request token (lifebeat)");
-			var dfd=new $.Deferred();
-			$.ajax({
-				type:     'POST',
-				url:      OC.filePath('shorty','ajax','requesttoken.php'),
-				cache:    false,
-				data:     { },
-				dataType: 'json'
-			}).pipe(
-				function(response){return OC.Shorty.Ajax.eval(response)},
-				function(response){return OC.Shorty.Ajax.fail(response)}
-			).done(function(response){
-				var token=response.token;
-				// (re-)bind request protection token to ajax calls
-				// TODO: check if there is a more precise way to remove ONLY the previously bound token (which has just been replaced)
-				$(document).bind('ajaxSend','');
-				$(document).bind('ajaxSend',function(elm,xhr,s){xhr.setRequestHeader('requesttoken',token);});
-				// store refreshed request token in EventSource routines
-				OC.EventSource.requesttoken=token;
-				dfd.resolve();
-			}).fail(dfd.reject)
-		} // OC.Shorty.Request.Refresh
-	}, // OC.Shorty.Request
 
 	// ===========
 
@@ -2401,7 +2371,7 @@ OC.Shorty={
 					});
 					OC.Shorty.Status.Server.versionset=parseVersionString(OC.Shorty.Status.Server.version);
 					OC.Shorty.Status.Valid.resolve(OC.Shorty.Status);
-				}).fail(function(response){
+				}).fail(function(){
 					OC.Shorty.Status.Valid.reject(NaN);
 				});
 				if (OC.Shorty.Debug){OC.Shorty.Debug.log(OC.Shorty.Status);}
@@ -2429,11 +2399,11 @@ OC.Shorty={
 			OC.Shorty.Status.getValues().done(function(values){
 				var ocVersion=values['Server']['versionset'];
 				dfd.resolve(applyVersionOperator[operator](ocVersion,cpVersion));
-			})
+			});
 			return dfd.promise();
 		} // OC.Shorty.Status.versionCompare
 	} // OC.Shorty.Status
-} // OC.Shorty
+}; // OC.Shorty
 
 /**
  * @class OC.Shorty.Runtime.Context.ListOfShortys
@@ -2475,7 +2445,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 					row.attr('data-'+this,'');
 				else row.attr('data-'+this,set[aspect]);
 				// fill data into corresponsing column
-				var title, content, classes=[];
+				var title;
 				switch(aspect)
 				{
 					case 'favicon':
@@ -2524,7 +2494,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 				} // switch
 				row.find('td[data-aspect="'+aspect+'"]').empty().append(span);
 			}
-		) // each aspect
+		); // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
 	/**
 	 * @method OC.Shorty.Runtime.Context.ListOfShortys.ListAddInsert
@@ -2546,10 +2516,11 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	ListFillFilter: function(list){
 		if (OC.Shorty.Debug) OC.Shorty.Debug.log("using 'default' method to filter filled list");
 		// only makes sense for default OC.Shorty list
-		var data=new Array();
-		data['sum_shortys']=$('#desktop #list-of-shortys tbody tr').length;
+		var data=[];
+		var tr = $('#desktop #list-of-shortys tbody tr');
+		data['sum_shortys']=tr.length;
 		data['sum_clicks']=0;
-		$('#desktop #list-of-shortys tbody tr').each(function(){
+		tr.each(function(){
 			data['sum_clicks']+=parseInt($(this).attr('data-clicks'),10);
 		});
 		OC.Shorty.WUI.Sums.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[data]);
@@ -2583,7 +2554,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 					OC.Shorty.WUI.List.Column.toggle(list.attr('id'),'list-of-shortys-title');
 				}
 			}
-		})
+		});
 		list.find('tr.shorty-toolbar th#list-of-shortys-target').each(function(){
 			if ($(this).find('div input.shorty-filter[value!=""]').length) {
 				filtered = true;
@@ -2592,7 +2563,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 					OC.Shorty.WUI.List.Column.toggle(list.attr('id'),'list-of-shortys-target');
 				}
 			}
-		})
+		});
 		list.find('tr.shorty-toolbar th#list-of-shortys-status select').each(function(){
 			if ($(this).find('option:selected[value!=""]').length) {
 				filtered = true;
@@ -2601,7 +2572,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 					OC.Shorty.WUI.List.Column.toggle(list.attr('id'),'list-of-shortys-status');
 				}
 			}
-		})
+		});
 		return filtered;
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ToolbarCheckFilter
 	/**
@@ -2614,4 +2585,4 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		$('#controls #sum_clicks').text(data.sum_clicks);
 	} // OC.Shorty.Runtime.Context.ListOfShortys.MetaFillSums
 
-} // OC.Shorty.Runtime.Context.ListOfShortys
+}; // OC.Shorty.Runtime.Context.ListOfShortys

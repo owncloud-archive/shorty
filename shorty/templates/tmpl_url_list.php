@@ -174,7 +174,7 @@
 <!-- IF any additional actions are registered via hooks, additional icons will appear here -->
 <?php foreach ( $_['shorty-actions']['list'] as $action ) { ?>
 					<a id="<?php p($action['id']); ?>" title="<?php p(array_key_exists('title',$action)?$action['title']:''); ?>"
-						data_method="<?php p($action['call']); ?>" class="">
+						data-method="<?php p($action['call']); ?>" class="">
 						<img class="shorty-icon svg"
 							alt="<?php p(array_key_exists('alt',$action)?$action['alt']:''); ?>"
 							title="<?php p(array_key_exists('title',$action)?$action['title']:''); ?>"

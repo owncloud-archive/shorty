@@ -34,9 +34,7 @@
 ?>
 
 <!-- a (usually hidden) dialog used to display a list of all tracked clicks hitting a Shorty -->
-<div	id="shorty-tracking-list-dialog"
-		class="shorty-dialog shorty-standalone"
-		style="max-width:80%">
+<div id="shorty-tracking-list-dialog" class="shorty-dialog shorty-standalone" style="max-width:80%">
 	<fieldset>
 		<legend>
 			<a id="close" class="shorty-close-button"
@@ -146,7 +144,7 @@
 					<td id="list-of-clicks-time"    data-aspect="time"    class="collapsible"></td>
 					<td id="list-of-clicks-actions" data-aspect="actions">
 						<span class="shorty-actions">
-							<a id="shorty-tracking-action-details" title="<?php p(OC_Shorty_L10n::t("details")); ?>" data_method="OC.Shorty.Tracking.details">
+							<a id="shorty-tracking-action-details" title="<?php p(OC_Shorty_L10n::t("details")); ?>" data-method="OC.Shorty.Tracking.details">
 								<img class="shorty-icon" alt="<?php p(OC_Shorty_L10n::t("details")); ?>"
 									title="<?php p(OC_Shorty_L10n::t('Show details')); ?>" class="svg"
 									src="<?php p(OCP\Util::imagePath('shorty','actions/info.svg')); ?>" />
