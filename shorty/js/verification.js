@@ -32,39 +32,41 @@
  */
 
 var check = function() {
-    var anchor = document.getElementsByTagName('html')[0];
-    var instance = document.getElementsByTagName('html')[0].getAttribute('data-verification-instance');
-    var target = anchor.getAttribute('data-verification-target');
-    anchor.setAttribute('data-verification-state', 'active');
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-            if (xmlhttp.status == 200) {
-                var response;
-                try {
-                    response = JSON.parse(xmlhttp.responseText);
-                    if (response.hasOwnProperty('status') &&
-                        response.hasOwnProperty('id') && response.id==='0000000000' &&
-                        response.hasOwnProperty('instance') && response.instance===instance) {
-                        anchor.setAttribute('data-verification-state', ('success'===response.status) ? 'valid' : 'invalid');
-                    } else {
-                        anchor.setAttribute('data-verification-state', 'invalid');
-                    }
-                } catch (e) {
-                    anchor.setAttribute('data-verification-state', 'invalid');
-                }
-            }
-        } else {
-            anchor.setAttribute('data-verification-state', 'invalid');
-        }
-        window.parent.postMessage('data-verification-state-changed', window.location);
-    };
-    xmlhttp.open('GET', target + '0000000000', true);
-    xmlhttp.send();
+	// indicate verification activity
+	var anchor = document.getElementsByTagName('html')[0];
+	anchor.setAttribute('data-verification-state', 'active');
+	var instance = document.getElementsByTagName('html')[0].getAttribute('data-verification-instance');
+	var target = anchor.getAttribute('data-verification-target');
+	var xmlhttp = new XMLHttpRequest();
+	// verification request
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+			if (xmlhttp.status == 200) {
+				var response;
+				try {
+				 	response = JSON.parse(xmlhttp.responseText);
+				 	if (response.hasOwnProperty('status') &&
+				 	 	response.hasOwnProperty('id') && response.id==='0000000000' &&
+				 	 	response.hasOwnProperty('instance') && response.instance===instance) {
+				 	 	anchor.setAttribute('data-verification-state', ('success'===response.status) ? 'valid' : 'invalid-X');
+				 	} else {
+				 		anchor.setAttribute('data-verification-state', 'invalid-XX');
+				 	}
+				} catch (e) {
+					anchor.setAttribute('data-verification-state', 'invalid-XXX');
+				}
+			}
+		}
+		if ( 'active' != anchor.getAttribute('data-verification-state' )) {
+			window.parent.postMessage('data-verification-state-changed', window.location);
+		}
+	};
+	xmlhttp.open('GET', target + '0000000000', true);
+	xmlhttp.send();
 };
 
 window.addEventListener("message", function(event){
-    if(event.origin !== window.location.origin) return;
-    if(event.data !== 'data-verification-target-changed') return;
-    check();
+	if(event.origin !== window.location.origin) return;
+	if(event.data !== 'data-verification-target-changed') return;
+	check();
 }, false);

@@ -66,11 +66,12 @@ class OC_Shorty_Backend
 		}
 
 		// kick out static backend if no base is configured
-		$backend_static_base = OCP\Config::getAppValue('shorty','backend_static_base');
+		$backend_static_base = OCP\Config::getAppValue('shorty','backend-static-base');
 		if ( empty($backend_static_base) ) {
 			unset($backend_types['static']);
 		}
 
+		// have a safe fallback: no backend
 		if ( empty($backend_types) )
 			$backend_types = array ( 'none' => OC_Shorty_Type::$BACKENDS['none'] );
 		return $backend_types;

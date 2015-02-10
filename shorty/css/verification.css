@@ -33,8 +33,9 @@ body {
     vertical-align: baseline;
     overflow: hidden;
 }
-.shorty-activity,
-.shorty-result {
+.shorty-verification-active,
+.shorty-verification-invalid,
+.shorty-verification-valid {
     position: absolute;
     height: 100%;
     vertical-align: baseline;
@@ -42,20 +43,16 @@ body {
     opacity: 0;
     transition:opacity 400ms;-o-transition:opacity 400ms;-ms-transition:opacity 400ms;-moz-transition:opacity 400ms;-khtml-transition:opacity 400ms;-webkit-transition:opacity 400ms;
 }
-.shorty-activity img {
+.shorty-verification-active img {
     position: relative;
     top: 40%;
 }
-.shorty-result img {
+.shorty-verification-invalid,
+.shorty-verification-valid img {
     margin-right: 8px;
 }
-
-html[data-verification-state="active"] .shorty-activity {
-    opacity: 1;
-}
-html[data-verification-state="invalid"] .shorty-result.invalid {
-    opacity: 1;
-}
-html[data-verification-state="valid"] .shorty-result.valid {
+html[data-verification-state="active"] .shorty-verification-active,
+html[data-verification-state="invalid"] .shorty-verification-invalid,
+html[data-verification-state="valid"] .shorty-verification-valid {
     opacity: 1;
 }

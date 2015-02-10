@@ -82,12 +82,14 @@ $(document).ready(function(){
 	});
 
 	// initialize example and first verification if some base url is initially configured
-	var target = $('#shorty-backend-static-base').val();
-	if (target.length) {
-		// modify example
-		$('#shorty-backend-example').text(target+'<shorty id>');
-		// trigger verification of setting
-		OC.Shorty.Action.Verification.verify(target);
-	}
+	setTimeout(function(){
+		var target = $('#shorty-backend-static-base').val();
+		if (target.length) {
+			// modify example
+			$('#shorty-backend-example').text(target+'<shorty id>');
+			// trigger verification of setting
+			OC.Shorty.Action.Verification.verify(target);
+		}
+	}, 1000);
 
 });

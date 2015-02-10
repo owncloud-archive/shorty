@@ -2107,19 +2107,6 @@ OC.Shorty={
 			 */
 			Agent:{},
 			/**
-			 * @method OC.Shorty.Action.Verification.stop
-			 * @brief Stops a running verification action
-			 * @author Christian Reiner
-			 */
-			stop:function(active){
-				// activity indicator
-				$('#shorty-backend-static-verification-agent img.shorty-activity').removeClass('active');
-				// result messages
-				$('#shorty-backend-static-verification-agent html').attr('data-verification-success', '');
-				// reset state visualization
-				$('#shorty-backend-static-base').removeClass('invalid').removeClass('valid');
-			}, // OC.Shorty.Action.Verification.stop
-			/**
 			 * @method OC.Shorty.Action.Verification.verify
 			 * @brief Controls the verification of the current setting of the static backends base url.
 			 * @author Christian Reiner
@@ -2128,21 +2115,18 @@ OC.Shorty={
 				// clear any previously set timer when grace period has not yet expired
 				if (OC.Shorty.Action.Verification.Timer) {
 					clearTimeout(OC.Shorty.Action.Verification.Timer);
-					OC.Shorty.Action.Verification.stop(false);
+					// reset state visualization to neutral (since currently untested)
+					$('#shorty-backend-static-base').removeClass('invalid').removeClass('valid');
+					$(OC.Shorty.Action.Verification.Agent.document).find('html').attr('data-verification-state', '');
 				}
 				// create a new timer to fire after a grace period
 				OC.Shorty.Action.Verification.Timer = setTimeout(function(){
-					OC.Shorty.Action.Verification.stop(true);
 					// trigger the verification in the context of the agent (iframe)
 					if (target.length){
 						// store value inside iframe
 						$(OC.Shorty.Action.Verification.Agent.document).find('html').attr('data-verification-target', target);
 						// signal agent to start verification
 						OC.Shorty.Action.Verification.Agent.postMessage('data-verification-target-changed', window.location);
-					}else{
-						// no target given, set mode to neutral
-						OC.Shorty.Action.Verification.stop(false);
-						// remove previously stored value
 					}
 				}, 1000);
 			}, // OC.Shorty.Action.Verification.verify

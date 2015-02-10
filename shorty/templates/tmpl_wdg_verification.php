@@ -39,8 +39,8 @@
 		<script type="text/javascript" src="<?= $_['script']?>"></script>
 	</head>
 	<body>
-		<span class="shorty-activity"><img src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></span>
-		<span class="shorty-result valid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/good.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup valid and usable"); ?></span>
-		<span class="shorty-result invalid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/bad.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup invalid and not usable"); ?></span>
+		<span class="shorty-verification-active"><img src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></span>
+		<span class="shorty-verification-valid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/good.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup valid and usable"); ?></span>
+		<span class="shorty-verification-invalid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/bad.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup invalid and not usable"); ?></span>
 	</body>
 </html>
