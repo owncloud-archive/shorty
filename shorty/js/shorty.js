@@ -2141,11 +2141,15 @@ OC.Shorty={
 					$('#shorty-backend-static-base').removeClass('invalid').addClass('valid');
 					// store current value
 					OC.Shorty.Action.Setting.set($('#shorty-backend-static-base').serialize())
+					// enable static backend in selection
+					$('#shorty-backend-selection input[name="backend-selection"][value="static"]').prop('checked', true).trigger('change').effect('pulsate', {times:1}, 2000);
 				} else {
 					// mark input as invalid
 					$('#shorty-backend-static-base').removeClass('valid').addClass('invalid');
 					// skip value, store empty value, so *remove* a prior value
 					OC.Shorty.Action.Setting.set('backend-static-base=');
+					// disable static backend in selection
+					$('#shorty-backend-selection input[name="backend-selection"][value="static"]').prop('checked', false).trigger('change').effect('pulsate', {times:1}, 2000);
 				}
 			} // OC.Shorty.Action.Verification.verified
 		} // OC.Shorty.Action.Verification
