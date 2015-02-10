@@ -74,7 +74,7 @@
 			<th id="list-of-shortys-clicks"   data-aspect="clicks"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Clicks'));    ?></div></th>
 			<th id="list-of-shortys-until"    data-aspect="until"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Expiration'));?></div></th>
 			<th id="list-of-shortys-created"  data-aspect="created"  class="collapsible"><div><?php p(OC_Shorty_L10n::t('Creation'));  ?></div></th>
-			<th id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible"><div><?php p(OC_Shorty_L10n::t('Last'));      ?></div></th>
+			<th id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible"><div><?php p(OC_Shorty_L10n::t('Access'));    ?></div></th>
 			<th id="list-of-shortys-status"   data-aspect="status"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Status'));    ?></div></th>
 			<th id="list-of-shortys-actions"  data-aspect="actions"><div>&nbsp;</div></th>
 		</tr>
