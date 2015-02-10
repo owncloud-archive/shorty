@@ -56,11 +56,21 @@ class OC_Shorty_Backend
 	 */
 	static function getBackendTypes()
 	{
+		// the hard coded list of implemented backends
 		$backend_types = OC_Shorty_Type::$BACKENDS;
+
+		// filter by saved system setting
 		$backend_selection = OCP\Config::getAppValue('shorty','backend-selection');
 		if ($backend_selection) {
 			$backend_types = array_intersect_key($backend_types, array_flip(explode(',', $backend_selection)));
 		}
+
+		// kick out static backend if no base is configured
+		$backend_static_base = OCP\Config::getAppValue('shorty','backend_static_base');
+		if ( empty($backend_static_base) ) {
+			unset($backend_types['static']);
+		}
+
 		if ( empty($backend_types) )
 			$backend_types = array ( 'none' => OC_Shorty_Type::$BACKENDS['none'] );
 		return $backend_types;
@@ -89,7 +99,7 @@ class OC_Shorty_Backend
 
 	/**
 	 * @method OC_Shorty_Backend::getBackendPreference
-	 * @brief Get system backend default
+	 * @brief Get personal backend preference
 	 * @return string user backend key
 	 * @static
 	 * @access public
@@ -127,7 +137,7 @@ class OC_Shorty_Backend
 				|| ! isset($backend_type, $backend_types) ) {
 				OCP\Config::getAppValue('shorty','backend-default','none');
 			}
-			switch (self::getBackendType())
+			switch (self::getBackendPreference())
 			{
 				default:
 					return OC_Shorty_Backend::registerUrl_default ( $id, $relay );
