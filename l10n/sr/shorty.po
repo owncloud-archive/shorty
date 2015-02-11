@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
+"PO-Revision-Date: 2015-02-10 08:10+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/owncloud/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -68,7 +68,7 @@ msgid "public"
 msgstr ""
 
 msgid "shared"
-msgstr ""
+msgstr "Дељено"
 
 # actions ("to be done")
 msgid "delete"
@@ -376,7 +376,7 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr ""
+msgstr "Поново учитај"
 
 msgid "Reload list"
 msgstr ""
