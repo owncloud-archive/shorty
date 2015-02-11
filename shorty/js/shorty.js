@@ -505,7 +505,7 @@ OC.Shorty={
 
 							default: // probably an action registered by another plugin...
 								// execute the function specified inside the clicked element:
-								if (typeof $(element).attr('data-method')!=undefined){
+								if (typeof $(element).attr('data-method')!=='undefined'){
 									if (OC.Shorty.Debug) OC.Shorty.Debug.log("handing control over entry '"+entry.attr('id')+"' to registered action");
 									executeFunctionByName($(element).attr('data-method'),$(window),entry);
 								}
@@ -736,7 +736,7 @@ OC.Shorty={
 					}).done(function(){
 						$.when(
 							OC.Shorty.WUI.List.Column.initAll('list-of-shortys'),
-							OC.Shorty.WUI.List.show(),
+							OC.Shorty.WUI.List.show(null),
 							OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
 						).always(function(){
 							OC.Shorty.WUI.Hourglass.toggle(false);
@@ -887,7 +887,7 @@ OC.Shorty={
 			 */
 			hide: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("hide list");
-				duration = 'slow';
+				duration = duration || 'slow';
 				var dfd = new $.Deferred();
 				var list = $('#list-of-shortys');
 				if ( ! list.is(':visible'))
@@ -944,7 +944,7 @@ OC.Shorty={
 									'accessed',
 									'until',
 									'notes'],function(j,aspect){
-						if (typeof set[aspect]===undefined) set[aspect]='';
+						if (typeof set[aspect]==='undefined') set[aspect]='';
 						// enhance row with actual set values
 						row.attr('data-'+this,set[aspect]);
 						if (hidden) row.addClass('shorty-fresh');
@@ -1007,7 +1007,7 @@ OC.Shorty={
 			 */
 			show: function(duration){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("show list");
-				duration = duration | 'slow';
+				duration = duration || 'slow';
 				var dfd = new $.Deferred();
 				var list = $('#list-of-shortys');
 				if (list.is(':visible'))
@@ -1063,10 +1063,11 @@ OC.Shorty={
 			 * @author Christian Reiner
 			 */
 			toggle: function(duration){
+                duration = duration || 'slow';
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("toggle list");
 				if (list.is(':visible'))
-					 return OC.Shorty.WUI.List.hide();
-				else return OC.Shorty.WUI.List.show();
+					 return OC.Shorty.WUI.List.hide(duration);
+				else return OC.Shorty.WUI.List.show(duration);
 			}, // OC.Shorty.WUI.List.toggle
 			/**
 			 * @method OC.Shorty.WUI.List.vacuum
@@ -1665,7 +1666,7 @@ OC.Shorty={
 					if (OC.Shorty.Debug){OC.Shorty.Debug.log("got setting(s):");OC.Shorty.Debug.log(response.data);}
 				}).done(function(response){
 					dfd.resolve(response.data);
-				}).fail(function(response){
+				}).fail(function(){
 					dfd.reject({});
 				});
 				return dfd.promise();
@@ -1732,7 +1733,7 @@ OC.Shorty={
 					// close and neutralize dialog
 					OC.Shorty.WUI.Dialog.hide(dialog),
 					OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
-					OC.Shorty.WUI.List.show()
+					OC.Shorty.WUI.List.show(null)
 				).done(function(){
 					var data={
 						status:  status,
@@ -1795,7 +1796,7 @@ OC.Shorty={
 					// close and neutralize dialog
 					OC.Shorty.WUI.Dialog.hide(dialog),
 					OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
-					OC.Shorty.WUI.List.show()
+					OC.Shorty.WUI.List.show(null)
 				).done(function(){
 					var data={
 						id:      id,
@@ -2255,7 +2256,7 @@ OC.Shorty={
 			$.when(
 				OC.Shorty.Action.Setting.get('backend-selection')
 			).done(function(result){
-				var backendSelection = $.parseJson(result['backend-selection']) || [];
+				var backendSelection = $.parseJSON(result['backend-selection']) || [];
 				dfd.resolve(backendSelection);
 			}).fail(dfd.reject);
 			return dfd.promise();
@@ -2441,7 +2442,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 				var span=$('<span />');
 				span.addClass('ellipsis');
 				// enhance row with real set values
-				if (typeof set[aspect]==undefined)
+				if (typeof set[aspect]==='undefined')
 					row.attr('data-'+this,'');
 				else row.attr('data-'+this,set[aspect]);
 				// fill data into corresponsing column
