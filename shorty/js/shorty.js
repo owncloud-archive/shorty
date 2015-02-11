@@ -665,7 +665,7 @@ OC.Shorty={
 						dfd.resolve();
 					else
 						$.when(
-							hourglass.fadeIn('fast')
+							hourglass.fadeIn('slow')
 						).done(dfd.resolve)
 				}else{
 					if (!hourglass.is(':visible'))
@@ -721,23 +721,23 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("build list");
 				OC.Shorty.WUI.Messenger.hide();
 				var dfd = new $.Deferred();
+				var list = $('#list-of-shortys').first();
 				// prepare loading
 				$.when(
 					OC.Shorty.WUI.Hourglass.toggle(true),
-					OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false)
+					OC.Shorty.WUI.List.dim(list,false)
 				).done(function(){
 					// retrieve new entries
 					$.when(
 						OC.Shorty.WUI.List.get()
 					).pipe(function(response){
-						var list = $('#list-of-shortys');
 						OC.Shorty.WUI.List.empty(list.first());
 						OC.Shorty.WUI.List.fill.apply(OC.Shorty.Runtime.Context.ListOfShortys,[list.first(),response.data]);
 					}).done(function(){
 						$.when(
 							OC.Shorty.WUI.List.Column.initAll('list-of-shortys'),
 							OC.Shorty.WUI.List.show(null),
-							OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true)
+							OC.Shorty.WUI.List.dim(list,true)
 						).always(function(){
 							OC.Shorty.WUI.Hourglass.toggle(false);
 							dfd.resolve();
@@ -762,12 +762,14 @@ OC.Shorty={
 				var body=list.find('tbody');
 				if (show)
 				{
+					// if there is a fresh row then select it (as if clicked)
 					var rows=body.find('tr.shorty-fresh');
 					OC.Shorty.WUI.List.highlight(list,rows.first());
 					$.when(
 						OC.Shorty.WUI.List.vacuum(),
 						body.fadeIn(duration)
 					).pipe(function(){
+						// pulsate fresh rows
 						rows.each(function(){
 							$(this).removeClass('shorty-fresh');
 							$(this).find('td').effect('pulsate', { times:3 }, 2000);
@@ -1716,14 +1718,15 @@ OC.Shorty={
 			add:function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action add url");
 				var dfd=new $.Deferred();
-				var dialog   =$('#dialog-add');
-				var status   =dialog.find('#status').val()||'public';
-				var target   =dialog.find('#target').val()||'';
-				var title    =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
-				var notes    =dialog.find('#notes').val()||'';
-				var created  =dialog.find('#created').val()||'';
-				var accessed =dialog.find('#accessed').val()||'';
-				var until    =dialog.find('#until').val()||'';
+				var list     = $('#list-of-shortys').first();
+				var dialog   = $('#dialog-add');
+				var status   = dialog.find('#status').val()||'public';
+				var target   = dialog.find('#target').val()||'';
+				var title    = dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
+				var notes    = dialog.find('#notes').val()||'';
+				var created  = dialog.find('#created').val()||'';
+				var accessed = dialog.find('#accessed').val()||'';
+				var until    = dialog.find('#until').val()||'';
 				// store favicon from meta data, except it is the internal default blank
 				var favicon = dialog.find('#meta #favicon').attr('src');
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
@@ -1732,7 +1735,8 @@ OC.Shorty={
 					OC.Shorty.WUI.Messenger.hide(),
 					// close and neutralize dialog
 					OC.Shorty.WUI.Dialog.hide(dialog),
-					OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
+					OC.Shorty.WUI.List.dim(list,false),
+					OC.Shorty.WUI.Hourglass.toggle(true),
 					OC.Shorty.WUI.List.show(null)
 				).done(function(){
 					var data={
@@ -1760,12 +1764,12 @@ OC.Shorty={
 						OC.Shorty.WUI.Dialog.reset(dialog)
 					}).done(function(response){
 						// add shorty to existing list
-							var list = $('#list-of-shortys');
-						OC.Shorty.WUI.List.add.apply(OC.Shorty.Runtime.Context.ListOfShortys,[list.first(),[response.data],true]);
-						OC.Shorty.WUI.List.dim(list.first(),true);
+						OC.Shorty.WUI.List.add.apply(OC.Shorty.Runtime.Context.ListOfShortys,[list,[response.data],true]);
+						OC.Shorty.WUI.Hourglass.toggle(false);
+						OC.Shorty.WUI.List.dim(list,true);
 						dfd.resolve(response);
 					}).fail(function(response){
-						OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true);
+						OC.Shorty.WUI.List.dim(list,true);
 						dfd.reject(response);
 					})
 				});
@@ -1778,15 +1782,16 @@ OC.Shorty={
 			edit: function(){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("action modify url");
 				var dfd=new $.Deferred();
-				var dialog=$('#dialog-edit');
-				var id       =dialog.find('#id').val();
-				var status   =dialog.find('#status').val()||'blocked';
-				var title    =dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
-				var target   =dialog.find('#target').val()||'';
-				var notes    =dialog.find('#notes').val()||'';
-				var created  =dialog.find('#created').val()||'';
-				var accessed =dialog.find('#accessed').val()||'';
-				var until    =dialog.find('#until').val()||'';
+				var list     = $('#list-of-shortys').first();
+				var dialog   = $('#dialog-edit');
+				var id       = dialog.find('#id').val();
+				var status   = dialog.find('#status').val()||'blocked';
+				var title    = dialog.find('#title').val()||dialog.find('#title').attr('placeholder');
+				var target   = dialog.find('#target').val()||'';
+				var notes    = dialog.find('#notes').val()||'';
+				var created  = dialog.find('#created').val()||'';
+				var accessed = dialog.find('#accessed').val()||'';
+				var until    = dialog.find('#until').val()||'';
 				// store favicon from meta data, except it is the internal default blank
 				var favicon = dialog.find('#meta #favicon').attr('src');
 				favicon=(favicon==dialog.find('#meta #favicon').attr('data'))?'':favicon;
@@ -1795,7 +1800,8 @@ OC.Shorty={
 					OC.Shorty.WUI.Messenger.hide(),
 					// close and neutralize dialog
 					OC.Shorty.WUI.Dialog.hide(dialog),
-					OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),false),
+					OC.Shorty.WUI.List.dim(list,false),
+					OC.Shorty.WUI.Hourglass.toggle(true),
 					OC.Shorty.WUI.List.show(null)
 				).done(function(){
 					var data={
@@ -1821,7 +1827,8 @@ OC.Shorty={
 						OC.Shorty.WUI.Dialog.reset(dialog);
 						// modify existing entry in list
 						OC.Shorty.WUI.List.modify([response.data],true);
-						OC.Shorty.WUI.List.dim($('#list-of-shortys').first(),true);
+						OC.Shorty.WUI.Hourglass.toggle(false);
+						OC.Shorty.WUI.List.dim(list,true);
 						dfd.resolve(response);
 					}).fail(function(response){
 						dfd.reject(response);
