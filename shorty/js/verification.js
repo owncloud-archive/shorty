@@ -50,16 +50,22 @@ var check = function() {
 				 	 	response.hasOwnProperty('instance') && response.instance===instance) {
 				 	 	anchor.setAttribute('data-verification-state', ('success'===response.status) ? 'valid' : 'invalid-X');
 				 	} else {
-				 		anchor.setAttribute('data-verification-state', 'invalid-XX');
+				 		anchor.setAttribute('data-verification-state', 'invalid');
 				 	}
 				} catch (e) {
-					anchor.setAttribute('data-verification-state', 'invalid-XXX');
+					anchor.setAttribute('data-verification-state', 'invalid');
 				}
 			}
 		}
 		if ( 'active' != anchor.getAttribute('data-verification-state' )) {
 			window.parent.postMessage('data-verification-state-changed', window.location);
 		}
+	};
+	xmlhttp.onerror = function () {
+        anchor.setAttribute('data-verification-state', 'invalid');
+	};
+    xmlhttp.ontimeout = function () {
+        anchor.setAttribute('data-verification-state', 'invalid');
 	};
 	xmlhttp.open('GET', target + '0000000000', true);
 	xmlhttp.send();
