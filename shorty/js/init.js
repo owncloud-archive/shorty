@@ -87,7 +87,7 @@ $(document).ready(function(){
 		// update corresponding list entry too
 		$(this).parents('tr').find('td[data-aspect="status"] span').text(label);
 	});
-	// refresh click count when clicking source or relay in embedded share dialog
+	// increment click count when clicking source or relay in embedded share dialog
 	$(document).on('click','.shorty-embedded#dialog-share .shorty-usages a#source',[],function(){
 		OC.Shorty.WUI.Sums.increment.apply(
 			OC.Shorty.Runtime.Context.ListOfShortys,

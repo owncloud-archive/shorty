@@ -1545,7 +1545,7 @@ OC.Shorty={
 				var clicks=parseInt(entry.attr('data-clicks'),10)+1;
 				entry.attr('data-accessed',Math.round((new Date()).getTime()/1000));
 				entry.attr('data-clicks',clicks);
-				entry.find('td#clicks span').text(clicks);
+				entry.find('td#list-of-shortys-clicks span').text(clicks);
 				var sum = $('#controls #sum_clicks');
 				sum.text(parseInt(sum.text(),10)+1);
 			} // OC.Shorty.WUI.Sums.increment
