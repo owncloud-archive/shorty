@@ -41,7 +41,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
+"PO-Revision-Date: 2015-02-12 00:20+0000\n"
 "Last-Translator: Adrián López Galera <adrian_201@hotmail.es>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/owncloud/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -268,7 +268,7 @@ msgid "Counted entries and clicks"
 msgstr "Entradas y clics contados"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr "Cree un nuevo 'Shorty' y compartalo"
+msgstr "Cree un nuevo 'Shorty' y compártalo"
 
 msgid "Creation"
 msgstr "Creación"
@@ -322,7 +322,7 @@ msgid "Modify shorty"
 msgstr "Modificar Shorty"
 
 msgid "New Shorty"
-msgstr "Nuevo Shorty"
+msgstr "Nuevo shorty"
 
 msgid "Notes"
 msgstr "Notas"
@@ -340,7 +340,7 @@ msgid "QRCode"
 msgstr "Codigo QR"
 
 msgid "Open source url"
-msgstr "Abrir url origen"
+msgstr "Abrir url de origen"
 
 msgid "Open relay url"
 msgstr "Abrir URL interna"
@@ -430,7 +430,7 @@ msgid "Share and use"
 msgstr "Compartir y usar"
 
 msgid "Share shorty"
-msgstr "Compartir Shorty"
+msgstr "Compartir shorty"
 
 msgid "Shortlet"
 msgstr "Shortlet"
@@ -511,7 +511,7 @@ msgid "then paste into message"
 msgstr "despúes pégalo en un mensaje"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr "Este código de barras 2D codifica la URL a la que apunta este Shorty"
+msgstr "Este código de barras 2D codifica la URL a la que apunta este shorty"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Esto es una URL interna abreviada a la que apunta la URL acortada"
@@ -550,7 +550,7 @@ msgid "Url shortened to: %s"
 msgstr "Url acortada a: %s"
 
 msgid "Use it in web pages by referencing or embedding"
-msgstr "Úselo en las páginas referenciandolo o insertándolo"
+msgstr "Úselo en las páginas referenciándolo o insertándolo"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
 msgstr "Utilice el botón de '%s' por encima o el 'Shortlet'"
@@ -748,7 +748,7 @@ msgid ""
 msgstr "Este motor ahora se ofrece como un motor alternativo adicional a todos los usuarios locales dentro de sus preferencias personales."
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr "¡Lo sentimos, pero tu configuración no parece estar funcionando correctamente todavía!"
+msgstr "¡Lo sentimos, pero su configuración no parece estar funcionando correctamente todavía!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"

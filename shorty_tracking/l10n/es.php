@@ -10,7 +10,7 @@
 "Click details" => "detalles",
 "Clicks" => "Clicks",
 "Host" => "Servidor",
-"List clicks" => "Listar Clicks",
+"List clicks" => "Listar clicks",
 "List of tracked clicks" => "Lista de clicks grabados",
 "Result" => "Resultado",
 "Time" => "Hora",
