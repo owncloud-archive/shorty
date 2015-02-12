@@ -171,7 +171,7 @@ class OC_Shorty_Backend
 		} // catch
 		catch (Exception $e)
 		{
-			throw new OC_Shorty_Exception ( "Failed to register url '%s' at '%s' backend.", array($relay,$type) );
+			throw new OC_Shorty_Exception ( "Failed to register url '%s' at '%s' backend.", array($relay,$backend_type) );
 		} // catch
 	} // OC_Shorty_Backend::registerUrl
 
@@ -180,7 +180,7 @@ class OC_Shorty_Backend
 	 * @brief Pseudo-registers a given local relay url
 	 * @param $id string
 	 * @param $relay string
-	 * @return url : Validated and pseudo-registered relay
+	 * @return string Validated and pseudo-registered relay
 	 * @throws OC_Shorty_Exception
 	 * @static
 	 * @access public
@@ -194,9 +194,9 @@ class OC_Shorty_Backend
 	/**
 	 * @method OC_Shorty_Backend::registerUrl_static
 	 * @brief Registers a given local relay url as local static shorty
-	 * @internal param id $string
-	 * @internal param relay $url
-	 * @return url : Registered and validated relay url
+	 * @param $id
+	 * @param $relay
+	 * @return string Registered and validated relay url
 	 * @throws OC_Shorty_Exception
 	 * @access public
 	 * @author Chrisian Reiner
@@ -212,8 +212,8 @@ class OC_Shorty_Backend
 	/**
 	 * @method OC_Shorty_Backend::registerUrl_bitly
 	 * @brief Registers a given local relay url at the bit.ly shortening service
-	 * @internal param id $string
-	 * @internal param relay $url
+	 * @param string $id
+	 * @param string $relay
 	 * @return mixed|NULL : Registered and validated relay url
 	 * @throws OC_Shorty_Exception
 	 * @static
@@ -255,8 +255,9 @@ class OC_Shorty_Backend
 	 * @method OC_Shorty_Backend::registerUrl_cligs
 	 * @brief Registers a given local relay url at the cli.gs shortening service
 	 * @internal param string $i
+	 * @param $id
 	 * @param $relay string
-	 * @return Registered and validated relay url
+	 * @return string Registered and validated relay url
 	 * @throws OC_Shorty_Exception
 	 * @static
 	 * @access public
@@ -282,7 +283,8 @@ class OC_Shorty_Backend
 	 * @brief Registers a given local relay url at the is.gd shortening service
 	 * @param $id string
 	 * @param $relay string
-	 * @return Registered and validated relay url
+	 * @return string Registered and validated relay url
+	 * @throws OC_Shorty_Exception
 	 * @static
 	 * @access public
 	 * @author Chrisian Reiner
@@ -302,16 +304,17 @@ class OC_Shorty_Backend
 		return OC_Shorty_Type::validate ( $match[1], OC_Shorty_Type::URL );
 	} // OC_Shorty_Backend::registerUrl_isgd
 
-	/**
-	 * @method OC_Shorty_Backend::registerUrl_google
-	 * @brief Registers a given local relay url at the google shortening service
-	 * @param $id string
-	 * @param $relay string
-	 * @return Registered and validated relay url
-	 * @static
-	 * @access public
-	 * @author Chrisian Reiner
-	 */
+ 	/**
+ 	 * @method OC_Shorty_Backend::registerUrl_google
+ 	 * @brief Registers a given local relay url at the google shortening service
+ 	 * @param $id string
+ 	 * @param $relay string
+ 	 * @return string Registered and validated relay url
+ 	 * @throws OC_Shorty_Exception
+ 	 * @static
+ 	 * @access public
+ 	 * @author Chrisian Reiner
+ 	 */
 	static function registerUrl_google ( $id, $relay )
 	{
 		$api_key = OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-google-key','');
@@ -343,7 +346,7 @@ class OC_Shorty_Backend
 	 * @brief Registers a given local relay url at the tiny.cc shortening service
 	 * @param $id string
 	 * @param $relay string
-	 * @return Registered and validated relay url
+	 * @return string Registered and validated relay url
 	 * @throws OC_Shorty_Exception
 	 * @static
 	 * @access public
@@ -385,7 +388,7 @@ class OC_Shorty_Backend
 	 * @brief Registers a given local relay url at the tinyURL shortening service
 	 * @param $id string
 	 * @param $relay string
-	 * @return Registered and validated relay url
+	 * @return string Registered and validated relay url
 	 * @throws OC_Shorty_Exception
 	 * @static
 	 * @access public

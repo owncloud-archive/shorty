@@ -42,7 +42,7 @@ class OC_ShortyTracking_Hooks
 	/**
 	 * @method OC_ShortyTracking_Hooks::deleteShortyClicks
 	 * @brief Deletes all alien clicks, clicks that have no corresponding Shorty any more (deleted)
-	 * @param paramters (array) parameters from emitted signal
+	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 * @description
 	 * This is a cleanup routine. It removes all previously recorded clicks from the database table that
@@ -68,7 +68,7 @@ class OC_ShortyTracking_Hooks
 	/**
 	 * @method OC_ShortyTracking_Hooks::registerClick
 	 * @brief Records details of request clicks targeting existing Shortys
-	 * @param paramters (array) parameters from emitted signal
+	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 * @description
 	 * This routine accepts an associative array of attributes that describe a
@@ -101,7 +101,7 @@ class OC_ShortyTracking_Hooks
 	/**
 	 * @method OC_ShortyTracking_Hooks::registerIncludes
 	 * @brief Registers additional includes required by this plugin
-	 * @param paramters (array) parameters from emitted signal
+	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 */
 	public static function registerIncludes ( $parameters )
@@ -116,7 +116,7 @@ class OC_ShortyTracking_Hooks
 	/**
 	 * @method OC_ShortyTracking_Hooks::registerActions
 	 * @brief Registers additional actions as expected by the Shorty app
-	 * @param paramters (array) parameters from emitted signal
+	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 */
 	public static function registerActions ( $parameters )
@@ -144,7 +144,7 @@ class OC_ShortyTracking_Hooks
 	/**
 	 * @method OC_ShortyTracking_Hooks::registerDetails
 	 * @brief Registers details describing this plugin as expected by the Shorty app
-	 * @param paramters (array) parameters from emitted signal
+	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 */
 	public static function registerDetails ( $parameters )
@@ -168,7 +168,7 @@ class OC_ShortyTracking_Hooks
 	/**
 	 * @method OC_ShortyTracking_Hooks::registerQueries
 	 * @brief Registers queries to be offered as expected by the Shorty app
-	 * @param paramters (array) parameters from emitted signal
+	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 */
 	public static function registerQueries ( $parameters )

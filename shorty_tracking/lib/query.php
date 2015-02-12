@@ -38,7 +38,7 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 			const CLICK_RECORD                = "INSERT INTO *PREFIX*shorty_tracking (shorty,time,address,host,\"user\",result) VALUES (:shorty,:time,:address,:host,:user,:result)";
 			const CLICK_LIST_START            = "SELECT id,time,address,host,\"user\",result FROM *PREFIX*shorty_tracking WHERE shorty=:shorty ORDER BY id desc LIMIT :limit";
 			const CLICK_LIST_CHUNK            = "SELECT id,time,address,host,\"user\",result FROM *PREFIX*shorty_tracking WHERE shorty=:shorty AND id<:offset ORDER BY id desc LIMIT :limit";
-			const CLICK_LIST_STATS            = "SELECT count(*) AS length,MIN(time) AS earliest,MAX(time) AS latest,MIN(id) as first FROM *PREFIX*shorty_tracking WHERE shorty=:shorty";
+			const CLICK_LIST_STATS            = "SELECT cou1nt(*) AS length,MIN(time) AS earliest,MAX(time) AS latest,MIN(id) as first FROM *PREFIX*shorty_tracking WHERE shorty=:shorty";
 			const CLICK_WIPE                  = "DELETE FROM *PREFIX*shorty_tracking ..... all clicks where entry in *PREFIX*shorty does NOT exist any more";
 			const QUERY_TRACKING_SINGLE_USAGE = "SELECT s.*,count(t.id) AS usage,min(t.time) as first,max(t.time) as last FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) WHERE s.id=:shorty GROUP BY s.id";
 			const QUERY_TRACKING_SINGLE_LIST  = "SELECT s.*,t.* FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) WHERE s.id=:shorty";

@@ -64,9 +64,9 @@
 			<!-- a button to open/close the toolbar below -->
 			<th id="list-of-shortys-favicon" data-aspect="favicon">
 				<div>
-					<img id="list-of-shortys-tools" class="shorty-tools" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
-							 class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
-							 data-unshade="actions/unshade" data-shade="actions/shade">
+					<img id="list-of-shortys-tools" class="shorty-tools svg" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
+						src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
+						data-unshade="actions/unshade" data-shade="actions/shade">
 				</div>
 			</th>
 			<th id="list-of-shortys-title"    data-aspect="title"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Title'));     ?></div></th>
@@ -134,7 +134,7 @@
 				<div style="display:none;">
 					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
 					<span class="shorty-select">
-						<select id="filter-status" class="shorty-filter" value="" data-placeholder=" ">
+						<select id="filter-status" class="shorty-filter" data-placeholder=" ">
 						<?php foreach($_['shorty-status'] as $option=>$label)
 							print_unescaped(sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label));
 						?>
@@ -156,8 +156,6 @@
 			data-target=""
 			data-clicks=""
 			data-until=""
-			data-created=""
-			data-accessed=""
 			data-created=""
 			data-accessed=""
 			data-notes="">

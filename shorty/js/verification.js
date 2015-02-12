@@ -62,10 +62,10 @@ var check = function() {
 		}
 	};
 	xmlhttp.onerror = function () {
-        anchor.setAttribute('data-verification-state', 'invalid');
+		anchor.setAttribute('data-verification-state', 'invalid');
 	};
     xmlhttp.ontimeout = function () {
-        anchor.setAttribute('data-verification-state', 'invalid');
+		anchor.setAttribute('data-verification-state', 'invalid');
 	};
 	xmlhttp.open('GET', target + '0000000000', true);
 	xmlhttp.send();

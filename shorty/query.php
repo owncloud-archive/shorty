@@ -49,7 +49,6 @@ try
 		':id'     => $p_id,
 		':sort'   => OC_Shorty_Type::$SORTING[$p_sort],
 		':format' => $p_format,
-		':sort'   => $p_sort,
 		':query'  => $p_query,
 	);
 

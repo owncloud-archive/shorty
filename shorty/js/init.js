@@ -134,7 +134,7 @@ $(document).ready(function(){
 		dateFormat :'yy-mm-dd',
 		changeMonth: true,
 		changeYear: true,
-// 		minDate: '+1',
+//		minDate: '+1',
 		firstDay: 1,
 		showOtherMonths: true,
 		selectOtherMonths: true,

@@ -26,7 +26,7 @@
 /**
  * @file ajax/settings.php
  * @brief Ajax method to store one or more system settings  (plugin settings)
- * @param string backend-static-base: Url to use as a base when the static backend is active (plugins default, may be overridden by user preference)
+ * @param string $backend-static-base: Url to use as a base when the static backend is active (plugins default, may be overridden by user preference)
  * @return json: success/error state indicator
  * @return json: Associative array holding the stored values by their key
  * @return json: Human readable message describing the result

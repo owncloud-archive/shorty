@@ -83,7 +83,7 @@ class OC_Shorty_Tools
 	/**
 	 * @method OC_Shorty_Tools::db_escape
 	 * @brief Escape a value for incusion in db statements
-	 * @param string value: Value to be escaped
+	 * @param string $value: Value to be escaped
 	 * @return string: Escaped string value
 	 * @throws OC_Shorty_Exception In case of an unknown database engine
 	 * @access public
@@ -171,8 +171,11 @@ class OC_Shorty_Tools
 	/**
 	 * @method OC_Shorty_Tools::convertToAlphabet
 	 * @brief Converts a given decimal number into an arbitrary base (alphabet)
-	 * @param integer number: Decimal numeric value to be converted
-	 * @return string: Converted value in string notation
+	 * @param integer $number : Decimal numeric value to be converted
+	 * @param string $alphabet
+	 * @return string : Converted value in string notation
+	 * @throws OC_Shorty_Exception
+	 * @throw OC_Shorty_Exception
 	 * @access public
 	 * @author Christian Reiner
 	 */
@@ -228,7 +231,8 @@ class OC_Shorty_Tools
 		/**
 		 * @method OC_Shorty_Tools::checkSubjectHash
 		 * @brief Checks if a given hashes matches a given subject
-		 * @param $subject
+		 * @param string $subject
+		 * @param string $hash
 		 * @return string The hashed subject
 		 * @throws OC_Shorty_Exception
 		 */
@@ -240,6 +244,7 @@ class OC_Shorty_Tools
 	/**
 	 * @method OC_Shorty_Tools::proxifyReference
 	 * @brief Creates a reference to the internal proxy feature
+     * @param string $mode proxy mode name (identifier)
 	 * @param string $subject: The subject to be handed over as reference query 'id'
 	 * @param bool $hash: Whether to create an additional hash inside the created reference
 	 * @return string
@@ -287,7 +292,7 @@ class OC_Shorty_Tools
 	/**
 	 * @method OC_Shorty_Tools::relayUrl
 	 * @brief Generates a relay url for a given id acting as a href target for all backends
-	 * @param string id: Shorty id as shorty identification
+	 * @param string $id: Shorty id as shorty identification
 	 * @return string: Generated absolute relay url
 	 * @access public
 	 * @author Christian Reiner
@@ -319,6 +324,8 @@ class OC_Shorty_Tools
 	/**
 	 * @method OC_Shorty_Tools::versionCompare
 	 * @brief Compares a given version (string notation) with the running ownCloud version
+	 * @param string $operator mathematical comparision operator
+	 * @param $cpVersion
 	 * @return integer the major version number
 	 * @access public
 	 * @author Christian Reiner
@@ -326,7 +333,7 @@ class OC_Shorty_Tools
 	 * The major version of the OC framework is relevant for a few compatibility issues.
 	 * It has to be checked against often when for example rendering templates, to add or suppres version dependant options.
 	 */
-	static function versionCompare ($operator,$cpVersion)
+	static function versionCompare ($operator, $cpVersion)
 	{
 		$ocVersion = implode('.',OCP\Util::getVersion());
 		return (version_compare($ocVersion,$cpVersion,$operator));
@@ -335,7 +342,8 @@ class OC_Shorty_Tools
 	/**
 	 * @method OC_Shorty_Tools::toBoolean
 	 * @brief Propper conversion of a value to boolean
-	 * @param value boolean some value to be casted to boolean
+	 * @param boolean $value some value to be casted to boolean
+	 * @param $strict
 	 * @return boolean the casted boolean value or NULL
 	 * @access public
 	 * @author Christian Reiner

@@ -56,6 +56,7 @@ class OC_Shorty_L10n
 	/**
 	 * @method OC_Shorty_L10n::__construct
 	 * @brief
+	 * @param string $app
 	 * @access protected
 	 * @author Christian Reiner
 	 */

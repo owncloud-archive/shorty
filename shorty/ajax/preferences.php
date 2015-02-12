@@ -26,15 +26,15 @@
 /**
  * @file ajax/preferences.php
  * @brief Ajax method to store one or more personal preferences
- * @param string backend-type: Identifier of chosen backend type
- * @param string backend-static-base: Url to use as a base when the static backend is active
- * @param string backend-google-key: Personal authentication key to use when the google backend is active
- * @param string backend-bitly-key: Personal authentication key to use when the bit.li backend is active
- * @param string backend-bitly-user: Personal authentication user to use when the bit.li backend is active
- * @param string sms-control: Controls wether a 'send as sms' action should be offered is the sharing dialog
- * @param string verbosity-control: A severity threshold controlling what messages will be displayed to the user
- * @param string verbosity-timeout: An oiptional time span after which shown messages will be hidden again automatically
- * @param string list-sort-code: Two character sorting key controlling the active sorting of shorty lists
+ * @param string $backend-type: Identifier of chosen backend type
+ * @param string $backend-static-base: Url to use as a base when the static backend is active
+ * @param string $backend-google-key: Personal authentication key to use when the google backend is active
+ * @param string $backend-bitly-key: Personal authentication key to use when the bit.li backend is active
+ * @param string $backend-bitly-user: Personal authentication user to use when the bit.li backend is active
+ * @param string $sms-control: Controls wether a 'send as sms' action should be offered is the sharing dialog
+ * @param string $verbosity-control: A severity threshold controlling what messages will be displayed to the user
+ * @param string $verbosity-timeout: An oiptional time span after which shown messages will be hidden again automatically
+ * @param string $list-sort-code: Two character sorting key controlling the active sorting of shorty lists
  * @return json: success/error state indicator
  * @return json: Associative array holding the stored values by their key
  * @return json: Human readable message describing the result

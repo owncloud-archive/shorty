@@ -49,15 +49,15 @@ try
 	$query = OCP\DB::prepare ( OC_Shorty_Query::URL_REMOVE );
 	$result = $query->execute(array(':user'=>OCP\User::getUser()));
 	// now comes the real list selection
-//   define ('PAGE_SIZE', 100);
-//   $p_offset = OC_Shorty_Type::req_argument ( 'page', OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
+//	define ('PAGE_SIZE', 100);
+//	$p_offset = OC_Shorty_Type::req_argument ( 'page', OC_Shorty_Type::INTEGER, FALSE) * PAGE_SIZE;
 	// pre-sort list according to user preferences
 	$p_sort = OC_Shorty_Type::$SORTING[OCP\Config::getUserValue(OCP\User::getUser(),'shorty','list-sort-code','cd')];
 	$param = array (
 		':user'   => OCP\User::getUser ( ),
 		':sort'   => $p_sort,
-// 		':offset' => $p_offset,
-// 		':limit'  => PAGE_SIZE,
+//		':offset' => $p_offset,
+//		':limit'  => PAGE_SIZE,
 	);
 	$query = OCP\DB::prepare ( OC_Shorty_Query::URL_LIST );
 	$result = $query->execute($param);

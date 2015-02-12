@@ -29,103 +29,12 @@
  * @author Christian Reiner
  */
 
-// we use the late event $(window).load() instead of $(document).ready(),
-// since otherwise the binding of the ajax request token (CSRF protection)
-// has not yet finished before we try to use it...
-// TODO: OC-4 compatibility: use document.ready instead of window.load when dropping OC-4 compatibility
-$(window).load(function(){
-	var dfd = new $.Deferred();
-	$.when(
-		// load layout of dialog to show the list of tracked clicks
-		OC.Shorty.Tracking.init()
-	).done(function(){
-	// bind actions to basic buttons
-	OC.Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
-		OC.Shorty.WUI.Dialog.hide(OC.Shorty.Tracking.Dialog.List);
-	});
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-toolbar .shorty-reload')
-		.on('click',function(){OC.Shorty.Tracking.build(false);});
-	OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load')
-		.on('click',function(){OC.Shorty.Tracking.build(true);});
-	// when clicking inside cells: highlight 'associated' cells: cells with same content
-	$(document).on('mouseenter','#list-of-clicks tbody tr td.associative span',[],function(){
-		// look for cells inside the same column that have the same content (text)
-		var cells=$(this).parents('tbody').find('tr td#'+$(this).parent().attr('id'));
-		// add class 'associated' to matching columns
-		cells.find('span:contains('+$(this).text()+')').addClass("associated");
-		// add class 'DEsociated' to matching columns
-		cells.find('span:not(.associated)').addClass("desociated");
-	});
-	// neutralize the hover effect of the previous lines
-	$(document).on('mouseleave','#list-of-clicks tbody tr td.associative span.associated',[],function(){
-		$(this).parents('tbody').find('tr td#'+$(this).parent().attr('id')+' span').removeClass("associated").removeClass("desociated");});
-	// when clicking inside cells: set column filter
-	$(document).on('click','#list-of-clicks tbody tr td.associative:not(.collapsed) span',[],function(){
-		var input=$(this).parents('table').find('thead tr.shorty-toolbar th[data-aspect="'+$(this).parent().attr('data-aspect')+'"]').find('input,select');
-		var value;
-		// open toolbar if still hidden
-		if (input.parent().is(':hidden'))
-			OC.Shorty.WUI.List.Toolbar.toggle.apply(OC.Shorty.Runtime.Context.ListOfClicks,[$('#list-of-clicks')]);
-		// set filter value
-		if(input.is('select')){
-			// use technical value of the matching option instead of the translated value
-			value=input.find('option:contains('+$(this).text()+')').first().attr('value');
-			input.val(value).effect('pulsate');
-		}else{ // fallback: text input field
-			// value is not ranslated but literal, so use it directly
-			value=$(this).text();
-			input.val(value).effect('pulsate');
-		} // if-else
-		// apply filter value
-		OC.Shorty.WUI.List.filter.apply(
-			OC.Shorty.Runtime.Context.ListOfClicks,
-			[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-				$(this).parent().attr('data-aspect'),
-				input.val()
-			]);
-	});
-	// column filter reaction
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
-		.find('thead tr.shorty-toolbar').find('th[data-aspect="time"],th[data-aspect="address"],th[data-aspect="host"],th[data-aspect="user"]').find('.shorty-filter')
-		.on('keyup',function(){
-			OC.Shorty.WUI.List.filter.apply(
-				OC.Shorty.Runtime.Context.ListOfClicks,
-				[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-					$($(this).context.parentElement.parentElement).attr('data-aspect'),
-					$(this).val()
-				]
-			);
-			// change the value attribute inside the DOM, some jquery/browser combination seem to block this...
-			$(this).attr('value',$(this).val());
-		});
-	// detect if the list has been scrolled to the bottom,
-	// retrieve next chunk of clicks if so
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').on('scroll',OC.Shorty.Tracking.bottom);
-	// status filter reaction
-	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('thead tr.shorty-toolbar th#result select')
-		.on('change',function(){
-			OC.Shorty.WUI.List.filter.apply(
-				OC.Shorty.Runtime.Context.ListOfClicks,
-				[	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
-					$(this).parents('th').attr('data-aspect'),
-					$(this).find(':selected').val()
-				]
-			);
-		});
-		// button to clear list filters
-		$(document).on('click','#list-of-clicks tr.shorty-toolbar .shorty-clear',[],function(){
-			$(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
-		});
-		dfd.resolve();
-	}).fail(dfd.reject);
-	return dfd.promise();
-}); // document.ready
-
 /**
  * @class OC.Shorty.Files
  * @brief Subclass that serves as a collection of methods private to this plugin
  * @author Christian Reiner
  */
+OC.Shorty.Tracking={};
 OC.Shorty.Tracking=
 {
 	/**
@@ -269,7 +178,7 @@ OC.Shorty.Tracking=
 				OC.Shorty.Tracking.sparkle();
 				dfd.resolve();
 			}).fail(dfd.reject)
-		}).done(dfd.resolve).fail(dfd.reject)
+		}).done(dfd.resolve).fail(dfd.reject);
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.build
 	/**
@@ -308,7 +217,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 			}).fail(function(){
 				dfd.reject();
 			})
-		})
+		});
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.control
 	/**
@@ -332,7 +241,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 				.attr('data-'+item,entry.attr('data-'+item));
 
 		} // switch
-	})
+	});
 	$.each(['result','address','host','user','time'],function(i,item){
 		switch(item){
 		case 'result':
@@ -353,7 +262,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 				.text(element.attr('data-'+item))
 				.attr('data-'+item,element.attr('data-'+item));
 		} // switch
-	})
+	});
 	// move 'share' dialog towards entry
 	dialog.appendTo(element.find('td#list-of-clicks-actions'));
 	// open dialog
@@ -391,7 +300,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 			dfd.resolve(response);
 		}).fail(function(response){
 			dfd.reject(response);
-		})
+		});
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.get
 	/**
@@ -438,12 +347,12 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 						break;
 					} // switch
 				})
-			}) // map
+			}); // map
 			return $.when.apply(null, dfds);
 		}else{
 			// dialogs already loaded, just clean them for usage
 			OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tbody tr').remove();
-			new Deferred().resolve();
+			new $.Deferred().resolve();
 		} // else
 	},
 	/**
@@ -461,10 +370,10 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 		var range   =rangeMax-rangeMin;
 		// we need to compute a value notation the jquery sparkline extension understands:
 		// []
-		var granted=new Array();
-		var denied =new Array();
-		var failed =new Array();
-		var blocked=new Array();
+		var granted=[];
+		var denied =[];
+		var failed =[];
+		var blocked=[];
 		var column, steps = 80;
 		// initialize all columns as zero value
 		for (column=0;column<=steps;column=column+1){
@@ -495,7 +404,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 				{ composite:false,
 					tooltipSuffix:' '+t('shorty_tracking','granted'),
 					lineColor:'green',
-					fillColor:'limegreen',
+					fillColor:'limegreen'
 				}
 			)
 		);
@@ -507,7 +416,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 				{ composite:true,
 					tooltipSuffix:' '+t('shorty_tracking','failed'),
 					lineColor:'goldenrod',
-					fillColor:false,
+					fillColor:false
 				}
 			)
 		);
@@ -519,7 +428,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 				{ composite:true,
 					tooltipSuffix:' '+t('shorty_tracking','denied'),
 					lineColor:'darkorange',
-					fillColor:false,
+					fillColor:false
 				}
 			)
 		);
@@ -543,7 +452,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 			$('.mouseoverregion').text("x="+region.x+" y="+region.y);
 		}).on('mouseleave',function(){$('.mouseoverregion').text('');});
 	} // OC.Shorty.Tracking.sparkle
-} // OC.Shorty.Tracking
+}; // OC.Shorty.Tracking
 
 /**
  * @class OC.Shorty.Runtime.Context.ListOfClicks
@@ -585,7 +494,6 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 				 row.attr('data-'+this,'');
 			else row.attr('data-'+this,set[aspect]);
 			// fill data into corresponsing column
-			var title, content, classes=[];
 			switch(aspect){
 			case 'status':
 				var icon;
@@ -624,7 +532,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 				span.text(set[aspect]);
 			} // switch
 			row.find('td[data-aspect="'+aspect+'"]').empty().append(span);
-		}) // each aspect
+		}); // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
 	/**
 	 * @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddInsert
@@ -678,4 +586,96 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 			||(  (toolbar.find('th#list-of-clicks-result select :selected').val())
 				 &&(toolbar.find('th#list-of-clicks-result').effect('pulsate', 2000)) ) );
 		} // OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
-} // OC.Shorty.Runtime.Context.ListOfClicks
+}; // OC.Shorty.Runtime.Context.ListOfClicks
+
+// we use the late event $(window).load() instead of $(document).ready(),
+// since otherwise the binding of the ajax request token (CSRF protection)
+// has not yet finished before we try to use it...
+// TODO: OC-4 compatibility: use document.ready instead of window.load when dropping OC-4 compatibility
+$(window).load(function(){
+    var dfd = new $.Deferred();
+    $.when(
+        // load layout of dialog to show the list of tracked clicks
+        OC.Shorty.Tracking.init()
+    ).done(function(){
+            // bind actions to basic buttons
+            OC.Shorty.Tracking.Dialog.List.find('#close').on('click',function(){
+                OC.Shorty.WUI.Dialog.hide(OC.Shorty.Tracking.Dialog.List);
+            });
+            OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks tr.shorty-toolbar .shorty-reload')
+                .on('click',function(){OC.Shorty.Tracking.build(false);});
+            OC.Shorty.Tracking.Dialog.List.find('#shorty-footer #load')
+                .on('click',function(){OC.Shorty.Tracking.build(true);});
+            // when clicking inside cells: highlight 'associated' cells: cells with same content
+            $(document).on('mouseenter','#list-of-clicks tbody tr td.associative span',[],function(){
+                // look for cells inside the same column that have the same content (text)
+                var cells=$(this).parents('tbody').find('tr td#'+$(this).parent().attr('id'));
+                // add class 'associated' to matching columns
+                cells.find('span:contains('+$(this).text()+')').addClass("associated");
+                // add class 'DEsociated' to matching columns
+                cells.find('span:not(.associated)').addClass("desociated");
+            });
+            // neutralize the hover effect of the previous lines
+            $(document).on('mouseleave','#list-of-clicks tbody tr td.associative span.associated',[],function(){
+                $(this).parents('tbody').find('tr td#'+$(this).parent().attr('id')+' span').removeClass("associated").removeClass("desociated");});
+            // when clicking inside cells: set column filter
+            $(document).on('click','#list-of-clicks tbody tr td.associative:not(.collapsed) span',[],function(){
+                var input=$(this).parents('table').find('thead tr.shorty-toolbar th[data-aspect="'+$(this).parent().attr('data-aspect')+'"]').find('input,select');
+                var value;
+                // open toolbar if still hidden
+                if (input.parent().is(':hidden'))
+                    OC.Shorty.WUI.List.Toolbar.toggle.apply(OC.Shorty.Runtime.Context.ListOfClicks,[$('#list-of-clicks')]);
+                // set filter value
+                if(input.is('select')){
+                    // use technical value of the matching option instead of the translated value
+                    value=input.find('option:contains('+$(this).text()+')').first().attr('value');
+                    input.val(value).effect('pulsate');
+                }else{ // fallback: text input field
+                    // value is not ranslated but literal, so use it directly
+                    value=$(this).text();
+                    input.val(value).effect('pulsate');
+                } // if-else
+                // apply filter value
+                OC.Shorty.WUI.List.filter.apply(
+                    OC.Shorty.Runtime.Context.ListOfClicks,
+                    [	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
+                        $(this).parent().attr('data-aspect'),
+                        input.val()
+                    ]);
+            });
+            // column filter reaction
+            OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first()
+                .find('thead tr.shorty-toolbar').find('th[data-aspect="time"],th[data-aspect="address"],th[data-aspect="host"],th[data-aspect="user"]').find('.shorty-filter')
+                .on('keyup',function(){
+                    OC.Shorty.WUI.List.filter.apply(
+                        OC.Shorty.Runtime.Context.ListOfClicks,
+                        [	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
+                            $($(this).context.parentElement.parentElement).attr('data-aspect'),
+                            $(this).val()
+                        ]
+                    );
+                    // change the value attribute inside the DOM, some jquery/browser combination seem to block this...
+                    $(this).attr('value',$(this).val());
+                });
+            // detect if the list has been scrolled to the bottom,
+            // retrieve next chunk of clicks if so
+            OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('tbody').on('scroll',OC.Shorty.Tracking.bottom);
+            // status filter reaction
+            OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first().find('thead tr.shorty-toolbar th#result select')
+                .on('change',function(){
+                    OC.Shorty.WUI.List.filter.apply(
+                        OC.Shorty.Runtime.Context.ListOfClicks,
+                        [	OC.Shorty.Tracking.Dialog.List.find('#list-of-clicks').first(),
+                            $(this).parents('th').attr('data-aspect'),
+                            $(this).find(':selected').val()
+                        ]
+                    );
+                });
+            // button to clear list filters
+            $(document).on('click','#list-of-clicks tr.shorty-toolbar .shorty-clear',[],function(){
+                $(this).parent().find('.shorty-filter').val('').trigger('keyup').trigger('change');
+            });
+            dfd.resolve();
+        }).fail(dfd.reject);
+    return dfd.promise();
+}); // document.ready

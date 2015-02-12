@@ -40,6 +40,7 @@ class OC_ShortyTracking_L10n extends OC_Shorty_L10n
 	/**
 	 * @method OC_ShortyTracking_L10n::__construct
 	 * @brief
+	 * @param $app string
 	 * @access protected
 	 * @author Christian Reiner
 	 */

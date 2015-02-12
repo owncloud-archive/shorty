@@ -64,8 +64,9 @@
 			<thead>
 				<tr id="list-of-clicks-titlebar" class="shorty-titlebar">
 					<th id="list-of-clicks-status"  data-aspect="status">
-						<div><img id="list-of-clicks-tools" class="shorty-tools" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
-								class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
+						<div><img id="list-of-clicks-tools" class="shorty-tools svg"
+								alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
+								src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
 								data-unshade="actions/unshade"
 								data-shade="actions/shade">
 						</div>
@@ -91,7 +92,7 @@
 						<div style="display:none;">
 							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<span class="shorty-select">
-								<select id="filter-result" class="shorty-filter" value="" data-placeholder=" ">
+								<select id="filter-result" class="shorty-filter" data-placeholder=" ">
 									<?php foreach($_['shorty-result'] as $option=>$label)
 										print_unescaped(sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label));
 									?>
@@ -145,8 +146,8 @@
 					<td id="list-of-clicks-actions" data-aspect="actions">
 						<span class="shorty-actions">
 							<a id="shorty-tracking-action-details" title="<?php p(OC_Shorty_L10n::t("details")); ?>" data-method="OC.Shorty.Tracking.details">
-								<img class="shorty-icon" alt="<?php p(OC_Shorty_L10n::t("details")); ?>"
-									title="<?php p(OC_Shorty_L10n::t('Show details')); ?>" class="svg"
+								<img class="shorty-icon svg" alt="<?php p(OC_Shorty_L10n::t("details")); ?>"
+									title="<?php p(OC_Shorty_L10n::t('Show details')); ?>"
 									src="<?php p(OCP\Util::imagePath('shorty','actions/info.svg')); ?>" />
 							</a>
 						</span>

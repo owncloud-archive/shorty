@@ -26,9 +26,9 @@
 /**
  * @file ajax/status.php
  * @brief Ajax method to modify the status of an existing shorty
- * @param string id: Internal id of the referenced shorty
- * @param string title: Human readable title
- * @param string notes: Any additional information in free text form
+ * @param string $id: Internal id of the referenced shorty
+ * @param string $title: Human readable title
+ * @param string $notes: Any additional information in free text form
  * @return json: success/error state indicator
  * @return json: Associative array holding the id of the shorty whose click was registered
  * @author Christian Reiner

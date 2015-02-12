@@ -26,7 +26,7 @@
 /**
  * @file ajax/click.php
  * @brief Ajax method to register a 'click', a single hit on an existing Shorty
- * @param string id: Internal id of a referenced shorty
+ * @param string $id: Internal id of a referenced shorty
  * @return json: success/error state indicator
  * @return json: Associative array holding the id of the shorty whose click was registered
  * @author Christian Reiner

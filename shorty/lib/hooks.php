@@ -42,7 +42,7 @@ class OC_Shorty_Hooks
 	/**
 	 * @method OC_Shorty_Hooks::deleteUser
 	 * @brief Deletes all Shortys and preferences of a certain user
-	 * @param array paramters: Array of parameters from postDeleteUser-Hook
+	 * @param array $parameters: Array of parameters from postDeleteUser-Hook
 	 * @return bool
 	 * @access public
 	 * @author Christian Reiner
@@ -217,6 +217,9 @@ class OC_Shorty_Hooks
 	/**
 	 * @method OC_Shorty_Hooks::registerClicks
 	 * @brief Hook offering informations about each click relayed by this app
+	 * @param $shorty
+	 * @param $request
+	 * @param $result
 	 * @access public
 	 * @author Christian Reiner
 	 */
@@ -240,7 +243,7 @@ class OC_Shorty_Hooks
 	/**
 	 * @method OC_Shorty_Hooks::registerQueries
 	 * @brief Registers queries to be offered as expected by the Shorty app
-	 * @param paramters (array) parameters from emitted signal
+	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 */
 	public static function registerQueries ( $parameters )

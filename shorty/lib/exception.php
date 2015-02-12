@@ -43,8 +43,8 @@ class OC_Shorty_Exception extends Exception
 	/**
 	 * @method OC_Shorty_Exception::__construct
 	 * @brief: Constructs an exception based on a phrase and a set of parameters
-	 * @param string phrase: Human readable message that should be translatable
-	 * @param array param: Set of parameters to be used as sprintf arguments to fill the phrase
+	 * @param string $phrase: Human readable message that should be translatable
+	 * @param array $param: Set of parameters to be used as sprintf arguments to fill the phrase
 	 * @access public
 	 * @author Christian Reiner
 	 */
@@ -79,7 +79,7 @@ class OC_Shorty_Exception extends Exception
 	 * @access public
 	 * @author Christian Reiner
 	 */
-	static function JSONerror ( $e )
+	static function JSONerror ( Exception $e )
 	{
 		$title = OC_Shorty_L10n::t("Exception");
 		switch ( get_class($e) )
@@ -131,7 +131,7 @@ class OC_Shorty_HttpException extends OC_Shorty_Exception
 	/**
 	 * @method OC_Shorty_HttpException::__construct
 	 * @brief: Constructs an exception based on a phrase and a set of parameters
-	 * @param integer status: Http status code
+	 * @param integer $status: Http status code
 	 * @access public
 	 * @author Christian Reiner
 	 */

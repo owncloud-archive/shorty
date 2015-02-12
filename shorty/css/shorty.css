@@ -782,7 +782,7 @@ div.jqibox .jqimessage input::-webkit-selection{
 }
 div.jqibox .jqimessage img.usage-qrcode {
 	width: 136px;
-	paddin: 2px;
+	padding: 2px;
 	margin: 2px;
 	border: 1px solid gray;
 }
