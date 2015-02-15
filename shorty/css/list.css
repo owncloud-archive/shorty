@@ -151,9 +151,6 @@
 .shorty-list thead tr:nth-child(2) > th {
 	padding-bottom: 0.5em;
 }
-.shorty-list thead tr.shorty-titlebar th img {
-	cursor: pointer;
-}
 
 
 .shorty-list tbody tr td {
@@ -292,9 +289,24 @@
 
 /* list of shortys */
 
+#list-of-shortys thead tr.shorty-titlebar:hover th {
+	background: #F4F4F4;
+}
+#list-of-shortys thead tr.shorty-titlebar:hover th:first-child {
+	border-top-left-radius: 0.5em;
+	border-bottom-left-radius: 0.5em;
+}
+#list-of-shortys thead tr.shorty-titlebar:hover th:last-child {
+	border-top-right-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+}
 #list-of-shortys thead tr.shorty-titlebar th,
 #list-of-shortys thead tr.shorty-titlebar th * {
-	cursor: row-resize;
+	cursor: url(../img/actions/unshade.svg), pointer;
+}
+#list-of-shortys thead tr.shorty-titlebar.shorty-clicked th,
+#list-of-shortys thead tr.shorty-titlebar.shorty-clicked th * {
+	cursor: url(../img/actions/shade.svg), pointer;
 }
 
 #list-of-shortys thead th#list-of-shortys-favicon,
