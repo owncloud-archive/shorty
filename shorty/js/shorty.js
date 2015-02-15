@@ -1042,14 +1042,17 @@ OC.Shorty={
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("sorting by list column "+sortCol+" "+(sortDir=='asc'?'ascending':'descending'));
 				// use the 'tinysort' jquery plugin for sorting
 				switch (sortCol){
-					case 'created':
-					case 'accessed':
 					case 'until':
-						//tinysort(list.find('tbody>tr td[data-aspect="'+sortCol+'"]'),{order:sortDir});
-						tinysort(list.find('tbody>tr'), {selector:'td[data-aspect="'+sortCol+'"] span', order:sortDir});
+						// column 'until' may hold *no* data value, if no expiration date is set
+						tinysort(list.find('tbody>tr'), {sortFunction:function(a,b){
+							var aVal = $(a.elm).data(sortCol) || '9999-12-31';
+							var bVal = $(b.elm).data(sortCol) || '9999-12-31';
+							var dVal = ('asc'===sortDir) ? 1 : -1; // a factor to invert the return value for desc sorting
+							return dVal * (aVal===bVal?0:(aVal>bVal?1:-1));
+						},order:sortDir});
 						break;
 					default:
-						tinysort(list.find('tbody>tr'), {attr:'data-'+sortCol,order:sortDir});
+						tinysort(list.find('tbody>tr'), {data:sortCol,order:sortDir});
 				} // switch
 				// mark currently active sort icon
 				var icons=list.find('thead tr.shorty-toolbar img.shorty-sort');
