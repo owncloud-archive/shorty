@@ -65,7 +65,7 @@
 "Close" => "Pechar",
 "Configuration" => "Configuración",
 "The amount of feedback messages shown." => "A cantidade de mensaxes de comentarios que amosar.",
-"The time span after which messages are hidden again automatically" => "O tempo despois do cal as mensaxes ocultaranse de novo automáticamente",
+"The time span after which messages are hidden again automatically" => "O tempo após o que as mensaxes agocharanse de novo automaticamente",
 "Copy to clipboard" => "Copiar ao portapapeis",
 "Counted entries and clicks" => "Entradas e clics contados",
 "Create a new 'Shorty' and share it" => "Crear un novo «Shorty» e compartilo",
