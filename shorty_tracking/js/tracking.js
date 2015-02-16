@@ -30,7 +30,7 @@
  */
 
 /**
- * @class OC.Shorty.Files
+ * @class OC.Shorty.Tracking
  * @brief Subclass that serves as a collection of methods private to this plugin
  * @author Christian Reiner
  */
