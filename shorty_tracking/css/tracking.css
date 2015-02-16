@@ -73,10 +73,6 @@
 #list-of-clicks tbody td#list-of-clicks-actions {
 	width: 28px;
 }
-#list-of-clicks thead tr.shorty-titlebar th,
-#list-of-clicks thead tr.shorty-titlebar th * {
-	cursor: row-resize;
-}
 #list-of-clicks thead tr.shorty-toolbar th#list-of-clicks-status img.shorty-clear {
 	margin-left: 3px;
 }
