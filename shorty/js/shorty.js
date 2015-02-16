@@ -1051,6 +1051,9 @@ OC.Shorty={
 							return dVal * (aVal===bVal?0:(aVal>bVal?1:-1));
 						},order:sortDir});
 						break;
+					case 'created':
+						tinysort(list.find('tbody>tr'), {data:sortCol,forceStrings:true,order:sortDir});
+						break;
 					default:
 						tinysort(list.find('tbody>tr'), {data:sortCol,order:sortDir});
 				} // switch
