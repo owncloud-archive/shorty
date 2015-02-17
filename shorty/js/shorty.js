@@ -1049,7 +1049,7 @@ OC.Shorty={
 							var bVal = $(b.elm).data(sortCol) || '9999-12-31';
 							var dVal = ('asc'===sortDir) ? 1 : -1; // a factor to invert the return value for desc sorting
 							return dVal * (aVal===bVal?0:(aVal>bVal?1:-1));
-						},order:sortDir});
+						},forceStrings:true,order:sortDir});
 						break;
 					case 'created':
 						tinysort(list.find('tbody>tr'), {data:sortCol,forceStrings:true,order:sortDir});
