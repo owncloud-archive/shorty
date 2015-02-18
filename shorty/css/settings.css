@@ -29,9 +29,14 @@
  */
 
 /* the settings partial */
-#shorty.section h2 img {
-	width: 22px;
+#shorty.section > img {
+	float: left;
+	position: relative;
+	bottom: 4px;
+	margin-right: 0.8em;
 	vertical-align: bottom;
+	width: 28px;
+	opacity: 0.8;
 }
 #shorty.section fieldset {
 	margin-bottom: 1em;

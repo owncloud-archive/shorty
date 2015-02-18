@@ -35,12 +35,8 @@
 
 <!-- settings of app 'shorty' -->
 <div class="section" id="shorty">
-	<h2>
-		<span class="shorty-title">
-			<img class="svg" src="<?php p(OCP\Util::imagePath("shorty","shorty-dusky.svg")); ?>">
-			Shorty
-		</span>
-	</h2>
+	<img class="svg" src="<?php p(OCP\Util::imagePath("shorty","shorty-dusky.svg")); ?>">
+	<h2>Shorty</h2>
 
 	<fieldset class="shorty-backend-supplement">
 		<legend><?php p(OC_Shorty_L10n::t("Backends available inside users preferences").":"); ?></legend>
