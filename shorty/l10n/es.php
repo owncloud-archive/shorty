@@ -51,7 +51,7 @@
 "alternatively the link can be copied for further usage" => "alternativamente, el enlace puede ser copiado para un uso posterior",
 "Alternatively the link can be copied manually" => "Alternativamente, el enlace puede ser copiado manualmente",
 "Alternatively the link can be copied into a message manually" => "Alternativamente, el enlace se puede copiar en un mensaje de forma manual",
-"Anything that appears helpful …" => "Cualquier cosa que parezca útil ...",
+"Anything that appears helpful …" => "Cualquier cosa que parezca útil...",
 "Default backend suggested inside users preferences" => "Backend por defecto sugeridos en el interior preferencias de los usuarios",
 "Backend" => "Motor",
 "Base url" => "url base",
