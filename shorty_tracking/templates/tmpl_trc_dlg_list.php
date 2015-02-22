@@ -34,7 +34,7 @@
 ?>
 
 <!-- a (usually hidden) dialog used to display a list of all tracked clicks hitting a Shorty -->
-<div id="shorty-tracking-list-dialog" class="shorty-dialog shorty-standalone" style="max-width:80%">
+<div id="shorty-tracking-list-dialog" class="shorty-dialog shorty-standalone shorty-hidden" style="max-width:80%">
 	<fieldset>
 		<legend>
 			<a id="close" class="shorty-close-button"

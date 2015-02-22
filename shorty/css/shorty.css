@@ -317,8 +317,10 @@ input.shorty-config {
 }
 
 /* general style of interactive dialogs */
-.shorty-dialog {
+.shorty-hidden {
 	display: none;
+}
+.shorty-dialog {
 	color: #000000;
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;

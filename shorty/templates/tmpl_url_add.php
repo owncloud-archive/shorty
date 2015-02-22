@@ -34,7 +34,7 @@
 ?>
 
 <!-- (hidden) dialog to add a new shorty -->
-<form id="dialog-add" class="shorty-dialog shorty-standalone" autocomplete="off">
+<form id="dialog-add" class="shorty-dialog shorty-standalone shorty-hidden" autocomplete="off">
 	<fieldset>
 		<legend class="">
 			<a id="close" class="shorty-close-button"

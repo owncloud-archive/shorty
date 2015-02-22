@@ -34,7 +34,7 @@
 ?>
 
 <!-- (hidden) dialog to share a shorty from the list -->
-<form id="dialog-share" class="shorty-dialog shorty-embedded">
+<form id="dialog-share" class="shorty-dialog shorty-embedded shorty-hidden">
 	<fieldset>
 		<legend class="">
 			<a id="close" class="shorty-close-button"

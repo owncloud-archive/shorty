@@ -34,7 +34,7 @@
 ?>
 
 <!-- begin of click details dialog -->
-<form id="shorty-tracking-click-dialog" class="shorty-dialog shorty-embedded">
+<form id="shorty-tracking-click-dialog" class="shorty-dialog shorty-embedded shorty-hidden">
 	<fieldset>
 		<legend>
 			<a id="close" class="shorty-close-button"

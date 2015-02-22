@@ -34,7 +34,7 @@
 ?>
 
 <!-- (hidden) dialog to show a shorty from the list -->
-<form id="dialog-show" class="shorty-dialog shorty-standalone">
+<form id="dialog-show" class="shorty-dialog shorty-standalone shorty-hidden">
 	<fieldset>
 		<legend class="">
 			<a id="close" class="shorty-close-button"
