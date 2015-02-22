@@ -35,9 +35,9 @@
 
 <div id="shorty-relay" class="shorty-dialog shorty-standalone">
 
-	<h1>Shorty relay service</h1>
+	<h1><?php p(OC_Shorty_L10n::t('Shorty relay service')); ?></h1>
 
-	<h2>If you proceed you will be forwarded to:</h2>
+	<h2><?php p(OC_Shorty_L10n::t('If you proceed you will be forwarded to:')); ?></h2>
 
 	<fieldset id="shorty-relay-object">
 		<legend><span class="heading"><?php p(OC_Shorty_L10n::t('Target object').':'); ?></span></legend>
@@ -59,26 +59,9 @@
 	</fieldset>
 
 	<div>
-		<button id="shorty-relay-proceed" class="shorty-button-submit" data-target="<?= $_['shorty']['target'] ?>">Proceed</button>
-	</div>
-
-	<div id=""shorty-relay-action" class="shorty-hidden">
-		<?php
-			switch($_['code']) {
-				case 200:
-				case '200':
-					echo "You will be forwarded to: ".$_['shorty']['target'];
-					break;
-				default:
-					?>
-					<ul>
-						<li class='error'>
-							<?php p($_['explanation']); ?>
-						</li>
-					</ul>
-					<?php
-			}
-		?>
+		<button id="shorty-relay-proceed" class="shorty-button-submit" data-target="<?= $_['shorty']['target'] ?>">
+			<?php p(OC_Shorty_L10n::t('Proceed')); ?>
+		</button>
 	</div>
 
 </div>
