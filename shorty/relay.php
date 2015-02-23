@@ -137,11 +137,12 @@ try
 			case 'private':
 				// check for a valid session and the required user account
 				if ( ! ($account=\OC::$server->getSession()->get('user_id'))) {
+					OC_Shorty_Hooks::registerClick ( $shorty, $request, 'failed' );
 					OCP\User::checkLoggedIn();
 				}
 				if ($shorty['user']!==$account) {
-					OCP\User::logout();
-					OCP\User::checkLoggedIn();
+					OC_Shorty_Hooks::registerClick ( $shorty, $request, 'denied' );
+					throw new OC_Shorty_HttpException ( 403 );
 				}
 				break;
 			case 'shared':
