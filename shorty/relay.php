@@ -130,45 +130,28 @@ try
 				// looks like an invalid shorty?
 				OC_Shorty_Hooks::registerClick ( $shorty, $request, 'blocked' );
 				throw new OC_Shorty_HttpException ( 500 );
-
 			case 'blocked':
 				// refuse forwarding => 403: Forbidden
 				OC_Shorty_Hooks::registerClick ( $shorty, $request, 'blocked' );
 				throw new OC_Shorty_HttpException ( 403 );
-
 			case 'private':
 				// check for a valid session and the required user account
-//				if ( ! OCP\User::isLoggedIn()) {
-//					if ($shorty['user']!==\OC::$server->getSession()->get('user_id')) {
-//						OCP\User::logout();
-//						OCP\User::checkLoggedIn();
-//					}
-//					OCP\User::checkLoggedIn();
-//				}
-				if ( ! \OC::$server->getSession()->get('user_id')) {
-					if ($shorty['user']!==\OC::$server->getSession()->get('user_id')) {
-						OCP\User::logout();
-						OCP\User::checkLoggedIn();
-					}
+				if ( ! ($account=\OC::$server->getSession()->get('user_id'))) {
+					OCP\User::checkLoggedIn();
+				}
+				if ($shorty['user']!==$account) {
+					OCP\User::logout();
 					OCP\User::checkLoggedIn();
 				}
 				break;
-
 			case 'shared':
 				// check for a valid session
-//				if ( ! OCP\User::isLoggedIn()) {
-//					exit();
-//					OC_Shorty_Hooks::registerClick ( $shorty, $request, 'denied' );
-//					OCP\User::checkLoggedIn();
-//				}
 				if ( ! \OC::$server->getSession()->get('user_id')) {
 					OC_Shorty_Hooks::registerClick ( $shorty, $request, 'denied' );
 					OCP\User::checkLoggedIn();
 				}
-
 				break;
-
-				case 'public':
+			case 'public':
 				// no access restriction, so all fine!
 
 		} // switch status
