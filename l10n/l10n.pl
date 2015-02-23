@@ -4,6 +4,8 @@ use Locale::PO;
 use Cwd;
 use Data::Dumper;
 use File::Path;
+use File::Basename;
+use Digest::MD5 qw(md5 md5_hex md5_base64);
 
 sub crawlPrograms{
 	my( $dir, $ignore ) = @_;
@@ -39,12 +41,12 @@ sub crawlFiles{
 	foreach my $i ( @files ){
 		next if substr( $i, 0, 1 ) eq '.';
 		next if $i eq 'l10n';
-		
+
 		if( -d $dir.'/'.$i ){
 			push( @found, crawlFiles( $dir.'/'.$i ));
 		}
 		else{
-			push(@found,$dir.'/'.$i) if $i =~ /\.js$/ || $i =~ /\.php$/;
+			push(@found,$dir.'/'.$i) if $i =~ /.*(?<!\.min)\.js$/ || $i =~ /\.php$/;
 		}
 	}
 
@@ -64,10 +66,21 @@ sub readIgnorelist{
 	return %ignore;
 }
 
+sub getPluralInfo {
+	my( $info ) = @_;
+
+	# get string
+	$info =~ s/.*Plural-Forms: (.+)\\n.*/$1/;
+	$info =~ s/^(.*)\\n.*/$1/g;
+
+	return $info;
+}
+
+my $app = shift( @ARGV );
 my $task = shift( @ARGV );
 my $place = '..';
 
-die( "Usage: l10n.pl task\ntask: read, write\n" ) unless $task && $place;
+die( "Usage: l10n.pl app task\ntask: read, write\n" ) unless $task && $place;
 
 # Our current position
 my $whereami = cwd();
@@ -96,6 +109,7 @@ if( $task eq 'read' ){
 		my @totranslate = crawlFiles('.');
 		my %ignore = readIgnorelist();
 		my $output = "${whereami}/templates/$app.pot";
+		my $packageName = "ownCloud $app";
 		print "  Processing $app\n";
 
 		foreach my $file ( @totranslate ){
@@ -104,7 +118,7 @@ if( $task eq 'read' ){
 			my $language = ( $file =~ /\.js$/ ? 'Python' : 'PHP');
 			my $joinexisting = ( -e $output ? '--join-existing' : '');
 			print "    Reading $file\n";
-			`xgettext --output="$output" $joinexisting --keyword=$keyword --language=$language "$file" --from-code=UTF-8 --package-version="5.0.0" --package-name="ownCloud Core" --msgid-bugs-address="translations\@owncloud.org"`;
+			`xgettext --output="$output" $joinexisting --keyword=$keyword --language=$language "$file" --add-comments=TRANSLATORS --from-code=UTF-8 --package-version="8.0.0" --package-name="ownCloud Shorty" --msgid-bugs-address="translations\@owncloud.org"`;
 		}
 		chdir( $whereami );
 	}
@@ -118,7 +132,7 @@ elsif( $task eq 'write' ){
 		print "  Processing $app\n";
 		foreach my $language ( @languages ){
 			next if $language eq 'templates';
-			
+
 			my $input = "${whereami}/$language/$app.po";
 			next unless -e $input;
 
@@ -126,6 +140,9 @@ elsif( $task eq 'write' ){
 			my $array = Locale::PO->load_file_asarray( $input );
 			# Create array
 			my @strings = ();
+			my @js_strings = ();
+			my $plurals;
+
 			foreach my $string ( @{$array} ){
 				next if $string->msgid() eq '""';
 				next if $string->msgstr() eq '""';
@@ -133,12 +150,37 @@ elsif( $task eq 'write' ){
 			}
 			next if $#strings == -1; # Skip empty files
 
-			# Write PHP file
-			open( OUT, ">$language.php" );
-			print OUT "<?php \$TRANSLATIONS = array(\n";
-			print OUT join( ",\n", @strings );
-			print OUT "\n);\n";
+			for (@strings) {
+				s/\$/\\\$/g;
+			}
+
+			if ( -e 'no-php' ) {
+				# delete old php file
+				unlink "$language.php";
+			} else {
+				# Write PHP file
+				open( OUT, ">$language.php" );
+				print OUT "<?php\n\$TRANSLATIONS = array(\n";
+				print OUT join( ",\n", @strings );
+				print OUT "\n);\n\$PLURAL_FORMS = \"$plurals\";\n";
+				close( OUT );
+			}
+
+			# Write js file
+			open( OUT, ">$language.js" );
+			print OUT "OC.L10N.register(\n    \"$app\",\n    {\n    ";
+			print OUT join( ",\n    ", @js_strings );
+			print OUT "\n},\n\"$plurals\");\n";
 			close( OUT );
+
+			# Write json file
+			open( OUT, ">$language.json" );
+			print OUT "{ \"translations\": ";
+			print OUT "{\n    ";
+			print OUT join( ",\n    ", @js_strings );
+			print OUT "\n},\"pluralForm\" :\"$plurals\"\n}";
+			close( OUT );
+
 		}
 		chdir( $whereami );
 	}
