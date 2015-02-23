@@ -157,8 +157,6 @@ try
 			case 'shared':
 				// check for a valid session
 //				if ( ! OCP\User::isLoggedIn()) {
-//					ChromePhp::log(OCP\User::isLoggedIn());
-//					ChromePhp::log(\OC::$server->getSession()->get('user_id'));
 //					exit();
 //					OC_Shorty_Hooks::registerClick ( $shorty, $request, 'denied' );
 //					OCP\User::checkLoggedIn();
@@ -178,7 +176,6 @@ try
 		// fetch template
 		$tmpl = new OCP\Template ( 'shorty', 'tmpl_http_relay', 'guest' );
 		$tmpl->assign ( 'shorty', $shorty );
-		ChromePhp::log($shorty);
 		// fetch meta data
 		$tmpl->assign ( 'meta', OC_Shorty_Meta::fetchMetaData($shorty['target']));
 		// render template
