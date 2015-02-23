@@ -30,13 +30,13 @@ There are six aspects that can be configured, all optional:
 6.) Installation of the additional tracking plugin (optional)
 
 1.) System wide "static backend" (optional)
-(Requires adminisstrative rights)
+(Requires administrative rights)
 This optional setting enables a 'static backend'. That is a backend generating
 source urls based on a static base url, thus the name. That base url should be
 chosen as short as possible, since this defines the total length of all links
 to be posted and used. Most likely the definition of that url requires the
 configuration of rewrite rules on the server side. So it is only an option for
-experienced adminsitrators with access to the server configuration, be it
+experienced administrators with access to the server configuration, be it
 centralized or based on decentralized per-directory rules (".htaccess files").
 The rules must be configured such that all requests to urls of the scheme
 <base url><shorty key> are mapped directly onto the relay service web url of
@@ -57,7 +57,7 @@ You can easily test your setup any time by clicking on the example dynamically
 visualized next to the configuration option. It runs a simple self-tests of the
 setup in background.
 There is no need that the base url must be served by the same http server that
-serves the owncoud system. A static rewrite setup may well forward short source
+serves the owncloud system. A static rewrite setup may well forward short source
 urls to the Shorty app inside a remote ownCloud installation. However, it is
 a known issue that the internal validation of the setup won't work with such
 scenario.
