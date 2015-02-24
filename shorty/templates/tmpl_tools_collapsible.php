@@ -34,8 +34,8 @@
 ?>
 
 					<img data-collapsible-code="collapse"
-						alt="<?php p(OC_Shorty_L10n::t('collapse'));?>" title="<?php p(OC_Shorty_L10n::t('collapse'));  ?>"
+						alt="<?php p(OC_Shorty_L10n::t('Collapse column'));?>" title="<?php p(OC_Shorty_L10n::t('Collapse column'));  ?>"
 						class="shorty-tool shorty-tool-collapsible svg" src="<?php p(OCP\Util::imagePath('shorty','actions/collapse.svg'));?>">
 					<img data-collapsible-code="expand"
-						alt="<?php p(OC_Shorty_L10n::t('expand'));  ?>" title="<?php p(OC_Shorty_L10n::t('expand'));  ?>"
+						alt="<?php p(OC_Shorty_L10n::t('Expand column'));  ?>" title="<?php p(OC_Shorty_L10n::t('Expand column'));  ?>"
 						class="shorty-tool shorty-tool-collapsible svg" src="<?php p(OCP\Util::imagePath('shorty','actions/expand.svg'));?>">

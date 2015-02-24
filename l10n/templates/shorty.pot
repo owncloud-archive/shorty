@@ -455,6 +455,12 @@ msgstr ""
 msgid "Clear filter"
 msgstr ""
 
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
+
 msgid "Source url"
 msgstr ""
 
