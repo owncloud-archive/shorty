@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Shorty Tracking" => "ការ​ឃ្លាំ​មើល​ខ្លីៗ",
 "granted" => "ទទួល​បាន",
 "denied" => "បាន​បដិសេធ",
@@ -15,3 +16,4 @@
 "Title" => "ចំណងជើង",
 "User" => "អ្នកប្រើ"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

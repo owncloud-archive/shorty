@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "blocked" => "توسۇلغان",
 "load" => "يۈكلە",
 "Address" => "ئادرېس",
@@ -9,3 +10,4 @@
 "Title" => "ماۋزۇ",
 "User" => "ئىشلەتكۈچى"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

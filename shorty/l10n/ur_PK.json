@@ -1,0 +1,9 @@
+{ "translations": {
+    "delete" : "ختم کریں",
+    "share" : "شئیر کریں",
+    "Close" : "بند ",
+    "Save" : "حفظ",
+    "Settings" : "سیٹینگز",
+    "Title" : "عنوان"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

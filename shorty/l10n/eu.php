@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "Pluginak",
 "all" => "dena",
 "blocked" => "Bloketatua",
@@ -132,3 +133,4 @@
 "tiny.cc key" => "tiny.cc gakoa",
 "tiny.cc user key" => "tini.cc erabiltzailearen gakoa"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

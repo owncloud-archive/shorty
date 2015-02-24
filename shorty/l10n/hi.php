@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Close" => "बंद करें ",
 "Notes" => "नोट्स",
 "Refresh" => "रीफ्रैश ",
@@ -6,3 +7,4 @@
 "Save" => "सहेजें",
 "Settings" => "सेटिंग्स"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

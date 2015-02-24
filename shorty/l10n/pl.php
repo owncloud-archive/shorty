@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "Pluginy",
 "all" => "Wszystkie",
 "blocked" => "zablokowane",
@@ -214,3 +215,4 @@
 "Please check your setup and make sure that the configured base url is indeed correct." => "Proszę sprawdź swoje ustawienia i upewnij się, że skonfigurowany URL bazowy jest rzeczywiście poprawny",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "Upewnij się, że wszystkie żądania są w jakiś sposób zmapowane do usługi przekazywania Shorty"
 );
+$PLURAL_FORMS = "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);";

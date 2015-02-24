@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Shorty Tracking" => "Shortyトラッキング",
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "アクセス履歴を統合的に可視化し、Shortyからリダイレクトされるすべてのリクエストの詳細なトラッキングです。",
 "granted" => "承認済み",
@@ -17,3 +18,4 @@
 "Title" => "タイトル",
 "User" => "ユーザー"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

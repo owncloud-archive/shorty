@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "all" => "сите",
 "blocked" => "блокиран",
 "deleted" => "избришан",
@@ -57,3 +58,4 @@
 "Google API key" => "Google API key",
 "Google API account" => "Google API account"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;";

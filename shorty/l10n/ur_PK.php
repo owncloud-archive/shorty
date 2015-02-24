@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "delete" => "ختم کریں",
 "share" => "شئیر کریں",
 "Close" => "بند ",
@@ -6,3 +7,4 @@
 "Settings" => "سیٹینگز",
 "Title" => "عنوان"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "all" => "ĉio",
 "blocked" => "blokita",
 "deleted" => "forigita",
@@ -112,3 +113,4 @@
 "tiny.cc user key" => "Uzantoklavo de tiny.cc",
 "Register a new '%%s' at their pages." => "Registri novan “%%s” en iliaj paĝoj."
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

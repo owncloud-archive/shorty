@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Shorty Tracking" => "단축 주소 추적하기",
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "기존 단축 주소로 향한 모든 요청을 자세히 추적하고 접근 기록 정보를 제공합니다.",
 "granted" => "허가됨",
@@ -17,3 +18,4 @@
 "Title" => "제목",
 "User" => "사용자 이름"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

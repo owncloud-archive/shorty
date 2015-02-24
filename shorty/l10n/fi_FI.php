@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "Liitännäiset",
 "all" => "kaikki",
 "blocked" => "estetty",
@@ -123,3 +124,4 @@
 "Great, your setup appears to be working fine!" => "Hienoa, tekemäsi asetukset vaikuttavat toimivan!",
 "Sorry, but your setup appears not to be working correctly yet!" => "Valitettavasti tekemäsi asetukset eivät vaikuta vielä toimivan!"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

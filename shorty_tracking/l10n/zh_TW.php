@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Shorty Tracking" => "追蹤Shorty",
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "詳細追蹤所以向現存shortys的請求，結果會以連線紀錄的綜合視覺化情報的方式呈現。",
 "granted" => "許可",
@@ -16,3 +17,4 @@
 "Title" => "標題",
 "User" => "使用者名稱"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

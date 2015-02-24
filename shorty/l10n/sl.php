@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "Vstavki",
 "all" => "vse",
 "blocked" => "zadržano",
@@ -215,3 +216,4 @@
 "Please check your setup and make sure that the configured base url is indeed correct." => "Najprej je priporočeno preveriti nastavitve in se prepričati, da je nastavljen internetni naslov pravilen.",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "Prepričajte se, da so vse zahteve preslikane v storitev posredovanja skrajšanih naslovov."
 );
+$PLURAL_FORMS = "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);";

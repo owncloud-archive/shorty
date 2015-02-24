@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "blocked" => "blokita",
 "load" => "ŝargi",
 "Address" => "Adreso",
@@ -11,3 +12,4 @@
 "Title" => "Titolo",
 "User" => "Uzanto"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "Program artırmaları",
 "all" => "hər şey",
 "blocked" => "bloklanıb",
@@ -25,3 +26,4 @@
 "Settings" => "Quraşdırmalar",
 "Title" => "Başlıq"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

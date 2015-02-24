@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "never" => "nunquam",
 "delete" => "deler",
 "share" => "compartir",
@@ -11,3 +12,4 @@
 "Settings" => "Configurationes",
 "Title" => "Titulo"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

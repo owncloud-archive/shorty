@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "blocked" => "অবরুদ্ধ",
 "Clicks" => "ক্লিকস",
 "Close" => "বন্ধ",
@@ -8,3 +9,4 @@
 "Settings" => "সেটিংস",
 "Title" => "পদবি"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "插件",
 "all" => "全部",
 "delete" => "刪除",
@@ -20,3 +21,4 @@
 "Verification failed" => "驗證失敗",
 "Account" => "帳號"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

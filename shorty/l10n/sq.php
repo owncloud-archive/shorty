@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "all" => "t'gjithë",
 "blocked" => "Bllokuar",
 "deleted" => "fshirë",
@@ -45,3 +46,4 @@
 "Target" => "Objektiv",
 "Title" => "Titulli"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

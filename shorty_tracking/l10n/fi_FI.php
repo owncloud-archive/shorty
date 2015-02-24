@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Shorty Tracking" => "Lyhyt seuranta",
 "granted" => "myönnetty",
 "denied" => "kielletty",
@@ -16,3 +17,4 @@
 "Title" => "Otsikko",
 "User" => "Käyttäjä"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

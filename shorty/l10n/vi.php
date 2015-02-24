@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "all" => "tất cả",
 "deleted" => "đã xóa",
 "never" => "không thay đổi",
@@ -29,3 +30,4 @@
 "Url shortened to: %s" => "Url được rút gọn thành: %s",
 "Account" => "Tài khoản"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

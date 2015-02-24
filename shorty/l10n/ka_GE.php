@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "all" => "ყველა",
 "blocked" => "დაბლოკილი",
 "deleted" => "წაშლილი",
@@ -174,3 +175,4 @@
 "Please check your setup and make sure that the configured base url is indeed correct." => "გთხოვთ შეამოწმოთ თქვენი კონფიგურაცია და დარჭმუნდით იმაში რომ კონფიგურირებული საბაზო url–ი აუცილებლად მართებულია.",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "დარწმუნდით იმაში რომ ყველა მოთხოვნა დამეპილია შემოკლებულად რელე სერვისზე."
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

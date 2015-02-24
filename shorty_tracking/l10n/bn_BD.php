@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "granted" => "অনুমোদিত",
 "denied" => "অস্বীকৃত",
 "blocked" => "আটকে দেয়া",
@@ -12,3 +13,4 @@
 "Title" => "শিরোনাম",
 "User" => "ব্যবহারকারি"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

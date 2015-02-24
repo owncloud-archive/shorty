@@ -1,0 +1,8 @@
+{ "translations": {
+    "Address" : "כתובת",
+    "Host" : "מארח",
+    "Time" : "זמן",
+    "Title" : "כותרת",
+    "User" : "שתמש"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

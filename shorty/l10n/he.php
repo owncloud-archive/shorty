@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "deleted" => "נמחק",
 "never" => "לעולם לא",
 "delete" => "מחיקה",
@@ -25,3 +26,4 @@
 "Title" => "כותרת",
 "Url shortened to: %s" => "הכתובת קוצרה לכדי: %s"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

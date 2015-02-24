@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "all" => "alle",
 "blocked" => "blokkert",
 "deleted" => "sletta",
@@ -41,3 +42,4 @@
 "Title" => "Tittel",
 "Url shortened to: %s" => "Nettadresse forkorta til: %s"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

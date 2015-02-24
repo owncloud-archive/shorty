@@ -1,0 +1,8 @@
+{ "translations": {
+    "Address" : "முகவரி",
+    "Host" : "ஓம்புனர்",
+    "Result" : "முடிவு",
+    "Title" : "தலைப்பு",
+    "User" : "பயனாளர்"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

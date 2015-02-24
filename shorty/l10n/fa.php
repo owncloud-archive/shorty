@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "افزونه ها",
 "all" => "همه",
 "blocked" => "مسدود شده",
@@ -131,3 +132,4 @@
 "Sorry, but your setup appears not to be working correctly yet!" => "متاسفم، اما راه اندازی شما هنوز به صورت  صحیح کار نمی کند!",
 "Please check your setup and make sure that the configured base url is indeed correct." => "لطفا راه اندازی خود را تنظیم نمایید و مطمئن شوید آدرس پایه که  پیکربندی شده است درست است."
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

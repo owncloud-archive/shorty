@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "deleted" => "escafat",
 "never" => "jamai",
 "delete" => "escafa",
@@ -9,3 +10,4 @@
 "Settings" => "Configuracion",
 "Title" => "Títol"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n > 1);";

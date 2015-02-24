@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "Insticksmoduler",
 "all" => "alla",
 "blocked" => "blockerad",
@@ -215,3 +216,4 @@
 "Please check your setup and make sure that the configured base url is indeed correct." => "Vänligen kontrollera din installation och säkerställ att den konfigurerade grundadressen verkligen är korrekt.",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "Säkerställ att alla förfrågningar till den på något sätt är anpassad till Shortys vidarebefodringstjänst."
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "Eklentiler",
 "all" => "tümü",
 "blocked" => "engellendi",
@@ -215,3 +216,4 @@
 "Please check your setup and make sure that the configured base url is indeed correct." => "Lütfen tanımlı temel adres değerinin doğru olduğundan emin olmak için ayarları kontrol edin.",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "Tüm isteklerin bir şekilde Kısaltmalar aktarım hizmetine eşleştirilmiş olduğundan emin olun."
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n > 1);";

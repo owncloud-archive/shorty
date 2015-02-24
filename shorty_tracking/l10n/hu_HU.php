@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Shorty Tracking" => "Shorty Tracking",
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Részletes nyomkövetése az összes kérésnek ami a Shortys-szal müködik együtt és beépitett megjelenítővel a hozzáférésekről.",
 "granted" => "megadott",
@@ -16,3 +17,4 @@
 "Title" => "Cím",
 "User" => "Felhasználó"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

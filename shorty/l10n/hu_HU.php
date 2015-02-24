@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "Kiegészítők",
 "all" => "Összes",
 "blocked" => "blokkolt",
@@ -138,3 +139,4 @@
 "Great, your setup appears to be working fine!" => "Óriási, a telepítésedben úgy néz ki minden jól müködik!",
 "Sorry, but your setup appears not to be working correctly yet!" => "Sajnos úgy tünik, hogy a telepítésed nem működik még megfelelően!"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

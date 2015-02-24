@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "deleted" => "ลบแล้ว",
 "never" => "ไม่ต้องเลย",
 "delete" => "ลบ",
@@ -14,3 +15,4 @@
 "Settings" => "ตั้งค่า",
 "Title" => "ชื่อ"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

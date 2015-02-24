@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "প্লাগইন",
 "all" => "সবাই",
 "blocked" => "আটকে দেয়া",
@@ -67,3 +68,4 @@
 "Total of clicks" => "মোট ক্লিক",
 "Account" => "একাউন্ট"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "deleted" => "eytt",
 "never" => "aldrei",
 "delete" => "eyða",
@@ -12,3 +13,4 @@
 "Settings" => "Stillingar",
 "Title" => "Titill"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

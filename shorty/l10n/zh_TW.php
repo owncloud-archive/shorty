@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "外掛程式",
 "all" => "所有",
 "blocked" => "被封鎖的",
@@ -208,3 +209,4 @@
 "Please check your setup and make sure that the configured base url is indeed correct." => "請檢查您的設定並確認配置好的base url是正確無誤的。",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "確認所有請求都已映射到Shorty中繼服務"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

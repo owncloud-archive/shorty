@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "Plugins" => "插件",
 "all" => "全部",
 "blocked" => "已屏蔽",
@@ -208,3 +209,4 @@
 "Please check your setup and make sure that the configured base url is indeed correct." => "请检查你的设置并确保之前配置的基础地址绝对正确",
 "Make sure that all requests to it are somehow mapped to Shortys relay service." => "请确保所有关于它的请求都映射到短链中继服务"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

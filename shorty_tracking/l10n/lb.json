@@ -1,0 +1,8 @@
+{ "translations": {
+    "Address" : "Adress",
+    "Host" : "Host",
+    "Result" : "Resultat",
+    "Time" : "Zäit",
+    "Title" : "Titel"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

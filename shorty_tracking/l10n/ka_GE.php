@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "granted" => "მინიჭებული",
 "denied" => "აკრძალული",
 "blocked" => "დაბლოკილი",
@@ -14,3 +15,4 @@
 "Title" => "სახელი",
 "User" => "მომხმარებელი"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

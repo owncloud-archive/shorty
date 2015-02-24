@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "deleted" => "geläscht",
 "never" => "ni",
 "delete" => "läschen",
@@ -13,3 +14,4 @@
 "Title" => "Titel",
 "Account" => "Konto"
 );
+$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

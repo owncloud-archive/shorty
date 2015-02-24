@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "all" => "ھەممىسى",
 "blocked" => "توسۇلغان",
 "deleted" => "ئۆچۈرۈلگەن",
@@ -64,3 +65,4 @@
 "Title" => "ماۋزۇ",
 "Account" => "ھېسابات"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

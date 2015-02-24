@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "blocked" => "ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ",
 "never" => "﻿ಎಂದಿಗೂ",
 "delete" => "﻿ಅಳಿಸಿ",
@@ -12,3 +13,4 @@
 "Settings" => "ಆಯ್ಕೆ",
 "Title" => "ಶೀರ್ಷಿಕೆ"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";

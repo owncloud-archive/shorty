@@ -1,4 +1,5 @@
-<?php $TRANSLATIONS = array(
+<?php
+$TRANSLATIONS = array(
 "all" => "ទាំងអស់",
 "blocked" => "បាន​ទប់​ស្កាត់",
 "deleted" => "បាន​លុប",
@@ -26,3 +27,4 @@
 "Title" => "ចំណងជើង",
 "Url shortened to: %s" => "បាន​បង្រួម Url ទៅ៖ %s"
 );
+$PLURAL_FORMS = "nplurals=1; plural=0;";
