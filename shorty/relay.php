@@ -158,7 +158,7 @@ try
 		} // switch status
 
 		// fetch template
-		$tmpl = new OCP\Template ( 'shorty', 'tmpl_http_relay', 'guest' );
+		$tmpl = new OCP\Template ( 'shorty', 'tmpl_wdg_relay', 'guest' );
 		$tmpl->assign ( 'shorty', $shorty );
 		// fetch meta data
 		$tmpl->assign ( 'meta', OC_Shorty_Meta::fetchMetaData($shorty['target']));

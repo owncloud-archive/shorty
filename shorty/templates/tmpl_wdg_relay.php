@@ -26,7 +26,7 @@
 
 <?php
 /**
- * @file templates/tmpl_http_relay.php
+ * @file templates/tmpl_wdg_relay.php
  * Displays a human readable version of a classical http status error
  * @access public
  * @author Christian Reiner
