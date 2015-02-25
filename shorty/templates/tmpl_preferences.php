@@ -258,7 +258,7 @@
 				<label for="timeout" class="shorty-aspect"></label>
 				<span id="shorty-timeout" style="margin-right:1em;">
 					<select id="shorty-verbosity-timeout" name="verbosity-timeout" style="width:11em;">
-						<?php foreach (array('(never)'=>0, '2 seconds'=>2000, '5 seconds'=>5000, '12 seconds'=>120000, '1 minute'=>60000) as $key=>$timeout)
+						<?php foreach (array('( never )'=>0, '2 seconds'=>2000, '5 seconds'=>5000, '12 seconds'=>120000, '1 minute'=>60000) as $key=>$timeout)
 								print_unescaped(sprintf('<option value="%1$s" %2$s>%3$s</option>'."\n",
 											$timeout,
 											($timeout==$_['verbosity-timeout']?'selected':''),

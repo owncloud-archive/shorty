@@ -112,7 +112,7 @@ class OC_Shorty_Type
 	);
 	// a list of implemented backends
 	static $BACKENDS = array (
-		'none'    => ' [ none ] ',
+		'none'    => '[ none ]',
 		'static'  => 'static backend',
 // 		'bitly'   => 'bitly.com service',
 // 		'cligs'   => 'cli.gs service',

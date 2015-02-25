@@ -37,7 +37,7 @@
 <div id="dialog-clipboard" class="shorty-popup" data-title="<?php p(OC_Shorty_L10n::t("Copy to clipboard")) ?>">
 	<fieldset>
 		<div class="usage-explanation">
-			<?php p(OC_Shorty_L10n::t("The link below can be copied for further usage")); ?>:
+			<?php p(OC_Shorty_L10n::t("The link below can be copied to paste it elsewhere")); ?>:
 		</div>
 		<input class="payload" readonly="true">
 		<div class="usage-instruction">

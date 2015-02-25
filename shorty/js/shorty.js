@@ -1905,10 +1905,10 @@ OC.Shorty={
 						// specific dialog button(s)
 						p_buttons = {stateIMG:{}, stateREF:{}};
 						p_buttons.stateIMG[t('shorty','Download QRCode')] = 'download';
-						p_buttons.stateIMG[t('shorty','Show qrcode reference')] = 'referer';
+						p_buttons.stateIMG[t('shorty','Show QRCode reference')] = 'referer';
 						p_buttons.stateIMG[t('shorty','Close')] = false;
 						p_buttons.stateREF[t('shorty','Download QRCode')] = 'download';
-						p_buttons.stateREF[t('shorty','Show qrcode image')] = 'image';
+						p_buttons.stateREF[t('shorty','Show QRCode image')] = 'image';
 						p_buttons.stateREF[t('shorty','Close')] = false;
 						// this popup has two states:
 						var p_states = {

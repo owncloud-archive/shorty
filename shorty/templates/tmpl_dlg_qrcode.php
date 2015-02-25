@@ -39,14 +39,11 @@
 		<div class='qrcode-img'>
 			<div class="usage-explanation">
 				<?php p(OC_Shorty_L10n::t("This 2d barcode encodes the url pointing to this Shorty")); ?>.
-				<?php p(OC_Shorty_L10n::t("Use it in web pages by referencing or embedding or simpy print or download it for off-line usage")); ?>!
+				<?php p(OC_Shorty_L10n::t("Use it in web pages by referencing or embedding or simply print or download it for offline usage")); ?>!
 			</div>
 			<div style="text-align:center;">
 				<img class="usage-qrcode" alt="<?php p(OC_Shorty_L10n::t("QRCode")); ?>"
 					src="<?php p(OCP\Util::imagePath('shorty','loading-disk.gif')); ?>" >
-				<div class="usage-instruction">
-					<?php p(OC_Shorty_L10n::t("Click for embedding details")); ?>…
-				</div>
 			</div>
 		</div>
 		<div class='qrcode-ref' style="display:none;">
