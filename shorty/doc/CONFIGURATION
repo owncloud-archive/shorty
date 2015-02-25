@@ -29,8 +29,8 @@ There are six aspects that can be configured, all optional:
 5.) Enabling of sending of Shortys as SMS (optional)
 6.) Installation of the additional tracking plugin (optional)
 
-1.) System wide "static backend" (optional)
-(Requires administrative rights)
+1.) System wide "static backend" (optional, for advanced users)
+(Requires administrative rights and some technical knowledge)
 This optional setting enables a 'static backend'. That is a backend generating
 source urls based on a static base url, thus the name. That base url should be
 chosen as short as possible, since this defines the total length of all links
@@ -47,20 +47,57 @@ each Shorty. That scheme is the one you want to rewrite your requests to, you
 just have to make sure the individual <shorty key> survives the redirect.
 The <shorty key> is a string, 6-12 characters long, hard to predict. It is
 guaranteed to be unique throughout the system (though in a technically crude
-manner...). The perfect situation for the definition of a meaningful static
+manner...).
+There are two variants of such a setup: same domain or cross domain. The first
+is easier to setup, the second allows greater flexibility to have a really
+short base url, since you can use a shorter domain name compared to the one the
+owncloud installation lives on. This is desirable, but more complex.
+The perfect situation for the definition of a meaningful static
 backend would be a domain with a very short name and configuration access to
 something close to the web root. At least you should try to find a setup where
 the web path of the ownCloud application is not part of the base url. So that
 you get something like http://<domain name>/<shorty key>.
-(Note that the shorty key is NOT part of the base url configuration).
-You can easily test your setup any time by clicking on the example dynamically
-visualized next to the configuration option. It runs a simple self-tests of the
-setup in background.
-There is no need that the base url must be served by the same http server that
-serves the owncloud system. A static rewrite setup may well forward short source
-urls to the Shorty app inside a remote ownCloud installation. However, it is
-a known issue that the internal validation of the setup won't work with such
-scenario.
+(Note that the <shorty key> is NOT part of the base url configuration).
+
+Your setup will automatically be verified by Shorty during the setup. Only in
+case of a successful verification the setup will be accepted (valid and usable).
+Only then the setup is saved and the static backend is offered as an option in
+the settings and the user preferences.
+
+1.a) Configuration of a static backend, same domain setup
+You need some kind of rewriting rule to map the requests to the short base url
+onto the final url of Shortys relay service. Typically a rewriting module for
+the http server is used for such a purpose, e.g. mod_rewrite in case of the
+ Apache http server. The rule must look something like this:
+  RewriteEngine   on
+  SSLProxyEngine  on
+  RewriteCond     %{HTTP_HOST}            ^proxy.domain.xyz$                                                [NC]
+  RewriteRule     ^/([A-Za-z0-9]{4,12})$  https://owncloud.domain.xyz/public.php?service=shorty_relay&id=$1 [QSA,L]
+Where "proxy.domain.xyz" is the short domain used in the base url setup and
+"owncloud.domain.xyz" is the domain where owncloud is delivered from. Different
+variants exist obviously, but the basic idea should be clear...
+
+1.b) Configuration of a static backend, cross domain setup
+Obviously you need a similar rewriting setup to the first alternative:
+  RewriteEngine   on
+  SSLProxyEngine  on
+  RewriteCond     %{HTTP_HOST}            ^proxy.domain.xyz$                                                [NC]
+  RewriteRule     ^/([A-Za-z0-9]{4,12})$  https://owncloud.domain.xyz/public.php?service=shorty_relay&id=$1 [QSA,L,P]
+  RewriteRule     ^/(.*)$                 https://owncloud.domain.xyz/$1                                    [QSA,L,P]
+Note the additional 'P' flag in the RewriteRules. This is required (and relies
+on the internal proxy module) because otherwise the cross domain setup will be
+blocked by most modern browsers due to cross domain security considerations.
+In additional you need to whitelist "proxy.domain.xyz" inside your owncloud
+configuration. Otherwise owncloud will reject these requests. Whitelisting is
+possible by simply adding the domain name inside the global configuration file
+config/config.php:
+  'trusted_domains' =>  array (
+    0 => 'owncloud.domain.xyz',
+    1 => 'proxy.domain.xyz',
+  )
+The first rule relays the request to the Shorty itself, whilst the second one
+is a general relay that allows you to interact using the whitelisted domain.
+Without that second rule the relaying service would be crippled and unusable.
 
 2.) Selection of a backend per user (optional)
 To generate the a source url that is part of every Shorty the app uses a

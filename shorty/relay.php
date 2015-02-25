@@ -78,9 +78,7 @@ if ( '0000000000'===$arg )
 	// this is a pseudo id, used to test the setup, so just return a positive message.
 	// this is used to test the setup of the static backend, shorty calls itself from there
 	OCP\Util::writeLog( 'shorty', "Positive validation of static backend base url.", OCP\Util::DEBUG );
-	// we have to react to a jsonp request, so we have to reply valid jsonp manually:
-	// note that we use 'static' jsonp, so no callback parameter is provided, instead it is hard coded here
-	// this reduces the complexity of setting up the backend, since no additional parameter has to be handled
+	// the validation request requires a CORS header in case of a cross domain setups:
 	header('Access-Control-Allow-Origin: *');
 	header('Content-Type: application/json');
 	OCP\JSON::success ( array('id'=>$arg,'instance'=>OCP\Config::getSystemValue('instanceid')) );

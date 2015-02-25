@@ -36,18 +36,6 @@ OCP\App::checkAppEnabled ( 'shorty' );
 $tmpl = new OCP\Template( 'shorty', 'tmpl_wdg_verification' );
 
 try {
-	// we just include the template, since using the template engine would create a whole bunch of problems...
-	// notably the OC wide csp policy sent as a header would prevent out js based verification to be blocked...
-//	header_remove ( 'Content-Security-Policy' );
-//	header (sprintf('Content-Security-Policy: '.
-//					"default-src 'self'; ".
-//					"script-src 'self'; ".
-//					"style-src 'self'; ".
-//					"connect-src *; ".
-//					"frame-src 'self'; ".
-//					"img-src 'self'; ".
-//					"font-src 'self'; ".
-//					"media-src 'self'") );
 	// prevent caching of result
 	header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 	header("Cache-Control: no-store, no-cache, must-revalidate");
