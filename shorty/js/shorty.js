@@ -1418,7 +1418,8 @@ OC.Shorty={
 					$.when(
 						OC.Shorty.WUI.Meta.reset(dialog)
 					).done(function(){
-						dialog.find('#title').attr('placeholder',meta.title);
+						var decodingHelper = $('<input type="text">').html(meta.title).text();
+						dialog.find('#title').attr('placeholder',decodingHelper);
 						// specify the icons and information to be shown as meta data
 						dialog.find('#staticon').attr('src', (meta.staticon ? meta.staticon : OC.imagePath('shorty','blank')));
 						dialog.find('#schemicon').attr('src', (meta.schemicon ? meta.schemicon : OC.imagePath('shorty','blank')));
