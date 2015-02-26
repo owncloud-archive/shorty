@@ -29,6 +29,8 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Hình ảnh có thể được dùng khi viết tài liệu hoặc thiết lập các webs",
     "Title" : "Tiêu đề",
     "Url shortened to: %s" : "Url được rút gọn thành: %s",
-    "Account" : "Tài khoản"
+    "Account" : "Tài khoản",
+    "Location" : "Vị trí",
+    "Proceed" : "Tiến hành"
 },
 "nplurals=1; plural=0;");

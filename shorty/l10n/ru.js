@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "ошибка",
     "info" : "подробнее",
     "debug" : "отладка",
-    "(never)" : "(никогда)",
     "2 seconds" : "2 секунды",
     "5 seconds" : "5 секунд",
     "12 seconds" : "12 секунд",
@@ -58,7 +57,6 @@ OC.L10N.register(
     "Backend" : "Бэкенд",
     "Base url" : "Базовый URL",
     "Choose a service…" : "Выберите сервис...",
-    "Click for embedding details" : "Кликните для подробностей внедрения",
     "Click it, for whatever site you want to create a Shorty." : "Щёлкните его, чтобы создать Shorty для любого сайта.",
     "Click registered" : "Клик зарегистрирован",
     "Clicks" : "Клики",
@@ -147,7 +145,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Эта картинка может быть использована в документах или веб-сайтах",
     "The backend service used to generate shortened URLs." : "Сервер для создания укороченных URL адресов.",
     "The default status as suggested for new Shortys." : "Статус по умолчанию, рекомендуемый для новых коротких ссылок.",
-    "The link below can be copied for usage apart" : "Ссылка ниже может быть скопирована для самостоятельного использования",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "Дополнительный плагин '%%s' отслеживает использование существующих Shorty!",
     "therefore the content must be copied manually" : "поэтому содержимое следует копировать вручную",
     "then paste into message" : "затем вставьте в сообщение",
@@ -215,6 +212,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Этот бэкенд теперь будет предлагаться как дополнительная альтернатива бэкенду для всех локальных пользователей в их личных настройках.",
     "Sorry, but your setup appears not to be working correctly yet!" : "Извините, но похоже, что ваша установка пока не работает правильно!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Проверьте вашу установку и убедитесь, что базовый url задан верно.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Убедитесь, что все запросы на него направлены на сервис перенаправляения Shorty."
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Убедитесь, что все запросы на него направлены на сервис перенаправляения Shorty.",
+    "Location" : "Местоположение",
+    "Proceed" : "Продолжить"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);");

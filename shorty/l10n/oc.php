@@ -8,6 +8,7 @@ $TRANSLATIONS = array(
 "Refresh" => "Refresca",
 "Save" => "Enregistra",
 "Settings" => "Configuracion",
-"Title" => "Títol"
+"Title" => "Títol",
+"Location" => "Plaça"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n > 1);";

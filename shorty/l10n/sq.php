@@ -44,6 +44,7 @@ $TRANSLATIONS = array(
 "SMS" => "SMS",
 "Source url" => "Burimi url",
 "Target" => "Objektiv",
-"Title" => "Titulli"
+"Title" => "Titulli",
+"Location" => "Vendndodhja"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

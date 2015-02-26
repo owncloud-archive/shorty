@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
-"Last-Translator: kenthage <khagebrand@gmail.com>\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/owncloud/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,8 +119,8 @@ msgid "debug"
 msgstr "felsök"
 
 # log message timeout
-msgid "(never)"
-msgstr "(aldrig)"
+msgid "( never )"
+msgstr ""
 
 msgid "2 seconds"
 msgstr "2 sekunder"
@@ -142,6 +142,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "bitly.com-tjänst"
 
@@ -224,9 +227,6 @@ msgstr "Grundadress"
 
 msgid "Choose a service…"
 msgstr "Välj en tjänst..."
-
-msgid "Click for embedding details"
-msgstr "Klicka för inbäddningsdetaljer"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Klicka på den för att skapa en Shorty."
@@ -438,6 +438,15 @@ msgstr "Shorty med id '%s' raderades"
 msgid "Show as QRCode"
 msgstr "Visa som QR-kod"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "Visa detaljer"
 
@@ -458,6 +467,12 @@ msgstr "Sortera fallande"
 
 msgid "Clear filter"
 msgstr "rensa filter"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr "Ursprunglig url"
@@ -492,8 +507,8 @@ msgstr "Den gränssnittstjänst som används för att generera förkortade adres
 msgid "The default status as suggested for new Shortys."
 msgstr "Den förvalda statusen som föreslagen för nya Shortys."
 
-msgid "The link below can be copied for usage apart"
-msgstr "Länken nedan kan kopieras för användning"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "Den ytterligare insticksmodulen '%%s' spårar användningen av existerande Shortys!"
@@ -506,6 +521,11 @@ msgstr "och sedan klistra in i meddelande"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Denna 2d-streckkod kodar url-adressen som pekar mot denna Shorty"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Detta är den interna adressen som den förkortade adressen vidarebefordrar till"
@@ -753,3 +773,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Säkerställ att alla förfrågningar till den på något sätt är anpassad till Shortys vidarebefodringstjänst."
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "Plats"
+
+msgid "Proceed"
+msgstr "Fortsätt"

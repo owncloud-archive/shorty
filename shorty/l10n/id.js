@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "kesalahan",
     "info" : "info",
     "debug" : "debug",
-    "(never)" : "(tidak pernah)",
     "2 seconds" : "2 detik",
     "5 seconds" : "5 detik",
     "12 seconds" : "12 detik",
@@ -58,7 +57,6 @@ OC.L10N.register(
     "Backend" : "Backend",
     "Base url" : "Url dasar",
     "Choose a service…" : "Pilih layanan...",
-    "Click for embedding details" : "Klik untuk detil penempelan",
     "Click it, for whatever site you want to create a Shorty." : "Klik situs mana yang anda inginkan untuk membuat Shorty.",
     "Click registered" : "Daftarkan klik",
     "Clicks" : "Klik",
@@ -147,7 +145,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Gambar tersebut dapat digunakan ketika menulis dokumen atau membuat situs web",
     "The backend service used to generate shortened URLs." : "Layanan backend yang digunakan untuk menghasilkan URL singkat.",
     "The default status as suggested for new Shortys." : "Status baku seperti yang disarankan untuk Shorty baru.",
-    "The link below can be copied for usage apart" : "Tautan berikut dapat disalin untuk penggunaan terpisah",
     "therefore the content must be copied manually" : "untuk itu isi harus disalin manual",
     "then paste into message" : "lalu tempelkan ke dalam pesan",
     "This 2d barcode encodes the url pointing to this Shorty" : "Barcode 2d berikut menyandikan url yang merujuk pada Shorty ini",
@@ -196,6 +193,8 @@ OC.L10N.register(
     "Usage of that static backend is fine and safe as long as this setup is not altered." : "Penggunaan backend statis adalah baik dan aman selama konfigurasi ini tidak diubah.",
     "Sorry, but your setup appears not to be working correctly yet!" : "Maaf, tampaknya instalasi Anda masih belum dapat berfungsi dengan baik!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Periksa instalasi Anda dan pastikan parameter base url telah dikonfigurasikan dengan benar.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Pastikan semua permintaan sudah dipetakan lewat layanan relai Shortys"
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Pastikan semua permintaan sudah dipetakan lewat layanan relai Shortys",
+    "Location" : "lokasi",
+    "Proceed" : "Melanjutkan"
 },
 "nplurals=1; plural=0;");

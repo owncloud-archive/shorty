@@ -56,6 +56,8 @@ $TRANSLATIONS = array(
 "Account" => "Сметка",
 "API key" => "API key",
 "Google API key" => "Google API key",
-"Google API account" => "Google API account"
+"Google API account" => "Google API account",
+"Location" => "Локација",
+"Proceed" => "Продолжи"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;";

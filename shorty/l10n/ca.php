@@ -52,7 +52,6 @@ $TRANSLATIONS = array(
 "Backend" => "Servidor",
 "Base url" => "URL base",
 "Choose a service…" => "Tria un servei...",
-"Click for embedding details" => "Feu clic per incrustar els detalls",
 "Click it, for whatever site you want to create a Shorty." => "Feu click per qualsevol lloc que vulgui crear una drecera",
 "Click registered" => "S'ha enregistrat el clic",
 "Clicks" => "Clics",
@@ -139,7 +138,6 @@ $TRANSLATIONS = array(
 "That image can be used when writing documents or setting up web sites" => "Aquesta imatge pot esser utilitzada quan s'escrigin documents o montatges de planas web",
 "The backend service used to generate shortened URLs." => "El servei de servidor utilitzat per general dreceras URLs. ",
 "The default status as suggested for new Shortys." => "El estat per defecte tal suggereix per noves dreceres",
-"The link below can be copied for usage apart" => "L'enllaç següent es pot copar per fer-lo servir a part",
 "The additional plugin '%%s' tracks the usage of existing Shortys!" => "El conector adicional '%%s' segueiz l'us de les dreceras existents!",
 "therefore the content must be copied manually" => "per tant el contingut deu esser copiar manualment",
 "then paste into message" => "tot seguit enganxa-ho en un missatge",
@@ -207,6 +205,8 @@ $TRANSLATIONS = array(
 "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." => "Aquest rerefons s'oferirà com una alternativa de segon pla d'execució a tots els usuaris locals dins les seves preferències personals.",
 "Sorry, but your setup appears not to be working correctly yet!" => "La configuració sembla no ser correcta, encara!",
 "Please check your setup and make sure that the configured base url is indeed correct." => "Comproveu la configuració i assegureu-vos que la url de base configurada és correcta.",
-"Make sure that all requests to it are somehow mapped to Shortys relay service." => "Assegureu-vos que totes les peticions estan mapades al servei de repetidor Shorty."
+"Make sure that all requests to it are somehow mapped to Shortys relay service." => "Assegureu-vos que totes les peticions estan mapades al servei de repetidor Shorty.",
+"Location" => "Ubicació",
+"Proceed" => "Procedeix"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

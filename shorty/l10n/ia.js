@@ -11,6 +11,7 @@ OC.L10N.register(
     "Notes" : "Notas",
     "Save" : "Salveguardar",
     "Settings" : "Configurationes",
-    "Title" : "Titulo"
+    "Title" : "Titulo",
+    "Location" : "Loco"
 },
 "nplurals=2; plural=(n != 1);");

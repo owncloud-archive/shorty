@@ -27,7 +27,7 @@
 # Playerthe12 <a7652246@drdrb.net>, 2014
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2013-2014
 # Marios Bekatoros <>, 2013
-# Salih Emin <salih-emin@ubuntu.com>, 2014
+# Salih Emin <cerebrux.gr@gmail.com>, 2014
 # thanaxix <thanasis@giannoulis.net>, 2013
 # Vassilis Kehayas <vkehayas@gmail.com>, 2014
 # Wasilis Mandratzis <inactive+Wasilis@transifex.com>, 2013
@@ -38,8 +38,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
-"Last-Translator: Salih Emin <salih-emin@ubuntu.com>\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/owncloud/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -122,8 +122,8 @@ msgid "debug"
 msgstr "αποσφαλμάτωση"
 
 # log message timeout
-msgid "(never)"
-msgstr "(ποτέ)"
+msgid "( never )"
+msgstr ""
 
 msgid "2 seconds"
 msgstr "2 δευτερόλεπτα"
@@ -145,6 +145,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "'bitly.com service "
 
@@ -227,9 +230,6 @@ msgstr "Επαλήθευση με κλικ."
 
 msgid "Choose a service…"
 msgstr "Επιλογή υπηρεσίας "
-
-msgid "Click for embedding details"
-msgstr "Κάντε κλικ για λεπτομέρειες ενσωμάτωσης"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Κάντε κλικ σε αυτό, για όποια ιστοσελίδα που θέλετε να δημιουργήθει ένα Shorty."
@@ -441,6 +441,15 @@ msgstr "Απροσδόκητη απόρριψη αντικειμένου που 
 msgid "Show as QRCode"
 msgstr "Εμφανιση ως QRCode"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "Προβολή λεπτομερειών"
 
@@ -461,6 +470,12 @@ msgstr "Φθίνουσα ταξινομηση"
 
 msgid "Clear filter"
 msgstr "Εκκαθάριση φίλτρου"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr "Αρχικό url "
@@ -495,8 +510,8 @@ msgstr "Η υπηρεσία backend χρησιμοποιήθηκε για να �
 msgid "The default status as suggested for new Shortys."
 msgstr "Το στάτους που μένει όπως προτάθηκε για τα νέα Shortys "
 
-msgid "The link below can be copied for usage apart"
-msgstr "Ο παρακάτω σύνδεσμος μπορεί να αντιγραφεί για χρήση εκτός"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "Τα επιπλέον πρόσθετα % %s παρακολουθούν την χρήση  την χρήση των παρόντων Συντομεύσεων "
@@ -509,6 +524,11 @@ msgstr "και κάντε επικόλληση σε μήνυμα"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Αυτό το 2D barcode κωδικοποιεί το url που δείχνουν προς αυτή Shorty"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Αυτή είναι μια εσωτερική url ότι οι συντομευθεί ρελέ url για να "
@@ -756,3 +776,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Βεβαιωθείτε ότι όλες οι αιτήσεις προβάλλονται κάπως στην υπηρεσία μετάθεσης των Shortys. "
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "Τοποθεσία"
+
+msgid "Proceed"
+msgstr "Συνέχιση"

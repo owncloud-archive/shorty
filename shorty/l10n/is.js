@@ -12,6 +12,7 @@ OC.L10N.register(
     "Notes" : "Skýringar",
     "Save" : "Vista",
     "Settings" : "Stillingar",
-    "Title" : "Titill"
+    "Title" : "Titill",
+    "Location" : "Staðsetning"
 },
 "nplurals=2; plural=(n != 1);");

@@ -12,6 +12,7 @@ $TRANSLATIONS = array(
 "Refresh" => "නැවුම් කරන්න",
 "Save" => "සුරකින්න",
 "Settings" => "සිටුවම්",
-"Title" => "මාතෘකාව"
+"Title" => "මාතෘකාව",
+"Location" => "ස්ථානය"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

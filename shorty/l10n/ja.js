@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "エラー",
     "info" : "情報",
     "debug" : "デバッグ",
-    "(never)" : "(なし)",
     "2 seconds" : "2秒",
     "5 seconds" : "5秒",
     "12 seconds" : "12秒",
@@ -58,7 +57,6 @@ OC.L10N.register(
     "Backend" : "バックエンド",
     "Base url" : "ベースURL",
     "Choose a service…" : "サービスを選択...",
-    "Click for embedding details" : "埋め込まれている詳細情報をクリックで確認",
     "Click it, for whatever site you want to create a Shorty." : "短縮を作成したい任意のサイトに対してクリックしてください。",
     "Click registered" : "クリックは登録されました",
     "Clicks" : "クリック",
@@ -147,7 +145,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "ドキュメントを作成したり、Webサイトを構築するときに、その画像を利用します。",
     "The backend service used to generate shortened URLs." : "短縮URLを生成する際に利用する外部サービス",
     "The default status as suggested for new Shortys." : "デフォルトの状態を新しい短縮として提案",
-    "The link below can be copied for usage apart" : "以下のリンクは別で利用するためにコピーできます",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "追加プラグイン '%%s' は、現在のShorty(短縮URL)の利用状況を追跡できます。",
     "therefore the content must be copied manually" : "従って、その内容は手動でコピーされなければなりません。",
     "then paste into message" : "そしてメッセージに貼り付けます",
@@ -215,6 +212,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "このバックエンドは、すべてのユーザーに個人設定での追加のバックエンドとして提供されるものです。",
     "Sorry, but your setup appears not to be working correctly yet!" : "すみませんが、設定がまだ正常になっていないようです。",
     "Please check your setup and make sure that the configured base url is indeed correct." : "設定をチェックして、設定されたベースURLが間違いなく正しいか、確認をお願いいたします。",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "それに対するすべてのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。"
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "それに対するすべてのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。",
+    "Location" : "位置",
+    "Proceed" : "続行"
 },
 "nplurals=1; plural=0;");

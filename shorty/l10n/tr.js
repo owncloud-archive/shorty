@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "hata",
     "info" : "bilgi",
     "debug" : "hata ayıklama",
-    "(never)" : "(hiçbir zaman)",
     "2 seconds" : "2 saniye",
     "5 seconds" : "5 saniye",
     "12 seconds" : "12 saniye",
@@ -58,7 +57,6 @@ OC.L10N.register(
     "Backend" : "Arka Uç",
     "Base url" : "Temel adres",
     "Choose a service…" : "Bir hizmet seçin...",
-    "Click for embedding details" : "Gömme ayrıntıları için tıklayın",
     "Click it, for whatever site you want to create a Shorty." : "Bir kısaltma oluşturmak istediğiniz site ne olursa olsun, tıklayın.",
     "Click registered" : "Tıklama kaydedildi",
     "Clicks" : "Tıklamalar",
@@ -147,7 +145,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Bu resim belgeler yazılırken veya web siteleri ayarlanırken kullanılabilir",
     "The backend service used to generate shortened URLs." : "Kısaltılmış adresler oluşturmak için kullanılan arka uç servisi.",
     "The default status as suggested for new Shortys." : "Yeni kısaltmalar için tavsiye edilen ön tanımlı durum.",
-    "The link below can be copied for usage apart" : "Aşağıdaki bağlantı ayrıca kullanılmak üzere kopyalanabilir",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "'%%s' ilave eklentisi mevcut kısaltmaların kullanımını takip edebilir!",
     "therefore the content must be copied manually" : "SMS gönderildikten sonra",
     "then paste into message" : "ardından iletiye yapıştırılabilir",
@@ -215,6 +212,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Bu arka uç tüm yerel kullanıcıların kişisel ayarlarında alternatif ilave arka uç olarak önerilecektir.",
     "Sorry, but your setup appears not to be working correctly yet!" : "Üzgünüz, fakat kurulumunuz henüz doğru gibi görünmüyor!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Lütfen tanımlı temel adres değerinin doğru olduğundan emin olmak için ayarları kontrol edin.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Tüm isteklerin bir şekilde Kısaltmalar aktarım hizmetine eşleştirilmiş olduğundan emin olun."
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Tüm isteklerin bir şekilde Kısaltmalar aktarım hizmetine eşleştirilmiş olduğundan emin olun.",
+    "Location" : "Konum",
+    "Proceed" : "Devam et"
 },
 "nplurals=2; plural=(n > 1);");

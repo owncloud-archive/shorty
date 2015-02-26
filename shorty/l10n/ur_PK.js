@@ -6,6 +6,7 @@ OC.L10N.register(
     "Close" : "بند ",
     "Save" : "حفظ",
     "Settings" : "سیٹینگز",
-    "Title" : "عنوان"
+    "Title" : "عنوان",
+    "Location" : "مقام"
 },
 "nplurals=2; plural=(n != 1);");

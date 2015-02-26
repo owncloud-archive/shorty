@@ -4,6 +4,7 @@ $TRANSLATIONS = array(
 "Notes" => "تێبینیەکان",
 "Save" => "پاشکه‌وتکردن",
 "Settings" => "ده‌ستكاری",
-"Title" => "ناونیشان"
+"Title" => "ناونیشان",
+"Location" => "شوێن"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

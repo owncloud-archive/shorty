@@ -33,7 +33,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/owncloud/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -117,7 +117,7 @@ msgid "debug"
 msgstr "调试"
 
 # log message timeout
-msgid "(never)"
+msgid "( never )"
 msgstr ""
 
 msgid "2 seconds"
@@ -140,6 +140,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "bitly.com 服务"
 
@@ -222,9 +225,6 @@ msgstr "基础网址"
 
 msgid "Choose a service…"
 msgstr "请选择一项服务"
-
-msgid "Click for embedding details"
-msgstr "点击查看嵌入详情"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "当想将某网页保存为短链时，点击它即可。"
@@ -436,6 +436,15 @@ msgstr "id为'%s' 的短链已被删除"
 msgid "Show as QRCode"
 msgstr "显示为二维码"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "显示详情"
 
@@ -456,6 +465,12 @@ msgstr "降序"
 
 msgid "Clear filter"
 msgstr "清除搜索词"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr "源地址"
@@ -490,8 +505,8 @@ msgstr "后端用来产生缩短的链接。"
 msgid "The default status as suggested for new Shortys."
 msgstr "新建短链的默认状态"
 
-msgid "The link below can be copied for usage apart"
-msgstr "下面的链接可复制后独立使用"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "附加的 '%%s' 插件跟踪短链的使用情况！"
@@ -504,6 +519,11 @@ msgstr "然后粘贴到信息"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "这个2d 条码代表此短链"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "这是短链中间指向的内部地址"
@@ -751,3 +771,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "请确保所有关于它的请求都映射到短链中继服务"
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "地点"
+
+msgid "Proceed"
+msgstr "已处理"

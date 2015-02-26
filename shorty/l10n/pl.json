@@ -22,7 +22,6 @@
     "error" : "błąd",
     "info" : "info",
     "debug" : "debug",
-    "(never)" : "(nigdy)",
     "2 seconds" : "2 sekundy",
     "5 seconds" : "5 sekund",
     "12 seconds" : "12 sekund",
@@ -56,7 +55,6 @@
     "Backend" : "Zaplecze",
     "Base url" : "Bazowy adres",
     "Choose a service…" : "Wybierz usługę...",
-    "Click for embedding details" : "Kliknij po więcej informacji",
     "Click it, for whatever site you want to create a Shorty." : "Kliknij na to, aby utworzyć skrót Shorty dla dowolnej strony.",
     "Click registered" : "Kliknij rejestrację",
     "Clicks" : "Kliknięcia",
@@ -144,7 +142,6 @@
     "That image can be used when writing documents or setting up web sites" : "Ten obrazek może być użyty podczas tworzenia dokumentów lub ustawiania stron internetowych",
     "The backend service used to generate shortened URLs." : "Serwis zaplecza używany do generowania skróconych adresów URL.",
     "The default status as suggested for new Shortys." : "Domyślny status sugerowany dla nowych Shorty.",
-    "The link below can be copied for usage apart" : "Poniższy link może być kopiowany do użytku poza",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "Dodatkowa wtyczka '%%s' śledzi użyzie istniejących skrótów Shorty!",
     "therefore the content must be copied manually" : "dlatego zawartość musi być skopiowana ręcznie",
     "then paste into message" : "potem wklej do wiadomości",
@@ -212,6 +209,8 @@
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "To zaplecze będzie teraz oferowane jako dodatkowa alternatywa do wszystkich użytkowników lokalnych w ich osobistych preferencjach",
     "Sorry, but your setup appears not to be working correctly yet!" : "Przykro nam, ale Twoje ustawienia jeszcze nie działają prawidłowo!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Proszę sprawdź swoje ustawienia i upewnij się, że skonfigurowany URL bazowy jest rzeczywiście poprawny",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Upewnij się, że wszystkie żądania są w jakiś sposób zmapowane do usługi przekazywania Shorty"
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Upewnij się, że wszystkie żądania są w jakiś sposób zmapowane do usługi przekazywania Shorty",
+    "Location" : "Lokalizacja",
+    "Proceed" : "Wykonaj"
 },"pluralForm" :"nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);"
 }

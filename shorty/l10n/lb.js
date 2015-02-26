@@ -13,6 +13,7 @@ OC.L10N.register(
     "Save" : "Späicheren",
     "Settings" : "Astellungen",
     "Title" : "Titel",
-    "Account" : "Konto"
+    "Account" : "Konto",
+    "Location" : "Uert"
 },
 "nplurals=2; plural=(n != 1);");

@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "errorea",
     "info" : "informazioa",
     "debug" : "araztu",
-    "(never)" : "(inoiz)",
     "2 seconds" : "2 segundu",
     "5 seconds" : "5 segundu",
     "12 seconds" : "12 segundu",
@@ -116,7 +115,6 @@ OC.L10N.register(
     "Target" : "Helburua",
     "Target url" : "Helburu helbidea",
     "Target url '%s' is valid" : "'%s' helburu helbidea baliozkoa da",
-    "The link below can be copied for usage apart" : "Hurrengo link-a kopiatu daiteke aparte erabiltzeko.",
     "then paste into message" : "gero mezuan itsasi",
     "Title" : "Izenburua",
     "Url shortened to: %s" : "Url-a honetara laburtu da: %s",
@@ -132,6 +130,8 @@ OC.L10N.register(
     "tiny.cc user" : "tiny.cc erabiltzailea",
     "tiny.cc user name" : "tiny.cc erabiltzaile izena",
     "tiny.cc key" : "tiny.cc gakoa",
-    "tiny.cc user key" : "tini.cc erabiltzailearen gakoa"
+    "tiny.cc user key" : "tini.cc erabiltzailearen gakoa",
+    "Location" : "Kokapena",
+    "Proceed" : "Jarraitu"
 },
 "nplurals=2; plural=(n != 1);");

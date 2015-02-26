@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 22:21+0000\n"
-"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/owncloud/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -119,8 +119,8 @@ msgid "debug"
 msgstr "debug"
 
 # log message timeout
-msgid "(never)"
-msgstr "(tidak pernah)"
+msgid "( never )"
+msgstr ""
 
 msgid "2 seconds"
 msgstr "2 detik"
@@ -142,6 +142,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "layanan bitly.com"
 
@@ -224,9 +227,6 @@ msgstr "Url dasar"
 
 msgid "Choose a service…"
 msgstr "Pilih layanan..."
-
-msgid "Click for embedding details"
-msgstr "Klik untuk detil penempelan"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Klik situs mana yang anda inginkan untuk membuat Shorty."
@@ -438,6 +438,15 @@ msgstr "Shorty dengan id '%s' telah dihapus"
 msgid "Show as QRCode"
 msgstr "Tampilkan sebagai QRCode"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "Tampilkan detail"
 
@@ -458,6 +467,12 @@ msgstr "Urutkan menurun"
 
 msgid "Clear filter"
 msgstr "Bersihkan penyaring"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr "Url sumber"
@@ -492,8 +507,8 @@ msgstr "Layanan backend yang digunakan untuk menghasilkan URL singkat."
 msgid "The default status as suggested for new Shortys."
 msgstr "Status baku seperti yang disarankan untuk Shorty baru."
 
-msgid "The link below can be copied for usage apart"
-msgstr "Tautan berikut dapat disalin untuk penggunaan terpisah"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
@@ -506,6 +521,11 @@ msgstr "lalu tempelkan ke dalam pesan"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Barcode 2d berikut menyandikan url yang merujuk pada Shorty ini"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr ""
@@ -753,3 +773,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Pastikan semua permintaan sudah dipetakan lewat layanan relai Shortys"
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "lokasi"
+
+msgid "Proceed"
+msgstr "Melanjutkan"

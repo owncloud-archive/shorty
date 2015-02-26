@@ -53,7 +53,6 @@ OC.L10N.register(
     "Backend" : "Motor",
     "Base url" : "URL base",
     "Choose a service…" : "Elegí un servicio...",
-    "Click for embedding details" : "Hacé clic para detalles de inserción",
     "Click it, for whatever site you want to create a Shorty." : "Hacé clic acá, para cualquier sitio para el que quieras crear un Shorty",
     "Click registered" : "Click registrado",
     "Clicks" : "Clicks",
@@ -140,7 +139,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Esa imagen se puede utilizar para escribir documentos o la creación de sitios web",
     "The backend service used to generate shortened URLs." : "El back-end usado para generar URLs acortadas.",
     "The default status as suggested for new Shortys." : "El estado por defecto que se sugiere para nuevos Shortys.",
-    "The link below can be copied for usage apart" : "El enlace abajo puede ser copiado para su uso por separado",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "¡El plug-in adicional '%%s' rastrea el uso de Shortys existentes!",
     "therefore the content must be copied manually" : "por lo tanto, el contenido debe ser copiado manualmente",
     "then paste into message" : "Después, pegá en el mensaje",
@@ -208,6 +206,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Este back-end ahora se ofrece como un back-end alternativo para todos los usuarios locales dentro de sus preferencias personales.",
     "Sorry, but your setup appears not to be working correctly yet!" : "¡Lamentablemente, tu configuración no parece estar funcionando correctamente todavía!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Por favor, conmprobá tu configuración y asegurate de que la URL base  es realmente correcta.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Comprobá que todas las solicitudes estén dirigidas de alguna manera al servicio de retransmisión de Shortys."
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Comprobá que todas las solicitudes estén dirigidas de alguna manera al servicio de retransmisión de Shortys.",
+    "Location" : "Ubicación",
+    "Proceed" : "Prosiga"
 },
 "nplurals=2; plural=(n != 1);");

@@ -10,6 +10,7 @@ $TRANSLATIONS = array(
 "Notes" => "Notas",
 "Save" => "Salveguardar",
 "Settings" => "Configurationes",
-"Title" => "Titulo"
+"Title" => "Titulo",
+"Location" => "Loco"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

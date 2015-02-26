@@ -17,7 +17,6 @@ $TRANSLATIONS = array(
 "show" => "näytä",
 "reload" => "lataa uudelleen",
 "error" => "virhe",
-"(never)" => "(ei koskaan)",
 "2 seconds" => "2 sekuntia",
 "5 seconds" => "5 sekuntia",
 "12 seconds" => "12 sekuntia",
@@ -122,6 +121,8 @@ $TRANSLATIONS = array(
 "tiny.cc user key" => "tiny.cc-käyttäjän avain",
 "You must provide a valid '%%s' to use this service." => "Sinun pitää antaa kelvollinen '%%s' käyttääksesi tätä palvelua.",
 "Great, your setup appears to be working fine!" => "Hienoa, tekemäsi asetukset vaikuttavat toimivan!",
-"Sorry, but your setup appears not to be working correctly yet!" => "Valitettavasti tekemäsi asetukset eivät vaikuta vielä toimivan!"
+"Sorry, but your setup appears not to be working correctly yet!" => "Valitettavasti tekemäsi asetukset eivät vaikuta vielä toimivan!",
+"Location" => "Sijainti",
+"Proceed" => "Jatka"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

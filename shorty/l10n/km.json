@@ -11,6 +11,7 @@
     "Close" : "បិទ",
     "Configuration" : "ការ​កំណត់​សណ្ឋាន",
     "Copy to clipboard" : "ចម្លង​ទៅ​ឃ្លីបបត",
+    "Feedback" : "មតិត្រឡប់",
     "Loading" : "កំពុង​ផ្ទុក",
     "Notes" : "កំណត់​ចំណាំ",
     "Nothing here yet" : "នៅ​ទីនេះ​មិន​ទាន់​មាន​អ្វី​ទេ",
@@ -24,6 +25,8 @@
     "SMS composer" : "កម្មវិធី​សរសេរ SMS",
     "then paste into message" : "ហើយ​បិទ​ភ្ជាប់​ទៅ​ក្នុង​សារ",
     "Title" : "ចំណងជើង",
-    "Url shortened to: %s" : "បាន​បង្រួម Url ទៅ៖ %s"
+    "Url shortened to: %s" : "បាន​បង្រួម Url ទៅ៖ %s",
+    "Location" : "ទីតាំង",
+    "Proceed" : "ធ្វើ​បន្ត"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

@@ -33,7 +33,6 @@ OC.L10N.register(
     "Anything that appears helpful …" : "ყველაფერი რაც არის საჭირო ...",
     "Backend" : "ბექენდი",
     "Base url" : "საბაზო url–ი",
-    "Click for embedding details" : "embedding–ის დეტალური ინფორმაცია",
     "Click it, for whatever site you want to create a Shorty." : "დააჭირე მას, რა საიტზედაც გინდათ შემოკლების გაკეთება.",
     "Click registered" : "დააჭირეთ დარეგისტრირებულებმა",
     "Clicks" : "ქლიქები",
@@ -109,7 +108,6 @@ OC.L10N.register(
     "Target url" : "სამიზნე url",
     "Target url '%s' is valid" : "სამიზნე url  '%s' მართებულია",
     "That image can be used when writing documents or setting up web sites" : "სურათი შეიძლება გამოყენებულ იქნას დოკუმენტების შექმისას ან web გვერდებზე",
-    "The link below can be copied for usage apart" : "შესაძლებელია ლინკის დაკოპირება შემდგომი გამოყენებისათვის",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "დამატებითი '%%s' ფლაგინი გვაჩვენებს მოცემული შემოკლებების გამოყენებას!",
     "therefore the content must be copied manually" : "ამასთანავე კონტენტი შეიძლება კოპირებულ იქნას ხელით",
     "then paste into message" : "შემდეგ ჩააკოპირეთ მესიჯის შიგნით",
@@ -174,6 +172,7 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "ეს ბექენდი იქნება შეთავაზებული ახალ დამატებით ბექენდად ყველა ლოკალური მომხმარებლისთვის პერსონალური პარამეტრების შიგნით.",
     "Sorry, but your setup appears not to be working correctly yet!" : "ბოდიშით, მაგრამ თქვენი კონფიგურაცია არ მუშაობს კორექტულად!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "გთხოვთ შეამოწმოთ თქვენი კონფიგურაცია და დარჭმუნდით იმაში რომ კონფიგურირებული საბაზო url–ი აუცილებლად მართებულია.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "დარწმუნდით იმაში რომ ყველა მოთხოვნა დამეპილია შემოკლებულად რელე სერვისზე."
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "დარწმუნდით იმაში რომ ყველა მოთხოვნა დამეპილია შემოკლებულად რელე სერვისზე.",
+    "Location" : "ადგილმდებარეობა"
 },
 "nplurals=1; plural=0;");

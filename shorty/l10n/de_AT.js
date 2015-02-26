@@ -4,6 +4,7 @@ OC.L10N.register(
     "never" : "niemals",
     "Save" : "Speichern",
     "Settings" : "Einstellungen",
-    "Title" : "Titel"
+    "Title" : "Titel",
+    "Location" : "Ort"
 },
 "nplurals=2; plural=(n != 1);");

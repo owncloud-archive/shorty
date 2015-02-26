@@ -84,6 +84,8 @@ OC.L10N.register(
     "Account" : "Cont",
     "API key" : "Cheie API",
     "Google API key" : "Cheie Google API",
-    "Sorry, but your setup appears not to be working correctly yet!" : "Ne pare rău , dar setările dumneavoastră par sa nu funcţioneze corect , încă !"
+    "Sorry, but your setup appears not to be working correctly yet!" : "Ne pare rău , dar setările dumneavoastră par sa nu funcţioneze corect , încă !",
+    "Location" : "Locație",
+    "Proceed" : "Continua"
 },
 "nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));");

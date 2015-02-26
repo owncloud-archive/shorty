@@ -24,14 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Flávio Veras <flaviove@gmail.com>, 2013-2014
+# Flávio Veras <flaviove@gmail.com>, 2013-2015
 # Rodrigo Tavares <rodrigost23@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
 "Last-Translator: Flávio Veras <flaviove@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/owncloud/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -115,8 +115,8 @@ msgid "debug"
 msgstr "debug"
 
 # log message timeout
-msgid "(never)"
-msgstr "(nunca)"
+msgid "( never )"
+msgstr "( nunca )"
 
 msgid "2 seconds"
 msgstr "2 segundos"
@@ -138,6 +138,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr "[ nenhum ]"
+
 msgid "bitly.com service"
 msgstr "serviço bitly.com"
 
@@ -220,9 +223,6 @@ msgstr "URL base"
 
 msgid "Choose a service…"
 msgstr "Escolha um serviço"
-
-msgid "Click for embedding details"
-msgstr "Click para incorporar detalhes"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Clique nele, para qualquer site que você deseja criar um Atalho."
@@ -434,6 +434,15 @@ msgstr "Shorty com id '%s' excluído"
 msgid "Show as QRCode"
 msgstr "Mostrar como QRCode"
 
+msgid "Show QRCode reference"
+msgstr "Mostrar a referência QRCode"
+
+msgid "Show QRCode image"
+msgstr "Mostrar a imagem QRCode"
+
+msgid "Download QRCode"
+msgstr "Baixar QRCode"
+
 msgid "Show details"
 msgstr "Mostrar detalhes"
 
@@ -454,6 +463,12 @@ msgstr "Ordem Descendente"
 
 msgid "Clear filter"
 msgstr "Limpar filtro"
+
+msgid "Collapse column"
+msgstr "Encolher coluna"
+
+msgid "Expand column"
+msgstr "Expandir coluna"
 
 msgid "Source url"
 msgstr "url fonte"
@@ -488,8 +503,8 @@ msgstr "O serviço de backend usado para gerar atalhos URLs."
 msgid "The default status as suggested for new Shortys."
 msgstr "O status padrão como sugerido por novos Atalhos."
 
-msgid "The link below can be copied for usage apart"
-msgstr "O link abaixo pode ser copiado para uso a parte"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr "O link abaixo podem ser copiado para colá-lo em outro lugar"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "O plugin adicional '%%s' acompanha o uso de Shortys existentes!"
@@ -502,6 +517,11 @@ msgstr "em seguida, cole na mensagem"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Este código de barras 2d codifica a url apontando para este Shorty"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr "Use-o em páginas da web, fazendo referência ou incorporação ou simplesmente imprimir ou baixar para uso offline"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Esta é uma url interna que retransmite para uma URL atalho"
@@ -749,3 +769,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Certifique-se de que todos os pedidos estão de alguma forma mapeados para Shortys serviço de retransmissão."
+
+msgid "Shorty relay service"
+msgstr "Serviço de retransmissão Shorty"
+
+msgid "If you proceed you will be forwarded to:"
+msgstr "Se você continuar, você será encaminhado para:"
+
+msgid "Target object:"
+msgstr "Objeto alvo:"
+
+msgid "Location"
+msgstr "Localização"
+
+msgid "Proceed"
+msgstr "Prosseguir"

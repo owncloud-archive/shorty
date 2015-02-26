@@ -12,6 +12,7 @@ $TRANSLATIONS = array(
 "Save" => "Späicheren",
 "Settings" => "Astellungen",
 "Title" => "Titel",
-"Account" => "Konto"
+"Account" => "Konto",
+"Location" => "Uert"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

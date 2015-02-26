@@ -22,7 +22,6 @@
     "error" : "fallu",
     "info" : "info",
     "debug" : "depurar",
-    "(never)" : "(enxamás)",
     "2 seconds" : "2 segundos",
     "5 seconds" : "5 segundos",
     "12 seconds" : "12 segundos",
@@ -56,7 +55,6 @@
     "Backend" : "Motor",
     "Base url" : "url base",
     "Choose a service…" : "Esbilla un serviciu...",
-    "Click for embedding details" : "Fai clic pa detalles d'inxerción",
     "Click it, for whatever site you want to create a Shorty." : "Clic nél, por cualquier sitiu que quiera crear un Shorty",
     "Click registered" : "Clic rexistráu",
     "Clicks" : "Clics",
@@ -144,7 +142,6 @@
     "That image can be used when writing documents or setting up web sites" : "Esa imaxe pue usase pa escribir documentos o la creación de sitios web",
     "The backend service used to generate shortened URLs." : "El serviciu usáu pa xenerar URLs acurtiaes.",
     "The default status as suggested for new Shortys." : "L'estáu por defeutu que se suxer pa Shortys nuevos.",
-    "The link below can be copied for usage apart" : "L'enllaz siguiente pue copiase pal so usu",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "¡El plug-in adicional '%%s' rastrexa l'usu de Shortys esistentes!",
     "therefore the content must be copied manually" : "poro, el conteníu ha copiase manualmente",
     "then paste into message" : "dempués apegalu nun mensaxe",
@@ -212,6 +209,8 @@
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Esti motor úfrese agora como un motor alternativu adicional a tolos usuarios llocales dientro de les tos preferencies personales.",
     "Sorry, but your setup appears not to be working correctly yet!" : "¡Sentímoslo, pero la to configuración paez qu'entá nun funciona correcho!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Por favor, comprueba la configuración y asegúrate de que la URL base configurada ye correuta.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Comprueba que toles solicitúes tean dirixíes de dalgún mou al serviciu de retresmisión de Shortys."
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Comprueba que toles solicitúes tean dirixíes de dalgún mou al serviciu de retresmisión de Shortys.",
+    "Location" : "Llocalización",
+    "Proceed" : "Proceder"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

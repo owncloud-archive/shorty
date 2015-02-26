@@ -24,14 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
-# André Koot <meneer@tken.net>, 2013-2014
+# André Koot <meneer@tken.net>, 2013-2015
 # Bram De Vuyst <bramdevuyst@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Dutch (http://www.transifex.com/projects/p/owncloud/language/nl/)\n"
 "MIME-Version: 1.0\n"
@@ -115,8 +115,8 @@ msgid "debug"
 msgstr "debug"
 
 # log message timeout
-msgid "(never)"
-msgstr "(nooit)"
+msgid "( never )"
+msgstr ""
 
 msgid "2 seconds"
 msgstr "2 seconden"
@@ -138,6 +138,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "bitly.com service"
 
@@ -220,9 +223,6 @@ msgstr "Basis url"
 
 msgid "Choose a service…"
 msgstr "Kies een service..."
-
-msgid "Click for embedding details"
-msgstr "Klik voor invoeg details"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Klik het om voor een gewenste site een Shorty te maken."
@@ -434,6 +434,15 @@ msgstr "Shorty met id '%s' verwijderd"
 msgid "Show as QRCode"
 msgstr "Tonen als QRCode"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "Tonen details"
 
@@ -454,6 +463,12 @@ msgstr "Aflopend sorteren"
 
 msgid "Clear filter"
 msgstr "Leegmaken filter"
+
+msgid "Collapse column"
+msgstr "Inklappen kolom"
+
+msgid "Expand column"
+msgstr "Uitbreiden kolom"
 
 msgid "Source url"
 msgstr "Bron url"
@@ -488,8 +503,8 @@ msgstr "The backend service die wordt gebruikt voor het genereren van verkorte U
 msgid "The default status as suggested for new Shortys."
 msgstr "De standaard status zoals gesuggereerd voor nieuwe Shortys."
 
-msgid "The link below can be copied for usage apart"
-msgstr "De link hieronder kan worden gekopieerd voor los gebruik"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "De aanvullende plugin '%%s' volgt het gebruik van bestaande Shortys!"
@@ -502,6 +517,11 @@ msgstr "in een bericht worden geplaatst"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Deze 2D streepjescode bevat de url die verwijst naar deze Shorty"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Dit is een interne url waarnaar de verkorte url naar verwijst"
@@ -749,3 +769,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Let erop dat alle aanroepen worden omgezet naar Shorty's relayservice."
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "Locatie"
+
+msgid "Proceed"
+msgstr "Ga verder"

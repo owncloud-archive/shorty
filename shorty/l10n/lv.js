@@ -16,6 +16,7 @@ OC.L10N.register(
     "Refresh" : "Atsvaidzināt",
     "Save" : "Saglabāt",
     "Settings" : "Iestatījumi",
-    "Title" : "Nosaukums"
+    "Title" : "Nosaukums",
+    "Location" : "Vieta"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);");

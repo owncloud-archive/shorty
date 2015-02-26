@@ -26,13 +26,13 @@
 # Translators:
 # Miguel Anxo Bouzada <mbouzada@gmail.com>, 2013
 # Miguel Anxo Bouzada <mbouzada@gmail.com>, 2013-2015
-# Xosé M. Lamas <correo.xmgz@gmail.com>, 2014
+# Xosé M. Lamas <correo.xmgz@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-14 10:50+0000\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/projects/p/owncloud/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -116,8 +116,8 @@ msgid "debug"
 msgstr "depuración"
 
 # log message timeout
-msgid "(never)"
-msgstr "(nunca)"
+msgid "( never )"
+msgstr "( nunca )"
 
 msgid "2 seconds"
 msgstr "2 segundos"
@@ -139,6 +139,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr "[ ningún ]"
+
 msgid "bitly.com service"
 msgstr "Servizo bitly.com"
 
@@ -221,9 +224,6 @@ msgstr "URL base"
 
 msgid "Choose a service…"
 msgstr "Escolla un servizo"
-
-msgid "Click for embedding details"
-msgstr "Prema para ver os detalles integrados"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Prema en calquera sitio do que queira xerar un «Shorty»"
@@ -435,6 +435,15 @@ msgstr "Eliminado o «Shorty» co ID «%s»"
 msgid "Show as QRCode"
 msgstr "Amosar como código QR"
 
+msgid "Show QRCode reference"
+msgstr "Amosar a referencia do QRCode"
+
+msgid "Show QRCode image"
+msgstr "Amosar a imaxe do QRCode"
+
+msgid "Download QRCode"
+msgstr "Descargar o QRCode"
+
 msgid "Show details"
 msgstr "Amosar os detalles"
 
@@ -455,6 +464,12 @@ msgstr "Orde descendente"
 
 msgid "Clear filter"
 msgstr "Limpar o filtro"
+
+msgid "Collapse column"
+msgstr "Contraer a columna"
+
+msgid "Expand column"
+msgstr "Expandir a columna"
 
 msgid "Source url"
 msgstr "URL orixe"
@@ -489,8 +504,8 @@ msgstr "A infraestrutura do servizo empregado para xerar URL acurtados."
 msgid "The default status as suggested for new Shortys."
 msgstr "O estado predeterminado para novos Shorty."
 
-msgid "The link below can be copied for usage apart"
-msgstr "Pode copiar a seguinte ligazón para usala aparte"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr "A ligazón inferior pódese copiar e pegar en calquera lugar"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "O engadido adicional «%%s» rastrexa o uso dos «Shorty« existentes!"
@@ -503,6 +518,11 @@ msgstr "entón, pegar na mensaxe"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Este código de barras 2D codifica o URL apuntando a este «Shorty»"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr "Utilíceo en páxinas web referenciándoo, incrustándoo ou simplemente imprímao ou descárgueo para usalo sen conexión"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Este é un URL interno que o recortador de URL repite a"
@@ -749,4 +769,19 @@ msgstr "Revise a configuración e asegúrese de que o URL base configurado é co
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr "Asegúrese de que todas as solicitudes están de algunha maneira asignadas ao servizo de repetidor de «Shorty»."
+msgstr "Asegúrese de que todas as solicitudes están dalgunha maneira asignadas ao servizo de repetidor de «Shorty»."
+
+msgid "Shorty relay service"
+msgstr "Servizo repetidor de acurtamento Shorty"
+
+msgid "If you proceed you will be forwarded to:"
+msgstr "Se continúa será redirixido a:"
+
+msgid "Target object:"
+msgstr "Obxecto de destino:"
+
+msgid "Location"
+msgstr "Localización"
+
+msgid "Proceed"
+msgstr "Continuar"

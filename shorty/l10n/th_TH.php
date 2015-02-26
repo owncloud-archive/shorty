@@ -13,6 +13,7 @@ $TRANSLATIONS = array(
 "Refresh" => "รีเฟรช",
 "Save" => "บันทึก",
 "Settings" => "ตั้งค่า",
-"Title" => "ชื่อ"
+"Title" => "ชื่อ",
+"Location" => "ตำแหน่งที่อยู่"
 );
 $PLURAL_FORMS = "nplurals=1; plural=0;";

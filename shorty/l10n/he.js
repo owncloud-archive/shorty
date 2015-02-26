@@ -23,8 +23,8 @@ OC.L10N.register(
     "Save" : "שמירה",
     "Send link by email" : "שליחת הקישור בדוא״ל",
     "Settings" : "הגדרות",
-    "The link below can be copied for usage apart" : "ניתן להעתיק את הקישור שלהלן לשימוש שונה",
     "Title" : "כותרת",
-    "Url shortened to: %s" : "הכתובת קוצרה לכדי: %s"
+    "Url shortened to: %s" : "הכתובת קוצרה לכדי: %s",
+    "Location" : "מיקום"
 },
 "nplurals=2; plural=(n != 1);");

@@ -13,6 +13,7 @@ OC.L10N.register(
     "Refresh" : "மீள் ஏற்றுக",
     "Save" : "சேமிக்க ",
     "Settings" : "அமைப்புகள்",
-    "Title" : "தலைப்பு"
+    "Title" : "தலைப்பு",
+    "Location" : "இடம்"
 },
 "nplurals=2; plural=(n != 1);");

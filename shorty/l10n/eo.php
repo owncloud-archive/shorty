@@ -90,7 +90,6 @@ $TRANSLATIONS = array(
 "Target" => "Celo",
 "Target url" => "Cela URL",
 "Target url '%s' is valid" => "La cela URL “%s” validas",
-"The link below can be copied for usage apart" => "La jena ligilo povas kopiiĝi por aparta uzo",
 "Title" => "Titolo",
 "Toggle toolbar" => "Baskuligi ilobreton",
 "Total of clicks" => "Totalo de klakoj",
@@ -111,6 +110,7 @@ $TRANSLATIONS = array(
 "tiny.cc user name" => "Uzantonomo de tiny.cc",
 "tiny.cc key" => "Klavo de tiny.cc",
 "tiny.cc user key" => "Uzantoklavo de tiny.cc",
-"Register a new '%%s' at their pages." => "Registri novan “%%s” en iliaj paĝoj."
+"Register a new '%%s' at their pages." => "Registri novan “%%s” en iliaj paĝoj.",
+"Location" => "Loko"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

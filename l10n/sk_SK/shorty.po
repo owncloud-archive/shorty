@@ -32,8 +32,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
-"Last-Translator: Marián Hvolka <marian.hvolka@stuba.sk>\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/owncloud/language/sk_SK/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,8 +116,8 @@ msgid "debug"
 msgstr "ladenie"
 
 # log message timeout
-msgid "(never)"
-msgstr "(nikdy)"
+msgid "( never )"
+msgstr ""
 
 msgid "2 seconds"
 msgstr "2 sekundy"
@@ -139,6 +139,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "bitly.com služba"
 
@@ -221,9 +224,6 @@ msgstr "Základná URL"
 
 msgid "Choose a service…"
 msgstr "Vyberte si službu..."
-
-msgid "Click for embedding details"
-msgstr "Kliknite pre vkladanie podrobností"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Zaklikni, pre akúkoľvek stránku tvorenú zo 'Shorty'."
@@ -435,6 +435,15 @@ msgstr "Skrátenie s id '%s' zmazané"
 msgid "Show as QRCode"
 msgstr "Zobraziť ako QR kód"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "Zobraziť podrobnosti"
 
@@ -455,6 +464,12 @@ msgstr "Zoradiť zostupne"
 
 msgid "Clear filter"
 msgstr "Vyčistiť filter"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr "Zdrojová URL"
@@ -489,8 +504,8 @@ msgstr "Backend služba slúži na generovanie skrátenej URL."
 msgid "The default status as suggested for new Shortys."
 msgstr "Východiskový stav je určený pre nové Shortys."
 
-msgid "The link below can be copied for usage apart"
-msgstr "Odkaz môže byť skopírovaný pre samostatné použitie"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "Prídavný zásuvný modul '%%s' sleduje využitie existujúcich 'Shortys'!"
@@ -503,6 +518,11 @@ msgstr "vložte do správy"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Tento 2D čiarový kód smeruje na toto skrátenie"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Toto je interná url, na ktorú skrátená url odkazuje"
@@ -750,3 +770,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Uisti sa, že všetky požiadavky k tomu sú nejako namapované k 'Shortys' 'relay' službe."
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "Umiestnenie"
+
+msgid "Proceed"
+msgstr "Vykonať"

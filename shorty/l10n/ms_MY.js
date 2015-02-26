@@ -10,6 +10,7 @@ OC.L10N.register(
     "Refresh" : "Refresh",
     "Save" : "Simpan",
     "Settings" : "Tetapan",
-    "Title" : "Judul"
+    "Title" : "Judul",
+    "Location" : "Lokasi"
 },
 "nplurals=1; plural=0;");

@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "fout",
     "info" : "info",
     "debug" : "debug",
-    "(never)" : "(nooit)",
     "2 seconds" : "2 seconden",
     "5 seconds" : "5 seconden",
     "12 seconds" : "12 seconden",
@@ -58,7 +57,6 @@ OC.L10N.register(
     "Backend" : "Backend",
     "Base url" : "Basis url",
     "Choose a service…" : "Kies een service...",
-    "Click for embedding details" : "Klik voor invoeg details",
     "Click it, for whatever site you want to create a Shorty." : "Klik het om voor een gewenste site een Shorty te maken.",
     "Click registered" : "Doorkliks geregistreerd",
     "Clicks" : "Doorkliks",
@@ -136,6 +134,8 @@ OC.L10N.register(
     "Sort ascending" : "Oplopend sorteren",
     "Sort descending" : "Aflopend sorteren",
     "Clear filter" : "Leegmaken filter",
+    "Collapse column" : "Inklappen kolom",
+    "Expand column" : "Uitbreiden kolom",
     "Source url" : "Bron url",
     "Specify a static base url…" : "Geef een vaste basis url op...",
     "Static backend: base url verification" : "Statische backend: basis url verificatie",
@@ -147,7 +147,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Die afbeelding kan worden gebruikt in documentatie of voor het inrichten van websites",
     "The backend service used to generate shortened URLs." : "The backend service die wordt gebruikt voor het genereren van verkorte URL's.",
     "The default status as suggested for new Shortys." : "De standaard status zoals gesuggereerd voor nieuwe Shortys.",
-    "The link below can be copied for usage apart" : "De link hieronder kan worden gekopieerd voor los gebruik",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "De aanvullende plugin '%%s' volgt het gebruik van bestaande Shortys!",
     "therefore the content must be copied manually" : "daarom moet de inhoud handmatig worden gekopieerd",
     "then paste into message" : "in een bericht worden geplaatst",
@@ -215,6 +214,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Deze backend wordt nu aan alle lokale gebruikers in hun persoonlijke voorkeuren aangeboden als een aanvullend backend alternatief.",
     "Sorry, but your setup appears not to be working correctly yet!" : "Helaas, uw instellingen lijken nog niet goed te werken!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Controleer uw instellingen en let erop dat de geconfigureerde basis url goed is.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Let erop dat alle aanroepen worden omgezet naar Shorty's relayservice."
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Let erop dat alle aanroepen worden omgezet naar Shorty's relayservice.",
+    "Location" : "Locatie",
+    "Proceed" : "Ga verder"
 },
 "nplurals=2; plural=(n != 1);");

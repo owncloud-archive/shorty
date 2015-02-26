@@ -39,8 +39,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-06 12:41+0000\n"
-"Last-Translator: John Doe <twisted_tits@mail.ru>\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Russian (http://www.transifex.com/projects/p/owncloud/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -123,8 +123,8 @@ msgid "debug"
 msgstr "отладка"
 
 # log message timeout
-msgid "(never)"
-msgstr "(никогда)"
+msgid "( never )"
+msgstr ""
 
 msgid "2 seconds"
 msgstr "2 секунды"
@@ -146,6 +146,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "сервис bitly.com"
 
@@ -228,9 +231,6 @@ msgstr "Базовый URL"
 
 msgid "Choose a service…"
 msgstr "Выберите сервис..."
-
-msgid "Click for embedding details"
-msgstr "Кликните для подробностей внедрения"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Щёлкните его, чтобы создать Shorty для любого сайта."
@@ -442,6 +442,15 @@ msgstr "Shorty с id '%s' удалён"
 msgid "Show as QRCode"
 msgstr "Показать как QR-код"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "Показать детали"
 
@@ -462,6 +471,12 @@ msgstr "Сортировать по убыванию"
 
 msgid "Clear filter"
 msgstr "Удалить фильтр"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr "Исходный url"
@@ -496,8 +511,8 @@ msgstr "Сервер для создания укороченных URL адре
 msgid "The default status as suggested for new Shortys."
 msgstr "Статус по умолчанию, рекомендуемый для новых коротких ссылок."
 
-msgid "The link below can be copied for usage apart"
-msgstr "Ссылка ниже может быть скопирована для самостоятельного использования"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "Дополнительный плагин '%%s' отслеживает использование существующих Shorty!"
@@ -510,6 +525,11 @@ msgstr "затем вставьте в сообщение"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Этот 2d штрихкод содержит ссылку на этот Shorty"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Это внутренний url, на который перенаправляется сокращённый"
@@ -757,3 +777,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Убедитесь, что все запросы на него направлены на сервис перенаправляения Shorty."
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "Proceed"
+msgstr "Продолжить"

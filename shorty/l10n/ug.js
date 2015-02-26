@@ -64,6 +64,7 @@ OC.L10N.register(
     "SMS" : "قىسقا ئۇچۇر",
     "Status" : "ھالەت",
     "Title" : "ماۋزۇ",
-    "Account" : "ھېسابات"
+    "Account" : "ھېسابات",
+    "Location" : "ئورنى"
 },
 "nplurals=1; plural=0;");

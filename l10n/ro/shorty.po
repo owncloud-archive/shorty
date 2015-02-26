@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/owncloud/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -116,7 +116,7 @@ msgid "debug"
 msgstr ""
 
 # log message timeout
-msgid "(never)"
+msgid "( never )"
 msgstr ""
 
 msgid "2 seconds"
@@ -139,6 +139,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "serviciu bitly.com"
 
@@ -221,9 +224,6 @@ msgstr "Url de baza"
 
 msgid "Choose a service…"
 msgstr "Alege un serviciu..."
-
-msgid "Click for embedding details"
-msgstr ""
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
@@ -435,6 +435,15 @@ msgstr ""
 msgid "Show as QRCode"
 msgstr "Arata sub forma de QRCode"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "Arată detali"
 
@@ -455,6 +464,12 @@ msgstr ""
 
 msgid "Clear filter"
 msgstr "Şterge filtru"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr ""
@@ -489,7 +504,7 @@ msgstr ""
 msgid "The default status as suggested for new Shortys."
 msgstr ""
 
-msgid "The link below can be copied for usage apart"
+msgid "The link below can be copied to paste it elsewhere"
 msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
@@ -502,6 +517,11 @@ msgid "then paste into message"
 msgstr "apoi lipiti in mesaj"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
+msgstr ""
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
 msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
@@ -750,3 +770,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr ""
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "Locație"
+
+msgid "Proceed"
+msgstr "Continua"

@@ -63,6 +63,7 @@ $TRANSLATIONS = array(
 "SMS" => "قىسقا ئۇچۇر",
 "Status" => "ھالەت",
 "Title" => "ماۋزۇ",
-"Account" => "ھېسابات"
+"Account" => "ھېسابات",
+"Location" => "ئورنى"
 );
 $PLURAL_FORMS = "nplurals=1; plural=0;";

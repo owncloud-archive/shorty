@@ -46,7 +46,6 @@ OC.L10N.register(
     "Backend" : "Külső tárolórendszer",
     "Base url" : "Alap url",
     "Choose a service…" : "Válassz szolgáltatást...",
-    "Click for embedding details" : "Kattints a beágyazás részleteiért",
     "Click registered" : "Regisztráltak ide kattintsanak",
     "Clicks" : "Kattintások",
     "Clicking 'Ok' below will try to launch an email composer" : "Klikkelj az 'Ok'-ra, hogy elinditsd az email szerkesződet",
@@ -115,7 +114,6 @@ OC.L10N.register(
     "Target" : "Cél",
     "Target url" : "Cél url",
     "Target url '%s' is valid" : "A cél url '%s' hibás",
-    "The link below can be copied for usage apart" : "A linket lentebb tudod másolni, hogy használd külön",
     "then paste into message" : "aztán beilleszted az üzenetbe",
     "Title" : "Cím",
     "Toggle toolbar" : "Eszköztár ki/be kapcsolása",
@@ -138,6 +136,8 @@ OC.L10N.register(
     "The external 'bitly.com' service is used to register a short url for each generated shorty." : "A külső 'bitly.com' szolgáltatás van használva az összes url röviditéshez.",
     "This means you require a 'Google API console account'." : "Ez azt jelenti, hogy rendelkezned kell 'Google API console account'-tal",
     "Great, your setup appears to be working fine!" : "Óriási, a telepítésedben úgy néz ki minden jól müködik!",
-    "Sorry, but your setup appears not to be working correctly yet!" : "Sajnos úgy tünik, hogy a telepítésed nem működik még megfelelően!"
+    "Sorry, but your setup appears not to be working correctly yet!" : "Sajnos úgy tünik, hogy a telepítésed nem működik még megfelelően!",
+    "Location" : "Hely",
+    "Proceed" : "Végrehajt"
 },
 "nplurals=2; plural=(n != 1);");

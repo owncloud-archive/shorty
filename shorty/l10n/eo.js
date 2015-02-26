@@ -91,7 +91,6 @@ OC.L10N.register(
     "Target" : "Celo",
     "Target url" : "Cela URL",
     "Target url '%s' is valid" : "La cela URL “%s” validas",
-    "The link below can be copied for usage apart" : "La jena ligilo povas kopiiĝi por aparta uzo",
     "Title" : "Titolo",
     "Toggle toolbar" : "Baskuligi ilobreton",
     "Total of clicks" : "Totalo de klakoj",
@@ -112,6 +111,7 @@ OC.L10N.register(
     "tiny.cc user name" : "Uzantonomo de tiny.cc",
     "tiny.cc key" : "Klavo de tiny.cc",
     "tiny.cc user key" : "Uzantoklavo de tiny.cc",
-    "Register a new '%%s' at their pages." : "Registri novan “%%s” en iliaj paĝoj."
+    "Register a new '%%s' at their pages." : "Registri novan “%%s” en iliaj paĝoj.",
+    "Location" : "Loko"
 },
 "nplurals=2; plural=(n != 1);");

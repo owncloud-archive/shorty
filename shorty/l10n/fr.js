@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "erreur",
     "info" : "information",
     "debug" : "débogage",
-    "(never)" : "(jamais)",
     "2 seconds" : "2 secondes",
     "5 seconds" : "5 secondes",
     "12 seconds" : "12 secondes",
@@ -58,7 +57,6 @@ OC.L10N.register(
     "Backend" : "Infrastructure",
     "Base url" : "URL de base",
     "Choose a service…" : "Choisir un service...",
-    "Click for embedding details" : "Cliquez pour afficher les détails d'intégration",
     "Click it, for whatever site you want to create a Shorty." : "Clickez-le pour le site auquel vous souhaitez associer un Shorty",
     "Click registered" : "Clic enregistré",
     "Clicks" : "Clics",
@@ -147,7 +145,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Cette image peut être utilisée pour la rédaction de documents ou dans des pages web",
     "The backend service used to generate shortened URLs." : "Le module utilisé pour générer les URLs courtes.",
     "The default status as suggested for new Shortys." : "Le statut par défaut tel que suggéré pour les nouveaux Shortys.",
-    "The link below can be copied for usage apart" : "Le lien ci-dessous peut être copié pour utilisation spéficique",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "Le module additionnel '%%s' suit l'utilisation des Shortys existants !",
     "therefore the content must be copied manually" : "par conséquent le contenu doit être copié manuellement",
     "then paste into message" : "puis coller dans le message",
@@ -215,6 +212,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Ce module dorsal sera maintenant offert en tant qu'alternative à tous les utilisateurs via leurs préférences personnelles",
     "Sorry, but your setup appears not to be working correctly yet!" : "Désolé, mais il semblerait que votre installation ne fonctionne pas correctement…",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Merci de vérifier votre installation et de vous assurer que l'url de base est configurée correctement.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Merci de vérifier que toutes les requêtes sont associées d'une façon ou d'une autre au service de relais Shortys"
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Merci de vérifier que toutes les requêtes sont associées d'une façon ou d'une autre au service de relais Shortys",
+    "Location" : "Emplacement",
+    "Proceed" : "Exécuter"
 },
 "nplurals=2; plural=(n > 1);");

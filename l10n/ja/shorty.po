@@ -34,8 +34,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-09 14:03+0000\n"
-"Last-Translator: kuromabo <md81bird@hitaki.net>\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
+"Last-Translator: I Robot\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -118,8 +118,8 @@ msgid "debug"
 msgstr "デバッグ"
 
 # log message timeout
-msgid "(never)"
-msgstr "(なし)"
+msgid "( never )"
+msgstr ""
 
 msgid "2 seconds"
 msgstr "2秒"
@@ -141,6 +141,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "bitly.com サービス"
 
@@ -223,9 +226,6 @@ msgstr "ベースURL"
 
 msgid "Choose a service…"
 msgstr "サービスを選択..."
-
-msgid "Click for embedding details"
-msgstr "埋め込まれている詳細情報をクリックで確認"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "短縮を作成したい任意のサイトに対してクリックしてください。"
@@ -437,6 +437,15 @@ msgstr "id '%s' の短縮は削除されました"
 msgid "Show as QRCode"
 msgstr "QRコードとして表示"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "詳細を表示"
 
@@ -457,6 +466,12 @@ msgstr "降順にソート"
 
 msgid "Clear filter"
 msgstr "フィルターをクリア"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr "ソースURL"
@@ -491,8 +506,8 @@ msgstr "短縮URLを生成する際に利用する外部サービス"
 msgid "The default status as suggested for new Shortys."
 msgstr "デフォルトの状態を新しい短縮として提案"
 
-msgid "The link below can be copied for usage apart"
-msgstr "以下のリンクは別で利用するためにコピーできます"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "追加プラグイン '%%s' は、現在のShorty(短縮URL)の利用状況を追跡できます。"
@@ -505,6 +520,11 @@ msgstr "そしてメッセージに貼り付けます"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "この2次元バーコードは、この短縮を指すURLをエンコードしています"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "これは、短縮化されたURLからリダイレクトされる内部URLです。"
@@ -752,3 +772,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "それに対するすべてのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。"
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "位置"
+
+msgid "Proceed"
+msgstr "続行"

@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "помилка",
     "info" : "інформація",
     "debug" : "налагодження",
-    "(never)" : "(ніколи)",
     "2 seconds" : "2 секунди",
     "5 seconds" : "5 секунд",
     "12 seconds" : "12 секунд",
@@ -58,7 +57,6 @@ OC.L10N.register(
     "Backend" : "Backend",
     "Base url" : "Основний URL",
     "Choose a service…" : "Оберіть сервіс...",
-    "Click for embedding details" : "Клацніть для вкладення подробиць",
     "Click it, for whatever site you want to create a Shorty." : "Клацніть, щоб створити Shorty для будь якого сайту.",
     "Click registered" : "Клац зареєстрований",
     "Clicks" : "Клацань",
@@ -147,7 +145,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Це зображення може бути використано при написанні документів або створенні Web-сайтів",
     "The backend service used to generate shortened URLs." : "Сервер для створення скорочених URL-адрес.",
     "The default status as suggested for new Shortys." : "Статус за замовчанням, рекомендований для нових скорочених посилань.",
-    "The link below can be copied for usage apart" : "Нижченаведене посилання можна скопіювати для окремого використання",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "Додатковий плагін '%%s' слідкує за використанням існуючих Shortys!",
     "therefore the content must be copied manually" : "тому зміст має бути скопійований вручну",
     "then paste into message" : "потім вставте в повідомлення",
@@ -215,6 +212,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Цей бекенд тепер пропонуватиметься в якості додаткового альтернативного бекенда для всіх локальних користувачів в їх особистих налаштуваннях.",
     "Sorry, but your setup appears not to be working correctly yet!" : "Вибачте, але ваші налаштування, схоже, ще не працюють правильно !",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Будь ласка, перевірте налаштування і переконайтеся, що налаштований основний URL дійсно правильний.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Переконайтеся, що всі запити до нього так чи інакше направляються на службу перетворень Shorty."
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Переконайтеся, що всі запити до нього так чи інакше направляються на службу перетворень Shorty.",
+    "Location" : "Місце",
+    "Proceed" : "Продовжити"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);");

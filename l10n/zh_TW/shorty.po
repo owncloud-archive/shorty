@@ -26,7 +26,7 @@
 # Translators:
 # akong <akong@aspa.idv.tw>, 2014
 # Chen-An Yeh <chnjsn1221@gmail.com>, 2013
-# happy chan <keroro20054@gmail.com>, 2014
+# Luigi Chan <keroro20054@gmail.com>, 2014
 # orinx <orinx@orinx.com>, 2013
 # Pellaeon Lin <nfsmwlin@gmail.com>, 2013
 msgid ""
@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgid "debug"
 msgstr "除錯"
 
 # log message timeout
-msgid "(never)"
+msgid "( never )"
 msgstr ""
 
 msgid "2 seconds"
@@ -141,6 +141,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl+V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "bit.ly.com服務"
 
@@ -223,9 +226,6 @@ msgstr "Base url"
 
 msgid "Choose a service…"
 msgstr "選擇一項服務..."
-
-msgid "Click for embedding details"
-msgstr "點擊以確認嵌入的詳細資訊"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "點選您想創造shorty來連結的任意站台"
@@ -437,6 +437,15 @@ msgstr "'%s' 的短網址已刪除"
 msgid "Show as QRCode"
 msgstr "以QRCode顯示"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "顯示細節"
 
@@ -457,6 +466,12 @@ msgstr "遞減排序"
 
 msgid "Clear filter"
 msgstr "清除過濾器"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr "來源超連結"
@@ -491,8 +506,8 @@ msgstr "此後端服務被用於產生短網址"
 msgid "The default status as suggested for new Shortys."
 msgstr "新的shortys的預設狀態"
 
-msgid "The link below can be copied for usage apart"
-msgstr "下方的連結可以複製以供外部使用"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "額外的外掛程式'%%s'追蹤了現存shortys的使用情況!"
@@ -505,6 +520,11 @@ msgstr "然後貼上至訊息中"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "這個二維條碼包含了這個短網址的 URL"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "這是該短網址中繼到的內部超連結"
@@ -752,3 +772,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "確認所有請求都已映射到Shorty中繼服務"
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "地點"
+
+msgid "Proceed"
+msgstr "已執行"

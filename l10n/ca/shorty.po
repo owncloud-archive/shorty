@@ -36,7 +36,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
+"PO-Revision-Date: 2015-02-26 12:34+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Catalan (http://www.transifex.com/projects/p/owncloud/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -120,7 +120,7 @@ msgid "debug"
 msgstr "depura"
 
 # log message timeout
-msgid "(never)"
+msgid "( never )"
 msgstr ""
 
 msgid "2 seconds"
@@ -143,6 +143,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr ""
+
 msgid "bitly.com service"
 msgstr "Servei bitly.com"
 
@@ -225,9 +228,6 @@ msgstr "URL base"
 
 msgid "Choose a service…"
 msgstr "Tria un servei..."
-
-msgid "Click for embedding details"
-msgstr "Feu clic per incrustar els detalls"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Feu click per qualsevol lloc que vulgui crear una drecera"
@@ -439,6 +439,15 @@ msgstr "Drecera amd id '%s' esborrat"
 msgid "Show as QRCode"
 msgstr "Mostra com a codi QR"
 
+msgid "Show QRCode reference"
+msgstr ""
+
+msgid "Show QRCode image"
+msgstr ""
+
+msgid "Download QRCode"
+msgstr ""
+
 msgid "Show details"
 msgstr "Mostra detalls"
 
@@ -459,6 +468,12 @@ msgstr "Ordena descendentment"
 
 msgid "Clear filter"
 msgstr "Neteja el filtre"
+
+msgid "Collapse column"
+msgstr ""
+
+msgid "Expand column"
+msgstr ""
 
 msgid "Source url"
 msgstr "URL font"
@@ -493,8 +508,8 @@ msgstr "El servei de servidor utilitzat per general dreceras URLs. "
 msgid "The default status as suggested for new Shortys."
 msgstr "El estat per defecte tal suggereix per noves dreceres"
 
-msgid "The link below can be copied for usage apart"
-msgstr "L'enllaç següent es pot copar per fer-lo servir a part"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "El conector adicional '%%s' segueiz l'us de les dreceras existents!"
@@ -507,6 +522,11 @@ msgstr "tot seguit enganxa-ho en un missatge"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Aquest codi de barres 2D codifica la URL apuntant a aquesta drecera"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Aquesta es una URL interna que la URL curta transmet a"
@@ -754,3 +774,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Assegureu-vos que totes les peticions estan mapades al servei de repetidor Shorty."
+
+msgid "Shorty relay service"
+msgstr ""
+
+msgid "If you proceed you will be forwarded to:"
+msgstr ""
+
+msgid "Target object:"
+msgstr ""
+
+msgid "Location"
+msgstr "Ubicació"
+
+msgid "Proceed"
+msgstr "Procedeix"

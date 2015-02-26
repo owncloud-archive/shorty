@@ -9,6 +9,7 @@ $TRANSLATIONS = array(
 "Refresh" => "Refresh",
 "Save" => "Simpan",
 "Settings" => "Tetapan",
-"Title" => "Judul"
+"Title" => "Judul",
+"Location" => "Lokasi"
 );
 $PLURAL_FORMS = "nplurals=1; plural=0;";

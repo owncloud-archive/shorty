@@ -44,7 +44,6 @@ OC.L10N.register(
     "Backend" : "بخش مدیریت",
     "Base url" : "آدرس پایه",
     "Choose a service…" : "انتخاب یک سرویس...",
-    "Click for embedding details" : "کلیک برای قرار دادن جزئیات",
     "Clicks" : "کلیک ها",
     "Clicking 'Ok' below will try to launch an email composer" : "در زیر کلیک کردن بر روی  'Ok' سعی خواهد کرد که یک سازنده ایمیل را راه اندازی کند.",
     "Clicking 'Ok' below will try to launch an sms composer" : "درپائین کلیک کردن بر روی 'Ok' سعی خواهد کرد که یک سازنده sms را راه اندازی کند.",
@@ -106,7 +105,6 @@ OC.L10N.register(
     "Target url" : "آدرس هدف",
     "Target url '%s' is valid" : "آدرس هدف  '%s' معتبر است.",
     "That image can be used when writing documents or setting up web sites" : "تصویر میتواند در زمان نوشتن مستندات یا راه اندازی کردن سایت ها مورد استفاده قرار بگیرد .",
-    "The link below can be copied for usage apart" : "لینک زیر را می توان برای استفاده جدا از هم کپی کرد.",
     "therefore the content must be copied manually" : "بنابراین محتوا باید به صورت دستی کپی شود.",
     "then paste into message" : "سپس چسباندن به پیغام",
     "This is the url referencing the QRCode shown before" : "این آدرس ارجاع کد QR از قبل نشان داده شده است",
@@ -131,6 +129,8 @@ OC.L10N.register(
     "Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration." : "از آنجا که این تنظیمات بستگی به قوانین مبتنی بر پیکربندی سروردارد، آدرس پایه تنها می تواند در بخش \"مدیریت\" از پیکربندی مشخص شود.",
     "Great, your setup appears to be working fine!" : "عالیه، راه اندازی شما به خوبی کار می کند!",
     "Sorry, but your setup appears not to be working correctly yet!" : "متاسفم، اما راه اندازی شما هنوز به صورت  صحیح کار نمی کند!",
-    "Please check your setup and make sure that the configured base url is indeed correct." : "لطفا راه اندازی خود را تنظیم نمایید و مطمئن شوید آدرس پایه که  پیکربندی شده است درست است."
+    "Please check your setup and make sure that the configured base url is indeed correct." : "لطفا راه اندازی خود را تنظیم نمایید و مطمئن شوید آدرس پایه که  پیکربندی شده است درست است.",
+    "Location" : "محل",
+    "Proceed" : "انجام گرفته"
 },
 "nplurals=1; plural=0;");

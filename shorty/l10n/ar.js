@@ -22,7 +22,6 @@ OC.L10N.register(
     "none" : "لا شيء",
     "error" : "خطأ",
     "info" : "المعلومات",
-    "(never)" : "(بتاتاً)",
     "2 seconds" : "ثانيتان",
     "5 seconds" : "5 ثواني",
     "12 seconds" : "12 ثانية",
@@ -68,6 +67,8 @@ OC.L10N.register(
     "SMS" : "رسالة نصية",
     "Status" : "الحالة",
     "Title" : "عنوان",
-    "Account" : "حساب"
+    "Account" : "حساب",
+    "Location" : "المكان",
+    "Proceed" : "تنفيذ"
 },
 "nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;");

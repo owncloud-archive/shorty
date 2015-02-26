@@ -5,6 +5,7 @@ $TRANSLATIONS = array(
 "Close" => "بند ",
 "Save" => "حفظ",
 "Settings" => "سیٹینگز",
-"Title" => "عنوان"
+"Title" => "عنوان",
+"Location" => "مقام"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

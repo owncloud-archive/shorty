@@ -9,6 +9,7 @@ OC.L10N.register(
     "Refresh" : "Refresca",
     "Save" : "Enregistra",
     "Settings" : "Configuracion",
-    "Title" : "Títol"
+    "Title" : "Títol",
+    "Location" : "Plaça"
 },
 "nplurals=2; plural=(n > 1);");

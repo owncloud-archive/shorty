@@ -53,7 +53,6 @@ OC.L10N.register(
     "Backend" : "後端",
     "Base url" : "Base url",
     "Choose a service…" : "選擇一項服務...",
-    "Click for embedding details" : "點擊以確認嵌入的詳細資訊",
     "Click it, for whatever site you want to create a Shorty." : "點選您想創造shorty來連結的任意站台",
     "Click registered" : "點擊已記錄",
     "Clicks" : "點擊數",
@@ -140,7 +139,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "該影像可以用於文件撰寫或者建構網站",
     "The backend service used to generate shortened URLs." : "此後端服務被用於產生短網址",
     "The default status as suggested for new Shortys." : "新的shortys的預設狀態",
-    "The link below can be copied for usage apart" : "下方的連結可以複製以供外部使用",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "額外的外掛程式'%%s'追蹤了現存shortys的使用情況!",
     "therefore the content must be copied manually" : "因此該內容必須手動複製",
     "then paste into message" : "然後貼上至訊息中",
@@ -208,6 +206,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "此後端將會作為所有本機使用者，在個人偏好設定中可選擇的額外後端。",
     "Sorry, but your setup appears not to be working correctly yet!" : "抱歉，但是您的設定看起來還無法正確的運作!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "請檢查您的設定並確認配置好的base url是正確無誤的。",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "確認所有請求都已映射到Shorty中繼服務"
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "確認所有請求都已映射到Shorty中繼服務",
+    "Location" : "地點",
+    "Proceed" : "已執行"
 },
 "nplurals=1; plural=0;");

@@ -5,6 +5,7 @@ OC.L10N.register(
     "Notes" : "تێبینیەکان",
     "Save" : "پاشکه‌وتکردن",
     "Settings" : "ده‌ستكاری",
-    "Title" : "ناونیشان"
+    "Title" : "ناونیشان",
+    "Location" : "شوێن"
 },
 "nplurals=2; plural=(n != 1);");

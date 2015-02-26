@@ -51,7 +51,6 @@
     "Backend" : "后端",
     "Base url" : "基础网址",
     "Choose a service…" : "请选择一项服务",
-    "Click for embedding details" : "点击查看嵌入详情",
     "Click it, for whatever site you want to create a Shorty." : "当想将某网页保存为短链时，点击它即可。",
     "Click registered" : "点击注册",
     "Clicks" : "点击次数",
@@ -138,7 +137,6 @@
     "That image can be used when writing documents or setting up web sites" : "那个图片可用在写文档或建网站上",
     "The backend service used to generate shortened URLs." : "后端用来产生缩短的链接。",
     "The default status as suggested for new Shortys." : "新建短链的默认状态",
-    "The link below can be copied for usage apart" : "下面的链接可复制后独立使用",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "附加的 '%%s' 插件跟踪短链的使用情况！",
     "therefore the content must be copied manually" : "因此必须手动复制内容",
     "then paste into message" : "然后粘贴到信息",
@@ -206,6 +204,8 @@
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "这个后端作为一个额外的后端，会替代所有本地用户的设置。",
     "Sorry, but your setup appears not to be working correctly yet!" : "抱歉，但是你的设置看起来不能正常工作！",
     "Please check your setup and make sure that the configured base url is indeed correct." : "请检查你的设置并确保之前配置的基础地址绝对正确",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "请确保所有关于它的请求都映射到短链中继服务"
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "请确保所有关于它的请求都映射到短链中继服务",
+    "Location" : "地点",
+    "Proceed" : "已处理"
 },"pluralForm" :"nplurals=1; plural=0;"
 }

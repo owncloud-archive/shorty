@@ -40,6 +40,7 @@ $TRANSLATIONS = array(
 "Target url '%s' is valid" => "Måladressa «%s» er ugyldig",
 "then paste into message" => "og lim inn i meldinga",
 "Title" => "Tittel",
-"Url shortened to: %s" => "Nettadresse forkorta til: %s"
+"Url shortened to: %s" => "Nettadresse forkorta til: %s",
+"Location" => "Stad"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

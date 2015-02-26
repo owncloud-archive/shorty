@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "napaka",
     "info" : "podrobnosti",
     "debug" : "razhroščevanje",
-    "(never)" : "(nikoli)",
     "2 seconds" : "2 sekundi",
     "5 seconds" : "5 sekund",
     "12 seconds" : "12 sekund",
@@ -58,7 +57,6 @@ OC.L10N.register(
     "Backend" : "Zaledje",
     "Base url" : "Osnovni naslov URL",
     "Choose a service…" : "Izbor storitve ...",
-    "Click for embedding details" : "Kliknite za vstavljanje podrobnosti",
     "Click it, for whatever site you want to create a Shorty." : "Kliknite za ustvarjanje skrajšanega naslova do katerokoli strani.",
     "Click registered" : "Klik je zabeležen",
     "Clicks" : "Kliki",
@@ -147,7 +145,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Sliko je mogoče uporabiti med sestavljanjem dokumentov, ali pa nastavljanjem spletnih strani",
     "The backend service used to generate shortened URLs." : "Ozadnja storitev za ustvarjanje skrajšanih naslovov URL.",
     "The default status as suggested for new Shortys." : "Privzeto predlagano stanje za nove skrajšane naslove.",
-    "The link below can be copied for usage apart" : "Spodnjo povezavo je mogoče kopirati za uporabo",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "Vstavek '%%s' sledi uporabi obstoječih skrajšanih naslovov!",
     "therefore the content must be copied manually" : "zato je treba vsebino kopirati ročno",
     "then paste into message" : "in ga v sporočilo prilepiti",
@@ -215,6 +212,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Ta zaledni sistem bo odslej na izbiro kot dodaten sistem znotraj osebnih nastavitev za vse krajevne uporabnike.",
     "Sorry, but your setup appears not to be working correctly yet!" : "Nastavitve še vedno niso nastavljene pravilno!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Najprej je priporočeno preveriti nastavitve in se prepričati, da je nastavljen internetni naslov pravilen.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Prepričajte se, da so vse zahteve preslikane v storitev posredovanja skrajšanih naslovov."
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Prepričajte se, da so vse zahteve preslikane v storitev posredovanja skrajšanih naslovov.",
+    "Location" : "Mesto",
+    "Proceed" : "Nadaljuj"
 },
 "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);");

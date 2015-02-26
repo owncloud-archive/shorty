@@ -11,6 +11,7 @@ $TRANSLATIONS = array(
 "Notes" => "Skýringar",
 "Save" => "Vista",
 "Settings" => "Stillingar",
-"Title" => "Titill"
+"Title" => "Titill",
+"Location" => "Staðsetning"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

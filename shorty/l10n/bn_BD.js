@@ -39,7 +39,6 @@ OC.L10N.register(
     "Administration" : "প্রশাসন",
     "Backend" : "পশ্চাদপট",
     "Choose a service…" : "সার্ভিস নির্বাচন করুন....",
-    "Click for embedding details" : "এমবেডিং এর বিস্তারিত জানতে ক্লিক করুন",
     "Clicks" : "ক্লিকসমূহ",
     "Clicking 'Ok' below will try to launch an email composer" : "নীচে 'Ok' ক্লিক করলে একটি ইমেইল কম্পোজার চালু হবে",
     "Close" : "বন্ধ",
@@ -64,9 +63,10 @@ OC.L10N.register(
     "Sort descending" : "উপর থেকে নীচে সাজাও",
     "Status" : "অবস্থা",
     "Target" : "লক্ষ্য",
-    "The link below can be copied for usage apart" : "নীচের লিংকটি এককভাবে ব্যবহারের জন্য কপি করা যাবেনা",
     "Title" : "শিরোনাম",
     "Total of clicks" : "মোট ক্লিক",
-    "Account" : "একাউন্ট"
+    "Account" : "একাউন্ট",
+    "Location" : "অবস্থান",
+    "Proceed" : "এগিয়ে যান"
 },
 "nplurals=2; plural=(n != 1);");

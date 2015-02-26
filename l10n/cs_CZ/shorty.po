@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-08 12:31+0000\n"
+"PO-Revision-Date: 2015-02-26 06:46+0000\n"
 "Last-Translator: Jaroslav Lichtblau <dragonlord@seznam.cz>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/owncloud/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
@@ -121,8 +121,8 @@ msgid "debug"
 msgstr "ladění"
 
 # log message timeout
-msgid "(never)"
-msgstr "(nikdy)"
+msgid "( never )"
+msgstr "( nikdy )"
 
 msgid "2 seconds"
 msgstr "2 sekundy"
@@ -144,6 +144,9 @@ msgid "Ctrl-V"
 msgstr "Ctrl-V"
 
 # the backend service names
+msgid "[ none ]"
+msgstr "[ žádný ]"
+
 msgid "bitly.com service"
 msgstr "služba bitly.com"
 
@@ -226,9 +229,6 @@ msgstr "Základní URL"
 
 msgid "Choose a service…"
 msgstr "Vybrat službu..."
-
-msgid "Click for embedding details"
-msgstr "Klikněte pro podrobnosti vložení"
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr "Klikněte pro jakoukoliv stránku, pro níž si přejete vytvořit Shorty"
@@ -440,6 +440,15 @@ msgstr "Shorty s id '%s' odstraněn"
 msgid "Show as QRCode"
 msgstr "Zobrazit jako QR kód"
 
+msgid "Show QRCode reference"
+msgstr "Zobrazit QR kód referenci"
+
+msgid "Show QRCode image"
+msgstr "Zobrazit QR kód obrázek"
+
+msgid "Download QRCode"
+msgstr "Stáhnout QR kód"
+
 msgid "Show details"
 msgstr "Zobrazit podrobnosti"
 
@@ -460,6 +469,12 @@ msgstr "Seřadit sestupně"
 
 msgid "Clear filter"
 msgstr "Vyčistit filtr"
+
+msgid "Collapse column"
+msgstr "Sbalit sloupec"
+
+msgid "Expand column"
+msgstr "Rozbalit sloupec"
 
 msgid "Source url"
 msgstr "URL zdroje"
@@ -494,8 +509,8 @@ msgstr "Podpůrná vrstva používaná k vytváření zkrácených URL."
 msgid "The default status as suggested for new Shortys."
 msgstr "Navrhovaný výchozí stav pro nové Shorty."
 
-msgid "The link below can be copied for usage apart"
-msgstr "Odkaz může být zkopírován pro samostatné použití"
+msgid "The link below can be copied to paste it elsewhere"
+msgstr "Odkaz níže lze zkopírovat a vložit někam dále"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "Dodatečný modul '%%s' sleduje používání stávajících Shortys!"
@@ -508,6 +523,11 @@ msgstr "a potom vložen do zprávy"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr "Tento 2D čárový kód obsahuje URL, která směřuje na tuto Shorty"
+
+msgid ""
+"Use it in web pages by referencing or embedding or simply print or download "
+"it for offline usage"
+msgstr "Použijte jej na webových stránkách odkazováním či vložením nebo pro vytištění či stažení pro použití offline"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Vnitřní URL, na níž je předána zkrácená URL"
@@ -755,3 +775,18 @@ msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
 msgstr "Ujistěte se, že všechny požadavky jsou nějak mapovány na předávací službu Shorty."
+
+msgid "Shorty relay service"
+msgstr "Shorty předávací služba"
+
+msgid "If you proceed you will be forwarded to:"
+msgstr "Pokud budete pokračovat, budete přesměrováni na:"
+
+msgid "Target object:"
+msgstr "Cílový objekt:"
+
+msgid "Location"
+msgstr "Umístění"
+
+msgid "Proceed"
+msgstr "Pokračovat"

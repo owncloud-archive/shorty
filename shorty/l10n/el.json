@@ -22,7 +22,6 @@
     "error" : "σφάλμα ",
     "info" : "πληροφορίες ",
     "debug" : "αποσφαλμάτωση",
-    "(never)" : "(ποτέ)",
     "2 seconds" : "2 δευτερόλεπτα",
     "5 seconds" : "5 δευτερόλεπτα",
     "12 seconds" : "12 δευτερόλεπτα",
@@ -56,7 +55,6 @@
     "Backend" : "Σύστημα υποστήριξης",
     "Base url" : "Επαλήθευση με κλικ.",
     "Choose a service…" : "Επιλογή υπηρεσίας ",
-    "Click for embedding details" : "Κάντε κλικ για λεπτομέρειες ενσωμάτωσης",
     "Click it, for whatever site you want to create a Shorty." : "Κάντε κλικ σε αυτό, για όποια ιστοσελίδα που θέλετε να δημιουργήθει ένα Shorty.",
     "Click registered" : "Το κλικ καταχωρήθηκε",
     "Clicks" : "Κλικς",
@@ -145,7 +143,6 @@
     "That image can be used when writing documents or setting up web sites" : "Αυτή η εικόνα μπορεί να χρησιμοποιηθεί κατά τη σύνταξη εγγράφων ή τη δημιουργία ιστοσελιδων",
     "The backend service used to generate shortened URLs." : "Η υπηρεσία backend χρησιμοποιήθηκε για να παράγει συντομεύσεις URLs",
     "The default status as suggested for new Shortys." : "Το στάτους που μένει όπως προτάθηκε για τα νέα Shortys ",
-    "The link below can be copied for usage apart" : "Ο παρακάτω σύνδεσμος μπορεί να αντιγραφεί για χρήση εκτός",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "Τα επιπλέον πρόσθετα % %s παρακολουθούν την χρήση  την χρήση των παρόντων Συντομεύσεων ",
     "therefore the content must be copied manually" : "Συνεπώς, το περιεχόμενο πρέπει να αντιγραφεί με το χέρι",
     "then paste into message" : "και κάντε επικόλληση σε μήνυμα",
@@ -213,6 +210,8 @@
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Αυτό το backend θα δοθεί τώρα ως επιπλέον backend εναλλαγής σε όλους τους τοπικούς χρήστες στα πλαίσια της προτίμησής τους. ",
     "Sorry, but your setup appears not to be working correctly yet!" : "Λυπούμαστε, αλλά η ρύθμιση σας φαίνεται να μην λειτουργεί σωστά ακόμα",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Παρακαλώ ελέγξετε την ρύθμισή σας και βεβαιωθείτε ότι η διαμορφωμένη βάση url είναι πραγματικά σωστή. ",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Βεβαιωθείτε ότι όλες οι αιτήσεις προβάλλονται κάπως στην υπηρεσία μετάθεσης των Shortys. "
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Βεβαιωθείτε ότι όλες οι αιτήσεις προβάλλονται κάπως στην υπηρεσία μετάθεσης των Shortys. ",
+    "Location" : "Τοποθεσία",
+    "Proceed" : "Συνέχιση"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

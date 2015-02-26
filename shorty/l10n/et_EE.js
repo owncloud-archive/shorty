@@ -24,7 +24,6 @@ OC.L10N.register(
     "error" : "viga",
     "info" : "info",
     "debug" : "veatuvastus",
-    "(never)" : "(mitte kunagi)",
     "2 seconds" : "2 sekundit",
     "5 seconds" : "5 sekundit",
     "12 seconds" : "12 sekundit",
@@ -58,7 +57,6 @@ OC.L10N.register(
     "Backend" : "Tagarakend",
     "Base url" : "Põhiaadress",
     "Choose a service…" : "Vali teenus...",
-    "Click for embedding details" : "Klõpsa täpsema integreerimise info saamiseks",
     "Click it, for whatever site you want to create a Shorty." : "Klõpsa sellel, ükskõik millisest saidist soovit tekitada Shorty",
     "Click registered" : "Klikk registreeritud",
     "Clicks" : "Klikke",
@@ -147,7 +145,6 @@ OC.L10N.register(
     "That image can be used when writing documents or setting up web sites" : "Seda pilti saab kasutada dokumentide või veebilehtede tegemisel",
     "The backend service used to generate shortened URLs." : "Kasutatav tagarakend genereerimaks lühendatud aadresse.",
     "The default status as suggested for new Shortys." : "Soovitatud vaikimisi staatus uutele Shorty-dele",
-    "The link below can be copied for usage apart" : "Allpool olevat linki võib kopeerida eraldi kasutamiseks",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "Lisavidin '%%s' jälgib olemasolevate Shorty-de kasutust!",
     "therefore the content must be copied manually" : "seetõttu tuleb sisu kopeerida käsitsi",
     "then paste into message" : "seejärel aseta sõnumisse",
@@ -215,6 +212,8 @@ OC.L10N.register(
     "This backend will now be offered as an additional backend alternative to all local users inside their personal preferences." : "Seda tagarakendit pakutakse kõikidele kohalikele kasutajatele lisana nende endi personaalsele seadistustele.",
     "Sorry, but your setup appears not to be working correctly yet!" : "Vabandust, kuid su seadistus ei tööta veel korrektselt!",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Palun kontrolli oma seadistust ning veendu, et määratud põhiaadress on kindlasti korrektne.",
-    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Veendu, et kõik päringud oleks mingil moel Shorty vahendusteenuses vastendatud."
+    "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Veendu, et kõik päringud oleks mingil moel Shorty vahendusteenuses vastendatud.",
+    "Location" : "Asukoht",
+    "Proceed" : "Jätka"
 },
 "nplurals=2; plural=(n != 1);");

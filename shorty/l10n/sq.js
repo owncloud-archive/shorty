@@ -45,6 +45,7 @@ OC.L10N.register(
     "SMS" : "SMS",
     "Source url" : "Burimi url",
     "Target" : "Objektiv",
-    "Title" : "Titulli"
+    "Title" : "Titulli",
+    "Location" : "Vendndodhja"
 },
 "nplurals=2; plural=(n != 1);");
