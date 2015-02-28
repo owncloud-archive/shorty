@@ -31,53 +31,55 @@
  * @author Christian Reiner
  */
 
+namespace OCA\Shorty;
+
 // Session checks
-OCP\User::checkLoggedIn  ( );
-OCP\App::checkAppEnabled ( 'shorty' );
+\OCP\User::checkLoggedIn  ( );
+\OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
 
-OCP\Util::addStyle  ( 'shorty', '../3rdparty/css/chosen.min' );
-OCP\Util::addStyle  ( 'shorty', 'shorty' );
-OCP\Util::addStyle  ( 'shorty', 'preferences' );
+\OCP\Util::addStyle  ( 'shorty', '../3rdparty/css/chosen.min' );
+\OCP\Util::addStyle  ( 'shorty', 'shorty' );
+\OCP\Util::addStyle  ( 'shorty', 'preferences' );
 
-OCP\Util::addScript ( 'shorty', '../3rdparty/js/chosen.jquery.min' );
-OCP\Util::addScript ( 'shorty', 'shorty' );
-OCP\Util::addScript ( 'shorty', 'util' );
-OCP\Util::addScript ( 'shorty', 'preferences' );
-if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
-	OCP\Util::addScript ( 'shorty', 'debug' );
+\OCP\Util::addScript ( 'shorty', '../3rdparty/js/chosen.jquery.min' );
+\OCP\Util::addScript ( 'shorty', 'shorty' );
+\OCP\Util::addScript ( 'shorty', 'util' );
+\OCP\Util::addScript ( 'shorty', 'preferences' );
+if ( \OCP\Util::DEBUG==\OCP\Config::getAppValue( "loglevel", \OCP\Util::WARN ) )
+	\OCP\Util::addScript ( 'shorty', 'debug' );
 
 // fetch template
-$tmpl = new OCP\Template ( 'shorty', 'tmpl_preferences' );
+$tmpl = new \OCP\Template ( 'shorty', 'tmpl_preferences' );
 // inflate template
 
 // backends selection available to the user
-$backend_types = OC_Shorty_Backend::getBackendTypes();
+$backend_types = Backend::getBackendTypes();
 
 // kick out static option again if no global backend base has been specified in the system settings
-$backend_static_base = OCP\Config::getAppValue('shorty','backend-static-base','');
+$backend_static_base = \OCP\Config::getAppValue('shorty','backend-static-base','');
 if (   empty($backend_static_base)
 	|| !parse_url($backend_static_base,PHP_URL_SCHEME)
 	|| !parse_url($backend_static_base,PHP_URL_HOST) )
 	unset($backend_types['static']);
 
 // user preference
-$backend_type = OC_Shorty_Backend::getBackendType();
+$backend_type = Backend::getBackendType();
 
 // feed template engine
-$tmpl->assign ( 'backend-types',       OC_Shorty_Backend::getBackendTypes() );
-$tmpl->assign ( 'backend-type',        OC_Shorty_Backend::getBackendPreference() );
+$tmpl->assign ( 'backend-types',       Backend::getBackendTypes() );
+$tmpl->assign ( 'backend-type',        Backend::getBackendPreference() );
 $tmpl->assign ( 'backend-static-base', $backend_static_base );
-$tmpl->assign ( 'backend-bitly-user',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-user','') );
-$tmpl->assign ( 'backend-bitly-key',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-bitly-key','') );
-$tmpl->assign ( 'backend-google-key',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-google-key','') );
-$tmpl->assign ( 'backend-tinycc-user', OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-tinycc-user','') );
-$tmpl->assign ( 'backend-tinycc-key',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-tinycc-key','') );
-$tmpl->assign ( 'backend-ssl-verify',  OCP\Config::getUserValue(OCP\User::getUser(),'shorty','backend-ssl-verify','0') );
-$tmpl->assign ( 'default-status',      OCP\Config::getUserValue(OCP\User::getUser(),'shorty','default-status','private') );
-$tmpl->assign ( 'sms-control',         OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
-$tmpl->assign ( 'verbosity-control',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-control','error') );
-$tmpl->assign ( 'verbosity-timeout',   OCP\Config::getUserValue(OCP\User::getUser(),'shorty','verbosity-timeout','5') );
+$tmpl->assign ( 'backend-bitly-user',  \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-bitly-user','') );
+$tmpl->assign ( 'backend-bitly-key',   \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-bitly-key','') );
+$tmpl->assign ( 'backend-google-key',  \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-google-key','') );
+$tmpl->assign ( 'backend-tinycc-user', \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-tinycc-user','') );
+$tmpl->assign ( 'backend-tinycc-key',  \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-tinycc-key','') );
+$tmpl->assign ( 'backend-ssl-verify',  \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-ssl-verify','0') );
+$tmpl->assign ( 'default-status',      \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','default-status','private') );
+$tmpl->assign ( 'sms-control',         \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','sms-control','disabled') );
+$tmpl->assign ( 'verbosity-control',   \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','verbosity-control','error') );
+$tmpl->assign ( 'verbosity-timeout',   \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','verbosity-timeout','5') );
 // render template
 $tmpl->printPage ( );

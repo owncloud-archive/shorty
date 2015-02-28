@@ -30,8 +30,10 @@
  * @author Christian Reiner
  */
 
+namespace OCA\Shorty;
+
 // Session checks
-OCP\App::checkAppEnabled ( 'shorty' );
+\OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
 
@@ -53,9 +55,9 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 		case 'id':
 		case 'shorty':
 			// this looks like the request refers to a Shortys ID, lets see if we know that one
-			$id     = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::ID,FALSE);
-			$param  = array ( ':id' => OC_Shorty_Type::normalize($id,OC_Shorty_Type::ID) );
-			$query  = OCP\DB::prepare ( OC_Shorty_Query::URL_BY_ID );
+			$id     = Type::req_argument($key,Type::ID,FALSE);
+			$param  = array ( ':id' => Type::normalize($id,Type::ID) );
+			$query  = \OCP\DB::prepare ( Query::URL_BY_ID );
 			break 2; // skip switch AND foreach, we have all details we need...
 		case 'url':
 		case 'uri':
@@ -63,9 +65,9 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 		case 'source':
 		case 'target':
 			// this looks like the request refers to a full url, lets see if we know that one as a Shortys source
-			$source = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::URL,FALSE);
-			$param  = array ( ':source' => OC_Shorty_Type::normalize($source,OC_Shorty_Type::URL) );
-			$query  = OCP\DB::prepare ( OC_Shorty_Query::URL_BY_SOURCE );
+			$source = Type::req_argument($key,Type::URL,FALSE);
+			$param  = array ( ':source' => Type::normalize($source,Type::URL) );
+			$query  = \OCP\DB::prepare ( Query::URL_BY_SOURCE );
 			break 2; // skip switch AND foreach, we have all details we need...
 	} // switch
 } // foreach
@@ -77,41 +79,41 @@ try
 	{
 		$result = $query->execute($param)->FetchAll();
 		if ( FALSE===$result )
-			throw new OC_Shorty_HttpException ( 500 );
+			throw new Exception ( 500 );
 		elseif ( ! is_array($result) )
-			throw new OC_Shorty_HttpException ( 500 );
+			throw new Exception ( 500 );
 		elseif ( 0==sizeof($result) )
 		{
 			// no entry found => 404: Not Found
-			throw new OC_Shorty_HttpException ( 404 );
+			throw new Exception ( 404 );
 		}
 		elseif ( 1<sizeof($result) )
 		{
 			// multiple matches => 409: Conflict
-			throw new OC_Shorty_HttpException ( 409 );
+			throw new Exception ( 409 );
 		}
 		elseif ( (!array_key_exists(0,$result)) || (!is_array($result[0])) || (!array_key_exists('source',$result[0])) )
 		{
 			// invalid entry => 500: Internal Server Error
-			throw new OC_Shorty_HttpException ( 500 );
+			throw new Exception ( 500 );
 		}
 		elseif ( (!array_key_exists('source',$result[0])) || ('1'==$result[0]['expired']) )
 		{
 			// entry expired => 410: Gone
-			throw new OC_Shorty_HttpException ( 410 );
+			throw new Exception ( 410 );
 		}
 		// force download / storage of image
 		header('Content-Type: image/png');
-		if ( FALSE===strpos($_SERVER['HTTP_REFERER'],dirname(OCP\Util::linkToAbsolute('',''))) )
+		if ( FALSE===strpos($_SERVER['HTTP_REFERER'],dirname(\OCP\Util::linkToAbsolute('',''))) )
 			header ( sprintf('Content-Disposition: inline; filename="qrcode-%s.png"',$result[0]['id']) );
 		else
 			header ( sprintf('Content-Disposition: attachment; filename="qrcode-%s.png"',$result[0]['id']) );
 		// generate qrcode, regardless of who sends the request
-		QRcode::png ( $result[0]['source'] );
+		\QRcode::png ( $result[0]['source'] );
 	} // if $source
 	else
 	{
 		// refuse forwarding => 403: Forbidden
-		throw new OC_Shorty_HttpException ( 403 );
+		throw new Exception ( 403 );
 	}
-} catch ( OC_Shorty_Exception $e ) { header($e->getMessage()); }
+} catch ( Exception $e ) { header($e->getMessage()); }

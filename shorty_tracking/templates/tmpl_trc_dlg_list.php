@@ -22,15 +22,15 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_trc_dlg.php
  * A table to visualize the hit requests to existing Shortys
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty\Tracking;
 ?>
 
 <!-- a (usually hidden) dialog used to display a list of all tracked clicks hitting a Shorty -->
@@ -38,22 +38,22 @@
 	<fieldset>
 		<legend>
 			<a id="close" class="shorty-close-button"
-				title="<?php p(OC_Shorty_L10n::t("close")); ?>">
-				<img alt="<?php p(OC_Shorty_L10n::t("close")); ?>" class="svg"
-					src="<?php p(OCP\Util::imagePath('shorty','actions/shade.svg')); ?>">
+				title="<?php p(L10n::t("close")); ?>">
+				<img alt="<?php p(L10n::t("close")); ?>" class="svg"
+					src="<?php p(\OCP\Util::imagePath('shorty','actions/shade.svg')); ?>">
 			</a>
-			<span class="heading"><?php p(OC_ShortyTracking_L10n::t("List of tracked clicks").':');?></span>
+			<span class="heading"><?php p(L10n::t("List of tracked clicks").':');?></span>
 		</legend>
 		<!-- begin: the dialogs header: linguistic reference to the Shorty and the sparkline -->
 		<div id="shorty-header">
-			<label for="shorty-title"><?php p(OC_Shorty_L10n::t("Title")); ?>: </label>
+			<label for="shorty-title"><?php p(L10n::t("Title")); ?>: </label>
 			<span id="shorty-title" class="ellipsis shorty-tracking-reference"></span>
 			<br/>
-			<label for="shorty-status"><?php p(OC_Shorty_L10n::t("Status")); ?>: </label>
+			<label for="shorty-status"><?php p(L10n::t("Status")); ?>: </label>
 			<span id="shorty-status" class="shorty-tracking-reference"></span>
 			<span id="stats" class="sparkline">
-				<img alt="loading…" title="<?php p(OC_Shorty_L10n::t("Loading")); ?>…"
-					src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>">
+				<img alt="loading…" title="<?php p(L10n::t("Loading")); ?>…"
+					src="<?php p(\OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>">
 			</span>
 			<hr>
 		</div>
@@ -65,17 +65,17 @@
 				<tr id="list-of-clicks-titlebar" class="shorty-titlebar">
 					<th id="list-of-clicks-status"  data-aspect="status">
 						<div><img id="list-of-clicks-tools" class="shorty-tools svg"
-								alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
-								src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
+								alt="toolbar" title="<?php p(L10n::t("Toggle toolbar")); ?>"
+								src="<?php p(\OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
 								data-unshade="actions/unshade"
 								data-shade="actions/shade">
 						</div>
 					</th>
-					<th id="list-of-clicks-result"  data-aspect="result"  class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("Result"));  ?></div></th>
-					<th id="list-of-clicks-address" data-aspect="address" class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("Address")); ?></div></th>
-					<th id="list-of-clicks-host"    data-aspect="host"    class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("Host"));    ?></div></th>
-					<th id="list-of-clicks-user"    data-aspect="user"    class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("User"));    ?></div></th>
-					<th id="list-of-clicks-time"    data-aspect="time"    class="collapsible"><div><?php p(OC_ShortyTracking_L10n::t("Time"));    ?></div></th>
+					<th id="list-of-clicks-result"  data-aspect="result"  class="collapsible"><div><?php p(L10n::t("Result"));  ?></div></th>
+					<th id="list-of-clicks-address" data-aspect="address" class="collapsible"><div><?php p(L10n::t("Address")); ?></div></th>
+					<th id="list-of-clicks-host"    data-aspect="host"    class="collapsible"><div><?php p(L10n::t("Host"));    ?></div></th>
+					<th id="list-of-clicks-user"    data-aspect="user"    class="collapsible"><div><?php p(L10n::t("User"));    ?></div></th>
+					<th id="list-of-clicks-time"    data-aspect="time"    class="collapsible"><div><?php p(L10n::t("Time"));    ?></div></th>
 					<th id="list-of-clicks-actions"><div>&nbsp;</div></th>
 				</tr>
 				<!-- table toolbar -->
@@ -83,8 +83,8 @@
 					<th id="list-of-clicks-status" data-aspect="status">
 						<div style="display:none;">
 							<a id="list-of-clicks-reload" class="shorty-reload">
-								<img alt="<?php p(OC_Shorty_L10n::t("Reload")); ?>" title="<?php p(OC_Shorty_L10n::t("Reload list")); ?>"
-									class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/reload.svg')); ?>">
+								<img alt="<?php p(L10n::t("Reload")); ?>" title="<?php p(L10n::t("Reload list")); ?>"
+									class="svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/reload.svg')); ?>">
 							</a>
 						</div>
 					</th>
@@ -97,8 +97,8 @@
 										print_unescaped(sprintf("<option value=\"%s\">%s</option>\n",($option?$option:''),$label));
 									?>
 								</select>
-								<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
-									class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
+								<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
+									class="shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 							</span>
 						</div>
 					</th>
@@ -106,32 +106,32 @@
 						<div style="display:none;">
 							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<input id="filter-address" class="shorty-filter" type="text" value="">
-							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
-								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
+							<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
+								class="shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
 					<th id="list-of-clicks-host" data-aspect="host" class="collapsible">
 						<div style="display:none;">
 							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<input id="filter-host" class="shorty-filter" type="text" value="">
-							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
-								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
+							<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
+								class="shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
 					<th id="list-of-clicks-user" data-aspect="user" class="collapsible">
 						<div style="display:none;">
 							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<input id="filter-user" class="shorty-filter" type="text" value="">
-							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
-								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
+							<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
+								class="shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
 					<th id="list-of-clicks-time" data-aspect="time" class="collapsible">
 						<div style="display:none;">
 							<?php print_unescaped($this->inc('../../shorty/templates/tmpl_tools_collapsible')); ?>
 							<input id="filter-time" class="shorty-filter" type="text" value="">
-							<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
-								class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
+							<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
+								class="shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 						</div>
 					</th>
 				</tr>
@@ -145,10 +145,10 @@
 					<td id="list-of-clicks-time"    data-aspect="time"    class="collapsible"></td>
 					<td id="list-of-clicks-actions" data-aspect="actions">
 						<span class="shorty-actions">
-							<a id="shorty-tracking-action-details" title="<?php p(OC_Shorty_L10n::t("details")); ?>" data-method="OC.Shorty.Tracking.details">
-								<img class="shorty-icon svg" alt="<?php p(OC_Shorty_L10n::t("details")); ?>"
-									title="<?php p(OC_Shorty_L10n::t('Show details')); ?>"
-									src="<?php p(OCP\Util::imagePath('shorty','actions/info.svg')); ?>" />
+							<a id="shorty-tracking-action-details" title="<?php p(L10n::t("details")); ?>" data-method="OC.Shorty.Tracking.details">
+								<img class="shorty-icon svg" alt="<?php p(L10n::t("details")); ?>"
+									title="<?php p(L10n::t('Show details')); ?>"
+									src="<?php p(\OCP\Util::imagePath('shorty','actions/info.svg')); ?>" />
 							</a>
 						</span>
 					</td>
@@ -162,15 +162,15 @@
 		<div id="shorty-footer">
 			<hr>
 			<span id="scrollingTurn">
-				<img id="load" alt="load" title="<?php p(OC_ShortyTracking_L10n::t("load")); ?>"
-					class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>">
+				<img id="load" alt="load" title="<?php p(L10n::t("load")); ?>"
+					class="svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>">
 			</span>
 			<span style="float:left;">
-				<label for="shorty-clicks"><?php p(OC_ShortyTracking_L10n::t("Clicks")); ?>: </label>
+				<label for="shorty-clicks"><?php p(L10n::t("Clicks")); ?>: </label>
 				<span id="shorty-clicks" class="shorty-tracking-reference"></span>
 			</span>
 			<span style="float:right;">
-				<label for="shorty-until"><?php p(OC_Shorty_L10n::t("Expiration")); ?>: </label>
+				<label for="shorty-until"><?php p(L10n::t("Expiration")); ?>: </label>
 				<span id="shorty-until" class="shorty-tracking-reference"></span>
 			</span>
 		</div>

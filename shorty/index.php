@@ -34,27 +34,28 @@
  * @UseSession
  */
 
+namespace OCA\Shorty;
 // Session checks
-OCP\User::checkLoggedIn  ( );
-OCP\App::checkAppEnabled ( 'shorty' );
+\OCP\User::checkLoggedIn  ( );
+\OCP\App::checkAppEnabled ( 'shorty' );
 
-OCP\App::setActiveNavigationEntry ( 'shorty_index' );
+\OCP\App::setActiveNavigationEntry ( 'shorty_index' );
 
-OCP\Util::addStyle ( 'shorty', '../3rdparty/css/impromptu.jquery.min' );
-OCP\Util::addStyle ( 'shorty', '../3rdparty/css/chosen.jquery.min' );
-OCP\Util::addStyle ( 'shorty', 'shorty' );
-OCP\Util::addStyle ( 'shorty', 'list' );
+\OCP\Util::addStyle ( 'shorty', '../3rdparty/css/impromptu.jquery.min' );
+\OCP\Util::addStyle ( 'shorty', '../3rdparty/css/chosen.jquery.min' );
+\OCP\Util::addStyle ( 'shorty', 'shorty' );
+\OCP\Util::addStyle ( 'shorty', 'list' );
 
-OCP\Util::addScript ( 'shorty', '../3rdparty/js/chosen.jquery.min');
-OCP\Util::addScript ( 'shorty', '../3rdparty/js/tinysort.jquery.min' );
-OCP\Util::addScript ( 'shorty', '../3rdparty/js/impromptu.jquery.min' );
-OCP\Util::addScript ( 'shorty', 'shorty' );
-OCP\Util::addScript ( 'shorty', 'util' );
-OCP\Util::addScript ( 'shorty', 'init' );
-if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
-	OCP\Util::addScript ( 'shorty',  'debug' );
-// any additional stuff to incude as registered into the hook ?
-OC_Shorty_Hooks::requestIncludes();
+\OCP\Util::addScript ( 'shorty', '../3rdparty/js/chosen.jquery.min');
+\OCP\Util::addScript ( 'shorty', '../3rdparty/js/tinysort.jquery.min' );
+\OCP\Util::addScript ( 'shorty', '../3rdparty/js/impromptu.jquery.min' );
+\OCP\Util::addScript ( 'shorty', 'shorty' );
+\OCP\Util::addScript ( 'shorty', 'util' );
+\OCP\Util::addScript ( 'shorty', 'init' );
+if ( \OCP\Util::DEBUG==\OCP\Config::getAppValue( "loglevel", \OCP\Util::WARN ) )
+	\OCP\Util::addScript ( 'shorty',  'debug' );
+// any additional stuff to include as registered into the hook ?
+Hooks::requestIncludes();
 
 // strategy:
 // - first: decide which action is requested
@@ -81,7 +82,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 		case 'folder':
 			// example: http://.../shorty/index.php?file=%3cfolder%3cfile
 			$act = 'acquire';
-			$arg = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::PATH,FALSE);
+			$arg = Type::req_argument($key,Type::PATH,FALSE);
 			break 2; // skip switch AND foreach
 
 		// any recognizable argument key indicating a url to be added as new shorty ?
@@ -90,7 +91,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 		case 'link':
 			// example: http://.../shorty/index.php?url=http%...
 			$act = 'acquire';
-			$arg = OC_Shorty_Type::req_argument($key,OC_Shorty_Type::URL,FALSE);
+			$arg = Type::req_argument($key,Type::URL,FALSE);
 			break 2; // skip switch AND foreach
 
 		// no recognizable key but something else, hm...
@@ -104,7 +105,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 				// use that source instead of $key, since $key contains replaced chars (php specific exceptions due to var name problems)
 				$raw = urldecode($_SERVER['QUERY_STRING']);
 				// now try to interpret its content
-				if (NULL!==($value=OC_Shorty_Type::normalize($raw,OC_Shorty_Type::URL,FALSE)))
+				if (NULL!==($value=Type::normalize($raw,Type::URL,FALSE)))
 				{
 					// the query string is a url, acquire it as a new shorty
 					$act = 'acquire';
@@ -129,8 +130,8 @@ switch ($act)
 	case 'acquire': // add url as new shorty
 		// keep the url specified as referer, that is the one we want to store
 		$_SESSION['shorty-referrer'] = $arg;
-		OCP\Util::writeLog( 'shorty', sprintf("Detected an incoming Shortlet request for url '%s...'",substr($arg,0,80)), OCP\Util::DEBUG );
-		header ( sprintf('Location: %s', OCP\Util::linkTo('shorty','index.php')) );
+		\OCP\Util::writeLog( 'shorty', sprintf("Detected an incoming Shortlet request for url '%s...'",substr($arg,0,80)), \OCP\Util::DEBUG );
+		header ( sprintf('Location: %s', \OCP\Util::linkTo('shorty','index.php')) );
 		exit();
 
 	// =====
@@ -142,31 +143,31 @@ switch ($act)
 			if ( isset($_SESSION['shorty-referrer']) )
 			{
 				// this takes care of handling the url on the client side
-				OCP\Util::addScript ( 'shorty', 'add' );
+				\OCP\Util::addScript ( 'shorty', 'add' );
 				// add url taked from the session vars to anything contained in the query string
 				$_SERVER['QUERY_STRING'] = implode('&',array_merge(array('url'=>$_SESSION['shorty-referrer']),explode('&',$_SERVER['QUERY_STRING'])));
 			}
 			else
 			{
 				// simple desktop initialization, no special actions contained
-				OCP\Util::addScript ( 'shorty', 'list' );
+				\OCP\Util::addScript ( 'shorty', 'list' );
 			}
-			$tmpl = new OCP\Template( 'shorty', 'tmpl_index', 'user' );
+			$tmpl = new \OCP\Template( 'shorty', 'tmpl_index', 'user' );
 			// any additional actions registered via hooks that should be offered ?
-			$tmpl->assign ( 'shorty-actions', OC_Shorty_Hooks::requestActions() );
+			$tmpl->assign ( 'shorty-actions', Hooks::requestActions() );
 			// available status options (required for select filter in toolbox)
-			$shorty_status['']=sprintf('- %s -',OC_Shorty_L10n::t('all'));
-			foreach ( OC_Shorty_Type::$STATUS as $status )
-				$shorty_status[$status] = OC_Shorty_L10n::t($status);
+			$shorty_status['']=sprintf('- %s -',L10n::t('all'));
+			foreach ( Type::$STATUS as $status )
+				$shorty_status[$status] = L10n::t($status);
 			$tmpl->assign ( 'shorty-status', $shorty_status );
-			$tmpl->assign ( 'default-status', OCP\Config::getUserValue(OCP\User::getUser(),'shorty','default-status','private') );
+			$tmpl->assign ( 'default-status', \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','default-status','private') );
 			// any referrer we want to hand over to the browser ?
 			if ( array_key_exists('shorty-referrer',$_SESSION) )
 				$tmpl->assign ( 'shorty-referrer', $_SESSION['shorty-referrer'] );
 			// is sending sms enabled in the personal preferences ?
-			$tmpl->assign ( 'sms-control', OCP\Config::getUserValue(OCP\User::getUser(),'shorty','sms-control','disabled') );
+			$tmpl->assign ( 'sms-control', \OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','sms-control','disabled') );
 			// clean up session var so that a browser reload does not trigger the same action again
 			\OC::$server->getSession()->remove('shorty-referrer');
 			$tmpl->printPage();
-		} catch ( OC_Shorty_Exception $e ) { OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'level'=>'error', 'data'=>$result ) ); }
+		} catch ( Exception $e ) { \OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'level'=>'error' ) ); }
 } // switch

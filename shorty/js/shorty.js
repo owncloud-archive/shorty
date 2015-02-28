@@ -61,7 +61,7 @@ OC.Shorty={
 			Panel: {},
 			Handle: {},
 			/**
-			 * @method OC.Shorty.WUI.Controls.init
+			 * @function OC.Shorty.WUI.Controls.init
 			 * @brief Initializes the control bar after it loaded
 			 * @author Christian Reiner
 			 */
@@ -73,7 +73,7 @@ OC.Shorty={
 				OC.Shorty.WUI.Controls.Panel.on('click','.shorty-handle',OC.Shorty.WUI.Controls.toggle);
 			}, // OC.Shorty.WUI.Controls.init
 			/**
-			 * @method OC.Shorty.WUI.Controls.hide
+			 * @function OC.Shorty.WUI.Controls.hide
 			 * @brief Hide the controls panel if visible
 			 * @author Christian Reiner
 			 */
@@ -95,7 +95,7 @@ OC.Shorty={
 				return dfd.promise();
 			},
 			/**
-			 * @method OC.Shorty.WUI.Controls.show
+			 * @function OC.Shorty.WUI.Controls.show
 			 * @brief Show the controls panel if not visible
 			 * @author Christian Reiner
 			 */
@@ -117,7 +117,7 @@ OC.Shorty={
 				return dfd.promise();
 			},
 			/**
-			 * @method OC.Shorty.WUI.Controls.toggle
+			 * @function OC.Shorty.WUI.Controls.toggle
 			 * @brief Toggles the visibility of the controls panel
 			 * @author Christian Reiner
 			 */
@@ -174,7 +174,7 @@ OC.Shorty={
 		 */
 		Dialog:{
 			/**
-			 * @method OC.Shorty.WUI.Dialog.execute
+			 * @function OC.Shorty.WUI.Dialog.execute
 			 * @brief Execute a dialog, including preparing the desktop beforehand
 			 * @param dialog jQueryObject Representation of the existing dialog
 			 * @author Christian Reiner
@@ -210,7 +210,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.execute
 			/**
-			 * @method OC.Shorty.WUI.Dialog.hide
+			 * @function OC.Shorty.WUI.Dialog.hide
 			 * @brief Hides a dialog
 			 * @param dialog jQueryObject Represents the dialog to be handled
 			 * @desrciption
@@ -243,7 +243,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.hide
 			/**
-			 * @method OC.Shorty.WUI.Dialog.hideAll
+			 * @function OC.Shorty.WUI.Dialog.hideAll
 			 * @brief Hides all dialogs
 			 * @desrciption
 			 * Also moves the dialog code back to its 'parking place' in case of embedded dialogs.
@@ -261,7 +261,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.hideAll
 			/**
-			 * @method OC.Shorty.WUI.Dialog.reset
+			 * @function OC.Shorty.WUI.Dialog.reset
 			 * @brief Resets a dialog to its default values
 			 * @param dialog jQueryObject Represents the dialog to be handled
 			 * @description The default values are read from the 'data-...' attributes stored in the specifically handled item.
@@ -301,7 +301,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.reset
 			/**
-			 * @method OC.Shorty.WUI.Dialog.sharpen
+			 * @function OC.Shorty.WUI.Dialog.sharpen
 			 * @brief Activates the button that triggers an action
 			 * @param dialog jQueryObject Represents the dialog to be handled
 			 * @param sharpness bool Flag indicating if the dialog should be sharpened or unsharpened
@@ -330,7 +330,7 @@ OC.Shorty={
 				}
 			}, // OC.Shorty.WUI.Dialog.sharpen
 			/**
-			 * @method OC.Shorty.WUI.Dialog.show
+			 * @function OC.Shorty.WUI.Dialog.show
 			 * @brief Makes an existing dialog visible
 			 * @param dialog jQueryObject Represents the dialog to be handled
 			 * @author Christian Reiner
@@ -413,7 +413,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.show
 			/**
-			 * @method OC.Shorty.WUI.Dialog.toggle
+			 * @function OC.Shorty.WUI.Dialog.toggle
 			 * @brief Toggles the visibility of an existing dialog
 			 * @param dialog jQueryObject Represents the dialog to be handled
 			 * @author Christian Reiner
@@ -429,7 +429,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Dialog.toggle
 			/**
-			 * @method OC.Shorty.WUI.Dialog.validate
+			 * @function OC.Shorty.WUI.Dialog.validate
 			 * @brief Validates the specified target
 			 * @param dialog jQueryObject Represents the dialog to be handled
 			 * @author Christian Reiner
@@ -457,7 +457,7 @@ OC.Shorty={
 		 */
 		Entry:{
 			/**
-			 * @method OC.Shorty.WUI.Entry.click
+			 * @function OC.Shorty.WUI.Entry.click
 			 * @brief Triggers the action specific for each action button offered for a list item
 			 * @param event jQueryObject Representation of a lists item to be handled
 			 * @param element
@@ -515,7 +515,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.click
 			/**
-			 * @method OC.Shorty.WUI.Entry.del
+			 * @function OC.Shorty.WUI.Entry.del
 			 * @brief Marks a list item as 'deleted' by changing its 'status'
 			 * @param entry jQueryObject Representation of a lists item to be handled
 			 * @author Christian Reiner
@@ -535,7 +535,7 @@ OC.Shorty={
 				}
 			}, // OC.Shorty.WUI.Entry.del
 			/**
-			 * @method OC.Shorty.WUI.Entry.edit
+			 * @function OC.Shorty.WUI.Entry.edit
 			 * @brief prepares the 'edit' action/dialog
 			 * @param entry jQueryObject Representation of a lists item to be handled
 			 * @author Christian Reiner
@@ -568,7 +568,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.edit
 			/**
-			 * @method OC.Shorty.WUI.Entry.send
+			 * @function OC.Shorty.WUI.Entry.send
 			 * @brief prepares the 'send' action
 			 * @param event jQueryObject Representation of a lists item to be handled
 			 * @param element
@@ -585,7 +585,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.send
 			/**
-			 * @method OC.Shorty.WUI.Entry.share
+			 * @function OC.Shorty.WUI.Entry.share
 			 * @brief prepares the 'share' action/dialog
 			 * @param entry jQueryObject Representation of a lists item to be handled
 			 * @author Christian Reiner
@@ -611,7 +611,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.share
 			/**
-			 * @method OC.Shorty.WUI.Entry.show
+			 * @function OC.Shorty.WUI.Entry.show
 			 * @brief prepares the 'show' action/dialog
 			 * @param entry jQueryObject Representation of a lists item to be handled
 			 * @author Christian Reiner
@@ -651,7 +651,7 @@ OC.Shorty={
 		 */
 		Hourglass:{
 			/**
-			 * @method OC.Shorty.WUI.Hourglass.toggle
+			 * @function OC.Shorty.WUI.Hourglass.toggle
 			 * @brief Toggles the visibility of the desktop hourglass
 			 * @param show bool Flag indicating of the list should be shown or hidden
 			 * @author Christian Reiner
@@ -685,7 +685,7 @@ OC.Shorty={
 		 */
 		List:{
 			/**
-			* @method OC.Shorty.WUI.List.add
+			* @function OC.Shorty.WUI.List.add
 			* @brief Adds a list of elements to an existing list
 			* @param list jQueryObject Representation of the 'list'
 			* @param elements array List of elements to be added
@@ -713,7 +713,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.add
 			/**
-			 * @method OC.Shorty.WUI.List.build
+			 * @function OC.Shorty.WUI.List.build
 			 * @brief Builds the content of a list by retrieving and adding entries
 			 * @author Christian Reiner
 			 */
@@ -749,7 +749,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.build
 				/**
-				 * @method OC.Shorty.WUI.List.dim
+				 * @function OC.Shorty.WUI.List.dim
 				 * @brief Dims the content of a list so that manipulations can be done without having to close it
 				 * @param list jQueryObject Representing the list to be handled
 				 * @param show bool Flag indicating of the list should be dimmed of re-shown
@@ -788,7 +788,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.dim
 			/**
-			 * @method OC.Shorty.WUI.List.empty
+			 * @function OC.Shorty.WUI.List.empty
 			 * @brief Clears a list by removing all its rows
 			 * @param list jQueryObject Represents the list to be handled
 			 * @description Will only clear the list body, header entries like titlebar and toolbar will be left untouched
@@ -808,7 +808,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.empty
 			/**
-			 * @method OC.Shorty.WUI.List.fill
+			 * @function OC.Shorty.WUI.List.fill
 			 * @brief (Re-)Fills a list with al elements from the given set
 			 * @param list jQueryObject Represents the list to be handled
 			 * @param elements array list of elements to be filled in the lists
@@ -825,7 +825,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.fill
 			/**
-			 * @method OC.Shorty.WUI.List.filter
+			 * @function OC.Shorty.WUI.List.filter
 			 * @brief Filters a given list by comparing column values to a given value pattern
 			 * @param list object: jQuery object representing the list to filter (html table)
 			 * @param column string: Name (id) of the column to consider
@@ -855,7 +855,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.filter
 			/**
-			 * @method OC.Shorty.WUI.List.get
+			 * @function OC.Shorty.WUI.List.get
 			 * @brief Retrieves the list of OC.Shortys from the server
 			 * @return object Deferred object
 			 * @author Christian Reiner
@@ -881,7 +881,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.get
 			/**
-			 * @method OC.Shorty.WUI.List.hide
+			 * @function OC.Shorty.WUI.List.hide
 			 * @brief Hides the list of OC.Shortys
 			 * @param duration string: The duration the hiding animation should take (optional)
 			 * @return object Deferred object
@@ -898,7 +898,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.hide
 			/**
-			 * @method OC.Shorty.WUI.List.highlight
+			 * @function OC.Shorty.WUI.List.highlight
 			 * @brief highlights a given entry in the list of OC.Shortys
 			 * @param list
 			 * @param entry object: jQuery object representing the entry to highlight
@@ -922,7 +922,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.highlight
 			/**
-			 * @method OC.Shorty.WUI.List.modify
+			 * @function OC.Shorty.WUI.List.modify
 			 * @brief Modifies existing entries in the list to match updated data
 			 * @param list object: jQuery object representing the list
 			 * @param hidden boolean: Flag indicating if modified rows should be kept hidden for later highlighting
@@ -1001,7 +1001,7 @@ OC.Shorty={
 				return dfd.resolve().promise();
 			}, // OC.Shorty.WUI.List.modify
 			/**
-			 * @method OC.Shorty.WUI.List.show
+			 * @function OC.Shorty.WUI.List.show
 			 * @brief Shows the list if it was hidden
 			 * @param duration string Duration the animation should take (optional)
 			 * @return object Deferred object
@@ -1028,7 +1028,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.List.show
 			/**
-			 * @method OC.Shorty.WUI.List.sort
+			 * @function OC.Shorty.WUI.List.sort
 			 * @brief Sorts a list by the values of a specified column
 			 * @param list object The list object in the DOM
 			 * @param sortCode string A two letter code as defined in lib/type.php
@@ -1065,7 +1065,7 @@ OC.Shorty={
 				OC.Shorty.Action.Preference.set({'list-sort-code':sortCode});
 			}, // OC.Shorty.WUI.List.sort
 			/**
-			 * @method OC.Shorty.WUI.List.toggle
+			 * @function OC.Shorty.WUI.List.toggle
 			 * @brief: Toggles the visibility of the list
 			 * @param duration string Duration the animation should take
 			 * @author Christian Reiner
@@ -1078,7 +1078,7 @@ OC.Shorty={
 				else return OC.Shorty.WUI.List.show(duration);
 			}, // OC.Shorty.WUI.List.toggle
 			/**
-			 * @method OC.Shorty.WUI.List.vacuum
+			 * @function OC.Shorty.WUI.List.vacuum
 			 * @brief Controls the visibility of the vacuum version of the list
 			 * @author Christian Reiner
 			 */
@@ -1100,7 +1100,7 @@ OC.Shorty={
 			 */
 			Column:{
 				/**
-				 * @method OC.Shorty.WUI.List.Column.collapse
+				 * @function OC.Shorty.WUI.List.Column.collapse
 				 * @brief Collapses an expanded lists column
 				 * @param list object The list whos column is to be collapsed
 				 * @param column object The column that is to be collapsed
@@ -1111,7 +1111,7 @@ OC.Shorty={
 					$('#'+list).find('thead th,thead td,tbody td').filter('[data-aspect="'+column+'"]').addClass('collapsed');
 				}, // OC.Shorty.WUI.List.Column.collapse
 				/**
-				 * @method OC.Shorty.WUI.List.Column.expand
+				 * @function OC.Shorty.WUI.List.Column.expand
 				 * @brief Expands a collapsed lists column
 				 * @param list object The list whos column is to be expanded
 				 * @param column object The column that is to be expanded
@@ -1122,7 +1122,7 @@ OC.Shorty={
 					$('#'+list).find('thead th,thead td,tbody td').filter('[data-aspect="'+column+'"]').removeClass('collapsed')
 				}, // OC.Shorty.WUI.List.Column.expand
 				/**
-				 * @method OC.Shorty.WUI.List.Column.getCollapsedColumns
+				 * @function OC.Shorty.WUI.List.Column.getCollapsedColumns
 				 * @brief Gets and validates the preference storing the lists of collapsed columns
 				 * @param list string The lists id
 				 * @author Christian Reiner
@@ -1142,7 +1142,7 @@ OC.Shorty={
 					return dfd.promise();
 				}, // OC.Shorty.WUI.List.Column.getCollapsedColumns
 				/**
-				 * @method OC.Shorty.WUI.List.Column.setCollapsedColumns
+				 * @function OC.Shorty.WUI.List.Column.setCollapsedColumns
 				 * @brief Sets the preference storing the lists of collapsed columns
 				 * @param list string The lists id
 				 * @param columns array The list collapsed columns
@@ -1160,7 +1160,7 @@ OC.Shorty={
 					return dfd.promise();
 				}, // OC.Shorty.WUI.List.Column.setCollapsedColumns
 				/**
-				 * @method OC.Shorty.WUI.List.Column.toggle
+				 * @function OC.Shorty.WUI.List.Column.toggle
 				 * @brief Toggles the compactness of a lists column
 				 * @param list object The list whos column is to be toggled
 				 * @param column object The list column that is to be toggled
@@ -1189,7 +1189,7 @@ OC.Shorty={
 					return dfd.promise();
 				}, // OC.Shorty.WUI.List.Column.toggle
 				/**
-				 * @method OC.Shorty.WUI.List.Column.initAll
+				 * @function OC.Shorty.WUI.List.Column.initAll
 				 * @brief initializes the lists columns to be collapsed or expanded
 				 * @param list object The list whos column is to be expanded
 				 * @author Christian Reiner
@@ -1217,7 +1217,7 @@ OC.Shorty={
 			 */
 			Toolbar:{
 				/**
-				* @method OC.Shorty.WUI.List.Toolbar.toggle
+				* @function OC.Shorty.WUI.List.Toolbar.toggle
 				* @brief Toggles the visibility of a lists toolbar
 				* @param list object The list whos toolbars is to be toggled
 				* @author Christian Reiner
@@ -1263,7 +1263,7 @@ OC.Shorty={
 		 */
 		Messenger:{
 			/**
-			 * @method OC.Shorty.WUI.Messenger.hide
+			 * @function OC.Shorty.WUI.Messenger.hide
 			 * @brief Hides the messenger area and clears the content
 			 * @param object A specific messenger clone object to be hidden or undefined
 			 * @author Christian Reiner
@@ -1293,7 +1293,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Messenger.hide
 			/**
-			 * @method OC.Shorty.WUI.Messenger.show
+			 * @function OC.Shorty.WUI.Messenger.show
 			 * @brief Populates the messenger area with the specified text and shows it
 			 * @param message (string) A human readable message
 			 * @param level (string) A severity level to be compared to the configured verbosity threshold
@@ -1384,7 +1384,7 @@ OC.Shorty={
 		 */
 		Meta:{
 			/**
-			* @method OC.Shorty.WUI.Meta.collect
+			* @function OC.Shorty.WUI.Meta.collect
 			* @brief Collects meta data about an url specified in the dialog
 			* @param dialog object The dialog that takes the meta data tokens
 			* @author Christian Reiner
@@ -1447,7 +1447,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Meta.collect
 			/**
-			 * @method OC.Shorty.WUI.Meta.get
+			 * @function OC.Shorty.WUI.Meta.get
 			 * @brief Fetches the meta data of a given target url
 			 * @param target string The target url to fetch meta data about
 			 * @author Christian Reiner
@@ -1501,7 +1501,7 @@ OC.Shorty={
 		 */
 		Sums:{
 			/**
-			 * @method OC.Shorty.WUI.Sums.fill
+			 * @function OC.Shorty.WUI.Sums.fill
 			 * @brief Fills the sums as specified in the provided data into the desktop
 			 * @param data array The data as specified during a server request
 			 * @author Christian Reiner
@@ -1516,7 +1516,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Sums.fill
 			/**
-			 * @method OC.Shorty.WUI.Sums.get
+			 * @function OC.Shorty.WUI.Sums.get
 			 * @brief Retrieves the statistical sums from the server
 			 * @author Christian Reiner
 			 */
@@ -1543,7 +1543,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Sums.get
 			/**
-			 * @method OC.Shorty.WUI.Sums.increment
+			 * @function OC.Shorty.WUI.Sums.increment
 			 * @brief Increments the click counter for a single entry in the visible list
 			 * @param entry object Jquery object representing the clicked entry (row)
 			 * @author Christian Reiner
@@ -1576,13 +1576,13 @@ OC.Shorty={
 		Preference:
 		{
 			/**
-			 * @method OC.Shorty.Action.Preference.Cache
+			 * @function OC.Shorty.Action.Preference.Cache
 			 * @brief: A cache holding preferences already retrieved
 			 * @author Christian Reiner
 			 */
 			Cache:{},
 			/**
-			 * @method OC.Shorty.Action.Preference.get
+			 * @function OC.Shorty.Action.Preference.get
 			 * @brief: Gets a specified users preference value
 			 * @author Christian Reiner
 			 */
@@ -1613,7 +1613,7 @@ OC.Shorty={
 				}
 			}, // OC.Shorty.Action.Preference.get
 			/**
-			 * @method OC.Shorty.Action.Preference.set
+			 * @function OC.Shorty.Action.Preference.set
 			 * @brief: Sets a specified users preference value
 			 * @author Christian Reiner
 			 */
@@ -1655,7 +1655,7 @@ OC.Shorty={
 		 */
 		Setting:{
 			/**
-			 * @method OC.Shorty.Action.Setting.get
+			 * @function OC.Shorty.Action.Setting.get
 			 * @brief: Gets a specified system settings value
 			 * @author Christian Reiner
 			 */
@@ -1681,7 +1681,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // OC.Shorty.Action.Setting.get
 			/**
-			 * @method OC.Shorty.Action.Setting.set
+			 * @function OC.Shorty.Action.Setting.set
 			 * @brief: Sets a specified system settings value
 			 * @author Christian Reiner
 			 */
@@ -1718,7 +1718,7 @@ OC.Shorty={
 		 */
 		Url:{
 			/**
-			 * @method OC.Shorty.Action.Url.add
+			 * @function OC.Shorty.Action.Url.add
 			 * @brief Adds a URL including meta data as specified as a new Shorty.
 			 * @author Christian Reiner
 			 */
@@ -1844,7 +1844,7 @@ OC.Shorty={
 				return dfd.promise();
 			}, // ===== OC.Shorty.Action.Url.edit =====
 			/**
-			 * @method OC.Shorty.Action.Url.del
+			 * @function OC.Shorty.Action.Url.del
 			 * @brief Marks an existing Shorty as deleted.
 			 * @author Christian Reiner
 			 */
@@ -1886,7 +1886,7 @@ OC.Shorty={
 				window.open(url);
 			}, // OC.Shorty.Action.Url.forward
 			/**
-			 * @method OC.Shorty.Action.Url.send
+			 * @function OC.Shorty.Action.Url.send
 			 * @brief RUns the specific action defined for a chosen sharing usage.
 			 * @author Christian Reiner
 			 */
@@ -2081,7 +2081,7 @@ OC.Shorty={
 				}
 			}, // OC.Shorty.Action.Url.send
 			/**
-			 * @method OC.Shorty.Action.Url.status
+			 * @function OC.Shorty.Action.Url.status
 			 * @brief Changes the status of an existing Shorty as specified.
 			 * @author Christian Reiner
 			 */
@@ -2129,7 +2129,7 @@ OC.Shorty={
 			 */
 			Agent:{},
 			/**
-			 * @method OC.Shorty.Action.Verification.verify
+			 * @function OC.Shorty.Action.Verification.verify
 			 * @brief Controls the verification of the current setting of the static backends base url.
 			 * @author Christian Reiner
 			 */
@@ -2153,7 +2153,7 @@ OC.Shorty={
 				}, 1000);
 			}, // OC.Shorty.Action.Verification.verify
 			/**
-			 * @method OC.Shorty.Action.Verification.verified
+			 * @function OC.Shorty.Action.Verification.verified
 			 * @brief Reacts on a verification attempt (its result)
 			 * @author Christian Reiner
 			 */
@@ -2186,7 +2186,7 @@ OC.Shorty={
 	 */
 	Ajax:{
 		/**
-		 * @method OC.Shorty.Ajax.eval
+		 * @function OC.Shorty.Ajax.eval
 		 * @brief Filters and converts ajax responses into internal format
 		 * @description
 		 * The ajax replies we get contain an error or a success structure.
@@ -2215,7 +2215,7 @@ OC.Shorty={
 			}
 		}, // OC.Shorty.Ajax.eval
 		/**
-		 * @method OC.Shorty.Ajax.fail
+		 * @function OC.Shorty.Ajax.fail
 		 * @brief Filters and converts ajax failures into internal format
 		 * @param response object Ajax response
 		 * @return object Rejected deferred object
@@ -2240,7 +2240,7 @@ OC.Shorty={
 	 */
 	Backend:{
 		/**
-		 * @method OC.Shorty.Backend.getUserBackend
+		 * @function OC.Shorty.Backend.getUserBackend
 		 * @brief Defines the users active backend preference
 		 * @author Christian Reiner
 		 */
@@ -2261,7 +2261,7 @@ OC.Shorty={
 			return dfd.promise();
 		}, // OC.Shorty.Backend.getUserBackend
 		/**
-		 * @method OC.Shorty.Backend.getSystemSelection
+		 * @function OC.Shorty.Backend.getSystemSelection
 		 * @brief Gets the selection (list) of backends available to the user
 		 * @author Christian Reiner
 		 */
@@ -2276,7 +2276,7 @@ OC.Shorty={
 			return dfd.promise();
 		}, // OC.Shorty.Backend.getSystemSelection
 		/**
-		 * @method OC.Shorty.Backend.setSystemSelection
+		 * @function OC.Shorty.Backend.setSystemSelection
 		 * @brief Saves the selection (list) of backends available to the user
 		 * @author Christian Reiner
 		 */
@@ -2306,7 +2306,7 @@ OC.Shorty={
 			return false;
 		},
 		/**
-		* @method OC.Shorty.Backend.getSystemDefault
+		* @function OC.Shorty.Backend.getSystemDefault
 		* @brief Gets the default backend suggested to the user
 		* @author Christian Reiner
 		*/
@@ -2364,7 +2364,7 @@ OC.Shorty={
 		Server:{},
 
 		/**
-		 * @method OC.Shorty.Status.fetch
+		 * @function OC.Shorty.Status.fetch
 		 * @brief Retrieve information from server and feed it into the cache
 		 * @author Christian Reiner
 		 */
@@ -2394,7 +2394,7 @@ OC.Shorty={
 			}
 		}, // OC.Shorty.Status.OCVersion
 		/**
-		 * @method OC.Shorty.Status.getValues
+		 * @function OC.Shorty.Status.getValues
 		 * @brief Return the status values
 		 * @author Christian Reiner
 		 */
@@ -2402,7 +2402,7 @@ OC.Shorty={
 			return OC.Shorty.Status.Valid.promise();
 		}, // OC.Shorty.Status.getValues
 		/**
-		 * @method OC.Shorty.Status.versionCompare
+		 * @function OC.Shorty.Status.versionCompare
 		 * @brief Compare the OC version with a given one using the specifed operand
 		 * @author Christian Reiner
 		 */
@@ -2436,7 +2436,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 	ColumnValueReference:{
 	},
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
+	 * @function OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
 	 * @brief Enriches a raw list entry with usage specific values taken from a sepcified set of attributes
 	 * @param row jQueryObject Represents the raw row, freshly cloned
 	 * @param set array A set of attributes (values) defining an element to be represented by the row
@@ -2513,7 +2513,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		); // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddEnrich
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfShortys.ListAddInsert
+	 * @function OC.Shorty.Runtime.Context.ListOfShortys.ListAddInsert
 	 * @brief Inserts a cloned and enriched row into the table at a usage specific place
 	 * @description
 	 * OC.Shortys always get inserted at the BEGIN of the table, regardless of its sorting
@@ -2525,7 +2525,7 @@ OC.Shorty.Runtime.Context.ListOfShortys={
 		list.find('>tbody').prepend(row);
 	}, // OC.Shorty.Runtime.Context.ListOfShortys.ListAddInsert
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfShortys.ListFillFilter
+	 * @function OC.Shorty.Runtime.Context.ListOfShortys.ListFillFilter
 	 * @param list jQueryObject Represents the list to be handled
 	 * @author Christian Reiner
 	 */

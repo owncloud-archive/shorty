@@ -22,15 +22,15 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_preferences.php
  * Dialog to change user preferences, to be included in the clouds preferences page.
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 <fieldset id="shorty-fieldset" class="personalblock">
@@ -38,120 +38,120 @@
 <?php require_once('tmpl_wdg_shortlet.php'); ?>
 			<p>
 				<!-- default-status -->
-				<label for="status" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Status").":"); ?></label>
+				<label for="status" class="shorty-aspect"><?php p(L10n::t("Status").":"); ?></label>
 				<span id="shorty-status" style="margin-right:1em;">
 					<select id="shorty-default-status" name="default-status" data="<?php echo $_['default-status'];?>">
 <?php
-						foreach ( OC_Shorty_Type::$STATUS as $status )
+						foreach ( Type::$STATUS as $status )
 							if ( 'deleted'!=$status )
 								print_unescaped(sprintf("<option value=\"%s\" %s>%s</option>\n",
-														$status, ($_['default-status']==$status)?'selected':'', OC_Shorty_L10n::t($status)));
+														$status, ($_['default-status']==$status)?'selected':'', L10n::t($status)));
 ?>
 					</select>
-					<em><?php p(OC_Shorty_L10n::t("The default status as suggested for new Shortys.")); ?></em>
+					<em><?php p(L10n::t("The default status as suggested for new Shortys.")); ?></em>
 				</span>
 			</p>
 			<p>
 				<!-- backend selection -->
-				<label for="shorty-backend-type" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Backend").":"); ?></label>
+				<label for="shorty-backend-type" class="shorty-aspect"><?php p(L10n::t("Backend").":"); ?></label>
 				<!-- list of available backend types -->
 				<span style="margin-right:1em;">
 					<select id="shorty-backend-type" name="backend-type" style="width:13em;"
-							placeholder="<?php p(OC_Shorty_L10n::t("Choose service…")); ?>" >
+							placeholder="<?php p(L10n::t("Choose service…")); ?>" >
 						<?php
 							foreach ( $_['backend-types'] as $key=>$label )
 								print_unescaped(sprintf ( "        <option value=\"%s\" %s>%s</option>\n",
 												$key,
 												($key==$_['backend-type'])?'selected':'',
-												OC_Shorty_L10n::t($label)));
+												L10n::t($label)));
 						?>
 					</select>
-					<em><?php p(OC_Shorty_L10n::t("The backend service used to generate shortened URLs.")); ?></em>
+					<em><?php p(L10n::t("The backend service used to generate shortened URLs.")); ?></em>
 				</span>
 				<!-- some additional fields: input, explanation and example -->
 				<!-- depending on the chosen backend-type above only one of the following span tags will be displayed -->
 				<div id="shorty-backend-none" class="shorty-backend-supplement">
-					<label for="shorty-backend-example-none" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+					<label for="shorty-backend-example-none" class="shorty-aspect"><?php p(L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-none" class="shorty-example">
-						<?php p(sprintf('http://%s%s<shorty-id>', $_SERVER['SERVER_NAME'], OCP\Util::linkTo('shorty','',false))); ?>
+						<?php p(sprintf('http://%s%s<shorty-id>', $_SERVER['SERVER_NAME'], \OCP\Util::linkTo('shorty','',false))); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
 						<?php print_unescaped(sprintf('%s<br />%s<br />%s',
-							OC_Shorty_L10n::t("No backend is used, direct links pointing to your ownCloud are generated."),
-							OC_Shorty_L10n::t("Such links are most likely longer than those generated when using a backend."),
-							OC_Shorty_L10n::t("However this option does not rely on any third party service and keeps your shortys under your control."))); ?>
+							L10n::t("No backend is used, direct links pointing to your ownCloud are generated."),
+							L10n::t("Such links are most likely longer than those generated when using a backend."),
+							L10n::t("However this option does not rely on any third party service and keeps your shortys under your control."))); ?>
 					</span>
 				</div>
 				<!-- backend -static- -->
 				<div id="shorty-backend-static" class="shorty-backend-supplement" style="display:none;">
 					<input id="shorty-backend-static-base" type="hidden" name="backend-static-base" value="<?php p($_['backend-static-base']); ?>">
 					<br/>
-					<label for="shorty-backend-example-static" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+					<label for="shorty-backend-example-static" class="shorty-aspect"><?php p(L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-static" class="shorty-example">
 						<?php p(sprintf('%s<shorty-id>',$_['backend-static-base'])); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
 						<?php print_unescaped(sprintf("%s<br />\n%s<br />\n%s<br />\n%s",
-							OC_Shorty_L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
-							OC_Shorty_L10n::t("Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration."),
-							OC_Shorty_L10n::t("Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."),
-							OC_Shorty_L10n::t("Only use this backend, if you can provide a short base url that is mapped the described way. Your shorties won't work otherwise."))); ?>
+							L10n::t("Static, rule-based backend, generates shorty links relative to a given base url."),
+							L10n::t("Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration."),
+							L10n::t("Have a try with the example link provided, click it, it should result in a confirmation that your setup is working."),
+							L10n::t("Only use this backend, if you can provide a short base url that is mapped the described way. Your shorties won't work otherwise."))); ?>
 					</span>
 				</div>
 				<!-- backend bit.ly -->
 				<div id="shorty-backend-bitly" class="shorty-backend-supplement">
-					<label for="shorty-backend-bitly-user" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("bit.ly user").':'); ?></label>
+					<label for="shorty-backend-bitly-user" class="shorty-aspect"><?php p(L10n::t("bit.ly user").':'); ?></label>
 					<input id="shorty-backend-bitly-user" type="text" name="backend-bitly-user" value="<?php p($_['backend-bitly-user']); ?>"
-						maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t("bit.ly user name")); ?>" style="width:10em;">
-					<label for="shorty-backend-bitly-key" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("bit.ly key").':'); ?></label>
+						maxlength="256" placeholder="<?php p(L10n::t("bit.ly user name")); ?>" style="width:10em;">
+					<label for="shorty-backend-bitly-key" class="shorty-aspect"><?php p(L10n::t("bit.ly key").':'); ?></label>
 					<input id="shorty-backend-bitly-key" type="text" name="backend-bitly-key" value="<?php p($_['backend-bitly-key']); ?>"
-						maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t("bit.ly users key")); ?>" style="width:18em;">
+						maxlength="256" placeholder="<?php p(L10n::t("bit.ly users key")); ?>" style="width:18em;">
 					<br/>
-					<label for="shorty-backend-example-bitly" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+					<label for="shorty-backend-example-bitly" class="shorty-aspect"><?php p(L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-bitly" class="shorty-example">
 						<?php p('http://bitly.com/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
 						<?php print_unescaped(sprintf("%s<br />\n%s<br />\n%s",
-							OC_Shorty_L10n::t("The external 'bitly.com' service is used to register a short url for each generated shorty."),
-							OC_Shorty_L10n::t("The service requires you to authenticate yourself by providing a valid bit.ly user name and an '%s'.",
-								sprintf('<a class="external" href="http://bitly.com/a/your_api_key" target="_blank">%s</a>',OC_Shorty_L10n::t("API access key")) ),
-							OC_Shorty_L10n::t("This means you have to '%s' at their site first.",
-								sprintf('<a class="external" href="http://bitly.com/a/sign_up" target="_blank">%s</a>',OC_Shorty_L10n::t("register an account")) ))); ?>
+							L10n::t("The external 'bitly.com' service is used to register a short url for each generated shorty."),
+							L10n::t("The service requires you to authenticate yourself by providing a valid bit.ly user name and an '%s'.",
+								sprintf('<a class="external" href="http://bitly.com/a/your_api_key" target="_blank">%s</a>',L10n::t("API access key")) ),
+							L10n::t("This means you have to '%s' at their site first.",
+								sprintf('<a class="external" href="http://bitly.com/a/sign_up" target="_blank">%s</a>',L10n::t("register an account")) ))); ?>
 					</span>
 				</div>
 				<!-- backend cligs -->
 				<div id="shorty-backend-cligs" class="shorty-backend-supplement">
-					<label for="shorty-backend-example-cligs" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+					<label for="shorty-backend-example-cligs" class="shorty-aspect"><?php p(L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-cligs" class="shorty-example">
 						<?php p('http://cli.gs/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
-						<?php p(OC_Shorty_L10n::t("The external 'cli.gs' service is used to register a short url for each generated shorty.")); ?>
+						<?php p(L10n::t("The external 'cli.gs' service is used to register a short url for each generated shorty.")); ?>
 					</span>
 				</div>
 				<!-- backend is.gd -->
 				<div id="shorty-backend-isgd" class="shorty-backend-supplement">
-					<label for="shorty-backend-example-isgd" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+					<label for="shorty-backend-example-isgd" class="shorty-aspect"><?php p(L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-isgd" class="shorty-example">
 						<?php p('http://is.gd/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
-						<?php p(OC_Shorty_L10n::t("The external 'is.gd' service is used to register a short url for each generated shorty.")); ?>
+						<?php p(L10n::t("The external 'is.gd' service is used to register a short url for each generated shorty.")); ?>
 					</span>
 				</div>
 				<!-- backend google -->
 				<div id="shorty-backend-google" class="shorty-backend-supplement">
-					<label for="shorty-backend-google-key" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("API key").':'); ?></label>
+					<label for="shorty-backend-google-key" class="shorty-aspect"><?php p(L10n::t("API key").':'); ?></label>
 					<input id="shorty-backend-google-key" type="text" name="backend-google-key" value="<?php p($_['backend-google-key']); ?>"
-						maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t("Google API key")); ?>" style="width:24em;">
+						maxlength="256" placeholder="<?php p(L10n::t("Google API key")); ?>" style="width:24em;">
 					<br/>
-					<label for="shorty-backend-example-google" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+					<label for="shorty-backend-example-google" class="shorty-aspect"><?php p(L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-google" class="shorty-example">
 						<?php p('http://goo.gl/<shorty-id>'); ?>
 					</span>
@@ -160,99 +160,99 @@
 					<span>
 						<input id="shorty-backend-ssl-verify" type="checkbox" name="backend-ssl-verify" value="1"
 							<?php p($_['backend-ssl-verify']?'checked':''); ?> >
-						<?php p(OC_Shorty_L10n::t("Force verification of encryption certificates during communication with the backend").'.'); ?>
+						<?php p(L10n::t("Force verification of encryption certificates during communication with the backend").'.'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
 						<?php print_unescaped(sprintf("%s<br />\n%s<br />\n%s<br />\n%s",
-							OC_Shorty_L10n::t("Googles external 'goo.gl service' is used to register a short url for each generated shorty."),
-							sprintf(OC_Shorty_L10n::t("You must provide a valid '%%s' to use this service."),
-								sprintf('<a class="external shorty-clickable" href="https://code.google.com/apis/console/" target="_blank">%s</a>',OC_Shorty_L10n::t("Google API key")) ),
-							OC_Shorty_L10n::t("This means you require a 'Google API console account'."),
-							sprintf(OC_Shorty_L10n::t("Register a new '%%s' at their pages."),
-								sprintf('<a class="external shorty-clickable" href="https://code.google.com/apis/console/" target="_blank">%s</a>',OC_Shorty_L10n::t("Google API account")) )));?>
+							L10n::t("Googles external 'goo.gl service' is used to register a short url for each generated shorty."),
+							sprintf(L10n::t("You must provide a valid '%%s' to use this service."),
+								sprintf('<a class="external shorty-clickable" href="https://code.google.com/apis/console/" target="_blank">%s</a>',L10n::t("Google API key")) ),
+							L10n::t("This means you require a 'Google API console account'."),
+							sprintf(L10n::t("Register a new '%%s' at their pages."),
+								sprintf('<a class="external shorty-clickable" href="https://code.google.com/apis/console/" target="_blank">%s</a>',L10n::t("Google API account")) )));?>
 					</span>
 				</div>
 				<!-- backend tinycc -->
 				<div id="shorty-backend-tiny" class="shorty-backend-supplement">
-					<label for="shorty-backend-tinycc-user" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("tiny.cc user").':'); ?></label>
+					<label for="shorty-backend-tinycc-user" class="shorty-aspect"><?php p(L10n::t("tiny.cc user").':'); ?></label>
 					<input id="shorty-backend-tinycc-user" type="text" name="backend-tinycc-user" value="<?php p($_['backend-tinycc-user']); ?>"
-						maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t("tiny.cc user name")); ?>" style="width:10em;">
-					<label for="shorty-backend-tinycc-key" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("tiny.cc key").':'); ?></label>
+						maxlength="256" placeholder="<?php p(L10n::t("tiny.cc user name")); ?>" style="width:10em;">
+					<label for="shorty-backend-tinycc-key" class="shorty-aspect"><?php p(L10n::t("tiny.cc key").':'); ?></label>
 					<input id="shorty-backend-tinycc-key" type="text" name="backend-tinycc-key" value="<?php p($_['backend-tinycc-key']); ?>"
-						maxlength="256" placeholder="<?php p(OC_Shorty_L10n::t("tiny.cc user key")); ?>" style="width:19em;">
+						maxlength="256" placeholder="<?php p(L10n::t("tiny.cc user key")); ?>" style="width:19em;">
 					<br/>
-					<label for="shorty-backend-example-tinycc" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+					<label for="shorty-backend-example-tinycc" class="shorty-aspect"><?php p(L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-tinycc" class="shorty-example">
 						<?php p(sprintf('http://tiny.cc/&lt;shorty-id&gt;')); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
 						<?php print_unescaped(sprintf ( "%s<br />\n%s<br />\n%s",
-							OC_Shorty_L10n::t("The external 'tiny.cc' service is used to register a short url for each generated shorty."),
-							OC_Shorty_L10n::t("The service requires you to authenticate yourself by providing a valid tiny.cc user name and an api access key."),
-							OC_Shorty_L10n::t("This means you have to register an '%s' at their site first.", array (
-								sprintf('<a class="external" href="http://tiny.ccc/" target="_blank">%s</a>', OC_Shorty_L10n::t("account") ) ) ))); ?>
+							L10n::t("The external 'tiny.cc' service is used to register a short url for each generated shorty."),
+							L10n::t("The service requires you to authenticate yourself by providing a valid tiny.cc user name and an api access key."),
+							L10n::t("This means you have to register an '%s' at their site first.", array (
+								sprintf('<a class="external" href="http://tiny.ccc/" target="_blank">%s</a>', L10n::t("account") ) ) ))); ?>
 					</span>
 				</div>
 				<!-- backend tinyURL -->
 				<div id="shorty-backend-tinyurl" class="shorty-backend-supplement">
-					<label for="shorty-backend-example-tinyurl" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+					<label for="shorty-backend-example-tinyurl" class="shorty-aspect"><?php p(L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-tinyurl" class="shorty-example">
 						<?php p('http://ti.ny/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
-						<?php p(OC_Shorty_L10n::t("The external 'ti.ny' service is used to register a short url for each generated shorty.")); ?>
+						<?php p(L10n::t("The external 'ti.ny' service is used to register a short url for each generated shorty.")); ?>
 					</span>
 				</div>
 				<!-- backend turl -->
 				<div id="shorty-backend-turl" class="shorty-backend-supplement">
-					<label for="shorty-backend-example-turl" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Example").':'); ?></label>
+					<label for="shorty-backend-example-turl" class="shorty-aspect"><?php p(L10n::t("Example").':'); ?></label>
 					<span id="shorty-backend-example-turl" class="shorty-example">
 						<?php p('http://turl.ca/<shorty-id>'); ?>
 					</span>
 					<br/>
 					<span class="shorty-explain">
-						<?php p(OC_Shorty_L10n::t("The external 'turl' service is used to register a short url for each generated shorty.")); ?>
+						<?php p(L10n::t("The external 'turl' service is used to register a short url for each generated shorty.")); ?>
 					</span>
 				</div>
 			</p>
 
 			<p>
 				<!-- sms -->
-				<label for="shorty-sms" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("SMS").":"); ?></label>
+				<label for="shorty-sms" class="shorty-aspect"><?php p(L10n::t("SMS").":"); ?></label>
 				<span id="shorty-sms" style="margin-right:1em;">
 					<select id="shorty-sms-control" name="sms-control" style="width:11em;">
 						<?php print_unescaped(sprintf("<option value=\"disabled\" %s>%s</option>\n",
 											('enabled'!=$_['sms-control']?'selected':''),
-											OC_Shorty_L10n::t('disabled'))); ?>
+											L10n::t('disabled'))); ?>
 						<?php print_unescaped(sprintf("<option value=\"enabled\" %s>%s</option>\n",
 											('enabled'==$_['sms-control']?'selected':''),
-											OC_Shorty_L10n::t('enabled'))); ?>
+											L10n::t('enabled'))); ?>
 					</select>
-					<em><?php p(OC_Shorty_L10n::t("Enabling the SMS option will offer sending a Shorty via SMS.")); ?></em>
+					<em><?php p(L10n::t("Enabling the SMS option will offer sending a Shorty via SMS.")); ?></em>
 				</span>
 			</p>
 			<p>
-				<span class="shorty-shorty-explain"><em><?php print_unescaped(OC_Shorty_L10n::t("Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones.")."<br>\n");
-												print_unescaped(OC_Shorty_L10n::t("In addition, those implementations are minimalistic, buggy and differ from system to system.")."<br>\n");
-												print_unescaped(OC_Shorty_L10n::t("In short: this might not work for you, therefore you can disable it…")."<br>\n"); ?></em></span>
+				<span class="shorty-shorty-explain"><em><?php print_unescaped(L10n::t("Unfortunately support for 'SMS url handling' is usually only found on mobile devices like smart phones.")."<br>\n");
+												print_unescaped(L10n::t("In addition, those implementations are minimalistic, buggy and differ from system to system.")."<br>\n");
+												print_unescaped(L10n::t("In short: this might not work for you, therefore you can disable it…")."<br>\n"); ?></em></span>
 			</p>
 
 			<p>
 				<!-- verbosity -->
-				<label for="shorty-verbosity" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Feedback").":"); ?></label>
+				<label for="shorty-verbosity" class="shorty-aspect"><?php p(L10n::t("Feedback").":"); ?></label>
 				<span id="shorty-verbosity" style="margin-right:1em;">
 					<select id="shorty-verbosity-control" name="verbosity-control" style="width:11em;">
 						<?php foreach (array('none','error','info','debug') as $verbosity)
 								print_unescaped(sprintf('<option value="%1$s" %2$s>%3$s</option>'."\n",
 											$verbosity,
 											($verbosity==$_['verbosity-control']?'selected':''),
-											OC_Shorty_L10n::t($verbosity)));
+											L10n::t($verbosity)));
 						?>
 					</select>
-					<em><?php p(OC_Shorty_L10n::t("The amount of feedback messages shown.")); ?></em>
+					<em><?php p(L10n::t("The amount of feedback messages shown.")); ?></em>
 				</span>
 				<br />
 				<label for="timeout" class="shorty-aspect"></label>
@@ -262,10 +262,10 @@
 								print_unescaped(sprintf('<option value="%1$s" %2$s>%3$s</option>'."\n",
 											$timeout,
 											($timeout==$_['verbosity-timeout']?'selected':''),
-											OC_Shorty_L10n::t($key)));
+											L10n::t($key)));
 						?>
 					</select>
-					<em><?php p(OC_Shorty_L10n::t("The time span after which messages are hidden again automatically.")); ?></em>
+					<em><?php p(L10n::t("The time span after which messages are hidden again automatically.")); ?></em>
 				</span>
 			</p>
 		</div>

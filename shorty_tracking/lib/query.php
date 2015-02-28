@@ -29,11 +29,13 @@
  * @author Christian Reiner
  */
 
+namespace OCA\Shorty\Tracking;
+
 // we define a different set of queries depending on the database engine used
-switch ( OCP\Config::getSystemValue('dbtype') )
+switch ( \OCP\Config::getSystemValue('dbtype') )
 {
 	case 'pgsql':
-		class OC_ShortyTracking_Query
+		class Query
 		{
 			const CLICK_RECORD                = "INSERT INTO *PREFIX*shorty_tracking (shorty,time,address,host,\"user\",result) VALUES (:shorty,:time,:address,:host,:user,:result)";
 			const CLICK_LIST_START            = "SELECT id,time,address,host,\"user\",result FROM *PREFIX*shorty_tracking WHERE shorty=:shorty ORDER BY id desc LIMIT :limit";
@@ -45,11 +47,11 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 			const QUERY_TRACKING_TOTAL_USAGE  = "SELECT s.*,count(t.id) AS usage,min(t.time) as first,max(t.time) as last FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) GROUP BY s.id ORDER BY :sort";
 			const QUERY_TRACKING_TOTAL_LIST   = "SELECT s.*,t.* FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) ORDER BY :sort";
 
-		} // class OC_ShortyTracking_Query
+		} // class Query
 		break;
 
 	default:
-		class OC_ShortyTracking_Query
+		class Query
 		{
 			const CLICK_RECORD                = "INSERT INTO *PREFIX*shorty_tracking (shorty,time,address,host,user,result) VALUES (:shorty,:time,:address,:host,:user,:result)";
 			const CLICK_LIST_START            = "SELECT id,time,address,host,user,result FROM *PREFIX*shorty_tracking WHERE shorty=:shorty ORDER BY id desc LIMIT :limit";
@@ -61,6 +63,6 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 			const QUERY_TRACKING_TOTAL_USAGE  = "SELECT s.*,count(t.id) AS usage,min(t.time) as first,max(t.time) as last FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) GROUP BY s.id ORDER BY :sort";
 			const QUERY_TRACKING_TOTAL_LIST   = "SELECT s.*,t.* FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) ORDER BY :sort";
 
-		} // class OC_ShortyTracking_Query
+		} // class Query
 
 } // switch

@@ -22,21 +22,21 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_index.php
  * The general html environment where specific templates are embedded into.
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 <!-- central messenger area -->
 <div id="shorty-messenger" class="shorty-messenger" style="z-index:9250;">
 	<fieldset>
-		<img id="close" title="" class="svg" src="<?php p(OCP\Util::imagePath('shorty','actions/shade.svg')); ?>">
+		<img id="close" title="" class="svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/shade.svg')); ?>">
 		<img id="symbol" title="" src="">
 		<span id="title"></span>
 		<img id="symbol" title="" src="">
@@ -50,49 +50,49 @@
 	<!-- controls: left area, buttons -->
 	<div class="shorty-controls-left">
 		<!-- button to add a new entry to list -->
-		<button id="add" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('New Shorty')); ?>"><?php p(OC_Shorty_L10n::t('New Shorty')); ?></button>
+		<button id="add" class="shorty-config settings" title="<?php p(L10n::t('New Shorty')); ?>"><?php p(L10n::t('New Shorty')); ?></button>
 	</div>
 	<!-- controls: right area, buttons -->
 	<div class="shorty-controls-right">
 		<!-- the internal settings button -->
-		<button id="controls-preferences" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Configuration')); ?>">
-			<img class="svg" src="<?php p(OCP\Util::imagePath('core', 'actions/settings.svg')); ?>"
-				alt="<?php p(OC_Shorty_L10n::t('Configuration')); ?>" />
+		<button id="controls-preferences" class="shorty-config settings" title="<?php p(L10n::t('Configuration')); ?>">
+			<img class="svg" src="<?php p(\OCP\Util::imagePath('core', 'actions/settings.svg')); ?>"
+				alt="<?php p(L10n::t('Configuration')); ?>" />
 		</button>
 		<!-- a container that will hold the preferences dialog -->
 		<div id="appsettings" class="popup topright hidden"></div>
 		<!-- the 'home' button currently links to the entry in the OC app store -->
 		<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
-			<button id="controls-home" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Home')); ?>">
-				<img class="svg" src="<?php p(OCP\Util::imagePath('core', 'places/home.svg')); ?>"
-					alt="<?php p(OC_Shorty_L10n::t('Home')); ?>" />
+			<button id="controls-home" class="shorty-config settings" title="<?php p(L10n::t('Home')); ?>">
+				<img class="svg" src="<?php p(\OCP\Util::imagePath('core', 'places/home.svg')); ?>"
+					alt="<?php p(L10n::t('Home')); ?>" />
 			</button>
 		</a>
 		<!-- the 'refresh' button -->
 		<a>
-			<button id="controls-refresh" class="shorty-config settings" title="<?php p(OC_Shorty_L10n::t('Refresh')); ?>">
-				<img class="svg" src="<?php p(OCP\Util::imagePath('shorty','refresh.svg')); ?>"
-					alt="<?php p(OC_Shorty_L10n::t('Refresh')); ?>" />
+			<button id="controls-refresh" class="shorty-config settings" title="<?php p(L10n::t('Refresh')); ?>">
+				<img class="svg" src="<?php p(\OCP\Util::imagePath('shorty','refresh.svg')); ?>"
+					alt="<?php p(L10n::t('Refresh')); ?>" />
 			</button>
 		</a>
 		<!-- handle to hide/show the panel -->
 		<span id="controls-handle" class="shorty-handle shorty-handle-top">
-			<img class="shorty-icon svg" src="<?php p(OCP\Util::imagePath('shorty','actions/shade.svg')); ?>" >
+			<img class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/shade.svg')); ?>" >
 		</span>
 	</div>
 	<!-- controls: center area, some  passive information -->
 	<div class="shorty-controls-center">
 		<!-- display label: number of entries in list -->
-		<span class="shorty-prompt"><?php p(OC_Shorty_L10n::t('Number of entries')); ?>:</span>
+		<span class="shorty-prompt"><?php p(L10n::t('Number of entries')); ?>:</span>
 		<span id="sum_shortys" class="shorty-value">
-			<img src="<?php p(OCP\Util::imagePath('core', 'loading.gif')); ?>"
-				class="shorty-icon" alt="<?php p(OC_Shorty_L10n::t('Loading')); ?>…"/>
+			<img src="<?php p(\OCP\Util::imagePath('core', 'loading.gif')); ?>"
+				class="shorty-icon" alt="<?php p(L10n::t('Loading')); ?>…"/>
 		</span>
 		<!-- display label: total of clicks in list -->
-		<span class="shorty-prompt"><?php p(OC_Shorty_L10n::t('Total of clicks')); ?>:</span>
+		<span class="shorty-prompt"><?php p(L10n::t('Total of clicks')); ?>:</span>
 		<span id="sum_clicks" class="shorty-value">
-			<img src="<?php p(OCP\Util::imagePath('core', 'loading.gif')); ?>"
-				class="shorty-icon" alt="<?php p(OC_Shorty_L10n::t('Loading')); ?>…" />
+			<img src="<?php p(\OCP\Util::imagePath('core', 'loading.gif')); ?>"
+				class="shorty-icon" alt="<?php p(L10n::t('Loading')); ?>…" />
 		</span>
 	</div>
 	<!-- the dialogs, hidden by default -->

@@ -22,37 +22,37 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_dlg_email.php
  * Dialog popup to prepare sending a url via email
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 <!-- begin of email dialog -->
-<div id="dialog-email" class="shorty-popup" data-title="<?php p(OC_Shorty_L10n::t("Send link by email")) ?>">
+<div id="dialog-email" class="shorty-popup" data-title="<?php p(L10n::t("Send link by email")) ?>">
 	<fieldset>
 		<div class="usage-explanation">
 			<span class="explanation">
-				<?php p(OC_Shorty_L10n::t("Clicking 'Ok' below will try to launch an email composer")); ?>.
+				<?php p(L10n::t("Clicking 'Ok' below will try to launch an email composer")); ?>.
 				<br>
-				<?php p(OC_Shorty_L10n::t("Alternatively the link can be copied into a message manually")); ?>:
+				<?php p(L10n::t("Alternatively the link can be copied into a message manually")); ?>:
 			</span>
 		</div>
 		<textarea class="payload"></textarea>
 		<div class="usage-instruction">
-			<?php p(OC_Shorty_L10n::t("Copy to clipboard")); ?>:
+			<?php p(L10n::t("Copy to clipboard")); ?>:
 			<span class="usage-token">
-				<?php p(OC_Shorty_L10n::t("Ctrl-C")); ?>
+				<?php p(L10n::t("Ctrl-C")); ?>
 			</span>
 			<br>
-			<?php p(OC_Shorty_L10n::t("then paste into message")); ?>:
+			<?php p(L10n::t("then paste into message")); ?>:
 			<span class="usage-token">
-				<?php p(OC_Shorty_L10n::t("Ctrl-V")); ?>
+				<?php p(L10n::t("Ctrl-V")); ?>
 			</span>
 		</div>
 	</fieldset>

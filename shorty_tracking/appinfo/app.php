@@ -29,40 +29,42 @@
  * @author Christian Reiner
  */
 
-OC::$CLASSPATH['OC_Shorty_Exception']     = 'shorty/lib/exception.php';
-OC::$CLASSPATH['OC_Shorty_L10n']          = 'shorty/lib/l10n.php';
-OC::$CLASSPATH['OC_Shorty_Tools']         = 'shorty/lib/tools.php';
-OC::$CLASSPATH['OC_Shorty_Type']          = 'shorty/lib/type.php';
-OC::$CLASSPATH['OC_Shorty_Query']         = 'shorty/lib/query.php';
-OC::$CLASSPATH['OC_ShortyTracking_L10n']  = 'shorty_tracking/lib/l10n.php';
-OC::$CLASSPATH['OC_ShortyTracking_Hooks'] = 'shorty_tracking/lib/hooks.php';
-OC::$CLASSPATH['OC_ShortyTracking_Query'] = 'shorty_tracking/lib/query.php';
+namespace OCA\Shorty\Tracking;
+
+\OC::$CLASSPATH['\OCA\Shorty\Exception']      = 'shorty/lib/exception.php';
+\OC::$CLASSPATH['\OCA\Shorty\L10n']           = 'shorty/lib/l10n.php';
+\OC::$CLASSPATH['\OCA\Shorty\Tools']          = 'shorty/lib/tools.php';
+\OC::$CLASSPATH['\OCA\Shorty\Type']           = 'shorty/lib/type.php';
+\OC::$CLASSPATH['\OCA\Shorty\Query']          = 'shorty/lib/query.php';
+\OC::$CLASSPATH['\OCA\Shorty\Tracking\L10n']  = 'shorty_tracking/lib/l10n.php';
+\OC::$CLASSPATH['\OCA\Shorty\Tracking\Hooks'] = 'shorty_tracking/lib/hooks.php';
+\OC::$CLASSPATH['\OCA\Shorty\Tracking\Query'] = 'shorty_tracking/lib/query.php';
 
 try
 {
 	// minimim requirement currently is as specified below:
 	$SHORTY_VERSION_MIN = '0.5.0';
 	// only plug into the mother app 'Shorty' if that one is installed, activated and has the minimum required version:
-	if ( OC_Installer::isInstalled('shorty') )
+	if ( \OC_Installer::isInstalled('shorty') )
 	{
-		if ( OCP\App::isEnabled('shorty') )
+		if ( \OCP\App::isEnabled('shorty') )
 		{
 			// check Shorty version: installed version required
-			$insV = explode ( '.', OCP\App::getAppVersion('shorty') );
+			$insV = explode ( '.', \OCP\App::getAppVersion('shorty') );
 			$reqV = explode ( '.', $SHORTY_VERSION_MIN );
 			if (  (sizeof($reqV)==sizeof($insV))
 				&&(		  ($reqV[0]<$insV[0])
 					||	( ($reqV[0]==$insV[0])&&($reqV[1]<$insV[1]) )
 					||	( ($reqV[0]==$insV[0])&&($reqV[1]==$insV[1])&&($reqV[2]<=$insV[2]) ) ) )
 			{
-				OCP\Util::connectHook ( 'OC_Shorty', 'post_deleteShorty', 'OC_ShortyTracking_Hooks', 'deleteShortyClicks');
-				OCP\Util::connectHook ( 'OC_Shorty', 'registerClick',     'OC_ShortyTracking_Hooks', 'registerClick');
-				OCP\Util::connectHook ( 'OC_Shorty', 'registerDetails',   'OC_ShortyTracking_Hooks', 'registerDetails');
-				OCP\Util::connectHook ( 'OC_Shorty', 'registerActions',   'OC_ShortyTracking_Hooks', 'registerActions');
-				OCP\Util::connectHook ( 'OC_Shorty', 'registerIncludes',  'OC_ShortyTracking_Hooks', 'registerIncludes');
-				OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries',   'OC_ShortyTracking_Hooks', 'registerQueries');
+				\OCP\Util::connectHook ( '\OCA\Shorty', 'post_deleteShorty', '\OCA\ShortyTracking\Hooks', 'deleteShortyClicks');
+				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerClick',     '\OCA\ShortyTracking\Hooks', 'registerClick');
+				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerDetails',   '\OCA\ShortyTracking\Hooks', 'registerDetails');
+				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerActions',   '\OCA\ShortyTracking\Hooks', 'registerActions');
+				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerIncludes',  '\OCA\ShortyTracking\Hooks', 'registerIncludes');
+				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerQueries',   '\OCA\ShortyTracking\Hooks', 'registerQueries');
 			}
-			else throw new OC_Shorty_Exception ( "App 'Shorty Tracking' requires app 'Shorty' in version >= %s.%s.%s !", $reqV );
+			else throw new Exception ( "App 'Shorty Tracking' requires app 'Shorty' in version >= %s.%s.%s !", $reqV );
 		}
 		else throw new Exception ( "App 'Shorty Tracking' requires base app 'Shorty' to be activated !" );
 	}
@@ -70,6 +72,6 @@ try
 }
 catch ( Exception $e )
 {
-	OCP\Util::writeLog ( 'shorty_tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), OCP\Util::WARN );
+	\OCP\Util::writeLog ( 'shorty_tracking', "Disabled because runtime requirement not met: ".$e->getMessage(), \OCP\Util::WARN );
 	return;
 }

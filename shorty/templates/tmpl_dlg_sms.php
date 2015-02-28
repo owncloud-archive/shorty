@@ -22,35 +22,35 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_dlg_sms.php
  * Dialog popup to prepare sending a url via sms
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 <!-- begin of sms dialog -->
-<div id="dialog-sms" class="shorty-popup" data-title="<?php p(OC_Shorty_L10n::t("Prepare to send as SMS")) ?>">
+<div id="dialog-sms" class="shorty-popup" data-title="<?php p(L10n::t("Prepare to send as SMS")) ?>">
 	<fieldset>
 		<div class="usage-explanation">
-			<?php p(OC_Shorty_L10n::t("Clicking 'Ok' below will try to launch an sms composer")); ?>.
+			<?php p(L10n::t("Clicking 'Ok' below will try to launch an sms composer")); ?>.
 			<br>
-			<?php p(OC_Shorty_L10n::t("Typically this only works on devices like smart phones")); ?>.
+			<?php p(L10n::t("Typically this only works on devices like smart phones")); ?>.
 			<br>
-			<?php p(OC_Shorty_L10n::t("Unfortunately the implementation of this scheme is limited")); ?>,
-			<?php p(OC_Shorty_L10n::t("therefore the content must be copied manually")); ?>:
+			<?php p(L10n::t("Unfortunately the implementation of this scheme is limited")); ?>,
+			<?php p(L10n::t("therefore the content must be copied manually")); ?>:
 		</div>
 		<textarea class="payload"></textarea>
 		<div class="usage-instruction">
-			<?php p(OC_Shorty_L10n::t("Copy to clipboard")); ?>:<span class="usage-token"><?php p(OC_Shorty_L10n::t("Ctrl-C")); ?></span>
+			<?php p(L10n::t("Copy to clipboard")); ?>:<span class="usage-token"><?php p(L10n::t("Ctrl-C")); ?></span>
 			<br>
-			…<?php p(OC_Shorty_L10n::t("after the SMS has been launched")); ?>…
+			…<?php p(L10n::t("after the SMS has been launched")); ?>…
 			<br>
-			<?php p(OC_Shorty_L10n::t("then paste into message")); ?>:<span class="usage-token"><?php p(OC_Shorty_L10n::t("Ctrl-V")); ?></span>
+			<?php p(L10n::t("then paste into message")); ?>:<span class="usage-token"><?php p(L10n::t("Ctrl-V")); ?></span>
 		</div>
 	</fieldset>
 </div>

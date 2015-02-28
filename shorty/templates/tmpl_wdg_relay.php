@@ -22,30 +22,30 @@
  * If not, see <http://www.gnu.org/licenses/>.
  *
  */
-?>
 
-<?php
 /**
  * @file templates/tmpl_wdg_relay.php
  * Displays a human readable version of a classical http status error
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 <div id="shorty-relay" class="shorty-dialog shorty-standalone">
 
-	<h1><?php p(OC_Shorty_L10n::t('Shorty relay service')); ?></h1>
+	<h1><?php p(L10n::t('Shorty relay service')); ?></h1>
 
-	<h2><?php p(OC_Shorty_L10n::t('If you proceed you will be forwarded to:')); ?></h2>
+	<h2><?php p(L10n::t('If you proceed you will be forwarded to:')); ?></h2>
 
 	<fieldset id="shorty-relay-object">
-		<legend><span class="heading"><?php p(OC_Shorty_L10n::t('Target object').':'); ?></span></legend>
+		<legend><span class="heading"><?php p(L10n::t('Target object').':'); ?></span></legend>
 
-		<label for="title"><?php p(OC_Shorty_L10n::t('Title').':'); ?></label>
+		<label for="title"><?php p(L10n::t('Title').':'); ?></label>
 		<span id="title" class=""><?= $_['shorty']['title'] ?></span>
 		<br />
-		<label for="target"><?php p(OC_Shorty_L10n::t('Location').':'); ?></label>
+		<label for="target"><?php p(L10n::t('Location').':'); ?></label>
 		<span id="target" class=""><?= $_['shorty']['target'] ?></span>
 		<hr />
 		<label for="details">
@@ -60,7 +60,7 @@
 
 	<div>
 		<button id="shorty-relay-proceed" class="shorty-button-submit" data-target="<?= $_['shorty']['target'] ?>">
-			<?php p(OC_Shorty_L10n::t('Proceed')); ?>
+			<?php p(L10n::t('Proceed')); ?>
 		</button>
 	</div>
 

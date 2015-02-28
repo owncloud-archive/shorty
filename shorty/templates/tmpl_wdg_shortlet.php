@@ -22,31 +22,31 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_wdg_shortlet.php
  * Widget offering the 'Shortlet' as a drag'n'drop object
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
-	<!-- shortlet -->
-	<label for="shortlet" class="shorty-aspect"><?php p(OC_Shorty_L10n::t("Shortlet").":"); ?></label>
+<!-- shortlet -->
+	<label for="shortlet" class="shorty-aspect"><?php p(L10n::t("Shortlet").":"); ?></label>
 	<span id="shortlet">
 		<a class="shortlet"
-			href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php p(OCP\Util::linkToAbsolute('shorty', 'index.php')); ?>?url='+url, 'owncloud-shorty')%20})()">
-			<?php p(OC_Shorty_L10n::t("Add page as 'Shorty' to ownCloud")); ?>
+			href="javascript:(function(){url=encodeURIComponent(location.href);window.open('<?php p(\OCP\Util::linkToAbsolute('shorty', 'index.php')); ?>?url='+url, 'owncloud-shorty')%20})()">
+			<?php p(\OCA\Shorty\L10n::t("Add page as 'Shorty' to ownCloud")); ?>
 		</a>
 	</span>
 	<p>
 		<span class="shorty-explain">
 			<em>
-				<?php p(OC_Shorty_L10n::t("Drag this to your browser bookmarks.")); ?>
+				<?php p(L10n::t("Drag this to your browser bookmarks.")); ?>
 				<br>
-				<?php p(OC_Shorty_L10n::t("Click it, for whatever site you want to create a Shorty.")); ?>
+				<?php p(L10n::t("Click it, for whatever site you want to create a Shorty.")); ?>
 			</em>
 		</span>
 	</p>

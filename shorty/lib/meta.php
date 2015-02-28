@@ -29,20 +29,19 @@
  * @author Christian Reiner
  */
 
+namespace OCA\Shorty;
+
 /**
- * @class OC_Shorty_Meta
- * @brief Static 'namespace' class for url meta information retrieval
- * @description
- * ownCloud propagates to use static classes as namespaces instead of OOP.
- * This 'namespace' defines routines for the retrieval of meta information about remote urls.
+ * @class Meta
+ * @brief Static class for url meta information retrieval
  * @access public
  * @author Christian Reiner
  */
-class OC_Shorty_Meta
+class Meta
 {
 
 	/**
-	 * @method OC_Shorty_Meta::fetchMetaData
+	 * @function fetchMetaData
 	 * @brief Retrieves the meta information to a given remote url
 	 * @param string $url: Decoded target url for which meta information if requested
 	 * @return array: Associative array holding the requested meta data
@@ -80,38 +79,38 @@ class OC_Shorty_Meta
 		}
 		// rewrite favicon reference to proxy service
 		if ($meta['favicon']) {
-			$meta['favicon'] = OC_Shorty_Tools::proxifyReference('favicon', $meta['favicon'], true);
+			$meta['favicon'] = Tools::proxifyReference('favicon', $meta['favicon'], true);
 		}
 		return $meta;
 	} // function fetchMetaData
 
 	/**
-	 * @method OC_Shorty_Meta::enrichMetaDataFile
+	 * @function enrichMetaDataFile
 	 * @brief Enriches the existing meta data structure my additional details
 	 * @param $url string The url pointing to the file to extract data from
 	 * @param $meta array An existing structure of meta data
-	 * @throws OC_Shorty_Exception
+	 * @throws Exception
 	 * @access protected
 	 * @author Christian Reiner
 	 */
 	static protected function enrichMetaDataFile ( $url, &$meta )
 	{
-		OCP\Share::getItemsShared('file');
+		\OCP\Share::getItemsShared('file');
 		// consult the sharing API for more details
 		$handle = curl_init ( );
 		$meta['mimetype']    = preg_replace ( '/^([^;]+);.*/i', '$1', curl_getinfo($handle,CURLINFO_CONTENT_TYPE) );
 		$meta['mimicon']     = self::selectIcon ( 'mimetype', $meta['mimetype'] );
 		$meta['code']        = curl_getinfo ( $handle, CURLINFO_HTTP_CODE );
-		$meta['status']      = OC_Shorty_L10n::t ( self::selectCode('status',$meta['code']) );
-		$meta['explanation'] = OC_Shorty_L10n::t ( self::selectCode('explanation',$meta['code']) );
+		$meta['status']      = L10n::t ( self::selectCode('status',$meta['code']) );
+		$meta['explanation'] = L10n::t ( self::selectCode('explanation',$meta['code']) );
 	} // function enrichMetaDataFile
 
 	/**
-	 * @method OC_Shorty_Meta::enrichMetaDataCurl
+	 * @function enrichMetaDataCurl
 	 * @brief Enriches the existing meta data structure my additional details
 	 * @param $url string The url pointing to the file to extract data from
 	 * @param $meta array An existing structure of meta data
-	 * @throws OC_Shorty_Exception
+	 * @throws Exception
 	 * @access protected
 	 * @author Christian Reiner
 	 */
@@ -122,7 +121,7 @@ class OC_Shorty_Meta
 			return;
 		// try to retrieve the meta data
 		$handle = curl_init ( );
-		curl_setopt ( $handle, CURLOPT_URL, OC_Shorty_Tools::idnToASCII($url) );
+		curl_setopt ( $handle, CURLOPT_URL, Tools::idnToASCII($url) );
 		curl_setopt ( $handle, CURLOPT_RETURNTRANSFER, 1 );
 		curl_setopt ( $handle, CURLOPT_FOLLOWLOCATION, TRUE );
 		curl_setopt ( $handle, CURLOPT_MAXREDIRS, 10 );
@@ -138,15 +137,15 @@ class OC_Shorty_Meta
 			$meta['mimetype']    = preg_replace ( '/^([^;]+);.*/i', '$1', curl_getinfo($handle,CURLINFO_CONTENT_TYPE) );
 			$meta['mimicon']     = self::selectIcon ( 'mimetype', $meta['mimetype'] );
 			$meta['code']        = curl_getinfo ( $handle, CURLINFO_HTTP_CODE );
-			$meta['status']      = OC_Shorty_L10n::t ( self::selectCode('status',$meta['code']) );
-			$meta['explanation'] = OC_Shorty_L10n::t ( self::selectCode('explanation',$meta['code']) );
+			$meta['status']      = L10n::t ( self::selectCode('status',$meta['code']) );
+			$meta['explanation'] = L10n::t ( self::selectCode('explanation',$meta['code']) );
 		} // if
 		curl_close ( $handle );
 		// that's it !
 	} // function enrichMetaDataCurl
 
 	/**
-	 * @method OC_Shorty_Meta::extractFavicon
+	 * @function extractFavicon
 	 * @brief Some helper method to extract a usable reference to a pages favicon
 	 * @param $page string The page markup (html) where to extract the favicons reference from
 	 * @param $url string The final url to examine (after resolution of redirections)
@@ -183,7 +182,7 @@ class OC_Shorty_Meta
 	}
 
 	/**
-	 * @method OC_Shorty_Meta::extractTitle
+	 * @function extractTitle
 	 * @brief Some helper method to extract a title from the page header
 	 * @param $page string The page markup (html) where to extract the title from
 	 * @return string The extracted title
@@ -203,12 +202,12 @@ class OC_Shorty_Meta
 	}
 
 	/**
-	 * @method OC_Shorty_Meta::selectCode
+	 * @function selectCode
 	 * @brief Some helper utility used to resolve numeric http status codes into human readable strings
 	 * @param string $aspect: String indicating a section/pool a code is to be resolved in
 	 * @param string $identifier: String indicating a specific code to be resolved
 	 * @return string: Human readable string resolving the specified numeric status code
-	 * @throws OC_Shorty_Exception in case of an undefined code to be resolved
+	 * @throws Exception in case of an undefined code to be resolved
 	 * @access protected
 	 * @author Christian Reiner
 	 */
@@ -217,7 +216,7 @@ class OC_Shorty_Meta
 		// map of official http status codes
 		$_code_map = array
 		(
-			'status' => OC_Shorty_Type::$HTTPCODE,
+			'status' => Type::$HTTPCODE,
 			'explanation' => array
 			(
 				200 => 'Target url is valid and resolved.',
@@ -243,14 +242,14 @@ class OC_Shorty_Meta
 					return sprintf("[Undefined status code '%s']",$identifier);
 
 				default:
-					throw new OC_Shorty_Exception ( "unknown aspect '%s' requested to resolve code '%s'",
+					throw new Exception ( "unknown aspect '%s' requested to resolve code '%s'",
 													array($aspect,$identifier) );
 			} // switch
 		}
 	} // function selectCode
 
 	/**
-	 * @method OC_Shorty_Meta::selectIcon
+	 * @function selectIcon
 	 * @brief Some helper utility for the easy integrate of icon references into templates and alike
 	 * @param string $aspect: String indicating a section/pool an icon is to be chosen from
 	 * @param string $identifier: String indicating a specific icon to be referenced
@@ -266,13 +265,13 @@ class OC_Shorty_Meta
 				switch ($identifier)
 				{
 					case TRUE:
-						return OCP\Util::imagePath('shorty', 'status/good.svg');
+						return \OCP\Util::imagePath('shorty', 'status/good.svg');
 
 					case FALSE:
-						return OCP\Util::imagePath('shorty', 'status/bad.svg');
+						return \OCP\Util::imagePath('shorty', 'status/bad.svg');
 
 					default:
-						return OCP\Util::imagePath('shorty', 'status/neutral.svg');
+						return \OCP\Util::imagePath('shorty', 'status/neutral.svg');
 				} // switch identifier
 
 			case 'scheme':
@@ -280,27 +279,27 @@ class OC_Shorty_Meta
 				{
 					case 'http':
 					case 'https':
-						return OCP\Util::imagePath('shorty', 'scheme/H.png');
+						return \OCP\Util::imagePath('shorty', 'scheme/H.png');
 
 					case 'ftp':
 					case 'ftps':
-						return OCP\Util::imagePath('shorty', 'scheme/F.png');
+						return \OCP\Util::imagePath('shorty', 'scheme/F.png');
 
 					case 'sftp':
-						return OCP\Util::imagePath('shorty', 'scheme/S.png');
+						return \OCP\Util::imagePath('shorty', 'scheme/S.png');
 
 					case 'mailto':
-						return OCP\Util::imagePath('shorty', 'scheme/M.png');
+						return \OCP\Util::imagePath('shorty', 'scheme/M.png');
 
 					case 'gopher':
-						return OCP\Util::imagePath('shorty', 'scheme/G.png');
+						return \OCP\Util::imagePath('shorty', 'scheme/G.png');
 
 					case 'webdav':
 					case 'webdavs':
-						return OCP\Util::imagePath('shorty', 'scheme/W.png');
+						return \OCP\Util::imagePath('shorty', 'scheme/W.png');
 
 					default:
-						return OCP\Util::imagePath('shorty', 'blank.png');
+						return \OCP\Util::imagePath('shorty', 'blank.png');
 				} // switch identifier
 
 			case 'mimetype':
@@ -308,30 +307,30 @@ class OC_Shorty_Meta
 				switch ($identifier[0])
 				{
 					case 'audio':
-						return OCP\Util::imagePath('core', 'filetypes/audio.png');
+						return \OCP\Util::imagePath('core', 'filetypes/audio.png');
 
 					case 'text':
-						return OCP\Util::imagePath('core', 'filetypes/text.png');
+						return \OCP\Util::imagePath('core', 'filetypes/text.png');
 
 					case 'video':
-						return OCP\Util::imagePath('core', 'filetypes/video.png');
+						return \OCP\Util::imagePath('core', 'filetypes/video.png');
 
 					case 'application':
 						switch ($identifier[1])
 						{
 							case 'pdf':
-								return OCP\Util::imagePath('core', 'filetypes/application-pdf.png');
+								return \OCP\Util::imagePath('core', 'filetypes/application-pdf.png');
 
 							default:
-								return OCP\Util::imagePath('shorty', 'blank.png');
+								return \OCP\Util::imagePath('shorty', 'blank.png');
 
 						} // switch identifier[1]
 
 					default:
-						return OCP\Util::imagePath('shorty', 'blank.png');
+						return \OCP\Util::imagePath('shorty', 'blank.png');
 				} // switch identifier[0]
 		} // switch aspect
         return null;
 	} // function selectIcon
 
-} // class OC_Shorty_Meta
+} // class Meta

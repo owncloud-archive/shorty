@@ -29,22 +29,24 @@
  * @author Christian Reiner
  */
 
-OC::$CLASSPATH['OC_Shorty_Backend']       = 'shorty/lib/backend.php';
-OC::$CLASSPATH['OC_Shorty_Exception']     = 'shorty/lib/exception.php';
-OC::$CLASSPATH['OC_Shorty_Hooks']         = 'shorty/lib/hooks.php';
-OC::$CLASSPATH['OC_Shorty_HttpException'] = 'shorty/lib/exception.php';
-OC::$CLASSPATH['OC_Shorty_L10n']          = 'shorty/lib/l10n.php';
-OC::$CLASSPATH['OC_Shorty_Meta']          = 'shorty/lib/meta.php';
-OC::$CLASSPATH['OC_Shorty_Query']         = 'shorty/lib/query.php';
-OC::$CLASSPATH['OC_Shorty_Tools']         = 'shorty/lib/tools.php';
-OC::$CLASSPATH['OC_Shorty_Type']          = 'shorty/lib/type.php';
+namespace OCA\Shorty;
 
-OCP\App::registerAdmin      ( 'shorty', 'settings' );
-OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
+\OC::$CLASSPATH['OCA\Shorty\Backend']       = 'shorty/lib/backend.php';
+\OC::$CLASSPATH['OCA\Shorty\Exception']     = 'shorty/lib/exception.php';
+\OC::$CLASSPATH['OCA\Shorty\Hooks']         = 'shorty/lib/hooks.php';
+\OC::$CLASSPATH['OCA\Shorty\HttpException'] = 'shorty/lib/exception.php';
+\OC::$CLASSPATH['OCA\Shorty\L10n']          = 'shorty/lib/l10n.php';
+\OC::$CLASSPATH['OCA\Shorty\Meta']          = 'shorty/lib/meta.php';
+\OC::$CLASSPATH['OCA\Shorty\Query']         = 'shorty/lib/query.php';
+\OC::$CLASSPATH['OCA\Shorty\Tools']         = 'shorty/lib/tools.php';
+\OC::$CLASSPATH['OCA\Shorty\Type']          = 'shorty/lib/type.php';
+
+\OCP\App::registerAdmin      ( 'shorty', 'settings' );
+\OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
 										'order' => 71,
-										'href' => OCP\Util::linkTo   ( 'shorty', 'index.php' ),
-										'icon' => OCP\Util::imagePath( 'shorty', 'shorty-light.svg' ),
+										'href' => \OCP\Util::linkTo   ( 'shorty', 'index.php' ),
+										'icon' => \OCP\Util::imagePath( 'shorty', 'shorty-light.svg' ),
 										'name' => 'Shorty' ) );
 
-OCP\Util::connectHook ( 'OCP\User',  'post_deleteUser', 'OC_Shorty_Hooks', 'deleteUser');
-OCP\Util::connectHook ( 'OC_Shorty', 'registerQueries', 'OC_Shorty_Hooks', 'registerQueries');
+\OCP\Util::connectHook ( 'OCP\User',  'post_deleteUser', 'OCA\Shorty\Hooks', 'deleteUser');
+\OCP\Util::connectHook ( 'OCA\Shorty', 'registerQueries', 'OCA\Shorty\Hooks', 'registerQueries');

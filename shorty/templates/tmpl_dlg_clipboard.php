@@ -22,26 +22,26 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_dlg_clipboard.php
  * Dialog popup to copy url for further usage
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 <!-- begin of clipboard dialog -->
-<div id="dialog-clipboard" class="shorty-popup" data-title="<?php p(OC_Shorty_L10n::t("Copy to clipboard")) ?>">
+<div id="dialog-clipboard" class="shorty-popup" data-title="<?php p(L10n::t("Copy to clipboard")) ?>">
 	<fieldset>
 		<div class="usage-explanation">
-			<?php p(OC_Shorty_L10n::t("The link below can be copied to paste it elsewhere")); ?>:
+			<?php p(L10n::t("The link below can be copied to paste it elsewhere")); ?>:
 		</div>
 		<input class="payload" readonly="true">
 		<div class="usage-instruction">
-			<?php p(OC_Shorty_L10n::t("Copy to clipboard")); ?>:<span class="usage-token"><?php p(OC_Shorty_L10n::t("Ctrl-C")); ?></span>
+			<?php p(L10n::t("Copy to clipboard")); ?>:<span class="usage-token"><?php p(L10n::t("Ctrl-C")); ?></span>
 		</div>
   </fieldset>
 </div>

@@ -22,20 +22,20 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_url_list_tools_collapsible.php
  * A list of tool icons to be used in list templates
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 					<img data-collapsible-code="collapse"
-						alt="<?php p(OC_Shorty_L10n::t('Collapse column'));?>" title="<?php p(OC_Shorty_L10n::t('Collapse column'));  ?>"
-						class="shorty-tool shorty-tool-collapsible svg" src="<?php p(OCP\Util::imagePath('shorty','actions/collapse.svg'));?>">
+						alt="<?php p(L10n::t('Collapse column'));?>" title="<?php p(L10n::t('Collapse column'));  ?>"
+						class="shorty-tool shorty-tool-collapsible svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/collapse.svg'));?>">
 					<img data-collapsible-code="expand"
-						alt="<?php p(OC_Shorty_L10n::t('Expand column'));  ?>" title="<?php p(OC_Shorty_L10n::t('Expand column'));  ?>"
-						class="shorty-tool shorty-tool-collapsible svg" src="<?php p(OCP\Util::imagePath('shorty','actions/expand.svg'));?>">
+						alt="<?php p(L10n::t('Expand column'));  ?>" title="<?php p(L10n::t('Expand column'));  ?>"
+						class="shorty-tool shorty-tool-collapsible svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/expand.svg'));?>">

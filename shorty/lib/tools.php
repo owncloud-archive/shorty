@@ -29,13 +29,15 @@
  * @author Christian Reiner
  */
 
+namespace OCA\Shorty;
+
 /**
- * @class OC_Shorty_Tools
+ * @class Tools
  * @brief Collection of a few practical routines, a tool box
  * @access public
  * @author Christian Reiner
  */
-class OC_Shorty_Tools
+class Tools
 {
 	// length of a quasi random alphabet to be created
 	const RANDOM_ALPHABET_LENGTH = 62;
@@ -45,7 +47,7 @@ class OC_Shorty_Tools
 	static $ob_active = FALSE;
 
 	/**
-	 * @method OC_Shorty_Tools::ob_control
+	 * @function ob_control
 	 * @param bool $switch Whether to activate or deactivate the buffer
 	 * @return NULL|string: NULL when starting buffering, buffered content when stopping buffering
 	 * @access public
@@ -81,18 +83,18 @@ class OC_Shorty_Tools
 	} // function ob_control
 
 	/**
-	 * @method OC_Shorty_Tools::db_escape
+	 * @function db_escape
 	 * @brief Escape a value for incusion in db statements
 	 * @param string $value: Value to be escaped
 	 * @return string: Escaped string value
-	 * @throws OC_Shorty_Exception In case of an unknown database engine
+	 * @throws Exception In case of an unknown database engine
 	 * @access public
 	 * @author Christian Reiner
 	 * @todo use mdb2::quote() / mdb2:.escape() instead ?
 	 */
 	static function db_escape ( $value )
 	{
-		$type = OCP\Config::getSystemValue ( 'dbtype', 'sqlite' );
+		$type = \OCP\Config::getSystemValue ( 'dbtype', 'sqlite' );
 		switch ( $type )
 		{
 			case 'sqlite':
@@ -107,21 +109,21 @@ class OC_Shorty_Tools
 					return mysql_real_escape_string ( stripslashes($value) );
 				else return mysql_real_escape_string ( $value );
 		} // switch
-		throw new OC_Shorty_Exception ( "unknown database backend type '%1'", array($type) );
+		throw new Exception ( "unknown database backend type '%1'", array($type) );
 	} // function db_escape
 
 	/**
-	 * @method OC_Shorty_Tools::db_timestamp
+	 * @function db_timestamp
 	 * @brief Current timestamp as required by db engine
 	 * @return string: Current timestamp as required by db engine
-	 * @throws OC_Shorty_Exception In case of an unknown database engine
+	 * @throws Exception In case of an unknown database engine
 	 * @access public
 	 * @author Christian Reiner
 	 * @todo not really required any more, we rely on CURRENT_TIMESTAMP instead
 	 */
 	static function db_timestamp ( )
 	{
-		$type = OCP\Config::getSystemValue( "dbtype", "sqlite" );
+		$type = \OCP\Config::getSystemValue( "dbtype", "sqlite" );
 		switch ( $type )
 		{
 			case 'sqlite':
@@ -134,11 +136,11 @@ class OC_Shorty_Tools
 			case 'pgsql':
 				return "date_part('epoch',now())::integer";
 		}
-		throw new OC_Shorty_Exception ( "unknown database backend type '%1'", array($type) );
+		throw new Exception ( "unknown database backend type '%1'", array($type) );
 	} // function db_timestamp
 
 	/**
-	 * @method OC_Shorty_Tools::shorty_id
+	 * @function shorty_id
 	 * @brief Creates a unique id to be used for a new shorty entry
 	 * @return string: Valid and unique id
 	 * @access public
@@ -151,31 +153,31 @@ class OC_Shorty_Tools
 	} // function shorty_id
 
 	/**
-	 * @method randomAlphabet
+	 * @function randomAlphabet
 	 * @brief returns a quasi random alphabet, unique but static for an installation
 	 * @access public
 	 * @author Christian Reiner
 	 */
 	static function randomAlphabet ()
 	{
-		$alphabet = OCP\Config::getAppValue ( 'shorty', 'id-alphabet' );
+		$alphabet = \OCP\Config::getAppValue ( 'shorty', 'id-alphabet' );
 		if ( empty($alphabet) )
 		{
 			$c = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxwz0123456789";
 			$alphabet = substr ( str_shuffle($c), 0, self::RANDOM_ALPHABET_LENGTH );
-			OCP\Config::setAppValue ( 'shorty', 'id-alphabet', $alphabet ) ;
+			\OCP\Config::setAppValue ( 'shorty', 'id-alphabet', $alphabet ) ;
 		}
 		return $alphabet;
 	} // function randomAlphabet
 
 	/**
-	 * @method OC_Shorty_Tools::convertToAlphabet
+	 * @function convertToAlphabet
 	 * @brief Converts a given decimal number into an arbitrary base (alphabet)
 	 * @param integer $number : Decimal numeric value to be converted
 	 * @param string $alphabet
 	 * @return string : Converted value in string notation
-	 * @throws OC_Shorty_Exception
-	 * @throw OC_Shorty_Exception
+	 * @throws Exception
+	 * @throw Exception
 	 * @access public
 	 * @author Christian Reiner
 	 */
@@ -184,7 +186,7 @@ class OC_Shorty_Tools
 		$alphabetLen = strlen($alphabet);
 		if ( is_numeric($number) )
 			$decVal = $number;
-		else throw new OC_Shorty_Exception ( "non numerical timestamp value: '%1'", array($number) );
+		else throw new Exception ( "non numerical timestamp value: '%1'", array($number) );
 			$number = FALSE;
 		$nslen = 0;
 		$pos = 1;
@@ -211,11 +213,11 @@ class OC_Shorty_Tools
 	} // function convertToAlphabet
 
 	/**
-	 * @method OC_Shorty_Tools::getSubjectHash
+	 * @function getSubjectHash
 	 * @brief Hashes a given string using the installation specific alphabet as salt
 	 * @param $subject
 	 * @return string The hashed subject
-	 * @throws OC_Shorty_Exception
+	 * @throws Exception
 	 */
 	static public function getSubjectHash ( $subject )
 	{
@@ -223,32 +225,32 @@ class OC_Shorty_Tools
 		$salt = substr($alphabet, 0, CRYPT_SALT_LENGTH);
 		$hash = crypt($subject, $salt);
 		if( !$alphabet || !$hash ) {
-			throw new OC_Shorty_Exception ( "failed to create a usable hash, check your system setup!" );
+			throw new Exception ( "failed to create a usable hash, check your system setup!" );
 		}
 		return $hash;
 	} // function getSubjectHash
 
 		/**
-		 * @method OC_Shorty_Tools::checkSubjectHash
+		 * @function checkSubjectHash
 		 * @brief Checks if a given hashes matches a given subject
 		 * @param string $subject
 		 * @param string $hash
 		 * @return string The hashed subject
-		 * @throws OC_Shorty_Exception
+		 * @throws Exception
 		 */
 		static public function checkSubjectHash ( $subject, $hash )
 	{
-		return ( OC_Shorty_Tools::getSubjectHash($subject) === $hash );
+		return ( self::getSubjectHash($subject) === $hash );
 	} // function checkSubjectHash
 
 	/**
-	 * @method OC_Shorty_Tools::proxifyReference
+	 * @function proxifyReference
 	 * @brief Creates a reference to the internal proxy feature
      * @param string $mode proxy mode name (identifier)
 	 * @param string $subject: The subject to be handed over as reference query 'id'
 	 * @param bool $hash: Whether to create an additional hash inside the created reference
 	 * @return string
-	 * @throws OC_Shorty_Exception
+	 * @throws Exception
 	 * @access public
 	 * @author Christian Reiner
 	 */
@@ -257,14 +259,14 @@ class OC_Shorty_Tools
 		if ( ! in_array($mode, array('favicon')))
 			return false;
 		if ($hash)  {
-			return sprintf('%s?mode=%s&subject=%s&hash=%s', OCP\Util::linkToAbsolute('shorty', 'proxy.php'), $mode, urlencode($subject), self::getSubjectHash($subject));
+			return sprintf('%s?mode=%s&subject=%s&hash=%s', \OCP\Util::linkToAbsolute('shorty', 'proxy.php'), $mode, urlencode($subject), self::getSubjectHash($subject));
 		} else {
-			return sprintf('%s?mode=%s&subject=%s', OCP\Util::linkToAbsolute('shorty', 'proxy.php'), $mode, urlencode($subject));
+			return sprintf('%s?mode=%s&subject=%s', \OCP\Util::linkToAbsolute('shorty', 'proxy.php'), $mode, urlencode($subject));
 		}
 	} // function proxifyReference
 
 	/**
-	 * @method OC_Shorty_Tools::deproxifyReference
+	 * @function deproxifyReference
 	 * @brief Extracts the target url from a reference to the internal proxy feature
 	 * @param string $reference: The reference to the internal proxy feature
 	 * @return string The extracted target url or false
@@ -274,7 +276,7 @@ class OC_Shorty_Tools
 	static public function deproxifyReference ( $reference )
 	{;
 		$pattern = sprintf( '/^%s%s(.+)%s(.+)$/',
-			preg_quote(OCP\Util::linkToAbsolute('shorty', 'proxy.php'), '/'),
+			preg_quote(\OCP\Util::linkToAbsolute('shorty', 'proxy.php'), '/'),
 			preg_quote('?mode=favicon&subject=', '/'),
 			preg_quote('&hash=', '/')
 		);
@@ -290,7 +292,7 @@ class OC_Shorty_Tools
 	} // function deproxifyReference
 
 	/**
-	 * @method OC_Shorty_Tools::relayUrl
+	 * @function relayUrl
 	 * @brief Generates a relay url for a given id acting as a href target for all backends
 	 * @param string $id: Shorty id as shorty identification
 	 * @return string: Generated absolute relay url
@@ -299,11 +301,11 @@ class OC_Shorty_Tools
 	 */
 	static function relayUrl ($id)
 	{
-		return sprintf ( '%s?service=%s&id=%s', OCP\Util::linkToAbsolute("", "public.php"), 'shorty_relay', $id );
+		return sprintf ( '%s?service=%s&id=%s', \OCP\Util::linkToAbsolute("", "public.php"), 'shorty_relay', $id );
 	} // function relayUrl
 
 	/**
-	 * @method OC_Shorty_Tools::countShortys
+	 * @function countShortys
 	 * @brief Returns the total number of entries and clicks from the database
 	 * @return array: Two elements sum_shortys & sum_clicks holding an integer each
 	 * @access public
@@ -313,16 +315,16 @@ class OC_Shorty_Tools
 	{
 		$param = array
 		(
-			':user'   => OCP\User::getUser ( ),
+			':user'   => \OCP\User::getUser ( ),
 		);
-		$query = OCP\DB::prepare ( OC_Shorty_Query::URL_COUNT );
+		$query = \OCP\DB::prepare ( Query::URL_COUNT );
 		$result = $query->execute($param);
 		$reply = $result->fetchAll();
 		return $reply[0];
 	} // function countShortys
 
 	/**
-	 * @method OC_Shorty_Tools::versionCompare
+	 * @function versionCompare
 	 * @brief Compares a given version (string notation) with the running ownCloud version
 	 * @param string $operator mathematical comparision operator
 	 * @param $cpVersion
@@ -335,12 +337,12 @@ class OC_Shorty_Tools
 	 */
 	static function versionCompare ($operator, $cpVersion)
 	{
-		$ocVersion = implode('.',OCP\Util::getVersion());
+		$ocVersion = implode('.', \OCP\Util::getVersion());
 		return (version_compare($ocVersion,$cpVersion,$operator));
 	} // function versionCompare
 
 	/**
-	 * @method OC_Shorty_Tools::toBoolean
+	 * @function toBoolean
 	 * @brief Propper conversion of a value to boolean
 	 * @param boolean $value some value to be casted to boolean
 	 * @param $strict
@@ -371,7 +373,7 @@ class OC_Shorty_Tools
 	} // function toBoolean
 
 	/**
-	 * @method OC_Shorty_Tools::idnToASCII
+	 * @function idnToASCII
 	 * @brief Converts an idn url to its ascii idn notation
 	 * @param $url string Some arbitrary url
 	 * @return string The ascii idn notation of the url
@@ -406,7 +408,7 @@ class OC_Shorty_Tools
 	} // function idnToASCII
 
 	/**
-	 * @method OC_Shorty_Tools::idnToUTF8
+	 * @function idnToUTF8
 	 * @brief Converts an idn url to its unicode notation
 	 * @param $url string An idn url
 	 * @return string The unicode notation of the url
@@ -420,4 +422,4 @@ class OC_Shorty_Tools
 		else return $url;
 	} // function idnToUTF8
 
-} // class OC_Shorty_Tools
+} // class Tools

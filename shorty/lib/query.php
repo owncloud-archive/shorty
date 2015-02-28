@@ -29,11 +29,13 @@
  * @author Christian Reiner
  */
 
-/**
- * @class OC_Shorty_Query
+namespace OCA\Shorty;
+
+	/**
+ * @class Query
  * @brief Static catalog of sql queries
  * @description
- * These query templates are referenced by a OC_Shorty_Query::URL_...
+ * These query templates are referenced by a Query::URL_...
  * They have to be prapared by adding an array of parameters
  * @access public
  * @author Christian Reiner
@@ -41,10 +43,10 @@
 
 // sql officially requires some reserved words to be quoted when used as identifiers (here the column name 'user')
 // we define a different set of queries depending on the database engine used
-switch ( OCP\Config::getSystemValue('dbtype') )
+switch ( \OCP\Config::getSystemValue('dbtype') )
 {
 	case 'pgsql':
-		class OC_Shorty_Query
+		class Query
 		{
 			const URL_BY_ID	               = "SELECT id,source,target,status,(until IS NOT NULL AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE id=:id";
 			const URL_BY_SOURCE	           = "SELECT id,source,target,status,(until IS NOT NULL AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE source=:source";
@@ -63,11 +65,11 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 			const WIPE_PREFERENCES	       = "DELETE FROM *PREFIX*preferences WHERE \"user\"=:user";
 			const QUERY_SHORTY_LIST        = "SELECT * FROM oc_shorty ORDER BY :sort";
 			const QUERY_SHORTY_SINGLE      = "SELECT * FROM oc_shorty WHERE id=:id";
-		} // class OC_Shorty_Query
+		} // class Query
 		break;
 
 	default:
-		class OC_Shorty_Query
+		class Query
 		{
 			const URL_BY_ID	               = "SELECT id,source,target,status,(until IS NOT NULL AND until!='' AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE id=:id";
 			const URL_BY_SOURCE	           = "SELECT id,source,target,status,(until IS NOT NULL AND until!='' AND until<CURRENT_TIMESTAMP) AS expired FROM *PREFIX*shorty WHERE source=:source";
@@ -86,6 +88,6 @@ switch ( OCP\Config::getSystemValue('dbtype') )
 			const WIPE_PREFERENCES	       = "DELETE FROM *PREFIX*preferences WHERE user=:user";
 			const QUERY_SHORTY_LIST        = "SELECT * FROM oc_shorty ORDER BY :sort";
 			const QUERY_SHORTY_SINGLE      = "SELECT * FROM oc_shorty WHERE id=:id";
-		} // class OC_Shorty_Query
+		} // class Query
 
 } // switch

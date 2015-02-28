@@ -29,18 +29,20 @@
  * @author Christian Reiner
  */
 
+namespace OCA\Shorty\Tracking;
+
 /**
- * @class OC_ShortyTracking_Hooks
+ * @class Hooks
  * @brief Static 'namespace' class for api hook population
  * ownCloud propagates to use static classes as namespaces instead of OOP.
  * This 'namespace' defines routines to populate hooks called by other parts of ownCloud
  * @access public
  * @author Christian Reiner
  */
-class OC_ShortyTracking_Hooks
+class Hooks
 {
 	/**
-	 * @method OC_ShortyTracking_Hooks::deleteShortyClicks
+	 * @function deleteShortyClicks
 	 * @brief Deletes all alien clicks, clicks that have no corresponding Shorty any more (deleted)
 	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
@@ -55,18 +57,18 @@ class OC_ShortyTracking_Hooks
 	 */
 	public static function deleteShortyClicks ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty_tracking', 'Wiping all clicks without corresponding Shorty', OCP\Util::INFO );
+		\OCP\Util::writeLog ( 'shorty_tracking', 'Wiping all clicks without corresponding Shorty', \OCP\Util::INFO );
 		$result = TRUE;
 		// wipe shorty clicks
-		$query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_WIPE );
+		$query = \OCP\DB::prepare ( Query::CLICK_WIPE );
 		if ( FALSE===$query->execute() )
 			$result = FALSE;
 		// report completion success
 		return $result;
-	} // function OC_ShortyTracking_Hooks::deleteShortyClicks
+	} // function deleteShortyClicks
 
 	/**
-	 * @method OC_ShortyTracking_Hooks::registerClick
+	 * @function registerClick
 	 * @brief Records details of request clicks targeting existing Shortys
 	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
@@ -81,9 +83,9 @@ class OC_ShortyTracking_Hooks
 	 */
 	public static function registerClick ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty_tracking', sprintf("Recording single click to Shorty '%s' with result '%s'",
+		\OCP\Util::writeLog ( 'shorty_tracking', sprintf("Recording single click to Shorty '%s' with result '%s'",
 														$parameters['shorty']['id'],
-														$parameters['request']['result']), OCP\Util::DEBUG );
+														$parameters['request']['result']), \OCP\Util::DEBUG );
 		$param  = array (
 			':shorty'    => $parameters['shorty']['id'],
 			':time'      => $parameters['request']['time'],
@@ -93,35 +95,35 @@ class OC_ShortyTracking_Hooks
 			':host'      => $parameters['request']['address']==$parameters['request']['host'] ?
 							' - ? - ' : $parameters['request']['host'],
 		);
-		$query = OCP\DB::prepare ( OC_ShortyTracking_Query::CLICK_RECORD );
+		$query = \OCP\DB::prepare ( Query::CLICK_RECORD );
 		$query->execute ( $param );
 		return TRUE;
-	} // function OC_ShortyTracking_Hooks::registerClick
+	} // function registerClick
 
 	/**
-	 * @method OC_ShortyTracking_Hooks::registerIncludes
+	 * @function registerIncludes
 	 * @brief Registers additional includes required by this plugin
 	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 */
 	public static function registerIncludes ( $parameters )
 	{
-		OCP\Util::writeLog  ( 'shorty_tracking', 'Registering additional include files', OCP\Util::DEBUG );
-		OCP\Util::addStyle  ( 'shorty_tracking', 'tracking' );
-		OCP\Util::addScript ( 'shorty_tracking', 'tracking' );
-		OCP\Util::addScript ( 'shorty_tracking', '../3rdparty/js/jquery.sparkline.min' );
+		\OCP\Util::writeLog  ( 'shorty_tracking', 'Registering additional include files', \OCP\Util::DEBUG );
+		\OCP\Util::addStyle  ( 'shorty_tracking', 'tracking' );
+		\OCP\Util::addScript ( 'shorty_tracking', 'tracking' );
+		\OCP\Util::addScript ( 'shorty_tracking', '../3rdparty/js/jquery.sparkline.min' );
 		return TRUE;
-	} // function OC_ShortyTracking_Hooks::registerIncludes
+	} // function registerIncludes
 
 	/**
-	 * @method OC_ShortyTracking_Hooks::registerActions
+	 * @function registerActions
 	 * @brief Registers additional actions as expected by the Shorty app
 	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 */
 	public static function registerActions ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional Shorty actions', OCP\Util::DEBUG );
+		\OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional Shorty actions', \OCP\Util::DEBUG );
 		if ( ! is_array($parameters) )
 		{
 			return FALSE;
@@ -132,24 +134,24 @@ class OC_ShortyTracking_Hooks
 			$parameters['list'][] = array (
 				'id'    => 'shorty-action-clicks',
 				'name'  => 'clicks',
-				'icon'  => OCP\Util::imagePath('shorty_tracking','actions/hits.svg'),
+				'icon'  => \OCP\Util::imagePath('shorty_tracking','actions/hits.svg'),
 				'call'  => 'OC.Shorty.Tracking.control',
-				'title' => OC_ShortyTracking_L10n::t("List clicks"),
-				'alt'   => OC_ShortyTracking_L10n::t("Clicks"),
+				'title' => L10n::t("List clicks"),
+				'alt'   => L10n::t("Clicks"),
 			);
 		}
 		return TRUE;
-	} // function OC_ShortyTracking_Hooks::registerActions
+	} // function registerActions
 
 	/**
-	 * @method OC_ShortyTracking_Hooks::registerDetails
+	 * @function registerDetails
 	 * @brief Registers details describing this plugin as expected by the Shorty app
 	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 */
 	public static function registerDetails ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty_tracking', 'Registering plugin description in main Shorty app', OCP\Util::DEBUG );
+		\OCP\Util::writeLog ( 'shorty_tracking', 'Registering plugin description in main Shorty app', \OCP\Util::DEBUG );
 		if ( ! is_array($parameters) )
 		{
 			return FALSE;
@@ -159,21 +161,21 @@ class OC_ShortyTracking_Hooks
 			$parameters['shorty'][] = array (
 				'id'       => 'shorty_tracking',
 				'name'     => "Shorty Tracking",
-				'abstract' => OC_ShortyTracking_L10n::t("Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history."),
+				'abstract' => L10n::t("Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history."),
 			);
 		}
 		return TRUE;
 	} // function registerQueries
 
 	/**
-	 * @method OC_ShortyTracking_Hooks::registerQueries
+	 * @function registerQueries
 	 * @brief Registers queries to be offered as expected by the Shorty app
 	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
 	 */
 	public static function registerQueries ( $parameters )
 	{
-		OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional queries to be offered', OCP\Util::DEBUG );
+		\OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional queries to be offered', \OCP\Util::DEBUG );
 		if ( ! is_array($parameters) )
 		{
 			return FALSE;
@@ -182,26 +184,26 @@ class OC_ShortyTracking_Hooks
 		{
 			$parameters['list'][] = array (
 				'id'    => 'tracking-single-usage',
-				'query' => OC_ShortyTracking_Query::QUERY_TRACKING_SINGLE_USAGE,
+				'query' => Query::QUERY_TRACKING_SINGLE_USAGE,
 				'param' => array(':shorty'),
 			);
 			$parameters['list'][] = array (
 				'id'    => 'tracking-single-list',
-				'query' => OC_ShortyTracking_Query::QUERY_TRACKING_SINGLE_LIST,
+				'query' => Query::QUERY_TRACKING_SINGLE_LIST,
 				'param' => array(':shorty'),
 			);
 			$parameters['list'][] = array (
 				'id'    => 'tracking-total-usage',
-				'query' => OC_ShortyTracking_Query::QUERY_TRACKING_TOTAL_USAGE,
+				'query' => Query::QUERY_TRACKING_TOTAL_USAGE,
 				'param' => array(':sort'),
 			);
 			$parameters['list'][] = array (
 				'id'    => 'tracking-total-list',
-				'query' => OC_ShortyTracking_Query::QUERY_TRACKING_TOTAL_LIST,
+				'query' => Query::QUERY_TRACKING_TOTAL_LIST,
 				'param' => array(':sort'),
 			);
 		}
 		return TRUE;
 	} // function registerQueries
 
-} // class OC_ShortyTracking_Hooks
+} // class Hooks

@@ -29,16 +29,18 @@
  * @author Christian Reiner
  */
 
+namespace OCA\Shorty\Tracking;
+
 /**
- * @class OC_ShortyTracking_L10n
+ * @class L10n
  * @brief Convenient translation singleton, based on the class in the Shorty app
  * @access public
  * @author Christian Reiner
  */
-class OC_ShortyTracking_L10n extends OC_Shorty_L10n
+class L10n extends OC_Shorty_L10n
 {
 	/**
-	 * @method OC_ShortyTracking_L10n::__construct
+	 * @function __construct
 	 * @brief
 	 * @param $app string
 	 * @access protected
@@ -47,7 +49,7 @@ class OC_ShortyTracking_L10n extends OC_Shorty_L10n
 	protected function __construct ( $app='shorty_tracking' ) { parent::__construct($app); }
 
 	/**
-	 * @method OC_ShortyTracking_L10n::identity
+	 * @function identity
 	 * @brief Used for late state binding to identify the class
 	 * @description This method must be reimplemented without change in all derived classes
 	 * @access protected
@@ -56,12 +58,12 @@ class OC_ShortyTracking_L10n extends OC_Shorty_L10n
 	static protected function identity ( ) { return __CLASS__; }
 
 	/**
-	 * @method OC_ShortyTracking_L10n::instantiate
+	 * @function instantiate
 	 * @brief Used during late state binding to instantiates an object of the own class
 	 * @description This method must be reimplemented without change in all derived classes
 	 * @access protected
 	 * @author Christian Reiner
 	 */
-	static protected function instantiate ( ) { return new OC_ShortyTracking_L10n; }
+	static protected function instantiate ( ) { return new L10n; }
 
-} // class OC_ShortyTracking_L10n
+} // class L10n

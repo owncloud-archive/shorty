@@ -22,15 +22,15 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_wdg_verify.php
  * Dialog popup to validate a configured static backend base
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 <html data-verification-target="" data-verification-state="" data-verification-instance="<?php p($_['instance'])?>">
@@ -39,8 +39,8 @@
 		<script type="text/javascript" src="<?= $_['script']?>"></script>
 	</head>
 	<body>
-		<span class="shorty-verification-active"><img src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></span>
-		<span class="shorty-verification-valid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/good.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup valid and usable"); ?></span>
-		<span class="shorty-verification-invalid"><img src="<?php echo OCP\Util::imagePath('shorty', 'status/bad.svg'); ?>"><?php echo OC_Shorty_L10n::t("Setup invalid and not usable"); ?></span>
+		<span class="shorty-verification-active"><img src="<?php p(\OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></span>
+		<span class="shorty-verification-valid"><img src="<?php echo \OCP\Util::imagePath('shorty', 'status/good.svg'); ?>"><?php echo L10n::t("Setup valid and usable"); ?></span>
+		<span class="shorty-verification-invalid"><img src="<?php echo \OCP\Util::imagePath('shorty', 'status/bad.svg'); ?>"><?php echo L10n::t("Setup invalid and not usable"); ?></span>
 	</body>
 </html>

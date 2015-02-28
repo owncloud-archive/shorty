@@ -22,45 +22,45 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_dlg_qrcode.php
  * Dialog popup to visualize and offer an url as a QRCode (2D barcode)
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 <!-- begin of qrcode dialog -->
-<div id="dialog-qrcode" class="shorty-popup" data-title="<?php p(OC_Shorty_L10n::t("Shorty as QRCode")) ?>">
+<div id="dialog-qrcode" class="shorty-popup" data-title="<?php p(L10n::t("Shorty as QRCode")) ?>">
 	<fieldset>
 		<div class='qrcode-img'>
 			<div class="usage-explanation">
-				<?php p(OC_Shorty_L10n::t("This 2d barcode encodes the url pointing to this Shorty")); ?>.
-				<?php p(OC_Shorty_L10n::t("Use it in web pages by referencing or embedding or simply print or download it for offline usage")); ?>!
+				<?php p(L10n::t("This 2d barcode encodes the url pointing to this Shorty")); ?>.
+				<?php p(L10n::t("Use it in web pages by referencing or embedding or simply print or download it for offline usage")); ?>!
 			</div>
 			<div style="text-align:center;">
-				<img class="usage-qrcode" alt="<?php p(OC_Shorty_L10n::t("QRCode")); ?>"
-					src="<?php p(OCP\Util::imagePath('shorty','loading-disk.gif')); ?>" >
+				<img class="usage-qrcode" alt="<?php p(L10n::t("QRCode")); ?>"
+					src="<?php p(\OCP\Util::imagePath('shorty','loading-disk.gif')); ?>" >
 			</div>
 		</div>
 		<div class='qrcode-ref' style="display:none;">
 			<div class="usage-explanation">
-				<?php p(OC_Shorty_L10n::t("This is the url referencing the QRCode shown before")); ?>.
-				<?php p(OC_Shorty_L10n::t("Embed the QRCode as an image into some web page using this url")); ?>.
+				<?php p(L10n::t("This is the url referencing the QRCode shown before")); ?>.
+				<?php p(L10n::t("Embed the QRCode as an image into some web page using this url")); ?>.
 			</div>
 			<input class="usage-qrcode" readonly="true">
 			<div class="usage-instruction">
-				<?php p(OC_Shorty_L10n::t("Copy to clipboard")); ?>:<span class="usage-token"><?php p(OC_Shorty_L10n::t("Ctrl-C")); ?></span>
+				<?php p(L10n::t("Copy to clipboard")); ?>:<span class="usage-token"><?php p(L10n::t("Ctrl-C")); ?></span>
 				<br>
-				<?php p(OC_Shorty_L10n::t("Paste to embed elsewhere")); ?>:<span class="usage-token"><?php p(OC_Shorty_L10n::t("Ctrl-V")); ?></span>
+				<?php p(L10n::t("Paste to embed elsewhere")); ?>:<span class="usage-token"><?php p(L10n::t("Ctrl-V")); ?></span>
 			</div>
 			<hr>
 			<div class="usage-explanation">
-				<?php p(OC_Shorty_L10n::t("Alternatively the image can be downloaded for printout or storage")); ?>.
-				<?php p(OC_Shorty_L10n::t("That image can be used when writing documents or setting up web sites")); ?>:
+				<?php p(L10n::t("Alternatively the image can be downloaded for printout or storage")); ?>.
+				<?php p(L10n::t("That image can be used when writing documents or setting up web sites")); ?>:
 			</div>
 		</div>
 	</fieldset>

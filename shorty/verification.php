@@ -47,4 +47,4 @@ try {
 	$tmpl->assign ( 'instance', OCP\Config::getSystemValue('instanceid') );
 	// output the template
 	$tmpl->printPage();
-} catch ( OC_Shorty_Exception $e ) {}
+} catch ( Exception $e ) {}

@@ -29,6 +29,8 @@
  * @author Christian Reiner
  */
 
+namespace OCA\Shorty;
+
 // the general length where list content is chopped by an ellipsis for narrow columns
 define ( 'CL', 44 );
 // some basic regular expressions to build our catalog further down
@@ -41,12 +43,12 @@ define ( '__rx_domain_name',__rx_domain_ip.'|localhost|([a-zA-Z0-9\-]+\.)*[a-zA-
 define ( '__rx_file_url',	'file\:\/\/'.__rx_path );
 
 /**
- * @class OC_Shorty_Type
- * @brief Static 'namespace' class offering routines and constants used to handle type recognition and value verification
+ * @class Type
+ * @brief Static class offering routines and constants used to handle type recognition and value verification
  * @access public
  * @author Christian Reiner
  */
-class OC_Shorty_Type
+class Type
 {
 	// the 'types' of values we deal with, actually more something like flavours
 	const ID          = 'id';
@@ -77,23 +79,23 @@ class OC_Shorty_Type
 	);
 	// a list of all valid user preferences
 	static $PREFERENCE = array (
-		'default-status'         => OC_Shorty_Type::STRING,
-		'backend-type'           => OC_Shorty_Type::STRING,
-		'backend-default'        => OC_Shorty_Type::STRING,
-		'backend-selection'      => OC_Shorty_Type::STRING,
-		'backend-static-base'    => OC_Shorty_Type::URL,
-		'backend-bitly-user'     => OC_Shorty_Type::STRING,
-		'backend-bitly-key'      => OC_Shorty_Type::STRING,
-		'backend-google-key'     => OC_Shorty_Type::STRING,
-		'backend-tinycc-user'    => OC_Shorty_Type::STRING,
-		'backend-tinycc-key'     => OC_Shorty_Type::STRING,
-		'backend-ssl-verify'     => OC_Shorty_Type::INTEGER,
-		'sms-control'            => OC_Shorty_Type::STRING,
-		'verbosity-control'      => OC_Shorty_Type::STRING,
-		'verbosity-timeout'      => OC_Shorty_Type::INTEGER,
-		'list-sort-code'         => OC_Shorty_Type::SORTKEY,
-		'list-columns-collapsed' => OC_Shorty_Type::JSON,
-		'controls-panel-visible' => OC_Shorty_Type::BOOLEAN,
+		'default-status'         => Type::STRING,
+		'backend-type'           => Type::STRING,
+		'backend-default'        => Type::STRING,
+		'backend-selection'      => Type::STRING,
+		'backend-static-base'    => Type::URL,
+		'backend-bitly-user'     => Type::STRING,
+		'backend-bitly-key'      => Type::STRING,
+		'backend-google-key'     => Type::STRING,
+		'backend-tinycc-user'    => Type::STRING,
+		'backend-tinycc-key'     => Type::STRING,
+		'backend-ssl-verify'     => Type::INTEGER,
+		'sms-control'            => Type::STRING,
+		'verbosity-control'      => Type::STRING,
+		'verbosity-timeout'      => Type::INTEGER,
+		'list-sort-code'         => Type::SORTKEY,
+		'list-columns-collapsed' => Type::JSON,
+		'controls-panel-visible' => Type::BOOLEAN,
 	);
 	// valid status for entries
 	static $STATUS = array (
@@ -123,9 +125,9 @@ class OC_Shorty_Type
 	);
 	// a list of all valid system settings
 	static $SETTING = array (
-		'backend-default'     => OC_Shorty_Type::STRING,
-		'backend-selection'   => OC_Shorty_Type::STRING,
-		'backend-static-base' => OC_Shorty_Type::URL,
+		'backend-default'     => Type::STRING,
+		'backend-selection'   => Type::STRING,
+		'backend-static-base' => Type::URL,
 	);
 	static $HTTPCODE = array (
 		200 => 'Ok',
@@ -182,15 +184,15 @@ class OC_Shorty_Type
 	);
 
 	/**
-	 * @method OC_Shorty_Type::validate
+	 * @function validate
 	 * @brief Validates a given value against a type specific regular expression
 	 * Validates a given value according to the claimed type of the value.
 	 * Validation is done by matching the value against a type specific regular expression.
 	 * @param mixed $value: Value to be verified according to the specified type
-	 * @param OC_Shorty_Type::type $type: Type the value is said to belong to, important for verification
+	 * @param Type $type: Type the value is said to belong to, important for verification
 	 * @param bool $strict: Flag indicating if the verification should be done strict, that is if an exception should be thrown in case of a failure
 	 * @return mixed|NULL The value itself in case of a positive validation, NULL or an exception in case of a failure, depending on the flag indication strict mode
-	 * @throws OC_Shorty_Exception Indicating a failed validation in case of strict mode
+	 * @throws Exception Indicating a failed validation in case of strict mode
 	 * @access public
 	 * @author Christian Reiner
 	 */
@@ -203,28 +205,28 @@ class OC_Shorty_Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::STATUS:
-				if ( in_array($value,OC_Shorty_Type::$STATUS) )
+				if ( in_array($value,Type::$STATUS) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::SORTKEY:
 				if ( array_key_exists ( trim($value), self::$SORTING ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::SORTVAL:
 				if ( in_array ( trim($value), self::$SORTING ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::JSON:
 				if ( NULL !== json_decode($value) )
@@ -233,22 +235,22 @@ class OC_Shorty_Type
 					return '{}';
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::STRING:
 				if ( preg_match ( '/^.*$/x', str_replace("\n","\\n",$value) ) )
 					return str_replace("\n","\\n",$value);
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::URL:
 				$pattern = '/^'.self::$RX['URL_SCHEME'].'\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*'.self::$RX['DOMAIN_NAME'].'(\:'.self::$RX['NUMBER'].')*(\/($|.+)?)*$/i';
-				if ( parse_url($value) && preg_match ( $pattern, OC_Shorty_Tools::idnToASCII($value) ) )
+				if ( parse_url($value) && preg_match ( $pattern, Tools::idnToASCII($value) ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::PATH:
 				$pattern = '/^'.self::$RX['PATH'].'$/';
@@ -256,55 +258,55 @@ class OC_Shorty_Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::INTEGER:
 				if ( preg_match ( '/^'.self::$RX['NUMBER'].'$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::FLOAT:
 				if ( preg_match ( '/^'.self::$RX['NUMBER'].'(\.'.self::$RX['NUMBER'].')?$/', $value ) )
 					return $value;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::TIMESTAMP:
 				if ( preg_match ( '/^'.self::$RX['TIMESTAMP'].'$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::DATE:
 				if (FALSE!==($time=strtotime($value)))
 					return $time;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 			case self::BOOLEAN:
-				if ( OC_Shorty_Tools::toBoolean(trim($value),$strict) )
+				if ( Tools::toBoolean(trim($value),$strict) )
 					return TRUE;
 				elseif ( ! $strict)
 					return FALSE;
-				throw new OC_Shorty_Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
 
 		} // switch $type
-		throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
+		throw new Exception ( "unknown request argument type '%s'", array($type) );
 	} // function validate
 
 	/**
-	 * @method OC_Shorty_Type::normalize
+	 * @function normalize
 	 * @brief Cleanup and formal normalization of a given value   according to its type
 	 * Normalizes a given value according to its claimed type.
 	 * This typically means trimming of string values, but somet  imes also more specific actions.
 	 * @param mixed $value: Value to be normalized
-	 * @param OC_Shorty_Type::type $type: Supposed type of the va  lue
+	 * @param Type::type $type: Supposed type of the va  lue
 	 * @param bool $strict: Flag indicating if the normalization   should be done in a strict way
 	 * @return mixed: The normalized value
-	 * @throws OC_Shorty_Exception Indicating a parameter violation
+	 * @throws Exception Indicating a parameter violation
 	 * @access public
 	 * @author Christian Reiner
 	 */
@@ -315,7 +317,7 @@ class OC_Shorty_Type
 			if ( ! $strict)
 				return NULL;
 			else
-				throw new OC_Shorty_Exception ( "invalid value '%1\$s' for type '%2\$s'", array($value,$type) );
+				throw new Exception ( "invalid value '%1\$s' for type '%2\$s'", array($value,$type) );
 		} // if
 		switch ( $type )
 		{
@@ -353,23 +355,23 @@ class OC_Shorty_Type
 				return trim ( $value );
 
 			case self::DATE:
-				return date ( 'Y-m-d', self::validate($value,OC_Shorty_Type::DATE) );
+				return date ( 'Y-m-d', self::validate($value, Type::DATE) );
 
 			case self::BOOLEAN:
-				return OC_Shorty_Tools::toBoolean(trim($value)) ? TRUE : FALSE;
+				return Tools::toBoolean(trim($value)) ? TRUE : FALSE;
 
 		} // switch $type
-		throw new OC_Shorty_Exception ( "unknown request argument type '%s'", array($type) );
+		throw new Exception ( "unknown request argument type '%s'", array($type) );
 	} // function normalize
 
 	/**
-	 * @method OC_Shorty_Type::req_argument
+	 * @function req_argument
 	 * @brief Returns checked request argument or throws an erro  r
 	 * @param string $arg: Name of the request argument to get_argument
 	 * @param $type
 	 * @param bool $strict: Controls if an exception will be thrown upon a missing argument
 	 * @return string: Checked and prepared value of request arg  ument
-	 * @throws OC_Shorty_Exception Indicating a parameter violation
+	 * @throws Exception Indicating a parameter violation
 	 * @access public
 	 * @author Christian Reiner
 	 */
@@ -382,18 +384,18 @@ class OC_Shorty_Type
 					return self::normalize ( urldecode($_POST[$arg]), $type ) ;
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
+				throw new Exception ( "missing mandatory argument '%1s'", array($arg) );
 
 			case 'GET':
 				if ( isset($_GET[$arg]) && !empty($_GET[$arg]) )
 					return self::normalize ( urldecode(trim($_GET[$arg])), $type, $strict );
 				elseif ( ! $strict)
 					return NULL;
-				throw new OC_Shorty_Exception ( "missing mandatory argument '%1s'", array($arg) );
+				throw new Exception ( "missing mandatory argument '%1s'", array($arg) );
 
 			default:
-				throw new OC_Shorty_Exception ( "unexpected http request method '%1s'", array($_SERVER['REQUEST_METHOD']) );
+				throw new Exception ( "unexpected http request method '%1s'", array($_SERVER['REQUEST_METHOD']) );
 		}
   } // function req_argument
 
-} // class OC_Shorty_Query
+} // class Type

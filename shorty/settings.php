@@ -31,31 +31,33 @@
  * @author Christian Reiner
  */
 
+namespace OCA\Shorty;
+
 // session checks
-OCP\User::checkLoggedIn  ( );
-OCP\User::checkAdminUser ( );
-OCP\App::checkAppEnabled ( 'shorty' );
+\OCP\User::checkLoggedIn  ( );
+\OCP\User::checkAdminUser ( );
+\OCP\App::checkAppEnabled ( 'shorty' );
 
 $RUNTIME_NOSETUPFS = true;
 
-OCP\Util::addStyle  ( 'shorty', 'settings' );
+\OCP\Util::addStyle  ( 'shorty', 'settings' );
 
-OCP\Util::addScript ( 'shorty', '../3rdparty/js/chosen.jquery.min' );
-OCP\Util::addScript ( 'shorty', 'shorty' );
-OCP\Util::addScript ( 'shorty', 'util' );
-OCP\Util::addScript ( 'shorty', 'settings' );
-if ( OCP\Util::DEBUG==OCP\Config::getAppValue( "loglevel", OCP\Util::WARN ) )
-	OCP\Util::addScript ( 'shorty', 'debug' );
+\OCP\Util::addScript ( 'shorty', '../3rdparty/js/chosen.jquery.min' );
+\OCP\Util::addScript ( 'shorty', 'shorty' );
+\OCP\Util::addScript ( 'shorty', 'util' );
+\OCP\Util::addScript ( 'shorty', 'settings' );
+if ( \OCP\Util::DEBUG==\OCP\Config::getAppValue( "loglevel", \OCP\Util::WARN ) )
+	\OCP\Util::addScript ( 'shorty', 'debug' );
 
 // fetch template
-$tmpl = new OCP\Template ( 'shorty', 'tmpl_settings' );
+$tmpl = new \OCP\Template ( 'shorty', 'tmpl_settings' );
 
 // inflate template
-$tmpl->assign ( 'backend-verifier',    OCP\Util::linkTo('shorty', 'verification.php') );
-$tmpl->assign ( 'backend-selection',   OC_Shorty_Backend::getBackendTypes() );
-$tmpl->assign ( 'backend-default',     OC_Shorty_Backend::getBackendType() );
-$tmpl->assign ( 'backend-static-base', OCP\Config::getAppValue('shorty', 'backend-static-base','') );
-$tmpl->assign ( 'shorty-plugins',      OC_Shorty_Hooks::requestDetails() );
+$tmpl->assign ( 'backend-verifier',    \OCP\Util::linkTo('shorty', 'verification.php') );
+$tmpl->assign ( 'backend-selection',   Backend::getBackendTypes() );
+$tmpl->assign ( 'backend-default',     Backend::getBackendType() );
+$tmpl->assign ( 'backend-static-base', \OCP\Config::getAppValue('shorty', 'backend-static-base','') );
+$tmpl->assign ( 'shorty-plugins',      Hooks::requestDetails() );
 
 // render template
 return $tmpl->fetchPage ( );

@@ -22,15 +22,15 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_url_add.php
  * A dialog to add a remote target url as a new shorty.
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
 <!-- (hidden) dialog to add a new shorty -->
@@ -38,58 +38,58 @@
 	<fieldset>
 		<legend class="">
 			<a id="close" class="shorty-close-button"
-				title="<?php p(OC_Shorty_L10n::t('Close')); ?>">
-				<img alt="<?php p(OC_Shorty_L10n::t('Close')); ?>" class="svg"
-					src="<?php p(OCP\Util::imagePath('shorty','actions/shade.svg'));  ?>">
+				title="<?php p(L10n::t('Close')); ?>">
+				<img alt="<?php p(L10n::t('Close')); ?>" class="svg"
+					src="<?php p(\OCP\Util::imagePath('shorty','actions/shade.svg'));  ?>">
 			</a>
-			<span class="heading"><?php p(OC_Shorty_L10n::t('Add a new shorty').':'); ?></span>
+			<span class="heading"><?php p(L10n::t('Add a new shorty').':'); ?></span>
 		</legend>
-		<label for="target"><?php p(OC_Shorty_L10n::t('Target url').':'); ?></label>
+		<label for="target"><?php p(L10n::t('Target url').':'); ?></label>
 		<input id="target" name="target" type="text" maxlength="4096" data="" class=""/>
 		<br />
-		<label for="meta"><img id="busy" height="12px" src="<?php p(OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></label>
+		<label for="meta"><img id="busy" height="12px" src="<?php p(\OCP\Util::imagePath('shorty', 'loading-led.gif')); ?>"></label>
 		<span id="meta" class="shorty-meta">
 			<span class="">
 				<img id="staticon"  class="shorty-icon svg" width="16px" data="blank"
-					src="<?php p(OCP\Util::imagePath('shorty', 'blank.png')); ?>">
+					src="<?php p(\OCP\Util::imagePath('shorty', 'blank.png')); ?>">
 				<img id="schemicon" class="shorty-icon svg" width="16px" data="blank"
-					src="<?php p(OCP\Util::imagePath('shorty', 'blank.png')); ?>">
+					src="<?php p(\OCP\Util::imagePath('shorty', 'blank.png')); ?>">
 				<img id="favicon"   class="shorty-icon svg" width="16px" data="blank"
-					src="<?php p(OCP\Util::imagePath('shorty', 'blank.png')); ?>">
+					src="<?php p(\OCP\Util::imagePath('shorty', 'blank.png')); ?>">
 				<img id="mimicon"   class="shorty-icon svg" width="16px" data="blank"
-					src="<?php p(OCP\Util::imagePath('shorty', 'blank.png')); ?>">
+					src="<?php p(\OCP\Util::imagePath('shorty', 'blank.png')); ?>">
 			</span>
 			<span id="explanation" class="shorty-value" data=""></span>
 		</span>
 		<br />
-		<label for="title"><?php p(OC_Shorty_L10n::t('Title').':'); ?></label>
+		<label for="title"><?php p(L10n::t('Title').':'); ?></label>
 		<input id="title" name="title" type="text" maxlength="1024" data="" class="" placeholder=""/>
 		<br />
 		<span class="label-line">
-			<label for="status"><?php p(OC_Shorty_L10n::t('Status').':'); ?></label>
+			<label for="status"><?php p(L10n::t('Status').':'); ?></label>
 			<select id="status" name="status" class=""
 					data="<?php echo $_['default-status'];?>" value="<?php echo $_['default-status'];?>" >
 <?php
-				foreach ( OC_Shorty_Type::$STATUS as $status )
+				foreach ( Type::$STATUS as $status )
 					if ( 'deleted'!=$status )
 						print_unescaped(sprintf("<option value=\"%s\" %s>%s</option>\n",
-												$status, ($status==$_['default-status'])?'selected':'', OC_Shorty_L10n::t($status)));
+												$status, ($status==$_['default-status'])?'selected':'', L10n::t($status)));
 ?>
 			</select>
 			<span style="display:inline-block;">
-				<label for="until"><?php p(OC_Shorty_L10n::t('Expiration').':'); ?></label>
+				<label for="until"><?php p(L10n::t('Expiration').':'); ?></label>
 				<input id="until" name="until" type="text" maxlength="10" value=""
 					data="" class="" style="width:8em;"
-					placeholder="-<?php p(OC_Shorty_L10n::t('never')); ?>-"
-					icon="<?php p(OCP\Util::imagePath('shorty', 'calendar.png')); ?>"/>
+					placeholder="-<?php p(L10n::t('never')); ?>-"
+					icon="<?php p(\OCP\Util::imagePath('shorty', 'calendar.png')); ?>"/>
 			</span>
 		</span>
 		<br />
-		<label for="notes"><?php p(OC_Shorty_L10n::t('Notes').':'); ?></label>
+		<label for="notes"><?php p(L10n::t('Notes').':'); ?></label>
 		<textarea id="notes" name="notes" maxlength="4096" data="" class=""
-				placeholder="<?php p(OC_Shorty_L10n::t('Anything that appears helpful …')); ?>"></textarea>
+				placeholder="<?php p(L10n::t('Anything that appears helpful …')); ?>"></textarea>
 		<br />
 		<label for="confirm"></label>
-		<button id="confirm" class="shorty-button-submit"><?php p(OC_Shorty_L10n::t('Add as new')); ?></button>
+		<button id="confirm" class="shorty-button-submit"><?php p(L10n::t('Add as new')); ?></button>
   </fieldset>
 </form>

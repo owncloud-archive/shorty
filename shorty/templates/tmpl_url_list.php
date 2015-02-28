@@ -22,37 +22,39 @@
 * If not, see <http://www.gnu.org/licenses/>.
 *
 */
-?>
 
-<?php
 /**
  * @file templates/tmpl_url_list.php
  * A table to visualize the list of existing shortys.
  * @access public
  * @author Christian Reiner
  */
+
+namespace OCA\Shorty;
 ?>
 
+<?php namespace OCA\Shorty; ?>
+
 <!-- the 'hourglass', a general busy indicator -->
-<div id="hourglass" class="shorty-hourglass" style="left:5em;top:6em;"><img src="<?php p(OCP\Util::imagePath('shorty', 'loading-disk.gif')); ?>"></div>
+<div id="hourglass" class="shorty-hourglass" style="left:5em;top:6em;"><img src="<?php p(\OCP\Util::imagePath('shorty', 'loading-disk.gif')); ?>"></div>
 
 <!-- the list of urls, empty variant -->
 <div id="vacuum" class="shorty-vacuum personalblock">
-	<div class="factoid"><?php p(OC_Shorty_L10n::t("Nothing here yet")." !"); ?></div>
+	<div class="factoid"><?php p(L10n::t("Nothing here yet")." !"); ?></div>
 	<!-- a hint to use the personal preferences -->
 	<p>
-		<div class="suggestion"><?php p(OC_Shorty_L10n::t("If you just started using Shorty").":"); ?></div>
+		<div class="suggestion"><?php p(L10n::t("If you just started using Shorty").":"); ?></div>
 		<div class="explanation">
-			<?php print_unescaped(sprintf(OC_Shorty_L10n::t("Set personal preferences using the cog wheel (%%s) on the upper right!" ),
+			<?php print_unescaped(sprintf(L10n::t("Set personal preferences using the cog wheel (%%s) on the upper right!" ),
 				sprintf('<img id="controls-preferences" class="svg settings" style="vertical-align:bottom;cursor:pointer;" src="%s" />',
-						OCP\Util::imagePath('core', 'actions/settings.svg'))
+						\OCP\Util::imagePath('core', 'actions/settings.svg'))
 				)); ?>
 		</div>
 	</p>
 	<!-- a hint explaining how to create content -->
 	<p>
-		<div class="suggestion"><?php p(OC_Shorty_L10n::t("Create a new 'Shorty' and share it").":"); ?></div>
-		<div class="explanation"><?php p(OC_Shorty_L10n::t("Use the '%s' button above or the fine 'Shortlet'",OC_Shorty_L10n::t("New Shorty")).":"); ?></div>
+		<div class="suggestion"><?php p(L10n::t("Create a new 'Shorty' and share it").":"); ?></div>
+		<div class="explanation"><?php p(L10n::t("Use the '%s' button above or the fine 'Shortlet'",L10n::t("New Shorty")).":"); ?></div>
 	</p>
 <?php require_once('tmpl_wdg_shortlet.php'); ?>
 </div>
@@ -64,18 +66,18 @@
 			<!-- a button to open/close the toolbar below -->
 			<th id="list-of-shortys-favicon" data-aspect="favicon">
 				<div>
-					<img id="list-of-shortys-tools" class="shorty-tools svg" alt="toolbar" title="<?php p(OC_Shorty_L10n::t("Toggle toolbar")); ?>"
-						src="<?php p(OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
+					<img id="list-of-shortys-tools" class="shorty-tools svg" alt="toolbar" title="<?php p(L10n::t("Toggle toolbar")); ?>"
+						src="<?php p(\OCP\Util::imagePath('shorty','actions/unshade.svg')); ?>"
 						data-unshade="actions/unshade" data-shade="actions/shade">
 				</div>
 			</th>
-			<th id="list-of-shortys-title"    data-aspect="title"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Title'));     ?></div></th>
-			<th id="list-of-shortys-target"   data-aspect="target"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Target'));    ?></div></th>
-			<th id="list-of-shortys-clicks"   data-aspect="clicks"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Clicks'));    ?></div></th>
-			<th id="list-of-shortys-until"    data-aspect="until"    class="collapsible"><div><?php p(OC_Shorty_L10n::t('Expiration'));?></div></th>
-			<th id="list-of-shortys-created"  data-aspect="created"  class="collapsible"><div><?php p(OC_Shorty_L10n::t('Creation'));  ?></div></th>
-			<th id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible"><div><?php p(OC_Shorty_L10n::t('Access'));    ?></div></th>
-			<th id="list-of-shortys-status"   data-aspect="status"   class="collapsible"><div><?php p(OC_Shorty_L10n::t('Status'));    ?></div></th>
+			<th id="list-of-shortys-title"    data-aspect="title"    class="collapsible"><div><?php p(L10n::t('Title'));     ?></div></th>
+			<th id="list-of-shortys-target"   data-aspect="target"   class="collapsible"><div><?php p(L10n::t('Target'));    ?></div></th>
+			<th id="list-of-shortys-clicks"   data-aspect="clicks"   class="collapsible"><div><?php p(L10n::t('Clicks'));    ?></div></th>
+			<th id="list-of-shortys-until"    data-aspect="until"    class="collapsible"><div><?php p(L10n::t('Expiration'));?></div></th>
+			<th id="list-of-shortys-created"  data-aspect="created"  class="collapsible"><div><?php p(L10n::t('Creation'));  ?></div></th>
+			<th id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible"><div><?php p(L10n::t('Access'));    ?></div></th>
+			<th id="list-of-shortys-status"   data-aspect="status"   class="collapsible"><div><?php p(L10n::t('Status'));    ?></div></th>
 			<th id="list-of-shortys-actions"  data-aspect="actions"><div>&nbsp;</div></th>
 		</tr>
 		<!-- toolbar opened/closed by the button above -->
@@ -83,8 +85,8 @@
 			<th id="list-of-shortys-favicon" data-aspect="favicon">
 				<div style="display:none;">
 					<a id="list-of-shortys-reload" class="shorty-reload">
-						<img alt="<?php p(OC_Shorty_L10n::t('reload')); ?>" title="<?php p(OC_Shorty_L10n::t('Reload list')); ?>"
-							class="shorty-tool shorty-reload svg" src="<?php p(OCP\Util::imagePath('shorty','actions/reload.svg')); ?>">
+						<img alt="<?php p(L10n::t('reload')); ?>" title="<?php p(L10n::t('Reload list')); ?>"
+							class="shorty-tool shorty-reload svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/reload.svg')); ?>">
 					</a>
 				</div>
 			</th>
@@ -93,8 +95,8 @@
 					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
 					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 't'))); ?>
 					<input id="filter-title" class="shorty-filter" type="text" value="">
-					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
-						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
+					<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
+						class="shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
 			<th id="list-of-shortys-target" data-aspect="target" class="collapsible">
@@ -102,8 +104,8 @@
 					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
 					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'u'))); ?>
 					<input id="filter-target" class="shorty-filter" type="text" value="">
-					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
-						class="shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
+					<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
+						class="shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
 			<th id="list-of-shortys-clicks" data-aspect="clicks" class="collapsible">
@@ -140,8 +142,8 @@
 						?>
 						</select>
 					</span>
-					<img id="clear" alt="<?php p(OC_Shorty_L10n::t('clear')); ?>" title="<?php p(OC_Shorty_L10n::t('Clear filter')); ?>"
-						class="shorty-tool shorty-clear svg" src="<?php p(OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
+					<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
+						class="shorty-tool shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
 				</div>
 			</th>
 		</tr>
@@ -179,25 +181,25 @@
 							src="<?php p($action['icon']); ?>" />
 					</a>
 <?php } ?>
-				<a id="shorty-action-show"   title="<?php p(OC_Shorty_L10n::t('show'));   ?>"   class="">
-					<img alt="<?php p(OC_Shorty_L10n::t('show')); ?>"   title="<?php p(OC_Shorty_L10n::t('Show details')); ?>"
-						class="shorty-icon svg" src="<?php p(OCP\Util::imagePath('shorty','actions/info.svg'));   ?>" />
+				<a id="shorty-action-show"   title="<?php p(L10n::t('show'));   ?>"   class="">
+					<img alt="<?php p(L10n::t('show')); ?>"   title="<?php p(L10n::t('Show details')); ?>"
+						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/info.svg'));   ?>" />
 				</a>
-				<a id="shorty-action-edit"   title="<?php p(OC_Shorty_L10n::t('edit'));   ?>"   class="">
-					<img alt="<?php p(OC_Shorty_L10n::t('modify')); ?>"   title="<?php p(OC_Shorty_L10n::t('Modify shorty')); ?>"
-						class="shorty-icon svg" src="<?php p(OCP\Util::imagePath('core','actions/rename.svg')); ?>" />
+				<a id="shorty-action-edit"   title="<?php p(L10n::t('edit'));   ?>"   class="">
+					<img alt="<?php p(L10n::t('modify')); ?>"   title="<?php p(L10n::t('Modify shorty')); ?>"
+						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('core','actions/rename.svg')); ?>" />
 				</a>
-				<a id="shorty-action-del"    title="<?php p(OC_Shorty_L10n::t('delete')); ?>" class="">
-					<img alt="<?php p(OC_Shorty_L10n::t('delete')); ?>" title="<?php p(OC_Shorty_L10n::t('Delete shorty')); ?>"
-						class="shorty-icon svg" src="<?php p(OCP\Util::imagePath('core','actions/delete.svg')); ?>" />
+				<a id="shorty-action-del"    title="<?php p(L10n::t('delete')); ?>" class="">
+					<img alt="<?php p(L10n::t('delete')); ?>" title="<?php p(L10n::t('Delete shorty')); ?>"
+						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('core','actions/delete.svg')); ?>" />
 				</a>
-				<a id="shorty-action-share"  title="<?php p(OC_Shorty_L10n::t('share'));  ?>"   class="">
-					<img alt="<?php p(OC_Shorty_L10n::t('share')); ?>"  title="<?php p(OC_Shorty_L10n::t('Share shorty')); ?>"
-						class="shorty-icon svg" src="<?php p(OCP\Util::imagePath('core','actions/share.svg'));  ?>" />
+				<a id="shorty-action-share"  title="<?php p(L10n::t('share'));  ?>"   class="">
+					<img alt="<?php p(L10n::t('share')); ?>"  title="<?php p(L10n::t('Share shorty')); ?>"
+						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('core','actions/share.svg'));  ?>" />
 				</a>
-				<a id="shorty-action-open"   title="<?php p(OC_Shorty_L10n::t('open'));   ?>"   class="">
-					<img alt="<?php p(OC_Shorty_L10n::t('open')); ?>"   title="<?php p(OC_Shorty_L10n::t('Open target')); ?>"
-						class="shorty-icon svg" src="<?php p(OCP\Util::imagePath('shorty','actions/open.svg')); ?>" />
+				<a id="shorty-action-open"   title="<?php p(L10n::t('open'));   ?>"   class="">
+					<img alt="<?php p(L10n::t('open')); ?>"   title="<?php p(L10n::t('Open target')); ?>"
+						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/open.svg')); ?>" />
 				</a>
 				</span>
 			</td>

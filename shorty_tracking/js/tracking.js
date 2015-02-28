@@ -74,7 +74,7 @@ OC.Shorty.Tracking=
 		granted:[]
 	},
 	/**
-	 * @method OC.Shorty.Tracking.bottom
+	 * @function OC.Shorty.Tracking.bottom
 	 * @brief Decides if a scrolling event has reached the bottom of the list
 	 * @access private
 	 * @author Christian Reiner
@@ -97,7 +97,7 @@ OC.Shorty.Tracking=
 			.on('scroll',OC.Shorty.Tracking.bottom);
 	}, // OC.Shorty.Tracking.bottom
 	/**
-	 * @method OC.Shorty.Tracking.build
+	 * @function OC.Shorty.Tracking.build
 	 * @brief Builds the content of the list of tracked clicks
 	 * @return deferred.promise
 	 * @access private
@@ -182,7 +182,7 @@ OC.Shorty.Tracking=
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.build
 	/**
-	 * @method OC.Shorty.Tracking.control
+	 * @function OC.Shorty.Tracking.control
 	 * @brief Central control method, called by the app to hand over control
 	 * @param entry jQuery object holding the clicked entry, in this case a row in the list of Shortys
 	 * @return deferred.promise
@@ -221,7 +221,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 		return dfd.promise();
 	}, // OC.Shorty.Tracking.control
 	/**
-	 * @method OC.Shorty.Tracking.details
+	 * @function OC.Shorty.Tracking.details
 	 * @brief Visualizes clicks details inside a popup
 	 * @access private
 	 * @author Christian Reiner
@@ -272,7 +272,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 	return dfd.promise();
 	}, // OC.Shorty.Tracking.details
 	/**
-	 * @method OC.Shorty.Tracking.get
+	 * @function OC.Shorty.Tracking.get
 	 * @brief Fetches a list of all registered clicks matching a specified Shorty
 	 * @param shorty string Id of the Shorty the click list is requested for
 	 * @param offset Numeric id of the last click that is already present in the list (ids being in chronological order!)
@@ -356,7 +356,7 @@ console.log('OC.Shorty.Tracking.Dialog.List: ');console.log(OC.Shorty.Tracking.D
 		} // else
 	},
 	/**
-	 * @method OC.Shorty.Tracking.sparkle
+	 * @function OC.Shorty.Tracking.sparkle
 	 * @brief Creates a 'click sparkline' at the top right of the dialog
 	 * @author Christian Reiner
 	 */
@@ -471,7 +471,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 		time:function(){return $(this).find('span').text();}
 	},
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
+	 * @function OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
 	 * @brief Callback function replacing the default used in OC.Shorty.WUI.List.add()
 	 * @param row jQuery object Holding a raw clone of the 'dummy' entry in the list, meant to be populated by real values
 	 * @param set object This is the set of attributes describing a single registered click
@@ -535,7 +535,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 		}); // each aspect
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddEnrich
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfClicks.ListAddInsert
+	 * @function OC.Shorty.Runtime.Context.ListOfClicks.ListAddInsert
 	 * @brief Inserts a cloned and enriched row into the table at a usage specific place
 	 * @access public
 	 * @author Christian Reiner
@@ -547,7 +547,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 		list.find('tbody').append(row);
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListAddInsert
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
+	 * @function OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
 	 * @brief Column filter rules specific to this plugins list
 	 * @access public
 	 * @author Christian Reiner
@@ -568,7 +568,7 @@ OC.Shorty.Runtime.Context.ListOfClicks={
 			[list,'result', toolbar.find('th#list-of-clicks-result  .shorty- :selected').val()]);
 	}, // OC.Shorty.Runtime.Context.ListOfClicks.ListFillFilter
 	/**
-	 * @method OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
+	 * @function OC.Shorty.Runtime.Context.ListOfClicks.ToolbarCheckFilter
 	 * @brief Callback used to check if any filters prevent closing a lists toolbar
 	 * @param toolbar jQueryObject The lists toolbar filters should be checked in
 	 * @return bool Indicates if an existing filter prevents the closing or not
