@@ -55,6 +55,7 @@ OC.L10N.register(
     "Close" : "Bağla",
     "Feedback" : "Geriyə cavab",
     "Home" : "Ev",
+    "Loading" : "Yüklənir",
     "Notes" : "Qeydlər",
     "Nothing here yet" : "Hələki burda heçnə yoxdur",
     "Refresh" : "Yenilə",
