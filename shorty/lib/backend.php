@@ -90,7 +90,7 @@ class OC_Shorty_Backend
 		$backend_types = self::getBackendTypes();
 		$backend_type = OCP\Config::getAppValue('shorty', 'backend-default');
 		if (   empty($backend_type)
-			|| ! in_array($backend_type, $backend_types) ) {
+			|| ! isset($backend_types[$backend_type]) ) {
 			// chose the first valid option
 			$backend_keys = array_keys($backend_types);
 			$backend_type = reset($backend_keys);
