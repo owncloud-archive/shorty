@@ -30,8 +30,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-27 16:01+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-02-28 21:30+0000\n"
+"Last-Translator: unixidzero <unixidzero@gmail.com>\n"
 "Language-Team: Azerbaijani (http://www.transifex.com/projects/p/owncloud/language/az/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -115,7 +115,7 @@ msgstr "səhvi araşdırmaq"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "( heç vaxt )"
 
 msgid "2 seconds"
 msgstr "2 saniyə "
@@ -138,7 +138,7 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[ heç bir ]"
 
 msgid "bitly.com service"
 msgstr "bitly.com xidməti"
@@ -206,7 +206,7 @@ msgid "Alternatively the link can be copied manually"
 msgstr "Alternativ olaraq link əllə nesxələnə bilər"
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "Link alternativ olaraq əllə olan mesajın içinə nüsxələnə bilər. "
 
 msgid "Anything that appears helpful …"
 msgstr ""
@@ -215,19 +215,19 @@ msgid "Default backend suggested inside users preferences"
 msgstr ""
 
 msgid "Backend"
-msgstr ""
+msgstr "Arxa son"
 
 msgid "Base url"
-msgstr ""
+msgstr "Baza url "
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Xidməti seçin ..."
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
 
 msgid "Click registered"
-msgstr ""
+msgstr "Qeydoyyatdan keçmişə sixin"
 
 msgid "Clicks"
 msgstr "Düymə sixilmaları"
@@ -242,7 +242,7 @@ msgid "Close"
 msgstr "Bağla"
 
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiqurasiya"
 
 msgid "The amount of feedback messages shown."
 msgstr ""
@@ -251,7 +251,7 @@ msgid "The time span after which messages are hidden again automatically"
 msgstr ""
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Buferə nüsxələ"
 
 msgid "Counted entries and clicks"
 msgstr ""
@@ -260,28 +260,28 @@ msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
 msgid "Creation"
-msgstr ""
+msgstr "Yaradılma"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Qısa sil"
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "Bunu sizin browser qeydlərinizin üstünə dartın."
 
 msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr ""
+msgstr "Misal"
 
 msgid "Exception"
-msgstr ""
+msgstr "İstisna"
 
 msgid "Exception (%s)"
 msgstr ""
 
 msgid "Expiration"
-msgstr ""
+msgstr "Vaxtın bitməsi"
 
 msgid "Feedback"
 msgstr "Geriyə cavab"
@@ -299,13 +299,13 @@ msgid "Loading"
 msgstr "Yüklənir"
 
 msgid "Mail client"
-msgstr ""
+msgstr "Mail müştərisi"
 
 msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Atributları dəyişdir"
 
 msgid "Modify shorty"
 msgstr ""

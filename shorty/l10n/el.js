@@ -127,6 +127,8 @@ OC.L10N.register(
     "Shorty as QRCode" : "Pronto o CodigoQR",
     "Shorty with id '%s' deleted" : "Απροσδόκητη απόρριψη αντικειμένου που έχει παγιδευτεί %s",
     "Show as QRCode" : "Εμφανιση ως QRCode",
+    "Show QRCode image" : "Εμφάνιση εικόνας QRCode",
+    "Download QRCode" : "Λήψη κώδικα QRCode",
     "Show details" : "Προβολή λεπτομερειών",
     "Show usage" : "Προβολή χρήσης",
     "SMS" : "SMS",
@@ -213,6 +215,7 @@ OC.L10N.register(
     "Sorry, but your setup appears not to be working correctly yet!" : "Λυπούμαστε, αλλά η ρύθμιση σας φαίνεται να μην λειτουργεί σωστά ακόμα",
     "Please check your setup and make sure that the configured base url is indeed correct." : "Παρακαλώ ελέγξετε την ρύθμισή σας και βεβαιωθείτε ότι η διαμορφωμένη βάση url είναι πραγματικά σωστή. ",
     "Make sure that all requests to it are somehow mapped to Shortys relay service." : "Βεβαιωθείτε ότι όλες οι αιτήσεις προβάλλονται κάπως στην υπηρεσία μετάθεσης των Shortys. ",
+    "Target object:" : "Αντικείμενο προορισμού:",
     "Location" : "Τοποθεσία",
     "Proceed" : "Συνέχιση"
 },
