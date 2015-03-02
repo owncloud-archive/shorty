@@ -149,6 +149,7 @@
     "That image can be used when writing documents or setting up web sites" : "ドキュメントを作成したり、Webサイトを構築するときに、その画像を利用します。",
     "The backend service used to generate shortened URLs." : "短縮URLを生成する際に利用する外部サービス",
     "The default status as suggested for new Shortys." : "デフォルトの状態を新しい短縮として提案",
+    "The link below can be copied to paste it elsewhere" : "下記のリンクは他の場所への貼付用にコピーできます",
     "The additional plugin '%%s' tracks the usage of existing Shortys!" : "追加プラグイン '%%s' は、現在のShorty(短縮URL)の利用状況を追跡できます。",
     "therefore the content must be copied manually" : "従って、その内容は手動でコピーされなければなりません。",
     "then paste into message" : "そしてメッセージに貼り付けます",

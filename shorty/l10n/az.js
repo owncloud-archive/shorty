@@ -54,6 +54,7 @@ OC.L10N.register(
     "alternatively the link can be copied for further usage" : "alternativ olaraq link gələcək istifadə üçün nüsxılını bilər",
     "Alternatively the link can be copied manually" : "Alternativ olaraq link əllə nesxələnə bilər",
     "Alternatively the link can be copied into a message manually" : "Link alternativ olaraq əllə olan mesajın içinə nüsxələnə bilər. ",
+    "Anything that appears helpful …" : "Əmələ gələn hər bir şey xeyirlidir …",
     "Backend" : "Arxa son",
     "Base url" : "Baza url ",
     "Choose a service…" : "Xidməti seçin ...",
