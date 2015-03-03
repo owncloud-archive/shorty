@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Mladen Pejaković <pejakm@autistici.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-26 12:34+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-03-02 15:51+0000\n"
+"Last-Translator: Mladen Pejaković <pejakm@autistici.org>\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/owncloud/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,7 +69,7 @@ msgid "public"
 msgstr ""
 
 msgid "shared"
-msgstr "Дељено"
+msgstr "дељено"
 
 # actions ("to be done")
 msgid "delete"
@@ -286,7 +287,7 @@ msgid "Feedback"
 msgstr ""
 
 msgid "Home"
-msgstr "Кућа"
+msgstr "Домаћа"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
