@@ -12,6 +12,7 @@ OC.L10N.register(
     "Clicks" : "Кликови",
     "Close" : "Затвори",
     "Configuration" : "Подешавање",
+    "Expiration" : "Истиче",
     "Home" : "Домаћа",
     "Loading" : "Учитавам",
     "Notes" : "Белешке",

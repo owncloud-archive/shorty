@@ -38,8 +38,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-26 14:52+0000\n"
-"Last-Translator: Hugo Bettencourt\n"
+"PO-Revision-Date: 2015-03-03 19:21+0000\n"
+"Last-Translator: alfalb.as\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -167,7 +167,7 @@ msgid "tiny.cc service"
 msgstr "serviço tiny.cc"
 
 msgid "static backend"
-msgstr "backend estático"
+msgstr "interface estática"
 
 # status explanations
 msgid "for any access"
@@ -220,10 +220,10 @@ msgid "Anything that appears helpful …"
 msgstr "Qualquer coisa que pareça que ajude..."
 
 msgid "Default backend suggested inside users preferences"
-msgstr "Backend predefinido sugerido dentro das preferências dos utilizadores"
+msgstr "A interface predefinida sugeridao dentro das preferências dos utilizadores"
 
 msgid "Backend"
-msgstr "Backend"
+msgstr "Interface"
 
 msgid "Base url"
 msgstr "URL Base"
@@ -349,7 +349,7 @@ msgid "Open target url"
 msgstr "Abrir url de destino"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr "Configuração opcional de um 'Backend Estático'"
+msgstr "Configuração opcional da 'Interface Estática'"
 
 msgid "or simpy print or download it for off-line usage"
 msgstr "ou simplesmente imprima ou transfira-o para utilizar desligado da rede"
@@ -484,7 +484,7 @@ msgid "Specify a static base url…"
 msgstr "Especifique um url base estático..."
 
 msgid "Static backend: base url verification"
-msgstr "Backend estático: verificação de url base"
+msgstr "Interface estática: verificação do url base"
 
 msgid "Status"
 msgstr "Estado"
@@ -505,7 +505,7 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr "Essa imagem pode ser utilizada quando escrever documentos ou a configurar os sítios da Web"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr "O serviço backend utilizado para gerar URLs encurtados."
+msgstr "O serviço da interface utilizado para gerar os URLs encurtados."
 
 msgid "The default status as suggested for new Shortys."
 msgstr "O estado predefinido como sugerido para novos Shortys."
@@ -534,7 +534,7 @@ msgid "This is a internal url that the shortened url relays to"
 msgstr "Este é um URL interno que o url encurtado substitui para"
 
 msgid "This is the shortened url registered at the backend"
-msgstr "Este é um url encurtado registado no backend"
+msgstr "Esta é o url encurtado registado na interface"
 
 msgid "This is the target url specified when generating this Shorty"
 msgstr "Este é o url de destino especificado quando cria este curtinho"
@@ -630,7 +630,7 @@ msgstr "chave do utilizador tiny.cc"
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr "Forçar verificação de certificados de encriptação durante a comunicação com o backend"
+msgstr "Forçar a verificação de certificados de encriptação durante a comunicação com a interface"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
@@ -667,7 +667,7 @@ msgstr "O serviço externo 'tiny.cc' é usado para registrar um url curto para c
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr "Não é usado nenhum backend, são criados links directos apontando para o ownCloud."
+msgstr "Não está a ser utilizada qualquer interface, são geradas hiperligações dirigidas para a sua ownCloud."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
@@ -676,7 +676,7 @@ msgstr "O serviço requer que se identifique, fornecendo um nome de utilizador v
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr "Estas ligações estão propensas a serem mais longas do que as criadas usando o backend."
+msgstr "Tais hiperligações estão sujeitas a serem mais longas do que as geradas quando utiliza uma interface."
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
@@ -691,7 +691,7 @@ msgstr "Uma vez que esta configuração depende das regras do servidor de base o
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr "Estática, regra baseada no backend, cria ligações curtinhas relativas a dado url básico."
+msgstr "Estática, regra baseada na interface, gera hiperligações curtas relativas ao url base indicado."
 
 msgid ""
 "You have to take care that any request to the url configured here is "
