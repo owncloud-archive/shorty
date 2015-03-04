@@ -42,11 +42,13 @@ namespace OCA\Shorty;
 \OC::$CLASSPATH['OCA\Shorty\Type']          = 'shorty/lib/type.php';
 
 \OCP\App::registerAdmin      ( 'shorty', 'settings' );
-\OCP\App::addNavigationEntry ( array (	'id' => 'shorty_index',
-										'order' => 71,
-										'href' => \OCP\Util::linkTo   ( 'shorty', 'index.php' ),
-										'icon' => \OCP\Util::imagePath( 'shorty', 'shorty-light.svg' ),
-										'name' => 'Shorty' ) );
+\OCP\App::addNavigationEntry ( [
+	'id' => 'shorty_index',
+	'order' => 71,
+	'href' => \OCP\Util::linkTo   ( 'shorty', 'index.php' ),
+	'icon' => \OCP\Util::imagePath( 'shorty', 'shorty-light.svg' ),
+	'name' => 'Shorty'
+] );
 
 \OCP\Util::connectHook ( 'OCP\User',  'post_deleteUser', 'OCA\Shorty\Hooks', 'deleteUser');
 \OCP\Util::connectHook ( 'OCA\Shorty', 'registerQueries', 'OCA\Shorty\Hooks', 'registerQueries');

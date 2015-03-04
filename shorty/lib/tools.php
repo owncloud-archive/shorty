@@ -109,7 +109,7 @@ class Tools
 					return mysql_real_escape_string ( stripslashes($value) );
 				else return mysql_real_escape_string ( $value );
 		} // switch
-		throw new Exception ( "unknown database backend type '%1'", array($type) );
+		throw new Exception ( "unknown database backend type '%1'", [$type] );
 	} // function db_escape
 
 	/**
@@ -136,7 +136,7 @@ class Tools
 			case 'pgsql':
 				return "date_part('epoch',now())::integer";
 		}
-		throw new Exception ( "unknown database backend type '%1'", array($type) );
+		throw new Exception ( "unknown database backend type '%1'", [$type] );
 	} // function db_timestamp
 
 	/**
@@ -149,7 +149,7 @@ class Tools
 	static function shorty_id ( )
 	{
 		// use pseudo random alphabet to generate a id being unique over time
-		return self::convertToAlphabet ( str_replace(array(' ','.'),'',microtime()), self::randomAlphabet() );
+		return self::convertToAlphabet ( str_replace([' ','.'],'',microtime()), self::randomAlphabet() );
 	} // function shorty_id
 
 	/**
@@ -186,7 +186,7 @@ class Tools
 		$alphabetLen = strlen($alphabet);
 		if ( is_numeric($number) )
 			$decVal = $number;
-		else throw new Exception ( "non numerical timestamp value: '%1'", array($number) );
+		else throw new Exception ( "non numerical timestamp value: '%1'", [$number] );
 			$number = FALSE;
 		$nslen = 0;
 		$pos = 1;
@@ -256,7 +256,7 @@ class Tools
 	 */
 	static public function proxifyReference ( $mode, $subject, $hash=false )
 	{
-		if ( ! in_array($mode, array('favicon')))
+		if ( ! in_array($mode, ['favicon']))
 			return false;
 		if ($hash)  {
 			return sprintf('%s?mode=%s&subject=%s&hash=%s', \OCP\Util::linkToAbsolute('shorty', 'proxy.php'), $mode, urlencode($subject), self::getSubjectHash($subject));
@@ -313,10 +313,9 @@ class Tools
 	 */
 	static function countShortys ()
 	{
-		$param = array
-		(
-			':user'   => \OCP\User::getUser ( ),
-		);
+		$param = [
+			':user' => \OCP\User::getUser ( ),
+		];
 		$query = \OCP\DB::prepare ( Query::URL_COUNT );
 		$result = $query->execute($param);
 		$reply = $result->fetchAll();

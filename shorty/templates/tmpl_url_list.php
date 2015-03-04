@@ -93,7 +93,7 @@ namespace OCA\Shorty;
 			<th id="list-of-shortys-title" data-aspect="title" class="collapsible">
 				<div style="display:none;">
 					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
-					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 't'))); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', ['sortcol' => 't'])); ?>
 					<input id="filter-title" class="shorty-filter" type="text" value="">
 					<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
 						class="shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
@@ -102,7 +102,7 @@ namespace OCA\Shorty;
 			<th id="list-of-shortys-target" data-aspect="target" class="collapsible">
 				<div style="display:none;">
 					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
-					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'u'))); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', ['sortcol' => 'u'])); ?>
 					<input id="filter-target" class="shorty-filter" type="text" value="">
 					<img id="clear" alt="<?php p(L10n::t('clear')); ?>" title="<?php p(L10n::t('Clear filter')); ?>"
 						class="shorty-clear svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/clear.svg')); ?>">
@@ -111,25 +111,25 @@ namespace OCA\Shorty;
 			<th id="list-of-shortys-clicks" data-aspect="clicks" class="collapsible">
 				<div style="display:none;">
 					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
-					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'h'))); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', ['sortcol' => 'h'])); ?>
 				</div>
 			</th>
 			<th id="list-of-shortys-until" data-aspect="until" class="collapsible">
 				<div style="display:none;">
 					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
-					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'd'))); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', ['sortcol' => 'd'])); ?>
 				</div>
 			</th>
 			<th id="list-of-shortys-created" data-aspect="created" class="collapsible">
 				<div style="display:none;">
 					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
-					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'c'))); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', ['sortcol' => 'c'])); ?>
 				</div>
 			</th>
 			<th id="list-of-shortys-accessed" data-aspect="accessed" class="collapsible">
 				<div style="display:none;">
 					<?php print_unescaped($this->inc('tmpl_tools_collapsible')); ?>
-					<?php print_unescaped($this->inc('tmpl_tools_sortable', array('sortcol' => 'a'))); ?>
+					<?php print_unescaped($this->inc('tmpl_tools_sortable', ['sortcol' => 'a'])); ?>
 				</div>
 			</th>
 			<th id="list-of-shortys-status" data-aspect="status" class="collapsible">

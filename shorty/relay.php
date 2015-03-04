@@ -83,7 +83,10 @@ if ( '0000000000'===$arg )
 	// the validation request requires a CORS header in case of a cross domain setups:
 	header('Access-Control-Allow-Origin: *');
 	header('Content-Type: application/json');
-	\OCP\JSON::success ( array('id'=>$arg,'instance'=>\OCP\Config::getSystemValue('instanceid')) );
+	\OCP\JSON::success ( [
+		'id'       => $arg,
+		'instance' => \OCP\Config::getSystemValue('instanceid')
+	] );
 	exit();
 }
 
@@ -94,15 +97,15 @@ try
 	$p_id = trim ( Type::normalize($arg,Type::ID) ) ;
 	if ( $p_id )
 	{
-		$param   = array ( 'id' => $p_id );
+		$param   = [ 'id' => $p_id ];
 		$query   = \OCP\DB::prepare ( Query::URL_RELAY );
 		$result  = $query->execute($param)->FetchAll();
-		$request = array (
-		'address' => $_SERVER['REMOTE_ADDR'],
-		'host'    => isset($_SERVER['REMOTE_HOST'])?$_SERVER['REMOTE_HOST']:gethostbyaddr($_SERVER['REMOTE_ADDR']),
-		'time'    => $_SERVER['REQUEST_TIME'],
-		'user'    => \OCP\User::getUser(),
-		);
+		$request = [
+			'address' => $_SERVER['REMOTE_ADDR'],
+			'host'    => isset($_SERVER['REMOTE_HOST'])?$_SERVER['REMOTE_HOST']:gethostbyaddr($_SERVER['REMOTE_ADDR']),
+			'time'    => $_SERVER['REQUEST_TIME'],
+			'user'    => \OCP\User::getUser(),
+		];
 		if ( FALSE===$result ) {
 			throw new HttpException ( 500 );
 		} elseif ( ! is_array($result) ) {

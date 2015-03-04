@@ -53,7 +53,7 @@ class Hooks
 	{
 		\OCP\Util::writeLog ( 'shorty',sprintf("Wiping all Shortys belonging to user '%s'",$parameters['uid']), \OCP\Util::INFO );
 		$result = TRUE;
-		$param  = array ( ':user' => $parameters['uid'] );
+		$param  = [ ':user' => $parameters['uid'] ];
 		// wipe preferences
 		$query = \OCP\DB::prepare ( Query::WIPE_PREFERENCES );
 		if ( FALSE===$query->execute($param) )
@@ -63,7 +63,7 @@ class Hooks
 		if ( FALSE===$query->execute($param) )
 			$result = FALSE;
 		// allow further cleanups via registered hooks
-		\OCP\Util::emitHook( '\OCA\Shorty', 'post_deleteUser', array('user'=>$param['user']) );
+		\OCP\Util::emitHook( '\OCA\Shorty', 'post_deleteUser', ['user'=>$param['user']] );
 		// report completion success
 		return $result;
 	}
@@ -78,17 +78,17 @@ class Hooks
 	public static function requestActions ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', \OCP\Util::DEBUG );
-		$actions = array ( 'list'=>array(), 'shorty'=>array() );
+		$actions = [ 'list'=>array(), 'shorty'=>array() ];
 		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
 		// ... for every action register a new element in the container
 		// ... ... such element must be an array holding the entries tested below
-		$container = array ( 'list'=>&$actions['list'], 'shorty'=>&$actions['shorty'] );
+		$container = [ 'list'=>&$actions['list'], 'shorty'=>&$actions['shorty'] ];
 		\OCP\Util::emitHook ( '\OCA\Shorty', 'registerActions', $container );
 		// validate and evaluate what was returned in the $container
 		if ( ! is_array($container))
 		{
 			\OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerAction hook, FIX THAT APP !', \OCP\Util::WARN );
-			return array();
+			return [];
 		} // if
 		foreach ( $container as $target )
 		{
@@ -125,17 +125,17 @@ class Hooks
 	public static function requestDetails ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting plugin details registered by other apps', \OCP\Util::DEBUG );
-		$details = array ( 'list'=>array(), 'shorty'=>array() );
+		$details = [ 'list'=>array(), 'shorty'=>array() ];
 		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
 		// ... for every action register a new element in the container
 		// ... ... such element must be an array holding the entries tested below
-		$container = array ( 'shorty'=>&$details['shorty'] );
+		$container = [ 'shorty'=>&$details['shorty'] ];
 		\OCP\Util::emitHook ( '\OCA\Shorty', 'registerDetails', $container );
 		// validate and evaluate what was returned in the $container
 		if ( ! is_array($container))
 		{
 			\OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerDetails hook, FIX THAT APP !', \OCP\Util::WARN );
-			return array();
+			return [];
 		} // if
 		foreach ( $container as $aspect )
 		{
@@ -169,7 +169,7 @@ class Hooks
 	public static function requestIncludes ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', \OCP\Util::DEBUG );
-		\OCP\Util::emitHook ( '\OCA\Shorty', 'registerIncludes', array() );
+		\OCP\Util::emitHook ( '\OCA\Shorty', 'registerIncludes', [] );
 	} // function requestIncludes
 
 	/**
@@ -182,17 +182,17 @@ class Hooks
 	public static function requestQueries ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting queries to be offered from other apps', \OCP\Util::DEBUG );
-		$queries = array ( 'list'=>array(), 'shorty'=>array() );
+		$queries = [ 'list'=>array(), 'shorty'=>array() ];
 		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
 		// ... for every action register a new element in the container
 		// ... ... such element must be an array holding the entries tested below
-		$container = array ( 'list'=>&$queries['list'], 'shorty'=>&$queries['shorty'] );
+		$container = [ 'list'=>&$queries['list'], 'shorty'=>&$queries['shorty'] ];
 		\OCP\Util::emitHook ( '\OCA\Shorty', 'registerQueries', $container );
 		// validate and evaluate what was returned in the $container
 		if ( ! is_array($container))
 		{
 			\OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerQueries hook, FIX THAT APP !', \OCP\Util::WARN );
-			return array();
+			return [];
 		} // if
 		foreach ( $container as $aspect )
 		{
@@ -231,15 +231,15 @@ class Hooks
 		// add result to details describing this request (click), important for emitting the event further down
 		$request['result'] = $result;
 		// save click in the database
-		$param = array (
+		$param = [
 			'id'     => $shorty['id'],
 			'time'   => $request['time'],
-		);
+		];
 		$query = \OCP\DB::prepare ( Query::URL_CLICK );
 		$query->execute ( $param );
 
 		// allow further processing IF hooks are registered
-		\OCP\Util::emitHook( '\OCA\Shorty', 'registerClick', array('shorty'=>$shorty,'request'=>$request) );
+		\OCP\Util::emitHook( '\OCA\Shorty', 'registerClick', [ 'shorty'=>$shorty,'request'=>$request ] );
 	} // function registerClick
 
 	/**
@@ -257,16 +257,16 @@ class Hooks
 		}
 		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
 		{
-			$parameters['list'][] = array (
+			$parameters['list'][] = [
 				'id'    => 'shorty-list',
 				'query' => Query::QUERY_SHORTY_LIST,
 				'param' => array(':sort'),
-			);
-			$parameters['list'][] = array (
+			];
+			$parameters['list'][] = [
 				'id'    => 'shorty-single',
 				'query' => Query::QUERY_SHORTY_SINGLE,
 				'param' => array(':id'),
-			);
+			];
 		}
 		return TRUE;
 	} // function registerQueries

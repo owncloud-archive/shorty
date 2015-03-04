@@ -86,7 +86,7 @@ class Hooks
 		\OCP\Util::writeLog ( 'shorty_tracking', sprintf("Recording single click to Shorty '%s' with result '%s'",
 														$parameters['shorty']['id'],
 														$parameters['request']['result']), \OCP\Util::DEBUG );
-		$param  = array (
+		$param  = [
 			':shorty'    => $parameters['shorty']['id'],
 			':time'      => $parameters['request']['time'],
 			':user'      => $parameters['request']['user'],
@@ -94,7 +94,7 @@ class Hooks
 			':address'   => $parameters['request']['address'],
 			':host'      => $parameters['request']['address']==$parameters['request']['host'] ?
 							' - ? - ' : $parameters['request']['host'],
-		);
+		];
 		$query = \OCP\DB::prepare ( Query::CLICK_RECORD );
 		$query->execute ( $param );
 		return TRUE;
@@ -131,14 +131,14 @@ class Hooks
 		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
 		{
 			// action 'tracking-list' in list-of-shortys
-			$parameters['list'][] = array (
+			$parameters['list'][] = [
 				'id'    => 'shorty-action-clicks',
 				'name'  => 'clicks',
 				'icon'  => \OCP\Util::imagePath('shorty_tracking','actions/hits.svg'),
 				'call'  => 'OC.Shorty.Tracking.control',
 				'title' => L10n::t("List clicks"),
 				'alt'   => L10n::t("Clicks"),
-			);
+			];
 		}
 		return TRUE;
 	} // function registerActions
@@ -158,11 +158,11 @@ class Hooks
 		}
 		if ( array_key_exists('shorty',$parameters) && is_array($parameters['shorty']) )
 		{
-			$parameters['shorty'][] = array (
+			$parameters['shorty'][] = [
 				'id'       => 'shorty_tracking',
 				'name'     => "Shorty Tracking",
 				'abstract' => L10n::t("Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history."),
-			);
+			];
 		}
 		return TRUE;
 	} // function registerQueries
@@ -182,26 +182,26 @@ class Hooks
 		}
 		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
 		{
-			$parameters['list'][] = array (
+			$parameters['list'][] = [
 				'id'    => 'tracking-single-usage',
 				'query' => Query::QUERY_TRACKING_SINGLE_USAGE,
 				'param' => array(':shorty'),
-			);
-			$parameters['list'][] = array (
+			];
+			$parameters['list'][] = [
 				'id'    => 'tracking-single-list',
 				'query' => Query::QUERY_TRACKING_SINGLE_LIST,
 				'param' => array(':shorty'),
-			);
-			$parameters['list'][] = array (
+			];
+			$parameters['list'][] = [
 				'id'    => 'tracking-total-usage',
 				'query' => Query::QUERY_TRACKING_TOTAL_USAGE,
 				'param' => array(':sort'),
-			);
-			$parameters['list'][] = array (
+			];
+			$parameters['list'][] = [
 				'id'    => 'tracking-total-list',
 				'query' => Query::QUERY_TRACKING_TOTAL_LIST,
 				'param' => array(':sort'),
-			);
+			];
 		}
 		return TRUE;
 	} // function registerQueries

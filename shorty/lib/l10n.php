@@ -53,7 +53,7 @@ class L10n
 	 * @access private
 	 * @author Christian Reiner
 	 */
-	static private $instance = array();
+	static private $instance = [];
 
 	/**
 	 * @function __construct
@@ -100,13 +100,13 @@ class L10n
 		switch ( func_num_args() )
 		{
 			case 1:
-				return htmlspecialchars ( self::$instance[static::identity()]->dictionary->t ( $phrase, array() ) );
+				return htmlspecialchars ( self::$instance[static::identity()]->dictionary->t ( $phrase, [] ) );
 
 			case 2:
 				$arg = func_get_arg(1);
 				if ( is_array($arg) )
 					return htmlspecialchars ( self::$instance[static::identity()]->dictionary->t ( $phrase, $arg ) );
-				else return htmlspecialchars ( self::$instance[static::identity()]->dictionary->t ( $phrase, array($arg) ) );
+				else return htmlspecialchars ( self::$instance[static::identity()]->dictionary->t ( $phrase, [$arg] ) );
 
 			default:
 				$args = func_get_args();

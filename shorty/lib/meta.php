@@ -52,7 +52,7 @@ class Meta
 	{
 		$url_token = parse_url ( $url );
 		// some sane fallback values, in case we cannot get the meta data
-		$meta = array();
+		$meta = [];
 		$meta['target']    = $url;
 		$meta['title']     = strtolower ( $url_token['host'] );
 		$meta['scheme']    = strtolower ( $url_token['scheme'] );
@@ -214,8 +214,7 @@ class Meta
 	static protected function selectCode ( $aspect, $identifier )
 	{
 		// map of official http status codes
-		$_code_map = array
-		(
+		$_code_map = [
 			'status' => Type::$HTTPCODE,
 			'explanation' => array
 			(
@@ -227,7 +226,7 @@ class Meta
 				205 => 'The request has been fulfilled and the view should be reset.',
 				206 => 'The request has been fulfilled partially.',
 			)
-		);
+		];
 		// resolve specified code against map or provide some fallback content
 		if ( key_exists($aspect,$_code_map) && key_exists($identifier,$_code_map[$aspect]) )
 			return $_code_map[$aspect][$identifier];
@@ -242,8 +241,7 @@ class Meta
 					return sprintf("[Undefined status code '%s']",$identifier);
 
 				default:
-					throw new Exception ( "unknown aspect '%s' requested to resolve code '%s'",
-													array($aspect,$identifier) );
+					throw new Exception ( "unknown aspect '%s' requested to resolve code '%s'", [$aspect,$identifier] );
 			} // switch
 		}
 	} // function selectCode

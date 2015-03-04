@@ -40,7 +40,7 @@ namespace OCA\Shorty;
 class Exception extends \Exception
 {
 	protected $phrase = '';
-	protected $param  = array ( );
+	protected $param  = [];
 
 	/**
 	 * @function __construct
@@ -50,11 +50,11 @@ class Exception extends \Exception
 	 * @access public
 	 * @author Christian Reiner
 	 */
-	public function __construct ( $phrase, $param=array() )
+	public function __construct ( $phrase, $param=[] )
 	{
 		if ( is_array($param) )
 			$this->param = $param;
-		else $this->param = array($param);
+		else $this->param = [$param];
 		$this->phrase  = $phrase;
 		$message = vsprintf ( $phrase, $this->param );
 		\OCP\Util::writeLog( 'shorty', $message, \OCP\Util::ERROR );
@@ -115,9 +115,11 @@ class Exception extends \Exception
 			\OCP\Util::writeLog( 'shorty', $message, \OCP\Util::WARN );
 		} // output
 		// return a clean JSON error
-		return \OCP\JSON::error ( array ('title'   => $title,
-										'level'   => 'error',
-										'message' => sprintf("%s:\n%s", $title, $message) ) );
+		return \OCP\JSON::error ( [
+			'title'   => $title,
+			'level'   => 'error',
+			'message' => sprintf("%s:\n%s", $title, $message)
+		] );
 	} // function error
 } // class Exception
 

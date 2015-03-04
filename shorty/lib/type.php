@@ -65,7 +65,7 @@ class Type
 	const TIMESTAMP   = 'timestamp';
 	const BOOLEAN     = 'boolean';
 	// a list of all valid list sorting codes
-	static $SORTING = array (
+	static $SORTING = [
 		''  =>'created DESC', // default
 		'aa'=>'accessed', 'ad'=>'accessed DESC',
 		'ca'=>'created',  'cd'=>'created DESC',
@@ -76,9 +76,9 @@ class Type
 		'ta'=>'title',    'td'=>'title DESC',
 		'ua'=>'target',   'ud'=>'target DESC',
 		'va'=>'source',   'vd'=>'source DESC'
-	);
+	];
 	// a list of all valid user preferences
-	static $PREFERENCE = array (
+	static $PREFERENCE = [
 		'default-status'         => Type::STRING,
 		'backend-type'           => Type::STRING,
 		'backend-default'        => Type::STRING,
@@ -96,24 +96,24 @@ class Type
 		'list-sort-code'         => Type::SORTKEY,
 		'list-columns-collapsed' => Type::JSON,
 		'controls-panel-visible' => Type::BOOLEAN,
-	);
+	];
 	// valid status for entries
-	static $STATUS = array (
+	static $STATUS = [
 		'blocked',
 		'private',
 		'shared',
 		'public',
 		'deleted',
-	);
+	];
 	// valid results of requests
-	static $RESULT = array (
+	static $RESULT = [
 		'blocked',
 		'denied',
 		'failed',
 		'granted',
-	);
+	];
 	// a list of implemented backends
-	static $BACKENDS = array (
+	static $BACKENDS = [
 		'none'    => '[ none ]',
 		'static'  => 'static backend',
 // 		'bitly'   => 'bitly.com service',
@@ -122,14 +122,14 @@ class Type
 		'google'  => 'goo.gl service',
 // 		'tinycc'  => 'tiny.cc service',
 		'tinyurl' => 'ti.ny service',
-	);
+	];
 	// a list of all valid system settings
-	static $SETTING = array (
+	static $SETTING = [
 		'backend-default'     => Type::STRING,
 		'backend-selection'   => Type::STRING,
 		'backend-static-base' => Type::URL,
-	);
-	static $HTTPCODE = array (
+	];
+	static $HTTPCODE = [
 		200 => 'Ok',
 		201 => 'Created',
 		202 => 'Accepted',
@@ -169,9 +169,9 @@ class Type
 		503 => 'Service Unavailable',
 		504 => 'Gateway Timeout',
 		505 => 'HTTP Version Not Supported',
-	);
+	];
 	// a catalog of regular expressions
-	static $RX = array (
+	static $RX = [
 		'DOMAIN_TLD'	=>	__rx_domain_tld,
 		'DOMAIN_IP'		=>	__rx_domain_ip,
 		'DOMAIN_NAME'	=>	__rx_domain_name,
@@ -181,7 +181,7 @@ class Type
 		'URL_SCHEME'	=>	'([a-zA-Z][a-zA-Z][a-zA-Z0-9]+)',
 		'PATH'			=>	__rx_path,
 		'FILE_URL'		=>	__rx_file_url,
-	);
+	];
 
 	/**
 	 * @function validate
@@ -205,28 +205,28 @@ class Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::STATUS:
 				if ( in_array($value,Type::$STATUS) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::SORTKEY:
 				if ( array_key_exists ( trim($value), self::$SORTING ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::SORTVAL:
 				if ( in_array ( trim($value), self::$SORTING ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::JSON:
 				if ( NULL !== json_decode($value) )
@@ -235,14 +235,14 @@ class Type
 					return '{}';
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::STRING:
 				if ( preg_match ( '/^.*$/x', str_replace("\n","\\n",$value) ) )
 					return str_replace("\n","\\n",$value);
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::URL:
 				$pattern = '/^'.self::$RX['URL_SCHEME'].'\:\/\/([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*'.self::$RX['DOMAIN_NAME'].'(\:'.self::$RX['NUMBER'].')*(\/($|.+)?)*$/i';
@@ -250,7 +250,7 @@ class Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::PATH:
 				$pattern = '/^'.self::$RX['PATH'].'$/';
@@ -258,43 +258,43 @@ class Type
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::INTEGER:
 				if ( preg_match ( '/^'.self::$RX['NUMBER'].'$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::FLOAT:
 				if ( preg_match ( '/^'.self::$RX['NUMBER'].'(\.'.self::$RX['NUMBER'].')?$/', $value ) )
 					return $value;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::TIMESTAMP:
 				if ( preg_match ( '/^'.self::$RX['TIMESTAMP'].'$/', $value ) )
 					return $value;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::DATE:
 				if (FALSE!==($time=strtotime($value)))
 					return $time;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 			case self::BOOLEAN:
 				if ( Tools::toBoolean(trim($value),$strict) )
 					return TRUE;
 				elseif ( ! $strict)
 					return FALSE;
-				throw new Exception ( "invalid value '%s' for type '%s'", array( ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type) );
+				throw new Exception ( "invalid value '%s' for type '%s'", [ ((CL<strlen($value))?$value:substr($value,0,(CL-3)).'…'),$type] );
 
 		} // switch $type
-		throw new Exception ( "unknown request argument type '%s'", array($type) );
+		throw new Exception ( "unknown request argument type '%s'", [$type] );
 	} // function validate
 
 	/**
@@ -317,7 +317,7 @@ class Type
 			if ( ! $strict)
 				return NULL;
 			else
-				throw new Exception ( "invalid value '%1\$s' for type '%2\$s'", array($value,$type) );
+				throw new Exception ( "invalid value '%1\$s' for type '%2\$s'", [$value,$type] );
 		} // if
 		switch ( $type )
 		{
@@ -361,7 +361,7 @@ class Type
 				return Tools::toBoolean(trim($value)) ? TRUE : FALSE;
 
 		} // switch $type
-		throw new Exception ( "unknown request argument type '%s'", array($type) );
+		throw new Exception ( "unknown request argument type '%s'", [$type] );
 	} // function normalize
 
 	/**
@@ -384,17 +384,17 @@ class Type
 					return self::normalize ( urldecode($_POST[$arg]), $type ) ;
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "missing mandatory argument '%1s'", array($arg) );
+				throw new Exception ( "missing mandatory argument '%1s'", [$arg] );
 
 			case 'GET':
 				if ( isset($_GET[$arg]) && !empty($_GET[$arg]) )
 					return self::normalize ( urldecode(trim($_GET[$arg])), $type, $strict );
 				elseif ( ! $strict)
 					return NULL;
-				throw new Exception ( "missing mandatory argument '%1s'", array($arg) );
+				throw new Exception ( "missing mandatory argument '%1s'", [$arg] );
 
 			default:
-				throw new Exception ( "unexpected http request method '%1s'", array($_SERVER['REQUEST_METHOD']) );
+				throw new Exception ( "unexpected http request method '%1s'", [$_SERVER['REQUEST_METHOD']] );
 		}
   } // function req_argument
 

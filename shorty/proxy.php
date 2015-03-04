@@ -66,7 +66,7 @@ try
 			} else {
 				// no hash specified: this is referring to an existing Shorty
 				$id     = Type::req_argument ( 'subject', Type::ID, TRUE );
-				$params = array ( 'id' => $id, );
+				$params = [ 'id' => $id ];
 				$query  = \OCP\DB::prepare ( Query::FAVICON_BY_ID );
 				$result = $query->execute ( $params );
 				$reply  = $result->fetchRow();

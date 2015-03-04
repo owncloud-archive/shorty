@@ -145,7 +145,7 @@ switch ($act)
 				// this takes care of handling the url on the client side
 				\OCP\Util::addScript ( 'shorty', 'add' );
 				// add url taked from the session vars to anything contained in the query string
-				$_SERVER['QUERY_STRING'] = implode('&',array_merge(array('url'=>$_SESSION['shorty-referrer']),explode('&',$_SERVER['QUERY_STRING'])));
+				$_SERVER['QUERY_STRING'] = implode('&',array_merge( [ 'url'=>$_SESSION['shorty-referrer'] ] ,explode('&',$_SERVER['QUERY_STRING'])));
 			}
 			else
 			{
@@ -169,5 +169,5 @@ switch ($act)
 			// clean up session var so that a browser reload does not trigger the same action again
 			\OC::$server->getSession()->remove('shorty-referrer');
 			$tmpl->printPage();
-		} catch ( Exception $e ) { \OCP\JSON::error ( array ( 'message'=>$e->getTranslation(), 'level'=>'error' ) ); }
+		} catch ( Exception $e ) { \OCP\JSON::error ( [ 'message'=>$e->getTranslation(), 'level'=>'error' ] ); }
 } // switch

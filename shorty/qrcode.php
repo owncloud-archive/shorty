@@ -40,7 +40,7 @@ $RUNTIME_NOSETUPFS = true;
 require_once ( '3rdparty/php/phpqrcode.php' );
 
 $query = NULL;
-$param = array ( );
+$param = [];
 // we try to guess what the request indicates, it is expected to be one of these:
 // - an alphanumerical ID referencing an existing Shorty in the database
 // - a _source_ url stored inside an existing Shorty in the database
@@ -56,7 +56,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 		case 'shorty':
 			// this looks like the request refers to a Shortys ID, lets see if we know that one
 			$id     = Type::req_argument($key,Type::ID,FALSE);
-			$param  = array ( ':id' => Type::normalize($id,Type::ID) );
+			$param  = [ ':id' => Type::normalize($id,Type::ID) ];
 			$query  = \OCP\DB::prepare ( Query::URL_BY_ID );
 			break 2; // skip switch AND foreach, we have all details we need...
 		case 'url':
@@ -66,7 +66,7 @@ foreach ($_GET as $key=>$val) // in case there are unexpected, additional argume
 		case 'target':
 			// this looks like the request refers to a full url, lets see if we know that one as a Shortys source
 			$source = Type::req_argument($key,Type::URL,FALSE);
-			$param  = array ( ':source' => Type::normalize($source,Type::URL) );
+			$param  = [ ':source' => Type::normalize($source,Type::URL) ];
 			$query  = \OCP\DB::prepare ( Query::URL_BY_SOURCE );
 			break 2; // skip switch AND foreach, we have all details we need...
 	} // switch

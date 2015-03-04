@@ -46,13 +46,13 @@ try
 	$p_query   = Type::req_argument ( 'query',  Type::STRING, FALSE );
 	$p_format  = Type::req_argument ( 'format', Type::STRING, FALSE );
 	$p_sort    = Type::req_argument ( 'sort',   Type::STRING, 'ka' );
-	$param = array (
+	$param = [
 		':user'   => \OCP\User::getUser ( ),
 		':id'     => $p_id,
 		':sort'   => Type::$SORTING[$p_sort],
 		':format' => $p_format,
 		':query'  => $p_query,
-	);
+	];
 
 	$match = NULL;
 	$candidates = Hooks::requestQueries();
@@ -60,7 +60,7 @@ try
 		if ($candidate['id']==$p_query)
 			$match = $candidate;
 	if ( ! $match )
-		throw new Exception ( "Request for unknown query '%1'.", array($p_query) );
+		throw new Exception ( "Request for unknown query '%1'.", [$p_query] );
 
 	// run query
 	$query = \OCP\DB::prepare ( $match['query'] );
