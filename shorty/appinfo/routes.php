@@ -29,42 +29,23 @@
  * @author Christian Reiner
  */
 
-$this->create('shorty_index', '/')
-	->actionInclude('shorty/index.php');
-$this->create('shorty_preferences', 'preferences.php')
-	->actionInclude('shorty/preferences.php');
-$this->create('shorty_proxy', 'proxy.php')
-	->actionInclude('shorty/proxy.php');
-$this->create('shorty_qrcode', 'qrcode.php')
-	->actionInclude('shorty/qrcode.php');
-$this->create('shorty_query', 'query.php')
-	->actionInclude('shorty/query.php');
-$this->create('shorty_relay', 'relay.php')
-	->actionInclude('shorty/relay.php');
-$this->create('shorty_settings', 'settings.php')
-	->actionInclude('shorty/settings.php');
-$this->create('shorty_verification', 'verification.php')
-	->actionInclude('shorty/verification.php');
+$this->create('shorty_index',        '/'               )->actionInclude('shorty/index.php');
+$this->create('shorty_preferences',  'preferences.php' )->actionInclude('shorty/preferences.php');
+$this->create('shorty_proxy',        'proxy.php'       )->actionInclude('shorty/proxy.php');
+$this->create('shorty_qrcode',       'qrcode.php'      )->actionInclude('shorty/qrcode.php');
+$this->create('shorty_query',        'query.php'       )->actionInclude('shorty/query.php');
+$this->create('shorty_relay',        'relay.php'       )->actionInclude('shorty/relay.php');
+$this->create('shorty_settings',     'settings.php'    )->actionInclude('shorty/settings.php');
+$this->create('shorty_verification', 'verification.php')->actionInclude('shorty/verification.php');
 
-$this->create('shorty_ajax_add', 'ajax/add.php')
-	->actionInclude('shorty/ajax/add.php');
-$this->create('shorty_ajax_click', 'ajax/click.php')
-	->actionInclude('shorty/ajax/click.php');
-$this->create('shorty_ajax_count', 'ajax/count.php')
-	->actionInclude('shorty/ajax/count.php');
-$this->create('shorty_ajax_del', 'ajax/del.php')
-	->actionInclude('shorty/ajax/del.php');
-$this->create('shorty_ajax_edit', 'ajax/edit.php')
-	->actionInclude('shorty/ajax/edit.php');
-$this->create('shorty_ajax_list', 'ajax/list.php')
-	->actionInclude('shorty/ajax/list.php');
-$this->create('shorty_ajax_meta', 'ajax/meta.php')
-	->actionInclude('shorty/ajax/meta.php');
-$this->create('shorty_ajax_preferences', 'ajax/preferences.php')
-	->actionInclude('shorty/ajax/preferences.php');
-$this->create('shorty_ajax_requesttoken', 'ajax/requesttoken.php')
-	->actionInclude('shorty/ajax/requesttoken.php');
-$this->create('shorty_ajax_settings', 'ajax/settings.php')
-	->actionInclude('shorty/ajax/settings.php');
-$this->create('shorty_ajax_status', 'ajax/status.php')
-	->actionInclude('shorty/ajax/status.php');
+$this->create('shorty_ajax_add',          'ajax/add.php'         )->actionInclude('shorty/ajax/add.php');
+$this->create('shorty_ajax_click',        'ajax/click.php'       )->actionInclude('shorty/ajax/click.php');
+$this->create('shorty_ajax_count',        'ajax/count.php'       )->actionInclude('shorty/ajax/count.php');
+$this->create('shorty_ajax_del',          'ajax/del.php'         )->actionInclude('shorty/ajax/del.php');
+$this->create('shorty_ajax_edit',         'ajax/edit.php'        )->actionInclude('shorty/ajax/edit.php');
+$this->create('shorty_ajax_list',         'ajax/list.php'        )->actionInclude('shorty/ajax/list.php');
+$this->create('shorty_ajax_meta',         'ajax/meta.php'        )->actionInclude('shorty/ajax/meta.php');
+$this->create('shorty_ajax_preferences',  'ajax/preferences.php' )->actionInclude('shorty/ajax/preferences.php');
+$this->create('shorty_ajax_requesttoken', 'ajax/requesttoken.php')->actionInclude('shorty/ajax/requesttoken.php');
+$this->create('shorty_ajax_settings',     'ajax/settings.php'    )->actionInclude('shorty/ajax/settings.php');
+$this->create('shorty_ajax_status',       'ajax/status.php'      )->actionInclude('shorty/ajax/status.php');

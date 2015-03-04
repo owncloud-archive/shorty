@@ -120,4 +120,4 @@ try
 			throw new Exception ( "unexpected request method '%s'", $_SERVER['REQUEST_METHOD'] );
 	} // switch
 
-} catch ( Exception $e ) { Exception::JSONerror($e); }
+} catch ( \Exception $e ) { Exception::JSONerror($e); }

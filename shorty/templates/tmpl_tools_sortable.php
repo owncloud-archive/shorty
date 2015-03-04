@@ -34,8 +34,8 @@ namespace OCA\Shorty;
 ?>
 
 <img data-sort-code="<?php p($_['sortcol']);?>a" data-sort-type="string" data-sort-direction='asc'
-						alt="<?php p(L10n::t('up'));   ?>" title="<?php p(L10n::t('Sort ascending'));  ?>"
-						class="shorty-tool shorty-sort shorty-sort-up svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
-					<img data-sort-code="<?php p($_['sortcol']);?>d" data-sort-type="string" data-sort-direction='desc'
-						alt="<?php p(L10n::t('down')); ?>" title="<?php p(L10n::t('Sort descending')); ?>"
-						class="shorty-tool shorty-sort shorty-sort-down svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/down.svg')); ?>">
+	alt="<?php p(L10n::t('up'));   ?>" title="<?php p(L10n::t('Sort ascending'));  ?>"
+	class="shorty-tool shorty-sort shorty-sort-up svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/up.svg'));   ?>">
+<img data-sort-code="<?php p($_['sortcol']);?>d" data-sort-type="string" data-sort-direction='desc'
+	alt="<?php p(L10n::t('down')); ?>" title="<?php p(L10n::t('Sort descending')); ?>"
+	class="shorty-tool shorty-sort shorty-sort-down svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/down.svg')); ?>">

@@ -29,7 +29,5 @@
  * @author Christian Reiner
  */
 
-$this->create('shorty_tracking_ajax_layout', 'ajax/layout.php')
-	->actionInclude('shorty_tracking/ajax/layout.php');
-$this->create('shorty_tracking_ajax_list', 'ajax/list.php')
-	->actionInclude('shorty_tracking/ajax/list.php');
+$this->create('shorty_tracking_ajax_layout', 'ajax/layout.php')->actionInclude('shorty_tracking/ajax/layout.php');
+$this->create('shorty_tracking_ajax_list',   'ajax/list.php'  )->actionInclude('shorty_tracking/ajax/list.php');
