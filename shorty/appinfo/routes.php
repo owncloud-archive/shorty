@@ -37,6 +37,7 @@ $this->create('shorty_query',        'query.php'       )->actionInclude('shorty/
 $this->create('shorty_relay',        'relay.php'       )->actionInclude('shorty/relay.php');
 $this->create('shorty_settings',     'settings.php'    )->actionInclude('shorty/settings.php');
 $this->create('shorty_verification', 'verification.php')->actionInclude('shorty/verification.php');
+$this->create('shorty_help',         'help.php'        )->actionInclude('shorty/help.php');
 
 $this->create('shorty_ajax_add',          'ajax/add.php'         )->actionInclude('shorty/ajax/add.php');
 $this->create('shorty_ajax_click',        'ajax/click.php'       )->actionInclude('shorty/ajax/click.php');
@@ -49,3 +50,4 @@ $this->create('shorty_ajax_preferences',  'ajax/preferences.php' )->actionInclud
 $this->create('shorty_ajax_requesttoken', 'ajax/requesttoken.php')->actionInclude('shorty/ajax/requesttoken.php');
 $this->create('shorty_ajax_settings',     'ajax/settings.php'    )->actionInclude('shorty/ajax/settings.php');
 $this->create('shorty_ajax_status',       'ajax/status.php'      )->actionInclude('shorty/ajax/status.php');
+$this->create('shorty_ajax_help',         'ajax/help.php'        )->actionInclude('shorty/ajax/help.php');

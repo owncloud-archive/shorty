@@ -55,23 +55,23 @@ namespace OCA\Shorty;
 	<!-- controls: right area, buttons -->
 	<div class="shorty-controls-right">
 		<!-- the internal settings button -->
-		<button id="controls-preferences" class="shorty-config settings" title="<?php p(L10n::t('Configuration')); ?>">
-			<img class="svg" src="<?php p(\OCP\Util::imagePath('core', 'actions/settings.svg')); ?>"
-				alt="<?php p(L10n::t('Configuration')); ?>" />
+		<button id="controls-preferences" class="shorty-config settings" title="<?php p(L10n::t('Preferences')); ?>">
+			<img class="svg" src="<?php p(\OCP\Util::imagePath('shorty', 'actions/preferences.svg')); ?>"
+				alt="<?php p(L10n::t('Preferences')); ?>" />
 		</button>
 		<!-- a container that will hold the preferences dialog -->
 		<div id="appsettings" class="popup topright hidden"></div>
-		<!-- the 'home' button currently links to the entry in the OC app store -->
-		<a href="http://apps.owncloud.com/content/show.php/Shorty?content=150401" target="_blank">
-			<button id="controls-home" class="shorty-config settings" title="<?php p(L10n::t('Home')); ?>">
-				<img class="svg" src="<?php p(\OCP\Util::imagePath('core', 'places/home.svg')); ?>"
-					alt="<?php p(L10n::t('Home')); ?>" />
+		<!-- the 'help' button shows the internal help system in a separate window / tab -->
+		<a href="<?php p(\OCP\Util::linkToAbsolute('shorty', 'help.php')) ?>" target="_blank">
+			<button id="controls-help" class="shorty-config settings" title="<?php p(L10n::t('Help')); ?>">
+				<img class="svg" src="<?php p(\OCP\Util::imagePath('shorty', 'actions/help.svg')); ?>"
+					alt="<?php p(L10n::t('Help')); ?>" />
 			</button>
 		</a>
 		<!-- the 'refresh' button -->
 		<a>
 			<button id="controls-refresh" class="shorty-config settings" title="<?php p(L10n::t('Refresh')); ?>">
-				<img class="svg" src="<?php p(\OCP\Util::imagePath('shorty','refresh.svg')); ?>"
+				<img class="svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/refresh.svg')); ?>"
 					alt="<?php p(L10n::t('Refresh')); ?>" />
 			</button>
 		</a>

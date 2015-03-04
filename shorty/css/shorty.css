@@ -108,6 +108,8 @@ html input, html textarea {
 
 .shorty-controls-right button img {
 	width: 20px;
+	vertical-align: baseline;
+	opacity: 0.6;
 }
 /* the handle of the controls panel */
 .shorty-controls .shorty-handle img {
