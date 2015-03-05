@@ -80,7 +80,7 @@ OC.L10N.register(
     "Exception (%s)" : "Eccezione (%s)",
     "Expiration" : "Scadenza",
     "Feedback" : "Segnalazioni",
-    "Home" : "Casa",
+    "Home" : "Home",
     "It can be enabled by a single click in the administration:" : "Può essere abilitato con un singolo clic nell'amministrazione:",
     "If you just started using Shorty" : "Se hai appena iniziato a utilizzare Shorty",
     "Loading" : "Caricamento",
