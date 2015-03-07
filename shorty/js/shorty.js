@@ -367,8 +367,8 @@ OC.Shorty={
 								// prevent submission before entering anything
 								OC.Shorty.WUI.Dialog.sharpen(dialog,false);
 								dialog.find('#target').focus();
-								dialog.find('#target').on('focusout', {dialog: dialog}, function(){
-									OC.Shorty.WUI.Dialog.validate(dialog);
+								dialog.find('#target').on('keyup input focusout', {dialog: dialog}, function(){
+									OC.Shorty.WUI.Dialog.validate(dialog, false);
 								});
 								break;
 
@@ -394,8 +394,8 @@ OC.Shorty={
 										OC.Shorty.WUI.Dialog.sharpen(dialog,false);
 									});
 									// react on changed element
-									$(this).on('focusout', {dialog: dialog}, function(){
-										OC.Shorty.WUI.Dialog.validate(dialog);
+									$(this).on('keyup input focusout', {dialog: dialog}, function(){
+										OC.Shorty.WUI.Dialog.validate(dialog, false);
 									});
 								});
 								break;
@@ -432,14 +432,15 @@ OC.Shorty={
 			 * @function OC.Shorty.WUI.Dialog.validate
 			 * @brief Validates the specified target
 			 * @param dialog jQueryObject Represents the dialog to be handled
+			 * @param immediately boolean act immediately or wait for a grace period
 			 * @author Christian Reiner
 			 */
-			validate: function(dialog){
+			validate: function(dialog, immediately){
 				if (OC.Shorty.Debug) OC.Shorty.Debug.log("validate target in dialog "+dialog.attr('id'));
 				var dfd = new $.Deferred();
 				OC.Shorty.WUI.Messenger.hide();
 				$.when(
-					OC.Shorty.WUI.Meta.collect(dialog)
+					OC.Shorty.WUI.Meta.trigger(dialog, immediately)
 				).done(function(){
 					// allow dialog submission
 					OC.Shorty.WUI.Dialog.sharpen(dialog,true);
@@ -563,7 +564,7 @@ OC.Shorty={
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
 				).done(function(){
-					OC.Shorty.WUI.Dialog.validate(dialog);
+					OC.Shorty.WUI.Dialog.validate(dialog, true);
 				});
 				return dfd.promise();
 			}, // OC.Shorty.WUI.Entry.edit
@@ -639,7 +640,7 @@ OC.Shorty={
 				$.when(
 					OC.Shorty.WUI.Dialog.show(dialog)
 				).done(function(){
-					OC.Shorty.WUI.Dialog.validate(dialog);
+					OC.Shorty.WUI.Dialog.validate(dialog, true);
 				});
 				return dfd.promise();
 			} // OC.Shorty.WUI.Entry.show
@@ -1384,6 +1385,12 @@ OC.Shorty={
 		 */
 		Meta:{
 			/**
+			 * @object OC.Shorty.WUI.Meta.Timer
+			 * @brief A timer used to slow down meta data retrieval
+			 * @author Christian Reiner
+			 */
+			Timer:{},
+			/**
 			* @function OC.Shorty.WUI.Meta.collect
 			* @brief Collects meta data about an url specified in the dialog
 			* @param dialog object The dialog that takes the meta data tokens
@@ -1492,7 +1499,33 @@ OC.Shorty={
 					dfd.resolve();
 				});
 				return dfd.promise();
-			} // OC.Shorty.WUI.Meta.reset
+			}, // OC.Shorty.WUI.Meta.reset
+			/**
+			 * @class OC.Shorty.WUI.Meta.trigger
+			 * @brief Triggers meta data retrieval and takes care of handling the timeouts between attempts
+			 * @param dialog object The dialog the be altered
+			 * @param immediately boolean act immediately or wait for a grace period
+			 * @author Christian Reiner
+			 */
+			trigger: function(dialog, immerdiately){
+				// clear any previously set timer when grace period has not yet expired
+				if (OC.Shorty.Action.Verification.Timer) {
+					clearTimeout(OC.Shorty.Action.Verification.Timer);
+					// remove any potentially already expressed activity
+					dialog.find('#busy').fadeOut('fast');
+				}
+				// create a new timer to fire after a grace period
+				if (target.length){
+					if (immerdiately) {
+						OC.Shorty.WUI.Meta.collect(dialog);
+					} else {
+						OC.Shorty.Action.Verification.Timer = setTimeout(function(){
+						// trigger the verification in the context of the agent (iframe)
+							OC.Shorty.WUI.Meta.collect(dialog);
+						}, 1000);
+					}
+				}
+			} // OC.Shorty.WUI.Meta.trigger
 		}, // OC.Shorty.WUI.Meta
 		/**
 		 * @class OC.Shorty.WUI.Sums
