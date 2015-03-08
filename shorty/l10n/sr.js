@@ -13,6 +13,7 @@ OC.L10N.register(
     "Close" : "Затвори",
     "Configuration" : "Подешавање",
     "Expiration" : "Истиче",
+    "Feedback" : "Ваше мишљење",
     "Home" : "Домаћа",
     "Loading" : "Учитавам",
     "Notes" : "Белешке",

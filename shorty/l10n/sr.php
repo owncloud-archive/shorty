@@ -12,6 +12,7 @@ $TRANSLATIONS = array(
 "Close" => "Затвори",
 "Configuration" => "Подешавање",
 "Expiration" => "Истиче",
+"Feedback" => "Ваше мишљење",
 "Home" => "Домаћа",
 "Loading" => "Учитавам",
 "Notes" => "Белешке",
