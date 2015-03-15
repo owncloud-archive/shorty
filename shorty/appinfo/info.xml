@@ -49,26 +49,27 @@ http://apps.owncloud.com/content/show.php/Shorty?content=150401
 	<version>0.5.0</version>
 	<licence>AGPL</licence>
 	<author>Christian Reiner</author>
-    <requiremin>7.0</requiremin>
-    <category>other</category>
+	<requiremin>8.0</requiremin>
+	<category>other</category>
 	<types>
-        <type>internet</type>
-        <type>bookmark</type>
+		<internet/>
+		<bookmark/>
 	</types>
-    <website>https://github.com/owncloud/shorty</website>
-    <bugs>https://github.com/owncloud/shorty/issues</bugs>
-    <repository type="git">https://github.com/owncloud/shorty.git</repository>
-    <documentation>
-        <user>https://raw.githubusercontent.com/owncloud/shorty/master/shorty/doc/USAGE</user>
-        <admin>https://raw.githubusercontent.com/owncloud/shorty/master/shorty/doc/CONFIGURATION</admin>
-    </documentation>
-    <dependencies>
-        <owncloud min-version="7" max-version="9"/>
-        <php min-version="5.3"/>
-    </dependencies>
+	<website>https://github.com/owncloud/shorty</website>
+	<bugs>https://github.com/owncloud/shorty/issues</bugs>
+	<repository type="git">https://github.com/owncloud/shorty.git</repository>
+	<documentation>
+		<user>https://raw.githubusercontent.com/owncloud/shorty/master/shorty/doc/USAGE</user>
+		<admin>https://raw.githubusercontent.com/owncloud/shorty/master/shorty/doc/CONFIGURATION</admin>
+	</documentation>
+	<dependencies>
+		<owncloud min-version="7" max-version="9"/>
+		<php min-version="5.3"/>
+		<lib>curl</lib>
+	</dependencies>
 	<public>
-		<shorty_relay>relay.php</shorty_relay>
-		<shorty_qrcode>qrcode.php</shorty_qrcode>
-		<shorty_query>query.php</shorty_query>
+		<file id="shorty_relay">relay.php</file>
+		<file id="shorty_qrcode">qrcode.php</file>
+		<file id="shorty_query">query.php</file>
 	</public>
 </info>
