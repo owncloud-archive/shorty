@@ -41,7 +41,7 @@ class Tools
 {
 	// length of a quasi random alphabet to be created
 	const RANDOM_ALPHABET_LENGTH = 62;
-	// internal flag indicating if output buffering should be used to prevent accidentially output during ajax requests
+	// internal flag indicating if output buffering should be used to prevent accidentally output during ajax requests
 	static $ob_usage  = TRUE;
 	// internal flag indicating if there is currently an output buffer active
 	static $ob_active = FALSE;

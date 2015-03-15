@@ -30,21 +30,21 @@ See file INSTALLATION.
 === Requirements ===
 ownCloud version 2 or newer on the server side.
 A css3 capable and reasonably standards conform web browser.
-A scripting capable bookmarks feature for the optional Shortlet thing.
+A scripting capable bookmarks feature for the optional Shortlet.
 
 === Usage ===
 This is only a very basic description. The plugin should be fairly intuitive to
 use, just have a try with a few web urls. To get going I suggest that you
 - chose a backend (see configuration below).
-- import the shortlet into your preferred web browser (see configuration below).
-- define a few shorties either manually ("New") or by using the shortlet.
+- import the Shortlet into your preferred web browser (see configuration below).
+- define a few shorties either manually ("New") or by using the Shortlet.
 All actions on existing shorties are accessed using the action icons shown to
 the right of the shorty in the list. Daily uses is probably based on selection
 the 'share' action and grabbing the visualized "source url".
 By clicking on the header row of the list of shorties you can open (and close)
 a "toolbox" offering options to sort, filter and reload the list. The sorting
 you chose is stored in a persistant manner, not so any filters defined. You
-cannot accidentially close the toolbox when there are still filters active.
+cannot accidentally close the toolbox when there are still filters active.
 You can remove (delete) existing shorties, but those shorties will only be
 marked as deleted. This way you can 'undelete' them if required. Permanent
 removal is done next time you access the shorty plugin. If you really want to
