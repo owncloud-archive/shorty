@@ -37,7 +37,7 @@ namespace OCA\Shorty\Tracking;
  * @access public
  * @author Christian Reiner
  */
-class L10n extends OC_Shorty_L10n
+class L10n extends \OCA\Shorty\L10n
 {
 	/**
 	 * @function __construct

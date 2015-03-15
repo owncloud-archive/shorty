@@ -63,7 +63,7 @@ class Hooks
 		if ( FALSE===$query->execute($param) )
 			$result = FALSE;
 		// allow further cleanups via registered hooks
-		\OCP\Util::emitHook( '\OCA\Shorty', 'post_deleteUser', ['user'=>$param['user']] );
+		\OCP\Util::emitHook( 'OCA\Shorty\Hooks', 'post_deleteUser', ['user'=>$param['user']] );
 		// report completion success
 		return $result;
 	}
@@ -83,7 +83,7 @@ class Hooks
 		// ... for every action register a new element in the container
 		// ... ... such element must be an array holding the entries tested below
 		$container = [ 'list'=>&$actions['list'], 'shorty'=>&$actions['shorty'] ];
-		\OCP\Util::emitHook ( '\OCA\Shorty', 'registerActions', $container );
+		\OCP\Util::emitHook ( 'OCA\Shorty\Hooks', 'registerActions', $container );
 		// validate and evaluate what was returned in the $container
 		if ( ! is_array($container))
 		{
@@ -130,7 +130,7 @@ class Hooks
 		// ... for every action register a new element in the container
 		// ... ... such element must be an array holding the entries tested below
 		$container = [ 'shorty'=>&$details['shorty'] ];
-		\OCP\Util::emitHook ( '\OCA\Shorty', 'registerDetails', $container );
+		\OCP\Util::emitHook ( 'OCA\Shorty\Hooks', 'registerDetails', $container );
 		// validate and evaluate what was returned in the $container
 		if ( ! is_array($container))
 		{
@@ -169,7 +169,7 @@ class Hooks
 	public static function requestIncludes ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', \OCP\Util::DEBUG );
-		\OCP\Util::emitHook ( '\OCA\Shorty', 'registerIncludes', [] );
+		\OCP\Util::emitHook ( 'OCA\Shorty\Hooks', 'registerIncludes', [] );
 	} // function requestIncludes
 
 	/**
@@ -187,7 +187,7 @@ class Hooks
 		// ... for every action register a new element in the container
 		// ... ... such element must be an array holding the entries tested below
 		$container = [ 'list'=>&$queries['list'], 'shorty'=>&$queries['shorty'] ];
-		\OCP\Util::emitHook ( '\OCA\Shorty', 'registerQueries', $container );
+		\OCP\Util::emitHook ( 'OCA\Shorty\Hooks', 'registerQueries', $container );
 		// validate and evaluate what was returned in the $container
 		if ( ! is_array($container))
 		{
@@ -239,7 +239,7 @@ class Hooks
 		$query->execute ( $param );
 
 		// allow further processing IF hooks are registered
-		\OCP\Util::emitHook( '\OCA\Shorty', 'registerClick', [ 'shorty'=>$shorty,'request'=>$request ] );
+		\OCP\Util::emitHook( 'OCA\Shorty\Hooks', 'registerClick', [ 'shorty'=>$shorty,'request'=>$request ] );
 	} // function registerClick
 
 	/**

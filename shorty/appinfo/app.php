@@ -50,5 +50,5 @@ namespace OCA\Shorty;
 	'name' => 'Shorty'
 ] );
 
-\OCP\Util::connectHook ( 'OCP\User',  'post_deleteUser', 'OCA\Shorty\Hooks', 'deleteUser');
-\OCP\Util::connectHook ( 'OCA\Shorty', 'registerQueries', 'OCA\Shorty\Hooks', 'registerQueries');
+\OCP\Util::connectHook ( 'OCP\User',         'post_deleteUser', 'OCA\Shorty\Hooks', 'deleteUser');
+\OCP\Util::connectHook ( 'OCA\Shorty\Query', 'registerQueries', 'OCA\Shorty\Hooks', 'registerQueries');

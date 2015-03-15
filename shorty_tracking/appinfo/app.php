@@ -30,19 +30,20 @@
  */
 
 namespace OCA\Shorty\Tracking;
+use OCA\Shorty\Exception;
 
-\OC::$CLASSPATH['\OCA\Shorty\Exception']      = 'shorty/lib/exception.php';
-\OC::$CLASSPATH['\OCA\Shorty\L10n']           = 'shorty/lib/l10n.php';
-\OC::$CLASSPATH['\OCA\Shorty\Tools']          = 'shorty/lib/tools.php';
-\OC::$CLASSPATH['\OCA\Shorty\Type']           = 'shorty/lib/type.php';
-\OC::$CLASSPATH['\OCA\Shorty\Query']          = 'shorty/lib/query.php';
-\OC::$CLASSPATH['\OCA\Shorty\Tracking\L10n']  = 'shorty_tracking/lib/l10n.php';
-\OC::$CLASSPATH['\OCA\Shorty\Tracking\Hooks'] = 'shorty_tracking/lib/hooks.php';
-\OC::$CLASSPATH['\OCA\Shorty\Tracking\Query'] = 'shorty_tracking/lib/query.php';
+\OC::$CLASSPATH['OCA\Shorty\Exception']      = 'shorty/lib/exception.php';
+\OC::$CLASSPATH['OCA\Shorty\L10n']           = 'shorty/lib/l10n.php';
+\OC::$CLASSPATH['OCA\Shorty\Tools']          = 'shorty/lib/tools.php';
+\OC::$CLASSPATH['OCA\Shorty\Type']           = 'shorty/lib/type.php';
+\OC::$CLASSPATH['OCA\Shorty\Query']          = 'shorty/lib/query.php';
+\OC::$CLASSPATH['OCA\Shorty\Tracking\L10n']  = 'shorty_tracking/lib/l10n.php';
+\OC::$CLASSPATH['OCA\Shorty\Tracking\Hooks'] = 'shorty_tracking/lib/hooks.php';
+\OC::$CLASSPATH['OCA\Shorty\Tracking\Query'] = 'shorty_tracking/lib/query.php';
 
 try
 {
-	// minimim requirement currently is as specified below:
+	// minimum requirement currently is as specified below:
 	$SHORTY_VERSION_MIN = '0.5.0';
 	// only plug into the mother app 'Shorty' if that one is installed, activated and has the minimum required version:
 	if ( \OC_Installer::isInstalled('shorty') )
@@ -57,12 +58,12 @@ try
 					||	( ($reqV[0]==$insV[0])&&($reqV[1]<$insV[1]) )
 					||	( ($reqV[0]==$insV[0])&&($reqV[1]==$insV[1])&&($reqV[2]<=$insV[2]) ) ) )
 			{
-				\OCP\Util::connectHook ( '\OCA\Shorty', 'post_deleteShorty', '\OCA\ShortyTracking\Hooks', 'deleteShortyClicks');
-				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerClick',     '\OCA\ShortyTracking\Hooks', 'registerClick');
-				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerDetails',   '\OCA\ShortyTracking\Hooks', 'registerDetails');
-				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerActions',   '\OCA\ShortyTracking\Hooks', 'registerActions');
-				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerIncludes',  '\OCA\ShortyTracking\Hooks', 'registerIncludes');
-				\OCP\Util::connectHook ( '\OCA\Shorty', 'registerQueries',   '\OCA\ShortyTracking\Hooks', 'registerQueries');
+				\OCP\Util::connectHook ( 'OCA\Shorty',       'post_deleteShorty', 'OCA\Shorty\Tracking\Hooks', 'deleteShortyClicks');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'registerClick',     'OCA\Shorty\Tracking\Hooks', 'registerClick');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'registerDetails',   'OCA\Shorty\Tracking\Hooks', 'registerDetails');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'registerActions',   'OCA\Shorty\Tracking\Hooks', 'registerActions');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'registerIncludes',  'OCA\Shorty\Tracking\Hooks', 'registerIncludes');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'registerQueries',   'OCA\Shorty\Tracking\Hooks', 'registerQueries');
 			}
 			else throw new Exception ( "App 'Shorty Tracking' requires app 'Shorty' in version >= %s.%s.%s !", $reqV );
 		}
