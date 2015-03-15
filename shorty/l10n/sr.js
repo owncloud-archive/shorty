@@ -1,7 +1,7 @@
 OC.L10N.register(
     "shorty",
     {
-    "blocked" : "блокиран",
+    "blocked" : "блокирано",
     "deleted" : "обрисано",
     "never" : "никада",
     "shared" : "дељено",
@@ -14,7 +14,7 @@ OC.L10N.register(
     "Configuration" : "Подешавање",
     "Expiration" : "Истиче",
     "Feedback" : "Ваше мишљење",
-    "Home" : "Домаћа",
+    "Home" : "Почетна страна",
     "Loading" : "Учитавам",
     "Notes" : "Белешке",
     "Nothing here yet" : "Овде још увек нема ничега",

@@ -1,6 +1,6 @@
 <?php
 $TRANSLATIONS = array(
-"blocked" => "блокиран",
+"blocked" => "блокирано",
 "deleted" => "обрисано",
 "never" => "никада",
 "shared" => "дељено",
@@ -13,7 +13,7 @@ $TRANSLATIONS = array(
 "Configuration" => "Подешавање",
 "Expiration" => "Истиче",
 "Feedback" => "Ваше мишљење",
-"Home" => "Домаћа",
+"Home" => "Почетна страна",
 "Loading" => "Учитавам",
 "Notes" => "Белешке",
 "Nothing here yet" => "Овде још увек нема ничега",
