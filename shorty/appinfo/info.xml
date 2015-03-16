@@ -51,6 +51,7 @@ http://apps.owncloud.com/content/show.php/Shorty?content=150401
 	<author>Christian Reiner</author>
 	<requiremin>8.0</requiremin>
 	<category>other</category>
+	<oscid>150401</oscid>
 	<types>
 		<internet/>
 		<bookmark/>
