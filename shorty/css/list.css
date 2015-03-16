@@ -162,7 +162,7 @@
 /* hide the content of the 'actions' column, except when being hovered */
 .shorty-list tbody tr td span.shorty-actions {
 	visibility: visible;
-	opacity: 0;
+	opacity: 0.1;
 	transition: opacity 600ms;
 	-o-transition: opacity 600ms;
 	-ms-transition: opacity 600ms;
@@ -172,12 +172,6 @@
 }
 .shorty-list tbody tr:hover td span.shorty-actions {
 	opacity: 0.7;
-	transition: opacity 600ms;
-	-o-transition: opacity 600ms;
-	-ms-transition: opacity 600ms;
-	-moz-transition: opacity 600ms;
-	-khtml-transition: opacity 600ms;
-	-webkit-transition: opacity 600ms;
 }
 /* keep action icons visible for active row */
 .shorty-list tbody tr.clicked td span.shorty-actions {
