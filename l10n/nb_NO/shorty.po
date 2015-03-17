@@ -25,14 +25,15 @@
 # 
 # Translators:
 # Espen Bye, 2013
+# Håvard Dalgrav <hdalgrav@gmail.com>, 2015
 # vidaren <news@vidartysse.net>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-26 12:34+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-03-16 17:06+0000\n"
+"Last-Translator: Håvard Dalgrav <hdalgrav@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (Norway) (http://www.transifex.com/projects/p/owncloud/language/nb_NO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,7 +117,7 @@ msgstr "debug"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "( aldri )"
 
 msgid "2 seconds"
 msgstr "2 sekunder"
@@ -139,7 +140,7 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[ ingen ]"
 
 msgid "bitly.com service"
 msgstr "bitly.com-tjeneste"
@@ -435,13 +436,13 @@ msgid "Show as QRCode"
 msgstr "Vis som QR-kode"
 
 msgid "Show QRCode reference"
-msgstr ""
+msgstr "Vis QR-kode referanse"
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "Vis QR-kode"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "Last ned QR-kode"
 
 msgid "Show details"
 msgstr "Vis detaljer"
