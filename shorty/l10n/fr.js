@@ -188,7 +188,7 @@ OC.L10N.register(
     "tiny.cc user name" : "Nom d'utilisateur tiny.cc",
     "tiny.cc key" : "clé tiny.cc",
     "tiny.cc user key" : "clé utilisateur tiny.cc",
-    "Force verification of encryption certificates during communication with the backend" : "Forcer la vérification des certificats de chiffrement durant la communication avec le module dorsal",
+    "Force verification of encryption certificates during communication with the backend" : "Forcer la vérification des certificats de chiffrement durant la communication avec le service",
     "The external 'bitly.com' service is used to register a short url for each generated shorty." : "Le service externe 'bitly.com' est utilisé afin d'enregistrer une URL courte pour chaque lien court généré.",
     "This means you have to register an '%s' at their site first." : "Ce qui implique que vous devez enregistrer un '%s' sur leur site au préalable.",
     "The external 'turl' service is used to register a short url for each generated shorty." : "Le service externe 'turl' est utilisé pour enregistrer une URL courte pour chaque lien court généré.",
