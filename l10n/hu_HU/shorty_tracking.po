@@ -24,13 +24,14 @@
 # 
 # Translators:
 # ebela <bela@dandre.hu>, 2013
+# jolly.joker <jolly.joker@freemail.hu>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-03-22 08:51+0000\n"
+"Last-Translator: jolly.joker <jolly.joker@freemail.hu>\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/owncloud/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +56,7 @@ msgid "denied"
 msgstr "tiltott"
 
 msgid "failed"
-msgstr ""
+msgstr "sikertelen"
 
 msgid "blocked"
 msgstr "blokkolt"
