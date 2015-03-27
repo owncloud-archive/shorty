@@ -47,7 +47,7 @@ body {
 	position: relative;
 	top: 40%;
 }
-.shorty-verification-invalid,
+.shorty-verification-invalid img,
 .shorty-verification-valid img {
 	margin-right: 8px;
 }
