@@ -325,12 +325,14 @@ class Backend
 			throw new Exception ( 'No goo.gl API key configured' );
 		}
 		$curl = curl_init ( );
-		curl_setopt ( $curl, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url' );
+//		curl_setopt ( $curl, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url' );
+		curl_setopt ( $curl, CURLOPT_URL, sprintf('https://www.googleapis.com/urlshortener/v1/url?key=%s', urlencode(trim($api_key))) );
 		curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-ssl-verify')) );
 		curl_setopt ( $curl, CURLOPT_SSL_VERIFYPEER, (\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-ssl-verify')) );
 		curl_setopt ( $curl, CURLOPT_POST, TRUE );
 		curl_setopt ( $curl, CURLOPT_HTTPHEADER, [ 'Content-Type: application/json' ] );
-		curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode( [ 'longUrl'=>$relay, 'key'=>$api_key ]) );
+//		curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode( [ 'longUrl'=>$relay, 'key'=>$api_key ]) );
+		curl_setopt ( $curl, CURLOPT_POSTFIELDS, json_encode( [ 'longUrl'=>$relay ]) );
 		curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, TRUE );
 		if (  (FALSE===($reply=curl_exec($curl)))
 			||(NULL===($payload=json_decode($reply)))
