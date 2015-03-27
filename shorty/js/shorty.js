@@ -2167,6 +2167,7 @@ OC.Shorty={
 			 * @author Christian Reiner
 			 */
 			verify:function(target){
+				target = target || $('#shorty-backend-static-base').val();
 				// clear any previously set timer when grace period has not yet expired
 				if (OC.Shorty.Action.Verification.Timer) {
 					clearTimeout(OC.Shorty.Action.Verification.Timer);
@@ -2323,6 +2324,17 @@ OC.Shorty={
 					var firstEntry = $('#shorty-backend-selection input[type="checkbox"][name="backend-selection"]')[0];
 					$(firstEntry).prop('checked', true);
 					list.push(firstEntry.val());
+				}
+				// prevent static backend when its base is not valid
+				if (-1<$.inArray('static', list)) {
+					var staticBase = $('#shorty-backend-static-base');
+					if (staticBase.hasClass('invalid')) {
+						var backendInput = $('#shorty-backend-selection input[name="backend-selection"][value="static"]');
+						backendInput.prop('checked', false).trigger('change').effect('pulsate', {times:1}, 2000);
+						staticBase.effect('pulsate', {times:1}, 2000);
+					} else if ( ! staticBase.hasClass('valid')) {
+						OC.Shorty.Action.Verification.verify();
+					}
 				}
 				// reflect change in default backend options
 				$('#shorty-backend-default option').each(function(){

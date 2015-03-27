@@ -55,6 +55,8 @@ var check = function() {
 				} catch (e) {
 					anchor.setAttribute('data-verification-state', 'invalid');
 				}
+			} else {
+				anchor.setAttribute('data-verification-state', 'invalid');
 			}
 		}
 		if ( 'active' != anchor.getAttribute('data-verification-state' )) {
