@@ -1810,6 +1810,7 @@ OC.Shorty={
 						dfd.resolve(response);
 					}).fail(function(response){
 						OC.Shorty.WUI.List.dim(list,true);
+						OC.Shorty.WUI.Hourglass.toggle(false),
 						dfd.reject(response);
 					})
 				});
