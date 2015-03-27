@@ -167,11 +167,11 @@ class Backend
 					return Backend::registerUrl_tinycc  ( $id, $relay );
 			} // switch
 		} // try
-		catch (\Exception $e)
+		catch (Exception $e)
 		{
 			throw $e;
 		} // catch
-		catch (Exception $e)
+		catch (\Exception $e)
 		{
 			throw new Exception ( "Failed to register url '%s' at '%s' backend.", [ $relay, $backend_type ] );
 		} // catch
@@ -226,8 +226,9 @@ class Backend
 	{
 		$bitly_api_user =\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-bitly-user','');
 		$bitly_api_key  =\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-bitly-key', '');
-		if ( ! $bitly_api_key || ! $bitly_api_user )
-			throw new Exception ( "No API user or key configured." );
+		if ( ! $bitly_api_key || ! $bitly_api_user ) {
+			throw new Exception ( "No bit.ly API user or key configured." );
+		}
 		$curl = curl_init ( );
 		curl_setopt ( $curl, CURLOPT_URL, 'https://api-ssl.bit.ly/shorten' );
 		curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-ssl-verify')) );
@@ -245,8 +246,7 @@ class Backend
 		if (  (FALSE===($reply=curl_exec($curl)))
 			||(NULL===($payload=json_decode($reply)))
 			||(!is_object($payload))
-			||(!property_exists($payload,'id')) )
-		{
+			||(!property_exists($payload,'id')) ) {
 			throw new Exception ( "Failed to register url at backend 'bit.ly'. \nError %s: %s",
 				[ curl_errno($curl),curl_error($curl)] );
 		}
@@ -321,8 +321,9 @@ class Backend
 	static function registerUrl_google ( $id, $relay )
 	{
 		$api_key =\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-google-key','');
-		if ( ! $api_key )
+		if ( ! $api_key ) {
 			throw new Exception ( 'No goo.gl API key configured' );
+		}
 		$curl = curl_init ( );
 		curl_setopt ( $curl, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url' );
 		curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-ssl-verify')) );
@@ -334,8 +335,7 @@ class Backend
 		if (  (FALSE===($reply=curl_exec($curl)))
 			||(NULL===($payload=json_decode($reply)))
 			||(!is_object($payload))
-			||(!property_exists($payload,'id')) )
-		{
+			||(!property_exists($payload,'id')) ) {
 			throw new Exception ( "Failed to register url at backend 'goo.gl'. \nError %s: %s",
 											[ curl_errno($curl),curl_error($curl) ] );
 		}
@@ -358,8 +358,9 @@ class Backend
 	{
 		$api_user =\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-tinycc-user','');
 		$api_key  =\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-tinycc-key','');
-		if ( ! $api_key || ! $api_user )
-			throw new Exception ( 'No goo.gl API key configured' );
+		if ( ! $api_key || ! $api_user ) {
+			throw new Exception ( 'No tiny.cc API key configured' );
+		}
 		$curl = curl_init ( );
 		curl_setopt ( $curl, CURLOPT_URL, 'http://tiny.cc/?c=shorten' );
 		curl_setopt ( $curl, CURLOPT_SSL_VERIFYHOST, (\OCP\Config::getUserValue(\OCP\User::getUser(),'shorty','backend-ssl-verify')) );
@@ -377,8 +378,7 @@ class Backend
 		if (  (FALSE===($reply=curl_exec($curl)))
 			||(NULL===($payload=json_decode($reply)))
 			||(!is_object($payload))
-			||(!property_exists($payload,'id')) )
-		{
+			||(!property_exists($payload,'id')) ) {
 			throw new Exception ( "Failed to register url at backend 'tiny.cc'. \nError %s: %s",
 				[ curl_errno($curl),curl_error($curl) ]  );
 		}

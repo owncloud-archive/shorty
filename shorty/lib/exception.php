@@ -58,7 +58,7 @@ class Exception extends \Exception
 		$this->phrase  = $phrase;
 		$message = vsprintf ( $phrase, $this->param );
 		\OCP\Util::writeLog( 'shorty', $message, \OCP\Util::ERROR );
-		Exception::__construct ( $message, 1 );
+		\Exception::__construct ( $message, 1 );
 	}
 
 	/**
@@ -86,7 +86,7 @@ class Exception extends \Exception
 		$title = L10n::t("Exception");
 		switch ( get_class($e) )
 		{
-			case 'Exception':
+			case 'OCA\Shorty\Exception':
 				$message = $e->getTranslation();
 				break;
 
