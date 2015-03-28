@@ -5,6 +5,7 @@ OC.L10N.register(
     "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." : "Seguiment detallat dels requeriments als Shortys existents, amb una visualització integrada de l'històric d'accés.",
     "granted" : "permès",
     "denied" : "denegat",
+    "failed" : "ha fallat",
     "blocked" : "bloquejat",
     "load" : "carrega",
     "Address" : "Adreça",
