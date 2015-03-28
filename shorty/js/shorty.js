@@ -2205,8 +2205,6 @@ OC.Shorty={
 				} else {
 					// mark input as invalid
 					staticBase.removeClass('valid').addClass('invalid');
-					// skip value, store empty value, so *remove* a prior value
-					OC.Shorty.Action.Setting.set('backend-static-base=');
 					// disable static backend in selection
 					backendInput.prop('checked', false).trigger('change').effect('pulsate', {times:1}, 2000);
 				}
