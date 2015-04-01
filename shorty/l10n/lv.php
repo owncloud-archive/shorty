@@ -8,6 +8,7 @@ $TRANSLATIONS = array(
 "Backend" => "Aizmugure",
 "Close" => "Aizvērt",
 "Configuration" => "Konfigurācija",
+"Feedback" => "Atsauksmes",
 "Home" => "Mājas",
 "Loading" => "Ielādē",
 "Notes" => "Piezīmes",

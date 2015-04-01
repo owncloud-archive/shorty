@@ -123,7 +123,7 @@ OC.L10N.register(
     "Setting '%s' retrieved" : "Réglage '%s' récupéré",
     "Setting '%s' saved" : "Réglage '%s' enregistré",
     "Settings" : "Paramètres",
-    "Share and use" : "Partage and utiliser",
+    "Share and use" : "Partager et utiliser",
     "Share shorty" : "Partager le lien-raccourci",
     "Shortlet" : "Shortlet",
     "Shorty as QRCode" : "Lien-raccourci sous forme de QRCode",
