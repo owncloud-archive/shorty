@@ -24,6 +24,7 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Bojan Beloica <beloica.b@mfkv.rs>, 2015
 # vujke <el.vujke@gmail.com>, 2015
 # Ilija Pecelj <pecelj@gmail.com>, 2015
 # Mladen Pejaković <pejakm@autistici.org>, 2015
@@ -33,7 +34,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-03-31 05:41+0000\n"
+"PO-Revision-Date: 2015-04-02 20:52+0000\n"
 "Last-Translator: Slobodan Simić (Слободан Симић) <slsimic@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/owncloud/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -114,7 +115,7 @@ msgid "info"
 msgstr "подаци"
 
 msgid "debug"
-msgstr ""
+msgstr "Додај нови "
 
 # log message timeout
 msgid "( never )"
@@ -182,19 +183,19 @@ msgid "Access"
 msgstr "Приступ"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "Додај нови Shorty"
 
 msgid "Add as new"
 msgstr "Додај као нови"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "Додај страницу као 'Shorty' у ownCloud"
 
 msgid "Administration"
 msgstr "Администрација"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr "Административно, системска подешавања ове апликације:"
+msgstr "Администрација, системска подешавања ове апликације:"
 
 msgid "after the SMS has been launched"
 msgstr "након покретања СМС-а"
@@ -218,7 +219,7 @@ msgid "Default backend suggested inside users preferences"
 msgstr ""
 
 msgid "Backend"
-msgstr ""
+msgstr "Позадина"
 
 msgid "Base url"
 msgstr "Основни УРЛ"
@@ -260,16 +261,16 @@ msgid "Counted entries and clicks"
 msgstr "Избројани уноси и кликови"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "Формирај нови 'Shorty' и подели га"
 
 msgid "Creation"
 msgstr "Стварање"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Обриши Shorty"
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "Одвуците ово у ваше обележиваче."
 
 msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
@@ -296,7 +297,7 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr "Може се омогућити притиском на тастер у администрацији."
 
 msgid "If you just started using Shorty"
-msgstr ""
+msgstr "Ако сте тек почели да користите Shorty"
 
 msgid "Loading"
 msgstr "Учитавам"
@@ -311,10 +312,10 @@ msgid "Modify attributes"
 msgstr "Модификуј атрибуте"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Измени Shorty"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "Нови Shorty"
 
 msgid "Notes"
 msgstr "Белешке"
@@ -329,46 +330,46 @@ msgid "Number of entries: %s"
 msgstr "Број уноса: %s"
 
 msgid "QRCode"
-msgstr ""
+msgstr "QRCode"
 
 msgid "Open source url"
-msgstr ""
+msgstr "Отвори изворни УРЛ"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "Отвори посреднички УРЛ"
 
 msgid "Open target"
 msgstr "Отворено одредиште"
 
 msgid "Open target url"
-msgstr ""
+msgstr "Отвори циљни УРЛ"
 
 msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
 
 msgid "or simpy print or download it for off-line usage"
-msgstr ""
+msgstr "или га једноставно одштампајте или преузмите за коришћење ван везе"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "Налепите за уградњу другде"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Поставка добављена"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Поставка сачувана"
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "Поставка „%s“ добављена"
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "Поставка „%s“ сачувана"
 
 msgid "Preferences"
 msgstr "Подешавања"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "Припреми за слање као телефонску поруку"
 
 msgid "Refresh"
 msgstr "Освежи"
@@ -377,13 +378,13 @@ msgid "Relay service"
 msgstr "Проследи сервис"
 
 msgid "Relay url"
-msgstr ""
+msgstr "Пренеси адресу"
 
 msgid "Reload"
 msgstr "Поново учитај"
 
 msgid "Reload list"
-msgstr ""
+msgstr "Учитај поново листу"
 
 msgid "Save"
 msgstr "Сачувај"
@@ -398,10 +399,10 @@ msgid "Send by SMS"
 msgstr "Пошаљи СМС-ом"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "Подесите личне поставке помоћу зупчаника (%%s) доле лево!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Подесите личне поставке помоћу зупчаника (%%s) горе десно!"
 
 msgid "Setting retrieved"
 msgstr "Поставке су учитане"
@@ -422,28 +423,28 @@ msgid "Share and use"
 msgstr "Подели и користи"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "Подели Shorty"
 
 msgid "Shortlet"
-msgstr ""
+msgstr "Shortlet"
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "Shorty као QRCode"
 
 msgid "Shorty with id '%s' deleted"
 msgstr ""
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "Прикажи као QRCode"
 
 msgid "Show QRCode reference"
 msgstr ""
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "Прикажи QRCode слику"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "Преузми QRCode"
 
 msgid "Show details"
 msgstr "Прикажи детаље"
@@ -452,70 +453,70 @@ msgid "Show usage"
 msgstr "Прикажи начин употребе"
 
 msgid "SMS"
-msgstr ""
+msgstr "Телефонска порука"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "Креирање телефонских порука"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Сортирај растуће"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Сортирај опадајуће"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "Очисти филтер"
 
 msgid "Collapse column"
-msgstr ""
+msgstr "Скупи колону"
 
 msgid "Expand column"
-msgstr ""
+msgstr "Прошири колону"
 
 msgid "Source url"
-msgstr ""
+msgstr "Изворна адреса"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "Наведите статичну основну адресу..."
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "Статична позадина: верификације основне адресе"
 
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "Циљ"
 
 msgid "Target url"
-msgstr ""
+msgstr "Циљана адреса"
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "Циљана адресу '%s' је важећа"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "Ова слика може бити кориштена када се пушу документи или подешавају веб странице"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "Позадински сервис за формирање скраћених адреса."
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "Подразумевани статус као препорука за нове Шортије."
 
 msgid "The link below can be copied to paste it elsewhere"
-msgstr ""
+msgstr "Веза испод се може копирати за лепљење на другим местима"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr ""
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "зато се садржај мора ручно копирати"
 
 msgid "then paste into message"
-msgstr ""
+msgstr "затим залепи у поруку"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr ""
@@ -526,13 +527,13 @@ msgid ""
 msgstr ""
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr ""
+msgstr "Ово је унутрашња адреса коју скраћена адреса преноси"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "Ово је скраћена адреса регистрована у позадини"
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr ""
+msgstr "Ово је циљна адреса наведена када се формира овај Шорти"
 
 msgid "This is the url referencing the QRCode shown before"
 msgstr ""
@@ -541,13 +542,13 @@ msgid "Title"
 msgstr "Наслов"
 
 msgid "Toggle toolbar"
-msgstr ""
+msgstr "Укључивање/искључивање линије алата"
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "Укупно кликова"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "Ово ради само на уређајима попут паметних телефона"
 
 msgid "Unexpected type of exception caught: %s"
 msgstr ""
@@ -559,7 +560,7 @@ msgid "Unknown object of type caught: %s"
 msgstr ""
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "Адреса је скраћена у: %s"
 
 msgid "Use it in web pages by referencing or embedding"
 msgstr ""
@@ -568,10 +569,10 @@ msgid "Use the '%s' button above or the fine 'Shortlet'"
 msgstr ""
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "Верификуј кликом..."
 
 msgid "Verification failed"
-msgstr ""
+msgstr "Верификација није успела"
 
 # exception description
 msgid ""
@@ -579,47 +580,47 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr ""
+msgstr "%s\nПорука (код): %s (%s)\nФајл (линија): %s (%s)\nПодаци: %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "API приступни кључ"
 
 msgid "Account"
 msgstr "Налог"
 
 msgid "API key"
-msgstr ""
+msgstr "API кључ"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "bit.ly корисник"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "bit.ly корисничко име"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "bit.ly кључ"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "bit.ly кориснички кључ"
 
 msgid "Google API key"
-msgstr ""
+msgstr "Google API кључ"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Google API налог"
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "tiny.cc корисник"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "tiny.cc корисничко име"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "tiny.cc кључ"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "tiny.cc кориснички кључ"
 
 # longer terms: typically explanations
 msgid ""
@@ -630,35 +631,35 @@ msgstr ""
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Спољни сервис 'bitly.com' се користи за регистровање  скраћених адреса за сваких формирани Shorty."
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "Ово значи да прво морате да региструјете „%s“ на њиховом сајту."
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Спољни сервис 'turl' се користи за регистровање  скраћених адреса за сваких формирани Shorty."
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Спољни сервис 'ti.ny' се користи за регистровање скраћених адреса за сваких формирани Shorty."
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Спољни сервис 'cli.gs' се користи за регистровање скраћених адреса за сваких формирани Shorty."
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Спољни сервис 'is.gd' се користи за регистровање скраћених адреса за сваких формирани Shorty."
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Спољни сервис 'tiny.cc' се користи за регистровање скраћених адреса за сваких формирани Shorty."
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
@@ -667,7 +668,7 @@ msgstr ""
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "Услуга захтева да се аутентификујете са исправним корисничким именом за bit.ly и „%s“"
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
@@ -681,7 +682,7 @@ msgstr ""
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "Како ова постава зависи од серверских правила подешавања, основни УРЛ се може навести само у одељку „Администрација“ у подешавањима"
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
@@ -694,17 +695,17 @@ msgid ""
 msgstr ""
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "Циљ тог мапирања мора бити адреса попут:"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "Испробајте везу дату у примеру. Кликните на њу и требало би да добијете потврду да је постава исправна."
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "Оставите празно ако не можете понудити кратку основу адресу која је мапирана на описани начин"
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
@@ -714,35 +715,35 @@ msgstr ""
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Спољни сервис Google 'goo.gl service' се користи за регистровање скраћених адреса за сваких формирани Shorty."
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "Морате понудити важећу '%%s' да би користили овај сервис."
 
 msgid "This means you require a 'Google API console account'."
-msgstr ""
+msgstr "То значи да вам је неопходан налог Гугл АПИ конзоле"
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "Региструјте нови '%%s' на њиховим страницама."
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr ""
+msgstr "Омогућавањем опције за слање телефонских порука омогућиће слање Shorty преко порука."
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr ""
+msgstr "Нажалост, подршка за руковање СМС УРЛ-ом се углавном налази само на мобилним уређајима."
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr ""
+msgstr "Надаље, те примене су минималистичке, пуне грешака и разликују се од система до система."
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "Укратко: ово вам можда неће радити, па га можете искључити..."
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "Ваша подешавања раде успешно!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
@@ -760,12 +761,12 @@ msgid ""
 msgstr ""
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "Ваша подешавања још увек не раде исправно!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "Проверите ваша подешавања и уверите се да сте заиста подесили добро основну адресу."
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
@@ -776,10 +777,10 @@ msgid "Shorty relay service"
 msgstr ""
 
 msgid "If you proceed you will be forwarded to:"
-msgstr ""
+msgstr "Ако наставите бићете прослеђени на:"
 
 msgid "Target object:"
-msgstr ""
+msgstr "Циљни објекат:"
 
 msgid "Location"
 msgstr "Локација"

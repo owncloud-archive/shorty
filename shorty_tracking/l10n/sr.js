@@ -1,6 +1,8 @@
 OC.L10N.register(
     "shorty_tracking",
     {
+    "Shorty Tracking" : "Shorty праћење",
+    "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." : "Детаљи праћења свих захтева постојећем Shorty-јима заједно са интегрисаним графичким приказом историје приступања.",
     "granted" : "дозвољен",
     "denied" : "одбијен",
     "failed" : "неуспешан",
