@@ -24,49 +24,51 @@
 */
 
 /**
- * @file lib/hooks.php
- * Static class providing routines to populate hooks called by other parts of ownCloud
+ * @file plugin/hooks.php
+ * @brief Static class calling routines registered by plugins to populate hooks
  * @author Christian Reiner
  */
 
 namespace OCA\Shorty;
 
 /**
- * @class OCA\Shorty\Hooks
- * @brief Static 'namespace' class for api hook population
- * ownCloud propagates to use static classes as namespaces instead of OOP.
- * This 'namespace' defines routines to populate hooks called by other parts of ownCloud
+ * @class Hooks
+ * @brief Static class for api hook population
  * @access public
  * @author Christian Reiner
  */
 class Hooks
 {
 	/**
-	 * @function deleteUser
-	 * @brief Deletes all Shortys and preferences of a certain user
-	 * @param array $parameters: Array of parameters from postDeleteUser-Hook
-	 * @return bool
+	 * @method requestLoop
+	 * @brief Requests a loop to be registered onto a hook
+	 * @return array: List of registered loops
+	 * @static
 	 * @access public
-	 * @author Christian Reiner
+	 * @return array List of plugs, documents in this case
 	 */
-	public static function deleteUser ( $parameters )
+	protected static function requestLoop($hookClass, $hookMethod, $expectedLoopType)
 	{
-		\OCP\Util::writeLog ( 'shorty',sprintf("Wiping all Shortys belonging to user '%s'",$parameters['uid']), \OCP\Util::INFO );
-		$result = TRUE;
-		$param  = [ ':user' => $parameters['uid'] ];
-		// wipe preferences
-		$query = \OCP\DB::prepare ( Query::WIPE_PREFERENCES );
-		if ( FALSE===$query->execute($param) )
-			$result = FALSE;
-		// wipe shortys
-		$query = \OCP\DB::prepare ( Query::WIPE_SHORTYS );
-		if ( FALSE===$query->execute($param) )
-			$result = FALSE;
-		// allow further cleanups via registered hooks
-		\OCP\Util::emitHook( 'OCA\Shorty\Hooks', 'post_deleteUser', ['user'=>$param['user']] );
-		// report completion success
-		return $result;
-	}
+		\OCP\Util::writeLog ( 'shorty', 'Requesting documents registered by other apps', \OCP\Util::DEBUG );
+		$payload = array();
+		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
+		// ... for every action register a new element in the container
+		// ... ... such element must be an array holding the entries tested below
+		$container = array ( 'payload'=>&$payload );
+		\OCP\Util::emitHook ( $hookClass, $hookMethod, $container );
+		// validate result
+		$loops = array();
+		foreach ($payload as $loop) {
+			if (is_a($loop, '\OCA\Shorty\Plugin\Loop')
+				&&($expectedLoopType && is_a($loop, $expectedLoopType))) {
+				\OCP\Util::writeLog ( 'shorty', sprintf("Accepting registered object of type '%s'", get_class($loop)), \OCP\Util::DEBUG );
+				$loops[] = $loop;
+			} else {
+				\OCP\Util::writeLog ( 'shorty', sprintf("'Ignoring registered object of type '%s'", get_class($loop)), \OCP\Util::WARNING );
+			}
+		}
+		return $loops;
+	} // function requestLoop
 
 	/**
 	 * @function requestActions
@@ -78,41 +80,7 @@ class Hooks
 	public static function requestActions ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', \OCP\Util::DEBUG );
-		$actions = [ 'list'=>array(), 'shorty'=>array() ];
-		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
-		// ... for every action register a new element in the container
-		// ... ... such element must be an array holding the entries tested below
-		$container = [ 'list'=>&$actions['list'], 'shorty'=>&$actions['shorty'] ];
-		\OCP\Util::emitHook ( 'OCA\Shorty\Hooks', 'registerActions', $container );
-		// validate and evaluate what was returned in the $container
-		if ( ! is_array($container))
-		{
-			\OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerAction hook, FIX THAT APP !', \OCP\Util::WARN );
-			return [];
-		} // if
-		foreach ( $container as $target )
-		{
-			if ( ! is_array($target) )
-			{
-				\OCP\Util::writeLog ( 'shorty', 'Invalid reply structure from an app that registered into the registerAction hook, FIX THAT APP !', \OCP\Util::WARN );
-				break;
-			}
-			foreach ( $target as $action )
-			{
-				if (  ! is_array($action)
-					|| ! array_key_exists('id',   $action) || ! is_string($action['id'])
-					|| ! array_key_exists('name', $action) || ! is_string($action['name'])
-					|| ! array_key_exists('icon', $action) || ! is_string($action['icon'])
-					|| ( array_key_exists('call', $action) && ! is_string($action['call'] ) )
-					|| ( array_key_exists('title',$action) && ! is_string($action['title']) )
-					|| ( array_key_exists('alt',  $action) && ! is_string($action['alt']  ) ) )
-				{
-					\OCP\Util::writeLog ( 'shorty', 'Invalid reply from an app that registered into the registerAction hook, FIX THAT APP !', \OCP\Util::WARN );
-					break;
-				}
-			} // foreach action
-		} // foreach target
-		return $actions;
+		return self::requestLoop('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Tracking\ShortyActionTracking');
 	} // function requestActions
 
 	/**
@@ -176,6 +144,7 @@ class Hooks
 	 * @function requestQueries
 	 * @brief Hook that requests any queries plugins may want to offer
 	 * @return array: Array of descriptions of queries
+	 * @static
 	 * @access public
 	 * @author Christian Reiner
 	 */
@@ -217,58 +186,33 @@ class Hooks
 	} // function requestQueries
 
 	/**
-	 * @function registerClicks
-	 * @brief Hook offering informations about each click relayed by this app
-	 * @param $shorty
-	 * @param $request
-	 * @param $result
+	 * @method requestDocuments
+	 * @brief Registers documents bundled with plugins
+	 * @return array: List of registered documents
+	 * @static
 	 * @access public
-	 * @author Christian Reiner
+	 * @return array List of plugs, documents in this case
 	 */
-	public static function registerClick ( $shorty, $request, $result )
+	public static function requestDocuments()
 	{
-		\OCP\Util::writeLog ( 'shorty', sprintf("Registering click to shorty '%s'",$shorty['id']), \OCP\Util::DEBUG );
-		// add result to details describing this request (click), important for emitting the event further down
-		$request['result'] = $result;
-		// save click in the database
-		$param = [
-			'id'     => $shorty['id'],
-			'time'   => $request['time'],
-		];
-		$query = \OCP\DB::prepare ( Query::URL_CLICK );
-		$query->execute ( $param );
-
-		// allow further processing IF hooks are registered
-		\OCP\Util::emitHook( 'OCA\Shorty\Hooks', 'registerClick', [ 'shorty'=>$shorty,'request'=>$request ] );
-	} // function registerClick
-
-	/**
-	 * @function registerQueries
-	 * @brief Registers queries to be offered as expected by the Shorty app
-	 * @param $parameters (array) parameters from emitted signal
-	 * @return bool
-	 */
-	public static function registerQueries ( $parameters )
-	{
-		\OCP\Util::writeLog ( 'shorty', 'Registering additional queries to be offered', \OCP\Util::DEBUG );
-		if ( ! is_array($parameters) )
-		{
-			return FALSE;
+		\OCP\Util::writeLog ( 'shorty', 'Requesting documents registered by other apps', \OCP\Util::DEBUG );
+		$payload = array();
+		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
+		// ... for every action register a new element in the container
+		// ... ... such element must be an array holding the entries tested below
+		$container = array ( 'payload'=>&$payload );
+		\OCP\Util::emitHook ( 'OCA\Shorty', 'registerDocuments', $container );
+		// validate result
+		$documents = array();
+		foreach ($payload as $document) {
+			if (is_a($document, '\OCA\Shorty\Plugin\Book')) {
+				\OCP\Util::writeLog ( 'shorty', sprintf('Accepting registered document with title "%s"', $document->getTitle()), \OCP\Util::DEBUG );
+				$documents[] = $document;
+			} else {
+				\OCP\Util::writeLog ( 'shorty', sprintf('Ignoring registered document of type %s', get_class($document)), \OCP\Util::WARNING );
+			}
 		}
-		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
-		{
-			$parameters['list'][] = [
-				'id'    => 'shorty-list',
-				'query' => Query::QUERY_SHORTY_LIST,
-				'param' => array(':sort'),
-			];
-			$parameters['list'][] = [
-				'id'    => 'shorty-single',
-				'query' => Query::QUERY_SHORTY_SINGLE,
-				'param' => array(':id'),
-			];
-		}
-		return TRUE;
-	} // function registerQueries
+		return $documents;
+	} // function requestDocuments
 
 } // class Hooks

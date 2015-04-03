@@ -130,27 +130,27 @@ try
 		{
 			default:
 				// looks like an invalid shorty?
-				Hooks::registerClick ( $shorty, $request, 'blocked' );
+				Hooks::raiseShortyEventRequest ( $shorty, $request, 'blocked' );
 				throw new HttpException ( 500 );
 			case 'blocked':
 				// refuse forwarding => 403: Forbidden
-				Hooks::registerClick ( $shorty, $request, 'blocked' );
+				Hooks::raiseShortyEventRequest ( $shorty, $request, 'blocked' );
 				throw new HttpException ( 403 );
 			case 'private':
 				// check for a valid session and the required user account
 				if ( ! ($account=\OC::$server->getSession()->get('user_id'))) {
-					Hooks::registerClick ( $shorty, $request, 'failed' );
+					Hooks::raiseShortyEventRequest ( $shorty, $request, 'failed' );
 					\OCP\User::checkLoggedIn();
 				}
 				if ($shorty['user']!==$account) {
-					Hooks::registerClick ( $shorty, $request, 'denied' );
+					Hooks::raiseShortyEventRequest ( $shorty, $request, 'denied' );
 					throw new HttpException ( 403 );
 				}
 				break;
 			case 'shared':
 				// check for a valid session
 				if ( ! \OC::$server->getSession()->get('user_id')) {
-					Hooks::registerClick ( $shorty, $request, 'denied' );
+					Hooks::raiseShortyEventRequest ( $shorty, $request, 'denied' );
 					\OCP\User::checkLoggedIn();
 				}
 				break;
@@ -173,7 +173,7 @@ try
 		// finish this script to record the click, even if the client detaches right after the redirect
 		ignore_user_abort ( TRUE );
 		// register click
-		Hooks::registerClick ( $shorty, $request, 'granted' );
+		Hooks::raiseShortyEventRequest ( $shorty, $request, 'granted' );
 	} // if
 } catch ( Exception $e ) {
     header($e->getMessage());

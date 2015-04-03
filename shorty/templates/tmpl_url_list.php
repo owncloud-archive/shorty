@@ -172,14 +172,11 @@ namespace OCA\Shorty;
 			<td id="list-of-shortys-actions"  data-aspect="actions">
 				<span class="shorty-actions">
 <!-- IF any additional actions are registered via hooks, additional icons will appear here -->
-<?php foreach ( $_['shorty-actions']['list'] as $action ) { ?>
-					<a id="<?php p($action['id']); ?>" title="<?php p(array_key_exists('title',$action)?$action['title']:''); ?>"
-						data-method="<?php p($action['call']); ?>" class="">
-						<img class="shorty-icon svg"
-							alt="<?php p(array_key_exists('alt',$action)?$action['alt']:''); ?>"
-							title="<?php p(array_key_exists('title',$action)?$action['title']:''); ?>"
-							src="<?php p($action['icon']); ?>" />
-					</a>
+<?php foreach ( $_['shorty-actions'] as $action ) { ?>
+				<a id="shorty-action-<?php p($action->getName()); ?>" title="<?php p($action->getAlt()); ?>" data-method="<?php p($action->getCallback()); ?>" class="">
+					<img alt="<?php p($action->getAlt()); ?>" title="<?php p($action->getTitle()); ?>"
+						class="shorty-icon svg" src="<?php p($action->getIcon()); ?>" />
+				</a>
 <?php } ?>
 				<a id="shorty-action-show"   title="<?php p(L10n::t('show'));   ?>"   class="">
 					<img alt="<?php p(L10n::t('show')); ?>"   title="<?php p(L10n::t('Show details')); ?>"

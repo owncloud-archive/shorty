@@ -68,7 +68,7 @@ class Hooks
 	} // function deleteShortyClicks
 
 	/**
-	 * @function registerClick
+	 * @function registerShortyEventRequest
 	 * @brief Records details of request clicks targeting existing Shortys
 	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
@@ -81,7 +81,7 @@ class Hooks
 	 * shorty: id, ...
 	 * request: time, address, requester, result, ...
 	 */
-	public static function registerClick ( $parameters )
+	public static function registerShortyEventRequest ( $parameters )
 	{
 		\OCP\Util::writeLog ( 'shorty_tracking', sprintf("Recording single click to Shorty '%s' with result '%s'",
 														$parameters['shorty']['id'],
@@ -98,7 +98,29 @@ class Hooks
 		$query = \OCP\DB::prepare ( Query::CLICK_RECORD );
 		$query->execute ( $param );
 		return TRUE;
-	} // function registerClick
+	} // function registerShortyEventRequest
+
+	/**
+	 * @function registerDetails
+	 * @brief Registers details describing this plugin as expected by the Shorty app
+	 * @param $parameters (array) parameters from emitted signal
+	 * @return bool
+	 */
+	public static function registerDetails ( $parameters )
+	{
+		\OCP\Util::writeLog ( 'shorty_tracking', 'Registering plugin description in main Shorty app', \OCP\Util::DEBUG );
+		if ( ! is_array($parameters) ) {
+			return FALSE;
+		}
+		if ( array_key_exists('shorty',$parameters) && is_array($parameters['shorty']) ) {
+			$parameters['shorty'][] = [
+				'id'       => 'shorty_tracking',
+				'name'     => "Shorty Tracking",
+				'abstract' => L10n::t("Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history."),
+			];
+		}
+		return TRUE;
+	} // function registerDetails
 
 	/**
 	 * @function registerIncludes
@@ -116,59 +138,18 @@ class Hooks
 	} // function registerIncludes
 
 	/**
-	 * @function registerActions
-	 * @brief Registers additional actions as expected by the Shorty app
-	 * @param $parameters (array) parameters from emitted signal
-	 * @return bool
-	 */
-	public static function registerActions ( $parameters )
-	{
-		\OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional Shorty actions', \OCP\Util::DEBUG );
-		if ( ! is_array($parameters) )
-		{
-			return FALSE;
-		}
-		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
-		{
-			// action 'tracking-list' in list-of-shortys
-			$parameters['list'][] = [
-				'id'    => 'shorty-action-clicks',
-				'name'  => 'clicks',
-				'icon'  => \OCP\Util::imagePath('shorty_tracking','actions/hits.svg'),
-				'call'  => 'OC.Shorty.Tracking.control',
-				'title' => L10n::t("List clicks"),
-				'alt'   => L10n::t("Clicks"),
-			];
-		}
-		return TRUE;
-	} // function registerActions
+	 * @function registerHelp
+     * @brief Registers help documents bundled with this plugin
+     * @param $parameters (array) parameters from emitted signal
+     * @return bool
+     */
+    public static function registerHelp ( $parameters )
+    {
+        return 'OC_ShortyTracking_Help';
+    } // function registerHelp
 
-	/**
-	 * @function registerDetails
-	 * @brief Registers details describing this plugin as expected by the Shorty app
-	 * @param $parameters (array) parameters from emitted signal
-	 * @return bool
-	 */
-	public static function registerDetails ( $parameters )
-	{
-		\OCP\Util::writeLog ( 'shorty_tracking', 'Registering plugin description in main Shorty app', \OCP\Util::DEBUG );
-		if ( ! is_array($parameters) )
-		{
-			return FALSE;
-		}
-		if ( array_key_exists('shorty',$parameters) && is_array($parameters['shorty']) )
-		{
-			$parameters['shorty'][] = [
-				'id'       => 'shorty_tracking',
-				'name'     => "Shorty Tracking",
-				'abstract' => L10n::t("Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history."),
-			];
-		}
-		return TRUE;
-	} // function registerQueries
-
-	/**
-	 * @function registerQueries
+    /**
+	 * @method registerQueries
 	 * @brief Registers queries to be offered as expected by the Shorty app
 	 * @param $parameters (array) parameters from emitted signal
 	 * @return bool
@@ -176,12 +157,10 @@ class Hooks
 	public static function registerQueries ( $parameters )
 	{
 		\OCP\Util::writeLog ( 'shorty_tracking', 'Registering additional queries to be offered', \OCP\Util::DEBUG );
-		if ( ! is_array($parameters) )
-		{
+		if ( ! is_array($parameters) ) {
 			return FALSE;
 		}
-		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) )
-		{
+		if ( array_key_exists('list',$parameters) && is_array($parameters['list']) ) {
 			$parameters['list'][] = [
 				'id'    => 'tracking-single-usage',
 				'query' => Query::QUERY_TRACKING_SINGLE_USAGE,

@@ -31,15 +31,19 @@
 
 namespace OCA\Shorty;
 
-\OC::$CLASSPATH['OCA\Shorty\Backend']       = 'shorty/lib/backend.php';
-\OC::$CLASSPATH['OCA\Shorty\Exception']     = 'shorty/lib/exception.php';
-\OC::$CLASSPATH['OCA\Shorty\Hooks']         = 'shorty/lib/hooks.php';
-\OC::$CLASSPATH['OCA\Shorty\HttpException'] = 'shorty/lib/exception.php';
-\OC::$CLASSPATH['OCA\Shorty\L10n']          = 'shorty/lib/l10n.php';
-\OC::$CLASSPATH['OCA\Shorty\Meta']          = 'shorty/lib/meta.php';
-\OC::$CLASSPATH['OCA\Shorty\Query']         = 'shorty/lib/query.php';
-\OC::$CLASSPATH['OCA\Shorty\Tools']         = 'shorty/lib/tools.php';
-\OC::$CLASSPATH['OCA\Shorty\Type']          = 'shorty/lib/type.php';
+\OC::$CLASSPATH['OCA\Shorty\Backend']                  = 'shorty/lib/backend.php';
+\OC::$CLASSPATH['OCA\Shorty\Exception']                = 'shorty/lib/exception.php';
+\OC::$CLASSPATH['OCA\Shorty\HttpException']            = 'shorty/lib/exception.php';
+\OC::$CLASSPATH['OCA\Shorty\L10n']                     = 'shorty/lib/l10n.php';
+\OC::$CLASSPATH['OCA\Shorty\Meta']                     = 'shorty/lib/meta.php';
+\OC::$CLASSPATH['OCA\Shorty\Query']                    = 'shorty/lib/query.php';
+\OC::$CLASSPATH['OCA\Shorty\Tools']                    = 'shorty/lib/tools.php';
+\OC::$CLASSPATH['OCA\Shorty\Type']                     = 'shorty/lib/type.php';
+\OC::$CLASSPATH['OCA\Shorty\Hooks']                    = 'shorty/plugin/hooks.php';
+\OC::$CLASSPATH['OCA\Shorty\Loops']                    = 'shorty/plugin/loops.php';
+\OC::$CLASSPATH['OCA\Shorty\Plugin\Loop']              = 'shorty/plugin/loops/loop.php';
+\OC::$CLASSPATH['OCA\Shorty\Plugin\LoopShortyAction']  = 'shorty/plugin/loops/loop_shorty_action.php';
+\OC::$CLASSPATH['OCA\Shorty\Plugin\LoopShortyEvent']   = 'shorty/plugin/loops/loop_shorty_event.php';
 
 \OCP\App::registerAdmin      ( 'shorty', 'settings' );
 \OCP\App::addNavigationEntry ( [
@@ -50,5 +54,5 @@ namespace OCA\Shorty;
 	'name' => 'Shorty'
 ] );
 
-\OCP\Util::connectHook ( 'OCP\User',         'post_deleteUser', 'OCA\Shorty\Hooks', 'deleteUser');
-\OCP\Util::connectHook ( 'OCA\Shorty\Query', 'registerQueries', 'OCA\Shorty\Hooks', 'registerQueries');
+\OCP\Util::connectHook ( 'OCP\User',   'post_deleteUser',   'OCA\Shorty\Loops', 'deleteUser');
+\OCP\Util::connectHook ( 'OCA\Shorty', 'registerQueries',   'OCA\Shorty\Loops', 'registerQueries');
