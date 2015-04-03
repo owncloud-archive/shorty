@@ -41,6 +41,7 @@ namespace OCA\Shorty\Tracking;
 class ShortyActionTracking extends \OCA\Shorty\Plugin\LoopShortyAction
 {
 	const APP = 'shorty_tracking';
+	const INDEX = 201;
 
 	const ACTION_NAME      = 'tracking';
 	const ACTION_ICON      = 'actions/hits.svg';

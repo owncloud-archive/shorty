@@ -28,7 +28,7 @@
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Tracking;
+namespace OCA\Shorty;
 
 /**
  * @class ShortyActionShow
@@ -40,10 +40,11 @@ namespace OCA\Shorty\Tracking;
 class ShortyActionShow extends \OCA\Shorty\Plugin\LoopShortyAction
 {
 	const APP = 'shorty';
+	const INDEX = 105;
 
 	const ACTION_NAME      = 'show';
-	const ACTION_ICON      = 'actions/show.svg';
-	const ACTION_CALLBACK  = 'OC.Shorty.Tracking.control';
-	const ACTION_TITLE     = "Click tracking";
-	const ACTION_ALT       = "tracking";
+	const ACTION_ICON      = 'actions/info.svg';
+	const ACTION_CALLBACK  = 'OC.Shorty.WUI.Entry.show';
+	const ACTION_TITLE     = "Show details";
+	const ACTION_ALT       = "show";
 }

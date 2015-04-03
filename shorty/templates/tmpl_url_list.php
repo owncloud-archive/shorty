@@ -171,33 +171,13 @@ namespace OCA\Shorty;
 			<td id="list-of-shortys-status"   data-aspect="status"   class="collapsible"></td>
 			<td id="list-of-shortys-actions"  data-aspect="actions">
 				<span class="shorty-actions">
-<!-- IF any additional actions are registered via hooks, additional icons will appear here -->
+<!-- actions are registered via hooks, action icons will appear here -->
 <?php foreach ( $_['shorty-actions'] as $action ) { ?>
 				<a id="shorty-action-<?php p($action->getName()); ?>" title="<?php p($action->getAlt()); ?>" data-method="<?php p($action->getCallback()); ?>" class="">
 					<img alt="<?php p($action->getAlt()); ?>" title="<?php p($action->getTitle()); ?>"
 						class="shorty-icon svg" src="<?php p($action->getIcon()); ?>" />
 				</a>
 <?php } ?>
-				<a id="shorty-action-show"   title="<?php p(L10n::t('show'));   ?>"   class="">
-					<img alt="<?php p(L10n::t('show')); ?>"   title="<?php p(L10n::t('Show details')); ?>"
-						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/info.svg'));   ?>" />
-				</a>
-				<a id="shorty-action-edit"   title="<?php p(L10n::t('edit'));   ?>"   class="">
-					<img alt="<?php p(L10n::t('modify')); ?>"   title="<?php p(L10n::t('Modify shorty')); ?>"
-						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('core','actions/rename.svg')); ?>" />
-				</a>
-				<a id="shorty-action-del"    title="<?php p(L10n::t('delete')); ?>" class="">
-					<img alt="<?php p(L10n::t('delete')); ?>" title="<?php p(L10n::t('Delete shorty')); ?>"
-						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('core','actions/delete.svg')); ?>" />
-				</a>
-				<a id="shorty-action-share"  title="<?php p(L10n::t('share'));  ?>"   class="">
-					<img alt="<?php p(L10n::t('share')); ?>"  title="<?php p(L10n::t('Share shorty')); ?>"
-						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('core','actions/share.svg'));  ?>" />
-				</a>
-				<a id="shorty-action-open"   title="<?php p(L10n::t('open'));   ?>"   class="">
-					<img alt="<?php p(L10n::t('open')); ?>"   title="<?php p(L10n::t('Open target')); ?>"
-						class="shorty-icon svg" src="<?php p(\OCP\Util::imagePath('shorty','actions/open.svg')); ?>" />
-				</a>
 				</span>
 			</td>
 		</tr>

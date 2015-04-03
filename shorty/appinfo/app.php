@@ -44,6 +44,11 @@ namespace OCA\Shorty;
 \OC::$CLASSPATH['OCA\Shorty\Plugin\Loop']              = 'shorty/plugin/loops/loop.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\LoopShortyAction']  = 'shorty/plugin/loops/loop_shorty_action.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\LoopShortyEvent']   = 'shorty/plugin/loops/loop_shorty_event.php';
+\OC::$CLASSPATH['OCA\Shorty\ShortyActionShow']         = 'shorty/plugin/loops/shorty_action_show.php';
+\OC::$CLASSPATH['OCA\Shorty\ShortyActionEdit']         = 'shorty/plugin/loops/shorty_action_edit.php';
+\OC::$CLASSPATH['OCA\Shorty\ShortyActionDelete']       = 'shorty/plugin/loops/shorty_action_delete.php';
+\OC::$CLASSPATH['OCA\Shorty\ShortyActionShare']        = 'shorty/plugin/loops/shorty_action_share.php';
+\OC::$CLASSPATH['OCA\Shorty\ShortyActionOpen']         = 'shorty/plugin/loops/shorty_action_open.php';
 
 \OCP\App::registerAdmin      ( 'shorty', 'settings' );
 \OCP\App::addNavigationEntry ( [
@@ -54,5 +59,10 @@ namespace OCA\Shorty;
 	'name' => 'Shorty'
 ] );
 
-\OCP\Util::connectHook ( 'OCP\User',   'post_deleteUser',   'OCA\Shorty\Loops', 'deleteUser');
-\OCP\Util::connectHook ( 'OCA\Shorty', 'registerQueries',   'OCA\Shorty\Loops', 'registerQueries');
+\OCP\Util::connectHook ( 'OCP\User',         'post_deleteUser',         'OCA\Shorty\Loops',              'deleteUser');
+\OCP\Util::connectHook ( 'OCA\Shorty',       'registerQueries',         'OCA\Shorty\Loops',              'registerQueries');
+\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestShortyActions',    'OCA\Shorty\ShortyActionShow',   'register');
+\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestShortyActions',    'OCA\Shorty\ShortyActionEdit',   'register');
+\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestShortyActions',    'OCA\Shorty\ShortyActionDelete', 'register');
+\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestShortyActions',    'OCA\Shorty\ShortyActionShare',  'register');
+\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestShortyActions',    'OCA\Shorty\ShortyActionOpen',   'register');

@@ -24,30 +24,27 @@
  */
 
 /**
- * @file plugin/loop/list_action.php
- * Static class providing routines to populate hooks called by other parts of ownCloud
+ * @file plugin/loops/shorty_action_share.php
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Plugin;
+namespace OCA\Shorty;
 
 /**
- * @class Loop
+ * @class ShortyActionShare
  * @extends \OCA\Shorty\Plugin\Loop
- * @brief Static 'namespace' class for api hook population
+ * @brief 'share' action on a Shorty
  * @access public
  * @author Christian Reiner
  */
-class Loop
+class ShortyActionShare extends \OCA\Shorty\Plugin\LoopShortyAction
 {
-	const APP = null;
-	const INDEX = 0;
+	const APP = 'shorty';
+	const INDEX = 102;
 
-	public static function getApp() { return static::APP; }
-
-	public static function register($container) {
-		if (is_array($container) && isset($container['payload']) && is_array($container['payload'])) {
-			$container['payload'][] = new static;
-		}
-	}
+	const ACTION_NAME      = 'share';
+	const ACTION_ICON      = 'actions/share.svg';
+	const ACTION_CALLBACK  = 'OC.Shorty.WUI.Entry.share';
+	const ACTION_TITLE     = "Share Shorty";
+	const ACTION_ALT       = "share";
 }

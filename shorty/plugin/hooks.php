@@ -64,11 +64,16 @@ class Hooks
 				\OCP\Util::writeLog ( 'shorty', sprintf("Accepting registered object of type '%s'", get_class($loop)), \OCP\Util::DEBUG );
 				$loops[] = $loop;
 			} else {
-				\OCP\Util::writeLog ( 'shorty', sprintf("'Ignoring registered object of type '%s'", get_class($loop)), \OCP\Util::WARNING );
+				\OCP\Util::writeLog ( 'shorty', sprintf("'Ignoring registered object of type '%s'", get_class($loop)), \OCP\Util::INFO );
 			}
 		}
+		usort($loops, 'self::shuffleByIndex');
 		return $loops;
 	} // function requestLoop
+
+	private static function shuffleByIndex($loopA, $loopB) {
+		return ($loopA::INDEX<$loopB::INDEX);
+	} // function sortLoopsByIndex
 
 	/**
 	 * @function requestActions
@@ -80,7 +85,7 @@ class Hooks
 	public static function requestActions ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', \OCP\Util::DEBUG );
-		return self::requestLoop('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Tracking\ShortyActionTracking');
+		return self::requestLoop('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Plugin\LoopShortyAction');
 	} // function requestActions
 
 	/**
