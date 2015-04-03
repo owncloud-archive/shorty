@@ -121,18 +121,4 @@ class Loops
 		return TRUE;
 	} // function registerQueries
 
-	/**
-	 * @function registerDocuments
-	 * @brief Registers help documents bundled with a plugin
-	 * @return bool
-	 */
-	public function registerDocuments($container)
-	{
-		\OCP\Util::writeLog('shorty_tracking', 'Registering documents bundled in main Shorty app', \OCP\Util::DEBUG);
-		if (is_array($container) && isset($container['payload']) && is_array($container['payload'])) {
-			$container['payload'][] = new BookUserGuide;
-			$container['payload'][] = new BookAdminGuide;
-		}
-	} // function registerDocuments
-
 } // class Loops

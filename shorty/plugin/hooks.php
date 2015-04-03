@@ -74,18 +74,6 @@ class Hooks
 
 
 	/**
-	 * @function requestAppIncludes
-	 * @brief Hook that requests any js or css includes plugins may want to register
-	 * @access public
-	 * @author Christian Reiner
-	 */
-	public static function requestAppIncludes ( )
-	{
-		\OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', \OCP\Util::DEBUG );
-		return self::requestLoop('OCA\Shorty\Hooks', 'requestAppIncludes', '\OCA\Shorty\Plugin\LoopAppIncludes');
-	} // function requestIncludes
-
-	/**
 	 * @function requestAppDetails
 	 * @brief Hook that requests any plugin details (id and abstract) plugins may want to register
 	 * @return array: Array of details of plugins
@@ -96,7 +84,32 @@ class Hooks
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting plugin details registered by other apps', \OCP\Util::DEBUG );
 		return self::requestLoop('OCA\Shorty\Hooks', 'requestAppDetails', '\OCA\Shorty\Plugin\LoopAppDetails');
-	} // function requestActions
+	} // function requestAppDetails
+
+	/**
+	 * @function requestAppIncludes
+	 * @brief Hook that requests any js or css includes plugins may want to register
+	 * @access public
+	 * @author Christian Reiner
+	 */
+	public static function requestAppIncludes ( )
+	{
+		\OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', \OCP\Util::DEBUG );
+		return self::requestLoop('OCA\Shorty\Hooks', 'requestAppIncludes', '\OCA\Shorty\Plugin\LoopAppIncludes');
+	} // function requestAppIncludes
+
+	/**
+	 * @function requestAppQueries
+	 * @brief Hook that requests any database queries to be registered by plugins
+	 * @return array: list of queries
+	 * @access public
+	 * @author Christian Reiner
+	 */
+	public static function requestAppQueries ( )
+	{
+		\OCP\Util::writeLog ( 'shorty', 'Requesting database queries to be offered by other apps', \OCP\Util::DEBUG );
+		return self::requestLoop('OCA\Shorty\Hooks', 'requestAppQueries', '\OCA\Shorty\Plugin\LoopAppQuery');
+	} // function requestAppQueries
 
 
 
@@ -111,62 +124,6 @@ class Hooks
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', \OCP\Util::DEBUG );
 		return self::requestLoop('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Plugin\LoopShortyAction');
-	} // function requestActions
-
-
-
-
-
-
-
-
-
-
-
-
-	/**
-	 * @function requestQueries
-	 * @brief Hook that requests any queries plugins may want to offer
-	 * @return array: Array of descriptions of queries
-	 * @static
-	 * @access public
-	 * @author Christian Reiner
-	 */
-	public static function requestQueries ( )
-	{
-		\OCP\Util::writeLog ( 'shorty', 'Requesting queries to be offered from other apps', \OCP\Util::DEBUG );
-		$queries = [ 'list'=>array(), 'shorty'=>array() ];
-		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
-		// ... for every action register a new element in the container
-		// ... ... such element must be an array holding the entries tested below
-		$container = [ 'list'=>&$queries['list'], 'shorty'=>&$queries['shorty'] ];
-		\OCP\Util::emitHook ( 'OCA\Shorty\Hooks', 'registerQueries', $container );
-		// validate and evaluate what was returned in the $container
-		if ( ! is_array($container))
-		{
-			\OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerQueries hook, FIX THAT APP !', \OCP\Util::WARN );
-			return [];
-		} // if
-		foreach ( $container as $aspect )
-		{
-			if ( ! is_array($aspect) )
-			{
-				\OCP\Util::writeLog ( 'shorty', 'Invalid reply structure from an app that registered into the registerQueries hook, FIX THAT APP !', \OCP\Util::WARN );
-				break;
-			}
-			foreach ( $aspect as $query )
-			{
-				if (  ! is_array($query)
-					|| ! array_key_exists('id',    $query) || ! is_string($query['id'])
-					|| ! array_key_exists('query', $query) || ! is_string($query['query'])
-					|| ! array_key_exists('param', $query) || ! is_array($query['param']) )
-				{
-					\OCP\Util::writeLog ( 'shorty', 'Invalid reply from an app that registered into the registerQueries hook, FIX THAT APP !', \OCP\Util::WARN );
-					break;
-				}
-			} // foreach query
-		} // foreach aspect
-		return $queries;
-	} // function requestQueries
+	} // function requestShortyActions
 
 } // class Hooks

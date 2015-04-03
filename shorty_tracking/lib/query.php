@@ -44,7 +44,7 @@ switch ( \OCP\Config::getSystemValue('dbtype') )
 			const CLICK_WIPE                  = "DELETE FROM *PREFIX*shorty_tracking ..... all clicks where entry in *PREFIX*shorty does NOT exist any more";
 			const QUERY_TRACKING_SINGLE_USAGE = "SELECT s.*,count(t.id) AS usage,min(t.time) as first,max(t.time) as last FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) WHERE s.id=:shorty GROUP BY s.id";
 			const QUERY_TRACKING_SINGLE_LIST  = "SELECT s.*,t.* FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) WHERE s.id=:shorty";
-			const QUERY_TRACKING_TOTAL_USAGE  = "SELECT s.*,count(t.id) AS usage,min(t.time) as first,max(t.time) as last FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) GROUP BY s.id ORDER BY :sort";
+			const QUERY_TRACKING_TOTAL_USAGE  = "SELECT s.*,count(t.id) AS usage,min(t.time) AS first,max(t.time) AS last FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) GROUP BY s.id ORDER BY :sort";
 			const QUERY_TRACKING_TOTAL_LIST   = "SELECT s.*,t.* FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) ORDER BY :sort";
 
 		} // class Query
@@ -60,7 +60,7 @@ switch ( \OCP\Config::getSystemValue('dbtype') )
 			const CLICK_WIPE                  = "DELETE FROM *PREFIX*shorty_tracking ..... all clicks where entry in *PREFIX*shorty does NOT exist any more";
 			const QUERY_TRACKING_SINGLE_USAGE = "SELECT s.*,count(t.id) AS usage,min(t.time) as first,max(t.time) as last FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) WHERE s.id=:shorty GROUP BY s.id";
 			const QUERY_TRACKING_SINGLE_LIST  = "SELECT s.*,t.* FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) WHERE s.id=:shorty";
-			const QUERY_TRACKING_TOTAL_USAGE  = "SELECT s.*,count(t.id) AS usage,min(t.time) as first,max(t.time) as last FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) GROUP BY s.id ORDER BY :sort";
+			const QUERY_TRACKING_TOTAL_USAGE  = "SELECT s.*,count(t.id) AS usage,min(t.time) AS first,max(t.time) AS last FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) GROUP BY s.id ORDER BY :sort";
 			const QUERY_TRACKING_TOTAL_LIST   = "SELECT s.*,t.* FROM oc_shorty s LEFT JOIN oc_shorty_tracking t ON (s.id=t.shorty) ORDER BY :sort";
 
 		} // class Query

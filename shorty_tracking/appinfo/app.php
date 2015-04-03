@@ -44,6 +44,10 @@ use OCA\Shorty\Exception;
 \OC::$CLASSPATH['OCA\Shorty\Tracking\Hooks']                     = 'shorty_tracking/plugin/hooks.php';
 \OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\AppDetails']           = 'shorty_tracking/plugin/loops/app_details.php';
 \OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\AppIncludes']          = 'shorty_tracking/plugin/loops/app_includes.php';
+\OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\QuerySingleList']      = 'shorty_tracking/plugin/loops/query_single_list.php';
+\OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\QuerySingleUsage']     = 'shorty_tracking/plugin/loops/query_single_usage.php';
+\OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\QueryTotalList']       = 'shorty_tracking/plugin/loops/query_total_list.php';
+\OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\QueryTotalUsage']      = 'shorty_tracking/plugin/loops/query_total_usage.php';
 \OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\ShortyActionTracking'] = 'shorty_tracking/plugin/loops/shorty_action_tracking.php';
 \OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\ShortyEventRequest']   = 'shorty_tracking/plugin/loops/shorty_event_request.php';
 
@@ -68,7 +72,10 @@ try
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestShortyActions',    'OCA\Shorty\Tracking\Loop\ShortyActionTracking', 'register');
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppIncludes',      'OCA\Shorty\Tracking\Loop\AppIncludes',          'register');
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppDetails',       'OCA\Shorty\Tracking\Loop\AppDetails',           'register');
-//				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'registerQueries',         'OCA\Shorty\Tracking\Hooks', 'registerQueries');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppQueries',       'OCA\Shorty\Tracking\Loop\QuerySingleList',      'register');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppQueries',       'OCA\Shorty\Tracking\Loop\QuerySingleUsage',     'register');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppQueries',       'OCA\Shorty\Tracking\Loop\QueryTotalList',       'register');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppQueries',       'OCA\Shorty\Tracking\Loop\QueryTotalUsage',      'register');
 			}
 			else throw new Exception ( "App 'Shorty Tracking' requires app 'Shorty' in version >= %s.%s.%s !", $reqV );
 		}
