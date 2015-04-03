@@ -138,7 +138,11 @@ switch ($act)
 		try
 		{
 			// any additional stuff to include as registered into the hook ?
-			Hooks::requestIncludes();
+			foreach( Hooks::requestAppIncludes() as $loop) {
+				foreach ($loop->getIncludeCallbacks() as $callback) {
+					$callback();
+				}
+			};
 			// is this a redirect from a call with a target url to be added ?
 			if ( isset($_SESSION['shorty-referrer']) )
 			{
@@ -154,7 +158,7 @@ switch ($act)
 			}
 			$tmpl = new \OCP\Template( 'shorty', 'tmpl_index', 'user' );
 			// any additional actions registered via hooks that should be offered ?
-			$tmpl->assign ( 'shorty-actions', Hooks::requestActions() );
+			$tmpl->assign ( 'shorty-actions', Hooks::requestShortyActions() );
 			// available status options (required for select filter in toolbox)
 			$shorty_status['']=sprintf('- %s -',L10n::t('all'));
 			foreach ( Type::$STATUS as $status )

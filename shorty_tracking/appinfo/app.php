@@ -42,7 +42,8 @@ use OCA\Shorty\Exception;
 \OC::$CLASSPATH['OCA\Shorty\Tracking\Query']                     = 'shorty_tracking/lib/query.php';
 \OC::$CLASSPATH['OCA\Shorty\Tracking\BookUserGuide']             = 'shorty_tracking/lib/book.php';
 \OC::$CLASSPATH['OCA\Shorty\Tracking\Hooks']                     = 'shorty_tracking/plugin/hooks.php';
-\OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\Includes']             = 'shorty_tracking/plugin/loops/includes.php';
+\OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\AppDetails']           = 'shorty_tracking/plugin/loops/app_details.php';
+\OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\AppIncludes']          = 'shorty_tracking/plugin/loops/app_includes.php';
 \OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\ShortyActionTracking'] = 'shorty_tracking/plugin/loops/shorty_action_tracking.php';
 \OC::$CLASSPATH['OCA\Shorty\Tracking\Loop\ShortyEventRequest']   = 'shorty_tracking/plugin/loops/shorty_event_request.php';
 
@@ -65,8 +66,8 @@ try
 				\OCP\Util::connectHook ( 'OCA\Shorty',       'post_deleteShorty',       'OCA\Shorty\Tracking',                           'deleteShortyClicks');
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'raiseShortyEventRequest', 'OCA\Shorty\Tracking\Loop\ShortyEventRequest',   'register');
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestShortyActions',    'OCA\Shorty\Tracking\Loop\ShortyActionTracking', 'register');
-				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestIncludes',         'OCA\Shorty\Tracking\Loop\Includes',             'register');
-//				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'registerDetails',         'OCA\Shorty\Tracking\Hooks', 'registerDetails');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppIncludes',      'OCA\Shorty\Tracking\Loop\AppIncludes',          'register');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppDetails',       'OCA\Shorty\Tracking\Loop\AppDetails',           'register');
 //				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'registerQueries',         'OCA\Shorty\Tracking\Hooks', 'registerQueries');
 			}
 			else throw new Exception ( "App 'Shorty Tracking' requires app 'Shorty' in version >= %s.%s.%s !", $reqV );

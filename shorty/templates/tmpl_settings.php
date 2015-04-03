@@ -88,13 +88,14 @@ namespace OCA\Shorty;
 <!-- list of installed plugins -->
 	<fieldset class="shorty-backend-supplement">
 		<legend><?php p(L10n::t("Plugins").":"); ?></legend>
-<?php foreach ( $_['shorty-plugins']['shorty'] as $plugin ) { ?>
+<?php foreach ( $_['shorty-plugins'] as $plugin ) { ?>
+<?php \ChromePhp::log($plugin); ?>
 		<div>
-			<label for="shorty-plugin-<?php p(trim($plugin['id']));?>">
-				<?php p(trim($plugin['name']).":");?>
+			<label for="shorty-plugin-<?php p(trim($plugin->getDetailKey()));?>">
+				<?php p(trim($plugin->getDetailName()).":");?>
 			</label>
-			<span class="shorty-plugin-<?php p(trim($plugin['id']));?>" class="shorty-example">
-				<?php p(trim($plugin['abstract']));?>
+			<span class="shorty-plugin-<?php p(trim($plugin->getDetailKey()));?>" class="shorty-example">
+				<?php p(trim($plugin->getDetailAbstract()));?>
 			</span>
 		</div>
 <?php } ?>

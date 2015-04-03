@@ -52,7 +52,8 @@ namespace OCA\Shorty;
 
 \OC::$CLASSPATH['OCA\Shorty\Loops']                    = 'shorty/plugin/loops.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\Loop']              = 'shorty/plugin/loops/loop.php';
-\OC::$CLASSPATH['OCA\Shorty\Plugin\LoopIncludes']      = 'shorty/plugin/loops/loop_includes.php';
+\OC::$CLASSPATH['OCA\Shorty\Plugin\LoopAppDetails']    = 'shorty/plugin/loops/loop_app_details.php';
+\OC::$CLASSPATH['OCA\Shorty\Plugin\LoopAppIncludes']   = 'shorty/plugin/loops/loop_app_includes.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\LoopShortyAction']  = 'shorty/plugin/loops/loop_shorty_action.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\LoopShortyEvent']   = 'shorty/plugin/loops/loop_shorty_event.php';
 \OC::$CLASSPATH['OCA\Shorty\Loop\ShortyActionShow']    = 'shorty/plugin/loops/shorty_action_show.php';

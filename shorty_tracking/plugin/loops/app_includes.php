@@ -32,13 +32,13 @@
 namespace OCA\Shorty\Tracking\Loop;
 
 /**
- * @class \OCA\Shorty\Tracking\Loop\Includes
- * @extends \OCA\Shorty\Plugin\LoopIncludes
+ * @class \OCA\Shorty\Tracking\Loop\AppIncludes
+ * @extends \OCA\Shorty\Plugin\LoopAppIncludes
  * @brief Represents a list of styles and script files to be included
  * @access public
  * @author Christian Reiner
  */
-class Includes extends \OCA\Shorty\Plugin\LoopIncludes
+class AppIncludes extends \OCA\Shorty\Plugin\LoopAppIncludes
 {
 	static $INCLUDE_CALLBACKS = [];
 

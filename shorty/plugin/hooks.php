@@ -49,7 +49,6 @@ class Hooks
 	 */
 	protected static function requestLoop($hookClass, $hookMethod, $expectedLoopType)
 	{
-		\OCP\Util::writeLog ( 'shorty', 'Requesting documents registered by other apps', \OCP\Util::DEBUG );
 		$payload = array();
 		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
 		// ... for every action register a new element in the container
@@ -68,93 +67,62 @@ class Hooks
 			}
 		}
 		usort($loops, function($A,$B){ return ($A::getLoopIndex() < $B::getLoopIndex()); } );
+		\OCP\Util::writeLog ( 'shorty', sprintf("Received %s hook loops in sum when requesting hook '%s' of type '%s'", count($loops), $hookMethod, $expectedLoopType), \OCP\Util::DEBUG );
 		return $loops;
 	} // function requestLoop
 
-	/**
-	 * @function requestActions
-	 * @brief Hook that requests any actions plugins may want to register
-	 * @return array: Array of descriptions of actions
-	 * @access public
-	 * @author Christian Reiner
-	 */
-	public static function requestActions ( )
-	{
-		\OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', \OCP\Util::DEBUG );
-		$actions = self::requestLoop('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Plugin\LoopShortyAction');
-		return $actions;
-	} // function requestActions
+
 
 	/**
-	 * @function requestIncludes
+	 * @function requestAppIncludes
 	 * @brief Hook that requests any js or css includes plugins may want to register
 	 * @access public
 	 * @author Christian Reiner
 	 */
-	public static function requestIncludes ( )
+	public static function requestAppIncludes ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', \OCP\Util::DEBUG );
-		foreach( self::requestLoop('OCA\Shorty\Hooks', 'requestIncludes', '\OCA\Shorty\Plugin\LoopIncludes') as $loop) {
-			foreach ($loop->getIncludeCallbacks() as $callback) {
-				$callback();
-			}
-		};
+		return self::requestLoop('OCA\Shorty\Hooks', 'requestAppIncludes', '\OCA\Shorty\Plugin\LoopAppIncludes');
 	} // function requestIncludes
 
-
-
-
-
-
-
-
-
-
-
-
 	/**
-	 * @function requestDetails
+	 * @function requestAppDetails
 	 * @brief Hook that requests any plugin details (id and abstract) plugins may want to register
 	 * @return array: Array of details of plugins
 	 * @access public
 	 * @author Christian Reiner
 	 */
-	public static function requestDetails ( )
+	public static function requestAppDetails ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting plugin details registered by other apps', \OCP\Util::DEBUG );
-		$details = [ 'list'=>array(), 'shorty'=>array() ];
-		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
-		// ... for every action register a new element in the container
-		// ... ... such element must be an array holding the entries tested below
-		$container = [ 'shorty'=>&$details['shorty'] ];
-		\OCP\Util::emitHook ( 'OCA\Shorty\Hooks', 'registerDetails', $container );
-		// validate and evaluate what was returned in the $container
-		if ( ! is_array($container))
-		{
-			\OCP\Util::writeLog ( 'shorty', 'Invalid reply from some app that registered into the registerDetails hook, FIX THAT APP !', \OCP\Util::WARN );
-			return [];
-		} // if
-		foreach ( $container as $aspect )
-		{
-			if ( ! is_array($aspect) )
-			{
-				\OCP\Util::writeLog ( 'shorty', 'Invalid reply structure from an app that registered into the registerDetails hook, FIX THAT APP !', \OCP\Util::WARN );
-				break;
-			}
-			foreach ( $aspect as $detail )
-			{
-				if (  ! is_array($detail)
-					|| ! array_key_exists('id',       $detail) || ! is_string($detail['id'])
-					|| ! array_key_exists('name',     $detail) || ! is_string($detail['name'])
-					|| ! array_key_exists('abstract', $detail) || ! is_string($detail['abstract']) )
-				{
-					\OCP\Util::writeLog ( 'shorty', 'Invalid reply from an app that registered into the registerDetails hook, FIX THAT APP !', \OCP\Util::WARN );
-					break;
-				}
-			} // foreach aspect
-		} // foreach aspect
-		return $details;
-	} // function requestDetails
+		return self::requestLoop('OCA\Shorty\Hooks', 'requestAppDetails', '\OCA\Shorty\Plugin\LoopAppDetails');
+	} // function requestActions
+
+
+
+	/**
+	 * @function requestShortyActions
+	 * @brief Hook that requests any actions plugins may want to register
+	 * @return array: Array of descriptions of actions
+	 * @access public
+	 * @author Christian Reiner
+	 */
+	public static function requestShortyActions ( )
+	{
+		\OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', \OCP\Util::DEBUG );
+		return self::requestLoop('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Plugin\LoopShortyAction');
+	} // function requestActions
+
+
+
+
+
+
+
+
+
+
+
 
 	/**
 	 * @function requestQueries
@@ -200,35 +168,5 @@ class Hooks
 		} // foreach aspect
 		return $queries;
 	} // function requestQueries
-
-	/**
-	 * @method requestDocuments
-	 * @brief Registers documents bundled with plugins
-	 * @return array: List of registered documents
-	 * @static
-	 * @access public
-	 * @return array List of plugs, documents in this case
-	 */
-	public static function requestDocuments()
-	{
-		\OCP\Util::writeLog ( 'shorty', 'Requesting documents registered by other apps', \OCP\Util::DEBUG );
-		$payload = array();
-		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
-		// ... for every action register a new element in the container
-		// ... ... such element must be an array holding the entries tested below
-		$container = array ( 'payload'=>&$payload );
-		\OCP\Util::emitHook ( 'OCA\Shorty', 'registerDocuments', $container );
-		// validate result
-		$documents = array();
-		foreach ($payload as $document) {
-			if (is_a($document, '\OCA\Shorty\Plugin\Book')) {
-				\OCP\Util::writeLog ( 'shorty', sprintf('Accepting registered document with title "%s"', $document->getTitle()), \OCP\Util::DEBUG );
-				$documents[] = $document;
-			} else {
-				\OCP\Util::writeLog ( 'shorty', sprintf('Ignoring registered document of type %s', get_class($document)), \OCP\Util::WARNING );
-			}
-		}
-		return $documents;
-	} // function requestDocuments
 
 } // class Hooks

@@ -24,7 +24,7 @@
  */
 
 /**
- * @file plugin/loops/loop_include.php
+ * @file plugin/loops/loop_app_include.php
  * Static class providing routines to populate hooks called by other parts of ownCloud
  * @author Christian Reiner
  */
@@ -33,13 +33,13 @@ namespace OCA\Shorty\Plugin;
 use OCA\Shorty\L10n;
 
 /**
- * @class \OCA\Shorty\Plugin\LoopIncludes
+ * @class \OCA\Shorty\Plugin\LoopAppIncludes
  * @extends \OCA\Shorty\Plugin\Loop
  * @brief Represents a list of styles and script files to be included
  * @access public
  * @author Christian Reiner
  */
-class LoopIncludes extends \OCA\Shorty\Plugin\Loop
+class LoopAppIncludes extends Loop
 {
 	static $INCLUDE_CALLBACKS  = [];
 

@@ -57,7 +57,7 @@ $tmpl->assign ( 'backend-verifier',    \OCP\Util::linkTo('shorty', 'verification
 $tmpl->assign ( 'backend-selection',   Backend::getBackendTypes() );
 $tmpl->assign ( 'backend-default',     Backend::getBackendType() );
 $tmpl->assign ( 'backend-static-base', \OCP\Config::getAppValue('shorty', 'backend-static-base','') );
-$tmpl->assign ( 'shorty-plugins',      Hooks::requestDetails() );
+$tmpl->assign ( 'shorty-plugins',      Hooks::requestAppDetails() );
 
 // render template
 return $tmpl->fetchPage ( );
