@@ -173,9 +173,9 @@ namespace OCA\Shorty;
 				<span class="shorty-actions">
 <!-- actions are registered via hooks, action icons will appear here -->
 <?php foreach ( $_['shorty-actions'] as $action ) { ?>
-				<a id="shorty-action-<?php p($action->getName()); ?>" title="<?php p($action->getAlt()); ?>" data-method="<?php p($action->getCallback()); ?>" class="">
-					<img alt="<?php p($action->getAlt()); ?>" title="<?php p($action->getTitle()); ?>"
-						class="shorty-icon svg" src="<?php p($action->getIcon()); ?>" />
+				<a id="shorty-action-<?php p($action->getActionName()); ?>" title="<?php p($action->getActionAlt()); ?>" data-method="<?php p($action->getActionCallback()); ?>" class="">
+					<img alt="<?php p($action->getActionAlt()); ?>" title="<?php p($action->getActionTitle()); ?>"
+						class="shorty-icon svg" src="<?php p($action->getActionIcon()); ?>" />
 				</a>
 <?php } ?>
 				</span>

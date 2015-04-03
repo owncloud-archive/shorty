@@ -29,10 +29,10 @@
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Tracking;
+namespace OCA\Shorty\Tracking\Loop;
 
 /**
- * @class OC_ShortyTracking_Loop_ShortyEventRequest
+ * @class OCA\Shorty\Tracking\Loop\ShortyEventRequest
  * @extends \OCA\Shorty\PluginLoop
  * @brief Static 'namespace' class for api hook population
  * @access public
@@ -40,6 +40,6 @@ namespace OCA\Shorty\Tracking;
  */
 class ShortyEventRequest extends \OCA\Shorty\Plugin\LoopShortyEvent
 {
-	const APP = 'shorty_tracking';
+	const LOOP_APP = 'shorty_tracking';
 
 }

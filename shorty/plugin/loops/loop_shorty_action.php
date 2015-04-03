@@ -47,9 +47,9 @@ class LoopShortyAction extends Loop
 	const ACTION_TITLE     = null;
 	const ACTION_ALT       = null;
 
-	public function getName()     { return static::ACTION_NAME; }
-	public function getIcon()     { return \OCP\Util::imagePath(static::APP,static::ACTION_ICON); }
-	public function getCallback() { return static::ACTION_CALLBACK; }
-	public function getTitle()    { return L10n::t(static::ACTION_TITLE); }
-	public function getAlt()      { return L10n::t(static::ACTION_ALT); }
+	public function getActionName()     { return static::ACTION_NAME; }
+	public function getActionIcon()     { return \OCP\Util::imagePath(static::LOOP_APP, static::ACTION_ICON); }
+	public function getActionCallback() { return static::ACTION_CALLBACK; }
+	public function getActionTitle()    { return L10n::t(static::ACTION_TITLE); }
+	public function getActionAlt()      { return L10n::t(static::ACTION_ALT); }
 }

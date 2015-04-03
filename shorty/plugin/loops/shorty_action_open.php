@@ -28,7 +28,7 @@
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty;
+namespace OCA\Shorty\Loop;
 
 /**
  * @class ShortyActionOpen
@@ -39,8 +39,8 @@ namespace OCA\Shorty;
  */
 class ShortyActionOpen extends \OCA\Shorty\Plugin\LoopShortyAction
 {
-	const APP = 'shorty';
-	const INDEX = 101;
+	const LOOP_APP = 'shorty';
+	const LOOP_INDEX = 101;
 
 	const ACTION_NAME      = 'open';
 	const ACTION_ICON      = 'actions/open.svg';

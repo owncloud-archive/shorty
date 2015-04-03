@@ -28,7 +28,7 @@
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty;
+namespace OCA\Shorty\Loop;
 
 /**
  * @class ShortyActionDelete
@@ -39,8 +39,8 @@ namespace OCA\Shorty;
  */
 class ShortyActionDelete extends \OCA\Shorty\Plugin\LoopShortyAction
 {
-	const APP = 'shorty';
-	const INDEX = 103;
+	const LOOP_APP = 'shorty';
+	const LOOP_INDEX = 103;
 
 	const ACTION_NAME      = 'del';
 	const ACTION_ICON      = 'actions/delete.svg';

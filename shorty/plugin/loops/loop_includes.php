@@ -24,27 +24,24 @@
  */
 
 /**
- * @file plugin/loops/shorty_action_share.php
+ * @file plugin/loops/loop_include.php
+ * Static class providing routines to populate hooks called by other parts of ownCloud
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Loop;
+namespace OCA\Shorty\Plugin;
+use OCA\Shorty\L10n;
 
 /**
- * @class ShortyActionShare
+ * @class \OCA\Shorty\Plugin\LoopIncludes
  * @extends \OCA\Shorty\Plugin\Loop
- * @brief 'share' action on a Shorty
+ * @brief Represents a list of styles and script files to be included
  * @access public
  * @author Christian Reiner
  */
-class ShortyActionShare extends \OCA\Shorty\Plugin\LoopShortyAction
+class LoopIncludes extends \OCA\Shorty\Plugin\Loop
 {
-	const LOOP_APP = 'shorty';
-	const LOOP_INDEX = 102;
+	static $INCLUDE_CALLBACKS  = [];
 
-	const ACTION_NAME      = 'share';
-	const ACTION_ICON      = 'actions/share.svg';
-	const ACTION_CALLBACK  = 'OC.Shorty.WUI.Entry.share';
-	const ACTION_TITLE     = "Share Shorty";
-	const ACTION_ALT       = "share";
+	public function getIncludeCallbacks()  { return static::$INCLUDE_CALLBACKS;  }
 }

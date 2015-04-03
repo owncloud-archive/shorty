@@ -40,10 +40,11 @@ namespace OCA\Shorty\Plugin;
  */
 class Loop
 {
-	const APP = null;
-	const INDEX = 0;
+	const LOOP_APP   = null;
+	const LOOP_INDEX = 0;
 
-	public static function getApp() { return static::APP; }
+	public static function getLoopApp()   { return static::LOOP_APP; }
+	public static function getLoopIndex() { return static::LOOP_INDEX; }
 
 	public static function register($container) {
 		if (is_array($container) && isset($container['payload']) && is_array($container['payload'])) {

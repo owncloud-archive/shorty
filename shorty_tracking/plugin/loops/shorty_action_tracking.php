@@ -29,10 +29,10 @@
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Tracking;
+namespace OCA\Shorty\Tracking\Loop;
 
 /**
- * @class ShortyActionTracking
+ * @class OCA\Shorty\Tracking\Loop\ShortyActionTracking
  * @extends \OCA\Shorty\Plugin\Loop
  * @brief 'tracking' action on a Shorty
  * @access public
@@ -40,8 +40,8 @@ namespace OCA\Shorty\Tracking;
  */
 class ShortyActionTracking extends \OCA\Shorty\Plugin\LoopShortyAction
 {
-	const APP = 'shorty_tracking';
-	const INDEX = 201;
+	const LOOP_APP = 'shorty_tracking';
+	const LOOP_INDEX = 201;
 
 	const ACTION_NAME      = 'tracking';
 	const ACTION_ICON      = 'actions/hits.svg';

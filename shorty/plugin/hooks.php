@@ -67,13 +67,9 @@ class Hooks
 				\OCP\Util::writeLog ( 'shorty', sprintf("'Ignoring registered object of type '%s'", get_class($loop)), \OCP\Util::INFO );
 			}
 		}
-		usort($loops, 'self::shuffleByIndex');
+		usort($loops, function($A,$B){ return ($A::getLoopIndex() < $B::getLoopIndex()); } );
 		return $loops;
 	} // function requestLoop
-
-	private static function shuffleByIndex($loopA, $loopB) {
-		return ($loopA::INDEX<$loopB::INDEX);
-	} // function sortLoopsByIndex
 
 	/**
 	 * @function requestActions
@@ -85,8 +81,36 @@ class Hooks
 	public static function requestActions ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', \OCP\Util::DEBUG );
-		return self::requestLoop('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Plugin\LoopShortyAction');
+		$actions = self::requestLoop('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Plugin\LoopShortyAction');
+		return $actions;
 	} // function requestActions
+
+	/**
+	 * @function requestIncludes
+	 * @brief Hook that requests any js or css includes plugins may want to register
+	 * @access public
+	 * @author Christian Reiner
+	 */
+	public static function requestIncludes ( )
+	{
+		\OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', \OCP\Util::DEBUG );
+		foreach( self::requestLoop('OCA\Shorty\Hooks', 'requestIncludes', '\OCA\Shorty\Plugin\LoopIncludes') as $loop) {
+			foreach ($loop->getIncludeCallbacks() as $callback) {
+				$callback();
+			}
+		};
+	} // function requestIncludes
+
+
+
+
+
+
+
+
+
+
+
 
 	/**
 	 * @function requestDetails
@@ -131,19 +155,6 @@ class Hooks
 		} // foreach aspect
 		return $details;
 	} // function requestDetails
-
-	/**
-	 * @function requestIncludes
-	 * @brief Hook that requests any includes plugins may want to register
-	 * @return array: Array of descriptions of actions
-	 * @access public
-	 * @author Christian Reiner
-	 */
-	public static function requestIncludes ( )
-	{
-		\OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', \OCP\Util::DEBUG );
-		\OCP\Util::emitHook ( 'OCA\Shorty\Hooks', 'registerIncludes', [] );
-	} // function requestIncludes
 
 	/**
 	 * @function requestQueries

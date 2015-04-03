@@ -54,8 +54,6 @@ namespace OCA\Shorty;
 \OCP\Util::addScript ( 'shorty', 'init' );
 if ( \OCP\Util::DEBUG==\OCP\Config::getAppValue( "loglevel", \OCP\Util::WARN ) )
 	\OCP\Util::addScript ( 'shorty',  'debug' );
-// any additional stuff to include as registered into the hook ?
-Hooks::requestIncludes();
 
 // strategy:
 // - first: decide which action is requested
@@ -139,6 +137,8 @@ switch ($act)
 	default:
 		try
 		{
+			// any additional stuff to include as registered into the hook ?
+			Hooks::requestIncludes();
 			// is this a redirect from a call with a target url to be added ?
 			if ( isset($_SESSION['shorty-referrer']) )
 			{
