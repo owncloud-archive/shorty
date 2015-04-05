@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-04-03 21:10+0000\n"
+"PO-Revision-Date: 2015-04-04 20:21+0000\n"
 "Last-Translator: Slobodan Simić (Слободан Симић) <slsimic@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/owncloud/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -228,7 +228,7 @@ msgid "Choose a service…"
 msgstr "Изаберите сервис ..."
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr ""
+msgstr "Кликните, за сваки сајт за који желите да направите скраћеницу."
 
 msgid "Click registered"
 msgstr "Клик је регистрован"
@@ -306,7 +306,7 @@ msgid "Mail client"
 msgstr "Клијент електронске поште"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "Измене за скраћеницу %s су сачуване"
 
 msgid "Modify attributes"
 msgstr "Модификуј атрибуте"
@@ -345,7 +345,7 @@ msgid "Open target url"
 msgstr "Отвори циљни УРЛ"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "Опциона подешавања статичног зачеља"
 
 msgid "or simpy print or download it for off-line usage"
 msgstr "или га једноставно одштампајте или преузмите за коришћење ван везе"
@@ -432,7 +432,7 @@ msgid "Shorty as QRCode"
 msgstr "Shorty као QRCode"
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr "Скраћеница %s је обрисана"
 
 msgid "Show as QRCode"
 msgstr "Прикажи као QRCode"
@@ -486,7 +486,7 @@ msgid "Status"
 msgstr "Статус"
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "Измена статуса за скраћеницу %s је сачувана"
 
 msgid "Target"
 msgstr "Циљ"
@@ -510,7 +510,7 @@ msgid "The link below can be copied to paste it elsewhere"
 msgstr "Веза испод се може копирати за лепљење на другим местима"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "Додатни прикључак„%%s“ прати употребу постојећих скраћеница!"
 
 msgid "therefore the content must be copied manually"
 msgstr "зато се садржај мора ручно копирати"
@@ -519,12 +519,12 @@ msgid "then paste into message"
 msgstr "затим залепи у поруку"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr ""
+msgstr "Овај 2Д баркод задржи УРЛ који показује на ову скраћеницу"
 
 msgid ""
 "Use it in web pages by referencing or embedding or simply print or download "
 "it for offline usage"
-msgstr ""
+msgstr "Користите га на веб странама или га одштампајте или преузмите за употребу ван везе."
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "Ово је унутрашња адреса коју скраћена адреса преноси"
@@ -554,7 +554,7 @@ msgid "Unexpected type of exception caught: %s"
 msgstr ""
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "Нажалост употребљивост ове шеме је ограничена"
 
 msgid "Unknown object of type caught: %s"
 msgstr ""
@@ -626,7 +626,7 @@ msgstr "tiny.cc кориснички кључ"
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "Обавезна провера шифрарских сертификата током коминукације са зачељем"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
@@ -663,7 +663,7 @@ msgstr "Спољни сервис 'tiny.cc' се користи за регис�
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "Не користи се зачеље. Генерисане су директне везе ка вашем облаку."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
@@ -672,12 +672,12 @@ msgstr "Услуга захтева да се аутентификујете с�
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "Такве везе су вероватно дуже од оних које би генерисало зачеље."
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "Међутим ова опција се не ослања на услуге треће стране и ваше скраћенице су под вашом контролом."
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
@@ -687,12 +687,12 @@ msgstr "Како ова постава зависи од серверских п
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "Статично, правилима базирано зачеље, генерише кратке везе релативно у односу на основни УРЛ."
 
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr ""
+msgstr "Морате се побринути да сваки захтев до УРЛ-а подешеног овде се интерно мапира до Шорти модула."
 
 msgid "The target of that mapping must be some URL like:"
 msgstr "Циљ тог мапирања мора бити адреса попут:"
@@ -710,7 +710,7 @@ msgstr "Оставите празно ако не можете понудити 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "Користите ово зачеље само ако можете да обезбедите кратки основни УРЛ мапиран како је описано. Иначе скраћенице неће радити."
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
@@ -748,17 +748,17 @@ msgstr "Ваша подешавања раде успешно!"
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr ""
+msgstr "Захтеви до подешеног основног УРЛ-а се мапирају на овај ОунКлауд сервис преусмеравања."
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr ""
+msgstr "Коришћење таквог статичног зачеља је добро и сигурно докле год се ова подешавања не дирају."
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "Ово зачеље биће понуђено свим локалним корисницима као додатни избор у њиховим личним подешавањима."
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Ваша подешавања још увек не раде исправно!"
@@ -771,10 +771,10 @@ msgstr "Проверите ваша подешавања и уверите се 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
+msgstr "Обезбедите да сви његови захтеви се некако мапирају до Шортијевог сервиса преусмеравања."
 
 msgid "Shorty relay service"
-msgstr ""
+msgstr "Шортијев сервис преусмеравања"
 
 msgid "If you proceed you will be forwarded to:"
 msgstr "Ако наставите бићете прослеђени на:"
