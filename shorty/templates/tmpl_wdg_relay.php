@@ -43,10 +43,10 @@ namespace OCA\Shorty;
 		<legend><span class="heading"><?php p(L10n::t('Target object').':'); ?></span></legend>
 
 		<label for="title"><?php p(L10n::t('Title').':'); ?></label>
-		<span id="title" class=""><?= $_['shorty']['title'] ?></span>
+		<span id="title" class=""><?= $_['shorty']->getTitle() ?></span>
 		<br />
 		<label for="target"><?php p(L10n::t('Location').':'); ?></label>
-		<span id="target" class=""><?= $_['shorty']['target'] ?></span>
+		<span id="target" class=""><?= $_['shorty']->getTarget() ?></span>
 		<hr />
 		<label for="details">
 			<img id="staticon"  class="shorty-icon svg" width="16px" src="<?= $_['meta']['staticon'] ?>">
@@ -59,7 +59,7 @@ namespace OCA\Shorty;
 	</fieldset>
 
 	<div>
-		<button id="shorty-relay-proceed" class="shorty-button-submit" data-target="<?= $_['shorty']['target'] ?>">
+		<button id="shorty-relay-proceed" class="shorty-button-submit" data-target="<?= $_['shorty']->getTarget() ?>">
 			<?php p(L10n::t('Proceed')); ?>
 		</button>
 	</div>

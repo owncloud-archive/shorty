@@ -24,28 +24,37 @@
  */
 
 /**
- * @file plugin/loops/loop_app_details.php
+ * @file plugin/atom/atom_request.php
  * Static class providing routines to populate hooks called by other parts of ownCloud
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Plugin;
-use OCA\Shorty\L10n;
+namespace OCA\Shorty\Atom;
 
 /**
- * @class \OCA\Shorty\Plugin\LoopAppDetails
- * @extends \OCA\Shorty\Plugin\Loop
- * @brief Represents an apps details and description
+ * @class AtomRequest
+ * @extends \OCA\Shorty\Plugin\Atom
  * @access public
  * @author Christian Reiner
  */
-abstract class LoopAppDetails extends Loop
+class AtomRequest extends \OCA\Shorty\Plugin\Atom
 {
-	static $DETAIL_KEY      = null;
-	static $DETAIL_NAME     = null;
-	static $DETAIL_ABSTRACT = null;
+	const ATOM_TYPE = \OCA\Shorty\Plugin\Atom::ATOM_TYPE_REQUEST;
 
-	public function getDetailKey()      { return static::$DETAIL_KEY;      }
-	public function getDetailName()     { return static::$DETAIL_NAME;     }
-	public function getDetailAbstract() { return static::$DETAIL_ABSTRACT; }
+	protected $address;
+	protected $host;
+	protected $time;
+	protected $user;
+
+	public function getAddress() { return $this->address; }
+	public function getHost()    { return $this->host; }
+	public function getTime()    { return $this->time; }
+	public function getUser()    { return $this->user; }
+
+	public function __construct($attributes) {
+		$this->address = (string) $attributes['address'];
+		$this->host    = (string) $attributes['host'];
+		$this->time    = (string) $attributes['time'];
+		$this->user    = (string) $attributes['user'];
+	}
 }

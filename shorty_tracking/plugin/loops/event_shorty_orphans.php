@@ -24,28 +24,27 @@
  */
 
 /**
- * @file plugin/loops/loop_app_details.php
+ * @file plugin/loops/shorty_action_clicks.php
  * Static class providing routines to populate hooks called by other parts of ownCloud
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Plugin;
-use OCA\Shorty\L10n;
+namespace OCA\Shorty\Tracking\Loop;
 
 /**
- * @class \OCA\Shorty\Plugin\LoopAppDetails
- * @extends \OCA\Shorty\Plugin\Loop
- * @brief Represents an apps details and description
+ * @class OCA\Shorty\Tracking\Loop\EventShortyOrphans
+ * @extends \OCA\Shorty\Plugin\Event
+ * @brief Deletes all orphaned tracking entries
  * @access public
  * @author Christian Reiner
  */
-abstract class LoopAppDetails extends Loop
+class EventShortyOrphans extends \OCA\Shorty\Plugin\Event
 {
-	static $DETAIL_KEY      = null;
-	static $DETAIL_NAME     = null;
-	static $DETAIL_ABSTRACT = null;
-
-	public function getDetailKey()      { return static::$DETAIL_KEY;      }
-	public function getDetailName()     { return static::$DETAIL_NAME;     }
-	public function getDetailAbstract() { return static::$DETAIL_ABSTRACT; }
+	public function process() {
+		\OCP\Util::writeLog ( 'shorty_tracking', 'Wiping all orphaned tracking entries without corresponding Shorty', \OCP\Util::INFO );
+		$result = TRUE;
+			// wipe shorty clicks
+		$query = \OCP\DB::prepare ( Query::CLICK_WIPE_ALL );
+		return FALSE===$query->execute();
+	}
 }

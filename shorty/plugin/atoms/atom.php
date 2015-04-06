@@ -24,22 +24,22 @@
  */
 
 /**
- * @file plugin/loops/shorty_action_clicks.php
+ * @file plugin/atom/atom.php
  * Static class providing routines to populate hooks called by other parts of ownCloud
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Tracking\Loop;
+namespace OCA\Shorty\Plugin;
 
 /**
- * @class OCA\Shorty\Tracking\Loop\ShortyEventRequest
- * @extends \OCA\Shorty\PluginLoop
- * @brief Static 'namespace' class for api hook population
+ * @class Atom
  * @access public
  * @author Christian Reiner
  */
-class ShortyEventRequest extends \OCA\Shorty\Plugin\LoopShortyEvent
+abstract class Atom
 {
-	const LOOP_APP = 'shorty_tracking';
+	CONST ATOM_TYPE_SHORTY  = 0;
+	CONST ATOM_TYPE_REQUEST = 1;
 
+	const ATOM_TYPE = null;
 }

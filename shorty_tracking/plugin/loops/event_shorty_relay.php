@@ -24,28 +24,37 @@
  */
 
 /**
- * @file plugin/loops/loop_app_details.php
- * Static class providing routines to populate hooks called by other parts of ownCloud
+ * @file plugin/loops/event_shorty_relay.php
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Plugin;
-use OCA\Shorty\L10n;
+namespace OCA\Shorty\Tracking\Loop;
 
 /**
- * @class \OCA\Shorty\Plugin\LoopAppDetails
- * @extends \OCA\Shorty\Plugin\Loop
- * @brief Represents an apps details and description
+ * @class OCA\Shorty\Tracking\Loop\EventShortyRequest
+ * @extends \OCA\Shorty\Plugin\Event
+ * @brief Static 'namespace' class for api hook population
  * @access public
  * @author Christian Reiner
  */
-abstract class LoopAppDetails extends Loop
+class EventShortyRelay
 {
-	static $DETAIL_KEY      = null;
-	static $DETAIL_NAME     = null;
-	static $DETAIL_ABSTRACT = null;
+	static public function process($param) {
+		list($shorty, $request, $result) = $param;
+		\OCP\Util::writeLog ( 'shorty_tracking',
+			sprintf("Recording relay event on Shorty '%s' with result '%s'", $shorty->getId(), $result),
+			\OCP\Util::DEBUG );
+		$param  = [
+			':shorty'    => $shorty->getId(),
+			':time'      => $request->getTime(),
+			':user'      => $request->getUser(),
+			':address'   => $request->getAddress(),
+			':host'      => $request->getHost()==$request->getAddress() ? ' - ? - ' : $request->getHost(),
+			':result'    => $result
+		];
+		$query = \OCP\DB::prepare ( \OCA\Shorty\Tracking\Query::CLICK_RECORD );
+		$query->execute ( $param );
+		return TRUE;
 
-	public function getDetailKey()      { return static::$DETAIL_KEY;      }
-	public function getDetailName()     { return static::$DETAIL_NAME;     }
-	public function getDetailAbstract() { return static::$DETAIL_ABSTRACT; }
+	}
 }

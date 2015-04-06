@@ -24,20 +24,20 @@
 */
 
 /**
- * @file plugin/hooks.php
+ * @file plugin/hooks/requests.php
  * @brief Static class calling routines registered by plugins to populate hooks
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty;
+namespace OCA\Shorty\Hook;
 
 /**
- * @class Hooks
+ * @class Requests
  * @brief Static class for api hook population
  * @access public
  * @author Christian Reiner
  */
-class Hooks
+class Requests
 {
 	/**
 	 * @method requestLoop
@@ -47,7 +47,7 @@ class Hooks
 	 * @access public
 	 * @return array List of plugs, documents in this case
 	 */
-	protected static function requestLoop($hookClass, $hookMethod, $expectedLoopType)
+	protected static function requestLoops($hookClass, $hookMethod, $expectedLoopType)
 	{
 		$payload = array();
 		// we hand over a container by reference and expect any app registering into this hook to obey this structure:
@@ -69,7 +69,7 @@ class Hooks
 		usort($loops, function($A,$B){ return ($A::getLoopIndex() < $B::getLoopIndex()); } );
 		\OCP\Util::writeLog ( 'shorty', sprintf("Received %s hook loops in sum when requesting hook '%s' of type '%s'", count($loops), $hookMethod, $expectedLoopType), \OCP\Util::DEBUG );
 		return $loops;
-	} // function requestLoop
+	} // function requestLoops
 
 
 
@@ -83,7 +83,7 @@ class Hooks
 	public static function requestAppDetails ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting plugin details registered by other apps', \OCP\Util::DEBUG );
-		return self::requestLoop('OCA\Shorty\Hooks', 'requestAppDetails', '\OCA\Shorty\Plugin\LoopAppDetails');
+		return self::requestLoops('OCA\Shorty\Hooks', 'requestAppDetails', '\OCA\Shorty\Plugin\LoopAppDetails');
 	} // function requestAppDetails
 
 	/**
@@ -95,7 +95,7 @@ class Hooks
 	public static function requestAppIncludes ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting includes registered by other apps', \OCP\Util::DEBUG );
-		return self::requestLoop('OCA\Shorty\Hooks', 'requestAppIncludes', '\OCA\Shorty\Plugin\LoopAppIncludes');
+		return self::requestLoops('OCA\Shorty\Hooks', 'requestAppIncludes', '\OCA\Shorty\Plugin\LoopAppIncludes');
 	} // function requestAppIncludes
 
 	/**
@@ -108,7 +108,7 @@ class Hooks
 	public static function requestAppQueries ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting database queries to be offered by other apps', \OCP\Util::DEBUG );
-		return self::requestLoop('OCA\Shorty\Hooks', 'requestAppQueries', '\OCA\Shorty\Plugin\LoopAppQuery');
+		return self::requestLoops('OCA\Shorty\Hooks', 'requestAppQueries', '\OCA\Shorty\Plugin\LoopAppQuery');
 	} // function requestAppQueries
 
 
@@ -123,7 +123,7 @@ class Hooks
 	public static function requestShortyActions ( )
 	{
 		\OCP\Util::writeLog ( 'shorty', 'Requesting actions to be offered for Shortys by other apps', \OCP\Util::DEBUG );
-		return self::requestLoop('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Plugin\LoopShortyAction');
+		return self::requestLoops('OCA\Shorty\Hooks', 'requestShortyActions', '\OCA\Shorty\Plugin\LoopShortyAction');
 	} // function requestShortyActions
 
-} // class Hooks
+} // class Requests

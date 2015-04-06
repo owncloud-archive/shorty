@@ -37,7 +37,7 @@ namespace OCA\Shorty\Plugin;
  * @access public
  * @author Christian Reiner
  */
-class LoopAppQuery extends Loop
+abstract class LoopAppQuery extends Loop
 {
 	static $QUERY_KEY       = null;
 	static $QUERY_STATEMENT = null;

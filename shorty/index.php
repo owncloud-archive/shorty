@@ -138,7 +138,7 @@ switch ($act)
 		try
 		{
 			// any additional stuff to include as registered into the hook ?
-			foreach( Hooks::requestAppIncludes() as $loop) {
+			foreach( Hook\Requests::requestAppIncludes() as $loop) {
 				foreach ($loop->getIncludeCallbacks() as $callback) {
 					$callback();
 				}
@@ -158,7 +158,7 @@ switch ($act)
 			}
 			$tmpl = new \OCP\Template( 'shorty', 'tmpl_index', 'user' );
 			// any additional actions registered via hooks that should be offered ?
-			$tmpl->assign ( 'shorty-actions', Hooks::requestShortyActions() );
+			$tmpl->assign ( 'shorty-actions', Hook\Requests::requestShortyActions() );
 			// available status options (required for select filter in toolbox)
 			$shorty_status['']=sprintf('- %s -',L10n::t('all'));
 			foreach ( Type::$STATUS as $status )

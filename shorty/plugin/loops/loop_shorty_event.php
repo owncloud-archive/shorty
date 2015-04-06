@@ -38,7 +38,7 @@ namespace OCA\Shorty\Plugin;
  * @access public
  * @author Christian Reiner
  */
-class LoopShortyEvent extends Loop
+abstract class LoopShortyEvent extends Loop
 {
 	const EVENT_NAME           = null;
 	const EVENT_ICON_LOCATION  = null;

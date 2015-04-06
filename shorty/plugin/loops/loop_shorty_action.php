@@ -39,7 +39,7 @@ use OCA\Shorty\L10n;
  * @access public
  * @author Christian Reiner
  */
-class LoopShortyAction extends Loop
+abstract class LoopShortyAction extends Loop
 {
 	const ACTION_NAME      = null;
 	const ACTION_ICON      = null;

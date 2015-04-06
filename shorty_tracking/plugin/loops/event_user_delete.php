@@ -24,28 +24,27 @@
  */
 
 /**
- * @file plugin/loops/loop_app_details.php
+ * @file plugin/loops/shorty_action_clicks.php
  * Static class providing routines to populate hooks called by other parts of ownCloud
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Plugin;
-use OCA\Shorty\L10n;
+namespace OCA\Shorty\Tracking\Loop;
 
 /**
- * @class \OCA\Shorty\Plugin\LoopAppDetails
- * @extends \OCA\Shorty\Plugin\Loop
- * @brief Represents an apps details and description
+ * @class OCA\Shorty\Tracking\Loop\EventUserDelete
+ * @extends \OCA\Shorty\Plugin\Event
+ * @brief Static 'namespace' class for api hook population
  * @access public
  * @author Christian Reiner
  */
-abstract class LoopAppDetails extends Loop
+class EventUserDelete extends \OCA\Shorty\Plugin\Event
 {
-	static $DETAIL_KEY      = null;
-	static $DETAIL_NAME     = null;
-	static $DETAIL_ABSTRACT = null;
-
-	public function getDetailKey()      { return static::$DETAIL_KEY;      }
-	public function getDetailName()     { return static::$DETAIL_NAME;     }
-	public function getDetailAbstract() { return static::$DETAIL_ABSTRACT; }
+	public function process($user) {
+		\OCP\Util::writeLog ( 'shorty_tracking', sprintf("Wiping all tacking entries of deleted user '%s'", $user), \OCP\Util::INFO );
+		$result = TRUE;
+			// wipe shorty clicks
+		$query = \OCP\DB::prepare ( Query::CLICK_WIPE_USER );
+		return FALSE===$query->execute();
+	}
 }

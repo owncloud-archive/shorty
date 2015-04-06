@@ -55,7 +55,7 @@ try
 	];
 
 	$query = NULL;
-	foreach (Hooks::requestAppQueries() as $query) {
+	foreach (Hook\Requests::requestAppQueries() as $query) {
 		if ($query->getQueryKey()==$p_query)
 			break;
 	}

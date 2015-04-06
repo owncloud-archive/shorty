@@ -48,15 +48,19 @@ namespace OCA\Shorty;
 \OC::$CLASSPATH['OCA\Shorty\Query']                    = 'shorty/lib/query.php';
 \OC::$CLASSPATH['OCA\Shorty\Tools']                    = 'shorty/lib/tools.php';
 \OC::$CLASSPATH['OCA\Shorty\Type']                     = 'shorty/lib/type.php';
-\OC::$CLASSPATH['OCA\Shorty\Hooks']                    = 'shorty/plugin/hooks.php';
+\OC::$CLASSPATH['OCA\Shorty\Hooks']                    = 'shorty/plugin/requests.php';
 
-\OC::$CLASSPATH['OCA\Shorty\Loops']                    = 'shorty/plugin/loops.php';
+\OC::$CLASSPATH['OCA\Shorty\Plugin\Atom']              = 'shorty/plugin/atoms/atom.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\Loop']              = 'shorty/plugin/loops/loop.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\LoopAppDetails']    = 'shorty/plugin/loops/loop_app_details.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\LoopAppIncludes']   = 'shorty/plugin/loops/loop_app_includes.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\LoopAppQuery']      = 'shorty/plugin/loops/loop_app_query.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\LoopShortyAction']  = 'shorty/plugin/loops/loop_shorty_action.php';
 \OC::$CLASSPATH['OCA\Shorty\Plugin\LoopShortyEvent']   = 'shorty/plugin/loops/loop_shorty_event.php';
+
+\OC::$CLASSPATH['OCA\Shorty\Atom\AtomRequest']         = 'shorty/plugin/atoms/atom_request.php';
+\OC::$CLASSPATH['OCA\Shorty\Atom\AtomShorty']          = 'shorty/plugin/atoms/atom_shorty.php';
+
 \OC::$CLASSPATH['OCA\Shorty\Loop\QueryShortyList']     = 'shorty/plugin/loops/query_shorty_list.php';
 \OC::$CLASSPATH['OCA\Shorty\Loop\QueryShortySingle']   = 'shorty/plugin/loops/query_shorty_single.php';
 \OC::$CLASSPATH['OCA\Shorty\Loop\ShortyActionShow']    = 'shorty/plugin/loops/shorty_action_show.php';
@@ -64,6 +68,9 @@ namespace OCA\Shorty;
 \OC::$CLASSPATH['OCA\Shorty\Loop\ShortyActionDelete']  = 'shorty/plugin/loops/shorty_action_delete.php';
 \OC::$CLASSPATH['OCA\Shorty\Loop\ShortyActionShare']   = 'shorty/plugin/loops/shorty_action_share.php';
 \OC::$CLASSPATH['OCA\Shorty\Loop\ShortyActionOpen']    = 'shorty/plugin/loops/shorty_action_open.php';
+
+\OC::$CLASSPATH['OCA\Shorty\Hook\Events']              = 'shorty/plugin/hooks/events.php';
+\OC::$CLASSPATH['OCA\Shorty\Hook\Requests']            = 'shorty/plugin/hooks/requests.php';
 
 \OCP\Util::connectHook ( 'OCP\User',         'post_deleteUser',         'OCA\Shorty\Loops',                   'deleteUser');
 \OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppQueries',       'OCA\Shorty\Loop\QueryShortyList',    'register');

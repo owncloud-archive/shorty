@@ -38,7 +38,7 @@ namespace OCA\Shorty\Plugin;
  * @access public
  * @author Christian Reiner
  */
-class Loop
+abstract class Loop
 {
 	const LOOP_APP   = null;
 	const LOOP_INDEX = 0;

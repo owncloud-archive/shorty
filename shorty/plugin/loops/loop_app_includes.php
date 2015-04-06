@@ -39,7 +39,7 @@ use OCA\Shorty\L10n;
  * @access public
  * @author Christian Reiner
  */
-class LoopAppIncludes extends Loop
+abstract class LoopAppIncludes extends Loop
 {
 	static $INCLUDE_CALLBACKS  = [];
 
