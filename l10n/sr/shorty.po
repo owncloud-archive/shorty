@@ -34,7 +34,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-04-06 11:01+0000\n"
+"PO-Revision-Date: 2015-04-07 06:21+0000\n"
 "Last-Translator: Bojan Beloica <beloica.b@mfkv.rs>\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/owncloud/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -551,13 +551,13 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Ово ради само на уређајима попут паметних телефона"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Затечен неочекивани тип изузетка: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Нажалост употребљивост ове шеме је ограничена"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Затечен непознати објекат типа: %s"
 
 msgid "Url shortened to: %s"
 msgstr "Адреса је скраћена у: %s"
@@ -566,7 +566,7 @@ msgid "Use it in web pages by referencing or embedding"
 msgstr "Користи на веб страницама упућивањем или уграђивањем"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "Користите '%s' тастер изнад или чисто 'Кратиша'"
 
 msgid "Verify by clicking…"
 msgstr "Верификуј кликом..."
