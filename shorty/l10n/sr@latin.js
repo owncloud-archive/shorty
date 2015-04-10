@@ -12,6 +12,8 @@ OC.L10N.register(
     "Expiration" : "Isticanje",
     "Home" : "Kuća",
     "Loading" : "Učitavanje",
+    "Notes" : "Beleške",
+    "Nothing here yet" : "Ovde još uvek nema ničega",
     "Save" : "Snimi",
     "Settings" : "Podešavanja",
     "Title" : "Naslov",
