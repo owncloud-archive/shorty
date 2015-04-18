@@ -1,5 +1,6 @@
 <?php
 $TRANSLATIONS = array(
+"Plugins" => "Pluginuri",
 "all" => "toate",
 "blocked" => "blocat",
 "deleted" => "șters",
@@ -8,6 +9,7 @@ $TRANSLATIONS = array(
 "never" => "niciodată",
 "private" => "privat",
 "public" => "public",
+"shared" => "partajat",
 "delete" => "ștergere",
 "edit" => "editează ",
 "open" => "deschide",
@@ -30,6 +32,7 @@ $TRANSLATIONS = array(
 "tiny.cc service" => "serviciu tiny.cc",
 "for own usage" => "pentru uz propriu ",
 "with ownCloud users" => "pentru utilizatorii ownCloud",
+"available for everyone" => "disponibil pentru oricine",
 "Access" => "Acces",
 "Add as new" => "Adaugaţi ca nou ",
 "Alternatively the link can be copied into a message manually" => "Ca alternativa, linkul poate fi copiat manual intr-un mesaj",
