@@ -71,6 +71,7 @@ try
 					||	( ($reqV[0]==$insV[0])&&($reqV[1]==$insV[1])&&($reqV[2]<=$insV[2]) ) ) ) {
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'eventShortyDelete',       'OCA\Shorty\Tracking\Loop\EventShortyDelete',    'process');
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'eventShortyRelay',        'OCA\Shorty\Tracking\Loop\EventShortyRelay',     'process');
+				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'eventUserDelete',         'OCA\Shorty\Tracking\Loop\EventUserDelete',      'process');
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestShortyActions',    'OCA\Shorty\Tracking\Loop\ShortyActionTracking', 'register');
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppIncludes',      'OCA\Shorty\Tracking\Loop\AppIncludes',          'register');
 				\OCP\Util::connectHook ( 'OCA\Shorty\Hooks', 'requestAppDetails',       'OCA\Shorty\Tracking\Loop\AppDetails',           'register');

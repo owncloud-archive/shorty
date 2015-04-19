@@ -1,11 +1,11 @@
 <?php
 /**
- * @package shorty-tracking an ownCloud url shortener plugin addition
+ * @package shorty an ownCloud url shortener plugin
  * @category internet
  * @author Christian Reiner
- * @copyright 2012-2015 Christian Reiner <foss@christian-reiner.info>
+ * @copyright 2011-2015 Christian Reiner <foss@christian-reiner.info>
  * @license GNU Affero General Public license (AGPL)
- * @link information http://apps.owncloud.com/content/show.php/Shorty+Tracking?content=152473
+ * @link information http://apps.owncloud.com/content/show.php/Shorty?content=150401
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE
@@ -28,22 +28,29 @@
  * @author Christian Reiner
  */
 
-namespace OCA\Shorty\Tracking\Loop;
+namespace OCA\Shorty\Loop;
 
 /**
- * @class OCA\Shorty\Tracking\Loop\EventUserDelete
+ * @class OCA\Shorty\Loop\EventUserDelete
  * @extends \OCA\Shorty\Plugin\Event
- * @brief Static 'namespace' class for api hook population
+ * @brief react on a user account getting deleted
  * @access public
  * @author Christian Reiner
  */
 class EventUserDelete extends \OCA\Shorty\Plugin\Event
 {
-	public function process($user) {
-		\OCP\Util::writeLog ( 'shorty_tracking', sprintf("Wiping all tacking entries of deleted user '%s'", $user), \OCP\Util::INFO );
-		$result = TRUE;
-			// wipe shorty clicks
-		$query = \OCP\DB::prepare ( Query::CLICK_WIPE_USER );
-		return FALSE===$query->execute();
+	public function process($param) {
+		$user = $param['uid'];
+		syslog(LOG_DEBUG,'***');
+		syslog(LOG_DEBUG,json_encode($param));
+		syslog(LOG_DEBUG,$user);
+		syslog(LOG_DEBUG,'***');
+		\OCP\Util::writeLog ( 'shorty_tracking', sprintf("Wiping all Shortys of deleted user '%s'", $user), \OCP\Util::INFO );
+		// wipe shortys
+		$query = \OCP\DB::prepare ( \OCA\Shorty\Query::WIPE_SHORTYS );
+		$query->execute(['user'=>$user]);
+		// wipe preferences
+		$query = \OCP\DB::prepare ( \OCA\Shorty\Query::WIPE_PREFERENCES );
+		$query->execute(['user'=>$user]);
 	}
 }
