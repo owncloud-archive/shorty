@@ -35,8 +35,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-04-15 16:03+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-05-03 09:24+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian (http://www.transifex.com/projects/p/owncloud/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -90,7 +90,7 @@ msgid "share"
 msgstr "bagikan"
 
 msgid "show"
-msgstr "perlihatkan"
+msgstr "tampilkan"
 
 # toolbar icons
 msgid "reload"
@@ -120,7 +120,7 @@ msgstr "debug"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "( jangan pernah )"
 
 msgid "2 seconds"
 msgstr "2 detik"
@@ -143,7 +143,7 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[ tidak ada ]"
 
 msgid "bitly.com service"
 msgstr "layanan bitly.com"
@@ -190,7 +190,7 @@ msgid "Add as new"
 msgstr "Tambah sebagai baru"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr "Tambah laman sebagai 'Shorty' untuk ownCloud"
+msgstr "Tambah halaman sebagai 'Shorty' untuk ownCloud"
 
 msgid "Administration"
 msgstr "Administrasi"
@@ -199,7 +199,7 @@ msgid "Administrative, system wide settings of this app:"
 msgstr "Administrasi, pengaturan sistem menyeluruh dari apl ini:"
 
 msgid "after the SMS has been launched"
-msgstr "setelah penulis SMS diluncurkan"
+msgstr "setelah SMS diluncurkan"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "Alternatif lainnya gambar ini dapat diunduh untuk dicetak atau disimpan"
@@ -292,7 +292,7 @@ msgid "Feedback"
 msgstr "Umpan balik"
 
 msgid "Home"
-msgstr "Rumah"
+msgstr "Depan"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr "Ini dapat diaktifkan dengan sekali klik pada administrasi:"
@@ -319,7 +319,7 @@ msgid "New Shorty"
 msgstr "Shorty Baru"
 
 msgid "Notes"
-msgstr "Nota"
+msgstr "Catatan"
 
 msgid "Nothing here yet"
 msgstr "Masih belum ada isinya"
@@ -388,7 +388,7 @@ msgid "Reload list"
 msgstr "Muat ulang daftar"
 
 msgid "Save"
-msgstr "simpan"
+msgstr "Simpan"
 
 msgid "Send by email"
 msgstr "Kirim dengan email"
@@ -415,10 +415,10 @@ msgid "Setting '%s' retrieved"
 msgstr "Pengaturan '%s' diambil"
 
 msgid "Setting '%s' saved"
-msgstr "Pengaturan '%s' telah disimpan"
+msgstr "Pengaturan '%s' tersimpan"
 
 msgid "Settings"
-msgstr "Setelan"
+msgstr "Pengaturan"
 
 msgid "Share and use"
 msgstr "Bagikan dan gunakan"
@@ -439,13 +439,13 @@ msgid "Show as QRCode"
 msgstr "Tampilkan sebagai QRCode"
 
 msgid "Show QRCode reference"
-msgstr ""
+msgstr "Tampilkan referensi QRCode"
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "Tampilkan gambar QRCode"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "Unduh QRCode"
 
 msgid "Show details"
 msgstr "Tampilkan detail"
@@ -469,10 +469,10 @@ msgid "Clear filter"
 msgstr "Bersihkan penyaring"
 
 msgid "Collapse column"
-msgstr ""
+msgstr "Gulung kolom"
 
 msgid "Expand column"
-msgstr ""
+msgstr "Lebarkan kolom"
 
 msgid "Source url"
 msgstr "Url sumber"
@@ -508,13 +508,13 @@ msgid "The default status as suggested for new Shortys."
 msgstr "Status baku seperti yang disarankan untuk Shorty baru."
 
 msgid "The link below can be copied to paste it elsewhere"
-msgstr ""
+msgstr "Tautan berikut dapat disalin untuk ditempelkan dimana saja"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "Plugin '%%s' tambahan melacak penggunaan Shortys yang ada!"
 
 msgid "therefore the content must be copied manually"
-msgstr "untuk itu isi harus disalin manual"
+msgstr "untuk itu isi harus disalin secara manual"
 
 msgid "then paste into message"
 msgstr "lalu tempelkan ke dalam pesan"
@@ -525,13 +525,13 @@ msgstr "Barcode 2d berikut menyandikan url yang merujuk pada Shorty ini"
 msgid ""
 "Use it in web pages by referencing or embedding or simply print or download "
 "it for offline usage"
-msgstr ""
+msgstr "Gunakan itu didalam halaman web sebagai referensi, penyematkan, dicetak atau diunduh untuk penggunaan offline"
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr ""
+msgstr "Ini merupakan url internal yang telah dipendekkan"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "Url yang dipendekkan ini terdaftar pada backend"
 
 msgid "This is the target url specified when generating this Shorty"
 msgstr "Ini adalah url target yang ditentukan saat membuat Shorty ini"
@@ -552,16 +552,16 @@ msgid "Typically this only works on devices like smart phones"
 msgstr "Biasanya hanya bekerja di perangkat seperti ponsel pintar"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "Jenis pengecualian yang tidak terduga: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
 msgstr "Sayangnya implementasi skema ini terbatas"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "Tipe obyek tidak diketahui: %s"
 
 msgid "Url shortened to: %s"
-msgstr "Tautan diciutkan ke: %s"
+msgstr "Tautan dipendekan ke: %s"
 
 msgid "Use it in web pages by referencing or embedding"
 msgstr "Gunakan di halaman web dengan mereferensikannya atau menempelkannya"
@@ -673,50 +673,50 @@ msgstr "Layanan ini mengharuskan anda untuk mengotentikasi diri Anda dengan memb
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "Tautan tersebut kemungkinan besar lebih lama dari yang dihasilkan saat menggunakan backend."
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "Namun pilihan ini tidak bergantung pada layanan pihak ketiga. Shorty tetap di bawah kendali Anda."
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "Karena pengaturan ini bergantung pada aturan konfigurasi berbasis server, url dasar hanya dapat ditentukan di bagian 'Admin' pada konfigurasi."
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "Statis, berbasis aturan backend, pembuatan tautan pendek ini relatif terhadap url dasar yang diberikan."
 
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr ""
+msgstr "Anda harus berhati-hati karena segala permintaan ke url ini terkonfigurasi disini yang secara internal dipetakan pada modul 'shorty'."
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "Target pemetaan harus berupa beberapa URL seperti:"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "Silakan mencoba dengan contoh tautan yang diberikan, klik padanya untuk memastikan bahwa setelan Anda sudah bekerja."
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "Biarkan kosong jika Anda tidak dapat menyediakan url basis pendek yang dipetakan seperti yang dijelaskan."
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "Hanya gunakan backend ini jika Anda dapat menyediakan url basis pendek yang dipetakan seperti yang dijelaskan. Shorty tidak bisa bekerja secara terbalik."
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "'layanan goo.gl' eksternal Google digunakan untuk mendaftarkan url pendek untuk setiap shorty yang dihasilkan."
 
 msgid "You must provide a valid '%%s' to use this service."
 msgstr "Anda harus menyediakan '%%s'  yang sah untuk menggunakan layanan ini."
@@ -733,18 +733,18 @@ msgstr "Mengaktifkan opsi SMS akan menawarkan pengiriman Shorty via SMS."
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr ""
+msgstr "Sayangnya dukungan untuk 'penanganan url SMS' biasanya hanya ditemukan pada perangkat mobile seperti ponsel cerdas."
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr ""
+msgstr "Selain itu, implementasi mereka sangat sedikit, penuh bug dan berbeda dari sistem ke sistem."
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "Singkatnya: ini mungkin tidak bekerja untuk Anda, karena itu Anda dapat menonaktifkannya ..."
 
 msgid "Great, your setup appears to be working fine!"
-msgstr "Selamat, konfigurasi anda bekerja dengan baik!"
+msgstr "Selamat, konfigurasi Anda bekerja dengan baik!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
@@ -759,7 +759,7 @@ msgstr "Penggunaan backend statis adalah baik dan aman selama konfigurasi ini ti
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "Backend ini sekarang akan digunakan sebagai backend alternatif tambahan untuk semua pengguna lokal di dalam preferensi pribadi mereka."
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
 msgstr "Maaf, tampaknya instalasi Anda masih belum dapat berfungsi dengan baik!"
@@ -775,16 +775,16 @@ msgid ""
 msgstr "Pastikan semua permintaan sudah dipetakan lewat layanan relai Shortys"
 
 msgid "Shorty relay service"
-msgstr ""
+msgstr "Layanan relay Shorty"
 
 msgid "If you proceed you will be forwarded to:"
-msgstr ""
+msgstr "Jika Anda meneruskan, Anda akan dialihkan ke:"
 
 msgid "Target object:"
-msgstr ""
+msgstr "Obyek tujuan:"
 
 msgid "Location"
-msgstr "lokasi"
+msgstr "Lokasi"
 
 msgid "Proceed"
 msgstr "Melanjutkan"
