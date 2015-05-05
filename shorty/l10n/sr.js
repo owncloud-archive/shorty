@@ -86,7 +86,7 @@ OC.L10N.register(
     "Loading" : "Учитавам",
     "Mail client" : "Клијент електронске поште",
     "Modifications for shorty with id '%s' saved" : "Измене за скраћеницу %s су сачуване",
-    "Modify attributes" : "Модификуј атрибуте",
+    "Modify attributes" : "Измени атрибуте",
     "Modify shorty" : "Измени Shorty",
     "New Shorty" : "Нови Shorty",
     "Notes" : "Белешке",
