@@ -26,6 +26,7 @@
 # Translators:
 # woosuk park <bjh13579@gmail.com>, 2013
 # Park Shinjo <peremen@gmail.com>, 2013,2015
+# Shinjo Park <kde@peremen.name>, 2015
 # Sungjin Kang <potopro@gmail.com>, 2013
 # Sungjin Kang <potopro@gmail.com>, 2013
 # Sungjin Kang <potopro@gmail.com>, 2013
@@ -36,8 +37,8 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-04-15 16:03+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-05-12 22:12+0000\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/owncloud/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -121,7 +122,7 @@ msgstr "디버그"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "(하지 않음)"
 
 msgid "2 seconds"
 msgstr "2초"
@@ -144,7 +145,7 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[없음]"
 
 msgid "bitly.com service"
 msgstr "bitly.com 서비스"
@@ -440,13 +441,13 @@ msgid "Show as QRCode"
 msgstr "QR 코드로 보기"
 
 msgid "Show QRCode reference"
-msgstr ""
+msgstr "QR 코드 참조 보기"
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "QR 코드 그림 보기"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "QR 코드 다운로드"
 
 msgid "Show details"
 msgstr "자세한 정보 보기"
@@ -470,10 +471,10 @@ msgid "Clear filter"
 msgstr "필터 지우기"
 
 msgid "Collapse column"
-msgstr ""
+msgstr "열 접기"
 
 msgid "Expand column"
-msgstr ""
+msgstr "열 펼치기"
 
 msgid "Source url"
 msgstr "원본 URL"
@@ -509,7 +510,7 @@ msgid "The default status as suggested for new Shortys."
 msgstr "새 단축 주소에 사용할 기본 상태입니다."
 
 msgid "The link below can be copied to paste it elsewhere"
-msgstr ""
+msgstr "다음 링크를 복사할 수 있습니다"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "추가 플러그인 '%%s'에서는 단축 주소의 상태를 추적할 수 있습니다!"
@@ -526,7 +527,7 @@ msgstr "단축 주소를 가리키는 2차원 바코드입니다"
 msgid ""
 "Use it in web pages by referencing or embedding or simply print or download "
 "it for offline usage"
-msgstr ""
+msgstr "웹 페이지에서 참조 및 점부하거나, 오프라인 사용 용도로 인쇄 및 다운로드할 수 있습니다"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "단축 URL이 가리키는 내부 URL입니다"
@@ -776,13 +777,13 @@ msgid ""
 msgstr "모든 요청이 Shorty의 중계 서비스로 매핑되는지 확인하십시오."
 
 msgid "Shorty relay service"
-msgstr ""
+msgstr "Shorty 중계 서비스"
 
 msgid "If you proceed you will be forwarded to:"
-msgstr ""
+msgstr "계속 진행하면 다음으로 넘어갑니다:"
 
 msgid "Target object:"
-msgstr ""
+msgstr "대상 객체:"
 
 msgid "Location"
 msgstr "위치"
