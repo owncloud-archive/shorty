@@ -78,7 +78,7 @@ class Meta
 				self::enrichMetaDataCurl ( $url, $meta );
 		}
 		// rewrite favicon reference to proxy service
-		if ($meta['favicon']) {
+		if (isset($meta['favicon']) && $meta['favicon']) {
 			$meta['favicon'] = Tools::proxifyReference('favicon', $meta['favicon'], true);
 		}
 		return $meta;
