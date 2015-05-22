@@ -46,8 +46,11 @@ namespace OCA\Shorty;
 \OC::$CLASSPATH['OCA\Shorty\L10n']                     = 'shorty/lib/l10n.php';
 \OC::$CLASSPATH['OCA\Shorty\Meta']                     = 'shorty/lib/meta.php';
 \OC::$CLASSPATH['OCA\Shorty\Query']                    = 'shorty/lib/query.php';
+\OC::$CLASSPATH['OCA\Shorty\Shorty']                   = 'shorty/lib/shorty.php';
 \OC::$CLASSPATH['OCA\Shorty\Tools']                    = 'shorty/lib/tools.php';
 \OC::$CLASSPATH['OCA\Shorty\Type']                     = 'shorty/lib/type.php';
+\OC::$CLASSPATH['OCA\Shorty\Validate']                 = 'shorty/lib/validate.php';
+
 \OC::$CLASSPATH['OCA\Shorty\Hooks']                    = 'shorty/plugin/requests.php';
 
 \OC::$CLASSPATH['OCA\Shorty\Plugin\Atom']              = 'shorty/plugin/atoms/atom.php';
