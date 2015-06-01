@@ -197,7 +197,7 @@
     "No backend is used, direct links pointing to your ownCloud are generated." : "Aucun service n'est utilisé, des liens directs pointant vers votre ownCloud seront générés.",
     "The service requires you to authenticate yourself by providing a valid bit.ly user name and an '%s'." : "Le service requiert que vous vous authentifiez en fournissant un identifiant bit.ly valide et un(e) '%s'.",
     "Such links are most likely longer than those generated when using a backend." : "De tels liens sont certainement plus longs que ceux générés par les services tiers.",
-    "However this option does not rely on any third party service and keeps your shortys under your control." : "Cependant cette option ne dépend d'aucun autre service et vous gardez donc le contrôle sur vos shortys.",
+    "However this option does not rely on any third party service and keeps your shortys under your control." : "Cependant cette option ne dépend d'aucun autre service et vous gardez donc le contrôle de vos shortys.",
     "Since this setup depends on server based configuration rules the base url can only be specified in the 'Admin' section of the configuration." : "L'URL de base peut seulement être définie depuis la section 'Admin' de la vue configuration puisque l'installation dépend de règles de configuration de niveau serveur.",
     "Static, rule-based backend, generates shorty links relative to a given base url." : "Module dorsal statique, basé sur des règles de gestion, générant des liens courts relatifs à une URL de base.",
     "You have to take care that any request to the url configured here is internally mapped to the 'shorty' module." : "Vous devez vous assurer que chaque requête à l'URL configurée ici est dirigée vers le module 'shorty'.",
