@@ -8,6 +8,7 @@ $TRANSLATIONS = array(
 "show" => "mòstra",
 "Clicks" => "Clics",
 "Close" => "Tampar",
+"Home" => "Mos fichièrs",
 "Notes" => "Nòtas",
 "Nothing here yet" => "Res d'afichar pel moment",
 "Refresh" => "Refresca",

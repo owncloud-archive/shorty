@@ -1,8 +1,6 @@
 OC.L10N.register(
-    "shorty",
+    "shorty_tracking",
     {
-    "Close" : "Փակել",
-    "Save" : "Պահպանել",
     "Title" : "Վերնագիր"
 },
 "nplurals=2; plural=(n != 1);");
