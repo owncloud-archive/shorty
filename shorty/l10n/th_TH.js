@@ -9,6 +9,7 @@ OC.L10N.register(
     "Backend" : "ด้านหลังระบบ",
     "Close" : "ปิด",
     "Configuration" : "การกำหนดค่า",
+    "Feedback" : "ข้อเสนอแนะ",
     "Home" : "บ้าน",
     "Notes" : "บันทึกย่อ",
     "Refresh" : "รีเฟรช",

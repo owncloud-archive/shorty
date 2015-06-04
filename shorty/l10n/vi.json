@@ -1,5 +1,7 @@
 { "translations": {
+    "Plugins" : "Trình cắm",
     "all" : "tất cả",
+    "blocked" : "đã chặn",
     "deleted" : "đã xóa",
     "never" : "không thay đổi",
     "delete" : "xóa",
@@ -9,6 +11,7 @@
     "up" : "lên",
     "down" : "xuống",
     "clear" : "Xóa",
+    "error" : "lỗi",
     "Ctrl-C" : "Ctrl-C",
     "Backend" : "phụ trợ",
     "Close" : "Đóng",
@@ -18,6 +21,7 @@
     "Home" : "Nhà",
     "Loading" : "Đang tải",
     "Notes" : "Ghi chép",
+    "Nothing here yet" : "Không có gì ở đây",
     "Refresh" : "Làm mới",
     "Reload" : "Tải ",
     "Save" : "Lưu",
