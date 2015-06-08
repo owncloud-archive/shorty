@@ -17,6 +17,7 @@ OC.L10N.register(
     "Notes" : "บันทึกย่อ",
     "Nothing here yet" : "ไม่มีอะไรเลยที่นี่",
     "Refresh" : "รีเฟรช",
+    "Reload" : "โหลดใหม่อีกครั้ง",
     "Save" : "บันทึก",
     "Settings" : "ตั้งค่า",
     "Title" : "ชื่อ",
