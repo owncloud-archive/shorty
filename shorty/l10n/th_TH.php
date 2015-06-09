@@ -10,6 +10,7 @@ $TRANSLATIONS = array(
 "Clicks" => "คลิก",
 "Close" => "ปิด",
 "Configuration" => "การกำหนดค่า",
+"Expiration" => "การหมดอายุ",
 "Feedback" => "ข้อเสนอแนะ",
 "Home" => "บ้าน",
 "Loading" => "กำลังโหลด",
