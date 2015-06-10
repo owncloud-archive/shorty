@@ -24,13 +24,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Sunchai Paejaroenchai, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-06-08 13:50+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-06-09 17:12+0000\n"
+"Last-Translator: Sunchai Paejaroenchai\n"
 "Language-Team: Thai (Thailand) (http://www.transifex.com/projects/p/owncloud/language/th_TH/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,11 +41,11 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "ปลั๊กอิน"
 
 # status names
 msgid "all"
-msgstr ""
+msgstr "ทั้งหมด"
 
 msgid "blocked"
 msgstr "ปิดกั้น"
@@ -53,32 +54,32 @@ msgid "deleted"
 msgstr "ลบแล้ว"
 
 msgid "disabled"
-msgstr ""
+msgstr "ปิดใช้งาน"
 
 msgid "enabled"
-msgstr ""
+msgstr "เปิดใช้งาน"
 
 msgid "never"
 msgstr "ไม่ต้องเลย"
 
 msgid "private"
-msgstr ""
+msgstr "ส่วนตัว"
 
 msgid "public"
-msgstr ""
+msgstr "สาธารณะ"
 
 msgid "shared"
-msgstr ""
+msgstr "ถูกแชร์"
 
 # actions ("to be done")
 msgid "delete"
 msgstr "ลบ"
 
 msgid "edit"
-msgstr ""
+msgstr "แก้ไข"
 
 msgid "open"
-msgstr ""
+msgstr "เปิด"
 
 msgid "share"
 msgstr "แชร์"
@@ -88,136 +89,136 @@ msgstr "แสดง"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "โหลดใหม่"
 
 msgid "up"
-msgstr ""
+msgstr "ขึ้น"
 
 msgid "down"
-msgstr ""
+msgstr "ลง"
 
 msgid "clear"
-msgstr ""
+msgstr "ล้าง"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "ไม่มี"
 
 msgid "error"
-msgstr ""
+msgstr "ข้อผิดพลาด"
 
 msgid "info"
-msgstr ""
+msgstr "ข้อมูล"
 
 msgid "debug"
-msgstr ""
+msgstr "แก้จุดบกพร่อง"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "( ไม่เคย )"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 วินาที"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 วินาที"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 วินาที"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 นาที"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
-msgstr ""
+msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[ ไม่มี ]"
 
 msgid "bitly.com service"
-msgstr ""
+msgstr "บริการ Bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "บริการ Cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "บริการ Goo.gl "
 
 msgid "is.gd service"
-msgstr ""
+msgstr "บริการ Is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "บริการ Ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "บริการ Tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "แบ็กเอนด์คงที่"
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "สำหรับการเข้าถึงใดๆ"
 
 msgid "for own usage"
-msgstr ""
+msgstr "สำหรับการใช้งานของตัวเอง"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "กับผู้ใช้ ownCloud"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "ใช้ได้สำหรับทุกคน"
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "การเข้าถึง"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "เพิ่ม shorty ใหม่"
 
 msgid "Add as new"
-msgstr ""
+msgstr "เพิ่มใหม่"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "เพิ่มหน้า 'Shorty' ไปยัง ownCloud"
 
 msgid "Administration"
-msgstr ""
+msgstr "ผู้ดูแลระบบ"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "ผู้ดูแลระบบ, ระบบกำลังตั้งค่าความกว้างของแอพฯนี้:"
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "หลังจาก SMS ได้ถูกเปิด"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "อีกทางเลือกหนึ่งของรูปภาพที่สามารถดาวน์โหลดได้สำหรับงานพิมพ์หรือจัดเก็บ"
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "อีกทางเลือกหนึ่งลิงค์สามารถคัดลอกสำหรับการใช้งานต่อไป"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "อีกทางเลือกหนึ่งคือสามารถคัดลอกลิงค์สำหรับการใช้งานต่อไป"
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "อีกวิธีหนึ่งคือสามารถคัดลอกลิงค์ลงในข้อความด้วยตนเอง"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "อะไรก็ตามที่ปรากฏมันมีประโยชน์ ..."
 
 msgid "Default backend suggested inside users preferences"
-msgstr ""
+msgstr "ค่าเริ่มต้ของแบ็กเอนด์นถูกแนะนำให้ตั้งค่าผู้ใช้ภายใน"
 
 msgid "Backend"
 msgstr "ด้านหลังระบบ"
 
 msgid "Base url"
-msgstr ""
+msgstr "ที่ตั้ง URL"
 
 msgid "Choose a service…"
 msgstr ""
@@ -472,10 +473,10 @@ msgid "Source url"
 msgstr ""
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "ระบุที่ตั้ง URL ..."
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "แบ็กเอนด์: การตรวจสอบที่ตั้ง URL"
 
 msgid "Status"
 msgstr ""
@@ -677,12 +678,12 @@ msgstr ""
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "เนื่องจากการตั้งค่านี้ขึ้นอยู่กับการกำหนดค่าเซิร์ฟเวอร์ตามกฎ ที่ตั้ง URL สามารถระบุไว้ในส่วน \"ผู้ดูแลระบบ\" ของการกำหนดค่า"
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "rule-based แบ็กเอนด์สร้างลิงค์ shorty เมื่อเทียบกับที่อยู่ URL ที่ได้รับ"
 
 msgid ""
 "You have to take care that any request to the url configured here is "
@@ -700,12 +701,12 @@ msgstr ""
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "ปล่อยว่างไว้ถ้าคุณไม่สามารถระบุ URL แบบสั้นมันจะถูกแมปวิธีอธิบายตามที่อธิบายไว้"
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "เพียงใช้แบ็กเอนด์นี้ถ้าคุณสามารถระบุ URL แบบสั้นมันจะถูกแมปวิธีอธิบายตามที่อธิบายไว้ Shorties ของคุณจะไม่ทำงานอย่างอื่น"
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
@@ -743,7 +744,7 @@ msgstr ""
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
 "service."
-msgstr ""
+msgstr "การร้องขอการต้องค่าที่ตั้ง URL ถูกแมปไปยังบริการของ ownClouds"
 
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
@@ -761,7 +762,7 @@ msgstr ""
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "กรุณาตรวจสอบการตั้งค่าของคุณและทำให้แน่ใจว่าที่ตั้ง url ถูกต้องแน่นอน"
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
