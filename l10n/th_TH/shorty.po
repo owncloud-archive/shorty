@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-06-09 17:12+0000\n"
+"PO-Revision-Date: 2015-06-10 12:51+0000\n"
 "Last-Translator: Sunchai Paejaroenchai\n"
 "Language-Team: Thai (Thailand) (http://www.transifex.com/projects/p/owncloud/language/th_TH/)\n"
 "MIME-Version: 1.0\n"
@@ -221,19 +221,19 @@ msgid "Base url"
 msgstr "ที่ตั้ง URL"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "เลือกบริการ ..."
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr ""
+msgstr "คลิกมันหากคุณต้องการสร้าง Shorty"
 
 msgid "Click registered"
-msgstr ""
+msgstr "คลิกที่ลงทะเบียน"
 
 msgid "Clicks"
 msgstr "คลิก"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "คลิก 'ตกลง' ที่ด้านล่างจะพยายามเริ่มต้นเขียนอีเมล"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
@@ -245,40 +245,40 @@ msgid "Configuration"
 msgstr "การกำหนดค่า"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "จำนวนของข้อเสนอแนะที่แสดง"
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "ช่วงเวลาหลังจากที่ข้อความที่ถูกซ่อนอีกครั้งโดยอัตโนมัติ"
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "คัดลอกไปที่คลิปบอร์ด"
 
 msgid "Counted entries and clicks"
-msgstr ""
+msgstr "นับรายการและการคลิก"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "สร้าง 'Shorty' ใหม่และแชร์มัน"
 
 msgid "Creation"
-msgstr ""
+msgstr "การสร้าง"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "ลบ Shorty"
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "ลากสิ่งนี้ไปยังบุ๊คมาร์คบนเบราว์เซอร์ของคุณ"
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr ""
+msgstr "ฝัง QRCode เป็นรูปภาพลงในบางหน้าเว็บโดยใช้ URL นี้"
 
 msgid "Example"
-msgstr ""
+msgstr "ตัวอย่าง"
 
 msgid "Exception"
-msgstr ""
+msgstr "ข้อยกเว้น"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "ข้อยกเว้น (%s)"
 
 msgid "Expiration"
 msgstr "การหมดอายุ"
@@ -290,28 +290,28 @@ msgid "Home"
 msgstr "บ้าน"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "มันสามารถเปิดใช้งานโดยคลิกเพียงครั้งเดียวในการจัดการ:"
 
 msgid "If you just started using Shorty"
-msgstr ""
+msgstr "หากคุณเพิ่งเริ่มใช้ Shorty"
 
 msgid "Loading"
 msgstr "กำลังโหลด"
 
 msgid "Mail client"
-msgstr ""
+msgstr "เมลไคลเอ็นต์"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "บันทึกการปรับแต่งแก้ไขสำหรับ shorty ด้วยไอดี '%s'"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "แก้ไขแอตทริบิวต์"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "แก้ไข  shorty"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "Shorty ใหม่"
 
 msgid "Notes"
 msgstr "บันทึกย่อ"
@@ -320,157 +320,157 @@ msgid "Nothing here yet"
 msgstr "ไม่มีอะไรเลยที่นี่"
 
 msgid "Number of entries"
-msgstr ""
+msgstr "จำนวนของรายการ"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "จำนวนของรายการ: %s"
 
 msgid "QRCode"
-msgstr ""
+msgstr "QRCode"
 
 msgid "Open source url"
-msgstr ""
+msgstr "URL โอเพนซอร์ส"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "เปิด URL relay"
 
 msgid "Open target"
-msgstr ""
+msgstr "เปิดเป้าหมาย"
 
 msgid "Open target url"
-msgstr ""
+msgstr "เปิด URL เป้าหมาย"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "ตัวเลือกการกำหนดค่าของ 'Static Backend'"
 
 msgid "or simpy print or download it for off-line usage"
-msgstr ""
+msgstr "หรือเพียงแค่พิมพ์หรือดาวน์โหลดมันสำหรับการใช้งานแบบออฟไลน์"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "วางเพื่อฝังที่อื่น"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "การตั้งค่าที่ดึงมา"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "บันทึกการตั้งค่า"
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "ดึงการตั้งค่า '%s' มา"
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "บันทึกการตั้งค่า '%s'"
 
 msgid "Preferences"
-msgstr ""
+msgstr "การตั้งค่า"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "เตรียมที่จะส่งเป็น SMS"
 
 msgid "Refresh"
 msgstr "รีเฟรช"
 
 msgid "Relay service"
-msgstr ""
+msgstr "บริการรีเลย์"
 
 msgid "Relay url"
-msgstr ""
+msgstr "URL รีเลย์"
 
 msgid "Reload"
 msgstr "โหลดใหม่อีกครั้ง"
 
 msgid "Reload list"
-msgstr ""
+msgstr "โหลดรายการใหม่อีกครั้ง"
 
 msgid "Save"
 msgstr "บันทึก"
 
 msgid "Send by email"
-msgstr ""
+msgstr "ส่งทางอีเมล"
 
 msgid "Send link by email"
-msgstr ""
+msgstr "ส่งลิงค์ทางอีเมล"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "ส่งทาง SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "ตั้งค่าส่วนบุคคลโดยใช้ COG (%%s) ที่ด้านล่างซ้าย!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "ตั้งค่าส่วนบุคคลโดยใช้ COG (%%s) ที่ด้านบนซ้าย!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "ดึงการตั้งค่า"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "บันทึกการตั้งค่า"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "ดึงการตั้งค่า '%s'"
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "บันทึกการตั้งค่า '%s' "
 
 msgid "Settings"
 msgstr "ตั้งค่า"
 
 msgid "Share and use"
-msgstr ""
+msgstr "แชร์และใช้"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "แชร์ Shorty"
 
 msgid "Shortlet"
-msgstr ""
+msgstr "Shortlet"
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "Shorty แบบเป็น QRCode"
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr "Shorty กับไอดี '%s' ถูกลบ"
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "แสดงเป็น QRCode"
 
 msgid "Show QRCode reference"
-msgstr ""
+msgstr "แสดงการอ้างอิง QRCode"
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "แสดงรูปภาพ QRCode"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "ดาวน์โหลด QRCode"
 
 msgid "Show details"
-msgstr ""
+msgstr "แสดงรายละเอียด"
 
 msgid "Show usage"
-msgstr ""
+msgstr "แสดงการใช้งาน"
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "เขียน SMS"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "เรียงลำดับจากน้อยไปมาก"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "เรียงลำดับจากมากไปน้อย"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "ล้างตัวกรอง"
 
 msgid "Collapse column"
-msgstr ""
+msgstr "ยุบคอลัมน์"
 
 msgid "Expand column"
-msgstr ""
+msgstr "ขยายคอลัมน์"
 
 msgid "Source url"
-msgstr ""
+msgstr "แหล่งที่มาของ URL"
 
 msgid "Specify a static base url…"
 msgstr "ระบุที่ตั้ง URL ..."
@@ -479,96 +479,96 @@ msgid "Static backend: base url verification"
 msgstr "แบ็กเอนด์: การตรวจสอบที่ตั้ง URL"
 
 msgid "Status"
-msgstr ""
+msgstr "สถานะ"
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "การเปลี่ยนแปลงสถานะ shorty กับ id ถูกบันทึก"
 
 msgid "Target"
-msgstr ""
+msgstr "เป้าหมาย"
 
 msgid "Target url"
-msgstr ""
+msgstr "URL เป้าหมาย"
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "URL เป้าหมายไม่ถูกต้อง"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "รูปภาพสามารถนำมาใช้เมื่อเขียนเอกสารหรือการตั้งค่าเว็บไซต์"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "บริการแบ็กเอนด์ที่ใช้ในการย่อ URL ให้สั้นลง"
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "สถานะเริ่มต้นเป็นข้อเสนอแนะสำหรับ Shorty ใหม่"
 
 msgid "The link below can be copied to paste it elsewhere"
-msgstr ""
+msgstr "ลิงค์ด้านล่างนี้สามารถคัดลอกไปวางไว้ที่อื่น"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "ปลั๊กอินเพิ่มเติม '%%s' ติดตามการใช้งานของ Shortys ที่มีอยู่!"
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "ดังนั้นจะต้องคัดลอกเนื้อหาด้วยตนเอง"
 
 msgid "then paste into message"
-msgstr ""
+msgstr "แล้ววางลงในข้อความ"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr ""
+msgstr "บาร์โค้ด 2มิตินี้ได้เข้ารหัส URL ที่ชี้ไปยัง Shorty นี้"
 
 msgid ""
 "Use it in web pages by referencing or embedding or simply print or download "
 "it for offline usage"
-msgstr ""
+msgstr "ใช้ในหน้าเว็บโดยการอ้างอิงหรือฝังหรือเพียงแค่พิมพ์หรือดาวน์โหลดได้สำหรับการใช้งานแบบออฟไลน์"
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr ""
+msgstr "URL ภายในนี้เป็น URL แบบสั้นที่ Relay ไปยัง"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "URL แบบสั้นนี้ถูกลงทะเบียนที่แบ็กเอนด์"
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr ""
+msgstr "นี่คือ URL เป้าหมายที่ระบุไว้เมื่อสร้าง Shorty นี้"
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr ""
+msgstr "นี่คือ URL อ้างอิง QRCode จะแสดงก่อน"
 
 msgid "Title"
-msgstr "ชื่อ"
+msgstr "ชื่อเรื่อง"
 
 msgid "Toggle toolbar"
-msgstr ""
+msgstr "แถบเครื่องมือสลับ"
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "จำนวนคลิกทั้งหมด"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "โดยปกติจะทำงานได้เฉพาะบนอุปกรณ์เช่นโทรศัพท์สมาร์ทโฟน"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "พบชนิดที่ไม่คาดคิดของข้อยกเว้น: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "แต่น่าเสียดายที่การดำเนินงานของรูปแบบนี้ถูกจำกัด"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "พบวัตถุไม่ทราบชนิด: %s"
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "URL แบบสั้นไปยัง: %s"
 
 msgid "Use it in web pages by referencing or embedding"
-msgstr ""
+msgstr "ใช้ในหน้าเว็บโดยการอ้างอิงหรือฝัง"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "ใช้ปุ่ม '%s' ด้านบนหรือปรับ 'Shortlet'"
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "ตรวจสอบโดยการคลิก ..."
 
 msgid "Verification failed"
-msgstr ""
+msgstr "การตรวจสอบล้มเหลว"
 
 # exception description
 msgid ""
@@ -576,61 +576,61 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr ""
+msgstr "%s\nข้อความ(โค้ด): %s (%s)\nไฟล์(บรรทัด): %s (%s)\nข้อมูล: %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "รหัสในการเข้าถึง API"
 
 msgid "Account"
-msgstr ""
+msgstr "บัญชี"
 
 msgid "API key"
-msgstr ""
+msgstr "รหัส API"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "ผู้ใช้ Bit.ly"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "ชื่อผู้ใช้ Bit.ly"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "รหัส Bit.ly"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "รหัสผู้ใช้ Bit.ly"
 
 msgid "Google API key"
-msgstr ""
+msgstr "รหัสกูเกิ้ล API"
 
 msgid "Google API account"
-msgstr ""
+msgstr "บัญชีกูเกิ้ล API"
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "ผู้ใช้ Tiny.cc"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "ชื่อผู้ใช้ Tiny.cc"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "รหัส Tiny.cc"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "รหัสผู้ใช้ Tiny.cc"
 
 # longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "บังคับให้ตรวจสอบใบรับรองการเข้ารหัสในระหว่างการติดต่อกับแบ็กเอนด์"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "บริการภายนอก 'bitly.com' ถูกนำมาใช้ในการลงทะเบียน URL สั้นลงสำหรับสร้างแต่ละ Shorty"
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "ซึ่งหมายความว่าคุณจะต้องลงทะเบียน '%s' ที่เว็บไซต์ของพวกเขาก่อน"
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
