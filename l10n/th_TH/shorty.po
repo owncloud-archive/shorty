@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-06-10 12:51+0000\n"
+"PO-Revision-Date: 2015-06-11 08:09+0000\n"
 "Last-Translator: Sunchai Paejaroenchai\n"
 "Language-Team: Thai (Thailand) (http://www.transifex.com/projects/p/owncloud/language/th_TH/)\n"
 "MIME-Version: 1.0\n"
@@ -236,7 +236,7 @@ msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr "คลิก 'ตกลง' ที่ด้านล่างจะพยายามเริ่มต้นเขียนอีเมล"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "คลิก 'ตกลง' ด้านล่างมันจะพยายามเปิดตัวเขียน SMS"
 
 msgid "Close"
 msgstr "ปิด"
@@ -635,45 +635,45 @@ msgstr "ซึ่งหมายความว่าคุณจะต้อง
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "บริการ 'Turl' ภายนอกที่ใช้ในการลงทะเบียน URL แบบสั้นสำหรับสร้างแต่ละ Shorty"
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "บริการ 'Ti.ny' ภายนอกที่ใช้ในการลงทะเบียนย่อ URL ให้สั้นลงสำหรับสร้างแต่ละ Shorty"
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "บริการ 'Cli.gs' ภายนอกที่ใช้ในการลงทะเบียนย่อ URL ให้สั้นลงสำหรับสร้างแต่ละ Shorty"
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "บริการ 'Is.gd' ภายนอกที่ใช้ในการลงทะเบียนย่อ URL ให้สั้นลงสำหรับสร้างแต่ละ Shorty"
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "บริการ 'Tiny.cc' ภายนอกที่ใช้ในการลงทะเบียนย่อ URL ให้สั้นลงสำหรับสร้างแต่ละ Shorty"
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "ไม่มีแบ็กเอนด์ถูกนำมาใช้ การเชื่อมโยงชี้ไปที่ ownCloud ของคุณจะถูกสร้างขึ้น"
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "จะต้องตรวจสอบบริการของคุณด้วยตัวเองโดยการระบุชื่อผู้ใช้ Bit.ly ที่ถูกต้องและ '%s'"
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "ลิงค์ดังกล่าวมักจะใช้เวลานานกว่าการสร้างขึ้นเมื่อใช้แบ็กเอนด์"
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "อย่างไรก็ตามตัวเลือกนี้ไม่ต้องพึ่งพาการบริการของบุคคลที่สามใด และช่วยให้ Shortys อยู่ภายใต้การควบคุมของคุณ"
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
@@ -688,15 +688,15 @@ msgstr "rule-based แบ็กเอนด์สร้างลิงค์ sho
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr ""
+msgstr "คุณจะต้องดูแลว่าการร้องขอไปยัง URL ที่กำหนดค่าใดๆ ที่นี่เป็น Mapped ภายในโมดูล 'shorty'"
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "เป้าหมายของการ Mapping จะต้องเหมือนบาง URL:"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "ลองกับลิงค์ตัวอย่าง หากคลิกมันก็จะส่งผลให้การตั้งค่าของคุณทำงาน"
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
@@ -711,35 +711,35 @@ msgstr "เพียงใช้แบ็กเอนด์นี้ถ้าค
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "บริการ Googles ภายนอก 'Goo.gl' ได้ถูกนำมาใช้ในการลงทะเบียนการย่อ URL ให้สั้นลงสำหรับสร้างแต่ละ Shorty"
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "คุณต้องระบุ '%%s' ให้ถูกต้องเพื่อที่จะใช้บริการนี้"
 
 msgid "This means you require a 'Google API console account'."
-msgstr ""
+msgstr "ซึ่งหมายความว่าคุณต้องมีบัญชี 'Google API console account'"
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "สมัครสมาชิกใหม่ '%%s' ที่หน้าของพวกเขา"
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr ""
+msgstr "การเปิดใช้งานตัวเลือก SMS จะมีการส่ง Shorty ผ่านทาง SMS"
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr ""
+msgstr "แต่น่าเสียดายที่การสนับสนุนสำหรับ 'SMS url handling' มักจะพบได้เฉพาะบนอุปกรณ์มือถือเช่นโทรศัพท์สมาร์ทโฟน"
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr ""
+msgstr "นอกจากนี้การใช้งานที่เรียบง่าย มีข้อผิดพลาดและแตกต่างจากระบบไปยังระบบ"
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "ในตอนนี้: อาจจะยังทำงานไม่ได้ ดังนั้นคุณควรปิดการใช้งาน ..."
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "ดีใจด้วย การตั้งค่าของคุณดูเหมือนจะทำงานได้ดี!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
@@ -749,15 +749,15 @@ msgstr "การร้องขอการต้องค่าที่ตั
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr ""
+msgstr "การใช้งานของแบ็กเอนด์แบบคงจะดีและปลอดภัยตราบเท่าที่การตั้งค่านี้จะไม่ถูกเปลี่ยนแปลง"
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "แบ็กเอนด์นี้จะถูกนำเสนอเป็นทางเลือกแบ็กเอนด์ที่เพิ่มขึ้นให้กับผู้ใช้ภายในทั้งหมด แล้วแต่ความชอบส่วนบุคคลของพวกเขา"
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "ขออภัย ควรการตั้งค่าการทำงานของคุณให้ถูกต้อง!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
@@ -767,16 +767,16 @@ msgstr "กรุณาตรวจสอบการตั้งค่าขอ
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
 "service."
-msgstr ""
+msgstr "ตรวจสอบให้แน่ใจว่าการร้องขอทั้งหมดมันถูก Mapped เพื่อให้บริการ Shortys relay"
 
 msgid "Shorty relay service"
-msgstr ""
+msgstr "บริการ Shorty relay"
 
 msgid "If you proceed you will be forwarded to:"
-msgstr ""
+msgstr "หากคุณดำเนินการต่อไปคุณจะถูกส่งต่อไป:"
 
 msgid "Target object:"
-msgstr ""
+msgstr "วัตถุเป้าหมาย:"
 
 msgid "Location"
 msgstr "ตำแหน่งที่อยู่"
