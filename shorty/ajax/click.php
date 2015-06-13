@@ -49,15 +49,13 @@ try
 {
 	if (isset($_GET['id']))
 	{
-		$p_id  = Type::req_argument ( $_GET['id'], Type::ID, TRUE );
 		$param = [
-			':id'   => $p_id,
-			':time' => 'NOW()',
+			'id'   => Type::req_argument ( $_GET['id'], Type::ID, TRUE ),
+			'time' => 'NOW()',
 		];
 
 		// record the click
-		$query = \OCP\DB::prepare ( Query::URL_CLICK );
-		$query->execute ( $param );
+		Shorty::click($param);
 
 		// allow further processing by registered hooks
 		$details = [];
@@ -66,25 +64,24 @@ try
 		$entries = $query->execute($param)->FetchAll();
 		if (  (1==count($entries))
 			&&(isset($entries[0]['id']))
-			&&($p_id==$entries[0]['id']) )
+			&&($param['id']==$entries[0]['id']) )
 			$entries[0]['relay']=Tools::relayUrl ( $entries[0]['id'] );
 		else
-			throw new Exception ( "failed to verify clicked shorty with id '%1s'", [$p_id] );
+			throw new Exception ( "failed to verify clicked shorty with id '%1s'", [$param['id']] );
 		$details['shorty'] = $entries[0];
 		// now collect some info about the request
 		$details['click'] = [
 			'address' => $_SERVER['REMOTE_ADDR'],
 			'host'    => $_SERVER['REMOTE_HOST'],
 			'time'    => $details['shorty']['accessed'],
-			'user'    => \OCP\User::getUser(),
 		];
 		// and off we go (IF any hooks were registered
 		\OCP\Util::emitHook( '\OCA\Shorty', 'post_clickShorty', $details );
 
 		// report result
-		\OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.",$p_id), \OCP\Util::DEBUG );
+		\OCP\Util::writeLog( 'shorty', sprintf("Registered click of shorty with id '%s'.", $param['id']), \OCP\Util::DEBUG );
 		\OCP\JSON::success ( [
-			'data'    => array('id'=>$p_id),
+			'data'    => array('id'=>$param['id']),
 			'level'   => 'info',
 			'message' => L10n::t("Click registered")
 		] );

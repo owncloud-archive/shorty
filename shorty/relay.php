@@ -100,12 +100,12 @@ try
 		$param   = [ 'id' => $p_id ];
 		$query   = \OCP\DB::prepare ( Query::URL_RELAY );
 		$result  = $query->execute($param)->FetchAll();
-		$request = [
+		$request = new \OCA\Shorty\Atom\AtomRequest([
 			'address' => $_SERVER['REMOTE_ADDR'],
 			'host'    => isset($_SERVER['REMOTE_HOST'])?$_SERVER['REMOTE_HOST']:gethostbyaddr($_SERVER['REMOTE_ADDR']),
 			'time'    => $_SERVER['REQUEST_TIME'],
 			'user'    => \OCP\User::getUser(),
-		];
+		]);
 		if ( FALSE===$result ) {
 			throw new HttpException ( 500 );
 		} elseif ( ! is_array($result) ) {
@@ -124,33 +124,33 @@ try
 			throw new HttpException ( 410 );
 		}
 		// an usable target !
-		$shorty = &$result[0];
+		$shorty = new \OCA\Shorty\Atom\AtomShorty($result[0]);
 		// check status of matched entry
-		switch ($shorty['status'])
+		switch ($shorty->getStatus())
 		{
 			default:
 				// looks like an invalid shorty?
-				Hooks::registerClick ( $shorty, $request, 'blocked' );
+				Hook\Events::raiseEventShortyRelay ( $shorty, $request, 'blocked' );
 				throw new HttpException ( 500 );
 			case 'blocked':
 				// refuse forwarding => 403: Forbidden
-				Hooks::registerClick ( $shorty, $request, 'blocked' );
+				Hook\Events::raiseEventShortyRelay ( $shorty, $request, 'blocked' );
 				throw new HttpException ( 403 );
 			case 'private':
 				// check for a valid session and the required user account
 				if ( ! ($account=\OC::$server->getSession()->get('user_id'))) {
-					Hooks::registerClick ( $shorty, $request, 'failed' );
+					Hook\Events::raiseEventShortyRelay ( $shorty, $request, 'failed' );
 					\OCP\User::checkLoggedIn();
 				}
-				if ($shorty['user']!==$account) {
-					Hooks::registerClick ( $shorty, $request, 'denied' );
+				if ($shorty->getUser()!==$account) {
+					Hook\Events::raiseEventShortyRelay ( $shorty, $request, 'denied' );
 					throw new HttpException ( 403 );
 				}
 				break;
 			case 'shared':
 				// check for a valid session
 				if ( ! \OC::$server->getSession()->get('user_id')) {
-					Hooks::registerClick ( $shorty, $request, 'denied' );
+					Hook\Events::raiseEventShortyRelay ( $shorty, $request, 'denied' );
 					\OCP\User::checkLoggedIn();
 				}
 				break;
@@ -163,7 +163,7 @@ try
 		$tmpl = new \OCP\Template ( 'shorty', 'tmpl_wdg_relay', 'guest' );
 		$tmpl->assign ( 'shorty', $shorty );
 		// fetch meta data
-		$tmpl->assign ( 'meta', Meta::fetchMetaData($shorty['target']));
+		$tmpl->assign ( 'meta', Meta::fetchMetaData($shorty->getTarget()));
 		// render template
 		\OCP\Util::addStyle  ( 'shorty', 'shorty' );
 		\OCP\Util::addStyle  ( 'shorty', 'relay' );
@@ -173,7 +173,7 @@ try
 		// finish this script to record the click, even if the client detaches right after the redirect
 		ignore_user_abort ( TRUE );
 		// register click
-		Hooks::registerClick ( $shorty, $request, 'granted' );
+		Hook\Events::raiseEventShortyRelay ( $shorty, $request, 'granted' );
 	} // if
 } catch ( Exception $e ) {
     header($e->getMessage());
