@@ -2,6 +2,7 @@
 $TRANSLATIONS = array(
 "granted" => "permis",
 "denied" => "Refuzat",
+"failed" => "a eșuat",
 "blocked" => "blocat",
 "load" => "incarca",
 "Address" => "Adresă",

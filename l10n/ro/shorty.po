@@ -27,13 +27,14 @@
 # andreiacob <andrei.iacob@y7mail.com>, 2014
 # laura berindei <lauraagavriloae@yahoo.com>, 2014
 # LiliIonita <lily.ionita@gmail.com>, 2014
+# Manuel Pacurar, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-03-31 05:41+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-04-17 12:52+0000\n"
+"Last-Translator: Manuel Pacurar\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/owncloud/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +44,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Pluginuri"
 
 # status names
 msgid "all"
@@ -71,7 +72,7 @@ msgid "public"
 msgstr "public"
 
 msgid "shared"
-msgstr ""
+msgstr "partajat"
 
 # actions ("to be done")
 msgid "delete"
@@ -174,7 +175,7 @@ msgid "with ownCloud users"
 msgstr "pentru utilizatorii ownCloud"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "disponibil pentru oricine"
 
 # short and general terms
 msgid "Access"

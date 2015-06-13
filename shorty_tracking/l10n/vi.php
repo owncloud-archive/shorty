@@ -1,5 +1,7 @@
 <?php
 $TRANSLATIONS = array(
+"granted" => "được phép",
+"blocked" => "đã chặn",
 "Address" => "Địa chỉ",
 "Host" => "Máy chủ",
 "Result" => "Kết quả",

@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-26 12:34+0000\n"
+"PO-Revision-Date: 2015-06-02 20:12+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/projects/p/owncloud/language/oc/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgid "all"
 msgstr ""
 
 msgid "blocked"
-msgstr ""
+msgstr "blocat"
 
 msgid "deleted"
 msgstr "escafat"
@@ -229,7 +229,7 @@ msgid "Click registered"
 msgstr ""
 
 msgid "Clicks"
-msgstr ""
+msgstr "Clics"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
 msgstr ""
@@ -238,7 +238,7 @@ msgid "Clicking 'Ok' below will try to launch an sms composer"
 msgstr ""
 
 msgid "Close"
-msgstr ""
+msgstr "Tampar"
 
 msgid "Configuration"
 msgstr ""
@@ -286,7 +286,7 @@ msgid "Feedback"
 msgstr ""
 
 msgid "Home"
-msgstr ""
+msgstr "Mos fichièrs"
 
 msgid "It can be enabled by a single click in the administration:"
 msgstr ""
@@ -313,10 +313,10 @@ msgid "New Shorty"
 msgstr ""
 
 msgid "Notes"
-msgstr ""
+msgstr "Nòtas"
 
 msgid "Nothing here yet"
-msgstr ""
+msgstr "Res d'afichar pel moment"
 
 msgid "Number of entries"
 msgstr ""

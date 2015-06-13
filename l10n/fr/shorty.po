@@ -34,13 +34,14 @@
 # Patrice LACHANCE <patlachance@gmail.com>, 2013
 # Redouane Lakrache <red-0ne@smarty-concept.com>, 2013
 # Romain DEP. <rom1dep@gmail.com>, 2013
+# TheQuestion, 2015
 # Thomas Imbreckx <zinks@member.fsf.org>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-04-04 08:38+0000\n"
+"PO-Revision-Date: 2015-06-11 07:24+0000\n"
 "Last-Translator: Thomas Imbreckx <zinks@member.fsf.org>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/owncloud/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -204,7 +205,7 @@ msgid "Administrative, system wide settings of this app:"
 msgstr "Paramètres administratifs globaux de cette application :"
 
 msgid "after the SMS has been launched"
-msgstr "après que le SMS ai été envoyé"
+msgstr "après que le SMS ait été envoyé"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
 msgstr "L'image peut aussi être téléchargée pour être imprimée ou archivée"
@@ -234,7 +235,7 @@ msgid "Choose a service…"
 msgstr "Choisir un service..."
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr "Clickez-le pour le site auquel vous souhaitez associer un Shorty"
+msgstr "Cliquez-le pour créer un lien-raccourci vers le site que vous visitez"
 
 msgid "Click registered"
 msgstr "Clic enregistré"
@@ -255,7 +256,7 @@ msgid "Configuration"
 msgstr "Configuration"
 
 msgid "The amount of feedback messages shown."
-msgstr "Le nombre de commentaires affichés."
+msgstr "Les types de notifications affichées."
 
 msgid "The time span after which messages are hidden again automatically"
 msgstr "Le laps de temps après lequel les messages sont cachés automatiquement à nouveau "
@@ -294,7 +295,7 @@ msgid "Expiration"
 msgstr "Expiration"
 
 msgid "Feedback"
-msgstr "Commentaires"
+msgstr "Notifications"
 
 msgid "Home"
 msgstr "Domicile"
@@ -303,7 +304,7 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr "Peut être activé par un clic simple dans l'interface d'administration :"
 
 msgid "If you just started using Shorty"
-msgstr "Si vous venez de débuter avec Shorty"
+msgstr "Si vous débutez avec Shorty"
 
 msgid "Loading"
 msgstr "Chargement"
@@ -405,10 +406,10 @@ msgid "Send by SMS"
 msgstr "Envoyer par SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr "Définir vos préférences personnelles en utilisant le \"cog whell\" (%%S) en bas à gauche!"
+msgstr "Définissez vos préférences personnelles en utilisant la roue dentée (%%s) en bas à gauche!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr "Définir vos préférences personnelles en utilisant la \"molette\" (%%S) en haut à droite!"
+msgstr "Définissez vos préférences personnelles en utilisant la roue dentée (%%s) en haut à droite !"
 
 msgid "Setting retrieved"
 msgstr "Réglage récupéré"
@@ -683,7 +684,7 @@ msgstr "De tels liens sont certainement plus longs que ceux générés par les s
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr "Cependant cette option ne dépend d'aucun autre service et vous gardez donc le contrôle sur vos shortys."
+msgstr "Cependant cette option ne dépend d'aucun autre service et vous gardez donc le contrôle de vos shortys."
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "

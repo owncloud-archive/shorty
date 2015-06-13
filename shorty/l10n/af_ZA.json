@@ -1,6 +1,7 @@
 { "translations": {
     "delete" : "uitvee",
     "share" : "deel",
+    "Notes" : "Notas",
     "Settings" : "Instellings"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

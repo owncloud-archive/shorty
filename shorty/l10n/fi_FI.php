@@ -16,6 +16,7 @@ $TRANSLATIONS = array(
 "share" => "jaa",
 "show" => "näytä",
 "reload" => "lataa uudelleen",
+"none" => "ei mitään",
 "error" => "virhe",
 "2 seconds" => "2 sekuntia",
 "5 seconds" => "5 sekuntia",

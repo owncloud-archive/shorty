@@ -26,13 +26,14 @@
 # Translators:
 # Nguyễn Tiến Trình <tunglam062000@gmail.com>, 2014
 # Sơn Nguyễn <sonnghit@gmail.com>, 2014
+# Uzumaki Naruto <narutoxboy69@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-03-31 05:41+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-06-03 09:30+0000\n"
+"Last-Translator: Uzumaki Naruto <narutoxboy69@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/projects/p/owncloud/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,14 +43,14 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Trình cắm"
 
 # status names
 msgid "all"
 msgstr "tất cả"
 
 msgid "blocked"
-msgstr ""
+msgstr "đã chặn"
 
 msgid "deleted"
 msgstr "đã xóa"
@@ -106,7 +107,7 @@ msgid "none"
 msgstr ""
 
 msgid "error"
-msgstr ""
+msgstr "lỗi"
 
 msgid "info"
 msgstr ""
@@ -318,7 +319,7 @@ msgid "Notes"
 msgstr "Ghi chép"
 
 msgid "Nothing here yet"
-msgstr ""
+msgstr "Không có gì ở đây"
 
 msgid "Number of entries"
 msgstr ""

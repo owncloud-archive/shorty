@@ -1,7 +1,9 @@
 OC.L10N.register(
     "shorty",
     {
+    "Plugins" : "Trình cắm",
     "all" : "tất cả",
+    "blocked" : "đã chặn",
     "deleted" : "đã xóa",
     "never" : "không thay đổi",
     "delete" : "xóa",
@@ -11,6 +13,7 @@ OC.L10N.register(
     "up" : "lên",
     "down" : "xuống",
     "clear" : "Xóa",
+    "error" : "lỗi",
     "Ctrl-C" : "Ctrl-C",
     "Backend" : "phụ trợ",
     "Close" : "Đóng",
@@ -20,6 +23,7 @@ OC.L10N.register(
     "Home" : "Nhà",
     "Loading" : "Đang tải",
     "Notes" : "Ghi chép",
+    "Nothing here yet" : "Không có gì ở đây",
     "Refresh" : "Làm mới",
     "Reload" : "Tải ",
     "Save" : "Lưu",

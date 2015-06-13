@@ -140,6 +140,7 @@ OC.L10N.register(
     "Sort descending" : "降順にソート",
     "Clear filter" : "フィルターをクリア",
     "Collapse column" : "列を折りたたむ",
+    "Expand column" : "カラムを拡張",
     "Source url" : "ソースURL",
     "Specify a static base url…" : "静的なベースURLを指定...",
     "Static backend: base url verification" : "静的バックエンド: ベースURLの確認",

@@ -1,6 +1,8 @@
 <?php
 $TRANSLATIONS = array(
+"Plugins" => "Trình cắm",
 "all" => "tất cả",
+"blocked" => "đã chặn",
 "deleted" => "đã xóa",
 "never" => "không thay đổi",
 "delete" => "xóa",
@@ -10,6 +12,7 @@ $TRANSLATIONS = array(
 "up" => "lên",
 "down" => "xuống",
 "clear" => "Xóa",
+"error" => "lỗi",
 "Ctrl-C" => "Ctrl-C",
 "Backend" => "phụ trợ",
 "Close" => "Đóng",
@@ -19,6 +22,7 @@ $TRANSLATIONS = array(
 "Home" => "Nhà",
 "Loading" => "Đang tải",
 "Notes" => "Ghi chép",
+"Nothing here yet" => "Không có gì ở đây",
 "Refresh" => "Làm mới",
 "Reload" => "Tải ",
 "Save" => "Lưu",

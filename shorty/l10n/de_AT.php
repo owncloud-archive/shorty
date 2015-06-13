@@ -1,6 +1,7 @@
 <?php
 $TRANSLATIONS = array(
 "never" => "niemals",
+"Feedback" => "Rückmeldung",
 "Save" => "Speichern",
 "Settings" => "Einstellungen",
 "Title" => "Titel",

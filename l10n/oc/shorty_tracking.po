@@ -23,13 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Cédric Valmary <cvalmary@yahoo.fr>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2014-10-27 04:08+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-06-01 22:50+0000\n"
+"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/projects/p/owncloud/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,55 +40,55 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Seguiment de Shorty"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Seguiment detalhat de totas las requèstas a de Shortys existents amb una visualizacion integrada de l'istoric d'accès."
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "autorizat"
 
 msgid "denied"
-msgstr ""
+msgstr "refusat"
 
 msgid "failed"
-msgstr ""
+msgstr "fracassat"
 
 msgid "blocked"
-msgstr ""
+msgstr "blocat"
 
 msgid "load"
-msgstr ""
+msgstr "cargar"
 
 msgid "Address"
-msgstr ""
+msgstr "Adreça"
 
 msgid "Click details"
-msgstr ""
+msgstr "Detalhs dels clics"
 
 msgid "Clicks"
-msgstr ""
+msgstr "Clics"
 
 msgid "Host"
-msgstr ""
+msgstr "Òste"
 
 msgid "List clicks"
-msgstr ""
+msgstr "Far la lista dels clics"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "Lista dels clics seguits"
 
 msgid "Result"
-msgstr ""
+msgstr "Resultat"
 
 msgid "Time"
-msgstr ""
+msgstr "Ora"
 
 msgid "Title"
 msgstr "Títol"
 
 msgid "User"
-msgstr ""
+msgstr "Utilizaire"
