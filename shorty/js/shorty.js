@@ -506,9 +506,10 @@ OC.Shorty={
 
 							default: // probably an action registered by another plugin...
 								// execute the function specified inside the clicked element:
-								if (typeof $(element).attr('data-method')!=='undefined'){
-									if (OC.Shorty.Debug) OC.Shorty.Debug.log("handing over control about entry '"+entry.attr('id')+"' to registered action");
-									executeFunctionByName($(element).attr('data-method'),$(window)[0],entry);
+								var handler = $(element).attr('data-method');
+								if (typeof handler!=='undefined'){
+									if (OC.Shorty.Debug) OC.Shorty.Debug.log("Calling action handler '"+handler+"' on Shorty '"+entry.attr('id')+"'");
+									executeFunctionByName(handler,$(window)[0],entry);
 								}
 						} // switch
 					} // if click

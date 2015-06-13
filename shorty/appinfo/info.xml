@@ -36,7 +36,7 @@
 	<name>Shorty</name>
 	<description>
 Shorty offers a service to store, manage and use a collection of short links
-pointing to ressources in the web. The features are a combination of a
+pointing to resources in the web. The features are a combination of a
 centralized bookmarks collection, an url shortener and an access control.
 The collection is presented as a link of "shorties", a shorty can be created
 either manually in the list ("New") or by using the "Shortlet". The Shortlet
