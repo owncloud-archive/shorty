@@ -2,6 +2,12 @@
 
 - - -
 
+## Status: This app is not maintained any more. 
+### The code has to be considered broken, it is not compatible with current OC versions. 
+### This app should NOT be installed or activated. 
+
+- - -
+
 ## Repository content
 
 ### Main App
