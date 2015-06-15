@@ -7,8 +7,11 @@ OC.L10N.register(
     "delete" : "escafa",
     "share" : "parteja",
     "show" : "mòstra",
+    "error" : "error",
     "Clicks" : "Clics",
     "Close" : "Tampar",
+    "Configuration" : "Configuracion",
+    "Expiration" : "Expiracion",
     "Home" : "Mos fichièrs",
     "Notes" : "Nòtas",
     "Nothing here yet" : "Res d'afichar pel moment",
@@ -16,6 +19,7 @@ OC.L10N.register(
     "Save" : "Enregistra",
     "Settings" : "Configuracion",
     "Title" : "Títol",
+    "Account" : "Compte",
     "Location" : "Plaça"
 },
 "nplurals=2; plural=(n > 1);");
