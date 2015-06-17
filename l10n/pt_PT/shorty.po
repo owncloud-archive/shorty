@@ -29,16 +29,16 @@
 # Daniel Pinto <daniel@mouxy.net>, 2013
 # Helder Meneses <helder.meneses@gmail.com>, 2013-2014
 # Hugo Bettencourt, 2014-2015
-# Luis Jorge Simões das Neves <luisjneves@gmail.com>, 2014
+# Luis Neves <luisjneves@gmail.com>, 2014
 # Nelson Rosado <nelsontrosado@gmail.com>, 2014
-# Andrew_Melim <nokostya.translation@gmail.com>, 2014
+# Andrew Melim <nokostya.translation@gmail.com>, 2014
 # Vitor, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-04-15 16:03+0000\n"
+"PO-Revision-Date: 2015-06-16 10:11+0000\n"
 "Last-Translator: alfalb.as\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"

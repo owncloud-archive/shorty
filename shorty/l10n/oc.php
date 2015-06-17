@@ -15,6 +15,7 @@ $TRANSLATIONS = array(
 "Notes" => "Nòtas",
 "Nothing here yet" => "Res d'afichar pel moment",
 "Refresh" => "Refresca",
+"Reload" => "Recargar",
 "Save" => "Enregistra",
 "Settings" => "Configuracion",
 "Title" => "Títol",
