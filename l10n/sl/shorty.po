@@ -25,14 +25,14 @@
 # 
 # Translators:
 # barbarak <barbarak@arnes.si>, 2013
-# Matej Urbančič <>, 2013-2014
+# Matej Urbančič <>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-04-15 16:03+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-06-19 21:03+0000\n"
+"Last-Translator: Matej Urbančič <>\n"
 "Language-Team: Slovenian (http://www.transifex.com/projects/p/owncloud/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,7 +116,7 @@ msgstr "razhroščevanje"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "( nikoli )"
 
 msgid "2 seconds"
 msgstr "2 sekundi"
@@ -139,7 +139,7 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[ brez ]"
 
 msgid "bitly.com service"
 msgstr "storitev bitly.com"
@@ -435,13 +435,13 @@ msgid "Show as QRCode"
 msgstr "Pokaži kot kodo QR"
 
 msgid "Show QRCode reference"
-msgstr ""
+msgstr "Pokaži sklic Kode QR"
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "Pokaži sličico kode QR"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "Prejmi kodo QR"
 
 msgid "Show details"
 msgstr "Pokaži podrobnosti"
@@ -465,10 +465,10 @@ msgid "Clear filter"
 msgstr "Počisti filter"
 
 msgid "Collapse column"
-msgstr ""
+msgstr "Zloži stolpec"
 
 msgid "Expand column"
-msgstr ""
+msgstr "Razširi stolpec"
 
 msgid "Source url"
 msgstr "Naslov URL vira"
@@ -777,7 +777,7 @@ msgid "If you proceed you will be forwarded to:"
 msgstr ""
 
 msgid "Target object:"
-msgstr ""
+msgstr "Ciljni predmet:"
 
 msgid "Location"
 msgstr "Mesto"
