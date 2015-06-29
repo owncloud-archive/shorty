@@ -24,6 +24,7 @@ OC.L10N.register(
     "error" : "viga",
     "info" : "info",
     "debug" : "veatuvastus",
+    "( never )" : "( mitte kunagi )",
     "2 seconds" : "2 sekundit",
     "5 seconds" : "5 sekundit",
     "12 seconds" : "12 sekundit",
