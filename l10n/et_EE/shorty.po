@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-06-28 21:00+0000\n"
+"PO-Revision-Date: 2015-06-29 05:57+0000\n"
 "Last-Translator: Rivo Zängov <eraser@eraser.ee>\n"
 "Language-Team: Estonian (Estonia) (http://www.transifex.com/projects/p/owncloud/language/et_EE/)\n"
 "MIME-Version: 1.0\n"
@@ -140,7 +140,7 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[ pole ]"
 
 msgid "bitly.com service"
 msgstr "bitly.com teenus"
@@ -436,13 +436,13 @@ msgid "Show as QRCode"
 msgstr "Näita QR koodina"
 
 msgid "Show QRCode reference"
-msgstr ""
+msgstr "Näita QR-koodi viidet"
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "Näita QR-koodi pilti"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "Laadi QR-kood alla"
 
 msgid "Show details"
 msgstr "Näita detaile"
@@ -466,10 +466,10 @@ msgid "Clear filter"
 msgstr "Tühjenda filter"
 
 msgid "Collapse column"
-msgstr ""
+msgstr "Sulge veerg"
 
 msgid "Expand column"
-msgstr ""
+msgstr "Laienda veergu"
 
 msgid "Source url"
 msgstr "Lähteaadress"
@@ -505,7 +505,7 @@ msgid "The default status as suggested for new Shortys."
 msgstr "Soovitatud vaikimisi staatus uutele Shorty-dele"
 
 msgid "The link below can be copied to paste it elsewhere"
-msgstr ""
+msgstr "Alloleva lingi saab mujale asetamiseks kopeerida"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
 msgstr "Lisavidin '%%s' jälgib olemasolevate Shorty-de kasutust!"
@@ -522,7 +522,7 @@ msgstr "See 2D ribakood sisaldab kodeerituna aadressi, mis viitab sellele Shorty
 msgid ""
 "Use it in web pages by referencing or embedding or simply print or download "
 "it for offline usage"
-msgstr ""
+msgstr "Kasuta seda veebilehel sellele viidates või lehele lisades või siis lihtsalt prindi või laadi see alla ilma veebita kasutamiseks"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "See on sisemine aadress, millel põhineb lühendatud aaressi vahendus"
@@ -772,13 +772,13 @@ msgid ""
 msgstr "Veendu, et kõik päringud oleks mingil moel Shorty vahendusteenuses vastendatud."
 
 msgid "Shorty relay service"
-msgstr ""
+msgstr "Shorty vahendusteenus"
 
 msgid "If you proceed you will be forwarded to:"
-msgstr ""
+msgstr "Kui sa jätkad, siis sind suunatakse:"
 
 msgid "Target object:"
-msgstr ""
+msgstr "Sihtobjekt:"
 
 msgid "Location"
 msgstr "Asukoht"
