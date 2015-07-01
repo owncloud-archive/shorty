@@ -46,7 +46,7 @@ OC.L10N.register(
     "Access" : "Accès",
     "Add a new shorty" : "Ajouter un nouveau shorty",
     "Add as new" : "Ajouter en tant que nouveau",
-    "Add page as 'Shorty' to ownCloud" : "Ajouter cette page à 'Shorty' sur ownCloud",
+    "Add page as 'Shorty' to ownCloud" : "Ajouter à Shorty sur ownCloud",
     "Administration" : "Administration",
     "Administrative, system wide settings of this app:" : "Paramètres administratifs globaux de cette application :",
     "after the SMS has been launched" : "après que le SMS ait été envoyé",
