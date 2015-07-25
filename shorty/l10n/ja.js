@@ -157,6 +157,7 @@ OC.L10N.register(
     "therefore the content must be copied manually" : "従って、その内容は手動でコピーされなければなりません。",
     "then paste into message" : "そしてメッセージに貼り付けます",
     "This 2d barcode encodes the url pointing to this Shorty" : "この2次元バーコードは、この短縮を指すURLをエンコードしています",
+    "Use it in web pages by referencing or embedding or simply print or download it for offline usage" : "参照または埋め込みによりウェブページで使用するか、オフラインで使用するため単に印刷するか、ダウンロードする",
     "This is a internal url that the shortened url relays to" : "これは、短縮化されたURLからリダイレクトされる内部URLです。",
     "This is the shortened url registered at the backend" : "これはバックエンドに登録された短縮URLです",
     "This is the target url specified when generating this Shorty" : "この短縮の生成時に指定されたターゲットURLです",
@@ -221,6 +222,9 @@ OC.L10N.register(
     "Sorry, but your setup appears not to be working correctly yet!" : "すみませんが、設定がまだ正常になっていないようです。",
     "Please check your setup and make sure that the configured base url is indeed correct." : "設定をチェックして、設定されたベースURLが間違いなく正しいか、確認をお願いいたします。",
     "Make sure that all requests to it are somehow mapped to Shortys relay service." : "それに対するすべてのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。",
+    "Shorty relay service" : "短縮URL中継サービス",
+    "If you proceed you will be forwarded to:" : "続行すると、転送されます：",
+    "Target object:" : "対象オブジェクト：",
     "Location" : "位置",
     "Proceed" : "続行"
 },

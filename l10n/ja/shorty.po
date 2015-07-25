@@ -29,13 +29,14 @@
 # kuromabo <md81bird@hitaki.net>, 2014-2015
 # Shinozaki Ippei <shino.ip.1231@gmail.com>, 2014-2015
 # YANO Tetsu <tetuyano+transi@gmail.com>, 2013-2015
+# Yoshitaka Takahashi <takahashi@shade3d.co.jp>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-07-22 14:16+0000\n"
-"Last-Translator: YANO Tetsu <tetuyano+transi@gmail.com>\n"
+"PO-Revision-Date: 2015-07-24 18:39+0000\n"
+"Last-Translator: Yoshitaka Takahashi <takahashi@shade3d.co.jp>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -524,7 +525,7 @@ msgstr "この2次元バーコードは、この短縮を指すURLをエンコ�
 msgid ""
 "Use it in web pages by referencing or embedding or simply print or download "
 "it for offline usage"
-msgstr ""
+msgstr "参照または埋め込みによりウェブページで使用するか、オフラインで使用するため単に印刷するか、ダウンロードする"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "これは、短縮化されたURLからリダイレクトされる内部URLです。"
@@ -774,13 +775,13 @@ msgid ""
 msgstr "それに対するすべてのリクエストがどんな形であれ、Shorty転送サービスへ接続されることに注意しなければなりません。"
 
 msgid "Shorty relay service"
-msgstr ""
+msgstr "短縮URL中継サービス"
 
 msgid "If you proceed you will be forwarded to:"
-msgstr ""
+msgstr "続行すると、転送されます："
 
 msgid "Target object:"
-msgstr ""
+msgstr "対象オブジェクト："
 
 msgid "Location"
 msgstr "位置"
