@@ -8,10 +8,11 @@ $TRANSLATIONS = array(
 "Backend" => "Stjórnun",
 "Close" => "Loka",
 "Configuration" => "Uppsetning",
+"Expiration" => "Rennurút",
 "Notes" => "Skýringar",
 "Save" => "Vista",
 "Settings" => "Stillingar",
 "Title" => "Titill",
 "Location" => "Staðsetning"
 );
-$PLURAL_FORMS = "nplurals=2; plural=(n != 1);";
+$PLURAL_FORMS = "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);";
