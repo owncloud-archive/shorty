@@ -38,6 +38,7 @@ OC.L10N.register(
     "Notes" : "Shënime",
     "Nothing here yet" : "Asgjë këtu ende",
     "Open target" : "Hap objektivin",
+    "Refresh" : "Rifresko",
     "Reload" : "Ngarko",
     "Save" : "Ruaj",
     "Settings" : "Parametra",

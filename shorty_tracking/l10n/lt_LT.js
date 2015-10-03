@@ -5,6 +5,7 @@ OC.L10N.register(
     "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." : "Išsamus registras visų užklausų į egzistuojančius trumpinius kartu su integruota prieigos istorijos vizualizacija.",
     "granted" : "suteikta",
     "denied" : "uždrausta",
+    "failed" : "Klaida",
     "blocked" : "užblokuotas",
     "load" : "įkelti",
     "Address" : "Adresas",

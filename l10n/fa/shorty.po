@@ -25,14 +25,15 @@
 # 
 # Translators:
 # mahdi Kereshteh <miki_mika1362@yahoo.com>, 2013
+# ximbesto <mashomid@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-04-15 16:03+0000\n"
-"Last-Translator: I Robot\n"
-"Language-Team: Persian (http://www.transifex.com/projects/p/owncloud/language/fa/)\n"
+"PO-Revision-Date: 2015-10-02 22:15+0000\n"
+"Last-Translator: ximbesto <mashomid@gmail.com>\n"
+"Language-Team: Persian (http://www.transifex.com/owncloud_robot/owncloud/language/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,10 +93,10 @@ msgid "reload"
 msgstr ""
 
 msgid "up"
-msgstr ""
+msgstr "بالا"
 
 msgid "down"
-msgstr ""
+msgstr "پایین"
 
 msgid "clear"
 msgstr ""
@@ -115,19 +116,19 @@ msgstr "اشکال زدایی کردن"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "( هرگز)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 ثانیه"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 ثانیه"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 ثانیه"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 دقیقه"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -437,10 +438,10 @@ msgid "Show QRCode reference"
 msgstr ""
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "نمایش تصویر کدQR"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "دانلود کد QR"
 
 msgid "Show details"
 msgstr "نمایش جزئیات"
@@ -461,7 +462,7 @@ msgid "Sort descending"
 msgstr "مرتب کردن به صورت نزولی"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "پاک کردن فیلتر"
 
 msgid "Collapse column"
 msgstr ""
@@ -589,13 +590,13 @@ msgid "API key"
 msgstr "کلید API "
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "کاربر bit.ly"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "نام‌کاربری bit.ly"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "کلید bit.ly"
 
 msgid "bit.ly users key"
 msgstr ""

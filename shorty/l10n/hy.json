@@ -1,6 +1,10 @@
 { "translations": {
+    "never" : "երբեք",
+    "delete" : "ջնջել",
+    "edit" : "խմբագրել",
     "Close" : "Փակել",
     "Save" : "Պահպանել",
-    "Title" : "Վերնագիր"
+    "Title" : "Վերնագիր",
+    "Account" : "Հաշիվ"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
