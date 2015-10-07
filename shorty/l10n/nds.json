@@ -1,0 +1,8 @@
+{ "translations": {
+    "Configuration" : "Konfiguration",
+    "Nothing here yet" : "Hier gibt es noch nichts",
+    "Settings" : "Einstellungen",
+    "API key" : "API Schlüssel",
+    "Location" : "Ort"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
