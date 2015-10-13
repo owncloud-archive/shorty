@@ -26,14 +26,15 @@
 # Translators:
 # Dr. ROX <to.dr.rox@gmail.com>, 2013
 # Liudas <liudas@aksioma.lt>, 2013
+# Vytautas Simanaitis <vyt.sima@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-07-29 05:50+0000\n"
-"Last-Translator: I Robot\n"
-"Language-Team: Lithuanian (Lithuania) (http://www.transifex.com/projects/p/owncloud/language/lt_LT/)\n"
+"PO-Revision-Date: 2015-10-12 16:44+0000\n"
+"Last-Translator: Vytautas Simanaitis <vyt.sima@gmail.com>\n"
+"Language-Team: Lithuanian (Lithuania) (http://www.transifex.com/owncloud_robot/owncloud/language/lt_LT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,7 +91,7 @@ msgstr "rodyti"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "Atnaujinti"
 
 msgid "up"
 msgstr "aukštyn"
@@ -116,19 +117,19 @@ msgstr "derinti"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "( niekada )"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 sek."
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 sek."
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 sek."
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 min."
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -139,7 +140,7 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[ joks ]"
 
 msgid "bitly.com service"
 msgstr "bitly.com paslauga"
@@ -186,34 +187,34 @@ msgid "Add as new"
 msgstr "Pridėti kaip naują"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "Pridėti puslapį kaip 'Shorty' prie ownCloud"
 
 msgid "Administration"
 msgstr "Administravimas"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "Administratoriaus, sisteminiai programėlės nustatymai:"
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "po SMS išsiuntimo"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "Paveikslėlis gali būti parsiųstas spausdinimui arba talpinimui"
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "nuoroda gali būti nukopijuota tolesniam naudojimui"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "Arba nuoroda gali būti nukopijuota rankiniu būdu"
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "Arba nuoroda gali būti nukopijuota į pranešimą rankiniu būdu"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "Labai gelbstintis aprašas ..."
 
 msgid "Default backend suggested inside users preferences"
-msgstr ""
+msgstr "Numatytasis serveris pasiūlytas vartotojo nustatymuose"
 
 msgid "Backend"
 msgstr "Posistemės pavadinimas"
@@ -225,19 +226,19 @@ msgid "Choose a service…"
 msgstr "Pasirinkite paslaugą..."
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr ""
+msgstr "Paspausk, bet kuriam puslapiui sukurti Shorty."
 
 msgid "Click registered"
-msgstr ""
+msgstr "Paspaudimas užregistruotas"
 
 msgid "Clicks"
 msgstr "Paspaudimai"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "Paspaudus 'Ok' žemiau bus bandoma atverti laiško šabloną"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "Paspaudus 'Ok' žemiau bus bandoma atverti sms šabloną"
 
 msgid "Close"
 msgstr "Užverti"
@@ -246,7 +247,7 @@ msgid "Configuration"
 msgstr "Konfigūracija"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "Rodomų atsiliepimų skaičius."
 
 msgid "The time span after which messages are hidden again automatically"
 msgstr ""
