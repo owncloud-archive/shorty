@@ -31,6 +31,7 @@ $TRANSLATIONS = array(
 "Example" => "Shëmbull",
 "Exception" => "Përjashtim",
 "Expiration" => "Data e skadimit",
+"Feedback" => "Përshtypje",
 "Home" => "Shtëpi",
 "Loading" => "Ngarkim",
 "Mail client" => "Klienti mail-it",
@@ -46,6 +47,8 @@ $TRANSLATIONS = array(
 "Source url" => "Burimi url",
 "Target" => "Objektiv",
 "Title" => "Titulli",
-"Location" => "Vendndodhja"
+"Account" => "Llogari",
+"Location" => "Vendndodhja",
+"Proceed" => "Bëje"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

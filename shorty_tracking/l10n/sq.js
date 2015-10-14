@@ -5,6 +5,7 @@ OC.L10N.register(
     "Address" : "Adresa",
     "Clicks" : "Klikime",
     "Host" : "Pritësi",
-    "Title" : "Titulli"
+    "Title" : "Titulli",
+    "User" : "Përdorues"
 },
 "nplurals=2; plural=(n != 1);");

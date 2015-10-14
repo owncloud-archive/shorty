@@ -30,6 +30,7 @@
     "Example" : "Shëmbull",
     "Exception" : "Përjashtim",
     "Expiration" : "Data e skadimit",
+    "Feedback" : "Përshtypje",
     "Home" : "Shtëpi",
     "Loading" : "Ngarkim",
     "Mail client" : "Klienti mail-it",
@@ -45,6 +46,8 @@
     "Source url" : "Burimi url",
     "Target" : "Objektiv",
     "Title" : "Titulli",
-    "Location" : "Vendndodhja"
+    "Account" : "Llogari",
+    "Location" : "Vendndodhja",
+    "Proceed" : "Bëje"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

@@ -32,6 +32,7 @@ OC.L10N.register(
     "Example" : "Shëmbull",
     "Exception" : "Përjashtim",
     "Expiration" : "Data e skadimit",
+    "Feedback" : "Përshtypje",
     "Home" : "Shtëpi",
     "Loading" : "Ngarkim",
     "Mail client" : "Klienti mail-it",
@@ -47,6 +48,8 @@ OC.L10N.register(
     "Source url" : "Burimi url",
     "Target" : "Objektiv",
     "Title" : "Titulli",
-    "Location" : "Vendndodhja"
+    "Account" : "Llogari",
+    "Location" : "Vendndodhja",
+    "Proceed" : "Bëje"
 },
 "nplurals=2; plural=(n != 1);");
