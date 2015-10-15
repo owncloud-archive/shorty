@@ -5,6 +5,7 @@ OC.L10N.register(
     "Address" : "Adresa",
     "Clicks" : "Klikime",
     "Host" : "Pritësi",
+    "Time" : "Kohë",
     "Title" : "Titulli",
     "User" : "Përdorues"
 },
