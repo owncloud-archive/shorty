@@ -27,6 +27,7 @@ $TRANSLATIONS = array(
 "Add as new" => "Shto te ri",
 "Clicks" => "Klikime",
 "Close" => "Mbyll",
+"Configuration" => "Formësim",
 "Creation" => "Krijim",
 "Example" => "Shëmbull",
 "Exception" => "Përjashtim",
@@ -48,6 +49,7 @@ $TRANSLATIONS = array(
 "Target" => "Objektiv",
 "Title" => "Titulli",
 "Account" => "Llogari",
+"API key" => "Kyç API",
 "Location" => "Vendndodhja",
 "Proceed" => "Bëje"
 );
