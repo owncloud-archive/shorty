@@ -8,6 +8,7 @@ $TRANSLATIONS = array(
 "Home" => "Domo",
 "Loading" => "Cargante",
 "Notes" => "Notas",
+"Refresh" => "Refrescar",
 "Save" => "Salveguardar",
 "Settings" => "Configurationes",
 "Title" => "Titulo",

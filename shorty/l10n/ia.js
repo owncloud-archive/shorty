@@ -9,6 +9,7 @@ OC.L10N.register(
     "Home" : "Domo",
     "Loading" : "Cargante",
     "Notes" : "Notas",
+    "Refresh" : "Refrescar",
     "Save" : "Salveguardar",
     "Settings" : "Configurationes",
     "Title" : "Titulo",
