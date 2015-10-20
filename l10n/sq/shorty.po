@@ -25,13 +25,14 @@
 # 
 # Translators:
 # Ardit Dani <ardit.dani@gmail.com>, 2014
+# Besnik <besnik@programeshqip.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-10-18 19:21+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-10-19 19:51+0000\n"
+"Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/owncloud_robot/owncloud/language/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,55 +42,55 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "Shtojca"
 
 # status names
 msgid "all"
-msgstr "t'gjithë"
+msgstr "krejt"
 
 msgid "blocked"
-msgstr "Bllokuar"
+msgstr "e bllokuar"
 
 msgid "deleted"
-msgstr "fshirë"
+msgstr "e fshirë"
 
 msgid "disabled"
-msgstr "Çaktivizo"
+msgstr "e çaktivizuar"
 
 msgid "enabled"
-msgstr "Aktivizo"
+msgstr "e aktivizuar"
 
 msgid "never"
 msgstr "kurrë"
 
 msgid "private"
-msgstr "Private"
+msgstr "private"
 
 msgid "public"
-msgstr "Publike"
+msgstr "publike"
 
 msgid "shared"
-msgstr "Ndarë"
+msgstr "e ndarë"
 
 # actions ("to be done")
 msgid "delete"
-msgstr "elimino"
+msgstr "fshije"
 
 msgid "edit"
-msgstr "modifiko"
+msgstr "përpunoni"
 
 msgid "open"
-msgstr "Hap"
+msgstr "hape"
 
 msgid "share"
-msgstr "nda"
+msgstr "ndajeni me të tjerët"
 
 msgid "show"
-msgstr "Shfaq"
+msgstr "shfaqe"
 
 # toolbar icons
 msgid "reload"
-msgstr "ngarko"
+msgstr "ringarkoje"
 
 msgid "up"
 msgstr "lart"
@@ -98,36 +99,36 @@ msgid "down"
 msgstr "poshtë"
 
 msgid "clear"
-msgstr "pastro"
+msgstr "pastroje"
 
 # log levels
 msgid "none"
 msgstr "asnjë"
 
 msgid "error"
-msgstr "Gabim"
+msgstr "gabim"
 
 msgid "info"
 msgstr "info"
 
 msgid "debug"
-msgstr ""
+msgstr "diagnostikoje"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "( kurrë )"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 sekonda"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 sekonda"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 sekonda"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minutë"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
@@ -138,150 +139,150 @@ msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[ asnjë ]"
 
 msgid "bitly.com service"
-msgstr ""
+msgstr "Shërbimi bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "Shërbimi cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "Shërbimi goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "Shërbimi is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "Shërbimi ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "Shërbimi tiny.cc"
 
 msgid "static backend"
 msgstr ""
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "për çfarëdo hyrje"
 
 msgid "for own usage"
-msgstr ""
+msgstr "për përdorim nga ju"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "me përdorues ownCloud"
 
 msgid "available for everyone"
-msgstr ""
+msgstr " i passhëm për këdo"
 
 # short and general terms
 msgid "Access"
 msgstr "Hyrje"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "Shtoni një shorty të re"
 
 msgid "Add as new"
-msgstr "Shto te ri"
+msgstr "Shtoje si të ri"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "Shtoje faqen si 'Shorty' te ownCloud"
 
 msgid "Administration"
-msgstr ""
+msgstr "Administrim"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "Rregullime administrative të këtij aplikacioni, me efekt në krejt sistemin"
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "pasi të jetë nisur aplikacioni për SMS"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "Përndryshe figura mund të shkarkohet për shtypje ose për depozitim"
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "Përndryshe lidhja mund të shkarkohet për përdorim të mëtejshëm"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "Përndryshe lidhja mund të kopjohet dorazi"
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "Përndryshe lidhja mund të kopjohet dorazi në një mesazh"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "Çfarëdo që duket e dobishme …"
 
 msgid "Default backend suggested inside users preferences"
-msgstr ""
+msgstr "Mekanizëm shërbimi parazgjedhje i këshilluar brenda parapëlqimeve të përdoruesit"
 
 msgid "Backend"
-msgstr ""
+msgstr "Mekanizëm shërbimi"
 
 msgid "Base url"
-msgstr ""
+msgstr "URL bazë"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "Zgjidhni një shërbim… \t"
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr ""
+msgstr "Klikoni mbi për cilindo sajt që doni t’i krijoni një Shorty."
 
 msgid "Click registered"
-msgstr ""
+msgstr "Klikimi u regjistrua"
 
 msgid "Clicks"
 msgstr "Klikime"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "Klikimi i 'Ok' më poshtë do të sjellë përpjekjen për të nisur një hartues email-esh"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "Klikimi i 'Ok' më poshtë do të sjellë përpjekjen për të nisur një hartues SMS-sh"
 
 msgid "Close"
-msgstr "Mbyll"
+msgstr "Mbylle"
 
 msgid "Configuration"
 msgstr "Formësim"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "Sasia e mesazheve të përshtypjeve të shfaqur"
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "Shtrirja kohore pas së cilës mesazhet kalojnë sërish vetvetiu të fshehur"
 
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "Kopjoje në të papastër"
 
 msgid "Counted entries and clicks"
-msgstr ""
+msgstr "Zërat dhe klikimet u numëruan"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "Krijoni një 'Shorty' të re dhe ndajeni me të tjerët"
 
 msgid "Creation"
 msgstr "Krijim"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Fshije shorty-n"
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "Tërhiqeni këtë te faqerojtësit e shfletuesit tuaj"
 
 msgid "Embed the QRCode as an image into some web page using this url"
-msgstr ""
+msgstr "Trupëzojeni QRCode-in si një figurë në disa faqe që përdorin këtë URL"
 
 msgid "Example"
-msgstr "Shëmbull"
+msgstr "Shembull"
 
 msgid "Exception"
 msgstr "Përjashtim"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "Përjashtim (%s)"
 
 msgid "Expiration"
-msgstr "Data e skadimit"
+msgstr "Skadim"
 
 msgid "Feedback"
 msgstr "Përshtypje"
@@ -290,46 +291,46 @@ msgid "Home"
 msgstr "Shtëpi"
 
 msgid "It can be enabled by a single click in the administration:"
-msgstr ""
+msgstr "Mund të aktivizohet me një klik të vetëm,te pjesa e administrimit:"
 
 msgid "If you just started using Shorty"
-msgstr ""
+msgstr "Nëse sapo filluat të përdorni Shorty-n"
 
 msgid "Loading"
-msgstr "Ngarkim"
+msgstr "Po ngarkohet"
 
 msgid "Mail client"
-msgstr "Klienti mail-it"
+msgstr "Klienti poste"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "Ndryshimet për shorty-n me id '%s' u ruajtën"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Ndryshoni atribute"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Ndryshoni shorty-n"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "Shorty e Re"
 
 msgid "Notes"
 msgstr "Shënime"
 
 msgid "Nothing here yet"
-msgstr "Asgjë këtu ende"
+msgstr "Ende asgjë këtu"
 
 msgid "Number of entries"
-msgstr ""
+msgstr "Numër zërash"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "Numër zërash: %s"
 
 msgid "QRCode"
-msgstr ""
+msgstr "QRCode"
 
 msgid "Open source url"
-msgstr ""
+msgstr "Hapni URL-në burim"
 
 msgid "Open relay url"
 msgstr ""
@@ -338,37 +339,37 @@ msgid "Open target"
 msgstr "Hap objektivin"
 
 msgid "Open target url"
-msgstr ""
+msgstr "Hapni URL-në objektiv"
 
 msgid "Optional configuration of a 'Static Backend'"
-msgstr ""
+msgstr "Formësim opsional i një 'Mekanizmi Statik Shërbimi'"
 
 msgid "or simpy print or download it for off-line usage"
-msgstr ""
+msgstr "ose thjesht shtypeni ose shkarkojeni për përdorim jashtë internetit"
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "Ngjiteni për ta trupëzuar kudo gjetkë"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Parapëlqimi u rimor"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Parapëlqimi u ruajt"
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "Parapëlqimi '%s' u rimor"
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "Parapëlqimi '%s' u ruajt"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Parapëlqime"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "Përgatite për dërgim si SMS"
 
 msgid "Refresh"
-msgstr "Rifresko"
+msgstr "Rifreskoje"
 
 msgid "Relay service"
 msgstr ""
@@ -377,198 +378,198 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr "Ngarko"
+msgstr "Ringarkoje"
 
 msgid "Reload list"
-msgstr ""
+msgstr "Ringarko listën"
 
 msgid "Save"
-msgstr "Ruaj"
+msgstr "Ruaje"
 
 msgid "Send by email"
-msgstr ""
+msgstr "Dërgoje email"
 
 msgid "Send link by email"
-msgstr ""
+msgstr "Dërgoje lidhjen me email"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "Dërgoje me SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "Rregulloni parapëlqimet personale duke përdorur rrotëzën (%%s) poshtë majtas!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Rregulloni parapëlqimet personale duke përdorur rrotëzën (%%s) sipër djathtas!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Rregullimi u rimor"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Rregullimi u ruajt"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Rregullimi '%s' u rimor"
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "Rregullimi '%s' u ruajt"
 
 msgid "Settings"
-msgstr "Parametra"
+msgstr "Rregullime"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Ndajeni dhe përdoreni"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "Ndani shorty-n"
 
 msgid "Shortlet"
 msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "Shorty si QRCode"
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr "Shorty me ID-në '%s' u fshi"
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "Shfaqe si QRCode"
 
 msgid "Show QRCode reference"
-msgstr ""
+msgstr "Shfaq referencë QRCode"
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "Shfaq Figurë QRCode"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "Shkarko QRCode"
 
 msgid "Show details"
-msgstr "Shfaq detajet"
+msgstr "Shfaq hollësi"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Shfaq përdorimin"
 
 msgid "SMS"
 msgstr "SMS"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "Hartues SMS-sh"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Renditi në rend rritës"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Renditi në rend zbritës"
 
 msgid "Clear filter"
-msgstr ""
+msgstr "Pastroje filtrin"
 
 msgid "Collapse column"
-msgstr ""
+msgstr "Tkurre shtyllën"
 
 msgid "Expand column"
-msgstr ""
+msgstr "Zgjeroje shtyllën"
 
 msgid "Source url"
-msgstr "Burimi url"
+msgstr "URL burimi"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "Përcaktoni një URL bazë statike…"
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "Mekanizëm statik shërbimi: verifikim URL-je bazë"
 
 msgid "Status"
-msgstr ""
+msgstr "Gjendje"
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "U ruajt ndryshimi i gjendjes për shorty-n me id-në '%s'"
 
 msgid "Target"
 msgstr "Objektiv"
 
 msgid "Target url"
-msgstr ""
+msgstr "URL e synuar"
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "URL-ja e synyar '%s' është e vlefshme"
 
 msgid "That image can be used when writing documents or setting up web sites"
-msgstr ""
+msgstr "Ajo figurë mund të përdoret kur shkruhen dokumente ose rregullohen sajte"
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "Mekanizmi i shërbimit i përdorur për të prodhuar URL të shkurtuara"
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "Gjendja parazgjedhje e këshilluar për Shorty të reja."
 
 msgid "The link below can be copied to paste it elsewhere"
-msgstr ""
+msgstr "Lidhja më poshtë mund të kopjohet ose ngjitet kudo"
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "Shtojca shtesë '%%s' ndjek përdorimin e Shorty-ve ekzistuese!"
 
 msgid "therefore the content must be copied manually"
-msgstr ""
+msgstr "ndaj lënda duhet të   kopjohet dorazi"
 
 msgid "then paste into message"
-msgstr ""
+msgstr "mandej ngjiteni te mesazhi"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
-msgstr ""
+msgstr "Ky barkod i dytë kodon URL-në që shpie te kjo Shorty"
 
 msgid ""
 "Use it in web pages by referencing or embedding or simply print or download "
 "it for offline usage"
-msgstr ""
+msgstr "Përdoreni në faqe web duke iu referuar ose duke e trupëzuar në to, ose thjesht shtypeni apo shkarkojeni për përdorim jashtë internetit"
 
 msgid "This is a internal url that the shortened url relays to"
-msgstr ""
+msgstr "Kjo është një URL e brendshme mbi të cilën bazohet URL-ja e shkurtuar"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "Kjo është URL-ja e shkurtuar e regjistruar te mekanizmi i shërbimit"
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr ""
+msgstr "Kjo është URL-ja synim e dhënë kur u prodhua kjo Shorty"
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr ""
+msgstr "Kjo është URL-ja që i referohet QRCode-it të shfaqur më parë"
 
 msgid "Title"
-msgstr "Titulli"
+msgstr "Titull"
 
 msgid "Toggle toolbar"
-msgstr ""
+msgstr "Shfaq/fshih panelin"
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "Klikime gjithsej"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "Zakonisht kjo funksionon vetëm në pajisje të tilla si telefonët"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "U kap lloj i papritur përjashtimi: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "Për fat të keq, sebdërtimi i kësaj skeme është i kufizuar"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "U kap objekt lloji të panjohur: %s"
 
 msgid "Url shortened to: %s"
-msgstr ""
+msgstr "URL-ja u shkurtua si: %s"
 
 msgid "Use it in web pages by referencing or embedding"
-msgstr ""
+msgstr "Përdoreni në faqe web duke iu referuar ose duke e trupëzuar në to"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "Përdorni butonin '%s' më sipër, ose 'Shortlet'-in  e hijshëm"
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "Verifikojeni duke klikuar…"
 
 msgid "Verification failed"
-msgstr ""
+msgstr "Verifikimi dështoi"
 
 # exception description
 msgid ""
@@ -576,11 +577,11 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr ""
+msgstr "%s\nMesazh(kod): %s (%s)\nKartelë(rresht): %s (%s)\nInfo: %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "Kyç përdorimi API"
 
 msgid "Account"
 msgstr "Llogari"
@@ -589,157 +590,157 @@ msgid "API key"
 msgstr "Kyç API"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "Përdorues bit.ly"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "Emër përdoruesi bit.ly"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "Kyç bit.ly"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "Kyç përdoruesi bit.ly"
 
 msgid "Google API key"
-msgstr ""
+msgstr "Kyç Google API"
 
 msgid "Google API account"
-msgstr ""
+msgstr "Llogari Google API"
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "Përdorues tiny.cc"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "Emër përdoruesi tiny.cc"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "Kyç tiny.cc"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "Kyç përdoruesi tiny.cc"
 
 # longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "Detyro verifikim dëshmish fshehtëzimi gjatë komunikimit me pjesën përkatëse te shërbyesi"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Shërbimi i jashtëm 'bitly.com' përdoret për të regjistruar një url të shkurtër për çdo shorty të prodhuar."
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "Kjo do të thotë që lypset ta regjistroni një '%s' te sajti i tyre së pari."
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Shërbimi i jashtëm 'turl' përdoret për të regjistruar një url të shkurtër për çdo shorty të prodhuar."
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Shërbimi i jashtëm 'ti.ny.com' përdoret për të regjistruar një url të shkurtër për çdo shorty të prodhuar."
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Shërbimi i jashtëm 'cli.gs' përdoret për të regjistruar një url të shkurtër për çdo shorty të prodhuar."
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Shërbimi i jashtëm 'is.gd' përdoret për të regjistruar një url të shkurtër për çdo shorty të prodhuar."
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Shërbimi i jashtëm 'tiny.cc' përdoret për të regjistruar një url të shkurtër për çdo shorty të prodhuar."
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "S’është përdorur mekanizëm shërbimi, janë prodhuar lidhje të drejtpërdrejta që shpien te ownCloud-i juaj."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
 "bit.ly user name and an '%s'."
-msgstr ""
+msgstr "Shërbimi lyp që ju të bëni mirëfilltësimin e vetes duke ofruar një emër të vlefshëm përdoruesi bit.ly dhe një '%s'."
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "Sipas krejt gjasave, lidhje të tilla janë më të gjata se ato të prodhuara nga shërbyesit"
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "
 "shortys under your control."
-msgstr ""
+msgstr "Megjithatë, kjo mundësi nuk bazohet në ndonjë shërbim nga palë të treta dhe i mban shorty-t tuaja nën kontrollin tuaj."
 
 msgid ""
 "Since this setup depends on server based configuration rules the base url "
 "can only be specified in the 'Admin' section of the configuration."
-msgstr ""
+msgstr "Ngaqë ky formësim varet nga rregulla formësimesh me bazë shërbyesin, URL-ja bazë mund të përcaktohet vetëm në ndarjen 'Admin' të formësimit."
 
 msgid ""
 "Static, rule-based backend, generates shorty links relative to a given base "
 "url."
-msgstr ""
+msgstr "Mekanizëm statik shërbimi, i bazuar në rregulla, prodhon lidhje shorty që lidhen me një URL bazë të dhënë."
 
 msgid ""
 "You have to take care that any request to the url configured here is "
 "internally mapped to the 'shorty' module."
-msgstr ""
+msgstr "Duhet të kujdeseni që cilado kërkesë te URL-ja e formësuar këtu, të jetë përshoqëruar së brendshmi te moduli 'shorty'."
 
 msgid "The target of that mapping must be some URL like:"
-msgstr ""
+msgstr "Pikëmbërritjet e këtyre përshoqërimeve duhet të jenë URL të tilla si:"
 
 msgid ""
 "Have a try with the example link provided, click it, it should result in a "
 "confirmation that your setup is working."
-msgstr ""
+msgstr "Provojeni me lidhjen e dhënë si shembull, klikojeni, duhet të japë si përfundim një ripohim që rregullimi juaj funksionon."
 
 msgid ""
 "Leave empty if you can't provide a short base url that is mapped the "
 "described way."
-msgstr ""
+msgstr "Lëreni të zbrazët, nëse s’jepni një URL bazë të shkurtër që të jetë përshoqëruar në mënyrën e përshkruar."
 
 msgid ""
 "Only use this backend, if you can provide a short base url that is mapped "
 "the described way. Your shorties won't work otherwise."
-msgstr ""
+msgstr "Përdoreni këtë mekanizëm shërbimi, nëse mundeni të jepni një URL bazë të shkurtër që është përshoqëruar sipas mënyrës së përshkruar. Përndryshe shorty-t tuaja s’do të funksionojnë."
 
 msgid ""
 "Googles external 'goo.gl service' is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "Shërbimi i jashtëm 'goo.gl' i Google-it përdoret për të regjistruar një url të shkurtër për çdo shorty të prodhuar."
 
 msgid "You must provide a valid '%%s' to use this service."
-msgstr ""
+msgstr "Duhet të furnizoni një '%%s' të vlefshëm që të përdorni këtë shërbim."
 
 msgid "This means you require a 'Google API console account'."
-msgstr ""
+msgstr "Kjo do të thotë që ju duhet një 'llogari konsole API Google'."
 
 msgid "Register a new '%%s' at their pages."
-msgstr ""
+msgstr "Regjistroni një '%%s' të ri te faqet e tyre."
 
 msgid "Enabling the SMS option will offer sending a Shorty via SMS."
-msgstr ""
+msgstr "Aktivizimi i mundësisë për SMS do të ofrojë dërgim Shorty-ish përmes SMS-sh."
 
 msgid ""
 "Unfortunately support for 'SMS url handling' is usually only found on mobile"
 " devices like smart phones."
-msgstr ""
+msgstr "Për fat të keq, 'SMS url handling' zakonisht mbulohet vetëm në pajisje celulare të tilla si telefona të mençur."
 
 msgid ""
 "In addition, those implementations are minimalistic, buggy and differ from "
 "system to system."
-msgstr ""
+msgstr "Përveç kësaj, këto sendërtime janë me natyrë minimale, me të meta dhe ndryshojnë nga sistemi në sistem."
 
 msgid "In short: this might not work for you, therefore you can disable it…"
-msgstr ""
+msgstr "Shkurt: kjo mund të mos funksionojë për ju, ndaj mund ta çaktivizoni…"
 
 msgid "Great, your setup appears to be working fine!"
-msgstr ""
+msgstr "Shkëlqyeshëm, rregullimi juaj duket se punon shumë mirë!"
 
 msgid ""
 "Requests to the configured base url are mapped to this ownClouds relay "
@@ -749,20 +750,20 @@ msgstr ""
 msgid ""
 "Usage of that static backend is fine and safe as long as this setup is not "
 "altered."
-msgstr ""
+msgstr "Përdorimi i atij mekanizmi shërbimi s’ka problem dhe është i sigurt, sa kohë që ky formësim nuk ndryshohet."
 
 msgid ""
 "This backend will now be offered as an additional backend alternative to all"
 " local users inside their personal preferences."
-msgstr ""
+msgstr "Ky mekanizëm shërbimi tani do të ofrohet si alternativë shtesë mekanizmi shërbimi për krejt përdoruesit, që brenda parapëlqimeve të tyre vetjake."
 
 msgid "Sorry, but your setup appears not to be working correctly yet!"
-msgstr ""
+msgstr "Na ndjeni, por rregullimi juaj ende nuk duket se po funksionon si duhet!"
 
 msgid ""
 "Please check your setup and make sure that the configured base url is indeed"
 " correct."
-msgstr ""
+msgstr "Ju lutemi, kontrolloni rregullimin tuaj dhe sigurohuni që formësimi i URL-së bazë është vërtet i saktë."
 
 msgid ""
 "Make sure that all requests to it are somehow mapped to Shortys relay "
@@ -773,13 +774,13 @@ msgid "Shorty relay service"
 msgstr ""
 
 msgid "If you proceed you will be forwarded to:"
-msgstr ""
+msgstr "Nëse vazhdoni, do të përcilleni te:"
 
 msgid "Target object:"
-msgstr ""
+msgstr "Objekti i synuar"
 
 msgid "Location"
-msgstr "Vendndodhja"
+msgstr "Vend"
 
 msgid "Proceed"
 msgstr "Bëje"

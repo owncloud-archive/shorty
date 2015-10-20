@@ -23,13 +23,14 @@
 # @author Christian Reiner
 # 
 # Translators:
+# Besnik <besnik@programeshqip.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-10-16 09:21+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2015-10-19 15:33+0000\n"
+"Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/owncloud_robot/owncloud/language/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,55 +40,55 @@ msgstr ""
 
 # plugin description
 msgid "Shorty Tracking"
-msgstr ""
+msgstr "Gjurmim Shorty-sh"
 
 msgid ""
 "Detailed tracking of all requests to existing Shortys along with an "
 "integrated visualization of the access history."
-msgstr ""
+msgstr "Gjurmim i hollësishëm i krejt kërkesave ndaj Shorty-sh ekzistuese, tok me një vizualizim të integruar të historikut të hyrjeve."
 
 # request results
 msgid "granted"
-msgstr ""
+msgstr "e akorduar"
 
 msgid "denied"
-msgstr ""
+msgstr "e mohuar"
 
 msgid "failed"
-msgstr ""
+msgstr "e dështuar"
 
 msgid "blocked"
-msgstr "Bllokuar"
+msgstr "e bllokuar"
 
 msgid "load"
-msgstr ""
+msgstr "ngarko"
 
 msgid "Address"
-msgstr "Adresa"
+msgstr "Adresë"
 
 msgid "Click details"
-msgstr ""
+msgstr "Klikoni mbi hollësitë"
 
 msgid "Clicks"
 msgstr "Klikime"
 
 msgid "Host"
-msgstr "Pritësi"
+msgstr "Strehë"
 
 msgid "List clicks"
-msgstr ""
+msgstr "Radhit klikimet"
 
 msgid "List of tracked clicks"
-msgstr ""
+msgstr "Listë klikimesh të gjurmuara"
 
 msgid "Result"
-msgstr ""
+msgstr "Përfundim"
 
 msgid "Time"
 msgstr "Kohë"
 
 msgid "Title"
-msgstr "Titulli"
+msgstr "Titull"
 
 msgid "User"
 msgstr "Përdorues"
