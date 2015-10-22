@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-10-19 19:51+0000\n"
+"PO-Revision-Date: 2015-10-20 15:51+0000\n"
 "Last-Translator: Besnik <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/owncloud_robot/owncloud/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -160,7 +160,7 @@ msgid "tiny.cc service"
 msgstr "Shërbimi tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "mekanizëm statik shërbimi"
 
 # status explanations
 msgid "for any access"

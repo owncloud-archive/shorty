@@ -37,6 +37,7 @@ $TRANSLATIONS = array(
 "is.gd service" => "Shërbimi is.gd",
 "ti.ny service" => "Shërbimi ti.ny",
 "tiny.cc service" => "Shërbimi tiny.cc",
+"static backend" => "mekanizëm statik shërbimi",
 "for any access" => "për çfarëdo hyrje",
 "for own usage" => "për përdorim nga ju",
 "with ownCloud users" => "me përdorues ownCloud",

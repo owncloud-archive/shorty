@@ -32,7 +32,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-10-12 16:44+0000\n"
+"PO-Revision-Date: 2015-10-20 18:15+0000\n"
 "Last-Translator: Vytautas Simanaitis <vyt.sima@gmail.com>\n"
 "Language-Team: Lithuanian (Lithuania) (http://www.transifex.com/owncloud_robot/owncloud/language/lt_LT/)\n"
 "MIME-Version: 1.0\n"
@@ -259,13 +259,13 @@ msgid "Counted entries and clicks"
 msgstr "Suskaičiuoti įėjimai ir paspaudimai"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "Sukurti naują Trumpį ir pasidalinti"
 
 msgid "Creation"
 msgstr "Sukurtas"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "Pašalinti Trumpį"
 
 msgid "Drag this to your browser bookmarks."
 msgstr ""
@@ -295,7 +295,7 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
 msgid "If you just started using Shorty"
-msgstr ""
+msgstr "Jei ką tik pradėjote naudotis Trumpiu"
 
 msgid "Loading"
 msgstr "Įkeliama"
@@ -304,16 +304,16 @@ msgid "Mail client"
 msgstr "Pašto klientas"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "Trumpio su id '%s' pakeitimai išsaugoti"
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "Keisti atributus"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "Keisti trumpį"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "Naujas trumpis"
 
 msgid "Notes"
 msgstr "Pastabos"
@@ -325,7 +325,7 @@ msgid "Number of entries"
 msgstr "Įrašų kiekis"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "Įrašų kiekis: %s"
 
 msgid "QRCode"
 msgstr "QRCode"
@@ -334,13 +334,13 @@ msgid "Open source url"
 msgstr "Atverti šaltinio url"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "Atverti perdavimo adresą"
 
 msgid "Open target"
-msgstr ""
+msgstr "Atverti objektą"
 
 msgid "Open target url"
-msgstr ""
+msgstr "Atverti objekto adresą"
 
 msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
@@ -352,31 +352,31 @@ msgid "Paste to embed elsewhere"
 msgstr ""
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "Gauti nustatymai "
 
 msgid "Preference saved"
-msgstr ""
+msgstr "Nustatymai išsaugoti"
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "Gautas '%s' nustatymas"
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "Išsaugotas '%s' nustatymas"
 
 msgid "Preferences"
 msgstr "Nustatymai"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "Paruošti SMS siuntimui"
 
 msgid "Refresh"
 msgstr "Atnaujinti"
 
 msgid "Relay service"
-msgstr ""
+msgstr "Perdavimo paslauga"
 
 msgid "Relay url"
-msgstr ""
+msgstr "Perdavimo adresas"
 
 msgid "Reload"
 msgstr "Įkelti iš naujo"
@@ -397,40 +397,40 @@ msgid "Send by SMS"
 msgstr "Siųsti SMS žinute"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
-msgstr ""
+msgstr "Nustatyk asmeniniu parametrus kairėje apačioje naudojant (%%s) krumpliaratį!"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
-msgstr ""
+msgstr "Nustatyk asmeniniu parametrus dešinėje viršuje naudojant (%%s) krumpliaratį!"
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "Gauti nustatymai"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "Nustatymai išsaugoti"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "Gautas '%s' nustatymas"
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "Išsaugotas '%s' nustatymas"
 
 msgid "Settings"
 msgstr "Nustatymai"
 
 msgid "Share and use"
-msgstr ""
+msgstr "Dalintis ir naudoti"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "Dalintis trumpiu"
 
 msgid "Shortlet"
 msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "Trumpis kaip QR kodas"
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr "Trumpis su id '%s' pašalintas"
 
 msgid "Show as QRCode"
 msgstr ""
@@ -442,13 +442,13 @@ msgid "Show QRCode image"
 msgstr ""
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "Atsiųsti QR kodą"
 
 msgid "Show details"
 msgstr "Rodyti informaciją"
 
 msgid "Show usage"
-msgstr ""
+msgstr "Rodyti naudojimus"
 
 msgid "SMS"
 msgstr "SMS"
@@ -457,25 +457,25 @@ msgid "SMS composer"
 msgstr ""
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "Rūšiuoti pagal abėcėlę"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "Rūšiuoti prieš abėcėlę"
 
 msgid "Clear filter"
 msgstr "Išvalyti filtrą"
 
 msgid "Collapse column"
-msgstr ""
+msgstr "Sutraukti stulpelius"
 
 msgid "Expand column"
-msgstr ""
+msgstr "Išplėsti stulpelius"
 
 msgid "Source url"
-msgstr ""
+msgstr "Šaltinio nuoroda"
 
 msgid "Specify a static base url…"
-msgstr ""
+msgstr "Nurodykite nuolatinį bazinį adresą..."
 
 msgid "Static backend: base url verification"
 msgstr ""
@@ -484,7 +484,7 @@ msgid "Status"
 msgstr "Būsena"
 
 msgid "Status change for shorty with id '%s' saved"
-msgstr ""
+msgstr "Pasikeitė trumpio su id '%s' būsena"
 
 msgid "Target"
 msgstr "Tikslas"
@@ -502,13 +502,13 @@ msgid "The backend service used to generate shortened URLs."
 msgstr ""
 
 msgid "The default status as suggested for new Shortys."
-msgstr ""
+msgstr "Numatytoji trumpio būsena naujiems trumpiams."
 
 msgid "The link below can be copied to paste it elsewhere"
 msgstr ""
 
 msgid "The additional plugin '%%s' tracks the usage of existing Shortys!"
-msgstr ""
+msgstr "Papildomas įskiepis '%%s' seka trupių naudojimą."
 
 msgid "therefore the content must be copied manually"
 msgstr ""
