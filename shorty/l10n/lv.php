@@ -2,6 +2,7 @@
 $TRANSLATIONS = array(
 "deleted" => "izdzests",
 "never" => "nekad",
+"shared" => "koplietots",
 "delete" => "dzēst",
 "share" => "dalīties",
 "show" => "parādīt",

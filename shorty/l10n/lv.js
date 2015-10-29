@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "deleted" : "izdzests",
     "never" : "nekad",
+    "shared" : "koplietots",
     "delete" : "dzēst",
     "share" : "dalīties",
     "show" : "parādīt",
