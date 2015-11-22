@@ -1,5 +1,6 @@
 <?php
 $TRANSLATIONS = array(
-"Host" => "Host"
+"Host" => "Host",
+"Title" => "Titel"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";

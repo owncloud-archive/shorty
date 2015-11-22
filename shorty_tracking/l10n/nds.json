@@ -1,4 +1,5 @@
 { "translations": {
-    "Host" : "Host"
+    "Host" : "Host",
+    "Title" : "Titel"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
