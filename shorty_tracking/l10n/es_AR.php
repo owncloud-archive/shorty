@@ -4,6 +4,7 @@ $TRANSLATIONS = array(
 "Detailed tracking of all requests to existing Shortys along with an integrated visualization of the access history." => "Seguimiento detallado de todas las solicitudes a Shortys existentes junto con una visualización integrada del historial de accesos.",
 "granted" => "permitido",
 "denied" => "denegado",
+"failed" => "falló",
 "blocked" => "bloqueado",
 "load" => "cargar",
 "Address" => "Dirección",
