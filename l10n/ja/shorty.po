@@ -25,9 +25,9 @@
 # 
 # Translators:
 # Daisuke Deguchi <ddeguchi@nagoya-u.jp>, 2013
-# タカハシ <gomidori@live.jp>, 2013
+# タカハシ <indexial@outlook.jp>, 2013
 # kuromabo <md81bird@hitaki.net>, 2014-2015
-# Shinozaki Ippei <shino.ip.1231@gmail.com>, 2014-2015
+# shino <shino.ip.1231@gmail.com>, 2014-2015
 # YANO Tetsu <tetuyano+transi@gmail.com>, 2013-2015
 # Yoshitaka Takahashi <takahashi@shade3d.co.jp>, 2015
 msgid ""
@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-08-07 03:58+0000\n"
+"PO-Revision-Date: 2015-11-26 13:22+0000\n"
 "Last-Translator: kuromabo <md81bird@hitaki.net>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/owncloud_robot/owncloud/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
@@ -784,7 +784,7 @@ msgid "Target object:"
 msgstr "対象オブジェクト："
 
 msgid "Location"
-msgstr "位置"
+msgstr "場所"
 
 msgid "Proceed"
 msgstr "続行"

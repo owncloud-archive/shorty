@@ -225,7 +225,7 @@ OC.L10N.register(
     "Shorty relay service" : "短縮URL中継サービス",
     "If you proceed you will be forwarded to:" : "続行すると、転送されます：",
     "Target object:" : "対象オブジェクト：",
-    "Location" : "位置",
+    "Location" : "場所",
     "Proceed" : "続行"
 },
 "nplurals=1; plural=0;");
