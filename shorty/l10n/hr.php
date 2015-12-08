@@ -18,6 +18,7 @@ $TRANSLATIONS = array(
 "Save" => "Snimi",
 "Settings" => "Postavke",
 "Title" => "Naslov",
+"Account" => "Korisnički nalog",
 "Location" => "Lokacija",
 "Proceed" => "Nastavite"
 );
