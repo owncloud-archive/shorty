@@ -13,6 +13,7 @@ OC.L10N.register(
     "Configuration" : "הגדרות",
     "Copy to clipboard" : "העתקה ללוח הגזירים",
     "Counted entries and clicks" : "כניסות ולחיצות שנרשמו",
+    "Expiration" : "תפוגה",
     "Feedback" : "משוב",
     "Home" : "בית",
     "Loading" : "טעינה",
