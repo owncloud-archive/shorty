@@ -26,6 +26,7 @@ OC.L10N.register(
     "Settings" : "הגדרות",
     "Title" : "כותרת",
     "Url shortened to: %s" : "הכתובת קוצרה לכדי: %s",
-    "Location" : "מיקום"
+    "Location" : "מיקום",
+    "Proceed" : "להמשך"
 },
 "nplurals=2; plural=(n != 1);");

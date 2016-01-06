@@ -58,7 +58,7 @@ OC.L10N.register(
     "Default backend suggested inside users preferences" : "Mekanizëm shërbimi parazgjedhje i këshilluar brenda parapëlqimeve të përdoruesit",
     "Backend" : "Mekanizëm shërbimi",
     "Base url" : "URL bazë",
-    "Choose a service…" : "Zgjidhni një shërbim… \t",
+    "Choose a service…" : "Zgjidhni një shërbim…",
     "Click it, for whatever site you want to create a Shorty." : "Klikoni mbi për cilindo sajt që doni t’i krijoni një Shorty.",
     "Click registered" : "Klikimi u regjistrua",
     "Clicks" : "Klikime",

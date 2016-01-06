@@ -25,6 +25,7 @@ $TRANSLATIONS = array(
 "Settings" => "הגדרות",
 "Title" => "כותרת",
 "Url shortened to: %s" => "הכתובת קוצרה לכדי: %s",
-"Location" => "מיקום"
+"Location" => "מיקום",
+"Proceed" => "להמשך"
 );
 $PLURAL_FORMS = "nplurals=2; plural=(n != 1);";
