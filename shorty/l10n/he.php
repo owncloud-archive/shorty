@@ -5,6 +5,7 @@ $TRANSLATIONS = array(
 "delete" => "מחיקה",
 "share" => "שיתוף",
 "show" => "הצגה",
+"error" => "שגיאה",
 "Ctrl-C" => "Ctrl-C",
 "Backend" => "מנגנון",
 "Click registered" => "לחיצות שנרשמו",
@@ -25,6 +26,7 @@ $TRANSLATIONS = array(
 "Settings" => "הגדרות",
 "Title" => "כותרת",
 "Url shortened to: %s" => "הכתובת קוצרה לכדי: %s",
+"Account" => "חשבון",
 "Location" => "מיקום",
 "Proceed" => "להמשך"
 );
