@@ -1,5 +1,6 @@
 <?php
 $TRANSLATIONS = array(
+"blocked" => "נחסם",
 "deleted" => "נמחק",
 "never" => "לעולם לא",
 "delete" => "מחיקה",
@@ -9,6 +10,7 @@ $TRANSLATIONS = array(
 "Ctrl-C" => "Ctrl-C",
 "Backend" => "מנגנון",
 "Click registered" => "לחיצות שנרשמו",
+"Clicks" => "לחיצות",
 "Close" => "סגירה",
 "Configuration" => "הגדרות",
 "Copy to clipboard" => "העתקה ללוח הגזירים",

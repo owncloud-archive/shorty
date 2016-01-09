@@ -1,6 +1,7 @@
 OC.L10N.register(
     "shorty",
     {
+    "blocked" : "נחסם",
     "deleted" : "נמחק",
     "never" : "לעולם לא",
     "delete" : "מחיקה",
@@ -10,6 +11,7 @@ OC.L10N.register(
     "Ctrl-C" : "Ctrl-C",
     "Backend" : "מנגנון",
     "Click registered" : "לחיצות שנרשמו",
+    "Clicks" : "לחיצות",
     "Close" : "סגירה",
     "Configuration" : "הגדרות",
     "Copy to clipboard" : "העתקה ללוח הגזירים",

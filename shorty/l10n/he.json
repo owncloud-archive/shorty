@@ -1,4 +1,5 @@
 { "translations": {
+    "blocked" : "נחסם",
     "deleted" : "נמחק",
     "never" : "לעולם לא",
     "delete" : "מחיקה",
@@ -8,6 +9,7 @@
     "Ctrl-C" : "Ctrl-C",
     "Backend" : "מנגנון",
     "Click registered" : "לחיצות שנרשמו",
+    "Clicks" : "לחיצות",
     "Close" : "סגירה",
     "Configuration" : "הגדרות",
     "Copy to clipboard" : "העתקה ללוח הגזירים",
