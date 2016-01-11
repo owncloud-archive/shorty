@@ -1,6 +1,7 @@
 OC.L10N.register(
     "shorty",
     {
+    "all" : "כולם",
     "blocked" : "נחסם",
     "deleted" : "נמחק",
     "never" : "לעולם לא",

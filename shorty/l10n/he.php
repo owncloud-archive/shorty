@@ -1,5 +1,6 @@
 <?php
 $TRANSLATIONS = array(
+"all" => "כולם",
 "blocked" => "נחסם",
 "deleted" => "נמחק",
 "never" => "לעולם לא",
