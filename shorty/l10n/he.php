@@ -4,6 +4,7 @@ $TRANSLATIONS = array(
 "blocked" => "נחסם",
 "deleted" => "נמחק",
 "never" => "לעולם לא",
+"shared" => "משותף",
 "delete" => "מחיקה",
 "share" => "שיתוף",
 "show" => "הצגה",

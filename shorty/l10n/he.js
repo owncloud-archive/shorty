@@ -5,6 +5,7 @@ OC.L10N.register(
     "blocked" : "נחסם",
     "deleted" : "נמחק",
     "never" : "לעולם לא",
+    "shared" : "משותף",
     "delete" : "מחיקה",
     "share" : "שיתוף",
     "show" : "הצגה",
