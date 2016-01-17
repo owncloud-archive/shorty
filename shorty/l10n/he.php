@@ -31,6 +31,7 @@ $TRANSLATIONS = array(
 "Title" => "כותרת",
 "Url shortened to: %s" => "הכתובת קוצרה לכדי: %s",
 "Account" => "חשבון",
+"API key" => "מפתח API",
 "Location" => "מיקום",
 "Proceed" => "להמשך"
 );
