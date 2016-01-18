@@ -7,6 +7,7 @@ OC.L10N.register(
     "never" : "לעולם לא",
     "shared" : "משותף",
     "delete" : "מחיקה",
+    "edit" : "עריכה",
     "share" : "שיתוף",
     "show" : "הצגה",
     "error" : "שגיאה",
