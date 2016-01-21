@@ -24,14 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
+# duvdevan <the_noam@yahoo.com>, 2016
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2016-01-17 18:42+0000\n"
-"Last-Translator: I Robot\n"
+"PO-Revision-Date: 2016-01-20 16:05+0000\n"
+"Last-Translator: duvdevan <the_noam@yahoo.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/owncloud_robot/owncloud/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +42,7 @@ msgstr ""
 
 # plugin description
 msgid "Plugins"
-msgstr ""
+msgstr "תוספים"
 
 # status names
 msgid "all"
@@ -54,19 +55,19 @@ msgid "deleted"
 msgstr "נמחק"
 
 msgid "disabled"
-msgstr ""
+msgstr "מנוטרל"
 
 msgid "enabled"
-msgstr ""
+msgstr "מופעל"
 
 msgid "never"
 msgstr "לעולם לא"
 
 msgid "private"
-msgstr ""
+msgstr "פרטי"
 
 msgid "public"
-msgstr ""
+msgstr "ציבורי"
 
 msgid "shared"
 msgstr "משותף"
@@ -79,7 +80,7 @@ msgid "edit"
 msgstr "עריכה"
 
 msgid "open"
-msgstr ""
+msgstr "פתוח"
 
 msgid "share"
 msgstr "שיתוף"
@@ -89,124 +90,124 @@ msgstr "הצגה"
 
 # toolbar icons
 msgid "reload"
-msgstr ""
+msgstr "טעינה מחדש"
 
 msgid "up"
-msgstr ""
+msgstr "למעלה"
 
 msgid "down"
-msgstr ""
+msgstr "למטה"
 
 msgid "clear"
-msgstr ""
+msgstr "ניקוי"
 
 # log levels
 msgid "none"
-msgstr ""
+msgstr "כלום"
 
 msgid "error"
 msgstr "שגיאה"
 
 msgid "info"
-msgstr ""
+msgstr "מידע"
 
 msgid "debug"
-msgstr ""
+msgstr "ניפוי באגים"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "( לעולם לא )"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 שניות"
 
 msgid "5 seconds"
-msgstr ""
+msgstr "5 שניות"
 
 msgid "12 seconds"
-msgstr ""
+msgstr "12 שניות"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 דקה"
 
 # keyboard shortcuts
 msgid "Ctrl-C"
 msgstr "Ctrl-C"
 
 msgid "Ctrl-V"
-msgstr ""
+msgstr "Ctrl-V"
 
 # the backend service names
 msgid "[ none ]"
-msgstr ""
+msgstr "[ כלום ]"
 
 msgid "bitly.com service"
-msgstr ""
+msgstr "שירות bitly.com"
 
 msgid "cli.gs service"
-msgstr ""
+msgstr "שירות cli.gs"
 
 msgid "goo.gl service"
-msgstr ""
+msgstr "שירות goo.gl"
 
 msgid "is.gd service"
-msgstr ""
+msgstr "שירות is.gd"
 
 msgid "ti.ny service"
-msgstr ""
+msgstr "שירות ti.ny"
 
 msgid "tiny.cc service"
-msgstr ""
+msgstr "שירות tiny.cc"
 
 msgid "static backend"
-msgstr ""
+msgstr "צד אחורי סטטי"
 
 # status explanations
 msgid "for any access"
-msgstr ""
+msgstr "לכל כניסה"
 
 msgid "for own usage"
-msgstr ""
+msgstr "לשימוש עצמי"
 
 msgid "with ownCloud users"
-msgstr ""
+msgstr "עם משתמשי ownCloud"
 
 msgid "available for everyone"
-msgstr ""
+msgstr "זמין לכל"
 
 # short and general terms
 msgid "Access"
-msgstr ""
+msgstr "גישה"
 
 msgid "Add a new shorty"
-msgstr ""
+msgstr "הוספת נתיב מקוצר חדש"
 
 msgid "Add as new"
-msgstr ""
+msgstr "הוספת כחדש"
 
 msgid "Add page as 'Shorty' to ownCloud"
-msgstr ""
+msgstr "הוספת עמוד כ- 'נתיב מקוצר' ל- ownCloud"
 
 msgid "Administration"
-msgstr ""
+msgstr "ניהול"
 
 msgid "Administrative, system wide settings of this app:"
-msgstr ""
+msgstr "ניהול, הגדרות מערכת רחבות ליישום זה:"
 
 msgid "after the SMS has been launched"
-msgstr ""
+msgstr "אחרי שה- SMS שוגר"
 
 msgid "Alternatively the image can be downloaded for printout or storage"
-msgstr ""
+msgstr "לחילופין ניתן להוריד את התמונה כהדפסה או לאחסון"
 
 msgid "alternatively the link can be copied for further usage"
-msgstr ""
+msgstr "לחילופין ניתן להעתיק את הקישור לשימוש נוסף"
 
 msgid "Alternatively the link can be copied manually"
-msgstr ""
+msgstr "לחילופין ניתן להעתיק את הקישור באופן ידני"
 
 msgid "Alternatively the link can be copied into a message manually"
-msgstr ""
+msgstr "לחילופין ניתן להעתיק את הקישור להודעה באופן ידני"
 
 msgid "Anything that appears helpful …"
 msgstr ""
