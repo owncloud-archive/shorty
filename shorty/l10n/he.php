@@ -68,6 +68,7 @@ $TRANSLATIONS = array(
 "Notes" => "הערות",
 "Nothing here yet" => "אין כאן כלום עדיין",
 "Refresh" => "רענון",
+"Reload" => "טעינה מחדש",
 "Save" => "שמירה",
 "Send link by email" => "שליחת הקישור בדוא״ל",
 "Settings" => "הגדרות",
