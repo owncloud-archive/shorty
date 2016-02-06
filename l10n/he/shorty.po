@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2016-01-21 19:08+0000\n"
+"PO-Revision-Date: 2016-02-05 19:18+0000\n"
 "Last-Translator: duvdevan <the_noam@yahoo.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/owncloud_robot/owncloud/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -219,10 +219,10 @@ msgid "Backend"
 msgstr "מנגנון"
 
 msgid "Base url"
-msgstr ""
+msgstr "נתיב בסיסי"
 
 msgid "Choose a service…"
-msgstr ""
+msgstr "בחירת שירות..."
 
 msgid "Click it, for whatever site you want to create a Shorty."
 msgstr ""
@@ -261,25 +261,25 @@ msgid "Create a new 'Shorty' and share it"
 msgstr ""
 
 msgid "Creation"
-msgstr ""
+msgstr "יצירה"
 
 msgid "Delete shorty"
 msgstr ""
 
 msgid "Drag this to your browser bookmarks."
-msgstr ""
+msgstr "גרור לסמניות הדפדפן שלך."
 
 msgid "Embed the QRCode as an image into some web page using this url"
 msgstr ""
 
 msgid "Example"
-msgstr ""
+msgstr "דוגמא"
 
 msgid "Exception"
-msgstr ""
+msgstr "יוצא מהכלל"
 
 msgid "Exception (%s)"
-msgstr ""
+msgstr "יוצאים מהכלל (%s)"
 
 msgid "Expiration"
 msgstr "תפוגה"
@@ -306,7 +306,7 @@ msgid "Modifications for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Modify attributes"
-msgstr ""
+msgstr "שינוי מאפיינים"
 
 msgid "Modify shorty"
 msgstr ""
@@ -321,25 +321,25 @@ msgid "Nothing here yet"
 msgstr "אין כאן כלום עדיין"
 
 msgid "Number of entries"
-msgstr ""
+msgstr "מספר רשומות כניסה"
 
 msgid "Number of entries: %s"
-msgstr ""
+msgstr "מספר רשומות כניסה: %s"
 
 msgid "QRCode"
-msgstr ""
+msgstr "QRCode"
 
 msgid "Open source url"
-msgstr ""
+msgstr "פתיחת נתיב מקור"
 
 msgid "Open relay url"
 msgstr ""
 
 msgid "Open target"
-msgstr ""
+msgstr "פתיחת יעד"
 
 msgid "Open target url"
-msgstr ""
+msgstr "פתיחת נתיב יעד"
 
 msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
@@ -348,25 +348,25 @@ msgid "or simpy print or download it for off-line usage"
 msgstr ""
 
 msgid "Paste to embed elsewhere"
-msgstr ""
+msgstr "הדבקה להטבעה במקום אחר"
 
 msgid "Preference retrieved"
-msgstr ""
+msgstr "העדפות אוחזרו"
 
 msgid "Preference saved"
-msgstr ""
+msgstr "העדפות נשמרו"
 
 msgid "Preference '%s' retrieved"
-msgstr ""
+msgstr "העדפה '%s' אוחזרה"
 
 msgid "Preference '%s' saved"
-msgstr ""
+msgstr "העדפה '%s' נשמרה"
 
 msgid "Preferences"
-msgstr ""
+msgstr "העדפות"
 
 msgid "Prepare to send as SMS"
-msgstr ""
+msgstr "הכנה לשליחה כ- SMS"
 
 msgid "Refresh"
 msgstr "רענון"
@@ -381,19 +381,19 @@ msgid "Reload"
 msgstr "טעינה מחדש"
 
 msgid "Reload list"
-msgstr ""
+msgstr "רשימת טעינה מחדש"
 
 msgid "Save"
 msgstr "שמירה"
 
 msgid "Send by email"
-msgstr ""
+msgstr "שליחה באמצעות דואר אלקטרוני"
 
 msgid "Send link by email"
 msgstr "שליחת הקישור בדוא״ל"
 
 msgid "Send by SMS"
-msgstr ""
+msgstr "שליחה באמצעות SMS"
 
 msgid "Set personal preferences using the cog wheel (%%s) on the bottom left!"
 msgstr ""
@@ -402,22 +402,22 @@ msgid "Set personal preferences using the cog wheel (%%s) on the upper right!"
 msgstr ""
 
 msgid "Setting retrieved"
-msgstr ""
+msgstr "הגדרות אוחזרו"
 
 msgid "Setting saved"
-msgstr ""
+msgstr "הגדרות נשמרו"
 
 msgid "Setting '%s' retrieved"
-msgstr ""
+msgstr "הגדרה '%s' אוחזרה"
 
 msgid "Setting '%s' saved"
-msgstr ""
+msgstr "הגדרה '%s' נשמרה"
 
 msgid "Settings"
 msgstr "הגדרות"
 
 msgid "Share and use"
-msgstr ""
+msgstr "שיתוף ושימוש"
 
 msgid "Share shorty"
 msgstr ""
@@ -450,10 +450,10 @@ msgid "Show usage"
 msgstr ""
 
 msgid "SMS"
-msgstr ""
+msgstr "SMS"
 
 msgid "SMS composer"
-msgstr ""
+msgstr "עורך SMS"
 
 msgid "Sort ascending"
 msgstr ""
@@ -462,7 +462,7 @@ msgid "Sort descending"
 msgstr ""
 
 msgid "Clear filter"
-msgstr ""
+msgstr "הסרת מסנן"
 
 msgid "Collapse column"
 msgstr ""
@@ -471,7 +471,7 @@ msgid "Expand column"
 msgstr ""
 
 msgid "Source url"
-msgstr ""
+msgstr "נתיב מקור"
 
 msgid "Specify a static base url…"
 msgstr ""
@@ -480,7 +480,7 @@ msgid "Static backend: base url verification"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "מצב"
 
 msgid "Status change for shorty with id '%s' saved"
 msgstr ""
