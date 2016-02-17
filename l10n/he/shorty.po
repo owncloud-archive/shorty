@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2016-02-05 19:18+0000\n"
+"PO-Revision-Date: 2016-02-16 19:47+0000\n"
 "Last-Translator: duvdevan <the_noam@yahoo.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/owncloud_robot/owncloud/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -210,7 +210,7 @@ msgid "Alternatively the link can be copied into a message manually"
 msgstr "לחילופין ניתן להעתיק את הקישור להודעה באופן ידני"
 
 msgid "Anything that appears helpful …"
-msgstr ""
+msgstr "כל דבר שנראה שעוזר..."
 
 msgid "Default backend suggested inside users preferences"
 msgstr ""
@@ -225,7 +225,7 @@ msgid "Choose a service…"
 msgstr "בחירת שירות..."
 
 msgid "Click it, for whatever site you want to create a Shorty."
-msgstr ""
+msgstr "יש ללחוץ על זה, עבור כל אתר עבורו יש ליצור קישור מקוצר"
 
 msgid "Click registered"
 msgstr "לחיצות שנרשמו"
@@ -234,10 +234,10 @@ msgid "Clicks"
 msgstr "לחיצות"
 
 msgid "Clicking 'Ok' below will try to launch an email composer"
-msgstr ""
+msgstr "לחיצה על 'בסדר' למטה ינסה לפתוח עורך דואר אלקטרוני"
 
 msgid "Clicking 'Ok' below will try to launch an sms composer"
-msgstr ""
+msgstr "לחיצה על 'בסדר' למטה ינסה לפתוח עורך SMS"
 
 msgid "Close"
 msgstr "סגירה"
@@ -246,10 +246,10 @@ msgid "Configuration"
 msgstr "הגדרות"
 
 msgid "The amount of feedback messages shown."
-msgstr ""
+msgstr "כמות המשובים להודעות שמוצגת"
 
 msgid "The time span after which messages are hidden again automatically"
-msgstr ""
+msgstr "הזמן שאחרי שעובר הודעות מוסתרות באופן אוטומטי"
 
 msgid "Copy to clipboard"
 msgstr "העתקה ללוח הגזירים"
@@ -258,13 +258,13 @@ msgid "Counted entries and clicks"
 msgstr "כניסות ולחיצות שנרשמו"
 
 msgid "Create a new 'Shorty' and share it"
-msgstr ""
+msgstr "יצירת 'קישור מקוצר' חדש ושיתוף שלו"
 
 msgid "Creation"
 msgstr "יצירה"
 
 msgid "Delete shorty"
-msgstr ""
+msgstr "מחיקת קישור מקוצר"
 
 msgid "Drag this to your browser bookmarks."
 msgstr "גרור לסמניות הדפדפן שלך."
@@ -294,7 +294,7 @@ msgid "It can be enabled by a single click in the administration:"
 msgstr ""
 
 msgid "If you just started using Shorty"
-msgstr ""
+msgstr "אם רק התחלת להשתמש בקישור מקוצר"
 
 msgid "Loading"
 msgstr "טעינה"
@@ -303,16 +303,16 @@ msgid "Mail client"
 msgstr "לקוח דוא״ל"
 
 msgid "Modifications for shorty with id '%s' saved"
-msgstr ""
+msgstr "שינוי של קישור מקוצר עם זיהוי '%s' נשמר"
 
 msgid "Modify attributes"
 msgstr "שינוי מאפיינים"
 
 msgid "Modify shorty"
-msgstr ""
+msgstr "שינוי קישור מקוצר"
 
 msgid "New Shorty"
-msgstr ""
+msgstr "קישור מקוצר חדש"
 
 msgid "Notes"
 msgstr "הערות"
@@ -420,7 +420,7 @@ msgid "Share and use"
 msgstr "שיתוף ושימוש"
 
 msgid "Share shorty"
-msgstr ""
+msgstr "שיתוף קישור מקוצר"
 
 msgid "Shortlet"
 msgstr ""
@@ -429,7 +429,7 @@ msgid "Shorty as QRCode"
 msgstr ""
 
 msgid "Shorty with id '%s' deleted"
-msgstr ""
+msgstr "קישור מקוצר עם זיהוי '%s' נמחק"
 
 msgid "Show as QRCode"
 msgstr ""
@@ -444,10 +444,10 @@ msgid "Download QRCode"
 msgstr ""
 
 msgid "Show details"
-msgstr ""
+msgstr "הצגת פרטים"
 
 msgid "Show usage"
-msgstr ""
+msgstr "הצגת אופן שימוש"
 
 msgid "SMS"
 msgstr "SMS"
@@ -456,19 +456,19 @@ msgid "SMS composer"
 msgstr "עורך SMS"
 
 msgid "Sort ascending"
-msgstr ""
+msgstr "סידור עולה"
 
 msgid "Sort descending"
-msgstr ""
+msgstr "סידור יורד"
 
 msgid "Clear filter"
 msgstr "הסרת מסנן"
 
 msgid "Collapse column"
-msgstr ""
+msgstr "קיווץ עמודה"
 
 msgid "Expand column"
-msgstr ""
+msgstr "פתיחת עמודה"
 
 msgid "Source url"
 msgstr "נתיב מקור"
@@ -486,13 +486,13 @@ msgid "Status change for shorty with id '%s' saved"
 msgstr ""
 
 msgid "Target"
-msgstr ""
+msgstr "יעד"
 
 msgid "Target url"
-msgstr ""
+msgstr "נתיב יעד"
 
 msgid "Target url '%s' is valid"
-msgstr ""
+msgstr "נתיב יעד '%s' חוקי"
 
 msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
@@ -513,7 +513,7 @@ msgid "therefore the content must be copied manually"
 msgstr ""
 
 msgid "then paste into message"
-msgstr ""
+msgstr "אחר כך יש להדביק להודעה"
 
 msgid "This 2d barcode encodes the url pointing to this Shorty"
 msgstr ""
@@ -542,7 +542,7 @@ msgid "Toggle toolbar"
 msgstr ""
 
 msgid "Total of clicks"
-msgstr ""
+msgstr "סך לחיצות"
 
 msgid "Typically this only works on devices like smart phones"
 msgstr ""
@@ -566,10 +566,10 @@ msgid "Use the '%s' button above or the fine 'Shortlet'"
 msgstr ""
 
 msgid "Verify by clicking…"
-msgstr ""
+msgstr "אימות על ידי לחיצה..."
 
 msgid "Verification failed"
-msgstr ""
+msgstr "אימות נכשל"
 
 # exception description
 msgid ""
@@ -590,10 +590,10 @@ msgid "API key"
 msgstr "מפתח API"
 
 msgid "bit.ly user"
-msgstr ""
+msgstr "משתמש bit.ly"
 
 msgid "bit.ly user name"
-msgstr ""
+msgstr "שם משתמש bit.ly"
 
 msgid "bit.ly key"
 msgstr ""
@@ -608,10 +608,10 @@ msgid "Google API account"
 msgstr ""
 
 msgid "tiny.cc user"
-msgstr ""
+msgstr "משתמש tiny.cc"
 
 msgid "tiny.cc user name"
-msgstr ""
+msgstr "שם משתמש tiny.cc"
 
 msgid "tiny.cc key"
 msgstr ""
