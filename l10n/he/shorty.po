@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2016-02-16 19:47+0000\n"
+"PO-Revision-Date: 2016-02-17 18:32+0000\n"
 "Last-Translator: duvdevan <the_noam@yahoo.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/owncloud_robot/owncloud/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -333,7 +333,7 @@ msgid "Open source url"
 msgstr "פתיחת נתיב מקור"
 
 msgid "Open relay url"
-msgstr ""
+msgstr "פתיחת נתיב ממסר"
 
 msgid "Open target"
 msgstr "פתיחת יעד"
@@ -345,7 +345,7 @@ msgid "Optional configuration of a 'Static Backend'"
 msgstr ""
 
 msgid "or simpy print or download it for off-line usage"
-msgstr ""
+msgstr "או פשוט להדפיס או להוריד לשימוש לא מקוון"
 
 msgid "Paste to embed elsewhere"
 msgstr "הדבקה להטבעה במקום אחר"
@@ -372,10 +372,10 @@ msgid "Refresh"
 msgstr "רענון"
 
 msgid "Relay service"
-msgstr ""
+msgstr "שירות ממסר"
 
 msgid "Relay url"
-msgstr ""
+msgstr "נתיב ממסר"
 
 msgid "Reload"
 msgstr "טעינה מחדש"
@@ -426,22 +426,22 @@ msgid "Shortlet"
 msgstr ""
 
 msgid "Shorty as QRCode"
-msgstr ""
+msgstr "קישור מקוצר כברקוד תמונה"
 
 msgid "Shorty with id '%s' deleted"
 msgstr "קישור מקוצר עם זיהוי '%s' נמחק"
 
 msgid "Show as QRCode"
-msgstr ""
+msgstr "הצגה כברקוד תמונה"
 
 msgid "Show QRCode reference"
-msgstr ""
+msgstr "הצגת הפנית ברקוד תמונה"
 
 msgid "Show QRCode image"
-msgstr ""
+msgstr "הצגת ברקוד תמונה"
 
 msgid "Download QRCode"
-msgstr ""
+msgstr "הורדת ברקוד תמונה"
 
 msgid "Show details"
 msgstr "הצגת פרטים"
