@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Address" : "Slóð",
     "Host" : "Netþjónn",
-    "Title" : "Titill"
+    "Title" : "Titill",
+    "User" : "Notandi"
 },
-"nplurals=2; plural=(n != 1);");
+"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

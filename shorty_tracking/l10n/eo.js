@@ -1,6 +1,8 @@
 OC.L10N.register(
     "shorty_tracking",
     {
+    "denied" : "malakceptita",
+    "failed" : "malsukcesis",
     "blocked" : "blokita",
     "load" : "ŝargi",
     "Address" : "Adreso",

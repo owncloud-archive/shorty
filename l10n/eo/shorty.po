@@ -24,15 +24,15 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Mariano <mstreet@kde.org.ar>, 2013
+# Mariano <mstreet@kde.org.ar>, 2013,2016
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2016-02-19 04:18+0000\n"
-"Last-Translator: I Robot\n"
-"Language-Team: Esperanto (http://www.transifex.com/owncloud_robot/owncloud/language/eo/)\n"
+"PO-Revision-Date: 2016-02-20 04:31+0000\n"
+"Last-Translator: Mariano <mstreet@kde.org.ar>\n"
+"Language-Team: Esperanto (http://www.transifex.com/owncloud-org/owncloud/language/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -115,10 +115,10 @@ msgstr "senerarigi"
 
 # log message timeout
 msgid "( never )"
-msgstr ""
+msgstr "(neniam)"
 
 msgid "2 seconds"
-msgstr ""
+msgstr "2 sekundoj"
 
 msgid "5 seconds"
 msgstr ""
@@ -212,7 +212,7 @@ msgid "Anything that appears helpful …"
 msgstr "Io ajn, kio ŝajnas helpa"
 
 msgid "Default backend suggested inside users preferences"
-msgstr ""
+msgstr "Defaŭlta motoro sugestata ene de uzantagordo"
 
 msgid "Backend"
 msgstr "Motoro"
@@ -476,7 +476,7 @@ msgid "Specify a static base url…"
 msgstr ""
 
 msgid "Static backend: base url verification"
-msgstr ""
+msgstr "Statika motoro: kontrolo de baza adreso"
 
 msgid "Status"
 msgstr "Stato"
@@ -497,7 +497,7 @@ msgid "That image can be used when writing documents or setting up web sites"
 msgstr ""
 
 msgid "The backend service used to generate shortened URLs."
-msgstr ""
+msgstr "La motorservo uzata por generi mallongigitajn adresojn."
 
 msgid "The default status as suggested for new Shortys."
 msgstr ""
@@ -526,7 +526,7 @@ msgid "This is a internal url that the shortened url relays to"
 msgstr ""
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "Ĉi tiu estas la mallongigita adreso registrita en la motoro"
 
 msgid "This is the target url specified when generating this Shorty"
 msgstr ""
@@ -580,13 +580,13 @@ msgstr "%s\nMesaĝo (kodo): %s (%s)\nDosiero (linio): %s (%s)\nInformo: %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr "Klavo de aliro al API"
+msgstr "API-alira ŝlosilo"
 
 msgid "Account"
 msgstr "Konto"
 
 msgid "API key"
-msgstr "API-klavo"
+msgstr "API-ŝlosilo"
 
 msgid "bit.ly user"
 msgstr "Uzanto de bit.ly"
@@ -595,13 +595,13 @@ msgid "bit.ly user name"
 msgstr "Uzantonomo de bit.ly"
 
 msgid "bit.ly key"
-msgstr "Klavo de bit.ly"
+msgstr "Ŝlosilo de bit.ly"
 
 msgid "bit.ly users key"
-msgstr "Uzantoklavo de bit.ly"
+msgstr "Uzantoŝlosilo de bit.ly"
 
 msgid "Google API key"
-msgstr "Klavo de Google API"
+msgstr "Ŝlosilo de Google API"
 
 msgid "Google API account"
 msgstr "Konto de Google API"
@@ -613,7 +613,7 @@ msgid "tiny.cc user name"
 msgstr "Uzantonomo de tiny.cc"
 
 msgid "tiny.cc key"
-msgstr "Klavo de tiny.cc"
+msgstr "Ŝlosilo de tiny.cc"
 
 msgid "tiny.cc user key"
 msgstr "Uzantoklavo de tiny.cc"
@@ -659,7 +659,7 @@ msgstr ""
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
-msgstr ""
+msgstr "Neniu motoro uziĝas; rektaj ligiloj celantaj vian ownCloud-on generiĝis."
 
 msgid ""
 "The service requires you to authenticate yourself by providing a valid "
@@ -668,7 +668,7 @@ msgstr ""
 
 msgid ""
 "Such links are most likely longer than those generated when using a backend."
-msgstr ""
+msgstr "Tiaj ligiloj plej verŝajne pli longas ol tiuj generataj motore."
 
 msgid ""
 "However this option does not rely on any third party service and keeps your "

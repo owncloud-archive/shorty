@@ -1,5 +1,7 @@
 <?php
 $TRANSLATIONS = array(
+"denied" => "malakceptita",
+"failed" => "malsukcesis",
 "blocked" => "blokita",
 "load" => "ŝargi",
 "Address" => "Adreso",

@@ -23,15 +23,15 @@
 # @author Christian Reiner
 # 
 # Translators:
-# Mariano <mstreet@kde.org.ar>, 2014
+# Mariano <mstreet@kde.org.ar>, 2014,2016
 msgid ""
 msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2015-02-05 19:20+0000\n"
-"Last-Translator: I Robot\n"
-"Language-Team: Esperanto (http://www.transifex.com/projects/p/owncloud/language/eo/)\n"
+"PO-Revision-Date: 2016-02-20 03:58+0000\n"
+"Last-Translator: Mariano <mstreet@kde.org.ar>\n"
+"Language-Team: Esperanto (http://www.transifex.com/owncloud-org/owncloud/language/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,10 +52,10 @@ msgid "granted"
 msgstr ""
 
 msgid "denied"
-msgstr ""
+msgstr "malakceptita"
 
 msgid "failed"
-msgstr ""
+msgstr "malsukcesis"
 
 msgid "blocked"
 msgstr "blokita"

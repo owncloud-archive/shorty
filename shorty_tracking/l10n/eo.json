@@ -1,4 +1,6 @@
 { "translations": {
+    "denied" : "malakceptita",
+    "failed" : "malsukcesis",
     "blocked" : "blokita",
     "load" : "ŝargi",
     "Address" : "Adreso",

@@ -10,6 +10,8 @@ OC.L10N.register(
     "Close" : "Loka",
     "Configuration" : "Uppsetning",
     "Expiration" : "Rennurút",
+    "Home" : "Heim",
+    "Loading" : "Hleð",
     "Notes" : "Skýringar",
     "Save" : "Vista",
     "Settings" : "Stillingar",
