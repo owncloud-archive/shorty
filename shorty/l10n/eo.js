@@ -89,6 +89,7 @@ OC.L10N.register(
     "SMS composer" : "SMS-skribilo",
     "Sort ascending" : "Ordigi kreske",
     "Sort descending" : "Ordigi malkreske",
+    "Clear filter" : "Forviŝi filtrilon",
     "Source url" : "Fonta URL",
     "Static backend: base url verification" : "Statika motoro: kontrolo de baza adreso",
     "Status" : "Stato",
@@ -120,6 +121,7 @@ OC.L10N.register(
     "No backend is used, direct links pointing to your ownCloud are generated." : "Neniu motoro uziĝas; rektaj ligiloj celantaj vian ownCloud-on generiĝis.",
     "Such links are most likely longer than those generated when using a backend." : "Tiaj ligiloj plej verŝajne pli longas ol tiuj generataj motore.",
     "Register a new '%%s' at their pages." : "Registri novan “%%s” en iliaj paĝoj.",
+    "Target object:" : "Cela objekto:",
     "Location" : "Loko"
 },
 "nplurals=2; plural=(n != 1);");
