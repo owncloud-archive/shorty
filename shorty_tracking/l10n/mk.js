@@ -1,6 +1,7 @@
 OC.L10N.register(
     "shorty_tracking",
     {
+    "Shorty Tracking" : "Shorty тракер",
     "blocked" : "блокиран",
     "Address" : "Адреса",
     "Host" : "Домаќин",

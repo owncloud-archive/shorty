@@ -1,6 +1,7 @@
 OC.L10N.register(
     "shorty",
     {
+    "Plugins" : "Додатоци",
     "all" : "сите",
     "blocked" : "блокиран",
     "deleted" : "избришан",

@@ -1,5 +1,6 @@
 <?php
 $TRANSLATIONS = array(
+"Plugins" => "Додатоци",
 "all" => "сите",
 "blocked" => "блокиран",
 "deleted" => "избришан",
