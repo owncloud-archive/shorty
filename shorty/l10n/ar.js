@@ -1,6 +1,7 @@
 OC.L10N.register(
     "shorty",
     {
+    "Plugins" : "الإضافات",
     "all" : "الكل",
     "blocked" : "محجوب",
     "deleted" : "تم الحذف",
