@@ -1,6 +1,7 @@
 { "translations": {
     "Address" : "Slóð",
     "Host" : "Netþjónn",
+    "Time" : "Tími",
     "Title" : "Titill",
     "User" : "Notandi"
 },"pluralForm" :"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);"

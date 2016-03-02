@@ -2,6 +2,7 @@
 $TRANSLATIONS = array(
 "Address" => "Slóð",
 "Host" => "Netþjónn",
+"Time" => "Tími",
 "Title" => "Titill",
 "User" => "Notandi"
 );

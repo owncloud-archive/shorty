@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "Address" : "Slóð",
     "Host" : "Netþjónn",
+    "Time" : "Tími",
     "Title" : "Titill",
     "User" : "Notandi"
 },

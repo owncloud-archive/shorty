@@ -29,7 +29,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2016-02-27 16:57+0000\n"
+"PO-Revision-Date: 2016-03-01 16:30+0000\n"
 "Last-Translator: I Robot\n"
 "Language-Team: Icelandic (http://www.transifex.com/owncloud-org/owncloud/language/is/)\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgid "none"
 msgstr ""
 
 msgid "error"
-msgstr ""
+msgstr "villa"
 
 msgid "info"
 msgstr ""
@@ -367,7 +367,7 @@ msgid "Prepare to send as SMS"
 msgstr ""
 
 msgid "Refresh"
-msgstr ""
+msgstr "Endurlesa"
 
 msgid "Relay service"
 msgstr ""
@@ -376,7 +376,7 @@ msgid "Relay url"
 msgstr ""
 
 msgid "Reload"
-msgstr ""
+msgstr "Endurlesa"
 
 msgid "Reload list"
 msgstr ""
@@ -582,10 +582,10 @@ msgid "API access key"
 msgstr ""
 
 msgid "Account"
-msgstr ""
+msgstr "Aðgangur"
 
 msgid "API key"
-msgstr ""
+msgstr "API-lykill"
 
 msgid "bit.ly user"
 msgstr ""
