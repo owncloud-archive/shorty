@@ -54,6 +54,7 @@ $TRANSLATIONS = array(
 "Alternatively the link can be copied manually" => "לחילופין ניתן להעתיק את הקישור באופן ידני",
 "Alternatively the link can be copied into a message manually" => "לחילופין ניתן להעתיק את הקישור להודעה באופן ידני",
 "Anything that appears helpful …" => "כל דבר שנראה שעוזר...",
+"Default backend suggested inside users preferences" => "ברירת המחדל של הצד האחורי מוצעת בהעדפות משתמשים",
 "Backend" => "מנגנון",
 "Base url" => "נתיב בסיסי",
 "Choose a service…" => "בחירת שירות...",
