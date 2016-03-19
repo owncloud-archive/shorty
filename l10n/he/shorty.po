@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: ownCloud\n"
 "Report-Msgid-Bugs-To: translations@owncloud.org\n"
 "POT-Creation-Date: 2013-04-26 15:00+0200\n"
-"PO-Revision-Date: 2016-03-15 19:49+0000\n"
+"PO-Revision-Date: 2016-03-18 17:28+0000\n"
 "Last-Translator: duvdevan <the_noam@yahoo.com>\n"
 "Language-Team: Hebrew (http://www.transifex.com/owncloud-org/owncloud/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -521,49 +521,49 @@ msgstr "ברקוד 2 ממדים זה מקדד את נתיב האינטרנט ה�
 msgid ""
 "Use it in web pages by referencing or embedding or simply print or download "
 "it for offline usage"
-msgstr ""
+msgstr "לשימוש בעמודי אינטרנט על ידי הפניה או הטמעה או פשוט להדפיס או להוריד לשימוש לא מחובר"
 
 msgid "This is a internal url that the shortened url relays to"
 msgstr "זה נתיב האינטרנט הפנימי שהנתיב המקוצר קשור אליו"
 
 msgid "This is the shortened url registered at the backend"
-msgstr ""
+msgstr "זה הקישור המקוצר הרשום בצד האחורי"
 
 msgid "This is the target url specified when generating this Shorty"
-msgstr ""
+msgstr "זה נתיב היעד המוגדר כאשר יוצרים את הנתיב המקוצר הזה"
 
 msgid "This is the url referencing the QRCode shown before"
-msgstr ""
+msgstr "זה נתיב האינטרנט המופנה על ידי ברקוד התמונה שהוצג קודם"
 
 msgid "Title"
 msgstr "כותרת"
 
 msgid "Toggle toolbar"
-msgstr ""
+msgstr "הראה/הסתר סרגל כלים"
 
 msgid "Total of clicks"
 msgstr "סך לחיצות"
 
 msgid "Typically this only works on devices like smart phones"
-msgstr ""
+msgstr "בדרך כלל זה עובד רק על מכשירים כגון טלפונים חכמים"
 
 msgid "Unexpected type of exception caught: %s"
-msgstr ""
+msgstr "סוג לא צפוי של חריג נלכד: %s"
 
 msgid "Unfortunately the implementation of this scheme is limited"
-msgstr ""
+msgstr "למרבה הצער היישום של שיטה זו מוגבל"
 
 msgid "Unknown object of type caught: %s"
-msgstr ""
+msgstr "נלכד אוביקט של סוג: %s"
 
 msgid "Url shortened to: %s"
-msgstr "הכתובת קוצרה לכדי: %s"
+msgstr "נתיב האינטרנט קוצר ל-: %s"
 
 msgid "Use it in web pages by referencing or embedding"
-msgstr ""
+msgstr "ניתן להשתמש בזה עבור דפי אינטרנט על ידי הפניה או הטמעה"
 
 msgid "Use the '%s' button above or the fine 'Shortlet'"
-msgstr ""
+msgstr "השתמש בכפתור '%s' למעלה או ה- 'Shortlet' המצויין"
 
 msgid "Verify by clicking…"
 msgstr "אימות על ידי לחיצה..."
@@ -577,11 +577,11 @@ msgid ""
 "Message(code): %s (%s)\n"
 "File(line): %s (%s)\n"
 "Info: %%s"
-msgstr ""
+msgstr "%s\nהודעה(קוד): %s (%s)\nקובץ(שורה): %s (%s)\nמידע: %%s"
 
 # technical backend details
 msgid "API access key"
-msgstr ""
+msgstr "מפתח גישה API"
 
 msgid "Account"
 msgstr "חשבון"
@@ -596,16 +596,16 @@ msgid "bit.ly user name"
 msgstr "שם משתמש bit.ly"
 
 msgid "bit.ly key"
-msgstr ""
+msgstr "מפתח bit.ly"
 
 msgid "bit.ly users key"
-msgstr ""
+msgstr "מפתח משתמש bit.ly"
 
 msgid "Google API key"
-msgstr ""
+msgstr "מפתח גוגל API"
 
 msgid "Google API account"
-msgstr ""
+msgstr "חשבון גוגל API"
 
 msgid "tiny.cc user"
 msgstr "משתמש tiny.cc"
@@ -614,49 +614,49 @@ msgid "tiny.cc user name"
 msgstr "שם משתמש tiny.cc"
 
 msgid "tiny.cc key"
-msgstr ""
+msgstr "מפתח tiny.cc"
 
 msgid "tiny.cc user key"
-msgstr ""
+msgstr "מפתח משתמש tiny.cc"
 
 # longer terms: typically explanations
 msgid ""
 "Force verification of encryption certificates during communication with the "
 "backend"
-msgstr ""
+msgstr "חייב אימות על בסיס תעודת קידוד בזמן תקשורת עם צד אחורי"
 
 msgid ""
 "The external 'bitly.com' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "השירות החיצוני 'bitly.com' משמש לרישום נתיב אינטרנט מקוצר לכל נתיב מקוצר מסופק."
 
 msgid "This means you have to register an '%s' at their site first."
-msgstr ""
+msgstr "לפיכך יש לבצע רישום '%s' באתר שלהם תחילה."
 
 msgid ""
 "The external 'turl' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "השירות החיצוני 'turl' משמש לרישום נתיב אינטרנט מקוצר לכל נתיב מקוצר מסופק."
 
 msgid ""
 "The external 'ti.ny' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "השירות החיצוני 'ti.ny' משמש לרישום נתיב אינטרנט מקוצר לכל נתיב מקוצר מסופק."
 
 msgid ""
 "The external 'cli.gs' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "השירות החיצוני 'cli.gs' משמש לרישום נתיב אינטרנט מקוצר לכל נתיב מקוצר מסופק."
 
 msgid ""
 "The external 'is.gd' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "השירות החיצוני 'is.gd' משמש לרישום נתיב אינטרנט מקוצר לכל נתיב מקוצר מסופק."
 
 msgid ""
 "The external 'tiny.cc' service is used to register a short url for each "
 "generated shorty."
-msgstr ""
+msgstr "השירות החיצוני 'tiny.cc' משמש לרישום נתיב אינטרנט מקוצר לכל נתיב מקוצר מסופק."
 
 msgid ""
 "No backend is used, direct links pointing to your ownCloud are generated."
@@ -771,13 +771,13 @@ msgid ""
 msgstr ""
 
 msgid "Shorty relay service"
-msgstr ""
+msgstr "שירות ממסר של נתיב מקוצר"
 
 msgid "If you proceed you will be forwarded to:"
-msgstr ""
+msgstr "אם ממשיכים הדף יועבר אל:"
 
 msgid "Target object:"
-msgstr ""
+msgstr "אוביקט יעד:"
 
 msgid "Location"
 msgstr "מיקום"
